@@ -1,0 +1,1270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <title>All Listed Companies - Screener</title>
+    
+
+    
+    <script async
+            event-user="unregistered"
+            
+            
+            data-domain="screener.in"
+            src="https://plausible.screener.in/js/script.pageview-props.tagged-events.js"></script>
+    <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+    <script src="https://rybbit.screener.in/api/script.js"
+            data-site-id="5494427e1dc0"
+            defer></script>
+
+    <!-- FONT -->
+    <link rel="stylesheet" href="https://cdn-static.screener.in/inter/inter.c622a5e75782.css" />
+    <link rel="stylesheet" href="https://cdn-static.screener.in/fontello/css/fontello.922bd1360ba2.css?v=3" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn-static.screener.in/css/normalize.a2444750a947.css" media="all">
+    <link rel="stylesheet" href="https://cdn-static.screener.in/css/skeleton.6c2bdf529367.css" media="all">
+    <link rel="stylesheet" href="https://cdn-static.screener.in/css/custom.dc99e63b07ab.css" media="all">
+
+    
+    
+    
+    
+
+    <meta name="author" content="Mittal Analytics Private Limited">
+
+    <!-- PWA manifest -->
+    <meta name="theme-color"
+          content="#fff"
+          media="(prefers-color-scheme: light)">
+    <meta name="theme-color"
+          content="#222530"
+          media="(prefers-color-scheme: dark)">
+    <link rel="manifest" href="/static/manifest.json">
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="https://cdn-static.screener.in/favicon/apple-touch-icon.b6e5f24bf7d3.png">
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://cdn-static.screener.in/favicon/favicon-32x32.00205914303a.png">
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="https://cdn-static.screener.in/favicon/favicon-16x16.2b35594b2f33.png">
+    <link rel="mask-icon"
+          href="https://cdn-static.screener.in/favicon/safari-pinned-tab.adbe3ed3c5ad.svg"
+          color="#8ED443">
+    <meta name="msapplication-TileColor" content="#da532c">
+  </head>
+
+  <body class="light flex-column">
+    
+      <nav class="u-full-width no-print">
+        <div id="mobile-search"><div class="has-addon left-addon dropdown-typeahead">
+  <i class="addon icon-search"></i>
+  <input
+    aria-label="Search for a company"
+    type="search"
+    autocomplete="off"
+    spellcheck="false"
+    placeholder="Search for a company"
+    class="u-full-width"
+    
+    data-company-search="true">
+</div>
+</div>
+
+<ul class="bottom-menu-bar hide-from-tablet-landscape">
+  
+    <li class="">
+      <a href="/">
+        <i class="icon-home"></i>
+        <br>
+        Home
+      </a>
+    </li>
+  
+
+  <li class="">
+    <a href="/explore/">
+      <i class="icon-screens"></i>
+      <br>
+      Screens
+    </a>
+  </li>
+
+  <li>
+    <button type="button"
+            onclick="MobileMenu.toggleSearch(this)"
+            class="round height-48 button-primary"
+            title="Search">
+      <i class="icon-search" style="font-size: 18px"></i>
+    </button>
+  </li>
+
+  <li>
+    <button class="button-plain" onclick="Modal.showInModal('#nav-tools-menu')">
+      <i class="icon-tools"></i>
+      <br>
+      Tools
+    </button>
+  </li>
+
+  
+    <li class="">
+      <a href="/register/?page=42">
+        <i class="icon-user-plus"></i>
+        <br>
+        Login
+      </a>
+    </li>
+  
+</ul>
+
+        <div class="top-nav-holder">
+          <div class="container">
+
+
+
+<div class="layer-holder top-navigation">
+  <div class="layer flex flex-space-between"
+       style="align-items: center;
+              height: 50px">
+    <div class="flex" style="align-items: center">
+      <a href="/" class="logo-holder">
+        <img alt="Screener Logo"
+             class="logo"
+             src="https://cdn-static.screener.in/img/logo-black.f44abb4998d1.svg" />
+      </a>
+
+      <div class="desktop-links" style="margin-left: 48px">
+        <a href="/">
+          
+            Home
+          
+        </a>
+        <a href="/explore/">Screens</a>
+        <div class="dropdown-menu">
+          <button class="button-plain"
+                  type="button"
+                  onclick="Utils.toggleDropdown(event)">
+            Tools
+            <i class="icon-down"></i>
+          </button>
+          <ul class="dropdown-content flex-column tools-menu"
+              style="width: 350px"
+              id="nav-tools-menu">
+            <li>
+              <a href="/screen/new/"
+                 class="flex flex-align-center flex-gap-16">
+                <div class="bg-stripes square height-56">
+                  <img src="https://cdn-static.screener.in/icons/screens.e960a5daedf9.svg" alt="Create a stock screen">
+                </div>
+                <div>
+                  <div class="font-weight-500 font-size-14">Create a stock screen</div>
+                  <div class="sub font-size-13">Run queries on 10 years of financial data</div>
+                </div>
+              </a>
+            </li>
+            <li class="flex flex-align-center no-hover" style="padding: 4px 0;">
+              <div class="button button-primary premium-indicator flex flex-align-center">
+                <img src="https://cdn-static.screener.in/icons/crown.fb0d2413ee43.svg"
+                     alt="Premium icon"
+                     style="margin-right: 8px">
+                <span>Premium features</span>
+              </div>
+              <hr class="flex-grow" style="padding: 0; margin: 0;">
+            </li>
+            
+              <li>
+                <a href="/ai/"
+                   class="flex flex-align-center flex-gap-16">
+                  <div class="bg-stripes square height-56">
+                    <img src="https://cdn-static.screener.in/icons/ai.970ef1d1cabb.svg" alt="Screener AI">
+                  </div>
+                  <div>
+                    <div class="font-weight-500 font-size-14">Screener AI</div>
+                    <div class="sub font-size-13">Extract valuable insights from hundreds of company documents.</div>
+                  </div>
+                </a>
+              </li>
+            
+            <li>
+              <a href="/hs/" class="flex flex-align-center flex-gap-16">
+                <div class="bg-stripes square height-56">
+                  <img src="https://cdn-static.screener.in/icons/export.d623f0029933.svg" alt="Commodity Prices">
+                </div>
+                <div>
+                  <div class="font-weight-500 font-size-14">Commodity Prices</div>
+                  <div class="sub font-size-13">Analyze price trends for 10,000+ commodities over the past 10 years.</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/people/"
+                 class="flex flex-align-center flex-gap-16">
+                <div class="bg-stripes square height-56">
+                  <img src="https://cdn-static.screener.in/icons/shares.10acc20cb936.svg"
+                       alt="Search shareholders by name">
+                </div>
+                <div>
+                  <div class="font-weight-500 font-size-14">Search shareholders</div>
+                  <div class="sub font-size-13">Find all companies where a person owns more than 1% of shares.</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/announcements/"
+                 class="flex flex-align-center flex-gap-16">
+                <div class="bg-stripes square height-56">
+                  <img src="https://cdn-static.screener.in/icons/loudspeaker.88769927f6eb.svg" alt="Loudspeaker">
+                </div>
+                <div>
+                  <div class="font-weight-500 font-size-14">Company Announcements</div>
+                  <div class="sub font-size-13">
+                    Stay updated. Search, filter and set alerts for the newest disclosures and developments.
+                  </div>
+                </div>
+              </a>
+            </li>
+            
+              <li style="padding: 16px;">
+                <a href="/premium/?driver=top-nav-tools"
+                   class="button button-primary text-align-center"
+                   style="color: var(--white);
+                          padding: 10px 24px">Upgrade to premium</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-from-tablet-landscape flex flex-gap-16"
+         style="justify-content: flex-end;
+                flex: 1 1 400px">
+      <div class="search" id="desktop-search"><div class="has-addon left-addon dropdown-typeahead">
+  <i class="addon icon-search"></i>
+  <input
+    aria-label="Search for a company"
+    type="search"
+    autocomplete="off"
+    spellcheck="false"
+    placeholder="Search for a company"
+    class="u-full-width"
+    
+    data-company-search="true">
+</div>
+</div>
+
+      
+        <div class="flex flex-gap-8" style="margin: 4px">
+          <a class="button account"
+             href="/login/?page=42">
+            <i class="icon-user-line blue-icon"></i>
+            Login
+          </a>
+          <a class="button account button-secondary"
+             href="/register/?page=42">Get free account</a>
+        </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+        </div>
+      </nav>
+    
+
+    
+    
+
+    
+      <main class="flex-grow container">
+        
+
+
+  
+
+
+
+
+
+
+        
+        <div class="breadcrumb hidden-if-empty"></div>
+        
+
+        
+          
+          <div class="card card-large">
+            
+<div id="screen-info" class="flex-row flex-space-between flex-gap-8 margin-bottom-16" data-screen-id="357649">
+  <h1 class="margin-0">
+    
+    All Listed Companies
+    
+  </h1>
+
+  <div class="flex flex-gap-8 flex-end flex-align-center">
+    
+    
+      
+
+      
+      <form action="/alerts/add-screen-357649/" method="POST">
+        <input type="hidden" name="csrfmiddlewaretoken" value="X6roa5Xcf34K0K3wE5baor7UQCmN7kHqEAd8RynPZ4P7tz61dSR16BUQVvQ72kHs">
+        <button type="submit" class="button-primary">
+          <i class="icon-bell"></i> Get Email Updates
+        </button>
+      </form>
+      
+    
+  </div>
+</div>
+
+
+<div style="max-width: 750px">
+  <p>All Market Listed Companies</p>
+  <p class="sub">
+    by <a href="/user/782414/">Durgesh</a>
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div data-messages></div>
+
+<div class="flex-row flex-gap-8 flex-space-between flex-align-center">
+  
+    <div class="sub" data-page-info>
+      5511 results found: Showing page 42 of 221
+    </div>
+  
+
+  <div class="flex flex-gap-8 flex-end">
+    
+      <div class="dropdown-filter">
+        <button onclick="toggleIndustryFilter(event)"
+                class="button-small plausible-event-name=Industry+Filter plausible-event-user=unregistered"
+                data-api-url="/api/get/sectors/?page=42&amp;url_name=screen&amp;screen_id=357649&amp;slug_name=all-listed-companies">
+          <i class="icon-industry"></i>
+          Industry
+        </button>
+        <ul class="dropdown-content industry-filter-menu font-size-14">
+        </ul>
+      </div>
+    
+
+    
+      <script src="https://cdn-static.screener.in/js/industry-filter.83955b5afc5f.js"></script>
+    
+
+    
+      <form action="/api/export/screen/?page=42&amp;url_name=screen&amp;screen_id=357649&amp;slug_name=all-listed-companies"
+            method="POST"
+            class="hide-on-mobile plausible-event-name=Excel+Screen plausible-event-user=unregistered">
+        <input type="hidden" name="csrfmiddlewaretoken" value="X6roa5Xcf34K0K3wE5baor7UQCmN7kHqEAd8RynPZ4P7tz61dSR16BUQVvQ72kHs">
+        <button class="button-small tooltip-left"
+                aria-label="Download Results"
+                type="submit"
+                data-tooltip="Download Results">
+          <i class="icon-download"></i>
+          Export
+        </button>
+      </form>
+    
+
+    
+      <a href="/user/columns/?next=/screens/357649/all-listed-companies/%3Fpage%3D42"
+         class="button button-small button-secondary plausible-event-name=Edit+Columns plausible-event-user=unregistered">
+        <i class="icon-cog"></i>
+        Edit Columns
+      </a>
+    
+  </div>
+</div>
+
+<div class="responsive-holder fill-card-width" data-page-results>
+  <table class="data-table text-nowrap striped mark-visited no-scroll-right highlight-on-hover">
+    <tbody>
+      
+        
+          <tr>
+            <th class="text"
+                scope="colgroup"
+                >
+              
+                <a href="?order=asc"
+                   class=""
+                   aria-label="Default Sort">S.No.</a>
+              
+            </th>
+
+            <th class="text" scope="colgroup">
+              
+                <a href="?sort=name&amp;order=desc"
+                   class=""
+                   aria-label="Sort on company name">Company</a>
+              
+            </th>
+
+            
+              <th data-tooltip="Current Price" scope="colgroup">
+                
+                  <a href="?sort=current+price&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Current Price">
+                    CMP
+                    <span style="color: hsl(0, 0%, 45%)">Rs.</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Price to Earning" scope="colgroup">
+                
+                  <a href="?sort=price+to+earning&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Price to Earning">
+                    P/E
+                    <span style="color: hsl(0, 0%, 45%)"></span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Market Capitalization" scope="colgroup">
+                
+                  <a href="?sort=market+capitalization&amp;order=desc"
+                     class="desc"
+                     aria-label="Sort on Market Capitalization">
+                    Mar Cap
+                    <span style="color: hsl(0, 0%, 45%)">Rs.Cr.</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Dividend yield" scope="colgroup">
+                
+                  <a href="?sort=dividend+yield&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Dividend yield">
+                    Div Yld
+                    <span style="color: hsl(0, 0%, 45%)">%</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Net Profit latest quarter" scope="colgroup">
+                
+                  <a href="?sort=net+profit+latest+quarter&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Net Profit latest quarter">
+                    NP Qtr
+                    <span style="color: hsl(0, 0%, 45%)">Rs.Cr.</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="YOY Quarterly profit growth" scope="colgroup">
+                
+                  <a href="?sort=yoy+quarterly+profit+growth&amp;order=desc"
+                     class=""
+                     aria-label="Sort on YOY Quarterly profit growth">
+                    Qtr Profit Var
+                    <span style="color: hsl(0, 0%, 45%)">%</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Sales latest quarter" scope="colgroup">
+                
+                  <a href="?sort=sales+latest+quarter&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Sales latest quarter">
+                    Sales Qtr
+                    <span style="color: hsl(0, 0%, 45%)">Rs.Cr.</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="YOY Quarterly sales growth" scope="colgroup">
+                
+                  <a href="?sort=yoy+quarterly+sales+growth&amp;order=desc"
+                     class=""
+                     aria-label="Sort on YOY Quarterly sales growth">
+                    Qtr Sales Var
+                    <span style="color: hsl(0, 0%, 45%)">%</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Return on capital employed" scope="colgroup">
+                
+                  <a href="?sort=return+on+capital+employed&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Return on capital employed">
+                    ROCE
+                    <span style="color: hsl(0, 0%, 45%)">%</span>
+                  </a>
+                
+              </th>
+            
+          </tr>
+        
+
+        <tr data-row-company-id="763">
+          
+            <td class="text">1026.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/DALMIASUG/consolidated/" target="_blank">Dalmia Bharat</a>
+          </td>
+          <td>428.75</td><td>16.91</td><td>3470.27</td><td>1.40</td><td>6.91</td><td>-80.34</td><td>848.19</td><td>-9.85</td><td>8.18</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="3590">
+          
+            <td class="text">1027.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/VAIBHAVGBL/consolidated/" target="_blank">Vaibhav Global</a>
+          </td>
+          <td>206.38</td><td>12.16</td><td>3462.43</td><td>2.91</td><td>56.38</td><td>49.83</td><td>917.07</td><td>12.70</td><td>16.43</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1274339">
+          
+            <td class="text">1028.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/ORIENTELEC/" target="_blank">Orient Electric</a>
+          </td>
+          <td>162.26</td><td>29.03</td><td>3462.08</td><td>0.92</td><td>31.49</td><td>95.61</td><td>949.76</td><td>23.49</td><td>19.87</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1274309">
+          
+            <td class="text">1029.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/SANDHAR/consolidated/" target="_blank">Sandhar Tech</a>
+          </td>
+          <td>574.00</td><td>16.50</td><td>3454.95</td><td>0.70</td><td>37.28</td><td>33.10</td><td>1381.89</td><td>26.77</td><td>12.29</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="2282">
+          
+            <td class="text">1030.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/NITINSPIN/" target="_blank">Nitin Spinners</a>
+          </td>
+          <td>612.35</td><td>16.25</td><td>3442.63</td><td>0.49</td><td>75.27</td><td>83.63</td><td>875.03</td><td>10.30</td><td>12.21</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1274804">
+          
+            <td class="text">1031.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/HEMIPROP/" target="_blank">Hemisphere Prop</a>
+          </td>
+          <td>120.36</td><td></td><td>3430.26</td><td>0.00</td><td>-3.20</td><td>-21.21</td><td>0.15</td><td>-37.50</td><td>-1.14</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="2514">
+          
+            <td class="text">1032.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/POLYPLEX/consolidated/" target="_blank">Polyplex Corpn</a>
+          </td>
+          <td>1086.20</td><td>21.96</td><td>3409.85</td><td>0.28</td><td>171.07</td><td>571.41</td><td>2253.62</td><td>29.62</td><td>0.89</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1806">
+          
+            <td class="text">1033.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/KNRCON/consolidated/" target="_blank">KNR Construct.</a>
+          </td>
+          <td>120.27</td><td>9.90</td><td>3382.41</td><td>0.21</td><td>80.73</td><td>-77.24</td><td>587.94</td><td>-4.04</td><td>10.36</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1286049">
+          
+            <td class="text">1034.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/CMLL/consolidated/" target="_blank">Caliber Mining</a>
+          </td>
+          <td>516.85</td><td>21.63</td><td>3378.95</td><td>0.00</td><td>29.76</td><td>-21.56</td><td>657.05</td><td>67.10</td><td>21.23</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1273362">
+          
+            <td class="text">1035.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/PARAGMILK/consolidated/" target="_blank">Parag Milk Foods</a>
+          </td>
+          <td>268.90</td><td>25.08</td><td>3377.64</td><td>0.41</td><td>22.05</td><td>-20.05</td><td>944.57</td><td>10.93</td><td>13.41</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1463">
+          
+            <td class="text">1036.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/INDOTECH/" target="_blank">Indo Tech.Trans.</a>
+          </td>
+          <td>3177.70</td><td>33.99</td><td>3374.72</td><td>0.31</td><td>25.70</td><td>34.06</td><td>227.89</td><td>39.02</td><td>40.35</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1285740">
+          
+            <td class="text">1037.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/MIDWESTLTD/consolidated/" target="_blank">Midwest</a>
+          </td>
+          <td>929.50</td><td>30.27</td><td>3361.15</td><td>0.00</td><td>31.04</td><td>26.67</td><td>191.84</td><td>34.84</td><td>15.84</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1284432">
+          
+            <td class="text">1038.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/ORIANA/consolidated/" target="_blank">Oriana Power Ltd</a>
+          </td>
+          <td>330.75</td><td>13.32</td><td>3360.28</td><td>0.00</td><td>130.41</td><td>19.02</td><td>1032.49</td><td>64.51</td><td>39.61</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1274633">
+          
+            <td class="text">1039.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/ANUP/consolidated/" target="_blank">The Anup Enginee</a>
+          </td>
+          <td>1677.10</td><td>39.14</td><td>3359.48</td><td>0.72</td><td>0.57</td><td>-97.83</td><td>125.25</td><td>-28.52</td><td>21.00</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1472">
+          
+            <td class="text">1040.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/INDRAMEDCO/" target="_blank">Indrapr.Medical</a>
+          </td>
+          <td>365.70</td><td>17.83</td><td>3352.48</td><td>1.09</td><td>55.85</td><td>8.53</td><td>406.15</td><td>11.26</td><td>35.75</td>
+        </tr>
+      
+        
+          <tr>
+            <th class="text"
+                scope="colgroup"
+                >
+              
+                <a href="?order=asc"
+                   class=""
+                   aria-label="Default Sort">S.No.</a>
+              
+            </th>
+
+            <th class="text" scope="colgroup">
+              
+                <a href="?sort=name&amp;order=desc"
+                   class=""
+                   aria-label="Sort on company name">Company</a>
+              
+            </th>
+
+            
+              <th data-tooltip="Current Price" scope="colgroup">
+                
+                  <a href="?sort=current+price&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Current Price">
+                    CMP
+                    <span style="color: hsl(0, 0%, 45%)">Rs.</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Price to Earning" scope="colgroup">
+                
+                  <a href="?sort=price+to+earning&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Price to Earning">
+                    P/E
+                    <span style="color: hsl(0, 0%, 45%)"></span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Market Capitalization" scope="colgroup">
+                
+                  <a href="?sort=market+capitalization&amp;order=desc"
+                     class="desc"
+                     aria-label="Sort on Market Capitalization">
+                    Mar Cap
+                    <span style="color: hsl(0, 0%, 45%)">Rs.Cr.</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Dividend yield" scope="colgroup">
+                
+                  <a href="?sort=dividend+yield&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Dividend yield">
+                    Div Yld
+                    <span style="color: hsl(0, 0%, 45%)">%</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Net Profit latest quarter" scope="colgroup">
+                
+                  <a href="?sort=net+profit+latest+quarter&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Net Profit latest quarter">
+                    NP Qtr
+                    <span style="color: hsl(0, 0%, 45%)">Rs.Cr.</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="YOY Quarterly profit growth" scope="colgroup">
+                
+                  <a href="?sort=yoy+quarterly+profit+growth&amp;order=desc"
+                     class=""
+                     aria-label="Sort on YOY Quarterly profit growth">
+                    Qtr Profit Var
+                    <span style="color: hsl(0, 0%, 45%)">%</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Sales latest quarter" scope="colgroup">
+                
+                  <a href="?sort=sales+latest+quarter&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Sales latest quarter">
+                    Sales Qtr
+                    <span style="color: hsl(0, 0%, 45%)">Rs.Cr.</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="YOY Quarterly sales growth" scope="colgroup">
+                
+                  <a href="?sort=yoy+quarterly+sales+growth&amp;order=desc"
+                     class=""
+                     aria-label="Sort on YOY Quarterly sales growth">
+                    Qtr Sales Var
+                    <span style="color: hsl(0, 0%, 45%)">%</span>
+                  </a>
+                
+              </th>
+            
+              <th data-tooltip="Return on capital employed" scope="colgroup">
+                
+                  <a href="?sort=return+on+capital+employed&amp;order=desc"
+                     class=""
+                     aria-label="Sort on Return on capital employed">
+                    ROCE
+                    <span style="color: hsl(0, 0%, 45%)">%</span>
+                  </a>
+                
+              </th>
+            
+          </tr>
+        
+
+        <tr data-row-company-id="1275363">
+          
+            <td class="text">1041.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/ANZEN/consolidated/" target="_blank">Anzen IYEP Trust</a>
+          </td>
+          <td>131.00</td><td>100.99</td><td>3349.92</td><td>12.11</td><td>54.03</td><td>354.35</td><td>288.12</td><td>160.84</td><td>3.28</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1285333">
+          
+            <td class="text">1042.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/JUBLCPL/consolidated/" target="_blank">Jubilant Agri</a>
+          </td>
+          <td>2210.10</td><td>25.30</td><td>3348.85</td><td>0.00</td><td>46.11</td><td>4.49</td><td>523.18</td><td>18.38</td><td>40.39</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1286187">
+          
+            <td class="text">1043.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/id/1286187/consolidated/" target="_blank">Varmora Granito</a>
+          </td>
+          <td></td><td>54.00</td><td>3344.98</td><td></td><td></td><td></td><td></td><td></td><td>9.46</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1354">
+          
+            <td class="text">1044.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/501945/" target="_blank">Dhenu Buildcon</a>
+          </td>
+          <td>5.58</td><td></td><td>3311.06</td><td>0.00</td><td>0.84</td><td>180.00</td><td>1.19</td><td>283.87</td><td>-0.04</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1270784">
+          
+            <td class="text">1045.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/AGIIL/consolidated/" target="_blank">AGI Infra</a>
+          </td>
+          <td>264.55</td><td>32.30</td><td>3306.81</td><td>0.08</td><td>27.54</td><td>37.53</td><td>96.44</td><td>5.27</td><td>20.24</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="3125">
+          
+            <td class="text">1046.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/JTEKTINDIA/" target="_blank">JTEKT India</a>
+          </td>
+          <td>118.07</td><td>42.71</td><td>3275.23</td><td>0.64</td><td>6.22</td><td>-42.51</td><td>717.98</td><td>26.85</td><td>9.77</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="2181">
+          
+            <td class="text">1047.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/NACLIND/consolidated/" target="_blank">NACL Industries</a>
+          </td>
+          <td>139.67</td><td>126.22</td><td>3271.68</td><td>0.00</td><td>20.84</td><td>59.82</td><td>383.33</td><td>-14.50</td><td>8.13</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="2205">
+          
+            <td class="text">1048.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/NFL/consolidated/" target="_blank">Natl.Fertilizer</a>
+          </td>
+          <td>66.67</td><td>8.98</td><td>3270.70</td><td>1.56</td><td>113.38</td><td>387.47</td><td>4500.39</td><td>27.34</td><td>9.10</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1273452">
+          
+            <td class="text">1049.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/ADVENZYMES/consolidated/" target="_blank">Advanced Enzyme</a>
+          </td>
+          <td>291.15</td><td>20.69</td><td>3260.19</td><td>1.84</td><td>38.59</td><td>-7.11</td><td>189.79</td><td>2.09</td><td>13.96</td>
+        </tr>
+      
+        
+
+        <tr data-row-company-id="1284708">
+          
+            <td class="text">1050.</td>
+          
+
+          
+
+          <td class="text">
+            <a href="/company/GOPAL/" target="_blank">Gopal Snacks</a>
+          </td>
+          <td>260.95</td><td>59.18</td><td>3253.18</td><td>0.38</td><td>12.85</td><td>430.99</td><td>422.32</td><td>31.09</td><td>11.67</td>
+        </tr>
+      
+    </tbody>
+    
+  </table>
+</div>
+
+
+  <div data-paging="true">
+
+
+
+<div class="pagination"><div class="flex-baseline options"><a href="?page=41"><i class="icon-left"></i> Previous
+        </a><a href="?page=1" class="ink-900">1</a><a href="?page=2" class="ink-900">2</a><button disabled="disabled">…</button><a href="?page=39" class="ink-900">39</a><a href="?page=40" class="ink-900">40</a><a href="?page=41" class="ink-900">41</a><a href="#" class="active">42</a><a href="?page=43" class="ink-900">43</a><a href="?page=44" class="ink-900">44</a><a href="?page=45" class="ink-900">45</a><button disabled="disabled">…</button><a href="?page=220" class="ink-900">220</a><a href="?page=221" class="ink-900">221</a><a href="?page=43">
+            Next <i class="icon-right"></i></a></div><div class="flex flex-baseline flex-gap-16"><span class="font-size-14 font-weight-500 sub">Results per page</span><div class="options"><a class=""
+           href="?page=1&amp;limit=10">10</a><a class="active"
+           href="?page=1&amp;limit=25">25</a><a class=""
+           href="?page=1&amp;limit=50">50</a></div></div></div>
+</div>
+
+
+
+
+
+
+<form method="get" action="/screen/raw/">
+
+  
+  <h3>Search Query</h3>
+  <p>You can customize the query below:</p>
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" name="sort" value="Market Capitalization" id="id_sort"><input type="hidden" name="order" value="desc" id="id_order"><input type="hidden" name="source_id" value="357649" id="id_source_id">
+
+
+  <div class="form-field">
+    
+
+      <label for="query-builder">
+        Query
+        
+        
+      </label>
+      
+      <div class="flex-row flex-space-between flex-gap-16" style="margin-bottom: 16px; margin-top: 0;">
+  <div style="flex-grow: 4; flex-shrink: 1; min-width: 25rem; max-width: 100%" class="dropdown-typeahead">
+    <textarea name="query" cols="30" rows="8" id="query-builder" spellcheck="false" class="u-full-width" maxlength="1500" required>Market capitalization &gt; 1</textarea>
+  </div>
+
+  <div class="callout success query-help">
+    <p class="bigger margin-bottom-0" id="query-help-name">Custom query example</p>
+    <p id="query-help-description" style="white-space: pre-line">Market capitalization &gt; 500 AND
+      Price to earning &lt; 15 AND
+      Return on capital employed &gt; 22%</p>
+    <div class="sub" id="query-help-detail">
+      <a href="/guides/creating-screens/">
+        Detailed guide on creating screens
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn-static.screener.in/js/query.builder.9dff65fa7ac8.js"></script>
+
+    
+  </div>
+
+  <div class="form-field">
+    
+      
+      <label>
+        <input type="checkbox" name="latest" aria-describedby="id_latest_helptext" id="id_latest">
+        <span>
+          
+            Only companies with Jun 2026 results
+          
+        </span>
+      </label>
+    
+  </div>
+
+
+
+
+
+  <div class="flex-row flex-space-between flex-gap-16">
+    <button type="submit" class="button-primary">
+      <i class="icon-play"></i>
+      Run this Query
+    </button>
+
+    <button id="show-ratio-gallery" type="button" onclick="RatioGallery.loadGallery(this)">
+      <i class="icon-beaker"></i>
+      Show all Ratios
+    </button>
+  </div>
+</form>
+
+<div id="ratio-gallery"></div>
+<script src="https://cdn-static.screener.in/js/ratio.gallery.240f93285e46.js"></script>
+
+
+          </div>
+        
+      </main>
+    
+
+    
+      
+
+<footer id="large-footer">
+  <div class="flex-row flex-space-between flex-column-tablet container no-print">
+    <div class="hide-from-tablet" style="margin-bottom: 16px;">
+      <img src="https://cdn-static.screener.in/img/logo-black.f44abb4998d1.svg"
+           alt="Screener Logo"
+           style="max-width: 120px"
+           class="logo">
+    </div>
+
+    <div class="show-from-tablet" style="padding: 0 64px 0 0;">
+      <img src="https://cdn-static.screener.in/img/logo-black.f44abb4998d1.svg"
+           alt="Screener Logo"
+           style="max-width: 120px"
+           class="logo">
+      <p class="font-size-19" style="font-weight: 500;">Stock analysis and screening tool</p>
+      <p class="sub">
+        Mittal Analytics Private Ltd &copy; 2009-2026
+        <br>
+        Made with <i class="icon-heart red"></i> in India.
+      </p>
+      <p class="sub font-size-13">Data provided by C-MOTS Internet Technologies Pvt Ltd</p>
+      <p class="font-size-13 sub">
+        <a href="/guides/terms/" class="underline-link">Terms</a> & <a href="/guides/privacy/" class="underline-link">Privacy</a>.
+      </p>
+    </div>
+
+    <div class="flex flex-end flex-space-between flex-grow"
+         style="max-width: 600px">
+      <div class="flex-grow">
+        <div class="title">Product</div>
+        <ul class="items">
+          <li>
+            <a href="/premium/?driver=footer">Premium</a>
+          </li>
+          <li>
+            <a href="/docs/changelog/">What's new?</a>
+          </li>
+          <li>
+            <a href="https://bit.ly/learnscreener">Learn</a>
+          </li>
+          <li>
+            <button class="a2hs button-secondary button-small">
+              <i class="icon-flash"></i>
+              Install
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex-grow">
+        <div class="title">Team</div>
+        <ul class="items">
+          <li>
+            <a href="/guides/about-us/">About us</a>
+          </li>
+          <li>
+            <a href="/support/">Support</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex-grow">
+        <div class="title">Theme</div>
+        <ul class="items">
+          <li>
+            <button onclick="SetTheme('light')"
+                    aria-label="Set light theme"
+                    class="button-plain">
+              <i class="icon-sun"></i>
+              Light
+            </button>
+          </li>
+          <li>
+            <button onclick="SetTheme('dark')"
+                    aria-label="Set dark theme"
+                    class="button-plain">
+              <i class="icon-moon"></i>
+              Dark
+            </button>
+          </li>
+          <li>
+            <button onclick="SetTheme('auto')"
+                    aria-label="Set auto theme"
+                    class="button-plain">
+              <i class="icon-monitor"></i>
+              Auto
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hide-from-tablet">
+      <hr>
+      <p class="sub">Mittal Analytics Private Ltd &copy; 2009-2026</p>
+      <p class="sub">Data provided by C-MOTS Internet Technologies Pvt Ltd</p>
+      <p class="sub">
+        <a href="/guides/terms/" class="underline-link">Terms</a>
+        & <a href="/guides/privacy/" class="underline-link">Privacy</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+    
+
+    <!-- Important JS (which provide global objects)- check below too -->
+    <script src="https://cdn-static.screener.in/js/utils.3460e8fa3e61.js"></script>
+    <script src="https://cdn-static.screener.in/js/modal.ccacae1a5594.js"></script>
+    <script src="https://cdn-static.screener.in/js/typeahead.8dcc9ac93685.js"></script>
+    <script src="https://cdn-static.screener.in/js/filter.component.48935d3ab300.js"></script>
+
+    <!-- Independent JS scripts for page interactions -->
+    <script src="https://cdn-static.screener.in/js/navbar.3fe7f0f4a630.js"></script>
+    <script src="https://cdn-static.screener.in/js/company.search.e48f94642999.js"></script>
+    
+    
+
+    <!-- Service worker installer for PWA -->
+    <script src="https://cdn-static.screener.in/js/pwa.6ade38a669c4.js"></script>
+  </body>
+</html>
