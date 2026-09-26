@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+<title>RAJ OIL MILLS LTD - home</title>
+<meta charset="UTF-8">
+<meta name="description" content="RAJ OIL MILLS LTD THE HOME OF INDIA’S FAVOURITE OILS.">
+<meta name="keywords" content="Raj Oil Mills Ltd. has been a preferred brand of oils for the last 75 years.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css"/>
+ 
+  	<!--[if lt IE 9]>
+  	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  	<![endif]--> 
+    
+    <!-- FAVICON  -->
+    <link rel="shortcut icon" href="img/favico.png">    
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2WVZ0HPLVL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2WVZ0HPLVL');
+</script>
+</head> 
+<body> 
+
+<!-- preloader -->
+<div class="preloader first">
+  <div class="loader">
+    <div class="loader-inner"></div>
+  </div>
+</div> 
+
+<main>
+<div id="home">
+      <video id="video_background" preload="auto" autoplay="true"  muted="muted" volume="0" poster="img/1.jpg"> 
+        <source src="videos/video.webm" type="video/webm"> 
+        <source src="videos/video.mp4" type="video/mp4"> 
+        <source src="videos/video.ogg" type="video/ogg"> 
+      </video>
+      <div class="video-logo" id="counter"></div>
+
+      <script>
+        setInterval(function() {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.replace("home.html");
+            }
+        }, 20000);
+    </script>
+  <a href="home.html" class="skip-btn">SKIP</a>
+</div>
+
+
+</main>
+<!-- Javascripts -->
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/modernizr.custom.js"></script> 
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+  
+</body>
+</html>

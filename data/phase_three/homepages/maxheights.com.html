@@ -1,0 +1,404 @@
+ 
+<html>
+<head>
+<meta charset="utf-8">
+ 
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="stylesheet" href="css/iview.css" />
+    
+		<link rel="stylesheet" href="css/skin 1/style.css" />
+		<script src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/raphael-min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.js"></script>
+
+		<script src="js/iview.js"></script>
+		<script>
+		    $(document).ready(function () {
+		        $('#iview').iView({
+		            pauseTime: 3000,
+		            directionNav: false,
+		            controlNav: true,
+		            tooltipY: -15
+		        });
+		    });
+		</script>
+            <script type="text/javascript">
+                function getID(name) {
+                    var panel = document.getElementById("pnlPopup");
+                    panel.style.display = 'block';
+                    var fram = document.getElementById('frameToPdf');
+                    fram.src = name;
+                }
+                function cancel() {
+                    var fram1 = document.getElementById('frameToPdf');
+                    fram1.src = '';
+                    var panel1 = document.getElementById("pnlPopup");
+                    panel1.style.display = 'none';
+                    return false;
+                }
+                function ddlchange() {
+                    var dll = document.getElementById('ddlgroup');
+                    var i = dll.selectedIndex;
+                    if (i == 1) {
+                        window.open('http://www.maxheights.com', "_blank");
+                    }
+                    if (i == 2) {
+                        window.open('http://www.aravallione.com', "_blank");
+                    }
+                    if (i == 3) {
+                        window.open('http://www.maxheights.in', "_blank");
+                    }
+
+                }
+             </script>
+        <script type="text/javascript">
+            function MouseScroll(event) {
+                var elem = document.getElementById("pnlPopup");
+                if (elem.addEventListener) {    // all browsers except IE before version 9
+                    // Internet Explorer, Opera, Google Chrome and Safari
+                    elem.addEventListener("mousewheel", MouseScroll, false);
+                    // Firefox
+                    elem.addEventListener("DOMMouseScroll", MouseScroll, false);
+                }
+                else {
+                    if (elem.attachEvent) { // IE before version 9
+                        elem.attachEvent("onmousewheel", MouseScroll);
+                    }
+                }
+            }
+    </script>
+    <style type="text/css">
+  .modalBack
+    {
+     background-color:Black;
+opacity:1;
+filter: alpha( opacity=90);
+z-index: 9999999;
+position:fixed;
+width:100%;
+height:100%;
+padding-top:10px;
+    }
+    .pnlTable
+    {
+    	width:1000px;height:610px;padding:15px;margin-top:25px;margin-left:185px;opacity:1;background-color: #F5F5DC;z-index: 9999999;opacity: 1;
+    	border-radius:10px;
+    }
+          
+</style>
+
+<title>Maxheights :: Home</title>
+<link href="lightSlider_files/base.css" rel="stylesheet">
+<link rel="stylesheet" href="lightSlider_files/lightSlider.css">
+<link rel="stylesheet" href="lightSlider_files/prettify.css">
+<link href="lightSlider_files/css" rel="stylesheet" type="text/css">
+<link href="lightSlider_files/css(1)" rel="stylesheet" type="text/css">
+<link href="lightSlider_files/css(2)" rel="stylesheet" type="text/css">
+<script async="" src="lightSlider_files/analytics.js"></script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49767543-1', 'sachinchoolur.github.io');
+    ga('send', 'pageview');
+
+</script>
+ 
+
+</head>
+
+
+<body class="body">
+<form method="post" action="./" id="f1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTYxNzUwOTk2D2QWAmYPZBYCAgMPZBYCZg8WAh4EVGV4dAX+LCA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvQW5udWFsIFJlcG9ydF9NSElMX0ZZIDIwMjUtMjYucGRmJyk7Ij5Bbm51YWwgUmVwb3J0IDIwMjUtMjYuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL0ZfTUdULTdfTUhJTF9GWSAyMDI0LTI1LnBkZicpOyI+QW5udWFsIFJldHVybiAyMDI0LTI1LjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9Bbm51YWwgUmVwb3J0XzIwMjQtMjVfTUhJTCAoMSkucGRmJyk7Ij5Bbm51YWwgUmVwb3J0IDIwMjQtMjUuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL0FubnVhbCBSZXBvcnRfTUhJTF8yMDIzLTI0LnBkZicpOyI+QW5udWFsIFJlcG9ydCAyMDIzLTI0LjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9GX01HVF83X01ISUxfMjYwNzIwMjRfQUdNXzEyMDkyMDI0X1NELnBkZicpOyI+QW5udWFsIFJldHVybiAyMDIzLTI0LjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9CYWxhbmNlIFNoZWV0IG9mIFN1YnNpZGlhcnkgQ29tcGFueSAoMSkucGRmJyk7Ij5CYWxhbmNlIFNoZWV0IG9mIFN1YnNpZGlhcnkgQ29tcGFueSAyMDIyLTIzLjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9Bbm51YWwgUmVwb3J0IEZpbmFsICgxKS5wZGYnKTsiPkFubnVhbCBSZXBvcnQgMjAyMi0yMy48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvTUdULTdfTWF4LnBkZicpOyI+QW5udWFsIFJldHVybiAyMDIyLTIzLjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9Bbm51YWwgUmV0dXJuXzIwMjIucGRmJyk7Ij5Bbm51YWwgUmV0dXJuIDIwMjEtMjIuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL0lDT04gQkFMQU5DRSBTSEVFVCAzMS4wMy4yMDIyLnBkZicpOyI+QmFsYW5jZSBTaGVldCBvZiB0aGUgU3Vic2lkaWFyeSBDb21wYW55IDIwMjEtMjAyMi48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvQW5udWFsIFJlcG9ydF8yMDIyLnBkZicpOyI+QW5udWFsIFJlc3VsdHMgMjAyMS0yMDIyLjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9Bbm51YWwgUmV0dXJuIGZvciB0aGUgRlkgMjAyMC0yMS5wZGYnKTsiPkFubnVhbCBSZXR1cm4gMjAyMC0yMS48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvSWNvbl9CUy5wZGYnKTsiPkJhbGFuY2UgU2hlZXQgb2YgdGhlIFN1YnNpZGlhcnkgQ29tcGFueSAyMDIwLTIwMjEuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL01ISUxfNDB0aCBBR01fMjAyMC0yMS5wZGYnKTsiPkFubnVhbCBSZXN1bHRzIDIwMjAtMjAyMS48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvTUhJTF9NR1QtNy5wZGYnKTsiPkFubnVhbCAgUmV0dXJuIDIwMTktMjAgMjAxOS0yMDIwLjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9NSElMX0FubnVhbCBSZXBvcnRfIDIwMjAucGRmJyk7Ij5Bbm51YWwgUmVzdWx0cyAyMDE5LTIwLjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9CU19NRFBMX2NvbXByZXNzZWQucGRmJyk7Ij5CYWxhbmNlIFNoZWV0cyBvZiBTdWJzaWRpYXJpZXMgYW5kIEFzc29jaWF0ZXMgZm9yIHRoZSBGWSAyMDE5LTIwIDIwMTktMjAuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL0JTX0ljb24gUmVhbGNvbiBQdnQgTHRkXzMxLjAzLjIwMjBfY29tcHJlc3NlZCAoMSkucGRmJyk7Ij5CYWxhbmNlIFNoZWV0cyBvZiBTdWJzaWRpYXJpZXMgYW5kIEFzc29jaWF0ZXMgZm9yIHRoZSBGWSAyMDE5LTIwIDIwMTktMjAuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL0JTX01STF9jb21wcmVzc2VkLnBkZicpOyI+QmFsYW5jZSBTaGVldHMgb2YgU3Vic2lkaWFyaWVzIGFuZCBBc3NvY2lhdGVzIGZvciB0aGUgRlkgMjAxOS0yMCAyMDE5LTIwLjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9NYXggSGVpZ2h0cyBQcm9tb3RlcnMucGRmIDMxLjAzLjIwMjBfY29tcHJlc3NlZC5wZGYnKTsiPkJhbGFuY2UgU2hlZXRzIG9mIFN1YnNpZGlhcmllcyBhbmQgQXNzb2NpYXRlcyBmb3IgdGhlIEZZIDIwMTktMjAgMjAxOS0yMC48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvTUhUUEwgMzEuMDMuMjAyMF9jb21wcmVzc2VkX2NvbXByZXNzZWQucGRmJyk7Ij5CYWxhbmNlIFNoZWV0cyBvZiBTdWJzaWRpYXJpZXMgYW5kIEFzc29jaWF0ZXMgZm9yIHRoZSBGWSAyMDE5LTIwIDIwMTktMjAuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL0FOTlVBTCBSRVBPUlRfMjAxOS5wZGYnKTsiPkFubnVhbCBSZXN1bHRzIDIwMTgtMTkuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL01heCBIZWlnaHRzIEluZnJhc3RydWN0dXJlIEx0ZF8yMDE3LTE4LnBkZicpOyI+QW5udWFsIFJlc3VsdHMgMjAxNy0xOC48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvTWF4IEhlaWdodHMgUHJvbW90ZXJzIFByaXZhdGUgTGltaXRlZCBBbm51YWwgUmVzdWx0cy5wZGYnKTsiPk1heCBIZWlnaHRzIFByb21vdGVycyBQcml2YXRlIExpbWl0ZWQgQW5udWFsIFJlc3VsdHMgMjAxNy0xOC48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvSWNvbiBSZWFsY29uIFByaXZhdGUgTGltaXRlZCBBbm51bCBSZXN1bHRzLnBkZicpOyI+SWNvbiBSZWFsY29uIFByaXZhdGUgTGltaXRlZCBBbm51YWwgUmVzdWx0cyAyMDE3LTE4LjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9NYXggSGVpZ2h0cyBSZWFsdG9ycyBQcml2YXRlIExpbWl0ZWQgQW5udWFsIFJlc3VsdHMucGRmJyk7Ij5NYXhoZWlnaHRzIFJlYWx0b3JzIExpbWl0ZWQgQW5udWFsIFJlc3VsdHMgMjAxNy0xOC48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvTWF4IEhlaWdodHMgVG93bnNoaXAgYW5kIFByb2plY3RzIFByaXZhdGUgTGltaXRlZCBBbm51YWwgUmVzdWx0cy5wZGYnKTsiPk1heCBIZWlnaHRzIFRvd25zaGlwIGFuZCBQcm9qZWN0cyBQcml2YXRlIExpbWl0ZWQgQW5udWFsIFJlc3VsdHMgMjAxNy0xOC48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvTUFYX0FOTlVBTCBSRVBPUlRfMjAxNy5wZGYnKTsiPkFubnVhbCBSZXN1bHRzIDIwMTYtMTcuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL01BWF9BTk5VQUwgUkVQT1JUXzIwMTUtMTYucGRmJyk7Ij5Bbm51YWwgUmVzdWx0cyAyMDE1LTE2LjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9NQVhfQU5OVUFMIFJFUE9SVF8yMDE0LTE1LnBkZicpOyI+QW5udWFsIFJlc3VsdHMgMjAxNC0xNS48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvTWF4aGVpZ2h0X2ZpbmFsX0FubnVhbF9SZXBvcnQyMDEzMTQucGRmJyk7Ij5Bbm51YWwgUmVzdWx0cyAyMDEzLTE0LjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9NYXhoZWlnaHRfZmluYWxfQW5udWFsX1JlcG9ydDIwMTIxMy5wZGYnKTsiPkFubnVhbCBSZXN1bHRzIDIwMTItMTMuPC9hPiA8L2xpPiAgPGxpPiA8YSBocmVmPScjJyAgb25jbGljaz0iZ2V0SUQoJ2h0dHBzOi8vbWF4aGVpZ2h0cy5jb20vQWRtaW4vQWxsRmlsZXMvQW5udWFsL0FubnVhbFJlcG9ydDEucGRmJyk7Ij5Bbm51YWwgUmVzdWx0cyAyMDExLTEyLjwvYT4gPC9saT4gIDxsaT4gPGEgaHJlZj0nIycgIG9uY2xpY2s9ImdldElEKCdodHRwczovL21heGhlaWdodHMuY29tL0FkbWluL0FsbEZpbGVzL0FubnVhbC9hbm51YWwyLnBkZicpOyI+QW5udWFsIFJlc3VsdHMgMjAxMC0xMS48L2E+IDwvbGk+ICA8bGk+IDxhIGhyZWY9JyMnICBvbmNsaWNrPSJnZXRJRCgnaHR0cHM6Ly9tYXhoZWlnaHRzLmNvbS9BZG1pbi9BbGxGaWxlcy9Bbm51YWwvYW5udWFsMy5wZGYnKTsiPkFubnVhbCBSZXN1bHRzIDIwMDktMTAuPC9hPiA8L2xpPiBkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBQ9jdGwwMCRidG5DYW5jZWx7ULAXo1bdf52uAqn/1NVgo2585noEVL/tahmFC1dfhw==" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90059987" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAK+j3PqPpUWa41C8d2ttjKlRURM6yB3099w+dfgbAnepMmQmPB8qtk7Kpgx/6G5EDDKtNx5ljGcMcj2YO62R0t1" />
+</div>
+<div id="pnlPopup" style="display:none" class="modalBack" onmouseover="MouseScroll();">
+    <table class="pnlTable"><tr><td>
+    <iframe id="frameToPdf" scrolling="auto" width="1000" frameborder="0" style="padding-top:10px;height:100%;min-height:500px;"></iframe></td></tr>
+    <a id="href" height="610" width="1000" frameborder="0" style="padding-top:10px;"></a>
+    <tr><td style="padding-top:5px;padding-right:25px;" align="right">
+  <br />
+    <input type="image" name="ctl00$btnCancel" id="btnCancel" src="AravaliOne/images/closelabel.gif" onclick="cancel();" style="width:75px;height:30px;" /></td></tr>
+    </table>
+    </div>
+    </form>
+<div id="main"><!--main div start here-->
+	
+	
+    <div id="header">
+    	<a href="#"><div class="logo">
+			<div class="flippety"><img src="images/logo.png"></div>
+			<div class="flop"><img src="images/logo.png"></div>
+						</div></a>
+                          <div class="header-right">
+                <div>Email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e2b1838e8791a28f839a8a878b858a9691cc818d8f">[email&#160;protected]</a></div>
+                 <div>Phone : 011-27314646, 27312522</div>
+            </div>
+            			     
+    													</div>                                
+                  <div>       <center>                      
+                   
+<link rel="Stylesheet" href="menustyle.css" />
+<div id="cssmenu">
+
+    <ul>
+        <li><a href='index.aspx'>Home</a></li>
+        <li class="active has-sub">
+            <a href="#"><span>Corporate</span></a>
+            <ul>
+                <li><a href='AboutUs.aspx'>About Us</a></li>
+                <li><a href='Mission.aspx'>Vision and Mission</a></li>
+                
+                <li><a href='Presence.aspx'>Presence</a></li>
+                <li><a href='Message.aspx'>Chairman's Message</a></li>
+                <li><a href='History.aspx'>History</a></li>
+                <li class="last"><a href="Management.aspx">Management</a></li>
+
+            </ul>
+        </li>
+
+
+    
+        <li class="active has-sub"><a href="#"><span>Investors</span></a>
+            <ul>
+             
+                  <li ><a href="smart-ODR.aspx">SMART ODR</a></li>
+                <li><a href="Investors.aspx">Corporate Governance</a></li>
+                <li><a href="Shareholding.aspx">Shareholding Pattern</a></li>
+                <li><a href="AnnualReport.aspx" alt="Annual Reports/Balance sheet">Annual Reports/Balance sheet</a></li>
+                <li><a href="Financials.aspx">Quarterly Reports</a></li>
+                <li><a href="Notices.aspx">Announcements</a></li>
+                <li><a href="Policies.aspx">Policy</a></li>
+                <li><a href="BalanceSheetofSubsidiaries.aspx">Dividend</a></li>
+                 <li ><a href="StockExchangeSharePrices.aspx">Stock Exchange Share Prices</a></li>
+                <li ><a href="ShareholdersCommunication.aspx">Shareholders Communications</a></li>
+                <li ><a href="disclosures-under-regulation.aspx">Disclosures Under Regulation 46</a></li>
+            </ul>
+        </li>
+        <li><a href='Media.aspx'>Media</a></li>
+        <li><a href='Careers.aspx'>Careers</a></li>
+        <li class="last"><a href='ContactUs.aspx'>Contact Us</a></li>
+    </ul>
+</div>
+
+             </center>   </div>       
+                                                                                        
+                   						<div id="banner1"  ><div id="iview">
+                                      
+                                                <div data-iview:image="photos/9.jpg"></div>
+                                           
+                                                
+                																	</div>
+                                        
+                                         									</div>    
+                                                                         
+                                                                              	<div id="maincon">
+        
+
+   <div id="box" >
+                                  
+       
+       <div id="content1"><img src="images/image.png"><h1>Welcome to MaxHeights</h1><p class="p">Maxheights Infrastucture Ltd. is one of the leading infrastructure companies in Delhi & NCR since 1981. At Maxheights we prefer to differ in our whole approach towards real estate development. While others may pride in boasting what they have designed, we simply rejoice in the way people enjoy being in our constructed spaces, be it for work or for living purposes. A fine bunch of young, passionate professionals, having a fair share of exposure in engineering, architecture, construction, marketing, finance and other key management disciplines, we at Maxheights Infrastucture are filled with ideas to shape the face of a new vibrant India.</p><img src="images/image2.png" style="float:right; margin-right:15px;"></div>
+       <div id="content2"><img src="images/image.png">
+        <div class="csSlideOuter"    style="width: 357px;height: 254px;">
+      <div class="csSlideWrapper usingCss"  style="max-width: 100%; position: relative; transition: 30000ms; -webkit-transition: 30000ms;"><ul id="content-slider" class="list-unstyled clearfix cSdemo lightSlider csSlide" style="width: 434px; transform: translate3d(-0px, 0px, 0px);">
+                            <li class=""  style="width: 434px; float: left; margin-right: 0px;">
+                                <div class="center">
+                                    <h3>News</h3>
+                                    <div class="features">
+                                        <ul class="pdl0">
+                                         <li> Outcome of Board Meeting. </li>  <li> Financial Results & Limited Review for June 30, 2014 (Consolidated). </li>  <li> Financial Results & Limited Review for June 30, 2014 (Standalone). </li>  <li> Shareholding Pattern For June 30, 2014 </li> 
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="h100"></span>
+                            </li>
+                            <li class="" style="width: 434px; float: left; margin-right: 0px;">
+                                <div class="center">
+                                    <h3>Financial Reports</h3>
+                                    <div class="features">
+                                        <ul class="pdl0">
+                                         <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Annual Report_MHIL_FY 2025-26.pdf');">Annual Report 2025-26.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/F_MGT-7_MHIL_FY 2024-25.pdf');">Annual Return 2024-25.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Annual Report_2024-25_MHIL (1).pdf');">Annual Report 2024-25.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Annual Report_MHIL_2023-24.pdf');">Annual Report 2023-24.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/F_MGT_7_MHIL_26072024_AGM_12092024_SD.pdf');">Annual Return 2023-24.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Balance Sheet of Subsidiary Company (1).pdf');">Balance Sheet of Subsidiary Company 2022-23.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Annual Report Final (1).pdf');">Annual Report 2022-23.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/MGT-7_Max.pdf');">Annual Return 2022-23.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Annual Return_2022.pdf');">Annual Return 2021-22.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/ICON BALANCE SHEET 31.03.2022.pdf');">Balance Sheet of the Subsidiary Company 2021-2022.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Annual Report_2022.pdf');">Annual Results 2021-2022.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Annual Return for the FY 2020-21.pdf');">Annual Return 2020-21.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Icon_BS.pdf');">Balance Sheet of the Subsidiary Company 2020-2021.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/MHIL_40th AGM_2020-21.pdf');">Annual Results 2020-2021.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/MHIL_MGT-7.pdf');">Annual  Return 2019-20 2019-2020.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/MHIL_Annual Report_ 2020.pdf');">Annual Results 2019-20.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/BS_MDPL_compressed.pdf');">Balance Sheets of Subsidiaries and Associates for the FY 2019-20 2019-20.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/BS_Icon Realcon Pvt Ltd_31.03.2020_compressed (1).pdf');">Balance Sheets of Subsidiaries and Associates for the FY 2019-20 2019-20.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/BS_MRL_compressed.pdf');">Balance Sheets of Subsidiaries and Associates for the FY 2019-20 2019-20.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Max Heights Promoters.pdf 31.03.2020_compressed.pdf');">Balance Sheets of Subsidiaries and Associates for the FY 2019-20 2019-20.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/MHTPL 31.03.2020_compressed_compressed.pdf');">Balance Sheets of Subsidiaries and Associates for the FY 2019-20 2019-20.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/ANNUAL REPORT_2019.pdf');">Annual Results 2018-19.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Max Heights Infrastructure Ltd_2017-18.pdf');">Annual Results 2017-18.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Max Heights Promoters Private Limited Annual Results.pdf');">Max Heights Promoters Private Limited Annual Results 2017-18.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Icon Realcon Private Limited Annul Results.pdf');">Icon Realcon Private Limited Annual Results 2017-18.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Max Heights Realtors Private Limited Annual Results.pdf');">Maxheights Realtors Limited Annual Results 2017-18.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Max Heights Township and Projects Private Limited Annual Results.pdf');">Max Heights Township and Projects Private Limited Annual Results 2017-18.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/MAX_ANNUAL REPORT_2017.pdf');">Annual Results 2016-17.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/MAX_ANNUAL REPORT_2015-16.pdf');">Annual Results 2015-16.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/MAX_ANNUAL REPORT_2014-15.pdf');">Annual Results 2014-15.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Maxheight_final_Annual_Report201314.pdf');">Annual Results 2013-14.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/Maxheight_final_Annual_Report201213.pdf');">Annual Results 2012-13.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/AnnualReport1.pdf');">Annual Results 2011-12.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/annual2.pdf');">Annual Results 2010-11.</a> </li>  <li> <a href='#'  onclick="getID('https://maxheights.com/Admin/AllFiles/Annual/annual3.pdf');">Annual Results 2009-10.</a> </li> 
+                                         
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="h100"></span>
+                            </li>
+                        
+                          
+                            
+                            
+                        </ul></div>
+
+                        
+                        </div>
+       <img src="images/image2.png" style="float:right; margin-right:15px;"></div>
+		</div>
+     
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="lightSlider_files/jquery.lightSlider.js"></script> 
+<script src="lightSlider_files/prettify.js"></script> 
+<script type="text/javascript">
+    var site = $('#site');
+
+    $(document).ready(function () {
+        window.prettyPrint && prettyPrint()
+        $('#lightSlider').lightSlider({
+            gallery: true,
+            minSlide: 1,
+            maxSlide: 1,
+            auto: true,
+            mode: 'fade',
+            proportion: '71.3%',
+            onSliderLoad: function () {
+                $('#lightSlider').removeClass('cS-hidden');
+            }
+        });
+        $('#content-slider').lightSlider({
+            minSlide: 1,
+            maxSlide: 1,
+            keyPress: false,
+            speed: 700,
+            auto: true,
+            controls: false,
+            onSliderLoad: function () {
+                $('#content-slider').removeClass('cS-hidden');
+            }
+        })
+        var clk = true;
+        $('.btn-navbar').on('click', function () {
+            if (site.hasClass('translate')) {
+                clk = false;
+                site.removeClass('translate');
+                setTimeout(function () {
+                    $("#mast-head").css('display', 'none');
+                    clk = true;
+                }, 700);
+            } else if (clk) {
+                $("#mast-head").css('display', 'block');
+                site.addClass('translate');
+            }
+        });
+        $('#site').on('touchmove', function (e) {
+            if ($(this).hasClass('translate')) {
+                e.preventDefault();
+            }
+        });
+        $('#site > .nav-over').on('click touchstart', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            clk = false;
+            site.removeClass('translate');
+            setTimeout(function () {
+                $("#mast-head").css('display', 'none');
+                clk = true;
+            }, 700);
+        })
+        $(window).on("resize orientationchange", function () {
+            if ($(window).width() > 767) {
+                $("#mast-head").css('display', 'block');
+                site.removeClass('translate');
+            } else if (!site.hasClass('translate')) {
+                $("#mast-head").css('display', 'none');
+            }
+        });
+    });
+</script>
+
+   	</div>
+              
+              
+                  </div><!--main div end-->
+              
+              
+                
+<div id="footer">
+               
+                       <div id="footer1">
+                    	
+                        <center>
+                        <div id="footer11">
+                    
+                    	<div id="footernav" style="width: 179px;">
+                        <h2>CORPORATE</h2>
+                        
+                        <p><a href="AboutUs.aspx#heading"> About Us</a></p>
+                        <p><a href="Mission.aspx#heading"> Vision and Mission</a></p>
+                       
+                        <p><a href="Presence.aspx"> Presence</a></p>
+                            <p><a href="Message.aspx"> Chairman's Message</a></p>
+                            <p><a href="History.aspx"> History</a></p>
+                            <p><a href="Management.aspx"> Management</a></p>
+                      </div>
+                        
+                       
+
+                        <div id="footernav" style="width:140px;">
+                        <h2>INVESTORS</h2>
+                        <p><a href="Investors.aspx#heading"> Overview</a></p>
+                        <p><a href="Financials.aspx#heading"> Financial</a></p>
+                      
+                        <p><a href="Notices.aspx#heading"> Notices</a></p></div>
+                        
+                    
+
+                      
+                        
+                        <div id="footernav" style="width:130px; float:right;">
+                        <h2><a href="Media.aspx" style="color:#b8d015;">MEDIA</a></h2>
+                        <h2><a href="Careers.aspx"  style="color:#b8d015;">CAREERS</a></h2>
+                         <h2 ><a href="Contactus.aspx"  style="color:#b8d015;">CONTACT US</a></h2>
+                       </div>
+                       <div id="footernav" style="width:240px; float:right;">
+                      
+                       <h2 style="margin-left: -2px !important;"><a href="#"  style="color:#b8d015;">For Sale</a></h2>
+                         <p><a href="#"> <span class="__cf_email__" data-cfemail="f9aa98959c8ab9b49881919c909e918d8ad79a9694">[email&#160;protected]</span></a></p>
+                          <h2 style="margin-left: -2px !important;margin-top: 10px;"><a href="#"  style="color:#b8d015;">For Investor Relation</a></h2>
+                         <p><a href="#"><span class="__cf_email__" data-cfemail="096a7a49646871616c606e617d7a276a6664">[email&#160;protected]</span></a></p>
+                            <h2 style="margin-left: -2px !important;margin-top: 10px;"><a href="#"  style="color:#b8d015;">For General</a></h2>
+                         <p><a href="#"> <span class="__cf_email__" data-cfemail="074e696168474a667f6f626e606f73742964686a">[email&#160;protected]</span></a></p>
+                        
+                       
+                         </div>
+
+                      
+                    						</div></center>
+                    </div>
+                       
+                       <div id="footer2">
+                            <center><div id="footer22">
+                                  		<div id="add"><p class="p"> Powered By : <a href ="http://www.jupsoft.com" style="text-decoration:none;color:Black" target="_blank">Jupsoft</a> </p></div>
+                                        <div id="copyright"><p class="p"> Copyright Maxheights 2014, All rights reserved</p></div>
+                       				</div></center>
+                       				</div>
+                                            
+                    
+                    
+                    </div><!--footer div start here-->
+              
+              
+              
+              
+              
+              
+              <!--footer end--> 
+              
+              
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"702dff6ba1734ac182b7697e9ec63b0e","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

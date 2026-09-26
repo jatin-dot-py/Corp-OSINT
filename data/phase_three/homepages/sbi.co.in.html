@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta  http-equiv="refresh" content="5; url=https://sbi.bank.in/">
+<title>State Bank of India</title>
+<style>
+ body {
+    font-family: system-ui;
+  }
+
+  /* Modal overlay */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+        background-color: rgba(255, 255, 255, 0.94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  /* Modal box */
+  .modal-content {
+    background: linear-gradient(221deg, #c62052 0, #280071 100%) no-repeat padding-box;
+    border-radius: 40px;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  /* Header */
+  .modal-header {
+    background-color: #281e74; /* PNB red */
+    color: white;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* Body container with flex */
+  .modal-body {
+    display: block;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* Logo container */
+  .logo-container {
+    flex: 0 0 250px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-container img {
+    max-width: 215px;
+    height: auto;
+  }
+.footer {
+    width: 100%;
+    margin: 20px 0px;
+}
+.copy {
+    color: #ffffff;
+    text-align: center;
+}
+  /* Text content */
+  .text-content {
+    flex: 1;
+    min-width: 200px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .text-content h3 {
+    margin-top: 0;
+    /* margin-bottom: 10px; */
+    font-weight: 700;
+  }
+
+  .spin-parent {
+        align-items: center;
+    justify-content: center;
+    display: flex;
+  } 
+
+  .text-content a {
+    color: #12a8e0;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .text-content p {
+      font-weight: bold;
+  }
+
+  .text-content a:hover {
+    text-decoration: underline;
+  }
+
+  .imp-info{
+    text-decoration: underline;
+  }
+  /* Loading spinner */
+  .spinner {
+    margin-top: 15px;
+    width: 24px;  
+    height: 24px;
+    border: 3px solid #ffffff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .modal-body {
+      flex-direction: column;
+      padding: 15px;
+    }
+    .logo-container {
+      border-right: none;
+      padding-right: 0;
+      padding-bottom: 15px;
+      flex: none;
+    }
+    .text-content {
+      min-width: auto;
+    }
+    .modal-content {
+    background: linear-gradient(221deg, #c62052 0, #280071 100%) no-repeat padding-box;
+    border-radius: 40px;
+    max-width: 324px !important;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+.modal-body {
+    display: block;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.modal {
+  padding: 0;
+}
+  }
+</style>
+</head>
+<body>
+
+<!-- Modal -->
+<div id="myModal" class="modal" style="display: flex;">
+  <div class="modal-content">
+    <!-- <div class="modal-header">State Bank of India</div> -->
+    <div class="modal-body">
+      <div class="logo-container">
+        <img src="./images/download.png" alt="State Bank of India Logo" />
+      </div>
+      <div class="text-content">
+        <h1 class="imp-info">Important Information</h1>
+        <p>State Bank of India announces migration of Corporate Website to new URL</p>
+        <p><a href="https://sbi.bank.in" target="_blank" rel="noopener noreferrer">https://sbi.bank.in</a></p>
+        <p>You will be automatically redirected. Please bookmark & use the new URL to enjoy secure banking experience.</p>
+        <div class="spin-parent">
+        <div class="spinner" aria-label="Loading"></div>
+        </div>
+        <div class="footer">
+          <p class="copy">© State Bank of India</p>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

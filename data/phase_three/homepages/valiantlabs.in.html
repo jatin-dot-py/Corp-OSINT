@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valiant Laboratories Limited">
+    <meta name="keywords" content="Valiant Laboratories Limited">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/images/favicon.ico">
+    <title>Valiant Laboratories Limited</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="">
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="assets/plugins/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugins/owlcarousel/assets/owl.theme.default.min.css"> -->
+    <style>
+    /* Fonts */
+    /* @font-face {
+        font-family: 'RedHatDisplay-Bold';
+        src: url('assets/fonts/RedHatDisplay-Bold.ttf') format('ttf');
+        font-weight: 700; 
+        font-style: bold;
+    }    
+    @font-face {
+        font-family: 'RedHatDisplay-Medium';
+        src: url('assets/fonts/RedHatDisplay-Medium.ttf') format('ttf');
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: 'RedHatDisplay-Regular';
+        src: url('assets/fonts/RedHatDisplay-Regular.ttf') format('ttf');
+        font-weight: normal;
+    } 
+    @font-face {
+        font-family: 'DMSans-Thin';
+        src: url('assets/fonts/DMSans-Thin.ttf') format('ttf');
+        font-weight: 100;
+    }   
+    body{
+        font-family: 'RedHatDisplay-Regular', sans-serif;
+        font-size: 15px;
+        color: #5D666F;
+    }
+    p, span, a {
+        font-family: 'DMSans-Thin', sans-serif;
+    }
+    h1, h2, h3 {
+        font-family: 'RedHatDisplay-Bold', sans-serif;
+    }
+    h4, h5, h6 {
+        font-family: 'RedHatDisplay-Medium', sans-serif;
+    } */
+    body {
+        font-family: "Red Hat Display", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        overflow-x: hidden;
+    }
+    .cst-bg-dark {
+        background-color: #1178a7;
+    }
+    .color-1{
+        color: #1178a7;
+    }
+    /* End Fonts --------------------------------------------------------------------*/
+
+    /* Top Bar */
+    .top-bar {
+        background: #20282D;
+        background: linear-gradient(90deg, rgb(17 74 167) 0%, rgb(13 133 124) 50%, rgb(15 131 81) 100%);
+    }
+    .top-bar ul li {
+        font-size: 1.05rem !important;
+    }
+    .top-p {
+        font-size: 1.05rem !important;
+    }
+    .divider-list li {
+        position: relative;
+        padding-right: 15px;
+    }
+    .divider-list li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 16px;
+        width: 1px;
+        background-color: #f1f1f1; 
+    }
+    /* End Top Bar --------------------------------------------------------------------*/
+
+    /* Custom button style */
+    .cust-btn {
+        height: 55px;
+        max-width: max-content;
+        padding: 13px 29px;
+        border: none;
+        box-shadow: none;
+        min-width: max-content;
+        border-radius: 15px;
+        transition: 800ms;
+        font-weight: 600;
+    }
+    @media only screen and (max-width: 575px) {
+    .cust-btn {
+            height: 47px;
+            padding: 13px 20px;
+            display: flex !important;
+            align-items: center !important;
+        }
+    }
+    .cust-btn.btn-primary {
+        background: #1178a7;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+    .cust-btn.btn-primary::before {
+        content: "";
+        position: absolute;
+        -webkit-transition-duration: 800ms;
+        transition-duration: 800ms;
+        width: 200%;
+        height: 200%;
+        top: 110%;
+        left: 50%;
+        background: #F2F2F2;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -o-border-radius: 50%;
+        -ms-border-radius: 50%;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    .cust-btn.btn-primary:hover {
+        background: #F2F2F2;
+        color: #20282D;
+    }
+    .cust-btn.btn-primary:hover::before {
+        top: -40%;
+    }
+    .cust-btn.btn-primary.btn-white {
+        background: #F2F2F2;
+        color: #20282D;
+    }
+    .cust-btn.btn-primary.btn-white::before {
+        background: #1178a7;
+    }
+    .cust-btn.btn-primary.btn-white:hover {
+        background: #1178a7;
+        color: #F2F2F2;
+    }
+    .cust-btn.btn-primary.btn-white:hover::before {
+        top: -40%;
+    }
+    .cust-btn.btn-border {
+        background: transparent;
+        border: 1px solid #E9ECF1;
+    }
+    .cust-btn:focus {
+        border: none;
+        box-shadow: none;
+    }
+    .btn-black {
+        color: #FFFFFF !important;
+    }
+    .btn-black:hover {
+        color: #20282D !important;
+    }
+    /* End Custom button style --------------------------------------------------------*/
+    /* Header CSS */
+    .drop-shadow {
+        box-shadow: 0px 4px 8px #00000054;
+    }
+    .header-menu .navbar-nav a.nav-link {
+        font-size: 16px;
+        color: #000000;
+        font-weight: 500 !important;
+        text-transform: capitalize;
+    }
+    .header-menu .navbar-nav .nav-link.active, .header-menu .navbar-nav .nav-link.show {
+        color: #17c1b5!important;
+        text-transform: capitalize;
+    }
+    .hover-dropdown .dropdown-menu {
+        display: block;                 
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        margin-top: 0;
+    }
+    .hover-dropdown:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .dropdown-toggle::after {
+        display: none;
+    }
+    .nav-item:hover .dropdown-icon {
+        transform: rotate(180deg);
+    }
+    .header-menu .navbar-nav .dropdown-menu {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 0;
+        border: 0;
+    }
+    .header-menu .navbar-nav .dropdown-menu li a.dropdown-item {
+        position: relative;
+        display: block;
+        line-height: 24px;
+        font-weight: 500;
+        font-size: 15px;
+        color: #000000;
+        text-align: left;
+        text-transform: capitalize;
+        padding: 11px 25px;
+        transition: 500ms;
+        width: 265px;
+    }
+    .header-menu .navbar-nav .dropdown-menu li a.dropdown-item:hover {
+        background-color: #ffffff;
+    }
+    .header-menu .navbar-nav .dropdown-menu li:last-child {
+        border: 0;
+        border-radius: 10px;
+    }
+    .header-menu .navbar-nav a.nav-link.dropdown-toggle span {
+        border: 1px solid #fff;
+        padding: 5px;
+        line-height: 0;
+        font-size: 11px;
+    }
+    /* Meaga menu CSS  */
+        .top-bar {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    .mega-dropdown {
+        position: static;
+       
+    }
+    .csth {
+         height:500px;
+         overflow-y: scroll !important;
+    }
+    .mega-menu {        
+        left: 20%;
+        right: 20%;
+        border-radius: 0;
+    }
+    .mega-title {
+        font-weight: 700;
+        color: #000000;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #525252;
+        padding-bottom: 10px;
+    }
+    .mega-menu .dropdown-item {
+        padding: 6px 0;
+        font-size: 14px;
+        text-transform: capitalize;
+        border-bottom: 1px solid #e2e2e2;
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+    }
+    .mega-menu .dropdown-item:hover {
+        color: #000000;
+        border-bottom: 1px solid #303030;
+        background-color: transparent;
+    }
+    .mega-menu .col-lg-3 .dropdown-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .new-bredcrumb {
+        background-color: #c7c7c7b3;
+    }
+        .subtitle {
+        font-size: 16px;
+        color: #070708;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    .sec_title {
+        font-size: 36px;
+        color: #070708;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .bg-content {
+        font-size: 150px;
+        position: absolute;
+        font-weight: 900;
+        letter-spacing: 0;
+        left: -90px;
+        z-index: -1;
+        top: -65px;
+        min-width: max-content;
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(0 0 0 / 25%);
+        line-height: 1;
+    }
+    .bg-content::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.8855917367) 0%, rgba(255, 255, 255, 0.6082808123) 35%, rgba(255, 255, 255, 0) 100%); */
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8855917367) 0%, rgb(255 255 255 / 78%) 35%, rgb(255 255 255 / 23%) 100%);
+    }
+    /* Hover open (desktop only) */
+    @media (min-width: 992px) {
+        .hover-dropdown:hover > .dropdown-menu {
+            display: block;
+        }
+        .mega-menu .dropdown-item:hover {
+            background-color: transparent;
+        }
+    }
+    /* Header CSS -----------------------------------------------------------------------------*/
+    /* Footer CSS */
+    #footer {
+        background: #083e95;
+        /* background: linear-gradient(90deg, rgb(17 74 167) 0%, rgb(13 133 124) 50%, rgb(15 131 81) 100%); */
+        color: #FFFFFF;
+    }
+    #footer .title {
+        color: #FFFFFF;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+    #back-to-top {
+        position: fixed;
+        bottom: 27px;
+        right: 20px;
+        display: none;
+        padding: 13px 15px;
+        border-radius: 50%;
+        font-size: 16px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;  
+        background-color: #2dd68d;
+    }
+    #back-to-top i {
+        color: #ffffff;
+    }
+    #back-to-top:hover {
+        background-color: #2dd68d;
+    }
+    #back-to-top:hover i {
+        color: #ffffff;
+    }
+    #back-to-top.show {
+        display: block;
+    }
+    /* Footer CSS -----------------------------------------------------------------------------*/
+    /*Media Queries */
+    @media (min-width: 992px) {
+    /* Header CSS */
+        .header-menu .navbar-nav .hover-dropdown:hover > .dropdown-menu {
+            display: block !important;
+        }
+        
+    }
+    @media only screen and (max-width: 991px) {
+        /* Header CSS */
+        .header-menu .navbar-nav .nav-link.active, .header-menu .navbar-nav .nav-link.show {
+            color: #ffffff!important;
+        }
+        .header-menu .navbar-nav li.nav-item {
+            background: #17c1b5;
+            border-bottom: 1px solid #e3e3e3;
+        }
+        .header-menu .navbar-nav .nav-link {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .header-menu .navbar-nav .nav-link {
+            color: #ccc;
+        }
+        .header-menu .navbar-nav .nav-link.active, .header-menu .navbar-nav .nav-link.show {
+            color: #fff;
+        }
+        .header-menu .navbar-nav .dropdown-menu {
+            background-color: #17c1b5;
+        }
+        .header-menu .navbar-nav .dropdown-menu li {
+            border-bottom: 1px solid rgb(255 255 255 / 38%);
+        }
+        .header-menu .navbar-nav a.nav-link.dropdown-toggle.show {
+            border-bottom: 1px solid #fff;
+        }
+        .header-menu .navbar-nav a.nav-link.dropdown-toggle::after {
+            display: none;
+        }
+        .header-menu .navbar-nav .hover-dropdown:hover > .dropdown-menu {
+            display: none !important;
+        }
+        .header-menu .navbar-nav .hover-dropdown > .dropdown-menu {
+            display: none !important;
+        }
+        .header-menu .navbar-nav .dropdown-menu li a.dropdown-item {
+            width : 100%;
+        }
+    }
+</style>    <style>
+        html, body {
+            scroll-behavior: smooth !important;
+        }
+        .navbar-nav .dropdown-item {
+            white-space: unset;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 d-flex justify-content-lg-end mb-0">
+                    <p class="text-white mb-0 top-p">Corporate Announcements : </p>
+                    <ul class="list-unstyled d-flex gap-3 ms-0 ms-lg-2 mb-0 divider-list">
+                        <li><a href="https://www.bseindia.com/stock-share-price/valiant-laboratories-ltd/valiantlab/543998/corp-announcements/" class="text-white text-decoration-none" target="_blank">BSE</a></li>
+                        <li><a href="https://www.nseindia.com/get-quote/equity/VALIANTLAB/Valiant-Laboratories-Limited" class="text-white text-decoration-none" target="_blank">NSE</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sticky-top">
+        <nav class="header-menu navbar navbar-expand-xl bg-white shadow-sm py-3 py-lg-1">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="assets/images/logo.svg" alt="logo" class="" width="190" fetchpriority="high" loading="eager">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-0 gap-lg-3 text-uppercase fw-normal">
+                        <li class="nav-item me-0 me-lg-2">
+                            <a class="nav-link py-2 py-lg-4 fw-normal active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown me-0 me-lg-2 hover-dropdown">
+                            <a class="nav-link dropdown-toggle py-2 py-lg-4 d-flex justify-content-between align-items-center " href="about-valiant-laboratories-limited" role="button" aria-expanded="false" data-bs-auto-close="outside">
+                                About Us
+                                <span class="d-inline-block"><i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
+                                <li class="d-block d-lg-none"><a class="dropdown-item" href="about-valiant-laboratories-limited">About Us</a></li>
+                                <li><a class="dropdown-item" href="board-of-directors">Board of directors</a></li>
+                                <li><a class="dropdown-item" href="composition-of-committees">Composition of Committees</a></li>
+                                <li><a class="dropdown-item" href="quality-policy">Quality Policy</a></li>
+                                <li><a class="dropdown-item mb-3" href="csr-activities">CSR Activities</a></li>
+                            </ul>
+                        </li>
+                        
+                                                <li class="nav-item me-0 me-lg-2">
+                            <a class="nav-link py-2 py-lg-4 fw-normal " aria-current="page" href="paracetamol-acetaminophen">Product
+                            </a>
+                        </li>
+                                                                        <li class="nav-item dropdown me-0 me-lg-2 hover-dropdown d-blck d-lg-none">
+                            <a class="nav-link dropdown-toggle py-2 py-lg-4 d-flex justify-content-between align-items-center " href="#" role="main Linke" aria-expanded="false">
+                                Investors
+                                <span class="d-inline-block"><i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
+                                                                <li><a class="dropdown-item" href="financial-information">Financial Information</a></li>
+                                                                <li><a class="dropdown-item" href="shareholders-information-under-reg-46-of-sebi-lodr">Shareholders' Information under Reg. 46 of SEBI LODR</a></li>
+                                                                <li><a class="dropdown-item" href="corporate-governance">Corporate Governance</a></li>
+                                                                <li><a class="dropdown-item" href="other-disclosure-to-stock-exchange">Other Disclosure to Stock Exchange</a></li>
+                                                            </ul>
+                        </li>
+                                                <li class="nav-item dropdown me-0 me-lg-2 hover-dropdown mega-dropdown d-none d-lg-block">
+                            <a class="nav-link dropdown-toggle py-2 py-lg-4 d-flex justify-content-between align-items-center "
+                            href="#" role="button" aria-expanded="false">
+                                Investors
+                                <span class="d-inline-block">
+                                    <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                                </span>
+                            </a>                            
+                            <div class="dropdown-menu mega-menu p-4 container shadow csth">
+                                <div class="row px-4">
+                                                                        <div class="col-lg-3">
+                                        <h6 class="mega-title">
+                                            <a href="financial-information" class="text-decoration-none text-dark d-flex align-items-center"><i class="fa-solid fa-folder-open me-3 fs-3"></i>Financial Information</a>
+                                        </h6>
+                                                                                <a class="dropdown-item" href="financial-results" >Financial Results</a>
+                                                                                <a class="dropdown-item" href="audited-financial-statements-of-subsidiaries" >Audited Financial Statements of Subsidiaries</a>
+                                                                                <a class="dropdown-item" href="annual-report" >Annual Report</a>
+                                                                                <a class="dropdown-item" href="credit-ratings" >Credit Ratings</a>
+                                                                                <a class="dropdown-item" href="deviation-and-variations" >Deviation and Variations</a>
+                                                                                <a class="dropdown-item" href="shareholding-pattern" >Shareholding Pattern</a>
+                                                                                <a class="dropdown-item" href="monitoring-agency-report" >Monitoring Agency Report</a>
+                                                                                <a class="dropdown-item" href="notice-of-board-meetings" >Notice of Board Meetings</a>
+                                                                            </div>
+                                                                        <div class="col-lg-3">
+                                        <h6 class="mega-title">
+                                            <a href="shareholders-information-under-reg-46-of-sebi-lodr" class="text-decoration-none text-dark d-flex align-items-center"><i class="fa-solid fa-folder-open me-3 fs-3"></i>Shareholders' Information under Reg. 46 of SEBI LODR</a>
+                                        </h6>
+                                                                                <a class="dropdown-item" href="details-of-business" >Details of Business</a>
+                                                                                <a class="dropdown-item" href="moa-aoa" >MOA & AOA</a>
+                                                                                <a class="dropdown-item" href="https://www.valiantlabs.in/board-of-directors" target="_blank">Brief Profile of Board of Directors</a>
+                                                                                <a class="dropdown-item" href="https://www.valiantlabs.in/assets/images/investors/tc_of_appointment_of_independent_directors-others.pdf" target="_blank">Terms and Conditions of Appointment of Independent Directors</a>
+                                                                                <a class="dropdown-item" href="https://www.valiantlabs.in/composition-of-committees" target="_blank">Composition of Various Committees of Board of Directors</a>
+                                                                                <a class="dropdown-item" href="https://www.valiantlabs.in/assets/images/investors/code_of_conduct_for_board_senior_management.pdf" target="_blank">Code of Conduct of Board of Directors and Senior Management Personnel</a>
+                                                                                <a class="dropdown-item" href="https://www.valiantlabs.in/assets/images/investors/whistle_blower_policy.pdf" target="_blank">Whistle Blower Policy</a>
+                                                                                <a class="dropdown-item" href="https://www.valiantlabs.in/assets/images/investors/related_party_transactions.pdf" target="_blank">Policy on Dealing with related Party Transactions</a>
+                                                                                <a class="dropdown-item" href="https://www.valiantlabs.in/assets/images/investors/material_subsidiary.pdf" target="_blank">Policy for Determining Material Subsidiaries</a>
+                                                                                <a class="dropdown-item" href="https://www.valiantlabs.in/assets/images/investors/details-of-familiarization-programme-2025-26.pdf" target="_blank">Details of Familiarization Programme</a>
+                                                                                <a class="dropdown-item" href="shareholders-complaints-section" >Shareholders' Complaints Section</a>
+                                                                                <a class="dropdown-item" href="initial-public-offer" >Initial Public Offer</a>
+                                                                                <a class="dropdown-item" href="rights-issue" >Rights Issue</a>
+                                                                                <a class="dropdown-item" href="downloads" >KYC Downloads</a>
+                                                                            </div>
+                                                                        <div class="col-lg-3">
+                                        <h6 class="mega-title">
+                                            <a href="corporate-governance" class="text-decoration-none text-dark d-flex align-items-center"><i class="fa-solid fa-folder-open me-3 fs-3"></i>Corporate Governance</a>
+                                        </h6>
+                                                                                <a class="dropdown-item" href="annual-return" >Annual Return</a>
+                                                                                <a class="dropdown-item" href="annual-general-meetings" >Annual General Meetings</a>
+                                                                                <a class="dropdown-item" href="disclosures-on-related-party-transactions" >Disclosures on Related Party Transactions</a>
+                                                                                <a class="dropdown-item" href="corporate-governance-report" >Corporate Governance Report</a>
+                                                                                <a class="dropdown-item" href="integrated-governance" >Integrated Governance</a>
+                                                                                <a class="dropdown-item" href="annual-secretarial-compliance-report" >Annual Secretarial Compliance Report</a>
+                                                                                <a class="dropdown-item" href="employee-provident-fund" >Employee Provident Fund</a>
+                                                                                <a class="dropdown-item" href="postal-ballot" >Postal Ballot</a>
+                                                                            </div>
+                                                                        <div class="col-lg-3">
+                                        <h6 class="mega-title">
+                                            <a href="other-disclosure-to-stock-exchange" class="text-decoration-none text-dark d-flex align-items-center"><i class="fa-solid fa-folder-open me-3 fs-3"></i>Other Disclosure to Stock Exchange</a>
+                                        </h6>
+                                                                                <a class="dropdown-item" href="other-disclosures-on-stock-exchange-under-regulation-30-of-sebi-lodr" >Other Disclosures on Stock Exchange under Regulation 30 of SEBI LODR</a>
+                                                                                <a class="dropdown-item" href="closure-of-trading-window" >Closure of Trading Window</a>
+                                                                                <a class="dropdown-item" href="newspaper-publications-for-financial-results" >Newspaper Publications for Financial Results</a>
+                                                                            </div>
+                                                                        
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown me-0 me-lg-2 hover-dropdown">
+                            <a class="nav-link dropdown-toggle py-2 py-lg-4 d-flex justify-content-between align-items-center " href="#" role="button" aria-expanded="false">
+                                Policies & Codes
+                                <span class="d-inline-block"><i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
+                                                                <li><a class="dropdown-item" href="policies">Policies</a></li>
+                                                                <li><a class="dropdown-item" href="codes">Codes</a></li>
+                                                                <li><a class="dropdown-item" href="others">Others</a></li>
+                                                            </ul>
+                        </li>
+                        <li class="nav-item me-0 me-lg-2">
+                            <a class="nav-link py-2 py-lg-4 fw-normal " href="career">Career</a>
+                        </li>
+                        <li class="nav-item me-0">
+                            <a class="nav-link py-2 py-lg-4 pe-0 " href="contact-valiant-laboratories-limited">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div><style>
+    #carouselExampleCaptions .carousel-item .carousel-caption {
+        right: unset;
+        top: 25%;
+        bottom: unset;
+        left: 15%;
+        text-align: left;
+        width: 45%;
+    }
+    .carousel-control-next, .carousel-control-prev {
+        opacity: 1;
+        transition: opacity .15s ease;
+    }
+    #carouselExampleCaptions .carousel-control-prev-icon, #carouselExampleCaptions .carousel-control-next-icon {
+        background: #ffffff;
+        position: relative;
+        padding: 23px;
+        border-radius: 50%;
+    }
+    #carouselExampleCaptions .carousel-control-prev-icon:before {
+        content: '\f053';
+        position: absolute;
+        font-family: "Font Awesome 7 Free";
+        font-size: 20px;
+        color: #000000;
+        font-weight: 700;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #carouselExampleCaptions .carousel-control-next-icon:before {
+        content: '\f054';
+        position: absolute;
+        font-family: "Font Awesome 7 Free";
+        font-size: 20px;
+        color: #000000;
+        font-weight: 700;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .carousel-caption h2 {
+        font-size: 60px;
+        line-height: 1.2;
+        text-transform: uppercase;        
+    }  
+    #carouselExampleCaptions .carousel-item .carousel-caption.caption-animate h2 {
+        animation: fadeInTop 0.8s ease both;
+        animation-delay: 0.4s;
+    }
+    #carouselExampleCaptions .carousel-item .carousel-caption.caption-animate .cust-btn {
+        animation: fadeInTop 0.9s ease both;
+        animation-delay: 0.8s;
+    }
+    @keyframes fadeInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+    .carousel-item .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgb(0 0 0 / 5%);
+        z-index: 1;
+    }
+    .carousel-item picture,
+    .carousel-item img {
+        position: relative;
+        z-index: 0;
+    }
+    @media only screen and (max-width: 676px) {
+        #carouselExampleCaptions .carousel-item .carousel-caption {
+            width: auto;
+        }
+        #carouselExampleCaptions .carousel-item .carousel-caption h2 {
+            font-size: 6vw;
+            padding: 2vw;
+        }
+    } 
+    @media only screen and (max-width: 768px) {
+        .carousel-caption h2 {
+            font-size: 26px!important;
+        }
+    }
+    @media only screen and (max-width: 1024px) {
+        .carousel-caption h2 {
+            font-size: 38px;
+        }
+    }
+    
+</style><style>
+    .subtitle {
+        font-size: 16px;
+        color: #070708;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    .sec_title {
+        font-size: 36px;
+        color: #070708;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .about-img-3 {
+        right: -12%;
+        animation: bounceSlow 3s ease-in-out infinite;
+    }
+    @keyframes bounceSlow {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }  
+    .about-img-2 {
+        left: -12%;
+        top: 10%;
+    }
+    .counter {
+        font-size: 68px;
+        font-weight: 900!important;
+    }    
+    #product { 
+        background-image: url(assets/images/product-bg-homepage.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    .bg-content {
+        font-size: 150px;
+        position: absolute;
+        font-weight: 900;
+        letter-spacing: 0;
+        left: -90px;
+        z-index: -1;
+        top: -65px;
+        min-width: max-content;
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(0, 0, 0, 0.1);
+        line-height: 1;
+    }
+    .bg-content::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8855917367) 0%, rgba(255, 255, 255, 0.6082808123) 35%, rgba(255, 255, 255, 0) 100%);
+    }
+    .form-control {
+        font-size: 14px;
+        color: #000000;
+        border: 0;
+        background: #F6F6F6;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input::placeholder,
+    textarea::placeholder {
+        font-size: 14px;
+        color: #8f8f8f !important;
+        opacity: 1 !important;
+    }
+    .form-control:focus {
+        background: #F6F6F6;
+        border: 1px solid #000000;
+        box-shadow: none; 
+    }
+    #team .bg-content {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .team-member:hover {
+        transform: translateY(-20px);
+        transition: 0.5s ease-out;
+    }
+    .ico-color {
+        color: #0b668f;
+    }
+    @media only screen and (max-width: 768px) {
+        .about-img-2 {
+            left: 13px !important;
+            bottom: -77px !important;
+            top: unset;
+        }
+    } 
+</style>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active position-relative">
+            <div class="overlay"></div>
+            <picture>
+                <source media="(min-width:767px)" srcset="assets/images/slider/slide-1.jpg">
+                <img src="assets/images/slider/slider-mobile-1-1.webp" alt="Leadership Packaging" class="d-block w-100">
+            </picture>
+            <div class="carousel-caption caption-animate z-2">
+                <h2 class="fw-medium mb-4">Consistency You Can Measure. Supply You Can Trust.</h2>
+                <a href="paracetamol-acetaminophen" class="cust-btn btn-primary btn-white text-decoration-none">Know More</a>
+            </div>
+        </div>
+        <div class="carousel-item position-relative">
+            <div class="overlay"></div>
+            <picture>
+                <source media="(min-width:767px)" srcset="assets/images/slider/slide-2.jpg">
+                <img src="assets/images/slider/slider-mobile-1-2.webp" alt="Leadership Packaging" class="d-block w-100">
+            </picture>
+            <div class="carousel-caption caption-animate z-2">
+                <h2 class="fw-medium mb-4">The Gold Standard in Acetaminophen Synthesis.</h2>
+                <a href="paracetamol-acetaminophen" class="cust-btn btn-primary btn-white text-decoration-none">Know More</a>
+            </div>
+        </div> 
+        <div class="carousel-item position-relative">
+            <div class="overlay"></div>
+            <picture>
+                <source media="(min-width:767px)" srcset="assets/images/slider/slide-3.jpg">
+                <img src="assets/images/slider/slider-mobile-1-3.webp" alt="Leadership Packaging" class="d-block w-100">
+            </picture>
+            <div class="carousel-caption caption-animate z-2">
+                <h2 class="fw-medium mb-4">Advanced Synthesis. Sustainable Relief.</h2>
+                <a href="paracetamol-acetaminophen" class="cust-btn btn-primary btn-white text-decoration-none">Know More</a>
+            </div>
+        </div>         
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<section id="about" class="py-5">
+    <div class="container my-5">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-5 position-relative mb-4 mb-lg-0">
+                <div class="about-img-1">
+                    <img src="assets/images/about-1.jpg" alt="" class="img-fluid rounded-4">
+                </div>
+                <div class="about-img-2 z-3 position-absolute bottom-0">
+                    <div class="rounded-4 cst-bg-dark p-4 text-white text-center">
+                        <span class="counter fw-bold cst-fs">45+</span>
+                        <p class="">Year of experience</p>
+                    </div>
+                </div>
+                <div class="about-img-3 z-3 position-absolute top-50 bottom-0 d-none d-lg-block">
+                    <img src="assets/images/about-2.png" alt="" class="img-fluid rounded-4">
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4 mb-lg-0 position-relative z-1 mt-5 mt-lg-0 pt-5 pt-lg-0">
+                <span class="bg-content text-uppercase d-none d-lg-block">About Us</span>
+                <h4 class="subtitle">About</h4>
+                <h2 class="sec_title fw-bold">Valiant Laboratories Limited</h2>
+                <h4 class="text-dark fs-3 mb-4">We reaffirm our commitment to future-ready growth and enhanced value creation, and to building the Valiant of tomorrow.</h4>
+                <p class="mb-4">An Active Pharmaceutical ingredient Manufacturing company in India, backed by a legacy of 45+ years, we have established a reputation of being a highly reliable supplier, one that is capable of not only meeting but also anticipating market needs. Company is a part of Aarti Group of industries.</p>
+                <a href="about-valiant-laboratories-limited" class="cust-btn btn-primary btn-black text-decoration-none">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="product" class="py-5">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-7">
+                <h3 class="title text-white">Paracetamol/Acetaminophen</h3>
+                <p class="text-white">Paracetamol/Acetaminophen (API/ Bulk Drug) which has several applications like uses in treatment of conditions such as headache, muscle ache, arthritis, back ache, tooth ache, cold and fever. Can also be used in management of more severe pain such as post-surgical and cancer pain.</p>
+                <a href="paracetamol-acetaminophen" class="cust-btn btn-primary btn-white text-decoration-none">Explore Product</a>   
+            </div>
+            <div class="col-lg-5">
+                <img src="assets/images/paracetamol-3d.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="enQ" class="py-3 py-lg-5">
+    <div class="container py-3 py-lg-5">
+        <div class="row">
+            <div class="col-lg-6 px-4">
+                <div class="cta position-relative z-1 mb-5">
+                    <span class="bg-content text-uppercase d-none d-lg-block">Enquiry</span>
+                    <h2 class="sec_title fw-bold mt-5">Send Enquiry</h2>
+                </div> 
+                <form action="contact.php?action=sendMail" method="POST" class="row">
+                    <input type="hidden" name="type" value="home">
+                    
+                    <div class="col-md-12 mb-4">
+                        <input type="text" name="name" class="form-control form-control-lg rounded-3" id="exampleFormControlInput1" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="email" name="email" class="form-control form-control-lg rounded-3" id="exampleFormControlInput1" placeholder="Your E-mail" required>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="tel" name="phone" class="form-control form-control-lg rounded-3" id="exampleFormControlInput6" placeholder="Your Phone" oninput="this.value = this.value.replace(/\D/g,'').slice(0,10);">
+                    </div>                    
+                    <div class="col-md-12 mb-4">
+                        <textarea class="form-control rounded-3" name="message" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 140px"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="input-group mb-3">
+                                                        <input type="hidden" class="form-control-border-bottom" name="otp" value="WERGK2NmZ1pKdllROVJKMVNVNGo4UT09" required>
+                            <span class="d-flex input-group-text form-control border form-control-border-bottom-1 fw-bold text-dark flex-fill">
+                            pje8v</span>
+                            <div class="flex-fill w-50">
+                                <input type="text" name="otp2" class="form-control form-control-lg rounded-0" id="exampleFormControlInput2" placeholder="Enter Security Code" required>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <button type="submit" class="cust-btn btn-primary btn-black text-decoration-none" name="submit">Send Enquiry</button>
+                    </div>                    
+                </form>               
+            </div>
+            <div class="col-lg-6 p-4">
+                <img src="assets/images/p-contact.jpg" alt="" class="img-fluid rounded-4">
+            </div>
+        </div>
+    </div>
+</section>
+
+                <section id="team" class="py-5">
+            <div class="container mb-5">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-12 position-relative z-1 mb-5 text-center">
+                        <span class="bg-content text-uppercase d-none d-lg-block">directors</span>
+                        <h4 class="subtitle">Board of directors</h4>
+                        <h2 class="sec_title fw-bold">Our Key Persons</h2>
+                    </div>
+                                        <div class="col-lg-4 mb-4 px-4">
+                        <div class="team-member border rounded-4">                    
+                            <img src="assets/images/team/1771406586.jpg" alt="" class="img-fluid rounded-top-4 mb-3">
+                            <div class="d-flex p-3">
+                                <div class="flex-shrink-0">
+                                    <h5 class="fw-bold fs-5">Shri Santosh S. Vora</h5>
+                                    <p class="text-dark">Managing Director</p>
+                                </div>
+                                <div class="flex-grow-1 text-end">
+                                    <a href="#" class="text-decoration-none mb-4 view-ico" data-bs-toggle="modal" data-bs-target="#memberData" data-bs-mid="2"><i class="fa-regular fa-eye fs-4 ico-color"></i></a>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                                        <div class="col-lg-4 mb-4 px-4">
+                        <div class="team-member border rounded-4">                    
+                            <img src="assets/images/team/1771406643.jpg" alt="" class="img-fluid rounded-top-4 mb-3">
+                            <div class="d-flex p-3">
+                                <div class="flex-shrink-0">
+                                    <h5 class="fw-bold fs-5">Shri Paresh S. Shah</h5>
+                                    <p class="text-dark">Whole-Time Director & CFO</p>
+                                </div>
+                                <div class="flex-grow-1 text-end">
+                                    <a href="#" class="text-decoration-none mb-4 view-ico" data-bs-toggle="modal" data-bs-target="#memberData" data-bs-mid="3"><i class="fa-regular fa-eye fs-4 ico-color"></i></a>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                                        <div class="col-lg-12 d-flex justify-content-center mt-4">
+                        <a href="board-of-directors" class="cust-btn btn-primary btn-black text-decoration-none text-center">View All</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <div id="footer" class="py-5">
+            <div class="container my-3">
+                <div class="row mb-4">
+                    <div class="col-xl-4">
+                        <div class="title-area mb-4">
+                            <h5 class="title">Valiant Laboratories Limited</h5>
+                            <img loading="lazy" src="assets/images/title-divider.svg" alt="">
+                        </div>                
+                        <p class="text-light pe-4">An Active Pharmaceutical ingredient Manufacturing company in India, backed by a legacy of 45+ years, we have established a reputation of being a highly reliable supplier, one that is capable of not only meeting but also anticipating market needs. Company is a part of Aarti Group of industries.</p>
+                    </div>
+                    <div class="col-xl-3 ps-lg-5">
+                        <div class="title-area mb-4">
+                            <h5 class="title">Quick Links</h5>
+                            <img loading="lazy" src="assets/images/title-divider.svg" alt="">
+                        </div>
+                        <ul class="footer-links text-light list-unstyled">
+                            <li><a href="/" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>Home</a></li>
+                            <li><a href="about-valiant-laboratories-limited" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>About Us</a></li>
+                            <li><a href="csr-activities" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>CSR Activities</a></li>
+                            <li><a href="quality-policy" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>Quality Policy</a></li>
+                            <li><a href="paracetamol-acetaminophen" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>Products</a></li>
+                            <li><a href="policies-codes" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>Policies & Codes</a></li>
+                            <li><a href="contact-valiant-laboratories-limited" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>Contact Us</a></li> 
+                            <li><a href="career" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>Career</a></li> 
+                            <li><a href="disclaimer" class="text-light text-decoration-none"><i class="fa-solid fa-arrow-right pe-4"></i>Disclaimer</a></li>
+                        </ul> 
+                    </div>
+                    <div class="col-xl-5">
+                        <div class="title-area mb-4">
+                            <h5 class="title">Contact Information</h5>
+                            <img loading="lazy" src="assets/images/title-divider.svg" alt="">
+                        </div>
+                        <div class="contact">
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="text-white">Registered Office Address</h5>
+                                    <span class="text-white">104, 1st Floor, Udyog Kshetra, Above Krishna Motors, Near D-Mart, Mulund Goregaon Link Road, Mulund (West), Mumbai – 400080</span>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="text-white">Corporate Office Address</h5>
+                                    <span class="text-white">701-A, 7th Floor, Tower-B, Embassy 247, L.B.S. Road, Vikhroli (West), Mumbai – 400083, Maharashtra, India.</span>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class="fa-solid fa-envelope text-white"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <span class="text-white"><a href="mailto:marketing@valiantlabs.in" class="text-decoration-none text-white">marketing@valiantlabs.in</a></span>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fa-solid fa-phone text-white"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <span class="text-white"><a href="tel:+91-22-4971 2001" class="text-decoration-none text-white">+91 22-4971 2001, 4971 7220, 4971 7221</a></span>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-4">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="text-start">
+                                <p class="mb-lg-0 mb-3">&copy; 2026 Valiant Laboratories Limited. All Rights Reserved.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex justify-content-lg-end justify-content-start">
+                                <p class="mb-0">Website Design &amp; Developed by <a href="https://clapsandwhistles.in/" class="text-decoration-none " target="_blank" style="color:#2dd68d;"> Claps and Whistles</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team Modal -->
+<div class="modal fade" id="memberData" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h1 class="modal-title fs-5 fw-bold ">Board of directors</h1>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5 text-center">
+                        <img src="" class="img-fluid rounded-4 mb-3" id="memberPhoto">
+                        <h1 class="modal-title fs-5 fw-bold " id="memberName"></h1>
+                        <p class="text-dark m-0" id="memberDesignation"></p>
+                    </div>
+                    <div class="col-lg-7 text-dark" id="memberDescription">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="#" id="back-to-top" class="text-decoration-none show">
+    <i class="fa-solid fa-chevron-up"></i>
+</a>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="assets/plugins/owlcarousel/owl.carousel.min.js"></script> -->
+    <script>
+
+    // JavaScript to handle button visibility and scroll behavior
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) { // Show button after scrolling down 200px
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    //--- Navbar Js
+    function toggleHoverClass() {
+        const dropdowns = document.querySelectorAll('.header-menu .nav-item.dropdown');
+
+        if (window.innerWidth <= 991) {
+            dropdowns.forEach(function (dropdown) {
+                const link = dropdown.querySelector('.nav-link');
+                link.setAttribute('data-bs-toggle', 'dropdown');
+                dropdown.classList.remove('hover-dropdown');
+            });
+        } else {
+            dropdowns.forEach(function (dropdown) {
+                const link = dropdown.querySelector('.nav-link');
+                link.removeAttribute('data-bs-toggle');
+                dropdown.classList.add('hover-dropdown');
+            });
+        }
+    }
+    window.addEventListener('load', toggleHoverClass);
+    window.addEventListener('resize', toggleHoverClass);
+    
+        //--------- Home Page Slider JS
+    const carousel = document.getElementById('carouselExampleCaptions');
+
+    carousel.addEventListener('slid.bs.carousel', function () {
+        document.querySelectorAll('.carousel-caption').forEach((caption) => {
+        caption.classList.remove('caption-animate');
+    });
+    const activeCaption = carousel.querySelector('.carousel-item.active .carousel-caption');
+        if (activeCaption) {
+            activeCaption.classList.add('caption-animate');
+        }
+    });
+    window.addEventListener('load', () => {
+        const activeCaption = carousel.querySelector('.carousel-item.active .carousel-caption');
+        if (activeCaption) {
+            activeCaption.classList.add('caption-animate');
+        }
+    });
+     
+    // Investor Section
+    // $(document).ready(function(){
+    //     $("#client_slider").owlCarousel({
+    //         items: 4,
+    //         margin: 30,
+    //         loop: true,
+    //         autoplay: true,
+    //         autoplayTimeout: 3000,
+    //         nav: true,
+    //         dots: false,
+    //         navText: ["<span><i class=\"fa-solid fa-angle-left text-white\"></i></span>", "<span><i class=\"fa-solid fa-angle-right text-white\"></i></span>"],
+    //         responsive: {
+    //         0: { items: 2 },
+    //         600: { items: 3 },
+    //         1000: { items: 4 }
+    //         }
+    //     });
+    // });
+</script>
+<script>
+    // Load member modal
+    const exampleModal1 = document.getElementById('memberData');
+    exampleModal1.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        const mid = button.getAttribute('data-bs-mid');
+        console.log(mid);
+        
+        $.ajax({
+            url:"get-member.php",
+            type: "POST",
+            data:{"m_id": mid,"action": "show_modal"},
+            success:function(data)
+            {
+                // console.log(data);
+                var jsonResponse = JSON.parse(data);
+                // Data
+                $("#memberName").html(jsonResponse.name);
+                $("#memberDesignation").html(jsonResponse.designation);
+                $("#memberPhoto").attr("src", "assets/images/team/" + jsonResponse.photo);
+                $("#memberDescription").html(jsonResponse.description);
+                
+            }
+        });
+    });
+</script></body>
+</html> 

@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script>
+ window.document.onkeydown = function(e) {
+  if (!e) {
+    e = event;
+  }
+  if (e.keyCode == 27) {
+    lightbox_close();
+    lightbox1_close();
+  }
+}
+
+function lightbox_open() {
+  var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+  window.scrollTo(0, 0);
+  document.getElementById('light').style.display = 'block';
+  document.getElementById('fade').style.display = 'block';
+  lightBoxVideo.play();
+}
+
+function lightbox_close() {
+  var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+  document.getElementById('light').style.display = 'none';
+  document.getElementById('fade').style.display = 'none';
+  lightBoxVideo.pause();
+}
+function lightbox1_open() {
+  var lightBoxVideo = document.getElementById("VisaChipCardVideo1");
+  window.scrollTo(0, 0);
+  document.getElementById('light').style.display = 'block';
+  document.getElementById('fade').style.display = 'block';
+  lightBoxVideo.play();
+}
+
+function lightbox1_close() {
+  var lightBoxVideo = document.getElementById("VisaChipCardVideo1");
+  document.getElementById('light').style.display = 'none';
+  document.getElementById('fade').style.display = 'none';
+  lightBoxVideo.pause();
+}
+
+
+
+    </script>
+    <title>
+	GALLOPS ENTERPRISE LIMITED 
+</title><link rel="stylesheet" href="style.css" type="text/css" />
+    <style>
+        #sidemenu {
+            width: 350px;
+            height: 100%;
+            float: right;
+            margin-top: -760px;
+            border: solid;
+            padding-left: 10px;
+            /*background-color: red;*/
+        }
+
+        #main {
+            margin-left: 250px;
+        }
+  #fade {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+
+#light {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 600px;
+  max-height: 360px;
+  margin-left: -300px;
+  margin-top: -180px;
+  border: 2px solid #FFF;
+  background: #FFF;
+  z-index: 1002;
+  overflow: visible;
+}
+
+#boxclose {
+  float: right;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 3px;
+  background: #222222;
+  font-size: 31px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 11px 3px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  z-index: 1002;
+  opacity: 0.9;
+}
+
+.boxclose:before {
+  content: "Ã—";
+}
+
+#fade:hover ~ #boxclose {
+  display:none;
+}
+    </style>
+</head>
+<body>
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE5NTU2MTk0NDZkZFIaz5DZfkgjumhnaFlFR2/RTG5Ds4YxNk81GjxwDP4K" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+</div>
+
+
+        <center>                
+            
+            <table style="width: 100%">
+
+                <tr>
+                    <td style="text-align:center" valign:"top" >
+<img src="Banner.jpg" style="width:100%"  alt=""/>
+</td>
+                </tr>
+
+
+                <tr>
+                    <td style="text-align:center" valign="top"" >
+                        </td>
+                    </tr>
+</table>
+
+                    <table style="width: 70%;padding-right:10%">
+                        <tr>
+                            <td class="head">
+                                <h2 style="text-align:center" >GALLOPS ENTERPRISE LIMITED </h2>
+                            </td>
+                            <tr>
+                                <td  style="width:50%" "valign:top" >
+                                    <div style="text-align:center">
+                                        <p>
+                                            <b>(Formerly Known as Ficon Lease And Finance Limited)</b>
+                                            <br />
+                                           CIN: L65910GJ1994PLC023470<br />
+                                           
+                                          Regd. Off: 9th Floor, Astron Tech Park,<br /> 
+                                      Near Satellite Police Station, Satellite, Ahmedabad - 380015<br />
+                    T - +917926861459/60 : : Website:  www.gallopsenterprise.com : :  Email : investors.gallops@gmail.com
+
+                                        </p>
+                                        <p>&nbsp;</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tr>
+                    </table>
+                        </center>
+    <div id="main">  
+<table style="width:60%">
+<tr>
+<td class="head" >
+<h4>:: Details of Compliance Officer ::</h4></td>
+
+
+<td class="head">
+<h4>:: Details of Investor Grievance ::</h4></td>
+  
+</tr>
+
+<tr>
+<td style="width:50%" "valign:top">
+CS Pooja Rajpara 
+    <br />
+9th Floor, Astron Tech Park, 
+    <br />
+Nr. Satellite Police Station, Satellite, 
+    <br />
+
+Ahmedabad 380 015.
+    <br />
+Email : investros.gallops@gmail.com
+ 
+
+
+<br/>
+Phone  (079) 26861459 / 60
+<br/>
+Fax       (079) 26860329</td>
+
+<td valign="top">
+Mr. Nitin Solanki 
+    <br />
+9th Floor, Astron Tech Park, 
+    <br />
+Nr. Satellite Police Station, Satellite, 
+    <br />
+
+Ahmedabad 380 015.
+    <br />
+Email : investros.gallops@gmail.com
+
+
+<br/>
+Phone  (079) 26861459 / 60
+<br/>
+Fax       (079) 26860329</td>
+
+<br/>
+</tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+
+<tr>
+<td class="head" style="text-align:center">
+<h4>:: Registrar & Share Transfer Agent  ::</h4></td>
+
+
+<tr>
+<td valign="top">
+<b>LINK INTIME INDIA PRIVATE LIMITED</b>
+<br/>
+C 101, 247 Park,
+    <br />
+L B S Marg, Vikhroli West,
+    <br />
+Mumbai 400 083
+
+<br/></td>
+
+   <td valign="top">
+<b>LINK INTIME INDIA PRIVATE LIMITED</b>
+<br/>
+     (Ahmedabad Branch)<br />
+    506-508, Amarnath Business Centre -1,<br />
+    (ABC-1), Beside Gala <br />
+    Business Centre, Near<br />
+    Saint Xavierâ€™s College corner, off C.G.<br />
+    Road, Ellisbridge, Ahmedabad â€“ 380006.<br />
+ 
+Tel No.: 079-26465179<br />
+Fax: 079-26465179<br />
+E-mail: ahmedabad@linkintime.co.in
+</td>
+<br/>
+<br />
+
+</tr>
+
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+
+
+</table>
+         
+         </div>
+       
+            <div id="sidemenu">
+                <div id="sub">
+                    <br />
+                    <b>Policies:-</b><br />
+                    
+                    <a id="LinkButton1" href="javascript:__doPostBack(&#39;LinkButton1&#39;,&#39;&#39;)">Whistleblower Policy</a><br />
+                  
+                    <a id="LinkButton4" href="javascript:__doPostBack(&#39;LinkButton4&#39;,&#39;&#39;)">Nomination & Remuneration Policy</a><br />
+                     <a id="LinkButton31" href="javascript:__doPostBack(&#39;LinkButton31&#39;,&#39;&#39;)">Code of Conduct</a><br />
+                     <a id="LinkButton32" href="javascript:__doPostBack(&#39;LinkButton32&#39;,&#39;&#39;)">Code of Conduct for PIT</a><br />
+                     <a id="LinkButton33" href="javascript:__doPostBack(&#39;LinkButton33&#39;,&#39;&#39;)">Performance Evaluation Policy</a><br />
+                     <a id="LinkButton34" href="javascript:__doPostBack(&#39;LinkButton34&#39;,&#39;&#39;)">Policy on Determing the Material Events</a><br />
+                     <a id="LinkButton36" href="javascript:__doPostBack(&#39;LinkButton36&#39;,&#39;&#39;)">Preservation of Documents</a><br />
+                    <a id="LinkButton37" href="javascript:__doPostBack(&#39;LinkButton37&#39;,&#39;&#39;)">T & C of Independent Directors</a>
+                    <br />
+                    <a id="LinkButton48" href="javascript:__doPostBack(&#39;LinkButton48&#39;,&#39;&#39;)">RPT Policy</a>
+                    <br />
+                    <br />
+
+                    <b>Notices:-</b>
+                    <br />
+                    <a id="LinkButton8" href="javascript:__doPostBack(&#39;LinkButton8&#39;,&#39;&#39;)">Intimation of Board Meeting</a><br />
+                    <a id="LinkButton15" href="javascript:__doPostBack(&#39;LinkButton15&#39;,&#39;&#39;)">BM Intimations Q1 17-18</a><br />
+                    <a id="LinkButton16" href="javascript:__doPostBack(&#39;LinkButton16&#39;,&#39;&#39;)">BM Intimations Q2 17-18</a><br />
+                    <a id="LinkButton17" href="javascript:__doPostBack(&#39;LinkButton17&#39;,&#39;&#39;)">BM Intimations Q3 17-18</a><br />
+                    <a id="LinkButton22" href="javascript:__doPostBack(&#39;LinkButton22&#39;,&#39;&#39;)">BM Intimations Q4 17-18</a><br />
+                    <a id="LinkButton25" href="javascript:__doPostBack(&#39;LinkButton25&#39;,&#39;&#39;)">BM Intimations Q1 18-19</a><br />
+                    <a id="LinkButton38" href="javascript:__doPostBack(&#39;LinkButton38&#39;,&#39;&#39;)">BM Intimations Q2 18-19</a><br />
+                    <a id="LinkButton40" href="javascript:__doPostBack(&#39;LinkButton40&#39;,&#39;&#39;)">BM Intimations Q3 18-19</a><br />
+                    <a id="LinkButton35" href="javascript:__doPostBack(&#39;LinkButton35&#39;,&#39;&#39;)">BM Intimations Q4 18-19</a><br />
+                    <a id="LinkButton50" href="javascript:__doPostBack(&#39;LinkButton50&#39;,&#39;&#39;)">BM Intimations Q1 19-20</a><br />
+                    <a id="LinkButton59" href="javascript:__doPostBack(&#39;LinkButton59&#39;,&#39;&#39;)">BM Intimations Q2 19-20</a><br />
+                    <a id="LinkButton63" href="javascript:__doPostBack(&#39;LinkButton63&#39;,&#39;&#39;)">BM Intimations Q3 19-20</a><br />
+                    <a id="LinkButton66" href="javascript:__doPostBack(&#39;LinkButton66&#39;,&#39;&#39;)">BM Intimations Q4 19-20</a><br />					<a id="LinkButton69" href="javascript:__doPostBack(&#39;LinkButton69&#39;,&#39;&#39;)">BM Intimations Q1 20-21</a><br />
+					<a id="LinkButton76" href="javascript:__doPostBack(&#39;LinkButton76&#39;,&#39;&#39;)">BM Intimations Q2 20-21</a><br />
+				    <a id="LinkButton78" href="javascript:__doPostBack(&#39;LinkButton78&#39;,&#39;&#39;)">BM Intimations Q3 20-21</a><br />
+				    <a id="LinkButton81" href="javascript:__doPostBack(&#39;LinkButton81&#39;,&#39;&#39;)">BM Intimations Q4 20-21</a><br />
+				    <a id="LinkButton82" href="javascript:__doPostBack(&#39;LinkButton82&#39;,&#39;&#39;)">BM Intimations Q1 21-22</a><br />
+				    <a id="LinkButton96" href="javascript:__doPostBack(&#39;LinkButton96&#39;,&#39;&#39;)">BM Intimations Q2 21-22</a><br />
+				    <a id="LinkButton97" href="javascript:__doPostBack(&#39;LinkButton97&#39;,&#39;&#39;)">BM Intimations Q3 21-22</a><br />
+				    <a id="LinkButton99" href="javascript:__doPostBack(&#39;LinkButton99&#39;,&#39;&#39;)">BM Intimations Q4 21-22</a><br />
+				    <a id="LinkButton102" href="javascript:__doPostBack(&#39;LinkButton102&#39;,&#39;&#39;)">BM Intimations Q1 22-23</a><br />
+				    <a id="LinkButton112" href="javascript:__doPostBack(&#39;LinkButton112&#39;,&#39;&#39;)">BM Intimations Q2 22-23</a><br />
+				    <a id="LinkButton115" href="javascript:__doPostBack(&#39;LinkButton115&#39;,&#39;&#39;)">BM Intimations Q3 22-23</a><br />
+				    <a id="LinkButton118" href="javascript:__doPostBack(&#39;LinkButton118&#39;,&#39;&#39;)">BM Intimations Q4 22-23</a><br />
+				    <a id="LinkButton120" href="javascript:__doPostBack(&#39;LinkButton120&#39;,&#39;&#39;)">BM Intimations Q1 23-24</a><br />
+                                                                    <a id="LinkButton130" href="javascript:__doPostBack(&#39;LinkButton130&#39;,&#39;&#39;)">BM Intimations Q2 23-24</a><br />
+				    <a id="LinkButton131" href="javascript:__doPostBack(&#39;LinkButton131&#39;,&#39;&#39;)">BM Intimations Q3 23-24</a><br />
+				    <a id="LinkButton134" href="javascript:__doPostBack(&#39;LinkButton134&#39;,&#39;&#39;)">BM Intimations Q4 23-24</a><br />																				 
+				    <a id="LinkButton136" href="javascript:__doPostBack(&#39;LinkButton136&#39;,&#39;&#39;)">BM Intimations Q1 24-25</a><br />																				 																				 
+			                    <a id="LinkButton142" href="javascript:__doPostBack(&#39;LinkButton142&#39;,&#39;&#39;)">BM Intimations Q2 24-25</a><br />	
+                                                                    <a id="LinkButton150" href="javascript:__doPostBack(&#39;LinkButton150&#39;,&#39;&#39;)">BM Intimations Q3 24-25</a><br />	
+                                                                    <a id="LinkButton151" href="javascript:__doPostBack(&#39;LinkButton151&#39;,&#39;&#39;)">BM Intimations Q4 24-25</a><br />	
+                                                                    <a id="LinkButton152" href="javascript:__doPostBack(&#39;LinkButton152&#39;,&#39;&#39;)">BM Intimations Q1 25-26</a><br />	
+                                                                    <a id="LinkButton186" href="javascript:__doPostBack(&#39;LinkButton186&#39;,&#39;&#39;)">BM Intimations Q2 25-26</a><br />	
+				    <a id="LinkButton198" href="javascript:__doPostBack(&#39;LinkButton198&#39;,&#39;&#39;)">BM Intimations Q3 25-26</a><br />	
+				    <a id="LinkButton201" href="javascript:__doPostBack(&#39;LinkButton201&#39;,&#39;&#39;)">BM Intimations Q4 25-26</a><br />
+<a id="LinkButton209" href="javascript:__doPostBack(&#39;LinkButton209&#39;,&#39;&#39;)">BM Intimations Q1 26-27</a><br />
+  
+<a id="LinkButton210" href="javascript:__doPostBack(&#39;LinkButton210&#39;,&#39;&#39;)">Postponement BM Intimations Q1 26-27</a><br />
+<a id="LinkButton211" href="javascript:__doPostBack(&#39;LinkButton211&#39;,&#39;&#39;)">BM Intimations Q1 26-27</a><br />
+  
+  
+                    <br />
+                    <br />
+                    <b>Board Meeting Outcome</b>
+                    <br />
+                     <a id="LinkButton155" href="javascript:__doPostBack(&#39;LinkButton155&#39;,&#39;&#39;)">BM Outcome 25-06-2020</a><br />	
+                     <a id="LinkButton156" href="javascript:__doPostBack(&#39;LinkButton156&#39;,&#39;&#39;)">BM Outcome 06-08-2020</a><br />	
+                     <a id="LinkButton157" href="javascript:__doPostBack(&#39;LinkButton157&#39;,&#39;&#39;)">BM Outcome 02-11-2020</a><br />	
+                     <a id="LinkButton158" href="javascript:__doPostBack(&#39;LinkButton158&#39;,&#39;&#39;)">BM Outcome 04-01-2021</a><br />	
+                     <a id="LinkButton159" href="javascript:__doPostBack(&#39;LinkButton159&#39;,&#39;&#39;)">BM Outcome 04-02-2021</a><br />	
+                      <a id="LinkButton160" href="javascript:__doPostBack(&#39;LinkButton160&#39;,&#39;&#39;)">BM Outcome 31-05-2021</a><br />	
+                     <a id="LinkButton161" href="javascript:__doPostBack(&#39;LinkButton161&#39;,&#39;&#39;)">BM Outcome 11-08-2021</a><br />	
+                     <a id="LinkButton162" href="javascript:__doPostBack(&#39;LinkButton162&#39;,&#39;&#39;)">BM Outcome 16-08-2021</a><br />	
+                     <a id="LinkButton163" href="javascript:__doPostBack(&#39;LinkButton163&#39;,&#39;&#39;)">BM Outcome 29-10-2021</a><br />	
+                     <a id="LinkButton164" href="javascript:__doPostBack(&#39;LinkButton164&#39;,&#39;&#39;)">BM Outcome 01-02-2022</a><br />	
+<a id="LinkButton165" href="javascript:__doPostBack(&#39;LinkButton165&#39;,&#39;&#39;)">BM Outcome 16-05-2022</a><br />	
+<a id="LinkButton166" href="javascript:__doPostBack(&#39;LinkButton166&#39;,&#39;&#39;)">BM Outcome 01-08-2022</a><br />	
+<a id="LinkButton167" href="javascript:__doPostBack(&#39;LinkButton167&#39;,&#39;&#39;)">BM Outcome 07-11-2022</a><br />	
+<a id="LinkButton168" href="javascript:__doPostBack(&#39;LinkButton168&#39;,&#39;&#39;)">BM Outcome 07-02-2023</a><br />	
+<a id="LinkButton169" href="javascript:__doPostBack(&#39;LinkButton169&#39;,&#39;&#39;)">BM Outcome 20-03-2023</a><br />	
+<a id="LinkButton170" href="javascript:__doPostBack(&#39;LinkButton170&#39;,&#39;&#39;)">BM Outcome 02-05-2023</a><br />	
+<a id="LinkButton171" href="javascript:__doPostBack(&#39;LinkButton171&#39;,&#39;&#39;)">BM Outcome 12-08-2023</a><br />	
+<a id="LinkButton172" href="javascript:__doPostBack(&#39;LinkButton172&#39;,&#39;&#39;)">BM Outcome 06-11-2023</a><br />	
+<a id="LinkButton173" href="javascript:__doPostBack(&#39;LinkButton173&#39;,&#39;&#39;)">BM Outcome 07-02-2024</a><br />	
+<a id="LinkButton174" href="javascript:__doPostBack(&#39;LinkButton174&#39;,&#39;&#39;)">BM Outcome 03-05-2024</a><br />	
+<a id="LinkButton175" href="javascript:__doPostBack(&#39;LinkButton175&#39;,&#39;&#39;)">BM Outcome 09-05-2024</a><br />	
+<a id="LinkButton176" href="javascript:__doPostBack(&#39;LinkButton176&#39;,&#39;&#39;)">BM Outcome 10-05-2024</a><br />	
+<a id="LinkButton177" href="javascript:__doPostBack(&#39;LinkButton177&#39;,&#39;&#39;)">BM Outcome 18-06-2024</a><br />	
+<a id="LinkButton178" href="javascript:__doPostBack(&#39;LinkButton178&#39;,&#39;&#39;)">BM Outcome 05-08-2024</a><br />	
+<a id="LinkButton179" href="javascript:__doPostBack(&#39;LinkButton179&#39;,&#39;&#39;)">BM Outcome 13-11-2024</a><br />	
+<a id="LinkButton180" href="javascript:__doPostBack(&#39;LinkButton180&#39;,&#39;&#39;)">BM Outcome 04-12-2024</a><br />	
+<a id="LinkButton181" href="javascript:__doPostBack(&#39;LinkButton181&#39;,&#39;&#39;)">BM Outcome 10-02-2025</a><br />	
+<a id="LinkButton182" href="javascript:__doPostBack(&#39;LinkButton182&#39;,&#39;&#39;)">BM Outcome 16-05-2025</a><br />	
+<a id="LinkButton187" href="javascript:__doPostBack(&#39;LinkButton187&#39;,&#39;&#39;)">BM Outcome 12-08-2025</a><br />	
+<a id="LinkButton199" href="javascript:__doPostBack(&#39;LinkButton199&#39;,&#39;&#39;)">BM Outcome 11-11-2025</a><br />	
+<a id="LinkButton202" href="javascript:__doPostBack(&#39;LinkButton202&#39;,&#39;&#39;)">BM Outcome 13-02-2026</a><br />
+<a id="LinkButton208" href="javascript:__doPostBack(&#39;LinkButton208&#39;,&#39;&#39;)">BM Outcome 09-03-2026</a><br />
+<a id="LinkButton212" href="javascript:__doPostBack(&#39;LinkButton212&#39;,&#39;&#39;)">BM Outcome 29-05-2026</a><br />
+
+
+
+                   <br />
+                    <br />
+
+                    <b>Finacial Results:-</b>
+                    <br />
+                    <a id="LinkButton2" href="javascript:__doPostBack(&#39;LinkButton2&#39;,&#39;&#39;)">2nd Quarter Result 2017</a><br />
+                    <a id="LinkButton10" href="javascript:__doPostBack(&#39;LinkButton10&#39;,&#39;&#39;)">3nd Quarter Result 2017</a><br />
+                    <a id="LinkButton11" href="javascript:__doPostBack(&#39;LinkButton11&#39;,&#39;&#39;)">Financial Results Q1-2017-18</a><br />
+                    <a id="LinkButton12" href="javascript:__doPostBack(&#39;LinkButton12&#39;,&#39;&#39;)">Financial Results Q2-2017-18</a><br />
+                    <a id="LinkButton13" href="javascript:__doPostBack(&#39;LinkButton13&#39;,&#39;&#39;)">Financial Results Q3-2017-18</a><br />
+                    <a id="LinkButton14" href="javascript:__doPostBack(&#39;LinkButton14&#39;,&#39;&#39;)">Financial Results Q4-2016-17</a><br />
+                    <a id="LinkButton24" href="javascript:__doPostBack(&#39;LinkButton24&#39;,&#39;&#39;)">Financial Results Q4-2017-18</a><br />
+                    <a id="LinkButton26" href="javascript:__doPostBack(&#39;LinkButton26&#39;,&#39;&#39;)">Financial Results Q1-2018-19</a><br />
+                    <a id="LinkButton39" href="javascript:__doPostBack(&#39;LinkButton39&#39;,&#39;&#39;)">Financial Results Q2-2018-19</a><br />
+                    <a id="LinkButton41" href="javascript:__doPostBack(&#39;LinkButton41&#39;,&#39;&#39;)">Financial Results Q3-2018-19</a><br />
+                    <a id="LinkButton49" href="javascript:__doPostBack(&#39;LinkButton49&#39;,&#39;&#39;)">Financial Results Q4-2018-19</a><br />
+                    <a id="LinkButton51" href="javascript:__doPostBack(&#39;LinkButton51&#39;,&#39;&#39;)">Financial Results Q1-2019-20</a><br />
+                    <a id="LinkButton60" href="javascript:__doPostBack(&#39;LinkButton60&#39;,&#39;&#39;)">Financial Results Q2-2019-20</a><br />
+                    <a id="LinkButton64" href="javascript:__doPostBack(&#39;LinkButton64&#39;,&#39;&#39;)">Financial Results Q3-2019-20</a><br/>
+					<a id="LinkButton67" href="javascript:__doPostBack(&#39;LinkButton67&#39;,&#39;&#39;)">Financial Results Q4-2019-20</a>	<br />              <a id="LinkButton70" href="javascript:__doPostBack(&#39;LinkButton70&#39;,&#39;&#39;)">Financial Results Q1-2020-21</a><br />
+					<a id="LinkButton77" href="javascript:__doPostBack(&#39;LinkButton77&#39;,&#39;&#39;)">Financial Results Q2-2020-21</a><br />
+					<a id="LinkButton79" href="javascript:__doPostBack(&#39;LinkButton79&#39;,&#39;&#39;)">Financial Results Q3-2020-21</a><br />
+					<a id="LinkButton80" href="javascript:__doPostBack(&#39;LinkButton80&#39;,&#39;&#39;)">Financial Results Q4-2020-21</a><br />
+					<a id="LinkButton83" href="javascript:__doPostBack(&#39;LinkButton83&#39;,&#39;&#39;)">Financial Results Q1-2021-22</a>	 <br />																						 
+					<a id="LinkButton89" href="javascript:__doPostBack(&#39;LinkButton89&#39;,&#39;&#39;)">Financial Results Q2-2021-22</a>	 <br />
+					<a id="LinkButton90" href="javascript:__doPostBack(&#39;LinkButton90&#39;,&#39;&#39;)">Financial Results Q3-2021-22</a>	 <br />	
+                   <a id="LinkButton100" href="javascript:__doPostBack(&#39;LinkButton100&#39;,&#39;&#39;)">Financial Results Q4-2021-22</a>	 <br />	
+                   <a id="LinkButton103" href="javascript:__doPostBack(&#39;LinkButton103&#39;,&#39;&#39;)">Financial Results Q1-2022-23</a>	<br />	
+                   <a id="LinkButton113" href="javascript:__doPostBack(&#39;LinkButton113&#39;,&#39;&#39;)">Financial Results Q2-2022-23</a>	 <br />	
+                   <a id="LinkButton116" href="javascript:__doPostBack(&#39;LinkButton116&#39;,&#39;&#39;)">Financial Results Q3-2022-23</a>	 <br />	
+                    <a id="LinkButton119" href="javascript:__doPostBack(&#39;LinkButton119&#39;,&#39;&#39;)">Financial Results Q4-2022-23</a>	 <br />	
+                   <a id="LinkButton121" href="javascript:__doPostBack(&#39;LinkButton121&#39;,&#39;&#39;)">Financial Results Q1-2023-24</a>	 <br />	
+                   <a id="LinkButton128" href="javascript:__doPostBack(&#39;LinkButton128&#39;,&#39;&#39;)">Financial Results Q2-2023-24</a>	 <br />
+                   <a id="LinkButton132" href="javascript:__doPostBack(&#39;LinkButton132&#39;,&#39;&#39;)">Financial Results Q3-2023-24</a>	 <br />
+                   <a id="LinkButton135" href="javascript:__doPostBack(&#39;LinkButton135&#39;,&#39;&#39;)">Financial Results Q4-2023-24</a>	 <br />
+                   <a id="LinkButton137" href="javascript:__doPostBack(&#39;LinkButton137&#39;,&#39;&#39;)">Financial Results Q1-2024-25</a>	 <br />
+                   <a id="LinkButton153" href="javascript:__doPostBack(&#39;LinkButton153&#39;,&#39;&#39;)">Financial Results Q2-2024-25</a>	 <br />
+                   <a id="LinkButton143" href="javascript:__doPostBack(&#39;LinkButton143&#39;,&#39;&#39;)">Financial Results Q3-2024-25</a>	 <br />
+                   <a id="LinkButton144" href="javascript:__doPostBack(&#39;LinkButton144&#39;,&#39;&#39;)">Financial Results Q4-2024-25</a>	 <br />
+                   <a id="LinkButton188" href="javascript:__doPostBack(&#39;LinkButton188&#39;,&#39;&#39;)">Financial Results Q1-2025-26</a>	 <br />
+                   <a id="LinkButton200" href="javascript:__doPostBack(&#39;LinkButton200&#39;,&#39;&#39;)">Financial Results Q2-2025-26</a>	 <br />
+                   <a id="LinkButton203" href="javascript:__doPostBack(&#39;LinkButton203&#39;,&#39;&#39;)">Financial Results Q3-2025-26</a>	 <br />
+                   <a id="LinkButton213" href="javascript:__doPostBack(&#39;LinkButton213&#39;,&#39;&#39;)">Financial Results Q4-2025-26</a>	 <br />
+                  
+          <br />
+                    <b>Other Information:-</b>
+                    <br />
+                    <a id="LinkButton45" href="javascript:__doPostBack(&#39;LinkButton45&#39;,&#39;&#39;)">Business Details</a><br />
+                    <a id="LinkButton46" href="javascript:__doPostBack(&#39;LinkButton46&#39;,&#39;&#39;)">Board of Directors</a><br />
+                    <a id="LinkButton47" href="javascript:__doPostBack(&#39;LinkButton47&#39;,&#39;&#39;)">Board Committees</a><br />
+                    <a id="LinkButton5" href="javascript:__doPostBack(&#39;LinkButton5&#39;,&#39;&#39;)">AGM Proceedings 27.09.2017</a><br />
+                    <a id="LinkButton6" href="javascript:__doPostBack(&#39;LinkButton6&#39;,&#39;&#39;)">Voting Results of AGM dated 27.09.2017</a><br />
+                    <a id="LinkButton7" href="javascript:__doPostBack(&#39;LinkButton7&#39;,&#39;&#39;)">Intimation of appointment of Auditor</a> <br />
+                    <a id="LinkButton29" href="javascript:__doPostBack(&#39;LinkButton29&#39;,&#39;&#39;)">AGM Proceedings 26.09.2018</a><br />
+                    <a id="LinkButton30" href="javascript:__doPostBack(&#39;LinkButton30&#39;,&#39;&#39;)">Gallops Reg. 44(3) Submission BSE -  AGM 2018</a><br />
+                    <a id="LinkButton56" href="javascript:__doPostBack(&#39;LinkButton56&#39;,&#39;&#39;)">REG 47 REGARDING NOTICE OF AGM</a><br />
+                    <a id="LinkButton57" href="javascript:__doPostBack(&#39;LinkButton57&#39;,&#39;&#39;)">AGM Proceedings 20.09.2019</a><br />
+                    <a id="LinkButton58" href="javascript:__doPostBack(&#39;LinkButton58&#39;,&#39;&#39;)">Gallops Reg. 44(3) Submission BSE -  AGM 2019</a><br />
+					 <a id="LinkButton73" href="javascript:__doPostBack(&#39;LinkButton73&#39;,&#39;&#39;)">AGM Proceedings 29.09.2020</a><br />
+                    <a id="LinkButton74" href="javascript:__doPostBack(&#39;LinkButton74&#39;,&#39;&#39;)">Gallops Reg. 44(3) Submission BSE -  AGM 2020</a><br />
+                    
+                    <a id="LinkButton86" href="javascript:__doPostBack(&#39;LinkButton86&#39;,&#39;&#39;)">Annual Return FY 2020-21 </a>
+																								 <br />
+<a id="LinkButton87" href="javascript:__doPostBack(&#39;LinkButton87&#39;,&#39;&#39;)">AGM PROCEEDING 27.09.2021</a><br />
+<a id="LinkButton88" href="javascript:__doPostBack(&#39;LinkButton88&#39;,&#39;&#39;)">Gallops Reg. 44(3) Submission BSE -  AGM 2021</a><br />
+<a id="LinkButton106" href="javascript:__doPostBack(&#39;LinkButton106&#39;,&#39;&#39;)">INTIMATION OF BOOK CLOUSER FOR AGM</a><br />
+<a id="LinkButton107" href="javascript:__doPostBack(&#39;LinkButton107&#39;,&#39;&#39;)">MGT 7 DRAFT FY 2021-22</a><br />
+<a id="LinkButton108" href="javascript:__doPostBack(&#39;LinkButton108&#39;,&#39;&#39;)">NEWSPAPER INTIMATION FOR AGM OF FY 2021-22</a><br />
+<a id="LinkButton109" href="javascript:__doPostBack(&#39;LinkButton109&#39;,&#39;&#39;)">AGM PROCEEDINGS 28.09.2022</a><br />
+<a id="LinkButton110" href="javascript:__doPostBack(&#39;LinkButton110&#39;,&#39;&#39;)">Gallops Regu 44(3) Submission on BSE AGM 2022</a><br />
+<div id="light">
+  <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+  <video id="VisaChipCardVideo" width="600" controls>
+    <source src="video conference of AGM 20.mp4" type="video/mp4" />
+    <!--Browser does not support <video> tag -->
+  </video>
+</div>
+
+<div id="fade" onClick="lightbox_close();"></div>
+
+<div>
+  <a href="#" onclick="lightbox_open();">Video Conference of AGM on 28.09.2022</a>
+</div>
+
+<a id="LinkButton124" href="javascript:__doPostBack(&#39;LinkButton124&#39;,&#39;&#39;)">Annual Return - 2022-2023</a>																			 
+      <br />   
+<a id="LinkButton125" href="javascript:__doPostBack(&#39;LinkButton125&#39;,&#39;&#39;)">Voting Results of AGM dated 25.09.2023</a>																			 
+      <br />   
+<div id="light">
+  <a class="boxclose" id="boxclose" onclick="lightbox1_close();"></a>
+  <video id="VisaChipCardVideo1" width="600" controls>
+    <source src="video conference of AGM 2024.mp4" type="video/mp4" />
+    <!--Browser does not support <video> tag -->
+  </video>
+</div>
+
+<div id="fade" onClick="lightbox1_close();"></div>
+
+<div>
+  <a href="#" onclick="lightbox1_open();">Video Conference of AGM 2024</a>
+</div>
+<a id="LinkButton183" href="javascript:__doPostBack(&#39;LinkButton183&#39;,&#39;&#39;)">Notice Of AGM 16.09.2024</a><br />
+<a id="LinkButton184" href="javascript:__doPostBack(&#39;LinkButton184&#39;,&#39;&#39;)">AGM Outcome 16.09.2024</a><br />
+<a id="LinkButton185" href="javascript:__doPostBack(&#39;LinkButton185&#39;,&#39;&#39;)">Scrutinizers Report of AGM 16.09.2024</a><br />
+<a id="LinkButton189" href="javascript:__doPostBack(&#39;LinkButton189&#39;,&#39;&#39;)">Change in Management 12-08-2025</a><br />
+<a id="LinkButton190" href="javascript:__doPostBack(&#39;LinkButton190&#39;,&#39;&#39;)">News Paper Publication Q1 UFR</a><br />
+<a id="LinkButton195" href="javascript:__doPostBack(&#39;LinkButton195&#39;,&#39;&#39;)">Newspaper Intimation for AGM OF FY 2024-25</a><br />
+<a id="LinkButton196" href="javascript:__doPostBack(&#39;LinkButton196&#39;,&#39;&#39;)">AGM Outcome 24.09.2025 </a><br />
+<a id="LinkButton197" href="javascript:__doPostBack(&#39;LinkButton197&#39;,&#39;&#39;)">Voting Results of AGM dated 24.09.2025</a><br />
+<a id="LinkButton206" href="javascript:__doPostBack(&#39;LinkButton206&#39;,&#39;&#39;)">Regulation 30-CFO Resignation</a><br />
+<a id="LinkButton207" href="javascript:__doPostBack(&#39;LinkButton207&#39;,&#39;&#39;)">Regulation 30-Change of Registered Office </a><br />
+ <br /> 
+
+                    <b>Shareholding pattern:-</b>
+                    <br />
+                    <a id="LinkButton18" href="javascript:__doPostBack(&#39;LinkButton18&#39;,&#39;&#39;)">Gallops SHP 30.06.2017</a><br />
+                    <a id="LinkButton19" href="javascript:__doPostBack(&#39;LinkButton19&#39;,&#39;&#39;)">Gallops SHP 30.09.2017</a><br />
+                    <a id="LinkButton20" href="javascript:__doPostBack(&#39;LinkButton20&#39;,&#39;&#39;)">Gallops SHP 31.03.2017</a><br />
+                    <a id="LinkButton21" href="javascript:__doPostBack(&#39;LinkButton21&#39;,&#39;&#39;)">Gallops SHP 31.12.2017</a><br />
+                     <a id="LinkButton23" href="javascript:__doPostBack(&#39;LinkButton23&#39;,&#39;&#39;)">Gallops SHP 31.03.2018</a><br />
+                    <a id="LinkButton42" href="javascript:__doPostBack(&#39;LinkButton42&#39;,&#39;&#39;)">Gallops SHP 30.06.2018</a><br />
+                    <a id="LinkButton43" href="javascript:__doPostBack(&#39;LinkButton43&#39;,&#39;&#39;)">Gallops SHP 30.09.2018</a><br />
+                    <a id="LinkButton44" href="javascript:__doPostBack(&#39;LinkButton44&#39;,&#39;&#39;)">Gallops SHP 31.12.2018</a><br />
+                    <a id="LinkButton54" href="javascript:__doPostBack(&#39;LinkButton54&#39;,&#39;&#39;)">Gallops SHP 31.03.2019</a><br />
+                    <a id="LinkButton55" href="javascript:__doPostBack(&#39;LinkButton55&#39;,&#39;&#39;)">Gallops SHP 30.06.2019</a><br />
+                    <a id="LinkButton61" href="javascript:__doPostBack(&#39;LinkButton61&#39;,&#39;&#39;)">Gallops SHP 30.09.2019</a><br />
+                    <a id="LinkButton62" href="javascript:__doPostBack(&#39;LinkButton62&#39;,&#39;&#39;)">Gallops SHP 31.12.2019</a><br />
+					<a id="LinkButton65" href="javascript:__doPostBack(&#39;LinkButton65&#39;,&#39;&#39;)">Gallops SHP 31.03.2020</a><br />						
+                    <a id="LinkButton68" href="javascript:__doPostBack(&#39;LinkButton68&#39;,&#39;&#39;)">Gallops SHP 30.06.2020</a><br />		
+                    <a id="LinkButton75" href="javascript:__doPostBack(&#39;LinkButton75&#39;,&#39;&#39;)">Gallops SHP 30.09.2020</a><br />	
+				  <a id="LinkButton91" href="javascript:__doPostBack(&#39;LinkButton91&#39;,&#39;&#39;)">Gallops SHP 31.12.2020</a><br />
+		  	    <a id="LinkButton92" href="javascript:__doPostBack(&#39;LinkButton92&#39;,&#39;&#39;)">Gallops SHP 31.03.2021</a><br />
+		    	  <a id="LinkButton93" href="javascript:__doPostBack(&#39;LinkButton93&#39;,&#39;&#39;)">Gallops SHP 30.06.2021</a><br />
+			    <a id="LinkButton94" href="javascript:__doPostBack(&#39;LinkButton94&#39;,&#39;&#39;)">Gallops SHP 30.09.2021</a><br />
+				 <a id="LinkButton95" href="javascript:__doPostBack(&#39;LinkButton95&#39;,&#39;&#39;)">Gallops SHP 31.12.2021</a><br />
+				<a id="LinkButton98" href="javascript:__doPostBack(&#39;LinkButton98&#39;,&#39;&#39;)">Gallops SHP 31.03.2022</a><br />	
+				<a id="LinkButton101" href="javascript:__doPostBack(&#39;LinkButton101&#39;,&#39;&#39;)">Gallops SHP 30.06.2022</a><br />
+<a id="LinkButton111" href="javascript:__doPostBack(&#39;LinkButton111&#39;,&#39;&#39;)">Gallops SHP 30.09.2022</a><br />
+<a id="LinkButton114" href="javascript:__doPostBack(&#39;LinkButton114&#39;,&#39;&#39;)">Gallops SHP 31.12.2022</a><br />																				 
+<a id="LinkButton117" href="javascript:__doPostBack(&#39;LinkButton117&#39;,&#39;&#39;)">Gallops SHP 31.03.2023</a><br />
+<a id="LinkButton126" href="javascript:__doPostBack(&#39;LinkButton126&#39;,&#39;&#39;)">Gallops SHP 30.06.2023</a><br />	
+<a id="LinkButton127" href="javascript:__doPostBack(&#39;LinkButton127&#39;,&#39;&#39;)">Gallops SHP 30.09.2023</a><br />
+<a id="LinkButton129" href="javascript:__doPostBack(&#39;LinkButton129&#39;,&#39;&#39;)">Gallops SHP 31.12.2023</a><br />																					 
+<a id="LinkButton133" href="javascript:__doPostBack(&#39;LinkButton133&#39;,&#39;&#39;)">Gallops SHP 31.03.2024</a><br />
+<a id="LinkButton145" href="javascript:__doPostBack(&#39;LinkButton145&#39;,&#39;&#39;)">Gallops SHP 30.06.2024</a><br />
+<a id="LinkButton146" href="javascript:__doPostBack(&#39;LinkButton146&#39;,&#39;&#39;)">Gallops SHP 30.09.2024</a><br />
+<a id="LinkButton147" href="javascript:__doPostBack(&#39;LinkButton147&#39;,&#39;&#39;)">Gallops SHP 31.12.2024</a><br />
+<a id="LinkButton148" href="javascript:__doPostBack(&#39;LinkButton148&#39;,&#39;&#39;)">Gallops SHP 31.03.2025</a><br />
+<a id="LinkButton149" href="javascript:__doPostBack(&#39;LinkButton149&#39;,&#39;&#39;)">Gallops SHP 30.06.2025</a><br />
+<a id="LinkButton204" href="javascript:__doPostBack(&#39;LinkButton204&#39;,&#39;&#39;)">Gallops SHP 30.09.2025</a><br />
+<a id="LinkButton205" href="javascript:__doPostBack(&#39;LinkButton205&#39;,&#39;&#39;)">Gallops SHP 31.12.2025</a><br />
+<a id="LinkButton214" href="javascript:__doPostBack(&#39;LinkButton214&#39;,&#39;&#39;)">Gallops SHP 31.03.2026</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <br />
+              
+                    <b>Annual Report:-</b>
+                    <br />
+
+                  
+                    <a id="LinkButton3" href="javascript:__doPostBack(&#39;LinkButton3&#39;,&#39;&#39;)">Notice of AGM FY 2016-17</a><br />
+          
+                    <a id="LinkButton9" href="javascript:__doPostBack(&#39;LinkButton9&#39;,&#39;&#39;)">Annual Report F.Y. 2016-17</a><br />
+
+                    <a id="LinkButton27" href="javascript:__doPostBack(&#39;LinkButton27&#39;,&#39;&#39;)">Notice of AGM FY 2017-18</a><br />
+          
+                    <a id="LinkButton28" href="javascript:__doPostBack(&#39;LinkButton28&#39;,&#39;&#39;)">Annual Report F.Y. 2017-18</a><br />
+                    <a id="LinkButton53" href="javascript:__doPostBack(&#39;LinkButton53&#39;,&#39;&#39;)">Notice of AGM FY 2018-19</a><br />
+                    <a id="LinkButton52" href="javascript:__doPostBack(&#39;LinkButton52&#39;,&#39;&#39;)">Annual Report F.Y. 2018-19</a><br />
+					<a id="LinkButton71" href="javascript:__doPostBack(&#39;LinkButton71&#39;,&#39;&#39;)">Notice of AGM FY 2019-20</a><br />
+                    <a id="LinkButton72" href="javascript:__doPostBack(&#39;LinkButton72&#39;,&#39;&#39;)">Annual Report F.Y. 2019-20</a><br />
+					<a id="LinkButton84" href="javascript:__doPostBack(&#39;LinkButton84&#39;,&#39;&#39;)">Notice of AGM FY 2020-21</a><br />
+                    <a id="LinkButton85" href="javascript:__doPostBack(&#39;LinkButton85&#39;,&#39;&#39;)">Annual Report F.Y. 2020-21</a><br />
+					<a id="LinkButton104" href="javascript:__doPostBack(&#39;LinkButton104&#39;,&#39;&#39;)">Notice of AGM FY 2021-22</a><br />
+                    <a id="LinkButton105" href="javascript:__doPostBack(&#39;LinkButton105&#39;,&#39;&#39;)">Annual Report F.Y. 2021-22</a><br />
+                    <a id="LinkButton122" href="javascript:__doPostBack(&#39;LinkButton122&#39;,&#39;&#39;)">Notice of AGM FY 2022-23</a><br />
+                    <a id="LinkButton123" href="javascript:__doPostBack(&#39;LinkButton123&#39;,&#39;&#39;)">Annual Report F.Y. 2022-23</a><br />																			 
+                   <a id="LinkButton138" href="javascript:__doPostBack(&#39;LinkButton138&#39;,&#39;&#39;)">Annual Return 2023-24</a><br />
+                    <a id="LinkButton139" href="javascript:__doPostBack(&#39;LinkButton139&#39;,&#39;&#39;)">Notice of AGM FY 2023-24</a><br />
+                    <a id="LinkButton140" href="javascript:__doPostBack(&#39;LinkButton140&#39;,&#39;&#39;)">Annual Report F.Y. 2023-24</a><br />
+                    <a id="LinkButton191" href="javascript:__doPostBack(&#39;LinkButton191&#39;,&#39;&#39;)">Notice of AGM FY 2024-25</a><br />
+                    <a id="LinkButton192" href="javascript:__doPostBack(&#39;LinkButton192&#39;,&#39;&#39;)">Annual Report F.Y. 2024-25</a><br />
+                    <a id="LinkButton193" href="javascript:__doPostBack(&#39;LinkButton193&#39;,&#39;&#39;)">E-voting Instructions AGM 2024-25</a><br />
+                    <a id="LinkButton194" href="javascript:__doPostBack(&#39;LinkButton194&#39;,&#39;&#39;)">Annual Return 2024-25</a><br />
+                    <a id="LinkButton215" href="javascript:__doPostBack(&#39;LinkButton215&#39;,&#39;&#39;)">Notice of AGM F.Y.2025-26</a><br />
+                    <a id="LinkButton216" href="javascript:__doPostBack(&#39;LinkButton216&#39;,&#39;&#39;)">Annual Report F.Y. 2025-26</a>																			 
+                </div>
+            </div>
+       
+    </form>
+
+</body>
+</html>

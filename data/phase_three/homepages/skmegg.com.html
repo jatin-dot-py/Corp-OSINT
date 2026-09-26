@@ -1,0 +1,642 @@
+ 
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://skmegg.com/images/fevicon.png" type="image/png" sizes="16x16">
+<title>SKM EGG PRODUCTS</title>
+<meta name="description" content="SKM EGG PRODUCTS">
+<meta name="keywords" content="SKM EGG PRODUCTS">
+<meta name="copyright" content="www.skmegg.com">
+<meta name="generator" content="Tulips Media, www.tulipsmedia.com and C-Infosoft Technologies, www.c-infosoft.com">
+<link href="css/cis_style.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+<script language="JavaScript" src="js/bootstrap.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="cis_menu/ddsmoothmenu.css" />
+<script type="text/javascript" src="cis_menu/ddsmoothmenu.js"></script>
+<script type="text/javascript">
+	ddsmoothmenu.init({
+	mainmenuid: "smoothmenu1", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+	
+function DoNav(xRowId){
+	var row = document.getElementById(xRowId);
+	row.className='highlight';
+	row.onmouseout = new Function("this.className=''");
+	var link = row.getElementsByTagName("a");
+	if(link[0].onclick){
+		row.onclick = eval(link[0].onclick);
+	}
+	else{
+		row.onclick = new Function("document.location.href='" + link[0].href + "'");
+	}
+}
+
+</script>
+<!--
+-->
+
+<script language="javascript" type="text/javascript">
+
+var pausecontent1=new Array()
+
+pausecontent1[0]='<strong>Sales & Marketing</strong><br>Mobile : +91 99944 51542<br>E-Mail : sales@skmegg.com           <br><br> <strong>Production & Engineering</strong><br>Mobile : +91 91595 88555 <br>E-Mail : production@skmegg.com<br>'
+pausecontent1[1]='<strong>Quality Assurance</strong><br>Mobile : +91 99944 51539<br>E-Mail : quality@skmegg.com         <br><br> <strong>HR &amp; Administration </strong><br>Mobile : +91 99944 51546 <br>E-Mail : hrd@skmegg.com<br>'
+pausecontent1[2]='<strong>Technical / Veterinary</strong><br>Mobile : +91 99944 51540<br>E-Mail : technical@skmegg.com  <br><br> <strong>Best Eggs</strong><br>Mobile : +91 97915 66888, +91 96009 73166 <br>E-Mail : bh@skemgg.com<br>'
+
+function pausescroller(content, divId, divClass, delay){
+this.content=content //message array content
+this.tickerid=divId //ID of ticker div to display information
+this.delay=delay //Delay between msg change, in miliseconds.
+this.mouseoverBol=0 //Boolean to indicate whether mouse is currently over scroller (and pause it if it is)
+this.hiddendivpointer=1 //index of message array for hidden div
+document.write('<div id="'+divId+'" class="'+divClass+'" style="position: relative; overflow: hidden"><div class="innerDiv" style="position: absolute; width: 100%" id="'+divId+'1">'+content[0]+'</div><div class="innerDiv" style="position: absolute; width: 100%; visibility: hidden" id="'+divId+'2">'+content[1]+'</div></div>')
+var scrollerinstance=this
+if (window.addEventListener) //run onload in DOM2 browsers
+window.addEventListener("load", function(){scrollerinstance.initialize()}, false)
+else if (window.attachEvent) //run onload in IE5.5+
+window.attachEvent("onload", function(){scrollerinstance.initialize()})
+else if (document.getElementById) //if legacy DOM browsers, just start scroller after 0.5 sec
+setTimeout(function(){scrollerinstance.initialize()}, 1000)
+}
+
+// -------------------------------------------------------------------
+// initialize()- Initialize scroller method.
+// -Get div objects, set initial positions, start up down animation
+// -------------------------------------------------------------------
+
+pausescroller.prototype.initialize=function(){
+this.tickerdiv=document.getElementById(this.tickerid)
+this.visiblediv=document.getElementById(this.tickerid+"1")
+this.hiddendiv=document.getElementById(this.tickerid+"2")
+this.visibledivtop=parseInt(pausescroller.getCSSpadding(this.tickerdiv))
+//set width of inner DIVs to outer DIV's width minus padding (padding assumed to be top padding x 2)
+this.visiblediv.style.width=this.hiddendiv.style.width=this.tickerdiv.offsetWidth-(this.visibledivtop*2)+"px"
+this.getinline(this.visiblediv, this.hiddendiv)
+this.hiddendiv.style.visibility="visible"
+var scrollerinstance=this
+document.getElementById(this.tickerid).onmouseover=function(){scrollerinstance.mouseoverBol=1}
+document.getElementById(this.tickerid).onmouseout=function(){scrollerinstance.mouseoverBol=0}
+if (window.attachEvent) //Clean up loose references in IE
+window.attachEvent("onunload", function(){scrollerinstance.tickerdiv.onmouseover=scrollerinstance.tickerdiv.onmouseout=null})
+setTimeout(function(){scrollerinstance.animateup()}, this.delay)
+}
+
+
+// -------------------------------------------------------------------
+// animateup()- Move the two inner divs of the scroller up and in sync
+// -------------------------------------------------------------------
+
+pausescroller.prototype.animateup=function(){
+var scrollerinstance=this
+if (parseInt(this.hiddendiv.style.top)>(this.visibledivtop+5)){
+this.visiblediv.style.top=parseInt(this.visiblediv.style.top)-5+"px"
+this.hiddendiv.style.top=parseInt(this.hiddendiv.style.top)-5+"px"
+setTimeout(function(){scrollerinstance.animateup()}, 50)
+}
+else{
+this.getinline(this.hiddendiv, this.visiblediv)
+this.swapdivs()
+setTimeout(function(){scrollerinstance.setmessage()}, this.delay)
+}
+}
+
+// -------------------------------------------------------------------
+// swapdivs()- Swap between which is the visible and which is the hidden div
+// -------------------------------------------------------------------
+
+pausescroller.prototype.swapdivs=function(){
+var tempcontainer=this.visiblediv
+this.visiblediv=this.hiddendiv
+this.hiddendiv=tempcontainer
+}
+
+pausescroller.prototype.getinline=function(div1, div2){
+div1.style.top=this.visibledivtop+"px"
+div2.style.top=Math.max(div1.parentNode.offsetHeight, div1.offsetHeight)+"px"
+}
+
+// -------------------------------------------------------------------
+// setmessage()- Populate the hidden div with the next message before it's visible
+// -------------------------------------------------------------------
+
+pausescroller.prototype.setmessage=function(){
+var scrollerinstance=this
+if (this.mouseoverBol==1) //if mouse is currently over scoller, do nothing (pause it)
+setTimeout(function(){scrollerinstance.setmessage()}, 100)
+else{
+var i=this.hiddendivpointer
+var ceiling=this.content.length
+this.hiddendivpointer=(i+1>ceiling-1)? 0 : i+1
+this.hiddendiv.innerHTML=this.content[this.hiddendivpointer]
+this.animateup()
+}
+}
+
+pausescroller.getCSSpadding=function(tickerobj){ //get CSS padding value, if any
+if (tickerobj.currentStyle)
+return tickerobj.currentStyle["paddingTop"]
+else if (window.getComputedStyle) //if DOM2
+return window.getComputedStyle(tickerobj, "").getPropertyValue("padding-top")
+else
+return 0
+}
+</script><script language="JavaScript" src="js/validate.js"></script>
+<script type="text/javascript" src="js/iepngfix_tilebg.js"></script>
+<style type="text/css">
+ img, div, input { behavior: url("iepngfix.htc") }
+ 
+ 
+</style>
+</head>
+<body id="index_page">
+<div>
+    <div id="header">
+    <div class="container">
+        <div class="row-fluid">
+        <div class="span12">
+            
+        <div id="logo"><a href="./"><img src="images/skm_logo.gif" border="0" alt=""></a></div>
+                <div id="top_right">
+                <div id="top_link">
+                <div id="tl_left"></div>
+                <div id="tl_center" style="color:#FFFFFF;"  ><a href="index.php" style="font:11px Arial, Helvetica, sans-serif normal; color:#FFFFFF; margin-top:9px;color:#FFFFFF; ">Home</a> &nbsp; | &nbsp; <a href="?page=enquiry" style="font:11px Arial, Helvetica, sans-serif normal; color:#FFFFFF; margin-top:9px;color:#FFFFFF; text-decoration:none;">Enquiry</a> &nbsp; | &nbsp; <a href="#" style="font:11px Arial, Helvetica, sans-serif normal; color:#FFFFFF; margin-top:9px;color:#FFFFFF; text-decoration:none;">Site Map</a></div>
+                <div id="tl_right"></div>
+            </div>
+            <div class="cls"></div>
+            <div id="google_translate_element"></div><script>
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                  }, 'google_translate_element');
+                }
+                </script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </div>
+    </div></div></div></div>
+    <div class="cls"></div>
+    <div class="container">
+<div class="row-fluid">
+<div class="span12">
+<div id="main_menu"><div class="row-fluid">
+
+<!-- Static navbar -->
+
+      <div class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+          <!--<span class="menus" data-toggle="collapse" data-target=".navbar-collapse"  style="cursor:pointer">Links</span>-->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<div style="width:100%">
+			<div style="width:30%;float:left">
+            <span class="sr-only" style="text-align:right;float:right">Toggle navigation</span>
+
+            <span class="icon-bar" style="text-align:right;" ></span>
+
+            <span class="icon-bar" style="text-align:right;"></span>
+
+            <span class="icon-bar" style="text-align:right;"></span>
+			</div>
+			
+			<div style="width:70%;float:right;">Navigation To</div>
+			
+			</div>
+
+          </button>
+
+          <!--<a class="navbar-brand" href="#">Project name</a>-->
+               
+        </div>
+
+		<div class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav">
+
+          <li class="dropdown"><a href="?page=about_us" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">ABOUT US <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li class="mobile-link"><a href="?page=about_us">Our Company</a></li>
+				<li><a href="?page=vision_and_mission">Our Vision & Mission</a></li>
+				<li><a href="?page=core_ideologies">Core Ideologies</a></li>
+				<li><a href="?page=brand_identity">Brand Identity</a></li>
+				<li><a href="?page=ceo_message">CEO&rsquo;s  Message</a></li>
+				<li><a href="?page=accolades">Accolades</a></li>
+				<li><a href="?page=board">Board of Directors</a></li>
+				<li><a href="https://skmegg.com/flipbook.html">Coffee Table Book</a></li>
+				
+			</ul>
+		  </li>
+		  
+		  <li class="dropdown"><a href="?page=egg_powder" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">PRODUCTS <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li class="mobile-link"><a href="?page=egg_powder">Egg Powder</a></li>
+				<li><a href="?page=bakery_mix">Bakery Mix</a></li>
+				<li><a href="?page=liquid_egg">Liquid Egg</a></li>
+			</ul>
+		  </li>
+		  
+		  <li class="dropdown"><a href="?page=quality_management" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">QUALITY <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="?page=quality_management" style="width:170px;">Quality Management System</a></li>
+				<li><a href="?page=quality_policy" style="width:170px;">Quality Policy</a></li>
+				<li><a href="?page=trackker" style="width:170px;">Trackker</a></li>
+				<li><a href="?page=integrated_approach" style="width:170px;">Integrated Approach</a></li>
+				<li><a href="?page=quality_assurance" style="width:170px;">Quality Assurance</a></li>
+			</ul>
+		  </li>
+		  
+		  <li class="dropdown"><a href="?page=infra_egg_products" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">INFRASTRUCTURE <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="?page=infra_egg_products">Egg Products</a></li>
+				<li><a href="?page=infra_poultry_farm">Poultry Farm</a></li>
+				<li><a href="?page=infra_EC_Shed">EC Shed</a></li>
+				<li><a href="?page=infra_feed_mill">Feed Mill</a></li>
+			</ul>
+		  </li>
+		  
+		  <li class="dropdown"><a href="?page=human_resources" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">HUMAN RESOURCES <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="?page=training" style="width:170px;">Training</a></li>
+				<li><a href="?page=quality_circle" style="width:170px;">Quality Circle</a></li>
+			</ul>
+		  </li>
+		  
+		  <li class="dropdown"><a href="?page=sustainability" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">SUSTAINABILITY <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+                <li><a href="?page=environmental_policy ">Environmental Policy</a></li>
+			</ul>
+		  </li>  
+		  
+		 <li class="dropdown"><a href="?page=annual_report" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">INVESTOR <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+			    
+			    
+			    <li><a href="?">Disclosures Under Regulation 46 Of The LODR</a></li>
+			    <li><a href="?page=30thagmmeeting">AGM Meeting</a></li>
+			    <li><a href="?page=investor_con_call">Investor Con.Call</a></li>
+			    <li><a href="?page=moaandaoa">MOA and AOA</a></li>
+			    <li><a href="?page=agm_notice">AGM Notice</a></li>
+				<li><a href="?page=annual_report">Annual Reports</a></li>
+				<li><a href="?page=sebi_kyc_format">Sebi KYC Format</a></li> 
+				<li><a href="?page=quarterly_report">Quarterly Results</a></li>
+				<li><a href="?page=scrutinizer_report">Scrutinizer Reports</a></li>
+                               <li ><a href="?page=share">Shareholding Pattern</a></li>
+                               <li ><a href="?page=unpaid">Unclaimed Dividend</a></li>
+                                 <li><a href="?page=StockPrices"> Stock Prices</a></li>
+                               
+							   	<li ><a href="?page=board_committee">Board Committee</a></li>
+							   	<li ><a href="?page=board_meeting_notice">Board Meeting Notice</a></li>
+                               <li><a href="?page=corporate">Corporate Governance</a></li>
+                               <li><a href="?page=limited">Limited Review Reports</a></li>
+                               <li ><a href="?page=policy">Policy/Info</a></li>
+                               <li><a href="?page=investor">Investor Contact</a></li>
+                               <li><a href="?page=investorrelations">Investor Relations</a></li>
+                               <li><a href="?page=code_of_conduct">Code of conduct</a></li>
+                               <li><a href="?page=code_of_practices">Code of practices</a></li>
+                               <li><a href="?page=press_report">News</a></li>
+                               <li><a href="?page=investor_info">Investor Information</a></li>
+							   <li><a href="?page=companies_act"> The Companies Act, 2013 Compliance</a></li>
+							   <li><a href="?page=annual_report">Postal Ballot Notice</a></li>
+							   <li><a href="?page=directors">Directors</a></li>
+							 
+							                                   
+			</ul>
+		  </li>
+		  
+		   <li class="dropdown"><a href="?page=csr" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">CSR <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="?page=csr">Community Development</a></li>
+				<li><a href="?page=trust_act">Trust Outreach Programs</a></li>
+				<li><a href="?page=education">Education</a></li>
+                                <li><a href="?page=mdarticle">MD Article</a></li>
+			</ul>
+		  </li>
+		  
+		  <li class="dropdown"><a href="?page=skm_japan" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false">OUR NETWORK <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="?page=skm_japan">SKM Japan</a></li>
+				<li><a href="?page=skm_europe">SKM Europe</a></li>
+				<li><a href="?page=skm_russia">SKM Russia</a></li>
+			</ul>
+		  </li>
+
+
+          </ul>
+
+        </div><!--/.nav-collapse -->
+
+      </div>
+
+</div></div></div>
+</div>
+</div>
+
+    <div class="cls"></div>
+    <div class="container">
+    <div class="row-fluid">
+    <div class="span12">
+    <div class="container">
+        <!-- Jssor Slider Begin -->
+        <!-- You can move inline styles to css file or css block. -->
+        <!-- ================================================== -->
+        <div id="slider1_container" style="display: none; position: relative; margin: 0 auto; width: 980px; border:1px solid #f6f6f6;
+        height: 300px; overflow: hidden;">
+
+            <!-- Loading Screen -->
+            <!-- Slides Container -->
+            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1050px; height: 300px;
+            overflow: hidden;">
+
+                <div>
+                    <img src="images/banner_02.jpg" width="1050" height="300" alt="">
+                </div>
+                <div>
+                    <img src="images/banner_03.jpg" width="1050" height="300" alt="">
+                </div>
+                <div>
+                    <img src="images/banner_04.jpg" width="1050" height="300" alt="">
+                </div>
+                <div>
+                    <img src="images/banner_05.jpg" width="1050" height="300" alt="">
+                </div>
+                <div>
+                    <img src="images/banner_06.jpg" width="1050" height="300" alt="">
+                </div>
+                <div>
+                    <img src="images/banner_07.jpg" width="1050" height="300" alt="">
+                </div>
+            </div>
+            <!-- Bullet Navigator Skin Begin -->
+            <style>
+                /* jssor slider bullet navigator skin 05 css */
+                /*
+                .jssorb05 div           (normal)
+                .jssorb05 div:hover     (normal mouseover)
+                .jssorb05 .av           (active)
+                .jssorb05 .av:hover     (active mouseover)
+                .jssorb05 .dn           (mousedown)
+                */
+                .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+                    
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+
+                .jssorb05 div {
+                    background-position: -7px -7px;
+                }
+
+                    .jssorb05 div:hover, .jssorb05 .av:hover {
+                        background-position: -37px -7px;
+                    }
+
+                .jssorb05 .av {
+                    background-position: -67px -7px;
+                }
+
+                .jssorb05 .dn, .jssorb05 .dn:hover {
+                    background-position: -97px -7px;
+                }
+            </style>
+            <!-- bullet navigator container -->
+            <div u="navigator" class="jssorb05" style="position: absolute; bottom: 16px; right: 6px;">
+                <!-- bullet navigator item prototype -->
+                <div u="prototype" style="POSITION: absolute; WIDTH: 16px; HEIGHT: 16px;"></div>
+            </div>
+            <!-- Bullet Navigator Skin End -->
+            <!-- Arrow Navigator Skin Begin -->
+            <style>
+                /* jssor slider arrow navigator skin 11 css */
+                /*
+                .jssora11l              (normal)
+                .jssora11r              (normal)
+                .jssora11l:hover        (normal mouseover)
+                .jssora11r:hover        (normal mouseover)
+                .jssora11ldn            (mousedown)
+                .jssora11rdn            (mousedown)
+                */
+                .jssora11l, .jssora11r, .jssora11ldn, .jssora11rdn {
+                    position: absolute;
+                    cursor: pointer;
+                    display: block;
+                    background: url(images/a11.png) no-repeat;
+                    overflow: hidden;
+                }
+
+                .jssora11l {
+                    background-position: -11px -41px;
+                }
+
+                .jssora11r {
+                    background-position: -71px -41px;
+                }
+
+                .jssora11l:hover {
+                    background-position: -131px -41px;
+                }
+
+                .jssora11r:hover {
+                    background-position: -191px -41px;
+                }
+
+                .jssora11ldn {
+                    background-position: -251px -41px;
+                }
+
+                .jssora11rdn {
+                    background-position: -311px -41px;
+                }
+            </style>
+            <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora11l" style="width: 37px; height: 37px; top: 123px; left: 8px;">
+            </span>
+            <!-- Arrow Right -->
+            <span u="arrowright" class="jssora11r" style="width: 37px; height: 37px; top: 123px; right: 8px">
+            </span>
+            <!-- Arrow Navigator Skin End -->
+        </div>
+        <!-- Jssor Slider End -->
+    </div>
+    
+         <div class="cls"></div>
+    <div class="container">
+    <div class="row-fluid">
+        <div class="span12">
+            <div id="body_content_main">
+        <!-- body rifht -->
+                <div id="body_home">
+        <div class="span4">
+            <div id="body_left">
+                <div class="page_title"><h1>Welcome to <span class="red"> SKM EGG Products</span></h1></div>
+                <div class="cls"><img src="images/spacer.gif" width="1" height="10" alt=""></div>
+                <div>
+                  <p style="line-height:24px;" align="justify">SKM is an integrated quality manufacturer and supplier of egg products in the international market. SKM is a committed player who uses their in-depth knowledge and experience to meet customer's unique needs in the process building an innovaive, service oriented company.  Today through the sheer commitment and values of excellence SKM has grown from an Individual to institution.</p></div>
+                <div class="readmore"><a href="?page=about_us">Read More</a></div>
+                <div class="cls"><img src="images/spacer.gif" width="1" height="10" alt=""></div>
+        	</div>
+            <!--<div id="body_div"></div>-->
+        </div>
+        
+         <div class="span4">    
+            <div id="body_center">
+                <div class="page_title"><h1>Application <span class="red">Areas</span></h1></div>
+                <div class="cls"><img src="images/spacer.gif" width="1" height="15" alt=""></div>
+                <div class="link1"><a href="?page=bakery_confectionary">Bakery &amp; Confectionary</a></div>
+                <div class="cls"><img src="images/spacer.gif" width="1" height="10" alt=""></div>
+                <div class="link2"><a href="?page=noodles_pasta">Noodles &amp; Pasta</a></div>
+                <div class="cls"><img src="images/spacer.gif" width="1" height="10" alt=""></div>
+                <div class="link3"><a href="?page=meat_fish">Meat &amp; Fish</a></div>
+                <div class="cls"><img src="images/spacer.gif" width="1" height="10" alt=""></div>
+                <div class="link4"><a href="?page=mayonnaise_dressing">Mayonnaise &amp; Salad Dressing</a></div>
+                <div class="cls"><img src="images/spacer.gif" width="1" height="10" alt=""></div>
+        	</div>
+            <!--<div id="body_div"></div>-->
+            </div>
+            
+            <div class="span4">
+            <div id="body_right">
+                <div class="page_title"><h1>Quick<span class="red"> Contacts</span></h1></div>
+                <div class="cls"><img src="images/spacer.gif" width="1" height="10" alt=""></div>
+                <!--<div id="nos"><div class="desc">Sales & Marketing</div><div class="phone">+91 99944 51542</div></div>
+                <div id="nos"><div class="desc">Production & Eng.</div><div class="phone">+91 99944 51535</div></div>
+                <div id="nos"><div class="desc">Quality Assurance</div><div class="phone">+91 99944 51539</div></div>
+                <div id="nos"><div class="desc">HR &amp; Administration</div><div class="phone">+91 97915 22888</div></div>
+                <div id="nos"><div class="desc">Technical Veterinary</div><div class="phone">+91 99944 51540</div></div>-->
+                <div class="news_content"><script type="text/javascript">
+                  new pausescroller(pausecontent1, "pscroller1", "someclass", 8000)
+                                </script></div>
+                <div class="viewall"><span class="readmore"><a href="?page=contactus">More Contacts</a></span></div>
+        	</div>
+            </div>
+            
+        </div>
+        <!-- body rifht -->
+    </div>
+    <div class="cls"></div>
+       </div>
+     </div> 
+   </div>    </div></div></div>
+	<div class="cls"></div>
+    
+    <div class="container">
+    <div class="row-fluid">
+    <div class="span12">
+    <div id="footer">
+      <div class="span8">
+        <div id="footer_left" align="left"><p style="line-height:22px;">
+                    <a href="?page=home" class="footerlink">Home</a> &nbsp; | &nbsp; 
+                    <a href="?page=about_us" class="footerlink">About</a> &nbsp; | &nbsp; 
+                    <a href="?page=egg_powder" class="footerlink">Products</a> &nbsp; | &nbsp; 
+                    <a href="?page=quality_management" class="footerlink">Quality</a> &nbsp; | &nbsp; 
+                    <a href="?page=infra_egg_products" class="footerlink">Infrastructure</a> &nbsp; | &nbsp; 
+                    <a href="?page=human_resources" class="footerlink">Human Resources</a> &nbsp; | &nbsp; 
+                    <a href="?page=sustainability" class="footerlink">Sustainability</a> &nbsp; | &nbsp; 
+                    <a href="?page=enquiry" class="footerlink">Enquiry</a> &nbsp; | &nbsp; 
+                    <a href="?page=contactus" class="footerlink">Contact Us</a> 
+                    <br>
+                    <span class="graytext">Copyright &copy; SKMEgg.com, 2015.</span></p>
+        </div></div>
+        
+        <div class="span4">
+        <div id="footer_right" class="graytext">
+          <div style="float:left; margin:15px 7px;">All Rights Reserved <span class="power"> - Powered by  <a href="http://santhila.co/" target="_blank">Santhila DataBot</a></span></div></div>
+        </div>
+    </div></div></div></div>
+
+</div>
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+        <script src="js/jquery-1.9.1.min.js"></script>
+    
+
+    <!-- jssor slider scripts-->
+    <!-- use jssor.js + jssor.slider.js instead for development -->
+    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+    <script>
+
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Scale: false,                                  //Scales bullets navigator or not while slider scale
+                },
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 12,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 4,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    $Scale: false,                                  //Scales bullets navigator or not while slider scale
+                }
+            };
+
+            //Make the element 'slider1_container' visible before initialize jssor slider.
+            jQuery("#slider1_container").css("display", "block");
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth) {
+                    jssor_slider1.$ScaleWidth(parentWidth - 30);
+                }
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            jQuery(window).bind("load", ScaleSlider);
+            jQuery(window).bind("resize", ScaleSlider);
+            jQuery(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+    </body></html>
+  

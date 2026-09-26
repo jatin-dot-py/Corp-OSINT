@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css"  href="css/style.css" />
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Website designed and developed by Deepak Sharma  of theITpark.com" />
+	<title>Shelter infra Projects Limited</title>
+	<link type="text/css" href="menu.css" rel="stylesheet" />
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="menu.js"></script>
+
+	<style type="text/css">
+		div#menu { margin:0px auto;
+			margin-left:260px;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="FeaturedContentSlider/style.css" />
+		<script type="text/javascript" src="FeaturedContentSlider/js/jquery-1.2.6.min.js"></script>
+		<script type="text/javascript" src="FeaturedContentSlider/js/jquery-easing-1.3.pack.js"></script>
+		<script type="text/javascript" src="FeaturedContentSlider/js/jquery-easing-compatibility.1.2.pack.js"></script>
+		<script type="text/javascript" src="FeaturedContentSlider/js/coda-slider.1.1.1.pack.js"></script>
+		
+		<script type="text/javascript">
+			var theInt = null;
+			var $crosslink, $navthumb;
+			var curclicked = 0;
+			
+			theInterval = function(cur){
+				clearInterval(theInt);
+				
+				if( typeof cur != 'undefined' )
+					curclicked = cur;
+				
+				$crosslink.removeClass("active-thumb");
+				$navthumb.eq(curclicked).parent().addClass("active-thumb");
+				$(".stripNav ul li a").eq(curclicked).trigger('click');
+				
+				theInt = setInterval(function(){
+					$crosslink.removeClass("active-thumb");
+					$navthumb.eq(curclicked).parent().addClass("active-thumb");
+					$(".stripNav ul li a").eq(curclicked).trigger('click');
+					curclicked++;
+					if( 6 == curclicked )
+						curclicked = 0;
+					
+				}, 3000);
+			};
+			
+			$(function(){
+				
+				$("#main-photo-slider").codaSlider();
+				
+				$navthumb = $(".nav-thumb");
+				$crosslink = $(".cross-link");
+				
+				$navthumb
+				.click(function() {
+					var $this = $(this);
+					theInterval($this.parent().attr('href').slice(1) - 1);
+					return false;
+				});
+				
+				theInterval();
+			});
+		</script>
+	</head>
+	<body bgcolor=#ffffff leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+		<a href="http://apycom.com/"></a>
+		<!-- save for web slices (index.psd) -->
+		<table id="table_01" width=964 height=1050 border=0 cellpadding=0 cellspacing=0 align="center">
+			<tr>
+				<td align="right" width=964 height=40 colspan=2 >
+					<div style="margin-left:50px; float:left">
+						<table  border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td><img src="images/envelop.jpg"/></td>
+								<td>&nbsp;</td>
+								<td  style="color:#fff; text-align:left; font-weight:bold;">info@ccapltd.in</td>
+								<td>&nbsp;</td>
+								<td><img src="images/phone.jpg" width="27" height="27" /></td>
+								<td>&nbsp;</td>
+								<td  style="color:#fff; text-align:left; font-weight:bold;">033- 40032290</td>
+							</tr>
+							
+						</table>
+					</div>
+					<div style="float:right;  margin-right:32px; color:#FFF; font-weight:bold;"><a href="index.html" style="color:#FFF; font-weight:bold; text-decoration:none;">Home</a>  &nbsp;|  &nbsp; <a href="#" style="color:#FFF; font-weight:bold; text-decoration:none;">Site map</a>  &nbsp;|&nbsp;  <a href="enquiry.html" style="color:#FFF; font-weight:bold; text-decoration:none;">Enquiry</a>  &nbsp;|&nbsp;  <a href="contact.html" style="color:#FFF; font-weight:bold; text-decoration:none;">Contact</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td  colspan=2 valign="top" background="images/index_02.jpg" style="background-repeat:no-repeat; background-position:bottom;">
+					<div id="menu" style="padding-top:30px;" >
+						<ul class="menu">
+							
+							<li><a href="#"><span>ABOUT US</span></a>
+								<ul>
+									<li><a href="profile.html"><span >PROFILE</span></a></li>
+									<li><a href="mission.html"><span>MISSION / VISION</span></a></li>
+									<li><a href="bod.html"><span>BOARD OF DIRECTORS</span></a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span> Investor Relations</span></a>
+								<ul>
+									<li><a href="code.html"><span>CODE OF CONDUCT </span></a></li>
+									<li><a href="Articles-of-Association-of- SIPL.pdf" target="_blank"><span>ARTICLE OF COMPANY</span></a></li>
+									<li><a href="corporate.html"><span>CORPORATE GOVERNANCE </span></a></li>
+									<li><a href="share.html"><span>SHAREHOLDING PATTERN  </span></a></li>
+									<li><a href="financial.html"><span>FINANCIAL RESULT </span></a>
+									</li>
+									<li><a href="postal.html"><span>Postal Ballot </span></a>
+									</li>
+									<li><a href="annual.html"><span>ANNUAL REPORT  </span></a>
+									</li>
+									<li><a href="notice.html"><span>POLICIES AND GUIDELINES  </span></a></li>
+									<li><a href="evoting.html" target="_blank"><span>RESULTS OF E-VOTING </span></a></li>
+									<li><a href="CCAP_Unpaid Div_2007-08.pdf" target="_blank"><span>CCAP_Unpaid Div_2007-08 </span></a></li>
+									<li><a href="CCAP_Unpaid Div_2007-08_1.pdf" target="_blank"><span>CCAP_Unpaid Div_2007-08 </span></a></li><li><a href="notice-board.html"><span>Notice Board </span></a></li>
+									<li><a href="newspaper-publication.html"><span>Newspaper Publication </span></a></li>
+									<li><a href="disclosure.html"><span>Disclosure under Regulation 30 </span></a></li>
+									<li><a href="disclosure-lodr.html"><span>Disclosure under SEBI(LODR) Regulations, 2015</span></a></li>
+									<li><a href="scrutinizers.html"><span>Scrutinizers Report</span></a></li>
+									<li><a href="agm-notice.html"><span>AGM Notice</span></a></li>
+									<li><a href="disclosure46.html"><span> Disclosure under Regulation 46 of SEBI (LODR) Regulations</span></a></li>
+									<li><a href="AGM-video.html"><span> AGM Video</span></a></li>
+								</ul>
+							</li>
+							<li class="last"><a href="#"><span>BUSINESS UNITS</span></a>
+								<ul>
+									<li><a href="infras.html"><span>INFRASTRUCTURE</span></a></li>
+									<li><a href="realestate.html"><span>REAL ESTATE</span></a>
+									</li>
+								</ul></li>
+								<li><a href="clientelle.html"><span>CLIENTELES</span></a></li>
+								<li class="last"><a href="#"><span>BUSINESS OPPORTUNITY</span></a>
+									<ul>
+										<li><a href="prospective.html"><span>PROSPECTIVE CLIENTS</span></a></li>
+										<li><a href="product_vendor.html"><span>PRODUCT VENDOR</span></a></li>
+										<li><a href="service_vendor.html"><span>SERVICE VENDOR</span></a></li>
+									</ul></li>
+									<li><a href="#"><span>CAREER</span></a>
+										<ul>
+											<li><a href="working.html"><span>WORKING WITH US</span></a></li>
+											<li><a href="current.html"><span>CURRENT OPENINGS</span></a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td height="409" width="299" valign="top" background="images/index_03.jpg">
+							<div style="margin-top:45px; margin-left:52px;">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									
+									<tr>
+										<td  colspan="3" height="25" align="center" valign="top">
+										</table>
+									</div>
+								</td>
+								<td background="images/index_04.jpg" width=665 height=409>
+									<div id="page-wrap">
+										<div class="slider-wrap">
+											<div id="main-photo-slider" class="csw">
+												<div class="panelContainer">
+													<div class="panel" title="Real Estate">
+														<div class="wrapper">
+															<img src="FeaturedContentSlider/images/realestate.jpg" alt="temp" width="571" height="299" />
+															<div class="photo-meta-data">
+																REAL ESTATE
+															</div>
+														</div>
+													</div>
+													<div class="panel" title="Bridge">
+														<div class="wrapper">
+															<img src="FeaturedContentSlider/images/bridge.jpg" alt="temp" width="571" height="299" />
+															<div class="photo-meta-data">
+																BRIDGES AND VIADUCT
+															</div>
+														</div>
+													</div>
+													<div class="panel" title="Highway">
+														<div class="wrapper">
+															<img src="FeaturedContentSlider/images/highway.jpg" alt="temp" width="571" height="299" />
+															<div class="photo-meta-data">
+																HIGHWAYS
+															</div>
+														</div>
+													</div>
+													<div class="panel" title="Infrastructure">
+														<div class="wrapper">
+															<img src="FeaturedContentSlider/images/infrasture.jpg" alt="temp" /><div class="photo-meta-data">
+																INFRASTRUCTURE
+															</div>
+														</div>
+													</div>
+													<div class="panel" title="Railway">
+														<div class="wrapper">
+															<img src="FeaturedContentSlider/images/railway.jpg" alt="temp" /><div class="photo-meta-data">
+																RAILWAY EMBANKMENT WORK
+															</div>
+														</div>
+													</div>
+													<div class="panel" title="Water Treatment">
+														<div class="wrapper">
+															<img src="FeaturedContentSlider/images/watertreatment.jpg" alt="temp" />
+															<div class="photo-meta-data">
+																WATER TREATMENT PLANT
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div style="height:60px; color:#000; font-weight:bold; font-size:14px; padding-top:10px; padding-bottom:10px; text-align:left;">CORE BUSINESS</div>
+											<div id="movers-row">
+												<div  style="width:90px; "><a href="#1" class="cross-link"><img src="FeaturedContentSlider/images/realestate_s.jpg" class="nav-thumb" alt="Real Estate"  title="Real Estate" /></a></div>
+												<div style="width:90px; "><a href="#2" class="cross-link"><img src="FeaturedContentSlider/images/bridge_s.jpg" class="nav-thumb" alt="Bridge" title="Bridge" /></a></div>
+												<div style="width:90px; "><a href="#3" class="cross-link"><img src="FeaturedContentSlider/images/highway_s.jpg" class="nav-thumb" alt="Highway" title="Highway" /></a></div>
+												<div style="width:90px; "><a href="#4" class="cross-link"><img src="FeaturedContentSlider/images/infrasture_s.jpg" class="nav-thumb" alt="Infrastructure" title="Infrastructure" /></a></div>
+												<div style="width:90px; "><a href="#5" class="cross-link"><img src="FeaturedContentSlider/images/railway_s.jpg" class="nav-thumb" alt="Railway" title="Railway" /></a></div>
+												<div style="width:90px; "><a href="#6" class="cross-link"><img src="FeaturedContentSlider/images/watertreatment_s.jpg" class="nav-thumb" alt="Water Treatment" title="Water Treatment" /></a></div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td height="432" colspan=2 valign="top" width=964>
+									<div style="float:left; width:550px; padding-left:50px;"><p><br />welcome to Shelter infra Projects Limited</p><br /><div style="text-align:justify;">Shelter infra Projects Limited(Formerly Central Concrete & Allied Products) is a recognized name in the construction field competent in managing mega-dimensional projects involving design and construction related to Civil, Mechanical and Electrical engineering.</div>
+									<div align="right"><a href="profile.html" style=" text-align:right; text-decoration:none; font-weight:bold; color:#f00;">read more...</a></div>
+									<div style="margin:13px 0px;"><img src="images/shadow.jpg" width="549" height="30" /></div>
+									<div>
+										<table width="100%" border="0" cellspacing="3" cellpadding="3">
+											<tr>
+												<td width="43%" valign="top"><img src="images/flyover.jpg" /></td>
+												<td width="2%" valign="top"><img src="images/line.jpg" /></td>
+												<td width="55%" valign="top"><p style="font-size:16px; padding:0px; margin:0px;">&nbsp;Clienteles</p><ul style="margin:0px; padding:0px; margin-left:8px;">
+													<li style="margin-top:0px; padding-top:0px;">Govt. of West Bengal</li>
+													<li>Metro  Railway,  Kolkata</li>
+													<li>Hariyana State Electricity Board</li>
+													<li>P.W.D.  W.B. Govt.</li>
+												</ul><div align="right"><a href="clientelle.html" style=" text-align:right;text-decoration:none; font-weight:bold; color:#f00;">read more...</a></div></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<div align="center" style="float:right; width:300px; margin-right:25px;"><div >
+									<div style="height:25px;"></div>
+									<div style="height:355px; padding:10px;  ">
+										
+										<div style="height:160px; margin-top:10px; background-color:#FFF">
+											<table bgcolor="#FFFFFF" width="100%" border="0" cellspacing="0" cellpadding="5"  >
+												<tr>
+													<td  style="border-right:1px solid #CCC;" >
+														 <style>
+    .carousel {
+        position: relative;
+        width: 300px;
+        overflow: hidden;
+    }
+
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 300px; /* Same as carousel width */
+    }
+
+    .slide img {
+        width: 100%;
+    }
+
+    .slide-title {
+        text-align: center;
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    /* Navigation buttons */
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+</style>
+
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="slide">
+            <img src="images/slide1.jpg" alt="Slide 1">
+            <div class="slide-title">Eternity</div>
+        </div>
+        <div class="slide">
+            <img src="images/slide2.jpg" alt="Slide 2">
+            <div class="slide-title">IB 163</div>
+        </div>
+        <div class="slide">
+            <img src="images/slide3.jpg" alt="Slide 3">
+            <div class="slide-title">Eternity</div>
+        </div>
+        <div class="slide">
+            <img src="images/slide4.jpg" alt="Slide 4">
+            <div class="slide-title">IB 163</div>
+        </div>
+        <div class="slide">
+            <img src="images/slide5.jpg" alt="Slide 5">
+            <div class="slide-title">IB 163</div>
+        </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+    <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+</div>
+
+<script>
+    let index = 0;
+    const slides = document.querySelector(".carousel-inner");
+    const totalSlides = document.querySelectorAll(".slide").length;
+
+    function nextSlide() {
+        index = (index + 1) % totalSlides;
+        updateSlide();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateSlide();
+    }
+
+    function updateSlide() {
+        slides.style.transform = `translateX(-${index * 300}px)`;
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+</script>
+
+
+													</td>
+												</tr>
+												
+											</table>
+										</div>
+									</div></div></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan=2 valign="top" height="70" align="center"><br />
+									<div style="color:#FFF; font-weight:bold;">Terms & Conditions  |  Privacy Policy  |  Disclaimer  </div><div  style="float:right;"><a href="http://www.theitpark.com" style="text-decoration:none; color:#fff; font-size:11px;" target="_blank">Website developed by : theITpark.com</a></div></td>
+								</tr>
+							</table>
+							<!-- end save for web slices -->
+						</body>
+						</html>

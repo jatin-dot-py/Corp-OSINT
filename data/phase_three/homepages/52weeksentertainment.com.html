@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>52 Weeks Entertainment</title>
+<meta name="description" content="52 Weeks Entertainment Ltd - An entertainment company which is into film production and producing quality TV serials" />
+<meta name="keywords" content="52 Weeks Entertainment Ltd, Film Production House in Mumbai, Film Production, Television Shows Production" />
+
+<meta property="og:site_name" content="52 Weeks Entertainment Ltd" />
+<meta property="og:title" content="52 Weeks Entertainment Ltd" />
+<meta property="og:url" content="http://52weeksentertainment.com/" />
+<meta property="og:image" content="http://52weeksentertainment.com/images/logo.jpg" />
+  
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"/>
+    <link rel="apple-touch-icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="images/favicon.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="images/favicon.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="images/favicon.png">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css' />
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" /><!-- Bootstrap -->
+<link rel="stylesheet" href="css/font-awesome-4.2.0/css/font-awesome.css" type="text/css" /><!-- Font Awesome -->
+<link rel="stylesheet" href="css/animate.css" type="text/css" /><!-- Animation -->	
+<link rel="stylesheet" href="js/owl-carousel/owl.carousel.css" type="text/css" /><!-- Owl Carousal -->	
+	<link rel="stylesheet" href="js/owl-carousel/owl.theme.css" type="text/css" /><!-- Owl Carousal -->	
+<link rel="stylesheet" type="text/css" media="all" href="css/datepicker.css" />
+
+<link rel="stylesheet" type="text/css" href="css/revolution.css" media="screen" /> <!-- Slider Revolution -->	
+<link rel="stylesheet" href="css/style.css" type="text/css" /><!-- Style -->	
+<link rel="stylesheet" href="css/responsive.css" type="text/css" /><!-- Responsive -->	
+
+
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<link rel='stylesheet' id='style-css'  href='css/video.css' type='text/css' media='all' />
+
+<link rel="stylesheet" href="css/brown.css" type="text/css" /><!-- brown -->
+	<link rel="stylesheet" href="js/boxslider/jquery.bxslider.css" type="text/css">
+	
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	 <script>
+	$(document).ready(function() {
+		$("#videohome")[0].src += "&autoplay=1";
+	});
+		
+$(window).load(function() {
+//$("#boxes").show();
+	
+});
+
+		</script>
+	
+	<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: '2E_vgc8GfKk',
+		playerVars: { 
+         'autoplay': 1,
+         'controls': 0, 
+         'rel' : 0,
+         'fs' : 0,
+  },
+        events: {
+            'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+var done = false;
+
+function onPlayerStateChange(event) {        
+    if(event.data === YT.PlayerState.ENDED) {          
+        stopVideo();
+    }
+}
+
+function stopVideo() {
+    player.stopVideo();
+    document.getElementById("player").style.display = "none";
+					$("#boxes").slideToggle();
+	//$("#boxes").delay(6000).hide();
+	
+	
+}
+</script>
+	
+	
+	
+    
+    
+ 
+<!-- Script -->
+<script type="text/javascript"  src="js/modernizr.js"></script><!-- modernizr -->
+<script src="js/jquery-1.11.0.js"></script><!-- Jquery -->
+
+<script src="js/boxslider/jquery.bxslider.js"></script><!-- Jquery -->
+
+
+ <script>
+ $(document).ready(function(){
+  $('.bxslider').bxSlider({
+  mode: 'fade',
+  auto:true,
+});
+});
+ </script>
+   
+	<style>
+	/*		#mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  background-color: #000;
+  
+}*/
+#boxes {
+  background-color: #000;
+  display: table;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+		
+#boxes .window {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  /*display: none;*/
+  z-index: 9999;
+  padding: 20px;
+  text-align: center;
+}
+
+#boxes #dialog {
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#boxes #dialog video
+{
+	position:relative;
+	top:25%;
+}
+
+#popupfoot {
+  font-size: 16pt;
+  position: fixed;
+  bottom: 0px;
+  width: 250px;
+  left: 250px;
+}
+
+
+	</style>
+	
+   
+	
+	
+   <style>
+	#preloader {
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999999;
+}
+#loading-animation {
+    background-image: url("logo.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    height: 400px;
+    left: 50%;
+    margin: -192px 0 0 -174px;
+    position: absolute;
+    top: 50%;
+    width: 350px;
+    -webkit-animation:fadeinout 1.5s linear infinite;
+    -moz-animation:fadeinout 1.5s linear infinite;
+    animation:fadeinout 1.5s linear infinite;
+}
+body.loadanimation
+{
+ position:fixed;
+ overflow:hidden;
+}
+
+@-webkit-keyframes fadeinout {
+  0%   { opacity: 0; }
+  50%   { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes fadeinout {
+  0%   { opacity: 0; }
+  50%   { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+@-o-keyframes fadeinout {
+  0%   { opacity: 0; }
+  50%   { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+@keyframes fadeinout {
+  0%   { opacity: 0; }
+  50%   { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+	</style>
+    
+ 
+	
+    <script>
+$(window).load(function() {
+        // will first fade out the loading animation
+    jQuery("#loading-animation").fadeOut();
+	        // will fade out the whole DIV that covers the website.
+    jQuery("#preloader").delay(50).fadeOut("slow");
+
+});
+$(document).ready( function() {
+setTimeout(function() {$('body').removeClass('loadanimation');
+					   }, 50);	
+});
+
+		</script>
+   
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69294436-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+</head>
+<body class="loadanimation">
+
+
+<div id="boxes">
+  <div id="dialog" class="window">
+  <!--<video  width="700px" height="auto"  autoplay="autoplay" id="myVideo">  		
+			<source src="images/52weeks.ogg" type="video/ogg">
+            <source src="images/52weeks.mp4" type="video/mp4">
+            <source src="images/52weeks.ogv" type="video/ogv">
+            
+		</video>-->
+		
+   <!--<iframe id="videohome" width="700px" height="500px"  src="https://www.youtube.com/embed/2E_vgc8GfKk?loop=1&showinfo=0&playlist=2E_vgc8GfKk" frameborder="0" allowfullscreen></iframe>-->
+   <!--<iframe id="videohome" width="700px" height="500px"  src="https://www.youtube.com/embed/2E_vgc8GfKk?loop=1&showinfo=0" frameborder="0" allowfullscreen></iframe>-->
+    <div id="player"></div>
+  
+  </div>
+  <div id="mask"></div>
+</div>
+
+
+<div class="theme-layout">
+
+<header class="simple-header">
+	<div class="header-top">
+		<div class="container">
+			<div class="info-top">
+				
+				<span class="email-span"><i class="fa fa-envelope"></i><a href="mailto:info@52weeksentertainment.com">info@52weeksentertainment.com</a>
+                
+                </span>
+                <span class="social-span">
+                
+                 <a href="https://www.facebook.com/52weeksentertainment" target="_blank"><i class="fa fa-facebook"></i></a>
+                 <i class="fa fa-twitter"></i>
+                 <i class="fa fa-youtube"></i>
+                 <i class="fa fa-linkedin"></i>
+
+                </span>
+                
+                
+			</div>
+			<div class="map-fixed">
+				<span><i class="fa fa-map-marker"></i></span>
+				<div class="map-open">
+							<h5>52 Weeks Entertainment Ltd</h5>
+							<span><i>Registered Address :</i> Unit No.501, 5th Floor, Morya Blue Moon, Opp. Citi Mall, Andheri Lokhandwala Road., Andheri (W) Mumbai  - 400 053</span>
+							<span><i>Phone :</i> 022-40167088 / 40163355 / 49241286</span>
+                            <span><i>Fax :</i>022-22819226</span>
+							<span><i>E-mail :</i> <a href="mailto:52weeksentltd@gmail.com">52weeksentltd@gmail.com</a></span>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="menu-sec">
+		<div class="container">
+			<div class="logo">
+				<a href="home.html"><img src="images/logo.jpg" alt="52weeks entertainment logo" /></a>
+			</div>
+			<nav>
+				<span class="open-menu"></span>
+                
+				<div id='cssmenu'>
+<ul>
+   <li><a href="home.html"><span>Home</span></a></li>
+   <li><a href="corporate.html">Corporate</a></li>
+	<li class=' has-sub submenu-button'><a href="television.html">Television</a>
+     <ul>
+         <li><a href="four-lions.html"><span>Four Lions</span></a></li>
+      </ul>
+    </li>
+                    
+   <li><a href="movies.html"><span>Movies</span></a></li>
+	<li class=' has-sub submenu-button'><a href="#"><span>Investor Relations</span></a>
+		<ul class="sub-menu1">
+			<div class="row">
+				<div class="column">
+					<a href="shareholding-pattern.html"><span>Share Holding Pattern</span></a>
+					<a href='corporateGovernanceReport.html'><span>Corporate Governance Report </span></a>
+					<a href="annual-report.html"><span>Annual Report</span></a>
+					<a href="financial-result.html"><span>Financial Result</span></a>
+					<a href="Agreement.html"><span>Agreement With Media Companies</span></a>
+					<a href="registrar.html"><span>Registrar And Transfer Agents</span></a>
+					<a href="stock-exchange.html"><span>Intimation to Stock Exchanges</span></a>
+					<a href="Newspaper-Advertisement.html"><span>Newspaper Advertisement</span></a>
+                    <a href="board-meeting-notice.html"><span>Board Meeting Notice</span></a>
+				</div>
+				<div class="column">
+					<!-- <a href="share-captial-audit-report.html"><span>Share Capital Audit Report</span></a> -->
+					<a href="voting-result.html"><span>Voting Result</span></a>
+					<a href="closure-of-trading-window.html"><span>Closure of Trading Window</span></a>
+					<a href="share-reconciliation.html"><span>Share Reconciliation</span></a>
+					<a href="board-and-committee.html"><span>Board and Committee Details</span></a>
+					<a href="miscellaneous.html"><span>Miscellaneous</span></a>
+					<a href="annual-return.html"><span>Annual Return</span></a>
+					<a href="SecretarialComplianceReport.html"><span>Secretarial Compliance Report</span></a>
+                    <a href="investor-complaints.html"><span>Investor Complaints</span></a>
+                    <a href="others.html"><span>Others</span></a>
+				</div>
+			</div>
+		</ul>
+	</li>
+   
+    <li><a href="careers.html" class="smooth" title="">Careers</a></li>
+                    <li><a href="in-the-news.html" class="smooth" title="">In The News</a></li>
+                    <li class="last"><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+
+
+			</nav>
+		</div>
+	</div>
+</header><!-- Header End -->
+
+<div class="slider">
+	
+	<div class="fullwidthbanner-container">
+            <div class="fullwidthbanner">
+                            <div class="owl-carousel owl-theme homeSlider">
+                                <div class="item" style="background-image:url(images/slider/ranangan.jpg)"> </div>
+								<div class="item" style="background-image:url(images/slider/kulfi-kumar-bajewala.jpg)"> </div>
+                                <div class="item"  style="background-image:url(images/slider/iss-pyar-ko-kya-naam-du3.jpg)">  </div>
+                                <div class="item"  style="background-image:url(images/slider/dil-bole-oberoi.jpg)">  </div>
+                                <div class="item"  style="background-image:url(images/slider/ishqbaaz.jpg)">  </div>
+                                <div class="item"  style="background-image:url(images/slider/luv-u-soniyo.jpg)">  </div>
+								<div class="item"  style="background-image:url(images/slider/qubool-hai.jpg)">  </div>
+								<div class="item"  style="background-image:url(images/slider/iss-pyar-ko-kya-naam-du.jpg)">  </div>
+								<div class="item"  style="background-image:url(images/slider/geet.jpg)">  </div>
+                              </div>
+                              
+                              
+                           </div>
+                          </div>
+	
+	
+	</div><!-- Slider -->
+
+<section class="block gray strip-sec">
+				<div class="container">
+						<div class="highlight-content">
+                                <div class="highlight-container">
+                                    <h1>52 Weeks Entertainment Ltd</h1>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class=""></div>
+                            
+                          <div class="row">
+                                <div class="boxed col-md-3 columns">
+                                <a href="corporate.html" >
+                                    <div class="boxed-content" style="background-image: url(images/corporatebg.jpg)">
+                                        <img class="imgopacity" alt="Corporate" src="images/icon1.png">
+                                        <h3 class="titleUppercase">Corporate</h3>
+                                        <div class="sep"><span class="sep2"></span></div>
+                                        <p>Founded in 1993 and converted into a Public Limited Company on 25th November, 1994</p>
+                                        
+                                        <div class="button" >View</div>
+                                    </div>
+                                    <div class="shadow-220"></div>
+                                   </a>
+                                </div>
+                                
+                                <div class="boxed col-md-3 columns">
+                                 <a  href="television.html">
+                                    <div class="boxed-content" style="background-image: url(images/televionbg.jpg)">
+                                        <img class="imgopacity" alt="Television" src="images/tv-icon.png">
+                                        <h3 class="titleUppercase">Television</h3>
+                                        <div class="sep"><span class="sep2"></span></div>
+                                        <p>A  creative Production House fueled by the passion of professionals with talents. </p>
+                                        
+                                       <div class="button" >View</div>
+                                    </div>
+                                    <div class="shadow-220"></div>
+                                    </a>
+                                </div>
+                                
+                                <div class="boxed col-md-3 columns">
+                                <a href="movies.html">
+                                    <div class="boxed-content" style="background-image: url(images/moviebg.jpg)">
+                                        <img class="imgopacity" alt="Movies" src="images/icon3.png">
+                                        <h3 class="titleUppercase">Movies</h3>
+                                        <div class="sep"><span class="sep2"></span></div>
+                                        <p>Creating entertainment content that will stay on in the heart of the audience forever.</p>
+                                        
+                                        <div class="button" >View</div>
+                                    </div>
+                                    <div class="shadow-220"></div>
+                                    </a>
+                                </div>
+                                
+                                <div class="boxed col-md-3 columns">
+                                <a  href="careers.html">
+                                    <div class="boxed-content" style="background-image: url(images/careerbg.jpg)">
+                                        <img class="imgopacity" alt="Careers" src="images/reel-icon.png">
+                                        <h3 class="titleUppercase">Careers</h3>
+                                        <div class="sep"><span class="sep2"></span></div>
+                                       <p>we offer excellent career opportunities for people who are  are looking for a challenging future.</p>
+                                        
+                                         <div class="button" >View</div>
+                                    </div>
+                                    <div class="shadow-220"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            
+                  </div>          
+                            
+	
+</section>
+
+<section class="block no-padding">
+<div class="parallex-height">
+	<div class="parallex-bg">
+    <div class="container">
+        <div class="col-md-7">
+    <div class="heading">
+			<h2>Latest <i>Promotional Videos</i></h2>
+		</div>
+        <div id="video-gallery" class="royalSlider videoGallery rsDefault">
+			<div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/ranangan.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>Ranangan  </div>
+					<span><time class="entry-date" >Apr 5, 2018</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="ishqbaaz"  class="rsImg" src="images/video/ranangan.jpg" data-rsvideo="https://www.youtube.com/watch?v=w7Zu4gOpbno">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>		Ranangan Trailer  </h2>
+				<div class="slider-byline"><span class="author-link-slider">Presenting the video of Naad Karaycha Naay sung by Avadhoot Gupte. </span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://www.youtube.com/watch?v=w7Zu4gOpbno">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+			
+			<div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/ranangan2.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>Ranangan  </div>
+					<span><time class="entry-date" >Mar 8, 2018</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="Ranangan"  class="rsImg" src="images/video/ranangan2.jpg" data-rsvideo="https://www.youtube.com/watch?v=TlgmwdjzpyY">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>		Ranangan Trailer  </h2>
+				<div class="slider-byline"><span class="author-link-slider">Presenting the movie teaser of Ranangan.
+
+Cast - Sachin Pilgaonkar, Swwapnil Joshi, Siddharth Chandekar, Pranali Ghogare, Suchetra Bandekar & Anand Ingale
+Production House - 52 Weeks Entertainment Pvt Ltd in association with GSEAMS & Harvey films
+Producer - Karishma Jain & Joe Rajan </span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://www.youtube.com/watch?v=TlgmwdjzpyY">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+			
+			
+			<div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/ranangan3.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>Ranangan  </div>
+					<span><time class="entry-date" >Mar 23, 2018</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="ranangan"  class="rsImg" src="images/video/ranangan3.jpg" data-rsvideo="https://www.youtube.com/watch?v=BNlRoCvmYIg">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>		Ranangan Trailer  </h2>
+				<div class="slider-byline"><span class="author-link-slider">Presenting the video of Vinayaka Gajanana sung by Vaishali Made.
+ </span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://www.youtube.com/watch?v=BNlRoCvmYIg">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+			
+			
+        <div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/iss-pyaar-ko-kya-namm-doo-3.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>Iss Pyar Ko Kya Naam Doon 3 promo release  </div>
+					<span><time class="entry-date" >Jun 23, 2016</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="ishqbaaz"  class="rsImg" src="images/video/iss-pyaar-ko-kya-namm-doo-3.jpg" data-rsvideo="https://youtu.be/qN5KAiHbE7c">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>		Iss Pyar Ko Kya Naam Doon 3 promo release  </h2>
+				<div class="slider-byline"><span class="author-link-slider">Presenting the soul-stirring song ‘Rabba Ve’ from Iss Pyaar Ko Kya Naam Doon, Coming Soon, Only on STAR PLUS. </span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://youtu.be/qN5KAiHbE7c">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+        <div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/ishqbaaz-video.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>New Show "ISHQBAAZ" On Star Plus</div>
+					<span><time class="entry-date" >Jun 23, 2016</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="ishqbaaz"  class="rsImg" src="images/video/ishqbaaz-video.jpg" data-rsvideo="https://youtu.be/dssLRpxvCFA">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>				
+									New Show "ISHQBAAZ" On Star Plus		</h2>
+				<div class="slider-byline"><span class="author-link-slider">New Show "ISHQBAAZ" On Star Plus, CAST caugth at JAIPUR, ISHQBAAZ is an Upcoming Tv serial on Star Plus. The Story of is Based on Youth . </span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://youtu.be/dssLRpxvCFA">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+        
+		<div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img src="images/video/1.jpg" alt="video" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>Luv U Soniyo Official Trailer</div>
+					<span><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">June 13, 2013</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="video"  class="rsImg" src="images/video1.jpg" data-rsVideo="https://youtu.be/wIEX9m2-QMg">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>				
+									Luv U Soniyo Official Trailer (2013) 		</h2>
+				<div class="slider-byline"><span class="author-link-slider">Directed by Joe Rajan /</span> <span class="posted-on-slider"><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">June 13, 2013</time></span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://youtu.be/wIEX9m2-QMg">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+        
+        <div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/thum2.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>Qubool hai Interview </div>
+					<span><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">May 09, 2014</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="video"  class="rsImg" src="images/video/video2.jpg" data-rsvideo="https://youtu.be/P9I2PSlhe7A">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>	Qubool hai Interview</h2>
+				<div class="slider-byline"><span class="author-link-slider">Four Lions Production /</span> <span class="posted-on-slider"><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">May 09, 2014</time></span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://youtu.be/P9I2PSlhe7A">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+        
+        <div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/thum3.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>52 weeks Intro</div>
+					<span><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">April 12, 2014</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="video"  class="rsImg" src="images/video/video3.jpg" data-rsVideo="https://youtu.be/2E_vgc8GfKk?loop=1&showinfo=0&playlist=2E_vgc8GfKk">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>				
+									52 weeks Intro	</h2>
+				<div class="slider-byline"><span class="author-link-slider"></span> <span class="posted-on-slider"><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">April 12, 2014</time></span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://youtu.be/Q8cVIyPcjwg">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+        
+        <div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/thum4.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>Hamsafar launch</div>
+					<span><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">Sep 23, 2014</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img  alt="video" class="rsImg" src="images/video/video4.jpg" data-rsVideo="https://youtu.be/yCPocuMSqkw">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>				
+									Hamsafar launch		</h2>
+				<div class="slider-byline"><span class="author-link-slider"></span> <span class="posted-on-slider"><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">June 13, 2013</time></span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://youtu.be/yCPocuMSqkw">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+        
+        <div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/thum5.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>IPKKND Episode</div>
+					<span><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">Aug 30, 2012</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="video"  class="rsImg" src="images/video/video5.jpg" data-rsVideo="https://youtu.be/NZEuDrpehRE">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>				
+								IPKKND Episode		</h2>
+				<div class="slider-byline"><span class="author-link-slider"></span> <span class="posted-on-slider"><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">Aug 30, 2012</time></span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://youtu.be/NZEuDrpehRE">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+        
+        <div class="content-slider-solar">
+			<div class="rsTmb">
+															<div class="image-thumb"><img alt="video" src="images/video/thum6.jpg" class="attachment-progression-slider-thumb wp-post-image"></div><!-- normal video thumbnail -->
+												      <div class="controller-text">
+					<div>Geet Episode</div>
+					<span><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">Jan 25,2013</time></span>
+				</div>
+				<div class="clearfix"></div>
+			</div><!-- close .rsTmb -->
+			
+			<div class="slider-solar-container">
+				
+															
+													<div class="solar-image-slider">
+														<img alt="video"  class="rsImg" src="images/video/video6.jpg" data-rsVideo="https://youtu.be/GmU7kXpxRTs">
+																</div><!-- close .solar-image-slider -->
+						
+				<h2>				Geet Episode	</h2>
+				<div class="slider-byline"><span class="author-link-slider"></span> <span class="posted-on-slider"><time class="entry-date" datetime="2013-06-13T04:57:50+00:00">Jan 25,2013</time></span> </div>
+				<div class="slider-excerpt">
+</div>
+															<a class="html5lightbox" href="https://youtu.be/GmU7kXpxRTs">
+											View Large					</a>
+							</div><!-- close .slider-solar-container -->
+		</div><!-- close. content-slider-solar -->
+        
+        
+			
+	</div><!-- close #video-gallery -->
+          
+                     
+    </div>
+        
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+<section class="block pressSection">
+	<div class="container">
+    
+    
+    <div class="col-md-12">
+     <div class="heading">
+			<h2>Movie Event<i>Highlight</i></h2>
+		</div>
+        
+		<div class="owl-carousel owl-theme hightlightimg">
+    <div class="item">
+		<a class="btn btngal" href="images/rananagan/1.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/1.jpg)"> 
+		
+		</a>
+	</div>
+    <div class="item">
+		<a class="btn btngal" href="images/rananagan/2.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/2.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/3.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/3.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/4.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/4.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/5.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/5.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/6.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/6.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/7.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/7.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/8.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/8.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/9.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/9.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/10.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/10.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/11.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/11.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/12.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/12.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/13.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/13.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/14.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/14.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/15.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/15.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/16.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/16.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/17.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/17.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/18.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/18.jpg)"> 
+		
+		</a>
+	</div>
+	<div class="item">
+		<a class="btn btngal" href="images/rananagan/19.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/19.jpg)"> 
+		
+
+		</a>
+	</div>		
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/20.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/20.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/21.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/21.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/22.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/22.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/23.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/23.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/24.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/24.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/25.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/25.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/26.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/26.jpg)"> 
+		
+		</a>
+	</div>
+		<div class="item">
+		<a class="btn btngal" href="images/rananagan/27.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/27.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/28.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/28.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/29.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/29.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/30.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/30.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/31.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/31.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/32.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/32.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/33.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/33.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/34.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/34.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/35.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/35.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/36.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/36.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/37.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/37.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/38.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/38.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/39.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/39.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/40.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/40.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/41.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/41.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/42.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/42.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/43.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/43.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/44.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/44.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/45.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/45.jpg)"> 
+		
+		</a>
+	</div>
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/46.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/46.jpg)"> 
+		
+		</a>
+	</div>
+			
+			<div class="item">
+		<a class="btn btngal" href="images/rananagan/47.jpg" title="ranangan" data-rel="prettyPhoto[pp_gal1]" style="background-image: url(images/rananagan/47.jpg)"> 
+		
+		</a>
+	</div>
+			
+			
+</div>
+		
+		
+						
+		
+    
+    </div>
+    
+    
+	</div>
+</section>
+
+
+<!--<section class="block videoSEction">
+	<div class="container">
+    
+    
+    <div class="col-md-5">
+     <div class="heading">
+			<h2>Press <i>Release</i></h2>
+		</div>
+        
+    <div class="widget">
+							<div class="sidebar-tabs">
+								<div id="demo1" class="scroll-text">
+      <ul>
+        <li>
+       
+        <a class="html5lightbox" href="https://player.vimeo.com/video/24771335">
+        <div class="sidebar-post">
+                                            
+                                            		<div class="col-md-3">
+												<span><img alt="video" src="images/small-slide/geet.jpg" /></span>                                                </div>
+                                                
+                                                <div class="col-md-9">
+                                                <h4>Geet: First video post</h4>
+                                                <p>Geet wedding photographer from Four Lions Films on Vimeo.</p>
+                                                <h6><i class="fa fa-calendar"></i>June, 07  2011</h6>
+                                                </div>
+			</div></a>
+            </li>
+                                            
+          <li>
+      
+        <a class="html5lightbox" href="https://player.vimeo.com/video/53410146">
+        <div class="sidebar-post">
+                                            
+                                            		<div class="col-md-3">
+												<span><img alt="video" src="images/small-slide/iss-pyaar.jpg" /></span>                                                </div>
+                                                
+                                                <div class="col-md-9">
+                                                <h4>Barun Sobti Interview</h4>
+                                                <p>Barun sabti in conversation of Gul khan</p>
+                                                <h6><i class="fa fa-calendar"></i>November, 13  2012</h6>
+                                                </div>
+			</div></a>
+                                            </li>                                  
+        
+         
+        <li>
+       
+        <a class="html5lightbox" href="https://player.vimeo.com/video/51544545">
+        <div class="sidebar-post">
+                                            
+                                            		<div class="col-md-3">
+												<span><img alt="video" src="images/small-slide/qubool.jpg" /></span>                                                </div>
+                                                
+                                                <div class="col-md-9">
+                                                <h4>First look: Qubool Hai</h4>
+                                                <p>First look at of our new show Qubool Hai. Starts 29th October at 9:30PM on Zee TV.</p>
+                                                <h6><i class="fa fa-calendar"></i>October, 16  2012</h6>
+                                                </div>
+			</div></a>
+                                            </li> 
+        
+      </ul>
+    </div>
+								
+							</div>
+            </div>
+    </div>
+    
+    
+	</div>
+</section>-->
+
+
+
+
+
+<footer>
+<section class="block">
+		<div class="layer">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-5">
+                    
+                    	<div class="footer-logo col-md-4"><img alt="52weeks entertainment logo" src="images/logo-foot.jpg"></div>
+                        
+                       <div class="col-md-8"><p><strong>52 Weeks Entertainment Ltd</strong> <br>
+                       An entertainment company which is into film production and producing  quality TV serials  </p>
+                       
+                       </div>
+                    </div>
+					<div class="col-md-7">
+                    
+                    <ul class="col-md-2">
+                    	<li class="bold-text"><a href="home.html">Home</a></li>
+                        <li><a href="corporate.html">Corporate</a></li>
+                        <li><a href="movies.html">Movies </a></li>
+                        <li><a href="television.html">Televisions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="col-md-5">
+                    <li class="bold-text"><a href="#">Investor Relation</a></li>
+                        <li><a href="shareholding-pattern.html"><span>Share Holding Pattern</span></a></li>
+         <li><a href="corporateGovernanceReport.html"><span>Corporate Governance Report </span></a></li>
+         <li><a href="annual-report.html"><span>Annual Report</span></a></li>
+         <li><a href="financial-result.html"><span>Financial Result</span></a></li>
+                    </ul>
+                    <ul class="col-md-5">                        
+         <li><a href="Agreement.html"><span>Agreement With Media Companies</span></a></li>
+         <li><a href="registrar.html"><span>Registrar And Transfer Agents</span></a></li>
+         <li><a href="stock-exchange.html"><span>Intimation to Stock Exchanges</span></a></li>
+         <li><a href="share-captial-audit-report.html"><span>Share Capital Audit Report</span></a></li>
+         <li><a href="voting-result.html"><span>Voting Result</span></a></li>
+         <li><a href="miscellaneous.html"><span>Miscellaneous</span></a></li>
+                    </ul>
+                    
+                    </div>
+                    
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</section>	
+
+<div class="bottom-line">
+	<div class="container">
+    <div class=" col-md-7">
+		<span class="pad-top">Copyright ©  52 Weeks Entertainment . Site Designed By <a target="_blank" href="http://sda-zone.com">SDA</a> </span>
+        </div>
+        
+        <div class="col-md-4 info-top">
+        <span class="social-span">
+                
+                 <a href="https://www.facebook.com/52weeksentertainment" target="_blank"><i class="fa fa-facebook"></i></a>
+                 <i class="fa fa-twitter"></i>
+                 <i class="fa fa-youtube"></i>
+                 <i class="fa fa-linkedin"></i>
+
+                </span></div>
+
+	</div>
+</div>	
+</footer>
+
+
+
+
+				
+				
+
+</div><!-- Boxed and Wide Layout -->
+
+  
+  <!-- Script -->
+
+
+<script src="js/jquery.scrollbox.js"></script>
+<script>
+$(function () {
+ 
+  $('#demo1').scrollbox({
+  linear: true,
+  step: 1,
+  delay: 0,
+  speed: 100
+});
+
+});
+</script>
+
+<script type="text/javascript"  src="js/html5lightbox.js"></script><!-- html5 Lightbox -->
+  <script>
+	    jQuery(document).ready(function($) {
+		$("#video-gallery").delay(500).show(true);
+		  $('#video-gallery').royalSlider({
+			 transitionType: 'move',
+			 transitionSpeed: 400,
+		    arrowsNav: false,
+		    fadeinLoadedSlide: true,
+		    controlNavigationSpacing: 0,
+					    controlNavigation: 'thumbnails',
+		    thumbs: { autoCenter: false, fitInViewport: true, orientation: 'vertical', spacing: 0, paddingBottom: 0 },			autoPlay: {
+			    		// autoplay options go gere
+			    		enabled: false,
+			    		pauseOnHover: true,
+			delay: '6500'
+			},
+		navigateByClick: false,
+		sliderDrag: false,
+		sliderTouch: true,
+		    keyboardNavEnabled: true,
+		    slidesSpacing: 0,
+		usePreloader: true,
+		    loop: false,
+		    loopRewind: true,
+		    numImagesToPreload: 3,
+		    video: {
+		      autoHideArrows:true,
+		      autoHideControlNav:false,
+		      autoHideBlocks: true
+		    }, 
+			 autoHeight: true,
+			autoScaleSlider: true, 
+			autoScaleSliderWidth: 960,     
+		    autoScaleSliderHeight: 525,
+			imageAlignCenter:false,
+			imageScaleMode: 'none'
+		  });
+		});
+	</script>
+		<script>
+	jQuery(document).ready(function($) {
+	    $('.flexslider').flexslider({
+			animation: "fade",      
+			slideDirection: "horizontal", 
+			slideshow: false,         
+			slideshowSpeed: 6000,  
+			animationDuration: 200,        
+			directionNav: true,             
+			controlNav: true               
+	    });
+	});
+	</script>
+    <script type='text/javascript' src='js/plugins.js'></script>  
+    
+    <script src="js/script.js"></script><!-- Common -->
+<script type="text/javascript"  src="js/bootstrap.min.js"></script><!-- Bootstrap -->
+
+
+
+
+<script type="text/javascript"  src="js/owl-carousel/owl.carousel.min.js"></script><!-- Owl Carousal -->
+<script type="text/javascript"  src="js/onscreen.js"></script><!-- On Screen -->
+<script type="text/javascript"  src="js/switcher.js"></script><!-- Style Switcher -->
+<script type="text/javascript"  src="js/scrolltopcontrol.js"></script><!-- Scroll to Top -->
+
+<script type="text/javascript"  src="js/masonary.js"></script><!-- masonary -->
+<script type="text/javascript"  src="js/jquery.isotope.js"></script><!-- jquery isotope -->
+
+
+<!---start video----->
+<script type="text/javascript">
+		/*$(document).ready(function() {
+			$(".theme-layout").css({"opacity":"0", "visibility":"hidden"});$("html").css({"position":"fixed", "height":"100%;", "width":"100%", "top":"0","left":"0"});setTimeout(function(){ $(".theme-layout").css({"opacity":"1", "visibility":"visible"});$("html").css({"position":"relative", "height":"auto;", "width":"100%", "top":"0","left":"0"}); $('#boxes').slideUp("slow"); }, 13500);$('#boxes').fullpage({verticalCentered: true,sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],afterRender: function(){setTimeout(function(){ $('video').slideUp("slow"); }, 13500); $(".theme-layout").show();}});});*/
+	</script>
+   
+	
+	
+    <link rel="stylesheet" type="text/css" href="js/prettyphoto/prettyPhoto.css">  
+ <script src="js/prettyphoto/jquery.prettyPhoto.js"></script>   
+
+    <script>
+    $(document).ready( function() {
+  $("a[data-rel^='prettyPhoto']").prettyPhoto({social_tools:!1});
+    });
+  
+    
+    
+  </script> 
+  
+
+</body>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl506679'},{'dcenter':'p3'},{'cp_id':'10292063'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>

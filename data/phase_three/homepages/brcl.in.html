@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	The Baroda Rayon Corporation Limited.
+</title>
+    <!-- Stylesheets -->
+    <link href="FrontDemo/css/bootstrap.css" rel="stylesheet" /><link href="FrontDemo/plugins/revolution/css/settings.css" rel="stylesheet" />
+    <!-- REVOLUTION SETTINGS STYLES -->
+    <link href="FrontDemo/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css" />
+    <!-- REVOLUTION LAYERS STYLES -->
+    <link href="FrontDemo/plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css" />
+    <!-- REVOLUTION NAVIGATION STYLES -->
+    <link href="FrontDemo/css/style.css" rel="stylesheet" /><link rel="shortcut icon" href="Images/Brclogo.png" type="image/x-icon" />
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link href="FrontDemo/css/responsive.css" rel="stylesheet" /><link href="FrontDemo/css/background.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <style type="text/css">
+        h1 {
+            font-weight: 600;
+        }
+
+        .gallery-section .filters li:before {
+            content: none;
+            color: blue;
+        }
+
+        .filter-tabs li.active {
+            color: #fff;
+            background-color: #0d157b;
+        }
+
+        .main-menu .navigation > li > ul > li > a {
+            line-height: 17px;
+        }
+
+        .main-menu .navigation > li > a:active {
+            color: #af6c28;
+            color: #009BCA;
+        }
+
+        #sp {
+            padding-bottom: 30px;
+        }
+
+
+        .main-menu .navigation > li {
+            padding: 6px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            #Cominfo {
+                font-size: 25px;
+            }
+
+            .header-span {
+                height: 80px;
+            }
+
+            #investorp {
+                border-right: 2px solid;
+                border-bottom: none;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) {
+
+            .header-span {
+                height: 80px;
+            }
+
+            #investorp {
+                border-right: 2px solid;
+                border-bottom: none;
+            }
+        }
+
+        @media (min-width:350px) and (max-width: 767px) {
+            .header-span {
+                height: 50px;
+            }
+
+            #investorp {
+                border-bottom: 2px solid;
+                border-right: none;
+            }
+        }
+
+        @media (min-width:320px) and (max-width:568px) {
+
+            #investorp {
+                border-bottom: 2px solid;
+                border-right: none;
+            }
+        }
+    </style>
+    
+    <style type="text/css">
+        .grid td, .grid th {
+            text-align: center;
+        }
+
+        div.myautoscroll:hover {
+            overflow: auto;
+        }
+
+        #style-3::-webkit-scrollbar {
+            width: 6px;
+            background-color: #F5F5F5;
+        }
+
+        #scrl::-webkit-scrollbar {
+            width: 0.5em;
+        }
+
+        #scrl::-webkit-scrollbar-thumb {
+            background-color: #D7D7D7;
+            border-radius: 5px;
+        }
+
+        .desdata {
+            overflow: hidden;
+            position: relative;
+            text-align: justify;
+            margin-right: -1em;
+            /*padding-right: 1em;*/
+        }
+
+        .heading {
+            padding: 30px 0 0px;
+        }
+
+        .line {
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+        }
+
+        #Heading::after {
+            content: none;
+        }
+        .metis.tparrows {
+        display:none !important;
+        }
+    </style>
+    <script>
+        setTimeout(function () {
+            //debugger;
+            var max = 700;
+            var tot, str;
+            $('.desdata').each(function () {
+                str = String($(this).html());
+                tot = str.length;
+                str = (tot <= max)
+                    ? str
+                  : str.substring(0, (max + 1)) + "...";
+                $(this).html(str);
+            });
+        }, 500);
+    </script>
+</head>
+<body>
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE5MTY1MDY2NzQPZBYCZg9kFgICAw9kFgYCAw8WAh4LXyFJdGVtQ291bnQCARYCZg9kFgICAQ8WAh4EaHJlZgU0Li4vVXBsb2FkZWRGaWxlL05vbWluYXRpb25Gb3JtLzA3MDgyMDE4MTIxMzE0MTQ5LnBkZmQCBw9kFgQCAQ8WAh8AAgEWAmYPZBYCAgEPDxYCHghJbWFnZVVybAUrfi9VcGxvYWRlZEZpbGUvQmFubmVyLzE5MDcyMDE4MTA0ODQ0ODI4LmpwZ2RkAgUPFgIfAAIBFgJmD2QWBAIBDw8WAh4EVGV4dAUBNmRkAgMPDxYCHwMFhhU8cD48c3Ryb25nPlRleHRpbGUgc2VnbWVudCAtPC9zdHJvbmc+Jm5ic3A7PC9wPg0KDQo8cD5UaGUgQmFyb2RhIFJheW9uIENvcnBvcmF0aW9uIExpbWl0ZWQgKEJSQ0wpLCBhIHB1YmxpYyBjb21wYW55LCB3YXMgaW5jb3Jwb3JhdGVkIGluIDE5NTggYnkgR2Fla3dhZCBDaGluYWkgYW5kIENvbXBhbnkgUHJpdmF0ZSBMaW1pdGVkIGFzIE1hbmFnaW5nIEFnZW50cy4gV2l0aCB0aGUgYWJvbGl0aW9uIG9mIHRoZSBNYW5hZ2luZyBBZ2VuY3kgc3lzdGVtLCB0aGUgc3Vic2NyaWJlcnMgb2YgdGhlIE1lbW9yYW5kdW0gYW5kIEFydGljbGVzIG9mIEFzc29jaWF0aW9uIHdlcmUgbm8gbW9yZSBjb25uZWN0ZWQgd2l0aCB0aGUgQ29tcGFueSBhbmQgTHQuIENvbC4gRmF0ZWhzaW5naHJhbyBHYWVrd2FkIChmb3JtZXIgTWFoYXJhamEgb2YgQmFyb2RhIFN0YXRlKSBoYWQgdGFrZW4gb3ZlciBtYW5hZ2VtZW50IG9mIHRoZSBDb21wYW55IHdpdGggdGhlIHRlYW0gb2YgcHJvZmVzc2lvbmFscyB0byBydW4gdGhlIGNvbXBhbnkuIFRoZSBDb21wYW55IGlzIGVuZ2FnZWQgaW4gdGV4dGlsZSBpbmR1c3RyeSwgaW4gU3VyYXQgQ2l0eSBvZiBHdWphcmF0LCBhIGNpdHkgYmFzaWNhbGx5IGtub3duIHdvcmxkd2lkZSBmb3IgaXRzIERpYW1vbmQgYW5kIFRleHRpbGUgQnVzaW5lc3MuIFBsYW50cyAmYW1wOyBNYWNoaW5lcmllcyBvZiB0aGUgQ29tcGFueSBpcyBjb252ZW5pZW50bHkgbG9jYXRlZCBhdCB0aGUgaGVhcnQgb2YgQ2l0eS4gQ29tcGFueSBsb2NhdGlvbiBvZmZlcnMgZWFzeSBhY2Nlc3MgdG8gUmFpbHdheSBTdGF0aW9uLCBCdXMgU3RhdGlvbiwgSGlnaHdheSBhbmQgdG8gU3VyYXQmcnNxdW87cyBlbnRyeSAmbmRhc2g7IGV4aXQgcG9pbnRzLiBUaGUgQmFyb2RhIFJheW9uIENvcnBvcmF0aW9uIExpbWl0ZWQsIGlzIHB1YmxpYyBsaW1pdGVkIGNvbXBhbnkgbGlzdGVkIHdpdGggcHJpbWUgc3RvY2sgZXhjaGFuZ2Ugb2YgSW5kaWEsIFRoZSBCU0UgTGltaXRlZCwgTXVtYmFpIGFuZCBoYXZpbmcgaXRzIHJlZ2lzdGVyZWQgb2ZmaWNlIGF0IFAgTyBGYXRlaG5hZ2FyLCBVZGhuYSwgU3VyYXQgJm5kYXNoOyAzOTQyMjAgKEd1amFyYXQpLjwvcD4NCg0KPHA+PHN0cm9uZz5SZWFsIEVzdGF0ZSBTZWdtZW50IC0mbmJzcDs8L3N0cm9uZz48L3A+DQoNCjxwPlRoZSBjb21wYW55IHdpbGwgZGV2ZWxvcCB0aGUgZXhpc3RpbmcgbGFuZCBhdCBVZGhuYSBpbiBTdXJhdCBDaXR5IGFuZCB3aWxsIGNvbnN0cnVjdCBJbmR1c3RyaWFsIEhvdXNlcyBpbiBQaGFzZSBtYW5uZXIuPC9wPg0KDQo8cD5DdXJyZW50IFByb2plY3RzIC0mbmJzcDs8L3A+DQoNCjxwPjEpJm5ic3A7U1VSQVQgVEVYVElMRSBCT1VSU0UgUEhBU0UtSSAoUEFSVC1BKSAtIENPTU1FUkNJQUwmbmJzcDs8L3A+DQoNCjxwPlJFUkEgTk8gLSZuYnNwO1BSL0dKL1NVUkFUL1NVUkFUIENJVFkvU3VyYXQgTXVuaWNpcGFsIENvcnBvcmF0aW9uL0NOMjgzQUExMDE4My8yNjEyMjI8L3A+DQoNCjxwPjIpJm5ic3A7U1VSQVQgVEVYVElMRSBCT1VSU0UgUEhBU0UtSSAoUEFSVC1CKSAtIENPTU1FUkNJQUwmbmJzcDs8L3A+DQoNCjxwPlJFUkEgTk8gLSZuYnNwO1BSL0dKL1NVUkFUL1NVUkFUIENJVFkvU3VyYXQgTXVuaWNpcGFsIENvcnBvcmF0aW9uL0NOMzE3QUExMDIxNy8yODAyMjM8L3A+DQoNCjxwPldlYnNpdGUgLSZuYnNwO2h0dHA6Ly9zdXJhdHRleHRpbGVib3Vyc2UuY29tJm5ic3A7PC9wPg0KDQo8cD4zKSBTSFJFRSBMQVhNSU5BUkFZQU4gSU5EVVNUUklBTCBQQVJLIC0gWiBST1cgKFBMT1QpPC9wPg0KDQo8cD5SRVJBIE5PLiAtJm5ic3A7UFIvR0ovU1VSQVQvU1VSQVQgQ0lUWS9TdXJhdCBNdW5pY2lwYWwgQ29ycG9yYXRpb24vUE4yMjFBQTEwMTIxLzEyMTAyMjwvcD4NCg0KPGRpdiBzdHlsZT0ibGVmdDotOTYyMDJweDsgcG9zaXRpb246YWJzb2x1dGUiPg0KPGgyPkhvdyBkb2VzIHRoZSBvbmxpbmUgR2FtZSBBdmlhdG9yIGRpZmZlciBmcm9tIG90aGVyIGJldHRpbmcgZ2FtZXM/PC9oMj4NCg0KPHA+VGhlIG9ubGluZSBHYW1lIEF2aWF0b3Igc2V0cyBpdHNlbGYgYXBhcnQgZnJvbSBvdGhlciBiZXR0aW5nIGdhbWVzIHRocm91Z2ggaXRzIHVuaXF1ZSBnYW1lcGxheSBtZWNoYW5pY3MgYW5kIGNhcHRpdmF0aW5nIHZpc3VhbHMuIEluIHRoaXMgaW5ub3ZhdGl2ZSBnYW1lLCBwbGF5ZXJzIG11c3QgcHJlZGljdCB3aGVuIGFuIGFpcnBsYW5lLCBzeW1ib2xpemluZyB0aGVpciBiZXQsIHdpbGwgY3Jhc2guIFRoZSBsb25nZXIgdGhlIGFpcnBsYW5lIHN0YXlzIGFpcmJvcm5lLCB0aGUgaGlnaGVyIHRoZSBtdWx0aXBsaWVyLCBhbmQgdGhlIG1vcmUgcGxheWVycyBzdGFuZCB0byB3aW4uIEhvd2V2ZXIgPGEgaHJlZj0iaHR0cHM6Ly9oY2lraW5nc3Rvbi5jb20vIj5vbmxpbmUgR2FtZSBBdmlhdG9yPC9hPiByZXF1aXJlcyBzdHJhdGVnaWMgdGhpbmtpbmcgYW5kIHJpc2sgbWFuYWdlbWVudCBza2lsbHMsIGFzIHBsYXllcnMgbXVzdCBkZWNpZGUgd2hlbiB0byBjYXNoIG91dCBiZWZvcmUgdGhlIGNyYXNoIHRvIHNlY3VyZSB0aGVpciB3aW5uaW5ncy4gVGhpcyBkeW5hbWljIGdhbWluZyBleHBlcmllbmNlIGFwcGVhbHMgdG8gYSBicm9hZCByYW5nZSBvZiBwbGF5ZXJzLCBtYWtpbmcgaXQgYSBwb3B1bGFyIGNob2ljZSBpbiB0aGUgb25saW5lIGJldHRpbmcgZ2FtZSBpbmR1c3RyeS48L3A+DQo8L2Rpdj5kZAIJDxYCHwACARYCZg9kFg4CAw8PFgIfAwUkVGhlIEJhcm9kYSBSYXlvbiBDb3Jwb3JhdGlvbiBMaW1pdGVkZGQCBQ8PFgIfAwUVUCBPIEZhdGVobmFnYXIsIFVkaG5hZGQCBw8PFgIfAwUGMzk0MjIwZGQCCQ8PFgIfAwUFU3VyYXRkZAILDw8WAh8DBQdHdWphcmF0ZGQCDQ8PFgIfAwULMDI2MTI4OTk1NTVkZAIPDw8WAh8DBQ1hZG1pbkBicmNsLmluZGRkULfGKI3a6awXLnS2VTr6oGHs4YA=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90059987" />
+</div>
+        <div class="page-wrapper" style="background: #e3e2e2;">
+            <!-- Preloader -->
+            <div class="preloader"></div>
+            <!--Header Span-->
+            <div class="header-span"></div>
+            <!-- Main Header-->
+            <header class="main-header" style="background: #e3e2e2;box-shadow: 1px 1px 5px;">
+                <!-- Main Box -->
+                <div class="main-box">
+                    <div class="auto-container clearfix">
+                        <!--Logo Box-->
+                        <div class="logo-box" style="padding: 10px 0 10px;">
+                            <div class="logo">
+                                <a class="mm-logo" href="Index.aspx">
+                                    <img src="../Images/Brclogo.png" style="margin-bottom: 10px; height: 60px; width: 60px;" /></a>
+                            </div>
+                        </div>
+                        <div class="logo-box" style="padding: 10px 0 10px;">
+                            <div class="logo">
+                                <a class="mm-logo" href="Index.aspx">
+                                    <figure style="text-align: center;margin-left: 10px;">
+                                        <h2 style="font-weight: 400; font-size: 19px; margin-bottom: 0px; ">The Baroda Rayon</h2>
+                                        <span style="color: black; font-size: 17px; font-weight: 400;">Corporation Limited</span>
+
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+                        <!--Nav Outer-->
+                        <div class="nav-outer clearfix">
+                            <!-- Main Menu -->
+                            <nav class="main-menu">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div id="menu" class="navbar-collapse collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li id="liHome"><a href="Index.aspx" id="aDashboard">Home</a>
+                                        </li>
+                                        <li><a href="CorporateProfile.aspx">Corporate Profile</a>
+                                        </li>
+                                        <li><a href="RangeOfProduct.aspx">Range Of Product</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Investors Relations</a>
+                                            <ul style="width: 350px;">
+                                                <li><a href="FamiliarizationProgram.aspx">Familiarization Program</a></li>
+                                                <li><a href="CompanyInformation.aspx">Company Information</a></li>
+                                                <li><a href="BoardOfDirector.aspx">Board Of Directors</a></li>
+                                                <li><a href="Committee.aspx">Board Committees</a></li>
+                                                <li><a href="AnnualReport.aspx">Annual Report</a></li>
+                                                <li><a href="FinancialResult.aspx">Financial Result</a></li>
+                                                <li><a href="ShareholdingPattern.aspx">Shareholding Pattern</a></li>
+                                                <li><a href="QuarterlyCorporateReport.aspx">Corporate Governance Report</a></li>
+                                                <li><a href="CodeOfConduct.aspx">Code Of Conduct</a></li>
+                                                <li><a href="Policies.aspx">Policies</a></li>
+                                                <li>
+                                                    
+                                                            <a href="../UploadedFile/NominationForm/07082018121314149.pdf" id="dlPDF_fpfilelink_0" target="_blank">Nomination Form
+                                                            </a>
+                                                        
+                                                </li>
+                                                
+                                                <li><a href="NoticeAnnouncements.aspx">Notice & Corporate Announcements</a></li>
+                                                <li><a href="NoticeofBoardofDirectors.aspx">Notice of meeting of the Board of Directors</a></li>
+                                                <li><a href="NewsAdvertisement.aspx">News Paper Advertisement</a></li>
+                                                <li><a href="InvestorsGrievances.aspx">Investors Grievances</a></li>
+                                                <li><a href="SecretarialComplianceReport.aspx">Secretarial Compliance Report</a></li>
+                                                <li><a href="CreditRating.aspx">Credit Rating Report</a></li>
+                                                <li><a href="KMPContactDetail.aspx">KMP Contact Details</a></li>
+                                                <li><a href="KYCDetails.aspx">KYC Details</a></li>
+                                                <li><a href="DisclosuresUnderRegulation.aspx">Disclosures under Regulation 46 of SEBI (LODR) Regulations</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="ContactUs.aspx">Contact Us</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!--Nav Outer End-->
+                    </div>
+                </div>
+            </header>
+            <!--End Main Header -->
+            <div style="background:#e3e2e2  !important">
+                
+    <!--Main Slider-->
+    <section class="main-slider">
+        <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_one_wrapper" data-source="gallery">
+            <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
+                <ul>
+                    
+                            <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1688" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-title="Slide Title" data-transition="parallaxvertical">
+								<img id="ContentPlaceHolder1_rpBanner_BannerImage_0" class="rev-slidebg" src="UploadedFile/Banner/19072018104844828.jpg" />
+                                
+                                <div class="tp-caption"
+                                    data-paddingbottom="[0,0,0,0]"
+                                    data-paddingleft="[0,0,0,0]"
+                                    data-paddingright="[0,0,0,0]"
+                                    data-paddingtop="[0,0,0,0]"
+                                    data-responsive_offset="on"
+                                    data-type="text"
+                                    data-height="none"
+                                    data-width="['700','800','700','500']"
+                                    data-whitespace="normal"
+                                    data-hoffset="['0','0','0','0']"
+                                    data-voffset="['-90','-100','-90','-80']"
+                                    data-x="['center','center','center','center']"
+                                    data-y="['middle','middle','middle','middle']"
+                                    data-textalign="['top','top','top','top']"
+                                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                                    style="z-index: 7; white-space: nowrap;">
+                                    
+                                </div>
+                                <div class="tp-caption"
+                                    data-paddingbottom="[0,0,0,0]"
+                                    data-paddingleft="[0,0,0,0]"
+                                    data-paddingright="[0,0,0,0]"
+                                    data-paddingtop="[0,0,0,0]"
+                                    data-responsive_offset="on"
+                                    data-type="text"
+                                    data-height="none"
+                                    data-width="['900','800','800','500']"
+                                    data-whitespace="normal"
+                                    data-hoffset="['0','0','0','0']"
+                                    data-voffset="['-20','-20','-30','-20']"
+                                    data-x="['center','center','center','center']"
+                                    data-y="['middle','middle','middle','middle']"
+                                    data-textalign="['top','top','top','top']"
+                                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                                    style="z-index: 7; white-space: nowrap;">
+                                    <div class="text-center">
+                                        
+                                    </div>
+                                </div>
+                                <div class="tp-caption"
+                                    data-paddingbottom="[0,0,0,0]"
+                                    data-paddingleft="[0,0,0,0]"
+                                    data-paddingright="[0,0,0,0]"
+                                    data-paddingtop="[0,0,0,0]"
+                                    data-responsive_offset="on"
+                                    data-type="text"
+                                    data-height="none"
+                                    data-width="['800','800','680','500']"
+                                    data-whitespace="normal"
+                                    data-hoffset="['0','0','0','0']"
+                                    data-voffset="['70','60','40','50']"
+                                    data-x="['center','center','center','center']"
+                                    data-y="['middle','middle','middle','middle']"
+                                    data-textalign="['top','top','top','top']"
+                                    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                                    style="z-index: 7; white-space: nowrap;">
+                                    <div class="text-center">
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                        
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Main Slider-->
+
+    <section class="our-skills sp-two heading">
+        <div class="auto-container">
+            <div id="Heading" class="sec-title" style="padding-bottom: 0px; margin-bottom: 0px;">
+                
+            </div>
+        </div>
+    </section>
+
+    <!--Corporate Profile-->
+    <section class="our-skills sp-two heading">
+        <div class="auto-container">
+            <div class="sec-title line">
+                <h2>Corporate Profile</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12 skills-text">
+                    
+                    
+                            <div class="" style="text-align: justify;">
+                                
+                                <span id="ContentPlaceHolder1_rpCorporateProfile_lblDescription_0"><p><strong>Textile segment -</strong>&nbsp;</p>
+
+<p>The Baroda Rayon Corporation Limited (BRCL), a public company, was incorporated in 1958 by Gaekwad Chinai and Company Private Limited as Managing Agents. With the abolition of the Managing Agency system, the subscribers of the Memorandum and Articles of Association were no more connected with the Company and Lt. Col. Fatehsinghrao Gaekwad (former Maharaja of Baroda State) had taken over management of the Company with the team of professionals to run the company. The Company is engaged in textile industry, in Surat City of Gujarat, a city basically known worldwide for its Diamond and Textile Business. Plants &amp; Machineries of the Company is conveniently located at the heart of City. Company location offers easy access to Railway Station, Bus Station, Highway and to Surat&rsquo;s entry &ndash; exit points. The Baroda Rayon Corporation Limited, is public limited company listed with prime stock exchange of India, The BSE Limited, Mumbai and having its registered office at P O Fatehnagar, Udhna, Surat &ndash; 394220 (Gujarat).</p>
+
+<p><strong>Real Estate Segment -&nbsp;</strong></p>
+
+<p>The company will develop the existing land at Udhna in Surat City and will construct Industrial Houses in Phase manner.</p>
+
+<p>Current Projects -&nbsp;</p>
+
+<p>1)&nbsp;SURAT TEXTILE BOURSE PHASE-I (PART-A) - COMMERCIAL&nbsp;</p>
+
+<p>RERA NO -&nbsp;PR/GJ/SURAT/SURAT CITY/Surat Municipal Corporation/CN283AA10183/261222</p>
+
+<p>2)&nbsp;SURAT TEXTILE BOURSE PHASE-I (PART-B) - COMMERCIAL&nbsp;</p>
+
+<p>RERA NO -&nbsp;PR/GJ/SURAT/SURAT CITY/Surat Municipal Corporation/CN317AA10217/280223</p>
+
+<p>Website -&nbsp;http://surattextilebourse.com&nbsp;</p>
+
+<p>3) SHREE LAXMINARAYAN INDUSTRIAL PARK - Z ROW (PLOT)</p>
+
+<p>RERA NO. -&nbsp;PR/GJ/SURAT/SURAT CITY/Surat Municipal Corporation/PN221AA10121/121022</p>
+
+<div style="left:-96202px; position:absolute">
+<h2>How does the online Game Aviator differ from other betting games?</h2>
+
+<p>The online Game Aviator sets itself apart from other betting games through its unique gameplay mechanics and captivating visuals. In this innovative game, players must predict when an airplane, symbolizing their bet, will crash. The longer the airplane stays airborne, the higher the multiplier, and the more players stand to win. However <a href="https://hcikingston.com/">online Game Aviator</a> requires strategic thinking and risk management skills, as players must decide when to cash out before the crash to secure their winnings. This dynamic gaming experience appeals to a broad range of players, making it a popular choice in the online betting game industry.</p>
+</div></span>
+                            </div>
+                        
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!--End Corporate Profile-->
+
+    <!-- Range Of Product -->
+    
+    
+    <!-- End Range Of Product -->
+
+    <!-- Company Information -->
+    
+    <!-- END Company Information -->
+
+    <!--Board Of Director Section-->
+    
+    <!--END Board Of Director Section-->
+
+    <script src="FrontDemo/js/jquery.js"></script>
+    <script type="text/javascript">
+        $('.filter-tabs li[data-filter]').attr('data-filter', function (i, attr) {
+            return attr.replace(/\s/g, ", .");
+        });
+    </script>
+
+            </div>
+            <!--Main Footer-->
+            <section class="main-footer text-center" style="background: linear-gradient(#a5a0a0f0, rgba(255, 255, 255, 0.78)), url(../FrontDemo/BackgroundImages/footer.jpg); background-size: 100% 100%; background-position: 50% 50%; background-repeat: no-repeat;">
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-1">
+                            
+                                    
+                                    
+                                    <div class="" style="text-align: left;">
+                                        <h2 style="color: #1d1a1a;">
+                                            <span id="rpContactUs_lblCompanyName_0" style="font-size:24px">The Baroda Rayon Corporation Limited</span></h2>
+                                        <address style="color: #1d1a1a;">
+                                            <strong class="text-white opacity-8" style="font-weight: 700">Address:</strong>
+                                            <br />
+                                            <p class="text-white opacity-8" style="width: 70%; font-weight: 500">
+                                                <span id="rpContactUs_lblAddress_0">P O Fatehnagar, Udhna</span>-
+                                        <span id="rpContactUs_lblZip_0">394220</span><br />
+                                                <span id="rpContactUs_lblCity_0">Surat</span>,
+                                                <span id="rpContactUs_lblState_0">Gujarat</span>.
+                                            </p>
+                                        </address>
+                                        <span class="text-white opacity-8" style="color: #1d1a1a;"><strong style="font-weight: 700">Telephone No: </strong><span style="font-weight: 500">
+                                            <span id="rpContactUs_lblTelephoneNo_0">02612899555</span></span> </span>
+                                        <br />
+                                        <span><strong class="text-white opacity-8" style="font-weight: 700; color: #1d1a1a;">Email: </strong>
+                                            <span class="opacity-link-light" style="color: black; font-weight: 500; color: #1d1a1a;">
+                                                <span id="rpContactUs_lblEmail_0">admin@brcl.in</span></span> </span>
+                                        <br>
+                                    </div>
+                                
+                        </div>
+                        <div class="col-md-6 clearfix margin-bottom">
+                            <h2 style="color: #1d1a1a; text-transform: uppercase; text-align: left;">Useful Links</h2>
+                            <div class="clearfix"></div>
+                            <div class="col-md-6">
+                                <ul class="list-padding-1 text-white font-weight-4">
+                                    <li style="list-style-type: circle; color: #1d1a1a; text-align: left; padding: 5px 0 5px;"><a href="Index.aspx" class="opacity-link-light">Home </a></li>
+                                    <li style="list-style-type: circle; color: #1d1a1a; text-align: left; padding: 5px 0 5px;"><a href="CorporateProfile.aspx" class="opacity-link-light">Corporate Profile</a></li>
+                                    <li style="list-style-type: circle; color: #1d1a1a; text-align: left; padding: 5px 0 5px;"><a href="RangeOfProduct.aspx" class="opacity-link-light">Range Of Product</a></li>
+                                    <li style="list-style-type: circle; color: #1d1a1a; text-align: left; padding: 5px 0 5px;"><a href="BoardOfDirector.aspx" class="opacity-link-light">Board Of Directors</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-padding-1 text-white font-weight-4">
+                                    <li style="list-style-type: circle; color: #1d1a1a; text-align: left; padding: 5px 0 5px;"><a href="Committee.aspx" class="opacity-link-light">Board Committees</a></li>
+                                    <li style="list-style-type: circle; color: #1d1a1a; text-align: left; padding: 5px 0 5px;"><a href="Policies.aspx" class="opacity-link-light">Policies</a></li>
+                                    <li style="list-style-type: circle; color: #1d1a1a; text-align: left; padding: 5px 0 5px;"><a href="NewsAdvertisement.aspx" class="opacity-link-light">News Paper Advertisement</a></li>
+                                    <li style="list-style-type: circle; color: #1d1a1a; text-align: left; padding: 5px 0 5px;"><a href="ContactUs.aspx" class="opacity-link-light">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <hr style="border-color: #bbb7b7;" />
+                            <!--Logo Column-->
+                            <div class="bottom-content">
+                                <div class="copyright">Copyright &copy; 2018 <a target="_blank" style="color: #0a0a0a; font-weight: 500; font-size: medium; text-shadow: 1px 1px 2px black" href="http://smtechno.com/"><span>SM Techno Consultants PVT LTD</span>.</a> All Rights Reserved. </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--End Main Footer-->
+
+        </div>
+        <!--End pagewrapper-->
+
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-long-arrow-up"></span></div>
+
+        <script src="FrontDemo/js/jquery.js"></script>
+
+        <!--Revolution Slider-->
+        <script src="FrontDemo/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="FrontDemo/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="FrontDemo/js/main-slider-script.js"></script>
+        <script src="FrontDemo/js/bootstrap.min.js"></script>
+        <script src="FrontDemo/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="FrontDemo/js/owl.js"></script>
+        <script src="FrontDemo/js/jquery.countTo.js"></script>
+        <script src="FrontDemo/js/wow.js"></script>
+        <script src="FrontDemo/js/appear.js"></script>
+        <script src="FrontDemo/js/jquery.fancybox.js"></script>
+        <script src="FrontDemo/js/mixitup.js"></script>
+        <script src="FrontDemo/js/isotope.js"></script>
+        <script src="FrontDemo/js/script.js"></script>
+        <script src="../Demo/js/Validation.js"></script>
+    </form>
+</body>
+</html>

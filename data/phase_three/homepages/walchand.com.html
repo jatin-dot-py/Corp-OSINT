@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Walchandnagar Industries</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <script type="text/javascript">
+            var surl = "https://walchand.com/wp-content/themes/walchand";
+        </script>
+        <link rel="stylesheet" type="text/css" href="https://walchand.com/wp-content/themes/walchand/style.css">
+        <link rel="stylesheet" type="text/css" href="https://walchand.com/wp-content/themes/walchand/css/gallery.css">
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/cufon-yui.js"></script>
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/Soho_Gothic_Std_400.font.js"></script>
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/Calibri_400.font.js"></script>
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/Calibri_italic_400.font.js"></script>
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/ddsmoothmenu.js"></script>
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/jquery.advancedSlider.min.js"></script>
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/slides.min.jquery.js"></script>
+
+            <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/jquery.fancybox-1.3.4.pack.js"></script>
+            <script src="https://walchand.com/wp-content/themes/walchand/scripts/ddaccordion.js" type="text/javascript"></script>
+            <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/jquery.jcarousel.min.js"></script>
+
+
+        <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/walchand.js"></script>
+		            <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/jquery.jticker.js"></script>
+                    <!--[if IE]>
+                <script type="text/javascript" src="https://walchand.com/wp-content/themes/walchand/scripts/html5.js"></script>
+        <![endif]-->
+        <script type="text/javascript" >
+            $(document).ready(function()
+            {
+                timerMethod();
+
+                $(document).on('change', '#s', function() {
+
+                	var letters = /^[a-zA-Z0-9_ -,]+$/;
+
+					if( !letters.test( $(this).val() ) )
+					{
+						alert("Invalid text");
+						$(this).val("Search");
+					}
+
+				});
+            });
+
+
+            function timerMethod()
+            {
+                var xmlhttp;
+                var stock;
+                var nseval = new Array();
+                var bseval = new Array();
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+
+
+                        stock=xmlhttp.responseText;
+                        arr=stock.split("~~");
+                        nseval = arr[0].split("-");
+                        bseval = arr[2].split("-");
+
+                        var nrvm = arr[1].search("-");
+                        var brvm = arr[3].search("-");
+
+                        var pattern = '\\+';
+                        var regn = new RegExp(pattern,'');
+
+
+
+                        var nrvp = arr[1].search(regn);
+                        var brvp = arr[3].search(regn);
+
+
+                        if(nrvm != -1)
+                        {
+
+                            document.getElementById("nd").style.display="inline-block";
+                            document.getElementById("nup").style.display="none";
+                            if ($('#nd1')) {
+                                $('#nd1').css('display', 'inline-block');
+                                $('#nup1').css('display', 'none');
+                            }
+
+                        }
+                        else if(nrvp !=-1)
+                        {
+                            document.getElementById("nup").style.display="inline-block";
+                            document.getElementById("nd").style.display="none";
+                            if ($('#nup1')) {
+                                $('#nd1').css('display', 'none');
+                                $('#nup1').css('display', 'inline-block');
+                            }
+
+                        }
+                        else
+                        {
+                            document.getElementById("nd").style.display="none";
+                            document.getElementById("nup").style.display="none";
+                            if ($('#nd1')) {
+                                $('#nd1').css('display', 'none');
+                                $('#nup1').css('display', 'none');
+                            }
+                        }
+
+
+                        if(brvm != -1)
+                        {
+                            document.getElementById("bd").style.display="inline-block";
+                            document.getElementById("bup").style.display="none";
+                            if ($('#bd1')) {
+                                $('#bd1').css('display', 'inline-block');
+                                $('#bup1').css('display', 'none');
+                            }
+                        }
+                        else if(brvp !=-1)
+                        {
+
+                            document.getElementById("bup").style.display="inline-block";
+                            document.getElementById("bd").style.display="none";
+                            if ($('#bup1')) {
+                                $('#bd1').css('display', 'none');
+                                $('#bup1').css('display', 'inline-block');
+                            }
+                        }
+                        else
+                        {
+                            document.getElementById("bd").style.display="none";
+                            document.getElementById("bup").style.display="none";
+                            if ($('#bup1')) {
+                                $('#bd1').css('display', 'none');
+                                $('#bup1').css('display', 'none');
+                            }
+                        }
+
+
+                        document.getElementById("nse").innerHTML=nseval[1].replace(/^\s+|\s+$/g,"")+" "+arr[1] ;
+                        document.getElementById("bse").innerHTML=bseval[1].replace(/^\s+|\s+$/g,"")+" "+arr[3] ;
+                        if ($('#nse1')) {
+                            var nseDate = nseval[1].replace(/^\s+|\s+$/g,"")+" "+arr[1];
+                            var bseData = bseval[1].replace(/^\s+|\s+$/g,"")+" "+arr[3] ;
+                            $('#nse1').html(nseDate);
+                            $('#bse1').html(bseData);
+                            Cufon.replace('#nse,#bse',{hover:true},{fontFamily: "Calibri"});
+                        }
+                        Cufon.replace('#nse,#bse',{hover:true},{fontFamily: "Calibri"});
+                    }
+                }
+                xmlhttp.open("GET","https://walchand.com/wp-content/themes/walchand/stock.php",true);
+                xmlhttp.send();
+            }
+
+            var timerId = setInterval(timerMethod,60000);
+
+        </script>
+        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://walchand.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://walchand.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.0.38" />
+<script type="text/javascript">
+var renderInvisibleReCaptcha = function() {
+
+    for (var i = 0; i < document.forms.length; ++i) {
+        var form = document.forms[i];
+        var holder = form.querySelector('.inv-recaptcha-holder');
+
+        if (null === holder) continue;
+		holder.innerHTML = '';
+
+         (function(frm){
+			var cf7SubmitElm = frm.querySelector('.wpcf7-submit');
+            var holderId = grecaptcha.render(holder,{
+                'sitekey': '6LeXg-4cAAAAAN24eF88Y3r1nwXo1pYb7J-n8vIf', 'size': 'invisible', 'badge' : 'bottomright',
+                'callback' : function (recaptchaToken) {
+					if((null !== cf7SubmitElm) && (typeof jQuery != 'undefined')){jQuery(frm).submit();grecaptcha.reset(holderId);return;}
+					 HTMLFormElement.prototype.submit.call(frm);
+                },
+                'expired-callback' : function(){grecaptcha.reset(holderId);}
+            });
+
+			if(null !== cf7SubmitElm && (typeof jQuery != 'undefined') ){
+				jQuery(cf7SubmitElm).off('click').on('click', function(clickEvt){
+					clickEvt.preventDefault();
+					grecaptcha.execute(holderId);
+				});
+			}
+			else
+			{
+				frm.onsubmit = function (evt){evt.preventDefault();grecaptcha.execute(holderId);};
+			}
+
+
+        })(form);
+    }
+};
+</script><script src="https://www.google.com/recaptcha/api.js?onload=renderInvisibleReCaptcha&render=explicit" async defer></script>
+<meta name="google-site-verification" content="7YADhnE987N11v45TCuBABoxY4w66cUrfB0XVMrESPY" />
+         <script type="text/javascript">
+
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-48446773-1']);
+         _gaq.push(['_trackPageview']);
+
+         (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+         </script>
+
+    </head>
+    <body>
+
+
+        <div class="wrapper clearfix">
+            <span class="logo"><a href="https://walchand.com/"><img src="https://walchand.com/wp-content/themes/walchand/images/walchand-logo.png" width="180" height="91" alt="Walchand"></a></span>
+            <div class="fR header-r">
+                <div id="topSearch" class="fR">
+                    <form role="search" method="get" id="searchform" action="https://walchand.com/">
+                        <input class="fL" type="text" name="s" id="s" title="Search" value="Search" onBlur="if(this.value==''){ this.value='Search';}" onFocus="if(this.value=='Search'){this.value='';}">
+                        <input class="fL" type="image" src="https://walchand.com/wp-content/themes/walchand/images/search-icon.png" alt="Search">
+                    </form>
+                </div>
+         <span class="stock-det fR">
+         <span class="blue">Nse</span> <img  id="nup" src="https://walchand.com/wp-content/themes/walchand/images/up-arrow.png" alt="up" title="up"><img id="nd" src="https://walchand.com/wp-content/themes/walchand/images/down-arrow.png" alt="down" title="down"><span id="nse"></span>
+         <span class="blue">Bse</span> <img id="bup" src="https://walchand.com/wp-content/themes/walchand/images/up-arrow.png" alt="down" title="down"><img id="bd" src="https://walchand.com/wp-content/themes/walchand/images/down-arrow.png" alt="down" title="down"><span id="bse"></span>
+         </span>
+
+ </div>
+        </div>
+        <div id="wrapper" class="clearfix clear">
+            <div id="smoothmenu" class="ddsmoothmenu">
+                <ul id="menu-mainmenu" class="clearfix"><li id="menu-item-123" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-123"><a href="https://walchand.com/">Home</a></li>
+<li id="menu-item-1930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1930"><a href="https://walchand.com/about-us/">About us</a>
+<ul class="sub-menu">
+	<li id="menu-item-3205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3205"><a href="https://walchand.com/about-us/company-profile/">Company Profile</a></li>
+	<li id="menu-item-5032" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5032"><a href="https://walchand.com/about-us/capabilities/">Certifications.</a></li>
+	<li id="menu-item-3408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3408"><a href="https://walchand.com/about-us/manufacturing-infrastructure/">Manufacturing Facilities</a></li>
+	<li id="menu-item-3225" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3225"><a href="https://walchand.com/about-us/policies-2/">Quality and Safety policies</a></li>
+	<li id="menu-item-3227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3227"><a href="https://walchand.com/about-us/walchandnagar-township/">Walchandnagar Township</a></li>
+	<li id="menu-item-3230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3230"><a href="https://walchand.com/about-us/corporate-social-responsibility-csr/">Corporate Social Responsibility</a></li>
+	<li id="menu-item-3231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3231"><a href="https://walchand.com/about-us/awards-recognition/">Awards &#038; Recognition</a></li>
+</ul>
+</li>
+<li id="menu-item-1931" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1931"><a href="https://walchand.com/business-area/">Business Areas</a>
+<ul class="sub-menu">
+	<li id="menu-item-3324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3324"><a href="https://walchand.com/business-area/aerospace/">Aerospace</a></li>
+	<li id="menu-item-3321" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3321"><a href="https://walchand.com/business-area/cement-plant-machinery-2/">Cement Plant Machinery</a></li>
+	<li id="menu-item-3327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3327"><a href="https://walchand.com/business-area/defence-missile/">Defence</a></li>
+	<li id="menu-item-4986" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4986"><a href="https://walchand.com/business-area/foundry/">Foundry</a></li>
+	<li id="menu-item-4983" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4983"><a href="https://walchand.com/business-area/gear-boxes/">Gear Boxes</a></li>
+	<li id="menu-item-4988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4988"><a href="https://walchand.com/business-area/tiwac/">Instrumentation</a></li>
+	<li id="menu-item-3322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3322"><a href="https://walchand.com/business-area/centrifugal-machines/">Centrifugal Machines</a></li>
+	<li id="menu-item-3323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3323"><a href="https://walchand.com/business-area/nuclear-power/">Nuclear Power</a></li>
+	<li id="menu-item-3320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3320"><a href="https://walchand.com/business-area/power-plants-boilers/">Co- Generation Power Plants</a></li>
+	<li id="menu-item-4984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4984"><a href="https://walchand.com/business-area/oil-gas-projects/">Missiles</a></li>
+	<li id="menu-item-3319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3319"><a href="https://walchand.com/business-area/sugar-plant-machinery/">Sugar Plant Machinery</a></li>
+	<li id="menu-item-4985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4985"><a href="https://walchand.com/business-area/walchand-technology-group/">Walchand Technology Group</a></li>
+</ul>
+</li>
+<li id="menu-item-4989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4989"><a href="https://walchand.com/investors/">Investors</a>
+<ul class="sub-menu">
+	<li id="menu-item-4990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4990"><a href="https://walchand.com/investors/financial-results/">Financial Results</a></li>
+	<li id="menu-item-4991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4991"><a href="https://walchand.com/investors/investor-information/">Investor Information</a></li>
+	<li id="menu-item-4992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4992"><a href="https://walchand.com/investors/corporate-governance/">Corporate Governance</a></li>
+</ul>
+</li>
+<li id="menu-item-4993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4993"><a href="https://walchand.com/media-2/">Media</a></li>
+<li id="menu-item-4997" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4997"><a href="https://walchand.com/career/">Careers</a></li>
+<li id="menu-item-5003" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5003"><a href="https://walchand.com/download/">Download</a>
+<ul class="sub-menu">
+	<li id="menu-item-5004" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5004"><a href="https://walchand.com/download/wilpower-news-letter/">WILPOWER News Letter</a></li>
+	<li id="menu-item-5005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5005"><a href="https://walchand.com/download/brochure/">Brochure</a></li>
+</ul>
+</li>
+<li id="menu-item-5025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5025"><a href="https://walchand.com/contact-us/">Contact Us</a></li>
+<li id="menu-item-6330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6330"><a title="Tenders" href="https://walchand.com/sample/">Tenders</a></li>
+</ul>            </div>
+    <div class="galSection clearfix clear">
+        <div class="businessArea fL">
+            <h2>Business Areas</h2>
+            <span class="caption-arrow"><!-- --></span>
+        </div>
+        <div class="gallery-r fR">
+            <div class="advanced-slider" id="gallery-box">
+                <ul class="slides">
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/defence1.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="Defence and Missile" title="Critical components for Akash Missile program of Ministry of Defence"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/defence1.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1>Defence and Missile</h1>
+                                <p>Critical components for Defense applications...<a href="https://walchand.com/business-area/hi-tech-manufacturing/defence-missile/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/12/1panoromicviewofpslv-c35atfirstlaunchpad-view3.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="Aerospace" title="SLV  / PSLV / GSLV"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/12/1panoromicviewofpslv-c35atfirstlaunchpad-view3.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1>Aerospace</h1>
+                                <p>Critical Systems & Components for Indian Space Research Program..<a href="https://walchand.com/business-area/hi-tech-manufacturing/aerospace/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/11/banner_nuclear.gif&amp;w=664&amp;h=346&amp;zc=0" alt="Nuclear Power" title="Calandrias in progress for 700 MWe Nuclear Power Plants"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/11/banner_nuclear.gif&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1>Nuclear Power</h1>
+                                <p>Manufacturing of Core equipment for Nuclear Power Plants..<a href="https://walchand.com/business-area/hi-tech-manufacturing/nuclear-power/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/11/banner_gear1.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="Gear Boxes" title="P-28 Gear Box for Indian Navy"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/11/banner_gear1.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1>Gear Boxes</h1>
+                                <p>Design, Manufacture & Supply of Marine & Industrial Gear Boxes ..<a href="https://walchand.com/business-area/product/gear-boxes/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/08/IMG_9806.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="" title=""> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/08/IMG_9806.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1></h1>
+                                <p>Design, Manufacture & Supply of Centrifugal Machines for Sugar Industry..<a href="https://www.walchand.com/business-area/centrifugal-machines/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/cement1.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="Cement Plant and Machinery" title="Turnkey supply for 1000 TPD Cement plant of Zambezi Portland, Zambia"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/cement1.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1>Cement Plant and Machinery</h1>
+                                <p>Design, Manufacture and Supply of Cement Machinery and Plants of all capacities...<a href="https://walchand.com/business-area/project-machinery/cement-plant-machinery-2/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2013/02/boiler-new-image.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="Power Plants and Boilers" title="High pressure Boiler for Ingenio Providencia, Colombia"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2013/02/boiler-new-image.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1>Power Plants and Boilers</h1>
+                                <p>Undertakes Power plant projects and Supplies Multi fuel Industrial Boilers and Steam Generators..<a href="https://walchand.com/business-area/power-plants-boilers/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/tiwac11.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="Instrumentation" title="Diaphragm Pressure  Gauge / Capillary type Temperature Gauge /  Liquid filled  Pressure Gauge"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/tiwac11.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1>Instrumentation</h1>
+                                <p>Manufacture & Supply of Pressure & Temperature Gauges..<a href="https://walchand.com/business-area/project-machinery/tiwac/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/foundry1.jpg&amp;w=664&amp;h=346&amp;zc=0" alt=" Foundry" title="Wind Mill Casting for Suzlon / Compressor Casting for Wartsila"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/foundry1.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1> Foundry</h1>
+                                <p>Cast Iron & Spheroidal Graphite Cast Iron heavy castings for Industrial applications..<a href="https://walchand.com/business-area/project-machinery/foundry/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/sugar1.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="Sugar Plant and Machinery" title="2500 TCD Sugar plant for Indreshwar sugar mills, India"> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2012/07/sugar1.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1>Sugar Plant and Machinery</h1>
+                                <p>Turnkey Sugar Plant from concept to comissioning...<a href="https://walchand.com/business-area/project-machinery/sugar-plant-machinery/">Read more</a></p>
+                            </div>
+                        </li>
+                                            <li class="slide">
+                            <img class="image" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/08/PP-List-of-customers.jpg&amp;w=664&amp;h=346&amp;zc=0" alt="" title=""> 
+                            <img class="thumbnail" src="https://walchand.com/wp-content/themes/walchand/thumb.php?src=https://walchand.com/wp-content/uploads/2018/08/PP-List-of-customers.jpg&amp;w=68&amp;h=47&amp;zc=0" alt="">
+                            <div class="caption-container galleryDesc">
+                                <h1></h1>
+                                <p>SERVING THE NATION..<a href="">Read more</a></p>
+                            </div>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+<div class="clearfix equlaHeight boxRow clear">
+    <div class="columnBox-bot fL">
+        <div class="columnBox-top">
+            <h3><img src="https://walchand.com/wp-content/themes/walchand/images/aboutwill-icon.gif" width="31" height="41" alt="About Wil"> About WIL</h3>
+            <p><strong>Walchandnagar Industries Ltd.(WIL)</strong>, established in 1908 is a  Heavy Engineering Company with a presence in Strategic Sectors like Defence, Nuclear & Aerospace and Industrial Products like Gears, Centrifugals, Castings and Gauges.  Certified for ISO 9001:2015, WIL also has a presence in Oil & Gas, Railways and in EPC sectors through its offerings for Sugar Plants, Co – Generation Boilers and Cement Plants.</p>
+            <ul class="sectorList">
+                
+            </ul>
+        </div>
+    </div>
+    <div class="columnBox-bot fL">
+        <div class="columnBox-top">
+            <h3><img src="https://walchand.com/wp-content/themes/walchand/images/global-icon.gif" width="36" height="41" alt="Global Clientele">Global Clientele</h3>
+            <a href="https://walchand.com/wp-content/themes/walchand/images/map-big.jpg" class="galleryImg"><img src="https://walchand.com/wp-content/themes/walchand/images/map.png" width="180" height="98" alt="Map"></a> 
+            <br /><br /><br /><a href="https://walchand.com/wp-content/themes/walchand/images/map-big.jpg" class="galleryImg">Click here to view enlarged image</a> 
+        </div>
+    </div>
+    <div class="columnBox-bot fL">
+        <div class="columnBox-top">
+            <h3><img src="https://walchand.com/wp-content/themes/walchand/images/accomplishments-icon.gif" width="44" height="41" alt="Accomplishment">Accomplishments</h3>
+            <div id="ticker">
+                <ul class="columnList">
+                    <li>100+ years of engineering excellence</li>
+                    <li>600+ EPC / Semi-Turnkey / Turnkey projects executed</li>
+                    <li>50+ years of association with DAE, NPCIL, BARC, ISRO and Ministry Of Defence</li>
+                    <li>Components supplied for 750+ Akash Missiles</li>
+                </ul>
+                <ul class="columnList">
+				    <li class="listHead"><strong>Critical components manufactured for India&rsquo;s:</strong>/li>
+				<li>Maiden Moon mission "CHANDRAYAAN-I & Mars Orbital Mission Mangalyaan"</li>
+                    <li>First Inter-continental ballistic missile "Agni-V"</li>
+                </ul>
+                <ul class="columnList">
+                    <li>540+ boiler installations worldwide</li>
+                    <li>More than 6500 gearboxes installed globally</li>
+                    <li>4500+ Centrifugal machines supplied</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="columnBox-bot fL">
+        <div class="columnBox-top">
+            <h3><img src="https://walchand.com/wp-content/themes/walchand/images/news-icon.gif" width="25" height="41" alt="News">News</h3>
+            <ul class="columnList">
+                

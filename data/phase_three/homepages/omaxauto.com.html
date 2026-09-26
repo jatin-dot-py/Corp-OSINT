@@ -1,0 +1,1096 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	OMAX
+</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /><link href="css/style.css?v=1.2" rel="stylesheet" /><link href="css/responsive.css?v=1.2" rel="stylesheet" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/popper.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery.animateNumber.min.js" type="text/javascript"></script>
+    <script src="js/jquery.fancybox.min.js" type="text/javascript"></script>
+    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="js/wow.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha256-1A78rJEdiWTzco6qdn3igTBv9VupN3Q1ozZNTR4WE/Y=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+
+    
+    <style>
+        .header {
+            background: rgba(0, 108, 181, 0.8);
+        }
+
+        .headerspace {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (localStorage.getItem('popup') != 'shown') {
+                setTimeout(function () {
+                    $('#popup').modal('show');
+                }, 2000);
+                var $videoSrc;
+                $videoSrc = $("#playerpopup").attr("src");
+                $('#popup').on('shown.bs.modal', function (e) {
+                    $("#playerpopup").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+                })
+                $('#popup').on('hide.bs.modal', function (e) {
+                    $("#playerpopup").attr('src', $videoSrc);
+                })
+                // localStorage.setItem('popup', 'shown')
+            }
+
+            //setTimeout(function () {
+            //    $('#popup').modal('show');
+            //}, 2000);
+            //var $videoSrc;
+            //$videoSrc = $("#playerpopup").attr("src");
+            //$('#popup').on('shown.bs.modal', function (e) {
+            //    $("#playerpopup").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+            //})
+            //$('#popup').on('hide.bs.modal', function (e) {
+            //    $("#playerpopup").attr('src', $videoSrc);
+            //})
+
+            //$(".feturebox").hover(function () {
+
+            //    $('.feturebox').removeClass('active');
+            //    $(this).addClass('active');
+
+            //});
+
+
+        });
+
+    </script>
+
+<style>
+/* ========== MEGA MENU STYLES FOR INVESTOR RELATIONSHIP ========== */
+.mega-menu-wrapper {
+    display: none;
+}
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    z-index: 9999;
+    display: none;
+    border-top: 3px solid #f89a1c;
+}
+.mega-menu.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.mega-menu-header {
+    display: none;
+}
+.mega-menu-content {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+/* Left sidebar with main categories */
+.mega-menu-sidebar {
+    width: 280px;
+    background: #f8f9fa;
+    border-right: 1px solid #eee;
+    padding: 15px 0;
+    flex-shrink: 0;
+}
+.mega-menu-sidebar .menu-category {
+    display: flex;
+    align-items: center;
+    padding: 14px 22px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+.mega-menu-sidebar .menu-category:hover,
+.mega-menu-sidebar .menu-category.active {
+    background: #fff;
+    border-left-color: #f89a1c;
+}
+.mega-menu-sidebar .menu-category .cat-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #0982c5, #006cb5);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+    color: #fff;
+    font-size: 16px;
+}
+.mega-menu-sidebar .menu-category.active .cat-icon {
+    background: linear-gradient(135deg, #f89a1c, #e88a0c);
+}
+.mega-menu-sidebar .menu-category .cat-text h5 {
+    margin: 0;
+    font-size: 15px;
+    color: #333;
+    font-weight: 600;
+}
+.mega-menu-sidebar .menu-category .cat-text p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    color: #888;
+}
+/* Right content area */
+.mega-menu-main {
+    flex: 1;
+    padding: 25px 30px;
+    display: none;
+    min-height: 300px;
+}
+.mega-menu-main.active {
+    display: block;
+}
+.mega-menu-main h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.mega-menu-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+.mega-menu-links a {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    color: #444;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-size: 15px;
+}
+.mega-menu-links a:hover {
+    background: #f0f7ff;
+    color: #0982c5;
+}
+.mega-menu-links a i {
+    width: 24px;
+    color: #0982c5;
+    margin-right: 10px;
+    font-size: 14px;
+}
+/* Simple list style for form downloads */
+.mega-menu-simple-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.mega-menu-simple-list a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    background: #f0f7ff;
+    color: #0982c5;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+.mega-menu-simple-list a:hover {
+    background: #0982c5;
+    color: #fff;
+}
+/* Position mega menu relative to header */
+.header {
+    position: relative;
+}
+.mid-header {
+    position: relative;
+}
+/* Hide original dropdown for investor relationship */
+li.arcustom.has-sub > ul {
+    display: none !important;
+}
+
+/* ========== RESPONSIVE MEGA MENU STYLES ========== */
+@media (max-width: 1000px) {
+    .mega-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 99999;
+        border-top: none;
+    }
+    .mega-menu-content {
+        flex-direction: column;
+        padding: 0;
+    }
+    .mega-menu-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 15px;
+    }
+    .mega-menu-sidebar .menu-category {
+        width: calc(50% - 5px);
+        padding: 10px 12px;
+        border-left: none;
+        border-radius: 8px;
+        background: #f8f9fa;
+    }
+    .mega-menu-sidebar .menu-category:hover,
+    .mega-menu-sidebar .menu-category.active {
+        border-left: none;
+        background: #e8f4fc;
+    }
+    .mega-menu-sidebar .menu-category .cat-icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    .mega-menu-sidebar .menu-category .cat-text h5 {
+        font-size: 13px;
+    }
+    .mega-menu-sidebar .menu-category .cat-text p {
+        display: none;
+    }
+    .mega-menu-main {
+        padding: 15px;
+        min-height: auto;
+    }
+    .mega-menu-links {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    .mega-menu-links a {
+        padding: 12px 14px;
+        font-size: 14px;
+        background: #f8f9fa;
+        border-radius: 6px;
+    }
+    .mega-menu-simple-list {
+        gap: 8px;
+    }
+    .mega-menu-simple-list a {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    /* Close button for mobile */
+    .mega-menu::before {
+        content: 'âœ• Close';
+        display: block;
+        text-align: right;
+        padding: 15px 20px;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 576px) {
+    .mega-menu-sidebar .menu-category {
+        width: 100%;
+    }
+    .mega-menu-sidebar .menu-category .cat-text p {
+        display: block;
+        font-size: 11px;
+    }
+}
+</style>
+<script>
+$(document).ready(function() {
+    var hoverTimeout;
+    var isMobile = window.innerWidth <= 1000;
+    
+    // Update isMobile on resize
+    $(window).on('resize', function() {
+        isMobile = window.innerWidth <= 1000;
+    });
+    
+    // Open mega menu on hover (desktop only)
+    $('.arcustom.has-sub').on('mouseenter', function() {
+        if (!isMobile) {
+            clearTimeout(hoverTimeout);
+            var $menu = $('.mega-menu');
+            $menu.addClass('active');
+            // Show first category by default
+            if(!$('.menu-category.active').length) {
+                $('.menu-category').first().addClass('active');
+                $('.mega-menu-main').first().addClass('active');
+            }
+        }
+    });
+    
+    // Keep menu open when hovering over it (desktop only)
+    $('.mega-menu').on('mouseenter', function() {
+        if (!isMobile) {
+            clearTimeout(hoverTimeout);
+        }
+    });
+    
+    // Close menu when mouse leaves both the menu item and mega menu (desktop only)
+    $('.arcustom.has-sub, .mega-menu').on('mouseleave', function() {
+        if (!isMobile) {
+            hoverTimeout = setTimeout(function() {
+                $('.mega-menu').removeClass('active');
+            }, 200);
+        }
+    });
+    
+    // Category hover/click
+    $('.menu-category').on('mouseenter click', function(e) {
+        var target = $(this).data('target');
+        $('.menu-category').removeClass('active');
+        $(this).addClass('active');
+        $('.mega-menu-main').removeClass('active');
+        $('#' + target).addClass('active');
+    });
+    
+    // Close on escape key
+    $(document).on('keydown', function(e) {
+        if(e.key === 'Escape') {
+            $('.mega-menu').removeClass('active');
+        }
+    });
+    
+    // Click to toggle for mobile
+    $('.arcustom.has-sub > a').on('click', function(e) {
+        e.preventDefault();
+        var $menu = $('.mega-menu');
+        if (isMobile) {
+            $menu.toggleClass('active');
+            // Show first category by default
+            if($menu.hasClass('active') && !$('.menu-category.active').length) {
+                $('.menu-category').first().addClass('active');
+                $('.mega-menu-main').first().addClass('active');
+            }
+        }
+    });
+    
+    // Close button click for mobile (using the ::before pseudo element area)
+    $('.mega-menu').on('click', function(e) {
+        if (isMobile && e.target === this) {
+            // Check if click is in the close button area (top 50px)
+            var rect = this.getBoundingClientRect();
+            if (e.clientY - rect.top < 50) {
+                $(this).removeClass('active');
+            }
+        }
+    });
+    
+    // Close when clicking outside on mobile
+    $(document).on('click', function(e) {
+        if (isMobile && $('.mega-menu').hasClass('active')) {
+            if (!$(e.target).closest('.mega-menu, .arcustom.has-sub').length) {
+                $('.mega-menu').removeClass('active');
+            }
+        }
+    });
+});
+</script>
+</head>
+
+<body>
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA3MTA2NDk2OGRkR7qztQLMBVevdb+cj1wJFiwe8iY=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+        
+        <div class='scrolltop'>
+            <div class='scroll-icon topscroll'><i class="fas fa-angle-up"></i></div>
+        </div>
+        
+        <div class="headerspace"></div>
+        <header class="header">
+            <!-- MEGA MENU FOR INVESTOR RELATIONSHIP -->
+            <div class="mega-menu">
+                <div class="mega-menu-content">
+                    <!-- Left Sidebar Categories -->
+                    <div class="mega-menu-sidebar">
+                        <div class="menu-category active" data-target="cat-whoweare">
+                            <div class="cat-icon"><i class="fas fa-building"></i></div>
+                            <div class="cat-text">
+                                <h5>Who We Are</h5>
+                                <p>Company Profile, Vision, Mission</p>
+                            </div>
+                        </div>
+                        <div class="menu-category" data-target="cat-governance">
+                            <div class="cat-icon"><i class="fas fa-landmark"></i></div>
+                            <div class="cat-text">
+                                <h5>Corporate Governance</h5>
+                                <p>AOA, MOA, Board Structure</p>
+                            </div>
+                        </div>
+                        <div class="menu-category" data-target="cat-boardmeeting">
+                            <div class="cat-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div class="cat-text">
+                                <h5>Board Meeting</h5>
+                                <p>Notices, Outcomes</p>
+                            </div>
+                        </div>
+                        <div class="menu-category" data-target="cat-reports">
+                            <div class="cat-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="cat-text">
+                                <h5>Reports & Policies</h5>
+                                <p>Annual Reports, Codes</p>
+                            </div>
+                        </div>
+                        <div class="menu-category" data-target="cat-financial">
+                            <div class="cat-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="cat-text">
+                                <h5>Financial Information</h5>
+                                <p>Quarterly, Annual Results</p>
+                            </div>
+                        </div>
+                        <div class="menu-category" data-target="cat-shareholders">
+                            <div class="cat-icon"><i class="fas fa-users"></i></div>
+                            <div class="cat-text">
+                                <h5>Shareholders Info</h5>
+                                <p>Forms, Disclosures, SEBI</p>
+                            </div>
+                        </div>
+                        <div class="menu-category" data-target="cat-disclosures">
+                            <div class="cat-icon"><i class="fas fa-bullhorn"></i></div>
+                            <div class="cat-text">
+                                <h5>Disclosures & Meetings</h5>
+                                <p>Regulations, Publications</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Content Panels -->
+                    <div class="mega-menu-main active" id="cat-whoweare">
+                        <h4>Who We Are</h4>
+                        <div class="mega-menu-links">
+                            <a href="about-company-profile.aspx"><i class="fas fa-building"></i> Company Profile</a>
+                            <a href="vision.aspx"><i class="fas fa-eye"></i> Vision</a>
+                            <a href="#."><i class="fas fa-bullseye"></i> Mission</a>
+                            <a href="core-values.aspx"><i class="fas fa-heart"></i> Core Values and Business Intent</a>
+                            <a href="about-management-board-of-directors.aspx"><i class="fas fa-users-cog"></i> Board of Directors</a>
+                            <a href="Default.aspx#keystrength"><i class="fas fa-key"></i> Key Strengths</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mega-menu-main" id="cat-governance">
+                        <h4>Corporate Governance</h4>
+                        <div class="mega-menu-links">
+                            <a href="aoa-moa.aspx" target="_blank"><i class="fas fa-file-pdf"></i> AOA and MOA</a>
+                            <a href="board-structure-committees.aspx" target="_blank"><i class="fas fa-sitemap"></i> Board Structure and its Committees</a>
+                            <a href="Shareholding-Pattern.aspx"><i class="fas fa-clipboard-check"></i> Corporate Governance Report</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mega-menu-main" id="cat-reports">
+                        <h4>Reports & Policies</h4>
+                        <div class="mega-menu-links">
+                            <a href="Codes-Policies.aspx"><i class="fas fa-book"></i> Codes and Policies</a>
+                            <a href="credit-ratings.aspx"><i class="fas fa-star"></i> Credit Rating</a>
+                            <a href="Annual-Reports.aspx"><i class="fas fa-file-invoice"></i> Annual Report</a>
+                             <a href="Annual-return.aspx"><i class="fas fa-file-invoice"></i> Annual Return</a>
+                            <a href="Unclaimed-Unpaid.aspx"><i class="fas fa-money-bill-wave"></i> Unclaimed Dividend and IEPF</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mega-menu-main" id="cat-financial">
+                        <h4>Financial Information</h4>
+                        <div class="mega-menu-links">
+                            <a href="Financial-Results.aspx?type=Quaterly"><i class="fas fa-calendar-alt"></i> Quarterly Results</a>
+                            <a href="Financial-Results.aspx?type=Annual Result"><i class="fas fa-calendar-check"></i> Annual Results</a>
+                        </div>
+                        <h4 style="margin-top:20px;">Shareholding</h4>
+                        <div class="mega-menu-links">
+                            <a href="sebi.aspx"><i class="fas fa-chart-pie"></i> Shareholding Pattern</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mega-menu-main" id="cat-shareholders">
+                        <h4>Shareholders Information</h4>
+                        <div class="mega-menu-links">
+                            <a href="related-party-disclosures.aspx" target="_blank"><i class="fas fa-handshake"></i> Related Party Disclosures</a>
+                            <a href="secretarial-compliance-report.aspx" target="_blank"><i class="fas fa-file-signature"></i> Secretarial Compliance Report</a>
+                            <a href="transfer-shares-demat.aspx" target="_blank"><i class="fas fa-exchange-alt"></i> Transfer of Shares (Demat)</a>
+                            <a href="sebi-sop-dispute-resolution.aspx" target="_blank"><i class="fas fa-gavel"></i> SEBI SOP for Dispute Resolution</a>
+                            <a href="sebi-pan-kyc-nomination.aspx" target="_blank"><i class="fas fa-id-card"></i> SEBI PAN, KYC & Nomination</a>
+                            <a href="online-dispute-resolution.aspx" target="_blank"><i class="fas fa-laptop"></i> Online Dispute Resolution</a>
+                            <a href="Designated-Officers.aspx"><i class="fas fa-phone-alt"></i> Investor Contact</a>
+                        </div>
+                        <h4 style="margin-top:20px;">Investors Form Download</h4>
+                        <div class="mega-menu-simple-list">
+
+                            <a href="investor-form-download-ISR1" target="_blank">ISR-1</a>
+                            <a href="investor-form-download-ISR2" target="_blank">ISR-2</a>
+                            <a href="investor-form-download-ISR3" target="_blank">ISR-3</a>
+                            <a href="investor-form-download-ISR4" target="_blank">ISR-4</a>
+                            <a href="investor-form-download-SH13" target="_blank">SH-13</a>
+                            <a href="investor-form-download-SH14" target="_blank">SH-14</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mega-menu-main" id="cat-disclosures">
+                        <h4>Regulatory Disclosures</h4>
+                        <div class="mega-menu-links">
+                            <a href="regulation46.aspx"><i class="fas fa-balance-scale"></i> Disclosure under Regulation 46 of LODR</a>
+                            <a href="regulation30.aspx"><i class="fas fa-bullhorn"></i> Corporate Announcement (Regulation 30)</a>
+                        </div>
+                        <h4 style="margin-top:20px;">Meetings & Publications</h4>
+                        <div class="mega-menu-links">
+                            <a href="newspaperpublications.aspx"><i class="fas fa-newspaper"></i> Newspaper Publication</a>
+                            <a href="noticeevoting.aspx"><i class="fas fa-vote-yea"></i> Shareholders Meeting</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mega-menu-main" id="cat-boardmeeting">
+                        <h4>Board Meeting</h4>
+                        <div class="mega-menu-links">
+                            <a href="Notices-Disclosures.aspx"><i class="fas fa-bell"></i> Notices</a>
+                            <a href="Information-Disclosure.aspx"><i class="fas fa-check-circle"></i> Outcomes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MEGA MENU -->
+
+            <div class="mid-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3 p-md-0">
+                            <div class="logo">
+                                <a href="Default.aspx">
+                                    <img class="logomb" src="images/logowhite.svg" />
+                                    <img class="logopc" src="images/logo-web.svg" />
+                                </a>
+                            </div>
+                            <div class="topmenubtn">
+                                <a href="#."><i class="fas fa-ellipsis-v"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="menumaxhtmb">
+                            <div class="topright">
+                                <ul>
+                                    
+                                    <li><a href="Customers.aspx">Customers</a></li>
+                                    <li>
+                                        <a href="#.">HR/People </a>
+                                        <ul class="submenu">
+                                            <li><a href="life-omax.aspx">Life @ OMAX</a></li>
+
+                                            <li><a href="OMAX-at-Campus.aspx">OMAX @ Campus</a></li>
+                                            <li><a href="Employee-Development.aspx">Growth & Development @ OMAX</a></li>
+                                            <li><a href="omax-and-i.aspx">OMAX & I</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="Your-career-at-OMAX.aspx">Career @ OMAX</a></li>
+                                    
+                                    
+                                    <li><a href="contact-us.aspx">Contact Us</a></li>
+                                    <li><a target="_blank" href="https://www.facebook.com/omaxautos/"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a target="_blank" href="https://twitter.com/OmaxAutosltd"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a target="_blank" href="https://in.linkedin.com/company/omax-autos-ltd"><i class="fab fa-linkedin-in"></i></a></li>
+
+                                </ul>
+                            </div>
+                            <div class="menu">
+                                <nav id='cssmenu'>
+                                    <div class="button"></div>
+                                    <ul>
+                                        <li><a href='Default.aspx'>Home</a></li>
+
+                                        <li><a href='#.'>About Us</a>
+                                            <ul>
+                                                <li><a href='about-company-profile.aspx'>Company Profile</a></li>
+                                                <li><a href='vision.aspx'>Vision</a></li>
+                                                <li><a href='#.'>Mission</a></li>
+                                                <li><a href='core-values.aspx'>Core Values and Business Intent</a></li>
+                                                <li><a href='about-management-board-of-directors.aspx'>Board of Directors</a></li>
+                                                <li><a class="scroll" id="keymenubtn" href='Default.aspx#keystrength'>Key Strengths </a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href='#'>Business Areas</a>
+                                            <ul>
+                                                <li><a href='Commercial-Vehicle.aspx'>Commercial Vehicle</a></li>
+                                                <!--<li><a href='Passenger-Car.aspx'>Passenger Cars</a></li>-->
+                                                <li><a href='Railways-and-Heavy-Fabrication.aspx'>Railways & Heavy Fabrication</a></li>
+                                                <li><a href='Our-Future-Offerings.aspx'>Our Future Offerings</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href='#'>Infrastructure </a>
+                                            <ul>
+                                                <li>
+                                                    <a href='#.'>Facilities</a>
+                                                    <ul>
+                                                        <!--li><a href='bangalore-plant.aspx'>Bangalore</a></li-->
+                                                        <!--li><a href='bawal-plant.aspx'>Bawal</a></li-->
+                                                       
+                                                        <li><a href='lucknow-plant.aspx'>Lucknow</a></li>
+                                                        <li><a href='long-member-plant.aspx'>Long Member Plant</a></li>
+                                                        <li><a href='railway-plant.aspx'>New Railway Plant</a></li>                                                    </ul>
+                                                </li>
+                                                <!--li>
+                                                    <a href='#.'>Upcoming Facilities</a>
+                                                    <ul>
+                                                        <li><a href='long-member-plant.aspx'>Long Member Plant</a></li>
+                                                        <li><a href='railway-plant.aspx'>New Railway Plant</a></li>
+                                                    </ul>
+                                                </li-->
+
+                                            </ul>
+                                        </li>
+                                        <li><a href='#'>Technology </a>
+                                            <ul>
+                                                <li><a href='Product-Design-and-Validation.aspx'>Product Design & Validation</a></li>
+                                                <li><a href='Process-Engineering.aspx'>Process Engineering</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href='javascript:void(0)'>CSR</a>
+                                            <ul>
+                                                <li><a href='csr.aspx'>CSR Activity</a></li>
+                                                <li><a href='csr-documents.aspx'>Documents & Reports</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li class="arcustom has-sub"><a href='#'>Investor Relationship <i class="fas fa-chevron-down" style="font-size:10px;margin-left:5px;"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        
+    <!-- The Modal -->
+    
+    <section class="banner">
+        <div id="slider" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#slider" data-slide-to="0" class="active"></li>
+                <li data-target="#slider" data-slide-to="1"></li>
+                <li data-target="#slider" data-slide-to="2"></li>
+                <li data-target="#slider" data-slide-to="3"></li>
+                 <li data-target="#slider" data-slide-to="4"></li>
+                 <li data-target="#slider" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+
+
+
+                <div class="carousel-item active">
+                    <div class="videoboxmain">
+                        <video class="mainvideo" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                            <source src="videos/video11.mp4" type="video/mp4">
+                        </video>
+                        <div class="bannertext">
+                            <div class="distable">
+                                <div class="distablecell">
+                                    <div>
+                                        <h1 data-animation="animated zoomIn">Leading Manufacturer Of Auto & Non-Auto Components</h1>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="videoboxmain">
+                        <video class="mainvideo" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                            <source src="videos/video22.mp4" type="video/mp4">
+                        </video>
+                        <div class="bannertext">
+                            <div class="distable">
+                                <div class="distablecell">
+                                    <div>
+                                        <h1 data-animation="animated zoomIn">Robust Foundation Goes A Long Way</h1>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url(images/banner3.jpg);">
+                    <div class="videoboxmain">
+
+                        <div class="bannertext">
+                            <div class="distable">
+                                <div class="distablecell">
+                                    <div>
+                                        <h1 data-animation="animated zoomIn">OMAX: Evolving From A Manufacturing To An Engineering Company</h1>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="carousel-item">
+                    <div class="videoboxmain">
+                        <video class="mainvideo" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                            <source src="videos/video3.mp4" type="video/mp4">
+                        </video>
+                        <div class="bannertext">
+                            <div class="distable">
+                                <div class="distablecell">
+                                    <div>
+                                        <h1 data-animation="animated zoomIn">Leading The Way In Automation</h1>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="videoboxmain">
+                        <video class="mainvideo" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                            <source src="videos/video4.mp4" type="video/mp4">
+                        </video>
+                        <div class="bannertext">
+                            <div class="distable">
+                                <div class="distablecell">
+                                    <div>
+                                        <h1 data-animation="animated zoomIn">Bridging The Gap Between Human &amp; Technology</h1>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url(images/banner4.jpg);">
+                    <div class="videoboxmain">
+
+                        <div class="bannertext">
+                            <div class="distable">
+                                <div class="distablecell">
+                                    <div>
+                                        <h1 data-animation="animated zoomIn">OMAXIANS: Driving Performance Culture</h1>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- controls -->
+            <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+                <i class="fas fa-chevron-left"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+                <i class="fas fa-chevron-right"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <section class="widget busbg d-none">
+        <div class="container">
+            <h3 class="heading text-center"><span>Our</span> Businesses</h3>
+            <div class="servicehomesec">
+                <ul>
+                    <li>
+                        <h5>Commercial Vehicle</h5>
+                        <div class="servicehomeboxinn">
+                            <div class="d-table">
+                                <div class="d-tablecell">
+                                    <h4>Commercial Vehicle</h4>
+
+                                    <div><a href="Commercial-Vehicle.aspx">Read More</a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Passenger Cars</h5>
+                        <div class="servicehomeboxinn">
+                            <div class="d-table">
+                                <div class="d-tablecell">
+                                    <h4>Passenger Cars</h4>
+
+                                    <div><a href="Passenger-Car.aspx">Read More</a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Railways & Heavy Fabrication</h5>
+                        <div class="servicehomeboxinn">
+                            <div class="d-table">
+                                <div class="d-tablecell">
+                                    <h4>Railways & Heavy Fabrication</h4>
+                                    <div><a href="Railways-and-Heavy-Fabrication.aspx">Read More</a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+    <section class="widget abtsection" id="keystrength">
+        <div class="container">
+            <h3 class="heading"><span>Our</span> Key Strengths at a glance</h3>
+            <div class="row margin0 keyslider justify-content-center">
+                <div class="col-md-3 padd0">
+                    <div id="keyfirstbox" class="feturebox wow fadeInUp" data-wow-delay="0.1s">
+                        <div>
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Leading</h4>
+                            <p>Commercial vehicle manufacturer</p>
+                        </div>
+                    </div>
+                </div>
+				<!--
+                <div class="col-md-3 padd0">
+                    <div class="feturebox wow fadeInUp" data-wow-delay="0.3s">
+                        <div>
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>India's only Tier 1 company</h4>
+                            <p>capable of delivering paintless coach shells</p>
+                        </div>
+                    </div>
+                </div>
+				-->
+                <div class="col-md-3 padd0">
+                    <div class="feturebox wow fadeInUp" data-wow-delay="0.5s">
+                        <div>
+                            <i class="fas fa-chart-area"></i>
+                            <h4>Proprietary Design & Manufacturing solutions</h4>
+                            <p>for light weighting</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 padd0">
+                    <div class="feturebox wow fadeInUp" data-wow-delay="0.7s">
+                        <div>
+                            <i class="fas fa-award"></i>
+                            <h4>Respect</h4>
+                            <p>for Intellectual property </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="widget teamsection">
+        <div class="container">
+            <div class="heading text-center">
+                <h3 class="heading"><span>Meet </span> our leaders</h3>
+            </div>
+           
+            <div class="owl-carousel" id="teamslider">
+                <div class="leaders leaders-play-btn">
+                    <a class="play-link" href="#.">
+                        <div class="img-holder">
+                            <img class="leader-img" src="images/jkm-sir.jpg" alt="">
+                            <div class="overlay-bg"></div>
+                        </div>
+                        <img class="play-btn-img" style="display: none;" src="images/play-btn.png">
+                    </a>
+                    <h4 class="leader-name">Mr. Jatender Mehta<span class="topic">Vice Chairman-Cum-MD</span></h4>
+                </div>
+              
+                <div class="leaders leaders-play-btn">
+                    <a class="play-link" data-fancybox="team" href="https://youtu.be/rKh2k2zB1yE">
+                        <div class="img-holder">
+                            <img class="leader-img" src="images/Devashish-Mehta.jpg" alt="">
+                            <div class="overlay-bg"></div>
+                        </div>
+                        <img class="play-btn-img" style="display: none;" src="images/play-btn.png">
+                    </a>
+                    <h4 class="leader-name">Mr. Devashish Mehta<span class="topic">Managing Director</span></h4>
+                </div>
+                <div class="leaders leaders-play-btn">
+                    <a class="play-link"  href="#.">
+                        <div class="img-holder">
+                            <img class="leader-img" src="https://www.omaxauto.com/images/sakshi-kaura.jpg" alt="">
+                            <div class="overlay-bg"></div>
+                        </div>
+                        <img class="play-btn-img" style="display: none;" src="images/play-btn.png">
+                    </a>
+                    <h4 class="leader-name">Mrs. Sakshi M Kaura<span class="topic">Non Executive Director</span></h4>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+
+            <div class="top-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="footbox">
+                                <h4>About Omax</h4>
+                                <div class="footaboutbox">
+                                    
+                                    <p>Omax Autos Limited is one of the leading manufacturer of sheet metal components.</p>
+                                    <a href="about-company-profile.aspx">Read more</a>
+                                    <div class="sociallist">
+                                        <ul>
+                                            <li><a target="_blank" href="https://www.facebook.com/omaxautos/"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a target="_blank" href="https://twitter.com/OmaxAutosltd"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a target="_blank" href="https://in.linkedin.com/company/omax-autos-ltd"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="footbox">
+                                <h4>Site Links</h4>
+                                <ul class="footer-list">
+                                    <li><a href="Default.aspx">Home</a></li>
+                                    <li><a href="Customers.aspx">Customers</a></li>
+                                    <li><a href="Your-career-at-OMAX.aspx">Career @ OMAX</a></li>
+
+                                    <li><a href="csr.aspx">CSR</a></li>
+                                    <li><a href="contact-us.aspx">Contact US</a></li>
+                                    <li><a href="sitemap.aspx">Site Map</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="footbox">
+                                <h4>About Us</h4>
+                                <ul class="footer-list">
+                                    <li><a href="about-company-profile.aspx">Company Profile</a></li>
+                                    <li><a href="vision.aspx">Vision</a></li>
+                                    <li><a href="#.">Mission</a></li>
+                                    <li><a href="core-values.aspx">Core Values</a></li>
+                                    <li><a href="about-management-board-of-directors.aspx">Board of Directors</a></li>
+                                    <li><a class="scroll" id="keymenubtn" href="Default.aspx#keystrength">Key Strengths </a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footbox">
+                                <h4>Business Areas</h4>
+                                <ul class="footer-list">
+
+                                    <li><a href="Commercial-Vehicle.aspx">Commercial Vehicle</a></li>
+                                    <li><a href="Railways-and-Heavy-Fabrication.aspx">Railways &amp; Heavy Fabrication</a></li>
+                                    <li><a href="Our-Future-Offerings.aspx">Our Future Offerings</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footbox">
+                                <h4>Reach Us !</h4>
+                                <div class="footadd">
+                                    <p><i class="fas fa-map-marker-alt"></i>Plot No. B-26, Institutional Area, Sector-32, Gurugram (Haryana)<br />India-122001 </p>
+                                    <p><i class="fas fa-phone"></i>Phone : +91-124-4343000 / 4341000 Fax : +91-124-2580016 </p>
+                                    <p><i class="fas fa-fax"></i>CIN: L30103HR1983PLC026142</p>
+                                    <p><i class="fas fa-envelope"></i>E-mail : <a href="mailto:info@omaxauto.com">info@omaxauto.com</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- row -->
+
+                    <div class="footercard">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="bot-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><a href="#." data-toggle="modal" data-target="#copypoup">Copyright 2026 OMAX Auto Limited. | All rights reserved.</a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="footright">
+                                <a target="_blank" href="https://www.way2webworld.com/">
+                                    <img height="35" src="https://way2webworld.com/images/developedby2.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="copypoup">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="copypopbx">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div>
+                            <h4>Copyright 2026 OMAX Auto</h4>
+                            <p>Material on this site is protected by copyright. Material may be downloaded or copied for personal use. Appropriate acknowledgement of the copyright owner is required if material is re-published in any format.</p>
+                            <h4>Legal Disclaimer</h4>
+                            <p>It is not possible to guarantee the accuracy of the information contained on this website. We therefore accept no liability for any inaccuracies or any loss or damage arising from the use of, or reliance on, information obtained from this website. The information and materials contained within this website â€“ and the terms and conditions of the access to and use of such information and materials â€“ are subject to change without notice.</p>
+                            <h4>Visitors of this website must agree that:</h4>
+                            <p>They will not engage in any activities related to the website that are contrary to applicable law, regulation or the terms of any agreements.</p>
+                            <p>OMAX Autos Limited may discontinue or make changes in the information, products, or services described herein at any time without prior notice to the users and without any liability to them. Any dated information is published as of its date only, and OMAX AUTO does not undertake any obligation or responsibility to update or amend any such information. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

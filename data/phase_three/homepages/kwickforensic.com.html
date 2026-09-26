@@ -1,0 +1,1553 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kwick Forensics</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="/CustCss/nav.css?v=1" rel="stylesheet" />
+
+    
+    
+
+    <link href="/CustCss/Rough.css?v=17" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    
+    <link href="/CustCss/safari-compat.css?v=2" rel="stylesheet" />
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "xyrbwfed96");
+    </script>
+</head>
+<body>
+
+
+
+<style>
+    .mobile-menu .sub-item-link {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+    /* Scoped ONLY to the 3 catalogue download buttons inside the modal.
+       Does not touch .download-btn itself (design stays exactly as-is),
+       just stacks the three buttons with spacing and keeps them
+       responsive on small screens. */
+    .catalogue-links-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+        .catalogue-links-group .download-btn {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            box-sizing: border-box;
+            white-space: nowrap;
+        }
+
+    @media (max-width: 480px) {
+        .catalogue-links-group .download-btn {
+            max-width: 100%;
+            white-space: normal;
+        }
+    }
+
+    /* Keeps "( OR )" on a single line instead of breaking into 3 lines. */
+    .modal-body1 .or-section {
+        white-space: nowrap;margin-left:40px;
+    }
+
+    /* Gives the QR code breathing room from the modal's left edge. */
+    .modal-body1 .qr-img {
+        margin-left: 45px;
+    }
+</style>
+
+<div id="catalogueModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div class="catalogue_head">Catalogue</div>
+        <div class="catalogue_QRtext">Scan QR-Code Download</div>
+
+        <div class="modal-body1">
+            <img src="/Images/Catalogue_IMG.png" alt="QR Code" class="qr-img">
+
+            <div class="or-section">( OR )</div>
+
+            <div class="catalogue-links-group">
+                <a href="/Images/PDF_File/Kwick_Forensic_AIO_Catalogue_2026.pdf" target="_blank" download class="download-btn">
+                    AIO Catalogue
+                </a>
+
+                <a href="/Images/PDF_File/AIO MII Catalogue.pdf" target="_blank" download class="download-btn">
+                    MII Catalogue
+                </a>
+
+                <a href="/Images/PDF_File/Cyber Forensic Products Catalogue.pdf" target="_blank" download class="download-btn">
+                    Cyber Forensic Catalogue
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar1">
+    <div class="container_new nav-inner1">
+        <div class="logo_NeW">
+            <a href="/Home/Index">
+                <img src="/Images/kwick_soft_logo.png" alt="Kwick Soft Logo" />
+            </a>
+        </div>
+
+        <button class="catalogue-btn" onclick="openModal()">
+            Download Catalogue
+        </button>
+
+        <div class="mobile-header">
+            <span class="menu-text">MENU</span>
+            <i class="fa fa-bars mobile-menu-icon" onclick="toggleMobileMenu()"></i>
+        </div>
+
+
+        <nav class="nav1" aria-label="Primary">
+            <ul>
+                <li><a href="/Home/Index" data-menu="home">Home</a></li>
+                <li><a href="/Home/Index#about">About Us</a></li>
+                <li class="mega1">
+
+                    <a style="padding:50px 0px;" href="#products" data-menu="products">
+                        Products
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+
+                    <div class="product-popup1">
+                        <div class="popup-left1">
+                            <ul>
+                                <li class="left-item1 active" data-target="felid">FIELD FORENSICS</li>
+                                <li class="left-item1">
+                                    <a href="/Products/E_Forensics">E-FORENSICS</a>
+                                </li>
+                                <li class="left-item1" data-target="lab">CYBER FORENSICS</li>
+                                <li class="left-item1" data-target="forensiclab">FORENSIC LABS</li>
+                                <li class="left-item1" data-target="training">TRAINING</li>
+                            </ul>
+                        </div>
+
+                        <div class="popup-divider1"></div>
+
+                        <div class="popup-right1">
+                            <div style="" class="right-list1 active" id="felid">
+                                <div class="col1">
+                                    <div class="row-box1">
+                                        <a href="/Products/SubCategories/Fingerprints">
+                                            <div class="toggle-head1">Fingerprints</div>
+                                        </a>
+                                        <div class="inline-list1">
+                                            <a class="A_tag1" href="/Products/Index/Hand Held Devices">Hand Held Devices</a>
+                                            <a class="A_tag1" href="/Products/Index/Powders">Powders</a>
+                                            <a class="A_tag1" href="/Products/Index/Brushes">Brushes</a>
+                                            <a class="A_tag1" href="/Products/Index/Magnifiers">Magnifiers</a>
+                                            <a class="A_tag1" href="/Products/Index/Lifting Tapes">Lifting Tapes</a>
+                                            <a class="A_tag1" href="/Products/Index/Backing Cards">Backing Cards</a>
+                                            <a class="A_tag1" href="/Products/Index/Finger Print Kits">Finger Print Kits</a>
+                                            <a class="A_tag1" href="/Products/Index/Finger Print Capturing Device">Finger Print Capturing Device</a>
+                                            <a class="A_tag1" href="/Products/Index/Pads">Pads</a>
+                                            <a class="A_tag1" href="/Products/Index/Rollers">Rollers</a>
+                                            <a class="A_tag1" href="/Products/Index/Inks">Inks</a>
+                                            <a class="A_tag1" href="/Products/Index/More Fingerprint">More Fingerprint</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col1 group3 full">
+                                    <div class="row-box1">
+                                        <a href="/Products/SubCategories/Forensics Evidence Collection Kits">
+                                            <div class="toggle-head1">Forensics Evidence Collection Kits</div>
+                                        </a>
+                                        <div class="inline-list1">
+                                            <a class="A_tag1" href="/Products/Index/Explosives">Explosives </a>
+                                            <a class="A_tag1" href="/Products/Index/Narcotics">Narcotics</a>
+                                            <a class="A_tag1" href="/Products/Index/Narcotics Devices">Narcotics Devices</a>
+                                            <a class="A_tag1" href="/Products/Index/Blood and Body Fluids">Blood & Body Fluids</a>
+                                            <a class="A_tag1" href="/Products/Index/Gun Shot Residue">Gun Shot Residue</a>
+                                            <a class="A_tag1" href="/Products/Index/Evidence Collection and Identification kit">Evidence Collection & Identification kit</a>
+                                            <a class="A_tag1" href="/Products/Index/Sketch Kit">Sketch Kit</a>
+                                            <a class="A_tag1" href="/Products/Index/Serial Number Restoration">Serial Number Restoration</a>
+                                            <a class="A_tag1" href="/Products/Index/Balistics Kits">Balistics Kits</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Products/SubCategories/Forensic">
+                                            <div class="toggle-head1">Forensic</div>
+                                        </a>
+                                        <div class="inline-list1">
+                                            <a class="A_tag1" href="/Products/Index/Laboratory Equipments">Laboratory Equipment</a>
+                                            <a class="A_tag1" href="/Products/Index/Alternate Light Sources">Alternate Light Sources </a>
+                                            <a class="A_tag1" href="/Products/Index/3d Laser Scanner">3D Laser Scanners</a>
+                                            <a class="A_tag1" href="/Products/Index/Hand Held Device">Hand Held Devices</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Products/SubCategories/DNA">
+                                            <div class="toggle-head1">DNA</div>
+                                        </a>
+                                        <div class="inline-list1">
+                                            <a class="A_tag1" href="/Products/Index/DNA Kits">DNA Kits</a>
+                                            <a class="A_tag1" href="/Products/Index/DNA Mobile Forensics Van">DNA Mobile Forensics Van</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col1 group1">
+                                    <div class="row-box1 bottom-row1">
+                                        <a href="/Products/SubCategories/CSI Vehicles">
+                                            <div class="toggle-head1">CSI Vehicles</div>
+                                        </a>
+                                        <div class="inline-list1">
+                                            <a class="A_tag1" href="/Products/Index/Mobile Forensic Vans">MFV Lab</a>
+                                            <a class="A_tag1" href="/Products/Index/Mobile Forensic Labs">MFV Small Vehicle</a>
+                                            <!--<a class="A_tag1" href="/Products/Index/Mobile Forensic Motorcycle">Mobile Forensic Motorcycle</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Products/SubCategories/Foot Print">
+                                            <div class="toggle-head1">Foot Print</div>
+                                        </a>
+                                        <div class="inline-list1">
+                                            <a class="A_tag1" href="/Products/Index/Footprint Taking Kits">Footprint Taking Kits</a>
+                                            <a class="A_tag1" href="/Products/Index/Footprint Light">Footprint Light</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Images/PDF_File/14 Standard Forensic Kits.pdf" target="_blank">
+                                            <div class="toggle-head1">Standard Forensic Kits</div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- LAB -->
+                            <div class="right-list1" id="lab">
+
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Products/SubCategories/Cyber Forensics">
+                                            <div class="toggle-head1">At Lab</div>
+                                        </a>
+                                        <div class="inline-list1">
+                                            <a class="A_tag1" href="/Products/Index/Computer Forensic">Computer Forensic</a>
+                                            <a class="A_tag1" href="/Products/Index/Mobile Forensic">Mobile Forensic</a>
+                                            <a class="A_tag1" href="/Products/Index/Forensic Imager">Forensic Imager</a>
+                                            <a class="A_tag1" href="/Products/Index/Damage Media">Damage Media</a>
+                                            <a class="A_tag1" href="/Products/Index/Image and Video Forensics">Image and Video Forensics</a>
+                                            <a class="A_tag1" href="/Products/Index/DVR Forensics">DVR Forensics</a>
+                                            <a class="A_tag1" href="/Products/Index/Drone Forensics">Drone Forensics</a>
+                                            <a class="A_tag1" href="/Products/Index/Triage Tools">Triage Tools</a>
+                                            <a class="A_tag1" href="/Products/Index/Password Cracking">Password Cracking</a>
+                                            <a class="A_tag1" href="/Products/Index/Work Station">Work Station</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Products/SubCategories/At Crime Scene">
+                                            <div class="toggle-head1">At Crime Scene</div>
+                                        </a>
+                                        <div class="inline-list1">
+                                            <a class="A_tag1" href="/Products/Index/At Computer Forensic">Computer Forensic</a>
+                                            <a class="A_tag1" href="/Products/Index/At Mobile Forensic">Mobile Forensic</a>
+                                            <a class="A_tag1" href="/Products/Index/At Triage Tools">Triage Tools</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="right-list1" id="forensiclab">
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Products/Index/Laboratory Equipments">
+                                            <div class="toggle-head1">Laboratory Equipments</div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Products/Index/DNA Lab Equipment">
+                                            <div class="toggle-head1">DNA Lab Equipment</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TRAINING -->
+                            <div class="right-list1" id="training">
+                                <div class="col1 group1">
+                                    <div class="row-box1">
+                                        <a href="/Products/CrimeSim">
+                                            <div class="toggle-head1">Crime Sim</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </li>
+
+                <li><a href="/Home/Investors_Page" data-menu="investors">Investors</a></li>
+                <li><a href="/R_D/R_And_D" data-menu="r&d">R&D </a></li>
+                <li><a href="/Home/Training" data-menu="training">Training</a></li>
+                <li><a href="/Home/Opportunities" data-menu="job">Job Opportunities</a></li>
+                <!--<li><a href="/Home/CSR" data-menu="csr">CSR</a></li>-->
+                <li><a href="/Law/Law_Index" data-menu="law">Law Index</a></li>
+                <li><a href="/ContactUs/Index" data-menu="contactUs">Contact Us </a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- Backdrop for off-canvas mobile menu -->
+<div class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+<div class="mobile-menu">
+    <div class="mobile-menu-header">
+        <span>MENU</span>
+        <i class="fa fa-times" onclick="toggleMobileMenu()"></i>
+    </div>
+    <ul>
+
+        <li><a href="/Home/Index" data-menu="home">Home</a></li>
+        <li><a href="/Home/Index#about" data-menu="about">About Us</a></li>
+
+        <!-- PRODUCTS (level1) â€” mirrors desktop popup-left1 order exactly -->
+        <li class="sub-item" onclick="toggleSubmenu('products-menu', this)">
+            Products
+            <i class="fa fa-angle-down mobile-arrow"></i>
+        </li>
+
+        <div class="mobile-submenu" id="products-menu">
+
+            <!-- FIELD FORENSICS (level2, toggle-only, no href on desktop either) -->
+            <div class="sub-item" onclick="toggleSubmenu('field-sub', this)">
+                FIELD FORENSICS
+                <i class="fa fa-angle-down mobile-arrow"></i>
+            </div>
+
+            <div class="mobile-submenu level2" id="field-sub">
+
+                <div class="sub-item-link">
+                    <a href="/Products/SubCategories/Fingerprints">Fingerprints</a>
+                    <i class="fa fa-angle-down mobile-arrow" onclick="toggleSubmenu('fp-fingerprints', this)"></i>
+                </div>
+                <div class="mobile-submenu level3" id="fp-fingerprints">
+                    <a href="/Products/Index/Hand Held Devices">Hand Held Devices</a>
+                    <a href="/Products/Index/Powders">Powders</a>
+                    <a href="/Products/Index/Brushes">Brushes</a>
+                    <a href="/Products/Index/Magnifiers">Magnifiers</a>
+                    <a href="/Products/Index/Lifting Tapes">Lifting Tapes</a>
+                    <a href="/Products/Index/Backing Cards">Backing Cards</a>
+                    <a href="/Products/Index/Finger Print Kits">Finger Print Kits</a>
+                    <a href="/Products/Index/Finger Print Capturing Device">Finger Print Capturing Device</a>
+                    <a href="/Products/Index/Pads">Pads</a>
+                    <a href="/Products/Index/Rollers">Rollers</a>
+                    <a href="/Products/Index/Inks">Inks</a>
+                    <a href="/Products/Index/More Fingerprint">More Fingerprint</a>
+                </div>
+
+                <div class="sub-item-link">
+                    <a href="/Products/SubCategories/Forensics Evidence Collection Kits">Forensics Evidence Collection Kits</a>
+                    <i class="fa fa-angle-down mobile-arrow" onclick="toggleSubmenu('fp-evidence-kits', this)"></i>
+                </div>
+                <div class="mobile-submenu level3" id="fp-evidence-kits">
+                    <a href="/Products/Index/Explosives">Explosives</a>
+                    <a href="/Products/Index/Narcotics">Narcotics</a>
+                    <a href="/Products/Index/Narcotics Devices">Narcotics Devices</a>
+                    <a href="/Products/Index/Blood and Body Fluids">Blood & Body Fluids</a>
+                    <a href="/Products/Index/Gun Shot Residue">Gun Shot Residue</a>
+                    <a href="/Products/Index/Evidence Collection and Identification kit">Evidence Collection & Identification kit</a>
+                    <a href="/Products/Index/Sketch Kit">Sketch Kit</a>
+                    <a href="/Products/Index/Balistics Kits">Balistics Kits</a>
+                </div>
+
+                <div class="sub-item-link">
+                    <a href="/Products/SubCategories/Forensic">Forensic</a>
+                    <i class="fa fa-angle-down mobile-arrow" onclick="toggleSubmenu('fp-forensic', this)"></i>
+                </div>
+                <div class="mobile-submenu level3" id="fp-forensic">
+                    <a href="/Products/Index/Laboratory Equipments">Laboratory Equipment</a>
+                    <a href="/Products/Index/3d Laser Scanner">3D Scanners</a>
+                    <a href="/Products/Index/Hand Held Device">Hand Held Devices</a>
+                    <a href="/Products/Index/Alternate Light Sources">Alternate Light Sources</a>
+                    <a href="/Products/Index/Rapiscan">Rapiscan</a>
+                </div>
+
+                <div class="sub-item-link">
+                    <a href="/Products/SubCategories/DNA">DNA</a>
+                    <i class="fa fa-angle-down mobile-arrow" onclick="toggleSubmenu('fp-dna', this)"></i>
+                </div>
+                <div class="mobile-submenu level3" id="fp-dna">
+                    <a href="/Products/Index/DNA Kits">DNA Kits</a>
+                    <a href="/Products/Index/DNA Mobile Forensics Van">DNA Mobile Forensics Van</a>
+                </div>
+
+                <div class="sub-item-link">
+                    <a href="/Products/SubCategories/CSI Vehicles">CSI Vehicles</a>
+                    <i class="fa fa-angle-down mobile-arrow" onclick="toggleSubmenu('fp-csi', this)"></i>
+                </div>
+                <div class="mobile-submenu level3" id="fp-csi">
+                    <a href="/Products/Index/Mobile Forensic Vans">Mobile Forensic Vans</a>
+                    <a href="/Products/Index/Mobile Forensic Labs">Mobile Forensic Labs</a>
+                </div>
+
+                <div class="sub-item-link">
+                    <a href="/Products/SubCategories/Foot Print">Foot Print</a>
+                    <i class="fa fa-angle-down mobile-arrow" onclick="toggleSubmenu('fp-footprint', this)"></i>
+                </div>
+                <div class="mobile-submenu level3" id="fp-footprint">
+                    <a href="/Products/Index/Footprint Taking Kits">Footprint Taking Kits</a>
+                </div>
+
+                <a href="/Images/PDF_File/14 Standard Forensic Kits.pdf" target="_blank">Standard Forensic Kits</a>
+
+            </div>
+
+            <!-- E-FORENSICS (level2, direct link, no children â€” same as desktop) -->
+            <a class="sub-item sub-item-direct" href="/Products/E_Forensics">E-FORENSICS</a>
+
+            <!-- CYBER FORENSICS (level2, toggle-only) -->
+            <div class="sub-item" onclick="toggleSubmenu('lab-sub', this)">
+                CYBER FORENSICS
+                <i class="fa fa-angle-down mobile-arrow"></i>
+            </div>
+
+            <div class="mobile-submenu level2" id="lab-sub">
+
+                <div class="sub-item-link">
+                    <a href="/Products/SubCategories/Cyber Forensics">At Lab</a>
+                    <i class="fa fa-angle-down mobile-arrow" onclick="toggleSubmenu('lab-atlab', this)"></i>
+                </div>
+                <div class="mobile-submenu level3" id="lab-atlab">
+                    <a href="/Products/Index/Computer Forensic">Computer Forensic</a>
+                    <a href="/Products/Index/Mobile Forensic">Mobile Forensic</a>
+                    <a href="/Products/Index/Forensic Imager">Forensic Imager</a>
+                    <a href="/Products/Index/Damage Media">Damage Media</a>
+                    <a href="/Products/Index/Image and Video Forensics">Image and Video Forensics</a>
+                    <a href="/Products/Index/DVR Forensics">DVR Forensics</a>
+                    <a href="/Products/Index/Drone Forensics">Drone Forensics</a>
+                    <a href="/Products/Index/Triage Tools">Triage Tools</a>
+                    <a href="/Products/Index/Password Cracking">Password Cracking</a>
+                    <a href="/Products/Index/Work Station">Work Station</a>
+                </div>
+
+                <div class="sub-item-link">
+                    <a href="/Products/SubCategories/At Crime Scene">At Crime Scene</a>
+                    <i class="fa fa-angle-down mobile-arrow" onclick="toggleSubmenu('lab-crimescene', this)"></i>
+                </div>
+                <div class="mobile-submenu level3" id="lab-crimescene">
+                    <a href="/Products/Index/At Computer Forensic">Computer Forensic</a>
+                    <a href="/Products/Index/At Mobile Forensic">Mobile Forensic</a>
+                    <a href="/Products/Index/At Triage Tools">Triage Tools</a>
+                </div>
+
+            </div>
+
+            <!-- FORENSIC LABS (level2, toggle-only) -->
+            <div class="sub-item" onclick="toggleSubmenu('forensiclab-sub', this)">
+                FORENSIC LABS
+                <i class="fa fa-angle-down mobile-arrow"></i>
+            </div>
+
+            <div class="mobile-submenu level2" id="forensiclab-sub">
+                <a href="/Products/Index/Laboratory Equipments">Laboratory Equipments</a>
+                <a href="/Products/Index/DNA Lab Equipment">DNA Lab Equipment</a>
+            </div>
+
+            <!-- TRAINING (level2, toggle-only) -->
+            <div class="sub-item" onclick="toggleSubmenu('training-sub', this)">
+                TRAINING
+                <i class="fa fa-angle-down mobile-arrow"></i>
+            </div>
+
+            <div class="mobile-submenu level2" id="training-sub">
+                <a href="/Products/CrimeSim">Crime Sim</a>
+            </div>
+
+        </div>
+
+        <li><a href="/Home/Investors_Page" data-menu="investors">Investors</a></li>
+        <li><a href="/R_D/R_And_D" data-menu="r&d">R&D</a></li>
+        <li><a href="/Home/Training" data-menu="training">Training</a></li>
+        <li><a href="/Home/Opportunities" data-menu="job">Job Opportunities</a></li>
+        <!--<li><a href="/Home/CSR" data-menu="csr">CSR</a></li>-->
+        <li><a href="/Law/Law_Index" data-menu="law">Law Index</a></li>
+        <li><a href="/ContactUs/Index" data-menu="contactUs">Contact Us</a></li>
+
+    </ul>
+</div>
+
+<script>
+    document.querySelectorAll('.left-item1').forEach(item => {
+        item.addEventListener("mouseenter", () => {
+
+            // Left highlight
+            document.querySelectorAll('.left-item1').forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            // Show right-list
+            document.querySelectorAll('.right-list1').forEach(r => r.classList.remove('active'));
+            const section = document.getElementById(item.getAttribute("data-target"));
+            section.classList.add("active");
+
+            // Reset lists and headings
+            section.querySelectorAll('.inline-list1').forEach(l => l.classList.remove("active"));
+            section.querySelectorAll('.toggle-head1').forEach(h => h.classList.remove('active'));
+        });
+    });
+
+    document.querySelectorAll('.toggle-head1').forEach(head => {
+
+        head.addEventListener("click", () => {
+
+            const section = head.closest('.right-list1');
+
+            // Hide all inline lists inside this section
+            section.querySelectorAll('.inline-list1').forEach(l => l.classList.remove("active"));
+
+            // Remove heading active style
+            section.querySelectorAll('.toggle-head1').forEach(h => h.classList.remove('active'));
+
+            // Show clicked list
+            head.nextElementSibling.classList.add("active");
+
+            // Highlight active heading
+            head.classList.add("active");
+        });
+
+    });
+
+</script>
+
+<script>
+    function isMobile() {
+        return window.innerWidth <= 992;
+    }
+
+    function handleResponsiveMenu() {
+        const mobileHeader = document.querySelector(".mobile-header");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const mobileOverlay = document.querySelector(".mobile-menu-overlay");
+        const desktopMenu = document.querySelector(".nav1");
+
+        if (isMobile()) {
+            // Mobile
+            mobileHeader.style.display = "flex";
+            desktopMenu.style.display = "none";
+        } else {
+            // Desktop - drawer thirandhu irundha close pannitu hide pannu
+            mobileMenu.classList.remove("active");
+            mobileOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+            mobileHeader.style.display = "none";
+            desktopMenu.style.display = "flex";
+        }
+    }
+
+    function toggleMobileMenu() {
+        if (!isMobile()) return; // BLOCK DESKTOP CLICK
+
+        const menu = document.querySelector(".mobile-menu");
+        const overlay = document.querySelector(".mobile-menu-overlay");
+
+        menu.classList.toggle("active");
+        overlay.classList.toggle("active");
+
+        // Menu open irukkumbodhu background scroll lock pannuvom (trending UX)
+        document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "";
+    }
+
+    // id = the collapsible <div> to show/hide
+    // el = the element that was clicked (row OR arrow icon) â€” used only
+    //      to rotate that element's own arrow via the .open class
+    function toggleSubmenu(id, el) {
+        if (!isMobile()) return; // BLOCK DESKTOP CLICK
+        document.getElementById(id).classList.toggle("active");
+        if (el) el.classList.toggle("open");
+    }
+
+    handleResponsiveMenu();
+    window.addEventListener("resize", handleResponsiveMenu);
+
+    // Close the mobile drawer on ANY link tap inside it.
+    // Needed because tapping "About Us" (or any #hash link) while already
+    // on that same page is a same-document navigation (no reload), so the
+    // drawer previously stayed open. Tapping a link from a different page
+    // worked by accident because the full page reload reset the drawer.
+    // This makes the close behavior explicit and consistent everywhere.
+    document.querySelectorAll('.mobile-menu a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            const menu = document.querySelector(".mobile-menu");
+            const overlay = document.querySelector(".mobile-menu-overlay");
+            menu.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.style.overflow = "";
+        });
+    });
+
+</script>
+
+<script>
+    function openModal() {
+        document.getElementById("catalogueModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("catalogueModal").style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        var modal = document.getElementById("catalogueModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+    
+
+
+
+
+<section class="hero reveal">
+    <div class="container hero-wrap">
+        <div>
+            <h1>
+                Modernization of
+                Forensic<br />Science Labs, Fingerprint Bureau,<br />Digital Forensic (Cyber Crime)<br />&amp; DNA Labs
+            </h1>
+            
+        </div>
+
+    </div>
+</section>
+
+<section class="about-section" id="about">
+    <div class="about-wrapper">
+
+        <img src="/Images/AboutUs_backImg.webp" class="bg-blue" alt="Blue Shape">
+
+        
+
+        <div class="about-content">
+            <h5>About Us</h5>
+            <h2>Who We Are</h2>
+            <p>
+                Kwick Forensic is focused on modernization of Police Departments
+                involved in crime scene investigations and specialises in
+                evidence identification, collection, digitization using scientific
+                kits and user friendly handheld devices.
+            </p>
+            <p class="sub-text">
+                Supply of fully equipped Micro Mini Mobile C.S.I units and Mini Mobile C.S.I. vehicles,
+                setting up of “Centre for Excellence” at Police Training Institutes and to adopt best
+                practices in total evidence management. We also offer upgradation of Forensic
+                Science Labs, Fingerprint Bureau, Digital Forensics (Cyber Crime), DNA Labs.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="about-section1">
+    <div class="container-block">
+
+        <div class="abt-row">
+            <div class="img-box big">
+                <img src="/Images/Objective_1.webp">
+            </div>
+            <div class="img-box small">
+                <img src="/Images/Objective_2.webp">
+            </div>
+
+            <div class="abt-content">
+                <h2>Objective</h2>
+                <p>Standardization, Strengthening and Synergizing Law Enforcement with justice delivery system. To minimize the time period to conclude a court case from existing over 15 years to the shortest possible time.</p>
+            </div>
+        </div>
+
+        <div class="abt-row reverse">
+            <div class="img-box big">
+                <img src="/Images/Vision_1.webp">
+            </div>
+            <div class="img-box small">
+                <img src="/Images/Vision_2.webp">
+            </div>
+
+            <div class="abt-content">
+                <h2>Our Vision</h2>
+                <p>Our Vision is to equip all A grade Police Station across India, all districts to be ready with basic investigations products and to provide authenticated test reports of evidences. To create smart police stations. To provide job opportunities to young graduates from forensic background who could perform a professional crime scene investigation. To equip the state Forensic Science Laboratory, upgrade Fingerprint Bureau, Cyber/Digital Forensic Labs, DNA labs with qualified lab technicians and enable to submit test reports of all evidences within the stipulated time.</p>
+            </div>
+        </div>
+
+        <div class="abt-row">
+            <div class="img-box big">
+                <img src="/Images/Mission_1.webp">
+            </div>
+            <div class="img-box small">
+                <img src="/Images/Mission_2.webp">
+            </div>
+
+            <div class="abt-content">
+                <h2>Our Mission</h2>
+                <h5>Mission Forensic 2028 :</h5>
+                <ul>
+                    <li>Reduce Pending Evidences at the Government Forensic Science Labs, Reduce Court Cases.</li>
+                    <li>Minimize Manual Processes & Focus on Digitization Processes from Crime Scene to Court.</li>
+                    <li>Shift from CAPEX to OPEX or Transform to Privatization –Faster Results at Minimum Cost.</li>
+                    <li>Enhance Responsibilities at Police Stations on Investigation Officers, Provide Forensic Experts.</li>
+                    <li>Actively Educate Judges on Forensic Sciences & Adopt Using AI & ML Assisting Judges to Decision Making leading to Conclude court cases, unbiased, fair and much faster.</li>
+                    <a href="/Home/OurMissionDetails" class="view-more">View More</a>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section id="company" class="company-section reveal">
+    <div class="company-container">
+        <div class="company-image">
+            <img src="/Images/The_Company.jpg" alt="Company Building">
+        </div>
+        <div class="company-content">
+            <h2>The Company</h2>
+            <p>
+                With over Five decades of experience in Manufacturing of Consumer and Industrial
+                Electronics specializing in Transformers, Voltage Stabilizers and various Power Supplies,
+                the founder(s) had started as Kwick Soft Solutions Private Limited in 2005 focusing on
+                advanced software development, animation and simulation and later transitioned into
+                forensic science solutions providing Total Evidence Management and Law Enforcement
+                related Products and Solutions offering World Class Technologies at All India Level.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="products-section" id="products-section">
+    <h2>Products</h2>
+    <div class="cards-row">
+        <div id="field-forensics" class="product-card reveal">
+            <div class="icon"><img src="/Images/Sec_1.png" alt="Forensics"></div>
+            <h3>Field Forensics</h3>
+            <ul class="product-list">
+                <li><a href="/Products/SubCategories/Fingerprints">Fingerprints</a></li>
+                <li><a href="/Products/SubCategories/Forensics Evidence Collection Kits">Forensics Evidence Collection Kits</a></li>
+                <li><a href="/Products/SubCategories/Forensic">Forensic</a></li>
+                <li><a href="/Products/SubCategories/DNA">DNA</a></li>
+                <li><a href="/Products/SubCategories/CSI Vehicles">CSI Vehicles</a></li>
+                <li><a href="/Products/SubCategories/Foot Print">Foot Print</a></li>
+                <li><a href="/Images/PDF_File/14 Standard Forensic Kits.pdf" target="_blank">Standard Forensic Kits</a></li>
+            </ul>
+        </div>
+
+        <div id="at-lab" class="product-card reveal">
+            <div class="icon"><img src="/Images/Oec_4.png" alt="Lab"></div>
+            <h3>At Lab</h3>
+            <ul>
+                <li><a href="/Products/SubCategories/Cyber Forensics">Cyber Forensics</a></li>
+                <li><a href="/Products/Index/Laboratory Equipments">Laboratory Equipments</a></li>
+                <li><a href="/Products/Index/DNA Lab Equipment">DNA Lab Equipment</a></li>
+            </ul>
+        </div>
+
+        <div id="train-ing" class="product-card reveal">
+            <div class="icon"><img src="/Images/Sec_3.png" alt="Training"></div>
+            <h3>Training</h3>
+            <ul>
+                <li><a href="/Products/CrimeSim">Crime Sim</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="innovation-section reveal">
+    <div class="container">
+        <h2 class="title">Our Innovation</h2>
+        <p class="subtitle">
+            Driven by research and technology, we continuously innovate to deliver safer, smarter,<br>
+            and more effective forensic solutions
+        </p>
+
+        <div class="cards">
+            <div class="card reveal">
+                <div class="card-top fingerprint">
+                    <img src="/Images/Layer_1-removebg-preview.png" alt="Fingerprint">
+                </div>
+                <div class="card-bottom">
+                    <h3>Advanced Biometrics</h3>
+                    <p>Next-generation fingerprint detection<br>with AI-powered analysis</p>
+                    <button class="read-btn">Read more →</button>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-top dna">
+                    <img src="/Images/Layer_2-removebg-preview.png" alt="DNA">
+                </div>
+                <div class="card-bottom">
+                    <h3>Smart DNA Analysis</h3>
+                    <p>Rapid DNA processing with cloud-based<br>data management</p>
+                    <button class="read-btn">Read more →</button>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-top lab">
+                    <img src="/Images/Layer_3-removebg-preview.png" alt="Microscope">
+                </div>
+                <div class="card-bottom">
+                    <h3>Mobile Lab Solutions</h3>
+                    <p>Fully-equipped mobile forensic units<br>with integrated technology</p>
+                    <button class="read-btn">Read more →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="awards-section">
+
+    <h2 class="title">Awards</h2>
+
+    <div class="awards-slider">
+
+        <!-- Left Arrow -->
+        <button class="Awards_arrow left-arrow" id="prevBtn">
+            &#10094;
+        </button>
+
+        <!-- Slider -->
+        <div class="slider-wrapper">
+
+            <div class="slider-track" id="sliderTrack">
+
+                <!-- Card 1 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=1">
+                        <img src="/Images/01_ThermoFisher.webp" alt="ThermoFisher">
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=2">
+                        <img src="/Images/02_UPSIFS.webp" alt="UPSIFS">
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=3">
+                        <img src="/Images/03_Praaxis solutions.webp" alt="Praaxis Solutions">
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=4">
+                        <img src="/Images/04_ Forensic Hackathon.webp" alt="Forensic Hackathon">
+                    </a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=5">
+                        <img src="/Images/05_Kenya.webp" alt="Kenya">
+                    </a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=6">
+                        <img src="/Images/06_ThermoFisher.webp" alt="ThermoFisher">
+                    </a>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=7">
+                        <img src="/Images/07_Recognition Plaque.webp" alt="Recognition Plaque">
+                    </a>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=8">
+                        <img src="/Images/08_NFSU.webp" alt="NFSU">
+                    </a>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=9">
+                        <img src="/Images/09_ Thermo Fisher.webp" alt="Thermo Fisher">
+                    </a>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=10">
+                        <img src="/Images/10_ ICFSL.webp" alt="ICFSL">
+                    </a>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=11">
+                        <img src="/Images/11_ MHA & NFSU.webp" alt="MHA & NFSU">
+                    </a>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=12">
+                        <img src="/Images/12_ MSME.webp" alt="MSME">
+                    </a>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=13">
+                        <img src="/Images/13_ MT service.webp" alt="MT Service">
+                    </a>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=14">
+                        <img src="/Images/14_Tamar.webp" alt="Tamar">
+                    </a>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=15">
+                        <img src="/Images/15_Sirchie.webp" alt="Sirchie">
+                    </a>
+                </div>
+
+                <!-- Card 16 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=16">
+                        <img src="/Images/16_Sirchie.webp" alt="Sirchie">
+                    </a>
+                </div>
+
+                <!-- Card 17 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=17">
+                        <img src="/Images/17_MHA.webp" alt="MHA">
+                    </a>
+                </div>
+
+                <!-- Card 18 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=18">
+                        <img src="/Images/18_Proaxis.webp" alt="Proaxis">
+                    </a>
+                </div>
+
+                <!-- Card 19 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=19">
+                        <img src="/Images/19_ThermoFisher.webp" alt="ThermoFisher">
+                    </a>
+                </div>
+
+                <!-- Card 20 -->
+                <div class="award-card">
+                    <a href="/Home/AwardsDetails?id=20">
+                        <img src="/Images/20_ThermoFisher.webp" alt="ThermoFisher">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Arrow -->
+        <button class="Awards_arrow right-arrow" id="nextBtn">
+            &#10095;
+        </button>
+
+    </div>
+
+</section>
+
+<section class="section reveal" style="">
+    <div class="container">
+        <h2 style="padding-bottom:40px;">Our Global Partners</h2>
+        <div class="logos" style="margin-top:16px">
+            <div class="logo-box"><img src="/Images/Sirchie_Logo.png" /></div>
+            <div class="logo-box"><img src="/Images/Leica_3D Laser Scanner_Logo.png" /></div>
+            <div class="logo-box"><img src="/Images/Randox logo.png" /></div>
+            <div class="logo-box"><img src="/Images/Thermofisher.png" /></div>
+            <div class="logo-box"><img src="/Images/Rigaku_Logo_RGB.png" /></div>
+            <div class="logo-box"><img src="/Images/seratec_logo.png" /></div>
+            <div class="logo-box"><img src="/Images/shimadzu-corporation-logo-vector.png" /></div>
+            <div class="logo-box"><img src="/Images/Stellar Logo.png" /></div>
+            <div class="logo-box1"><img src="/Images/smallpond.png" /></div>
+        </div>
+    </div>
+</section>
+
+<section class="clients-section">
+    <div class="container">
+        <h2 class="title">Our Esteemed Client</h2>
+
+        <div class="clients">
+
+            <div class="client reveal">
+                <img src="/Images/Oec_2.png" alt="Home Affairs">
+                <p>Ministry Of Home Affairs,<br>Govt Of India</p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/OEC_img2.png" alt="India Map">
+                <p>Ministry of Law and Justice</p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/OEC_img3.png" alt="Home Affairs">
+                <p>Ministry of Health &amp; Family welfare</p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/OEC_img4.png" alt="Home Affairs">
+                <p>Ministry of Defence</p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/CFSL.png" alt="Police Station">
+                <p>
+                    Central Forensics Science Laboratory
+                </p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/OEC_img5.png" alt="Police Station">
+                <p>
+                    Forensic Science Laboratory
+                </p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/OEC_img6.png" alt="Police Station">
+                <p>
+                    Regional Forensic Science Laboratory
+                </p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/OEC_img7.png" alt="Police Station">
+                <p>
+                    Directorate of Forensic Science Services
+                </p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/OEC_img8.png" alt="Police Station">
+                <p>
+                    National Crime Records Bureau
+                </p>
+            </div>
+
+            <div class="client reveal">
+                <img style="border-radius:5px;" src="/Images/OEC_img9.png" alt="Police Station">
+                <p>
+                    National Forensic Sciences University
+                </p>
+            </div>
+
+            <div class="client reveal">
+                <img src="/Images/Oec_3.png" alt="Police Station">
+                <p>
+                    Narcotics Control Bureau
+                </p>
+            </div>
+
+            <div class="client reveal">
+                <img src="/Images/Oec_3.png" alt="Police Station">
+                <p>
+                    State Police
+                </p>
+            </div>
+
+            <div class="client reveal">
+                <img src="/Images/Oec_4.png" alt="Lab">
+                <p>Central &amp; State Forensic Labs</p>
+            </div>
+
+            <div class="client reveal">
+                <img src="/Images/Oec_5.png" alt="Fingerprint">
+                <p>Central &amp; State Fingerprint Bureaus</p>
+            </div>
+
+            <div class="client reveal">
+                <img src="/Images/Layer 6.png" alt="Training">
+                <p>Police Training Academy and Institutions</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="video-section">
+    <div class="video-container">
+        <div class="video-thumb reveal" data-src="https://www.youtube.com/embed/RhacQx3FZzU?autoplay=1">
+            <img src="/Images/Video_thumb1.webp" alt="Video 1 Thumbnail">
+            <div class="overlay">
+                <div class="play-btn">
+                    <svg viewBox="0 0 24 24" fill="white" width="36px" height="36px">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="video-title">KFSL Corporate Video</div>
+        </div>
+        <div class="video-thumb reveal" data-src="https://www.youtube.com/embed/GqqEs88bROU?autoplay=1">
+            <img src="/Images/Video_thumb2.webp" alt="Video 2 Thumbnail">
+            <div class="overlay">
+                <div class="play-btn">
+                    <svg viewBox="0 0 24 24" fill="white" width="36px" height="36px">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="video-title">KFSL Vision Pro</div>
+        </div>
+        <div class="video-thumb reveal" data-src="https://www.youtube.com/embed/sFJwz6NX0jw?autoplay=1">
+            <img src="/Images/Video_thumb3.webp" alt="Video 3 Thumbnail">
+            <div class="overlay">
+                <div class="play-btn">
+                    <svg viewBox="0 0 24 24" fill="white" width="36px" height="36px">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="video-title">KFSL Police Expo</div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer reveal" role="contentinfo">
+    <div class="container cols">
+        <div>
+            <img style="width:230px" src="/Images/kwick_soft_logo.png" />
+            <p class="muted" style="margin-top:8px;color:#ffff;font-size:14px;">
+                Kwick Forensic Solutions Limited is a pioneering organisation with over two decades of
+                expertise in advancing forensic sciences and evidence management in India, thus bridging
+                the gap between crime scenes and court rooms.
+            </p>
+        </div>
+
+        <div>
+            <h3 style="color:#ffff;font-weight:500;font-size:18px;">Company</h3>
+            <p class="muted">
+                <a href="/Home/Index#about">About Us</a><br>
+                <a href="/Home/Certification">Certifications</a><br>
+                <a href="/Home/Opportunities">Job Opportunities</a><br>
+                <a href="/Home/CSR">CSR</a>
+            </p>
+        </div>
+
+        <div>
+            <h3 style="color: #ffff; font-weight: 500; font-size: 18px;">Products</h3>
+            <p class="muted">
+                <a href="/#field-forensics">Field Forensics</a><br>
+                <a href="/#at-lab">At Lab</a><br>
+                <a href="/#train-ing">Training Software</a>
+            </p>
+        </div>
+
+        <div>
+            <h3 style="color: #ffff; font-weight: 500; font-size: 18px;">Support</h3>
+            <p class="muted">
+                <a href="/Home/Training">Training Programs</a><br>
+                <a href="/ContactUs/Index">Contact</a><br>
+            </p>
+        </div>
+    </div>
+
+    <div class="foot-note">
+        <div class="container">
+            &copy;Copyright 2026 KwickForensics - All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    var activeMenu = "home";
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll("a[data-menu]");
+        links.forEach(link => {
+            if (link.getAttribute("data-menu") === activeMenu) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
+
+
+<script>
+    document.querySelectorAll('.left-item').forEach(item => {
+        item.addEventListener("mouseenter", () => {
+
+            // Left highlight
+            document.querySelectorAll('.left-item').forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            // Show right-list
+            document.querySelectorAll('.right-list').forEach(r => r.classList.remove('active'));
+            const section = document.getElementById(item.getAttribute("data-target"));
+            section.classList.add("active");
+
+            // Reset lists and headings
+            section.querySelectorAll('.inline-list').forEach(l => l.classList.remove("active"));
+            section.querySelectorAll('.toggle-head').forEach(h => h.classList.remove('active'));
+        });
+    });
+
+    document.querySelectorAll('.toggle-head').forEach(head => {
+
+        head.addEventListener("click", () => {
+
+            const section = head.closest('.right-list');
+
+            // Hide all inline lists inside this section
+            section.querySelectorAll('.inline-list').forEach(l => l.classList.remove("active"));
+
+            // Remove heading active style
+            section.querySelectorAll('.toggle-head').forEach(h => h.classList.remove('active'));
+
+            // Show clicked list
+            head.nextElementSibling.classList.add("active");
+
+            // Highlight active heading
+            head.classList.add("active");
+        });
+
+    });
+
+</script>
+
+<script>
+    window.addEventListener("scroll", () => {
+        const reveals = document.querySelectorAll(".reveal");
+
+        reveals.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("show");
+            }
+        });
+    });
+</script>
+
+<script>
+    function highlightCardFromHash() {
+        if (window.location.hash) {
+            const id = window.location.hash.substring(1);
+            const element = document.getElementById(id);
+
+            if (element && element.classList.contains("product-card")) {
+
+                // remove old highlights
+                document.querySelectorAll(".card-highlight")
+                    .forEach(el => el.classList.remove("card-highlight"));
+
+                element.classList.add("card-highlight");
+
+                setTimeout(() => {
+                    element.classList.remove("card-highlight");
+                }, 3000);
+            }
+        }
+    }
+
+    // Page load
+    window.addEventListener("load", highlightCardFromHash);
+
+    // Same page hash click
+    window.addEventListener("hashchange", highlightCardFromHash);
+</script>
+<script>
+    const track = document.getElementById("sliderTrack");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    const cards = document.querySelectorAll(".award-card");
+
+    let currentIndex = 0;
+
+    function getCardWidth() {
+        const card = cards[0];
+        const style = window.getComputedStyle(track);
+        const gap = parseInt(style.gap) || 18;
+        return card.offsetWidth + gap;
+    }
+
+    function getVisibleCards() {
+
+        if (window.innerWidth <= 480) return 2;
+        if (window.innerWidth <= 768) return 3;
+        if (window.innerWidth <= 992) return 4;
+
+        return 5; // Desktop
+    }
+
+    function updateSlider() {
+
+        const cardWidth = getCardWidth();
+
+        track.style.transform =
+            `translateX(-${currentIndex * cardWidth}px)`;
+
+        updateButtons();
+    }
+
+    function updateButtons() {
+
+        const visible = getVisibleCards();
+
+        prevBtn.disabled = currentIndex == 0;
+
+        nextBtn.disabled = currentIndex >= cards.length - visible;
+    }
+
+    nextBtn.onclick = function () {
+
+        const visible = getVisibleCards();
+
+        currentIndex += visible;   // <-- 5 images jump
+
+        if (currentIndex > cards.length - visible) {
+            currentIndex = cards.length - visible;
+        }
+
+        updateSlider();
+    };
+
+    prevBtn.onclick = function () {
+
+        const visible = getVisibleCards();
+
+        currentIndex -= visible;   // <-- 5 images back
+
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        }
+
+        updateSlider();
+    };
+
+    window.onresize = function () {
+
+        const visible = getVisibleCards();
+
+        if (currentIndex > cards.length - visible) {
+            currentIndex = cards.length - visible;
+        }
+
+        updateSlider();
+    };
+
+    updateSlider();
+</script>
+<script>
+    const products = [
+        {
+            id: 1,
+            name: "ThermoFisher",
+            image: "/Images/01_ThermoFisher.webp",
+            description: "ThermoFisher award description..."
+        },
+        {
+            id: 2,
+            name: "UPSIFS",
+            image: "/Images/02_UPSIFS.webp",
+            description: "UPSIFS award description..."
+        },
+        {
+            id: 3,
+            name: "Praaxis Solutions",
+            image: "/Images/03_Praaxis solutions.webp",
+            description: "Praaxis Solutions award description..."
+        },
+        {
+            id: 4,
+            name: "Forensic Hackathon",
+            image: "/Images/04_ Forensic Hackathon.webp",
+            description: "Forensic Hackathon award description..."
+        },
+        {
+            id: 5,
+            name: "Kenya",
+            image: "/Images/05_Kenya.webp",
+            description: "Kenya award description..."
+        },
+        {
+            id: 6,
+            name: "ThermoFisher",
+            image: "/Images/06_ThermoFisher.webp",
+            description: "ThermoFisher award description..."
+        },
+        {
+            id: 7,
+            name: "Recognition Plaque",
+            image: "/Images/07_Recognition Plaque.webp",
+            description: "Recognition Plaque award description..."
+        },
+        {
+            id: 8,
+            name: "NFSU",
+            image: "/Images/08_NFSU.webp",
+            description: "NFSU award description..."
+        },
+        {
+            id: 9,
+            name: "Thermo Fisher",
+            image: "/Images/09_ Thermo Fisher.webp",
+            description: "Thermo Fisher award description..."
+        },
+        {
+            id: 10,
+            name: "ICFSL",
+            image: "/Images/10_ ICFSL.webp",
+            description: "ICFSL award description..."
+        },
+        {
+            id: 11,
+            name: "MHA & NFSU",
+            image: "/Images/11_ MHA & NFSU.webp",
+            description: "MHA & NFSU award description..."
+        },
+        {
+            id: 12,
+            name: "MSME",
+            image: "/Images/12_ MSME.webp",
+            description: "MSME award description..."
+        },
+        {
+            id: 13,
+            name: "MT Service",
+            image: "/Images/13_ MT service.webp",
+            description: "MT Service award description..."
+        },
+        {
+            id: 14,
+            name: "Tamar",
+            image: "/Images/14_Tamar.webp",
+            description: "Tamar award description..."
+        },
+        {
+            id: 15,
+            name: "Sirchie",
+            image: "/Images/15_Sirchie.webp",
+            description: "Sirchie award description..."
+        },
+        {
+            id: 16,
+            name: "Sirchie",
+            image: "/Images/16_Sirchie.webp",
+            description: "Sirchie award description..."
+        },
+        {
+            id: 17,
+            name: "MHA",
+            image: "/Images/17_MHA.webp",
+            description: "MHA award description..."
+        },
+        {
+            id: 18,
+            name: "Proaxis",
+            image: "/Images/18_Proaxis.webp",
+            description: "Proaxis award description..."
+        },
+        {
+            id: 19,
+            name: "ThermoFisher",
+            image: "/Images/19_ThermoFisher.webp",
+            description: "ThermoFisher award description..."
+        },
+        {
+            id: 20,
+            name: "ThermoFisher",
+            image: "/Images/20_ThermoFisher.webp",
+            description: "ThermoFisher award description..."
+        }
+    ];
+</script>
+<script>
+    document.querySelectorAll('.video-thumb').forEach(function (thumb) {
+        var originalHTML = thumb.innerHTML;
+        var src = thumb.getAttribute('data-src');
+
+        thumb.addEventListener('click', function (e) {
+            if (e.target.closest('.close-btn')) return;
+            if (thumb.querySelector('iframe')) return;
+
+            thumb.innerHTML =
+                '<iframe src="' + src + '" allow="autoplay; encrypted-media" allowfullscreen></iframe>' +
+                '<button class="close-btn" aria-label="Close video">&times;</button>';
+
+            thumb.querySelector('.close-btn').addEventListener('click', function (e) {
+                e.stopPropagation();
+                thumb.innerHTML = originalHTML;
+            });
+        });
+    });
+</script>
+
+
+
+    
+    
+
+</body>
+</html>

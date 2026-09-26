@@ -1,0 +1,2274 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahinsa Denim | Premium &amp; Sustainable Denim Fabric Manufacturer</title>
+    <meta name="description" content="Ahinsa Denim, a unit of Bhilwara Spinners, produces high-quality sustainable denim and cotton fabrics.">
+    <meta name="keywords"    content="denim, cotton, textile, sustainable, bhilwara, fabric manufacturer">
+    <meta name="robots"      content="index, follow">
+    <link rel="canonical"    href="https://www.bhilwaraspinners.com/">
+
+    <meta property="og:title"       content="Ahinsa Denim | Premium &amp; Sustainable Denim Fabric Manufacturer">
+    <meta property="og:description" content="Ahinsa Denim, a unit of Bhilwara Spinners, produces high-quality sustainable denim and cotton fabrics.">
+    <meta property="og:url"         content="https://www.bhilwaraspinners.com/">
+    <meta property="og:type"        content="website">
+    <meta property="og:image"       content="https://www.bhilwaraspinners.com/assets/images/ahinsa-home-page-banner.jpeg">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "TextileBusiness",
+    "name": "Ahinsa Denim",
+    "image": "https://www.bhilwaraspinners.com/assets/images/ahinsa-home-page-banner.jpeg",
+    "url": "https://www.bhilwaraspinners.com",
+    "logo": "https://www.bhilwaraspinners.com/assets/icons/ahinsa-final-280x100.png",
+    "description": "Ahinsa Denim, a unit of Bhilwara Spinners, produces high-quality sustainable denim and cotton fabrics.",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhilwara",
+        "addressRegion": "Rajasthan",
+        "addressCountry": "IN"
+    }
+}    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/assets/icons/ahinsa-icon.ico">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preload" href="/assets/style/style.css" as="style">
+    <link rel="preload" href="/assets/style/theme.css" as="style">
+    <link rel="stylesheet" href="/assets/style/style.css">
+    <link rel="stylesheet" href="/assets/style/theme.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        corePlugins: { preflight: false },
+        darkMode: ['attribute', 'data-theme'],
+        theme: {
+            extend: {
+                colors: {
+                    orange: {
+                        DEFAULT: 'rgb(243,113,33)',
+                        light:   'rgb(255,140,60)',
+                        dim:     'rgba(243,113,33,0.12)'
+                    }
+                },
+                fontFamily: { poppins: ['Poppins', 'sans-serif'] }
+            }
+        }
+    };
+    </script>
+
+    <!-- Apply saved theme BEFORE render (no flash) -->
+    <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('ahinsa-theme')||'dark'); })();</script>
+
+    <style>
+    /* ═══════════════════════ NAVBAR ═══════════════════════ */
+    #site-nav {
+        position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;
+        display:flex;align-items:center;padding:0 2rem;gap:1rem;
+        background:var(--nav-bg);
+        backdrop-filter:blur(14px) saturate(1.6);
+        -webkit-backdrop-filter:blur(14px);
+        border-bottom:1px solid var(--border);
+        transition:background .4s,box-shadow .4s;
+        will-change:background;
+    }
+    #site-nav.scrolled { background:var(--nav-scroll);box-shadow:0 2px 32px rgba(0,0,0,.25); }
+
+    .nav-logo { flex-shrink:0;margin-right:auto;display:flex;align-items:center;text-decoration:none; }
+    .nav-logo img { height:40px;width:auto;display:block;transition:transform .3s,opacity .3s; }
+    .nav-logo:hover img { transform:scale(1.04);opacity:.9; }
+    [data-theme="light"] .nav-logo img { filter:brightness(0) saturate(100%); }
+
+    /* Nav links */
+    .nav-links { display:flex;align-items:center;gap:.05rem;list-style:none;margin:0;padding:0; }
+    .nav-links > li { position:relative; }
+    .nav-links > li > a {
+        display:flex;align-items:center;gap:.32rem;padding:.46rem .85rem;
+        font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.04em;
+        color:var(--nav-link);text-decoration:none;border-radius:7px;
+        transition:color .22s,background .22s;white-space:nowrap;position:relative;
+    }
+    .nav-links > li > a::after {
+        content:'';position:absolute;bottom:4px;left:50%;right:50%;
+        height:2px;background:var(--orange);border-radius:2px;
+        transition:left .25s ease,right .25s ease;
+    }
+    .nav-links > li > a:hover::after,
+    .nav-links > li > a.active::after { left:12px;right:12px; }
+    .nav-links > li > a:hover,
+    .nav-links > li > a.active { color:var(--orange);background:var(--orange-dim); }
+
+    .nav-arrow { font-size:.5rem;opacity:.55;transition:transform .28s cubic-bezier(.4,0,.2,1); }
+    .nav-links > li:hover > a .nav-arrow,
+    .nav-links > li.dd-open > a .nav-arrow { transform:rotate(180deg);opacity:.9; }
+
+    /* Dropdown */
+    .nav-dropdown {
+        position:absolute;top:calc(100% + 8px);left:-8px;min-width:220px;
+        background:var(--dropdown-bg);border:1px solid var(--dropdown-border);
+        border-top:2px solid var(--orange);border-radius:0 0 12px 12px;
+        list-style:none;margin:0;padding:.4rem 0;
+        opacity:0;pointer-events:none;
+        transform:translateY(-8px) scale(.98);transform-origin:top center;
+        transition:opacity .22s cubic-bezier(.4,0,.2,1),transform .22s cubic-bezier(.4,0,.2,1);
+        box-shadow:0 24px 52px rgba(0,0,0,.24);backdrop-filter:blur(18px);z-index:1100;
+    }
+    .nav-links > li:hover .nav-dropdown,
+    .nav-links > li.dd-open .nav-dropdown { opacity:1;pointer-events:all;transform:translateY(0) scale(1); }
+
+    .nav-dropdown li a {
+        display:flex;align-items:center;gap:.5rem;padding:.54rem 1.1rem;
+        font-family:'Poppins',sans-serif;font-size:.79rem;color:var(--text-sub);
+        text-decoration:none;border-left:2px solid transparent;
+        opacity:0;transform:translateX(-6px);
+        transition:color .18s,padding-left .18s,border-color .18s,background .18s,opacity .18s,transform .18s;
+    }
+    .nav-links > li:hover .nav-dropdown li a,
+    .nav-links > li.dd-open .nav-dropdown li a { opacity:1;transform:translateX(0); }
+    .nav-links > li:hover .nav-dropdown li:nth-child(1) a,
+    .nav-links > li.dd-open .nav-dropdown li:nth-child(1) a  { transition-delay:.03s; }
+    .nav-links > li:hover .nav-dropdown li:nth-child(2) a,
+    .nav-links > li.dd-open .nav-dropdown li:nth-child(2) a  { transition-delay:.07s; }
+    .nav-links > li:hover .nav-dropdown li:nth-child(3) a,
+    .nav-links > li.dd-open .nav-dropdown li:nth-child(3) a  { transition-delay:.11s; }
+    .nav-links > li:hover .nav-dropdown li:nth-child(4) a,
+    .nav-links > li.dd-open .nav-dropdown li:nth-child(4) a  { transition-delay:.15s; }
+    .nav-links > li:hover .nav-dropdown li:nth-child(5) a,
+    .nav-links > li.dd-open .nav-dropdown li:nth-child(5) a  { transition-delay:.18s; }
+    .nav-links > li:hover .nav-dropdown li:nth-child(n+6) a,
+    .nav-links > li.dd-open .nav-dropdown li:nth-child(n+6) a { transition-delay:.21s; }
+
+    .nav-dropdown li a:hover { color:var(--orange);padding-left:1.35rem;border-left-color:var(--orange);background:rgba(243,113,33,.07); }
+    .nav-dropdown li a.dd-active { color:var(--orange);border-left-color:var(--orange);background:rgba(243,113,33,.05); }
+
+    /* Action buttons */
+    .nav-actions { display:flex;align-items:center;gap:.4rem;flex-shrink:0; }
+    #search-toggle, #theme-toggle {
+        display:flex;align-items:center;justify-content:center;
+        width:36px;height:36px;border:none;background:var(--nav-btn-bg);
+        border-radius:9px;cursor:pointer;flex-shrink:0;color:var(--nav-link);font-size:.92rem;
+        transition:background .22s,color .22s,transform .22s;
+    }
+    #search-toggle:hover { background:var(--orange-dim);color:var(--orange);transform:scale(1.1); }
+    #theme-toggle { border-radius:20px;font-size:1rem; }
+    #theme-toggle:hover { background:var(--orange-dim);color:var(--orange);transform:rotate(22deg); }
+    #theme-toggle .icon-sun  { display:none; }
+    #theme-toggle .icon-moon { display:block; }
+    [data-theme="light"] #theme-toggle .icon-sun  { display:block; }
+    [data-theme="light"] #theme-toggle .icon-moon { display:none; }
+
+    /* Hamburger */
+    .hamburger {
+        display:none;flex-direction:column;justify-content:center;align-items:center;
+        gap:5px;width:38px;height:38px;border:none;background:var(--nav-btn-bg);
+        border-radius:9px;cursor:pointer;flex-shrink:0;transition:background .2s;
+    }
+    .hamburger:hover { background:var(--orange-dim); }
+    .hamburger span {
+        display:block;width:20px;height:1.5px;background:var(--ham-color);border-radius:2px;
+        transition:transform .32s cubic-bezier(.4,0,.2,1),opacity .22s,width .22s;
+        transform-origin:center;
+    }
+    .hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0;width:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile menu */
+    #mobile-menu {
+        position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--mob-bg);
+        backdrop-filter:blur(20px);z-index:998;overflow-y:auto;padding:1.5rem 1.5rem 3rem;
+        transform:translateX(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);
+    }
+    #mobile-menu.open { transform:translateX(0); }
+    .mob-list { list-style:none;margin:0;padding:0; }
+    .mob-list > li { border-bottom:1px solid var(--mob-divider);opacity:0;transform:translateX(20px); }
+    #mobile-menu.open .mob-list > li { opacity:1;transform:translateX(0);transition:opacity .3s ease,transform .3s ease; }
+    #mobile-menu.open .mob-list > li:nth-child(1)   { transition-delay:.04s; }
+    #mobile-menu.open .mob-list > li:nth-child(2)   { transition-delay:.08s; }
+    #mobile-menu.open .mob-list > li:nth-child(3)   { transition-delay:.12s; }
+    #mobile-menu.open .mob-list > li:nth-child(4)   { transition-delay:.16s; }
+    #mobile-menu.open .mob-list > li:nth-child(5)   { transition-delay:.20s; }
+    #mobile-menu.open .mob-list > li:nth-child(6)   { transition-delay:.24s; }
+    #mobile-menu.open .mob-list > li:nth-child(n+7) { transition-delay:.28s; }
+
+    .mob-list > li > a, .mob-tog {
+        display:flex;align-items:center;justify-content:space-between;width:100%;
+        padding:1rem .25rem;font-family:'Poppins',sans-serif;font-size:.98rem;font-weight:500;
+        color:var(--mob-link);text-decoration:none;background:none;border:none;cursor:pointer;
+        transition:color .2s,padding-left .2s;
+    }
+    .mob-list > li > a:hover, .mob-tog:hover { color:var(--orange);padding-left:.5rem; }
+    .mob-list > li > a.mob-active { color:var(--orange); }
+    .mob-icon { font-size:.55rem;color:var(--text-sub);transition:transform .3s; }
+    .mob-list > li.open .mob-icon { transform:rotate(180deg);color:var(--orange); }
+    .mob-sub {
+        list-style:none;margin:0;padding:0 0 .6rem 1rem;
+        max-height:0;overflow:hidden;
+        transition:max-height .35s cubic-bezier(.4,0,.2,1);
+    }
+    .mob-list > li.open .mob-sub { max-height:600px; }
+    .mob-sub li a {
+        display:block;padding:.5rem .25rem .5rem .75rem;font-family:'Poppins',sans-serif;font-size:.86rem;
+        color:var(--mob-sub);text-decoration:none;border-left:2px solid var(--mob-sub-border);
+        margin-left:.25rem;transition:color .18s,border-color .18s,padding-left .18s;
+    }
+    .mob-sub li a:hover, .mob-sub li a.mob-active { color:var(--orange);border-left-color:var(--orange);padding-left:1rem; }
+
+    .nav-spacer { height:var(--nav-h); }
+    .nav-spacer.no-spacer { display:none; }
+
+    @media(max-width:1100px){ .nav-links { gap:0; } }
+    @media(max-width:1024px){ .nav-links{display:none;} .hamburger{display:flex;} }
+    @media(max-width:640px){ #site-nav{padding:0 1rem;} }
+
+    /* ═══════════════ PAGE TRANSITION OVERLAY ═══════════════ */
+    #page-transition {
+        position:fixed;inset:0;z-index:9990;pointer-events:none;
+        background:linear-gradient(135deg,var(--orange) 0%,#c05000 100%);
+        transform:scaleX(0);transform-origin:left;
+        transition:transform .38s cubic-bezier(.77,0,.18,1);
+    }
+    #page-transition.entering { transform:scaleX(1);pointer-events:all; }
+
+    /* ═══════════════ SEARCH OVERLAY ═══════════════ */
+    #search-overlay {
+        position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:2000;
+        display:flex;align-items:flex-start;justify-content:center;padding-top:10vh;
+        backdrop-filter:blur(8px);opacity:0;visibility:hidden;pointer-events:none;
+        transition:opacity .22s,visibility .22s;
+    }
+    #search-overlay:not([hidden]) { opacity:1;visibility:visible;pointer-events:auto; }
+    #search-box {
+        width:100%;max-width:640px;background:var(--bg2,#111114);
+        border:1px solid rgba(255,255,255,.14);border-top:2px solid var(--orange);
+        border-radius:14px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,.55);
+        transform:translateY(-14px) scale(.98);margin:0 1rem;
+        transition:transform .22s cubic-bezier(.4,0,.2,1);
+    }
+    #search-overlay:not([hidden]) #search-box { transform:translateY(0) scale(1); }
+    #search-input-wrap {
+        display:flex;align-items:center;gap:.75rem;padding:1.1rem 1.3rem;
+        border-bottom:1px solid var(--border,rgba(255,255,255,.07));
+    }
+    #search-input {
+        flex:1;background:none;border:none;outline:none;
+        color:var(--text,#e4e4e7);font-family:'Poppins',sans-serif;font-size:1rem;
+        caret-color:var(--orange);
+    }
+    #search-input::placeholder { color:var(--text-sub); }
+    #search-close {
+        background:none;border:none;color:var(--text-sub);cursor:pointer;
+        font-size:1rem;padding:.25rem;transition:color .18s,transform .22s;
+    }
+    #search-close:hover { color:var(--orange);transform:rotate(90deg); }
+    .sr-kbd {
+        font-size:.68rem;color:var(--text-sub);border:1px solid var(--border);
+        border-radius:4px;padding:1px 6px;font-family:monospace;white-space:nowrap;
+    }
+    #search-results { padding:.5rem;max-height:360px;overflow-y:auto; }
+    .sr-item {
+        display:flex;align-items:center;gap:.7rem;padding:.72rem 1rem;
+        border-radius:8px;cursor:pointer;text-decoration:none;
+        color:var(--text,#e4e4e7);transition:background .15s,transform .15s;
+    }
+    .sr-item:hover,.sr-item.sr-active { background:var(--orange-dim);transform:translateX(3px); }
+    .sr-item i { color:var(--orange);width:16px;text-align:center;font-size:.85rem; }
+    .sr-item span { font-size:.88rem; }
+    .sr-empty { text-align:center;padding:1.75rem;color:var(--text-sub);font-size:.86rem; }
+    </style>
+
+        <link rel="preload" href="/assets/style/index-page.css" as="style">
+    <link rel="stylesheet" href="/assets/style/index-page.css">
+</head>
+<body>
+
+<!-- Page Transition Overlay -->
+<div id="page-transition" aria-hidden="true"></div>
+
+<nav id="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Ahinsa Denim Home">
+        <img loading="lazy" decoding="async" src="/assets/icons/ahinsa-final-280x100.png"
+             alt="Ahinsa Denim Logo" width="180" height="40">
+    </a>
+
+    <ul class="nav-links" role="menubar">
+                <li role="none">
+                        <a href="/about-us"
+               role="menuitem"
+                               aria-haspopup="true" aria-expanded="false">
+                Who We Are                <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>            </a>
+                        <ul class="nav-dropdown" role="menu">
+                                <li role="none">
+                    <a href="/about-us"
+                       role="menuitem"
+                       >
+                        About Us                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/leadership"
+                       role="menuitem"
+                       >
+                        Leadership                    </a>
+                </li>
+                            </ul>
+                    </li>
+                <li role="none">
+                        <a href="/our-businesses"
+               role="menuitem"
+                               aria-haspopup="true" aria-expanded="false">
+                Our Businesses                <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>            </a>
+                        <ul class="nav-dropdown" role="menu">
+                                <li role="none">
+                    <a href="/fabrics"
+                       role="menuitem"
+                       >
+                        Fabrics                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/real-estate-main"
+                       role="menuitem"
+                       >
+                        Real Estate                    </a>
+                </li>
+                            </ul>
+                    </li>
+                <li role="none">
+                        <a href="/doc"
+               role="menuitem"
+                               aria-haspopup="true" aria-expanded="false">
+                Investors                <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>            </a>
+                        <ul class="nav-dropdown" role="menu">
+                                <li role="none">
+                    <a href="/doc/?category=2"
+                       role="menuitem"
+                       >
+                        Company Information                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/?category=5"
+                       role="menuitem"
+                       >
+                        Annual Return                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/?category=4"
+                       role="menuitem"
+                       >
+                        Code Of Conduct &amp; Policies                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/?category=3"
+                       role="menuitem"
+                       >
+                        Annual Report                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/?category=6"
+                       role="menuitem"
+                       >
+                        Financial Results                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/?category=7"
+                       role="menuitem"
+                       >
+                        Moa Aoa &amp; Coi                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/?category=8"
+                       role="menuitem"
+                       >
+                        Newspaper Publication And Notices                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/?category=9"
+                       role="menuitem"
+                       >
+                        Others                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/?category=10"
+                       role="menuitem"
+                       >
+                        Shareholding Pattern                    </a>
+                </li>
+                            </ul>
+                    </li>
+                <li role="none">
+                        <a href="/sustainability"
+               role="menuitem"
+                               aria-haspopup="true" aria-expanded="false">
+                Sustainability                <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>            </a>
+                        <ul class="nav-dropdown" role="menu">
+                                <li role="none">
+                    <a href="/sustainability"
+                       role="menuitem"
+                       >
+                        Overview                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/responsible-water-usage"
+                       role="menuitem"
+                       >
+                        Water Treatment                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/waste-reduction"
+                       role="menuitem"
+                       >
+                        Waste Reduction                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/carbon-emissions"
+                       role="menuitem"
+                       >
+                        Decarbonization                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/chemical-safety"
+                       role="menuitem"
+                       >
+                        Hazardous Chemicals                    </a>
+                </li>
+                            </ul>
+                    </li>
+                <li role="none">
+                        <a href="/corporate-social-responsibility"
+               role="menuitem"
+                               aria-haspopup="true" aria-expanded="false">
+                CSR                <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>            </a>
+                        <ul class="nav-dropdown" role="menu">
+                                <li role="none">
+                    <a href="/corporate-social-responsibility"
+                       role="menuitem"
+                       >
+                        Overview                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/csr-health"
+                       role="menuitem"
+                       >
+                        Health                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/csr-education"
+                       role="menuitem"
+                       >
+                        Education                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/csr-gaushalas"
+                       role="menuitem"
+                       >
+                        Animal Care                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/csr-tree-plantation-main"
+                       role="menuitem"
+                       >
+                        Tree Plantation                    </a>
+                </li>
+                            </ul>
+                    </li>
+                <li role="none">
+                        <a href="/contact-us"
+               role="menuitem"
+                              >
+                Contact                            </a>
+                    </li>
+                <li role="none">
+                        <a href="/our-products"
+               role="menuitem"
+                               aria-haspopup="true" aria-expanded="false">
+                Products                <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>            </a>
+                        <ul class="nav-dropdown" role="menu">
+                                <li role="none">
+                    <a href="/our-products"
+                       role="menuitem"
+                       >
+                        Overview                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/products/100-cotton"
+                       role="menuitem"
+                       >
+                        100% Cotton Denim                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/products/cotton-poly"
+                       role="menuitem"
+                       >
+                        Cotton Poly                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/products/cotton-poly-stretch"
+                       role="menuitem"
+                       >
+                        Cotton Poly Stretch                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/products/denim-shirting"
+                       role="menuitem"
+                       >
+                        Denim Shirting                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/products/kids-denim"
+                       role="menuitem"
+                       >
+                        Kids Denim                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/products/high-stretch"
+                       role="menuitem"
+                       >
+                        High Stretch Denim                    </a>
+                </li>
+                            </ul>
+                    </li>
+                <li role="none">
+                        <a href="/services"
+               role="menuitem"
+                               aria-haspopup="true" aria-expanded="false">
+                Services                <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i>            </a>
+                        <ul class="nav-dropdown" role="menu">
+                                <li role="none">
+                    <a href="/research-and-development"
+                       role="menuitem"
+                       >
+                        Research and Development                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/creative-room"
+                       role="menuitem"
+                       >
+                        Creative Room                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/quality-assurance"
+                       role="menuitem"
+                       >
+                        Quality Assurance                    </a>
+                </li>
+                                <li role="none">
+                    <a href="/doc/certificates"
+                       role="menuitem"
+                       >
+                        Our Certifications                    </a>
+                </li>
+                            </ul>
+                    </li>
+            </ul>
+
+    <div class="nav-actions">
+        <button id="search-toggle" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </button>
+        <button id="theme-toggle" aria-label="Toggle light/dark mode">
+            <i class="fa-solid fa-sun  icon-sun"  aria-hidden="true"></i>
+            <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+        </button>
+        <button class="hamburger" id="mob-toggle"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ══ SEARCH OVERLAY ══ -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Site search" hidden>
+    <div id="search-box">
+        <div id="search-input-wrap">
+            <i class="fa-solid fa-magnifying-glass" style="color:var(--text-sub);font-size:.95rem;" aria-hidden="true"></i>
+            <input type="text" id="search-input" placeholder="Search pages..." autocomplete="off" spellcheck="false">
+            <span class="sr-kbd">ESC</span>
+            <button id="search-close" aria-label="Close search">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div id="search-results" role="listbox"></div>
+    </div>
+</div>
+
+<!-- ══ MOBILE MENU ══ -->
+<div id="mobile-menu" aria-hidden="true">
+    <ul class="mob-list">
+                <li>
+                            <button class="mob-tog" aria-expanded="false">
+                    Who We Are                    <i class="fa-solid fa-chevron-down mob-icon" aria-hidden="true"></i>
+                </button>
+                <ul class="mob-sub" role="menu">
+                                        <li role="none">
+                        <a href="/about-us"
+                           >
+                            About Us                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/leadership"
+                           >
+                            Leadership                        </a>
+                    </li>
+                                    </ul>
+                    </li>
+                <li>
+                            <button class="mob-tog" aria-expanded="false">
+                    Our Businesses                    <i class="fa-solid fa-chevron-down mob-icon" aria-hidden="true"></i>
+                </button>
+                <ul class="mob-sub" role="menu">
+                                        <li role="none">
+                        <a href="/fabrics"
+                           >
+                            Fabrics                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/real-estate-main"
+                           >
+                            Real Estate                        </a>
+                    </li>
+                                    </ul>
+                    </li>
+                <li>
+                            <button class="mob-tog" aria-expanded="false">
+                    Investors                    <i class="fa-solid fa-chevron-down mob-icon" aria-hidden="true"></i>
+                </button>
+                <ul class="mob-sub" role="menu">
+                                        <li role="none">
+                        <a href="/doc/?category=2"
+                           >
+                            Company Information                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/?category=5"
+                           >
+                            Annual Return                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/?category=4"
+                           >
+                            Code Of Conduct &amp; Policies                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/?category=3"
+                           >
+                            Annual Report                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/?category=6"
+                           >
+                            Financial Results                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/?category=7"
+                           >
+                            Moa Aoa &amp; Coi                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/?category=8"
+                           >
+                            Newspaper Publication And Notices                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/?category=9"
+                           >
+                            Others                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/?category=10"
+                           >
+                            Shareholding Pattern                        </a>
+                    </li>
+                                    </ul>
+                    </li>
+                <li>
+                            <button class="mob-tog" aria-expanded="false">
+                    Sustainability                    <i class="fa-solid fa-chevron-down mob-icon" aria-hidden="true"></i>
+                </button>
+                <ul class="mob-sub" role="menu">
+                                        <li role="none">
+                        <a href="/sustainability"
+                           >
+                            Overview                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/responsible-water-usage"
+                           >
+                            Water Treatment                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/waste-reduction"
+                           >
+                            Waste Reduction                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/carbon-emissions"
+                           >
+                            Decarbonization                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/chemical-safety"
+                           >
+                            Hazardous Chemicals                        </a>
+                    </li>
+                                    </ul>
+                    </li>
+                <li>
+                            <button class="mob-tog" aria-expanded="false">
+                    CSR                    <i class="fa-solid fa-chevron-down mob-icon" aria-hidden="true"></i>
+                </button>
+                <ul class="mob-sub" role="menu">
+                                        <li role="none">
+                        <a href="/corporate-social-responsibility"
+                           >
+                            Overview                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/csr-health"
+                           >
+                            Health                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/csr-education"
+                           >
+                            Education                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/csr-gaushalas"
+                           >
+                            Animal Care                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/csr-tree-plantation-main"
+                           >
+                            Tree Plantation                        </a>
+                    </li>
+                                    </ul>
+                    </li>
+                <li>
+                            <a href="/contact-us"
+                   >
+                    Contact                </a>
+                    </li>
+                <li>
+                            <button class="mob-tog" aria-expanded="false">
+                    Products                    <i class="fa-solid fa-chevron-down mob-icon" aria-hidden="true"></i>
+                </button>
+                <ul class="mob-sub" role="menu">
+                                        <li role="none">
+                        <a href="/our-products"
+                           >
+                            Overview                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/products/100-cotton"
+                           >
+                            100% Cotton Denim                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/products/cotton-poly"
+                           >
+                            Cotton Poly                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/products/cotton-poly-stretch"
+                           >
+                            Cotton Poly Stretch                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/products/denim-shirting"
+                           >
+                            Denim Shirting                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/products/kids-denim"
+                           >
+                            Kids Denim                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/products/high-stretch"
+                           >
+                            High Stretch Denim                        </a>
+                    </li>
+                                    </ul>
+                    </li>
+                <li>
+                            <button class="mob-tog" aria-expanded="false">
+                    Services                    <i class="fa-solid fa-chevron-down mob-icon" aria-hidden="true"></i>
+                </button>
+                <ul class="mob-sub" role="menu">
+                                        <li role="none">
+                        <a href="/research-and-development"
+                           >
+                            Research and Development                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/creative-room"
+                           >
+                            Creative Room                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/quality-assurance"
+                           >
+                            Quality Assurance                        </a>
+                    </li>
+                                        <li role="none">
+                        <a href="/doc/certificates"
+                           >
+                            Our Certifications                        </a>
+                    </li>
+                                    </ul>
+                    </li>
+            </ul>
+</div>
+
+<div class="nav-spacer no-spacer"></div>
+
+<script>
+(function(){
+'use strict';
+
+var html = document.documentElement;
+var nav  = document.getElementById('site-nav');
+var mTgl = document.getElementById('mob-toggle');
+var mMnu = document.getElementById('mobile-menu');
+var tTgl = document.getElementById('theme-toggle');
+var pt   = document.getElementById('page-transition');
+
+/* ── Scroll: darken nav (rAF throttled) ── */
+var ticking = false;
+window.addEventListener('scroll', function(){
+    if (!ticking) {
+        requestAnimationFrame(function(){
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+            ticking = false;
+        });
+        ticking = true;
+    }
+}, {passive:true});
+
+/* ── Theme toggle ── */
+tTgl.addEventListener('click', function(){
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('ahinsa-theme', next);
+});
+
+/* ── Mobile menu ── */
+function closeMobile(){
+    mMnu.classList.remove('open');
+    mTgl.classList.remove('open');
+    mTgl.setAttribute('aria-expanded','false');
+    mMnu.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+}
+mTgl.addEventListener('click', function(){
+    var o = mMnu.classList.toggle('open');
+    mTgl.classList.toggle('open', o);
+    mTgl.setAttribute('aria-expanded', String(o));
+    mMnu.setAttribute('aria-hidden', String(!o));
+    document.body.style.overflow = o ? 'hidden' : '';
+});
+document.querySelectorAll('.mob-tog').forEach(function(btn){
+    btn.addEventListener('click', function(){
+        var li     = btn.closest('li');
+        var isOpen = li.classList.contains('open');
+        document.querySelectorAll('.mob-list > li.open').forEach(function(x){
+            if (x !== li){
+                x.classList.remove('open');
+                var b = x.querySelector('.mob-tog');
+                if (b) b.setAttribute('aria-expanded','false');
+            }
+        });
+        li.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+});
+document.querySelectorAll('#mobile-menu a').forEach(function(a){
+    a.addEventListener('click', closeMobile);
+});
+
+/* ── Desktop dropdown (click for touch screens) ── */
+var ddItems = document.querySelectorAll('.nav-links > li');
+ddItems.forEach(function(li){
+    var link = li.querySelector(':scope > a');
+    var dd   = li.querySelector('.nav-dropdown');
+    if (!link || !dd) return;
+    link.addEventListener('click', function(e){
+        var wasOpen = li.classList.contains('dd-open');
+        ddItems.forEach(function(x){
+            x.classList.remove('dd-open');
+            var xa = x.querySelector(':scope > a');
+            if (xa) xa.setAttribute('aria-expanded','false');
+        });
+        if (!wasOpen){
+            li.classList.add('dd-open');
+            link.setAttribute('aria-expanded','true');
+            e.preventDefault();
+        }
+    });
+});
+document.addEventListener('click', function(e){
+    if (!e.target.closest('.nav-links > li')){
+        ddItems.forEach(function(x){
+            x.classList.remove('dd-open');
+            var xa = x.querySelector(':scope > a');
+            if (xa) xa.setAttribute('aria-expanded','false');
+        });
+    }
+});
+
+/* ── Escape key ── */
+document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+        closeMobile();
+        ddItems.forEach(function(x){ x.classList.remove('dd-open'); });
+    }
+});
+
+/* ── Page Transition ── */
+if (pt){
+    document.querySelectorAll('a[href]').forEach(function(a){
+        var href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') ||
+            href.startsWith('tel:') || href.startsWith('http') ||
+            a.getAttribute('target') === '_blank' || a.hasAttribute('download')) return;
+        a.addEventListener('click', function(e){
+            if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+            e.preventDefault();
+            pt.classList.add('entering');
+            var dest = href;
+            setTimeout(function(){ window.location.href = dest; }, 360);
+        });
+    });
+    window.addEventListener('pageshow', function(ev){
+        if (ev.persisted) pt.classList.remove('entering');
+    });
+    window.addEventListener('load', function(){ pt.classList.remove('entering'); });
+}
+
+/* ── Search ── */
+var sTgl   = document.getElementById('search-toggle');
+var sOvl   = document.getElementById('search-overlay');
+var sInput = document.getElementById('search-input');
+var sRes   = document.getElementById('search-results');
+var sClose = document.getElementById('search-close');
+var srIdx  = -1;
+
+var SP = [
+    {n:'Home',                       u:'/',                               i:'fa-house'},
+    {n:'About Us',                   u:'/about-us',                       i:'fa-circle-info'},
+    {n:'Leadership',                 u:'/leadership',                     i:'fa-user-tie'},
+    {n:'Our Businesses',             u:'/our-businesses',                 i:'fa-briefcase'},
+    {n:'Fabrics',                    u:'/fabrics',                        i:'fa-layer-group'},
+    {n:'Cotton Fabrics',             u:'/cotton-fabric',                  i:'fa-leaf'},
+    {n:'Real Estate',                u:'/real-estate-main',               i:'fa-building'},
+    {n:'Our Products',               u:'/our-products',                   i:'fa-box'},
+    {n:'100% Cotton Denim',          u:'/products/100-cotton',            i:'fa-box'},
+    {n:'Cotton Poly',                u:'/products/cotton-poly',           i:'fa-box'},
+    {n:'Cotton Poly Stretch',        u:'/products/cotton-poly-stretch',   i:'fa-box'},
+    {n:'Denim Shirting',             u:'/products/denim-shirting',        i:'fa-box'},
+    {n:'Kids Denim',                 u:'/products/kids-denim',            i:'fa-box'},
+    {n:'High Stretch Denim',         u:'/products/high-stretch',          i:'fa-box'},
+    {n:'Services',                   u:'/services',                       i:'fa-gears'},
+    {n:'Research & Development',     u:'/research-and-development',       i:'fa-microscope'},
+    {n:'Creative Room',              u:'/creative-room',                  i:'fa-palette'},
+    {n:'Quality Assurance',          u:'/quality-assurance',              i:'fa-circle-check'},
+    {n:'Sustainability',             u:'/sustainability',                  i:'fa-seedling'},
+    {n:'Carbon Emissions',           u:'/carbon-emissions',               i:'fa-cloud'},
+    {n:'Chemical Safety',            u:'/chemical-safety',                i:'fa-flask'},
+    {n:'Energy Efficiency',          u:'/energy-efficiency',              i:'fa-bolt'},
+    {n:'Water Treatment',            u:'/responsible-water-usage',        i:'fa-droplet'},
+    {n:'Waste Reduction',            u:'/waste-reduction',                i:'fa-recycle'},
+    {n:'CSR',                        u:'/corporate-social-responsibility', i:'fa-heart'},
+    {n:'CSR - Health',               u:'/csr-health',                     i:'fa-heart-pulse'},
+    {n:'CSR - Education',            u:'/csr-education',                  i:'fa-graduation-cap'},
+    {n:'CSR - Animal Care',          u:'/csr-gaushalas',                  i:'fa-paw'},
+    {n:'CSR - Tree Plantation',      u:'/csr-tree-plantation-main',       i:'fa-tree'},
+    {n:'Investors',                  u:'/doc',                            i:'fa-chart-line'},
+    {n:'News & Notices',             u:'/newsandpublicnotice',            i:'fa-newspaper'},
+    {n:'Contact Us',                 u:'/contact-us',                     i:'fa-envelope'},
+];
+
+function openS(){
+    sOvl.hidden = false;
+    setTimeout(function(){ sInput.focus(); }, 60);
+    renderS(''); srIdx = -1;
+}
+function closeS(){
+    sOvl.hidden = true; sInput.value = ''; srIdx = -1;
+}
+function renderS(q){
+    q = q.toLowerCase().trim();
+    var list = q ? SP.filter(function(p){ return p.n.toLowerCase().includes(q) || p.u.includes(q); }) : SP;
+    if (!list.length){ sRes.innerHTML = '<div class="sr-empty">No results for &ldquo;'+q+'&rdquo;</div>'; return; }
+    sRes.innerHTML = list.map(function(p){
+        return '<a class="sr-item" href="'+p.u+'"><i class="fa-solid '+p.i+'" aria-hidden="true"></i><span>'+p.n+'</span></a>';
+    }).join('');
+}
+function getItems(){ return sRes.querySelectorAll('.sr-item'); }
+function setActive(idx){
+    var items = getItems();
+    items.forEach(function(el){ el.classList.remove('sr-active'); });
+    if (idx >= 0 && idx < items.length){ items[idx].classList.add('sr-active'); items[idx].scrollIntoView({block:'nearest'}); srIdx = idx; }
+    else { srIdx = -1; }
+}
+
+if (sTgl)   sTgl.addEventListener('click', openS);
+if (sClose) sClose.addEventListener('click', closeS);
+if (sOvl)   sOvl.addEventListener('click', function(e){ if(e.target===sOvl) closeS(); });
+if (sInput){
+    sInput.addEventListener('input', function(){ renderS(sInput.value); srIdx=-1; });
+    sInput.addEventListener('keydown', function(e){
+        var items = getItems(); var len = items.length;
+        if (e.key==='ArrowDown') { e.preventDefault(); setActive(Math.min(srIdx+1,len-1)); }
+        else if (e.key==='ArrowUp') { e.preventDefault(); setActive(Math.max(srIdx-1,0)); }
+        else if (e.key==='Enter' && srIdx>=0) { window.location.href = items[srIdx].getAttribute('href'); }
+    });
+}
+document.addEventListener('keydown', function(e){
+    if (e.key==='Escape' && sOvl && !sOvl.hidden) closeS();
+    if ((e.ctrlKey||e.metaKey) && e.key==='k') { e.preventDefault(); openS(); }
+});
+
+})();
+</script>
+
+<!-- SVG scroll path is injected by JavaScript below -->
+
+<!-- 
+     HERO SECTION
+ -->
+<section class="hero-section" id="sec-hero">
+    <!-- Fallback Image -->
+    <img loading="lazy" id="hero-img"
+         src="/assets/images/home-ahinsa-welcome-new.png"
+         alt="Ahinsa Denim  -  Premium Sustainable Denim"
+         class="hero-media">
+
+    <!-- Background Video -->
+    <video id="hero-vid" class="hero-media" autoplay loop muted playsinline style="display:none;">
+        <source src="/assets/videos/home-vc-welcome.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+
+
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="brand">Ahinsa Denim</span>
+        </h1>
+        <p class="hero-sub">
+            Sustainable luxury, woven into every thread.
+        </p>
+        <div class="hero-actions">
+            <button id="discoverBtn" class="btn-ghost-hero">
+                <i class="fa-solid fa-play" style="margin-right:0.4rem; font-size:0.75rem;"></i> Watch Film
+            </button>
+            <a href="/about-us" class="btn-ghost-hero">Discover</a>
+        </div>
+    </div>
+
+    <div class="scroll-down">
+        <span>Scroll</span>
+        <div class="scroll-pip"></div>
+    </div>
+</section>
+
+<!--  -  -  -  MARQUEE TICKER  -  -  -  -->
+<div class="marquee-wrap">
+    <div class="marquee-track">
+        <span>Stretch Denim</span><span class="marquee-dot">&#183;</span>
+        <span>Rigid Denim</span><span class="marquee-dot">&#183;</span>
+        <span>Cotton-Poly Blend</span><span class="marquee-dot">&#183;</span>
+        <span>Denim Shirting</span><span class="marquee-dot">&#183;</span>
+        <span>High-Stretch Denim</span><span class="marquee-dot">&#183;</span>
+        <span>Kids Denim</span><span class="marquee-dot">&#183;</span>
+        <span>Washed &amp; Finished</span><span class="marquee-dot">&#183;</span>
+        <span>Premium Indigo</span><span class="marquee-dot">&#183;</span>
+        <span>Sustainable Fabrics</span><span class="marquee-dot">&#183;</span>
+        <span>Global Quality</span><span class="marquee-dot">&#183;</span>
+        <!-- Duplicate for infinite loop -->
+        <span>Stretch Denim</span><span class="marquee-dot">&#183;</span>
+        <span>Rigid Denim</span><span class="marquee-dot">&#183;</span>
+        <span>Cotton-Poly Blend</span><span class="marquee-dot">&#183;</span>
+        <span>Denim Shirting</span><span class="marquee-dot">&#183;</span>
+        <span>High-Stretch Denim</span><span class="marquee-dot">&#183;</span>
+        <span>Kids Denim</span><span class="marquee-dot">&#183;</span>
+        <span>Washed &amp; Finished</span><span class="marquee-dot">&#183;</span>
+        <span>Premium Indigo</span><span class="marquee-dot">&#183;</span>
+        <span>Sustainable Fabrics</span><span class="marquee-dot">&#183;</span>
+        <span>Global Quality</span><span class="marquee-dot">&#183;</span>
+    </div>
+</div>
+
+<!--  -  -  -  3-STAT BAR  -  -  -  -->
+<div class="stat-bar">
+    <div class="stat-bar-item">
+        <span class="stat-bar-num">45<span style="color:var(--orange)">+</span></span>
+        <span class="stat-bar-label">Years of Textile Legacy</span>
+    </div>
+    <div class="stat-bar-divider"></div>
+    <div class="stat-bar-item">
+        <span class="stat-bar-num">10<span style="color:var(--orange)">+</span></span>
+        <span class="stat-bar-label">Denim Fabric Varieties</span>
+    </div>
+    <div class="stat-bar-divider"></div>
+    <div class="stat-bar-item">
+        <span class="stat-bar-num">98<span style="color:var(--orange)">%</span></span>
+        <span class="stat-bar-label">Water Recycled via ZLD Plant</span>
+    </div>
+    <div class="stat-bar-divider"></div>
+    <div class="stat-bar-item">
+        <span class="stat-bar-num">2025</span>
+        <span class="stat-bar-label">Denim Division Launched</span>
+    </div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+    <div class="video-modal-inner">
+        <button class="video-close" id="videoClose">&#215;</button>
+        <iframe id="storyVideo" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- 
+     ABOUT STRIP
+ -->
+<div class="section-divider" data-reveal></div>
+
+<section class="about-strip" id="sec-about">
+    <div class="about-strip-text" data-reveal>
+        <span class="section-tag">Who We Are</span>
+        <h2 class="about-lead">
+            Four Decades of Textile Mastery  - <br><span style="color:var(--orange);font-style:normal;">Now in Denim.</span>
+        </h2>
+        <p class="about-body">
+            Bhilwara Spinners Limited, established in 1980, launched its dedicated denim division  - 
+            <strong style="color:#fafafa;">Ahinsa Denim</strong>  -  in 2025. We blend four decades of textile mastery
+            with cutting-edge machinery to produce high-quality, premium-grade denim fabrics for domestic
+            and international apparel brands.
+        </p>
+        <div class="philosophy-pills">
+            <span class="pill"><i class="fa-solid fa-leaf"></i> Sustainable Practices</span>
+            <span class="pill"><i class="fa-solid fa-award"></i> Quality Commitment</span>
+            <span class="pill"><i class="fa-solid fa-handshake"></i> Ethical Production</span>
+            <span class="pill"><i class="fa-solid fa-industry"></i> State-of-Art Manufacturing</span>
+        </div>
+        <a href="/about-us" class="link-orange">Learn our story <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="about-strip-image" style="position:relative;">
+        <img src="/assets/images/overvison-new-232.jpg" alt="Ahinsa Denim Overview" loading="lazy">
+        <!-- Floating stat badge -->
+        <div style="position:absolute;bottom:2rem;left:2rem;z-index:3;background:rgba(10,10,12,0.85);backdrop-filter:blur(16px);border:1px solid rgba(243,113,33,0.25);border-radius:14px;padding:1rem 1.5rem;">
+            <div style="font-family:var(--playfair);font-size:2rem;font-weight:700;color:var(--orange);line-height:1;">45+</div>
+            <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#a1a1aa;margin-top:0.25rem;">Years of Excellence</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 
+     FASHIONING GROWTH  -  INTRO SLIDER
+ -->
+<div class="section-divider" data-reveal></div>
+
+<section class="slider-section" id="sec-growth" data-reveal>
+    <div class="section-header">
+        <span class="section-tag">Our Fabrics & Businesses</span>
+        <h2 class="section-title">Fashioning Growth</h2>
+        <p class="section-desc">From rigid classics to performance stretch  -  explore every denim type crafted at Ahinsa, engineered for global fashion.</p>
+    </div>
+
+    <div class="slider-track-wrap">
+        <button class="slider-arrow prev" onclick="slideScroll('slider1', -310)" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="slider-scroll" id="slider1">
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-stretch-blue.png" alt="Stretch Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag"><i class="fa-solid fa-star"></i> Most Popular</span>
+                    <h3 class="slide-card-title">Stretch Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">2% - 5% Elastane | 250-400 GSM</div>
+                                        <p class="slide-card-desc">Elastane-blended for ultimate comfort and movement. Premium 2-way & 4-way stretch for slim-fit, skinny & jegging silhouettes.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-rigid-dark.png" alt="Rigid Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Classic</span>
+                    <h3 class="slide-card-title">Rigid Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">100% Cotton | 10oz - 14oz</div>
+                                        <p class="slide-card-desc">Classic 100% ring-spun cotton. Raw, authentic selvedge indigo woven for a true traditional denim feel and iconic fade.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-cotton-natural.png" alt="Cotton Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Natural</span>
+                    <h3 class="slide-card-title">Cotton Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">100% Cotton | Breathable</div>
+                                        <p class="slide-card-desc">Pure woven cotton with superior breathability, natural indigo colour retention and a clean, refined hand feel.</p>
+                    <a href="/cotton-fabric" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-fabric-new-page.webp" alt="Denim Shirting" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Versatile</span>
+                    <h3 class="slide-card-title">Denim Shirting</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">Light Weight | 140-200 GSM</div>
+                                        <p class="slide-card-desc">Lightweight, finely woven chambray-denim perfect for shirts, casual jackets, summer tops and unisex garments.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-highstretch-perform.png" alt="High-Stretch Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Performance</span>
+                    <h3 class="slide-card-title">High-Stretch Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">40%+ Stretch | Athletic Grade</div>
+                                        <p class="slide-card-desc">Super-stretch with 40%+ elasticity  -  engineered for activewear, athleisure and performance-first lifestyle fashion.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/ahinsa-website-banner-denim-febric.webp" alt="Cotton-Poly Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Durable</span>
+                    <h3 class="slide-card-title">Cotton-Poly Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">Poly Blend | Anti-Shrink</div>
+                                        <p class="slide-card-desc">Cotton-polyester blend engineered for enhanced durability, reduced shrinkage and wrinkle resistance without losing the denim aesthetic.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-kids-soft.png" alt="Kids Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Kidswear</span>
+                    <h3 class="slide-card-title">Kids Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">Hypoallergenic | Soft Finish</div>
+                                        <p class="slide-card-desc">Softer, safer, skin-friendly denim for children's apparel  -  easy-care, hypoallergenic finish with comfortable lightweight weave.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/washing-new-34567.jpeg" alt="Washed & Finished" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Creative Wash</span>
+                    <h3 class="slide-card-title">Washed & Finished</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">Stone &#183; Enzyme &#183; Acid</div>
+                                        <p class="slide-card-desc">Stone-wash, enzyme-wash & acid-wash finishes. Sandblasted, whiskered or vintage-fade  -  ready-to-wear aesthetic from the roll.</p>
+                    <a href="/creative-room" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/ahinsa Website Banner Denim Machine.jpg" alt="Denim Manufacturing" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Technology</span>
+                    <h3 class="slide-card-title">Denim Manufacturing</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">Rapier &#183; Air-Jet Weaving</div>
+                                        <p class="slide-card-desc">State-of-the-art rapier & air-jet weaving machines producing world-class denim at scale  -  from yarn to finished fabric.</p>
+                    <a href="/our-businesses" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-indigo-premium.png" alt="Premium Indigo Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag"><i class="fa-solid fa-gem"></i> Premium</span>
+                    <h3 class="slide-card-title">Premium Indigo Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">Ring-Spun | Rope-Dyed</div>
+                                        <p class="slide-card-desc">Deep indigo ring-spun rope-dyed denim with exceptional fade potential, rich hand feel and luxurious tonal depth.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-selvedge-weave.png" alt="Raw Selvedge Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Heritage</span>
+                    <h3 class="slide-card-title">Raw Selvedge Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">Shuttle Loom | Selvedge</div>
+                                        <p class="slide-card-desc">Traditionally woven on shuttle looms with clean selvedge edges  -  the pinnacle of denim craftsmanship for heritage and luxury brands.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                        <div class="slide-card">
+                <img alt="Ahinsa Denim"  loading="lazy" decoding="async" src="/assets/images/denim-overdyed-color.png" alt="Overdyed Denim" class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <span class="slide-card-tag">Colour Collection</span>
+                    <h3 class="slide-card-title">Overdyed Denim</h3>
+                                        <div style="font-size:0.65rem;color:rgba(243,113,33,0.8);letter-spacing:0.08em;margin-bottom:0.4rem;font-weight:600;">Multi-Tonal | Fashion Dyes</div>
+                                        <p class="slide-card-desc">Beyond classic indigo  -  overdyed in bold black, grey, olive, burgundy and earth tones for fashion-forward colour statements.</p>
+                    <a href="/denim-fabrics" class="slide-read-more">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+                    </div>
+        <button class="slider-arrow next" onclick="slideScroll('slider1', 310)" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- View All Fabrics link -->
+    <div style="text-align:center; margin-top:2rem;">
+        <a href="/fabrics" class="link-orange">View All Fabric Types <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- 
+     DENIM TYPES  -  VISUAL SHOWCASE
+ -->
+<div class="section-divider" data-reveal></div>
+
+<section class="denim-showcase-section" id="sec-denim">
+    <div class="denim-showcase-header" data-reveal>
+        <span class="section-tag">Denim Varieties</span>
+        <h2 class="section-title">The <span style="color:var(--orange);">Ahinsa Denim</span> Collection</h2>
+        <p class="section-desc">From timeless selvedge to performance stretch  -  every denim type crafted with precision for global fashion houses and apparel brands.</p>
+    </div>
+
+    <div class="denim-types-grid" data-reveal>
+        <!-- Featured: Stretch Denim -->
+        <div class="denim-type-card featured">
+            <img src="/assets/images/denim-stretch-blue.png" alt="Stretch Denim" class="denim-type-img" loading="lazy">
+            <div class="denim-type-overlay">
+                <span class="denim-type-badge"><i class="fa-solid fa-star"></i> Most Popular</span>
+                <h3 class="denim-type-name">Stretch Denim</h3>
+                <div class="denim-spec-tags">
+                    <span class="denim-spec-tag">2â&#183;¬â - œ5% Elastane</span>
+                    <span class="denim-spec-tag">250â&#183;¬â - œ400 GSM</span>
+                    <span class="denim-spec-tag">4-Way Stretch</span>
+                </div>
+                <p class="denim-type-desc">Elastane-blended for ultimate freedom of movement. Premium 2-way & 4-way stretch construction  -  ideal for slim-fit, skinny, and jegging silhouettes.</p>
+                <a href="/denim-fabrics" class="denim-type-link">Explore Fabric <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Rigid Denim -->
+        <div class="denim-type-card">
+            <img src="/assets/images/denim-rigid-dark.png" alt="Rigid Denim" class="denim-type-img" loading="lazy">
+            <div class="denim-type-overlay">
+                <span class="denim-type-badge">Classic</span>
+                <h3 class="denim-type-name">Rigid Denim</h3>
+                <p class="denim-type-desc">100% ring-spun cotton selvedge  -  authentic indigo, traditional feel.</p>
+                <a href="/denim-fabrics" class="denim-type-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- High-Stretch -->
+        <div class="denim-type-card">
+            <img src="/assets/images/denim-highstretch-perform.png" alt="High-Stretch Denim" class="denim-type-img" loading="lazy">
+            <div class="denim-type-overlay">
+                <span class="denim-type-badge">Performance</span>
+                <h3 class="denim-type-name">High-Stretch</h3>
+                <p class="denim-type-desc">40%+ elasticity for activewear & athleisure.</p>
+                <a href="/denim-fabrics" class="denim-type-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Denim Shirting - Wide -->
+        <div class="denim-type-card wide">
+            <img src="/assets/images/denim-fabric-new-page.webp" alt="Denim Shirting" class="denim-type-img" loading="lazy">
+            <div class="denim-type-overlay">
+                <span class="denim-type-badge">Versatile</span>
+                <h3 class="denim-type-name">Denim Shirting</h3>
+                <p class="denim-type-desc">Lightweight chambray-denim woven for shirts, jackets and casual tops  -  140â&#183;¬â - œ200 GSM.</p>
+                <a href="/denim-fabrics" class="denim-type-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Premium Indigo -->
+        <div class="denim-type-card">
+            <img src="/assets/images/denim-indigo-premium.png" alt="Premium Indigo Denim" class="denim-type-img" loading="lazy">
+            <div class="denim-type-overlay">
+                <span class="denim-type-badge"><i class="fa-solid fa-gem"></i> Premium</span>
+                <h3 class="denim-type-name">Premium Indigo</h3>
+                <p class="denim-type-desc">Ring-spun rope-dyed with deep fade potential.</p>
+                <a href="/denim-fabrics" class="denim-type-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Washed & Finished -->
+        <div class="denim-type-card">
+            <img src="/assets/images/washing-new-34567.jpeg" alt="Washed Denim" class="denim-type-img" loading="lazy">
+            <div class="denim-type-overlay">
+                <span class="denim-type-badge">Creative Wash</span>
+                <h3 class="denim-type-name">Washed & Finished</h3>
+                <p class="denim-type-desc">Stone, enzyme & acid washes  -  ready-to-wear from the roll.</p>
+                <a href="/creative-room" class="denim-type-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;" data-reveal>
+        <a href="/denim-fabrics" class="btn-primary-hero" style="display:inline-flex;align-items:center;gap:0.5rem;">
+            <i class="fa-solid fa-layer-group"></i> View All Denim Types
+        </a>
+        <a href="/fabrics" class="btn-ghost-hero" style="margin-left:1rem;display:inline-flex;align-items:center;gap:0.5rem;">
+            All Fabric Ranges
+        </a>
+    </div>
+</section>
+
+
+<!-- 
+     SUSTAINABILITY COUNTERS
+ -->
+<section class="sustain-section" id="sec-sustain">
+    <div class="section-header" data-reveal>
+        <span class="section-tag">Our Commitment</span>
+        <h2 class="section-title">Fashioning Sustainability</h2>
+        <p class="section-desc">Transforming denim manufacturing through measurable environmental initiatives across four key pillars  -  targeting net-zero by 2030.</p>
+    </div>
+
+    <div class="counter-grid">
+                <div class="counter-card" data-reveal style="transition-delay:0s">
+            <div class="counter-icon"><i class="fa-solid fa-tint"></i></div>
+            <div class="counter-number">
+                <span class="counter-val" data-target="0">0</span>+
+            </div>
+            <div class="counter-label">WATER</div>
+            <p class="counter-desc">WATER MANAGED DAILY</p>
+        </div>
+                <div class="counter-card" data-reveal style="transition-delay:0.12s">
+            <div class="counter-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="counter-number">
+                <span class="counter-val" data-target="0">0</span>+
+            </div>
+            <div class="counter-label">DENIM</div>
+            <p class="counter-desc">ANNUAL DENIM PRODUCTION</p>
+        </div>
+                <div class="counter-card" data-reveal style="transition-delay:0.24s">
+            <div class="counter-icon"><i class="fa-solid fa-recycle"></i></div>
+            <div class="counter-number">
+                <span class="counter-val" data-target="0">0</span>+
+            </div>
+            <div class="counter-label">ENERGY</div>
+            <p class="counter-desc">ENERGY CONSUMPTION</p>
+        </div>
+            </div>
+
+    <!-- 2030 Goals strip -->
+    <div style="max-width:900px; margin: 3rem auto 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; padding:0 1rem;" data-reveal>
+                <div style="background:rgba(243,113,33,0.04);border:1px solid rgba(243,113,33,0.15);border-radius:14px;padding:1.25rem;text-align:center;">
+            <div style="color:var(--orange);font-size:1.4rem;margin-bottom:0.6rem;"><i class="fa-solid fa-cloud"></i></div>
+            <div style="color:#fafafa;font-weight:600;font-size:0.9rem;margin-bottom:0.3rem;">Decarbonization</div>
+            <div style="color:#52525b;font-size:0.8rem;">ESP systems & biofuel-based boilers</div>
+        </div>
+                <div style="background:rgba(243,113,33,0.04);border:1px solid rgba(243,113,33,0.15);border-radius:14px;padding:1.25rem;text-align:center;">
+            <div style="color:var(--orange);font-size:1.4rem;margin-bottom:0.6rem;"><i class="fa-solid fa-water"></i></div>
+            <div style="color:#fafafa;font-weight:600;font-size:0.9rem;margin-bottom:0.3rem;">Water Treatment</div>
+            <div style="color:#52525b;font-size:0.8rem;">ZLD plant recycling 98% process water</div>
+        </div>
+                <div style="background:rgba(243,113,33,0.04);border:1px solid rgba(243,113,33,0.15);border-radius:14px;padding:1.25rem;text-align:center;">
+            <div style="color:var(--orange);font-size:1.4rem;margin-bottom:0.6rem;"><i class="fa-solid fa-flask"></i></div>
+            <div style="color:#fafafa;font-weight:600;font-size:0.9rem;margin-bottom:0.3rem;">Chemical Safety</div>
+            <div style="color:#52525b;font-size:0.8rem;">Eliminating hazardous substances</div>
+        </div>
+                <div style="background:rgba(243,113,33,0.04);border:1px solid rgba(243,113,33,0.15);border-radius:14px;padding:1.25rem;text-align:center;">
+            <div style="color:var(--orange);font-size:1.4rem;margin-bottom:0.6rem;"><i class="fa-solid fa-trash-alt"></i></div>
+            <div style="color:#fafafa;font-weight:600;font-size:0.9rem;margin-bottom:0.3rem;">Waste Reduction</div>
+            <div style="color:#52525b;font-size:0.8rem;">Zero waste to landfill programs</div>
+        </div>
+            </div>
+
+    <div style="text-align:center;margin-top:2.5rem;" data-reveal>
+        <a href="/sustainability" class="link-orange" style="font-size:0.9rem;">
+            Explore Sustainability Initiatives <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+<!-- 
+     FEATURES GRID  -  Page Summaries
+ -->
+<section class="features-section" id="sec-features">
+    <div class="section-header" data-reveal>
+        <span class="section-tag">Explore Ahinsa</span>
+        <h2 class="section-title">Everything We Stand For</h2>
+        <p class="section-desc">From world-class fabrics to community impact  -  discover the full breadth of Ahinsa Denim's commitment.</p>
+    </div>
+
+    <div class="feature-grid">
+                <a href="/fabrics" class="feature-card" data-reveal style="transition-delay:0s">
+            <div class="feature-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3 class="feature-card-title">Premium Denim Fabrics</h3>
+            <p class="feature-card-desc">High-quality denim & cotton blends  -  stretch, shirting, poly-cotton and more  -  engineered for durability, style and global fashion standards.</p>
+            <span class="feature-card-link">Explore Fabrics <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+                <a href="/quality-assurance" class="feature-card" data-reveal style="transition-delay:0.1s">
+            <div class="feature-card-icon"><i class="fa-solid fa-microscope"></i></div>
+            <h3 class="feature-card-title">Quality Assurance</h3>
+            <p class="feature-card-desc">Every yard undergoes rigorous testing. Our ISO-aligned QA processes include tensile strength, color fastness, shrinkage, and dimensional stability checks.</p>
+            <span class="feature-card-link">Our QA Process <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+                <a href="/research-and-development" class="feature-card" data-reveal style="transition-delay:0.2s">
+            <div class="feature-card-icon"><i class="fa-solid fa-flask"></i></div>
+            <h3 class="feature-card-title">Research & Development</h3>
+            <p class="feature-card-desc">Our R&D lab continually innovates  -  developing new weave structures, innovative finishing effects, and next-generation sustainable fabric technologies.</p>
+            <span class="feature-card-link">Discover R&D <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+                <a href="/creative-room" class="feature-card" data-reveal style="transition-delay:0s">
+            <div class="feature-card-icon"><i class="fa-solid fa-palette"></i></div>
+            <h3 class="feature-card-title">Creative Room</h3>
+            <p class="feature-card-desc">A dedicated design studio where trends are translated into fabric  -  combining global fashion insights with our in-house wash development capabilities.</p>
+            <span class="feature-card-link">Visit Creative Room <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+                <a href="/corporate-social-responsibility" class="feature-card" data-reveal style="transition-delay:0.1s">
+            <div class="feature-card-icon"><i class="fa-solid fa-heart"></i></div>
+            <h3 class="feature-card-title">CSR & Community</h3>
+            <p class="feature-card-desc">Ahinsa gives back through education programs, gaushalas, tree plantation drives, and healthcare camps  -  building stronger communities around our operations.</p>
+            <span class="feature-card-link">Our CSR Work <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+                <a href="/our-businesses" class="feature-card" data-reveal style="transition-delay:0.2s">
+            <div class="feature-card-icon"><i class="fa-solid fa-building"></i></div>
+            <h3 class="feature-card-title">Our Businesses</h3>
+            <p class="feature-card-desc">From premium denim and cotton fabrics to real estate development, Bhilwara Spinners has diversified into multiple high-growth sectors.</p>
+            <span class="feature-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+            </div>
+</section>
+
+<!-- 
+     FASHIONING A BETTER TOMORROW  -  FUTURE SLIDER
+ -->
+<div class="section-divider" data-reveal></div>
+
+<section class="slider-section" data-reveal>
+    <div class="section-header">
+        <span class="section-tag">CSR & Sustainability</span>
+        <h2 class="section-title orange">Fashioning a Better Tomorrow</h2>
+        <p class="section-desc">Our social and environmental commitments that make us more than just a fabric company.</p>
+    </div>
+
+    <div class="slider-track-wrap">
+        <button class="slider-arrow prev" onclick="slideScroll('slider2', -380)" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="slider-scroll" id="slider2">
+                        <div class="slide-card landscape">
+                <img alt="Ahinsa Denim"  loading="lazy" src="/assets/images/denim-with-a-purpose-educating-for-impact-691738.jpeg"
+                     alt=""
+                     class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <h3 class="slide-card-title"></h3>
+                    <a href="#" class="slide-read-more">
+                        Discover <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+                        <div class="slide-card landscape">
+                <img alt="Ahinsa Denim"  loading="lazy" src="/assets/images/ahinsa-csr-tree-plantation.webp"
+                     alt=""
+                     class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <h3 class="slide-card-title"></h3>
+                    <a href="#" class="slide-read-more">
+                        Discover <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+                        <div class="slide-card landscape">
+                <img alt="Ahinsa Denim"  loading="lazy" src="/assets/images/animal-care-with-ahinsa-211924.jpg"
+                     alt=""
+                     class="slide-card-img" loading="lazy">
+                <div class="slide-card-overlay">
+                    <h3 class="slide-card-title"></h3>
+                    <a href="#" class="slide-read-more">
+                        Discover <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+                                </div>
+        <button class="slider-arrow next" onclick="slideScroll('slider2', 380)" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+        <a href="/sustainability" class="link-orange">View All Initiatives <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- 
+     QUALITY + R&D STRIP
+ -->
+<div class="section-divider" data-reveal></div>
+
+<section class="quality-strip">
+    <div class="quality-strip-panel" data-reveal>
+        <div class="strip-icon"><i class="fa-solid fa-shield-check"></i></div>
+        <h2 class="strip-title">Rigorous Quality Assurance</h2>
+        <p class="strip-desc">Every yard of Ahinsa Denim fabric is tested to the highest global standards  -  ensuring our customers receive nothing but perfection.</p>
+        <ul class="strip-ul">
+            <li>Tensile strength & tear resistance testing</li>
+            <li>Color fastness  -  wash, rub and light</li>
+            <li>Dimensional stability & shrinkage control</li>
+            <li>Seam slippage & abrasion resistance</li>
+            <li>OEKO-TEX & GOTS compliant processes</li>
+        </ul>
+        <a href="/quality-assurance" class="link-orange">Explore QA <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="quality-strip-panel" data-reveal style="transition-delay:0.15s">
+        <div class="strip-icon"><i class="fa-solid fa-flask"></i></div>
+        <h2 class="strip-title">Innovation Through R&D</h2>
+        <p class="strip-desc">Our dedicated research and development lab continuously creates new fabric structures, finishing effects, and sustainable textile solutions.</p>
+        <ul class="strip-ul">
+            <li>Advanced weave & yarn development</li>
+            <li>Innovative wash & fading techniques</li>
+            <li>Next-gen sustainable fiber integration</li>
+            <li>Digital printing & custom finishing</li>
+            <li>Collaboration with global fashion trends</li>
+        </ul>
+        <a href="/research-and-development" class="link-orange">Explore R&D <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- 
+     CSR IMPACT BANNER
+ -->
+<section class="csr-banner" id="sec-csr">
+    <img src="/assets/images/ahinsa-csr-tree-plantation.webp" alt="CSR  -  Tree Plantation by Ahinsa Denim" loading="lazy">
+    <div class="csr-banner-overlay"></div>
+    <div class="csr-content">
+        <div data-reveal>
+            <span class="section-tag">Social Responsibility</span>
+            <h2 class="section-title" style="text-align:left; max-width:550px; margin:0.75rem 0 1rem;">
+                Giving Back to the <span style="color:var(--orange);">Community</span>
+            </h2>
+            <p style="color:#a1a1aa; max-width:500px; font-size:0.95rem; line-height:1.7;">
+                Ahinsa Denim's CSR programs touch thousands of lives  -  from education scholarships and healthcare camps
+                to tree plantation drives and animal welfare initiatives through our Samriddhi Gaushala.
+            </p>
+            <div class="csr-stats">
+                <div>
+                    <div class="csr-stat-num">500+</div>
+                    <div class="csr-stat-label">Trees Planted</div>
+                </div>
+                <div>
+                    <div class="csr-stat-num">1000+</div>
+                    <div class="csr-stat-label">Students Supported</div>
+                </div>
+                <div>
+                    <div class="csr-stat-num">200+</div>
+                    <div class="csr-stat-label">Healthcare Beneficiaries</div>
+                </div>
+            </div>
+            <a href="/corporate-social-responsibility" class="btn-primary-hero" style="margin-top:2rem; display:inline-flex;">
+                Our CSR Journey <i class="fa-solid fa-arrow-right" style="margin-left:0.5rem;"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 
+     CONTACT CTA
+ -->
+<section class="contact-cta" id="sec-contact">
+    <div class="contact-cta-box" data-reveal>
+        <div style="width:56px;height:56px;background:var(--orange-dim);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.5rem;color:var(--orange);">
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+        <h2 style="font-family:var(--playfair);font-size:clamp(1.6rem,3vw,2.2rem);color:#fafafa;margin-bottom:0.75rem;">
+            Ready to Partner With Us?
+        </h2>
+        <p style="color:#71717a;font-size:0.95rem;line-height:1.7;margin-bottom:2rem;">
+            Whether you're a fashion brand looking for a reliable fabric partner or a buyer seeking premium denim  - 
+            we'd love to hear from you.
+        </p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="/contact-us" class="btn-primary-hero">Get in Touch</a>
+            <a href="/our-products" class="btn-ghost-hero">Browse Products</a>
+        </div>
+    </div>
+</section>
+
+<style>
+/* â€”â€”â€” FOOTER RESET & BASE â€”â€”â€” */
+.site-footer {
+    background: #070709;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+}
+/* Subtle orange glow top-left */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: -120px; left: -80px;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(243,113,33,0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* â€”â€”â€” MAIN FOOTER GRID â€”â€”â€” */
+.footer-main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    gap: 3rem 2.5rem;
+}
+
+/* â€”â€”â€” BRAND COLUMN â€”â€”â€” */
+.footer-brand .footer-logo {
+    margin-bottom: 1.4rem;
+    display: block;
+}
+.footer-brand .footer-logo img {
+    height: 38px;
+    width: auto;
+    filter: brightness(1.1);
+}
+.footer-brand p {
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.48);
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+}
+.footer-address {
+    font-size: 0.79rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.42);
+    font-style: normal;
+    margin-bottom: 1.4rem;
+}
+.footer-address a {
+    color: rgba(243,113,33,0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-address a:hover { color: rgb(243,113,33); }
+
+/* Social icons */
+.footer-social {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.55);
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.2s;
+}
+.footer-social a:hover {
+    background: rgba(243,113,33,0.15);
+    color: rgb(243,113,33);
+    border-color: rgba(243,113,33,0.3);
+    transform: translateY(-2px);
+}
+
+/* â€”â€”â€” LINK COLUMNS â€”â€”â€” */
+.footer-col h5 {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li {
+    margin-bottom: 0.55rem;
+}
+.footer-col ul li a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.46);
+    text-decoration: none;
+    transition: color 0.2s, padding-left 0.2s;
+    display: block;
+}
+.footer-col ul li a:hover {
+    color: rgb(243,113,33);
+    padding-left: 0.35rem;
+}
+
+/* â€”â€”â€” DIVIDER â€”â€”â€” */
+.footer-divider {
+    max-width: 1300px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* â€”â€”â€” FOOTER BOTTOM BAR â€”â€”â€” */
+.footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1.4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.footer-bottom-copy {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.3);
+}
+.footer-bottom-copy span {
+    color: rgba(243,113,33,0.75);
+    font-weight: 500;
+}
+.footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.footer-bottom-links a {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-bottom-links a:hover { color: rgb(243,113,33); }
+
+/* â€”â€”â€” RESPONSIVE â€”â€”â€” */
+@media (max-width: 1100px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.5rem 2rem;
+    }
+    .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 680px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        padding: 3.5rem 1.25rem 2rem;
+        gap: 2rem 1.5rem;
+    }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem 1.25rem;
+        gap: 0.6rem;
+    }
+    .footer-bottom-links { justify-content: center; }
+}
+@media (max-width: 400px) {
+    .footer-main { grid-template-columns: 1fr; }
+}
+</style>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+
+        <!-- Brand column -->
+        <div class="footer-brand">
+            <a href="/" class="footer-logo" aria-label="Ahinsa Denim Home">
+                <img loading="lazy" decoding="async" src="/assets/icons/ahinsa-denim-white.png" alt="Ahinsa Denim White Logo">
+            </a>
+            <p>Premium sustainable denim crafted at Bhilwara engineered for global fashion with a commitment to responsible manufacturing.</p>
+            <address class="footer-address">
+                Bhilwara Spinners Limited<br>
+                Spl-1, 35, Pur Rd, near Ajuba Petrol Pump,<br>
+                RIICO Industrial Area, Bhilwara,<br>
+                Rajasthan 311011, India.<br>
+                <a href="tel:+918561034288">+91-85610-34288</a><br>
+                <a href="mailto:info@ahinsadenim.com">info@ahinsadenim.com</a>
+            </address>
+            <div class="footer-social" aria-label="Social media links">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Who We Are -->
+        <div class="footer-col">
+            <h5>Who We Are</h5>
+            <ul>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/leadership">Leadership</a></li>
+                <li><a href="/our-businesses">Our Businesses</a></li>
+            </ul>
+        </div>
+
+        <!-- Products -->
+        <div class="footer-col">
+            <h5>Products</h5>
+            <ul>
+                <li><a href="/denim-fabrics">Denim Fabrics</a></li>
+                <li><a href="/cotton-fabrics">Cotton Fabrics</a></li>
+                <li><a href="/real-estate-main">Real Estate</a></li>
+                <li><a href="/creative-room">Creative Room</a></li>
+            </ul>
+        </div>
+
+        <!-- Sustainability -->
+        <div class="footer-col">
+            <h5>Sustainability</h5>
+            <ul>
+                <li><a href="/sustainability">Overview</a></li>
+                <li><a href="/energy-efficiency">Energy Efficiency</a></li>
+                <li><a href="/responsible-water-usage">Water Usage</a></li>
+                <li><a href="/waste-reduction">Waste Reduction</a></li>
+            </ul>
+        </div>
+
+        <!-- CSR & Quick Links -->
+        <div class="footer-col">
+            <h5>CSR &amp; More</h5>
+            <ul>
+                <li><a href="/corporate-social-responsibility">CSR Overview</a></li>
+                <li><a href="/csr-health">Health</a></li>
+                <li><a href="/csr-education">Education</a></li>
+                <li><a href="/investors">Investors</a></li>
+                <li><a href="/newsandpublicnotice">News &amp; Notices</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom">
+        <p class="footer-bottom-copy">
+            &copy; 2026 <span>Ahinsa Denim</span> &mdash; A unit of Bhilwara Spinners Limited. All rights reserved.
+        </p>
+        <nav class="footer-bottom-links" aria-label="Footer legal links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<!-- Common JS Assets -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/assets/js/mains-script.js?v=1790449057"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 1000, once: true });
+        }
+    });
+</script>
+<!-- <script src="/assets/js/scroll-path.js?v=1790449057" defer></script> -->
+
+<!-- Optional custom scripts from page -->
+<script>
+//  -  -  -  Video Hero  -  -  - 
+document.addEventListener('DOMContentLoaded', function() {
+    const heroImg = document.getElementById('hero-img');
+    const heroVid = document.getElementById('hero-vid');
+    const discoverBtn = document.getElementById('discoverBtn');
+    const videoModal = document.getElementById('videoModal');
+    const videoClose = document.getElementById('videoClose');
+    const storyVideo = document.getElementById('storyVideo');
+    const VIDEO_URL = 'https://drive.google.com/file/d/1ZOw5TirrZ1R0mOamEPgd4RU97ET24oma/preview';
+
+    // Try loading background video
+    if (heroVid) {
+        setTimeout(function() {
+            heroVid.style.display = 'block';
+            heroVid.play().then(function() {
+                setTimeout(function() { heroImg.style.opacity = '0'; }, 500);
+            }).catch(function() {
+                heroVid.style.display = 'none';
+            });
+        }, 800);
+        heroVid.addEventListener('error', function() { heroVid.style.display = 'none'; });
+    }
+
+    // Video modal
+    function openModal() {
+        storyVideo.src = VIDEO_URL;
+        videoModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        videoModal.classList.remove('open');
+        setTimeout(function() { storyVideo.src = ''; }, 400);
+        document.body.style.overflow = '';
+    }
+    if (discoverBtn) discoverBtn.addEventListener('click', openModal);
+    if (videoClose) videoClose.addEventListener('click', closeModal);
+    if (videoModal) videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal.classList.contains('open')) closeModal();
+    });
+
+    //  -  -  -  Scroll Reveal  -  -  - 
+    var revealEls = document.querySelectorAll('[data-reveal]');
+    var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.01 });
+    revealEls.forEach(function(el) { io.observe(el); });
+
+    //  -  -  -  Counter Animation  -  -  - 
+    var counterEls = document.querySelectorAll('.counter-val');
+    var counterIO = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    counterEls.forEach(function(el) { counterIO.observe(el); });
+});
+
+function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-target')) || 0;
+    if (target === 0) { el.textContent = '0'; return; }
+    var duration = 1800, start = performance.now();
+    function step(now) {
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target.toLocaleString();
+    }
+    requestAnimationFrame(step);
+}
+
+//  -  -  -  Slider Scroll  -  -  - 
+function slideScroll(id, amount) {
+    var el = document.getElementById(id);
+    if (el) el.scrollBy({ left: amount, behavior: 'smooth' });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.slider-track').forEach(function(slider) {
+        var isDown = false;
+        var startX, scrollLeft;
+        
+        slider.addEventListener('mousedown', function(e) {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', function() { isDown = false; slider.style.cursor = 'grab'; });
+        slider.addEventListener('mouseup', function() { isDown = false; slider.style.cursor = 'grab'; });
+        slider.addEventListener('mousemove', function(e) {
+            if(!isDown) return;
+            e.preventDefault();
+            var x = e.pageX - slider.offsetLeft;
+            var walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+        
+        slider.addEventListener('touchstart', function(e) {
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        }, {passive: true});
+        slider.addEventListener('touchend', function() { isDown = false; });
+        slider.addEventListener('touchmove', function(e) {
+            if(!isDown) return;
+            var x = e.touches[0].pageX - slider.offsetLeft;
+            var walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        }, {passive: true});
+    });
+});
+
+// 
+// SVG WINDING SCROLL PATH ANIMATION
+// Draws an SVG path through page content as user scrolls.
+// Retracts on scroll-up. Uses stroke-dashoffset technique.
+// 
+</script>
+
+<!-- Back-to-Top Button -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- WhatsApp Floating Button -->
+<a id="whatsapp-float" href="https://wa.me/919001234567?text=Hello%2C%20I%20am%20interested%20in%20Ahinsa%20Denim%20fabrics."
+   target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div id="cookie-banner-inner">
+        <div id="cookie-text">
+            <i class="fa-solid fa-cookie-bite" style="color:var(--orange);margin-right:0.5rem;"></i>
+            We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+            <a href="/privacy-policy" style="color:var(--orange);margin-left:0.3rem;">Learn more</a>
+        </div>
+        <div id="cookie-actions">
+            <button id="cookie-decline">Decline</button>
+            <button id="cookie-accept">Accept</button>
+        </div>
+    </div>
+</div>
+
+<style>
+#back-to-top {
+    position: fixed;
+    bottom: 8rem;
+    right: 1.75rem;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    z-index: 500;
+    opacity: 0; pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.3s, transform 0.3s, background 0.2s;
+    box-shadow: 0 4px 16px rgba(243,113,33,0.4);
+    border: none; cursor: pointer;
+}
+#back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+#back-to-top:hover { background: var(--orange-light); transform: translateY(-2px); }
+
+#whatsapp-float {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    z-index: 500;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    transition: transform 0.25s, box-shadow 0.25s;
+    text-decoration: none;
+}
+#whatsapp-float:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+
+#cookie-banner {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--bg3, #18181b);
+    border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+    z-index: 999;
+    padding: 1rem 2rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+}
+#cookie-banner.show { transform: translateY(0); }
+#cookie-banner-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+#cookie-text {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    flex: 1;
+    line-height: 1.6;
+}
+#cookie-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+#cookie-accept {
+    padding: 0.55rem 1.4rem;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+#cookie-accept:hover { background: var(--orange-light); }
+#cookie-decline {
+    padding: 0.55rem 1.4rem;
+    background: transparent;
+    color: var(--text-sub);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+#cookie-decline:hover { border-color: var(--orange); color: var(--orange); }
+@media (max-width: 600px) {
+    #cookie-banner { padding: 1rem; }
+    #cookie-banner-inner { flex-direction: column; gap: 0.75rem; }
+    #cookie-text { text-align: center; }
+    #cookie-actions { width: 100%; justify-content: center; }
+    #back-to-top { bottom: 7rem; }
+}
+</style>
+
+<script>
+(function() {
+    var btt = document.getElementById('back-to-top');
+    if (btt) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) { btt.classList.add('visible'); }
+            else { btt.classList.remove('visible'); }
+        }, { passive: true });
+        btt.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    var banner = document.getElementById('cookie-banner');
+    var accept = document.getElementById('cookie-accept');
+    var decline = document.getElementById('cookie-decline');
+    if (banner && !localStorage.getItem('ahinsa-cookie-consent')) {
+        setTimeout(function() { banner.classList.add('show'); }, 1200);
+    }
+    if (accept) {
+        accept.addEventListener('click', function() {
+            localStorage.setItem('ahinsa-cookie-consent', 'accepted');
+            banner.classList.remove('show');
+        });
+    }
+    if (decline) {
+        decline.addEventListener('click', function() {
+            localStorage.setItem('ahinsa-cookie-consent', 'declined');
+            banner.classList.remove('show');
+        });
+    }
+})();
+</script>
+</body>
+</html>
+
+
+
+
+
+

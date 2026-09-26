@@ -1,0 +1,484 @@
+<style>
+	.site-navbar .site-navigation .site-menu .has-children .dropdown>li.has-children>a:before {
+    content: "\e315";
+    right: 20px
+	}
+</style>
+
+ <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--Title key description-->
+<title></title>
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<!--End of Title key description-->
+<link rel="shortcut icon" href="images/favicon.ico">
+<link href="./css/reset.css" rel="stylesheet" type="text/css" />
+<link href="./css/style.css" rel="stylesheet" type="text/css" />
+<link href="./css/style1.css" rel="stylesheet" type="text/css" />
+<link href="./css/iefix.css" rel="stylesheet" type="text/css" />
+<link href="./css/reset.css" rel="stylesheet" type="text/css" />
+<link href="./css/responsive.css" rel="stylesheet" type="text/css" />
+
+<link href="./css/js-image-slider.css" rel="stylesheet" type="text/css" />
+<link href="./css/generic.css" rel="stylesheet" type="text/css" />
+
+<script src="./js/dropdowntabs.js" type="text/javascript"></script>
+<script src="./js/simplegallery2.js" type="text/javascript"></script>
+<script src="./js/jquery-1.2.6.pack.js" type="text/javascript"></script>
+<script src="./js/js-image-slider.js" type="text/javascript"></script>
+
+<!--Sliding Start-->
+<link rel="stylesheet" type="text/css" href="./css/contentslider.css" />
+<script type="text/javascript" src="./js/contentslider.js"></script>
+<!--Sliding End-->
+<link href="./css/dropdown.css" rel="stylesheet" type="text/css" />
+<link href="./css/quake.slider.css" rel="stylesheet" type="text/css" />
+<link href="./css/quake.skin.css" rel="stylesheet" type="text/css" />
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/quake.slider-min.js" type="text/javascript"></script>
+<script src="./js/jquery.timelinr-0.9.3.js" type="text/javascript"></script>
+	<script type="text/javascript"> 
+		$(function(){
+			$().timelinr()
+		});
+	</script>
+<script type="text/javascript">
+   $(document).ready(function () {
+            $('.quake-slider').quake({
+                thumbnails: true,
+                animationSpeed: 500,
+                applyEffectsRandomly: true,
+                navPlacement: 'inside',
+                navAlwaysVisible: false,
+                captionsSetup: [
+				 {
+					 "orientation": "top",
+					 "slides": [0, 1],
+					 "callback": captionAnimateCallback
+				 },
+				  {
+					  "orientation": "left",
+					  "slides": [2, 3],
+					  "callback": captionAnimationCallback1
+				  }
+				  ,
+				  
+				  
+				  {
+					  "orientation": "left",
+					  "slides": [4, 5],
+					  "callback": captionAnimationCallback1
+				  }
+				]
+
+            });
+
+            function captionAnimateCallback(captionWrapper, captionContainer, orientation) {
+                captionWrapper.css({ left: '-990px' }).stop(true, true).animate({ left: 0 }, 500);
+                captionContainer.css({ left: '-990px' }).stop(true, true).animate({ left: 0 }, 500);
+            }
+            function captionAnimationCallback1(captionWrapper, captionContainer, orientation) {
+                captionWrapper.css({ top: '-330px' }).stop(true, true).animate({ top: 0 }, 500);
+                captionContainer.css({ top: '-330px' }).stop(true, true).animate({ top: 0 }, 500);
+            }
+        });
+</script>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+
+<!-- jQuery -->
+<!-- FlexSlider -->
+<script type="text/javascript" src="./js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+    $('.flexslider').flexslider({
+          animation: "fade"
+    });
+	
+	$(function() {
+		$('.show_menu').click(function(){
+				$('.menu').fadeIn();
+				$('.show_menu').fadeOut();
+				$('.hide_menu').fadeIn();
+		});
+		$('.hide_menu').click(function(){
+				$('.menu').fadeOut();
+				$('.show_menu').fadeIn();
+				$('.hide_menu').fadeOut();
+		});
+	});
+  });
+</script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44127567-1']);
+  _gaq.push(['_setDomainName', 'mitsuniversity.ac.in']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<link rel="stylesheet" href="css/menu.css" type="text/css"/>
+
+</head>
+
+<body>
+<!--Header Section Start-->
+<div id="HeaderSec" style="padding:10px 0 0 0;">
+  <div class="headermain"> <a class="logo" href="." title="Mangalam Cement Limited"><img src="images/logo.jpg" /></a>
+    <div class="bkgroup" style="margin:0 0 0 0;"><img src="images/bkgroup.jpg" width="130" height="92" /></div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
+</div>
+<!--Header Section  End--> 
+
+<!--Menu Start -->
+<!--<div id="menu">
+  <div id="colortab" class="ddcolortabs">
+    <div id="nav">
+      <ul>
+      <li><a href="index.php">Home</a></li>
+        <li><a href="aboutus_new.php">About Us</a></li>
+        <li><a href="product_type.php">Products </a></li>
+ 		<li ><a href="sustainability-csr.php" >Sustainability</a></li>
+        <li ><a href="finance_new.php" >Investor Relations</a></li>
+        <li><a href="career-new.php">Careers</a></li>
+        <li style="border:none;"><a href="contactus-new.php">Contact Us</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div id="dropmenu1_3" class="dropmenudiv_a"></div>
+  <div id="dropmenu1_5" class="dropmenudiv_a"></div>
+  <div id="dropmenu1_6" class="dropmenudiv_a"></div>
+  <div id="dropmenu1_9" class="dropmenudiv_a"></div>
+  
+</div>-->
+<div id="menu">
+ <div class="main_menu">
+  
+    <label for="show-menu" class="show-menu">Show Menu</label>
+	<input type="checkbox" id="show-menu" role="button">
+	<ul id="sub_menu">
+      <li><a href=".">Home</a></li>
+      <li><a href="aboutus_new.php">About Us</a>
+        <ul class="hidden">
+          <li><a href="aboutus_new.php" class="active">Profile</a></li>
+          <li><a href="legacy.php">Legacy</a></li>
+          <li><a href="bod.php">Board of Directors</a></li>
+          <li><a href="toe.php">Team of Executives</a></li>
+          <li><a href="milestone_new.php">Milestones</a></li>
+          <li><a href="awards.php">Awards &amp; Recognition</a></li>
+        </ul>
+      </li>
+      <li><a href="product_type.php">Products </a>
+        <ul class="hidden">
+          <li><a href="product_type.php" class="active">Type</a></li>
+          <li><a href="product_brand.php">Brand</a></li>
+          <li><a href="product_networks.php">Product Dealers</a></li>
+        </ul>
+      </li>
+      <!--        <li><a href="#">Projects </a></li>
+-->
+      	<li ><a href="sustainability-csr.php">Sustainability</a>
+			<ul class="hidden">
+			<li><a href="sustainability-csr.php">CSR</a></li>
+			<li><a href="renewal-energy.php">Renewable Energy</a></li>
+			<li><a href="environment_compliances.php">Environment Compliances</a></li>
+			</ul>
+      	</li>
+      	<li><a href="finance_new.php">Investor Relations</a>
+			<ul class="hidden">
+				<li><a href="#">Disclosures U/R 46 & 62 of the SEBI(LOOR)</a>
+					<ul class="hidden" style="left: 100%;top: 0;width:80%">
+						<li><a href="finance_new.php" style="width:100%" class="active dropdown" >Financial Results &amp; Annual Report</a></li>
+						<li><a href="plant_location.php" style="width:100%">Plant Location</a></li>
+						<li><a href="shareholding_partners.php" style="width:100%">Shareholding Patterns</a></li>
+						<li><a href="unclaimed_dividend.php" style="width:100%">Unclaimed Dividend and IEPF</a></li>
+						<li><a href="codes_policies.php" style="width:100%">Codes &amp; Policies</a></li>
+						<li><a href="listing_information.php" style="width:100%">Listing Information</a></li>
+						<li><a href="investors_grievances.php" style="width:100%">Investor Grievances</a></li>
+						<li><a href="familiarisation_programme.php" style="width:100%">Familiarisation Programme</a></li>
+						<li><a href="cbm.php" style="width:100%">Composition of Committees</a></li>
+						<li><a href="others.php" style="width:100%">Others</a></li>
+					</ul>
+				</li>
+			</ul>
+      
+      	</li>
+      <!--        <li><a href="media.php"> Media</a></li>
+-->
+      <li><a href="career-new.php">Careers</a></li>
+      <li style="border:none;"><a href="contactus-new.php">Contact Us</a>
+        <ul class="hidden right_sub" >
+          <li><a href="contactus-new.php" class="active">Corporate  Office</a></li>
+          <li style="min-width:230px;"><a href="registered_offc.php">Registered Office &amp; Factory</a></li>
+          <li><a href="depo_offc.php">Depot Office</a></li>
+        </ul>
+      </li>
+    </ul>
+   
+    <div class="clr"></div>
+    <div class="clr"></div>
+  </div>
+</div>
+<!--Menu Start End--> <!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include quake-slider plugin JavaScript file -->
+<script src="path/to/quake-slider.js"></script>
+
+<!-- Include quake-slider plugin CSS file -->
+<link rel="stylesheet" href="path/to/quake-slider.css">
+
+<script src="js/quake.slider.js" type="text/javascript"></script> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var currentIndex = 0;
+    var images = $('.quake-slider-images img');
+    var captions = $('.quake-slider-captions .quake-slider-caption');
+
+    // Show initial image and caption
+    images.eq(currentIndex).show();
+    captions.eq(currentIndex).show();
+
+    // Start the slideshow
+    setInterval(function() {
+      // Hide current image and caption
+      images.eq(currentIndex).hide();
+      captions.eq(currentIndex).hide();
+
+      // Increment the index
+      currentIndex = (currentIndex + 1) % images.length;
+
+      // Show next image and caption
+      images.eq(currentIndex).show();
+      captions.eq(currentIndex).show();
+    }, 5000);
+  });
+</script>
+
+<style>
+  .quake-slider-images img {
+    display: none;
+  }
+
+  .quake-slider-captions .quake-slider-caption {
+    display: none;
+  }
+</style>
+
+<div class="homebanner">
+  <div class="quake-slider">
+    <div class="quake-slider-images">
+      <img src="images/1.jpg" alt="Image 1">
+      <img src="images/2.jpg" alt="Image 2">
+      <img src="images/3.jpg" alt="Image 3">
+    </div>
+    <div class="quake-slider-captions">
+      <div class="quake-slider-caption">
+        <h2>Gain <br/>
+          Ownership</h2>
+        <p align="left">Produce and deliver quality cement and clinker as per customers' requirements with an aim to enhance customer satisfaction. Continual improvement in Quality, Health, Safety, and Environmental Performance.</p>
+      </div>
+      <div class="quake-slider-caption">
+        <h2>Environment <br/>
+          First</h2>
+        <p align="left">A growing trend in business is the emphasis on sustainability. Environmental Conservation Practices. We at Mangalam Cement are committed to Environmental Conservation.</p>
+      </div>
+      <div class="quake-slider-caption">
+        <h2>Forward <br/>
+          Focus</h2>
+        <p align="justify">At Mangalam Cement, the strategy for steady growth is a focused approach to the future.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="cleardiv"></div>
+</div>
+<!--Bannar End -->
+<div class="cleardiv"></div>
+<div class="ContainDiv">
+  <div class="mainDiv" style="padding-top:5px; padding-bottom:10px;"> 
+    
+    <!--<h2 class="innerRightHeading" style="line-height:25px;">Since inception in 1981, Mangalam Cement is a flagship subsidiary of B.K.Birla Group of Companies. The company has come along a long way in becoming one of the leading integrated manufacturer of world class cement in Northern India with a production capacity of 3.25 MTPA.</h2>-->
+    
+    <h2 class="innerRightHeading" style="line-height:25px; text-align:justify;">Mangalam Cement Limited was promoted in the year 1978 by the famed House of Syt B.K. Birla, the most eminent and illustrious industrialist of the country. It is a professionally managed and well established cement manufacturing company enjoying the confidence of consumers because of its superior quality product and excellent customer service.</h2>
+    <div class="cleardiv"></div>
+    <div class="homeLeft">
+      <div class="annualReportDiv" style="margin-top:5px;">
+        <div class="annualReportTop">News Update</div>
+        <div class="annualReportBot">
+          <marquee behavior="scroll" direction="up" scrolldelay="300" style="height:90px;" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 6, 0);" >
+          
+          <p class="topic"><img src="images/leftarrow-home.png" width="8" height="14" align="absmiddle" class="mr5"><a href="pdf/Announcement-for-reduction-of-GST-on-our-Products.pdf" target="_blank">Announcement for reduction of GST on our Products. Please click on the link. </p>
+          <p class="topic"><img src="images/leftarrow-home.png" width="8" height="14" align="absmiddle" class="mr5">50th Annual General meeting of the Company is scheduled to be held on Friday, 21st August, 2026 at 2.00 P.M. Indian Standard Time (IST) through Video Conferencing (“VC”) / Other Audio Visual Means (“OAVM”)</p>
+                    
+          <!-- <p class="topic"><img src="images/leftarrow-home.png" width="8" height="14" align="absmiddle" class="mr5"><a href="pdf/Quarterly_Results/31.03.2015.pdf" target="_blank">Unaudited Financial Results for Quarter and year Ended 31st March, 2015. </a></p>
+          <p class="topic"><img src="images/leftarrow-home.png" width="8" height="14" align="absmiddle" class="mr5"><a href="pdf/Quarterly_Results/31.09.2014.pdf" target="_blank">Unaudited Financial Results for Quarter/Half year Ended 30th September, 2014. </a></p>
+          <p class="topic"><img src="images/leftarrow-home.png" width="8" height="14" align="absmiddle" class="mr5"><a href="http://www.bseindia.com/xml-data/corpfiling/AttachHis/Mangalam_Cement_Ltd_140814_Rst.pdf" target="_blank">Unaudited Financial Result for the quarter ended June 30, 2014. </a></p>
+          <p class="topic"><img src="images/leftarrow-home.png" width="8" height="14" align="absmiddle" class="mr5"><a href="pdf/Mangalam-Cement-AGM-Outcome.pdf" target="_blank">38th Annual General Meeting of the Company will be held on 13th September, 2014 at its registered office. </a></p>
+          <p class="topic"><img src="images/leftarrow-home.png" width="8" height="14" align="absmiddle" class="mr5">Commercial Production of 1.25 MTPA. Cement mill started in May 2014.</p>
+          <p class="topic"><img src="images/leftarrow-home.png" width="8" height="14" align="absmiddle" class="mr5"><a href="pdf/Quarterly_Results/31.03.2014.pdf" target="_blank">Unaudited Financial Results for Quarter and year ended 31st March, 2014. </a></p>-->
+          </marquee>
+        </div>
+        
+        <!--<ul id="reportticker">
+<li><div class="annualReportBot">
+<div class="cleardiv"></div>
+</div></li>
+<li><div class="annualReportBot">
+<div class="cleardiv"></div>
+</div></li>
+<li><div class="annualReportBot">
+<div class="cleardiv"></div>
+</div></li>
+</ul>--> 
+        
+      </div>
+      
+      <!--<div class="annualReportDiv" style="margin-top:15px;">
+<div class="annualReportTop">Our Network</div>
+<div class="annualReportBot">
+  <img src="images/conmap.png" width="158" height="125" class="fl">
+<div style=" width:45%; float:right;">
+<p class="network"><a href="depo_offc.php">Haryana</a></p>
+<p class="network"><a href="depo_offc.php">Delhi NCR</a></p>
+<p class="network"><a href="depo_offc.php">Uttar Pradesh</a></p>
+<p class="network"><a href="depo_offc.php">Madhya Pradesh</a></p>
+<p class="network"><a href="depo_offc.php">Rajasthan</a></p>
+</div> 
+</div>
+</div>--> 
+    </div>
+    <div class="homeRight">
+      <div class="homeBox" style="margin-top:5px;">
+        <p style="border-bottom:dotted 1px #F00; padding-bottom:10px; margin-bottom:10px;"><a href="product_type.php">Products</a></p>
+        <a href="product_type.php"><img src="images/grade.jpg" width="165" height="135"></a></div>
+      <div class="homeBox" style="margin-top:5px;">
+        <p style="border-bottom:dotted 1px #F00; padding-bottom:10px; margin-bottom:10px;"><a href="product_brand.php">Brand</a></p>
+        <a href="product_brand.php"><img src="images/birlauttam.jpg" width="165" height="135"></a></div>
+      <div class="homeBox" style="margin-top:5px;">
+        <p style="border-bottom:dotted 1px #F00; padding-bottom:10px; margin-bottom:10px;"><a href="product_brand.php">Brand</a></p>
+        <a href="product_brand.php"><img src="images/Promax.jpg" width="165" height="135"></a></div>
+      <div class="cleardiv"></div>
+      <!--<div class="birlagrade">
+<ul>
+	<li style=" padding-right:71px;"><span>43</span> <br/> Grade</li>
+    <li style=" padding-right:63px;"><span>53</span> <br/> Grade</li>
+    <li style=" padding-right:0px;"><span>PPC</span> <br/> Grade</li>
+</ul>
+<div class="cleardiv"></div>
+
+</div><div class="isoDiv">
+<div class="isoTop">IS/ISO 9001 : 2008 Certificate</div>
+<div class="isoBot">
+<div class="left"><img src="images/isoimg.png" width="75" height="105"></div>
+<div class="right">Product ,Processes , Systems and Machinery are required to meet optimal standards to enhance reliability.</div>
+<div class="cleardiv"></div>
+</div>
+</div>
+<div class="homeLegacyDiv">
+<div class="homeLegacyTop">Legacy</div>
+<div class="homeLegacyBot">
+<div class="left"><img src="images/bkbirla.jpg" width="80" height="109"></div>
+<div class="right">"I am confident that Mangalam Cement will make all of us proud by contributing sustainably to the growth of the country and the community." <br/>
+<span>B. K. Birla</span>
+</div>
+<div class="cleardiv"></div>
+</div>
+</div>-->
+      <div class="cleardiv"></div>
+    </div>
+    <div class="cleardiv"></div>
+  </div>
+</div>
+<div id="footer">
+  <div class="footermain"><div class="footermenu">
+        <ul>
+          <li><a href="aboutus_new.php">About</a></li>
+          <li>|</li>
+          <li><a href="product_type.php">Products</a></li>
+          <li>|</li>
+          <li ><a href="sustainability-csr.php" >Sustainability</a></li>
+          <li>|</li>
+          <li><a href="finance_new.php">Investor Relations</a></li>
+          <li>|</li>
+          <li><a href="career-new.php">Careers</a></li>
+          <li>|</li>
+          <li><a href="contactus-new.php">Contact Us</a></li>
+          <li>|</li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="copy">&copy; 2014 Copyright. All right reserved.</div>
+   <!-- <div class="w50per float-l">
+      <div class="beliefBox">
+        <h1>Our Belief</h1>
+        
+        
+        <ul id="footerticker">
+          <li>Being Most Reliable and Responsible. </li>
+          <li>Manufacturing Consistently with Improved Technology. </li>
+          <li>Efficient Engineering to Guarantee Quality Products. </li>
+        </ul>
+         
+      </div>
+      
+      <div class="copy">&copy; 2014 Copyright. All right reserved. Powered by <a href="http://www.rmadigital.com/" style="color:#fff; text-decoration:none;">ReleaseMyAd Digital</a></div>
+    </div>-->
+    
+    
+    <!--<div class="w50per float-r">
+      <div class="touchBox">
+        <h1>Corporate Office</h1>
+        <p style="line-height:20px;">Birla Building, 10th Floor<br />
+		9/1, R. N. Mukherjee Road,<br />
+		Kolkata 700001<br />
+        Phone: 033-22438706/07 &nbsp;Fax: 033-22438709
+          <br />
+          E-mail: <a href="mailto:kolkata@mangalamcement.com">kolkata@mangalamcement.com</a></p>
+      </div>
+    </div>-->
+    <div class="cleardiv"></div>
+  </div>
+</div>
+</div>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> 
+-->
+<script>
+	function tick(){
+		$('#footerticker li:first').slideUp( function () { $(this).appendTo($('#footerticker')).slideDown(); });
+	}
+	setInterval(function(){ tick () }, 5000);
+</script>
+<script>
+          $(document).ready(function(){
+			  $("#slide").click(function(){
+				  $("#content_box").slideToggle(500)
+				  
+				  });
+			  
+			  });
+          </script>
+
+</body><script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl507256'},{'dcenter':'sg2'},{'cp_id':'4286292'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>

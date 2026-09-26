@@ -1,0 +1,926 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Birla Corporation</title>
+<link href="css/style.css?v=3.4.7" rel="stylesheet" type="text/css">
+
+
+<!-- Menu -->
+<script src="js/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<!-- Menu End -->
+
+
+<!-- Slider -->
+<link rel="stylesheet" href="css/responsiveslides.css">
+<script type="text/javascript" src="js/responsiveslides.min.js"></script>
+<script type="text/javascript">
+	// You can also use "$(window).load(function() {"
+	$(function () {
+		// Slideshow 1
+		$("#slider1").responsiveSlides({
+		pager: true,
+        nav: false,
+		maxwidth: 2000,
+		speed: 800,
+		namespace: "centered-btns"
+		});
+	});
+	$(function () {
+		// Slideshow 1
+		$("#slider2").responsiveSlides({
+		pager: false,
+        nav: false,
+		maxwidth: 2000,
+		speed: 2000,
+		namespace: "centered-btns"
+		});
+	});
+
+</script>
+<!-- Slider End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">var jq164 = jQuery.noConflict(true);</script>
+
+<script type="text/javascript">
+function tick(){
+$('#ticker li:first').slideUp( function () { $(this).appendTo($('#ticker')).slideDown(); });
+}
+setInterval(function(){ tick () }, 5000);
+</script>
+
+
+<script type="text/javascript">
+	function goToByScroll(id){
+		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+	}
+</script>
+
+<script>
+function hidediv(id){
+document.getElementById(id).style.display = "none";
+}
+</script>
+
+
+ <link type="text/css" rel="stylesheet" href="css/jquery.jConveyorTicker.min.css?v=1.1.0" />
+<!-- jConveyorTicker plugin -->
+  <script src="js/jquery.jConveyorTicker.min.js?v=1.1.0"></script>
+
+  <script type="text/javascript" charset="utf-8">
+  $(function() {
+
+    /*! Default options:
+     *  
+     *  anim_duration:  200
+     *  reverse_elm:    false
+     *  force_loop:     false
+     *  start_paused:   false
+     * 
+     */
+
+    
+	$('.js-conveyor-1').jConveyorTicker({
+      force_loop: true
+    });
+
+
+  });
+  </script>
+
+</head>
+
+<body id="top">
+
+<div class="textscroll">
+<div class="wrap">
+<!-- Plugin HTML begin -->
+<div class="d-demo-wrap">
+              <div class="js-conveyor-1">
+                <ul>
+                  <li>
+                    <a href="investors/notices/Website_Special_Window_Notice.pdf" target="_blank">
+                      <span>Notice of Special Window for re-lodgement of transfer and dematerialisation of physical shares</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="investors/downloads/100_Days-Campaign_Website.pdf" target="_blank">
+                      <span>Second 100 Days Campaign – "Saksham Niveshak" – for KYC, bank mandates and other related updations and shareholder outreach to prevent Transfer of Unpaid / Unclaimed dividends to IEPF</span>
+                    </a>
+                  </li>
+                  
+                  
+                  <!--<li>
+                    <a href="investors/downloads/100-days-campaign-letter.pdf" target="_blank">
+                      <span>100 Days Campaign – "Saksham Niveshak" – for KYC, bank mandates and other related updations and shareholder outreach to prevent Transfer of Unpaid / Unclaimed dividends to IEPF</span>
+                    </a>
+                  </li>-->
+                  
+                </ul>
+              </div>
+              <!-- Plugin HTML end -->
+     </div>         
+</div>
+</div>
+
+
+<!-- Popup Area -->
+<!--<div class="popup-area" id="offer-box">
+	<div>
+        <a href="https://birlacorporation.com/investors/annual-reports/Annual-Report-BCL-2022-23.pdf" target="_blank"><img src="images/popup-img-1.jpeg" alt="" class="img-responsive" /></a>
+        <a onClick="hidediv('offer-box')" class="closebtnh"><i class="fa fa-times" aria-hidden="true"></i></a>   
+   </div>
+</div>-->
+<!-- Popup Area End -->
+
+
+
+
+<!-- Header Area Start -->
+<script>
+$(document).ready(function() {
+    $("#submit_bot").click(function() {
+        var t = $("#frms").serialize();
+        $("#submit_bot").attr("disabled", "disabled");
+		$.ajax({
+            type: "POST",
+            url: "fltng_frm_sbmt.php",
+            data: t,
+            success: function(t) {
+                if("sent" == t){
+					alert("Thank you for your enquiry, Our representative will get in touch with you very soon.");
+					location.replace("");
+				}else{
+					$("#errmsg").html(t).fadeTo(900, 1, function() {
+                        $("#errmsg").fadeOut();
+                    });
+					$("#submit_bot").attr("disabled", !1);
+				}
+            }
+        });
+    });
+});
+</script>
+
+
+
+<!--<script>
+$(document).ready(function(){
+  	$("#submit_bot").click(function(e){
+	e.preventDefault();
+	var datas = $("#frms").serialize();
+	$("#submit_bot").attr('disabled','disabled');	
+		$.ajax({
+			type: "POST",
+			url: "fltng_frm_sbmt.php",
+			data: datas,
+				success: function(data){
+						if(data == 'sent'){
+							$("#frms").hide();
+							//$("#frm_cntct")[0].reset();
+							$("#errmsg").fadeTo(200,0.1,function(){ 
+							$(this).html('Thank you for your enquiry, Our representative will get in touch with you very soon.').fadeTo(900,1,function(){});
+							});
+						}else{
+							$("#errmsg").fadeTo(200,0.1,function(){ 
+							$("#submit_bot").attr('disabled',false);
+							$("#errmsg").html(data).fadeTo(900,1,function(){});
+							});
+						}
+						$("#errmsg").html(datas)
+				}
+						
+	});
+  });
+ });
+</script>-->  
+
+
+<!--<script>
+
+$(document).ready(function() {
+   
+	$("#submit_bot").on('click', function() {
+	
+	if($('#name').val() == ''){
+		$('#errmsg').text("Enter Your Name");
+	}else if($('#contact_no').val() == ''){
+		$('#errmsg').text("Enter Contact Number");
+	}else if($('#emaill_ID').val() == ''){
+		$('#errmsg').text("Enter Email");
+	}else if($('#city').val() == ''){
+		$('#errmsg').text("Enter City Name");	
+	}else if($('#area').val() == ''){
+		$('#errmsg').text("Select Nature of Enquiry");
+	}else if($('#mssg').val() == ''){
+		$('#errmsg').text("Enter your message");
+	}else{
+	
+			var formData = 'pname='+$('#name').val()+'&area='+$('#area').val()+'&mobileno='+$('#contact_no').val()+'&city='+$('#city').val()+'&mailid='+$('#emaill_ID').val()+'&txtEnquirym='+$('#mssg').val();
+			$.ajax({
+			 url: 'https://u.cdnxp.com/mail-birlacorporation.php?callback=?',
+			 type: "GET",
+			 data: formData,
+			 dataType: "jsonp",
+			 jsonpCallback: "localJsonpCallback"
+			});
+			
+			
+			function localJsonpCallback(json) {
+			 if (!json.Error) {
+			 } else {
+			 }
+			}
+			
+			$('#name').val('');
+			$('#contact_no').val('');
+			$('#emaill_ID').val('');
+			$('#city').val('');
+			$('#area').val('');
+			$('#mssg').val('');
+			
+			$('#errmsg').text("Thank you for your enquiry. Will contact you soon!");
+			}
+	
+	});
+});
+
+</script>-->
+
+
+
+
+
+<div id="slideout">
+
+	<img src="images/enquiry-tab.png" alt="">
+
+	<div id="slideout_inner">
+
+		<form class="left-form-area" method="post" id="frms" name="frms" onSubmit="return false;">
+			<input type="text" id="name" name="name" placeholder="Name*" required>
+			<input type="text" id="contact_no" name="contact_no" placeholder="Contact No.*" required>
+			<input type="text" id="emaill_ID" name="emaill_ID" placeholder="Email*" required>
+			<input type="text" id="city" name="city" placeholder="City*" required>
+			<select id="area" name="area">
+				<option value="">--- Nature of Enquiry ---</option>
+				<option value="Product">Product</option>
+                <option value="Vendor association">Vendor Association</option>
+				<option value="Dealership Enquiry">Dealership Enquiry</option>
+				<option value="Customer Feedback">Customer Feedback</option>
+				<option value="Others">Others</option>
+			</select>
+			<textarea rows="4" name="mssg" id="mssg"  placeholder="Message"></textarea>
+			<input type="submit" value="Submit" class="submit1" id="submit_bot"> 
+			<input type="reset" value="Reset!" class="reset">
+		</form>
+        <!--<span id="errmsg" style="display:none; color:#000"></span>-->
+        <span id="errmsg" style="color:#000"></span>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="top-wrap">
+
+	<div class="header-area">
+
+    	<a href="index.html"><img src="images/birla-logo.jpg" alt=""></a>
+
+        <!--<a class="rit-logo"><img src="images/logo.png" alt=""></a>-->
+
+    	<div>
+
+    		<big>Birla Corporation Limited</big>
+
+    		<ul class="top-head">
+
+            	<!--<li><a href="calendar-2022.html"><img src="images/download-calendar03.jpg" alt=""></a></li>-->
+                
+                <!--<span><img src="images/stock-icon.png" alt=""> High: <i class="fa fa-inr" aria-hidden="true"></i> 580.90</span>-->
+
+    			<!--<li><a href="#" onClick="window.open('http://www.nseindia.com/companytracker/cmtracker.jsp?symbol=BIRLACORPN', '_blank', 'fullscreen=yes,titlebar=no,scrollbars=no');"><img src="images/market-tracker.png" alt=""></a></li>-->
+                
+                <li><a href="#" onClick="window.open('https://www.nseindia.com/get-quotes/equity?symbol=BIRLACORPN', '_blank', 'fullscreen=yes,titlebar=no,scrollbars=no');"><img src="images/market-tracker.png" alt=""></a></li>
+
+    			<li>Cement<br /> Helpline <span><img src="images/phone-icon.png" alt=""> 1800 123 1117</span></li>
+
+            </ul>
+
+            <!-- Navigation -->
+
+            <div>
+
+                <div id='cssmenu'>
+
+                    <div id="head-mobile">Menu</div>
+
+                    <div class="button"></div>
+
+        
+
+                        <ul>
+
+                        <li class='menu-item-has-children'><a>Corporate</a>
+
+                            <ul>
+
+                                <li><a href="company-profile.html">Company Profile</a></li>
+
+                                <li><a href="vision-mission-values.html">Vision, Mission & Values</a></li>
+
+                                <li><a>Our Leadership</a>
+
+                                	<ul>
+
+                                        <li><a href="board-of-directors.html">Board of Directors</a></li>
+
+                                        <li><a href="board-committees.html">Board Committees</a></li>
+
+                                        <li><a href="senior-management-team.html">Management Team</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><a href="awards-recognition.html">Awards &amp; Recognition</a></li>
+
+                                <li><a>Sustainability</a>
+
+                                	<ul>
+
+                                        <li><a href="climatic.html">Climatic</a></li>
+
+                                        <li><a href="social.html">Social</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <!--<li><a href="plants-offices.html">Network - Plants & Offices</a></li>
+
+				                <li><a href="exports.html">Exports</a></li>-->
+
+                            </ul>
+
+                        </li>
+
+                        <li class='menu-item-has-children'><a>Investors</a>
+
+                            <ul>
+
+                            	<li><a>Disclosures under Regulation 46<br> of the LODR</a>
+
+                                	<ul>
+
+                                    
+
+                                    	<li><a>Our Leadership</a>
+
+                                            <ul>
+
+                                                <li><a href="board-of-directors.html">Board of Directors</a></li>
+
+                                                <li><a href="board-committees.html">Board Committees</a></li>
+
+                                                <!--<li><a href="senior-management-team.html">Senior Management Team</a></li>-->
+
+                                                <li><a href="Draft-Letter-of-Appointment-of-Independent-Director.pdf" target="_blank">Letter of Appointment</a></li>
+
+                                        		<li><a href="directors-induction.html">Directors' Induction, Familiarisation and Training</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><a>Financial Info</a>
+
+                                            <ul>
+
+                                                <li><a href="investors/financial-highlights.pdf" target="_blank">Financial Highlights</a></li>
+
+                                                <li><a href="financial-results.html">Financial Results</a></li>
+
+                                                <li><a href="annual-report.html">Annual Report</a></li>
+
+                                                <li><a href="subsidiaries.html">Subsidiaries</a></li>
+                                                <li><a href="earnings-call-transcript.html">Earnings Call/Transcript</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><a>Corporate Governance</a>
+
+                                            <ul>
+
+                                                <li><a href="notice.html">Notice</a></li>
+
+                                                <li><a href="policies.html">Policies</a></li>
+
+                                                <li><a href="agm.html">AGM</a></li>
+
+                                                <li><a href="investors-grievance.html">Investors Grievance</a></li>
+
+                                                <!--<li><a href="agm-poll-results.html">AGM Poll Results</a></li>-->
+
+                                                <li><a href="postal-ballot.html">Postal Ballot</a></li>
+
+                                                <li><a href="stock-exchanges-notices-disclosures.html">Stock Exchanges - Notices & Disclosures</a></li>
+
+                                                <li><a href="annual-return.html">Annual Return</a></li>
+                                                
+                                                <li><a href="/investors/KMP-details-for-determination-of-materiality.pdf" target="_blank">KMP details for determination of materiality</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    	<li><a>Code of Conduct</a>
+
+                                            <ul>
+
+                                                <li><a href="investors/code-of-conduct/code-of-conduct-director-and-senior-management.pdf" target="_blank">Directors, Senior Management and the Management Team</a></li>
+
+                                                <li><a href="investors/code-of-conduct/code-of-conduct-independent-directors.pdf" target="_blank">Independent Directors</a></li>
+
+                                                <li><a href="bcl-insider-trading.pdf" target="_blank">Insider Trading</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        
+
+                                        <li><a>Unpaid Dividend</a>
+
+                                            <ul>
+
+                                                <li><a href="statement-of-unpaid-dividend.html">Statement of Unpaid Dividend</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li><a>Transfer of shares to IEPF</a>
+
+                                            <ul>
+
+                                                <li><a href="notices.html">Notices - IEPF</a></li>
+
+                                                <li><a href="nodal-officer.html">Nodal Officer</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    	<!--<li><a href="http://www.iepf.gov.in/IEPF/corporates.html" target="_blank">Link for Claiming Shares & Unpaid Dividend from the  IEPF Authority</a></li>-->
+                                        <li><a href="claim-from-the-investor-education.html">Claim from the Investor Education and Protection Fund Authority</a></li>
+
+                                        <li><a href="registrar-and-share-transfer-agent.html">Registrar and Share Transfer Agent</a></li>
+
+                                        <li><a href="investors/green-initiative.pdf" target="_blank">Green Initiative</a></li>
+
+                                        <li><a href="talavadi-amalgamation.html">Talavadi Amalgamation</a></li>
+
+                                        <li><a href="investors/demat_process.pdf" target="_blank">Dematerialization of shares</a></li>
+
+                                        <li><a href="credit-ratings.html">Credit Rating</a></li>
+
+                                        <li><a href="csr.html">CSR</a></li>
+                                        
+                                        <li><a href="https://smartodr.in/login" target="_blank">SMART ODR Portal</a></li>
+
+                                        <li class="blue"><a href="downloads.html" >Downloads</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><a>Disclosures under Regulation 62<br> of the LODR</a>
+
+                                	<ul>
+
+                                    	<li><a href="notices-and-disclosures.html">Notices and Disclosures</a></li>
+
+                                        <li><a href="debenture-trustees.html">Debenture Trustees</a></li>
+										<li><a href="registrar-and-share-transfer-agent.html">Registrar and Transfer Agent</a></li
+                                        ><li><a href="debenture-holders.html">Downloads for Debenture holders</a></li>
+
+                                    </ul>
+
+                                </li>
+								
+								
+								
+								
+
+
+
+                            </ul>
+
+                        </li>
+
+                        <li class='menu-item-has-children'><a>Cement</a>
+
+                            <ul>
+
+                                <li><a href="cement.html">Overview</a></li>
+
+								<li><a href="cement-products.html">Products</a></li>
+
+								<li><a href="brands.html">Cement Brands</a>
+
+                                	<ul> 
+
+                                    	<li><a href="https://www.mpbirlacement.com/mp-birla-cement-rakshak/" target="_blank">MP Birla Cement Rakshak</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/mp-birla-cement-perfect-plus/" target="_blank">MP Birla Cement Perfect Plus</a></li>
+
+                                        <li><a href="https://www.mpbirlacement.com/mp-birla-cement-samrat-advanced/" target="_blank">MP Birla Cement Samrat Advanced</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/mp-birla-cement-ultimate-ultra/" target="_blank">MP Birla Cement Ultimate Ultra</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/mp-birla-cement-unique/" target="_blank">MP Birla Cement Unique Plus</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/mp-birla-cement-samrat/" target="_blank">MP Birla Cement Samrat</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/mp-birla-cement-ultimate/" target="_blank">MP Birla Cement Ultimate</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/mp-birla-cement-chetak/" target="_blank">MP Birla Cement Chetak</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/mp-birla-cement-psc/" target="_blank">MP Birla Cement PSC</a></li>
+
+                                        <li><a href="https://www.mpbirlacement.com/mp-birla-multicem/" target="_blank">MP Birla Cement Multicem</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/mp-birla-cement-concrecem/" target="_blank">MP Birla Cement Concrecem</a></li>
+
+                                        
+
+                                    </ul>
+
+                                </li>
+
+                                <li><a href="#">Wall Putty & Construction chemicals</a>
+
+                                	<ul> 
+
+                                        <li><a href="https://www.mpbirlacement.com/perfect-plus-wall-putty/" target="_blank">Wall Putty</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/sbr/" target="_blank">SBR</a></li>
+
+                                        <li><a href="http://www.mpbirlacement.com/iwp/" target="_blank">IWP</a></li>
+                                        
+                                        
+
+                                    </ul>
+
+                                </li>
+								<li><a href="https://www.mpbirlacement.com/rmc/" target="_blank">RMC</a></li>
+                                <!--<li><a href="https://www.mpbirlacement.com/footprint/" target="_blank">MP Birla Cement Presence</a></li>-->
+                                <li><a href="https://www.mpbirlacement.com/tv-commercial/" target="_blank">MP Birla Cement Presence</a></li>
+
+								<li><a href="plants.html">Plants</a></li>
+                                <li><a href="fuel-security-coal.html">Fuel Security (Coal)</a></li>
+                                <li><a href="green-energy.html">Green Energy</a></li>
+                                
+                                <li><a href="green-fuel-afr.html">Green Fuel (AFR)</a></li>
+
+                                <li><a href="ec-compliance.html">EC Compliance</a></li>
+
+								<li><a href="customer-care.html">Customer Care</a></li>
+
+								<li><a href="landmarks.html">Landmarks</a></li>
+
+                                
+
+								<!--<li><a href="cement_downloads.html">Downloads</a></li>-->
+                                <li><a href="https://www.mpbirlacement.com/home-building-companion/" target="_blank">Home Building Companion</a></li>
+                                <li><a href="https://www.mpbirlacement.com/" target="_blank">Visit MP Birla Cement Website</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class='menu-item-has-children'><a>CSR Activities</a>
+
+                        	 <ul>
+
+                                <li><a href="csr-activities/CSR-Brochure-2021-22.pdf" target="_blank">CSR Brochure 2021-22</a></li>
+                                <li><a href="csr-activities/MP-CSR-DOSSIER.pdf" target="_blank">Madhya Pradesh CSR Dossier</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class='menu-item-has-children'><a>Jute</a>
+
+                            <ul>
+
+                                <li><a href="jute.html">Overview</a></li>
+
+								<li><a href="jute-products.html">Products</a></li>
+
+								<li><a href="jute-processing.html">Jute Processing</a></li>
+
+                                <li><a href="https://mpbirlajute.com/" target="_blank">Visit MP Birla Jute Website</a></li>
+
+								<li><a href="images/certificate.pdf" target="_blank">Testimonials</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li><a href='http://birlacorporation.com/heart-and-strength/'>Heart and Strength</a></li>
+
+                        
+
+                        <li class='menu-item-has-children'><a>Career</a>
+
+                            <ul>
+
+                                <li><a href="HRD-mission.html">HRD Mission</a></li>
+
+								<!--<li><a href="online-application.html">Online Application</a></li>-->
+                                <li><a href="https://birlacorp.darwinbox.in/ms/candidatev2/main/careers/home" target="_blank">Online Application</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class='menu-item-has-children'><a>Media</a>
+
+                            <ul>
+
+                                <li><a href="press-release.html">Press Release</a></li>
+
+								<li><a href="events.html">Happenings / Events</a></li>
+
+                                <!--<li><a href="mp-birla-cement-tvcs.html">MP Birla Cement TVCs</a></li>-->
+                                <li><a href="https://www.mpbirlacement.com/tv-commercial/" target="_blank">MP Birla Cement TVCs</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li><a href='contact.html'>Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- Navigation -->
+
+
+
+        </div>
+
+        
+
+        
+
+        
+
+    </div>
+
+</div>
+
+<!-- Header Area End -->
+
+
+<!-- Banner Area Start -->
+<div class="banner-area">
+    <ul class="rslides" id="slider1">
+    	<li><img src="images/slider/slide010.jpg" alt=""></li>
+        <li><img src="images/slider/slide01.jpg" alt=""></li>
+        <li><img src="images/slider/slide13.jpg" alt=""></li>
+        <li><img src="images/slider/slide02.jpg" alt=""></li>
+        <li><img src="images/slider/slide03.jpg" alt=""></li>
+        <li><img src="images/slider/slide04.jpg" alt=""></li>
+        <li><img src="images/slider/slide05.jpg" alt=""></li>
+        <li><img src="images/slider/slide06.jpg" alt=""></li>
+        <li><img src="images/slider/slide07.jpg" alt=""></li>
+        <li><img src="images/slider/slide08.jpg" alt=""></li>
+        <li><img src="images/slider/slide09.jpg" alt=""></li>
+        <li><img src="images/slider/slide011.jpg" alt=""></li>
+        <li><img src="images/slider/slide14.jpg" alt=""></li>
+        <li><img src="images/slider/slide17.jpg" alt=""></li>
+        <li><img src="images/slider/slide16.jpg" alt=""></li>
+	</ul>
+</div>
+<!-- Banner Area End -->
+
+
+<!-- Mid Area -->
+<div class="wrap">
+
+	<div class="mid-product-box">
+		<!-- News -->
+		<!--<div>
+			<h2>Latest News</h2>
+			<ul id="ticker">
+            	<li>
+                    <span>19 July, 2017</span>
+                    <a href="MP-Birla-Cement-unique-9-unique-benefits.html">MP Birla Cement presents "M P Birla Cement UNIQUE - Premium Cement with 9 Unique Benefits"</a>
+                </li>
+            	<li>
+                    <span>18 July, 2017</span>
+                    <a href="CM-Dedicates-MP-Birla-Planetarium-to-people-of-kolkata.html">CM Dedicates M P Birla Planetarium to people of Kolkata</a>
+                </li>
+            	<li>
+                    <span>9 March, 2017</span>
+                    <a href="mp-birla-cement-launches-multicem-concrecem.html">M P Birla Cement launches MULTICEM & CONCRECEM for institutional buyers</a>
+                </li>
+            	<li>
+                    <span>4 February 2016</span>
+                    <a href="">Birla Corp to acquire cement business of Reliance</a>
+                </li>
+                <li>
+                    <span>18 February 2015</span>
+                    <a href="mamata-banerjee-unveils-priyamvada-birla-campus-foundation-stone.html">Mamata Banerjee unveils Priyamvada Birla Campus Foundation Stone</a>
+                </li>
+                <li>
+                    <span>7-8 January 2015</span>
+                    <a href="">Bengal Global Business Summit 2015</a>
+                </li>
+            </ul>
+            <a href="press-release.html"><i class="fa fa-chevron-right" aria-hidden="true"></i> Know More</a>
+		</div>-->
+		<!-- News End -->
+		<!-- Product Box -->
+		<div>
+			<img src="images/cement.jpg" alt="">
+			<div>
+				<h3>Cement Division</h3>
+				<p>The Cement Division of Birla Corporation Limited has 10 plants at eight locations, Satna & Maihar (Madhya Pradesh)...</p>
+			</div>
+			<a href="cement.html"><i class="fa fa-chevron-right" aria-hidden="true"></i> Know More</a>
+		</div>
+		<div>
+			<img src="images/jute.jpg" alt="">
+			<div>
+				<h3>Jute Division</h3>
+				<p>More than a century's experience. Modern spinning technology. Skilled workforce. Above all, an innovative, customer-focused outlook.</p>
+			</div>
+			<a href="jute.html"><i class="fa fa-chevron-right" aria-hidden="true"></i> Know More</a>
+		</div>
+		<!-- Product Box End -->
+	</div>
+	
+</div>
+<!-- Mid Area Ends -->
+
+
+<div class="welcome-txt">
+	<div class="wrap">
+		<h1>Building a Stronger India</h1>
+		<p>Founded in 1919, the M.P. Birla Group is amongst the largest industrial houses in India. The company leads the scene the in the cement industry. with strong presence in northerm, central and eastern India. Considered one of the leaders in cable industry, the M.P. Birla Group has joint ventures with global giants like <strong>Furukawa</strong>.</p>
+		<a href="company-profile.html"><i class="fa fa-chevron-right" aria-hidden="true"></i> Know More</a>
+	</div>
+</div>
+
+
+<!-- 4 Box Area -->
+<div class="wrap">
+	<ul class="four-box">
+		<li>
+			<div>
+				<h2>Technology & Environment</h2>
+				<p>Sustainability at the heart of our operations</p>
+			</div>
+			<a href="climatic.html"><img src="images/technology-environment.jpg" alt=""></a>
+		</li>
+		<li>
+			<div>
+				<h2>Community & Us</h2>
+				<p>To society we give back with love and gratitude</p>
+			</div>
+			<a href="social.html"><img src="images/community.jpg" alt=""></a>
+		</li>
+		<li>
+			<div>
+				<h2>Our Brands</h2>
+				<p><strong>M P Birla Cement</strong><br>"Cement se Ghar tak"</p>
+			</div>
+			<a href="brands.html"><img src="images/brand-2.jpg" alt=""></a>
+		</li>
+		<li>
+			<div>
+				<h2>Marketing Initiatives</h2>
+				<p>Innovation, Value-creation, Consumer Connect</p>
+			</div>
+			<ul class="rslides1" id="slider2">
+		        <li><img src="images/marketing3.jpg" alt=""></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<!-- 4 Box Area End -->
+
+
+<!-- Footer Start -->
+﻿<div class="footer-band">
+	<div class="wrap">
+		<strong>Creating Sustainable Value</strong>
+		<div>
+			<a href=""><i class="fa fa-envelope" aria-hidden="true"></i></a>
+			<span>
+				<p>Join Birla Corp Today</p>
+				<a href="mailto:career@birlacorp.com">career@birlacorp.com</a>
+			</span>
+		</div>
+	</div>
+</div>
+
+<div class="footer-links">
+	<div class="wrap">
+		<ul>
+			<li>
+				<h5>Our Brands</h5>
+                <a href="http://www.mpbirlacement.com/mp-birla-cement-perfect-plus/" target="_blank">MP Birla Cement Perfect Plus</a>
+                <a href="https://www.mpbirlacement.com/mp-birla-cement-rakshak/" target="_blank">MP Birla Cement Rakshak</a>
+                <a href="http://www.mpbirlacement.com/samrat-advanced/">MP Birla Cement Samrat Advanced</a>
+                 <a href="http://www.mpbirlacement.com/mp-birla-cement-ultimate-ultra/" target="_blank">MP Birla Cement Ultimate Ultra</a>
+                <a href="http://www.mpbirlacement.com/mp-birla-cement-unique/" target="_blank">MP Birla Cement Unique Plus</a>
+                <a href="http://www.mpbirlacement.com/mp-birla-cement-samrat/" target="_blank">MP Birla Cement Samrat</a>
+                <a href="http://www.mpbirlacement.com/mp-birla-cement-ultimate/" target="_blank">MP Birla Cement Ultimate</a>
+                <a href="http://www.mpbirlacement.com/mp-birla-cement-chetak/" target="_blank">MP Birla Cement Chetak</a>
+                <a href="http://www.mpbirlacement.com/mp-birla-cement-psc/" target="_blank">MP Birla Cement PSC</a>
+                <a href="http://www.mpbirlacement.com/mp-birla-cement-multicem/" target="_blank">MP Birla Cement Multicem</a>
+                <a href="http://www.mpbirlacement.com/mp-birla-cement-concrecem/" target="_blank">MP Birla Cement Concrecem</a>
+			</li>
+			<li>
+				<h5>Investors</h5>
+				<a href="financial-results.html">Financial Results</a>
+				<a href="annual-report.html">Annual Report</a>
+				<a href="notice.html">Notice</a>
+				<a href="policies.html">Policies</a>
+				<a href="investors/green-initiative.pdf" target="_blank">Green Initiative</a>
+				<a href="talavadi-amalgamation.html">Talavadi Amalgamation</a>
+			</li>
+			<li>
+				<h5>Info</h5>
+                    <a href="company-profile.html">Company Profile</a>
+                    <a href="vision-mission-values.html">Vision, Mission & Values</a>
+                    <a href="board-of-directors.html">Our Leadership</a>
+                    <a href="awards-recognition.html">Awards &amp; Recognition</a>
+                    <a href="climatic.html">Sustainability</a>
+           		</li>
+           		<li>
+				<h5>Connect with us</h5>
+
+				<ul>
+                    <li><a href="https://www.facebook.com/MPBirlaCement/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/MPBirla_Cement" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=Y6vXF1TMdkw&feature=youtu.be" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/mpbirla_cement/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/mp-birla-cement/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>
+
+				<div class="clubultimate-area">
+				<a href="https://www.clubultimate.in" target="_blank"><img src="images/club-ultimate.jpg" alt="" /></a>
+				<span><strong>CLUB ULTIMATE</strong><br>The exclusive club for<br>MP Birla Cement associates.</span>
+				</div>
+
+          		</li>
+		</ul>
+	</div>
+</div>
+
+<div class="footer-copyright-area">
+	<div class="wrap">
+		<p>&copy; 2020 Birla Corporation.</p>
+		<a href="javascript:void(0)" onClick="goToByScroll('top')"><i class="fa fa-chevron-up"></i></a>
+        <span style="padding-right:40px; display:block;"><a href="privacy-policy.html">Privacy Policy</a></span>
+	</div>
+</div>
+
+<script>
+$(document).ready( function() {
+   $('#area').change( function() {
+      var vendor = $(this).val();
+	  if (vendor == 'Vendor association'){
+		  location.href = 'https://vportal.birlacorp.com//#/sp/registrationRequest/bcl/';
+	  }
+   });
+});
+</script><!-- Footer End -->
+
+
+
+</body>
+
+</html>

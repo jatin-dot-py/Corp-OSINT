@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>ZF-India</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<script type="text/javascript" src="scripts/jquery-1.2.6.pack.js"></script>
+
+<style type="text/css">
+
+/*Make sure your page contains a valid doctype at the top*/
+#simplegallery1{ //CSS for Simple Gallery Example 1
+position: relative; /*keep this intact*/
+visibility: hidden; /*keep this intact*/
+
+}
+
+#simplegallery1 .gallerydesctext{ //CSS for description DIV of Example 1 (if defined)
+text-align: left;
+padding: 2px 5px;
+}
+
+</style>
+
+<script type="text/javascript" src="scripts/simplegallery.js">
+</script>
+
+<script type="text/javascript">
+
+var mygallery=new simpleGallery({
+	wrapperid: "simplegallery1", //ID of main gallery container,
+	dimensions: [651, 363], //width/height of gallery in pixels. Should reflect dimensions of the images exactly
+	imagearray: [
+		["gallery/open.jpg", "", "", ""],
+		["gallery/01.jpg", "", "", ""],		
+		["gallery/02.jpg", "", "", ""],		
+		["gallery/03.jpg", "", "", ""],		
+		["gallery/04.jpg", "", "", ""],		
+		["gallery/05.jpg", "", "", ""],		
+		["gallery/06.jpg", "", "", ""],
+		["gallery/07.jpg", "", "", ""],
+		["gallery/08.jpg", "", "", ""],		
+		["gallery/09.jpg", "", "", ""]
+		
+		//["img/04.jpg", "", "", ""]
+	],
+	autoplay: [true, 2500, 10], //[auto_play_boolean, delay_btw_slide_millisec, cycles_before_stopping_int]
+	persist: false, //remember last viewed slide and recall within same session?
+	fadeduration: 500, //transition duration (milliseconds)
+	oninit:function(){ //event that fires when gallery has initialized/ ready to run
+		//Keyword "this": references current gallery instance (ie: try this.navigate("play/pause"))
+	},
+	onslide:function(curslide, i){ //event that fires after each slide is shown
+		//Keyword "this": references current gallery instance
+		//curslide: returns DOM reference to current slide's DIV (ie: try alert(curslide.innerHTML)
+		//i: integer reflecting current image within collection being shown (0=1st image, 1=2nd etc)
+	}
+})
+
+</script>
+</head>
+<body>
+<div id="header">
+		<div class="container">
+			<div id="logo"><a href="../index.php"><img src="../images/logo-new.jpg" alt="" style="border:none;"/></a></div>
+			<div id="menu">
+				<ul>
+					<li><a href="../index.php" class="active-menu">HOME</a></li>
+					<li><a href="../profile.php" >PROFILE</a></li>
+					<li><a href="../products.php" >PRODUCTS</a></li>
+					<li><a href="../support.php" >SUPPORT &amp; SERVICES</a></li>
+					<li><a href="../excellence.php" >AREAS OF EXCELLENCE</a></li>
+					<li><a href="../finance.php" >INVESTORS</a>
+						<ul>
+							<li><a href="../investor-service-request.php" class="active-menu">INVESTORS SERVICE REQUESTS</a></li>
+							<li><a href="../saksham-niveshak–iepf.php" >SAKSHAM NIVESHAK – IEPF</a></li>
+						</ul>
+					</li>
+					<li><a href="../customers.php" >CUSTOMERS</a></li>
+					<li><a href="../contact.php" >CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+</div>	
+	<div id="main-banner">
+		<div class="container">
+			<div id="main-banner-image">
+				<div id='simplegallery1'></div>
+			</div>
+			<div class="main-banner-right">
+				<div class="sppechContainer">
+					<div class="speechTitle">ABOUT</div>
+					<div class="speechContent"><h5 style="font-size:15px; color:#1E4591;">ZF Steering Gear (India) Ltd.</h5> <br/><strong>CIN:</strong> L29130PN1981PLC023734
+						<p><strong>Registered Office:</strong> Gat No. 1242/44, Village Vadu Bk., Tal. Shirur, Dist. Pune - 412 216</p>
+							<p><strong>Tel.:</strong> 02137-305100</p><p>Fax: 02137-305302</p><p><strong>Email ID:</strong> enquiry@zfindia.com</p></div>
+					
+				</div>
+				<!--<div class="sppechContainer">
+					<div class="speechTitle">MANAGEMENT SPEAKS</div>
+					<div class="speechContent">I have great pleasure in welcoming you all, at the 35th Annual General Meeting of our Company. I would like to thank you all, for your presence here today, and I appreciate your interest in the Company.
+					</div>
+					<div class="speaker">&nbsp;</div>
+					<div class="speakerDesignation">
+						<div class="speakerPost"></div>
+						<div class="sppechMore" style="text-align:left;"><img src="images/sppech-more.gif" alt="" style="padding-right:5px;"/><a href="profile/management.php" title="" >more</a></div>
+					</div>
+				</div>-->
+				<div class="sppechRight"></div>
+				<div class="speechBottom"></div>
+				<div class="speechSpace"></div>
+				<div class="sppechContainer">
+					<div class="speechTitle">505163 ZFSTEER GROUP(S) BSE DATA</div>
+					<!--<div class="bseStats" id="result">INR  </div>
+					<div class="bseDate">Sat 26th Sep, 2026 </div>-->
+					<div class="latestUpdate"><b>Latest Updates</b></div>
+					<div class="bseDetails"><img src="images/sppech-more.gif" alt="" style="padding-right:5px;"/>
+					<!--<a href="http://www.bseindia.com/bseplus/StockReach/AdvanceStockReach.aspx?scripcode=505163" title="" target="_blank" >View Details</a>-->
+					<a href="https://www.bseindia.com/stock-share-price/zfsteering-gear-(india)-ltd/zfsteering/505163/" title="" target="_blank" >View Details</a>
+					</div>
+				</div>
+				<div class="sppechRight"></div>
+				<div class="speechBottom"></div>				
+			</div>
+           <!--  <div class="ticker"><b>NEWS:</b> <a href="http://www.zfindia.com/profile/news.php">ZF Steering Gear (India) Limited announces commissioning of its 5 MW Solar Power Project.</a>&nbsp;<a href="http://www.zfindia.com/profile/news.php" class="tikmore"> > more</a></div>-->
+		</div>
+	</div>
+	<div id="container-top"></div>
+	<div class="container">
+		<div class="shortDesc-container">
+			<div class="ShortDesc-col">
+				<div class="Title"><img src="images/border-left.gif" alt="" class="shortDesc-border"/>ZF INDIA AT A GLANCE</div>
+				<div class="shortDesc-image"><img src="images/zf-glance.jpg" alt="" /></div>
+				<div class="shortDesc-content">ZFINDIA a pioneer in manufacture and supply of integral hydraulic power steering system in India, and having joint venture with M/s.ZF Lenksysteme GmbH, since establishment in the year 1981.
+				</div>
+				<div class="moreDetails"><img src="images/sppech-more.gif" alt="" style="padding-right:5px;"/><a href="profile/profile.php" title="" >more</a></div>
+			</div>
+			<div style="width:45px;;height:229px;float:left;"></div>
+			<div class="ShortDesc-col">
+				<div class="Title"><img src="images/border-left.gif" alt="" class="shortDesc-border"/>ZF INDIA PRODUCTS</div>
+				<div class="shortDesc-image"><img src="images/products.jpg" alt="" /></div>
+				<div class="shortDesc-content">Dense traffic and high speed characterises everyday life on roads.This puts increasing demands on the field of vehicle engineering for higher vehicular safety and comfort.And the steering system plays a major part in fulfilling this requirement.
+				</div>
+				<div class="moreDetails"><img src="images/sppech-more.gif" alt="" style="padding-right:5px;"/><a href="products/steerings.php" title="" >more</a></div>
+			</div>
+			<div style="width:45px;;height:229px;float:left;"></div>
+			<div class="ShortDesc-col">
+				<div class="Title"><img src="images/border-left.gif" alt="" class="shortDesc-border"/>DEALERS NETWORK/CUSTOMER CARE</div>
+				<div class="shortDesc-image"><img src="images/dealers-network.jpg" alt="" /></div>
+				<div class="shortDesc-content">To meet our Customers Service demands ZF India has established an extensive network of over 100 Dealers and Distributors across the country.
+				</div>
+				<div class="moreDetails"><img src="images/sppech-more.gif" alt="" style="padding-right:5px;"/><a href="support/taskforce.php" title="" >more</a></div>
+			</div>
+		</div>
+		<div class="testimonialContainer">
+			<div class="memeber"><img src="images/career.jpg" alt="" /></div>
+			<div class="career-container">
+				<div class="careerAt"><img src="images/border-left.gif" alt="" class="career-border"/> CAREER AT ZF INDIA</div>
+				<div class="careerContent">ZF India is a Leading Manufacturer of Automobile Components. We invite applications for various positions ..
+				</div>
+				<div class="moreCareer"><img src="images/sppech-more.gif" alt="" style="padding-right:5px;"/><a href="career.php" title="" >more</a></div>
+			</div>
+			<div class="client"> <a href="customers.php" style="border:0;height:114px;line-height:114px;" ><img src="images/logo-gif-banner.gif" alt="" style="border:none;padding-top:6px;"/> </a></div>
+			<div class="career-container">
+				<div class="careerAt"><img src="images/border-left.gif" alt="" class="career-border"/> CLIENT TESTIMONIALS</div>
+				<div class="testiContent">It has been an absolute delight of working with ZF STEERING GEAR INDIA LTD.
+				</div>
+				<div class="moreTesti"><img src="images/sppech-more.gif" alt="" style="padding-right:5px;"/><a href="testimonial/dealer.php" title="" >more</a></div>
+				<div class="testiSpeaker">Pramod Shah  </div>
+			</div>
+		</div>
+		<!--<div class="sppechContainer" style="width:100%; height:auto; margin-top:30px; margin-left:0px;">
+					<div class="speechTitle" style="width:100%;     background-position: center center;">MANAGEMENT SPEAKS</div>
+					<div style="clear:both;"></div>
+					<div class="speechContent" style="width:100%;">I have great pleasure in welcoming you all, at the 35th Annual General Meeting of our Company. I would like to thank you all, for your presence here today, and I appreciate your interest in the Company.
+					</div>
+					<div class="speaker">&nbsp;</div>
+					<div class="speakerDesignation" style="width:100%;">
+						<div class="speakerPost"></div>
+						<div class="sppechMore" style="text-align:left;"><img src="images/sppech-more.gif" alt="" style="padding-right:5px;"/><a href="profile/management.php" title="" >more</a></div>
+					</div>
+				</div>-->
+	</div>
+	<div id="footer">
+		<div class="container">
+			<div id="footer-menu">
+				<ul>
+					<li><a href="index.php" >Home</a></li>
+					<li><a href="products/steerings.php" >Product</a></li>
+					<li><a href="career.php" >Careers</a></li>
+					<li><a href="testimonial/client.php" >Testimonial</a></li>
+					<li><a href="faq.php" >FAQ</a></li>
+				</ul>
+			</div>
+			<div style="color:#928984;font-size:11px;float:left;height:31px;line-height:31px;">&copy; ZFIndia.com 2026</div>
+			<div style="float:left;margin-top:5px;margin-left:90px;"><img src="images/webwingz.gif" alt="" border="0" usemap="#Map" />
+<map name="Map" id="Map"><area shape="rect" coords="-3,-1,66,21" href="https://www.webwingz.com" target="_blank" alt="Webwingz"/>
+</map></div>
+		</div>
+	</div>
+	
+</body></html>

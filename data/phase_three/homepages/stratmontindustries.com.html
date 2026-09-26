@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+	   <link rel="shortcut icon" href="LOGO FOR PRINT.ico" type="image/x-icon">
+	<title>Stratmont Industries Ltd</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="css/menu.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/slideshow.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="menu">
+
+	<!-- <img src="img/logo.jpg" style="width: 50px; height:auto;" alt=""> -->
+	<div align="center">
+		<h1 style="color:#FFFFFF; size:20px;">STRATMONT INDUSTRIES LIMITED</h1>
+	</div>
+	<ul id="nav">
+		<li class="current_page_item"><a href="index.php">Home</a></li>
+		<li><a class="hsubs" href="#">Vision</a>
+			<ul class="subs">
+				<!-- <li><a href="company-profile.php">Company Profile</a></li> -->
+				<li><a href="mission-statement.php">Vision</a></li>
+				<li><a href="csr.php">CSR</a></li>
+
+			</ul>
+		</li>
+		<li><a href="#">Investor Desk</a>
+			<ul class="subs">
+				<li><a href="board-of-directors.php">Board of Director</a></li>
+				<li><a href="annual_reports.php">Annual Reports</a></li>
+				<li><a href="financial.php">Financials</a></li>
+				<li><a href="shareholding-pattern.php">Shareholding Pattern</a></li>
+				<li><a href="#">Policies</a></li>
+				<li><a href="announcment.php">Announcement</a></li>
+				<li><a href="preference.php">Preference Issue 23-24</a></li>
+				<li><a href="news.php">News</a></li>
+
+
+			</ul>
+		</li>
+		<li><a href="#">Products</a>
+			<ul class="subs">
+				<li><a href="product-portfolio.php">Product portfolio</a></li>
+			</ul>
+		</li>
+
+
+		<li><a href="contact_us.php">Contact us</a></li>
+	</ul>
+</div>
+		<!-- end #menu -->
+		<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {		
+	
+	//Execute the slideShow
+	slideShow();
+
+});
+
+function slideShow() {
+
+	//Set the opacity of all images to 0
+	$('#gallery a').css({opacity: 0.0});
+	
+	//Get the first image and display it (set it to full opacity)
+	$('#gallery a:first').css({opacity: 1.0});
+	
+	//Set the caption background to semi-transparent
+	$('#gallery .caption').css({opacity: 0.7});
+
+	//Resize the width of the caption according to the image width
+	$('#gallery .caption').css({width: $('#gallery a').find('img').css('width')});
+	
+	//Get the caption of the first image from REL attribute and display it
+	$('#gallery .content').html($('#gallery a:first').find('img').attr('rel'))
+	.animate({opacity: 0.7}, 400);
+	
+	//Call the gallery function to run the slideshow, 6000 = change to next image after 6 seconds
+	setInterval('gallery()',4500);
+	
+}
+
+function gallery() {
+	
+	//if no IMGs have the show class, grab the first image
+	var current = ($('#gallery a.show')?  $('#gallery a.show') : $('#gallery a:first'));
+
+	//Get next image, if it reached the end of the slideshow, rotate it back to the first image
+	var next = ((current.next().length) ? ((current.next().hasClass('caption'))? $('#gallery a:first') :current.next()) : $('#gallery a:first'));	
+	
+	//Get next image caption
+	var caption = next.find('img').attr('rel');	
+	
+	//Set the fade in effect for the next image, show class has higher z-index
+	next.css({opacity: 0.0})
+	.addClass('show')
+	.animate({opacity: 1.0}, 1000);
+
+	//Hide the current image
+	current.animate({opacity: 0.0}, 1000)
+	.removeClass('show');
+	
+	//Set the opacity to 0 and height to 1px
+	$('#gallery .caption').animate({opacity: 0.0}, { queue:false, duration:0 }).animate({height: '1px'}, { queue:true, duration:300 });	
+	
+	//Animate the caption, opacity to 0.7 and heigth to 100px, a slide up effect
+	$('#gallery .caption').animate({opacity: 0.7},100 ).animate({height: '100px'},500 );
+	
+	//Display the content
+	$('#gallery .content').html(caption);
+	
+	
+}
+
+</script>
+<style type="text/css">
+body{
+	font-family:arial
+}
+
+.clear {
+	clear:both
+}
+
+#gallery {
+	position:relative;
+	height:249px
+}
+	#gallery a {
+		float:left;
+		position:absolute;
+	}
+	
+	#gallery a img {
+		border:none;
+	}
+	
+	#gallery a.show {
+		z-index:-500;
+	}
+
+	#gallery .caption {
+		z-index:600; 
+		background-color:#000; 
+		color:#ffffff; 
+		height:100px; 
+		width:100%; 
+		position:absolute;
+		bottom:0;
+	}
+
+	#gallery .caption .content {
+		margin:5px
+	}
+	
+	#gallery .caption .content h3 {
+		margin:0;
+		padding:0;
+		color:#1DCCEF;
+	}
+	
+
+</style>
+
+<div id="gallery">
+
+	
+	
+	<a href="#">
+		<img src="images/83b4af76_resized_980x249.jpg" alt="Grass Blades" title="" alt="" rel="<h3>Grass Blades</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "/>
+	</a>
+	
+	
+
+	<a href="#">
+		<img src="images/02_resized_980x249.jpg" alt="Lightning" title="" alt="" rel="<h3>Lightning</h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+	</a>	
+
+</div>		<!-- end #header -->
+		<div id="page">
+			<div id="page-bgtop">
+				<div id="page-bgbtm">
+					<div id="content">
+						<div class="post">
+							<h2 class="title"><a href="#">Welcome to Stratmont Industries Ltd</a></h2>
+
+							<div style="clear: both;">&nbsp;</div>
+							<div class="entry">
+								<img src="images/tmt.jpg" width="150" height="150" alt="" class="right" />
+								<p>Stratmont Industries Limited, is a leading trade finance & distribution company
+									specializing in supply chain financing solutions for the construction and
+									infrastructure sectors.
+
+									Our expertise lies in facilitating commodity sales transactions by offering tailored
+									financial support to corporate customers. We propose a strategic partnership with
+									your company to enhance sales operations by extending credit facilities to corporate
+									clients facing credit limitations, thereby expanding your market reach and
+									profitability.
+
+									Headquartered in Mumbai, we establish a collaborative lead generation system, in
+									which a two-way communication channel for sharing and acting upon potential customer
+									leads.
+
+									We specialize in steel commodities like TMT Bars, Structural steel, Plates, coils,
+									Pipes, Wire Rods, Sponge Iron, and Stainless Steel. Apart from steel commodities, we
+									also handle Coke, Coal, Non-ferrous materials, and Bitumen.
+
+									With a client base of over 300+ companies, we remain committed to driving growth and
+									enabling new business opportunities in the industry.
+
+								</p><br />
+
+
+
+								<p class="links" align="right"><a href="company-profile.php">Read More</a></p>
+							</div>
+						</div>
+						<!-- <div class="post">
+							<h2 class="title"><a href="#">Product Portfolio</a></h2>
+							<div style="clear: both;">&nbsp;</div>
+							<div class="entry">
+								<img src="images/tmt bar.jpg" width="150" height="150" alt="" class="left" />
+								<p>We
+									offer an extensive range of stainless steel and specialty steel products in various
+									forms, including coils, sheets, beams, bars,
+									wire rods, pipes, tubes, plates, and more, provide precision services such as cut to
+									length, blanking, slitting, and shearing
+									Additionally, we shall provides advanced value added processes, including laser
+									cutting, fabrication, mechanical polishing, and
+									other customized solutions </p>
+								<br />
+
+
+								<p>We process LAM coke from high end raw materials available in the country using latest
+									technology. In addition to the above fact, the company is counted as a leading name
+									among the prominent manufacturers as well as Suppliers in India.</p>
+								<p class="links" align="right"><a href="product-portfolio.php">Read More</a></p>
+							</div>
+						</div> -->
+						<!--<div class="post">
+				<h2 class="title"><a href="#">Technology</a></h2>
+				<div style="clear: both;">&nbsp;</div>
+				<div class="entry">
+<img src="images/img003.jpg" width="150" height="150" alt="" class="right" />
+					<p>The coke ovens used by the Company is latest Technology coke ovens.</p>
+<p>It's a oven where a high uniform coking rate is achieved by optimum combustion of the evolved volatiles in the closed coking chamber using pre heated primary and secondary air. The hot gasses are fed through down comers in the oven walls to pairs of well designed flues under the oven sole where more preheated air are injected at suitable points to achieve uniform and complete combustion.</p>
+					<p class="links" align="right"><a href="technology.php">Read More</a></p>
+				</div>
+			</div>-->
+						<div style="clear: both;">&nbsp;</div>
+					</div>
+					<!-- end #content -->
+					<div id="sidebar">
+						<ul>
+
+							<div style="clear: both;">&nbsp;</div>
+
+							<li>
+								<h2>Board of Directors</h2>
+								<ul>
+
+
+									<!--<li><a href="board-of-directors.php#detailed3">Mr. Harish Kisan Kunchekar</a></li>-->
+									<li><a href="board-of-directors.php#detailed3">Mr. Vatsal Agarwaal</a></li>
+									<li><a href="board-of-directors.php#detailed3">Mr. Sudhanshu Kumar Binodkumar Mishra</a></li>
+									<li><a href="board-of-directors.php#detailed3">Mr. Ashok Kumar Tyagi</a></li>
+									<li><a href="board-of-directors.php#detailed3">Mr. Abhilash Bhaurao Borkar </a></li>
+									<li><a href="board-of-directors.php#detailed3">Mr. Saumya Varma </a></li>
+
+								</ul>
+							</li>
+							<li>
+								<h2>About us</h2>
+								<ul>
+									<li><a href="mission-statement.php#vision">Vision</a></li>
+									<li><a href="csr.php">CSR</a></li>
+								</ul>
+							</li>
+							<li>
+								<h2>Products</h2>
+								<ul>
+									<li><a href="product-portfolio.php">Product portfolio</a></li>
+
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+					<!-- end #sidebar -->
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+		<!-- end #page -->
+	</div>
+		<div id="footer">
+		<p>Copyright (c) 2020 Stratmont Industries Ltd.com. All rights reserved.</p>
+	</div>	<!-- end #footer -->
+</body>
+
+</html>

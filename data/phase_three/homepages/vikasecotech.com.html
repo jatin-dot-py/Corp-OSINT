@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /><title>
+	Vikas Ecotech Ltd.
+</title>
+<link href="Styles/MainStyleSheet.css" rel="stylesheet" type="text/css" />
+<link href="Styles/animations.css" rel="stylesheet" type="text/css" />
+<link href="Styles/NavstyleHm.css" rel="stylesheet" type="text/css" />
+<link href="Styles/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="Styles/MediaQueries.css" rel="stylesheet" type="text/css" />
+
+<script src="JS/jquery-1.10.1.min.js" type="text/javascript"></script>
+<link href="Styles/accordian-style.css" rel="stylesheet" type="text/css" />
+
+<link href="Styles/font-awesome.css" rel="stylesheet" type="text/css" />
+<script src="JS/jquery.collapse.js" type="text/javascript"></script>
+<script src="JS/jquery.collapse_storage.js" type="text/javascript"></script>
+<script src="JS/modernizr.custom.js" type="text/javascript"></script>
+<script src="JS/main.js" type="text/javascript"></script>
+
+    
+    <!-- Slider -->
+    <script type="text/javascript" src="Slider/js/jssor.core.js"></script>
+    <script type="text/javascript" src="Slider/js/jssor.utils.js"></script>
+    <script type="text/javascript" src="Slider/js/jssor.slider.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+
+            var _SlideshowTransitions = [
+            //Fade
+                {$Duration: 700, $Opacity: 2, $Brother: { $Duration: 1000, $Opacity: 2} }
+            ];
+
+            var options = {
+                $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actuall size, default value is 0
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 0,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 1200,                               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+
+                $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 8,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$SetScaleWidth(Math.min(bodyWidth, 1920));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleSlider);
+            }
+
+
+            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+            //    $(window).bind("orientationchange", ScaleSlider);
+            //}
+            //responsive code end
+        });
+    </script>
+
+    <script src="JS/jquery.collapse.js" type="text/javascript"></script>
+    <script src="JS/jquery.collapse_storage.js" type="text/javascript"></script>
+    
+</head>
+<body>
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE5NjM4Mjk4NzFkZCpax6lZlp59vJkB0Vfmb51z5mcColSnjYygeR3ObQUw" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=EdRsBV3yGO7qB-6ToFJYZVz-_HLXQvAHTv5rlHh6aGPMSYhzHt2r41Wy14BQNxO3UIrqjGVwPcDrvtaBQ_c66vYNqFTgizIO2E7-42plr041&amp;t=639190844600000000" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAALclCFkITyaZluOzP+akodB17ihoQyv2nnjbymLCjo/RTHLT2MC/f+Q4c/c7BIBY4JhkMQswoOFc+H5FnsOPi+C" />
+</div>
+    <div class="scrolldown">                    
+        <img src="images/scrolldown-icon.png"/>
+    </div>
+    <div class="scrollup">                    
+        <img src="images/scrollup-icon.png"/>
+    </div>
+    
+    
+
+<script>
+    $(function () {
+        var pull = $('#pull');
+        menu = $('nav ul');
+        menuHeight = menu.height();
+
+        $(pull).on('click', function (e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+
+        $(window).resize(function () {
+            var w = $(window).width();
+            if (w > 460 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    });
+</script>
+<style>
+
+	@media (max-width: 767px) {
+		.btn {
+		border-radius: 25px!important;
+		padding: 4px 20px!important;
+		position: absolute;
+		right: 19%;
+		letter-spacing: 1px;
+		z-index: 10;
+		}
+	}
+    .orangeBtn{
+        background: #e36d16!important;
+        color: #fff!important;
+        text-decoration: none;
+        margin-left: 6px !important;
+        margin-bottom: 10px !important;
+        font-size: 18px;
+        }   
+    .btn {
+        border-radius: 25px!important;
+        padding: 4px 10px!important;
+       	position: absolute;
+        letter-spacing: 1px;
+		z-index: 10;
+    }
+    .blink{
+        animation: blink 0.5s linear infinite;
+    }
+    @keyframes blink{
+        0%{opacity: 0;}
+        50%{opacity: .5;}
+        100%{opacity: 1;}
+    }
+</style>
+<div class="HmMenuCont">        
+        <div class="logo">
+            <a href="default.aspx"><img src="images/VELogo.png"/></a>
+			<!--
+            <a href="http://vikasecotech.com/faq.aspx" target="_blank" class="btn orangeBtn">
+			<span class="blink">Final Reminder - Call Money</span> </a>
+            -->
+        </div><!--logo-->
+        <nav class="clearfix"> 
+            <a href="#" id="pull">Menu</a> 
+        	<ul class="clearfix" id="nav">
+                <li><a href="about-overview.aspx" id="WCTopBar1_abtus">About</a>
+                    <ul id="subLnk" class="pullDown about">       
+                        <li class="col1">
+                            <a href="about-overview.aspx" class="menuitem abtus_over">Overview</a>
+                            <a href="about-us-mission.aspx" class="menuitem abtus_mission">Mission</a>
+                            <a href="about-us-strategy.aspx" class="menuitem abtus_strategy">Strategy</a>
+                        </li>                    
+                        <li class="col2">
+                            <a href="about-us-leadership.aspx" class="menuitem abtus_leadership ">Leadership</a>
+                            <a href="about-us-message-from-the-cmd.aspx" class="menuitem abtus_mdmsg">Message from the MD</a>
+                            <a href="about-us-history-and-milestones.aspx" class="menuitem abtus_history">History & Milestones</a>
+                        </li>
+                        <li class="col3">
+                            <a href="about-us-awards-and-recognition.aspx" class="menuitem abtus_awards">Awards & Recognition</a>
+                        </li>
+                    </ul>
+                </li>
+                 <li><a href="product-overview.aspx" id="WCTopBar1_products">Products</a>
+                    <ul id="subLnk2" class="pullDown products">       
+                        <li class="col1">
+                            <a href="product-overview.aspx" class="menuitem products_over">Overview</a>
+                            <a href="specialty-additives.aspx" class="menuitem products_additives">Specialty Additives</a>
+                            <a href="polymer-compound.aspx" class="menuitem products_polymer">Polymer Compounds</a>
+                        </li>                    
+                        <li class="col2">
+                            <a href="polymer-pvc.aspx" class="menuitem products_recycled">Recycled Materials</a>
+                            <a href="products-manufacuring.aspx" class="menuitem products_manufa">Manufacturing</a>
+                            <a href="products-quality.aspx" class="menuitem products_quality">Quality</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="industries-overview.aspx" id="WCTopBar1_industries">Industries</a>
+                     <ul id="subLnk3" class="pullDown industries">                           
+                        <li class="col1">
+                            <a href="industries-overview.aspx" class="menuitem industries_over">Overview</a>
+                            <a href="rnd-stories.aspx" class="menuitem industries_ct">Customer Testimonials</a>
+                            <a href="industries-rfs.aspx" class="menuitem industries_rfs">Request for Solution</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="rnd-whitepapers.aspx" id="WCTopBar1_rnd">R&D</a>
+                    <ul id="subLnk4" class="pullDown rnd">                           
+                        <li class="col1">
+                            <a href="rnd-whitepapers.aspx" class="menuitem rnd_whitepaper">White Papers</a>
+                            <a href="rnd-resources.aspx" class="menuitem rnd_industry">Industry Resources</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="responsiblity-ehs.aspx" id="WCTopBar1_responsibility">Responsibility </a>
+                   <ul id="subLnk5" class="pullDown response">                           
+                        <li class="col1">
+                            <a href="responsiblity-ehs.aspx" class="menuitem response_env">Environment, Health & Safety</a>
+                            <a href="responsiblity-csr.aspx" class="menuitem response_csr">CSR</a>
+                        </li>        
+                    </ul>
+                </li>
+                <li><a href="investors-overview.aspx" id="WCTopBar1_investors"> Investors </a>
+					
+                    <ul id="subLnk6" class="pullDown investors">                           
+                        <li class="col1">
+                            <a href="investors-overview.aspx" class="menuitem investors_over">Overview</a>
+                            <a href="investor-financial-information-annual-reports.aspx" class="menuitem investors_fin">Annual Reports</a>
+							 <a href="investor-financial-result-reports.aspx" class="menuitem investors_fin">Financial Results</a>
+                            <a href="investors-shareholding-pattern.aspx" class="menuitem investors_share">Shareholding Pattern</a>
+                            <a href="committees.aspx" class="menuitem investors_comm">Board Committees</a>
+							<a href="board_meetings.aspx" class="menuitem investors_comm">Board Meetings</a>
+							<a href="annual-returns.aspx" class="menuitem investors_fin">Annual Returns</a>
+							<a href="regulation-47-disclosures.aspx" class="menuitem investors_comm">Reg 47 Disclosure</a>
+							<a href="qip.aspx" class="menuitem investors_ann">QIP</a>
+                        </li>        
+                        <li class="col2">
+                            <a href="investors-code-of-conduct.aspx" class="menuitem investors_corp">Code of Conduct</a>
+							 <a href="investors-company-policy.aspx" class="menuitem investors_corp">Company Policies</a>
+							 <a href="investors-dividends.aspx" class="menuitem investors_corp">Dividends</a>
+                            <a href="investors-announcements.aspx" class="menuitem investors_ann">Announcements</a>
+                            <a href="investor-contact.aspx" class="menuitem investors_invr">Investor Contact</a>
+							<a href="secretarial-compliance-reports.aspx" class="menuitem investors_egm">Secretarial Compliance Report</a>
+							<a href="transcript-of-agm.aspx" class="menuitem investors_egm">Transcript Of AGM</a>
+                            <a href="egm.aspx" class="menuitem investors_egm">EGM</a>
+							<a href="investors-media-release.aspx" class="menuitem investors_ann">Media Release</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+				<li>
+                    <a href="disclaimer.aspx" id="WCTopBar1_disclaimer">Disclaimer</a>
+                </li>
+                <li>
+                    <a href="career-overview.aspx" id="WCTopBar1_careers">Careers</a>
+                </li>
+                <li>
+                    <a href="media-kit.aspx" id="WCTopBar1_media">Media</a>
+                </li>
+                <li>
+                    <a href="reach-us.aspx" id="WCTopBar1_reachus">Reach Us</a>
+                </li>
+            </ul>                            
+        </nav>
+
+        <div class="top_otherlinks"><a href="career-overview.aspx">Careers</a><a href="media-overview.aspx">Media</a><a href="reach-us.aspx" style="border-right:none;">Reach Us</a></div>
+        <div class="search-box">        
+            <i class="fa fa-search search-icon" aria-hidden="true"></i>
+            <input name="WCTopBar1$SrchAll" type="text" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;WCTopBar1$SrchAll\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="WCTopBar1_SrchAll" placeholder="Search" />
+        </div><!--search-box-->  
+    </div> 
+
+    
+    <div class="container">        
+        <div id="sliderwrap">
+        <div id="slider1">
+            <div id="slider1_container" style="position: relative; margin: 0; top: 0px; left: 0px; width: 1600px; height: 539px; overflow: hidden;">
+                <!-- Loading Screen -->
+                <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;">
+                    </div>
+                    <div style="position: absolute; display: block; background: url(images/loading.gif) no-repeat center center;
+                        top: 0px; left: 0px; width: 100%; height: 100%;">
+                    </div>
+                </div>
+                <!-- Slides Container -->
+                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1600px;
+                    height: 539px; overflow: hidden;">
+                     <div>
+                        <img u="image" src="images/Story2.jpg" />
+                        <div class="ImgTextCont" id="txt1">
+                             <a href="about-us-Overview.aspx">How our scientists find innovative chemical solutions for a better tomorrow
+                             <br />
+                             <span style="font-size:18px;font-family:SourceSansPro_Semibold;">more></span></a>
+                        </div>
+                    </div>
+                     <div>
+                        <img u="image" src="images/Story1.jpg"/>
+                        <div class="ImgTextCont" id="txt2">
+                            <a href="responsiblity-ehs.aspx">How we address the big challenge of keeping people and the environment safe
+                            <br />
+                            <span style="font-size:18px;font-family:SourceSansPro_Semibold;">more></span></a>
+                        </div>
+                    </div>
+                      <div>
+                        <img u="image" src="images/Story3.jpg" />
+                        <div class="ImgTextCont" id="txt3">
+                           <a href="rnd-whitepapers.aspx">How lead-awareness can create a safe and sustainable world
+                           <br />
+                          <span style="font-size:18px;font-family:SourceSansPro_Semibold;">more></span></a>
+                        </div>
+                    </div>
+                   
+                   
+                                       
+                    <!-- Example to add fixed static share buttons in slider BEGIN -->
+                    <!-- Remove it if no need -->
+                    <!-- Share Button Styles -->
+                    <style>
+                        .share-icon
+                        {
+                            display: inline-block;
+                            float: left;
+                            margin: 4px;
+                            width: 32px;
+                            height: 32px;
+                            cursor: pointer;
+                            vertical-align: middle;
+                            background-image: url(../img/share/share-icons.png);
+                        }
+                        
+                        .share-facebook
+                        {
+                            background-position: 0px 0px;
+                        }
+                        
+                        .share-facebook:hover
+                        {
+                            background-position: 0px -40px;
+                        }
+                        
+                        .share-twitter
+                        {
+                            background-position: -40px 0px;
+                        }
+                        
+                        .share-twitter:hover
+                        {
+                            background-position: -40px -40px;
+                        }
+                        
+                        .share-pinterest
+                        {
+                            background-position: -80px 0px;
+                        }
+                        
+                        .share-pinterest:hover
+                        {
+                            background-position: -80px -40px;
+                        }
+                        
+                        .share-linkedin
+                        {
+                            background-position: -240px 0px;
+                        }
+                        
+                        .share-linkedin:hover
+                        {
+                            background-position: -240px -40px;
+                        }
+                        
+                        
+                        .share-googleplus
+                        {
+                            background-position: -120px 0px;
+                        }
+                        
+                        .share-googleplus:hover
+                        {
+                            background-position: -120px -40px;
+                        }
+                        
+                        
+                        .share-stumbleupon
+                        {
+                            background-position: -360px 0px;
+                        }
+                        
+                        .share-stumbleupon:hover
+                        {
+                            background-position: -360px -40px;
+                        }
+                        
+                        .share-email
+                        {
+                            background-position: -320px 0px;
+                        }
+                        
+                        .share-email:hover
+                        {
+                            background-position: -320px -40px;
+                        }
+                    </style>
+                </div>
+                <!-- Bullet Navigator Skin Begin -->
+                <style>
+                    .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
+                    {
+                        background: url(images/b21.png) no-repeat;
+                        overflow: hidden;
+                        cursor: pointer;
+                    }
+                    .jssorb21 div
+                    {
+                        background-position: -5px -5px;
+                    }
+                    .jssorb21 div:hover, .jssorb21 .av:hover
+                    {
+                        background-position: -35px -5px;
+                    }
+                    .jssorb21 .av
+                    {
+                        background-position: -65px -5px;
+                    }
+                    .jssorb21 .dn, .jssorb21 .dn:hover
+                    {
+                        background-position: -95px -5px;
+                    }
+                </style>
+                <!-- bullet navigator container -->
+                <div u="navigator" class="jssorb21" style="position: absolute; top: 500px; margin-left:36.5%; z-index:999999;">
+                    <!-- bullet navigator item prototype -->
+                    <div u="prototype" style="position: absolute; width: 19px; height: 19px; text-align: center;
+                        line-height: 19px; color: White; font-size: 12px;">
+                    </div>
+                </div>
+                <!-- Bullet Navigator Skin End -->
+                <!-- Arrow Navigator Skin Begin -->
+                <style>
+                    .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn
+                    {
+                        position: absolute;
+                        cursor: pointer;
+                        display: block;
+                        background: url(images/a21.png) center center no-repeat;
+                        overflow: hidden;
+                    }
+                    .jssora21l
+                    {
+                        background-position: -3px -33px;
+                    }
+                    .jssora21r
+                    {
+                        background-position: -63px -33px;
+                    }
+                    .jssora21l:hover
+                    {
+                        background-position: -123px -33px;
+                    }
+                    .jssora21r:hover
+                    {
+                        background-position: -183px -33px;
+                    }
+                    .jssora21ldn
+                    {
+                        background-position: -243px -33px;
+                    }
+                    .jssora21rdn
+                    {
+                        background-position: -303px -33px;
+                    }
+                </style>
+                <!-- Arrow Left -->
+                <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 150px;
+                    left: 8px;"></span>
+                <!-- Arrow Right -->
+                <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 150px;
+                    right: 8px"></span>
+            </div>
+        </div><!--slider-->
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <div class="product-line">
+        <div class="container2">
+            
+            <div class="product-box">
+                <a href="specialty-additives.aspx">
+                    <div class="box">
+                        <img src="images/addtives.png"/>
+                        <p>SPECIALTY <br />Additives</p>    
+                        <div class="productHoverBox">
+                            <h3 style="background-image:url('images/addtives.png'); background-repeat:no-repeat; background-position:left top;">SPECIALTY <br />Additives</h3>
+                            <div class="border">&nbsp;</div>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td><a href="additives-organotion-stablizer.aspx">Organotin Stabilizers</a></td>
+                                    <td><a href="additives-flame-retardants.aspx">Flame Retardants</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="additives-dimethyl.aspx">Dimethyl Tin Dichloride</a></td>
+                                    <td><a href="additives-chlorinated-poly.aspx">Chlorinated Polyethylene</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="additives-plasticizers.aspx">Plasticizers</a></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>               
+                    </div>
+                </a>
+
+                <a href="polymer-compound.aspx">
+                    <div class="box">
+                        <img src="images/compound.png"/>
+                        <p>Plastic <br />Compounds</p>
+                        <div class="productHoverBox">
+                            <h3 style="background-image:url('images/compound.png'); background-repeat:no-repeat; background-position:left top;">Plastic <br />Compounds</h3>
+                            <div class="border">&nbsp;</div>
+                            <table cellpadding="0" cellspacing="0" style="margin-left:60px;">
+                                <tr>
+                                    <td><a href="polymer-tpr.aspx">TPR</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="polymer-tpe.aspx">TPE</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="polymer-eva.aspx">EVA</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="polymer-pvc.aspx">
+                    <div class="box box-last">
+                        <img src="images/recycle-icon.png"/>
+                        <p>Recycled <br />Materials</p>
+                        <div class="productHoverBox">
+                            <h3 style="background-image:url('images/recycle-icon.png'); background-repeat:no-repeat; background-position:left top;">Recycled <br />Materials</h3>
+                            <div class="border">&nbsp;</div>
+                            <table cellpadding="0" cellspacing="0" style="margin-left:60px;">
+                                <tr>
+                                    <td><a href="polymer-pvc.aspx">PVC</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="polymer-pet.aspx">PET</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </a>
+                <div class="clear"></div>
+
+                <div class="upper-line"></div>
+            </div><!--product-box-->
+            
+        </div><!--container2-->
+    </div><!--product-line-->
+    <div class="grey-stripe">
+        <div class="container2" style="position:relative;">
+            
+            <a href=" http://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/GetQuote.jsp?symbol=VIKASECO&illiquid=0&smeFlag=0&itpFlag=0" target="_blank" class="nse-button"><img src="images/nse.png" style="vertical-align:top;"> <p style="text-transform:uppercase;">VikasEco</p>
+            </a>
+            <a href=" http://www.bseindia.com/stock-share-price/vikas-ecotech-ltd/vikaseco/530961/" target="_blank" class="nse-button"><img src="images/bse1.png" style="vertical-align:top;"/>
+            <p>530961</p></a>
+           
+            
+            
+        </div><!--container2-->
+    </div><!--grey-stripe-->
+
+    <div class="who-we-are">
+        <div class="container2">
+            <a href="about-overview.aspx" class="about-read"><h3>Who We Are</h3>
+            <p>Vikas Ecotech is a leading provider of high-end speciality chemicals to customers across the world. We are passionate about finding innovative solutions to the most pressing environment and safety challenges of our times. </p>
+            <p class="small">We leverage world-leading technology and chemical science to create value-added safer alternatives in product applications across industries.</a></p>
+            
+        </div><!--container2-->
+    </div><!--who-we-are-->
+
+    <div class="info-panel">
+        <div class="container3">
+            
+            <div class="info-box">
+            <img src="images/sucess-stories.png"/>
+            <h3><a href="media-overview.aspx" style="color:#057617;"> Vikas Ecotech in the News</a></h3>
+            <p>CNBC-TV18: Vikas Ecotech on the radar<br />
+              <a href="media-gallery.aspx" style="color:#b33003;font-family:SourceSansPro_Semibold;font-size:16px; line-height:16px;">more></a>
+            </p>
+            <p style="padding-top:5px;">Business India: Detoxing to Success<br />
+              <a href="corporate-report/corporate_report.pdf" style="color:#b33003;font-family:SourceSansPro_Semibold;font-size:16px; line-height:16px;" target="_blank">more></a>
+            </p>
+            </div>
+            <div class="info-box">
+            <img src="images/blog.png"/>
+            <h3><a href="rnd-whitepapers.aspx" style="color:#057617;">White Papers</a></h3>
+            <p>Lead - Poisoning India's food and water supply chain<br />
+              <a href="rnd-whitepapers.aspx" style="color:#b33003;font-family:SourceSansPro_Semibold;font-size:16px;">more></a>
+            </p>
+            </div>
+            <div class="clear"></div>
+        </div><!--container2-->
+    </div><!--info-panel-->
+    <div class="client">
+        <div class="container2">
+            <h3>Industry Memberships</h3>
+            <a href="Uploads/Certificates/M1-CII MembershipCertificate.pdf" target="_blank"><img src="images/client1.png" class="client-logo"/></a>
+            <a href="images/certification.jpg" target=_blank"><img src="images/client2.png" class="client-logo"/></a>
+            <a href="images/fieo-certificate.jpg" target="_blank"><img src="images/client3.png" class="client-logo"/></a>
+            <a href="Uploads/Certificates/M2-SATRA Membership certitifcate.pdf" target="_blank"><img src="images/client7.png" class="client-logo"/></a>
+            <a href="images/clecertificate1.jpg" target="_blank"><img src="images/client4.png" class="client-logo"/></a>
+            <img src="images/client5.png" class="client-logo"/>
+            <img src="images/client6.png" class="client-logo"/>
+        </div><!--container-->
+    </div><!--client-->
+
+    
+<div class="footer">
+    <div class="container2">
+        <div class="text-left">Copyright <script type="text/javascript">var d = new Date(); yr = d.getFullYear(); document.write(yr);</script>. Vikas Ecotech Ltd. All Rights Reserved.</div>
+        <div class="text-right">
+            <div class="frhs"><a href="#"><a href="disclaimer.aspx">Disclaimer</a> | <a href="sitemap.aspx">Sitemap</a> 
+			
+			</div>
+           
+        </div>
+        <div class="clear"></div>
+    </div><!--container2-->
+</div><!--footer-->
+
+ 
+
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#subLnk,#subLnk1,#subLnk2,#subLnk3,#subLnk4,#subLnk5,#subLnk6').each(function () {
+                var imagePos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow + 400) {
+                    $(this).addClass("pullDown");
+                }
+            });
+        });        
+    </script>
+    <script>
+        $(function () {
+            $(document).on('scroll', function () {                
+                if ($(window).scrollTop() > 1100) {
+                    $('.scrolldown').addClass('hide');
+                    $('.scrollup').addClass('show');
+                } else {
+                    $('.scrolldown').removeClass('hide');
+                    $('.scrollup').removeClass('show');
+                }
+            });
+            $('.scrolldown').on('click', scrollToServices);
+            $('.scrollup').on('click', scrollToUp);
+        });
+        function scrollToServices() {
+            if ($(window).scrollTop() < 574) {
+                $('html,body').animate({ scrollTop: 574 }, 'slow');
+            } 
+            else if ($(window).scrollTop() > 500) {
+                $('html,body').animate({ scrollTop: 1170 }, 'slow');
+            }
+            else if ($(window).scrollTop() > 1100) {
+                $('.scrolldown').addClass('hide');
+            }
+        }
+        function scrollToUp() {
+            if ($(window).scrollTop() > 1100) {
+                $('html,body').animate({ scrollTop: 0 }, 'slow');
+            } 
+        }
+    </script>
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7159203509327568",
+    enable_page_level_ads: true
+  });
+</script>				
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]>
+</script>
+</form>
+</body>
+</html>

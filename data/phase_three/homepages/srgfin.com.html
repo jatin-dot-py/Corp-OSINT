@@ -1,0 +1,864 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta charset="utf-8" /><meta content="True" name="HandheldFriendly" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><meta name="viewport" content="width=device-width" /><meta name="description" /><meta name="author" /><meta name="robots" content="index, follow" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/Main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/Header.css" rel="stylesheet" type="text/css" />
+    <link href="/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+    <link href="/css/Homeslider.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="/js/jssor.js"></script>
+    <script type="text/javascript" src="/js/jssor.slider.js"></script>
+
+      
+<title>
+
+</title></head>
+<body>
+    <form method="post" action="./" id="Form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTM1NjAyMzk4NA9kFgJmD2QWAgIDD2QWAgIDD2QWBAIXDxYCHgtfIUl0ZW1Db3VudAIIFhBmD2QWBAIBDxYCHgRocmVmZBYCZg8VARRJbnZlc3RvciBJbmZvcm1hdGlvbmQCAw9kFgICAQ8WAh8AAgIWBGYPZBYCAgEPFgIfAQUgL0Jlc3RQcmFjdGljZXNTdWIvNS9Qcm9zcGVjdHVzL1kWAmYPFQEKUHJvc3BlY3R1c2QCAQ9kFgICAQ8WAh8BBRwvQmVzdFByYWN0aWNlc1N1Yi82L090aGVycy9ZFgJmDxUBBk90aGVyc2QCAQ9kFgQCAQ8WAh8BZBYCZg8VARlTdG9jayBFeGNoYW5nZSBDb21wbGlhbmNlZAIDD2QWAgIBDxYCHwACDBYYZg9kFgICAQ8WAh8BBS8vQmVzdFByYWN0aWNlc1N1Yi80L1NoYXJlJTIwSG9sZGluZyUyMFBhdHRlcm4vSBYCZg8VARVTaGFyZSBIb2xkaW5nIFBhdHRlcm5kAgEPZBYCAgEPFgIfAQUwL0Jlc3RQcmFjdGljZXNTdWIvMTAvQm9hcmQlMjBNZWV0aW5nJTIwTm90aWNlcy9RFgJmDxUBFUJvYXJkIE1lZXRpbmcgTm90aWNlc2QCAg9kFgICAQ8WAh8BBTIvQmVzdFByYWN0aWNlc1N1Yi8xMS9HZW5lcmFsJTIwTWVldGluZyUyME5vdGljZXMvURYCZg8VARdHZW5lcmFsIE1lZXRpbmcgTm90aWNlc2QCAw9kFgICAQ8WAh8BBTAvQmVzdFByYWN0aWNlc1N1Yi8xMi9Cb2FyZCUyME1lZXRpbmclMjBPdXRjb21lL1EWAmYPFQEVQm9hcmQgTWVldGluZyBPdXRjb21lZAIED2QWAgIBDxYCHwEFMi9CZXN0UHJhY3RpY2VzU3ViLzEzL0dlbmVyYWwlMjBNZWV0aW5nJTIwT3V0Y29tZS9RFgJmDxUBF0dlbmVyYWwgTWVldGluZyBPdXRjb21lZAIFD2QWAgIBDxYCHwEFJi9CZXN0UHJhY3RpY2VzU3ViLzE0L1Bvc3RhbCUyMEJhbGxvdC9ZFgJmDxUBDVBvc3RhbCBCYWxsb3RkAgYPZBYCAgEPFgIfAQUiL0Jlc3RQcmFjdGljZXNTdWIvMjQvQ0clMjBSZXBvcnQvWRYCZg8VAQlDRyBSZXBvcnRkAgcPZBYCAgEPFgIfAQUlL0Jlc3RQcmFjdGljZXNTdWIvMjgvQm9vayUyMENsb3N1cmUvURYCZg8VAQxCb29rIENsb3N1cmVkAggPZBYCAgEPFgIfAQUvL0Jlc3RQcmFjdGljZXNTdWIvMzUvQ29tcGxpYW5jZSUyMENlcnRpZmljYXRlL1kWAmYPFQEWQ29tcGxpYW5jZSBDZXJ0aWZpY2F0ZWQCCQ9kFgICAQ8WAh8BBS0vQmVzdFByYWN0aWNlc1N1Yi8zNi9UcmFuc2ZlciUyMENlcnRpZmljYXRlL1kWAmYPFQEUVHJhbnNmZXIgQ2VydGlmaWNhdGVkAgoPZBYCAgEPFgIfAQUpL0Jlc3RQcmFjdGljZXNTdWIvMzcvT3RoZXIlMjBJbnRpbWF0aW9uL1kWAmYPFQEQT3RoZXIgSW50aW1hdGlvbmQCCw9kFgICAQ8WAh8BBTQvQmVzdFByYWN0aWNlc1N1Yi8zOC9JbnZlc3RvciUyMENvbXBsYWludCUyMFJlcG9ydC9ZFgJmDxUBGUludmVzdG9yIENvbXBsYWludCBSZXBvcnRkAgIPZBYEAgEPFgIfAQUbL0Jlc3RQcmFjdGljZXMvMi9GaW5hbmNpYWxzFgJmDxUBCkZpbmFuY2lhbHNkAgMPZBYCAgEPFgIfAAIBFgJmD2QWAgIBDxYCHwEFKC9CZXN0UHJhY3RpY2VzU3ViLzcvRmluYW5jaWFsJTIwUmVzdWx0L0gWAmYPFQEQRmluYW5jaWFsIFJlc3VsdGQCAw9kFgQCAQ8WAh8BBSEvQmVzdFByYWN0aWNlcy8xOC9Bbm51YWwlMjBSZXBvcnQWAmYPFQENQW5udWFsIFJlcG9ydGQCAw9kFgICAQ8WAh8AAgEWAmYPZBYCAgEPFgIfAQUlL0Jlc3RQcmFjdGljZXNTdWIvOC9Bbm51YWwlMjBSZXBvcnQvWRYCZg8VAQ1Bbm51YWwgUmVwb3J0ZAIED2QWBAIBDxYCHwEFIS9CZXN0UHJhY3RpY2VzLzE5L0NyZWRpdCUyMFJhdGluZxYCZg8VAQ1DcmVkaXQgUmF0aW5nZAIDD2QWAgIBDxYCHwACARYCZg9kFgICAQ8WAh8BBSYvQmVzdFByYWN0aWNlc1N1Yi80MC9DcmVkaXQlMjBSYXRpbmcvWRYCZg8VAQ1DcmVkaXQgUmF0aW5nZAIFD2QWBAIBDxYCHwFkFgJmDxUBEEludmVzdG9yIENvbnRhY3RkAgMPZBYCAgEPFgIfAAICFgRmD2QWAgIBDxYCHwEFNS9CZXN0UHJhY3RpY2VzU3ViLzkvR3JpZXZhbmNlJTIwUmVkcmVzc2FsJTIwT2ZmaWNlci9ZFgJmDxUBG0dyaWV2YW5jZSBSZWRyZXNzYWwgT2ZmaWNlcmQCAQ9kFgICAQ8WAh8BBUIvQmVzdFByYWN0aWNlc1N1Yi8zMC9SZWdpc3RyYXIlMjBBbmQlMjBTaGFyZSUyMFRyYW5zZmVyJTIwQWdlbnRzL1kWAmYPFQEjUmVnaXN0cmFyIEFuZCBTaGFyZSBUcmFuc2ZlciBBZ2VudHNkAgYPZBYEAgEPFgIfAWQWAmYPFQESUG9saWNpZXMgYW5kIGNvZGVzZAIDD2QWAgIBDxYCHwACBBYIZg9kFgICAQ8WAh8BBS0vQmVzdFByYWN0aWNlc1N1Yi8xNi9GYWlyJTIwUHJhY3RpY2UlMjBDb2RlL1kWAmYPFQESRmFpciBQcmFjdGljZSBDb2RlZAIBD2QWAgIBDxYCHwEFKi9CZXN0UHJhY3RpY2VzU3ViLzE3L0tZQyUyMEFORCUyMEFNTC1DRlQvWRYCZg8VAQ9LWUMgQU5EIEFNTC1DRlRkAgIPZBYCAgEPFgIfAQUjL0Jlc3RQcmFjdGljZXNTdWIvMTgvQ0dSJTIwUG9saWN5L1kWAmYPFQEKQ0dSIFBvbGljeWQCAw9kFgICAQ8WAh8BBRsvQmVzdFByYWN0aWNlc1N1Yi8yMS9NSVRDL1kWAmYPFQEETUlUQ2QCBw9kFgQCAQ8WAh8BZBYCZg8VARRDb3Jwb3JhdGUgR292ZXJuYW5jZWQCAw9kFgICAQ8WAh8AAgoWFGYPZBYCAgEPFgIfAQUxL0Jlc3RQcmFjdGljZXNTdWIvMTkvSW5zaWRlciUyMFRyYWRpbmclMjBQb2xpY3kvWRYCZg8VARZJbnNpZGVyIFRyYWRpbmcgUG9saWN5ZAIBD2QWAgIBDxYCHwEFMS9CZXN0UHJhY3RpY2VzU3ViLzIwL1ZpZ2lsJTIwTWVjaGFuaXNtJTIwUG9saWN5L1kWAmYPFQEWVmlnaWwgTWVjaGFuaXNtIFBvbGljeWQCAg9kFgICAQ8WAh8BBSovQmVzdFByYWN0aWNlc1N1Yi8yMi9Db2RlJTIwb2YlMjBDb25kdWN0L1kWAmYPFQEPQ29kZSBvZiBDb25kdWN0ZAIDD2QWAgIBDxYCHwEFLi9CZXN0UHJhY3RpY2VzU3ViLzIzL0JvYXJkJTIwQW5kJTIwQ29tbWl0dGVzL1kWAmYPFQETQm9hcmQgQW5kIENvbW1pdHRlc2QCBA9kFgICAQ8WAh8BBTIvQmVzdFByYWN0aWNlc1N1Yi8yNS9GYW1pbGlhcmlzYXRpb24lMjBQcm9ncmFtbWUvWRYCZg8VARlGYW1pbGlhcmlzYXRpb24gUHJvZ3JhbW1lZAIFD2QWAgIBDxYCHwEFNC9CZXN0UHJhY3RpY2VzU3ViLzI2L1BvbGljeSUyMG9uJTIwUmVsYXRlZCUyMFBhcnR5L1kWAmYPFQEXUG9saWN5IG9uIFJlbGF0ZWQgUGFydHlkAgYPZBYCAgEPFgIfAQUvL0Jlc3RQcmFjdGljZXNTdWIvMjcvVGVybXMlMjBvZiUyMEFwcG9pbnRtZW50L1kWAmYPFQEUVGVybXMgb2YgQXBwb2ludG1lbnRkAgcPZBYCAgEPFgIfAQUoL0Jlc3RQcmFjdGljZXNTdWIvMzMvQXJjaGl2YWwlMjBQb2xpY3kvWRYCZg8VAQ9BcmNoaXZhbCBQb2xpY3lkAggPZBYCAgEPFgIfAQU6L0Jlc3RQcmFjdGljZXNTdWIvMzQvRGlzY2xvc3VyZSUyME9mJTIwTWF0ZXJpYWwlMjBFdmVudHMvWRYCZg8VAR1EaXNjbG9zdXJlIE9mIE1hdGVyaWFsIEV2ZW50c2QCCQ9kFgICAQ8WAh8BBT8vQmVzdFByYWN0aWNlc1N1Yi8zOS9Ob21pbmF0aW9uJTIwYW5kJTIwUmVtdW5lcmF0aW9uJTIwUG9saWN5L1kWAmYPFQEiTm9taW5hdGlvbiBhbmQgUmVtdW5lcmF0aW9uIFBvbGljeWQCSQ8WAh8AAggWEGYPZBYEAgEPFgIfAWQWAmYPFQEUSW52ZXN0b3IgSW5mb3JtYXRpb25kAgMPZBYCAgEPFgIfAAICFgRmD2QWAgIBDxYCHwEFIC9CZXN0UHJhY3RpY2VzU3ViLzUvUHJvc3BlY3R1cy9ZFgJmDxUBClByb3NwZWN0dXNkAgEPZBYCAgEPFgIfAQUcL0Jlc3RQcmFjdGljZXNTdWIvNi9PdGhlcnMvWRYCZg8VAQZPdGhlcnNkAgEPZBYEAgEPFgIfAWQWAmYPFQEZU3RvY2sgRXhjaGFuZ2UgQ29tcGxpYW5jZWQCAw9kFgICAQ8WAh8AAgwWGGYPZBYCAgEPFgIfAQUvL0Jlc3RQcmFjdGljZXNTdWIvNC9TaGFyZSUyMEhvbGRpbmclMjBQYXR0ZXJuL0gWAmYPFQEVU2hhcmUgSG9sZGluZyBQYXR0ZXJuZAIBD2QWAgIBDxYCHwEFMC9CZXN0UHJhY3RpY2VzU3ViLzEwL0JvYXJkJTIwTWVldGluZyUyME5vdGljZXMvURYCZg8VARVCb2FyZCBNZWV0aW5nIE5vdGljZXNkAgIPZBYCAgEPFgIfAQUyL0Jlc3RQcmFjdGljZXNTdWIvMTEvR2VuZXJhbCUyME1lZXRpbmclMjBOb3RpY2VzL1EWAmYPFQEXR2VuZXJhbCBNZWV0aW5nIE5vdGljZXNkAgMPZBYCAgEPFgIfAQUwL0Jlc3RQcmFjdGljZXNTdWIvMTIvQm9hcmQlMjBNZWV0aW5nJTIwT3V0Y29tZS9RFgJmDxUBFUJvYXJkIE1lZXRpbmcgT3V0Y29tZWQCBA9kFgICAQ8WAh8BBTIvQmVzdFByYWN0aWNlc1N1Yi8xMy9HZW5lcmFsJTIwTWVldGluZyUyME91dGNvbWUvURYCZg8VARdHZW5lcmFsIE1lZXRpbmcgT3V0Y29tZWQCBQ9kFgICAQ8WAh8BBSYvQmVzdFByYWN0aWNlc1N1Yi8xNC9Qb3N0YWwlMjBCYWxsb3QvWRYCZg8VAQ1Qb3N0YWwgQmFsbG90ZAIGD2QWAgIBDxYCHwEFIi9CZXN0UHJhY3RpY2VzU3ViLzI0L0NHJTIwUmVwb3J0L1kWAmYPFQEJQ0cgUmVwb3J0ZAIHD2QWAgIBDxYCHwEFJS9CZXN0UHJhY3RpY2VzU3ViLzI4L0Jvb2slMjBDbG9zdXJlL1EWAmYPFQEMQm9vayBDbG9zdXJlZAIID2QWAgIBDxYCHwEFLy9CZXN0UHJhY3RpY2VzU3ViLzM1L0NvbXBsaWFuY2UlMjBDZXJ0aWZpY2F0ZS9ZFgJmDxUBFkNvbXBsaWFuY2UgQ2VydGlmaWNhdGVkAgkPZBYCAgEPFgIfAQUtL0Jlc3RQcmFjdGljZXNTdWIvMzYvVHJhbnNmZXIlMjBDZXJ0aWZpY2F0ZS9ZFgJmDxUBFFRyYW5zZmVyIENlcnRpZmljYXRlZAIKD2QWAgIBDxYCHwEFKS9CZXN0UHJhY3RpY2VzU3ViLzM3L090aGVyJTIwSW50aW1hdGlvbi9ZFgJmDxUBEE90aGVyIEludGltYXRpb25kAgsPZBYCAgEPFgIfAQU0L0Jlc3RQcmFjdGljZXNTdWIvMzgvSW52ZXN0b3IlMjBDb21wbGFpbnQlMjBSZXBvcnQvWRYCZg8VARlJbnZlc3RvciBDb21wbGFpbnQgUmVwb3J0ZAICD2QWBAIBDxYCHwFkFgJmDxUBCkZpbmFuY2lhbHNkAgMPZBYCAgEPFgIfAAIBFgJmD2QWAgIBDxYCHwEFKC9CZXN0UHJhY3RpY2VzU3ViLzcvRmluYW5jaWFsJTIwUmVzdWx0L0gWAmYPFQEQRmluYW5jaWFsIFJlc3VsdGQCAw9kFgQCAQ8WAh8BZBYCZg8VAQ1Bbm51YWwgUmVwb3J0ZAIDD2QWAgIBDxYCHwACARYCZg9kFgICAQ8WAh8BBSUvQmVzdFByYWN0aWNlc1N1Yi84L0FubnVhbCUyMFJlcG9ydC9ZFgJmDxUBDUFubnVhbCBSZXBvcnRkAgQPZBYEAgEPFgIfAWQWAmYPFQENQ3JlZGl0IFJhdGluZ2QCAw9kFgICAQ8WAh8AAgEWAmYPZBYCAgEPFgIfAQUmL0Jlc3RQcmFjdGljZXNTdWIvNDAvQ3JlZGl0JTIwUmF0aW5nL1kWAmYPFQENQ3JlZGl0IFJhdGluZ2QCBQ9kFgQCAQ8WAh8BZBYCZg8VARBJbnZlc3RvciBDb250YWN0ZAIDD2QWAgIBDxYCHwACAhYEZg9kFgICAQ8WAh8BBTUvQmVzdFByYWN0aWNlc1N1Yi85L0dyaWV2YW5jZSUyMFJlZHJlc3NhbCUyME9mZmljZXIvWRYCZg8VARtHcmlldmFuY2UgUmVkcmVzc2FsIE9mZmljZXJkAgEPZBYCAgEPFgIfAQVCL0Jlc3RQcmFjdGljZXNTdWIvMzAvUmVnaXN0cmFyJTIwQW5kJTIwU2hhcmUlMjBUcmFuc2ZlciUyMEFnZW50cy9ZFgJmDxUBI1JlZ2lzdHJhciBBbmQgU2hhcmUgVHJhbnNmZXIgQWdlbnRzZAIGD2QWBAIBDxYCHwFkFgJmDxUBElBvbGljaWVzIGFuZCBjb2Rlc2QCAw9kFgICAQ8WAh8AAgQWCGYPZBYCAgEPFgIfAQUtL0Jlc3RQcmFjdGljZXNTdWIvMTYvRmFpciUyMFByYWN0aWNlJTIwQ29kZS9ZFgJmDxUBEkZhaXIgUHJhY3RpY2UgQ29kZWQCAQ9kFgICAQ8WAh8BBSovQmVzdFByYWN0aWNlc1N1Yi8xNy9LWUMlMjBBTkQlMjBBTUwtQ0ZUL1kWAmYPFQEPS1lDIEFORCBBTUwtQ0ZUZAICD2QWAgIBDxYCHwEFIy9CZXN0UHJhY3RpY2VzU3ViLzE4L0NHUiUyMFBvbGljeS9ZFgJmDxUBCkNHUiBQb2xpY3lkAgMPZBYCAgEPFgIfAQUbL0Jlc3RQcmFjdGljZXNTdWIvMjEvTUlUQy9ZFgJmDxUBBE1JVENkAgcPZBYEAgEPFgIfAWQWAmYPFQEUQ29ycG9yYXRlIEdvdmVybmFuY2VkAgMPZBYCAgEPFgIfAAIKFhRmD2QWAgIBDxYCHwEFMS9CZXN0UHJhY3RpY2VzU3ViLzE5L0luc2lkZXIlMjBUcmFkaW5nJTIwUG9saWN5L1kWAmYPFQEWSW5zaWRlciBUcmFkaW5nIFBvbGljeWQCAQ9kFgICAQ8WAh8BBTEvQmVzdFByYWN0aWNlc1N1Yi8yMC9WaWdpbCUyME1lY2hhbmlzbSUyMFBvbGljeS9ZFgJmDxUBFlZpZ2lsIE1lY2hhbmlzbSBQb2xpY3lkAgIPZBYCAgEPFgIfAQUqL0Jlc3RQcmFjdGljZXNTdWIvMjIvQ29kZSUyMG9mJTIwQ29uZHVjdC9ZFgJmDxUBD0NvZGUgb2YgQ29uZHVjdGQCAw9kFgICAQ8WAh8BBS4vQmVzdFByYWN0aWNlc1N1Yi8yMy9Cb2FyZCUyMEFuZCUyMENvbW1pdHRlcy9ZFgJmDxUBE0JvYXJkIEFuZCBDb21taXR0ZXNkAgQPZBYCAgEPFgIfAQUyL0Jlc3RQcmFjdGljZXNTdWIvMjUvRmFtaWxpYXJpc2F0aW9uJTIwUHJvZ3JhbW1lL1kWAmYPFQEZRmFtaWxpYXJpc2F0aW9uIFByb2dyYW1tZWQCBQ9kFgICAQ8WAh8BBTQvQmVzdFByYWN0aWNlc1N1Yi8yNi9Qb2xpY3klMjBvbiUyMFJlbGF0ZWQlMjBQYXJ0eS9ZFgJmDxUBF1BvbGljeSBvbiBSZWxhdGVkIFBhcnR5ZAIGD2QWAgIBDxYCHwEFLy9CZXN0UHJhY3RpY2VzU3ViLzI3L1Rlcm1zJTIwb2YlMjBBcHBvaW50bWVudC9ZFgJmDxUBFFRlcm1zIG9mIEFwcG9pbnRtZW50ZAIHD2QWAgIBDxYCHwEFKC9CZXN0UHJhY3RpY2VzU3ViLzMzL0FyY2hpdmFsJTIwUG9saWN5L1kWAmYPFQEPQXJjaGl2YWwgUG9saWN5ZAIID2QWAgIBDxYCHwEFOi9CZXN0UHJhY3RpY2VzU3ViLzM0L0Rpc2Nsb3N1cmUlMjBPZiUyME1hdGVyaWFsJTIwRXZlbnRzL1kWAmYPFQEdRGlzY2xvc3VyZSBPZiBNYXRlcmlhbCBFdmVudHNkAgkPZBYCAgEPFgIfAQU/L0Jlc3RQcmFjdGljZXNTdWIvMzkvTm9taW5hdGlvbiUyMGFuZCUyMFJlbXVuZXJhdGlvbiUyMFBvbGljeS9ZFgJmDxUBIk5vbWluYXRpb24gYW5kIFJlbXVuZXJhdGlvbiBQb2xpY3lkZM0T2Zm9ITVp0L/XmtYxhtUs0kgPiKXxdRELGaiQv7rf" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=wiYOzjqS7GgdMD6XD4jh6UHlnwUCUMWUbcYB3LRwbAvohRu10MohEmWpATKF_1NU3-0g2v-7LSCyhnFywpXBtbSxTtEuOJpVNDtRl8iEUpc1&amp;t=639192094340000000" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=B8Q31XxkTfu0-isyBeKuusZjPm6bNcChXuAcYQ5EcbAd8kfXVPQFi8dsBp_ZEutnTEb7OJwLdmEjeBXO1cmZA7nPoJDJSJSsz7HO3OA59ikfau6JjsAun6hmJcFW023xCFnJ51N1V_lIOXl7x6KoCUdtAiI3dyl2K59LbViTH2ZO1DmEDCVdayoDfdx9LkB_0&amp;t=fffffffff7f39b88" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=E5vuYP5Cw_mzo2aIG8KBo5MeQusksF-fDIi7AuFU4G1vGQkqdtj_qS_-Wv24w7sjLOR-KlVuvjxOTyGnmAa3iyr6DQHv-Z6i2HGWnkOJskfSyUJs5P4VpUdNvCswNDvmGETtkbKtMBuyjrk-xQAS4OZek7VC0kBUaf8Gqa_3RZbzENzDFPynjzxNZ585ILMm0&amp;t=fffffffff7f39b88" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'Form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+       
+            
+
+<!--header part with slider & menu-->
+
+<!--Top to bottom scroll-->
+<div id="to-the-top"><i class="fa fa-chevron-up"></i></div>
+<!--preloader-->
+<!--Header-->
+<i class="fa fa-bars fa-2" id="srgfin-mobile-menu-btn" style="background-color: #e31c24;"></i>
+<div class="srgfin-mobile-menu" id="srgfin-mobile-menu" style="background-color: #363B3F;">
+    <h3>menu</h3>
+    <nav>
+        <ul class="responsive-list  ">
+            <li>
+                <a href="/Home">Home</a>
+            </li>
+            <li>
+                <a href="/About-SRG-Securities-Finance-Limited">About Us</a>
+                <ul>
+                    <li><a href="/Mission-Vision-Value">Vision Mission & Value</a></li>
+                    <li><a href="/Our-Team">Our Team</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/Loan-Against-Property">Product & Services</a>
+                <ul>
+                    <li>
+                        <a href="/Loan-Against-Property">Equipment Finance</a>
+
+                    </li>
+                    <li><a href="/Vehicle-Loan">Vehicle Finance</a></li>
+                    <li><a href="/Business-Loan">Business Loan</a></li>
+					
+                </ul>
+            </li>
+            <li>
+                <a href="/Loan-Process">Loan Process</a>
+            </li>
+            <li>
+                <a>Investor Desk</a>
+                <ul>
+				
+					<li><a href="/Disclosures-Under-Regulation">Disclosure under Reg. 46</a></li>
+                    
+                            <li><a id="Header_Part_RepCategories_lnk2_0">
+                                Investor Information
+                            </a>
+                                
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/5/Prospectus/Y" id="Header_Part_RepCategories_SubMenu_0_repBindSubMenu_0_A1_0">Prospectus</a></li>
+    
+              <li><a href="/BestPracticesSub/6/Others/Y" id="Header_Part_RepCategories_SubMenu_0_repBindSubMenu_0_A1_1">Others</a></li>
+    
+</ul>
+
+                            </li>
+                        
+                            <li><a id="Header_Part_RepCategories_lnk2_1">
+                                Stock Exchange Compliance
+                            </a>
+                                
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/4/Share%20Holding%20Pattern/H" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_0">Share Holding Pattern</a></li>
+    
+              <li><a href="/BestPracticesSub/10/Board%20Meeting%20Notices/Q" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_1">Board Meeting Notices</a></li>
+    
+              <li><a href="/BestPracticesSub/11/General%20Meeting%20Notices/Q" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_2">General Meeting Notices</a></li>
+    
+              <li><a href="/BestPracticesSub/12/Board%20Meeting%20Outcome/Q" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_3">Board Meeting Outcome</a></li>
+    
+              <li><a href="/BestPracticesSub/13/General%20Meeting%20Outcome/Q" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_4">General Meeting Outcome</a></li>
+    
+              <li><a href="/BestPracticesSub/14/Postal%20Ballot/Y" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_5">Postal Ballot</a></li>
+    
+              <li><a href="/BestPracticesSub/24/CG%20Report/Y" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_6">CG Report</a></li>
+    
+              <li><a href="/BestPracticesSub/28/Book%20Closure/Q" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_7">Book Closure</a></li>
+    
+              <li><a href="/BestPracticesSub/35/Compliance%20Certificate/Y" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_8">Compliance Certificate</a></li>
+    
+              <li><a href="/BestPracticesSub/36/Transfer%20Certificate/Y" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_9">Transfer Certificate</a></li>
+    
+              <li><a href="/BestPracticesSub/37/Other%20Intimation/Y" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_10">Other Intimation</a></li>
+    
+              <li><a href="/BestPracticesSub/38/Investor%20Complaint%20Report/Y" id="Header_Part_RepCategories_SubMenu_1_repBindSubMenu_1_A1_11">Investor Complaint Report</a></li>
+    
+</ul>
+
+                            </li>
+                        
+                            <li><a href="/BestPractices/2/Financials" id="Header_Part_RepCategories_lnk2_2">
+                                Financials
+                            </a>
+                                
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/7/Financial%20Result/H" id="Header_Part_RepCategories_SubMenu_2_repBindSubMenu_2_A1_0">Financial Result</a></li>
+    
+</ul>
+
+                            </li>
+                        
+                            <li><a href="/BestPractices/18/Annual%20Report" id="Header_Part_RepCategories_lnk2_3">
+                                Annual Report
+                            </a>
+                                
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/8/Annual%20Report/Y" id="Header_Part_RepCategories_SubMenu_3_repBindSubMenu_3_A1_0">Annual Report</a></li>
+    
+</ul>
+
+                            </li>
+                        
+                            <li><a href="/BestPractices/19/Credit%20Rating" id="Header_Part_RepCategories_lnk2_4">
+                                Credit Rating
+                            </a>
+                                
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/40/Credit%20Rating/Y" id="Header_Part_RepCategories_SubMenu_4_repBindSubMenu_4_A1_0">Credit Rating</a></li>
+    
+</ul>
+
+                            </li>
+                        
+                            <li><a id="Header_Part_RepCategories_lnk2_5">
+                                Investor Contact
+                            </a>
+                                
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/9/Grievance%20Redressal%20Officer/Y" id="Header_Part_RepCategories_SubMenu_5_repBindSubMenu_5_A1_0">Grievance Redressal Officer</a></li>
+    
+              <li><a href="/BestPracticesSub/30/Registrar%20And%20Share%20Transfer%20Agents/Y" id="Header_Part_RepCategories_SubMenu_5_repBindSubMenu_5_A1_1">Registrar And Share Transfer Agents</a></li>
+    
+</ul>
+
+                            </li>
+                        
+                            <li><a id="Header_Part_RepCategories_lnk2_6">
+                                Policies and codes
+                            </a>
+                                
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/16/Fair%20Practice%20Code/Y" id="Header_Part_RepCategories_SubMenu_6_repBindSubMenu_6_A1_0">Fair Practice Code</a></li>
+    
+              <li><a href="/BestPracticesSub/17/KYC%20AND%20AML-CFT/Y" id="Header_Part_RepCategories_SubMenu_6_repBindSubMenu_6_A1_1">KYC AND AML-CFT</a></li>
+    
+              <li><a href="/BestPracticesSub/18/CGR%20Policy/Y" id="Header_Part_RepCategories_SubMenu_6_repBindSubMenu_6_A1_2">CGR Policy</a></li>
+    
+              <li><a href="/BestPracticesSub/21/MITC/Y" id="Header_Part_RepCategories_SubMenu_6_repBindSubMenu_6_A1_3">MITC</a></li>
+    
+</ul>
+
+                            </li>
+                        
+                            <li><a id="Header_Part_RepCategories_lnk2_7">
+                                Corporate Governance
+                            </a>
+                                
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/19/Insider%20Trading%20Policy/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_0">Insider Trading Policy</a></li>
+    
+              <li><a href="/BestPracticesSub/20/Vigil%20Mechanism%20Policy/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_1">Vigil Mechanism Policy</a></li>
+    
+              <li><a href="/BestPracticesSub/22/Code%20of%20Conduct/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_2">Code of Conduct</a></li>
+    
+              <li><a href="/BestPracticesSub/23/Board%20And%20Committes/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_3">Board And Committes</a></li>
+    
+              <li><a href="/BestPracticesSub/25/Familiarisation%20Programme/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_4">Familiarisation Programme</a></li>
+    
+              <li><a href="/BestPracticesSub/26/Policy%20on%20Related%20Party/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_5">Policy on Related Party</a></li>
+    
+              <li><a href="/BestPracticesSub/27/Terms%20of%20Appointment/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_6">Terms of Appointment</a></li>
+    
+              <li><a href="/BestPracticesSub/33/Archival%20Policy/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_7">Archival Policy</a></li>
+    
+              <li><a href="/BestPracticesSub/34/Disclosure%20Of%20Material%20Events/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_8">Disclosure Of Material Events</a></li>
+    
+              <li><a href="/BestPracticesSub/39/Nomination%20and%20Remuneration%20Policy/Y" id="Header_Part_RepCategories_SubMenu_7_repBindSubMenu_7_A1_9">Nomination and Remuneration Policy</a></li>
+    
+</ul>
+
+                            </li>
+                        
+                </ul>
+            </li>
+            <li><a href="/Why-SRG-Securities-Finance-Limited">Careers</a>
+                <ul>
+                    <li><a href="/Why-SRG-Securities-Finance-Limited">Why SRG</a></li>
+                    <li><a href="/Apply-Job" id="Header_Part_A2">Apply Now</a></li>
+                    <li><a href="/Job-Openings">JobOpenings</a></li>
+                </ul>
+            </li>
+                <li><a href="/CustomerGrievanceRedressal">Customer Grievance Redressal</a></li>
+            <li><a href="/Contact-Us">Contact Us</a>
+                <ul>
+                    <li><a href="/Contact-Us">Contact Us</a></li>
+                    <li><a href="/SRG-Map">SRG Map</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<header class="srgfin-header srgfin-header-1">
+    <div class="srgfin-top-bar">
+        <div class="HeaderTop">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="lefttopsidetopmenu">
+                            <p class="contacts"><i class="fa fa-phone"></i>0294-2412609</p>
+                            <p class="contacts"><i class="fa fa-envelope"></i><a href="mailto:srgsecurities@gmail.com">srgsecurities@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-6 col-sm-4 ">
+                        <div class="rightttopsidetopmenu">
+                            <ul class="Topmenulink">
+                                <li><a href="/Home"><i class="fa fa-home"></i>HOME</a></li>
+                                <li><a href="/frequently-asked-questions"><i class="fa fa-comments"></i>FAQ'S</a></li>
+                               
+                                <li><a href="/Photo-Gallery"><i class="fa fa-picture-o"></i>GALLERY</a></li>
+                                <li><a href="/SiteMap"><i class="fa fa-sitemap"></i>SITEMAP</a></li>
+                            </ul>
+                            <ul class="social-btns">
+                                <li><a target="_blank" href="https://www.facebook.com/S-R-G-Securities-Finance-Limited-938532382882554/?ref=hl"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com/srg_securities"><i class="fa fa-twitter"></i></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/company/srg-securities-finance-ltd/"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a target="_blank" href="https://plus.google.com/u/3/111428086631254039873"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 srgfin-header-bg" id="srgfin-header-menu">
+        <div class="Headercont">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="srgfin-relative">
+
+
+
+
+
+                        <a href="Default.aspx">
+                            <div class="srgfin-logo">
+                                <a href="/Home">
+                                    <img alt="srgfin Logo" src="images/logo.png" /></a>
+                            </div>
+
+
+
+                        <nav>
+                            <ul>
+                                <li>
+
+                                    <a href="/Home">Home</a>
+
+                                </li>
+
+
+                                <li>
+                                    <a href="/About-SRG-Securities-Finance-Limited">About Us</a>
+                                    <ul>
+                                        <li><a href="/Mission-Vision-Value">Vision Mission & Value</a></li>
+                                        <li><a href="/Our-Team">Our Team</a></li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/Loan-Against-Property">Product & Services</a>
+                                    <ul>
+                                        <li>
+                                            <a href="/Loan-Against-Property">Equipment Finance</a>
+
+                                        </li>
+                                        <li><a href="/Vehicle-Loan">Vehicle Finance</a></li>
+                                        <li><a href="/Business-Loan">Business Loan</a></li>
+										<li><a href="Service%20and%20Charges_SRG%20Securities.pdf">Services & Charges</a></li>
+
+                                    </ul>
+                                </li>
+
+
+                                <li>
+                                    <a href="/Loan-Process">Loan Process</a>
+
+                                </li>
+                                <li>
+                                    <a>Investor Desk</a>
+                                    <ul>
+									<li><a href="/Disclosures-Under-Regulation">Disclosure under Reg. 46</a></li>
+                                        
+                                                <li><a id="Header_Part_bindCatMain_lnk2_0">
+                                                    Investor Information
+                                                </a>
+                                                    
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/5/Prospectus/Y" id="Header_Part_bindCatMain_SubMenu_0_repBindSubMenu_0_A1_0">Prospectus</a></li>
+    
+              <li><a href="/BestPracticesSub/6/Others/Y" id="Header_Part_bindCatMain_SubMenu_0_repBindSubMenu_0_A1_1">Others</a></li>
+    
+</ul>
+
+                                                </li>
+                                            
+                                                <li><a id="Header_Part_bindCatMain_lnk2_1">
+                                                    Stock Exchange Compliance
+                                                </a>
+                                                    
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/4/Share%20Holding%20Pattern/H" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_0">Share Holding Pattern</a></li>
+    
+              <li><a href="/BestPracticesSub/10/Board%20Meeting%20Notices/Q" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_1">Board Meeting Notices</a></li>
+    
+              <li><a href="/BestPracticesSub/11/General%20Meeting%20Notices/Q" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_2">General Meeting Notices</a></li>
+    
+              <li><a href="/BestPracticesSub/12/Board%20Meeting%20Outcome/Q" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_3">Board Meeting Outcome</a></li>
+    
+              <li><a href="/BestPracticesSub/13/General%20Meeting%20Outcome/Q" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_4">General Meeting Outcome</a></li>
+    
+              <li><a href="/BestPracticesSub/14/Postal%20Ballot/Y" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_5">Postal Ballot</a></li>
+    
+              <li><a href="/BestPracticesSub/24/CG%20Report/Y" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_6">CG Report</a></li>
+    
+              <li><a href="/BestPracticesSub/28/Book%20Closure/Q" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_7">Book Closure</a></li>
+    
+              <li><a href="/BestPracticesSub/35/Compliance%20Certificate/Y" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_8">Compliance Certificate</a></li>
+    
+              <li><a href="/BestPracticesSub/36/Transfer%20Certificate/Y" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_9">Transfer Certificate</a></li>
+    
+              <li><a href="/BestPracticesSub/37/Other%20Intimation/Y" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_10">Other Intimation</a></li>
+    
+              <li><a href="/BestPracticesSub/38/Investor%20Complaint%20Report/Y" id="Header_Part_bindCatMain_SubMenu_1_repBindSubMenu_1_A1_11">Investor Complaint Report</a></li>
+    
+</ul>
+
+                                                </li>
+                                            
+                                                <li><a id="Header_Part_bindCatMain_lnk2_2">
+                                                    Financials
+                                                </a>
+                                                    
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/7/Financial%20Result/H" id="Header_Part_bindCatMain_SubMenu_2_repBindSubMenu_2_A1_0">Financial Result</a></li>
+    
+</ul>
+
+                                                </li>
+                                            
+                                                <li><a id="Header_Part_bindCatMain_lnk2_3">
+                                                    Annual Report
+                                                </a>
+                                                    
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/8/Annual%20Report/Y" id="Header_Part_bindCatMain_SubMenu_3_repBindSubMenu_3_A1_0">Annual Report</a></li>
+    
+</ul>
+
+                                                </li>
+                                            
+                                                <li><a id="Header_Part_bindCatMain_lnk2_4">
+                                                    Credit Rating
+                                                </a>
+                                                    
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/40/Credit%20Rating/Y" id="Header_Part_bindCatMain_SubMenu_4_repBindSubMenu_4_A1_0">Credit Rating</a></li>
+    
+</ul>
+
+                                                </li>
+                                            
+                                                <li><a id="Header_Part_bindCatMain_lnk2_5">
+                                                    Investor Contact
+                                                </a>
+                                                    
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/9/Grievance%20Redressal%20Officer/Y" id="Header_Part_bindCatMain_SubMenu_5_repBindSubMenu_5_A1_0">Grievance Redressal Officer</a></li>
+    
+              <li><a href="/BestPracticesSub/30/Registrar%20And%20Share%20Transfer%20Agents/Y" id="Header_Part_bindCatMain_SubMenu_5_repBindSubMenu_5_A1_1">Registrar And Share Transfer Agents</a></li>
+    
+</ul>
+
+                                                </li>
+                                            
+                                                <li><a id="Header_Part_bindCatMain_lnk2_6">
+                                                    Policies and codes
+                                                </a>
+                                                    
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/16/Fair%20Practice%20Code/Y" id="Header_Part_bindCatMain_SubMenu_6_repBindSubMenu_6_A1_0">Fair Practice Code</a></li>
+    
+              <li><a href="/BestPracticesSub/17/KYC%20AND%20AML-CFT/Y" id="Header_Part_bindCatMain_SubMenu_6_repBindSubMenu_6_A1_1">KYC AND AML-CFT</a></li>
+    
+              <li><a href="/BestPracticesSub/18/CGR%20Policy/Y" id="Header_Part_bindCatMain_SubMenu_6_repBindSubMenu_6_A1_2">CGR Policy</a></li>
+    
+              <li><a href="/BestPracticesSub/21/MITC/Y" id="Header_Part_bindCatMain_SubMenu_6_repBindSubMenu_6_A1_3">MITC</a></li>
+    
+</ul>
+
+                                                </li>
+                                            
+                                                <li><a id="Header_Part_bindCatMain_lnk2_7">
+                                                    Corporate Governance
+                                                </a>
+                                                    
+
+<ul>
+
+
+              <li><a href="/BestPracticesSub/19/Insider%20Trading%20Policy/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_0">Insider Trading Policy</a></li>
+    
+              <li><a href="/BestPracticesSub/20/Vigil%20Mechanism%20Policy/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_1">Vigil Mechanism Policy</a></li>
+    
+              <li><a href="/BestPracticesSub/22/Code%20of%20Conduct/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_2">Code of Conduct</a></li>
+    
+              <li><a href="/BestPracticesSub/23/Board%20And%20Committes/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_3">Board And Committes</a></li>
+    
+              <li><a href="/BestPracticesSub/25/Familiarisation%20Programme/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_4">Familiarisation Programme</a></li>
+    
+              <li><a href="/BestPracticesSub/26/Policy%20on%20Related%20Party/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_5">Policy on Related Party</a></li>
+    
+              <li><a href="/BestPracticesSub/27/Terms%20of%20Appointment/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_6">Terms of Appointment</a></li>
+    
+              <li><a href="/BestPracticesSub/33/Archival%20Policy/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_7">Archival Policy</a></li>
+    
+              <li><a href="/BestPracticesSub/34/Disclosure%20Of%20Material%20Events/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_8">Disclosure Of Material Events</a></li>
+    
+              <li><a href="/BestPracticesSub/39/Nomination%20and%20Remuneration%20Policy/Y" id="Header_Part_bindCatMain_SubMenu_7_repBindSubMenu_7_A1_9">Nomination and Remuneration Policy</a></li>
+    
+</ul>
+
+                                                </li>
+                                            
+
+                                    </ul>
+                                </li>
+                                <li><a href="/Why-SRG-Securities-Finance-Limited">Careers</a>
+                                    <ul>
+                                        <li><a href="/Why-SRG-Securities-Finance-Limited">Why SRG</a></li>
+                                        <li><a href="/Apply-Job" id="Header_Part_A1">Apply Now</a></li>
+                                        <li><a href="/Job-Openings">JobOpenings</a></li>
+                                    </ul>
+                                </li>
+                                 <li><a href="/CustomerGrievanceRedressal">Customer Grievance Redressal</a></li>
+                                <li><a href="/Contact-Us">Contact Us</a>
+                                    <ul>
+                                        <li><a href="/Contact-Us">Contact Us</a></li>
+                                        <li><a href="/SRG-Map">SRG Map</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+
+
+
+
+</header>
+
+
+
+
+       
+       
+            
+      <div class="container">
+    <div class="row">
+        <div class="col-md-12 srgfintaglinebg">
+            <h2>SRG Fingrow Finance Limited</h2>
+        </div>
+    </div>
+
+    <div class="container sliderArea">
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6 imagepart">
+
+                <!-- Jssor Slider Begin -->
+                <!-- To move inline styles to css file/block, please specify a class name for each element. -->
+                <div id="slider1_container" style="position: relative; top: 0px; left: -14px; width: 600px; height: 300px; overflow: hidden;">
+
+                    <!-- Loading Screen -->
+                    <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                        <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; background-color: #000000; top: 0px; left: 0px; width: 100%; height: 100%;">
+                        </div>
+                        <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;">
+                        </div>
+                    </div>
+
+                    <!-- Slides Container -->
+                    <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; overflow: hidden;">
+                        <div>
+                            <img u="image" src="images/header.jpg" />
+                        </div>
+                        <div>
+                            <img id="ContentPlaceHolder1_Image1" u="image" src="images/header2.jpg" />
+                        </div>
+                        <div>
+                            <img id="ContentPlaceHolder1_Image3" u="image" src="images/header3.jpg" />
+                        </div>
+                        <div>
+                            <img id="ContentPlaceHolder1_Image2" u="image" src="images/header4.jpg" />
+                        </div>
+
+                    </div>
+                    <!-- bullet navigator container -->
+                    <div u="navigator" class="jssorb05" style="bottom: 16px; right: 6px;">
+                        <!-- bullet navigator item prototype -->
+                        <div u="prototype"></div>
+                    </div>
+
+                    <!-- Arrow Left -->
+                    <span u="arrowleft" class="jssora12l" style="top: 123px; left: 0px;"></span>
+                    <!-- Arrow Right -->
+                    <span u="arrowright" class="jssora12r" style="top: 123px; right: 0px;"></span>
+                    <!--#endregion Bullet Navigator Skin End -->
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-sm-6 titlebox">
+                
+                <div class="titlearea">
+                    <h3>Welcome to SRG Fingrow
+                    </h3>
+                    <hr />
+
+                    <p>
+                        “SRG FINGROW FINANCE LIMITED, a fastest growing NBFC incorporated on 06th March, 1995 under Companies Act, 1956, with the Registrar of Companies, Jaipur with an object to work in the field of finance.<br />
+                        The company started its financing operations after getting license from Reserve Bank of India in the year 1999
+                    </p>
+
+                    
+                    <br />
+                    <br />
+                    <a href="/About-SRG-Securities-Finance-Limited" type="button" class="btn btn-primary btn-md">Click here to Read  More</a>
+                </div>
+
+                    </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <aside class="col-md-3 col-sm-4 center">
+            
+            
+            
+            
+
+ <div class="leftsideblock1">
+                        <h4>SRG PROMISES</h4>
+                        <ul class="whysrgfinn_list">
+                            <li><i class="fa fa-gift"></i><a href="#">Loan Offering</a></li>
+                            <li><i class="fa fa-file-text-o"></i><a href="#">Easy Documentation</a></li>
+                            <li><i class="fa fa-cogs"></i><a href="#">Quick Loan Processing</a></li>
+
+                        </ul>
+                    </div>
+        </aside>
+        <div class="col-md-6 col-sm-4">
+            <div class="center-block">
+                <div class="media">
+                    <div class="pull-left">
+                        <img alt="" src="images/jcb-img.jpg" class="img-responsive" />
+                    </div>
+
+                    <div class="media-body">
+                        <h4>Equipment Finance Scheme-(EFS)</h4>
+                        <hr />
+                        <p>Presently we are more involved in the business of Equipment and Vehicle finance under our EFS. </p>
+
+                        <a href="/Loan-Against-Property" type="button" class="btn btn-primary">Click For More Details</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-block">
+                <div class="media">
+                    <div class="pull-left">
+                        <img alt="" src="images/veical-finance.jpg" class="img-responsive" />
+                    </div>
+
+                    <div class="media-body">
+                        <h4>Vehicle Finance-(VF)</h4>
+                        <hr />
+                        <p>We also provide loan for purchase of cars, jeeps and Heavy vehicles like trucks, tractors etc.</p>
+
+                        <a href="/Vehicle-Loan" type="button" class="btn btn-primary">Click For More Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="center-block">
+                <div class="media">
+                    <div class="pull-left">
+                        <img alt="" src="images/business-loan.jpg" class="img-responsive" />
+                    </div>
+
+                    <div class="media-body">
+                        <h4>Business Loan-(BL)</h4>
+                        <hr />
+                        <p>SRG FFL is introducing new concept in the field of finance known as business loan to various established business entity for their business needs for a shorter or longer periods.</p>
+
+                        <a href="/Business-Loan" type="button" class="btn btn-primary">Click For More Details</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aside class="col-md-3 col-sm-4 rightsideblock">
+            
+
+
+ <div class="rightsidinfo">
+                      <a href="/Contact-Us"><img alt="" src="images/banner-1.jpg" class="img-responsive" /></a>
+
+                    </div>
+            
+
+
+<div class="rightsidinfo">
+                       <a href="/Contact-Us"><img alt="" src="images/feedback.gif" class="img-responsive" /></a>
+
+                    </div>
+        </aside>
+    </div>
+    </div>
+
+      
+        
+
+
+<!--Footer - Part-->
+
+<section>
+    <div class="HeaderTop footerarea">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <ul>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/About-SRG-Securities-Finance-Limited">About Us</a></li>
+                   <li><a href="/Loan-Process">Finance</a></li>			
+                    <li><a href="/Job-Openings">Careers</a></li>
+                    <li><a href="/Loan-Process">Loan Process</a></li>
+                    <li><a href="/Our-Team">Management</a></li>
+                    <li><a href="/frequently-asked-questions">Faq’s</a></li>
+                    <li><a href="/Photo-Gallery">Gallery</a></li>
+                    <li><a href="/Contact-Us">Contact Us</a></li>
+                    <li><a href="/SiteMap">Site Map</a></li>
+                </ul>
+                <br />
+                <ul><a href="#" target="_blank" style="color:white;"> @Copyright 2013 S R G Securities Finance Limited : Design & Developed by SRG Global Solutions Pvt. Ltd.</a></ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!--core Script-->
+
+<script>
+
+    jQuery(document).ready(function ($) {
+
+        var _SlideshowTransitions = [
+        //Fade
+        { $Duration: 1200, $Opacity: 2 }
+        ];
+
+        var options = {
+            $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+            $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+            $AutoPlayInterval: 3000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+            $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+            $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+            $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+            $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+            //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+            //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+            $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+            $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+            $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+            $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+            $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+            $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+            $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+            },
+
+            $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                $SpacingY: 10,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+            },
+
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+            }
+        };
+        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+        //responsive code begin
+        //you can remove responsive code if you don't want the slider scales while window resizes
+        function ScaleSlider() {
+            var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+            if (parentWidth)
+                jssor_slider1.$ScaleWidth(Math.min(parentWidth, 600));
+            else
+                window.setTimeout(ScaleSlider, 30);
+        }
+        ScaleSlider();
+
+        $(window).bind("load", ScaleSlider);
+        $(window).bind("resize", ScaleSlider);
+        $(window).bind("orientationchange", ScaleSlider);
+        //responsive code end
+    });
+</script>
+
+
+
+<script type="text/javascript" src="/js/srgfin.js"></script>
+<script type="text/javascript" src="/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/npm.js"></script>
+
+    </form>
+</body>
+</html>

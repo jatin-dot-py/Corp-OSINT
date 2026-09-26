@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/favicon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO -->
+  <meta name="description" content="Bonlon Industries is a BSE & NSE-listed metals company, manufacturing and trading copper, aluminium, zinc, and lead across India and international markets. Incorporated in 1997.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bonlonindustries.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bonlon Industries Limited">
+  <meta property="og:title" content="Bonlon Industries Limited">
+  <meta property="og:description" content="Bonlon Industries is a BSE & NSE-listed metals company, manufacturing and trading copper, aluminium, zinc, and lead across India and international markets. Incorporated in 1997.">
+  <meta property="og:url" content="https://bonlonindustries.com/">
+  <meta property="og:image" content="https://bonlonindustries.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="628">
+  <meta property="og:image:alt" content="Bonlon Industries Limited">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bonlon Industries Limited">
+  <meta name="twitter:description" content="Bonlon Industries is a BSE & NSE-listed metals company, manufacturing and trading copper, aluminium, zinc, and lead across India and international markets. Incorporated in 1997.">
+  <meta name="twitter:image" content="https://bonlonindustries.com/og-image.jpg">
+  <meta name="twitter:image:alt" content="Bonlon Industries Limited">
+  <title>Bonlon Industries Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:      #0a0b0d;
+      --ink-2:    #111317;
+      --ink-3:    #181b20;
+      --panel:    #1d2127;
+      --line:     rgba(255,255,255,0.08);
+      --line-2:   rgba(255,255,255,0.14);
+      --text:     #e6e7ea;
+      --text-2:   #b4b7bd;
+      --text-3:   #7b7f87;
+      --text-4:   #53575e;
+      --copper:   #c8784a;
+      --copper-hi:#e5a07a;
+      --copper-lo:#7a3e22;
+      --steel:    #c9ced5;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--text);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVIGATION — transparent until scrolled ── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 68px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 96px;
+      transition: background 0.3s, border-color 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-nav.scrolled {
+      background: rgba(10,11,13,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: var(--line);
+    }
+
+    .nav-logo a { display: block; line-height: 0; }
+    .nav-logo img { height: 34px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 14.5px;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: var(--text-3);
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 6px;
+      transition: color 0.18s, background 0.18s;
+    }
+    .nav-links a:hover { color: var(--copper-hi); background: rgba(200,120,74,0.08); }
+    .nav-links a.active { color: var(--copper-hi); }
+
+    /* ── INVESTORS NAV DROPDOWN ── */
+    .nav-investors { position: relative; }
+    .nav-links li.nav-investors > a { display: flex; align-items: center; gap: 4px; cursor: pointer; user-select: none; }
+    .nav-chevron { display: inline-block; width: 0; height: 0; border-left: 3.5px solid transparent; border-right: 3.5px solid transparent; border-top: 4px solid currentColor; opacity: 0.5; transition: transform 0.2s; flex-shrink: 0; }
+    .nav-investors:hover > a .nav-chevron,
+    .nav-investors.open > a .nav-chevron { transform: rotate(180deg); }
+    .investors-dropdown {
+      position: absolute; top: 100%; left: 50%; margin-top: 1px;
+      transform: translateX(-50%); width: 680px;
+      background: #0d0f12; border: 1px solid rgba(255,255,255,0.1); border-top: 2px solid var(--copper);
+      border-radius: 0 0 8px 8px; padding: 20px 28px 22px;
+      flex-direction: column; display: none; z-index: 10;
+    }
+    .nav-investors:hover .investors-dropdown,
+    .nav-investors.open .investors-dropdown { display: flex; }
+    .idd-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 36px; }
+    .idd-col { display: flex; flex-direction: column; }
+    .investors-dropdown .idd-col-header {
+      display: flex; align-items: center; gap: 6px;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--copper); text-decoration: none; padding: 0;
+      margin-bottom: 10px; padding-bottom: 9px;
+      border-bottom: 1px solid rgba(255,255,255,0.1); border-radius: 0; transition: color 0.15s;
+    }
+    .investors-dropdown .idd-col-header:hover { color: var(--copper-hi); background: transparent; }
+    .idd-label {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 10px; padding-bottom: 9px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .idd-group ul { list-style: none; }
+    .investors-dropdown a:not(.idd-col-header):not(.idd-footer-link) {
+      display: block; font-size: 13.5px; font-weight: 400;
+      color: rgba(230,231,234,0.62); text-decoration: none;
+      padding: 4px 0; transition: color 0.15s; line-height: 1.4;
+    }
+    .investors-dropdown a:not(.idd-col-header):not(.idd-footer-link):hover { color: var(--copper-hi); }
+    .idd-footer { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .investors-dropdown .idd-footer-link {
+      display: flex; align-items: center; gap: 6px;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--copper); text-decoration: none; padding: 0; transition: color 0.15s;
+    }
+    .investors-dropdown .idd-footer-link:hover { color: var(--copper-hi); background: transparent; }
+
+    .nav-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--copper);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--copper-hi);
+      text-decoration: none;
+      background: rgba(200,120,74,0.12);
+      transition: background 0.18s, border-color 0.18s;
+    }
+    .nav-cta:hover { background: rgba(200,120,74,0.22); border-color: var(--copper-hi); }
+
+    /* ── SHARED UTILITIES ─────────────────────────── */
+    .grid-bg::before {
+      content: "";
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(to right,  rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, #000 40%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, #000 40%, transparent 100%);
+    }
+
+    .vignette::after {
+      content: "";
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 100% 80% at 50% 100%, rgba(0,0,0,0.5), transparent 60%);
+    }
+
+    .chrome-line {
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255,255,255,0.14) 15%,
+        rgba(200,120,74,0.5) 50%,
+        rgba(255,255,255,0.14) 85%,
+        transparent 100%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .eyebrow .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--copper);
+      box-shadow: 0 0 10px rgba(200,120,74,0.8);
+      flex-shrink: 0;
+    }
+
+    /* ── HERO — content-height, no forced viewport ── */
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 0 96px;
+      background: radial-gradient(ellipse 130% 90% at 50% 0%, #171a1f 0%, #0b0c0f 55%, #060708 100%);
+      overflow: hidden;
+    }
+
+    /* Hero grid: copper dot pattern with left-to-right brightness */
+    .hero.grid-bg::before {
+      background-image:
+        radial-gradient(ellipse 70% 50% at 50% 50%, rgba(200,120,74,0.07) 0%, transparent 100%),
+        radial-gradient(circle, rgba(200,120,74,0.55) 1px, transparent 1px);
+      background-size: auto, 28px 28px;
+      mask-image:
+        linear-gradient(to bottom, transparent 0%, black 5%, black 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.85) 60%, black 85%);
+      mask-composite: intersect;
+      -webkit-mask-image:
+        linear-gradient(to bottom, transparent 0%, black 5%, black 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.85) 60%, black 85%);
+      -webkit-mask-composite: destination-in;
+    }
+
+    .hero-center {
+      padding: 110px 0 52px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: clamp(48px, 6.5vw, 88px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+      background: linear-gradient(180deg, #f6f7f9 0%, #c9ced5 42%, #51555b 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-title .cu {
+      background: linear-gradient(180deg, #f5c9a8 0%, #c8784a 55%, #6b351d 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-body {
+      margin-top: 32px;
+      max-width: 600px;
+    }
+
+    .hero-sub {
+      font-size: clamp(14px, 1.2vw, 17px);
+      color: var(--text-2);
+      line-height: 1.65;
+      font-weight: 300;
+      margin-top: 16px;
+    }
+    .hero-sub em { color: #eceef1; font-style: normal; }
+
+    /* ── TRUSTED BY — directly below hero content ─── */
+    .trusted {
+      position: relative;
+      z-index: 1;
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+    }
+
+    .trusted-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      background: linear-gradient(90deg, #f5c9a8 0%, #c8784a 60%, #7a3e22 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .marquee-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .marquee-wrap::before,
+    .marquee-wrap::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--ink), transparent);
+    }
+    .marquee-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--ink), transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-33.333%); }
+    }
+
+    .marquee-item {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding: 0 52px;
+    }
+    .marquee-logo {
+      height: 36px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      display: block;
+      filter: grayscale(1) brightness(0.45);
+      transition: filter 0.35s ease;
+    }
+    .marquee-item:hover .marquee-logo { filter: grayscale(1) brightness(1.1); }
+    .marquee-logo[src*="clientlogo11"] {
+      height: 52px;
+      max-width: 200px;
+    }
+
+    /* ── AT A GLANCE — SLIDE 2 ────────────────────── */
+    .glance {
+      position: relative;
+      padding: 100px 96px 120px;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, #13161b 0%, #0a0b0e 60%, #060708 100%);
+      overflow: hidden;
+    }
+
+    .glance-content { position: relative; z-index: 1; }
+
+    .section-title {
+      font-weight: 500;
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #f3f4f6;
+      margin-top: 18px;
+    }
+
+    .copper-text {
+      background: linear-gradient(180deg, #f5c9a8 0%, #c8784a 65%, #7a3e22 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 60px;
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-right: 40px;
+    }
+    .metric + .metric {
+      padding-left: 40px;
+      padding-right: 40px;
+      border-left: 1px solid var(--line);
+    }
+    .metric:last-child { padding-right: 0; }
+
+    .metric-val {
+      font-size: clamp(36px, 4.2vw, 62px);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      background: linear-gradient(180deg, #f2f3f5 0%, #9aa0a8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .metric-val.copper {
+      background: linear-gradient(180deg, #f5c9a8 0%, #c8784a 65%, #7a3e22 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .metric-val .unit { font-size: 0.5em; letter-spacing: -0.01em; }
+    .metric-val .dim {
+      font-size: 0.4em;
+      letter-spacing: 0;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      color: var(--text-4);
+    }
+
+    .metric-lbl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    .metric-sub {
+      font-size: clamp(13px, 1vw, 15px);
+      color: var(--text-2);
+      line-height: 1.5;
+      font-weight: 300;
+      max-width: 260px;
+    }
+
+    /* ── WHY BONLON ──────────────────────────────── */
+    .why-bonlon {
+      position: relative;
+      padding: 100px 96px 120px;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, #0f1114 0%, #0a0b0d 60%);
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+    }
+    .why-bonlon-content { position: relative; z-index: 1; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      margin-top: 52px;
+      align-items: start;
+    }
+
+    .why-left-summary {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--text-4);
+      line-height: 2.2;
+      text-transform: uppercase;
+      margin-top: 32px;
+    }
+    .why-left-summary span {
+      display: block;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+    .why-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .why-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--copper-hi);
+      min-width: 32px;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .why-item h4 {
+      font-size: 17px;
+      font-weight: 500;
+      color: #eceef1;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .why-item p {
+      font-size: 14.5px;
+      color: var(--text-2);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* ── TWO WAYS WE OPERATE ─────────────────────── */
+    .overview {
+      position: relative;
+      padding: 100px 96px;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, #13161b 0%, #0a0b0d 60%);
+      overflow: hidden; border-top: 1px solid var(--line);
+    }
+    .overview-inner { position: relative; z-index: 1; }
+    .overview-lead {
+      font-size: clamp(15px, 1.3vw, 17px);
+      color: var(--text-2);
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 780px;
+      margin-top: 20px;
+    }
+    .overview-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; margin-top: 48px; align-items: start;
+    }
+    .overview-body p {
+      font-size: 15.5px; color: var(--text-2); line-height: 1.8;
+      font-weight: 300; margin-bottom: 20px;
+    }
+    .overview-body p:last-child { margin-bottom: 0; }
+    .overview-body strong { color: var(--text); font-weight: 500; }
+    .segment-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; margin-top: 0;
+      border: 1px solid var(--line);
+    }
+    .segment-card {
+      padding: 28px 24px;
+      background: rgba(255,255,255,0.015);
+    }
+    .segment-card-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--copper-hi);
+      margin-bottom: 10px;
+    }
+    .segment-card-title {
+      font-size: 17px; font-weight: 500; color: #eceef1; margin-bottom: 10px;
+    }
+    .segment-card-body {
+      font-size: 13.5px; color: var(--text-2); line-height: 1.65; font-weight: 300;
+    }
+    .segment-tags {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px;
+    }
+    .segment-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--text-3); background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line); padding: 3px 8px; border-radius: 2px;
+    }
+    .units-block { margin-top: 32px; }
+    .units-title {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--copper-hi); margin-bottom: 16px;
+    }
+    .unit-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 0; border-top: 1px solid var(--line);
+    }
+    .unit-item:last-child { border-bottom: 1px solid var(--line); }
+    .unit-num {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      letter-spacing: 0.2em; color: var(--copper-hi); padding-top: 3px; flex-shrink: 0;
+    }
+    .unit-addr { font-size: 14px; color: var(--text-2); line-height: 1.6; font-weight: 300; }
+    .unit-addr strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 2px; }
+
+    /* ── HOW WE TRADE ────────────────────────────── */
+    .how-trade {
+      position: relative;
+      padding: 100px 96px 120px;
+      background: radial-gradient(ellipse 130% 90% at 50% 0%, #171a1f 0%, #0b0c0f 60%, #060708 100%);
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+    }
+    .how-trade-content { position: relative; z-index: 1; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 56px;
+      position: relative;
+    }
+
+    /* connecting line between dots */
+    .steps-grid::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 10px; right: 10px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200,120,74,0.35) 10%, rgba(200,120,74,0.35) 90%, transparent);
+    }
+
+    .step { padding-right: 28px; }
+    .step:last-child { padding-right: 0; }
+
+    .step-marker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .step-dot {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--copper);
+      box-shadow: 0 0 0 4px var(--ink), 0 0 14px rgba(200,120,74,0.6);
+      flex-shrink: 0;
+    }
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      color: var(--text-3);
+      text-transform: uppercase;
+    }
+
+    .step h4 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #eceef1;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .step p {
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── SEGMENT CARD LINKS ── */
+    .segment-card-link {
+      text-decoration: none; color: inherit; display: block;
+      position: relative;
+      transition: background 0.3s, outline-color 0.3s;
+      outline: 1px solid transparent; cursor: pointer;
+    }
+    .segment-card-link::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 0;
+      height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--copper-lo), var(--copper), var(--copper-hi));
+      transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+    .segment-card-link:hover::before { width: 100%; }
+    .segment-card-link:hover { background: rgba(200,120,74,0.07); outline-color: rgba(200,120,74,0.25); }
+    .segment-card-link:hover .segment-card-title { color: var(--copper-hi); transition: color 0.25s; }
+    .segment-card-link:hover .segment-tag {
+      border-color: rgba(200,120,74,0.3);
+      color: var(--text-2);
+    }
+    .segment-tag { transition: color 0.3s, border-color 0.3s; }
+    .segment-card-arrow {
+      font-size: 16px; color: var(--copper); margin-top: 12px;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .segment-card-link:hover .segment-card-arrow { transform: translateX(6px); }
+
+    /* ── ABOUT TEASER ── */
+    .about-teaser {
+      position: relative;
+      padding: 100px 96px;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, #0f1114 0%, #0a0b0d 60%);
+      overflow: hidden; border-top: 1px solid var(--line);
+    }
+    .about-teaser-inner { position: relative; z-index: 1; }
+    .about-teaser-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-teaser-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 1px solid rgba(200,120,74,0.25);
+    }
+    .teaser-stat {
+      padding: 32px 28px;
+      border-right: 1px solid rgba(200,120,74,0.25);
+      border-bottom: 1px solid rgba(200,120,74,0.25);
+    }
+    .teaser-stat:nth-child(2n) { border-right: none; }
+    .teaser-stat:nth-child(3), .teaser-stat:nth-child(4) { border-bottom: none; }
+    .teaser-stat-val {
+      font-size: clamp(24px, 2.5vw, 36px); font-weight: 500;
+      letter-spacing: -0.03em; line-height: 1;
+      background: linear-gradient(180deg, #f5c9a8 0%, #c8784a 65%, #7a3e22 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .teaser-stat-lbl {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--text-3); margin-top: 10px;
+    }
+    .teaser-link {
+      display: inline-flex; align-items: center;
+      font-size: 14px; font-weight: 500; color: var(--copper-hi);
+      text-decoration: none; letter-spacing: 0.02em;
+      transition: color 0.18s, gap 0.18s; gap: 6px;
+    }
+    .teaser-link:hover { color: var(--copper); gap: 10px; }
+
+    /* ── INVESTORS TEASER ── */
+    .investors-teaser {
+      position: relative;
+      padding: 100px 96px;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, #13161b 0%, #0a0b0d 60%);
+      overflow: hidden; border-top: 1px solid var(--line);
+    }
+    .investors-teaser-inner { position: relative; z-index: 1; }
+    .investors-teaser-grid {
+      display: grid; grid-template-columns: 1fr 380px;
+      gap: 80px; align-items: center;
+    }
+    .investors-price-card {
+      border: 1px solid rgba(200,120,74,0.3);
+      padding: 28px 32px 24px;
+      background: rgba(200,120,74,0.04);
+      border-radius: 14px;
+    }
+    .ipc-top { display: flex; align-items: center; margin-bottom: 12px; }
+    .ipc-pill {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      letter-spacing: 0.18em; color: var(--copper-hi);
+      background: rgba(200,120,74,0.12); border: 1px solid rgba(200,120,74,0.3);
+      padding: 4px 10px; border-radius: 2px;
+    }
+    .ipc-name {
+      font-size: 13px; color: var(--text-3); font-weight: 300; margin-bottom: 20px;
+    }
+    .ipc-footer {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; gap: 16px;
+      border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; margin-top: 8px;
+    }
+    .ipc-both { display: flex; flex-direction: column; gap: 8px; }
+    .ipc-both-item { display: flex; align-items: center; gap: 10px; }
+    .ipc-exchange {
+      font-family: 'JetBrains Mono', monospace; font-size: 9px;
+      letter-spacing: 0.18em; color: var(--text-4); text-transform: uppercase;
+      width: 28px;
+    }
+    .ipc-val { font-size: 13px; color: var(--text-2); font-weight: 300; }
+    .ipc-sep { height: 1px; background: var(--line); width: 100%; }
+    .ipc-price {
+      font-size: clamp(28px, 2.8vw, 38px); font-weight: 500;
+      letter-spacing: -0.03em; line-height: 1; text-align: right;
+      background: linear-gradient(180deg, #f5c9a8 0%, #c8784a 65%, #7a3e22 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .ipc-change { font-size: 12px; color: var(--text-3); text-align: right; margin-top: 4px; }
+    .ipc-change.positive { color: #4ade80; }
+    .ipc-change.negative { color: #f87171; }
+    .ipc-price.loading { color: var(--text-4); background: none; -webkit-background-clip: unset; background-clip: unset; }
+    .ipc-time { font-size: 10px; color: var(--text-4); text-align: right; margin-top: 8px; letter-spacing: 0.02em; }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      position: relative;
+      padding: 64px 96px;
+      background: #060708;
+      border-top: 1px solid;
+      border-image: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 15%, rgba(200,120,74,0.5) 50%, rgba(255,255,255,0.14) 85%, transparent 100%) 1;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 64px;
+    }
+    .footer-brand img { height: 36px; width: auto; margin-bottom: 16px; }
+    .footer-tagline {
+      font-size: 14px; color: var(--text-3); line-height: 1.65; font-weight: 300;
+      max-width: 280px;
+    }
+    .footer-heading {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--copper-hi); margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 13.5px; color: var(--text-3);
+      line-height: 1.55; font-weight: 300; margin-bottom: 12px;
+    }
+    .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; opacity: 0.5; }
+    .footer-bottom {
+      margin-top: 56px; padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.14em; color: var(--text-4);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 1100px) {
+      .hero, .glance, .why-bonlon, .how-trade { padding-left: 52px; padding-right: 52px; }
+      .site-nav { padding: 0 52px; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 52px 0; }
+      .metric + .metric { border-left: none; padding-left: 0; }
+      .metric:nth-child(2n) { padding-left: 40px; border-left: 1px solid var(--line); }
+      .why-grid { grid-template-columns: 1fr; gap: 48px; }
+      .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 40px 0; }
+      .steps-grid::before { display: none; }
+    }
+
+    @media (max-width: 1100px) {
+      .about-teaser, .investors-teaser, .site-footer { padding-left: 52px; padding-right: 52px; }
+      .about-teaser-grid, .investors-teaser-grid { grid-template-columns: 1fr; gap: 48px; }
+      .overview-grid { grid-template-columns: 1fr; gap: 48px; }
+      .segment-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .site-nav { padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+      .nav-links { display: none; }
+      .hero, .glance { padding-left: 24px; padding-right: 24px; }
+      .about-teaser, .investors-teaser, .site-footer { padding-left: 24px; padding-right: 24px; }
+      .metrics-grid { grid-template-columns: 1fr; gap: 40px; }
+      .metric, .metric + .metric { border-left: none; padding-left: 0; padding-right: 0; }
+      .about-teaser-stats { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .why-bonlon, .overview, .how-trade { padding-left: 24px; padding-right: 24px; }
+      .segment-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+      .overview-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── MOBILE NAV ── */
+    .nav-right { gap: 10px; }
+    .nav-icon-btn {
+      display: none; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+      border: 1px solid rgba(200,120,74,0.5); color: var(--copper-hi);
+      background: rgba(200,120,74,0.1); text-decoration: none;
+      transition: background 0.18s, border-color 0.18s;
+    }
+    .nav-icon-btn:hover { background: rgba(200,120,74,0.22); border-color: var(--copper-hi); }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 7px 6px; background: none;
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+      color: var(--text-3); flex-shrink: 0;
+      transition: border-color 0.18s, background 0.18s, color 0.18s;
+    }
+    .nav-hamburger:hover { border-color: var(--copper); background: rgba(200,120,74,0.08); color: var(--copper-hi); }
+    .nav-hamburger span { display: block; width: 20px; height: 2px; background: currentColor; border-radius: 2px; }
+    .mobile-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+      z-index: 299; opacity: 0; pointer-events: none; transition: opacity 0.35s;
+    }
+    .mobile-overlay.open { opacity: 1; pointer-events: all; }
+    .mobile-nav {
+      position: fixed; top: 0; right: 0; width: 280px; height: 100dvh;
+      background: rgba(10,11,13,0.97);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border-left: 1px solid rgba(255,255,255,0.08);
+      z-index: 300; transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column; overflow-y: auto;
+    }
+    .mobile-nav.open { transform: translateX(0); }
+    .mobile-nav-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.07); flex-shrink: 0;
+    }
+    .mobile-nav-logo { height: 26px; width: auto; }
+    .mobile-nav-close {
+      background: none; border: none; cursor: pointer; color: var(--text-3);
+      padding: 6px; display: flex; align-items: center; border-radius: 6px;
+      transition: color 0.18s, background 0.18s;
+    }
+    .mobile-nav-close:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+    .mobile-nav-links { display: flex; flex-direction: column; flex: 1; padding: 8px 0; }
+    .mobile-nav-links a {
+      font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 400;
+      color: var(--text-2); text-decoration: none;
+      padding: 15px 24px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: color 0.18s, background 0.18s, padding-left 0.2s;
+    }
+    .mobile-nav-links a:first-child { border-top: 1px solid rgba(255,255,255,0.04); }
+    .mobile-nav-links a:hover { color: var(--copper-hi); background: rgba(200,120,74,0.07); padding-left: 30px; }
+    .mobile-nav-links a.active { color: var(--copper-hi); }
+    .mobile-nav-cta { padding: 20px; flex-shrink: 0; }
+    .mobile-nav-cta a {
+      display: block; text-align: center; padding: 13px 24px; border-radius: 6px;
+      border: 1px solid rgba(200,120,74,0.4); background: rgba(200,120,74,0.1);
+      color: var(--copper-hi); font-weight: 500; font-size: 15px;
+      font-family: 'Space Grotesk', sans-serif; text-decoration: none;
+      transition: background 0.18s, border-color 0.18s;
+    }
+    .mobile-nav-cta a:hover { background: rgba(200,120,74,0.2); border-color: rgba(200,120,74,0.6); }
+    @media (max-width: 700px) { .nav-hamburger { display: flex; } .nav-icon-btn { display: inline-flex; } .nav-cta { display: none; } }
+
+    /* ── PAGE TRANSITIONS ── */
+    #swup { transition: opacity 0.35s ease; }
+    html.is-animating #swup { opacity: 0; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="bonlon-logo-200px.png" alt="Bonlon" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="manufacturing.html">Manufacturing</a>
+    <a href="trading.html">Trading</a>
+    <a href="investors.html">Investors</a>
+  </nav>
+  <div class="mobile-nav-cta">
+    <a href="contact.html">Contact us →</a>
+  </div>
+</aside>
+
+<!-- ── NAVIGATION ──────────────────────────────────── -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-logo">
+    <a href="#home"><img src="bonlon-logo-200px.png" alt="Bonlon Industries Limited"></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="manufacturing.html">Manufacturing</a></li>
+    <li><a href="trading.html">Trading</a></li>
+    <li class="nav-investors">
+      <a href="investors.html">Investors <span class="nav-chevron"></span></a>
+      <div class="investors-dropdown">
+        <div class="idd-cols">
+          <div class="idd-col">
+            <a href="investors.html" class="idd-col-header">Investor Relations <span>→</span></a>
+            <div class="idd-label">Financial Reporting</div>
+            <div class="idd-group"><ul>
+              <li><a href="investors.html#financial-results">Financial Results</a></li>
+              <li><a href="investors.html#annual-reports">Annual Report</a></li>
+              <li><a href="investors.html#subsidiary-results">Financial Results for Subsidiaries</a></li>
+              <li><a href="investors.html#annual-return">Annual Return</a></li>
+            </ul></div>
+          </div>
+          <div class="idd-col">
+            <div class="idd-label">Corporate Governance</div>
+            <div class="idd-group"><ul>
+              <li><a href="investors.html#corporate-governance">Corporate Governance Report</a></li>
+              <li><a href="investors.html#board-of-directors">Board of Directors &amp; Committees</a></li>
+              <li><a href="investors.html#policies">Policies</a></li>
+              <li><a href="investors.html#code-of-conduct">Code of Conduct</a></li>
+              <li><a href="investors.html#certificates-reports">Certificates &amp; Reports</a></li>
+            </ul></div>
+          </div>
+          <div class="idd-col">
+            <div class="idd-label">Shareholder Information</div>
+            <div class="idd-group"><ul>
+              <li><a href="investors.html#shareholders-list">Shareholders List</a></li>
+              <li><a href="investors.html#corporate-announcements">Corporate Announcements</a></li>
+              <li><a href="investors.html#general-meetings-postal-ballot">General Meetings &amp; Postal Ballot</a></li>
+              <li><a href="investors.html#board-meetings">Notice &amp; Outcome of Board Meetings</a></li>
+              <li><a href="investors.html#newspaper-ads">Newspaper Advertisement</a></li>
+              <li><a href="investors.html#other-compliances">Other Compliances</a></li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="idd-footer">
+          <a href="investors.html#reg46-disclosures" class="idd-footer-link">Disclosures required under Regulation 46 of SEBI <span>→</span></a>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+  <div class="nav-right">
+    <a href="contact.html" class="nav-cta">Contact us</a>
+    <a href="contact.html" class="nav-icon-btn" aria-label="Contact us">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="swup">
+
+<!-- ── HERO (Slide 1) — trusted by pinned to bottom ── -->
+<section class="hero grid-bg vignette" id="home">
+
+  <div class="hero-center">
+    <h1 class="hero-title">
+      Manufacturing<br>
+      & Trading Metals<br>
+      <span class="cu">Since 1997.</span>
+    </h1>
+
+    <div class="hero-body">
+      <div class="chrome-line"></div>
+      <p class="hero-sub">
+        Established in <em>1997</em>. Over <em>29 years</em> of manufacturing and trading
+        ferrous and non-ferrous metals — from <em>India</em> to the world.
+      </p>
+      <a href="about.html" class="teaser-link" style="display:inline-flex;margin-top:24px;">Learn about us →</a>
+    </div>
+  </div>
+
+  <!-- Trusted by — sits flush at the bottom of the hero viewport -->
+  <div class="trusted">
+    <div class="trusted-label">Trusted by industry leaders</div>
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <!-- Set 1 -->
+        <div class="marquee-item"><img class="marquee-logo" src="processed/KEI Logo.png" alt="KEI Industries"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/POLYCAB.NS_BIG-75d2f870.png" alt="Polycab"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/Tangent-Trading-Logo.svg" alt="Tangent Trading"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/clientlogo10.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/clientlogo11.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/images.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/thyssenkrupp-logopng-32748.png" alt="Thyssenkrupp"></div>
+        <!-- Set 2 -->
+        <div class="marquee-item"><img class="marquee-logo" src="processed/KEI Logo.png" alt="KEI Industries"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/POLYCAB.NS_BIG-75d2f870.png" alt="Polycab"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/Tangent-Trading-Logo.svg" alt="Tangent Trading"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/clientlogo10.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/clientlogo11.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/images.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/thyssenkrupp-logopng-32748.png" alt="Thyssenkrupp"></div>
+        <!-- Set 3 — ensures seamless fill at any screen width -->
+        <div class="marquee-item"><img class="marquee-logo" src="processed/KEI Logo.png" alt="KEI Industries"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/POLYCAB.NS_BIG-75d2f870.png" alt="Polycab"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/Tangent-Trading-Logo.svg" alt="Tangent Trading"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/clientlogo10.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/clientlogo11.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/images.png" alt="Client"></div>
+        <div class="marquee-item"><img class="marquee-logo" src="processed/thyssenkrupp-logopng-32748.png" alt="Thyssenkrupp"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ── TWO WAYS WE OPERATE ───────────────────────── -->
+<section class="overview grid-bg vignette" id="overview">
+  <div class="overview-inner">
+    <div class="eyebrow"><span class="dot"></span>What we do</div>
+    <h2 class="section-title">Two ways we <span class="copper-text">operate.</span></h2>
+    <p class="overview-lead">We operate across the metals value chain — manufacturing, processing, and trading copper, aluminium, zinc, and lead in forms ranging from scrap to cathodes to finished wire rods. Two segments drive the business.</p>
+
+    <div class="segment-grid" style="margin-top:48px;">
+      <a href="manufacturing.html" class="segment-card segment-card-link">
+        <div class="segment-card-label">Segment 01</div>
+        <div class="segment-card-title">Manufacturing</div>
+        <div class="segment-card-body">
+          Four core product lines from two facilities in Bhiwadi and Chopaki, Rajasthan — copper wire rods (8mm–16mm), copper wires, and scrap recycling operations across cable grades including Berry, Candy, Birch, and Cliff.
+        </div>
+        <div class="segment-tags">
+          <span class="segment-tag">Copper Wire Rods</span>
+          <span class="segment-tag">Copper Wires</span>
+          <span class="segment-tag">Scrap Recycling</span>
+          <span class="segment-tag">Cable Scrap</span>
+        </div>
+        <div class="segment-card-arrow">→</div>
+      </a>
+      <a href="trading.html" class="segment-card segment-card-link">
+        <div class="segment-card-label">Segment 02</div>
+        <div class="segment-card-title">Trading</div>
+        <div class="segment-card-body">
+          Refined metals, secondary &amp; off-grade metals, scrap, and hedging services — hedged on LME &amp; MCX, every counterparty KYC-screened, all trades documented end to end. Serving domestic and international markets.
+        </div>
+        <div class="segment-tags">
+          <span class="segment-tag">Refined Metals</span>
+          <span class="segment-tag">Secondary Metals</span>
+          <span class="segment-tag">Metal Scrap</span>
+          <span class="segment-tag">Hedging Services</span>
+        </div>
+        <div class="segment-card-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY BONLON ────────────────────────────────── -->
+<section class="why-bonlon grid-bg vignette" id="manufacturing">
+  <div class="why-bonlon-content">
+    <div class="why-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Why Bonlon</div>
+        <h2 class="section-title" style="margin-top:18px;">
+          Built like a <span class="copper-text"><br>trading desk.</span>
+        </h2>
+        <p style="font-size:clamp(14px,1.2vw,17px);color:var(--text-2);font-weight:300;line-height:1.65;max-width:420px;margin-top:16px;">
+          Every cargo is hedged, every counterparty is screened, every shipment is backed by institutional-grade risk discipline.
+        </p>
+        <div class="chrome-line" style="margin-top:36px;"></div>
+        <div class="why-left-summary">
+          <span>01 &nbsp; Quality first.</span>
+          <span>02 &nbsp; Pricing on your terms.</span>
+          <span>03 &nbsp; Listed, banked, KYC-clean.</span>
+          <span>04 &nbsp; Continuity of supply.</span>
+        </div>
+      </div>
+      <div>
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h4>Quality first.</h4>
+            <p>From raw material sourcing to finished product dispatch — every lot is verified against test certificates and every process is documented. The quality you're promised is the quality you get.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h4>Pricing on your terms.</h4>
+            <p>Fix your price before, during, or after delivery on LME or MCX basis — your call. We manage the hedge so you don't carry market exposure.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div>
+            <h4>Listed, banked, KYC-clean.</h4>
+            <p>A public company on NSE &amp; BSE, backed by reputed Indian banks. Every counterparty is KYC-screened before a contract is issued.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div>
+            <h4>Continuity of supply.</h4>
+            <p>Two manufacturing facilities, established sourcing networks, and the relationships to hold a contract through disruption — domestic or international.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INVESTORS TEASER ───────────────────────────── -->
+<section class="investors-teaser grid-bg vignette">
+  <div class="investors-teaser-inner">
+    <div class="investors-teaser-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Investor's Corner</div>
+        <h2 class="section-title" style="margin-top:18px;">
+          For our <span class="copper-text">shareholders.</span>
+        </h2>
+        <p style="font-size:clamp(14px,1.2vw,17px);color:var(--text-2);font-weight:300;line-height:1.65;max-width:460px;margin-top:20px;">
+          Regulatory filings, financial results, governance documents, and shareholder information for Bonlon Industries Limited — listed on BSE and NSE.
+        </p>
+        <a href="investors.html" class="teaser-link" style="margin-top:36px;">View investor relations →</a>
+      </div>
+      <div class="investors-price-card">
+        <div class="ipc-top">
+          <span class="ipc-pill">BONLON</span>
+        </div>
+        <div class="ipc-name">Bonlon Industries Ltd</div>
+        <div class="ipc-footer">
+          <div class="ipc-both">
+            <div class="ipc-both-item"><span class="ipc-exchange">NSE</span><span class="ipc-val" id="home-nse">—</span></div>
+            <div class="ipc-sep"></div>
+            <div class="ipc-both-item"><span class="ipc-exchange">BSE</span><span class="ipc-val" id="home-bse">—</span></div>
+          </div>
+          <div class="ipc-right">
+            <div class="ipc-price loading" id="home-price">—</div>
+            <div class="ipc-change neutral" id="home-change">—</div>
+          </div>
+        </div>
+        <div class="ipc-time" id="home-time"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="bonlon-logo-200px.png" alt="Bonlon Industries">
+      <p class="footer-tagline">Manufacturing and trading ferrous and non-ferrous metals since 1997. Listed on NSE &amp; BSE. Driven by innovation and versatility.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Contact us</div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>7A/39 (12-F.F), WEA Channa Market,<br>Karol Bagh, New Delhi — 110005</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+911-47532792</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>info@bonlonindustries.com</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Bonlon Industries Ltd. All rights reserved.</span>
+    <span class="footer-copy">bonlonindustries.com</span>
+  </div>
+</footer>
+
+</div><!-- /#swup -->
+
+<script>
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+</script>
+<script>
+(function() {
+  // ── Bonlon price card — with localStorage cache fallback ──
+  (async function() {
+    const CACHE_KEY = 'bonlon_prices';
+
+    function renderPrices(data, els) {
+      const fmt = v => v != null ? '₹' + Number(v).toFixed(2) : '—';
+      if (els.nse) els.nse.textContent = fmt(data.nse?.price);
+      if (els.bse) els.bse.textContent = fmt(data.bse?.price);
+      const nseP = data.nse?.price ?? 0, bseP = data.bse?.price ?? 0;
+      const best = nseP >= bseP ? data.nse : data.bse;
+      if (best?.price != null && els.price) {
+        els.price.classList.remove('loading');
+        els.price.textContent = fmt(best.price);
+        const chg = best.price - best.prev;
+        const pct = chg / best.prev * 100;
+        if (els.change) {
+          els.change.textContent = (chg >= 0 ? '+' : '') + chg.toFixed(2) + ' (' + pct.toFixed(2) + '%)';
+          els.change.className = 'ipc-change ' + (chg >= 0 ? 'positive' : 'negative');
+        }
+      }
+      if (els.time && data.updatedAt) {
+        const ts = new Date(data.updatedAt);
+        const mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        els.time.textContent = `Updated ${ts.getDate()} ${mo[ts.getMonth()]}, ${ts.getHours()}:${String(ts.getMinutes()).padStart(2,'0')} IST`;
+      }
+    }
+
+    async function fetchQuote(symbol) {
+      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=2d`;
+      const proxies = [
+        { src: `https://corsproxy.io/?${encodeURIComponent(url)}`,                                wrap: false },
+        { src: `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,                   wrap: true  },
+        { src: `https://corsproxy.io/?${encodeURIComponent(url.replace('query1','query2'))}`,     wrap: false },
+        { src: `https://api.allorigins.win/get?url=${encodeURIComponent(url.replace('query1','query2'))}`, wrap: true },
+      ];
+      for (const p of proxies) {
+        try {
+          const res  = await fetch(p.src, { signal: AbortSignal.timeout(8000) });
+          if (!res.ok) continue;
+          const raw  = await res.json();
+          const json = p.wrap ? JSON.parse(raw.contents) : raw;
+          const meta = json?.chart?.result?.[0]?.meta;
+          if (!meta?.regularMarketPrice) continue;
+          return {
+            price: meta.regularMarketPrice,
+            prev:  meta.chartPreviousClose ?? meta.regularMarketPreviousClose ?? meta.previousClose ?? meta.regularMarketPrice,
+          };
+        } catch { continue; }
+      }
+      return null;
+    }
+
+    /* Try numeric BSE code first, then ticker-style fallback */
+    async function fetchBSE() {
+      return (await fetchQuote('543277.BO')) ?? (await fetchQuote('BONLON.BO'));
+    }
+
+    function getEls(prefix) {
+      return {
+        price:  document.getElementById(prefix + '-price'),
+        change: document.getElementById(prefix + '-change'),
+        nse:    document.getElementById(prefix + '-nse'),
+        bse:    document.getElementById(prefix + '-bse'),
+        time:   document.getElementById(prefix + '-time'),
+      };
+    }
+
+    // 1. Show cached data immediately
+    const cached = (() => { try { return JSON.parse(localStorage.getItem(CACHE_KEY)); } catch { return null; } })();
+    const homeEls = getEls('home');
+    if (cached && homeEls.price) renderPrices(cached, homeEls);
+
+    // 2. Fetch fresh data
+    const [nse, bse] = await Promise.all([fetchQuote('BONLON.NS'), fetchBSE()]);
+    const fresh = { nse, bse, updatedAt: Date.now() };
+
+    // 3. Merge with cache (keep old values if new fetch failed)
+    const merged = {
+      nse: nse ?? cached?.nse ?? null,
+      bse: bse ?? cached?.bse ?? null,
+      updatedAt: fresh.updatedAt,
+    };
+
+    // 4. Save to localStorage
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify(merged)); } catch {}
+
+    // 5. Render fresh/merged data
+    if (homeEls.price) renderPrices(merged, homeEls);
+  })();
+})();
+</script>
+
+<script>
+  (function() {
+    var hamburger = document.getElementById('navHamburger');
+    var overlay = document.getElementById('mobileOverlay');
+    var sidebar = document.getElementById('mobileNav');
+    var closeBtn = document.getElementById('mobileNavClose');
+    if (!hamburger) return;
+    function openNav()  { sidebar.classList.add('open');  overlay.classList.add('open');  document.body.style.overflow = 'hidden'; }
+    function closeNav() { sidebar.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+    hamburger.addEventListener('click', openNav);
+    overlay.addEventListener('click', closeNav);
+    closeBtn.addEventListener('click', closeNav);
+  })();
+</script>
+<script>
+(function() {
+  var wrap = document.querySelector('.nav-investors');
+  if (!wrap) return;
+  wrap.querySelector(':scope > a').addEventListener('click', function(e) {
+    e.preventDefault();
+    wrap.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e) {
+    if (!wrap.contains(e.target)) wrap.classList.remove('open');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') wrap.classList.remove('open');
+  });
+  wrap.querySelectorAll('.investors-dropdown a').forEach(function(a) {
+    a.addEventListener('click', function() { wrap.classList.remove('open'); });
+  });
+})();
+</script>
+<script src="https://unpkg.com/swup@4/dist/Swup.umd.min.js"></script>
+<script src="https://unpkg.com/@swup/scripts-plugin@2/dist/SwupScriptsPlugin.umd.min.js"></script>
+<script>
+(function() {
+  if (window._swupInit) return;
+  window._swupInit = true;
+  var swup = new Swup({ plugins: [new SwupScriptsPlugin()] });
+  function updateNavActive() {
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === page);
+    });
+  }
+  swup.hooks.on('page:view', function() {
+    window.scrollTo(0, 0);
+    updateNavActive();
+  });
+})();
+</script>
+</body>
+</html>

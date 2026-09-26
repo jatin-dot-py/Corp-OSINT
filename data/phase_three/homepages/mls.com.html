@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+    <title>MLS.com - MLS Listings, Real Estate Property Listings, Homes for Sale</title>
+    <meta name="description" content="Search MLS.com for real estate listings, foreclosures, new homes, and local agents nationwide. Find homes for sale by state, city, or ZIP code." />
+
+    <link rel="canonical" href="https://www.mls.com/" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EGJQRS5E5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9EGJQRS5E5');
+    </script>
+    
+    <link href="/Content/main.css" rel="stylesheet" />
+    <link href="/Content/Homepage.css" rel="stylesheet" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script src="/Scripts/global/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-228625-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript">
+        function TrackGoogleEvent(category, action, label) {
+            _gaq.push(['_trackEvent', category, action, label]);
+        }
+
+        function TrackingGoogleAnalyticEvent(eventName, label) {
+            gtag('event', eventName, {
+                'event_category': 'user_interaction',
+                'event_label': label,
+                'value': 1 // Optional: Send a numeric value if needed
+            });
+		}
+    </script>
+</head>
+
+<body>
+    <div id="fh5co-wrapper">
+        <button id="scrollToTopBtn">
+            <span style="font-size: 40px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
+                </svg>
+            </span>
+            
+        </button>
+        <div id="fh5co-page">
+               <!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <div class="header-content">
+            <span class="icon" id="toggleBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </span>
+            <div class="logo">
+                <a href="/"><img src="https://www.mls.com/Content/images/mls_logo.png" height="40" alt="MLS.com"></a>
+            </div>
+            <nav class="nav">
+                <a href="/ForeclosureListings/">Foreclosures</a>
+                <a href="https://www.newhomesource.com?refer=mlscom&utm_medium=distribution&utm_source=mls.com&utm_campaign=mlscom_disty" target="_blank" onclick="window.TrackGoogleEvent('New Homes Menu', 'Clicked', window.URL);">New Homes</a>
+                <a href="https://www.realestateagents.com/compare-agents?utm_campaign=textlink&utm_source=mlsdotcom" target="_blank" onclick="window.TrackGoogleEvent('Find An Agent Menu', 'Clicked', window.URL);">Find an Agent</a>
+                <a href="/Education.mvc">Real Estate Classes</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="side-navbar" id="sideNavbar">
+    <nav class="nav navresp">
+        <a href="/ForeclosureListings/">Foreclosures</a>
+        <a href="https://www.newhomesource.com?refer=mlscom&utm_medium=distribution&utm_source=mls.com&utm_campaign=mlscom_disty" target="_blank" onclick="window.TrackGoogleEvent('New Homes Menu', 'Clicked', window.URL);">New Homes</a>
+        <a href="https://www.realestateagents.com/compare-agents?utm_campaign=textlink&utm_source=mlsdotcom" target="_blank" onclick="window.TrackGoogleEvent('Find An Agent Menu', 'Clicked', window.URL);">Find an Agent</a>
+        <a href="/Education.mvc">Real Estate Classes</a>
+    </nav>
+</div>
+
+<script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const sidebar = document.getElementById("sideNavbar");
+
+    // Toggle on click
+    toggleBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        sidebar.classList.toggle("active");
+    });
+
+    // Stop propagation inside sidebar (optional)
+    sidebar.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+
+    // Hide on any outside click
+    document.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+    });
+
+    // Close sidebar when user scrolls
+    window.addEventListener("scroll", () => {
+        if (sidebar.classList.contains("active")) {
+            sidebar.classList.remove("active");
+            updateIconsAndScroll(false);
+        }
+    });
+
+</script>
+            
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MLS.com","url":"https://www.mls.com","logo":"https://www.mls.com/Content/images/mls_logo.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"MLS.com","url":"https://www.mls.com"}</script>
+
+<link href="/Content/Homepage.css" rel="stylesheet" />
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-content">
+        <div class="hero-title">MLS Real Estate Listings</div>
+        <div class="hero-subtitle">Multiple Listing Service</div>
+        
+        <p>
+            <div style="text-align: center; margin-top: 30px;">
+                <div class="custom-dropdown" id="dropdown">
+                    <div class="state-search-container">
+                        <input type="text" id="dropdownSearch" class="state-search-input" placeholder="Search" autocomplete="off">
+                        <button class="dropdown-btn" onclick="toggleDropdown()" id="searchBtn">Select State</button>
+                    </div>
+                    
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="/Search/Alabama.mvc" data-abbr="AL" onclick="showLoader()">Alabama Real Estate</a>
+                        <a href="/Search/Alaska.mvc" data-abbr="AK" onclick="showLoader()">Alaska Real Estate</a>
+                        <a href="/Search/Arizona.mvc" data-abbr="AZ" onclick="showLoader()">Arizona Real Estate</a>
+                        <a href="/Search/Arkansas.mvc" data-abbr="AR" onclick="showLoader()">Arkansas Real Estate</a>
+                        <a href="/Search/California.mvc" data-abbr="CA" onclick="showLoader()">California Real Estate</a>
+                        <a href="/Search/Colorado.mvc" data-abbr="CO" onclick="showLoader()">Colorado Real Estate</a>
+                        <a href="/Search/Connecticut.mvc" data-abbr="CT" onclick="showLoader()">Connecticut Real Estate</a>
+                        <a href="/Search/Delaware.mvc" data-abbr="DE" onclick="showLoader()">Delaware Real Estate</a>
+                        <a href="/Search/District-of-Columbia.mvc" data-abbr="DC" onclick="showLoader()">District of Columbia Real Estate</a>
+                        <a href="/Search/Florida.mvc" data-abbr="FL" onclick="showLoader()">Florida Real Estate</a>
+                        <a href="/Search/Georgia.mvc" data-abbr="GA" onclick="showLoader()">Georgia Real Estate</a>
+                        <a href="/Search/Hawaii.mvc" data-abbr="HI" onclick="showLoader()">Hawaii Real Estate</a>
+                        <a href="/Search/Idaho.mvc" data-abbr="ID" onclick="showLoader()">Idaho Real Estate</a>
+                        <a href="/Search/Illinois.mvc" data-abbr="IL" onclick="showLoader()">Illinois Real Estate</a>
+                        <a href="/Search/Indiana.mvc" data-abbr="IN" onclick="showLoader()">Indiana Real Estate</a>
+                        <a href="/Search/Iowa.mvc" data-abbr="IA" onclick="showLoader()">Iowa Real Estate</a>
+                        <a href="/Search/Kansas.mvc" data-abbr="KS" onclick="showLoader()">Kansas Real Estate</a>
+                        <a href="/Search/Kentucky.mvc" data-abbr="KY" onclick="showLoader()">Kentucky Real Estate</a>
+                        <a href="/Search/Louisiana.mvc" data-abbr="LA" onclick="showLoader()">Louisiana Real Estate</a>
+                        <a href="/Search/Maine.mvc" data-abbr="ME" onclick="showLoader()">Maine Real Estate</a>
+                        <a href="/Search/Maryland.mvc" data-abbr="MD" onclick="showLoader()">Maryland Real Estate</a>
+                        <a href="/Search/Massachusetts.mvc" data-abbr="MA" onclick="showLoader()">Massachusetts Real Estate</a>
+                        <a href="/Search/Michigan.mvc" data-abbr="MI" onclick="showLoader()">Michigan Real Estate</a>
+                        <a href="/Search/Minnesota.mvc" data-abbr="MN" onclick="showLoader()">Minnesota Real Estate</a>
+                        <a href="/Search/Mississippi.mvc" data-abbr="MS" onclick="showLoader()">Mississippi Real Estate</a>
+                        <a href="/Search/Missouri.mvc" data-abbr="MO" onclick="showLoader()">Missouri Real Estate</a>
+                        <a href="/Search/Montana.mvc" data-abbr="MT" onclick="showLoader()">Montana Real Estate</a>
+                        <a href="/Search/Nebraska.mvc" data-abbr="NE" onclick="showLoader()">Nebraska Real Estate</a>
+                        <a href="/Search/Nevada.mvc" data-abbr="NV" onclick="showLoader()">Nevada Real Estate</a>
+                        <a href="/Search/New-Hampshire.mvc" data-abbr="NH" onclick="showLoader()">New Hampshire Real Estate</a>
+                        <a href="/Search/New-Jersey.mvc" data-abbr="NJ" onclick="showLoader()">New Jersey Real Estate</a>
+                        <a href="/Search/New-Mexico.mvc" data-abbr="NM" onclick="showLoader()">New Mexico Real Estate</a>
+                        <a href="/Search/New-York.mvc" data-abbr="NY" onclick="showLoader()">New York Real Estate</a>
+                        <a href="/Search/North-Carolina.mvc" data-abbr="NC" onclick="showLoader()">North Carolina Real Estate</a>
+                        <a href="/Search/North-Dakota.mvc" data-abbr="ND" onclick="showLoader()">North Dakota Real Estate</a>
+                        <a href="/Search/Ohio.mvc" data-abbr="OH" onclick="showLoader()">Ohio Real Estate</a>
+                        <a href="/Search/Oklahoma.mvc" data-abbr="OK" onclick="showLoader()">Oklahoma Real Estate</a>
+                        <a href="/Search/Oregon.mvc" data-abbr="OR" onclick="showLoader()">Oregon Real Estate</a>
+                        <a href="/Search/Pennsylvania.mvc" data-abbr="PA" onclick="showLoader()">Pennsylvania Real Estate</a>
+                        <a href="/Search/Rhode-Island.mvc" data-abbr="RI" onclick="showLoader()">Rhode Island Real Estate</a>
+                        <a href="/Search/South-Carolina.mvc" data-abbr="SC" onclick="showLoader()">South Carolina Real Estate</a>
+                        <a href="/Search/South-Dakota.mvc" data-abbr="SD" onclick="showLoader()">South Dakota Real Estate</a>
+                        <a href="/Search/Tennessee.mvc" data-abbr="TN" onclick="showLoader()">Tennessee Real Estate</a>
+                        <a href="/Search/Texas.mvc" data-abbr="TX" onclick="showLoader()">Texas Real Estate</a>
+                        <a href="/Search/Utah.mvc" data-abbr="UT" onclick="showLoader()">Utah Real Estate</a>
+                        <a href="/Search/Vermont.mvc" data-abbr="VT" onclick="showLoader()">Vermont Real Estate</a>
+                        <a href="/Search/Virginia.mvc" data-abbr="VA" onclick="showLoader()">Virginia Real Estate</a>
+                        <a href="/Search/Washington.mvc" data-abbr="WA" onclick="showLoader()">Washington Real Estate</a>
+                        <a href="/Search/West-Virginia.mvc" data-abbr="WV" onclick="showLoader()">West Virginia Real Estate</a>
+                        <a href="/Search/Wisconsin.mvc" data-abbr="WI" onclick="showLoader()">Wisconsin Real Estate</a>
+                        <a href="/Search/Wyoming.mvc" data-abbr="WY" onclick="showLoader()">Wyoming Real Estate</a>
+                    </div>
+                </div>
+            </div>
+        </p>
+    </div>
+</div>
+
+<!-- State Selection -->
+<section class="state-section">
+    <div class="container">
+        <h2 class="section-title">Find Real Estate</h2>
+        <p class="section-subtitle">Click on a State to View MLS Listings in your area</p>
+
+        <div class="map-container">
+            <div class="usa-map">
+                <!-- 🗺️ Interactive USA Map - Click any state to explore listings -->
+                <div class="usa-map">
+                    <div class="row row-bottom-padded-md">
+                        <div class="col-md-12 text-center animate-box fadeInUp animated">
+                            <p>
+                            </p>
+                            <div class="lg-map-wrapper" data-map="/Scripts/module/usa.js" style="width: 1050px; height: 596.344px; position:relative;">
+                                <div id="lg-map"></div>
+                                <div class="lg-map-text"></div>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Search Section -->
+<section class="search-section" id="search">
+    <div class="container">
+        <div class="search-grid">
+            <div class="search-card">
+    
+    <h3>Find Real Estate Listings</h3>
+    <p>Search for listings near you.</p>
+
+    <form class="card-form">
+        <input type="text" name="cityName" id="searchCityName" class="form-input" placeholder="City" />
+        
+
+        <select name="state" id="searchState" class="form-select" placeholder="State">
+        </select>
+
+        <input type="text" name="zipCode" id="searchZipCode" class="form-input" placeholder="Zip" />
+        
+
+        <input type="text" name="county" id="searchCounty" class="form-input" placeholder="County" />
+        
+
+        
+        <button type="submit" onclick="doCitySearch(); return false;" class="search-btn">SEARCH</button>
+    </form>
+</div>
+
+<script type="text/javascript" src="/Scripts/mls/CitySearch.js"></script>
+
+<script>
+    GetStateNames();
+
+    function GetStateNames() {
+        $.ajax({
+            type: 'POST',
+            url: '/Search/GetStateNames',
+            success: function (states) {
+                setStateNameDropdown(states)
+            }
+        });
+    }
+
+    function setStateNameDropdown(states) {
+        $('#searchState').html('');
+        $.each(states, function (i, state) {
+            $('#searchState').append(`<option value="${state.Abbr}">${state.Name}</option>`);
+        });
+        $('#searchState').prepend(`<option value="" selected="">State</option>`);
+    }
+</script>
+            
+<script type="text/javascript">
+    // Widget parameters
+    var PARTNER_ID = 9101;
+    var REFER = "mlscom";
+    var DEFAULT_STATE = "";
+    var NEW_WINDOW = true;
+</script>
+
+<script type="text/javascript" src="//resources.newhomesource.com/globalresources/widget/js/widget-release-v2.js"></script>
+
+<div class="search-card">
+    
+    <h3>Find New Homes</h3>
+    <p>Search for new home listings near you.</p>
+
+    <form class="card-form home-form-card" action="//www.newhomesource.com/locationhandler" id="nhs_Form">
+        <input type="text" class="form-input" name="searchtext" id="searchtext" placeholder="ZIP, City or County">
+        <select class="form-select" name="state" id="setStateNameDropdownOnNewHomes">
+        </select>
+        <select class="form-select" name="pricelow" id="pricelow">
+            <option value="0">No minimum</option>
+            <option value="100000">$100,000</option>
+            <option value="150000">$150,000</option>
+            <option value="160000">$160,000</option>
+            <option value="170000">$170,000</option>
+            <option value="180000">$180,000</option>
+            <option value="190000">$190,000</option>
+            <option value="200000">$200,000</option>
+            <option value="220000">$220,000</option>
+            <option value="240000">$240,000</option>
+            <option value="260000">$260,000</option>
+            <option value="280000">$280,000</option>
+            <option value="300000">$300,000</option>
+            <option value="325000">$325,000</option>
+            <option value="350000">$350,000</option>
+            <option value="375000">$375,000</option>
+            <option value="400000">$400,000</option>
+            <option value="425000">$425,000</option>
+            <option value="450000">$450,000</option>
+            <option value="475000">$475,000</option>
+            <option value="500000">$500,000</option>
+            <option value="600000">$600,000</option>
+            <option value="700000">$700,000</option>
+            <option value="800000">$800,000</option>
+            <option value="900000">$900,000</option>
+            <option value="1000000">$1,000,000+</option>
+        </select>
+        <select class="form-select" name="pricehigh" id="pricehigh">
+            <option value="0">No maximum</option>
+            <option value="100000">$100,000</option>
+            <option value="150000">$150,000</option>
+            <option value="160000">$160,000</option>
+            <option value="170000">$170,000</option>
+            <option value="180000">$180,000</option>
+            <option value="190000">$190,000</option>
+            <option value="200000">$200,000</option>
+            <option value="220000">$220,000</option>
+            <option value="240000">$240,000</option>
+            <option value="260000">$260,000</option>
+            <option value="280000">$280,000</option>
+            <option value="300000">$300,000</option>
+            <option value="325000">$325,000</option>
+            <option value="350000">$350,000</option>
+            <option value="375000">$375,000</option>
+            <option value="400000">$400,000</option>
+            <option value="425000">$425,000</option>
+            <option value="450000">$450,000</option>
+            <option value="475000">$475,000</option>
+            <option value="500000">$500,000</option>
+            <option value="600000">$600,000</option>
+            <option value="700000">$700,000</option>
+            <option value="800000">$800,000</option>
+            <option value="900000">$900,000</option>
+            <option value="1000000">$1,000,000+</option>
+        </select>
+        <div>
+        <button type="submit" class="search-btn btn btn-primary">SEARCH</button>
+        <p class="powered-by-desc" style="margin-top: 1rem; font-size: 0.9rem; color: #718096;">
+            Powered by <strong>NewHomeSource.com</strong>
+        </p>
+        </div>
+        
+    </form>
+</div>
+
+<!--<form action="//www.newhomesource.com/locationhandler" id="nhs_Form">
+    <div class="service animate-box listing-card ">
+        <div class="cards-icons">🏠</div>
+        <h3>Find New Homes</h3>
+        <p>Search for new home listings near you.</p>
+        <div class="form-group">
+            <span id="formError" class="form__error" style="display: none;">
+                Please enter a Zip
+                code, City or County.
+            </span>
+            <input class="form-control" type="text" name="searchtext" id="searchtext" autocomplete="off" placeholder="ZIP, City, County">
+        </div>
+        <div class="form-group">
+            <div>
+                <select name="state" id="setStateNameDropdownOnNewHomes" class="form-control">-->
+                    
+                <!--</select>
+            </div>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="pricelow" id="pricelow">
+                <option value="0">No minimum</option>
+                <option value="100000">$100,000</option>
+                <option value="150000">$150,000</option>
+                <option value="160000">$160,000</option>
+                <option value="170000">$170,000</option>
+                <option value="180000">$180,000</option>
+                <option value="190000">$190,000</option>
+                <option value="200000">$200,000</option>
+                <option value="220000">$220,000</option>
+                <option value="240000">$240,000</option>
+                <option value="260000">$260,000</option>
+                <option value="280000">$280,000</option>
+                <option value="300000">$300,000</option>
+                <option value="325000">$325,000</option>
+                <option value="350000">$350,000</option>
+                <option value="375000">$375,000</option>
+                <option value="400000">$400,000</option>
+                <option value="425000">$425,000</option>
+                <option value="450000">$450,000</option>
+                <option value="475000">$475,000</option>
+                <option value="500000">$500,000</option>
+                <option value="600000">$600,000</option>
+                <option value="700000">$700,000</option>
+                <option value="800000">$800,000</option>
+                <option value="900000">$900,000</option>
+                <option value="1000000">$1,000,000+</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="pricehigh" id="pricehigh">
+                <option value="0">No maximum</option>
+                <option value="100000">$100,000</option>
+                <option value="150000">$150,000</option>
+                <option value="160000">$160,000</option>
+                <option value="170000">$170,000</option>
+                <option value="180000">$180,000</option>
+                <option value="190000">$190,000</option>
+                <option value="200000">$200,000</option>
+                <option value="220000">$220,000</option>
+                <option value="240000">$240,000</option>
+                <option value="260000">$260,000</option>
+                <option value="280000">$280,000</option>
+                <option value="300000">$300,000</option>
+                <option value="325000">$325,000</option>
+                <option value="350000">$350,000</option>
+                <option value="375000">$375,000</option>
+                <option value="400000">$400,000</option>
+                <option value="425000">$425,000</option>
+                <option value="450000">$450,000</option>
+                <option value="475000">$475,000</option>
+                <option value="500000">$500,000</option>
+                <option value="600000">$600,000</option>
+                <option value="700000">$700,000</option>
+                <option value="800000">$800,000</option>
+                <option value="900000">$900,000</option>
+                <option value="1000000">$1,000,000+</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-0">
+            <input class="btn btn-primary" type="submit" value="Search">
+            <p id="nhsPowered" class="small-text">
+                Powered by
+                <a href="//www.newhomesource.com/" target="_blank" title="New homes for sale, home builders and house plans">NewHomeSource.com</a>
+            </p>
+        </div>
+    </div>
+</form>-->
+
+<script>
+    document.getElementById("nhs_Form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop default form submit
+
+        const zipOrCity = document.getElementById("searchtext").value.trim();
+        const state = document.getElementById("setStateNameDropdownOnNewHomes").value;
+        const priceLow = document.getElementById("pricelow").value;
+        const priceHigh = document.getElementById("pricehigh").value;
+
+        // NewHomeSource retired its partner deep-link (the old
+        // /locationhandler?searchtext=... endpoint now 404s), and it no longer
+        // exposes a public URL that accepts a raw ZIP/city or price filters -
+        // free-text search is now a private JS typeahead. The only reliable
+        // target we can build from the widget's inputs is the state results
+        // page: https://www.newhomesource.com/communities/{stateAbbr}
+        // If no state is chosen we send the user to NHS's own search page so
+        // they can complete the search there instead of hitting a dead link.
+        const utm = "utm_medium=distribution&utm_source=mls.com&utm_campaign=mlscom_disty";
+
+        let url;
+        if (state !== "") {
+            url = `https://www.newhomesource.com/communities/${state.toLowerCase()}?${utm}`;
+        } else {
+            url = `https://www.newhomesource.com/basicsearch?${utm}`;
+        }
+
+        // GA4 event for reporting New Homes search clicks by state (e.g. FL/TX/CA).
+        // "state" is a custom event parameter - it must be registered as a custom
+        // dimension in GA4 (Admin > Custom definitions) before it will show up as
+        // a report/Explore dimension.
+        if (typeof gtag === "function") {
+            gtag('event', 'new_homes_search', {
+                event_category: 'New Homes',
+                event_label: state || 'No State Selected',
+                state: state || 'Unknown',
+                zip_or_city: zipOrCity
+            });
+        }
+
+        // Fire-and-forget health check: the server verifies the NewHomeSource link
+        // and emails an alert if it is broken (e.g. a 404), so we get notified and
+        // can fix it. sendBeacon survives the redirect below, so it adds no delay.
+        try {
+            const fd = new FormData();
+            fd.append("url", url);
+            navigator.sendBeacon("/Search/CheckNewHomesLink", fd);
+        } catch (beaconErr) {
+            console.error("New Homes link check failed to start:", beaconErr);
+        }
+
+        // First call API to log search
+            fetch("/Search/NewHomesSearchLog", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ zipOrCity, state, priceLow, priceHigh })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // After saving in DB, redirect
+                    window.open(url, "_self");
+                })
+                .catch(err => {
+                    console.error("Error saving log:", err);
+                    // Even if DB fails, still redirect
+                    window.open(url, "_self");
+			    });
+            //window.open(url, "_Self");
+    });
+
+    GetStateNamesOnNewHomes();
+
+    function GetStateNamesOnNewHomes() {
+        $.ajax({
+            type: 'POST',
+            url: '/Search/GetStateNames',
+            success: function (states) {
+                setStateNameDropdownOnNewHomes(states)
+            }
+        });
+    }
+
+    function setStateNameDropdownOnNewHomes(states) {
+        $('#setStateNameDropdownOnNewHomes').html('');
+        $.each(states, function (i, state) {
+            $('#setStateNameDropdownOnNewHomes').append(`<option value="${state.Abbr}">${state.Name}</option>`);
+        });
+        $('#setStateNameDropdownOnNewHomes').prepend(`<option value="" selected="">State</option>`);
+    }
+</script>
+
+<script src="https://nhs-static.secure.footprint.net/GlobalResources14/External/js/widget.js?v=2" async></script>
+
+            <script type="text/javascript" src="/Scripts/mls/ForeclosureSearch.js"></script>
+
+<div class="search-card foreclosure-card">
+    <div class="login-container">
+        
+        <button class="login-btn" onclick="window.open('https://mls.foreclosure.com/login.html?referralUrl=/&utm_source=internal&utm_medium=link&utm_campaign=MLS_top_links', '_blank');">
+            LOGIN
+        </button>
+    </div>
+    <h3>Find Foreclosures</h3>
+    <p>Search for foreclosure listings near you.</p>
+
+    <form class="card-form" action="/Foreclosure/Search.mvc" method="post" onsubmit="return doForeclosureSearch();">
+        <div class="form-row">
+            <input type="text" id="foreclosureCity" name="city" class="form-input" placeholder="City" />
+            <select id="foreclosureStateCity" name="stateCity" class="form-select" placeholder="State">
+            </select>
+        </div>
+
+        <div class="row"><div class="col-md-12 text-center spacing">OR</div></div>
+
+        <div class="form-row">
+            <input type="text" name="county" id="foreclosureCounty" class="form-input" placeholder="County" />
+            <select id="foreclosureStateCounty" name="stateCounty" class="form-select">
+            </select>
+        </div>
+
+        <div class="row"><div class="col-md-12 text-center spacing">OR</div></div>
+
+        <input type="text" name="zip" id="foreclosureZip" class="form-input" placeholder="Zip" />
+
+        <button type="submit" class="search-btn">SEARCH</button>
+    </form>
+</div>
+
+<script>
+    GetStateNamesOnforeclosureState();
+
+    function GetStateNamesOnforeclosureState() {
+        $.ajax({
+            type: 'POST',
+            url: '/Search/GetStateNames',
+            success: function (states) {
+                setStateNameDropdownOnforeclosureState(states)
+            }
+        });
+    }
+
+    function setStateNameDropdownOnforeclosureState(states) {
+        $('#foreclosureStateCity').html('');
+        $('#foreclosureStateCounty').html('');
+
+        $.each(states, function (i, state) {
+            $('#foreclosureStateCity').append(`<option value="${state.Abbr}">${state.Name}</option>`);
+        });
+        $('#foreclosureStateCity').prepend(`<option value="" selected="">State</option>`);
+
+        $.each(states, function (i, state) {
+            $('#foreclosureStateCounty').append(`<option value="${state.Abbr}">${state.Name}</option>`);
+        });
+        $('#foreclosureStateCounty').prepend(`<option value="" selected="">State</option>`);
+    }
+</script>
+        </div>
+    </div>
+</section>
+
+<!-- Agent Section
+<section class="main-section">
+    <div class="agent-card">
+        <div class="agent-icon">👥</div>
+        <h2 class="agent-title">Find Real Estate Agents</h2>
+        <p class="agent-description">Discover local experts in your area to help you buy or sell your home.</p>
+        <button class="agent-btn" onclick="TrackingGoogleAnalyticEvent('Find an Agent', 'Partner - Find an Agent');
+                window.open('https://www.realestateagents.com/compare-agents?utm_campaign=textlink&utm_source=mlsdotcom', '_blank');">
+                Find an Agent
+        </button>
+    </div>
+</section> -->
+
+<!-- Agent Section -->
+<section class="agent-section" id="agents">
+    <div class="container">
+        <div class="agent-card">
+            
+            <h2>Find Real Estate Agents</h2>
+            <p>Discover local experts in your area to help you buy or sell your home.</p>
+            <a href="https://www.realestateagents.com/compare-agents?utm_campaign=textlink&utm_source=mlsdotcom" target="_blank" class="cta-button find-agent-button" style="color: #fff; margin-top: 1rem;">FIND AN AGENT</a>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Searches -->
+<section class="popular-searches">
+    <div class="container">
+        <h2 style="color: #2d3748; margin-bottom: 2rem;">Popular Real Estate Searches</h2>
+        <div class="popular-links">
+            <a href="/Search/Georgia/Metro/Atlanta-Area.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'Atlanta');">Atlanta MLS</a>
+            <a href="/Search/Illinois/Metro/Chicago-City-and-Neighborhood.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'Chicago');">Chicago MLS</a>
+            <a href="/Search/Texas/Metro/Dallas-Fort-Worth-Area.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'Dallas');">Dallas MLS</a>
+            <a href="/Search/California/Metro/Los-Angeles-Area.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'Los Angeles');">Los Angeles MLS</a>
+            <a href="/Search/New-York/Metro/NYC-Her-Boroughs.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'New York');">New York MLS</a>
+            <a href="/Search/Florida/Metro/Orlando-Area-Cities.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'Orlando');">Orlando MLS</a>
+            <a href="/Search/California/Metro/San-Diego-Area.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'San Diego');">San Diego MLS</a>
+            <a href="/Search/California/Metro/San-Francisco-Bay-Area-East-Bay.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'San Francisco');">San Francisco MLS</a>
+            <a href="/Search/Washington/Metro/Seattle-Area.mvc" onclick="TrackingGoogleAnalyticEvent('Popular Metro', 'Seattle');">Seattle MLS</a>
+        </div>
+    </div>
+</section>
+
+<!-- States Section -->
+<section class="states-section">
+    <div class="container">
+        <div class="cities-grid cities-grid--5col">
+            <div class="cities-col">
+                <a class="state-link" href="/Search/Alabama.mvc">Alabama MLS</a>
+                <a class="state-link" href="/Search/Alaska.mvc">Alaska MLS</a>
+                <a class="state-link" href="/Search/Arizona.mvc">Arizona MLS</a>
+                <a class="state-link" href="/Search/Arkansas.mvc">Arkansas MLS</a>
+                <a class="state-link" href="/Search/California.mvc">California MLS</a>
+                <a class="state-link" href="/Search/Colorado.mvc">Colorado MLS</a>
+                <a class="state-link" href="/Search/Connecticut.mvc">Connecticut MLS</a>
+                <a class="state-link" href="/Search/Delaware.mvc">Delaware MLS</a>
+                <a class="state-link" href="/Search/District-of-Columbia.mvc">District of Columbia MLS</a>
+                <a class="state-link" href="/Search/Florida.mvc">Florida MLS</a>
+                <a class="state-link" href="/Search/Georgia.mvc">Georgia MLS</a>
+            </div>
+            <div class="cities-col">
+                <a class="state-link" href="/Search/Hawaii.mvc">Hawaii MLS</a>
+                <a class="state-link" href="/Search/Idaho.mvc">Idaho MLS</a>
+                <a class="state-link" href="/Search/Illinois.mvc">Illinois MLS</a>
+                <a class="state-link" href="/Search/Indiana.mvc">Indiana MLS</a>
+                <a class="state-link" href="/Search/Iowa.mvc">Iowa MLS</a>
+                <a class="state-link" href="/Search/Kansas.mvc">Kansas MLS</a>
+                <a class="state-link" href="/Search/Kentucky.mvc">Kentucky MLS</a>
+                <a class="state-link" href="/Search/Louisiana.mvc">Louisiana MLS</a>
+                <a class="state-link" href="/Search/Maine.mvc">Maine MLS</a>
+                <a class="state-link" href="/Search/Maryland.mvc">Maryland MLS</a>
+                <a class="state-link" href="/Search/Massachusetts.mvc">Massachusetts MLS</a>
+            </div>
+            <div class="cities-col">
+                <a class="state-link" href="/Search/Michigan.mvc">Michigan MLS</a>
+                <a class="state-link" href="/Search/Minnesota.mvc">Minnesota MLS</a>
+                <a class="state-link" href="/Search/Mississippi.mvc">Mississippi MLS</a>
+                <a class="state-link" href="/Search/Missouri.mvc">Missouri MLS</a>
+                <a class="state-link" href="/Search/Montana.mvc">Montana MLS</a>
+                <a class="state-link" href="/Search/Nebraska.mvc">Nebraska MLS</a>
+                <a class="state-link" href="/Search/Nevada.mvc">Nevada MLS</a>
+                <a class="state-link" href="/Search/New-Hampshire.mvc">New Hampshire MLS</a>
+                <a class="state-link" href="/Search/New-Jersey.mvc">New Jersey MLS</a>
+                <a class="state-link" href="/Search/New-Mexico.mvc">New Mexico MLS</a>
+                <a class="state-link" href="/Search/New-York.mvc">New York MLS</a>
+            </div>
+            <div class="cities-col">
+                <a class="state-link" href="/Search/North-Carolina.mvc">North Carolina MLS</a>
+                <a class="state-link" href="/Search/North-Dakota.mvc">North Dakota MLS</a>
+                <a class="state-link" href="/Search/Ohio.mvc">Ohio MLS</a>
+                <a class="state-link" href="/Search/Oklahoma.mvc">Oklahoma MLS</a>
+                <a class="state-link" href="/Search/Oregon.mvc">Oregon MLS</a>
+                <a class="state-link" href="/Search/Pennsylvania.mvc">Pennsylvania MLS</a>
+                <a class="state-link" href="/Search/Rhode-Island.mvc">Rhode Island MLS</a>
+                <a class="state-link" href="/Search/South-Carolina.mvc">South Carolina MLS</a>
+                <a class="state-link" href="/Search/South-Dakota.mvc">South Dakota MLS</a>
+                <a class="state-link" href="/Search/Tennessee.mvc">Tennessee MLS</a>
+                <a class="state-link" href="/Search/Texas.mvc">Texas MLS</a>
+            </div>
+            <div class="cities-col">
+                <a class="state-link" href="/Search/Utah.mvc">Utah MLS</a>
+                <a class="state-link" href="/Search/Vermont.mvc">Vermont MLS</a>
+                <a class="state-link" href="/Search/Virginia.mvc">Virginia MLS</a>
+                <a class="state-link" href="/Search/Washington.mvc">Washington MLS</a>
+                <a class="state-link" href="/Search/West-Virginia.mvc">West Virginia MLS</a>
+                <a class="state-link" href="/Search/Wisconsin.mvc">Wisconsin MLS</a>
+                <a class="state-link" href="/Search/Wyoming.mvc">Wyoming MLS</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Info Section -->
+<section class="info-section">
+    <div class="container">
+        <div class="info-content">
+            <h2>What is MLS.com®?</h2>
+            <p>
+                MLS.com® is a free MLS search to find real estate listings for sale by Realtors® and other realty professionals
+                that are members of your local MLS Multiple Listing Service. MLS.com® also features foreclosures, new
+                construction, international properties and real estate classes.
+            </p>
+            <p>
+                Find homes for sale, new homes and resale homes, new construction, acreage, lots, land, commercial properties
+                and investment properties. MLS.com is independently owned and operated and is not affiliated with any of the
+                over 900 local MLS systems. On MLS.com you can list your properties and reach our global audience.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+        // Open dropdown
+        $('#dropdownSearch').on('click', function (e) {
+            $('#dropdownContent').show();
+            e.stopPropagation();
+        });
+
+        // Prevent closing inside
+        $('#dropdown').on('click', function (e) {
+            e.stopPropagation();
+        });
+
+        // Close outside
+        $(document).on('click', function () {
+            $('#dropdownContent').hide();
+        });
+
+        // Handle selection click
+        $('.dropdown-content a').on('click', function (e) {
+            e.preventDefault();
+
+            let text = $(this).text();
+            let url = $(this).attr('href');
+
+            $('#dropdownSearch')
+                .val(text)
+                .data('url', url);
+
+            $('#dropdownContent').hide();
+        });
+
+        //  Live search
+        $('#dropdownSearch').on('input', function () {
+            let value = $(this).val().toLowerCase();
+            let visibleItems = [];
+
+            $('.dropdown-content a').each(function () {
+                let text = $(this).text().toLowerCase();
+
+                if (text.includes(value) && value !== "") {
+                    $(this).show();
+                    visibleItems.push(this);
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            // If exactly ONE match → auto select its URL
+            if (visibleItems.length === 1) {
+                let item = $(visibleItems[0]);
+                $('#dropdownSearch').data('url', item.attr('href'));
+            } else {
+                // Otherwise clear selection
+                $('#dropdownSearch').removeData('url');
+            }
+        });
+
+        // Navigate
+        $('#searchBtn').on('click', function () {
+            let url = $('#dropdownSearch').data('url');
+
+            if (url) {
+                showLoader();
+                window.location.href = url;
+            }
+        });
+
+    });
+</script>
+
+            <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="/Home/About.mvc">About Us</a></li>
+                <li><a href="/Home/Contact.mvc">Contact Us</a></li>
+                <li><a href="/Home/PrivacyPolicy.mvc">Privacy Policy</a></li>
+                <li><a href="/Home/TermsOfUse.mvc">Terms of Use</a></li>
+                <li><a href="/Sitemap.html">Site Map</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Property Search</h3>
+            <ul>
+                <li><a href="/ForeclosureListings/">Find Foreclosures</a></li>
+                <li><a href="https://www.newhomesource.com?refer=mlscom" target="_blank" onclick="TrackingGoogleAnalyticEvent('New Homes Menu', 'New Homes Partner');">Find New Homes</a></li>
+                <li><a href="https://www.realestateagents.com/compare-agents?utm_campaign=textlink&utm_source=mlsdotcom" target="_blank" onclick="TrackingGoogleAnalyticEvent('Find an Agent', 'Partner - Find an Agent');">Find An Agent</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Resources</h3>
+            <ul>
+                <li><a id="bookmarkme" href="">Bookmark This Site</a></li>
+                <li><a href="https://mls.theceshop.com/real-estate" target="_blank" onclick="TrackingGoogleAnalyticEvent('Real Estate Classes', 'Real Estate Education');">Education</a></li>
+                <li><a href="/Home/Glossary.mvc">Glossary</a></li>
+                <li><a href="/Home/BuyerSellerInfo.mvc">Seller/Buyer Info</a></li>
+                <li><a href="//www.hud.gov/program_offices/fair_housing_equal_opp" target="_blank">Fair Housing</a></li>
+            </ul>
+        </div>
+        <div class="footer-section about-footer-section">
+            <h3>About MLS</h3>
+            <p>
+                Multiple Listing Network<sup>&reg;</sup> is the parent company of and DBA MLS.com<sup>&reg;</sup>.
+                Multiple Listing Network<sup>&reg;</sup> is an independently owned and operated Real Estate
+                Advertising and Listing Service Company for real estate firms and other real estate related entities.
+                MLS.com is independently owned and operated and is not affiliated with any of the over 900 local MLS systems.
+                Your use of this web site constitutes your acceptance of our
+                <a href="/Home/PrivacyPolicy.mvc">Privacy Policy</a> and <a href="/Home/TermsOfUse.mvc">Terms of Use</a>.
+                Multiple Listing Network<sup>&reg;</sup> and "MLS.com America's Real Estate Portal" are federally registered Servicemarks.
+            </p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>
+            Multiple Listing Network Copyright 1991 - 2026 |
+            MLS.com America's Real Estate Portal Copyright 2007 - 2026. <br />All Rights Reserved.
+        </p>
+        <!-- DigiCert Seal HTML -->
+        <div class="seal-container">
+            <div id="DigiCertClickID_Ue4bZrKd"></div>
+        </div>
+    </div>
+</footer>
+
+<!-- DigiCert Seal Code -->
+<script type="text/javascript">
+    var __dcid = __dcid || [];
+    __dcid.push({ "cid": "DigiCertClickID_Ue4bZrKd", "tag": "Ue4bZrKd" });
+    (function () { var cid = document.createElement("script"); cid.async = true; cid.src = "//seal.digicert.com/seals/cascade/seal.min.js"; var s = document.getElementsByTagName("script"); var ls = s[(s.length - 1)]; ls.parentNode.insertBefore(cid, ls.nextSibling); }());
+</script>
+        </div>
+    </div>
+    <script src="/Scripts/main.js"></script>
+    <script src="/Scripts/jquery/jquery.easing.1.3.js"></script>
+<script src="/Scripts/jquery/jquery.waypoints.min.js"></script>
+<script src="/Scripts/jquery/jquery.stellar.min.js"></script>
+<script src="/Scripts/jquery/jquery.magnific-popup.min.js"></script>
+
+    <script src="/Scripts/module/bundle.module.min.js"></script>
+
+    <script src="/Scripts/mls/bundle.mls.min.js"></script>
+
+
+    
+    <div id="hitsLink"></div>
+    <script type="text/javascript" src="/Scripts/hits_link.js"></script>
+    <noscript>
+        <div>
+            <img style="border: none;" width="1" height="1" alt="" src="//counter.hitslink.com/stats-ns.asp?acct=mlscom&amp;v=1&amp;s=24" />
+        </div>
+    </noscript>
+    
+</body>
+</html>

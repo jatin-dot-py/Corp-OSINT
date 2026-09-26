@@ -1,0 +1,330 @@
+                                                       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8">
+	<title>Raunaq International</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css" /><!--top nevi start-->
+	<link href="css/top-nevi.css" rel="stylesheet" type="text/css" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script type="text/javascript" src="js/top-nevi.js"></script><script type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu1", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+</script><!--top nevi end--><!--slider start-->
+	<link href="css/estilos.css" media="all" rel="stylesheet" type="text/css" /><script type="text/javascript" src="js/mootools.v1.11.js"></script><script type="text/javascript" src="js/cufon-yui.js"></script><!--slider end--><script type="text/javascript">
+                window.addEvent('domready',function(){
+                    var num_imagenes = 2;
+                    var imagen_actual = 1;
+                    var imagen_sig = 1;
+                    intervalo=setInterval(function(){
+                                                if (imagen_actual==num_imagenes){
+                                                    imagen_sig=1;
+                                                }else{
+                                                    imagen_sig = parseInt(parseInt(imagen_actual) + 1);
+                                                }
+                                                cambiaMega(String(imagen_sig));
+                                            }
+                        ,4000);
+                    
+                    $$('.mini_cover').each(function(el){
+                        el.addEvent('click',function(){
+                          clearInterval(intervalo);
+                          cambiaMega(el.id);   
+                        });
+                    });
+                    function cambiaMega(id){
+                        if (imagen_actual != id.replace('miniatura','')){
+                            posicion_triangulo_actual = 25+73*(imagen_actual-1) + 4*(imagen_actual-1);
+                            $('miniatura'+imagen_actual).removeClass('seleccionada');
+                            //var myFx = new Fx.Style($('cover'+imagen_actual), 'opacity').start(1,0);
+                            $('cover'+imagen_actual).effect('opacity', {duration: 800, transition: Fx.Transitions.Quad.easeInOut}).start(1,0);
+                            imagen_actual = id.replace('miniatura','');
+                            //var myFx = new Fx.Style($('cover'+imagen_actual), 'opacity').start(0,1);
+                            $('cover'+imagen_actual).effect('opacity', {duration: 800, transition: Fx.Transitions.Quad.easeInOut}).start(0,1);
+    		                $('miniatura'+imagen_actual).addClass('seleccionada');
+                            $$('#tit_miniaturas_portada').setHTML($('miniatura'+imagen_actual).getProperty('alt'));
+                            Cufon.replace('#tit_miniaturas_portada', { fontFamily: 'FranklinGothicDemiCond', hover: true });
+                            posicion_triangulo_nueva = 25+73*(imagen_actual-1) + 4*(imagen_actual-1);
+                            //$('foto_marcada').setStyle('left',posicion_triangulo+'px');
+                            $('foto_marcada').effect('left', {duration: 800, transition: Fx.Transitions.Quad.easeInOut}).start(posicion_triangulo_actual,posicion_triangulo_nueva);
+                        }                        
+                    }
+                })
+</script><script type="text/javascript" src="js/crawler.js"></script>
+</head>
+<body>
+<div id="top">
+<div id="covers_home">
+<div class="cover_home" id="cover1" style="visibility: visible; background-image: url(images/slide01.jpg)"><img alt="" src="images/trans.gif" /></div>
+
+<div class="cover_home" id="cover2" style="background-image: url(images/slide02.jpg)"><img alt="" src="images/trans.gif" /></div>
+
+<div class="cover_home" id="cover3" style="background-image: url(images/slide03.jpg)"><img alt="" src="images/trans.gif" /></div>
+</div>
+</div>
+
+<div id="top_centrado">
+<div id="cont_miniaturas_portada">
+<div id="miniaturas_portada">
+<div id="imgs">
+<div class="marco_mini"><img alt="1" class="mini_cover" height="1" id="miniatura1" src="images/trans.gif" width="1" /></div>
+
+<div class="marco_mini"><img alt="2" class="mini_cover seleccionada" height="1" id="miniatura2" src="images/trans.gif" width="1" /></div>
+<img alt="" id="foto_marcada" src="images/trans.gif" style="position: absolute; left: 25px;" /></div>
+</div>
+</div>
+</div>
+
+<div id="wrapper">
+<div id="wrapper-container">
+<div id="nav">
+<div class="logo"><a href="index.html"><img src="images/logo-new.jpg" /></a></div>
+
+<div class="navigation">
+<div class="ddsmoothmenu" id="smoothmenu1">
+<ul>
+	<li><a href="index.html">HOME</a></li>
+	<li><a href="#">CORPORATE</a>
+	<ul>
+		<li><a href="company-profile.html">Company Profile</a></li>
+		<li><a href="#">Management</a>
+		<ul>
+			<li><a href="core-team.html">Core Team</a></li>
+			<li><a href="board-directors.html">Board of Directors</a></li>
+		</ul>
+		</li>
+		<li><a href="message-from-chairman.html">Message From Chairman</a></li>
+		<li><a href="quality.html">Quality &amp; HSE</a></li>
+		<li><a href="social-responsibility.html">Social Responsibility</a></li>
+		<!--<li><a href="pdf/policy-on-prevention-of-sexual-harassment-ril.pdf" target="_blank">Policy on prevention of sexual harassment</a></li>--><!--<li><a href="pdf/corporate-social-responsibility-policy.pdf" target="_blank">Corporate Social Responsibility (CSR) Policy</a></li>--><!--<li><a href="pdf/corporate-social-responsibility-policy-20-01-2015.pdf" target="_blank">Corporate Social Responsibility (CSR) Policy</a></li>
+ <li><a href="pdf/policy-on-material-subsidiary.pdf"target="_blank">Policy on Material Subsidiary(ies)</a></li>
+ <li><a href="pdf/related-party-transaction-policy.pdf" target="_blank">Related Party Transactions Policy</a></li>-->
+	</ul>
+	</li>
+	<li><a href="#">PROJECTS</a>
+	<ul>
+		<li><a href="cross-country.html">Cross Country Piping</a></li>
+		<li><a href="epc-contracts.html">EPC Contracts Multi Disciplinary</a></li>
+		<li><a href="power-station.html">Power Station Piping</a></li>
+		<li><a href="hydrocarbon-industrial.html">Hydrocarbon &amp; Industrial Utility Piping </a></li>
+		<li><a href="civil.html">Civil</a></li>
+		<li><a href="photogallery.html">Photo Gallery</a></li>
+	</ul>
+	</li>
+	<li><a href="#">INVESTORS</a>
+	<ul>
+		<li><a href="integrated-filing.html">Integrated Filing</a></li>
+<li><a href="financial-results.html">Financial Results</a></li>
+		<li><a href="related-party-transactions.html">Related Party Transactions</a></li>
+		<li><a href="annual-report.html">Annual Report</a></li>
+		<li><a href="annual-returns.html">Annual Returns</a></li>
+		<li><a href="shareholding-pattern.html">Shareholding Pattern</a></li>
+		<li><a href="announcement-under-regulation-30-(LODR).html">Announcement under Regulation 30 (LODR)</a></li>
+<li><a href="newspaper-publications.html">Newspaper Publications</a></li>
+<li><a href="notice-of-meetings.html">Notice of Meetings </a></li>
+		<!--<li><a href="code-of-conduct.html">Code of Conduct</a></li>-->
+		 <li><a href="corporate-governance.html">Corporate Governance</a></li>
+ <!-- <li><a href="pdf/notice-of-57th-agm.pdf" target="_blank">Notice of 57<sup>th</sup> AGM</a></li> -->
+
+
+<li><a href="pdf/notice-of-61st-agm.pdf" target="_blank">Notice of 61st AGM</a></li>
+<li><a href="pdf/inspection-documents-61st-agm.pdf" target="_blank">Inspection Documents 61st AGM</a></li>
+ <li><a href="pdf/voting-results-of-61st-agm.pdf" target="_blank">Voting Results of 61st AGM</a></li>
+<li><a href="pdf/agm-transcript.pdf" target="_blank">AGM - Speeches & Transcripts</a></li>
+<li><a href="annual-general-meeting-recordings.html">Annual General Meeting Recordings </a></li>
+		
+		<li><a href="corporate-announcement.html">Corporate Announcement</a></li>
+		<!--<li><a href="forms.html">Forms</a></li>--><!--<li><a href="pdf/green-initiative-raunaq-international-limited.pdf" target="_blank">Green Initiative in Corporate Governance</a></li>--><!--<li><a href="unclaimed-dividend.html">Unclaimed Dividend</a></li>-->
+		<li><a href="pdf/information-memorandum.pdf" target="_blank">Information Memorandum</a></li><!-- <li><a href="pdf/notice-of-55th-AGM.pdf" target="_blank">Notice of 55<sup>th</sup> AGM</a></li> -->    <!-- <li><a href="pdf/inspection-documents-55th-AGM.pdf" target="_blank">Inspection Documents- 55<sup>th</sup> AGM</a></li> -->
+		<!--<li><a href="appointment-letters-independent-directors.html">Appointment Letters-Independent Directors</a></li>--><!--    <li><a href="pdf/notice-of-53rd-AGM.pdf" target="_blank">Notice of 53<sup>rd</sup> AGM</a></li>-->
+		<!-- <li><a href="pdf/voting-results-of-55th-AGM.pdf" target="_blank">Voting Results of 55<sup>th</sup> AGM</a></li> -->
+		<li><a href="xlerate-driveline-annual-reports.html">Xlerate Driveline India Limited (WoS)</a></li>
+<li><a href="formats-for-kyc.html">Formats for KYC</a></li>
+<li><a href="pdf/form-isr-4.pdf" target="_blank">Form ISR-4</a></li>
+<li><a href="secretarial-compliance-report-under-regulation-24-a.html">Secretarial Compliance Report under Regulation 24(A)</a></li>
+<li><a href="credit-ratings.html">Credit Ratings</a></li>
+<li><a href="policies.html">Policies</a></li>
+<li><a href="details-of-unclaimed-dividend-and-iepf.html">Details of Unclaimed Dividend and IEPF</a></li>
+<li><a href="grievance-redressal.html">E-mail Address – Grievance Redressal</a></li>
+<li><a href="investors-grievances.html">Designated Officials – Investor Grievances</a></li>
+<li><a href="kmps-materiality-of-events.html">KMPs – Materiality of Events </a></li>
+		<li><a href="postal-ballot-updates.html" target="_blank">Postal Ballot Updates</a></li>
+<li><a href="pdf/memorandum-and-articles-of-association.pdf" target="_blank">Memorandum and Articles of Association</a></li>
+	</ul>
+	</li>
+	<li><a href="clients.html">CLIENTS</a></li>
+	<li style="border-right:none;"><a href="#">CONTACT US</a>
+	<ul>
+		<li><a href="business-enquiries.html">Business Enquiries</a></li>
+		<li><a href="careers-ril.html">Careers @ RIL</a></li>
+		<li><a href="supply-us.html">Supply to Us</a></li>
+		<li><a href="locations.html">Locations</a></li>
+		<li><a href="#">Driving Directions to RIL</a>
+		<ul>
+			<li><a href="railway-station.html">From Railway Station</a></li>
+			<li><a href="airport.html">From Airport</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="what-new">
+<p><img src="images/whats-new-heading.png" style="padding-bottom:17px;" /></p>
+
+<h1>What&rsquo;s New</h1>
+
+<div class="what-new">
+<ul>
+    
+    <li><a href="pdf/annual-report-2025-26.pdf" target="_blank">Annual Report 2025-26</a></li>
+	<li><a href="pdf/notice-of-61st-agm.pdf" target="_blank">Notice of 61<sup>th</sup> AGM </a></li>
+	<li><a href="pdf/inspection-documents-61st-agm.pdf" target="_blank">Inspection Documents 61<sup>st</sup> AGM</a></li>
+	<li><a href="pdf/voting-results-of-61st-agm.pdf" target="_blank">Voting Results of 61<sup>st</sup> AGM</a></li>
+	<!-- <li><a href="pdf/addendum-to-the-notice-of-the-59th-annual-general-meeting.pdf" target="_blank">Addendum to the Notice of the 59<sup>th</sup> Annual General Meeting </a></li> -->
+	
+    
+    
+	
+	
+	<!--<li><a href="https://www.raunaqinternational.com/corporate-announcement.html" target="_blank">Board Meeting Notice </a></li>-->
+	
+	
+	
+	<!--<li><a href="pdf/Details-of-Shares-to-be-transferred-into-IEPF-during-FY-2020-21.xlsx" target="_blank">Details of Shares to be transferred into IEPF in 2020-21 </a></li>-->
+	<!--<li><a href="pdf/Shareholding-Pattern-as-on-31st-March-2020.pdf" target="_blank">Shareholding Pattern as on 31st March, 2020</a></li>-->
+	<!--<li><a href="pdf/Corporate-Governance-Report-for-the-Quarter-ended-31st-March-2020.pdf" target="_blank">Corporate Governance Report for the Quarter ended March 31, 2020</a></li>-->
+	<!--  <li><a href="pdf/details-of-shares-to-be-transferred-into-IEPF acc.xls" target="_blank">Details of Shares actually transferred into IEPF in 2019-20 </a></li>   -->
+	<!--<li><a href="pdf/financial-results-31-12-2019.pdf" target="_blank">Standalone Un-audited financial results for the Quarter and Half Year ended 31<sup>st</sup> December, 2019 </a></li>-->
+	<!--  <li><a href="pdf//2019/shareholding-pattern-31-12-2019.pdf" target="_blank">Shareholding Pattern as on 31st December, 2019</a></li> --><!--<li><a href="pdf/financial-results-30-09-2018.pdf" target="_blank">Standalone Un-audited financial results for the Quarter and Half Year ended 30<sup>th</sup> September, 2018 </a></li> --><!-- <li><a href="pdf/2018/shareholding-pattern-30-09-2018.pdf" target="_blank">Shareholding Pattern as on 30th September, 2018</a></li>--><!-- <li><a href="pdf/corporate-governance-report/2019-2020/corporate-governance-report-31-12-2019.pdf" target="_blank">Corporate Governance Report for the Quarter ended December 31, 2019</a></li> --><!-- <li><a href="pdf/corporate-governance-report/2018-2019/corporate-governance-report-30-09-2018.pdf" target="_blank">Corporate Governance Report for the Quarter ended September 30, 2018</a></li>--><!-- <li><a href="pdf/financial-results-30-06-2018.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter ended 30<sup>th</sup> June, 2018</a></li> --><!--<li><a href="pdf/2018/shareholding-pattern-30-06-2018.pdf" target="_blank">Shareholding Pattern as on 30th June, 2018</a></li>--><!--<li><a href="pdf/financial-results-31-03-2018.pdf" target="_blank">Standalone and Consolidated Audited financial results for the Quarter and year ended 31<sup>st</sup> March, 2018</a></li>--><!--<li><a href="corporate-announcement.html">Company Notice</a></li>--><!--<li><a href="pdf/2018/shareholding-pattern-31-03-2018.pdf" target="_blank">Shareholding Pattern as on 31st March, 2018</a></li>--><!--<li><a href="pdf/corporate-governance-report/2018-2019/corporate-governance-report-31-03-2018.pdf" target="_blank">Corporate Governance Report for the Quarter ended March 31, 2018</a></li>--><!--<li><a href="pdf/details-of-familiarization-programme-for-independent-directors-2017-2018.pdf" target="_blank">Details of Familiarization Programme For Independent Directors (FY 17-18)</a></li>--><!--<li><a href="pdf/2017/shareholding-pattern-31-12-2017.pdf" target="_blank">Shareholding Pattern as on 31st December, 2017</a></li>--><!--<li><a href="pdf/corporate-governance-report/2017-2018/corporate-governance-report-31-12-2017.pdf" target="_blank">Corporate Governance Report for the Quarter ended December 31, 2017</a></li>--><!--<li><a href="pdf/corporate-governance-report/2017-2018/corporate-governance-report-30-09-2017.pdf"target="_blank">Corporate Governance Report for the Quarter ended September 30, 2017</a></li>--><!--<li><a href="pdf/2017/shareholding-pattern-30-09-2017.pdf" target="_blank">Shareholding Pattern as on 30th September, 2017</a></li>--><!--<li><a href="pdf/voting-results-AGM-02-08-2018.pdf" target="_blank">Voting Results of 53<sup>rd</sup> AGM</a></li>--><!--<li><a href="pdf/2017/shareholding-pattern-30-06-2017.pdf" target="_blank">Shareholding Pattern as on 30th June, 2017</a></li>--><!--<li><a href="pdf/corporate-governance-report/2017-2018/corporate-governance-report-30-06-2017.pdf" target="_blank">Corporate Governance Report for the Quarter ended June 30, 2017</a></li>--><!--<li><a href="pdf/corporate-governance-report/2017-2018/corporate-governance-report-2016-2017.pdf" target="_blank">Corporate Governance Report for the Year ended March 31, 2017</a></li>--><!--<li><a href="pdf/annual-report-2016-2017.pdf" target="_blank">Annual Report 2016-2017</a></li>--><!--<li><a href="pdf/financial-results-31-03-2017.pdf" target="_blank">Standalone and Consolidated Audited financial results for the Quarter and year ended 31<sup>st</sup> March, 2017</a></li>--><!--<li><a href="corporate-announcement.html">Company Notice</a></li>
+           <li><a href="pdf/2017/shareholding-pattern-31-03-2017.pdf" target="_blank">Shareholding Pattern as on 31st March, 2017</a></li>--><!--<li><a href="pdf/corporate-governance-report/2017-2018/corporate-governance-report-31-03-2017.pdf" target="_blank">Corporate Governance Report for the Quarter ended March 31, 2017</a></li>
+           <li><a href="pdf/details-of-familiarization-programme-for-independrent-director-FY-16-17.pdf" target="_blank">Details of Familiarization Programme For Independent Directors (FY 16-17) </a></li>--><!--<li><a href="pdf/financial-results-31-12-2016.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter and Nine Months ended 31<sup>st</sup> December, 2016 </a></li>--><!--<li><a href="pdf/2016/shareholding-pattern-31-12-2016.pdf" target="_blank">Shareholding Pattern as on 31st December, 2016</a></li>
+           <li><a href="pdf/corporate-governance-report/2016-2017/corporate-governance-report-31-12-2016.pdf" target="_blank">Corporate Governance Report for the Quarter ended December 31, 2016</a></li>--><!--<li><a href="pdf/financial-results-30-09-2016.pdf" target="_blank">Standalone Un-audited financial results for the Quarter and Six Months ended 30<sup>th</sup> September, 2016 </a></li>--><!--<li><a href="pdf/corporate-governance-report/2016-2017/corporate-governance-report-30-09-2016.pdf"target="_blank">Corporate Governance Report for the Quarter ended September 30, 2016</a></li>--><!--<li><a href="pdf/2016/shareholding-pattern-30-09-2016.pdf" target="_blank">Shareholding Pattern as on 30th September, 2016</a></li>--><!--<li><a href="corporate-announcement.html">Company Notice</a></li>--><!--<li><a href="pdf/voting-results-of-51st-agm.pdf" target="_blank">Voting Results of 51st AGM</a></li>--><!-- <li><a href="pdf/financial-results-30-06-2016.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter ended 30<sup>th</sup> June, 2016</a></li>--><!-- <li><a href="pdf/2016/shareholding-pattern-30-06-2016.pdf" target="_blank">Shareholding Pattern as on 30th June, 2016</a></li>
+          <li><a href="pdf/corporate-governance-report/2016-2017/corporate-governance-report-30-06-2016.pdf" target="_blank">Corporate Governance Report for the Quarter ended June 30, 2016</a></li>--><!-- <li><a href="pdf/corporate-governance-report/2015-2016/corporate-governance-report.pdf" target="_blank">Corporate Governance Report for the Year ended March 31, 2016</a></li>--><!--<li><a href="pdf/notice-of-53rd-AGM.pdf" target="_blank">Notice of 53<sup>rd</sup> AGM</a></li>   <li><a href="pdf/voting-results-of-55th-AGM.pdf" target="_blank">Voting Results of 55<sup>th</sup> AGM</a></li>--><!--<li><a href="pdf/annual-report-2015-16.pdf" target="_blank">Annual Report 2015-2016</a></li>--><!--<li><a href="pdf/financial-results-31-03-2016.pdf" target="_blank">Standalone and Consolidated Audited financial results for the Quarter and year ended 31<sup>st</sup> March, 2016</a></li>--><!-- <li><a href="pdf/2016/shareholding-pattern-31-03-2016.pdf" target="_blank">Shareholding Pattern as on 31st March, 2016</a></li>--><!--<li><a href="pdf/corporate-governance-report/2015-2016/corporate-governance-report-31-03-2016.pdf" target="_blank">Corporate Governance Report for the Quarter ended March 31, 2016 </a></li>
+        <li><a href="pdf/details-of-familarisation-programme-for-independent-directors-15-16.pdf" target="_blank">Details of Familarisation Programme For Independent Directors (FY 15-16)</a></li>--><!--<li><a href="pdf/2015/shareholding-pattern-31-12-2015.pdf" target="_blank">Shareholding Pattern as on 31st December, 2015</a></li>--><!--<li><a href="pdf/financial-results-31-12-2015.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter and Nine Months ended 31<sup>st</sup> December, 2015</a></li>--><!--<li><a href="corporate-announcement.html">Company Notice</a></li>--><!-- <li><a href="pdf/corporate-governance-report/2015-2016/corporate-governance-report-31-12-2015.pdf" target="_blank">Corporate Governance Report for the Quarter ended December 31, 2015</a></li>--><!--<li><a href="pdf/policy-on-criteria-for-determining-materiality-of-events.pdf" target="_blank">Policy on Criteria for Determining Materiality of Events</a></li>--><!--<li><a href="pdf/policy-on-preservation-of-documents-archival-policy-on-website-disclosure.pdf" target="_blank">Policy on Preservation of Documents/Archival Policy on Website Disclosure</a></li>--><!--<li><a href="pdf/financial-results-30-09-2015.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter and half year ended 30<sup>th</sup> September, 2015</a></li>--><!--<li><a href="pdf/terms-of-appointment-independent-directors.pdf" target="_blank">Terms of Appointment of Independent Directors </a></li>--><!--<li><a href="pdf/code-of-business-conduct-and-ethics-or-the-code.pdf" target="_blank">Code of Business Conduct and Ethics or The Code</a></li>
+        <li><a href="pdf/agm-proceedings-ril-30-07-2015.pdf" target="_blank">Results of 50<sup>th</sup> Annual General Meeting (30<sup>th</sup> July, 2015)</a></li>--><!--<li><a href="pdf/financial-result-june-2015-2016.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter ended 30<sup>th</sup> June, 2015</a></li>--><!--<li><a href="corporate-announcement.html">Notice of Board Meeting</a></li>--><!--<li><a href="pdf/corporate-governance-report/2014-2015/corporate-governance-report-2014-15.pdf" target="_blank">Corporate Governance Report for the Year ended March 31, 2015</a>
+        </li>--><!--<li><a href="pdf/corporate-governance-report/2015-2016/corporate-governance-report-30-06-2015.pdf" target="_blank">Corporate Governance Report 30<sup>th</sup> June 2015</a>
+        </li>--><!-- <li><a href="pdf/2015/shareholding-pattern-30-06-2015.pdf" target="_blank">Shareholding Pattern 30<sup>th</sup> June 2015</a></li>--><!--<li><a href="corporate-announcement.html">AGM &amp; E-Voting Notice</a></li>--><!--<li><a href="pdf/annual-report-2014-15.pdf" target="_blank">Annual Report 2014-2015</a></li>--><!--<li><a href="pdf/ril-agm-notice-2014-15.pdf" target="_blank">Notice of 50<sup>th</sup> AGM</a></li>--><!--<li><a href="pdf/postal-ballot-results-and-scutinizer-report.pdf" target="_blank">Result of Postal Ballot-March 2015</a></li>
+        <li><a href="pdf/corporate-governance-report-2014-2015-corporate-governance-report-31-03-2015.pdf" target="_blank">Corporate Governance Report for the Quarter ended March 31, 2015</a>        </li>--><!--<li><a href="pdf/2015/shareholding-pattern-31-03-2015.pdf" target="_blank">Shareholding Pattern as on 31st March, 2015</a></li>--><!--<li><a href="pdf/policy-on-material-subsidiary.pdf"target="_blank">Policy on Material Subsidiary(ies)</a></li>
+         <li><a href="pdf/related-party-transaction-policy.pdf" target="_blank">Related Party Transactions Policy</a></li>--><!--<li><a href="pdf/corporate-social-responsibility-policy-20-01-2015.pdf" target="_blank">Corporate Social Responsibility (CSR) Policy
+        </a></li>--><!--<li><a href="pdf/un-audited-financial-results-30-09-2014.pdf" target="_blank">Unaudited Financial Results for the quarter and six months ended 30<sup>th</sup> September, 2014</a></li>--><!--<li><a href="unclaimed-dividend.html">Unclaimed Dividend as on the Date of Last AGM</a></li>--><!--<li><a href="pdf/2014/shareholding-pattern-30-09-2014.pdf" target="_blank">Shareholding Pattern as on 30th September, 2014</a></li>--><!--<li><a href="pdf/scrutinizer-report-and-agm-results.pdf" target="_blank">Results of 49<sup>th</sup> Annual General Meeting (29<sup>th</sup> August, 2014)</a></li>
+        <li><a href="pdf/agm-notice-ril.pdf" target="_blank">Notice of 49<sup>th</sup> AGM</a></li>--><!--<li style="border-bottom:none;"><a href="pdf/annual-report-2013-14.pdf" target="_blank">Annual Report 2013-2014</a></li>--><!--<li><a href="pdf/financial-result-june-2014.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter ended 30<sup>th</sup> June, 2014</a></li>--><!--<li><a href="pdf/corporate-governance-report/2014-2015/corporate-governance-report-30-06-2014.pdf" target="_blank">Corporate Governance Report for the Quarter ended June 30, 2014</a></li>--><!--<li><a href="pdf/2014/shareholding-pattern-30-06-2014.pdf" target="_blank">Shareholding Pattern as on 30th June, 2014</a></li>--><!--<li><a href="pdf/policy-on-vigil-mechanism.pdf" target="_blank">Policy on Vigil Mechanism</a></li>--><!--<li><a href="pdf/financial-result-mar-2014.pdf" target="_blank">Standalone and Consolidated Audited Financial Results for the year ended 31<sup>st</sup> March, 2014</a></li>--><!--<li><a href="pdf/corporate-governance-report/2013-2014/corporate-governance-report-31-03-2014.pdf" target="_blank">Corporate Governance Report for the Quarter ended March 31, 2014</a></li>--><!--        <li><a href="pdf/2014/shareholding-pattern-31-03-2014.pdf" target="_blank">Shareholding Pattern as on 31st March, 2014</a></li>        --><!--<li><a href="pdf/financial-result-dec-2013.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter ended 31st December, 2013 </a></li>--><!--<li><a href="corporate-announcement.html">Corporate Announcement</a></li>--><!--<li><a href="pdf/2013/shareholding-pattern-31-12-2013.pdf" target="_blank">Shareholding Pattern as on 31st December, 2013</a></li>--><!--<li><a href="pdf/satandalone-un-audited-financial-results-september-2013.pdf" target="_blank">Standalone Unaudited Financial Results for the Quarter ended 30th September, 2013</a></li>--><!--<li><a href="pdf/2013/shareholding-pattern-30-09-2013.pdf" target="_blank">Shareholding Pattern as on 30th September, 2013</a></li>--><!--<li><a href="pdf/corporate-governance-report-2013.pdf" target="_blank">Corporate Governance for the year ended March 31, 2013 </a></li>
+        <li><a href="pdf/annual-report-2013.pdf" target="_blank">Annual Report 2012-2013</a></li>
+       <li style="border-bottom:none;"><a href="pdf/shareholding-pattern-march-2013.pdf" target="_blank">Shareholding Pattern as on 31st March, 2013</a></li>-->
+</ul>
+</div>
+</div>
+
+<div class="clr"></div>
+
+<div id="content-area">
+<div id="content-left">
+<h1>Raunaq International Limited</h1>
+<p></p>
+&nbsp;
+
+<p class="body-text"><img align="left" src="images/home-img.jpg" style="padding:0 20px 20px 0" />Raunaq International Limited, an Engineering Contracting Organisation managed by a dedicated team of professionals at various levels in different disciplines, is engaged in the service of core sector of industries in India.<br />
+<br />
+Raunaq International Limited, has sufficient in-house resources in terms of Engineering Manpower, Tools &amp; Plants, and Technical know-how besides separate departments for Design &amp; Engineering, Quality Assurance &amp; Inspection etc. to cater the needs for undertaking the Turnkey Contracts of Mechanical, Civil and associated Electrical &amp; Instrumentation works and offer specialized services.<br />
+<br />
+&ldquo;Raunaq International Limited&quot;, an Engineering Contracting Organization managed by a dedicated team of professionals at various levels in different disciplines, is engaged primarily in the service of core infrastructural and industrial sectors in India, namely Power, Chemical, Hydro-carbon, Metal and Automobile sectors.</p>
+
+<p align="right"><a href="company-profile.html">Read More... </a></p>
+&nbsp;
+
+<div class="iso">
+<h1>ISO 9001:2008 certified</h1>
+&nbsp;
+
+<p><a href="quality.html"><img src="images/iso-9001.png" /></a></p>
+</div>
+
+<div class="iso">
+<h1>Social Responsibility</h1>
+&nbsp;
+
+<p><a href="http://www.autism-india.org/" target="_blank"><img src="images/social-responsibility.jpg" /></a></p>
+</div>
+
+<div class="clr"></div>
+&nbsp;
+
+<h1>Clients</h1>
+
+<div class="marquee" id="mycrawler2"><img src="images/clients01.png" /> <img src="images/clients02.png" /> <img src="images/clients03.png" /> <img src="images/clients04.png" /> <img src="images/clients05.png" /> <img src="images/clients06.png" /> <img src="images/clients07.png" /> <img src="images/clients08.png" /> <img src="images/clients09.png" /> <img src="images/clients10.png" /> <img src="images/clients11.png" /> <img src="images/clients12.png" /> <img src="images/clients13.png" /> <img src="images/clients14.png" /> <img src="images/clients15.png" /> <img src="images/clients16.png" /> <img src="images/clients17.png" /> <img src="images/clients18.png" /> <img src="images/clients19.png" /> <img src="images/clients20.png" /> <img src="images/clients21.png" /> <img src="images/clients22.png" /> <img src="images/clients23.png" /> <img src="images/clients24.png" /> <img src="images/clients25.png" /><img src="images/client-logo.png" /><img src="images/client-img1.png" /> <img src="images/client-logo1.png" /><img src="images/client-logo3.png" /><img src="images/client-logo2.jpg" /></div>
+
+<p class="main-heading">Raunaq International Limited.<br />
+ </p>
+
+<p><strong>20 KM Mathura Road,<br />
+P.O. Box - 353, P.O. Amar Nagar</strong><br />
+Faridabad - 121003<br />
+CIN: L51909HR1965PLC034315<br />
+<!-- Name of the Concerned Person: Mr. Rajan Malhotra, Chief Executive Officer<br /> -->
+Phone: +91-129-4288888<br />
+Fax: +91-129-4288823<br />
+Email: <a href="mailto:info@raunaqintl.com">info@raunaqintl.com</a></p>
+<script type="text/javascript">
+marqueeInit({
+	uniqueid: 'mycrawler2',
+	style: {
+		'padding': '10px',
+		'width': '600px',
+		'height': '100px'
+	},
+	inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+	mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+	moveatleast: 2,
+	neutral: 150,
+	savedirection: true
+});
+</script></div>
+
+<div id="content-right">
+<h1>Projects Undertaken</h1>
+&nbsp;
+
+<div class="projects-heading first"><a href="cross-country.html"><img align="left" src="images/project-img01.jpg" style="padding:0 15px 15px 0" /></a>
+
+<p style="padding-top:25px;"><a href="cross-country.html">Cross-Country Piping</a></p>
+</div>
+
+<div class="projects-heading"><a href="power-station.html"><img align="left" src="images/project-img02.jpg" style="padding:0 15px 15px 0" /></a>
+
+<p style="padding-top:25px;"><a href="power-station.html">Power Station Piping</a></p>
+</div>
+
+<div class="projects-heading"><a href="epc-contracts.html"><img align="left" src="images/project-img03.jpg" style="padding:0 15px 15px 0" /></a>
+
+<p style="padding-top:20px;"><a href="epc-contracts.html">EPC Contracts-Multi Disciplinary</a></p>
+</div>
+
+<div class="projects-heading"><a href="hydrocarbon-industrial.html"><img align="left" src="images/project-img04.png" style="padding:0 15px 15px 0" /></a>
+
+<p style="padding-top:20px;"><a href="hydrocarbon-industrial.html">Hydrocarbon &amp; Industrial Utility Piping</a></p>
+</div>
+
+<div class="projects-heading"><a href="civil.html"><img align="left" src="images/project-img05.png" style="padding:0 15px 15px 0" /></a>
+
+<p style="padding-top:20px;"><a href="civil.html">Civil</a></p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<p align="center" class="footer-nav"><a href="index.html">Home</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="company-profile.html">Corporate</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="cross-country.html">Projects</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="financial-results.html">Investors</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="clients.html">Clients</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="locations.html">Contact us</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="sitemap.html">Sitemap</a></p>
+&nbsp;
+
+<p class="copyright">Copyright &copy; Raunaq International Ltd. All Rights Reserved.</p>
+
+<p class="smartech"><a href="http://www.smartechindia.com/" target="_blank"><img src="images/smartech.jpg" /></a></p>
+</div>
+</div>
+</body>
+</html>

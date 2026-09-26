@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfa Transformers Limited</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        accent: '#DC143C',
+                        background: '#1E40AF',
+                        // Add some light mode colors if needed
+                        lightBg: '#f8fafc',
+                        lightCard: '#ffffff',
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::selection {
+            background: #DC143C;
+            color: #FFFFFF;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark {
+            background-color: #1E40AF;
+            color: #FFFFFF;
+        }
+        body:not(.dark) {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .glass-border {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .dark .glass-border {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        body:not(.dark) .glass-border {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1E40AF;
+        }
+        body:not(.dark) ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        body:not(.dark) ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        body:not(.dark) ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <!-- React & ReactDOM (UMD) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel Standalone for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel" src="App.jsx?v=13"></script>
+</body>
+</html>

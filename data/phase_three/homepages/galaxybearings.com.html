@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Galaxy Bearings</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" /> 
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <!-- Custom -->
+    <link href="css/fonts/fonts.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/jquery.bxslider2.css" rel="stylesheet" />
+    <!-- new-menu css -->
+    <link href="css/sm-core.css" rel="stylesheet" type="text/css" />
+    <link href="css/sm-blue.css" rel="stylesheet" type="text/css" />
+    <!-- new-menu css end -->
+    <link rel="stylesheet" href="css/lightGallery.css" />
+    <script src="js/jquery.js"></script>
+    <!-- new-menu js -->
+    <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $("#main-menu").smartmenus({
+          subMenusSubOffsetX: 1,
+          subMenusSubOffsetY: -1,
+        });
+      });
+    </script>
+    <!-- new-menu js end-->
+    <script src="js/jquery.bxslider.js"></script>
+    <script>
+      $(document).ready(function (e) {
+        $(".bxslider").bxSlider({
+          auto: true,
+          pause: 5000,
+          autoHover: true,
+          mode: "fade",
+        });
+      });
+      $(window).load(function () {
+        $("#myModal").modal("show");
+      });
+
+      $(function () {
+        function reposition() {
+          var modal = $(this),
+            dialog = modal.find(".modal-dialog");
+          modal.css("display", "block");
+
+          dialog.css(
+            "margin-top",
+            Math.max(0, ($(window).height() - dialog.height()) / 2)
+          );
+        }
+
+        $(".modal").on("show.bs.modal", reposition);
+
+        $(window).on("resize", function () {
+          $(".modal:visible").each(reposition);
+        });
+      });
+    </script>
+    <style>
+      #myModal .modal-dialog {
+        max-width: 600px;
+      }
+
+      #myModal .modal-content {
+        padding: 15px;
+      }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Modal -->
+
+    <!--div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+        <button type="button" class="close md-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+     <img src="images/expo_2019.jpg" alt="Truck, Trailer and Tyre Expo" class="img-responsive center-block"></div>
+   
+    </div>
+  </div-->
+
+    <div id="wrapper" class="clearfix">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <button
+                data-target=".navbar-collapse"
+                data-toggle="collapse"
+                class="navbar-toggle toggleMenu"
+                type="button"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html"
+                ><img src="images/logo.png" alt="Med Mantra" class="logoimg"
+              /></a>
+            </div>
+            <div class="col-lg-9">
+              <div class="socila-icon">
+                <div class="top-menu-link hed-link">
+                  <a href="marketing.html">Marketing &amp; Sales Network </a>
+                  <a href="applications.html">Application</a>
+                  <a href="events.html">Events</a>
+                  <a href="inquiry.html">Inquiry</a>
+                  <a href="career.html">Career</a>
+                  <a href="sitemap.html">Sitemap</a>
+                  <a href="brochure.html" class="brochure"
+                    ><span>E-BROCHURE</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-bg-white">
+          <div class="container">
+            <div class="row">
+              <div class="nav-collapse">
+                <ul id="main-menu" class="sm sm-blue" style="display: none">
+                  <li><a href="index.html" class="active">home</a></li>
+                  <li><a href="aboutus.html">about us</a></li>
+                  <li>
+                    <a href="future-expansion.html">Future Expansion</a>
+                  </li>
+                  <li>
+                    <a href="investor.html">Investor Relations</a>
+                  </li>
+                  <li>
+                    <a href="product.html" class="parent">product</a>
+                    <ul>
+                      <li>
+                        <a href="product-tapered-roller.html"
+                          >Tapered Roller Bearings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="product-cylindrical-roller.html"
+                          >Cylindrical Roller Bearings</a
+                        >
+                      </li>
+                      <li>
+                        <a href="product-wheel-hub-bearing.html"
+                          >Wheel Hub Bearings</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="qms.html">qms</a></li>
+                  <li><a href="contact.html">contact us</a></li>
+                  <!--li class="hed-link2"> <a href="group-of-company.html">Group of Companies</a></li-->
+                  <li class="hed-link2">
+                    <a href="applications.html">Application</a>
+                  </li>
+                  <li class="hed-link2"><a href="events.html">Events</a></li>
+                  <li class="hed-link2"><a href="inquiry.html">Inquiry</a></li>
+                  <li class="hed-link2"><a href="career.html">Career</a></li>
+                  <li class="hed-link2"><a href="sitemap.html">Sitemap</a></li>
+                  <!--<li class="hed-link2"><a href="brochure.html">E-BROCHURE</a></li>-->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="bxslider">
+        <!--- Slide 1 -->
+        <div class="slide banner_bg1">
+          <div class="container banner_pad">
+            <div class="banner_img">
+              <img
+                src="images/slide-02.png"
+                alt="Bearings for Automotive Applications"
+                class="img-responsive"
+              />
+            </div>
+          </div>
+        </div>
+        <!--- /Slide 1 -->
+        <!--- Slide 2 -->
+        <div class="slide banner_bg2">
+          <div class="container banner_pad">
+            <div class="banner_img">
+              <img
+                src="images/slide-03.png"
+                alt="Electrical Capacitors for Equipments and Appliances"
+                class="img-responsive"
+              />
+            </div>
+          </div>
+        </div>
+        <!--- /Slide 2 -->
+      </div>
+      <section>
+        <div class="container">
+          <div class="product-shadow">
+            <div class="product-main">
+              <div class="col-xs-12 col-sm-4 col-md-4 right-border left-border">
+                <div class="clearfix text-center">
+                  <img
+                    src="images/product-01.png"
+                    class="img-responsive"
+                    alt=""
+                  />
+                </div>
+                <a href="product-tapered-roller.html"
+                  >TAPERED ROLLER BEARINGS</a
+                >
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 right-border">
+                <div class="clearfix text-center">
+                  <img
+                    src="images/product-02.png"
+                    class="img-responsive"
+                    alt=""
+                  />
+                </div>
+                <a href="product-cylindrical-roller.html"
+                  >Cylindrical Roller Bearings</a
+                >
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="clearfix text-center">
+                  <img
+                    src="images/product-03.png"
+                    class="img-responsive"
+                    alt=""
+                  />
+                </div>
+                <a href="product-wheel-hub-bearing.html">Wheel Hub Bearings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="content">
+        <div class="container">
+          <div
+            class="col-sm-8 col-md-8 col-lg-9 padding-left welcome-border-right"
+          >
+            <!-- <div style="border-left:solid 1px #cccccc; right:0px; position:absolute; margin-right:-3px; margin-top:-28px; height:100%; top:0px; bottom:0px;">&nbsp;</div>-->
+            <p class="highlight mtp1">
+              Galaxy Bearings Ltd. was incorporated in 1990 as the first Public
+              Limited Company of the Galaxy group. Galaxy Bearings Ltd. started
+              manufacturing Taper Roller Bearings & Cylindrical Roller Bearings
+              in 1994 and so far we have developed a variety of bearings to
+              cater different market segments.
+            </p>
+            <p>
+              At Galaxy Bearings Ltd. we draw inspiration from the immense power
+              and energy of the SUN. It is our symbol for all the values that we
+              hold - Reliability, Strength, Quality and Energy. And just like
+              the sun provides light and warmth to the universe, we too strive
+              to reach our customers, no matter where they are in the world and
+              ensure that they receive highest quality product and services with
+              punctual deliveries and for earning the warmth of business
+              relationship based on high business morals and ethics.
+            </p>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-3 inquiry-form padding-right">
+            <div class="sub-hedding">
+              <h3>LATEST EVENTS</h3>
+            </div>
+            <div class="media">
+              <div class="row">
+                <div class="pull-left col-xs-12">
+                  <ul style="margin-top: -23px"> 
+                    <li>
+                      <a href="events.html"
+                        ><img
+                          src="images/events/Automechanika-Istanbul-2023.jpg"
+                          class="img-responsive event-img center-block"
+                          alt="LATEST EVENTS"
+                      /></a>
+                    </li>
+                  </ul>
+                  <!--<a href="#"><img alt="" class="img-responsive event-img center-block" src="images/event-img.png"></a>-->
+                </div>
+              </div>
+              <div class="event-caption">Automechanika Istanbul 2023</div>
+              <div class="clearfix mbp1"></div>
+              <!--<div class="media-body">In the Galaxy Bearing Ltd., we all works in the form of team, considers human resources...
+              <p><a class="readmore" href="events.html">Read more �</a></p>
+            </div>-->
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-5 col-lg-6">
+              <div class="footer-logo">
+                <img src="images/footer-logo.png" alt="" />
+              </div>
+              <p class="copyright">
+                Copyright &copy;
+                <script language="JavaScript" type="text/javascript">
+                  var localTime = new Date();
+                  var year = localTime.getFullYear();
+                  document.write(" " + year + "");
+                </script>
+                Galaxy Bearings Ltd. All Rights Reserved.
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-7 col-lg-6">
+              <div class="row footer-menu-link">
+                <div class="col-sm-4 col-md-4 col-lg-4 menu1">
+                  <a href="index.html">Home</a>
+                  <a href="aboutus.html">About Us</a>
+                  <a href="future-expansion.html">Future Expansion</a>
+                  <a href="product.html">Product</a> <a href="qms.html">QMS</a>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-6 menu2">
+                  <a href="applications.html">Application</a>
+                  <a href="marketing.html">Marketing & Sales Network</a>
+                  <!--a href="group-of-company.html">Group of Companies</a--><a
+                    href="general-info-bearings.html"
+                    >General Information of Bearings</a
+                  >
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-2 menu3">
+                  <a href="inquiry.html">Inquiry Form</a>
+                  <a href="career.html">Career</a>
+                  <a href="contact.html">Contact Us</a>
+                  <a href="sitemap.html">Sitemap</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/lightGallery.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#auto-loop, #auto-loop2").lightGallery({
+          /*loop:true,*/
+          loop: false,
+          auto: false,
+          pause: 1000,
+        });
+      });
+    </script>
+  </body>
+</html>

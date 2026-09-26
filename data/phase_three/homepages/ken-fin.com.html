@@ -1,0 +1,857 @@
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head id="Head1"><link id="fabicon" rel="shortcut icon" href="image/favicon.ico" /><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" /><meta id="keywords" name="keywords" content=" " /><meta id="description" name="description" content=" " /><style id="dockStyles" type="text/css">
+       #HeaderControl .rdMiddle .rdLeft,#HeaderControl .rdMiddle .rdRight,#HeaderControl .rdBottom .rdLeft,#HeaderControl .rdBottom .rdRight,#HeaderControl .rdBottom .rdCenter,#HeaderControl .rdTop .rdLeft,#HeaderControl .rdTop .rdRight{display: none !important;} #HeaderControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #HeaderControl .rdTop .rdCenter,#HeaderControl .rdTop .rdLeft,#HeaderControl .rdTop .rdRight{height: 0px !important;} #HeaderControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#HomepagecontentControl .rdMiddle .rdLeft,#HomepagecontentControl .rdMiddle .rdRight,#HomepagecontentControl .rdBottom .rdLeft,#HomepagecontentControl .rdBottom .rdRight,#HomepagecontentControl .rdBottom .rdCenter,#HomepagecontentControl .rdTop .rdLeft,#HomepagecontentControl .rdTop .rdRight{display: none !important;} #HomepagecontentControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #HomepagecontentControl .rdTop .rdCenter,#HomepagecontentControl .rdTop .rdLeft,#HomepagecontentControl .rdTop .rdRight{height: 0px !important;} #HomepagecontentControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#widgetsControl .rdMiddle .rdLeft,#widgetsControl .rdMiddle .rdRight,#widgetsControl .rdBottom .rdLeft,#widgetsControl .rdBottom .rdRight,#widgetsControl .rdBottom .rdCenter,#widgetsControl .rdTop .rdLeft,#widgetsControl .rdTop .rdRight{display: none !important;} #widgetsControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #widgetsControl .rdTop .rdCenter,#widgetsControl .rdTop .rdLeft,#widgetsControl .rdTop .rdRight{height: 0px !important;} #widgetsControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#MenuControl .rdMiddle .rdLeft,#MenuControl .rdMiddle .rdRight,#MenuControl .rdBottom .rdLeft,#MenuControl .rdBottom .rdRight,#MenuControl .rdBottom .rdCenter,#MenuControl .rdTop .rdLeft,#MenuControl .rdTop .rdRight{display: none !important;} #MenuControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #MenuControl .rdTop .rdCenter,#MenuControl .rdTop .rdLeft,#MenuControl .rdTop .rdRight{height: 0px !important;} #MenuControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#WidgetControl1 .rdMiddle .rdLeft,#WidgetControl1 .rdMiddle .rdRight,#WidgetControl1 .rdBottom .rdLeft,#WidgetControl1 .rdBottom .rdRight,#WidgetControl1 .rdBottom .rdCenter,#WidgetControl1 .rdTop .rdLeft,#WidgetControl1 .rdTop .rdRight{display: none !important;} #WidgetControl1 .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #WidgetControl1 .rdTop .rdCenter,#WidgetControl1 .rdTop .rdLeft,#WidgetControl1 .rdTop .rdRight{height: 0px !important;} #WidgetControl1 .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}</style>
+    <script src="https://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+    
+    
+    
+    <style type="text/css"> 
+ 
+.RadDock RadDock_Default
+{
+	border-width:0px !important;
+	border-style:none !important;
+	border-color:White !important;
+}
+    
+
+
+
+.RadDockZone
+{
+	padding:0px !important;
+}
+
+</style>
+    <script language="javascript" type="text/javascript">
+  
+
+
+    </script>
+    <style type="text/css"> 
+ 
+ .navbar-inverse
+ {
+ 	z-index:99 !important;
+ }
+ #MenuControl_C
+ { 
+ 	overflow:visible !important;
+  z-index:9999999 !important;
+ }
+ #MenuControl
+ {
+ 	 z-index:99999999 !important;
+ }
+ .marquee {
+  
+  overflow: hidden;
+
+}
+ 
+  
+</style>
+    <title>
+
+</title><link rel="stylesheet" type="text/css" href="/usercss/afterloginbar.css" /><link rel="stylesheet" type="text/css" href="/usercss/animate.min.css" /><link rel="stylesheet" type="text/css" href="/usercss/bootstrap-responsive.css" /><link rel="stylesheet" type="text/css" href="/usercss/bootstrap.min.css" /><script language="javascript" type="text/javascript" src="/usercss/bootstrap.min.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/ca-style.css" /><link rel="stylesheet" type="text/css" href="/usercss/font-awesome.min.css" /><script language="javascript" type="text/javascript" src="/usercss/jquery.easing.1.3.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/login.css" /><script language="javascript" type="text/javascript" src="/usercss/menu.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/Res-Style.css" /><script language="javascript" type="text/javascript" src="/usercss/responsiveslides.min.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/slider-style.css" /><link rel="stylesheet" type="text/css" href="/usercss/style.css" /><meta property="og:title" content="www.ken-fin.com" /><meta property="og:description" /><meta property="og:url" content="https://www.ken-fin.com/NewTheme10.aspx" /><link href="/WebResource.axd?d=NFOxMFP0zkRLCxhoroHODitwKW556Jid_Z48rDghNXhU0pluQeJeV0uK217n7AtMTIzCyfVEmIGBpadJtb7mOO9WFEWL9hSiXxBZF84UQHgQNZZ2hiQgBeW7AeVYPe43KRu3gCt--WJWKZzt9wKNwAYnQZLSpJFBTcC7w45fKLo1&amp;t=637927308760000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=LvIZRuR2R0kHeh4jbX90t6LdmNtjht-FPbjvbmLZtcmqMIzIDOvhAJ7MwPvHXFESClXPfyCLvh2IJjl1LASzCCC9_bzAcDfc8B07vfAdhU78lpkAdZa9ighfdWC7fCkJral6MYqKyFi8xzJxh9RX2g2&amp;t=637927308760000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body id="body1" leftmargin="0px" bottommargin="0px" rightmargin="0px" topmargin="0px" style="margin: 0px; padding: 0px; overflow-x: hidden;">
+    <form name="form2" method="post" action="./NewTheme10.aspx" id="form2" style="background-color:#ffffff">
+<div>
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTA1MDgzNDA5D2QWBAIBD2QWBmYPFgIeBGhyZWYFEWltYWdlL2Zhdmljb24uaWNvZAICDxYCHgdjb250ZW50BQEgZAIDDxYCHwEFASBkAgMPZBYEAgEPFgIeBXN0eWxlBRhiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYWAgIFDxYCHwIFNWhlaWdodDphdXRvO292ZXJmbG93OmhpZGRlbjtiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmY7FgQCAQ8WBB4PU3RvcmVkUG9zaXRpb25zBaUBeyJIZWFkZXJDb250cm9sIjoiUmFkRG9ja1pvbmUyIiwiSG9tZXBhZ2Vjb250ZW50Q29udHJvbCI6IlJhZERvY2tab25lMSIsIndpZGdldHNDb250cm9sIjoiUmFkRG9ja1pvbmUyIiwiTWVudUNvbnRyb2wiOiJSYWREb2NrWm9uZTIiLCJXaWRnZXRDb250cm9sMSI6IlJhZERvY2tab25lMyJ9Hg1TdG9yZWRJbmRpY2VzBWR7IkhlYWRlckNvbnRyb2wiOjAsIkhvbWVwYWdlY29udGVudENvbnRyb2wiOjAsIndpZGdldHNDb250cm9sIjoyLCJNZW51Q29udHJvbCI6MSwiV2lkZ2V0Q29udHJvbDEiOjB9FhICAQ8PFgIeF0VuYWJsZUFqYXhTa2luUmVuZGVyaW5naGRkAgMPDxYCHwVoFgIeBVN0eWxlBRt6LWluZGV4Ojk7b3ZlcmZsb3c6dmlzaWJsZTtkAgUPDxYCHwVoZGQCBw8PFgIeB1Zpc2libGVoZGQCCQ8PFgYeBF8hU0ICAh8FaB4IQ3NzQ2xhc3MFCGNvbC1tZC00FgIfAgULZmxvYXQ6TGVmdDsWAmYPZBYGZg9kFgRmDxYCHgVjbGFzcwUGcmRMZWZ0ZAIDDxYCHwoFB3JkUmlnaHRkAgEPZBYGZg8WAh8KBQZyZExlZnRkAgEPZBYCZg9kFgJmD2QWBGYPZBYCZg9kFgICAQ8PFgIfB2hkZAIBDxYEHwJlHgdiZ2NvbG9yZBYEZg8WAh8HaGQCAQ8WAh4JaW5uZXJodG1sBYIDPGh0bWw+PGhlYWRlcj4KPGRpdiBjbGFzcz0iYmFubmVyLWJ0bSI+CjwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIiPgogICAgICAgICAgCiAgICAgICAgPGRpdiBjbGFzcz0icm93Ij4gCiAgICAgICAgCTxkaXYgY2xhc3M9ImNvbC1tZC00Ij4gICAKICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9IndlYi1sb2dvIj4KICAgICAgICAgICAgICAgICAgPGEgaHJlZj0iL3Jlc291cmNlL2hvbWUuYXNweCI+PGltZyBzcmM9IkltYWdlL3dlYi1sb2dvLnBuZyIgY2xhc3M9ImltZy1yZXNwb25zaXZlIj48L2E+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIAogICAJPC9kaXY+CiAgPC9kaXY+CjwvaGVhZGVyPjwvaHRtbD5kAgIPFgIfCgUHcmRSaWdodGQCAg9kFgRmDxYCHwoFBnJkTGVmdGQCAg8WAh8KBQdyZFJpZ2h0ZAIKDw8WBh8IAgIfBWgfCQUJY29sLW1kLTEyZBYCZg9kFgZmD2QWBGYPFgIfCgUGcmRMZWZ0ZAIDDxYCHwoFB3JkUmlnaHRkAgEPZBYGZg8WAh8KBQZyZExlZnRkAgEPZBYCZg9kFgJmD2QWAgIFDxYCHgRUZXh0BcUOPGh0bWw+Cgo8aGVhZD4KICAgIDxtZXRhIGh0dHAtZXF1aXY9IkNvbnRlbnQtVHlwZSIgY29udGVudD0idGV4dC9odG1sO2NoYXJzZXQ9dXRmLTgiPgo8L2hlYWQ+Cgo8Ym9keT4KICAgIDxzZWN0aW9uIGNsYXNzPSJobS1hYnQiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9InJvdyI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJjb2wtbWQtNiI+CiAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9IkltYWdlL2Fib3V0LWltZzEuanBnIiBjbGFzcz0iaW1nLXJlc3BvbnNpdmUiPgogICAgICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29sLW1kLTYiPgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImFib3V0Ym94Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPGgyIGNsYXNzPSJobS1oZWFkIj5BYm91dCBVczwvaDI+CgogICAgICAgICAgICAgICAgICAgICAgICA8cD5LZW4gRmluYW5jaWFsIFNlcnZpY2VzIExpbWl0ZWQgKEw2NTk5ME1IMTk5NFBMQzA3ODg5OCkgaXMgYSBwdWJsaWMgbGltaXRlZCBjb21wYW55CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbmNvcnBvcmF0ZWQgaW4gdGhlIHllYXIgMTk5NCB1bmRlciBDb21wYW5pZXMgQWN0LCAxOTU2LiBLZW4gRmluYW5jaWFsIFNlcnZpY2VzIExpbWl0ZWQgaXMKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFsc28gbGlzdGVkIG9uIHRoZSBCb21iYXkgU3RvY2sgRXhjaGFuZ2UgKEJTRSBDb2RlIC0gNTMwNTQ3KS4KICAgICAgICAgICAgICAgICAgICAgICAgPC9wPgoKCgogICAgICAgICAgICAgICAgICAgICAgICA8cD5UaGUgQ29tcGFueSBpcyBlbmdhZ2VkIGluIHRoZSBidXNpbmVzcyBvZiBGaW5hbmNpYWwgU2VydmljZXMgd2l0aGluIEluZGlhLiBJdCBoYXMgYSB2ZXJ5CiAgICAgICAgICAgICAgICAgICAgICAgICAgICB5b3VuZyBhbmQgZW5lcmdldGljIHRlYW0uCiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+PHN0cm9uZz5MSVNUIE9GIERJUkVDVE9SUzwvc3Ryb25nPgogICAgICAgICAgICAgICAgICAgICAgICA8IS0tIDwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgTXIuIFNoYWt0aSBTaW5naCBSYXRob3JlPGJyPgogICAgICAgICAgICAgICAgICAgICAgICBNci4gUHJhdmVlbiBLdW1hciBNb2RpPHA+IC0tPgogICAgICAgICAgICAgICAgICAgICAgICA8dWw+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+TXIuIFNoYWt0aSBTaW5naCBSYXRob3JlPC9saT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaT5Nci4gUHJhdmVlbiBLdW1hciBNb2RpPC9saT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaT5Nci4gUml0ZXNoIEt1bWFyIFBhdGhhazwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+TXMuIE5laGEgS2FpbGFzaCBCaGFnZXJpYTwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+TXIuIEhhcmlzaCBTaXRhcmFtIFNoYXJtYTwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvdWw+CiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InJkLW1yciI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8YSBocmVmPSIvcmVzb3VyY2UvQWJvdXRfVXMuYXNweCI+UmVhZCBNb3JlPC9hPgogICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KPC9ib2R5PgoKPC9odG1sPmQCAg8WAh8KBQdyZFJpZ2h0ZAICD2QWBGYPFgIfCgUGcmRMZWZ0ZAICDxYCHwoFB3JkUmlnaHRkAgsPDxYGHwgCAh8FaB8JBQljb2wtbWQtMTJkFgJmD2QWBmYPZBYEZg8WAh8KBQZyZExlZnRkAgMPFgIfCgUHcmRSaWdodGQCAQ9kFgZmDxYCHwoFBnJkTGVmdGQCAQ9kFgJmD2QWAmYPZBYCAgEPFgIfB2cWAmYPZBYCZg9kFgICAQ8WAh8NBesTPGh0bWw+PGhlYWQ+PG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7Y2hhcnNldD11dGYtOCI+PC9oZWFkPjxib2R5PjxzZWN0aW9uIGNsYXNzPSJiYW5uZXItaG0iPgoJPGRpdiBpZD0ibXlDYXJvdXNlbCIgY2xhc3M9ImNhcm91c2VsIHNsaWRlIiBkYXRhLXJpZGU9ImNhcm91c2VsIj4KICAgICAgICA8IS0tIEluZGljYXRvcnMgLS0+CiAgICAgICAgPG9sIGNsYXNzPSJjYXJvdXNlbC1pbmRpY2F0b3JzIj4KICAgICAgICAgICAgPGxpIGRhdGEtdGFyZ2V0PSIjbXlDYXJvdXNlbCIgZGF0YS1zbGlkZS10bz0iMCIgY2xhc3M9ImFjdGl2ZSI+PC9saT4KICAgICAgICAgICAgPGxpIGRhdGEtdGFyZ2V0PSIjbXlDYXJvdXNlbCIgZGF0YS1zbGlkZS10bz0iMSIgY2xhc3M9IiI+PC9saT4KICAgICAgICAgICAgPGxpIGRhdGEtdGFyZ2V0PSIjbXlDYXJvdXNlbCIgZGF0YS1zbGlkZS10bz0iMiIgY2xhc3M9IiI+PC9saT4KICAgICAgICA8L29sPgoKICAgICAgICA8IS0tIFdyYXBwZXIgZm9yIHNsaWRlcyAtLT4KICAgICAgICA8ZGl2IGNsYXNzPSJjYXJvdXNlbC1pbm5lciI+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9Iml0ZW0gYWN0aXZlIj4KICAgICAgICAgICAgICAgIDxpbWcgc3JjPSJJbWFnZS9CYW5uZXItQjEuanBnIiBhbHQ9IiMiIHdpZHRoPSIxMDAlIj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImNhcm91c2VsLWNhcHRpb24iIHN0eWxlPSJsZWZ0OjE0JSAhaW1wb3J0YW50OyByaWdodDppbmhlcml0OyB0b3A6MTYwcHg7Ij4KICAgICAgIDxoMz5DYXJlZXI8L2gzPgogICAgICAgIDxwPldlIG51cnR1cmUgYW5kIGN1bHRpdmF0ZSBhIHNlbnNlIHByaWRlIGluIHRoZSB3b3JrIGFuZCBjcmVhdGUgPGJyPnRlYW0gbGVhZGVycy4gWW91ciBncm93dGggY2hhcnQgd2lsbC4uLjwvcD4KICAgICAgICA8ZGl2PjxhIGhyZWY9Ii9yZXNvdXJjZS9DYXJlZXIuYXNweCIgY2xhc3M9InJlZC1tIj5SRUFEIE1PUkU8L2E+PC9kaXY+CiAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXYgY2xhc3M9Iml0ZW0iPgogICAgICAgICAgICAgICAgPGltZyBzcmM9IkltYWdlL0Jhbm5lci1CMi5qcGciIGFsdD0iIyIgd2lkdGg9IjEwMCUiPgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iY2Fyb3VzZWwtY2FwdGlvbiIgc3R5bGU9ImxlZnQ6aW5oZXJpdDsgcmlnaHQ6MTQlOyB0b3A6MTYwcHg7IHRleHQtYWxpZ246cmlnaHQ7Ij4KICAgICAgICA8aDM+T1VSIFZJU0lPTgo8L2gzPgogICAgICAgIDxwPldlIGFzcGlyZSB0byBiZSBhIGxlYWRpbmcgYW5kIHJlbGlhYmxlIG9yZ2FuaXphdGlvbiBpbiB0aGU8YnI+IGJ1c2luZXNzIHdvcmxkIHdpdGggY29udGludWVkIGltcHJvdmlzYXRpb24uCQkJCQkKCjwvcD4KICAgICAgIDxkaXY+PGEgaHJlZj0iL3Jlc291cmNlL0Fib3V0X1VzLmFzcHgiIGNsYXNzPSJyZWQtbSI+UkVBRCBNT1JFPC9hPjwvZGl2PgogICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJpdGVtIj4KICAgICAgICAgICAgICAgIDxpbWcgc3JjPSJJbWFnZS9CYW5uZXItQjMuanBnIiBhbHQ9IiMiIHdpZHRoPSIxMDAlIj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImNhcm91c2VsLWNhcHRpb24iIHN0eWxlPSJsZWZ0OjE0JSAhaW1wb3J0YW50OyByaWdodDppbmhlcml0OyB0b3A6MTYwcHg7Ij4KICAgICAgICA8aDM+T1VSIE1JU1NJT048L2gzPgogICAgICAgIDxwPldlIGFpbSB0byBwcm92aWRlIGlubm92YXRpdmUsIGNvc3QtZWZmZWN0aXZlIGFuZDxicj4gc3VzdGFpbmFibGUgc29sdXRpb25zLCB3aGlsZSBmb2xsb3dpbmcgZmFpciBjb21tZXJjaWFsIHByYWN0aWNlcy48L3A+CiAgICAgICA8ZGl2PjxhIGhyZWY9Ii9yZXNvdXJjZS9BYm91dF9Vcy5hc3B4IiBjbGFzcz0icmVkLW0iPlJFQUQgTU9SRTwvYT48L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAKICAgICAgICAgICAgCiAgICAgICAgICAgIAoKICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGEgY2xhc3M9ImxlZnQgY2Fyb3VzZWwtY29udHJvbCIgaHJlZj0iI215Q2Fyb3VzZWwiIGRhdGEtc2xpZGU9InByZXYiPgogICAgICAgICAgICA8c3BhbiBjbGFzcz0iZ2x5cGhpY29uIGdseXBoaWNvbi1jaGV2cm9uLWxlZnQgZmEgZmEtYW5nbGUtbGVmdCI+PC9zcGFuPgogICAgICAgICAgICA8c3BhbiBjbGFzcz0ic3Itb25seSI+UHJldmlvdXM8L3NwYW4+CiAgICAgICAgPC9hPgogICAgICAgIDxhIGNsYXNzPSJyaWdodCBjYXJvdXNlbC1jb250cm9sIiBocmVmPSIjbXlDYXJvdXNlbCIgZGF0YS1zbGlkZT0ibmV4dCI+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJnbHlwaGljb24gZ2x5cGhpY29uLWNoZXZyb24tcmlnaHQgZmEgZmEtYW5nbGUtcmlnaHQiPjwvc3Bhbj4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9InNyLW9ubHkiPk5leHQ8L3NwYW4+CiAgICAgICAgPC9hPgogICAgPC9kaXY+Cjwvc2VjdGlvbj48L2JvZHk+PC9odG1sPmQCAg8WAh8KBQdyZFJpZ2h0ZAICD2QWBGYPFgIfCgUGcmRMZWZ0ZAICDxYCHwoFB3JkUmlnaHRkAgwPDxYGHwgCAh8FaB8JBQhjb2wtbWQtOBYCHwIFDGZsb2F0OlJpZ2h0OxYCZg9kFgZmD2QWBGYPFgIfCgUGcmRMZWZ0ZAIDDxYCHwoFB3JkUmlnaHRkAgEPZBYGZg8WAh8KBQZyZExlZnRkAgEPZBYCZg9kFgJmD2QWAgIBDxQrAA0PFgwfCAKEHB4JRm9udF9Cb2xkZx4JRm9yZUNvbG9yCgAeC18hRGF0YUJvdW5kZx4KRm9udF9OYW1lcxUBBUFyaWFsHglGb250X1NpemUoKiJTeXN0ZW0uV2ViLlVJLldlYkNvbnRyb2xzLkZvbnRVbml0AzlwdGQWDB8RFQEFQXJpYWwfDwoAHglCYWNrQ29sb3IKAB4LSXRlbVNwYWNpbmcbAAAAAAAAAAABAAAAHw5nHwgCjJQQZBYGHxMKAB8PCgAfCAIMZGRkFgYfEwoAHw8KAB8IAgwWCB4LQm9yZGVyQ29sb3IKAB8TCgAeD1ZlcnRpY2FsUGFkZGluZxsAAAAAAAAIQAEAAAAfCAKYgARkZGQUKwAKBSMwOjAsMDoxLDA6MiwwOjMsMDo0LDA6NSwwOjYsMDo3LDA6OBQrAAIWDh8NBQRIb21lHgVWYWx1ZQUESG9tZR4LTmF2aWdhdGVVcmwFEy9yZXNvdXJjZS9ob21lLmFzcHgeB0VuYWJsZWRnHgpTZWxlY3RhYmxlZx4IRGF0YVBhdGgFEy9yZXNvdXJjZS9ob21lLmFzcHgeCURhdGFCb3VuZGdkFCsAAhYOHw0FCEFib3V0IFVzHxcFCEFib3V0IFVzHxgFFy9yZXNvdXJjZS9BYm91dF9Vcy5hc3B4HxlnHxpnHxsFFy9yZXNvdXJjZS9hYm91dF91cy5hc3B4HxxnZBQrAAIWDB8NBQhTZXJ2aWNlcx8XBQhTZXJ2aWNlcx8ZZx8aaB8bBSQ1ZTY0ZDY1NS0xZDcxLTQ1NWYtOGJjMy01OGU4NGQ3MDkzMzAfHGcUKwAFBQ8wOjAsMDoxLDA6MiwwOjMUKwACFg4fDQUPUmV0YWlsIFNlcnZpY2VzHxcFD1JldGFpbCBTZXJ2aWNlcx8YBScvcmVzb3VyY2UvU2VydmljZXMvUmV0YWlsX1NlcnZpY2VzLmFzcHgfGWcfGmcfGwUnL3Jlc291cmNlL3NlcnZpY2VzL3JldGFpbF9zZXJ2aWNlcy5hc3B4HxxnZBQrAAIWDh8NBRZJbnN0aXR1dGlvbmFsIFNlcnZpY2VzHxcFFkluc3RpdHV0aW9uYWwgU2VydmljZXMfGAUuL3Jlc291cmNlL1NlcnZpY2VzL0luc3RpdHV0aW9uYWxfU2VydmljZXMuYXNweB8ZZx8aZx8bBS4vcmVzb3VyY2Uvc2VydmljZXMvaW5zdGl0dXRpb25hbF9zZXJ2aWNlcy5hc3B4HxxnZBQrAAIWDh8NBQ1JVEVzIFNlcnZpY2VzHxcFDUlURXMgU2VydmljZXMfGAUlL3Jlc291cmNlL1NlcnZpY2VzL0lURXNfU2VydmljZXMuYXNweB8ZZx8aZx8bBSUvcmVzb3VyY2Uvc2VydmljZXMvaXRlc19zZXJ2aWNlcy5hc3B4HxxnZBQrAAIWDh8NBRJJbnZlc3RtZW50IEJhbmtpbmcfFwUSSW52ZXN0bWVudCBCYW5raW5nHxgFKi9yZXNvdXJjZS9TZXJ2aWNlcy9JbnZlc3RtZW50X0JhbmtpbmcuYXNweB8ZZx8aZx8bBSovcmVzb3VyY2Uvc2VydmljZXMvaW52ZXN0bWVudF9iYW5raW5nLmFzcHgfHGdkFCsAAhYOHw0FD1BhcnRuZXIgV2l0aCBVcx8XBQ9QYXJ0bmVyIFdpdGggVXMfGAUeL3Jlc291cmNlL1BhcnRuZXJfV2l0aF9Vcy5hc3B4HxlnHxpnHxsFHi9yZXNvdXJjZS9wYXJ0bmVyX3dpdGhfdXMuYXNweB8cZ2QUKwACFgwfDQUSSW52ZXN0b3IgUmVsYXRpb25zHxcFEkludmVzdG9yIFJlbGF0aW9ucx8ZZx8aaB8bBSRhZWM4NjkxNC1mZmQxLTQ0Y2YtOWE2NS04MmE0ODkyYjViYzQfHGcUKwANBTEwOjAsMDoxLDA6MiwwOjMsMDo0LDA6NSwwOjYsMDo3LDA6OCwwOjksMDoxMCwwOjExFCsAAhYOHw0FDUFHTSBEb2N1bWVudHMfFwUNQUdNIERvY3VtZW50cx8YBS8vcmVzb3VyY2UvSW52ZXN0b3JfUmVsYXRpb25zL0FHTV9Eb2N1bWVudHMuYXNweB8ZZx8aZx8bBS8vcmVzb3VyY2UvaW52ZXN0b3JfcmVsYXRpb25zL2FnbV9kb2N1bWVudHMuYXNweB8cZ2QUKwACFg4fDQUNQm9hcmQgTWVldGluZx8XBQ1Cb2FyZCBNZWV0aW5nHxgFLy9yZXNvdXJjZS9JbnZlc3Rvcl9SZWxhdGlvbnMvQm9hcmRfTWVldGluZy5hc3B4HxlnHxpnHxsFLy9yZXNvdXJjZS9pbnZlc3Rvcl9yZWxhdGlvbnMvYm9hcmRfbWVldGluZy5hc3B4HxxnZBQrAAIWDh8NBR9Bbm5vdW5jbWVudCB1bmRlciBSZWd1bGF0aW9uIDMwHxcFH0Fubm91bmNtZW50IHVuZGVyIFJlZ3VsYXRpb24gMzAfGAUvL3Jlc291cmNlL0ludmVzdG9yX1JlbGF0aW9ucy9Bbm5vdW5jZW1lbnRzLmFzcHgfGWcfGmcfGwUvL3Jlc291cmNlL2ludmVzdG9yX3JlbGF0aW9ucy9hbm5vdW5jZW1lbnRzLmFzcHgfHGdkFCsAAhYOHw0FFENvcnBvcmF0ZSBHb3Zlcm5hbmNlHxcFFENvcnBvcmF0ZSBHb3Zlcm5hbmNlHxgFNy9yZXNvdXJjZS9JbnZlc3Rvcl9SZWxhdGlvbnMvQ29ycG9yYXRlX0dvdmVybmFuY2UxLmFzcHgfGWcfGmcfGwU3L3Jlc291cmNlL2ludmVzdG9yX3JlbGF0aW9ucy9jb3Jwb3JhdGVfZ292ZXJuYW5jZTEuYXNweB8cZ2QUKwACFg4fDQURRmluYW5jaWFsIFJlc3VsdHMfFwURRmluYW5jaWFsIFJlc3VsdHMfGAUzL3Jlc291cmNlL0ludmVzdG9yX1JlbGF0aW9ucy9GaW5hbmNpYWxfUmVzdWx0cy5hc3B4HxlnHxpnHxsFMy9yZXNvdXJjZS9pbnZlc3Rvcl9yZWxhdGlvbnMvZmluYW5jaWFsX3Jlc3VsdHMuYXNweB8cZ2QUKwACFg4fDQUUU2hhcmVob2xkaW5nIFBhdHRlcm4fFwUUU2hhcmVob2xkaW5nIFBhdHRlcm4fGAU2L3Jlc291cmNlL0ludmVzdG9yX1JlbGF0aW9ucy9TaGFyZWhvbGRpbmdfUGF0dGVybi5hc3B4HxlnHxpnHxsFNi9yZXNvdXJjZS9pbnZlc3Rvcl9yZWxhdGlvbnMvc2hhcmVob2xkaW5nX3BhdHRlcm4uYXNweB8cZ2QUKwACFg4fDQUIUG9saWNpZXMfFwUIUG9saWNpZXMfGAUqL3Jlc291cmNlL0ludmVzdG9yX1JlbGF0aW9ucy9Qb2xpY2llcy5hc3B4HxlnHxpnHxsFKi9yZXNvdXJjZS9pbnZlc3Rvcl9yZWxhdGlvbnMvcG9saWNpZXMuYXNweB8cZ2QUKwACFg4fDQUNQW5udWFsIFJlcG9ydB8XBQ1Bbm51YWwgUmVwb3J0HxgFLy9yZXNvdXJjZS9JbnZlc3Rvcl9SZWxhdGlvbnMvQW5udWFsX1JlcG9ydC5hc3B4HxlnHxpnHxsFLy9yZXNvdXJjZS9pbnZlc3Rvcl9yZWxhdGlvbnMvYW5udWFsX3JlcG9ydC5hc3B4HxxnZBQrAAIWDh8NBRVTaGFyZWhvbGRlcnMgU2VydmljZXMfFwUVU2hhcmVob2xkZXJzIFNlcnZpY2VzHxgFNi9yZXNvdXJjZS9JbnZlc3Rvcl9SZWxhdGlvbnMvU2hhcmVob2xkZXItc2VydmljZXMuYXNweB8ZZx8aZx8bBTYvcmVzb3VyY2UvaW52ZXN0b3JfcmVsYXRpb25zL3NoYXJlaG9sZGVyLXNlcnZpY2VzLmFzcHgfHGdkFCsAAhYOHw0FDUFubnVhbCBSZXR1cm4fFwUNQW5udWFsIFJldHVybh8YBS8vcmVzb3VyY2UvSW52ZXN0b3JfUmVsYXRpb25zL0FubnVhbC1SZXR1cm4uYXNweB8ZZx8aZx8bBS8vcmVzb3VyY2UvaW52ZXN0b3JfcmVsYXRpb25zL2FubnVhbC1yZXR1cm4uYXNweB8cZ2QUKwACFg4fDQUORU9HTSBEb2N1bWVudHMfFwUORU9HTSBEb2N1bWVudHMfGAUwL3Jlc291cmNlL0ludmVzdG9yX1JlbGF0aW9ucy9FT0dNLURvY3VtZW50cy5hc3B4HxlnHxpnHxsFMC9yZXNvdXJjZS9pbnZlc3Rvcl9yZWxhdGlvbnMvZW9nbS1kb2N1bWVudHMuYXNweB8cZ2QUKwACFg4fDQUTR3JpZXZhbmNlIFJlZHJlc3NhbB8XBRNHcmlldmFuY2UgUmVkcmVzc2FsHxgFNS9yZXNvdXJjZS9JbnZlc3Rvcl9SZWxhdGlvbnMvR3JpZXZhbmNlX1JlZHJlc3NhbC5hc3B4HxlnHxpnHxsFNS9yZXNvdXJjZS9pbnZlc3Rvcl9yZWxhdGlvbnMvZ3JpZXZhbmNlX3JlZHJlc3NhbC5hc3B4HxxnZBQrAAIWDh8NBQVRdWVyeR8XBQVRdWVyeR8YBRgvTmV3VGhlbWVRdWVyeXNoZWV0LmFzcHgfGWcfGmcfGwUYL25ld3RoZW1lcXVlcnlzaGVldC5hc3B4HxxnZBQrAAIWDh8NBQdDYXJlZXJzHxcFB0NhcmVlcnMfGAUVL3Jlc291cmNlL0NhcmVlci5hc3B4HxlnHxpnHxsFFS9yZXNvdXJjZS9jYXJlZXIuYXNweB8cZ2QUKwACFgwfDQUFQWRtaW4fFwUFQWRtaW4fGWcfGmgfGwUkYWJmMjdjNzQtMTQ5OC00OGNlLTliMWUtMTE0ZmExZmI2MGExHxxnFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYOHw0FBUxvZ2luHxcFBUxvZ2luHxgFCy9Mb2dpbi5hc3B4HxlnHxpnHxsFCy9sb2dpbi5hc3B4HxxnZBQrAAIWDh8NBQtFbWFpbCBMb2dpbh8XBQtFbWFpbCBMb2dpbh8YBRdodHRwOi8vbWFpbC5rZW4tZmluLmNvbR8ZZx8aZx8bBRdodHRwOi8vbWFpbC5rZW4tZmluLmNvbR8cZ2QUKwACFhAfDQUKVGltZSBTaGVldB8XBQpUaW1lIFNoZWV0HxgFImh0dHBzOi8va2VuLWZpbi5jb20vVGltZXNoZWV0LmFzcHgfGWcfGmcfGwUiaHR0cHM6Ly9rZW4tZmluLmNvbS90aW1lc2hlZXQuYXNweB8cZx4GVGFyZ2V0BQZfYmxhbmtkFCsAAhYQHw0FCkNQRSBTdGF0dXMfFwUKQ1BFIFN0YXR1cx8YBSNodHRwOi8vY3BlYXBwLmljYWkub3JnL21lbWJlci9sb2dpbh8ZZx8aZx8bBSNodHRwOi8vY3BlYXBwLmljYWkub3JnL21lbWJlci9sb2dpbh8cZx8dBQZfYmxhbmtkFCsAAhYOHw0FCkNvbnRhY3QgVXMfFwUKQ29udGFjdCBVcx8YBRkvcmVzb3VyY2UvQ29udGFjdF9Vcy5hc3B4HxlnHxpnHxsFGS9yZXNvdXJjZS9jb250YWN0X3VzLmFzcHgfHGdkZAICDxYCHwoFB3JkUmlnaHRkAgIPZBYEZg8WAh8KBQZyZExlZnRkAgIPFgIfCgUHcmRSaWdodGQCDQ8PFgIfBWhkFgJmD2QWBmYPZBYEZg8WAh8KBQZyZExlZnRkAgMPFgIfCgUHcmRSaWdodGQCAQ9kFgZmDxYCHwoFBnJkTGVmdGQCAQ9kFgJmD2QWAmYPZBYCAgEPFgIfB2cWAmYPZBYCZg9kFgICAQ8WAh8NBbsePGh0bWw+PGhlYWQ+PG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7Y2hhcnNldD11dGYtOCI+PC9oZWFkPjxib2R5PjxzZWN0aW9uIGNsYXNzPSJobS1zZXJ2Ij4KCTxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CiAgICA8ZGl2IGNsYXNzPSJzZXJib3giPgogICAgCTxoMiBjbGFzcz0iaG0taGVhZCI+T3VyIFNlcnZpY2VzPC9oMj4KICAgICAgICA8ZGl2IGNsYXNzPSJyb3ciPgogICAgICAgIAk8ZGl2IGNsYXNzPSJjb2wtbWQtNCI+CiAgICAgICAgICAgIAk8ZGl2IGNsYXNzPSJzZXItYngiPgogICAgICAgICAgICAgICAgPGltZyBzcmM9IkltYWdlL3Nlci1pbWcxLmpwZyIgY2xhc3M9ImltZy1yZXNwb25zaXZlIj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InNlci1jb250Ij4KICAgICAgICAgICAgICAgIAk8aDM+UmV0YWlsIHNlcnZpY2VzPC9oMz4KICAgICAgICAgICAgICAgICAgICA8cD5Db21pbmcgU29vbjwvcD4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJyZC1tciI+CiAgICAgICAgICAgICAgICAgICAgCTxhIGhyZWY9Ii9yZXNvdXJjZS9TZXJ2aWNlcy9SZXRhaWxfU2VydmljZXMuYXNweCI+UmVhZCBNb3JlPC9hPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+IAogICAgICAgICAgICAKICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29sLW1kLTQiPgogICAgICAgICAgICAJPGRpdiBjbGFzcz0ic2VyLWJ4Ij4KICAgICAgICAgICAgICAgIDxpbWcgc3JjPSJJbWFnZS9zZXItaW1nMi5qcGciIGNsYXNzPSJpbWctcmVzcG9uc2l2ZSI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZXItY29udCI+CiAgICAgICAgICAgICAgICAJPGgzPkludmVzdG1lbnQgYmFua2luZzwvaDM+CiAgICAgICAgICAgICAgICAgICAgPHA+Q29taW5nIFNvb248L3A+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0icmQtbXIiPgogICAgICAgICAgICAgICAgICAgIAk8YSBocmVmPSIvcmVzb3VyY2UvU2VydmljZXMvSW52ZXN0bWVudF9CYW5raW5nLmFzcHgiPlJlYWQgTW9yZTwvYT4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAKICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29sLW1kLTQiPgogICAgICAgICAgICAJPGRpdiBjbGFzcz0ic2VyLWJ4Ij4KICAgICAgICAgICAgICAgIDxpbWcgc3JjPSJJbWFnZS9zZXItaW1nMy5qcGciIGNsYXNzPSJpbWctcmVzcG9uc2l2ZSI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZXItY29udCI+CiAgICAgICAgICAgICAgICAJPGgzPkluc3RpdHV0aW9uYWwgc2VydmljZXM8L2gzPgogICAgICAgICAgICAgICAgICAgIDxwPkVxdWl0aWVzLCBEZWJ0LCBGb3JleDwvcD4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJyZC1tciI+CiAgICAgICAgICAgICAgICAgICAgCTxhIGhyZWY9Ii9yZXNvdXJjZS9TZXJ2aWNlcy9JbnN0aXR1dGlvbmFsX1NlcnZpY2VzLmFzcHgiPlJlYWQgTW9yZTwvYT4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PiAKICAgICAgICA8L2Rpdj4gICAgICAgCiAgICAgICAgCiAgICAgICAgCiAgICA8L2Rpdj4KICAgIDwvZGl2Pgo8L3NlY3Rpb24+CgoKCjxkaXYgY2xhc3M9ImNvbnQtaG0iPgoJPGRpdiBjbGFzcz0iY29udGFpbmVyLW1pZGRsZSI+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIiPjxkaXYgY2xhc3M9InJvdyI+CiAgICAJPGRpdiBjbGFzcz0iY29sLW1kLTYiPgogICAgICAgICA8aWZyYW1lIHNyYz0iaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2VtYmVkP3BiPSExbTE2ITFtMTIhMW0zITFkMzc2Ny44MzM3NDA5MzY1MTYzITJkNzIuODUzMDU0Mjc1OTY3NDIhM2QxOS4yMDI0NjI3NDc5ODg3MzMhMm0zITFmMCEyZjAhM2YwITNtMiExaTEwMjQhMmk3NjghNGYxMy4xITJtMSExczNyZCUyMEZsb29yJTJDJTIwS2FscGF0YXJ1JTIwQXZlbnVlJTJDJTIwT3Bwb3NpdGUlMjBFU0lDJTIwSG9zcGl0YWwlMkMlMjBha3VybGklMjBSb2FkJTJDJTIwS2FuZGl2YWxpJTIwRWFzdCUyQyUyME11bWJhaSUyMDQwMCUyMDEwMS4hNWUwITNtMiExc2VuITJzaW4hNHYxNzczNjY0NTM4MDc2ITVtMiExc2VuITJzaW4iIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjQ1MCIgc3R5bGU9ImJvcmRlcjowOyIgYWxsb3dmdWxsc2NyZWVuPSIiIGxvYWRpbmc9ImxhenkiIHJlZmVycmVycG9saWN5PSJuby1yZWZlcnJlci13aGVuLWRvd25ncmFkZSI+PC9pZnJhbWU+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAKICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29sLW1kLTYiPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJjb250LWJnIj4KICAgICAgICAgICAgPGgyIGNsYXNzPSJobS1oZWFkIj5Db250YWN0IFVzPC9oMj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29udC1pbmZvIj4KICAgICAgICAgICAgICA8cCBjbGFzcz0ibWItMiI+PGkgY2xhc3M9ImZhIGZhLW1hcC1tYXJrZXIiPjwvaT48c3Ryb25nPkFkZHJlc3M8L3N0cm9uZz4tT2ZmaWNlIE5vLiAzNCwgM3JkIEZsb29yLCBLYWxwYXRhcnUgQXZlbnVlLCBPcHBvc2l0ZSBFU0lDIEhvc3BpdGFsLCBrdXJsaSBSb2FkLCBLYW5kaXZhbGkgRWFzdCwgTXVtYmFpIDQwMCAxMDEuPC9wPgogICAgICAgICAgICAgIDxwIGNsYXNzPSJtYi0yIj48aSBjbGFzcz0iZmEgZmEtcGhvbmUiPjwvaT48c3Ryb25nPkNvbnRhY3QgTm86PC9zdHJvbmc+ICArMDIyLTQ2MDAyOTg5PC9wPgogICAgICAgICAgICAgIDxwIGNsYXNzPSJtYi0yIj48aSBjbGFzcz0iZmEgZmEtZW52ZWxvcGUtbyI+PC9pPjxzdHJvbmc+RW1haWw6LSZuYnNwOzwvc3Ryb25nPmtlbmZzbEByZWRpZmZtYWlsLmNvbTwvcD4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJzb2NpYWwtbGlua3MgbXQtMyI+PGJyPgogICAgICAgICAgICAgICAgPGEgaHJlZj0iaHR0cHM6Ly90d2l0dGVyLmNvbS8iIHRhcmdldD0iX2JsYW5rIj48aSBjbGFzcz0iZmEiPjxzdmcgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBzdHlsZT0iY29sb3I6IzAwMDsiIGZpbGw9ImN1cnJlbnRDb2xvciIgY2xhc3M9ImJpIGJpLXR3aXR0ZXIteCIgdmlld2JveD0iMCAwIDE2IDE2Ij4KICA8cGF0aCBkPSJNMTIuNi43NWgyLjQ1NGwtNS4zNiA2LjE0MkwxNiAxNS4yNWgtNC45MzdsLTMuODY3LTUuMDctNC40MjUgNS4wN0guMzE2bDUuNzMzLTYuNTdMMCAuNzVoNS4wNjNsMy40OTUgNC42MzNMMTIuNjAxLjc1Wm0tLjg2IDEzLjAyOGgxLjM2TDQuMzIzIDIuMTQ1SDIuODY1eiI+PC9wYXRoPgo8L3N2Zz48L2k+PC9hPgogICAgICAgICAgICAgICAgPGEgaHJlZj0iaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tLyIgdGFyZ2V0PSJfYmxhbmsiPjxpIGNsYXNzPSJmYSBmYS1mYWNlYm9vayI+PC9pPjwvYT4KICAgICAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vIiB0YXJnZXQ9Il9ibGFuayI+PGkgY2xhc3M9ImZhIGZhLWluc3RhZ3JhbSI+PC9pPjwvYT4KICAgICAgICAgICAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS8iIHRhcmdldD0iX2JsYW5rIj48aSBjbGFzcz0iZmEgZmEtbGlua2VkaW4iPjwvaT48L2E+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+PC9kaXY+CiAgICA8L2Rpdj4KPC9kaXY+PC9ib2R5PjwvaHRtbD5kAgIPFgIfCgUHcmRSaWdodGQCAg9kFgRmDxYCHwoFBnJkTGVmdGQCAg8WAh8KBQdyZFJpZ2h0ZAIDD2QWAgIBD2QWAmYPZBYCZg9kFgQCAQ8WAh8CBURiYWNrZ3JvdW5kLWNvbG9yOnRleHQtYWxpZ246cmlnaHQ7UGFkZGluZy1Ub3A6MTVweDt0ZXh0LWFsaWduOnJpZ2h0OxYEAgEPDxYCHw0FBjEyNjUyNmRkAgMPDxYCHw0FDlRpbWVzIFZpc2l0ZWQgZGQCAw8WBB8CBWh3aWR0aDoxMDAlO21hcmdpbi10b3A6N3B4O2hlaWdodDphdXRvO2ZvbnQtc2l6ZToyZXg7Zm9udC1mYW1pbHk6VmVyZGFuYTtjb2xvcjojZmZmZmZmO2JhY2tncm91bmQtY29sb3I6Ox8MBcsEPGEgaHJlZj0iaHR0cDovL3dlYnRlbC5pbiIgc3R5bGU9ImRpc3BsYXk6bm9uZTsiIHJlbD0iZG9mb2xsb3ciPldlYnRlbDwvYT4KCgoKPGZvb3Rlcj4KCTxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CiAgICAJCiAgICAJCiAgICAgICAgPGRpdiBjbGFzcz0iY29weS1yaHQiPgogICAgICAgIAk8ZGl2IGNsYXNzPSJyb3ciPgogICAgICAgIAk8ZGl2IGNsYXNzPSJjb2wtbWQtNSBmb290ZXItbGZ0Ij4KICAgICAgICAgICAgCTxwPsKpIDIwMjIgS2VuIEZpbmFuY2lhbCBTZXJ2aWNlcyBMaW1pdGVkIEFsbCBSaWdodHMgUmVzZXJ2ZWQ8L3A+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJjb2wtbWQtMiI+PGEgaHJlZj0iL3Jlc291cmNlL2Rpc2NsYWltZXIuYXNweCI+RGlzY2xhaW1lcjwvYT48L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29sLW1kLTUgZm9vdGVyLXJodCI+CiAgICAgICAgICAgIAk8cD5Qb3dlcmVkIGJ5IFdlYnRlbCBFbGVjdHJvc29mdCBMdGQuPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgIDwvZGl2Pgo8L2Zvb3Rlcj4KCgpkAgMPFgIfB2gWAgIBD2QWBgIEDxYCHwwFDENoYXQgV2l0aCBVc2QCBg8WAh8MBRBib3QgaXMgdHlwaW5nLi4uZAIKDxYCHwwFEFdhbnQgVG8gQ29uc3VsdD9kGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYIBQxSYWREb2NrWm9uZTIFDFJhZERvY2tab25lMQUMUmFkRG9ja1pvbmUzBQ1IZWFkZXJDb250cm9sBRZIb21lcGFnZWNvbnRlbnRDb250cm9sBQ53aWRnZXRzQ29udHJvbAULTWVudUNvbnRyb2wFDldpZGdldENvbnRyb2wxsIBoONQQRZGNhDxIoTzfyZcMW5060lwll24O3NxrHNc=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form2'];
+if (!theForm) {
+    theForm = document.form2;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=4k70njDBj4Ayc75g08zTukvHeOqXKCNGBqxbo1TfXMTC5FaR4lik4qL1TqVHOcQpj6izBWzcxWmTmUGwS8dDZHASmbpGI4n3n7hNPX7k6pk1&amp;t=638901739900000000" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3aa8328cc8-0a99-4e41-8fe3-b58afac64e45%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2010.2.713.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a1814ab69-dbf3-46be-b5e4-1b4e7d85f183%3a16e4e7cd%3af7645509%3a854aa0a7%3a874f8ea2%3a5a6d9d23" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6393C27E" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAJR2lcIlqWO/2asempRKKvJsu/cYFL6xJbnXI5xGKw4beyI69Bd8AQYLKNV5XdEWCGd43HO2n4N7SGZdyfLOlMa" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('RadScriptManager1', 'form2', [], [], [], 90, '');
+//]]>
+</script>
+
+    <center>
+        <input type="hidden" name="hdn" id="hdn" />
+        <div id="Div_body" style="height:auto;overflow:hidden;background-color:#ffffff;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 table-responsive">
+                        
+                            <div id="RadDockZone2" class="RadDockZone RadDockZone_Default rdHorizontal container-fluid" style="border-style:None;width:100%;min-width:10px;min-height:10px;margin: 0px; padding: 0px; height: auto; min-height: 0px; margin: 0px;
+                                z-index: 100;">
+	<!-- 2010.2.713.40 --><div id="HeaderControl" class="RadDock RadDock_Default col-md-4" style="height:100px;float:Left;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="HeaderControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+<script language="javascript" type="text/javascript">
+
+  
+
+</script>
+  <script type="text/javascript">
+var Analog_Color="#ffffff";
+//alert(col);
+Analog_Color=Analog_Color.substring(1,7);
+//alert(col);
+
+var clocksize=75;
+var colnumbers=Analog_Color;
+var colseconds=Analog_Color;
+var colminutes=Analog_Color;
+var colhours=Analog_Color;
+
+var numstyle = 0;
+var font_family = 'helvetica,arial,sans-serif';
+var localZone = 1;
+var mytimezone = 0;
+var dst = 0;
+var city = '';
+var country = '';
+var fix = 1;
+var xpos=0;
+var ypos=0;
+</script>
+<script type="text/javascript" language="javascript">
+
+var dayname = new Array ('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'); var am = 'AM'; var pm = 'PM';
+
+// you should not need to alter the below code
+var pi = Math.PI; var d = document; var pi2 = pi/2; var rad = (+clocksize) / 2; var ctrX = (+xpos) + rad; var ctrY = (+ypos) + rad; var hourln = 1; var minln = secln = 2; for(var i = 0; i < (rad / 2) + (rad / 16); i++) {hourln += 1;} for(var i = 0; i < (rad / 2) - (rad / 8); i++) {minln += 2;secln += 2;} var font_size = rad / 4; var offset = 16;  var clocknum = [[,1,2,3,4,5,6,7,8,9,10,11,12],[,'I','II','III','IIII','V','VI','VII','VIII','IX','X','XI','XII'],[,'�','�','-','�','�','<span style="font-size:60%">|</span>','�','�','-','�','�','<span style="font-size:60%">||</span>']]; if (numstyle < 0 || numstyle > 2) numstyle = 0; function timeZone(now,loc,mtz,dst) {if (loc) {var dow = now.getDay(); var second = now.getSeconds(); var minute = now.getMinutes(); var hour = now.getHours();} else {now.setUTCMinutes(now.getUTCMinutes() + (mtz + dst)*60); var dow = now.getUTCDay(); var second = now.getUTCSeconds(); var minute = now.getUTCMinutes(); var hour = now.getUTCHours();} if (hour > 11) {moa = pm; hour -= 12;} else moa = am; return [dow,moa,hour,minute,second];} function commonClock(n) {n.style.position = 'absolute'; n.style.top = '0'; n.style.left = '0'; n.style.visibility = 'hidden';} 
+function displayClock() 
+{
+if (!d.getElementById) return; 
+    var ctx = document.createElement('div'); 
+    if ( fix) {ctx.style.position = 'relative'; 
+    ctx.style.margin = 'auto'; 
+    ctx.style.width = (clocksize + offset * 2) + 'px'; 
+    ctx.style.height = (clocksize + offset * 2) + 'px'; 
+    ctx.style.overflow = 'visible';
+} 
+var cn = []; for (var i = 12; i > 0; i--) 
+{
+    cn[i] = document.createElement('div'); 
+    cn[i].id = 'cnum' + i; commonClock(cn[i]); 
+    cn[i].style.width = (offset * 2) + 'px'; 
+    cn[i].style.height = (offset * 2) + 'px'; 
+    cn[i].style.fontFamily = font_family; cn[i].style.fontSize = font_size + 'px'; 
+    cn[i].style.color = '#' + colnumbers; cn[i].style.textAlign = 'center'; 
+    cn[i].style.paddingTop = '10px'; 
+    cn[i].style.zIndex = 1000; cn[i].innerHTML = clocknum[numstyle][i]; 
+    ctx.appendChild(cn[i]);
+} 
+var mn = []; 
+for (i = minln; i > 0; i--) 
+{
+    mn[i] = document.createElement('div'); 
+    mn[i].id = 'cmin' + i; 
+    commonClock(mn[i]);
+    mn[i].style.width = '1px'; mn[i].style.height = '1px';
+    mn[i].style.fontSize = '1px'; 
+    mn[i].style.backgroundColor = '#' + colminutes; mn[i].style.zIndex = 997; 
+    ctx.appendChild(mn[i]);
+} 
+var hr = []; 
+for (i = hourln; i > 0; i--) 
+{
+    hr[i] = document.createElement('div'); 
+    hr[i].id = 'chour' + i; commonClock(hr[i]); 
+    hr[i].style.width = '2px'; 
+    hr[i].style.height = '2px'; 
+    hr[i].style.fontSize ='2px'; 
+    hr[i].style.backgroundColor = '#' + colhours; 
+    hr[i].style.zIndex = 998; ctx.appendChild(hr[i]);
+} 
+var sc = []; 
+for (i = secln; i > 0; i--) 
+{
+    sc[i] = document.createElement('div'); 
+    sc[i].id = 'csec' + i; 
+    commonClock(sc[i]); 
+    sc[i].style.width = '1px'; sc[i].style.height = '1px'; 
+    sc[i].style.fontSize ='1px'; 
+    sc[i].style.backgroundColor = '#' + colseconds; 
+    sc[i].style.zIndex = 999; ctx.appendChild(sc[i]);
+} 
+    var am = document.createElement('div'); 
+    am.id = 'ampm'; commonClock(am); 
+    am.style.width = ((xpos + rad) * 2) + 'px'; 
+    am.style.fontFamily = font_family; 
+    am.style.fontSize = (font_size * 2 / 3) + 'px'; 
+    am.style.color = '#' + colnumbers; 
+    am.style.textAlign = 'center'; 
+    am.style.paddingTop = '10px'; 
+    am.style.zIndex = 990; 
+    ctx.appendChild(am); 
+    var zn = document.createElement('div'); 
+    zn.id = 'zone'; commonClock(zn); 
+    zn.style.width = ((xpos + rad) * 2) + 'px'; 
+    zn.style.fontFamily = font_family; zn.style.fontSize = (font_size * 2 / 3) + 'px'; 
+    zn.style.color = '#' + colnumbers; zn.style.textAlign = 'center'; 
+    zn.style.paddingTop = '10px'; zn.style.zIndex = 990; 
+    ctx.appendChild(zn); 
+    try
+    {
+    d.getElementById('clock_a').appendChild(ctx); 
+    }
+    catch(e)
+    {
+    }
+for (var i = 12; i > 0; i--) 
+{
+    try
+    {
+    d.getElementById('cnum' + i).style.top = (ctrY - offset + rad * Math.sin(i * pi / 6 - pi2))+'px'; 
+    d.getElementById('cnum' + i).style.left = (ctrX - offset + rad * Math.cos(i * pi / 6 - pi2))+'px'; 
+    d.getElementById('cnum' + i).style.visibility = 'visible';
+    }
+    catch(e)
+    {
+    }
+} 
+updateClock();
+
+} 
+function moveClock(l, e, f) 
+{
+try
+{
+for (var i = l; i > 0; i--) 
+{
+    d.getElementById(e + i).style.top = (ctrY + i * Math.sin(f))+'px';
+    d.getElementById(e + i).style.left = (ctrX + i * Math.cos(f))+'px';
+    d.getElementById(e + i).style.visibility = 'visible';
+}
+}
+catch(e)
+{
+}
+} 
+function updateClock() 
+{
+   try
+   {
+    var now = new Date(); 
+    var theTime = timeZone(now,localZone,mytimezone,dst); 
+    d.getElementById('ampm').style.top = (ypos + rad/3)+'px'; 
+    d.getElementById('ampm').innerHTML = theTime[1] + '<br />' + dayname[theTime[0]]; 
+    d.getElementById('ampm').style.visibility = 'visible'; 
+    if (!localZone)
+    {
+    d.getElementById('zone').style.top = (ctrY + (rad/10))+'px'; 
+    d.getElementById('zone').innerHTML = city + '<br />' + country; 
+    d.getElementById('zone').style.visibility = 'visible';
+    
+    }
+     
+     moveClock(secln, 'csec', pi * theTime[4] / 30 - pi2); 
+     moveClock(minln, 'cmin', pi * theTime[3] / 30 - pi2); 
+     moveClock(hourln, 'chour', pi * theTime[2] / 6 + pi * (+now.getMinutes())/360 - pi2); 
+     setTimeout('updateClock()', 100);
+     }
+     catch(e)
+     {
+     }
+}
+
+window.onload = displayClock;
+
+</script>
+<script language="JavaScript" type="text/javascript">
+
+function curTime()
+{
+var now=new Date()
+var hrs=now.getHours()
+var min=now.getMinutes()
+var sec=now.getSeconds()
+var don="AM"
+if (hrs>=12){ don="PM" }
+if (hrs>12) { hrs-=12 }
+if (hrs==0) { hrs=12 }
+if (hrs<10) { hrs="0"+hrs }
+if (min<10) { min="0"+min }
+if (sec<10) { sec="0"+sec }
+if(navigator.appName.indexOf("Microsoft Internet Explorer") != -1)
+{
+    clock.innerHTML=hrs+":"+min+":"+sec+" "+don
+}
+else
+{
+    document.getElementById("clock").textContent=hrs+":"+min+":"+sec+" "+don
+}
+setTimeout("curTime()",1000)
+
+}
+</script>
+ <style type="text/css">
+.IE8Fix
+{
+    text-align:left;
+    z-index: 100;
+}
+.imstyle			
+ {			
+     float:left;			
+     padding:0px;			    
+     margin:0px;			
+     border:0px;			
+ }	
+</style>
+
+<table class="table-responsive" style="width:100%; height:20%; margin-top:0px;margin-left:0px;margin-right:0px;margin-bottom:0px;padding-bottom:0px; padding-top:0px; border-spacing:0px; vertical-align:top;"  cellpadding ="0" cellspacing = "0" border="0">
+        <tr id="HeaderControl_C_ctl00_imageheader" style="width:100%; margin:0 ; ">
+						<td colspan="3" style="width:100%; border:0;  margin:0 ;">
+                
+            </td>
+					</tr>
+					
+        <tr id="HeaderControl_C_ctl00_tr_HeaderBackImage" valign="top" style="">
+						<td id="HeaderControl_C_ctl00_Header" style="width:100%; height:100%" valign="top" class="IE8Fix"><html><header>
+<div class="banner-btm">
+</div>
+      <div class="container">
+          
+        <div class="row"> 
+        	<div class="col-md-4">   
+                <div class="web-logo">
+                  <a href="/resource/home.aspx"><img src="Image/web-logo.png" class="img-responsive"></a>
+                </div>
+            </div>
+            
+   	</div>
+  </div>
+</header></html></td>
+					</tr>
+					
+      </table>
+
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="HeaderControl_ClientState" name="HeaderControl_ClientState" type="hidden" />
+	</div><div id="MenuControl" class="RadDock RadDock_Default col-md-8" style="height:100px;float:Right;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="MenuControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+
+ <nav class="navbar-default marginBottom-0 " style="z-index:155555555555;" >
+ <div class="container-fluid" style="z-index:1010192;">
+                <div class="navbar navbar-header" style="z-index:155555555555;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1" style="z-index:155555555555;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            
+            </div>
+            <div class="collapse navbar-collapse " id="navbar-collapse-1" style="z-index:1010192;">
+           
+             
+                    <ul class="nav navbar-nav">
+						<li><a href="/resource/home.aspx" title="Home">Home</a></li><li><a href="/resource/About_Us.aspx" title="About Us">About Us</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Services&nbsp;<b class="caret"></b></a><ul class="dropdown-menu">
+							<li><a href="/resource/Services/Retail_Services.aspx" title="Retail Services">Retail Services</a></li><li><a href="/resource/Services/Institutional_Services.aspx" title="Institutional Services">Institutional Services</a></li><li><a href="/resource/Services/ITEs_Services.aspx" title="ITEs Services">ITEs Services</a></li><li><a href="/resource/Services/Investment_Banking.aspx" title="Investment Banking">Investment Banking</a></li>
+						</ul></li><li><a href="/resource/Partner_With_Us.aspx" title="Partner With Us">Partner With Us</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Investor Relations&nbsp;<b class="caret"></b></a><ul class="dropdown-menu">
+							<li><a href="/resource/Investor_Relations/AGM_Documents.aspx" title="AGM Documents">AGM Documents</a></li><li><a href="/resource/Investor_Relations/Board_Meeting.aspx" title="Board Meeting">Board Meeting</a></li><li><a href="/resource/Investor_Relations/Announcements.aspx" title="Announcment under Regulation 30">Announcment under Regulation 30</a></li><li><a href="/resource/Investor_Relations/Corporate_Governance1.aspx" title="Corporate Governance">Corporate Governance</a></li><li><a href="/resource/Investor_Relations/Financial_Results.aspx" title="Financial Results">Financial Results</a></li><li><a href="/resource/Investor_Relations/Shareholding_Pattern.aspx" title="Shareholding Pattern">Shareholding Pattern</a></li><li><a href="/resource/Investor_Relations/Policies.aspx" title="Policies">Policies</a></li><li><a href="/resource/Investor_Relations/Annual_Report.aspx" title="Annual Report">Annual Report</a></li><li><a href="/resource/Investor_Relations/Shareholder-services.aspx" title="Shareholders Services">Shareholders Services</a></li><li><a href="/resource/Investor_Relations/Annual-Return.aspx" title="Annual Return">Annual Return</a></li><li><a href="/resource/Investor_Relations/EOGM-Documents.aspx" title="EOGM Documents">EOGM Documents</a></li><li><a href="/resource/Investor_Relations/Grievance_Redressal.aspx" title="Grievance Redressal">Grievance Redressal</a></li>
+						</ul></li><li><a href="/NewThemeQuerysheet.aspx" title="Query">Query</a></li><li><a href="/resource/Career.aspx" title="Careers">Careers</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Admin&nbsp;<b class="caret"></b></a><ul class="dropdown-menu">
+							<li><a href="/Login.aspx" title="Login">Login</a></li><li><a href="http://mail.ken-fin.com" target="_blank" title="Email Login">Email Login</a></li><li><a href="https://ken-fin.com/Timesheet.aspx" target="_blank" title="Time Sheet">Time Sheet</a></li><li><a href="http://cpeapp.icai.org/member/login" target="_blank" title="CPE Status">CPE Status</a></li>
+						</ul></li><li><a href="/resource/Contact_Us.aspx" title="Contact Us">Contact Us</a></li>
+					</ul>
+             
+                
+
+            </div>
+           
+        </div>
+
+        </nav>
+        <style type="text/css" >
+        
+        .marginBottom-0 {margin-bottom:0;}
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#555;}
+.dropdown-submenu.pull-left{float:none;}
+.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+.dropdown-menu[data-placement="left"] {
+    left: auto !important;
+    right: 0px !important;
+}
+
+.navbar .nav>li>.dropdown-menu[data-placement="left"]:before {
+    left:auto !important;
+    right: 9px !important;
+}
+
+.navbar .nav>li>.dropdown-menu[data-placement="left"]:after {
+    left: auto  !important;
+    right: 10px  !important;
+}
+        </style>
+
+
+
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="MenuControl_ClientState" name="MenuControl_ClientState" type="hidden" />
+	</div><div id="widgetsControl" class="RadDock RadDock_Default col-md-12" style="height:500px;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="widgetsControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+<div > 
+                            <table id="widgetsControl_C_ctl00_tbl_widgets" width="100%" style="height:100%;" cellpadding="0" cellspacing="0" border="0">
+						<tr id="widgetsControl_C_ctl00_tr_Widgets" style="height:100%;">
+							<td style="text-align:left;margin:0px 0px 0px 0px;height:100%;">
+                                        <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><section class="banner-hm">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="Image/Banner-B1.jpg" alt="#" width="100%">
+                <div class="carousel-caption" style="left:14% !important; right:inherit; top:160px;">
+       <h3>Career</h3>
+        <p>We nurture and cultivate a sense pride in the work and create <br>team leaders. Your growth chart will...</p>
+        <div><a href="/resource/Career.aspx" class="red-m">READ MORE</a></div>
+      </div>
+            </div>
+
+            <div class="item">
+                <img src="Image/Banner-B2.jpg" alt="#" width="100%">
+                <div class="carousel-caption" style="left:inherit; right:14%; top:160px; text-align:right;">
+        <h3>OUR VISION
+</h3>
+        <p>We aspire to be a leading and reliable organization in the<br> business world with continued improvisation.					
+
+</p>
+       <div><a href="/resource/About_Us.aspx" class="red-m">READ MORE</a></div>
+      </div>
+            </div>
+
+            <div class="item">
+                <img src="Image/Banner-B3.jpg" alt="#" width="100%">
+                <div class="carousel-caption" style="left:14% !important; right:inherit; top:160px;">
+        <h3>OUR MISSION</h3>
+        <p>We aim to provide innovative, cost-effective and<br> sustainable solutions, while following fair commercial practices.</p>
+       <div><a href="/resource/About_Us.aspx" class="red-m">READ MORE</a></div>
+      </div>
+            </div>
+            
+            
+            
+
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left fa fa-angle-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right fa fa-angle-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section></body></html>
+                                    </td>
+						</tr>
+					</table>
+					                         
+                         </div>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="widgetsControl_ClientState" name="widgetsControl_ClientState" type="hidden" />
+	</div><div class="RadDock RadDock_Default rdPlaceHolder" id="RadDockZone2_D" style="display:none;">
+		<!-- -->
+	</div><div class="clear" id="RadDockZone2_C">
+		<!-- -->
+	</div><input id="RadDockZone2_ClientState" name="RadDockZone2_ClientState" type="hidden" />
+</div>
+                            <div id="RadDockZone1" class="RadDockZone RadDockZone_Default rdHorizontal container" style="border-style:None;min-width:10px;min-height:10px;z-index:9;overflow:visible;">
+	<div id="HomepagecontentControl" class="RadDock RadDock_Default col-md-12" style="min-height:450px;z-index:0;border-color:white;height:auto;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="HomepagecontentControl_C" class="rdContent" style="height:auto;overflow:hidden;border-style:none;">
+					
+<center>
+ <table cellpadding ="0" cellspacing = "5" style="width: 100%;margin-top:20px;">
+        <tr style="width: 100%;">
+           
+        </tr>
+        </table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr valign="top">
+                    <td valign="top" >
+                       
+                       </td>
+                    <td valign="top" style="width:100%;" >
+                     
+                        <html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+
+<body>
+    <section class="hm-abt">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="Image/about-img1.jpg" class="img-responsive">
+                </div>
+
+                <div class="col-md-6">
+                    <div class="aboutbox">
+                        <h2 class="hm-head">About Us</h2>
+
+                        <p>Ken Financial Services Limited (L65990MH1994PLC078898) is a public limited company
+                            incorporated in the year 1994 under Companies Act, 1956. Ken Financial Services Limited is
+                            also listed on the Bombay Stock Exchange (BSE Code - 530547).
+                        </p>
+
+
+
+                        <p>The Company is engaged in the business of Financial Services within India. It has a very
+                            young and energetic team.
+                        </p>
+                        <p><strong>LIST OF DIRECTORS</strong>
+                        <!-- </p>
+                        Mr. Shakti Singh Rathore<br>
+                        Mr. Praveen Kumar Modi<p> -->
+                        <ul>
+                            <li>Mr. Shakti Singh Rathore</li>
+                            <li>Mr. Praveen Kumar Modi</li>
+                            <li>Mr. Ritesh Kumar Pathak</li>
+                            <li>Ms. Neha Kailash Bhageria</li>
+                            <li>Mr. Harish Sitaram Sharma</li>
+                        </ul>
+                        <div class="rd-mrr">
+                            <a href="/resource/About_Us.aspx">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+                    </td>
+                    <td valign="top">
+                       </td>
+                </tr>
+            </table>  
+            </center>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="HomepagecontentControl_ClientState" name="HomepagecontentControl_ClientState" type="hidden" />
+	</div><div class="RadDock RadDock_Default rdPlaceHolder" id="RadDockZone1_D" style="display:none;">
+		<!-- -->
+	</div><div class="clear" id="RadDockZone1_C">
+		<!-- -->
+	</div><input id="RadDockZone1_ClientState" name="RadDockZone1_ClientState" type="hidden" />
+</div>
+                            <div id="RadDockZone3" class="RadDockZone RadDockZone_Default rdHorizontal container-fluid zoneover" style="border-style:None;width:100%;min-width:10px;min-height:10px;margin: 0px; padding: 0px; height: auto; z-index: 0; min-height: 0px;
+                                margin: 0px;">
+	<div id="WidgetControl1" class="RadDock RadDock_Default">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="WidgetControl1_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+
+<div > 
+                            <table id="WidgetControl1_C_ctl00_tbl_widgets" width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr id="WidgetControl1_C_ctl00_tr_Widgets">
+							<td style="text-align:left;margin:0px 0px 0px 0px;">
+                                        <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><section class="hm-serv">
+	<div class="container">
+    <div class="serbox">
+    	<h2 class="hm-head">Our Services</h2>
+        <div class="row">
+        	<div class="col-md-4">
+            	<div class="ser-bx">
+                <img src="Image/ser-img1.jpg" class="img-responsive">
+                <div class="ser-cont">
+                	<h3>Retail services</h3>
+                    <p>Coming Soon</p>
+                    <div class="rd-mr">
+                    	<a href="/resource/Services/Retail_Services.aspx">Read More</a>
+                    </div>
+                </div>
+                </div>
+            </div> 
+            
+            <div class="col-md-4">
+            	<div class="ser-bx">
+                <img src="Image/ser-img2.jpg" class="img-responsive">
+                <div class="ser-cont">
+                	<h3>Investment banking</h3>
+                    <p>Coming Soon</p>
+                    <div class="rd-mr">
+                    	<a href="/resource/Services/Investment_Banking.aspx">Read More</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+            	<div class="ser-bx">
+                <img src="Image/ser-img3.jpg" class="img-responsive">
+                <div class="ser-cont">
+                	<h3>Institutional services</h3>
+                    <p>Equities, Debt, Forex</p>
+                    <div class="rd-mr">
+                    	<a href="/resource/Services/Institutional_Services.aspx">Read More</a>
+                    </div>
+                </div>
+                </div>
+            </div> 
+        </div>       
+        
+        
+    </div>
+    </div>
+</section>
+
+
+
+<div class="cont-hm">
+	<div class="container-middle">
+    <div class="container"><div class="row">
+    	<div class="col-md-6">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3767.8337409365163!2d72.85305427596742!3d19.202462747988733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s3rd%20Floor%2C%20Kalpataru%20Avenue%2C%20Opposite%20ESIC%20Hospital%2C%20akurli%20Road%2C%20Kandivali%20East%2C%20Mumbai%20400%20101.!5e0!3m2!1sen!2sin!4v1773664538076!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="col-md-6">
+            <div class="cont-bg">
+            <h2 class="hm-head">Contact Us</h2>
+            <div class="cont-info">
+              <p class="mb-2"><i class="fa fa-map-marker"></i><strong>Address</strong>-Office No. 34, 3rd Floor, Kalpataru Avenue, Opposite ESIC Hospital, kurli Road, Kandivali East, Mumbai 400 101.</p>
+              <p class="mb-2"><i class="fa fa-phone"></i><strong>Contact No:</strong>  +022-46002989</p>
+              <p class="mb-2"><i class="fa fa-envelope-o"></i><strong>Email:-&nbsp;</strong>kenfsl@rediffmail.com</p>
+              <div class="social-links mt-3"><br>
+                <a href="https://twitter.com/" target="_blank"><i class="fa"><svg width="16" height="16" style="color:#000;" fill="currentColor" class="bi bi-twitter-x" viewbox="0 0 16 16">
+  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
+</svg></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            </div>
+            </div>
+        </div></div>
+    </div>
+</div></body></html>
+                                    </td>
+						</tr>
+					</table>
+					                         
+                         </div>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="WidgetControl1_ClientState" name="WidgetControl1_ClientState" type="hidden" />
+	</div><div class="RadDock RadDock_Default rdPlaceHolder" id="RadDockZone3_D" style="display:none;">
+		<!-- -->
+	</div><div class="clear" id="RadDockZone3_C">
+		<!-- -->
+	</div><input id="RadDockZone3_ClientState" name="RadDockZone3_ClientState" type="hidden" />
+</div>
+                            
+                        
+                        
+   <div style="-moz-border-radius:0px; -webkit-border-radius:0px; -khtml-border-radius:0px;border-radius:0px; behavior:url(../js/border-radius.htc);
+/*border-radius:0px; box-shadow: 0 0 10px rgba(0,0,0,.5); */
+ /*margin-bottom:10px;*/ height:auto;" align="center">
+
+<table id="FooterrControl1_tbl" style="height:auto;width:100%;" class="table-responsive" cellpadding="0" cellspacing="0" border="0">
+	<tr id="FooterrControl1_tr_FooterBackImage">
+		<td style="width:100%; height:auto;" valign="top">
+         
+        <table style="width:100%;height:auto; float:right;"  class="table-responsive" cellpadding ="0"  cellspacing ="0"; border="0">
+        <tr>
+        <td id="FooterrControl1_tr_hitCounter" style="background-color:text-align:right;Padding-Top:15px;text-align:right;" valign="middle">   
+        <span id="FooterrControl1_lbl_hitsCounter" style="font-weight:bold;">126526</span>
+         <span id="FooterrControl1_lbl_hitMessage" style="font-weight:bold;">Times Visited </span>
+        </td>
+		
+        </tr></table>
+        <div id="FooterrControl1_Footer" style="width:100%;margin-top:7px;height:auto;font-size:2ex;font-family:Verdana;color:#ffffff;background-color:;"><a href="http://webtel.in" style="display:none;" rel="dofollow">Webtel</a>
+
+
+
+<footer>
+	<div class="container">
+    	
+    	
+        <div class="copy-rht">
+        	<div class="row">
+        	<div class="col-md-5 footer-lft">
+            	<p>© 2022 Ken Financial Services Limited All Rights Reserved</p>
+            </div>
+            <div class="col-md-2"><a href="/resource/disclaimer.aspx">Disclaimer</a></div>
+            <div class="col-md-5 footer-rht">
+            	<p>Powered by Webtel Electrosoft Ltd.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</footer>
+
+
+</div> 
+        </td>
+	</tr>
+</table>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDockZone, {"clientID":"RadDockZone2","clientStateFieldID":"RadDockZone2_ClientState","fitDocks":false,"layoutID":"RadDockLayout1","uniqueName":"RadDockZone2"}, null, null, $get("RadDockZone2"));
+    $create(Telerik.Web.UI.RadDock, {"_expandedHeight":140,"allowedZones":[],"clientStateFieldID":"HeaderControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"100px","layoutID":"RadDockLayout1","left":"-6px","skin":"Default","title":"HeaderControl(20%*140px)  Left","top":"178px","uniqueID":"HeaderControl","uniqueName":"HeaderControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("HeaderControl"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"MenuControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"100px","index":1,"layoutID":"RadDockLayout1","left":"199px","skin":"Default","title":"MenuControl(80%*140px)  Right","top":"193px","uniqueID":"MenuControl","uniqueName":"MenuControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("MenuControl"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"widgetsControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"500px","index":2,"layoutID":"RadDockLayout1","skin":"Default","title":"widgetsControl(100%*1100px)  None","uniqueID":"widgetsControl","uniqueName":"widgetsControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("widgetsControl"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDockZone, {"clientID":"RadDockZone1","clientStateFieldID":"RadDockZone1_ClientState","fitDocks":false,"layoutID":"RadDockLayout1","uniqueName":"RadDockZone1"}, null, null, $get("RadDockZone1"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"HomepagecontentControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone1","forbiddenZones":[],"layoutID":"RadDockLayout1","skin":"Default","title":"HomepagecontentControl(100%*600)None","uniqueID":"HomepagecontentControl","uniqueName":"HomepagecontentControl","width":""}, null, {"dockZone":"RadDockZone1"}, $get("HomepagecontentControl"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDockZone, {"clientID":"RadDockZone3","clientStateFieldID":"RadDockZone3_ClientState","fitDocks":false,"layoutID":"RadDockLayout1","uniqueName":"RadDockZone3"}, null, null, $get("RadDockZone3"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"WidgetControl1_ClientState","dockMode":2,"dockZoneID":"RadDockZone3","forbiddenZones":[],"layoutID":"RadDockLayout1","skin":"Default","title":"WidgetControl1(100* 450 ) None","uniqueID":"WidgetControl1","uniqueName":"WidgetControl1","width":""}, null, {"dockZone":"RadDockZone3"}, $get("WidgetControl1"));
+});
+//]]>
+</script>
+</form>
+    
+</body>
+
+<script language="javascript" type="text/javascript">
+ 
+
+ 
+</script>
+
+</html>

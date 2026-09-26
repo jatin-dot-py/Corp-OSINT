@@ -1,0 +1,858 @@
+<!-- DEBUG-VIEW START 1 APPPATH/Views/web/header.php -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script  id="debugbar_loader" data-time="1790449252.359434" src="https://master-group.in/index.php?debugbar"></script><script  id="debugbar_dynamic_script"></script><style  id="debugbar_dynamic_style"></style><script class="kint-rich-script">"use strict";(()=>{function m(n){if(!(n instanceof Element))throw new Error("Invalid argument to dedupeElement()");let t=n.ownerDocument,e=E(n);for(let s of t.querySelectorAll(e))n!==s&&s.parentNode.removeChild(s)}function d(n){return n instanceof Element?n.ownerDocument.contains(n):!1}function E(n){if(!(n instanceof Element))throw new Error("Invalid argument to buildClassSelector()");return[n.nodeName,...n.classList].join(".")}function f(n){if(!(n instanceof Element))throw new Error("Invalid argument to selectText()");let t=n.ownerDocument,e=t.getSelection(),s=t.createRange();s.selectNodeContents(n),e.removeAllRanges(),e.addRange(s)}function I(n,t){let e;return function(...s){clearTimeout(e),e=setTimeout(function(){n(...s)},t)}}function x(n){if(!(n instanceof Element))throw new Error("Invalid argument to offsetTop()");return n.offsetTop+(n.offsetParent?x(n.offsetParent):0)}var u=class n{static#e=new Set;static toggleSearchBox(t,e){let s=t.querySelector(".kint-search"),i=t.parentNode;if(s)if(s.classList.toggle("kint-show",e)){if(s.focus(),s.select(),!n.#e.has(s)){let r=i.querySelectorAll("dl").length,o=200;r>1e4&&(o=700),s.addEventListener("keyup",I(n.#t.bind(null,s),o)),n.#e.add(s)}n.#t(s)}else i.classList.remove("kint-search-root")}static#t(t){let e=t.closest(".kint-parent")?.parentNode;if(e)if(t.classList.contains("kint-show")&&t.value.length){let s=e.dataset.lastSearch;if(e.classList.add("kint-search-root"),s!==t.value){e.dataset.lastSearch=t.value,e.classList.remove("kint-search-match");for(let i of e.querySelectorAll(".kint-search-match"))i.classList.remove("kint-search-match");n.#s(e,t.value.toUpperCase())}}else e.classList.remove("kint-search-root")}static#s(t,e){let s=t.cloneNode(!0);for(let c of s.querySelectorAll(".access-path"))c.remove();if(!s.textContent.toUpperCase().includes(e))return;t.classList.add("kint-search-match");let i=t.firstElementChild;for(;i&&i.tagName!=="DT";)i=i.nextElementSibling;if(!i)return;let r=a.getChildContainer(i);if(!r)return;let o,l;for(let c of r.children)c.tagName==="DL"?n.#s(c,e):c.tagName==="UL"&&(c.classList.contains("kint-tabs")?o=c.children:c.classList.contains("kint-tab-contents")&&(l=c.children));if(!(!o||o.length!==l?.length))for(let c=o.length;c--;){let k=!1,F=!1;o[c].textContent.toUpperCase().includes(e)&&(k=!0);let O=l[c].cloneNode(!0);for(let v of O.querySelectorAll(".access-path"))v.remove();if(O.textContent.toUpperCase().includes(e)&&(k=!0,F=!0),k&&o[c].classList.add("kint-search-match"),F)for(let v of l[c].children)v.tagName==="DL"&&n.#s(v,e)}}};var g=class{static sort(t,e){let s=t.dataset.kintTableSort,i=parseInt(s)===e?-1:1,r=t.tBodies[0];[...r.rows].sort(function(o,l){o=o.cells[e].textContent.trim().toLocaleLowerCase(),l=l.cells[e].textContent.trim().toLocaleLowerCase();let c=0;return!isNaN(o)&&!isNaN(l)?(o=parseFloat(o),l=parseFloat(l),c=o-l):isNaN(o)&&!isNaN(l)?c=1:isNaN(l)&&!isNaN(o)?c=-1:c=(""+o).localeCompare(""+l),c*i}).forEach(o=>r.appendChild(o)),i<0?t.dataset.kintTableSort=null:t.dataset.kintTableSort=e}};var a=class n{#e;#t;#s;constructor(t){if(!(t instanceof h))throw new Error("Invalid argument to Rich.constructor()");this.#e=t,this.#e.runOnInit(this.#i.bind(this));let e=new q(this,t);new b(this,t.window,e)}#i(){let t=this.#e.window.document;if(d(this.#t)||(this.#t=t.querySelector("style.kint-rich-style")),this.#t&&m(this.#t),t.querySelector(".kint-rich.kint-file")){this.setupFolder(t);let e=this.#s.querySelector("dd.kint-foldout"),s=Array.from(t.querySelectorAll(".kint-rich.kint-file"));for(let i of s)i.parentNode!==e&&e.appendChild(i);this.#s.classList.add("kint-show")}}addToFolder(t){let e=t.closest(".kint-rich");if(!e)throw new Error("Bad addToFolder");let s=this.#e.window.document;if(this.setupFolder(s),this.folder.contains(t))throw new Error("Bad addToFolder");let i=this.#s.querySelector("dd.kint-foldout"),r=t.closest(".kint-parent, .kint-rich"),o=Array.from(e.querySelectorAll(".kint-folder-trigger"));if(e===r||e.querySelectorAll(".kint-rich > dl").length===1){for(let l of o)l.remove();e.classList.add("kint-file"),i.insertBefore(e,i.firstChild)}else{let l=s.createElement("div");l.classList.add("kint-rich"),l.classList.add("kint-file"),l.appendChild(r.closest(".kint-rich > dl"));let c=e.lastElementChild;c.matches(".kint-rich > footer")&&l.appendChild(c.cloneNode(!0));for(let k of o)k.remove();i.insertBefore(l,i.firstChild)}n.toggle(this.#s.querySelector(".kint-parent"),!0)}setupFolder(t){if(this.#s)d(this.#s)||(this.#s=t.querySelector(".kint-rich.kint-folder"));else{let e=t.createElement("template");e.innerHTML='<div class="kint-rich kint-folder"><dl><dt class="kint-parent"><nav></nav>Kint</dt><dd class="kint-foldout"></dd></dl></div>',this.#s=e.content.firstChild,t.body.appendChild(this.#s)}}get folder(){return d(this.#s)||(this.#s=this.#e.window.document.querySelector(".kint-rich.kint-folder")),this.#s&&m(this.#s),this.#s}isFolderOpen(){let t=this.#s?.querySelector("dd.kint-foldout");if(t)return t.previousSibling.classList.contains("kint-show")}static getChildContainer(t){let e=t.nextElementSibling;for(;e&&!e.matches("dd");)e=e.nextElementSibling;return e}static toggle(t,e){let s=n.getChildContainer(t);s&&(e=t.classList.toggle("kint-show",e),n.#n(s,e))}static switchTab(t){t.parentNode.getElementsByClassName("kint-active-tab")[0].classList.remove("kint-active-tab"),t.classList.add("kint-active-tab");let e=t,s=0;for(;e=e.previousElementSibling;)s++;let i=t.parentNode.nextSibling.children;for(let r=i.length;r--;)r===s?(i[r].classList.add("kint-show"),n.#n(i[r],!0)):i[r].classList.remove("kint-show")}static toggleChildren(t,e){let s=n.getChildContainer(t);if(!s)return;e===void 0&&(e=t.classList.contains("kint-show"));let i=Array.from(s.getElementsByClassName("kint-parent"));for(let r of i)r.classList.toggle("kint-show",e)}static toggleAccessPath(t,e){let s=t.querySelector(".access-path");s?.classList.toggle("kint-show",e)&&f(s)}static#n(t,e){if(t.children.length===2&&t.lastElementChild.matches("ul.kint-tab-contents"))for(let s of t.lastElementChild.children)s.matches("li.kint-show")&&(t=s);if(t.children.length===1&&t.firstElementChild.matches("dl")){let s=t.firstElementChild.firstElementChild;s?.classList?.contains("kint-parent")&&n.toggle(s,e)}}},b=class{#e;#t;#s;#i=null;#n=null;#o=0;constructor(t,e,s){this.#e=t,this.#t=s,this.#s=e,this.#s.addEventListener("click",this.#a.bind(this),!0)}#r(){clearTimeout(this.#i),this.#i=setTimeout(this.#l.bind(this),250)}#l(){clearTimeout(this.#i),this.#i=null,this.#n=null,this.#o=0}#c(){let t=this.#n;if(!t.matches(".kint-parent > nav"))return;let e=t.parentNode;if(this.#o===1)a.toggleChildren(e),this.#t.onTreeChanged(),this.#r(),this.#o=2;else if(this.#o===2){this.#l();let s=e.classList.contains("kint-show"),i=this.#e.folder?.querySelector(".kint-parent"),r=Array.from(this.#s.document.getElementsByClassName("kint-parent"));for(let o of r)o!==i&&o.classList.toggle("kint-show",s);this.#t.onTreeChanged(),this.#t.scrollToFocus()}}#a(t){if(this.#o){this.#c();return}let e=t.target;if(!e.closest(".kint-rich"))return;if(e.tagName==="DFN"&&f(e),e.tagName==="TH"){t.ctrlKey||g.sort(e.closest("table"),e.cellIndex);return}if(e.tagName==="LI"&&e.parentNode.className==="kint-tabs"){if(e.className!=="kint-active-tab"){let i=e.closest("dl")?.querySelector(".kint-parent > nav")??e;a.switchTab(e),this.#t.onTreeChanged(),this.#t.setCursor(i)}return}let s=e.closest("dt");if(e.tagName==="NAV")e.parentNode.tagName==="FOOTER"?(this.#t.setCursor(e),e.parentNode.classList.toggle("kint-show")):s?.classList.contains("kint-parent")&&(a.toggle(s),this.#t.onTreeChanged(),this.#t.setCursor(e),this.#r(),this.#o=1,this.#n=e);else if(e.classList.contains("kint-access-path-trigger"))s&&a.toggleAccessPath(s);else if(e.classList.contains("kint-search-trigger"))s?.matches(".kint-rich > dl > dt.kint-parent")&&u.toggleSearchBox(s);else if(e.classList.contains("kint-folder-trigger")){if(s?.matches(".kint-rich > dl > dt.kint-parent"))this.#e.addToFolder(e),this.#t.onTreeChanged(),this.#t.setCursor(s.querySelector("nav")),this.#t.scrollToFocus();else if(e.parentNode.tagName==="FOOTER"){let i=e.closest(".kint-rich").querySelector(".kint-parent > nav, .kint-rich > footer > nav");this.#e.addToFolder(e),this.#t.onTreeChanged(),this.#t.setCursor(i),this.#t.scrollToFocus()}}else e.classList.contains("kint-search")||(e.tagName==="PRE"&&t.detail===3?f(e):e.closest(".kint-source")&&t.detail===3?f(e.closest(".kint-source")):e.classList.contains("access-path")?f(e):e.tagName!=="A"&&s?.classList.contains("kint-parent")&&(a.toggle(s),this.#t.onTreeChanged(),this.#t.setCursor(s.querySelector("nav"))))}},j=65,G=68,A=70,S=72,K=74,D=75,p=76,V=83,P=9,T=13,B=27,L=32,N=37,R=38,C=39,H=40,M=".kint-rich .kint-parent > nav, .kint-rich > footer > nav, .kint-rich .kint-tabs > li:not(.kint-active-tab)",q=class{#e=[];#t=0;#s=!1;#i;#n;constructor(t,e){this.#i=t,this.#n=e.window,this.#n.addEventListener("keydown",this.#c.bind(this),!0),e.runOnInit(this.onTreeChanged.bind(this))}scrollToFocus(){let t=this.#e[this.#t];if(!t)return;let e=this.#i.folder;if(t===e?.querySelector(".kint-parent > nav"))return;let s=x(t);if(this.#i.isFolderOpen()){let i=e.querySelector("dd.kint-foldout");i.scrollTo(0,s-i.clientHeight/2)}else this.#n.scrollTo(0,s-this.#n.innerHeight/2)}onTreeChanged(){let t=this.#e[this.#t];this.#e=[];let e=this.#i.folder,s=e?.querySelector(".kint-parent > nav"),i=this.#n.document;this.#i.isFolderOpen()&&(i=e,this.#e.push(s));let r=Array.from(i.querySelectorAll(M));for(let o of r)o.offsetParent!==null&&o!==s&&this.#e.push(o);if(s&&!this.#i.isFolderOpen()&&this.#e.push(s),this.#e.length===0){this.#s=!1,this.#r();return}t&&this.#e.indexOf(t)!==-1?this.#t=this.#e.indexOf(t):this.#r()}setCursor(t){if(this.#i.isFolderOpen()&&!this.#i.folder.contains(t)||!t.matches(M))return!1;let e=this.#e.indexOf(t);if(e===-1&&(this.onTreeChanged(),e=this.#e.indexOf(t)),e!==-1){if(e!==this.#t)return this.#t=e,this.#r(),!0;this.#e[e]?.classList.remove("kint-weak-focus")}else console.error("setCursor failed to find target in list",t),console.info("Please report this as a bug in Kint at https://github.com/kint-php/kint");return!1}#o(t){if(this.#e.length===0)return this.#t=0,null;for(this.#t+=t;this.#t<0;)this.#t+=this.#e.length;for(;this.#t>=this.#e.length;)this.#t-=this.#e.length;return this.#r(),this.#t}#r(){let t=this.#n.document.querySelector(".kint-focused");t&&(t.classList.remove("kint-focused"),t.classList.remove("kint-weak-focus")),this.#s&&this.#e[this.#t]?.classList.add("kint-focused")}#l(t){let e=t.closest(".kint-rich .kint-parent ~ dd")?.parentNode.querySelector(".kint-parent > nav");e&&(this.setCursor(e),this.scrollToFocus())}#c(t){if(this.#s&&t.keyCode===B&&t.target.matches(".kint-search")){t.target.blur(),this.#r();return}if(t.target!==this.#n.document.body||t.altKey||t.ctrlKey)return;if(t.keyCode===G){if(this.#s)this.#s=!1;else{if(this.#s=!0,this.onTreeChanged(),this.#e.length===0){this.#s=!1;return}this.scrollToFocus()}this.#r(),t.preventDefault();return}else if(t.keyCode===B){this.#s&&(this.#s=!1,this.#r(),t.preventDefault());return}else if(!this.#s)return;t.preventDefault(),d(this.#e[this.#t])||this.onTreeChanged();let e=this.#e[this.#t];if([P,R,D,H,K].includes(t.keyCode)){t.keyCode===P?this.#o(t.shiftKey?-1:1):t.keyCode===R||t.keyCode===D?this.#o(-1):(t.keyCode===H||t.keyCode===K)&&this.#o(1),this.scrollToFocus();return}if(e.tagName==="LI"&&[L,T,C,p,N,S].includes(t.keyCode)){t.keyCode===L||t.keyCode===T?(a.switchTab(e),this.onTreeChanged()):t.keyCode===C||t.keyCode===p?this.#o(1):(t.keyCode===N||t.keyCode===S)&&this.#o(-1),this.scrollToFocus();return}if(e.parentNode.tagName==="FOOTER"&&e.closest(".kint-rich")){if(t.keyCode===L||t.keyCode===T)e.parentNode.classList.toggle("kint-show");else if(t.keyCode===N||t.keyCode===S)if(e.parentNode.classList.contains("kint-show"))e.parentNode.classList.remove("kint-show");else{this.#l(e.closest(".kint-rich"));return}else if(t.keyCode===C||t.keyCode===p)e.parentNode.classList.add("kint-show");else if(t.keyCode===A&&!this.#i.isFolderOpen()&&e.matches(".kint-rich > footer > nav")){let i=e.closest(".kint-rich").querySelector(".kint-parent > nav, .kint-rich > footer > nav");this.#i.addToFolder(e),this.onTreeChanged(),this.setCursor(i),this.scrollToFocus()}return}let s=e.closest(".kint-parent");if(s){if(t.keyCode===j){a.toggleAccessPath(s);return}if(t.keyCode===A){!this.#i.isFolderOpen()&&s.matches(".kint-rich:not(.kint-folder) > dl > .kint-parent")&&(this.#i.addToFolder(e),this.onTreeChanged(),this.setCursor(e),this.scrollToFocus());return}if(t.keyCode===V){let i=s.closest(".kint-rich > dl")?.querySelector(".kint-search")?.closest(".kint-parent");if(i){e.classList.add("kint-weak-focus"),u.toggleSearchBox(i,!0);return}}if(t.keyCode===L||t.keyCode===T){a.toggle(s),this.onTreeChanged();return}if([C,p,N,S].includes(t.keyCode)){let i=s.classList.contains("kint-show");if(t.keyCode===C||t.keyCode===p){i&&a.toggleChildren(s,!0),a.toggle(s,!0),this.onTreeChanged();return}else if(i){a.toggleChildren(s,!1),a.toggle(s,!1),this.onTreeChanged();return}else{this.#l(s);return}}}}};var y=class{#e;#t;constructor(t){if(!(t instanceof h))throw new Error("Invalid argument to Plain.constructor()");this.#e=t.window,t.runOnInit(this.#s.bind(this))}#s(){d(this.#t)||(this.#t=this.#e.document.querySelector("style.kint-plain-style")),this.#t&&m(this.#t)}};var w=class{#e;constructor(t){if(!(t instanceof h))throw new Error("Invalid argument to Microtime.constructor()");this.#e=t.window,t.runOnInit(this.#t.bind(this))}#t(){let t={},e=this.#e.document.querySelectorAll("[data-kint-microtime-group]");for(let s of e){let i=s.querySelector(".kint-microtime-lap");if(!i)continue;let r=s.dataset.kintMicrotimeGroup,o=parseFloat(i.textContent),l=parseFloat(s.querySelector(".kint-microtime-avg").textContent);t[r]??={min:o,max:o,avg:l},t[r].min>o&&(t[r].min=o),t[r].max<o&&(t[r].max=o),t[r].avg=l}for(let s of e){let i=s.querySelector(".kint-microtime-lap");if(!i)continue;let r=parseFloat(i.textContent),o=t[s.dataset.kintMicrotimeGroup];if(s.querySelector(".kint-microtime-avg").textContent=o.avg,!(r===o.min&&r===o.max))if(s.classList.add("kint-microtime-js"),r>o.avg){let l=(r-o.avg)/(o.max-o.avg);i.style.background="hsl("+(40-40*l)+", 100%, 65%)"}else{let l=0;o.avg!==o.min&&(l=(o.avg-r)/(o.avg-o.min)),i.style.background="hsl("+(40+80*l)+", 100%, 65%)"}}}};var U=Symbol(),h=class n{static#e=null;#t;#s=[];#i=new Set;static init(t){return n.#e??=new n(t,U),n.#e.#n(),n.#e.runOnLoad(n.#r),n.#e}get window(){return this.#t}constructor(t,e){if(U!==e)throw new Error("Kint constructor is private. Use Kint.init()");if(!(t instanceof Window))throw new Error("Invalid argument to Kint.init()");this.#t=t,this.runOnInit(this.#o.bind(this)),new y(this),new a(this),new w(this)}runOnLoad(t){if(this.#t.document.readyState==="complete")try{t()}catch{}else this.#t.addEventListener("load",t)}runOnInit(t){this.#s.push(t)}#n(){this.#t.document.currentScript&&(this.#i.add(E(window.document.currentScript)),window.document.currentScript.remove())}#o(){for(let t of this.#i.keys())for(let e of this.#t.document.querySelectorAll(t))e.remove()}static#r(){for(let t of n.#e.#s)t()}};window.Kint||(window.Kint=h);window.Kint.init(window);})();
+</script><style class="kint-rich-style">.kint-rich{--spacing: 4px;--nav-size: 15px;--backdrop-color: rgba(255, 255, 255, 0.9);--main-background: #e0eaef;--secondary-background: #c1d4df;--text-color: #1d1e1e;--variable-name-color: #1d1e1e;--variable-type-color: #0092db;--variable-type-color-hover: #5cb730;--border-color: #b6cedb;--border-color-hover: #0092db;--border: 1px solid var(--border-color);--foldout-max-size: calc(100vh - 100px);--foldout-zindex: 999999;--caret-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 150'><g stroke-width='2' fill='%23FFF'><path d='M1 1h28v28H1zm5 14h18m-9 9V6M1 61h28v28H1zm5 14h18' stroke='%23379'/><path d='M1 31h28v28H1zm5 14h18m-9 9V36M1 91h28v28H1zm5 14h18' stroke='%235A3'/><path d='M1 121h28v28H1zm5 5l18 18m-18 0l18-18' stroke='%23CCC'/></g></svg>");--ap-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><g stroke='%23000' fill='transparent'><path d='M2 8h3m3 3v3M8 2v3m3 3h3M3 8' stroke-width='2' stroke-linecap='round'/><circle stroke-width='1.5' r='4.5' cx='8' cy='8'/></g></svg>");--folder-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M2 2h4l2 2h6v9H2V2h2' stroke-width='2' stroke='%23000' fill='transparent' stroke-linejoin='round'/></svg>");--search-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><g stroke='%23000' fill='transparent'><path d='M2 14l3-3' stroke-linecap='round' stroke-width='3'/><circle stroke-width='2' r='5' cx='9' cy='7'/></g></svg>");font-size:13px;overflow-x:auto;white-space:nowrap;background:var(--backdrop-color);direction:ltr;contain:content}.kint-rich.kint-folder{position:fixed;bottom:0;left:0;right:0;z-index:var(--foldout-zindex);width:100%;margin:0;display:block}.kint-rich.kint-folder dd.kint-foldout{max-height:var(--foldout-max-size);padding-right:calc(var(--spacing)*2);overflow-y:scroll;display:none}.kint-rich.kint-folder dd.kint-foldout.kint-show{display:block}.kint-rich::selection{background:var(--border-color-hover);color:var(--text-color)}.kint-rich .kint-focused{box-shadow:0 0 3px 3px var(--variable-type-color-hover)}.kint-rich .kint-focused.kint-weak-focus{box-shadow:0 0 3px 1px color-mix(in srgb, var(--variable-type-color-hover) 50%, transparent)}.kint-rich,.kint-rich::before,.kint-rich::after,.kint-rich *,.kint-rich *::before,.kint-rich *::after{box-sizing:border-box;border-radius:0;color:var(--text-color);float:none !important;font-family:Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;line-height:15px;margin:0;padding:0;text-align:left}.kint-rich{margin:calc(var(--spacing)*2) 0}.kint-rich dt,.kint-rich dl{width:auto}.kint-rich dt,.kint-rich div.access-path{background:var(--main-background);border:var(--border);color:var(--text-color);display:block;font-weight:bold;list-style:none outside none;overflow:auto;padding:var(--spacing)}.kint-rich dt:hover,.kint-rich div.access-path:hover{border-color:var(--border-color-hover)}.kint-rich>dl dl{padding:0 0 0 calc(var(--spacing)*3)}.kint-rich dt.kint-parent>nav,.kint-rich>footer>nav{background:var(--caret-image) no-repeat scroll 0 0/var(--nav-size) 75px rgba(0,0,0,0);cursor:pointer;display:inline-block;height:var(--nav-size);width:var(--nav-size);margin-right:3px;vertical-align:middle}.kint-rich dt.kint-parent:hover>nav,.kint-rich>footer>nav:hover{background-position:0 25%}.kint-rich dt.kint-parent.kint-show>nav,.kint-rich>footer.kint-show>nav{background-position:0 50%}.kint-rich dt.kint-parent.kint-show:hover>nav,.kint-rich>footer.kint-show>nav:hover{background-position:0 75%}.kint-rich dt.kint-parent.kint-locked>nav{background-position:0 100%}.kint-rich dt.kint-parent+dd{display:none;border-left:1px dashed var(--border-color);contain:strict}.kint-rich dt.kint-parent.kint-show+dd{display:block;contain:content}.kint-rich var,.kint-rich var a{color:var(--variable-type-color);font-style:normal}.kint-rich dt:hover var,.kint-rich dt:hover var a{color:var(--variable-type-color-hover)}.kint-rich dfn{font-style:normal;font-family:monospace;color:var(--variable-name-color)}.kint-rich pre{color:var(--text-color);margin:0 0 0 calc(var(--spacing)*3);padding:5px;overflow-y:hidden;border-top:0;border:var(--border);background:var(--main-background);display:block;word-break:normal}.kint-rich .kint-access-path-trigger,.kint-rich .kint-folder-trigger,.kint-rich .kint-search-trigger{background:color-mix(in srgb, var(--text-color) 80%, transparent);border-radius:3px;padding:2px;height:var(--nav-size);width:var(--nav-size);font-size:var(--nav-size);margin-left:5px;font-weight:bold;text-align:center;line-height:1;float:right !important;cursor:pointer;position:relative;overflow:hidden}.kint-rich .kint-access-path-trigger::before,.kint-rich .kint-folder-trigger::before,.kint-rich .kint-search-trigger::before{display:block;content:"";width:100%;height:100%;background:var(--main-background);mask:center/contain no-repeat alpha}.kint-rich .kint-access-path-trigger:hover,.kint-rich .kint-folder-trigger:hover,.kint-rich .kint-search-trigger:hover{background:var(--main-background)}.kint-rich .kint-access-path-trigger:hover::before,.kint-rich .kint-folder-trigger:hover::before,.kint-rich .kint-search-trigger:hover::before{background:var(--text-color)}.kint-rich .kint-access-path-trigger::before{mask-image:var(--ap-image)}.kint-rich .kint-folder-trigger::before{mask-image:var(--folder-image)}.kint-rich .kint-search-trigger::before{mask-image:var(--search-image)}.kint-rich input.kint-search{display:none;border:var(--border);border-top-width:0;border-bottom-width:0;padding:var(--spacing);float:right !important;margin:calc(var(--spacing)*-1) 0;color:var(--variable-name-color);background:var(--secondary-background);height:calc(var(--nav-size) + var(--spacing)*2);width:calc(var(--nav-size)*10);position:relative;z-index:100}.kint-rich input.kint-search.kint-show{display:block}.kint-rich .kint-search-root ul.kint-tabs>li:not(.kint-search-match){background:var(--secondary-background);filter:saturate(0);opacity:.5}.kint-rich .kint-search-root dl:not(.kint-search-match){opacity:.5}.kint-rich .kint-search-root dl:not(.kint-search-match)>dt{background:var(--main-background);filter:saturate(0)}.kint-rich .kint-search-root dl:not(.kint-search-match) dl,.kint-rich .kint-search-root dl:not(.kint-search-match) ul.kint-tabs>li:not(.kint-search-match){opacity:1}.kint-rich div.access-path{background:var(--secondary-background);display:none;margin-top:5px;padding:4px;white-space:pre}.kint-rich div.access-path.kint-show{display:block}.kint-rich footer{padding:0 3px 3px;font-size:9px;background:rgba(0,0,0,0)}.kint-rich footer>.kint-folder-trigger{background:rgba(0,0,0,0)}.kint-rich footer>.kint-folder-trigger::before{background:var(--text-color)}.kint-rich footer nav{height:10px;width:10px;background-size:10px 50px}.kint-rich footer>ol{display:none;margin-left:32px}.kint-rich footer.kint-show>ol{display:block}.kint-rich a{color:var(--text-color);text-shadow:none;text-decoration:underline}.kint-rich a:hover{color:var(--variable-name-color);border-bottom:1px dotted var(--variable-name-color)}.kint-rich ul{list-style:none;padding-left:calc(var(--spacing)*3)}.kint-rich ul:not(.kint-tabs) li{border-left:1px dashed var(--border-color)}.kint-rich ul:not(.kint-tabs) li>dl{border-left:none}.kint-rich ul.kint-tabs{margin:0 0 0 calc(var(--spacing)*3);padding-left:0;background:var(--main-background);border:var(--border);border-top:0}.kint-rich ul.kint-tabs>li{background:var(--secondary-background);border:var(--border);cursor:pointer;display:inline-block;height:calc(var(--spacing)*6);margin:calc(var(--spacing)/2);padding:0 calc(2px + var(--spacing)*2.5);vertical-align:top}.kint-rich ul.kint-tabs>li:hover,.kint-rich ul.kint-tabs>li.kint-active-tab:hover{border-color:var(--border-color-hover);color:var(--variable-type-color-hover)}.kint-rich ul.kint-tabs>li.kint-active-tab{background:var(--main-background);border-top:0;margin-top:-1px;height:27px;line-height:24px}.kint-rich ul.kint-tabs>li:not(.kint-active-tab){line-height:calc(var(--spacing)*5)}.kint-rich ul.kint-tabs li+li{margin-left:0}.kint-rich ul.kint-tab-contents>li{display:none;contain:strict}.kint-rich ul.kint-tab-contents>li.kint-show{display:block;contain:content}.kint-rich dt:hover+dd>ul>li.kint-active-tab{border-color:var(--border-color-hover);color:var(--variable-type-color-hover)}.kint-rich dt>.kint-color-preview{width:var(--nav-size);height:var(--nav-size);display:inline-block;vertical-align:middle;margin-left:10px;border:var(--border);background-color:#ccc;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="%23FFF" d="M0 0h1v2h1V1H0z"/></svg>');background-size:min(20px,100%)}.kint-rich dt>.kint-color-preview:hover{border-color:var(--border-color-hover)}.kint-rich dt>.kint-color-preview>div{width:100%;height:100%}.kint-rich table{border-collapse:collapse;empty-cells:show;border-spacing:0}.kint-rich table *{font-size:12px}.kint-rich table dt{background:none;padding:calc(var(--spacing)/2)}.kint-rich table dt .kint-parent{min-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.kint-rich table td,.kint-rich table th{border:var(--border);padding:calc(var(--spacing)/2);vertical-align:center}.kint-rich table th{cursor:alias}.kint-rich table td:first-child,.kint-rich table th{font-weight:bold;background:var(--secondary-background);color:var(--variable-name-color)}.kint-rich table td{background:var(--main-background);white-space:pre}.kint-rich table td>dl{padding:0}.kint-rich table pre{border-top:0;border-right:0}.kint-rich table thead th:first-child{background:none;border:0}.kint-rich table tr:hover>td{box-shadow:0 0 1px 0 var(--border-color-hover) inset}.kint-rich table tr:hover var{color:var(--variable-type-color-hover)}.kint-rich table ul.kint-tabs li.kint-active-tab{height:20px;line-height:17px}.kint-rich pre.kint-source{margin-left:-1px}.kint-rich pre.kint-source[data-kint-filename]:before{display:block;content:attr(data-kint-filename);margin-bottom:var(--spacing);padding-bottom:var(--spacing);border-bottom:1px solid var(--secondary-background)}.kint-rich pre.kint-source>div:before{display:inline-block;content:counter(kint-l);counter-increment:kint-l;border-right:1px solid var(--border-color-hover);padding-right:calc(var(--spacing)*2);margin-right:calc(var(--spacing)*2)}.kint-rich pre.kint-source>div.kint-highlight{background:var(--secondary-background)}.kint-rich .kint-microtime-js .kint-microtime-lap{text-shadow:-1px 0 var(--border-color-hover),0 1px var(--border-color-hover),1px 0 var(--border-color-hover),0 -1px var(--border-color-hover);color:var(--main-background);font-weight:bold}input.kint-note-input{width:100%}.kint-rich{--main-background: #f8f8f8;--secondary-background: #f8f8f8;--variable-type-color: #06f;--variable-type-color-hover: #f00;--border-color: #d7d7d7;--border-color-hover: #aaa;--alternative-background: #fff;--highlight-color: #cfc;--caret-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 150'><path d='M6 7h18l-9 15zm0 30h18l-9 15zm0 45h18l-9-15zm0 30h18l-9-15zm0 12l18 18m-18 0l18-18' fill='%23555'/><path d='M6 126l18 18m-18 0l18-18' stroke-width='2' stroke='%23555'/></svg>")}.kint-rich .kint-focused{box-shadow:0 0 3px 2px var(--variable-type-color-hover)}.kint-rich dt{font-weight:normal}.kint-rich dt.kint-parent{margin-top:4px}.kint-rich dl dl{margin-top:4px;padding-left:25px;border-left:none}.kint-rich>dl>dt{background:var(--secondary-background)}.kint-rich ul{margin:0;padding-left:0}.kint-rich ul:not(.kint-tabs)>li{border-left:0}.kint-rich ul.kint-tabs{background:var(--secondary-background);border:var(--border);border-width:0 1px 1px 1px;padding:4px 0 0 12px;margin-left:-1px;margin-top:-1px}.kint-rich ul.kint-tabs li,.kint-rich ul.kint-tabs li+li{margin:0 0 0 4px}.kint-rich ul.kint-tabs li{border-bottom-width:0;height:calc(var(--spacing)*6 + 1px)}.kint-rich ul.kint-tabs li:first-child{margin-left:0}.kint-rich ul.kint-tabs li.kint-active-tab{border-top:var(--border);background:var(--alternative-background);font-weight:bold;padding-top:0;border-bottom:1px solid var(--alternative-background) !important;margin-bottom:-1px}.kint-rich ul.kint-tabs li.kint-active-tab:hover{border-bottom:1px solid var(--alternative-background)}.kint-rich ul>li>pre{border:var(--border)}.kint-rich dt:hover+dd>ul{border-color:var(--border-color-hover)}.kint-rich pre{background:var(--alternative-background);margin-top:4px;margin-left:25px}.kint-rich .kint-source{margin-left:-1px}.kint-rich .kint-source .kint-highlight{background:var(--highlight-color)}.kint-rich .kint-parent.kint-show>.kint-search{border-bottom-width:1px}.kint-rich table td{background:var(--alternative-background)}.kint-rich table td>dl{padding:0;margin:0}.kint-rich table td>dl>dt.kint-parent{margin:0}.kint-rich table td:first-child,.kint-rich table td,.kint-rich table th{padding:2px 4px}.kint-rich table dd,.kint-rich table dt{background:var(--alternative-background)}.kint-rich table tr:hover>td{box-shadow:none;background:var(--highlight-color)}
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Group - Master Components Ltd</title>
+    
+    <meta name="description" content="At Master Group, we bridge imagination and engineering to create the extraordinary. As a unified force of three specialized companies, we provide end-to-end solutions that take an idea from the drawing board to a high-precision, market-ready product. Whether it’s product design, mould design, advanced injection, compression moulding, compression & thermoset injection moulding, or cutting-edge additive manufacturing, we are the backbone of industries that demand quality, reliability, and innovation.">
+    <meta name="keywords" content="End-to-end plastic product development and design India, Precision plastic components for OEMs, Plastic moulding company for automotive industry, Custom injection mould manufacturer India, NSE listed plastic components manufacturer India, High-performance plastic parts for aerospace, Complete plastic manufacturing solutions under one roof, Thermoset and thermoplastic moulding services India, Leading B2B injection moulding manufacturer India, Global supplier of custom plastic engineering solutions">
+    
+  <link rel="icon" type="image/jpeg" href="https://master-group.in/public/assets/web/logo/favi-logo.jpg">
+
+    <!-- bootsrap CDN 4.6 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://master-group.in/public/assets/web/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NZDV24NJ5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-6NZDV24NJ5');
+    </script>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container d-flex justify-content-center">
+            <div>
+                <a target="_blank" href="https://www.tradingview.com/symbols/NSE-MASTER/"><i
+                        class="fa-solid fa-chart-line" style="color: rgb(255, 255, 255);"></i> Master Components Ltd
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- header -->
+    <header class="main-index-header">
+
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white- nav2bg p-0">
+                <a class="navbar-brand p-0" href="https://master-group.in/"><img class="logo" src="https://master-group.in/public/assets/web/logo/logo.png" alt="" width="45%"
+                        class="bg-white-" style="border-radius:15px; background: #fff;"></a>
+
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse"
+                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse top-wrap" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="https://master-group.in/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://master-group.in/about">About Us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                Our Companies
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="https://master-group.in/moulds">Master Moulds Pvt
+                                    Ltd
+                                </a>
+                                <a class="dropdown-item" href="https://master-group.in/components">Master Components
+                                    Ltd </a>
+                                <a target="_blank" class="dropdown-item" href="https://www.mnam3d.com/">Master
+                                    Nidavellir AeroMed Pvt
+                                    Ltd </a>
+                            </div>
+                        </li>
+                        <!--  -->
+                        <!--<li class="nav-item dropdown">-->
+                        <!--    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"-->
+                        <!--        aria-expanded="false">-->
+                        <!--        Investor Relations-->
+                        <!--    </a>-->
+                        <!--    <div class="dropdown-menu">-->
+                        <!--        <a class="dropdown-item" href="documents.html">IPO Documents-->
+                        <!--        </a>-->
+                        <!--        <a class="dropdown-item" href="documents.html">Policies</a>-->
+                        <!--        <a class="dropdown-item" href="documents.html">Annual Report And-->
+                        <!--            Return</a>-->
+                        <!--        <a class="dropdown-item" href="documents.html">Shareholding Pattern</a>-->
+                        <!--        <a class="dropdown-item" href="documents.html">Stock Exchange-->
+                        <!--            Compliance</a>-->
+                        <!--        <a class="dropdown-item" href="documents.html">Financial Statement Of-->
+                        <!--            Group Companies</a>-->
+                        <!--        <a class="dropdown-item" href="documents.html"> Material Disclosures-->
+                        <!--            Under LODR Reg. 30</a>-->
+                        <!--        <a class="dropdown-item" href="documents.html"> MOA & AOA Of Company</a>-->
+                        <!--    </div>-->
+                        <!--</li>-->
+                        <!--  -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://master-group.in/investorrelation"> Investor Relations</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://master-group.in/sustainability">Sustainability</a>
+                        </li>
+                        <!--  -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                Gallery
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="https://master-group.in/mouldsgallery">Master Moulds</a>
+                                <a class="dropdown-item" href="https://master-group.in/compsgallery">Master Components</a>
+                                <a class="dropdown-item" href="https://master-group.in/awardsgallery">Awards & Recognitions</a>
+                                <a class="dropdown-item" href="https://master-group.in/lifegallery">Life at Master Group
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://master-group.in/careers">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://master-group.in/contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!------------------------------------ 
+               Header End 
+    -------------------------------------->
+
+
+<!-- DEBUG-VIEW ENDED 1 APPPATH/Views/web/header.php -->
+<!-- DEBUG-VIEW START 2 APPPATH/Views/web/home.php -->
+
+    <!-- Swiper -->
+    <div class="hero ">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide ">
+                    <img src="https://master-group.in/public/assets/web/banner/master-banner.jpg" alt="">
+                    <h1>Mastering Success With Master Group </h1>
+                </div>
+                <!-- <div class="swiper-slide">
+                    <img src="assets/banner/banner-new1.jpg" alt="">
+                    <h1>Mastering Success With Master Group </h1>
+                </div> -->
+            </div>
+            <div class="swiper-button-next" style="color: #0770B7;"></div>
+            <div class="swiper-button-prev" style="color: #0770B7;"></div>
+        </div>
+    </div>
+
+
+    <!-- Section Header -->
+    <section class="section-header">
+        <div class="container">
+            <h1 class="main-head">From Concept to Creation - Engineering Every Detail</h1>
+            <p class="text-center">Master Group is a powerhouse of three dynamic companies, each specializing in a
+                crucial
+                aspect of design
+                & manufacturing. Whether independently or together, our products & services are tailored to meet the
+                unique needs of our customers.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features pt-3 inx-1-">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Feature 1: Concept Design -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Concept Design</h3>
+                        <p>Our team excels in transforming ideas into clear, actionable designs that push the
+                            boundaries
+                            of innovation.</p>
+                    </div>
+                </div>
+                <!-- Feature 2: Engineering Excellence -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Engineering Excellence</h3>
+                        <p>We specialize in engineering and manufacturing components that are precise, durable, and
+                            cost-effective.</p>
+                    </div>
+                </div>
+                <!-- Feature 3: Manufacturing Mastery -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <i class="fas fa-industry"></i>
+                        <h3>Manufacturing Mastery</h3>
+                        <p>From rapid prototyping to full-scale production, we have the capabilities to meet all
+                            your
+                            manufacturing needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-g py-5">
+
+        <!-- Section Header -->
+        <section class="section-header mt-0">
+            <div class="container">
+                <h2 class="main-head">Three Companies, One Vision</h2>
+                <p class="text-center">Explore the three dynamic companies under the Master Group, each with a unique
+                    specialization, but united
+                    by one common vision.</p>
+            </div>
+        </section>
+
+        <!-- Flip Card Section -->
+        <section class="container inx-1">
+            <div class="row justify-content-center">
+                <!-- Master Moulds Pvt Ltd -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-container">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front front1" style="border: 2px solid #C5A05A;">
+                                    <h4>Master Moulds Pvt Ltd</h4>
+                                </div>
+                                <div class="flip-card-back">
+                                    <img src="https://master-group.in/public/assets/web/img/Mm-pvt02.jpg" alt="Master Moulds Pvt Ltd" width="100%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master Components Ltd -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-container">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front front2" style="border: 2px solid #C5A05A;">
+                                    <h4>Master Components Ltd</h4>
+                                </div>
+                                <div class="flip-card-back">
+                                    <img src="https://master-group.in/public/assets/web/img/Mc-pvt.jpg" alt="Master Components Ltd">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master Nidavellir AeroMed Pvt Ltd -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-container">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front front3" style="border: 2px solid #C5A05A;">
+                                    <h4>Master Nidavellir AeroMed Pvt Ltd</h4>
+                                </div>
+                                <div class="flip-card-back">
+                                    <img src="https://master-group.in/public/assets/web/img/back.jpg" alt="Master Nidavellir AeroMed Pvt Ltd">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+
+
+    <!-- Offer Cards -->
+    <section class="offer-cards mt-0 mb-0">
+
+        <!-- Section Header -->
+        <section class="section-header mb-5 mt-0">
+            <div class="container">
+                <h2 class="main-head ">What We Offer</h2>
+                <p class="text-white text-center">Our expertise covers a wide range of services, providing you with
+                    the
+                    best
+                    solutions for your needs.
+                </p>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row text-center">
+                <!-- Card 1: Mould Design & Manufacturing -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="offer-card">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                            class="text-3xl mx-auto" height="1em" width="1em" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M475.115 163.781L336 252.309v-68.28c0-18.916-20.931-30.399-36.885-20.248L160 252.309V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56v400c0 13.255 10.745 24 24 24h464c13.255 0 24-10.745 24-24V184.029c0-18.917-20.931-30.399-36.885-20.248z">
+                            </path>
+                        </svg>
+                        <p>Industry-Leading Expertise in Mould Design & Manufacturing</p>
+
+                    </div>
+                </div>
+
+                <!-- Card 2: Precision Components & Assemblies -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="offer-card">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512"
+                            class="text-3xl mx-auto" height="1em" width="1em" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z">
+                            </path>
+                        </svg>
+                        <p>Manufacturing of Precision Components, Sub-Assemblies & Assemblies</p>
+
+                    </div>
+                </div>
+
+                <!-- Card 3: Reverse Engineering & Product Design -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="offer-card">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                            class="text-3xl mx-auto" height="1em" width="1em" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M457.01 344.42c-25.05 20.33-52.63 37.18-82.54 49.05l54.38 94.19 53.95 23.04c9.81 4.19 20.89-2.21 22.17-12.8l7.02-58.25-54.98-95.23zm42.49-94.56c4.86-7.67 1.89-17.99-6.05-22.39l-28.07-15.57c-7.48-4.15-16.61-1.46-21.26 5.72C403.01 281.15 332.25 320 256 320c-23.93 0-47.23-4.25-69.41-11.53l67.36-116.68c.7.02 1.34.21 2.04.21s1.35-.19 2.04-.21l51.09 88.5c31.23-8.96 59.56-25.75 82.61-48.92l-51.79-89.71C347.39 128.03 352 112.63 352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96c0 16.63 4.61 32.03 12.05 45.66l-68.3 118.31c-12.55-11.61-23.96-24.59-33.68-39-4.79-7.1-13.97-9.62-21.38-5.33l-27.75 16.07c-7.85 4.54-10.63 14.9-5.64 22.47 15.57 23.64 34.69 44.21 55.98 62.02L0 439.66l7.02 58.25c1.28 10.59 12.36 16.99 22.17 12.8l53.95-23.04 70.8-122.63C186.13 377.28 220.62 384 256 384c99.05 0 190.88-51.01 243.5-134.14zM256 64c17.67 0 32 14.33 32 32s-14.33 32-32 32-32-14.33-32-32 14.33-32 32-32z">
+                            </path>
+                        </svg>
+                        <p>Reverse Engineering, Product Design & Additive Manufacturing</p>
+
+                    </div>
+                </div>
+
+                <!-- Card 4: End-to-End Solutions -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="offer-card">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512"
+                            class="text-3xl mx-auto" height="1em" width="1em" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z">
+                            </path>
+                        </svg>
+                        <p>End-to-end Solutions, From Concept to Production</p>
+
+                    </div>
+                </div>
+                <!-- Card 5: End-to-End Solutions -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="offer-card">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                            class="text-3xl mx-auto" height="1em" width="1em" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M416 48v416c0 26.51-21.49 48-48 48H144c-26.51 0-48-21.49-48-48V48c0-26.51 21.49-48 48-48h224c26.51 0 48 21.49 48 48zm96 58v12a6 6 0 0 1-6 6h-18v6a6 6 0 0 1-6 6h-42V88h42a6 6 0 0 1 6 6v6h18a6 6 0 0 1 6 6zm0 96v12a6 6 0 0 1-6 6h-18v6a6 6 0 0 1-6 6h-42v-48h42a6 6 0 0 1 6 6v6h18a6 6 0 0 1 6 6zm0 96v12a6 6 0 0 1-6 6h-18v6a6 6 0 0 1-6 6h-42v-48h42a6 6 0 0 1 6 6v6h18a6 6 0 0 1 6 6zm0 96v12a6 6 0 0 1-6 6h-18v6a6 6 0 0 1-6 6h-42v-48h42a6 6 0 0 1 6 6v6h18a6 6 0 0 1 6 6zM30 376h42v48H30a6 6 0 0 1-6-6v-6H6a6 6 0 0 1-6-6v-12a6 6 0 0 1 6-6h18v-6a6 6 0 0 1 6-6zm0-96h42v48H30a6 6 0 0 1-6-6v-6H6a6 6 0 0 1-6-6v-12a6 6 0 0 1 6-6h18v-6a6 6 0 0 1 6-6zm0-96h42v48H30a6 6 0 0 1-6-6v-6H6a6 6 0 0 1-6-6v-12a6 6 0 0 1 6-6h18v-6a6 6 0 0 1 6-6zm0-96h42v48H30a6 6 0 0 1-6-6v-6H6a6 6 0 0 1-6-6v-12a6 6 0 0 1 6-6h18v-6a6 6 0 0 1 6-6z">
+                            </path>
+                        </svg>
+                        <p>Cutting-edge Technology and State-of-the-art Facilities</p>
+
+                    </div>
+                </div>
+                <!-- Card 6: End-to-End Solutions -->
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="offer-card">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 352 512"
+                            class="text-3xl mx-auto" height="1em" width="1em" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z">
+                            </path>
+                        </svg>
+                        <p>Commitment to Precision, Innovation, and Quality</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- <section class="what-we-offer py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 text-primary main-head">What We Offer</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="d-flex align-items-center justify-content-center p-3 border rounded shadow-sm bg-white">
+                        <span class="check-icon fs-3 text-primary me-3">✔</span>
+                        <p class="mb-0">Industry-leading expertise in mould design & manufacturing</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="d-flex align-items-center justify-content-center p-3 border rounded shadow-sm bg-white">
+                        <span class="check-icon fs-3 text-primary me-3  mr-1">✔</span>
+                        <p class="mb-0">Manufacturing of precision components, sub-assemblies & assemblies</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="d-flex align-items-center justify-content-center p-3 border rounded shadow-sm bg-white">
+                        <span class="check-icon fs-3 text-primary me-3  mr-1">✔</span>
+                        <p class="mb-0">Reverse Engineering, Product Design & Additive Manufacturing</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="d-flex align-items-center justify-content-center p-3 border rounded shadow-sm bg-white">
+                        <span class="check-icon fs-3 text-primary me-3">✔</span>
+                        <p class="mb-0">End-to-end solutions, from concept to production</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="d-flex align-items-center justify-content-center p-3 border rounded shadow-sm bg-white">
+                        <span class="check-icon fs-3 text-primary me-3">✔</span>
+                        <p class="mb-0">Cutting-edge technology and state-of-the-art facilities </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="d-flex align-items-center justify-content-center p-3 border rounded shadow-sm bg-white">
+                        <span class="check-icon fs-3 text-primary me-3">✔</span>
+                        <p class="mb-0">Commitment to precision, innovation, and quality </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <section class="industries-we-serve py-5- pb-5 bg-light-">
+        <div class="container text-center">
+            <h2 class="mb-4 text-primary main-head">Industries We Serve</h2>
+            <p class="mb-5 text-left">We cater to a wide range of industries, including:</p>
+        
+            <div class="swiper mySwiper3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm border-0">
+                            <img src="assets/img/Ele.jpg" class="card-img-top" alt="Electrical Industry">
+                            <div class="card-body">
+                                <h5 class="card-title">Electrical</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm border-0">
+                            <img src="assets/img/Automotive.jpg" class="card-img-top" alt="Automotive Industry">
+                            <div class="card-body">
+                                <h5 class="card-title">Automotive</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm border-0">
+                            <img src="assets/img/Industrial.jpg" class="card-img-top" alt="Industrial Industry">
+                            <div class="card-body">
+                                <h5 class="card-title">Industrial</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm border-0">
+                            <img src="assets/img/Healthcare.jpg" class="card-img-top"
+                                alt="Healthcare & Childcare Industry">
+                            <div class="card-body">
+                                <h5 class="card-title">Healthcare & Childcare</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm border-0">
+                            <img src="assets/img/Construction.jpg" class="card-img-top" alt="Construction Industry">
+                            <div class="card-body">
+                                <h5 class="card-title">Construction</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm border-0">
+                            <img src="assets/img/Aerospace.jpg" class="card-img-top" alt="Aerospace & Defence Industry">
+                            <div class="card-body">
+                                <h5 class="card-title">Aerospace & Defence</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="industries-we-serve py-5 bg-light- bg-g">
+        <div class="container text-center">
+            <h2 class="mb-4 text-primary main-head">Industries We Serve</h2>
+            <!-- <p class="mb-5">We cater to a wide range of industries, including:</p> -->
+            <div class="row">
+                <!-- Electrical Industry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <img src="https://master-group.in/public/assets/web/img/Construction.jpg" class="card-img-top" alt="Construction Industry">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-building"></i> Construction</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automotive Industry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <img src="https://master-group.in/public/assets/web/img/Automotive.jpg" class="card-img-top" alt="Automotive Industry">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa-solid fa-car"></i> Automotive</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Industry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <img src="https://master-group.in/public/assets/web/img/Industrial.jpg" class="card-img-top" alt="Industrial Industry">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa-solid fa-industry"></i> Industrial</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare & Childcare Industry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <img src="https://master-group.in/public/assets/web/img/Healthcare.jpg" class="card-img-top" alt="Healthcare & Childcare Industry">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa-solid fa-stethoscope"></i> Healthcare & Childcare</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Construction Industry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <img src="https://master-group.in/public/assets/web/img/Ele.jpg" class="card-img-top" alt="Electrical Industry">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa-solid fa-bolt"></i> Electrical</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Aerospace & Defence Industry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <img src="https://master-group.in/public/assets/web/img/Aerospace.jpg" class="card-img-top" alt="Aerospace & Defence Industry">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa-solid fa-plane-departure"></i> Aerospace & Defence</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <!-- <section class="counter-section hidden">
+        <div class="container">
+            <div class="row text-center">
+           
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="counter-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <div id="projects" class="counter-number">0</div>
+                        <div class="counter-label">Projects</div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="counter-item">
+                        <i class="fas fa-building"></i>
+                        <div id="factories" class="counter-number">0</div>
+                        <div class="counter-label">Factories</div>
+                    </div>
+                </div>
+          
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="counter-item">
+                        <i class="fas fa-users"></i>
+                        <div id="employees" class="counter-number">0</div>
+                        <div class="counter-label">Employees</div>
+                    </div>
+                </div>
+           
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="counter-item">
+                        <i class="fas fa-smile"></i>
+                        <div id="clients" class="counter-number">0</div>
+                        <div class="counter-label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- Our Customers Section -->
+    <section class="our-customers py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 main-head">Our Customers</h2>
+            <p class="mb-5 text-center">Trusted by top industries, Master Group delivers quality products with <br>
+                unwavering reliability and on-time service while building strong partnerships that last.</p>
+
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-1.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-2.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-3.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-4.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-5.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-6.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-7.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-8.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-9.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-10.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-11.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <!--<div class="col-lg-2 col-md-3 col-sm-4 col-4">-->
+                <!--    <img src="https://master-group.in/public/assets/web/client/cli-12.jpg" alt="Customer 1" class="customer-logo">-->
+                <!--</div>-->
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-13.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-14.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-15.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-16.png" alt="Customer 1" class="customer-logo">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                    <img src="https://master-group.in/public/assets/web/client/cli-17.jpg" alt="Customer 1" class="customer-logo">
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+   
+<!-- DEBUG-VIEW ENDED 2 APPPATH/Views/web/home.php -->
+<!-- DEBUG-VIEW START 3 APPPATH/Views/web/footer.php -->
+ <!-- Footer Section -->
+    <!-- Footer Section -->
+    <footer class=" text-white py-6 text-center mt-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 footer-center">
+                    <p>2026 © All Rights Reserved by Master Group</p>
+                    <div class="flex justify-center ">
+                        <a href="https://www.linkedin.com/company/master-components-limited/ " target="_blank"
+                            class="mr-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:customersupport@master-components.com" class="mr-3">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mastercomponentsltd/" target="_blank" class="mr-1"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                    <!--<div class="mt-3 f-link">Home | About Us | Investor Relations | Our Companies | Careers | Contact Us-->
+                    <!--</div>-->
+                    <style>
+                    .f-nav a{
+                        color:#fff;
+                    }
+                    .f-nav a:hover{
+                        text-decoration:none;
+                    }
+                </style>
+                    <div class="mt-3 f-link f-nav" style="color: #fff !important;"> <a href="https://master-group.in/">Home</a> | <a href="https://master-group.in/about">About Us</a>  | <a href="https://master-group.in/investorrelation">Investor Relations</a>  |  <a href="https://master-group.in/components">Master Components Ltd</a>  | <a href="https://master-group.in/careers">Careers</a>  | <a href="https://master-group.in/contact">Contact Us</a> 
+</div>
+                </div>
+                <div class="col-lg-2"> <img class="f-logo" src="https://master-group.in/public/assets/web/logo/logo.png" alt=""
+                         style="border-radius: 6px; background: #fff;">
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Go to top">
+        ↑
+    </button>
+    <script>
+        // Get the button element
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        // Show the button when user scrolls down 100px from the top of the document
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.classList.remove("hidden");
+            } else {
+                scrollToTopBtn.classList.add("hidden");
+            }
+        };
+
+        // Scroll to the top when the button is clicked
+        scrollToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'  // Smooth scroll
+            });
+        };
+
+    </script>
+
+    <!-- sticky header js -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            const logo = document.querySelector('.logo');
+
+            if (window.scrollY > 0) {
+                header.classList.add('sticky-active');
+                logo.classList.add('logo-sticky'); // Add class when sticky
+            } else {
+                header.classList.remove('sticky-active');
+                logo.classList.remove('logo-sticky'); // Remove class when back to top
+            }
+        });
+
+    </script>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper   hero-->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+    <!-- Initialize Swiper  our customers -->
+    <script>
+        // Initialize Swiper with Autoplay
+        var swiper = new Swiper(".mySwiper2", {
+            slidesPerView: 3, // Number of slides to show at once
+            spaceBetween: 30, // Space between slides
+            loop: true, // Enable loop
+            autoplay: {
+                delay: 2500, // Delay in ms between slides (2.5 seconds)
+                disableOnInteraction: false, // Keep autoplay running after user interaction
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 4, // Show 2 slides on tablets
+                },
+                480: {
+                    slidesPerView: 1, // Show 1 slide on mobile
+                },
+            },
+        });
+
+    </script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper3", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+
+    <!-- bootsrap CDN 4.6 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!-- DEBUG-VIEW ENDED 3 APPPATH/Views/web/footer.php -->

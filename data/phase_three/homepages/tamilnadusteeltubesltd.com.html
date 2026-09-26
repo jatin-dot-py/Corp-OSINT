@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+
+    <!-- Title -->
+    <title>TamilNadu Steel Tubes Ltd.</title>
+
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="TamilNadu Steel Tubes Ltd.">
+	<link rel="icon" href="assets/images/favicon.ico">
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/vendor/vegas/vegas.min.css">
+    <link rel="stylesheet" href="assets/vendor/aos/dist/aos.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+  </head>
+  <body class="home-layout-center" data-offset="0">
+
+    <!-- Loader -->
+    <div class="loader bg-dark">
+      <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Home Content -->
+    <div id="home" class="home-content">
+      <div class="overlay overlay-advanced">
+        <div class="overlay-inner kenburns-background overlay-media"></div>
+        <div class="overlay-inner bg-dark opacity-70"></div>
+      </div>
+      <div class="home-content-inner">
+
+        <div class="container align-self-center px-lg-8 px-xl-10 py-14 py-lg-10 text-white text-center">
+
+          <a href="https://tntpipes.com" class="text-center"><img src="assets/images/logo.png"></a>
+		  <h4 class="mb-7" data-aos="fade-up" data-aos-delay="50">TamilNadu Steel Tubes Ltd.</h4>
+		  <h1 class="mb-5" data-aos="fade-up">
+            Our New Site is <span class="font-weight-bold" data-toggle="typed" data-options='{"strings": ["www.tntpipes.com", "tntpipes.com"]}'></span>
+          </h1>
+          
+          <button class="btn btn-white mb-3 mb-sm-0 mr-sm-3 d-block d-sm-inline-block w-100 w-sm-auto scrollto" data-aos="fade-up" data-aos-delay="100"><a href="https://tntpipes.com">New Site</a></button>
+
+        </div>
+    
+      </div>
+    </div>
+
+    <!-- Libs JS -->
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/vegas/vegas.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/aos/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+    // Slideshow Background
+    if ($('.home-content .overlay-inner').hasClass('kenburns-background')) {
+      var kenburnsDisplayBackdrops = false;
+      var kenburnsBackgrounds = [
+        { src: 'assets/images/photos/01.jpg', valign: 'center' },
+        { src: 'assets/images/photos/02.jpg', valign: 'center' },
+		{ src: 'assets/images/photos/03.jpg', valign: 'center' },
+        { src: 'assets/images/photos/04.jpg', valign: 'center' }
+      ];
+
+      $('.home-content .overlay-inner.kenburns-background').vegas({
+        preload: true,
+        transition: 'swirlLeft2',
+        transitionDuration: 3000,
+        firstTransition: 'none',
+        timer: false,
+        delay: 6000,
+        slides: kenburnsBackgrounds,
+        walk: function (nb) {
+          if (kenburnsDisplayBackdrops === true) {
+            var backdrop;
+
+            backdrop = backdrops[nb];
+            backdrop.animation = 'kenburns';
+            backdrop.animationDuration = 10000;
+            backdrop.transition = 'fade';
+            backdrop.transitionDuration = 1000;
+
+            $('.home-content .overlay-inner.kenburns-background')
+              .vegas('options', 'slides', [ backdrop ])
+              .vegas('next');
+          }
+        }
+      });
+    }
+    </script>
+
+  </body>
+</html>

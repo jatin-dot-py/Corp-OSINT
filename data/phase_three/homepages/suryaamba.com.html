@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://www.suryaamba.com/xmlrpc.php">
+	<title>Suryaamba</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Suryaamba &raquo; Feed" href="https://www.suryaamba.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Suryaamba &raquo; Comments Feed" href="https://www.suryaamba.com/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.13.1 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-ZCKV5KVDJK"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.13.1';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+										'ga-disable-G-ZCKV5KVDJK',
+															'ga-disable-UA-38504944-2',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+														parameters.send_to = monsterinsights_frontend.ua;
+							__gtagDataLayer(type, name, parameters);
+													} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+										__gtagTracker('config', 'G-ZCKV5KVDJK', {"forceSSL":"true"} );
+															__gtagTracker('config', 'UA-38504944-2', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.suryaamba.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.14"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='easy-modal-site-css' href='https://www.suryaamba.com/wp-content/plugins/easy-modal/assets/styles/easy-modal-site.css?ver=0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.suryaamba.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.suryaamba.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://www.suryaamba.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-font-awesome-css' href='https://www.suryaamba.com/wp-content/plugins/download-manager/assets/fontawesome/css/all.min.css?ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-front-bootstrap-css' href='https://www.suryaamba.com/wp-content/plugins/download-manager/assets/bootstrap/css/bootstrap.min.css?ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-front-css' href='https://www.suryaamba.com/wp-content/plugins/download-manager/assets/css/front.css?ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='gdlr-core-google-font-css' href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700%7CDroid+Serif%3Aregular%2Citalic%2C700%2C700italic&#038;subset=latin%2Clatin-ext%2Cdevanagari&#038;ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='gdlr-core-plugin-css' href='https://www.suryaamba.com/wp-content/plugins/goodlayers-core/plugins/combine/style.css?ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='gdlr-core-page-builder-css' href='https://www.suryaamba.com/wp-content/plugins/goodlayers-core/include/css/page-builder.css?ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdmpp-front-css' href='https://www.suryaamba.com/wp-content/plugins/wpdm-premium-packages/assets/css/wpdmpp.css?ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='realfactory-style-core-css' href='https://www.suryaamba.com/wp-content/themes/suryamba/css/style-core.css?ver=6.1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='realfactory-custom-style-css' href='https://www.suryaamba.com/wp-content/uploads/rftr-style-custom.css?1610961396&#038;ver=6.1.14' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.13.1' id='monsterinsights-frontend-script-js'></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/www.suryaamba.com","hash_tracking":"false","ua":"UA-38504944-2","v4_id":"G-ZCKV5KVDJK"};/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/jquery/jquery.form.min.js?ver=4.3.0' id='jquery-form-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/download-manager/assets/bootstrap/js/popper.min.js?ver=6.1.14' id='wpdm-poper-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/download-manager/assets/bootstrap/js/bootstrap.min.js?ver=6.1.14' id='wpdm-front-bootstrap-js'></script>
+<script type='text/javascript' id='wpdm-frontjs-js-extra'>
+/* <![CDATA[ */
+var wpdm_url = {"home":"https:\/\/www.suryaamba.com\/","site":"https:\/\/www.suryaamba.com\/","ajax":"https:\/\/www.suryaamba.com\/wp-admin\/admin-ajax.php"};
+var wpdm_js = {"spinner":"<i class=\"fas fa-sun fa-spin\"><\/i>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/download-manager/assets/js/front.js?ver=3.2.69' id='wpdm-frontjs-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/wpdm-premium-packages/assets/js/wpdmpp-front.js?ver=6.1.14' id='wpdm-pp-js-js'></script>
+<link rel="https://api.w.org/" href="https://www.suryaamba.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.suryaamba.com/wp-json/wp/v2/pages/4282" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.suryaamba.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.suryaamba.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.14" />
+<link rel="canonical" href="https://www.suryaamba.com/" />
+<link rel='shortlink' href='https://www.suryaamba.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.suryaamba.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.suryaamba.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.suryaamba.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.suryaamba.com%2F&#038;format=xml" />
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-132786427-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	    <script>
+        var wpdmpp_base_url = 'https://www.suryaamba.com/wp-content/plugins/wpdm-premium-packages/';
+        var wpdmpp_currency_sign = '$';
+        var wpdmpp_csign_before = '$';
+        var wpdmpp_csign_after = '';
+        var wpdmpp_currency_code = 'USD';
+        var wpdmpp_cart_url = 'https://www.suryaamba.com/cart/';
+
+        var wpdmpp_txt = {"cart_button_label":"<i class=\"fas fa-shopping-basket mr-2\"><\/i>Add To Cart","pay_now":"Complete Purchase","checkout_button_label":"Complete Purchase"};
+
+    </script>
+    <style>p.wpdmpp-notice {
+            margin: 5px;
+        }
+    .wpbtn-success {
+        color: var(--color-success) !important;border-color: var(--color-success ) !important;
+        background: rgba(var(--color-success-rgb),0.03) !important;
+        transition: all ease-in-out 300ms;
+    }
+        .wpbtn-success:active,
+        .wpbtn-success:hover {
+            color: var(--color-success-active) !important;
+            border-color: var(--color-success-active) !important;
+            background: rgba(var(--color-success-rgb),0.07) !important;
+        }
+    </style>
+    <!--[if lt IE 9]>
+<script src="https://www.suryaamba.com/wp-content/themes/suryamba/js/html5.js"></script>
+<![endif]-->
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>		<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+.gdlr-core-portfolio-info-tag a:before {
+    content: "* ";
+}
+.gdlr-core-portfolio-info-tag a {
+    display: block;
+    color: #333 !important;
+	font-style: normal;
+}
+.gdlr-core-portfolio-info-tag .gdlr-core-sep {
+	display: none;
+}
+.realfactory-footer-wrapper .realfactory-widget-title{
+	font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    margin-bottom: 15px;
+    font-weight: normal;}
+
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border-bottom-width: 2px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-weight: 600 !important;
+}
+
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #ddd;
+    vertical-align: middle !important;
+    color: #000;
+    padding: 15px 20px !important;
+}		</style>
+		<meta name="generator" content="WordPress Download Manager 3.2.69" />
+                <style>
+        /* WPDM Link Template Styles */        </style>
+                <style>
+
+            :root {
+                --color-primary: #4a8eff;
+                --color-primary-rgb: 74, 142, 255;
+                --color-primary-hover: #4a8eff;
+                --color-primary-active: #4a8eff;
+                --color-secondary: #6c757d;
+                --color-secondary-rgb: 108, 117, 125;
+                --color-secondary-hover: #6c757d;
+                --color-secondary-active: #6c757d;
+                --color-success: #18ce0f;
+                --color-success-rgb: 24, 206, 15;
+                --color-success-hover: #18ce0f;
+                --color-success-active: #18ce0f;
+                --color-info: #2CA8FF;
+                --color-info-rgb: 44, 168, 255;
+                --color-info-hover: #2CA8FF;
+                --color-info-active: #2CA8FF;
+                --color-warning: #FFB236;
+                --color-warning-rgb: 255, 178, 54;
+                --color-warning-hover: #FFB236;
+                --color-warning-active: #FFB236;
+                --color-danger: #ff5062;
+                --color-danger-rgb: 255, 80, 98;
+                --color-danger-hover: #ff5062;
+                --color-danger-active: #ff5062;
+                --color-green: #30b570;
+                --color-blue: #0073ff;
+                --color-purple: #8557D3;
+                --color-red: #ff5062;
+                --color-muted: rgba(69, 89, 122, 0.6);
+                --wpdm-font: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            .wpdm-download-link.btn.btn-primary {
+                border-radius: 4px;
+            }
+
+
+        </style>
+        </head>
+
+<body data-rsssl=1 class="home page-template-default page page-id-4282 gdlr-core-body realfactory-body realfactory-body-front realfactory-full  realfactory-with-sticky-navigation gdlr-core-link-to-lightbox">
+<div class="realfactory-mobile-header-wrap" ><div class="realfactory-mobile-header realfactory-header-background realfactory-style-slide" id="realfactory-mobile-header" ><div class="realfactory-mobile-header-container realfactory-container" ><div class="realfactory-logo  realfactory-item-pdlr"><div class="realfactory-logo-inner"><a href="https://www.suryaamba.com/" ><img src="https://www.suryaamba.com/wp-content/uploads/2017/05/Suryaamba-logo-small.png" alt="" width="184" height="130" /></a></div></div><div class="realfactory-mobile-menu-right" ><div class="realfactory-mobile-menu" ><a class="realfactory-mm-menu-button realfactory-mobile-menu-button realfactory-mobile-button-hamburger-with-border" href="#realfactory-mobile-menu"  ><i class="fa fa-bars" ></i></a><div class="realfactory-mm-menu-wrap realfactory-navigation-font" id="realfactory-mobile-menu" data-slide="right" ><ul id="menu-main" class="m-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4282 current_page_item menu-item-4288"><a href="https://www.suryaamba.com/" aria-current="page">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4074"><a href="https://www.suryaamba.com/about-us/">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4199"><a href="https://www.suryaamba.com/our-core-team/">Our Core Team</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4119"><a href="https://www.suryaamba.com/our-advantage/">Our Advantage</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4034"><a href="https://www.suryaamba.com/products/">Products</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4194"><a href="https://www.suryaamba.com/investors/">Investors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4326"><a href="https://www.suryaamba.com/exports/">Exports</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4191"><a href="https://www.suryaamba.com/gallery/">Gallery</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4118"><a href="https://www.suryaamba.com/csr/">CSR</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4192"><a href="https://www.suryaamba.com/careers/">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5416"><a href="https://www.suryaamba.com/catalog/">Catalog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4031"><a href="https://www.suryaamba.com/contact/">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5775"><a href="https://www.suryaamba.com/cart/">Cart</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5777"><a href="https://www.suryaamba.com/purchases/">Purchases</a></li>
+</ul></div></div></div></div></div></div><div class="realfactory-body-outer-wrapper ">
+		<div class="realfactory-body-wrapper clearfix  realfactory-with-transparent-navigation realfactory-with-frame">
+	  	
+<header class="realfactory-header-wrap realfactory-header-style-bar realfactory-header-background  realfactory-style-left" >
+	<div class="realfactory-header-container clearfix  realfactory-container">
+		<div class="realfactory-header-container-inner">
+		<div class="realfactory-logo  realfactory-item-pdlr"><div class="realfactory-logo-inner"><a href="https://www.suryaamba.com/" ><img src="https://www.suryaamba.com/wp-content/uploads/2017/05/Suryaamba-logo-small.png" alt="" width="184" height="130" /></a></div></div><div class="realfactory-logo-right-text realfactory-item-pdlr" ><div class="realfactory-logo-right-block" ><i class="realfactory-logo-right-block-icon fa fa-certificate" ></i><div class="realfactory-logo-right-block-content" ><div class="realfactory-logo-right-block-title realfactory-title-font" ><div style="text-align="center"><img src="https://www.suryaamba.com/wp-content/uploads/2018/09/logo.jpg" style="width: 90px;display: block; margin: auto;"></div><span>ISO 9001:2015 Certified</span></div></div></div><div class="realfactory-logo-right-block" ><div class="realfactory-logo-right-block-content" ><div class="realfactory-logo-right-block-title realfactory-title-font" ><a href="#" target="_blank" class="realfactory-top-bar-social-icon" title="linkedin"><i class="fa fa-linkedin"></i></a></div></div></div><a class="realfactory-header-right-button" data-toggle="modal" data-target="#myModal" href="#" target="_self" >Get A Quote</a><a class="realfactory-header-right-button" href="https://www.suryaamba.com/wp-content/uploads/2017/06/Suryaamba-Brochure-Final_1.pdf" target="_self" download> E-brochure</a></div>		</div>
+	</div>
+</header><!-- header -->
+<div class="realfactory-navigation-bar-wrap  realfactory-style-transparent realfactory-sticky-navigation realfactory-sticky-navigation-height realfactory-style-left  realfactory-style-fixed realfactory-without-placeholder" >
+	<div class="realfactory-navigation-background" ></div>
+	<div class="realfactory-navigation-container clearfix  realfactory-container">
+				<div class="realfactory-navigation realfactory-item-pdlr clearfix " >
+		<div class="realfactory-main-menu" id="realfactory-main-menu" ><ul id="menu-main-1" class="sf-menu"><li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4282 current_page_item menu-item-4288 realfactory-normal-menu"><a href="https://www.suryaamba.com/">Home</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4074 realfactory-normal-menu"><a href="https://www.suryaamba.com/about-us/">About Us</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4199 realfactory-normal-menu"><a href="https://www.suryaamba.com/our-core-team/">Our Core Team</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4119 realfactory-normal-menu"><a href="https://www.suryaamba.com/our-advantage/">Our Advantage</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4034 realfactory-normal-menu"><a href="https://www.suryaamba.com/products/">Products</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4194 realfactory-normal-menu"><a href="https://www.suryaamba.com/investors/">Investors</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4326 realfactory-normal-menu"><a href="https://www.suryaamba.com/exports/">Exports</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4191 realfactory-normal-menu"><a href="https://www.suryaamba.com/gallery/">Gallery</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4118 realfactory-normal-menu"><a href="https://www.suryaamba.com/csr/">CSR</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4192 realfactory-normal-menu"><a href="https://www.suryaamba.com/careers/">Careers</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5416 realfactory-normal-menu"><a href="https://www.suryaamba.com/catalog/">Catalog</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4031 realfactory-normal-menu"><a href="https://www.suryaamba.com/contact/">Contact</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5775 realfactory-normal-menu"><a href="https://www.suryaamba.com/cart/">Cart</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5777 realfactory-normal-menu"><a href="https://www.suryaamba.com/purchases/">Purchases</a></li>
+</ul><div class="realfactory-navigation-slide-bar" id="realfactory-navigation-slide-bar" ></div></div>		</div><!-- realfactory-navigation -->
+
+	</div><!-- realfactory-header-container -->
+</div><!-- realfactory-navigation-bar-wrap -->
+
+
+	<div class="realfactory-page-wrapper" id="realfactory-page-wrapper" ><div class="gdlr-core-page-builder-body"><div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 0px 0px;" ><div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   ><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space" ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-revolution-slider-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 0px;"  ><div class="gdlr-core-external-plugin-message">Please install and activate the &quot;Revolution Slider&quot; plugin to show the slides.</div></div></div></div></div></div><div class="gdlr-core-pbf-wrapper " style="margin: 0px 0px 0px 0px;padding: 0px 0px 60px 0px;" ><div class="gdlr-core-pbf-background-wrap"><div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-repeat: repeat;background-position: center;"  data-parallax-speed="0.2"  ></div></div><div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   ><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" ><div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first gdlr-core-hide-in-mobile" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: -100px 0px 0px 0px;padding: 45px 0px 45px 0px;"   data-sync-height="height-service-1"  ><div class="gdlr-core-pbf-background-wrap"><div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(https://www.suryaamba.com/wp-content/uploads/2016/06/service-1.jpg);background-size: cover;background-position: center;"  data-parallax-speed="0"  ></div></div><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 23px;font-weight: 500;letter-spacing: 0px;text-transform: none;"  >On Time Delivery</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 15px;font-weight: 300;font-style: normal;color: #0a0a0a;"  ><p style="text-align: justify;">Our job is incomplete till we are not able to deliver express services to our esteemed customers. Our professional and friendly customer service ensures your goods are delivered on time to their destination.</p></span></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-hide-in-mobile" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: -100px 0px 0px 0px;padding: 45px 0px 45px 0px;"   data-sync-height="height-service-1"  ><div class="gdlr-core-pbf-background-wrap"><div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(https://www.suryaamba.com/wp-content/uploads/2016/06/service-2.jpg);background-size: cover;background-position: center;"  data-parallax-speed="0"  ></div></div><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 23px;font-weight: 300;letter-spacing: 0px;text-transform: none;color: #f8c12c;"  >State-Of-The-Art Factory</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 15px;font-weight: 300;font-style: normal;color: #ffffff;"  ><p style="text-align: justify;">Suryaamba offers state-of-the-art manufacturing facility having modern & sophisticated technology and infrastructure, driven by best industry practices to provide the highest quality of products for maximum customer satisfaction.</p></span></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-hide-in-mobile" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: -100px 0px 0px 0px;padding: 45px 0px 45px 0px;"   data-sync-height="height-service-1"  ><div class="gdlr-core-pbf-background-wrap"><div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(https://www.suryaamba.com/wp-content/uploads/2016/06/service-3.jpg);background-size: cover;background-position: center;"  data-parallax-speed="0"  ></div></div><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 23px;font-weight: 300;letter-spacing: 0px;text-transform: none;color: #f8c12c;"  >High Standard Labors</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 15px;font-weight: 300;font-style: normal;color: #ffffff;"  ><p style="text-align: justify;">Our highly skilled labor is characterized by their high experience and expertise levels.  We train our labors for even the most delicate tasks that require specific skill sets, education, training and experience, and may involve abstract thinking.</p></span></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: 0px 0px 0px -15px;padding: 100px 0px 0px 0px;"   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 36px;font-weight: 300;letter-spacing: 0px;text-transform: none;"  >Who we are?</h3></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal"  ><div class="gdlr-core-divider-container gdlr-core-left-align" style="max-width: 106px;"  ><div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #d8a419;border-bottom-width: 2px;" ></div></div></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-40" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 100px 0px 0px 0px;"   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 15px;"  ><div class="gdlr-core-text-box-item-content" style="font-size: 15px;"  ><p style="text-align: justify;">Suryaamba Spinning Mills Limited is anchored by Mr Virender Kumar Agarwal and family members, who have been in the textile business for over a period of time prior to incepting Suryaamba. An ISO 9001:2015 certified organization, Suryaamba is a state of art manufacturing unit located strategically at Nayakund, near Ramtek, District: Nagpur (Maharashtra). The unit is well connected by road and is only an hour away from the Nagpur airport. </p>
+<p style="text-align: justify;">Started in 1993, Suryaamba Spinning Mills Ltd. is a leading manufacturer of speciality synthetic spun Yarns. The core competitive strength of the company is its innovative product range, specifically tailor-made for the customers. We produce yearly 14400 mt. of quality Yarns. Surpassing 25 years milestone with the knowledge and experience of the promoters, Suryaamba Spinning Mills Limited has established itself in the domestic and export market with a wide product range from 100% polyester and viscose spun Yarns as well as blended synthetic Yarns, used for weaving.</p>
+<p style="text-align: right;"><a style="color: #cc9c36;" href="https://www.suryaamba.com/about-us/">MORE >></a></p>
+</div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 15px;"  ><div class="gdlr-core-text-box-item-content" style="font-size: 15px;"  ><p><iframe title="Suryaamba Spinning Mills Ltd" width="1150" height="647" src="https://www.youtube.com/embed/5Wbk6rvI6qA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+</div></div></div></div></div></div></div></div></div><div class="gdlr-core-pbf-wrapper " style="padding: 55px 0px 55px 0px;" data-skin="Call to action" ><div class="gdlr-core-pbf-background-wrap"><div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(https://www.suryaamba.com/wp-content/uploads/2016/06/CTA-bg-2.jpg);background-size: cover;background-position: center;"  data-parallax-speed="0.1"  ></div></div><div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   ><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" ></div></div></div><div class="gdlr-core-pbf-wrapper " style="padding: 80px 0px 0px 0px;" ><div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   ><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 36px;font-weight: 300;letter-spacing: 0px;text-transform: none;"  >Our Advantages</h3></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal"  ><div class="gdlr-core-divider-container gdlr-core-left-align" style="max-width: 100px;"  ><div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #d8a419;border-bottom-width: 2px;" ></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 35px;"  ><div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-width: 0px;"  ><a  class="gdlr-core-ilightbox gdlr-core-js " href="https://www.suryaamba.com/wp-content/uploads/2017/06/technology.jpg"><img src="https://www.suryaamba.com/wp-content/uploads/2017/06/technology-800x420.jpg" alt="" width="800" height="420" /><span class="gdlr-core-image-overlay " style="background: rgba(236, 182, 34, 0.6);"  ><i class="gdlr-core-image-overlay-icon fa fa-search gdlr-core-size-28" style="color: #ffffff;"  ></i></span></a></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 20px;font-weight: 500;letter-spacing: 0px;text-transform: none;color: #e6a734;"  >Technology & Innovation</h3></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  ><div class="gdlr-core-text-box-item-content"  ><p style="text-align: justify;">It is innovation that transformed us from a small firm into Nagpur’s leading enterprise. Innovation in technology has always been in our DNA.</p>
+<p style="text-align: right;"><a style="color: #cc9c36;" href="https://www.suryaamba.com/our-advantage/">MORE >></a></p>
+</div></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-20" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 35px;"  ><div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-width: 0px;"  ><a  class="gdlr-core-ilightbox gdlr-core-js " href="https://www.suryaamba.com/wp-content/uploads/2017/06/manufacturingprosess.jpg"><img src="https://www.suryaamba.com/wp-content/uploads/2017/06/manufacturingprosess-800x420.jpg" alt="" width="800" height="420" /><span class="gdlr-core-image-overlay " style="background: rgba(236, 182, 34, 0.6);"  ><i class="gdlr-core-image-overlay-icon fa fa-search gdlr-core-size-28" style="color: #ffffff;"  ></i></span></a></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 20px;font-weight: 500;letter-spacing: 0px;text-transform: none;color: #e6a734;"  >Manufacturing Process</h3></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  ><div class="gdlr-core-text-box-item-content"  ><p style="text-align: justify;">Our state-of-the-art manufacturing units are highly advanced and automated, ensuring consistency and high quality across multiple product types.</p>
+<p style="text-align: right;"><a style="color: #cc9c36;" href="https://www.suryaamba.com/our-advantage/">MORE >></a></p>
+</div></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-20" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 35px;"  ><div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-width: 0px;"  ><a  class="gdlr-core-ilightbox gdlr-core-js " href="https://www.suryaamba.com/wp-content/uploads/2017/06/Qulity.jpg"><img src="https://www.suryaamba.com/wp-content/uploads/2017/06/Qulity-800x420.jpg" alt="" width="800" height="420" /><span class="gdlr-core-image-overlay " style="background: rgba(236, 182, 34, 0.6);"  ><i class="gdlr-core-image-overlay-icon fa fa-search gdlr-core-size-28" style="color: #ffffff;"  ></i></span></a></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 20px;font-weight: 500;letter-spacing: 0px;text-transform: none;color: #e6a734;"  >Quality </h3></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  ><div class="gdlr-core-text-box-item-content"  ><p style="text-align: justify;">Quality is main pillar of our business. All employees including promoters understand that quality management is very essential to the success of our business.</p>
+<p style="text-align: right;"><a style="color: #cc9c36;" href="https://www.suryaamba.com/our-advantage/">MORE >></a></p>
+</div></div></div></div></div></div></div></div></div><div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 0px 0px;" ><div class="gdlr-core-pbf-background-wrap" style="background-color: #d0aa3b;"  ></div><div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   ><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space" ><div class="gdlr-core-pbf-column gdlr-core-column-12 gdlr-core-column-first" data-skin="Dark" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: 0px 0px 5px 0px;padding: 100px 30px 0px 30px;"   data-sync-height="height-port"  ><div class="gdlr-core-pbf-background-wrap"><div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(https://www.suryaamba.com/wp-content/uploads/2016/06/port-desc-bg.jpg);background-size: cover;background-position: center;"  data-parallax-speed="0.2"  ></div></div><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content" style="max-width: 300px;"   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 15px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px;font-weight: 500;letter-spacing: 0px;text-transform: none;color: #f8c12c;"  >Products</h3></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal" style="padding-bottom: 40px;"  ><div class="gdlr-core-divider-container gdlr-core-left-align" style="max-width: 93px;"  ><div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #f8c12c;border-bottom-width: 2px;" ></div></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 10px;"  ><div class="gdlr-core-text-box-item-content" style="font-size: 16px;"  ><p>Suryaamba Spinning Mills manufactures Polyester and Polyester/Viscose Blended Yarn. The company manufactures Synthetic Ring Spun Yarn for weaving, knitting, and embroidery and other industrial applications and specialized products according to customer requirements as follow:</p>
+<p style="text-align: right;"><a style="color: #cc9c36;" href="https://www.suryaamba.com/products/">MORE >></a></p>
+</div></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-12" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-promo-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px;"  ><div class="gdlr-core-promo-box"><div class="gdlr-core-promo-box-item-image gdlr-core-media-image" ><img src="https://www.suryaamba.com/wp-content/uploads/2016/06/two-500x625.jpg" alt="" width="500" height="625" /></div><div class="gdlr-core-promo-box-content-wrap gdlr-core-left-align gdlr-core-with-frame" style="border-color: #ba9425;border-width: 0px 0px 0px 0px;"  ><h3 class="gdlr-core-promo-box-item-title" style="color: #000000;"  ><a href="https://www.suryaamba.com/products/"  style="color:#000;">100% Polyester Yarns</a></h3><div class="gdlr-core-promo-box-item-content"  ><p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></p>
+<ul style="color:#000;">
+<li>Cationic Super Dye</li>
+<li>Flame Retardants</li>
+<li>Super- Micro (0.6D) &#038; Micro Deniers (0.8D)</li>
+<li>TVT Optical White</li>
+</ul>
+<p></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a></p>
+</div></div></div></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-12" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-promo-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px;"  ><div class="gdlr-core-promo-box"><div class="gdlr-core-promo-box-item-image gdlr-core-media-image" ><img src="https://www.suryaamba.com/wp-content/uploads/2016/06/three-500x625.jpg" alt="" width="500" height="625" /></div><div class="gdlr-core-promo-box-content-wrap gdlr-core-left-align gdlr-core-with-frame" style="border-width: 0px 0px 0px 0px;"  ><h3 class="gdlr-core-promo-box-item-title" style="color: #000000;"  ><a href="https://www.suryaamba.com/products/"  style="color:#000;">Polyester/ Viscose Yarns</a></h3><div class="gdlr-core-promo-box-item-content"  ><p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></p>
+<ul style="color:#000;">
+<li>2D Polyester/Viscose</li>
+<li>Bright Polyester/Viscose</li>
+<li>Cationic/Viscose</li>
+<li>Trilobal/Viscose</li>
+</ul>
+<p></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a></p>
+</div></div></div></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-12" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-promo-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px;"  ><div class="gdlr-core-promo-box"><div class="gdlr-core-promo-box-item-image gdlr-core-media-image" ><img src="https://www.suryaamba.com/wp-content/uploads/2016/06/five-500x625.jpg" alt="" width="500" height="625" /></div><div class="gdlr-core-promo-box-content-wrap gdlr-core-left-align gdlr-core-with-frame" style="border-width: 0px 0px 0px 0px;"  ><h3 class="gdlr-core-promo-box-item-title" style="color: #000000;"  ><a href="https://www.suryaamba.com/products/"  style="color:#000;">Viscose Yarns</a></h3><div class="gdlr-core-promo-box-item-content"  ><p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></p>
+<ul style="color:#000;">
+<li>Bright Viscose</li>
+<li>Fancy viscose</li>
+<li>Micro Modal (0.9D)</li>
+<li>Modal</li>
+</ul>
+<p></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a></p>
+</div></div></div></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-12" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js "   ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-promo-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px;"  ><div class="gdlr-core-promo-box"><div class="gdlr-core-promo-box-item-image gdlr-core-media-image" ><img src="https://www.suryaamba.com/wp-content/uploads/2016/06/four-500x625.jpg" alt="" width="500" height="625" /></div><div class="gdlr-core-promo-box-content-wrap gdlr-core-left-align gdlr-core-with-frame" style="border-width: 0px 0px 0px 0px;"  ><h3 class="gdlr-core-promo-box-item-title" style="color: #000000;"  ><a href="https://www.suryaamba.com/products/"  style="color:#000;">Fancy Yarns</a></h3><div class="gdlr-core-promo-box-item-content"  ><p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></a></p>
+<p><a href="https://www.suryaamba.com/products/"></p>
+<ul style="color:#000;">
+<li>Neps</li>
+<li>Stubs</li>
+<li>Super Short Stubs</li>
+<li>TNT Yarns</li>
+</ul>
+<p></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a><a href="https://www.suryaamba.com/products/"></a></p>
+</div></div></div></div></div></div></div></div></div></div></div><div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 0px 0px;" ><div class="gdlr-core-pbf-background-wrap" style="background-color: #ececec;"  ></div><div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   ><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" ><div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" data-skin="Grey" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 85px 0px 0px 0px;"   data-sync-height="height-financial"  ><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"   ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 28px;font-weight: 500;letter-spacing: 0px;text-transform: none;color: #c8942b;"  >Investors</h3></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal"  ><div class="gdlr-core-divider-container gdlr-core-left-align" style="max-width: 100px;"  ><div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #d8a419;border-bottom-width: 2px;" ></div></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"  ><div class="gdlr-core-text-box-item-content"  ><p><a href="https://www.suryaamba.com/investors/"><span style="background: #fff; padding: 25px; font-size: 17px; display: inline-block; width: 100%; margin: 0 0 7px 0;">Financial Results &#038; Annual Reports</span></a><br />
+<a href="https://www.suryaamba.com/investors/"><span style="background: #fff; padding: 25px; font-size: 17px; display: inline-block; width: 100%; margin: 0 0 7px 0;">Terms &#038; Regulations</span></a><br />
+<a href="https://www.suryaamba.com/investors/"><span style="background: #fff; padding: 25px; font-size: 17px; display: inline-block; width: 100%; margin: 0 0 7px 0;">Corporate Governance</span></a></p>
+<p style="text-align: right;"><a style="color: #cc9c36;" href="https://www.suryaamba.com/investors/">MORE >></a></p>
+</div></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-20" data-skin="Dark" ><div class="gdlr-core-pbf-column-content-margin gdlr-core-js  gdlr-core-column-extend-right" style="padding: 80px 0px 35px 56px;"   data-sync-height="height-financial"  ><div class="gdlr-core-pbf-background-wrap"><div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(https://www.suryaamba.com/wp-content/uploads/2017/06/envestors.jpg);background-size: cover;background-position: center;"  data-parallax-speed="0.2"  ></div></div><div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"   ></div></div></div></div></div></div><div class="gdlr-core-pbf-wrapper " style="padding: 45px 0px 15px 0px;" ><div class="gdlr-core-pbf-wrapper-content gdlr-core-js "   ><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" ><div class="gdlr-core-pbf-element" ><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px;"  ><div class="gdlr-core-title-item-title-wrap " ><h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 28px;font-weight: 500;letter-spacing: 0px;text-transform: none;color: #c8942b;"  >Places We Go</h3></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal"  ><div class="gdlr-core-divider-container gdlr-core-center-align" style="max-width: 100px;"  ><div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #d8a419;border-bottom-width: 2px;" ></div></div></div></div><div class="gdlr-core-pbf-element" ><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align"  ><div class="gdlr-core-text-box-item-content"  ><p>Canada  •  USA  •  Mexico  •  Columbia  •  Peru  •  Brazil  •  Chile  •  Argentina  •  Portugal  •  Spain  •  Morocco<br />
+•  Egypt  •  Nigeria  •  South Africa  •  Pakistan  •  Bangladesh  •  Turkey </p>
+</div></div></div></div></div></div></div></div><footer><div class="realfactory-footer-wrapper" ><div class="realfactory-footer-container realfactory-container clearfix" ><div class="realfactory-footer-column realfactory-item-pdlr realfactory-column-15" ></div><div class="realfactory-footer-column realfactory-item-pdlr realfactory-column-15" ><div id="text-8" class="widget widget_text realfactory-widget"><h3 class="realfactory-widget-title">CSR</h3>			<div class="textwidget">We encourage gender equality, and hence women employment remains strong in our company.
+<br><br>
+Our workforce’s wellbeing is primarily our concern and hence heath checkups and eye camps are conducted annually in the organization.<br><br>
+We promote cultural activities in the premises of the plant to ensure bonding within the community.</div>
+		</div></div><div class="realfactory-footer-column realfactory-item-pdlr realfactory-column-15" ><div id="text-9" class="widget widget_text realfactory-widget"><h3 class="realfactory-widget-title">CAREER</h3>			<div class="textwidget">
+<div class="wpcf7 no-js" id="wpcf7-f4364-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/#wpcf7-f4364-o1" method="post" class="wpcf7-form init" aria-label="Contact form" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="4364" />
+<input type="hidden" name="_wpcf7_version" value="5.7.7" />
+<input type="hidden" name="_wpcf7_locale" value="en_US" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4364-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</div>
+<div class="gdlr-core-input-wrap gdlr-core-large gdlr-core-full-width gdlr-core-with-column gdlr-core-no-border">
+	<div class="gdlr-core-column-60">
+		<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" value="" type="text" name="your-name" /></span>
+		</p>
+	</div>
+	<div class="clear">
+	</div>
+	<div class="gdlr-core-column-60">
+		<p><span class="wpcf7-form-control-wrap" data-name="your-subject"><input size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Position" value="" type="text" name="your-subject" /></span>
+		</p>
+	</div>
+	<div class="clear">
+	</div>
+	<div class="gdlr-core-column-60">
+		<p>Your Resume<br />
+<span class="wpcf7-form-control-wrap" data-name="file-504"><input size="40" class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required" accept="audio/*,video/*,image/*" aria-required="true" aria-invalid="false" type="file" name="file-504" /></span>
+		</p>
+	</div>
+	<div class="clear">
+	</div>
+	<div class="gdlr-core-column-60 gdlr-core-center-align">
+		<p><input class="wpcf7-form-control has-spinner wpcf7-submit" type="submit" value="Send" />
+		</p>
+	</div>
+</div><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+		</div></div><div class="realfactory-footer-column realfactory-item-pdlr realfactory-column-15" ><div id="text-7" class="widget widget_text realfactory-widget"><h3 class="realfactory-widget-title">Contact Info</h3>			<div class="textwidget"><p><strong>City Office</strong><br />
+Plot No.72, Surya Pratham Apartment,<br />
+Shradhanand Peth, Abhyankar nagar, SA Road,<br />
+Nagpur-440 010,<br />
+Maharashtra.</p>
+<p>LL: +91-712-2591410</p>
+<p><strong>Plant Office </strong><br />
+Survey No. 300,<br />
+Nayakund Parseoni Road,<br />
+Dist, Nagpur Maharashtra – 441 105.</p>
+<p><strong>Contact</strong><br />
+E : <a href="mailto:pujit@suryaamba.com">pujit@suryaamba.com</a></p>
+<p><strong>Company Secretary and Compliance Officer</strong><br />
+Ms Suchita Dandekar<br />
+E: cs@suryaamba.com<br />
+samba.ngp@gmail.com</p>
+<p><strong>Registered Office</strong><br />
+1st Floor, Surya Towers,<br />
+105, Sardar Patel Road,<br />
+Secunderabad,<br />
+Telangana &#8211; 500 003.<br />
+LL: +91-40-27813360</p>
+<p><strong>Registrar and Share Transfer Agent of the Company</strong><br />
+KFin Technologies Limited,<br />
+Selenium Tower B, Plot No &#8211; 31 &#038; 32, Gachibowli, Financial District, Nanakramguda,  Hyderabad &#8211; 500 032.   E : einward.ris@kfintech.com Website: https://www.kfintech.com and / or  https://ris.kfintech.com        Toll Free No.: 1-800-309-4001</p>
+</div>
+		</div></div></div></div><div class="realfactory-copyright-wrapper" ><div class="realfactory-copyright-container realfactory-container"><div class="realfactory-copyright-text realfactory-item-pdlr">Copyright 2017 Suryaamba, All Right Reserved</div></div></div></footer></div></div>
+            <script>
+                jQuery(function($){
+
+                    
+                });
+            </script>
+            <div id="fb-root"></div>
+            <script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/easy-modal/assets/scripts/jquery.transit.min.js?ver=0.9.11' id='jquery-transit-js'></script>
+<script type='text/javascript' id='easy-modal-site-js-extra'>
+/* <![CDATA[ */
+var emodal_themes = [];
+emodal_themes = {"1":{"id":"1","theme_id":"1","overlay":{"background":{"color":"#ffffff","opacity":100}},"container":{"padding":18,"background":{"color":"#f9f9f9","opacity":100},"border":{"style":"none","color":"#000000","width":1,"radius":0},"boxshadow":{"inset":"no","horizontal":1,"vertical":1,"blur":3,"spread":0,"color":"#020202","opacity":23}},"close":{"text":"CLOSE","location":"topright","position":{"top":0,"left":0,"bottom":0,"right":0},"padding":8,"background":{"color":"#00b7cd","opacity":100},"font":{"color":"#ffffff","size":12,"family":"Times New Roman"},"border":{"style":"none","color":"#ffffff","width":1,"radius":0},"boxshadow":{"inset":"no","horizontal":0,"vertical":0,"blur":0,"spread":0,"color":"#020202","opacity":23},"textshadow":{"horizontal":0,"vertical":0,"blur":0,"color":"#000000","opacity":23}},"title":{"font":{"color":"#000000","size":32,"family":"Tahoma"},"text":{"align":"left"},"textshadow":{"horizontal":0,"vertical":0,"blur":0,"color":"#020202","opacity":23}},"content":{"font":{"color":"#8c8c8c","family":"Times New Roman"}}}};;
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/easy-modal/assets/scripts/easy-modal-site.js?defer&#038;ver=2' defer='defer' id='easy-modal-site-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.7' id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.suryaamba.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.7' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/goodlayers-core/plugins/combine/script.js?ver=6.1.14' id='gdlr-core-plugin-js'></script>
+<script type='text/javascript' id='gdlr-core-page-builder-js-extra'>
+/* <![CDATA[ */
+var gdlr_core_pbf = {"admin":"","video":{"width":"640","height":"360"},"ajax_url":"https:\/\/www.suryaamba.com\/wp-admin\/admin-ajax.php","ilightbox_skin":"dark"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/plugins/goodlayers-core/include/js/page-builder.js?ver=6.1.14' id='gdlr-core-page-builder-js'></script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.13.2' id='jquery-effects-core-js'></script>
+<script type='text/javascript' id='realfactory-script-core-js-extra'>
+/* <![CDATA[ */
+var realfactory_script_core = {"home_url":"https:\/\/www.suryaamba.com\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.suryaamba.com/wp-content/themes/suryamba/js/script-core.js?ver=1.0.0' id='realfactory-script-core-js'></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+<!----------------Modal---------------------->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Get a Quote</h4>
+      </div>
+      <div class="modal-body">
+        
+<div class="wpcf7 no-js" id="wpcf7-f3895-o2" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/#wpcf7-f3895-o2" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="3895" />
+<input type="hidden" name="_wpcf7_version" value="5.7.7" />
+<input type="hidden" name="_wpcf7_locale" value="en_US" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3895-o2" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</div>
+<p><label> Your Name (required)<br />
+<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" value="" type="text" name="your-name" /></span> </label>
+</p>
+<p><label> Your Email (required)<br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" value="" type="email" name="your-email" /></span> </label>
+</p>
+<p><label> Subject<br />
+<span class="wpcf7-form-control-wrap" data-name="your-subject"><input size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="your-subject" /></span> </label>
+</p>
+<p><label> Your Message<br />
+<span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" name="your-message"></textarea></span> </label>
+</p>
+<p><input class="wpcf7-form-control has-spinner wpcf7-submit" type="submit" value="Send" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,2775 @@
+<head>
+      <link rel="preload" as="image" href="./images/banner/desktop1.webp">
+    <link rel="preload" as="image" href="./images/banner/mobile1.webp">
+    <link rel="preload" as="image" href="./images/banner/Tablet1.webp">
+    <link rel="preload" as="image" href="./images/products/wheels1.webp">
+  <link rel="preload" as="image" href="./images/products/Rehabcare1.webp">
+  <link rel="preload" as="image" href="./images/products/spare_parts2.webp">
+  <link rel="preload" as="image" href="./images/products/Tyres1.webp">
+</head>
+<style>
+  html {
+    scroll-padding-top: 90px; /* offset for sticky header */
+  }
+  .justify { text-align: justify; }
+
+  /* =========================================
+     HERO SLIDER — ALL SLIDES
+  ========================================= */
+
+  /* shared hero content box */
+  .hero-content {
+    color: #fff;
+    text-align: left;
+    /* margin-left: clamp(24px, 13vw, 179px)!important; */
+        margin-left: clamp(24px, 13vw, 234px) !important;
+  }
+
+  /* slide 1 specific */
+  .hero-logo {
+    height: 40px;
+    display: block;
+    margin-bottom: 16px;
+    filter: invert(1) brightness(2);
+  }
+  .hero-body {
+    font-size: 15.5px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+    color: #fff;
+    text-align: justify;
+    text-shadow: 0 1px 5px rgba(0,0,0,.55);
+  }
+  .hero-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 4px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.4;
+    text-shadow: 0 1px 5px rgba(0,0,0,.55);
+  }
+  .hero-list li { padding-left: 18px; position: relative; margin-bottom: 4px; }
+  .hero-list li::before { content: '•'; position: absolute; left: 0; }
+
+  /* slides 2 & 3 */
+  .hero-content h1 {
+    font-size: clamp(1.5rem, 2.8vw, 44px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0,0,0,.6);
+  }
+  .hero-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-align: justify;
+    text-shadow: 0 1px 5px rgba(0,0,0,.5);
+  }
+  @media (min-width: 1440px) {
+      .hero-content {
+          margin-left: clamp(160px, 12vw, 240px);
+      }
+      #productImage {
+          width: 95% !important;
+          height: 404px !important;
+      }
+  }
+
+  /* ── TABLET (768–991px) ── */
+  @media (max-width: 991px) {
+    .hero-logo { height: 40px; }
+    .hero-body { font-size: 15px; }
+    .hero-list { font-size: 15px; }
+  }
+
+  /* ── MOBILE L (≤767px) ── */
+  @media (max-width: 767px) {
+    /* Reduce font size only for first carousel banner */
+    .carousel-item:first-child .hero-logo { height: 30px; margin-bottom: 8px; }
+    .carousel-item:first-child .hero-body { font-size: 13px; line-height: 1.6; }
+    .carousel-item:first-child .hero-list { font-size: 13px; margin-bottom: 14px; }
+    .carousel-item:first-child .hero-content .btn { padding: 8px 20px !important; font-size: 13px !important; }
+  }
+
+  /* ── Section title ── */
+  .section-title { font-size: 2rem !important; }
+
+  /* ── Tabs ── */
+  .product-tabs {
+      border-bottom: none !important;
+      display: flex;
+      justify-content: center;
+  }
+  .tabs-inner {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-bottom: 2px solid #ddd;
+      gap: 0;
+  }
+  .tab-btn {
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      padding: 8px 20px;
+      background: none;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 15px;
+  }
+  .tab-btn.active {
+      border-bottom: 2px solid #0d6efd;
+      color: #0d6efd;
+      font-weight: 600;
+  }
+  .tab-btn.active::after {
+      display: none !important;
+  }
+
+  /* ── Product Pagination Indicators ── */
+  .product-pagination {
+      margin-top: 25px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+  }
+  .pagination-segment {
+      height: 4px;
+      width: 24px;
+      background-color: #ddd;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .pagination-segment.active {
+      width: 48px;
+      background-color: #0d6efd;
+  }
+  .pagination-segment:hover:not(.active) {
+      background-color: #bbb;
+  }
+
+  /* ── Product section ── */
+  .btn-primary {
+      padding: 12px 36px !important;
+      border-radius: 8px !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+  }
+  #productTitle { font-size: 1.6rem !important; font-weight: 700 !important; line-height: 1.25 !important; }
+  #productDesc  { font-size: 16px !important; line-height: 1.8 !important; }
+  #productImage {
+      width: 100%;
+      height: auto !important;
+      object-fit: cover;
+      border-radius: 0;
+  }
+  .btn-outline-light {
+    padding: 12px 36px !important;
+  }
+
+  /* ── Advantage cards ── */
+  .adv-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      display: block;
+      text-decoration: none;
+  }
+  .adv-card img {
+      width: 100% !important;
+      height: 100px !important;
+      object-fit: cover !important;
+      display: block !important;
+      transition: transform .4s ease;
+  }
+  .adv-card:hover img { transform: scale(1.05); }
+  .adv-card span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600 !important;
+      font-size: 1.75rem !important;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.12);
+  }
+
+  /* ── News section ── */
+  .news-section-wrap {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+
+      /* Section title */
+      .section-title { font-size: 1.4rem !important; }
+
+      /* Tabs — centered, scroll if needed */
+      .product-tabs { justify-content: center; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+      .tabs-inner { flex-wrap: nowrap; width: auto; display: inline-flex; justify-content: center; }
+      .tab-btn { font-size: 13px; padding: 8px 12px; flex-shrink: 0; }
+
+      /* Product — stack image above text */
+      .products-section .row.product-content { flex-direction: column; }
+      .products-section .col-lg-5,
+      .products-section .col-lg-7 { width: 100% !important; max-width: 100% !important; }
+      #productImage { height: 220px; border-radius: 10px; width: 100%; object-fit: cover; object-position: center; }
+      #productTitle { font-size: 1.2rem !important; }
+      #productDesc  { font-size: 14px !important; }
+      .btn-primary { padding: 9px 22px !important; font-size: 14px !important; }
+      .btn-outline-light { padding: 9px 22px !important; font-size: 14px !important; }
+
+      /* Advantage — 1 per row on mobile */
+      .advantage-section .col-6 { flex: 0 0 100%; max-width: 100%; }
+      .adv-card img { height: 200px; }
+      .adv-card span { font-size: 1rem !important; }
+
+      /* Featured Products */
+      .product-card img { height: 200px; }
+
+      /* News */
+      .news-card img { height: 190px; }
+      .news-card h5 { font-size: 14px; }
+  }
+
+  /* ── MOBILE M (≤480px) ── */
+  @media (max-width: 480px) {
+      .hero-content { max-width: 90%; }
+      .hero-content h1 { font-size: 1.3rem !important; text-align: left !important; }
+      .hero-content p { font-size: 12px !important; margin: 6px 0 10px !important; text-align: justify !important; }
+      /* Reduce font size only for first carousel banner */
+      .carousel-item:first-child .hero-logo { height: 26px !important; }
+      .carousel-item:first-child .hero-body { font-size: 12px !important; }
+      .carousel-item:first-child .hero-list { font-size: 12px !important; margin-bottom: 12px; }
+      .btn-primary, .btn-outline-light { padding: 8px 18px !important; font-size: 13px !important; }
+
+      .section-title { font-size: 1.5rem !important; }
+      #productImage { height: 310px !important; }
+      #productTitle { font-size: 1.1rem !important; }
+      #productDesc  { font-size: 13px !important; }
+
+      /* Advantage — 1 per row on mobile */
+      .advantage-section .col-6 { flex: 0 0 100%; max-width: 100%; }
+      .adv-card img { height: 180px; }
+      .adv-card span { font-size: 1.5rem !important; }
+
+      .product-card img { height: 170px; }
+      .news-card img { height: 170px; }
+  }
+
+  /* ── MOBILE S (≤375px) ── */
+  @media (max-width: 375px) {
+      .hero-content h1 { font-size: 1.15rem !important; text-align: left !important; }
+      .hero-content p { font-size: 11px !important; margin: 4px 0 8px !important; text-align: justify !important; }
+      /* Reduce font size only for first carousel banner */
+      .carousel-item:first-child .hero-logo { height: 20px !important; }
+      .carousel-item:first-child .hero-body { font-size: 10px !important; }
+      .carousel-item:first-child .hero-list { font-size: 10px !important; }
+      .carousel-item:first-child .hero-content .btn {
+          font-size: 10px !important;
+      }
+      .btn-primary, .btn-outline-light { padding: 7px 14px !important; font-size: 12px !important; }
+
+      .section-title { font-size: 1.5rem !important; }
+      #productImage { height: 270px !important; }
+      #productTitle { font-size: 1rem !important; }
+      #productDesc  { font-size: 12px !important; }
+
+      .adv-card img { height: 170px; }
+      .adv-card span { font-size: 1.5rem !important; }
+
+      .product-card img { height: 150px; }
+      .product-label { font-size: 13px; padding: 8px; }
+      .news-card img { height: 150px; }
+      .news-card h5 { font-size: 13px; }
+      .tabs-inner {
+          flex-wrap: nowrap;
+          width: max-content !important;
+          display: inline-flex;
+          justify-content: center;
+      }
+      .tab-btn {
+          padding: 8px 16px !important;
+          font-size: 12px !important;
+      }
+          .carousel-indicators {
+        bottom: 40px !important;
+       
+    }
+  }
+  @media (max-width: 320px) {
+    #productImage { height: 225px !important; }
+    .tab-btn {
+        padding: 8px 10px !important;
+        font-size: 12px !important;
+    }
+    .mb-5 {
+        margin-bottom: 2rem !important;
+    }
+    .section-title {
+        font-size: 1.25rem !important;
+    }
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 1rem !important;
+    }
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Krypton Industries Limited</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1780910763">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+    /* ==============================================
+       HEADER — DESKTOP
+    =============================================== */
+    .main-header {
+        background: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9999;
+        box-shadow: 0 2px 8px rgba(0,0,0,.10);
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(16px, 4vw, 60px);
+        height: 80px;
+        position: relative;
+    }
+
+    /* Logo */
+    .nav-logo img { height: 36px; display: block; }
+
+    /* Nav list */
+    .nav-list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0; padding: 0;
+        gap: 2px;
+    }
+
+    .nav-list > li > a {
+        display: block;
+        padding: 8px 14px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #222;
+        text-decoration: none;
+        position: relative;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .nav-list > li > a::after {
+        content: "";
+        position: absolute;
+        left: 14px; bottom: 2px;
+        width: 0; height: 2px;
+        background: #5372EF;
+        transition: width .3s;
+    }
+
+    .nav-list > li > a:hover { color: #5372EF; }
+    .nav-list > li > a:hover::after { width: calc(100% - 28px); background: #5372EF; }
+
+    /* ==============================================
+       ABOUT DROPDOWN — DESKTOP
+    =============================================== */
+    .about-parent { position: relative; }
+
+    .about-mega {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: flex;
+        background: #fff;
+        box-shadow: 0 15px 40px rgba(0,0,0,.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition: .3s ease;
+        z-index: 1000;
+    }
+
+    .about-parent:hover .about-mega {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .about-left { padding: 25px 20px; min-width: 260px; }
+    .about-left ul { list-style: none; margin: 0; padding: 0; }
+    .about-left li { padding: 10px 0; cursor: pointer; transition: .25s; }
+    .about-left li:hover { color: #1E42C5; transform: translateX(6px); }
+
+    /* fly-out right panel */
+    .about-right {
+        position: absolute;
+        left: 100%; top: 0;
+        background: #fff;
+        box-shadow: 0 15px 40px rgba(0,0,0,.12);
+        padding: 25px 20px;
+        min-width: 260px;
+        display: none;
+    }
+    .about-right.show {
+        display: block;
+        animation: slideRight .2s ease forwards;
+    }
+    .about-right ul { list-style: none; margin: 0; padding: 0; }
+    .about-right li { padding: 10px 0; cursor: pointer; transition: .25s; }
+    .about-right li:hover { color: #1E42C5; transform: translateX(6px); }
+
+    @keyframes slideRight {
+        from { opacity: 0; transform: translateX(15px); }
+        to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ==============================================
+       INVESTOR MEGA MENU — DESKTOP
+    =============================================== */
+    .investor-parent { position: static; }
+
+    .mega-menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(12px);
+        top: 100%;
+        width: min(1200px, 100vw);
+        max-width: calc(100vw - 32px);
+        
+        background: #f8f8f8;
+        padding: 30px 20px;
+
+        box-shadow: 0 18px 45px rgba(0,0,0,.14);
+        border-radius: 14px;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: .35s ease;
+        z-index: 1000;
+
+        /* IMPORTANT FIX */
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .investor-parent:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .mega-menu::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .mega-menu::-webkit-scrollbar-thumb {
+        background: #b9c1ff;
+        border-radius: 10px;
+    }
+
+    .mega-menu::-webkit-scrollbar-track {
+        background: #eee;
+    }
+
+    .mega-menu h6 {
+        font-weight: 700;
+        margin-bottom: 14px;
+        border-bottom: 2px solid #ddd;
+        display: inline-block;
+        padding-bottom: 6px;
+        font-size: 14px;
+    }
+
+    .mega-menu ul { list-style: none; padding: 0; margin: 0; }
+    .mega-menu ul li { margin-bottom: 7px; font-size: 14px; cursor: pointer; transition: .3s; }
+    .mega-menu ul li:hover { color: #1E42C5; transform: translateX(5px); }
+
+    /* Medium laptop fix */
+    @media (max-width: 1300px) {
+        .mega-menu .row > div {
+            margin-bottom: 20px;
+        }
+
+        .mega-menu {
+            width: 98%;
+            padding: 25px 18px;
+        }
+    }
+
+    /* Tablet */
+    @media (max-width: 991px) {
+        .mega-menu {
+            max-height: unset;
+            overflow: visible;
+            border-radius: 8px;
+        }
+    }
+
+    .about-left a, .about-right a, .mega-menu a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* Fancy stakeholder nav list */
+    .fancy-nav-list { list-style: none; padding: 0; margin: 0; }
+    .fancy-nav-list li { margin-bottom: 1px; }
+
+    .fancy-nav-list li a {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        padding: 7px 10px 7px 8px;
+        border-radius: 7px;
+        font-size: 13px;
+        color: #444;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background .2s, color .2s, padding-left .2s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* left accent bar */
+    .fancy-nav-list li a::before {
+        content: '';
+        position: absolute;
+        left: 0; top: 20%; bottom: 20%;
+        width: 2px;
+        background: #4c63ff;
+        border-radius: 2px;
+        transform: scaleY(0);
+        transition: transform .2s ease;
+    }
+
+    .fancy-nav-list li a:hover::before { transform: scaleY(1); }
+
+    /* icon — hidden by default, slides in on hover */
+    .fni {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 0;
+        overflow: hidden;
+        opacity: 0;
+        flex-shrink: 0;
+        transition: width .2s ease, opacity .2s ease, margin .2s ease;
+        color: #4c63ff;
+    }
+
+    .fancy-nav-list li a:hover .fni {
+        width: 16px;
+        opacity: 1;
+        margin-right: 7px;
+    }
+
+    .fancy-nav-list li a:hover {
+        background: #f0f2ff;
+        color: #4c63ff;
+        padding-left: 14px;
+    }
+
+    /* Mobile: always show icon */
+    @media (max-width: 991px) {
+        .fni { width: 16px; opacity: 1; margin-right: 7px; }
+        .fancy-nav-list li a { padding: 9px 12px; }
+        .fancy-nav-list li a:hover { padding-left: 12px; }
+    }
+
+    /* ==============================================
+       SEARCH BOX
+    =============================================== */
+    .nav-search {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 999px;
+        padding: 8px 16px;
+        gap: 10px;
+        border: 1.5px solid #d8d8d8;
+        cursor: pointer;
+        transition: border-color .2s ease;
+        position: relative;
+    }
+
+    .nav-search:focus-within {
+        border-color: #aaa;
+    }
+
+    .nav-search input {
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 14px;
+        color: #333;
+        width: 120px;
+        font-family: 'Inter', sans-serif;
+        font-style: italic;
+    }
+
+    .nav-search input::placeholder {
+        color: #999;
+        font-style: italic;
+    }
+
+    .nav-search svg {
+        flex-shrink: 0;
+    }
+
+    /* Override the inline stroke on the SVG icon */
+    .nav-search svg line,
+    .nav-search svg circle {
+        stroke: #222 !important;
+    }
+
+    /* ==============================================
+       SEARCH RESULTS DROPDOWN
+    =============================================== */
+    .search-results-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 60px;
+        width: 420px;
+        max-width: calc(100vw - 32px);
+        max-height: 500px;
+        overflow-y: auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        z-index: 10000;
+        display: none;
+        padding: 12px 0;
+    }
+
+    .search-results-dropdown.show {
+        display: block;
+    }
+
+    .search-results-dropdown::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .search-results-dropdown::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+    }
+
+    .search-results-dropdown::-webkit-scrollbar-track {
+        background: #f5f5f5;
+    }
+
+    .search-result-item {
+        padding: 12px 20px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .search-result-item:last-child {
+        border-bottom: none;
+    }
+
+    .search-result-item:hover {
+        background: #f8f9ff;
+    }
+
+    .search-result-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 3px;
+    }
+
+    .search-result-snippet {
+        font-size: 12px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 4px;
+    }
+
+    .search-result-page {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+        color: #5372EF;
+        background: #eef0ff;
+        border-radius: 4px;
+        padding: 2px 7px;
+    }
+
+    .search-result-highlight {
+        background: #fff3cd;
+        color: #856404;
+        padding: 1px 3px;
+        border-radius: 2px;
+        font-weight: 600;
+    }
+
+    .search-no-results {
+        padding: 20px;
+        text-align: center;
+        color: #999;
+        font-size: 14px;
+    }
+
+    .search-result-count {
+        padding: 8px 20px;
+        font-size: 12px;
+        color: #666;
+        border-bottom: 2px solid #f0f0f0;
+        font-weight: 600;
+    }
+
+    @media (max-width: 991px) {
+        .search-results-dropdown {
+            right: 16px;
+            width: calc(100vw - 32px);
+        }
+    }
+
+    /* ==============================================
+       HAMBURGER
+    =============================================== */
+    .nav-burger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 42px; height: 42px;
+        background: none; border: none;
+        cursor: pointer; padding: 0;
+        flex-shrink: 0;
+        gap: 6px;
+    }
+    .nav-burger span {
+        display: block;
+        width: 24px; height: 2px;
+        background: #222; border-radius: 2px;
+    }
+
+    /* Close button inside drawer */
+    .drawer-close-row {
+        border-bottom: none !important;
+        display: flex;
+        justify-content: flex-end;
+        padding: 12px 16px 4px;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 1;
+    }
+
+    .drawer-close-btn {
+        background: #f0f0f0;
+        border: none;
+        border-radius: 50%;
+        width: 36px; height: 36px;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        line-height: 1;
+    }
+
+    .drawer-close-btn:hover { background: #e0e0e0; }
+
+    /* ==============================================
+       MOBILE OVERLAY
+    =============================================== */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 9997;
+    }
+    .nav-overlay.on { display: block; }
+
+    /* ==============================================
+       MOBILE STYLES
+    =============================================== */
+    @media (max-width: 991px) {
+
+        .main-nav { padding: 0 16px; }
+        .nav-search { display: none; }
+        .nav-burger { display: flex; }
+
+        /* Slide-in drawer */
+        .nav-list {
+            position: fixed;
+            top: 0; right: -110%;
+            width: min(300px, 85vw);
+            height: 100%;
+            background: #fff;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            overflow-y: auto;
+            padding: 0px 4px 40px;
+            z-index: 9998;
+            box-shadow: -4px 0 24px rgba(0,0,0,.15);
+            transition: right .32s cubic-bezier(.4,0,.2,1);
+        }
+
+        .nav-list.open { right: 0; }
+
+        .nav-list > li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-list > li > a {
+            padding: 14px 20px;
+            font-size: 15px;
+            display: block;
+        }
+
+        .nav-list > li > a::after { display: none; }
+
+        /* Disable hover dropdowns on mobile */
+        .about-parent:hover .about-mega,
+        .investor-parent:hover .mega-menu {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(12px) !important;
+        }
+
+        /* About accordion */
+        .about-mega {
+            position: static !important;
+            display: none !important;
+            flex-direction: column !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            box-shadow: none !important;
+            background: #f7f8ff;
+            border-left: 3px solid #4c63ff;
+            margin: 0 16px 8px;
+            border-radius: 0 6px 6px 0;
+        }
+        .about-mega.open {
+            display: flex !important;
+        }
+        /* override hover suppression when open */
+        .about-parent:hover .about-mega.open {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: flex !important;
+        }
+
+        .about-left { padding: 12px 16px; min-width: unset; }
+        .about-left li { padding: 9px 0; font-size: 14px; border-bottom: 1px solid #eee; }
+        .about-left li:last-child { border-bottom: none; }
+
+        /* right panel always visible inside open mega on mobile */
+        .about-right {
+            position: static !important;
+            display: block !important;
+            box-shadow: none !important;
+            padding: 12px 16px !important;
+            min-width: unset !important;
+            animation: none !important;
+            border-top: 1px solid #e8e8e8;
+            background: #eef0ff;
+        }
+        .about-right li { padding: 9px 0; font-size: 14px; border-bottom: 1px solid #eee; }
+        .about-right li:last-child { border-bottom: none; }
+
+        /* Investor accordion */
+        .mega-menu {
+            position: static !important;
+            display: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            box-shadow: none !important;
+            padding: 8px 0 !important;
+            background: #f7f8ff;
+            border-left: 3px solid #4c63ff;
+            margin: 0 16px 8px;
+            border-radius: 0 6px 6px 0;
+        }
+        .mega-menu.open {
+            display: block !important;
+        }
+        .investor-parent:hover .mega-menu.open {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+
+        .mega-menu .container { padding: 0 16px; }
+        .mega-menu .row { flex-direction: column; margin: 0; }
+        .mega-menu .col-lg-2,
+        .mega-menu .col-lg-3,
+        .mega-menu .col-lg-1 {
+            flex: 0 0 100%; max-width: 100%;
+            padding: 0; margin-bottom: 12px;
+        }
+        .mega-menu h6 { font-size: 12px; margin-bottom: 6px; }
+        .mega-menu ul li { font-size: 13px; margin-bottom: 5px; }
+    }
+
+    @media (max-width: 375px) {
+        .nav-logo img { height: 28px; }
+    }
+
+    /* Hide close row on desktop */
+    @media (min-width: 992px) {
+        .drawer-close-row { display: none !important; }
+        .nav-burger { display: none !important; }
+    }
+    </style>
+</head>
+
+<body>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<header class="main-header">
+    <nav class="main-nav">
+
+        <!-- Logo -->
+        <a class="nav-logo" href="index.php">
+            <img src="images/logo.png" alt="Krypton Logo">
+        </a>
+
+        <!-- Nav list -->
+        <ul class="nav-list" id="navList">
+
+            <!-- Close button inside drawer (mobile only) -->
+            <li class="drawer-close-row">
+                <button class="drawer-close-btn" id="drawerClose" aria-label="Close menu">&#10005;</button>
+            </li>
+
+            <li><a href="index.php">Home</a></li>
+
+            <!-- About -->
+            <li class="about-parent">
+                <a href="#" id="aboutToggle">About</a>
+                <div class="about-mega" id="aboutMega">
+                    <div class="about-left">
+                        <ul class="fancy-nav-list">
+                            <li class="has-sub"><a href="#"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>Profile</a></li>
+                            <li><a href="quality_process.php"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>Quality Process</a></li>
+                            <li><a href="research_development.php"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>Research &amp; Development</a></li>
+                            <li><a href="sales_marketing.php"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Sales &amp; Marketing</a></li>
+                            <li><a href="certificate.php"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></span>Certificate</a></li>
+                            <li><a href="manufacturing_facilities.php"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></span>Manufacturing Facilities</a></li>
+                        </ul>
+                    </div>
+                    <div class="about-right" id="aboutRight">
+                        <ul class="fancy-nav-list">
+                            <li><a href="#"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>Company Overview</a></li>
+                            <li><a href="about.php"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>About Us</a></li>
+                            <li><a href="about.php#mission-vision"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></span>Mission &amp; Vision</a></li>
+                            <li><a href="company_legacy.php"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>Legacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Products -->
+            <li class="about-parent">
+                <a href="index.php#product" id="productsToggle">Products</a>
+                <div class="about-mega" id="productsMega">
+                    <div class="about-left">
+                        <ul class="fancy-nav-list">
+                                                                                                <li>
+                                        <a href="index.php?product=1#product">
+                                            <span class="fni">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>                                            </span>
+                                            Rehabcare                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="index.php?product=2#product">
+                                            <span class="fni">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>                                            </span>
+                                            Components                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="index.php?product=3#product">
+                                            <span class="fni">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>                                            </span>
+                                            Tyres                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="index.php?product=4#product">
+                                            <span class="fni">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="22" y2="12"/></svg>                                            </span>
+                                            Wheels                                        </a>
+                                    </li>
+                                                                                    </ul>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Investor -->
+            <li class="investor-parent">
+                <a href="#" id="investorToggle">Investor</a>
+                <div class="mega-menu" id="investorMega">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h6><a href="general_information.php">General Information</a></h6>
+                                <ul class="fancy-nav-list">
+                                    <li><a href="general_information.php?section=board-of-director"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Board Of Director</a></li>
+                                    <li><a href="general_information.php?section=lists-of-kmp"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>Lists of KMP</a></li>
+                                    <li><a href="general_information.php?section=committees-of-the-board"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>Committees of the Board</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2">
+                                <h6><a href="financial_information.php">Financial Information</a></h6>
+                                <ul class="fancy-nav-list">
+                                    <li><a href="financial_information.php?section=results"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>Results</a></li>
+                                    <li><a href="financial_information.php?section=annual-report"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>Annual Report</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2">
+                                <h6><a href="corporate_governance.php">Corporate Governance</a></h6>
+                                <ul class="fancy-nav-list">
+                                    <li><a href="corporate_governance.php?section=cg-report"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>CG Report</a></li>
+                                    <li><a href="corporate_governance.php?section=ascr"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>Annual Secretarial Compliance Report</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2">
+                                <h6><a href="stakeholder_information.php">Stakeholder Information</a></h6>
+                                <ul class="fancy-nav-list">
+                                    <li><a href="stakeholder_information.php?section=agm"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>General Meeting</a></li>
+                                    <li><a href="stakeholder_information.php?section=mgt7"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>MGT 7</a></li>
+                                    <li><a href="stakeholder_information.php?section=shareholding"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>Shareholding Patterns</a></li>
+                                    <li><a href="stakeholder_information.php?section=unclaimed-dividend"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>Unclaimed Dividend</a></li>
+                                    <li><a href="stakeholder_information.php?section=newspaper"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg></span>Newspaper Publication</a></li>
+                                    <li><a href="stakeholder_information.php?section=notices-forms"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>Notices &amp; Forms For Shareholders</a></li>
+                                    <!-- <li><a href="stakeholder_information.php?section=board-meeting-notice"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Notice of Board Meeting</a></li> -->
+                                    <li><a href="stakeholder_information.php?section=notice-and-outcome-of-bm"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Notice & Outcomes of Board Meetings</a></li>
+                                    <li><a href="stakeholder_information.php?section=trading-window"><span class="fni"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>Trading Window Closure</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2">
+                                <h6><a href="code_policies.php">Code &amp; Policies</a></h6>
+                                <ul class="fancy-nav-list">
+                                                                                                                        <li>
+                                                <a href="code_policies.php?section=insider-trading-code">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>                                                    </span>
+                                                    Insider Trading Code                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=remuneration-policy">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>                                                    </span>
+                                                    Remuneration Policy                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=dividend-distribution-policy">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg>                                                    </span>
+                                                    Dividend Distribution Policy                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=whistle-blower-policy">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>                                                    </span>
+                                                    Whistle Blower Policy                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=policy-for-determination-material-subsidiaries">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>                                                    </span>
+                                                    Policy for Determination Material Subsidiaries                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=preservation-of-documents-archival-policy">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>                                                    </span>
+                                                    Preservation of Documents &amp; Archival Policy                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=familiarisation-programme-for-independent-directors">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>                                                    </span>
+                                                    Familiarisation Programme for Independent Directors                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=code-of-conduct">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>                                                    </span>
+                                                    Code of Conduct                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=policy-on-prevention-redressal-of-sexual-harassment">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>                                                    </span>
+                                                    Policy on Prevention &amp; Redressal of Sexual Harassment                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=contact-details-of-kmps">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>                                                    </span>
+                                                    Contact Details of KMPs                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=policy-on-diversity-of-board-of-directors">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>                                                    </span>
+                                                    Policy on Diversity of Board of Directors                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=policy-on-evaluation-of-board-of-directors-its-committees-and-individual-directors">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>                                                    </span>
+                                                    Policy on Evaluation of Board of Directors, its Committees and Individual Directors                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=policy-on-succession-planning-for-the-board-and-smps">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>                                                    </span>
+                                                    Policy on Succession Planning for the Board and SMPs                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="code_policies.php?section=related-party-transaction-policy">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>                                                    </span>
+                                                    Related Party Transaction Policy                                                </a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                            <div class="col-lg-2">
+                                <h6><a href="others.php">Others</a></h6>
+                                <ul class="fancy-nav-list">
+                                                                                                                        <li>
+                                                <a href="others.php?id=1#oth_1">
+                                                    <span class="fni">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>                                                    </span>
+                                                    MOA &amp; AOA                                                </a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li><a href="index.php#news_update">Media</a></li>
+            <li><a href="contact_us.php">Contact</a></li>
+
+        </ul>
+
+        <!-- Search -->
+        <div class="nav-search">
+            <input type="text" id="siteSearchInput" placeholder="Search..." autocomplete="off">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+        </div>
+
+        <!-- Search Results Dropdown -->
+        <div class="search-results-dropdown" id="searchResultsDropdown"></div>
+
+        <!-- Hamburger -->
+        <button class="nav-burger" id="navBurger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+
+    </nav>
+</header>
+
+<!-- Connect Now Fixed Button (All Pages) -->
+<a href="contact_us.php" class="connect-now-btn" aria-label="Connect Now">
+    Connect Now
+</a>
+
+<style>
+/* ── Connect Now — vertical tab flush to right edge ── */
+.connect-now-btn {
+    position: fixed;
+    right: -52px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center center;
+    background: #5372EF;
+    color: #fff;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px 8px 0 0;
+    box-shadow: -3px 0 14px rgba(83, 114, 239, 0.4);
+    z-index: 1000;
+    transition: right 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.connect-now-btn:hover {
+    right: -48px;
+    background: #1E42C5;
+    box-shadow: -4px 0 20px rgba(83, 114, 239, 0.6);
+    color: #fff;
+}
+
+/* ── Tablet ── */
+@media (max-width: 991px) {
+    .connect-now-btn {
+        padding: 9px 18px;
+        font-size: 12px;
+        right: -34px;
+    }
+    .connect-now-btn:hover { right: -24px; }
+}
+
+/* ── Mobile: hide old pill ── */
+@media (max-width: 767px) {
+    .connect-now-btn { display: none; }
+}
+</style>
+
+<!-- Mobile arrow tabs (shown only on mobile) -->
+<div class="mob-arrow-wrap" id="mobTriWrap">
+    <div class="mob-arrow mob-arrow-connect" id="mobArrowConnect" onclick="mobToggle('connect')">
+        <div class="mob-arrow-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="#fff" stroke-width="2.2"/>
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <span class="mob-arrow-label">Connect Now</span>
+    </div>
+    <!-- WhatsApp arrow tab injected by homepage JS -->
+</div>
+
+<style>
+/* ════════════════════════════════════
+   MOBILE ARROW TABS
+════════════════════════════════════ */
+.mob-arrow-wrap { display: none; }
+
+@media (max-width: 767px) {
+
+    .mob-arrow-wrap {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 0;
+        bottom: 40px;          /* stick to bottom */
+        top: auto;             /* remove top positioning */
+        transform: none;       /* remove the translateY centering */
+        z-index: 1001;
+        gap: 4px;
+        width: 62px;
+        overflow: visible;
+        align-items: flex-end;
+    }
+
+    /*
+     * Layout: [icon (left/tip)][label (right/body)]
+     * Collapsed: translateX(128px) hides label off-screen right.
+     * Open: translateX(0) reveals full shape.
+     * The wrap is right:0 so the shape's right edge is always at screen edge.
+     */
+    .mob-arrow {
+        display: flex;
+        align-items: center;
+        height: 46px;
+        width: 180px;
+        clip-path: polygon(26px 0%, 100% 0%, 100% 100%, 26px 100%, 0% 50%);
+        background: #5372EF;
+        cursor: pointer;
+        transform: translateX(118px);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        filter: drop-shadow(-3px 2px 6px rgba(83,114,239,0.5));
+        pointer-events: auto;
+    }
+
+    .mob-arrow.open {
+        transform: translateX(0);
+        filter: drop-shadow(-4px 3px 10px rgba(83,114,239,0.65));
+    }
+
+    .mob-arrow-wa {
+        background: #25D366 !important;
+        filter: drop-shadow(-3px 2px 6px rgba(37,211,102,0.5)) !important;
+    }
+    .mob-arrow-wa.open {
+        filter: drop-shadow(-4px 3px 10px rgba(37,211,102,0.65)) !important;
+    }
+
+    /* Icon — LEFT (order:1), always in the visible tip */
+    .mob-arrow-icon {
+        flex-shrink: 0;
+        width: 62px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 1;
+        padding-left: 12px;
+    }
+    .mob-arrow-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Label — RIGHT (order:2), fades in on open */
+    .mob-arrow-label {
+        order: 2;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        white-space: nowrap;
+        padding-right: 14px;
+        flex: 1;
+        opacity: 0;
+        transition: opacity 0.18s ease 0.18s;
+        pointer-events: none;
+    }
+    .mob-arrow.open .mob-arrow-label {
+        opacity: 1;
+    }
+}
+@media (max-width: 425px) {
+    .mob-arrow-wrap {
+        right: -10px;
+        bottom: 30px;
+        top: auto;
+        gap: 3px;
+    }
+}
+</style>
+
+<script>
+function mobToggle(type) {
+    var ac = document.getElementById('mobArrowConnect');
+    var aw = document.getElementById('mobArrowWa');
+
+    if (type === 'connect') {
+        if (ac && ac.classList.contains('open')) {
+            window.location.href = 'contact_us.php';
+        } else {
+            if (aw) aw.classList.remove('open');
+            if (ac) ac.classList.add('open');
+        }
+    } else {
+        if (aw && aw.classList.contains('open')) {
+            window.open('https://wa.me/918100202973', '_blank');
+        } else {
+            if (ac) ac.classList.remove('open');
+            if (aw) aw.classList.add('open');
+        }
+    }
+}
+
+/* Close ONLY on a direct click on blank space (not on the buttons) */
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mob-arrow-wrap')) {
+        var ac = document.getElementById('mobArrowConnect');
+        var aw = document.getElementById('mobArrowWa');
+        if (ac) ac.classList.remove('open');
+        if (aw) aw.classList.remove('open');
+    }
+});
+
+/* Close on scroll — using touchmove for mobile reliability */
+var _mobScrollTimer;
+window.addEventListener('scroll', function() {
+    clearTimeout(_mobScrollTimer);
+    _mobScrollTimer = setTimeout(function() {
+        var ac = document.getElementById('mobArrowConnect');
+        var aw = document.getElementById('mobArrowWa');
+        if (ac) ac.classList.remove('open');
+        if (aw) aw.classList.remove('open');
+    }, 80);
+}, { passive: true });
+
+window.addEventListener('touchmove', function() {
+    var ac = document.getElementById('mobArrowConnect');
+    var aw = document.getElementById('mobArrowWa');
+    if (ac) ac.classList.remove('open');
+    if (aw) aw.classList.remove('open');
+}, { passive: true });
+</script>
+
+    <script>
+(function () {
+    var burger         = document.getElementById('navBurger');
+    var navList        = document.getElementById('navList');
+    var overlay        = document.getElementById('navOverlay');
+    var drawerClose    = document.getElementById('drawerClose');
+    var aboutToggle    = document.getElementById('aboutToggle');
+    var aboutMega      = document.getElementById('aboutMega');
+    var investorToggle = document.getElementById('investorToggle');
+    var investorMega   = document.getElementById('investorMega');
+    var productsToggle = document.getElementById('productsToggle');
+    var productsMega   = document.getElementById('productsMega');
+    var hasSub         = document.querySelector('.has-sub');
+    var aboutRight     = document.getElementById('aboutRight');
+
+    /* bail out if core elements missing */
+    if (!burger || !navList || !overlay) return;
+
+    function isMob() { return window.innerWidth < 992; }
+
+    /* ── Open / Close drawer ── */
+    function openNav() {
+        navList.classList.add('open');
+        overlay.classList.add('on');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+        navList.classList.remove('open');
+        overlay.classList.remove('on');
+        document.body.style.overflow = '';
+        if (aboutMega)    aboutMega.classList.remove('open');
+        if (investorMega) investorMega.classList.remove('open');
+        if (productsMega) productsMega.classList.remove('open');
+    }
+
+    burger.addEventListener('click', function () {
+        navList.classList.contains('open') ? closeNav() : openNav();
+    });
+
+    overlay.addEventListener('click', closeNav);
+
+    if (drawerClose) {
+        drawerClose.addEventListener('click', closeNav);
+    }
+
+    /* ── About tap (mobile) ── */
+    if (aboutToggle && aboutMega) {
+        aboutToggle.addEventListener('click', function (e) {
+            if (!isMob()) return;
+            e.preventDefault();
+            var opening = !aboutMega.classList.contains('open');
+            if (investorMega) investorMega.classList.remove('open');
+            if (productsMega) productsMega.classList.remove('open');
+            aboutMega.classList.toggle('open', opening);
+        });
+    }
+
+    /* ── Products tap (mobile) ── */
+    if (productsToggle && productsMega) {
+        productsToggle.addEventListener('click', function (e) {
+            if (!isMob()) return;
+            e.preventDefault();
+            var opening = !productsMega.classList.contains('open');
+            if (aboutMega)    aboutMega.classList.remove('open');
+            if (investorMega) investorMega.classList.remove('open');
+            productsMega.classList.toggle('open', opening);
+        });
+    }
+
+    /* ── Investor tap (mobile) ── */
+    if (investorToggle && investorMega) {
+        investorToggle.addEventListener('click', function (e) {
+            if (!isMob()) return;
+            e.preventDefault();
+            var opening = !investorMega.classList.contains('open');
+            if (aboutMega)    aboutMega.classList.remove('open');
+            if (productsMega) productsMega.classList.remove('open');
+            investorMega.classList.toggle('open', opening);
+        });
+    }
+
+    /* ── Desktop: Profile fly-out ── */
+    var profileTimer;
+    if (hasSub && aboutRight) {
+        hasSub.addEventListener('mouseenter', function () {
+            if (isMob()) return;
+            clearTimeout(profileTimer);
+            aboutRight.classList.add('show');
+        });
+        hasSub.addEventListener('mouseleave', function () {
+            profileTimer = setTimeout(function () { aboutRight.classList.remove('show'); }, 120);
+        });
+        aboutRight.addEventListener('mouseenter', function () {
+            clearTimeout(profileTimer);
+        });
+        aboutRight.addEventListener('mouseleave', function () {
+            profileTimer = setTimeout(function () { aboutRight.classList.remove('show'); }, 120);
+        });
+    }
+
+    /* ── Resize reset ── */
+    window.addEventListener('resize', function () {
+        if (!isMob()) closeNav();
+    });
+})();
+
+/* ══════════════════════════════════════════════════════════
+   SITE-WIDE SEARCH
+══════════════════════════════════════════════════════════ */
+(function() {
+    var searchInput    = document.getElementById('siteSearchInput');
+    var searchDropdown = document.getElementById('searchResultsDropdown');
+    if (!searchInput || !searchDropdown) return;
+
+    /* ── Site index: every searchable item across all pages ── */
+    var SITE_INDEX = [
+        { title: 'Home',                    snippet: 'Krypton manufacturing OEM components spare parts healthcare mobility 35 years',  url: 'index.php',                                              page: 'Home',                    keywords: 'krypton industries home main page oem components spare parts healthcare mobility 35 years globe' },
+        { title: 'Polyurethane Tyres and Wheels', snippet: 'Polyurethane tyres wheels moulded components puncture proof',           url: 'index.php',                                              page: 'Home',                    keywords: 'polyurethane pu tyres wheels moulded components puncture proof' },
+        { title: 'Complete Wheelchairs',    snippet: 'Complete wheelchairs hygiene aids walking aids',                               url: 'index.php',                                              page: 'Home',                    keywords: 'complete wheelchairs hygiene aids walking aids mobility' },
+        { title: 'Specialty Tyres',         snippet: 'Specialty tyres wheels bicycles industrial farm equipment',                    url: 'index.php',                                              page: 'Home',                    keywords: 'specialty tyres wheels bicycles industrial farm equipment' },
+        { title: '6 Manufacturing Locations', snippet: '6 manufacturing locations 15600 sqm built space 650 SKUs 3 verticals 200 workforce', url: 'index.php',                                   page: 'Home',                    keywords: '6 manufacturing locations 15600 sqm built space 650 skus verticals 200 workforce' },
+        { title: '25 Countries Exported',   snippet: '25 countries exported 20 Indian states 35 years business 800 dealer network', url: 'index.php',                                              page: 'Home',                    keywords: '25 countries exported 20 indian states 35 years business 800 dealer network' },
+        { title: 'Our Products',            snippet: 'Rehabcare Components Tyres Wheels',                                            url: 'index.php#product',                                      page: 'Home',                    keywords: 'products rehabcare components spare parts tyres wheels icare' },
+        { title: 'Rehabcare',               snippet: 'Made in India brand mobility solutions wheelchairs walking aids hygiene ICARE OEM global', url: 'index.php?product=rehab#product',           page: 'Products',                keywords: 'icare rehab rehabilitation wheelchair components made in india oem global europe north america gcc east asia africa australia' },
+        { title: 'Components',              snippet: 'In-house production technologies rehab devices customised tailor-made solutions cutting edge', url: 'index.php?product=spare#product',        page: 'Products',                keywords: 'components spare parts footrest headrest handrest commode wheelchair accessories customised tailor made' },
+        { title: 'Tyres',                   snippet: 'MCP solid puncture-proof tyres bicycles wheelchairs industrial 1990 polyurethane PU', url: 'index.php?product=tyres#product',               page: 'Products',                keywords: 'tyres tires cycle bicycle puncture proof tubeless pu polyurethane mcp solid 1990' },
+        { title: 'Wheels',                  snippet: 'Wheelchairs bicycles wheelbarrows push-carts standard sizes polyurethane pneumatic customised', url: 'index.php?product=wheels#product',      page: 'Products',                keywords: 'wheels wheelchair wheels puncture proof rehabilitation wheelbarrow push cart pneumatic customised' },
+        { title: 'The Krypton Advantage',   snippet: 'Expertise Innovation Client Focus Result Oriented Integrity Adaptability',     url: 'our_advantage.php',                                      page: 'Our Advantage',           keywords: 'krypton advantage expertise innovation client focus integrity adaptability result oriented' },
+        { title: 'Featured Products',       snippet: 'Tyres Industrial Wheelchair featured products Forrester',                      url: 'index.php',                                              page: 'Home',                    keywords: 'featured products tyres industrial wheelchair forrester best selling' },
+        { title: 'News Updates',            snippet: 'Ditch the Flats PU tyres Puncture-proof Revolution Krypton news',              url: 'index.php#news_update',                                  page: 'Home',                    keywords: 'news updates media press release latest ditch flats pu tyres puncture proof revolution' },
+        { title: 'About Us',                snippet: 'Established 1990 Krypton Group mobility solutions PU tyres wheelchairs BSE CSE listed', url: 'about.php',                               page: 'About',                   keywords: 'about company overview krypton industries history founded 1990 bse cse listed' },
+        { title: 'Mission',                 snippet: 'Most preferred homegrown Brand in Healthcare support Solution Market affordable value driven', url: 'about.php#mission-vision',           page: 'About',                   keywords: 'mission goal objective healthcare support affordable value driven' },
+        { title: 'Vision',                  snippet: 'Freedom to every individual who needs physical assistance Freedom to Glide Work Grow Mobile', url: 'about.php#mission-vision',           page: 'About',                   keywords: 'vision freedom mobility physical assistance global healthcare' },
+        { title: 'Global Footprint',        snippet: 'Krypton products sold in Australia Africa Middle-East Europe North America India', url: 'about.php',                                       page: 'About',                   keywords: 'global footprint export international australia africa europe north america dealer distributor' },
+        { title: 'Pioneering Puncture-Proof Technology', snippet: 'MCP Tubeless Puncture-Proof Tyres for Bicycles smoother safer ride', url: 'about.php',                                      page: 'About',                   keywords: 'puncture proof mcp tubeless bicycle tyre technology' },
+        { title: 'Company Legacy',          snippet: 'Founded 1990 PU tyres ISO 9001:2008 TUV SUD three decades of growth',          url: 'company_legacy.php',                                     page: 'Company Legacy',          keywords: 'legacy history 1990 founded polyurethane pu tyres iso 9001 tuv sud quality assurance' },
+        { title: 'Expanding Horizons',      snippet: 'PU Inserts Foam Filled Tyres Wheels Castor Assemblies Forks Frames Wheelchair Hospital Rehabilitation', url: 'company_legacy.php',       page: 'Company Legacy',          keywords: 'pu inserts foam filled tyres rims wheels castor forks frames wheelchair hospital rehabilitation' },
+        { title: 'I-Care Brand',            snippet: 'Rehabilitation healthcare wheelchairs affordable durable mobility solutions dealer network India', url: 'company_legacy.php',              page: 'Company Legacy',          keywords: 'icare i-care brand rehabilitation healthcare wheelchair affordable mobility dealer india' },
+        { title: 'Customer-Centric Philosophy', snippet: 'Superior product quality strong client relationships customized solutions technical expertise', url: 'company_legacy.php',            page: 'Company Legacy',          keywords: 'customer satisfaction quality relationships customized solutions technical expertise' },
+        { title: 'Our Expertise',           snippet: 'Puncture-proof cycle tyres advanced materials reinforced protection precision manufacturing quality testing', url: 'our_advantage.php#expertise', page: 'Our Advantage', keywords: 'expertise puncture proof cycle tyres advanced materials reinforced protection precision manufacturing' },
+        { title: 'Empowering Mobility Through Innovation', snippet: 'Wheelchairs bathing shower hygiene products BSE CSE listed trusted partner', url: 'our_advantage.php#innovation',        page: 'Our Advantage',           keywords: 'mobility innovation wheelchair bathing hygiene bse cse listed' },
+        { title: 'Commitment to Quality and Client Focus', snippet: 'Exceptional quality innovation deep understanding of customer requirements', url: 'our_advantage.php#client-focus',       page: 'Our Advantage',           keywords: 'quality client focus commitment innovation customer requirements' },
+        { title: 'Result-Oriented Execution', snippet: 'Proven performance strict quality standards real-world testing continuous improvement', url: 'our_advantage.php#result-oriented',    page: 'Our Advantage',           keywords: 'result oriented performance quality standards testing continuous improvement' },
+        { title: 'Integrity You Can Rely On', snippet: 'Precision engineering no shortcuts transparency accountability safety durability performance', url: 'our_advantage.php#integrity',      page: 'Our Advantage',           keywords: 'integrity precision engineering transparency accountability safety durability' },
+        { title: 'Adaptability You Can Rely On', snippet: 'Changing roads surfaces tough environments advanced materials resilient design long-lasting performance', url: 'our_advantage.php#adaptability', page: 'Our Advantage', keywords: 'adaptability roads surfaces environments materials resilient design performance' },
+        { title: 'Quality Process',         snippet: 'Quality standards and manufacturing processes',                                 url: 'quality_process.php',                                    page: 'Quality Process',         keywords: 'quality process iso manufacturing standards testing procedures' },
+        { title: 'Research and Development', snippet: 'Research capabilities innovation initiatives development processes',           url: 'research_development.php',                               page: 'Research and Development', keywords: 'research development r&d innovation technology lab capabilities' },
+        { title: 'Sales and Marketing',     snippet: 'Sales network marketing strategies customer engagement initiatives',            url: 'sales_marketing.php',                                    page: 'Sales and Marketing',     keywords: 'sales marketing network distribution customer engagement strategy export' },
+        { title: 'Manufacturing Facilities', snippet: 'Manufacturing infrastructure capabilities production processes Falta Special Economic Zone', url: 'manufacturing_facilities.php',       page: 'Manufacturing Facilities', keywords: 'manufacturing plant factory falta special economic zone west bengal production infrastructure' },
+        { title: 'Certificate',             snippet: 'ISO certifications BSI FM 704897 ISO 9001:2015 Quality Management System',    url: 'certificate.php',                                        page: 'Certificate',             keywords: 'certificate iso certification bsi fm 704897 quality management 9001 2015 registration' },
+        { title: 'Ditch the Flats Krypton PU Tyres', snippet: 'Puncture-proof cycle tyres zero air pressure zero puncture risk smooth ride all terrains', url: 'news_detail.php?id=1',        page: 'News',                    keywords: 'pu tyres puncture proof cycle flat tyre smooth ride all terrain polyurethane' },
+        { title: 'Krypton Puncture-Proof Revolution', snippet: 'Innovation quality accessibility urban rural tracks global footprint freedom of movement', url: 'news_detail.php?id=2',        page: 'News',                    keywords: 'puncture proof revolution innovation quality accessibility urban rural global' },
+        { title: 'Board Of Director',       snippet: 'Board of Directors of Krypton Industries Limited',                             url: 'general_information.php?section=board-of-director',      page: 'General Information',     keywords: 'board director directors bod managing director independent director jay singh bardia' },
+        { title: 'Lists of KMP',            snippet: 'Key Managerial Personnel names and designations',                              url: 'general_information.php?section=lists-of-kmp',           page: 'General Information',     keywords: 'kmp key managerial personnel cfo ceo company secretary compliance officer' },
+        { title: 'Committees of the Board', snippet: 'Audit Nomination Stakeholder committees',                                      url: 'general_information.php?section=committees-of-the-board',page: 'General Information',     keywords: 'audit committee nomination remuneration stakeholder relationship committee' },
+        { title: 'Financial Results',       snippet: 'Quarterly and annual financial results Q1 Q2 Q3 Q4',                           url: 'financial_information.php?section=results',              page: 'Financial Information',   keywords: 'financial results quarterly unaudited audited profit loss revenue q1 q2 q3 q4' },
+        { title: 'Annual Report',           snippet: 'Annual reports of Krypton Industries Limited FY yearly',                       url: 'financial_information.php?section=annual-report',        page: 'Financial Information',   keywords: 'annual report yearly fy financial year balance sheet' },
+        { title: 'CG Report',               snippet: 'Corporate Governance Report quarterly SEBI LODR regulations',                  url: 'corporate_governance.php?section=cg-report',             page: 'Corporate Governance',    keywords: 'corporate governance cg report quarterly sebi lodr regulations' },
+        { title: 'Annual Secretarial Compliance Report', snippet: 'Annual secretarial compliance report company secretary',          url: 'corporate_governance.php?section=ascr',                  page: 'Corporate Governance',    keywords: 'secretarial compliance report annual ascr company secretary' },
+        { title: 'Annual General Meeting',  snippet: 'AGM notices proceedings and outcomes shareholders meeting',                    url: 'stakeholder_information.php?section=agm',                page: 'Stakeholder Information', keywords: 'agm annual general meeting notice proceedings outcome shareholders' },
+        { title: 'MGT 7',                   snippet: 'Annual Return MGT-7 filings Companies Act',                                    url: 'stakeholder_information.php?section=mgt7',               page: 'Stakeholder Information', keywords: 'mgt7 mgt-7 annual return companies act filing' },
+        { title: 'Shareholding Patterns',   snippet: 'Quarterly shareholding pattern promoter public institutional',                 url: 'stakeholder_information.php?section=shareholding',       page: 'Stakeholder Information', keywords: 'shareholding pattern promoter public institutional quarterly' },
+        { title: 'Unclaimed Dividend',      snippet: 'Unclaimed dividend IEPF unpaid shareholders',                                  url: 'stakeholder_information.php?section=unclaimed-dividend', page: 'Stakeholder Information', keywords: 'unclaimed dividend iepf unpaid shareholders' },
+        { title: 'Newspaper Publication',   snippet: 'Newspaper advertisements financial results AGM notice quarterly annual',       url: 'stakeholder_information.php?section=newspaper',          page: 'Stakeholder Information', keywords: 'newspaper publication advertisement financial results agm notice' },
+        { title: 'Notices and Forms For Shareholders', snippet: 'Notices and forms for shareholders physical demat letter',          url: 'stakeholder_information.php?section=notices-forms',      page: 'Stakeholder Information', keywords: 'notices forms shareholders letter physical demat' },
+        { title: 'Notice of Board Meeting', snippet: 'Notice of board meeting documents intimation BM',                              url: 'stakeholder_information.php?section=board-meeting-notice',page: 'Stakeholder Information', keywords: 'notice board meeting intimation bm' },
+        { title: 'Notice and Outcomes of Board Meetings', snippet: 'Intimation and outcome of board meetings quarterly event based', url: 'stakeholder_information.php?section=notice-and-outcome-of-bm', page: 'Stakeholder Information', keywords: 'notice outcome board meeting intimation quarterly event based' },
+        { title: 'Trading Window Closure',  snippet: 'Trading window closure notices quarterly SEBI insider trading',               url: 'stakeholder_information.php?section=trading-window',     page: 'Stakeholder Information', keywords: 'trading window closure insider trading sebi quarterly' },
+        { title: 'Insider Trading Code',    snippet: 'Code for prohibition of insider trading SEBI PIT regulations',                url: 'code_policies.php?section=insider-trading',              page: 'Code and Policies',       keywords: 'insider trading code prohibition sebi pit regulations' },
+        { title: 'Remuneration Policy',     snippet: 'Policy for remuneration of directors and KMP salary compensation',            url: 'code_policies.php?section=remuneration-policy',          page: 'Code and Policies',       keywords: 'remuneration policy salary directors kmp compensation' },
+        { title: 'Dividend Distribution Policy', snippet: 'Policy for dividend distribution payout shareholders',                   url: 'code_policies.php?section=dividend-policy',              page: 'Code and Policies',       keywords: 'dividend distribution policy payout shareholders' },
+        { title: 'Whistle Blower Policy',   snippet: 'Vigil mechanism and whistle blower policy fraud reporting ethics',            url: 'code_policies.php?section=whistle-blower',               page: 'Code and Policies',       keywords: 'whistle blower vigil mechanism fraud reporting ethics' },
+        { title: 'Policy for Determination of Material Subsidiaries', snippet: 'Material subsidiaries policy SEBI',                 url: 'code_policies.php?section=material-subsidiaries',        page: 'Code and Policies',       keywords: 'material subsidiaries policy determination sebi' },
+        { title: 'Preservation of Documents and Archival Policy', snippet: 'Document preservation and archival policy retention records', url: 'code_policies.php?section=preservation-documents', page: 'Code and Policies',      keywords: 'preservation documents archival policy retention records' },
+        { title: 'Familiarisation Programme for Independent Directors', snippet: 'Familiarisation programme training orientation independent directors', url: 'code_policies.php?section=familiarisation-directors', page: 'Code and Policies', keywords: 'familiarisation programme independent directors training orientation' },
+        { title: 'Code of Conduct',         snippet: 'Code of conduct and business ethics behaviour directors employees',            url: 'code_policies.php?section=code-of-conduct',              page: 'Code and Policies',       keywords: 'code conduct ethics business behaviour directors employees' },
+        { title: 'Policy on Prevention and Redressal of Sexual Harassment', snippet: 'POSH policy prevention of sexual harassment at workplace', url: 'code_policies.php?section=sexual-harassment', page: 'Code and Policies', keywords: 'posh sexual harassment prevention redressal workplace policy' },
+        { title: 'Policy on Related Party Transactions', snippet: 'Related party transactions policy RPT SEBI LODR',                url: 'code_policies.php?section=related-party',                page: 'Code and Policies',       keywords: 'related party transactions rpt policy sebi lodr' },
+        { title: 'MOA and AOA',             snippet: 'Memorandum of Association and Articles of Association incorporation documents', url: 'others.php',                                            page: 'Others',                  keywords: 'moa aoa memorandum articles association incorporation documents' },
+        { title: 'Contact Us',              snippet: 'Get in touch First name Last name Email Phone Company Purpose Message Become a vendor Work with Us', url: 'contact_us.php',               page: 'Contact',                 keywords: 'contact address phone email enquiry reach us location become vendor work with us' }
+    ];
+
+    var searchTimeout;
+
+    function escapeHtml(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+    function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+    function performSearch(query) {
+        if (!query || query.length < 2) {
+            searchDropdown.classList.remove('show');
+            return;
+        }
+
+        var q   = query.toLowerCase();
+        var re  = new RegExp('(' + escapeRegex(query) + ')', 'gi');
+        var staticResults = [];
+        var seen = new Set();
+
+        /* ── Static index search ── */
+        SITE_INDEX.forEach(function(item) {
+            var score = 0;
+            var tl = item.title.toLowerCase();
+            var sl = item.snippet.toLowerCase();
+            var kl = (item.keywords || '').toLowerCase();
+
+            if (tl === q)              score = 100;
+            else if (tl.startsWith(q)) score = 80;
+            else if (tl.includes(q))   score = 60;
+            else if (kl.includes(q))   score = 50;
+            else if (sl.includes(q))   score = 30;
+
+            if (score > 0 && !seen.has(item.url)) {
+                seen.add(item.url);
+                staticResults.push({ item: item, score: score });
+            }
+        });
+        staticResults.sort(function(a, b) { return b.score - a.score; });
+
+        /* ── DB search via AJAX ── */
+        fetch('search_ajax.php?q=' + encodeURIComponent(query))
+            .then(function(r) { return r.json(); })
+            .then(function(dbRows) {
+                var combined = [];
+
+                /* DB results first (real data, highest priority) */
+                dbRows.forEach(function(row) {
+                    if (!seen.has(row.url + '|' + row.title)) {
+                        seen.add(row.url + '|' + row.title);
+                        combined.push({ item: row, score: 90, fromDB: true });
+                    }
+                });
+
+                /* Then static index results */
+                staticResults.forEach(function(r) {
+                    combined.push(r);
+                });
+
+                combined = combined.slice(0, 10);
+                displayResults(combined, query, re);
+            })
+            .catch(function() {
+                /* Fallback to static only if AJAX fails */
+                displayResults(staticResults.slice(0, 10), query, re);
+            });
+    }
+
+    function displayResults(results, query, re) {
+        if (!re) re = new RegExp('(' + escapeRegex(query) + ')', 'gi');
+
+        if (results.length === 0) {
+            searchDropdown.innerHTML = '<div class="search-no-results">No results found for "' + escapeHtml(query) + '"</div>';
+            searchDropdown.classList.add('show');
+            return;
+        }
+
+        var html = '<div class="search-result-count">' + results.length + ' result' + (results.length !== 1 ? 's' : '') + ' found</div>';
+
+        results.forEach(function(r) {
+            var item    = r.item;
+            var title   = escapeHtml(item.title).replace(re, '<span class="search-result-highlight">$1</span>');
+            var snippet = escapeHtml(item.snippet).replace(re, '<span class="search-result-highlight">$1</span>');
+            html += '<a class="search-result-item" href="' + escapeHtml(item.url) + '">';
+            html += '<div class="search-result-title">' + title + '</div>';
+            html += '<div class="search-result-snippet">' + snippet + '</div>';
+            html += '<div class="search-result-page">' + escapeHtml(item.page) + '</div>';
+            html += '</a>';
+        });
+
+        searchDropdown.innerHTML = html;
+        searchDropdown.classList.add('show');
+    }
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        var q = this.value.trim();
+        searchTimeout = setTimeout(function() { performSearch(q); }, 250);
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            var first = searchDropdown.querySelector('.search-result-item');
+            if (first) { window.location.href = first.getAttribute('href'); }
+        }
+        if (e.key === 'Escape') {
+            searchDropdown.classList.remove('show');
+            this.blur();
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-search') && !e.target.closest('.search-results-dropdown')) {
+            searchDropdown.classList.remove('show');
+        }
+    });
+})();
+</script>
+
+<section class="hero-slider">
+
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+                        <!-- ================= DYNAMIC SLIDE 1 ================= -->
+          <div class="carousel-item active">
+
+            <picture>
+              <source media="(max-width: 575px)" srcset="./images/banner/mobile1.webp">
+              <source media="(max-width: 991px)" srcset="./images/banner/Tablet1.webp">
+              <img class="hero-image" src="./images/banner/desktop1.webp" alt="Krypton Hero" loading="eager">
+            </picture>
+
+            <div class="overlay"></div>
+
+            <div class="banner">
+              <div class="hero-content">
+                                  <img src="./images/footer-transparent.png" alt="Krypton" class="hero-logo">
+                                
+                <p class="hero-body">
+  Krypton has been manufacturing and selling various OEM components, spare parts for the
+  healthcare and mobility industry and more for more than 35 years with many satisfied
+  customers around the globe. Our product profile can be divided under the following segments:
+</p>
+<ul class="hero-list">
+  <li>Polyurethane tyres and wheels and moulded components</li>
+  <li>Complete wheelchairs, hygiene aids and walking aids</li>
+  <li>Specialty tyres and wheels for bicycles, industrial and farm equipment</li>
+</ul>                
+                <div class="d-flex gap-3 flex-wrap">
+                  <a href="about.php" class="btn btn-primary">About Us</a>
+                  <a href="contact_us.php" class="btn btn-outline-light">Contact Us</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+                  <!-- ================= DYNAMIC SLIDE 2 ================= -->
+          <div class="carousel-item">
+
+            <picture>
+              <source media="(max-width: 575px)" srcset="./images/banner/mobile2.webp">
+              <source media="(max-width: 991px)" srcset="./images/banner/Tablet2.webp">
+              <img class="hero-image" src="./images/banner/desktop2.webp" alt="Krypton Hero" loading="lazy">
+            </picture>
+
+            <div class="overlay"></div>
+
+            <div class="banner">
+              <div class="hero-content">
+                                
+                <ul class="hero-stats">
+  <li>6 MANUFACTURING LOCATIONS</li>
+  <li>15,600 SQM OF BUILT SPACE</li>
+  <li>650 SKUs ACROSS 3 VERTICALS</li>
+  <li>200+ STRONG WORKFORCE</li>
+</ul>                
+                <div class="d-flex gap-3 flex-wrap">
+                  <a href="about.php" class="btn btn-primary">About Us</a>
+                  <a href="contact_us.php" class="btn btn-outline-light">Contact Us</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+                  <!-- ================= DYNAMIC SLIDE 3 ================= -->
+          <div class="carousel-item">
+
+            <picture>
+              <source media="(max-width: 575px)" srcset="./images/banner/mobile3.webp">
+              <source media="(max-width: 991px)" srcset="./images/banner/Tablet3.webp">
+              <img class="hero-image" src="./images/banner/desktop3.webp" alt="Krypton Hero" loading="lazy">
+            </picture>
+
+            <div class="overlay"></div>
+
+            <div class="banner">
+              <div class="hero-content">
+                                
+                <ul class="hero-stats">
+  <li>25+ COUNTRIES EXPORTED TO</li>
+  <li>20+ INDIAN STATES SUPPLIED</li>
+  <li>35+ YEARS IN BUSINESS</li>
+  <li>800+ INDIAN DEALER NETWORK</li>
+</ul>                
+                <div class="d-flex gap-3 flex-wrap">
+                  <a href="about.php" class="btn btn-primary">About Us</a>
+                  <a href="contact_us.php" class="btn btn-outline-light">Contact Us</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+                  </div>
+
+    <!-- DOT INDICATORS -->
+          <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" class=""  aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" class=""  aria-label="Slide 3"></button>
+              </div>
+    
+  </div>
+
+</section>
+
+
+<!-- NEXT SECTION -->
+<!-- ================= OUR PRODUCTS ================= -->
+<section class="products-section py-5" id="product">
+
+  <div class="container">
+
+    <h2 class="section-title text-center mb-4" data-aos="fade-down">Our Products</h2>
+
+    <!-- TABS -->
+    <div class="product-tabs text-center mb-5" data-aos="fade-up" data-aos-delay="150">
+        <div class="tabs-inner">
+            <button class="tab-btn active" data-product="1">Rehabcare</button><button class="tab-btn" data-product="2">Components</button><button class="tab-btn" data-product="3">Tyres</button><button class="tab-btn" data-product="4">Wheels</button>        </div>
+    </div>
+
+    <div class="row align-items-start product-content fade-in">
+
+      <!-- IMAGE -->
+      <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="250">
+        <img id="productImage"
+          src="./images/products/Rehabcare1.webp"
+          class="img-fluid shadow">
+      </div>
+
+      <!-- TEXT -->
+      <div class="col-lg-7 d-flex flex-column align-items-start" data-aos="fade-up" data-aos-delay="350">
+          <h4 id="productTitle">
+              A <span class="highlight">Made in India</span> brand that specialises in Rehab components          </h4>
+
+          <p id="productDesc" class="justify">
+              A completely forward-integrated manufacturing capability, Krypton is one of India’s leading manufacturers of mobility solutions, wheelchairs, walking aids and hygiene. Krypton works with global OEM clients across India, Europe, North America, GCC, East Asia, Africa, and Australia. Our Made in India brand ICARE caters to the domestic markets since the last 15 years.          </p>
+
+          <a href="https://icareworld.in/" id="exploreBtn" class="btn btn-primary mt-3" target="_blank" data-aos="zoom-in" data-aos-delay="500">Explore more</a>
+
+          <!-- PREMIUM SEGMENTED PAGINATION LINE -->
+          <div id="productPagination" class="product-pagination">
+              <!-- Dynamically populated via JS -->
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= OUR ADVANTAGE ================= -->
+<section class="advantage-section py-5">
+  <div class="container">
+
+    <h2 class="section-title text-center mb-5" data-aos="fade-down">The Krypton Advantage</h2>
+
+    <div class="row g-3 g-md-4">
+                  <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="250">
+              <a href="our_advantage.php#expertise" class="adv-card reveal d-block">
+                                  <img src="./images/our_advantage/1781072429_bg_1.png" alt="Expertise">
+                                <span>Expertise</span>
+              </a>
+            </div>
+                        <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <a href="our_advantage.php#innovation" class="adv-card reveal d-block">
+                                  <img src="./images/our_advantage/1781072654_bg_2.png" alt="Innovation">
+                                <span>Innovation</span>
+              </a>
+            </div>
+                        <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="350">
+              <a href="our_advantage.php#client-focus" class="adv-card reveal d-block">
+                                  <img src="./images/our_advantage/1781072745_bg_3.png" alt="Client Focus">
+                                <span>Client Focus</span>
+              </a>
+            </div>
+                        <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="400">
+              <a href="our_advantage.php#result-oriented" class="adv-card reveal d-block">
+                                  <img src="./images/our_advantage/1781073318_bg_4.png" alt="Result Oriented">
+                                <span>Result Oriented</span>
+              </a>
+            </div>
+                        <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="450">
+              <a href="our_advantage.php#integrity" class="adv-card reveal d-block">
+                                  <img src="./images/our_advantage/1781073330_bg_5.png" alt="Integrity">
+                                <span>Integrity</span>
+              </a>
+            </div>
+                        <div class="col-6 col-md-4" data-aos="fade-up" data-aos-delay="500">
+              <a href="our_advantage.php#adaptability" class="adv-card reveal d-block">
+                                  <img src="./images/our_advantage/1781073342_bg_6.png" alt="Adaptability">
+                                <span>Adaptability</span>
+              </a>
+            </div>
+                </div>
+
+  </div>
+</section>
+
+
+<!-- ================= Feature Products ================= -->
+<section class="best-selling py-5">
+  <div class="container">
+
+    <h2 class="section-title text-center mb-5" data-aos="fade-down">Featured Products</h2>
+
+    <div class="row g-4" data-aos="fade-up" data-aos-delay="250">
+                    <div class="col-12 col-md-4">
+                <a href="https://kryptontyres.com/tyre/forrester/" target="_blank" class="text-decoration-none">
+                  <div class="product-card reveal">
+                                          <img src="./images/featured_produts/tyre section.webp">
+                                        <div class="product-label">Tyres</div>
+                  </div>
+                </a>
+              </div>
+                            <div class="col-12 col-md-4">
+                <a href="https://kryptontyres.com/tyre/400-8-wheel/" target="_blank" class="text-decoration-none">
+                  <div class="product-card reveal">
+                                          <img src="./images/featured_produts/Industrial section.webp">
+                                        <div class="product-label">Industrial</div>
+                  </div>
+                </a>
+              </div>
+                            <div class="col-12 col-md-4">
+                <a href="https://icareworld.in/product/folding-premium-whelchair/" target="_blank" class="text-decoration-none">
+                  <div class="product-card reveal">
+                                          <img src="./images/featured_produts/wheelchair section.webp">
+                                        <div class="product-label">Wheelchair</div>
+                  </div>
+                </a>
+              </div>
+                  </div>
+
+  </div>
+</section>
+
+
+<!-- ================= NEWS UPDATE ================= -->
+<section class="py-5" id="news_update">
+  <div class="container">
+    <div class="news-section-wrap">
+
+      <h2 class="section-title text-center mb-5" data-aos="fade-down">News Updates</h2>
+
+      <div class="row g-4" data-aos="fade-up" data-aos-delay="250">
+                        <div class="col-12 col-md-6">
+                  <a href="news_detail.php?id=4" class="news-card reveal d-block">
+                    <div class="news-card-img-wrap">
+                                              <img src="images/news_update/1787125618_EVENT POST.webp" alt="KRYPTON at REHACARE 2026 – Showcasing Innovation in Mobility Solutions">
+                                          </div>
+                    <h5>KRYPTON at REHACARE 2026 – Showcasing Innovation in Mobility Solutions</h5>
+                    <p>Krypton Industries Limited is proud to participate in REHACARE 2026, the world&#039;s leading trade fa...</p>
+                  </a>
+                </div>
+                                <div class="col-12 col-md-6">
+                  <a href="news_detail.php?id=1" class="news-card reveal d-block">
+                    <div class="news-card-img-wrap">
+                                              <img src="images/news_update/news_1.png" alt="Ditch the Flats: Cycle Krypton PU tyres - True Wheel Alignment Bliss">
+                                          </div>
+                    <h5>Ditch the Flats: Cycle Krypton PU tyres - True Wheel Alignment Bliss</h5>
+                    <p>Say goodbye to punctures and hello to a smoother, safer ride with Krypton PU tyres. Engineered wi...</p>
+                  </a>
+                </div>
+                                <div class="col-12 col-md-6">
+                  <a href="news_detail.php?id=2" class="news-card reveal d-block">
+                    <div class="news-card-img-wrap">
+                                              <img src="images/news_update/news_2.png" alt="Conquer Every Road: PU Cycle and the Krypton Tyres and the Krypton Puncture-proof Revolution">
+                                          </div>
+                    <h5>Conquer Every Road: PU Cycle and the Krypton Tyres and the Krypton Puncture-proof Revolution</h5>
+                    <p>The road ahead has never looked more promising. Krypton Industries is leading a puncture-proof re...</p>
+                  </a>
+                </div>
+                      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4 py-4">
+
+            <!-- Logo Section -->
+            <div class="col-12 col-lg-4">
+                <div class="footer-logo-section">
+                    <img src="./images/footer-transparent.png" alt="Krypton Logo" class="footer-logo">
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h3 class="footer-heading">QUICK LINKS</h3>
+                <ul class="footer-links-new">
+                    <li><a href="about.php">About Us</a></li>
+                    <li><a href="index.php#news_update">Media</a></li>
+                    <li><a href="quality_process.php">Quality Process</a></li>
+                    <li><a href="sales_marketing.php">Sales &amp; Marketing</a></li>
+                    <li><a href="company_legacy.php">Legacy</a></li>
+                    <li><a href="manufacturing_facilities.php">Manufacturing Facilities</a></li>
+                    <li><a href="contact_us.php">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h3 class="footer-heading">CONTACT US</h3>
+                <div class="footer-contact-list">
+                    
+                    <!-- Email -->
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon-svg">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="white" stroke-width="2"/>
+                                <path d="M33 17H17C15.9 17 15.01 17.9 15.01 19L15 31C15 32.1 15.9 33 17 33H33C34.1 33 35 32.1 35 31V19C35 17.9 34.1 17 33 17ZM33 21L25 26L17 21V19L25 24L33 19V21Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">
+                            <a href="mailto:info@kryptongroup.com">info@kryptongroup.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Head Office -->
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon-svg">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="white" stroke-width="2"/>
+                                <path d="M25 15C20.58 15 17 18.58 17 23C17 29 25 37 25 37C25 37 33 29 33 23C33 18.58 29.42 15 25 15ZM25 26C23.34 26 22 24.66 22 23C22 21.34 23.34 20 25 20C26.66 20 28 21.34 28 23C28 24.66 26.66 26 25 26Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">
+                            <p><strong>Head Office:</strong> 410, Vardaan Building, 25A, Camac Street, Kolkata - 700 016, India</p>
+                        </div>
+                    </div>
+
+                    <!-- Regd Office -->
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon-svg">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="white" stroke-width="2"/>
+                                <path d="M25 15C20.58 15 17 18.58 17 23C17 29 25 37 25 37C25 37 33 29 33 23C33 18.58 29.42 15 25 15ZM25 26C23.34 26 22 24.66 22 23C22 21.34 23.34 20 25 20C26.66 20 28 21.34 28 23C28 24.66 26.66 26 25 26Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">
+                            <p><strong>Regd. Office:</strong> Banganagar, Diamond Harbour Road, Falta, Fatehpur, WB-743513, India</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-divider-line"></div>
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">Copyright 2024 | Krypton Group</p>
+                
+                <div class="footer-social-icons">
+                    <a href="https://www.facebook.com/kryptontyresandwheels" aria-label="Facebook">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/krypton-industries-ltd" aria-label="LinkedIn">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/kryptontyresandwheels?igsh=NG9xend1a3NzaHo2" aria-label="Instagram">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer-bottom-links">
+                    <a href="index.php">Home</a>
+                    <a href="https://icareworld.in/">icare</a>
+                    <a href="https://kryptontyres.com/">Krypton tyres</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<style>
+/* ══════════════════════════════════════════════════════════════════════════════
+   FOOTER STYLES - Compact Modern Design
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Footer Base ── */
+.site-footer {
+    background: #37474f;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    padding-top: 0;
+}
+
+/* ── Logo Section ── */
+.footer-logo-section {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    max-width: 220px;
+    height: auto;
+    filter: invert(1) brightness(2);
+}
+
+/* ── Footer Headings ── */
+.footer-heading {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* ── Quick Links ── */
+.footer-links-new {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-new li {
+    margin-bottom: 2px;
+    position: relative;
+    padding-left: 16px;
+}
+
+.footer-links-new li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer-links-new li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links-new li a:hover {
+    color: #ffffff;
+    padding-left: 4px;
+}
+
+/* ── Contact Section ── */
+.footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.footer-contact-icon-svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.footer-contact-icon-svg svg {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.footer-contact-item:hover .footer-contact-icon-svg {
+    transform: scale(1.05);
+}
+
+.footer-contact-text {
+    flex: 1;
+    line-height: 1.6;
+    padding-top: 2px;
+}
+
+.footer-contact-text a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-text a:hover {
+    color: #ffffff;
+}
+
+.footer-contact-text p {
+    color: #e0e0e0;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.footer-contact-text strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ── Bottom Bar (Same Background) ── */
+.footer-bottom {
+    background: #37474f;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* ── Short Centered Divider Line ── */
+.footer-divider-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 20px;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-copyright {
+    color: #d1d5db;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ── Social Icons (Larger) ── */
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-social-icons a {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.footer-social-icons svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* ── Bottom Links ── */
+.footer-bottom-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.footer-bottom-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #ffffff;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Tablet (768px and below) ── */
+@media (max-width: 768px) {
+    .footer-logo {
+        max-width: 180px;
+    }
+
+    .footer-heading {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+
+    .footer-links-new li {
+        margin-bottom: 9px;
+    }
+
+    .footer-contact-list {
+        gap: 16px;
+    }
+
+    .footer-contact-icon-svg svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        padding: 18px 0;
+    }
+
+    .footer-divider-line {
+        max-width: 900px;
+        margin-bottom: 18px;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer-social-icons {
+        order: 2;
+    }
+
+    .footer-copyright {
+        order: 1;
+    }
+
+    .footer-bottom-links {
+        order: 3;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+}
+
+/* ── Mobile (576px and below) ── */
+@media (max-width: 576px) {
+    .site-footer {
+        font-size: 13px;
+    }
+
+    .footer-logo {
+        max-width: 160px;
+    }
+
+    .footer-heading {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .footer-links-new li {
+        margin-bottom: 8px;
+        padding-left: 14px;
+    }
+
+    .footer-links-new li a {
+        font-size: 13px;
+    }
+
+    .footer-contact-list {
+        gap: 14px;
+    }
+
+    .footer-contact-icon-svg svg {
+        width: 42px;
+        height: 42px;
+    }
+
+    .footer-contact-text a,
+    .footer-contact-text p {
+        font-size: 13px;
+    }
+
+    .footer-social-icons {
+        gap: 16px;
+    }
+
+    .footer-social-icons a {
+        width: 42px;
+        height: 42px;
+    }
+
+    .footer-social-icons svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .footer-bottom-links {
+        gap: 14px;
+    }
+
+    .footer-bottom-links a {
+        font-size: 13px;
+    }
+
+    .footer-copyright {
+        font-size: 13px;
+    }
+
+    .footer-bottom {
+        margin-top: 15px;
+        padding: 16px 0;
+    }
+
+    .footer-divider-line {
+        max-width: 100%;
+        width: 95%;
+        margin-bottom: 16px;
+    }
+}
+
+/* ── Extra Small Mobile (400px and below) ── */
+@media (max-width: 400px) {
+    .footer-logo {
+        max-width: 140px;
+    }
+
+    .footer-contact-item {
+        gap: 12px;
+    }
+
+    .footer-contact-icon-svg svg {
+        width: 38px;
+        height: 38px;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-social-icons a {
+        width: 38px;
+        height: 38px;
+    }
+
+    .footer-social-icons svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-divider-line {
+        width: 90%;
+    }
+}
+</style>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 900, easing: "ease-out-cubic", once: true, offset: 80 });
+</script>
+<!-- Desktop: keep connect-now-btn at 30% on homepage -->
+<style>
+@media (min-width: 768px) {
+    .connect-now-btn { top: 30% !important; }
+}
+</style>
+
+<!-- Desktop WhatsApp floating button (homepage only) -->
+<a href="https://wa.me/918100202973" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#fff">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
+
+<style>
+/* Desktop/tablet WhatsApp circle */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 24px;
+    width: 54px;
+    height: 54px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.5);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.7);
+}
+/* Hide desktop WhatsApp circle on mobile (triangle tab takes over) */
+@media (max-width: 767px) {
+    .whatsapp-float { display: none; }
+}
+</style>
+
+<!-- Mobile: inject WhatsApp arrow into mob-arrow-wrap -->
+<script>
+(function() {
+    var wrap = document.getElementById('mobTriWrap');
+    if (!wrap) return;
+    var waDiv = document.createElement('div');
+    waDiv.className = 'mob-arrow mob-arrow-wa';
+    waDiv.id = 'mobArrowWa';
+    waDiv.setAttribute('onclick', "mobToggle('wa')");
+    waDiv.innerHTML =
+        '<div class="mob-arrow-icon">' +
+        '<svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">' +
+        '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>' +
+        '</svg></div>' +
+        '<span class="mob-arrow-label">WhatsApp Us</span>';
+    wrap.appendChild(waDiv);
+})();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const heroCarousel = document.querySelector('#heroCarousel');
+
+    const carousel = new bootstrap.Carousel(heroCarousel, {
+        interval: 10000, //10 secws
+        pause: false,
+        touch: true
+    });
+
+    /* Reset animation AFTER slide change */
+    heroCarousel.addEventListener('slid.bs.carousel', function () {
+
+        document.querySelectorAll('.hero-content').forEach(el => {
+            el.style.opacity = "";
+            el.style.transform = "";
+        });
+
+    });
+</script>
+
+<script>
+
+/* -------- AUTO-SELECT TAB FROM URL PARAM -------- */
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const prod   = params.get('product');
+    if (!prod) return;
+
+    /* Wait for DOM + any deferred scripts */
+    window.addEventListener('DOMContentLoaded', function() {
+        let btn = document.querySelector(`.tab-btn[data-product="${prod}"]`);
+        
+        // If not found by direct ID, map query parameter to category name and search
+        if (!btn) {
+            const paramMap = {
+                'rehab': 'rehabcare',
+                'spare': 'components',
+                'tyres': 'tyres',
+                'wheels': 'wheels'
+            };
+            const targetName = paramMap[prod.toLowerCase()];
+            if (targetName) {
+                btn = Array.from(document.querySelectorAll('.tab-btn')).find(b => 
+                    b.textContent.trim().toLowerCase().includes(targetName)
+                );
+            }
+        }
+
+        if (btn) {
+            btn.click();
+            /* Scroll to section after a short delay so content renders first */
+            setTimeout(function() {
+                const section = document.getElementById('product');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 400);
+        }
+    });
+})();
+
+/* -------- PRODUCT DATA & SLIDER -------- */
+
+const productData = {"1":[{"img":".\/images\/products\/Rehabcare1.webp","title":"A Made in India brand that specialises in Rehab components","highlight":"Made in India","desc":"A completely forward-integrated manufacturing capability, Krypton is one of India\u2019s leading manufacturers of mobility solutions, wheelchairs, walking aids and hygiene. Krypton works with global OEM clients across India, Europe, North America, GCC, East Asia, Africa, and Australia. Our Made in India brand ICARE caters to the domestic markets since the last 15 years.","link":"https:\/\/icareworld.in\/"}],"2":[{"img":".\/images\/products\/spare_parts2.webp","title":"Reliable Components Engineered for Comfort, Safety, and Performance","highlight":"Components","desc":"With a wide range of in-house production technologies, Krypton caters to large and specialized manufacturers of Rehab devices across the globe since the past decades. Along with a strong portfolio of ready-made solutions, Krypton also creates completely customised and tailor-made solutions for our customers with our development team, consistently provided cutting edge solutions to the world\u2019s leading manufacturers.","link":"https:\/\/icareworld.in\/product-category\/spare-parts\/"}],"3":[{"img":".\/images\/products\/Tyres1.webp","title":"A Made-in-India Brand Delivering Advanced Tubeless Tyre Solutions","highlight":"Made-in-India","desc":"Established in 1990, Krypton Industries Limited specializes in high-performance polyurethane (PU) solutions. We are a leading manufacturer of MCP solid, puncture-proof tyres for bicycles, wheelchairs, and industrial applications.","link":"https:\/\/kryptontyres.com\/bicycle-category\/"}],"4":[{"img":".\/images\/products\/wheels1.webp","title":"Advanced Puncture-Proof Wheels for Rehabilitation Equipment","highlight":"Puncture-Proof Wheels","desc":"From wheelchairs and bicycles to wheelbarrows and push-carts, Krypton has an extensive range of ready to use wheels combining standard sizes with our high-performance polyurethane tyres as well pneumatic tyres completely customised to our customers\u2019 needs.","link":"https:\/\/kryptontyres.com\/wheelchair-wheels\/"}]};
+let activeCategoryId = "1";
+let currentSlideIndex = 0;
+let slideInterval = null;
+
+const contentBox = document.querySelector(".product-content");
+const productImage = document.getElementById("productImage");
+const productTitle = document.getElementById("productTitle");
+const productDesc = document.getElementById("productDesc");
+const exploreBtn = document.getElementById("exploreBtn");
+const productPagination = document.getElementById("productPagination");
+
+// Render pagination indicators for the active category
+function updatePagination() {
+    productPagination.innerHTML = '';
+    const products = productData[activeCategoryId] || [];
+    if (products.length <= 1) {
+        productPagination.style.display = 'none';
+        return;
+    }
+    productPagination.style.display = 'flex';
+    products.forEach((prod, index) => {
+        const seg = document.createElement('div');
+        seg.className = 'pagination-segment' + (index === currentSlideIndex ? ' active' : '');
+        seg.title = `Go to product ${index + 1}`;
+        seg.addEventListener('click', () => {
+            if (index !== currentSlideIndex) {
+                goToSlide(index);
+                resetAutoSlide();
+            }
+        });
+        productPagination.appendChild(seg);
+    });
+}
+
+// Animate and show the selected slide index of the active category
+function goToSlide(index) {
+    const products = productData[activeCategoryId] || [];
+    if (products.length === 0) return;
+    
+    currentSlideIndex = index;
+    const data = products[currentSlideIndex];
+
+    // Fade out
+    contentBox.classList.remove("fade-in");
+    contentBox.classList.add("fade-out");
+
+    setTimeout(() => {
+        // Update content
+        productImage.src = data.img;
+        
+        // Highlight title text
+        if (data.highlight) {
+            productTitle.innerHTML = data.title.replace(
+                data.highlight,
+                `<span class="highlight">${data.highlight}</span>`
+            );
+        } else {
+            productTitle.innerHTML = data.title;
+        }
+
+        productDesc.innerText = data.desc;
+        if (exploreBtn) {
+            exploreBtn.href = data.link;
+        }
+
+        // Update pagination active state
+        const segments = productPagination.querySelectorAll('.pagination-segment');
+        segments.forEach((seg, idx) => {
+            if (idx === currentSlideIndex) {
+                seg.classList.add('active');
+            } else {
+                seg.classList.remove('active');
+            }
+        });
+
+        // Fade in
+        contentBox.classList.remove("fade-out");
+        contentBox.classList.add("fade-in");
+
+        if (typeof AOS !== "undefined") {
+            AOS.refreshHard();
+        }
+    }, 350);
+}
+
+// Start auto cycle every 5 seconds
+function startAutoSlide() {
+    const products = productData[activeCategoryId] || [];
+    if (products.length <= 1) return;
+    
+    slideInterval = setInterval(() => {
+        let nextIndex = (currentSlideIndex + 1) % products.length;
+        goToSlide(nextIndex);
+    }, 5000);
+}
+
+// Stop/Reset auto cycle timer
+function resetAutoSlide() {
+    if (slideInterval) {
+        clearInterval(slideInterval);
+    }
+    startAutoSlide();
+}
+
+// Tab click handling
+document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+        const catId = this.dataset.product;
+        if (catId === activeCategoryId) return;
+
+        // Active button styles
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+
+        activeCategoryId = catId;
+        currentSlideIndex = 0;
+
+        if (slideInterval) {
+            clearInterval(slideInterval);
+            slideInterval = null;
+        }
+
+        updatePagination();
+        goToSlide(0);
+        startAutoSlide();
+    });
+});
+
+// Initialize on page load
+window.addEventListener('DOMContentLoaded', () => {
+    updatePagination();
+    startAutoSlide();
+});
+
+
+/* -------- SCROLL REVEAL -------- */
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll(".reveal")
+  .forEach(el=>observer.observe(el));
+
+</script>

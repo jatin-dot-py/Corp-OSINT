@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHILWARA TECHNICAL TEXTILES LIMITED</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #990000;
+            --secondary-color: #1a4b5f;
+            --accent-color: #3a7c94;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --header-bg: #1a4b5f;
+            --footer-bg: #1a4b5f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--header-bg), var(--accent-color));
+            color: white;
+            padding: 15px 0;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+ .logo {
+            height: 60px;
+        }
+        
+        .logo-right {
+            height: 80px;
+            margin-left: 20px;
+        }
+        
+        .company-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            top: 100%;
+            left: 0;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .dropdown-content a {
+            color: var(--dark-color);
+            padding: 12px 16px;
+            display: block;
+            font-weight: normal;
+        }
+        
+        .dropdown-content a:after {
+            display: none;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: var(--primary-color);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('') center/cover no-repeat;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #7a0000;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .about-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 15px auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            background-color: white;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--footer-bg), var(--accent-color));
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-menu {
+                gap: 15px;
+            }
+            
+            .company-name {
+                font-size: 18px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 576px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* ----- Cookie Disclaimer - Bottom Quarter (overlay) ----- */
+        #cookie-overlay {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 25vh;              /* bottom quarter of viewport */
+            max-height: 300px;          /* ensures it doesn't get too tall on large screens */
+            background: rgba(20, 20, 30, 0.92);
+            backdrop-filter: blur(3px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 20px;
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.4s ease, transform 0.3s ease;
+            box-shadow: 0 -8px 25px rgba(0,0,0,0.5);
+            border-top: 3px solid var(--primary-color);
+        }
+        #cookie-overlay.hidden {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        .cookie-card {
+            background: transparent;
+            max-width: 1100px;
+            width: 100%;
+            color: #f0f0f0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px 30px;
+        }
+        .cookie-text {
+            flex: 3 1 420px;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .cookie-text p {
+            margin-bottom: 6px;
+        }
+        .cookie-text ul {
+            display: inline-block;
+            list-style: none;
+            padding: 0;
+            margin: 4px 0 6px 0;
+        }
+        .cookie-text ul li {
+            display: inline;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+        .cookie-text ul li strong {
+            color: #ffbb77;
+        }
+        .cookie-accept-btn {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 10px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 0.3px;
+        }
+        .cookie-accept-btn:hover {
+            background: #b30000;
+            transform: scale(1.02);
+        }
+        .cookie-note {
+            font-size: 0.8rem;
+            color: #aaa;
+            border-left: 2px solid var(--primary-color);
+            padding-left: 14px;
+            flex: 0 1 auto;
+            white-space: nowrap;
+        }
+        /* responsive: stack on small screens */
+        @media (max-width: 780px) {
+            #cookie-overlay {
+                height: auto;
+                max-height: 45vh;
+                padding: 18px 16px;
+                align-items: flex-start;
+                overflow-y: auto;
+            }
+            .cookie-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .cookie-text {
+                font-size: 0.85rem;
+                flex: 1 1 auto;
+            }
+            .cookie-text ul li {
+                display: block;
+                margin-right: 0;
+            }
+            .cookie-note {
+                border-left: none;
+                padding-left: 0;
+                white-space: normal;
+                font-size: 0.75rem;
+            }
+            .cookie-accept-btn {
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            #cookie-overlay {
+                max-height: 55vh;
+                padding: 14px 12px;
+            }
+            .cookie-text {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cookie Disclaimer - Bottom Quarter -->
+    <div id="cookie-overlay">
+        <div class="cookie-card">
+            <div class="cookie-text">
+                <p><strong>Cookie Disclaimer</strong> — We use cookies to improve your browsing experience, analyze traffic, and personalize content. Categories:</p>
+                <ul>
+                    <li><strong>(i)</strong> Strictly Necessary</li>
+                    <li><strong>(ii)</strong> Performance &amp; Analytics</li>
+                    <li><strong>(iii)</strong> Functional</li>
+                </ul>
+                <p>By continuing, you agree to our use of cookies. For non-essential cookies, separate consent will be sought. You may withdraw consent anytime via browser settings or our Preference Centre.</p>
+            </div>
+            <button class="cookie-accept-btn" id="cookieAcceptBtn">Accept</button>
+
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <a href="tel:+911204390300"><i class="fas fa-phone"></i> +91 120 4390300</a>
+ 
+                </div>
+
+            </div>
+            
+                <nav>
+                <div class="logo-container">
+                    <img src="images/bttl.png" alt="BTTL Logo" class="logo">
+           
+                    <div class="company-name">BHILWARA TECHNICAL TEXTILES LIMITED</div>
+		
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Investor Relations <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="investor.html">Disclosure under Regulation 46</a>
+                            <a href="investor3.html">Other Disclosure</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+							         <img src="images/2.png" alt="LNJLogo" class="logo-right">
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Innovative Technical Textile Solutions</h1>
+                <p>High-quality technical textiles with a commitment to excellence and innovation</p>
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About BTTL</h2>
+                    <p>Bhilwara Technical Textiles Limited (BTTL) has been incorporated under the provision of the Companies Act, 1956, pursuant to the Scheme of De-merger of 'Strategic Investment Division' of the "M/s. RSWM Ltd.".</p>
+                    <p>The main object of the Company is to carry on the business of manufacturers, producers, dealers, importers, exporters, buyers, sellers and dealers in and as brokers, agents, stockist, distributors and suppliers of all kinds of automotive and home furnishing fabrics, made-ups, apparels and other products, goods, articles and things as are made from or with cotton, nylon, silk, polyester, acrylic and other kinds of fiber etc.</p>
+                    <p>With a strong foundation and clear vision, BTTL continues to expand its capabilities and market presence, delivering quality textile solutions to diverse industries.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://bttl.co.in/images/ind_pic.gif" alt="Textile Manufacturing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Our Strengths</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Modern Manufacturing</h3>
+                    <p>State-of-the-art production facilities equipped with the latest technology for superior quality products.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Reach</h3>
+                    <p>Exporting our technical textiles to various countries across the world, maintaining international standards.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research & Development</h3>
+                    <p>Continuous innovation and product development to meet evolving market needs and applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Bhilwara Technical Textiles Limited is a leading manufacturer of technical textiles, committed to quality and innovation since its inception.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="investor.html">Investor Relations</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+
+
+                    <p><i class="fas fa-map-marker-alt"></i> Bhilwara Towers,  A-12, Sector-1, Noida 201301</p>
+                    <p><i class="fas fa-phone"></i> +91 120-4390300</p>
+                
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>Copyright &copy; 2023 Bhilwara Technical Textiles Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Cookie disclaimer accept - hide overlay
+        (function() {
+            const overlay = document.getElementById('cookie-overlay');
+            const acceptBtn = document.getElementById('cookieAcceptBtn');
+            if (overlay && acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    overlay.classList.add('hidden');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

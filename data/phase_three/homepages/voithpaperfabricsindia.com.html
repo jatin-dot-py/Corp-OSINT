@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Voith</title>
+	
+	
+	
+	<script src="shared/js/smarttag.js"></script>   
+	
+
+    <script type="text/javascript">
+
+		function countdown( remaining ) {
+
+            if( remaining == 0 ) {
+                document.getElementById( 'countdown' ).innerHTML = remaining;
+                // redirect
+				self.location.replace( 'https://www.voith.com/corp-en/about-us/markets-locations/india/voith-paper-fabrics-india-limited.html' );
+            }
+            else {
+                document.getElementById( 'countdown' ).innerHTML = remaining;
+                remaining = remaining - 1;
+                setTimeout( function() {
+                    countdown( remaining )
+                }, 1000 );
+            }
+        }
+		
+		
+		
+		var tag = new ATInternet.Tracker.Tag({redirect: true, site: 588704});
+		var contextObj = {
+			location: 'https://www.voith.com/corp-en/about-us/markets-locations/india/voith-paper-fabrics-india-limited.html',
+			target: 'document'
+		};
+		
+		ATInternet.Utils.setLocation(contextObj);
+		
+		tag.publisher.set({
+		   impression:{
+				campaignId : '[QuickLinks]',
+				creation : '[voithpaperfabricsindia.com%2F]', // Quicklink
+				variant : '[https%3A%2F%2Fwww.voith.com%2Fcorp-en%2Fabout-us%2Fmarkets-locations%2Findia%2Fvoith-paper-fabrics-india-limited.html]', // Zielseite
+												detailedPlacement : '[https%3A%2F%2Fredirect.voith.com%2Fredirect.php%3FR%3DD762D6E92D718]', // aktuelle Seite
+			}
+		});
+		tag.dispatch();                            
+
+
+
+
+    </script>
+
+    
+	<meta http-equiv="refresh" content="3; URL=https://www.voith.com/corp-en/about-us/markets-locations/india/voith-paper-fabrics-india-limited.html">
+	<!-- *** CSS *** -->
+	<link rel="stylesheet" href="shared/css/default.css">
+</head>
+<body onload="countdown( 3 );">
+	<div class="divBody">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td class="headline1"><span>Redirect</span></td>
+
+				<td valign="top"><img align="right" src="shared/image/logo-voith.png" /></td>
+			</tr>
+		</table>
+		<img src="shared/image/hr-with-space.jpg" style="padding:14px 0px 3px 0px;"/>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" class="tableInhalt">
+			<tr>
+
+				<td class="tdText">
+
+					<span class="textarial">Please wait. You will be redirected in <span id="countdown" style="font-weight: bold;">3</span> seconds.
+					<br>
+					Click <a class="link" href="https://www.voith.com/corp-en/about-us/markets-locations/india/voith-paper-fabrics-india-limited.html" onclick="return tag.click.send({elem:this, name:'voithpaperfabricsindia.com%2F', level2:'0', type:'navigation'});">here</a> if you are not automatically redirected.
+					
+					</span>
+				</td>
+				<td>
+
+				</td>
+			</tr>
+			<tr><td></td></tr>
+		</table>
+
+	</div>
+
+</body>
+</html>
+

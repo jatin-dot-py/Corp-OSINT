@@ -1,0 +1,763 @@
+<script type="text/javascript">
+//<![CDATA[
+<!--
+	function GetXmlHttpObject(handler)
+	{ 
+		var objXmlHttp=null;
+		if (navigator.userAgent.indexOf("Opera")>=0)
+		{
+			alert("This example doesn't work in Opera");
+			return;
+		}
+		if (navigator.userAgent.indexOf("MSIE")>=0)
+		{ 
+			var strName="Msxml2.XMLHTTP";
+			if (navigator.appVersion.indexOf("MSIE 5.5")>=0)
+			{
+				strName="Microsoft.XMLHTTP";
+			} 
+			try
+			{ 
+				objXmlHttp=new ActiveXObject(strName);
+				objXmlHttp.onreadystatechange=handler;
+				return objXmlHttp;
+			} 
+			catch(ex)
+			{ 
+				alert("Error. Scripting for ActiveX might be disabled");
+				return null;
+			} 
+		} 
+		if (navigator.userAgent.indexOf("Mozilla")>=0)
+		{
+				objXmlHttp=new XMLHttpRequest();
+				objXmlHttp.onload=handler;
+				objXmlHttp.onerror=handler; 
+				return objXmlHttp;
+		}
+	}
+//-->   
+//]]>	
+</script><!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+
+
+
+	<!-- Stylesheets
+	============================================= -->
+    
+    
+    
+	<link href="/https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+
+  
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png"/>
+    
+    
+	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+    
+	
+	<link rel="stylesheet" href="/css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" href="css/colors.php?color=25278d" type="text/css" />
+	<!-- Document Title
+	============================================= -->
+	<title>Home</title>
+    
+    
+
+
+<meta name="description" content="Tyche Industries Limited">
+
+
+
+<meta name="keywords" content="Tyche Industries Limited">
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header transparent-header " data-sticky-class="not-dark">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo">
+							<a href="/index.php" class="standard-logo" data-dark-logo="images/tyche_logo.png"><img src="images/tyche_logo.png" ></a>
+							<a href="/index.php" class="retina-logo" data-dark-logo="images/tyche_logo.png"><img src="images/tyche_logo.png" ></a>
+						</div><!-- #logo end -->
+
+						
+
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div>
+
+						<!-- Primary Navigation
+						============================================= -->
+						<nav class="primary-menu">
+
+							<ul class="menu-container">
+								
+                                                                  
+                                
+                                <li class="menu-item">
+									<a class="menu-link" href="/index.php"><div>About Us</div></a>
+									<ul class="sub-menu-container">
+										
+                                        <li class="menu-item">
+											<a class="menu-link" href="/aboutus.php"><div>About Tyche  </div></a>
+                                            </li>
+                                        
+										
+										<li class="menu-item">
+											<a class="menu-link" href="/vision-mission.php"><div>Vision, Mission &amp; Quality Policy
+</div></a></li>
+										<li class="menu-item">
+											<a class="menu-link" href="/board-directors.php"><div>Board of Directors
+</div></a></li>
+								
+<li class="menu-item"><a class="menu-link" href="/csr.php"><div>CSR</div></a></li>	
+
+
+<li class="menu-item"><a class="menu-link" href="/ehs.php"><div>EHS</div></a></li>
+<li class="menu-item"><a class="menu-link" href="/our-asset.php"><div>Our Asset</div></a></li>
+
+										
+										
+										
+											
+									</ul>
+								</li>
+                                
+                                
+                                
+                                
+                                
+                                <li class="menu-item">
+									<a class="menu-link" href="/index.php"><div>Business Areas</div></a>
+									<ul class="sub-menu-container">
+										
+                                       
+                                        
+									    <li class="menu-item">
+															<a class="menu-link" href="/api.php"><div>API</div></a>
+														</li>
+														<li class="menu-item">
+															<a class="menu-link" href="/intermidiates.php"><div>Intermediates</div></a>
+														</li>
+														<li class="menu-item">
+															<a class="menu-link" href="/chiral_intermidates.php"><div>Chiral Intermediates  </div></a>
+														</li>
+														<li class="menu-item">
+															<a class="menu-link" href="/nutraceuticals.php"><div>Nutraceuticals</div></a>
+														</li>
+                                                        
+                                                        <li class="menu-item">
+															<a class="menu-link" href="/cdmo.php"><div>CDMO </div></a>
+														</li>
+										</li>
+                                        
+																																								
+										
+										
+										
+											
+									</ul>
+								</li>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+								<li class="menu-item">
+									<a class="menu-link" href="/research-development.php"><div>Research &amp; Development        </div></a>
+									
+                                    
+                                    
+								</li>
+								<li class="menu-item">
+									<a class="menu-link" href="/infrastructure.php"><div>Infrastructure</div></a>
+									
+                                    
+								</li>
+								
+                                
+                                <li class="menu-item">
+									<a class="menu-link" href="/regualatory.php"><div>Regulatory </div></a>
+									
+								</li>
+                                
+                                <li class="menu-item">
+									<a class="menu-link" href="/quality.php"><div>Quality </div></a>
+									
+								</li>
+                                
+                                
+                                
+                                
+                             
+                                
+                                
+                                <li class="menu-item"><a class="menu-link" href="JavaScript:void(0);">Investor Relations</a>
+                                
+                               
+                                <ul  class="sub-menu-container">
+	<li class="menu-item"><a href="prod_disp.php?id=5"  class="menu-link" >Audited/Unaudited Financial Results</a></li><li class="menu-item"><a href="prod_disp.php?id=8"  class="menu-link" >Share Holding Pattern</a></li><li class="menu-item"><a href="prod_disp.php?id=6"  class="menu-link" >Corporate Governance Reports</a></li><li class="menu-item"><a href="prod_disp.php?id=7"  class="menu-link" >Code Of Conduct</a></li><li class="menu-item"><a href="prod_disp.php?id=14"  class="menu-link" >Policy of Company</a></li><li class="menu-item"><a href="prod_disp.php?id=24"  class="menu-link" >Notice</a></li><li class="menu-item"><a href="prod_disp.php?id=4"  class="menu-link" >Annual Reports</a></li><li class="menu-item"><a href="prod_disp.php?id=27"  class="menu-link" >Dividend/IEPF</a></li><li class="menu-item"><a href="prod_disp.php?id=26"  class="menu-link" >AGM/EGM</a></li><li class="menu-item"><a href="prod_disp.php?id=28"  class="menu-link" >Newspaper Publications</a></li><li class="menu-item"><a href="prod_disp.php?id=34"  class="menu-link" >Stock Exchange</a></li><li class="menu-item"><a href="prod_disp.php?id=39"  class="menu-link" >Disclosures under Regulation46SEBI(LODR)</a></li>    
+  
+
+  </ul>
+                                
+                                
+                                
+                                 <li class="menu-item">
+									<a class="menu-link" href="/global-presence.php"><div>Global Presence</div></a>
+									
+                                    
+								</li> 
+                  <li class="menu-item">
+									<a class="menu-link" href="/careers.php"><div>Careers</div></a>
+									
+                                    
+								</li>            
+								
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
+						
+
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+
+		
+
+        
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    
+    
+    <div class="carousel-item active">
+      <img class=" w-100" src="images/banner1.jpg" alt="">
+    </div>
+    <div class="carousel-item">
+      <img class=" w-100" src="images/banner3.jpg"alt="">
+    </div>
+    
+    <div class="carousel-item">
+      <img class=" w-100" src="images/banner4.jpg"alt="">
+    </div>
+    
+    <div class="carousel-item ">
+      <img class=" w-100" src="images/award-banner2.jpg" alt="">
+    </div>
+    
+    
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<section id="content">
+
+
+
+
+
+
+
+			<div class="content-wrap pb-0" style="z-index: 1;">
+            
+            
+            <div class="container clearfix">
+
+					<div class="row col-mb-50 mb-0">
+
+						<div class="col-lg-4">
+
+							<div class="heading-block fancy-title border-bottom-0 title-bottom-border">
+								<h4 class="text-secondary">Vision</h4>
+							</div>
+
+							<p>To become one of the leading global manufacturers in the field by 2025</p>
+
+						</div>
+
+						<div class="col-lg-4">
+
+							<div class="heading-block fancy-title border-bottom-0 title-bottom-border">
+								<h4 class="text-secondary">Mission</h4>
+							</div>
+
+							<p>To consistently maintain high standards in developing and manufacturing APIs and Advanced Intermediates for sustainable growth.
+</p>
+
+						</div>
+
+						<div class="col-lg-4">
+
+							<div class="heading-block fancy-title border-bottom-0 title-bottom-border">
+								<h4 class="text-secondary">Quality Policy</h4>
+						</div>
+
+							<p>To maintain good manufacturing standards and inculcate awareness of GMP practices among all employees.
+</p>
+
+						</div>
+
+					</div>
+
+				</div>
+                
+                
+                
+                
+                
+                
+                <div class="section m-0 bg-primary text-white">
+					<div class="container clearfix">
+
+
+<h3 class="text-white text-center mb-3">Portfolio Growth</h3>
+						<div class="row col-mb-50 justify-content-center">
+
+							<div class="col-sm-12 col-lg-6 col-md-6 text-center ">
+                            <h3 class="text-white text-center mb-3 h5 mt-4 brdrbtn">API<br />
+(Active Pharmaceutical Ingredients)
+</h3>
+                           
+                          <div class="row">  
+                          
+                          <div class="col-sm-6 col-lg-6 col-md-6 col-6 text-center" data-animate="bounceIn">
+														<div class="counter counter-lined"><span data-from="0" data-to="19" data-refresh-interval="50" data-speed="2000"></span></div>
+								<h5 class="text-white">Commercial APIs</h5>
+							</div>
+
+							<div class="col-sm-6 col-lg-6 col-md-6 col-6 text-center" data-animate="bounceIn" data-delay="200">
+															<div class="counter counter-lined"><span data-from="0" data-to="5" data-refresh-interval="100" data-speed="2500"></span></div>
+								<h5 class="text-white">Under Development </h5>
+							</div>
+                            </div>
+</div>
+
+
+<div class="col-md-3">         <h3 class="text-white text-center mb-3 h5 mt-4 brdrbtn">Advance &amp; Chiral Intermediates  </h3>
+                           <div class="col-sm-12 col-lg-12 col-md-12 text-center" data-animate="bounceIn" data-delay="600">
+															<div class="counter counter-lined"><span data-from="0" data-to="19" data-refresh-interval="60" data-speed="2700"></span></div>
+								<h5 class="text-white">Intermediates </h5>
+							</div></div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            <div class="col-md-3">         <h3 class="text-white text-center mb-3 h5 mt-4 brdrbtn">CDMO<br />
+Product </h3>
+                           <div class="col-sm-12 col-lg-12 col-md-12 text-center" data-animate="bounceIn" data-delay="600">
+															<div class="counter counter-lined"><span data-from="0" data-to="5" data-refresh-interval="30" data-speed="2700"></span>+</div>
+								<h5 class="text-white">CDMO  </h5>
+							</div></div>
+								
+
+						<div class="col-sm-12 col-lg-12 col-md-12 text-center">	
+                        
+                         <h3 class="text-white text-center mb-3 h5 mt-4 brdrbtn">DMF &amp; CEP  </h3>
+                        
+                    <div class="row">   <div class="col-sm-6 col-lg-3 col-md-3 text-center" data-animate="bounceIn" data-delay="400">
+																<div class="counter counter-lined"><span data-from="0" data-to="17" data-refresh-interval="25" data-speed="3500"></span></div>
+								<h5 class="text-white">DMF</h5>
+							</div>
+                            
+                        <div class="col-sm-6 col-lg-3 col-md-3 text-center" data-animate="bounceIn" data-delay="600">
+																<div class="counter counter-lined"><span data-from="0" data-to="6" data-refresh-interval="30" data-speed="2700"></span></div>
+								<h5 class="text-white">CEP Granted</h5>
+							</div>
+                            
+                            
+                            <!-- <div class="col-sm-6 col-lg-3 col-md-3 text-center" data-animate="bounceIn" data-delay="600">
+																<div class="counter counter-lined"><span data-from="0" data-to="3" data-refresh-interval="30" data-speed="2700"></span></div>
+								<h5 class="text-white">CEP Under Filing</h5>
+							</div> -->
+                            
+                            
+                            <div class="col-sm-6 col-lg-3 col-md-3 text-center" data-animate="bounceIn" data-delay="600">
+																<div class="counter counter-lined"><span data-from="0" data-to="3" data-refresh-interval="30" data-speed="2700"></span></div>
+								<h5 class="text-white">USDMF</h5>
+							</div>
+                            
+                            
+                            <div class="col-sm-6 col-lg-3 col-md-3 text-center" data-animate="bounceIn" data-delay="600">
+																<div class="counter counter-lined"><span data-from="60" data-to="7" data-refresh-interval="30" data-speed="2700"></span></div>
+								<h5 class="text-white">EUDMF</h5>
+							</div>
+                            
+                            <div class="col-sm-6 col-lg-3 col-md-3 text-center" data-animate="bounceIn" data-delay="600">
+																<div class="counter counter-lined"><span data-from="0" data-to="1" data-refresh-interval="30" data-speed="2700"></span></div>
+								<h5 class="text-white">KDMF</h5>
+							</div>
+                            
+                            <div class="col-sm-6 col-lg-3 col-md-3 text-center" data-animate="bounceIn" data-delay="600">
+																<div class="counter counter-lined"><span data-from="0" data-to="1" data-refresh-interval="30" data-speed="2700"></span></div>
+								<h5 class="text-white">JDMF</h5>
+							</div>
+                            
+                            
+                            <div class="col-sm-6 col-lg-3 col-md-3 text-center" data-animate="bounceIn" data-delay="600">
+																<div class="counter counter-lined"><span data-from="0" data-to="1" data-refresh-interval="30" data-speed="2700"></span></div>
+								<h5 class="text-white">Canadian DMF</h5>
+							</div>
+                            
+                            
+                            </div>
+                            </div>
+                            
+                            
+                   </div>
+                   
+                   
+                  
+                   
+
+					</div>
+				</div>
+            
+            
+            <div class="row align-items-stretch">
+
+					<div class="col-md-5  min-vh-75">
+                    
+                    
+                    <div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
+						<div class="flexslider">
+							<div class="slider-wrap">
+								<div class="slide"> <img  src="images/products-bg-home.jpg">
+								</div>
+                                
+                                <div class="slide"> <img  src="images/products-bg-home2.jpg">
+								</div>
+                                
+                                <div class="slide"> <img  src="images/products-bg-home3.jpg">
+								</div>
+								
+								
+							</div>
+						</div>
+			  </div>
+                    
+                    
+                    </div>
+
+					<div class="col-md-7 col-padding">
+						<div>
+							<div class="heading-block">
+								<span class="before-heading text-primary"></span>
+								<h3 class="text-secondary">Business Areas</h3>
+							</div>
+
+							<div class="row col-mb-50 justify-content-center">
+
+								<div class="col-sm-6 col-lg-6 text-center" data-animate="bounceIn"><div class="p-3 m-3 border rounded">
+								<a href="/api.php">
+                                <img src="images/icons/ingredients.png" class="w100" />
+								
+								<h4 class="text-primary mt-1">Active Pharmaceutical<br />
+
+Ingredients (API)</h4></a>
+							</div></div>
+
+								<div class="col-sm-6 col-lg-6 text-center" data-animate="bounceIn">
+                                <div class="p-3 m-3 border rounded">
+								<a href="/intermidiates.php">
+                                <img src="images/icons/intermediates.png" class="w100" />
+								
+								<h4 class="text-primary mt-1">Intermediates<br />
+&nbsp;</h4>
+</a>
+                                </div>
+							</div>
+
+
+							</div>
+                            
+                            
+                            
+                            <div class="row col-mb-50 mt-1 justify-content-center">
+
+								<div class="col-sm-6 col-lg-4 text-center" data-animate="bounceIn">
+                                <div class="p-3 m-3 border rounded">
+								<a href="/chiral_intermidates.php">
+                                <img src="images/icons/chiral.png" class="w100" />
+								
+								<h4 class="text-primary mt-1">Chiral <br />
+Intermediates</h4>
+</a>
+</div>
+							</div>
+                            
+
+								<div class="col-sm-6 col-lg-4 text-center" data-animate="bounceIn">
+                                <div class="p-3 m-3 border rounded">
+								<a href="/nutraceuticals.php">
+                                <img src="images/icons/nutraceuticals.png" class="w100" />
+								
+								<h4 class="text-primary mt-1">Nutraceuticals<br />
+&nbsp;</h4>
+</a>
+</div>
+							</div>
+                            
+                            <div class="col-sm-6 col-lg-4 text-center" data-animate="bounceIn">
+                                <div class="p-3 m-3 border rounded">
+								<a href="/cdmo.php">
+                                <img src="images/icons/cmdo.png" class="w100" />
+								
+								<h4 class="text-primary mt-1">CMDO<br />
+&nbsp;</h4>
+</a>
+</div>
+							</div>
+                            
+                            
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+                
+                
+                   
+                </div>
+                
+              
+                
+
+
+
+                
+
+    
+    
+    
+    
+    
+    
+   <div class="container topmargin clearfix ">
+
+					<!-- our Clients
+					============================================= -->
+					<div class="heading-block center border-0" data-heading="W">
+						<h3>Certificates</h3>
+					</div>
+   
+
+					<ul class="clients-grid grid-2 grid-sm-3 grid-md-6 mb-0 justify-content-center">
+                    
+                    
+                    <li class="grid-item"><img src="images/certificates/fda.jpg" alt="FDA"></li>
+                        
+                        
+                        
+                        <li class="grid-item"><img src="images/certificates/pmda.jpg" alt="PMDA"></li>
+                        
+                         <li class="grid-item"><img src="images/certificates/gmp.jpg" alt="GMP"></li>
+                          
+                          
+                           <li class="grid-item"><img src="images/certificates/who.jpg" alt="WHO"></li>
+                           <li class="grid-item"><img src="images/certificates/cdsco.jpg" alt="cdsco"></li>
+                    
+						
+                        
+                       
+                         
+                        
+
+						
+                        
+					</ul>
+              
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+</section>
+                
+                
+                
+<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+			
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+				<div class="container">	
+
+					<div class="row col-mb-30">
+
+						<div class="col-md-12 text-center text-md-center">
+							
+							<div class="copyright-links"><a href="aboutus.php">Home</a>  <a href="#">About Us</a>  <a href="/careers.php">Careers</a> <a href="contact.php">Contact Us</a>  </div>
+Copyrights © 2020 All Rights Reserved by Tyche Industries Limited<br>
+						</div>
+
+						
+					</div>
+
+				</div>
+			</div><!-- #copyrights end -->
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+
+<script src="/js/yav.js" type="text/javascript"></script> 
+<script src="/js/yav-config.js" type="text/javascript"></script> 
+<script type="text/javascript"  src="/js/form.js"></script>
+
+
+<script>
+		jQuery(window).on( 'pluginSwiperReady', function(){
+			var swiperParent = new Swiper('.swiper-parent',{
+				paginationClickable: false,
+				slidesPerView: 4,
+				grabCursor: true,
+				navigation: {
+			    	nextEl: '.slider-arrow-right',
+			    	prevEl: '.slider-arrow-left',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 4
+			        },
+			        992: {
+			          slidesPerView: 3
+			        },
+			        768: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested1 = new Swiper('.swiper-nested-1',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 3,
+				navigation: {
+			    	nextEl: '#sw1-arrow-bottom',
+			    	prevEl: '#sw1-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 3
+			        },
+			        992: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested2 = new Swiper('.swiper-nested-2',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 2,
+				navigation: {
+			    	nextEl: '#sw2-arrow-bottom',
+			    	prevEl: '#sw2-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested3 = new Swiper('.swiper-nested-3',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 2,
+				navigation: {
+			    	nextEl: '#sw3-arrow-bottom',
+			    	prevEl: '#sw3-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+		});
+	</script>
+    
+    
+    
+
+</body>
+</html>

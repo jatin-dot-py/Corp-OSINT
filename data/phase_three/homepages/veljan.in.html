@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to VELJAN</title>
+  <style>
+    body {
+      /* background-color:; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      font-family: "arial", sans-serif;
+      background-color: #CCC;
+      background-image: url(home-bg.jpg);
+      background-repeat: repeat;
+    }
+
+    .content {
+      /* background-color: ; */
+      height: 99vh;
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .main {
+      /* background-color:; */
+      height: auto;
+      font-size: 14px;
+    }
+
+    .main-first {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .main-second {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -150px;
+    }
+
+    .center {
+      background: lightblue;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      padding: 10px;
+      width: 50vh;
+      height: 50vh;
+      min-width: 200px;
+      min-height: 200px;
+      width: 300px;
+      height: 300px;
+      background-image: url(60-logo.png);
+      background-size: contain;
+      transform: translate(0rem, 0rem);
+    }
+
+    .left {
+      /* background: #0070bf; */
+      /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
+      padding: 10px;
+      /* width: 50vh; */
+      /* height: 50vh; */
+      /* min-width: 200px; */
+      /* min-height: 200px; */
+      /* width: 300px; */
+      /* height: 300px; */
+      /* transform: translate(0%, 0%); */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .right {
+      /* background: #0070bf; */
+      /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
+      padding: 10px;
+      /* width: 50vh; */
+      /* height: 50vh; */
+      /* min-width: 200px; */
+      /* min-height: 200px; */
+      /* width: 300px; */
+      /* height: 300px; */
+      /* transform: translate(0%, 0%); */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .linkLeft {
+      color: #ffffff;
+      text-align: center;
+      vertical-align: bottom;
+      text-decoration: none;
+      background-color: #0070bf;
+      padding: 15px 20px;
+      border-radius: 40px;
+      min-width: 150px;
+    }
+
+    .linkRight {
+      text-align: center;
+      color: #ffffff;
+      text-decoration: none;
+      background-color: #0070bf;
+      padding: 15px 20px;
+      border-radius: 40px;
+      min-width: 150px;
+    }
+
+    .main-logo {
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    .logo img {
+      width: 80%;
+    }
+
+    .main-logo p {
+      font-size: 21px;
+      font-family: "arial", sans-serif;
+      color: #736f6f;
+    }
+.mobile {
+  display: none;
+}
+    @media (max-width: 765px) {
+      body {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content {
+  gap: 20px;
+}
+.mobile {
+  text-align: center;
+    padding-bottom: 20px;
+    display: block;
+}
+.mobile img{
+  width: 70%;
+}
+.main-center {
+  display: none;
+}
+.main-first {
+  flex-direction: column;
+}
+      /* .left,
+      .right,
+      .center {
+        width: 200px;
+        height: 200px;
+      } */
+
+      .main-second {
+        margin-top: -102px;
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .linkLeft,
+      .linkRight {
+        min-width: auto;
+      }
+
+      .main-first {
+        gap: 10px;
+      }
+
+      .main-first img {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 475px) {
+      .main {
+        font-size: 12px;
+      }
+
+      /* .left,
+      .right,
+      .center {
+        width: 125px;
+        height: 125px;
+        min-width: 125px;
+        min-height: 125px;
+      } */
+
+      .main-second {
+        margin-top: -65px;
+      }
+    }
+
+    body,
+    td,
+    th {
+      font-family: arial, sans-serif;
+    }
+
+    .hydrair-compliance-note {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: 65%;
+      margin: 0 auto;
+      padding: 12px 20px;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #c00000;
+      text-align: center;
+      box-sizing: border-box;
+      border-radius: 14px 14px 0 0;
+    }
+
+    @media (max-width: 765px) {
+      .hydrair-compliance-note {
+        font-size: 11px;
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="main-logo">
+      <div class="logo">
+        <img src="./logo.png" alt="">
+        <p>Pioneers in Fluid Power</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="mobile">
+          <img src="./60-logo.png" alt="">
+      </div>
+      <div class="main-first">
+        <div class="left">
+          <a href="/denison-home" target="_self" class="linkLeft">
+            Veljan Denison
+          </a>
+        </div>
+        <div class="main-center">
+          <img src="./60-logo.png" alt="">
+        </div>
+        <div class="right">
+          <a href="/home" target="_self" class="linkRight">Veljan Hydrair
+          </a>
+        </div>
+      </div>
+      <!-- <div class="main-second">
+        <div class="center">center</div>
+      </div> -->
+      <div class="hydrair-compliance-note">
+        Veljan Hydrair Limited and all entities in the wider Veljan group are committed to full compliance with all applicable international trade laws and regulations, including export controls, sanctions, and customs requirements in every jurisdiction in which they operate which includes the USA, UK and EU. All distributors, stockists, and customers globally are also required to ensure compliance with these regulations.
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

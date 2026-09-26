@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Link paused</title>
+<style>
+:root{--teal:#20a795;--teal-deep:#0f7a6d;--ink:#0b1220;--grey:#667085;--amber:#E59426;--amber-soft:#fff8ef}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+a{text-decoration:none}
+.wrap{min-height:100%;display:flex;flex-direction:column}
+.banner{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;background:var(--amber-soft);color:#8a5407;border-bottom:1px solid #f3e3c9;padding:14px 20px;font-size:14px;font-weight:500;text-align:center}
+.ico{width:20px;height:20px;flex:0 0 20px;border-radius:50%;background:var(--amber);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 28px}
+.brand{font-size:13px;font-weight:600;color:var(--grey)}
+.brand i{display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--teal);margin-right:8px;vertical-align:middle}
+h1{margin-top:20px;font-size:clamp(30px,5vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.05}
+p{margin-top:16px;color:var(--grey);font-size:16px;line-height:1.6;max-width:44ch}
+.cta{margin-top:32px;display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:#fff;font-size:15px;font-weight:600;padding:15px 28px;border-radius:999px;transition:background .15s ease,transform .15s ease}
+.cta:hover{background:var(--teal-deep);transform:translateY(-1px)}
+.cta span{transition:transform .15s ease}
+.cta:hover span{transform:translateX(3px)}
+@media(prefers-color-scheme:dark){body{background:#0b1220}.body h1{color:#e9edf2}.banner{background:#241c0b;color:#f0c777;border-color:#3a2e13}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="banner"><span class="ico">!</span> This link is paused — monthly visit limit reached</div>
+<div class="body">
+<div class="brand"><i></i>RedirHub</div>
+<h1>We'll be right back.</h1>
+<p>This link hit its monthly visit limit and was paused automatically. You can still continue to the website below.</p>
+<!-- continue link: edge engine replaces https://india.whirlpool.in with the destination / override URL -->
+<a class="cta" href="https://india.whirlpool.in">Continue to website <span>&rarr;</span></a>
+</div>
+</div>
+</body>
+</html>

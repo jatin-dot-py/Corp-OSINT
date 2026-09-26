@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="igpl-logo.png" type="image/png">
+
+  <!-- SEO -->
+  <title>IGPL — India's Largest Single-Site PA Complex | IG Petrochemicals</title>
+  <meta name="description" content="IG Petrochemicals Ltd. — India's largest single-site phthalic anhydride producer with 275,110  MTPA capacity across 5 plants at Taloja, Maharashtra. Supplying PA, MA, BA, and DEP to downstream industries.">
+  <meta property="og:title" content="IGPL — India's Largest Single-Site PA Complex">
+  <meta property="og:description" content="275,110  MTPA phthalic anhydride capacity. India's chemical value chain backbone. Taloja, Maharashtra.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.igpetro.com/">
+  <meta property="og:image" content="https://www.igpetro.com/plant-aerial.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IGPL — IG Petrochemicals Ltd.">
+  <meta name="twitter:description" content="275,110  MTPA phthalic anhydride. India's chemical backbone. Taloja, Maharashtra.">
+  <link rel="canonical" href="https://www.igpetro.com/">
+
+  <!-- Fonts & Styles -->
+  <script src="https://cdn.tailwindcss.com/3.4.0"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="hero-plant.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/design-system.css?v=2">
+  <link rel="stylesheet" href="css/igpl-2026.css?v=3">
+
+  <style>
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+
+    /* Scroll reveal animations */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+      opacity: 0; transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0; transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .stagger > * {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+    .stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
+    .stagger.visible > *:nth-child(3) { transition-delay: 0.2s; }
+    .stagger.visible > *:nth-child(4) { transition-delay: 0.3s; }
+    .stagger.visible > *:nth-child(5) { transition-delay: 0.35s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: 0.4s; }
+    .stagger.visible > * { opacity: 1; transform: translateY(0); }
+
+    /* Card lift */
+    .card-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,124,102,0.12);
+    }
+
+    /* Nav link underline */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: #007C66; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link--active::after { width: 100%; }
+
+    /* Nav transparent state */
+    .nav-transparent .nav-link { color: rgba(255,255,255,0.85); }
+    .nav-transparent .nav-link:hover { color: #ffffff; }
+    .nav-transparent .nav-link::after { background: #ffffff; }
+    .nav-transparent .nav-link--active { color: #ffffff; }
+    .nav-transparent .nav-link--active::after { background: #ffffff; }
+    .nav-transparent .hamburger-icon { color: #ffffff; }
+    .nav-transparent .nav-cta { background: transparent; border-color: rgba(255,255,255,0.6); color: #ffffff; }
+    .nav-transparent .nav-cta:hover { background: #ffffff; color: #1E293B; }
+
+    /* Hero video cover */
+    .hero-video { object-fit: cover; width: 100%; height: 100%; }
+
+    /* Products dropdown */
+    .nav-dropdown {
+      display: none; position: absolute; top: 100%; left: 0;
+      transform: none; padding-top: 12px; z-index: 200;
+    }
+    .nav-dropdown-inner {
+      background: #ffffff; border: 1px solid #E5E7EB; border-radius: 8px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1); min-width: 220px; overflow: hidden;
+    }
+    .nav-dropdown a {
+      display: block; padding: 10px 20px; font-family: 'Inter', sans-serif;
+      font-size: 13px; font-weight: 500; color: #475569;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-dropdown a:hover { background: #F0FDF9; color: #007C66; }
+    .nav-parent:hover .nav-dropdown { display: block; }
+
+    /* Transparent nav hides dropdown styling issues */
+    .nav-transparent .nav-parent:hover .nav-dropdown { display: block; }
+
+    /* Value chain arrow animation */
+    .vc-arrow { animation: vc-pulse 2s ease-in-out infinite; }
+    @keyframes vc-pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+
+    /* Sector icon */
+    .sector-icon {
+      width: 56px; height: 56px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,124,102,0.08); flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="bg-white text-[#0F172A]">
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav data-igpl-nav id="main-nav" class="fixed top-0 left-0 right-0 z-[100] transition-all duration-300 nav-transparent">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="flex items-center justify-between h-[72px]">
+        <!-- Logo -->
+        <a href="index.html" class="igpl-logo-lockup" aria-label="IG Petrochemicals Limited — Home"><img src="igpl-logo.png" alt="IG Petrochemicals Ltd." class="igpl-logo-lockup__mark"><span class="igpl-logo-lockup__name">I G Petrochemicals Limited</span></a>
+
+        <!-- Desktop Links -->
+        <div class="hidden xl:flex items-center gap-7">
+          <div class="relative nav-parent">
+            <a href="about.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#374151] transition-colors nav-link inline-flex items-center gap-1">About <svg class="w-3 h-3 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="nav-dropdown"><div class="nav-dropdown-inner">
+              <a href="about.html">About Overview</a>
+              <a href="board-of-directors.html">Board of Directors</a>
+              <a href="certifications.html">Certifications</a>
+            </div></div>
+          </div>
+
+          <!-- Products with dropdown -->
+          <div class="relative nav-parent">
+            <a href="products.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#374151] transition-colors nav-link inline-flex items-center gap-1">
+              Products
+              <svg class="w-3 h-3 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-inner">
+                <a href="pa.html">Phthalic Anhydride</a>
+                <a href="ma.html">Maleic Anhydride</a>
+                <a href="ba.html">Benzoic Acid</a>
+                <a href="dep.html">Di-ethyl Phthalate</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="manufacturing.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#374151] transition-colors nav-link">Manufacturing</a>
+          <a href="applications.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#374151] transition-colors nav-link">Applications</a>
+          <a href="sustainability.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#374151] transition-colors nav-link">Sustainability</a>
+                    <div class="relative nav-parent">
+            <a href="investors.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#374151] transition-colors nav-link inline-flex items-center gap-1">Investors <svg class="w-3 h-3 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="nav-dropdown"><div class="nav-dropdown-inner">
+              <a href="investors.html">Investor Relations</a>
+              <a href="investor-library.html">Financial Reports</a>
+              <a href="governance.html">Corporate Governance</a>
+              <a href="filings.html">Filings &amp; Announcements</a>
+            </div></div>
+          </div>
+          <a href="careers.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#374151] transition-colors nav-link">Careers</a>
+          <a href="contact.html" class="nav-cta bg-[#007C66] text-white font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] px-5 py-2.5 rounded-md hover:bg-[#005E4D] transition-all border-2 border-[#007C66] hover:border-[#005E4D]">Request Quote</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="menu-toggle" class="xl:hidden p-2 hamburger-icon text-[#374151]" aria-label="Open navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-[#E5E7EB]">
+      <div class="px-6 py-5 flex flex-col gap-4">
+        <a href="about.html" class="font-[Montserrat] font-bold text-xs uppercase tracking-[0.06em] text-[#374151]">About</a>
+        <div class="pl-4 flex flex-col gap-3">
+          <a href="about.html" class="font-[Inter] text-sm text-[#475569]">About Overview</a>
+          <a href="board-of-directors.html" class="font-[Inter] text-sm text-[#475569]">Board of Directors</a>
+          <a href="certifications.html" class="font-[Inter] text-sm text-[#475569]">Certifications</a>
+        </div>
+        <a href="products.html" class="font-[Montserrat] font-bold text-xs uppercase tracking-[0.06em] text-[#374151]">Products</a>
+        <div class="pl-4 flex flex-col gap-3">
+          <a href="pa.html" class="font-[Inter] text-sm text-[#475569]">Phthalic Anhydride</a>
+          <a href="ma.html" class="font-[Inter] text-sm text-[#475569]">Maleic Anhydride</a>
+          <a href="ba.html" class="font-[Inter] text-sm text-[#475569]">Benzoic Acid</a>
+          <a href="dep.html" class="font-[Inter] text-sm text-[#475569]">Di-ethyl Phthalate</a>
+        </div>
+        <a href="manufacturing.html" class="font-[Montserrat] font-bold text-xs uppercase tracking-[0.06em] text-[#374151]">Manufacturing</a>
+        <a href="applications.html" class="font-[Montserrat] font-bold text-xs uppercase tracking-[0.06em] text-[#374151]">Applications</a>
+        <a href="sustainability.html" class="font-[Montserrat] font-bold text-xs uppercase tracking-[0.06em] text-[#374151]">Sustainability</a>
+        <a href="investors.html" class="font-[Montserrat] font-bold text-xs uppercase tracking-[0.06em] text-[#374151]">Investors</a>
+        <div class="pl-4 flex flex-col gap-3">
+          <a href="investor-library.html" class="font-[Inter] text-sm text-[#475569]">Financial Reports</a>
+          <a href="governance.html" class="font-[Inter] text-sm text-[#475569]">Corporate Governance</a>
+          <a href="filings.html" class="font-[Inter] text-sm text-[#475569]">Filings &amp; Announcements</a>
+        </div>
+        <a href="careers.html" class="font-[Montserrat] font-bold text-xs uppercase tracking-[0.06em] text-[#374151]">Careers</a>
+        <a href="contact.html" class="bg-[#007C66] text-white font-[Montserrat] font-bold text-xs uppercase tracking-[0.06em] px-4 py-2.5 rounded-md text-center mt-2">Request Quote</a>
+      </div>
+    </div>
+  </nav>
+  <div id="menu-backdrop" class="fixed inset-0 bg-black/30 z-[90] hidden"></div>
+
+
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
+  <section class="relative w-full overflow-hidden flex items-end" style="height: clamp(640px, 90vh, 900px);">
+    <!-- Hero fallback image (shown when video is blocked, e.g. iOS Low Power Mode) -->
+    <img src="hero-plant.webp" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover object-center">
+    <!-- Hero Video Background (preload gated — saves mobile data; poster fallback preloaded in head) -->
+    <video id="hero-video" autoplay muted loop playsinline preload="none" class="absolute inset-0 w-full h-full object-cover object-center">
+      <source src="hero-plant.webm" type="video/webm">
+      <source src="hero-plant.mp4" type="video/mp4">
+    </video>
+
+    <!-- Gradient Overlay — darker toward the bottom-left so the headline & eyebrow always read -->
+    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(8,32,27,0.94) 0%, rgba(8,32,27,0.62) 34%, rgba(8,32,27,0.28) 66%, rgba(8,32,27,0.32) 100%), linear-gradient(105deg, rgba(8,32,27,0.55) 0%, rgba(8,32,27,0.10) 52%, rgba(8,32,27,0) 100%);"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 w-full max-w-[1280px] mx-auto px-6 pb-16 md:pb-24">
+      <p class="eyebrow-2026 mb-5" style="color:#5BE9C2;">Taloja, Maharashtra &mdash; India</p>
+      <h1 class="font-[Montserrat] font-bold text-[42px] md:text-[62px] lg:text-[78px] text-white leading-[0.98] tracking-[-0.03em] max-w-5xl"><span style="white-space:nowrap;">India's largest single&#8209;site</span><br class="hidden md:block"> Phthalic Anhydride complex</h1>
+      <p class="font-[Inter] text-[17px] md:text-[20px] text-white/85 mt-6 max-w-2xl leading-relaxed">The benchmark supplier of phthalic anhydride to India's coatings, plasticiser, and resin industries &mdash; in continuous operation since 1992.</p>
+      <div class="flex flex-wrap gap-4 mt-9">
+        <a href="products.html" class="btn-primary-2026">Explore Products
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="investors.html" class="font-[Montserrat] font-bold text-[12px] uppercase tracking-[0.1em] px-7 py-3.5 rounded-[9px] transition-all text-white border border-white/40 hover:bg-white hover:text-[#08201B] inline-flex items-center">Investor Relations</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       2. KEY STATS BAND
+       ============================================================ -->
+  <section class="bg-[#1E293B] py-16 md:py-20">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6">
+        <!-- Stat 1 -->
+        <div class="text-center stat-monument" style="text-align:center;">
+          <div class="stat-monument__value" style="color:#fff;"><span data-counter data-target="275110 ">275,110 </span></div>
+          <div class="stat-monument__rule" style="margin-left:auto;margin-right:auto;background:var(--igpl-mint);"></div>
+          <p class="stat-monument__label">MTPA PA Capacity</p>
+        </div>
+        <!-- Stat 2 -->
+        <div class="text-center stat-monument" style="text-align:center;">
+          <div class="stat-monument__value" style="color:#fff;"><span data-counter data-target="5">5</span></div>
+          <div class="stat-monument__rule" style="margin-left:auto;margin-right:auto;background:var(--igpl-mint);"></div>
+          <p class="stat-monument__label">Production Plants</p>
+        </div>
+        <!-- Stat 3 -->
+        <div class="text-center stat-monument" style="text-align:center;">
+          <div class="stat-monument__value" style="color:#fff;">~<span data-counter data-target="50" data-suffix="%">50%</span></div>
+          <div class="stat-monument__rule" style="margin-left:auto;margin-right:auto;background:var(--igpl-mint);"></div>
+          <p class="stat-monument__label">India Market Share</p>
+        </div>
+        <!-- Stat 4 -->
+        <div class="text-center stat-monument" style="text-align:center;">
+          <div class="stat-monument__value" style="color:#fff;"><span data-counter data-target="34">34</span></div>
+          <div class="stat-monument__rule" style="margin-left:auto;margin-right:auto;background:var(--igpl-mint);"></div>
+          <p class="stat-monument__label">Years of Operation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       3. WHO WE ARE
+       ============================================================ -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Copy -->
+        <div class="reveal-left">
+          <p class="font-[Inter] font-semibold text-[12px] text-[#007C66] uppercase tracking-[0.1em] mb-3">Who We Are</p>
+          <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-[#0F172A] leading-tight mb-6">India's Chemical Backbone</h2>
+          <div class="w-16 h-[3px] bg-[#007C66] rounded-full mb-8"></div>
+          <p class="font-[Inter] text-[16px] text-[#475569] leading-relaxed mb-5">IG Petrochemicals Ltd. operates five phthalic anhydride production plants at a single integrated campus in Taloja, Maharashtra — 275,110  MTPA of installed capacity and approximately 50% of India's domestic PA capacity, making it a significant supplier to the downstream chemical value chain.</p>
+          <p class="font-[Inter] text-[16px] text-[#475569] leading-relaxed mb-5">Our core product, phthalic anhydride, is an essential industrial intermediate used in the manufacture of plasticisers, alkyd resins, unsaturated polyester resins, dyes, and pigments. Every significant Indian manufacturer in paints, PVC, and construction chemicals depends on a reliable PA supply chain &mdash; and IGPL sits at the centre of it.</p>
+          <p class="font-[Inter] text-[16px] text-[#475569] leading-relaxed mb-8">Beyond PA, we recover maleic anhydride and benzoic acid as by-products and produce diethyl phthalate as a downstream value-added product &mdash; capturing more of the value chain from the same ortho-xylene feedstock.</p>
+          <a href="about.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#007C66] border-2 border-[#007C66] px-6 py-3 rounded-md hover:bg-[#007C66] hover:text-white transition-all inline-flex items-center gap-2">
+            Our Story
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <!-- Image -->
+        <div class="reveal-right">
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img src="plant-aerial.webp" alt="Aerial view of IGPL's Taloja manufacturing campus with five PA plants" class="w-full h-auto object-cover" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       3B. WHY IGPL MATTERS
+       ============================================================ -->
+  <section class="py-20 md:py-28 section-tint">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-14 reveal">
+        <p class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.12em] text-[#007C66] mb-3">Strategic Relevance</p>
+        <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-[#0F172A] leading-tight">Why IGPL Matters</h2>
+        <div class="w-16 h-[3px] bg-[#007C66] rounded-full mx-auto mt-5"></div>
+      </div>
+
+      <!-- Subtitle for investor audience -->
+      <div class="max-w-3xl mx-auto text-center mb-10 reveal">
+        <p class="font-[Inter] text-[15px] text-[#475569] leading-relaxed">IGPL occupies a structural position in India's chemical value chain. Large-scale domestic PA manufacturing is freight-sensitive, quality-critical, and consumed by industries that demand uninterrupted supply &mdash; characteristics that favour established producers with scale and continuity.</p>
+      </div>
+
+      <!-- 3-Column Insight Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger reveal">
+        <!-- Card 1: Scale and Market Position -->
+        <div class="border-l-4 border-[#007C66] bg-[#F8FAFB] rounded-r-xl pl-5 pr-6 py-6 card-lift">
+          <h3 class="font-[Montserrat] font-bold text-[18px] text-[#0F172A] mb-3">Scale and Market Position</h3>
+          <p class="font-[Inter] text-[15px] text-[#475569] leading-[1.75]">Phthalic anhydride is a critical industrial intermediate used in plasticisers, coatings, resins, and specialty chemicals. IGPL holds approximately 50% of India's domestic PA capacity &mdash; one of India's principal domestic suppliers in this category.</p>
+        </div>
+
+        <!-- Card 2: Integrated Value Recovery -->
+        <div class="border-l-4 border-[#007C66] bg-[#F8FAFB] rounded-r-xl pl-5 pr-6 py-6 card-lift">
+          <h3 class="font-[Montserrat] font-bold text-[18px] text-[#0F172A] mb-3">Integrated Value Recovery</h3>
+          <p class="font-[Inter] text-[15px] text-[#475569] leading-[1.75]">A single feedstock &mdash; ortho-xylene &mdash; produces four commercial products through integrated operations. Maleic anhydride, benzoic acid, and diethyl phthalate are recovered as by-products, maximising yield from every tonne of raw material.</p>
+        </div>
+
+        <!-- Card 3: Structural Logistics Advantage -->
+        <div class="border-l-4 border-[#007C66] bg-[#F8FAFB] rounded-r-xl pl-5 pr-6 py-6 card-lift">
+          <h3 class="font-[Montserrat] font-bold text-[18px] text-[#0F172A] mb-3">Structural Logistics Advantage</h3>
+          <p class="font-[Inter] text-[15px] text-[#475569] leading-[1.75]">Located at Taloja, Maharashtra &mdash; 50 km from JNPT, India's largest container port. Proximity to port, domestic consumption centres, and raw material sources creates a durable cost and delivery advantage.</p>
+        </div>
+      </div>
+
+      <!-- CTA to Investors page -->
+      <div class="text-center mt-10 reveal">
+        <a href="investors.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#007C66] border-2 border-[#007C66] px-6 py-3 rounded-md hover:bg-[#007C66] hover:text-white transition-all inline-flex items-center gap-2">
+          Investor Information
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       4. VALUE CHAIN
+       ============================================================ -->
+  <section class="py-20 md:py-28 bg-[#F8FAFC]">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-14 reveal">
+        <p class="font-[Inter] font-semibold text-[12px] text-[#007C66] uppercase tracking-[0.1em] mb-3">Our Value Chain</p>
+        <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-[#0F172A] leading-tight">From Feedstock to End Use</h2>
+        <div class="w-16 h-[3px] bg-[#007C66] rounded-full mx-auto mt-5"></div>
+      </div>
+
+      <!-- Value Chain Visual -->
+      <div class="reveal">
+        <div class="flex items-stretch w-full py-10 gap-0">
+          <!-- O-Xylene -->
+          <div data-vc-node class="bg-[#1E293B] rounded-xl py-10 text-center flex-1 cursor-default transition-all duration-300 flex flex-col items-center justify-center">
+            <h3 class="font-[Montserrat] font-bold text-[20px] text-white">O-Xylene</h3>
+            <p class="font-[Inter] text-[14px] text-[#94A3B8] mt-2">Feedstock</p>
+          </div>
+
+          <!-- Arrow -->
+          <div class="flex items-center flex-shrink-0 px-2">
+            <svg class="w-10 h-6 text-[#007C66] vc-arrow" viewBox="0 0 48 20" fill="none"><path d="M0 10h40M34 4l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <!-- IGPL Core -->
+          <div data-vc-node class="bg-[#007C66] rounded-xl py-10 text-center flex-[1.6] cursor-default transition-all duration-300 shadow-lg relative flex flex-col items-center justify-center">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#005E4D] text-white font-[Montserrat] font-bold text-[10px] uppercase tracking-widest px-4 py-1 rounded-full">IGPL</div>
+            <h3 class="font-[Montserrat] font-extrabold text-[22px] text-white mt-1">Phthalic Anhydride</h3>
+            <p class="font-[Inter] text-[15px] text-[#A7F3D0] mt-2">275,110  MTPA</p>
+          </div>
+
+          <!-- Arrow -->
+          <div class="flex items-center flex-shrink-0 px-2">
+            <svg class="w-10 h-6 text-[#007C66] vc-arrow" viewBox="0 0 48 20" fill="none"><path d="M0 10h40M34 4l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <!-- Downstream -->
+          <div class="flex flex-col gap-3 flex-[1.4]">
+            <div data-vc-node class="bg-white border border-[#E5E7EB] rounded-lg py-5 text-center w-full cursor-default transition-all duration-300 hover:border-[#007C66] flex-1 flex flex-col items-center justify-center">
+              <h3 class="font-[Montserrat] font-bold text-[15px] text-[#0F172A]">Plasticisers</h3>
+              <p class="font-[Inter] text-[12px] text-[#94A3B8] mt-1">Flexible PVC, cables</p>
+            </div>
+            <div data-vc-node class="bg-white border border-[#E5E7EB] rounded-lg py-5 text-center w-full cursor-default transition-all duration-300 hover:border-[#007C66] flex-1 flex flex-col items-center justify-center">
+              <h3 class="font-[Montserrat] font-bold text-[15px] text-[#0F172A]">Alkyd Resins</h3>
+              <p class="font-[Inter] text-[12px] text-[#94A3B8] mt-1">Paints &amp; coatings</p>
+            </div>
+            <div data-vc-node class="bg-white border border-[#E5E7EB] rounded-lg py-5 text-center w-full cursor-default transition-all duration-300 hover:border-[#007C66] flex-1 flex flex-col items-center justify-center">
+              <h3 class="font-[Montserrat] font-bold text-[15px] text-[#0F172A]">UPR &amp; Composites</h3>
+              <p class="font-[Inter] text-[12px] text-[#94A3B8] mt-1">Construction, marine</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- by-products Row -->
+        <div class="flex items-center justify-center gap-3 flex-wrap mt-6">
+          <span class="font-[Inter] text-[12px] text-[#94A3B8] uppercase tracking-wider mr-2">by-products &amp; Downstream:</span>
+          <div data-vc-node class="bg-[#F0FDF9] border border-dashed border-[#007C66] rounded-lg px-5 py-2.5 text-center cursor-default transition-all duration-300">
+            <h3 class="font-[Montserrat] font-bold text-[12px] text-[#007C66]">Maleic Anhydride</h3>
+          </div>
+          <div data-vc-node class="bg-[#F0FDF9] border border-dashed border-[#007C66] rounded-lg px-5 py-2.5 text-center cursor-default transition-all duration-300">
+            <h3 class="font-[Montserrat] font-bold text-[12px] text-[#007C66]">Benzoic Acid</h3>
+          </div>
+          <div data-vc-node class="bg-[#F0FDF9] border border-dashed border-[#007C66] rounded-lg px-5 py-2.5 text-center cursor-default transition-all duration-300">
+            <h3 class="font-[Montserrat] font-bold text-[12px] text-[#007C66]">Di-ethyl Phthalate</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="max-w-3xl mx-auto text-center mt-12 reveal">
+        <p class="font-[Inter] text-[16px] text-[#475569] leading-relaxed">IGPL converts ortho-xylene into phthalic anhydride at industrial scale using the Wacker Chemie Von-Heyden catalytic oxidation process. Maleic anhydride and benzoic acid are recovered as by-products from the same reaction, while diethyl phthalate is manufactured downstream &mdash; maximising value extraction from a single feedstock.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       5. WHY IGPL (Core Strengths)
+       ============================================================ -->
+  <section class="py-20 md:py-28 bg-white relative overflow-hidden">
+    <!-- Background texture -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('core-strengths-bg.webp'); background-size: cover; background-position: center;"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 relative z-10">
+      <!-- Header -->
+      <div class="text-center mb-14 reveal">
+        <p class="font-[Inter] font-semibold text-[12px] text-[#007C66] uppercase tracking-[0.1em] mb-3">Why IGPL</p>
+        <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-[#0F172A] leading-tight">A Defensible Industrial Position</h2>
+        <div class="w-16 h-[3px] bg-[#007C66] rounded-full mx-auto mt-5"></div>
+      </div>
+
+      <!-- 3 Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger reveal">
+        <!-- Strategic Location -->
+        <div class="bg-[#007C66] rounded-xl p-8 md:p-10 card-lift">
+          <div class="w-12 h-12 rounded-lg bg-white/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          </div>
+          <h3 class="font-[Montserrat] font-extrabold text-[20px] text-white mb-3">Strategic Location</h3>
+          <p class="font-[Inter] text-[15px] text-[#A7F3D0] leading-relaxed">Taloja, Maharashtra &mdash; in the heart of India's western chemical corridor. 50 km from JNPT, India's largest container port, enabling cost-effective logistics for both domestic dispatch and export shipments.</p>
+        </div>
+
+        <!-- Category Leadership -->
+        <div class="bg-[#007C66] rounded-xl p-8 md:p-10 card-lift">
+          <div class="w-12 h-12 rounded-lg bg-white/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+          </div>
+          <h3 class="font-[Montserrat] font-extrabold text-[20px] text-white mb-3">Category Leadership</h3>
+          <p class="font-[Inter] text-[15px] text-[#A7F3D0] leading-relaxed">India's largest single-site PA complex with approximately 50% domestic market share. Three decades of continuous capacity expansion have created a scale advantage that new entrants cannot easily replicate.</p>
+        </div>
+
+        <!-- Integrated Value Capture -->
+        <div class="bg-[#007C66] rounded-xl p-8 md:p-10 card-lift">
+          <div class="w-12 h-12 rounded-lg bg-white/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+          </div>
+          <h3 class="font-[Montserrat] font-extrabold text-[20px] text-white mb-3">Integrated Value Capture</h3>
+          <p class="font-[Inter] text-[15px] text-[#A7F3D0] leading-relaxed">PA, maleic anhydride, and benzoic acid recovered from the same catalytic process, plus downstream DEP production. Multiple revenue streams from a single feedstock, lowering marginal cost and improving gross contribution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       5C. FULL-BLEED SCALE BAND (chapter break)
+       ============================================================ -->
+  <section class="fullbleed-band" style="min-height:clamp(380px,52vh,520px); display:flex; align-items:center;">
+    <img src="plant-aerial.webp" alt="" aria-hidden="true" loading="lazy">
+    <div class="fullbleed-band__scrim"></div>
+    <div class="fullbleed-band__inner w-full max-w-[1280px] mx-auto px-6 py-20">
+      <p class="eyebrow-2026 mb-5" style="color:#5BE9C2;">Single-Site Scale</p>
+      <h2 class="font-[Montserrat] font-bold text-white text-[30px] md:text-[46px] leading-[1.05] tracking-[-0.02em] max-w-3xl">275,110  MTPA of phthalic anhydride,<br class="hidden md:block"> from one integrated campus.</h2>
+      <p class="font-[Inter] text-[16px] md:text-[18px] text-white/80 mt-5 max-w-2xl leading-relaxed">Five plants, shared utilities, and centralised DCS control on a single Taloja site &mdash; delivering supply continuity that distributed producers cannot match.</p>
+      <div class="flex flex-wrap gap-x-12 gap-y-6 mt-10">
+        <div class="stat-monument"><div class="stat-monument__value" style="color:#fff;font-size:clamp(2rem,3.4vw,3rem);">5</div><p class="stat-monument__label">PA Plants</p></div>
+        <div class="stat-monument"><div class="stat-monument__value" style="color:#fff;font-size:clamp(2rem,3.4vw,3rem);">1</div><p class="stat-monument__label">Integrated Site</p></div>
+        <div class="stat-monument"><div class="stat-monument__value" style="color:#fff;font-size:clamp(2rem,3.4vw,3rem);">50<span class="unit">km to JNPT</span></div><p class="stat-monument__label">Port Proximity</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       6. PRODUCTS PREVIEW
+       ============================================================ -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-14 reveal">
+        <p class="font-[Inter] font-semibold text-[12px] text-[#007C66] uppercase tracking-[0.1em] mb-3">Our Products</p>
+        <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-[#0F172A] leading-tight">A Complete Chemical Value Chain</h2>
+        <div class="w-16 h-[3px] bg-[#007C66] rounded-full mx-auto mt-5"></div>
+      </div>
+
+      <!-- Customer CTA subtitle -->
+      <div class="max-w-2xl mx-auto text-center mb-10 reveal">
+        <p class="font-[Inter] text-[15px] text-[#475569] leading-relaxed">Technical data sheets and safety data sheets available on request. Contact our commercial team for specifications, pricing, and logistics.</p>
+      </div>
+
+      <!-- 4 Product Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger reveal">
+        <!-- PA -->
+        <a href="pa.html" class="group block bg-white border border-[#E5E7EB] rounded-xl overflow-hidden card-lift">
+          <div class="h-44 overflow-hidden">
+            <img src="generated-product-photos/pa-product-photo.webp" alt="Phthalic Anhydride white flakes in a clean laboratory dish" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          </div>
+          <div class="bg-[#007C66] px-5 py-3">
+            <h3 class="font-[Montserrat] font-extrabold text-[15px] text-white uppercase tracking-[0.02em]">Phthalic Anhydride</h3>
+            <p class="font-[Inter] text-[11px] text-white/70 mt-0.5">Core product &middot; 275,110  MTPA</p>
+          </div>
+          <div class="px-5 py-4">
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">The foundational intermediate for plasticisers, alkyd resins, and unsaturated polyester resins. Purity &ge;99.8%.</p>
+            <span class="inline-flex items-center gap-1 font-[Montserrat] font-bold text-[11px] text-[#007C66] uppercase tracking-[0.06em] mt-3 group-hover:gap-2 transition-all">
+              Learn More
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- MA -->
+        <a href="ma.html" class="group block bg-white border border-[#E5E7EB] rounded-xl overflow-hidden card-lift">
+          <div class="h-44 overflow-hidden">
+            <img src="generated-product-photos/ma-product-photo.webp" alt="Maleic Anhydride white flakes in a clear laboratory sample dish" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          </div>
+          <div class="bg-[#007C66] px-5 py-3">
+            <h3 class="font-[Montserrat] font-extrabold text-[15px] text-white uppercase tracking-[0.02em]">Maleic Anhydride</h3>
+            <p class="font-[Inter] text-[11px] text-white/70 mt-0.5">Recovered by-product</p>
+          </div>
+          <div class="px-5 py-4">
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">Recovered during PA production. Used in unsaturated polyester resins, coatings, and agricultural chemicals.</p>
+            <span class="inline-flex items-center gap-1 font-[Montserrat] font-bold text-[11px] text-[#007C66] uppercase tracking-[0.06em] mt-3 group-hover:gap-2 transition-all">
+              Learn More
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- BA -->
+        <a href="ba.html" class="group block bg-white border border-[#E5E7EB] rounded-xl overflow-hidden card-lift">
+          <div class="h-44 overflow-hidden">
+            <img src="generated-product-photos/ba-product-photo.webp" alt="Benzoic Acid white crystalline flakes in a clean glass dish" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          </div>
+          <div class="bg-[#007C66] px-5 py-3">
+            <h3 class="font-[Montserrat] font-extrabold text-[15px] text-white uppercase tracking-[0.02em]">Benzoic Acid</h3>
+            <p class="font-[Inter] text-[11px] text-white/70 mt-0.5">Recovered by-product</p>
+          </div>
+          <div class="px-5 py-4">
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">A reaction by-product with applications in food preservatives, plasticisers, and pharmaceutical intermediates.</p>
+            <span class="inline-flex items-center gap-1 font-[Montserrat] font-bold text-[11px] text-[#007C66] uppercase tracking-[0.06em] mt-3 group-hover:gap-2 transition-all">
+              Learn More
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- DEP -->
+        <a href="dep.html" class="group block bg-white border border-[#E5E7EB] rounded-xl overflow-hidden card-lift">
+          <div class="h-44 overflow-hidden">
+            <img src="generated-product-photos/dep-product-photo.webp" alt="Di-ethyl Phthalate clear colorless liquid in a clean laboratory glass bottle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          </div>
+          <div class="bg-[#007C66] px-5 py-3">
+            <h3 class="font-[Montserrat] font-extrabold text-[15px] text-white uppercase tracking-[0.02em]">Di-ethyl Phthalate</h3>
+            <p class="font-[Inter] text-[11px] text-white/70 mt-0.5">Downstream value-add</p>
+          </div>
+          <div class="px-5 py-4">
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">Manufactured downstream from PA. Used as a plasticiser in cosmetics, perfumery, and specialty chemical applications.</p>
+            <span class="inline-flex items-center gap-1 font-[Montserrat] font-bold text-[11px] text-[#007C66] uppercase tracking-[0.06em] mt-3 group-hover:gap-2 transition-all">
+              Learn More
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       7. APPLICATIONS PREVIEW
+       ============================================================ -->
+  <section class="py-20 md:py-28 bg-[#F8FAFC]">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-14 reveal">
+        <p class="font-[Inter] font-semibold text-[12px] text-[#007C66] uppercase tracking-[0.1em] mb-3">Applications</p>
+        <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-[#0F172A] leading-tight">Products at the Core of Major Industries</h2>
+        <div class="w-16 h-[3px] bg-[#007C66] rounded-full mx-auto mt-5"></div>
+      </div>
+
+      <!-- 6 Sector Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger reveal">
+        <!-- Paints & Coatings -->
+        <div class="bg-white border border-[#E5E7EB] rounded-xl p-6 card-lift flex gap-5 items-start">
+          <div class="sector-icon">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.764m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
+          </div>
+          <div>
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1">Paints &amp; Coatings</h3>
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">PA-based alkyd resins for architectural and industrial coatings, enabling durability and gloss retention.</p>
+          </div>
+        </div>
+
+        <!-- Plasticisers -->
+        <div class="bg-white border border-[#E5E7EB] rounded-xl p-6 card-lift flex gap-5 items-start">
+          <div class="sector-icon">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>
+          </div>
+          <div>
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1">Plasticisers</h3>
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">PA converts to DOP and other plasticisers for flexible PVC in packaging, cables, flooring, and medical devices.</p>
+          </div>
+        </div>
+
+        <!-- Resins & Composites -->
+        <div class="bg-white border border-[#E5E7EB] rounded-xl p-6 card-lift flex gap-5 items-start">
+          <div class="sector-icon">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1">Resins &amp; Composites</h3>
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">Unsaturated polyester resins derived from PA and MA for construction panels, tanks, and marine applications.</p>
+          </div>
+        </div>
+
+        <!-- Construction Chemicals -->
+        <div class="bg-white border border-[#E5E7EB] rounded-xl p-6 card-lift flex gap-5 items-start">
+          <div class="sector-icon">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1">Construction Chemicals</h3>
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">Waterproofing compounds, sealants, and adhesive systems that rely on phthalate-based plasticiser chemistry.</p>
+          </div>
+        </div>
+
+        <!-- Automotive -->
+        <div class="bg-white border border-[#E5E7EB] rounded-xl p-6 card-lift flex gap-5 items-start">
+          <div class="sector-icon">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.079-1.124C21.108 13.144 18.63 8.25 16.5 8.25H4.875a1.125 1.125 0 00-1.036.689l-2.514 6.281A1.125 1.125 0 002.25 16.5h.75m16.5 0h.375a1.125 1.125 0 001.125-1.125v-.75"/></svg>
+          </div>
+          <div>
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1">Automotive</h3>
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">OEM and refinish coatings plus flexible interior components that depend on PA-derived raw materials.</p>
+          </div>
+        </div>
+
+        <!-- Agriculture -->
+        <div class="bg-white border border-[#E5E7EB] rounded-xl p-6 card-lift flex gap-5 items-start">
+          <div class="sector-icon">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1">Agriculture</h3>
+            <p class="font-[Inter] text-[14px] text-[#475569] leading-relaxed">Agrochemical intermediates produced from maleic anhydride and phthalic anhydride-based chemistry.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12 reveal">
+        <a href="applications.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-[#007C66] border-2 border-[#007C66] px-7 py-3 rounded-md hover:bg-[#007C66] hover:text-white transition-all inline-flex items-center gap-2">
+          Explore Applications
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <!-- Investor link -->
+      <div class="text-center mt-6 reveal">
+        <a href="investors.html" class="font-[Inter] text-[14px] text-[#475569] hover:text-[#007C66] transition-colors inline-flex items-center gap-1.5">
+          Investors: See why scale matters in this category
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       8. MANUFACTURING PREVIEW
+       ============================================================ -->
+  <section class="py-20 md:py-28 bg-[#1E293B]">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Copy -->
+        <div class="reveal-left">
+          <p class="font-[Inter] font-semibold text-[12px] text-[#00A88A] uppercase tracking-[0.1em] mb-3">Manufacturing</p>
+          <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-white leading-tight mb-6">Industrial Scale at a Single Site</h2>
+          <div class="w-16 h-[3px] bg-[#007C66] rounded-full mb-8"></div>
+          <p class="font-[Inter] text-[16px] text-[#94A3B8] leading-relaxed mb-5">Five phthalic anhydride production plants operate on a single integrated campus at Taloja, Maharashtra. Each plant uses the Wacker Chemie Von-Heyden catalytic oxidation process, converting ortho-xylene feedstock into high-purity PA at a combined capacity of 275,110  MTPA.</p>
+          <p class="font-[Inter] text-[16px] text-[#94A3B8] leading-relaxed mb-5">The Taloja campus sits within India's western chemical corridor, less than 50 km from JNPT &mdash; providing direct access to port infrastructure for raw material imports and product exports. Shared utilities, centralised DCS control rooms, and common logistics infrastructure deliver operational efficiency that distributed operations cannot match.</p>
+
+          <!-- Quick facts -->
+          <div class="grid grid-cols-2 gap-4 mt-8 mb-8">
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3">
+              <p class="font-[Montserrat] font-extrabold text-[20px] text-white">5</p>
+              <p class="font-[Inter] text-[12px] text-[#94A3B8] mt-0.5">PA Plants</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3">
+              <p class="font-[Montserrat] font-extrabold text-[20px] text-white">270K</p>
+              <p class="font-[Inter] text-[12px] text-[#94A3B8] mt-0.5">MTPA Capacity</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3">
+              <p class="font-[Montserrat] font-extrabold text-[20px] text-white">1 Site</p>
+              <p class="font-[Inter] text-[12px] text-[#94A3B8] mt-0.5">Integrated Campus</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3">
+              <p class="font-[Montserrat] font-extrabold text-[20px] text-white">50 km</p>
+              <p class="font-[Inter] text-[12px] text-[#94A3B8] mt-0.5">From JNPT Port</p>
+            </div>
+          </div>
+
+          <a href="manufacturing.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-white border-2 border-white/60 px-6 py-3 rounded-md hover:bg-white hover:text-[#1E293B] transition-all inline-flex items-center gap-2">
+            See Our Facilities
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <!-- Image -->
+        <div class="reveal-right">
+          <div class="rounded-xl overflow-hidden shadow-2xl">
+            <img src="steam-pipes.webp" alt="Industrial steam pipes and process infrastructure at IGPL Taloja" class="w-full h-auto object-cover" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       9. INVESTOR SNAPSHOT
+       ============================================================ -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-14 reveal">
+        <p class="font-[Inter] font-semibold text-[12px] text-[#007C66] uppercase tracking-[0.1em] mb-3">Investors</p>
+        <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-[#0F172A] leading-tight">A Serious Industrial Business</h2>
+        <div class="w-16 h-[3px] bg-[#007C66] rounded-full mx-auto mt-5"></div>
+      </div>
+
+      <!-- 3 Column Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 stagger reveal">
+        <!-- Left: Narrative -->
+        <div class="lg:col-span-1">
+          <p class="font-[Inter] text-[16px] text-[#475569] leading-relaxed mb-5">IGPL is one of India's largest phthalic anhydride producers &mdash; a critical chemical intermediate for the paints, PVC, and resin industries. With approximately 50% domestic market share and three decades of operating history, the company occupies a structural position in India's industrial value chain that is difficult to displace.</p>
+          <p class="font-[Inter] text-[16px] text-[#475569] leading-relaxed">Listed on both NSE and BSE, IGPL offers investors exposure to India's core chemical infrastructure with the scale economics of category leadership.</p>
+        </div>
+
+        <!-- Center: Key Facts -->
+        <div class="lg:col-span-1">
+          <div class="bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl p-6 h-full">
+            <h3 class="font-[Montserrat] font-bold text-[14px] text-[#0F172A] uppercase tracking-wider mb-5">Key Facts</h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center border-b border-[#E5E7EB] pb-3">
+                <span class="font-[Inter] text-[14px] text-[#475569]">Listed On</span>
+                <span class="font-[Montserrat] font-bold text-[14px] text-[#0F172A]">NSE &amp; BSE</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-[#E5E7EB] pb-3">
+                <span class="font-[Inter] text-[14px] text-[#475569]">PA Capacity</span>
+                <span class="font-[Montserrat] font-bold text-[14px] text-[#0F172A]">275,110  MTPA</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-[#E5E7EB] pb-3">
+                <span class="font-[Inter] text-[14px] text-[#475569]">Market Position</span>
+                <span class="font-[Montserrat] font-bold text-[14px] text-[#0F172A]">India's Largest</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-[#E5E7EB] pb-3">
+                <span class="font-[Inter] text-[14px] text-[#475569]">India PA Share</span>
+                <span class="font-[Montserrat] font-bold text-[14px] text-[#0F172A]">~50%</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="font-[Inter] text-[14px] text-[#475569]">Operations Since</span>
+                <span class="font-[Montserrat] font-bold text-[14px] text-[#0F172A]">1992</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Resource Cards -->
+        <div class="lg:col-span-1 flex flex-col gap-4">
+          <a href="docs/annual-reports/" class="group bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl p-6 card-lift block">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-lg bg-[rgba(0,124,102,0.08)] flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-[Montserrat] font-bold text-[15px] text-[#0F172A] group-hover:text-[#007C66] transition-colors">Annual Reports</h4>
+                <p class="font-[Inter] text-[13px] text-[#94A3B8] mt-0.5">Financial statements and disclosures</p>
+              </div>
+              <svg class="w-5 h-5 text-[#94A3B8] ml-auto group-hover:text-[#007C66] transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+            </div>
+          </a>
+          <a href="investors.html" class="group bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl p-6 card-lift block">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-lg bg-[rgba(0,124,102,0.08)] flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-[Montserrat] font-bold text-[15px] text-[#0F172A] group-hover:text-[#007C66] transition-colors">Investor Information</h4>
+                <p class="font-[Inter] text-[13px] text-[#94A3B8] mt-0.5">Governance, shareholding &amp; filings</p>
+              </div>
+              <svg class="w-5 h-5 text-[#94A3B8] ml-auto group-hover:text-[#007C66] transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+            </div>
+          </a>
+          <a href="investors.html" class="bg-[#007C66] text-white font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] px-6 py-3.5 rounded-md hover:bg-[#005E4D] transition-all text-center mt-2 block border-2 border-[#007C66] hover:border-[#005E4D]">Investor Relations</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       9B. INVESTOR RESOURCE HUB
+       ============================================================ -->
+  <section class="bg-[#F8FAFC] py-16 md:py-20 border-t border-[#E5E7EB]">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="reveal text-center mb-12">
+        <p class="font-[Inter] font-semibold text-[12px] text-[#007C66] uppercase tracking-[0.1em] mb-3">Investor Relations</p>
+        <h2 class="font-[Montserrat] font-extrabold text-[28px] md:text-[36px] text-[#0F172A] leading-tight">Everything Investors Need</h2>
+        <div class="w-16 h-[3px] bg-[#007C66] rounded-full mx-auto mt-5"></div>
+      </div>
+      <div class="stagger grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+
+        <a href="investor-library.html" class="group card-lift bg-white border border-[#E5E7EB] rounded-2xl p-7 flex flex-col gap-4 hover:border-[#007C66]/40 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-[#E6F5F2] flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1.5 group-hover:text-[#007C66] transition-colors">Financial Reports</h3>
+            <p class="font-[Inter] text-[14px] text-[#6B7280] leading-relaxed">Annual reports, quarterly results, and investor presentations — FY 2020-21 onwards.</p>
+          </div>
+          <span class="flex items-center gap-1.5 font-[Montserrat] font-bold text-[11px] uppercase tracking-wider text-[#007C66]">
+            View Reports <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="governance.html" class="group card-lift bg-white border border-[#E5E7EB] rounded-2xl p-7 flex flex-col gap-4 hover:border-[#007C66]/40 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-[#E6F5F2] flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1.5 group-hover:text-[#007C66] transition-colors">Corporate Governance</h3>
+            <p class="font-[Inter] text-[14px] text-[#6B7280] leading-relaxed">Board & management docs, policies, MOA &amp; AOA, and AGM outcomes.</p>
+          </div>
+          <span class="flex items-center gap-1.5 font-[Montserrat] font-bold text-[11px] uppercase tracking-wider text-[#007C66]">
+            View Governance <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a href="filings.html" class="group card-lift bg-white border border-[#E5E7EB] rounded-2xl p-7 flex flex-col gap-4 hover:border-[#007C66]/40 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-xl bg-[#E6F5F2] flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-[#007C66]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-[Montserrat] font-bold text-[16px] text-[#0F172A] mb-1.5 group-hover:text-[#007C66] transition-colors">Filings &amp; Announcements</h3>
+            <p class="font-[Inter] text-[14px] text-[#6B7280] leading-relaxed">Earnings calls, board notices, SEBI disclosures, subsidiary accounts, and investor forms.</p>
+          </div>
+          <span class="flex items-center gap-1.5 font-[Montserrat] font-bold text-[11px] uppercase tracking-wider text-[#007C66]">
+            View Filings <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+      </div>
+      <div class="text-center">
+        <a href="investors.html" class="inline-flex items-center gap-2 font-[Montserrat] font-bold text-[11px] uppercase tracking-wider text-[#007C66] hover:text-[#005E4D] transition-colors">
+          All Investor Relations
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       10. CAREERS PREVIEW
+       ============================================================ -->
+  <section class="py-20 md:py-28 relative overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="team-outdoor-v2.webp" alt="" class="w-full h-full object-cover" aria-hidden="true">
+      <div class="absolute inset-0 bg-[#0F172A]/80"></div>
+    </div>
+
+    <div class="max-w-[1280px] mx-auto px-6 relative z-10">
+      <div class="max-w-2xl reveal">
+        <p class="font-[Inter] font-semibold text-[12px] text-[#00A88A] uppercase tracking-[0.1em] mb-3">Careers</p>
+        <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-white leading-tight mb-6">Build at Industrial Scale</h2>
+        <div class="w-16 h-[3px] bg-[#007C66] rounded-full mb-8"></div>
+        <p class="font-[Inter] text-[16px] text-white/70 leading-relaxed mb-4">IGPL operates at the intersection of chemistry, engineering, and industrial logistics. Our team manages five production plants, complex process chemistry, and a supply chain that serves India's largest downstream manufacturers.</p>
+        <p class="font-[Inter] text-[16px] text-white/70 leading-relaxed mb-8">We are looking for people who want to solve real operational problems at scale &mdash; not optimise slide decks.</p>
+
+        <!-- Role families -->
+        <div class="flex flex-wrap gap-3 mb-10">
+          <span class="bg-white/10 border border-white/20 text-white font-[Inter] font-medium text-[13px] px-4 py-2 rounded-full">Engineering &amp; Operations</span>
+          <span class="bg-white/10 border border-white/20 text-white font-[Inter] font-medium text-[13px] px-4 py-2 rounded-full">Commercial &amp; Strategy</span>
+          <span class="bg-white/10 border border-white/20 text-white font-[Inter] font-medium text-[13px] px-4 py-2 rounded-full">Finance &amp; Corporate</span>
+        </div>
+
+        <a href="careers.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-white border-2 border-white/60 px-7 py-3 rounded-md hover:bg-white hover:text-[#1E293B] transition-all inline-flex items-center gap-2">
+          Explore Opportunities
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       11. CTA BAND
+       ============================================================ -->
+  <section class="py-16 md:py-20" style="background: linear-gradient(135deg, #007C66 0%, #00A88A 100%);">
+    <div class="max-w-[1280px] mx-auto px-6 text-center">
+      <h2 class="font-[Montserrat] font-extrabold text-[32px] md:text-[40px] text-white leading-tight mb-4">Ready to discuss supply requirements?</h2>
+      <p class="font-[Inter] text-[17px] text-white/85 max-w-2xl mx-auto leading-relaxed mb-10">Connect with our commercial team for technical specifications, pricing, or logistics enquiries &mdash; or explore our investor relations for financial and governance information.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="bg-white text-[#007C66] font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] px-8 py-3.5 rounded-md hover:bg-[#F8FAFC] transition-all border-2 border-white hover:shadow-lg">Contact Us</a>
+        <a href="investors.html" class="font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] text-white border-2 border-white/60 px-8 py-3.5 rounded-md hover:bg-white hover:text-[#007C66] transition-all">Explore Investor Relations</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="bg-[#1E293B] pt-16 pb-8">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <!-- 4 Column Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <!-- Column 1: Company -->
+        <div>
+          <img src="igpl-logo.png" alt="IG Petrochemicals Ltd." class="h-10 w-auto mb-4 brightness-0 invert">
+          <p class="font-[Inter] text-[14px] text-[#94A3B8] leading-relaxed mb-4">India's largest single-site phthalic anhydride producer. Part of India's industrial value chain since 1992.</p>
+          <p class="font-[Inter] text-[13px] text-[#64748B] leading-relaxed">
+            Taloja MIDC, Raigad District<br>
+            Maharashtra, India
+          </p>
+          <p class="font-[Inter] text-[12px] text-[#475569] mt-3">Reg: IG Petrochemicals Ltd.</p>
+        </div>
+
+        <!-- Column 2: Products -->
+        <div>
+          <h4 class="font-[Montserrat] font-bold text-[12px] text-white uppercase tracking-wider mb-5">Products</h4>
+          <div class="flex flex-col gap-3">
+            <a href="pa.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Phthalic Anhydride</a>
+            <a href="ma.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Maleic Anhydride</a>
+            <a href="ba.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Benzoic Acid</a>
+            <a href="dep.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Di-ethyl Phthalate</a>
+          </div>
+        </div>
+
+        <!-- Column 3: Company Links -->
+        <div>
+          <h4 class="font-[Montserrat] font-bold text-[12px] text-white uppercase tracking-wider mb-5">Company</h4>
+          <div class="flex flex-col gap-3">
+            <a href="about.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">About</a>
+            <a href="manufacturing.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Manufacturing</a>
+            <a href="applications.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Applications</a>
+            <a href="sustainability.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Sustainability</a>
+            <a href="investors.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Investors</a>
+            <a href="investor-library.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Financial Reports</a>
+            <a href="governance.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Corporate Governance</a>
+            <a href="board-of-directors.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Board of Directors</a>
+            <a href="filings.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Filings &amp; Announcements</a>
+            <a href="certifications.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Certifications</a>
+            <a href="csr.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">CSR</a>
+            <a href="careers.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Careers</a>
+          </div>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div>
+          <h4 class="font-[Montserrat] font-bold text-[12px] text-white uppercase tracking-wider mb-5">Get in Touch</h4>
+          <div class="flex flex-col gap-4">
+            <div>
+              <p class="font-[Inter] text-[12px] text-[#475569] uppercase tracking-wider mb-1">Commercial Enquiries</p>
+              <a href="contact.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Contact Commercial Team</a>
+            </div>
+            <div>
+              <p class="font-[Inter] text-[12px] text-[#475569] uppercase tracking-wider mb-1">Investor Relations</p>
+              <a href="investors.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">Investor Information</a>
+            </div>
+            <div>
+              <p class="font-[Inter] text-[12px] text-[#475569] uppercase tracking-wider mb-1">Careers</p>
+              <a href="careers.html" class="font-[Inter] text-[14px] text-[#94A3B8] hover:text-white transition-colors">View Opportunities</a>
+            </div>
+            <a href="contact.html" class="mt-2 bg-[#007C66] text-white font-[Montserrat] font-bold text-[11px] uppercase tracking-[0.06em] px-5 py-2.5 rounded-md hover:bg-[#005E4D] transition-colors text-center">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="flex flex-col md:flex-row items-center justify-between pt-8 gap-4">
+        <p class="font-[Inter] text-[13px] text-[#64748B]">&copy; 2026 IG Petrochemicals Ltd. All rights reserved. &nbsp;&middot;&nbsp; NSE: IGPL &middot; BSE: 500199 &middot; CIN: L51496GA1988PLC000915</p>
+        <div class="flex items-center gap-6">
+          <a href="legal.html" class="font-[Inter] text-[13px] text-[#64748B] hover:text-white transition-colors">Legal</a>
+          <span class="text-[#475569]">&middot;</span>
+          <a href="legal.html" class="font-[Inter] text-[13px] text-[#64748B] hover:text-white transition-colors">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.igpetro.com/#organization",
+        "name": "IG Petrochemicals Ltd.",
+        "alternateName": "IGPL",
+        "url": "https://www.igpetro.com",
+        "logo": "https://www.igpetro.com/igpl-logo.png",
+        "description": "India's largest single-site phthalic anhydride producer with 275,110  MTPA capacity at Taloja, Maharashtra.",
+        "foundingYear": "1992",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Taloja",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        },
+        "sameAs": ["https://www.bseindia.com/stock-share-price/ig-petrochemicals-ltd/igpl/500199/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.igpetro.com/#website",
+        "url": "https://www.igpetro.com",
+        "name": "IG Petrochemicals Ltd.",
+        "publisher": {"@id": "https://www.igpetro.com/#organization"}
+      }
+    ]
+  }
+  </script>
+
+  <!-- Nav scroll behavior + scroll reveal -->
+  <script>
+    (function() {
+      var nav = document.getElementById('main-nav');
+      if (nav) {
+        function onScroll() {
+          if (window.scrollY > 80) {
+            nav.classList.remove('nav-transparent');
+            nav.style.background = '#ffffff';
+            nav.style.borderBottom = '1px solid #E5E7EB';
+            nav.style.boxShadow = '0 2px 12px rgba(0,0,0,0.06)';
+          } else {
+            nav.classList.add('nav-transparent');
+            nav.style.background = 'transparent';
+            nav.style.borderBottom = 'none';
+            nav.style.boxShadow = 'none';
+          }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      // Scroll reveal
+      var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger');
+      if (revealEls.length) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function(el) { obs.observe(el); });
+      }
+
+      // Counters
+      var counters = document.querySelectorAll('[data-counter]');
+      if (counters.length) {
+        var cObs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting && !e.target.dataset.counted) {
+              e.target.dataset.counted = 'true';
+              var el = e.target;
+              var target = parseInt(el.dataset.target, 10);
+              var suffix = el.dataset.suffix || '';
+              var prefix = el.dataset.prefix || '';
+              var duration = 1800;
+              var start = performance.now();
+              function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+              function update(now) {
+                var elapsed = now - start;
+                var progress = Math.min(elapsed / duration, 1);
+                var value = Math.round(target * easeOut(progress));
+                el.textContent = prefix + value.toLocaleString('en-US') + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+              }
+              requestAnimationFrame(update);
+            }
+          });
+        }, { threshold: 0.3 });
+        counters.forEach(function(el) { cObs.observe(el); });
+      }
+    })();
+  </script>
+
+  <script src="js/igpl.js"></script>
+  <script>
+    // Retry hero video play on first user interaction (handles iOS Low Power Mode)
+    (function () {
+      var v = document.getElementById('hero-video');
+      if (!v) return;
+      var played = false;
+      function tryPlay() {
+        if (played) return;
+        v.play().then(function () { played = true; }).catch(function () {});
+      }
+      document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+      document.addEventListener('click', tryPlay, { once: true });
+    })();
+  </script>
+</body>
+</html>

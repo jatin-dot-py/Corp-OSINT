@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html class="no-js  page-1 app-GL" lang="en" >
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <title>Home</title>
+    <base href="/tpl/" />
+<link rel="stylesheet" href="/i/app_ui/css/Core.min.css?v=24.1.6" type="text/css" />
+<link rel="stylesheet" href="/i/app_ui/css/Theme-Standard.min.css?v=24.1.6" type="text/css" />
+
+    <link rel="stylesheet" href="/i/libraries/font-apex/2.3/css/font-apex.min.css?v=24.1.6" type="text/css" />
+<link rel="stylesheet" href="/i/themes/theme_42/24.1/css/Core.min.css?v=24.1.6" type="text/css" />
+
+    <style type="text/css">
+@font-face {
+    font-family: 'Manrope';
+    src: url('r/glfl/424/files/static/v473/Manrope-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('r/glfl/424/files/static/v473/Manrope-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('r/glfl/424/files/static/v473/Manrope-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('r/glfl/424/files/static/v473/Manrope-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body,
+html,
+.t-Body,
+.t-PageBody,
+.t-Region,
+.t-Button,
+input,
+select,
+textarea,
+a {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+
+
+a {
+    font-family: 'Manrope', sans-serif;
+}
+
+#mobileOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1090;
+}
+
+#mobileOverlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modern-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 80px;
+}
+
+.modern-header.scrolled {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo-wrapper a {
+    display: flex;
+    align-items: center;
+}
+
+.logo-wrapper .logo {
+    height: 19px;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 639px) {
+    .logo-wrapper .logo {
+        height: 35px;
+        transition: transform 0.3s ease;
+    }
+}
+
+.logo-wrapper .logo:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: end;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+/* .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+} */
+
+.nav-menu>li {
+    position: relative;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+.nav-menu>li>a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(12px, 0.85vw, 16px);
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+    padding: 1rem clamp(1.35rem, 0.8vw, 1rem);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+/* .nav-menu>li>a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    white-space: nowrap;
+} */
+
+.nav-menu>li>a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #FF0000;
+    transition: width 0.3s ease;
+}
+
+.nav-menu>li>a:hover {
+    /* color: #FF0000; */
+    background: #E1E8F6;
+    color: #FF0000;
+}
+
+.nav-menu>li>a:hover::after {
+    width: 100%;
+}
+
+/* Active State for Nav Items - BLUE BACKGROUND */
+.nav-menu>li.active>a {
+    color: #ffffff;
+    background: #FF0000;
+}
+
+.nav-menu>li.active>a::after {
+    display: none;
+}
+
+.nav-menu>li.has-megamenu {
+    position: relative;
+}
+
+/* Dropdown Arrow - REMOVED */
+.nav-menu>li.has-megamenu>a::before {
+    display: none;
+}
+
+.nav-menu>li.active.has-megamenu>a::before {
+    display: none;
+}
+
+/* Megamenu Wrapper - Small Box */
+.megamenu-wrapper {
+    position: absolute;
+    top: 100%;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    width: auto;
+    padding-top: 0;
+    pointer-events: none;
+    z-index: 1050;
+    margin-top: 0;
+}
+
+.nav-menu>li.has-megamenu.active .megamenu-wrapper {
+    pointer-events: auto;
+}
+
+/* Megamenu Styles - Small Box */
+.megamenu {
+    background: white;
+    min-width: 300px;
+    max-width: 400px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    /* transform: translateY(-10px); */
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.nav-menu>li.has-megamenu.active .megamenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.megamenu-content {
+    padding: 1.5rem;
+    max-width: 100%;
+}
+
+.megamenu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.megamenu-section h3 {
+    color: #FF0000;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 0.8rem 0;
+    font-weight: 700;
+    display: none;
+}
+
+.megamenu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.megamenu-links li {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.megamenu-links a {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    padding: 0.75rem 0.8rem;
+    border-radius: 4px;
+}
+
+.megamenu-links a:hover {
+    color: #FF0000;
+    background: #E1E8F6;
+    padding-left: 1.2rem;
+}
+
+/* Nested Submenu Styles */
+.megamenu-links li.has-submenu {
+    position: relative;
+}
+
+.megamenu-links li.has-submenu>a {
+    cursor: pointer;
+}
+
+.submenu-arrow {
+    font-size: 0.6rem;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.megamenu-links li.has-submenu.active>a .submenu-arrow {
+    transform: rotate(180deg);
+}
+
+.submenu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 0.5rem;
+}
+
+.megamenu-links li.has-submenu.active .submenu-links {
+    max-height: 500px;
+    margin-top: 0.3rem;
+}
+
+.submenu-links li {
+    margin-bottom: 0;
+    display: block;
+}
+
+.submenu-links a {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    background: rgba(225, 232, 246, 0.3);
+    color: #4a5568;
+    display: block;
+    border-radius: 2px;
+}
+
+.submenu-links a:hover {
+    background: #E1E8F6;
+    color: #FF0000;
+}
+
+/* Responsive Banner */
+.responsive-banner {
+    position: fixed;
+    top: 81.2%;
+    left: -7vw;
+    width: 107.2vw;
+    height: 40%;
+    background-color: #FF0000;
+    z-index: 1099;
+    clip-path: polygon(100% 0, 100% 50.021%, 20.849% 50.02%, 20.849% 50.02%, 20.824% 50.11%, 20.8% 50.374%, 20.777% 50.802%, 20.756% 51.384%, 20.736% 52.109%, 20.718% 52.969%, 20.702% 53.952%, 20.688% 55.049%, 20.677% 56.25%, 20.669% 57.545%, 20.596% 72.491%, 20.596% 72.491%, 20.567% 77.198%, 20.527% 81.573%, 20.477% 85.578%, 20.419% 89.173%, 20.353% 92.321%, 20.28% 94.983%, 20.202% 97.12%, 20.118% 98.694%, 20.03% 99.667%, 19.939% 100%, 0 100%, 0 50.041%, 20.315% 50.041%, 20.315% 50.041%, 20.318% 50.039%, 20.322% 50.033%, 20.325% 50.022%, 20.329% 50.007%, 20.332% 49.987%, 20.335% 49.961%, 20.339% 49.929%, 20.342% 49.891%, 20.346% 49.846%, 20.349% 49.794%, 20.349% 49.794%, 20.352% 49.773%, 20.355% 49.745%, 20.358% 49.712%, 20.361% 49.673%, 20.363% 49.63%, 20.366% 49.581%, 20.369% 49.528%, 20.372% 49.47%, 20.375% 49.408%, 20.378% 49.342%, 20.378% 49.342%, 20.379% 49.32%, 20.381% 49.293%, 20.383% 49.261%, 20.385% 49.225%, 20.386% 49.185%, 20.388% 49.142%, 20.389% 49.096%, 20.391% 49.049%, 20.393% 49%, 20.394% 48.951%, 20.394% 48.951%, 20.396% 48.926%, 20.397% 48.899%, 20.398% 48.872%, 20.399% 48.842%, 20.4% 48.812%, 20.401% 48.781%, 20.402% 48.748%, 20.403% 48.714%, 20.404% 48.679%, 20.405% 48.643%, 20.405% 48.643%, 20.407% 48.574%, 20.409% 48.504%, 20.411% 48.433%, 20.413% 48.36%, 20.415% 48.285%, 20.417% 48.209%, 20.419% 48.13%, 20.421% 48.05%, 20.423% 47.967%, 20.425% 47.882%, 20.425% 47.882%, 20.428% 47.798%, 20.430% 47.706%, 20.433% 47.606%, 20.435% 47.501%, 20.437% 47.391%, 20.439% 47.277%, 20.441% 47.159%, 20.443% 47.038%, 20.445% 46.916%, 20.447% 46.792%, 20.447% 46.792%, 20.449% 46.675%, 20.452% 46.555%, 20.454% 46.434%, 20.456% 46.311%, 20.458% 46.186%, 20.459% 46.058%, 20.461% 45.928%, 20.463% 45.794%, 20.465% 45.658%, 20.466% 45.518%, 20.466% 45.518%, 20.468% 45.381%, 20.470% 45.244%, 20.471% 45.104%, 20.473% 44.964%, 20.474% 44.821%, 20.476% 44.677%, 20.477% 44.531%, 20.479% 44.382%, 20.480% 44.232%, 20.481% 44.079%, 20.481% 44.079%, 20.483% 43.924%, 20.484% 43.769%, 20.485% 43.614%, 20.487% 43.456%, 20.488% 43.297%, 20.489% 43.136%, 20.490% 42.971%, 20.491% 42.803%, 20.492% 42.631%, 20.493% 42.454%, 20.566% 27.508%, 20.566% 27.508%, 20.568% 27.046%, 20.571% 26.585%, 20.573% 26.127%, 20.576% 25.67%, 20.579% 25.215%, 20.581% 24.763%, 20.584% 24.314%, 20.587% 23.868%, 20.590% 23.424%, 20.594% 22.985%, 20.594% 22.985%, 20.602% 21.903%, 20.611% 20.841%, 20.621% 19.8%, 20.632% 18.779%, 20.643% 17.778%, 20.654% 16.799%, 20.666% 15.841%, 20.678% 14.904%, 20.691% 13.989%, 20.704% 13.096%, 20.704% 13.096%, 20.707% 12.924%, 20.710% 12.755%, 20.713% 12.587%, 20.716% 12.421%, 20.718% 12.255%, 20.721% 12.091%, 20.724% 11.926%, 20.727% 11.762%, 20.730% 11.596%, 20.733% 11.43%, 20.733% 11.43%, 20.736% 11.24%, 20.739% 11.053%, 20.743% 10.867%, 20.746% 10.684%, 20.749% 10.503%, 20.753% 10.323%, 20.756% 10.145%, 20.760% 9.969%, 20.763% 9.795%, 20.767% 9.621%, 20.767% 9.621%, 20.771% 9.4%, 20.776% 9.182%, 20.780% 8.965%, 20.785% 8.75%, 20.790% 8.537%, 20.795% 8.325%, 20.799% 8.113%, 20.804% 7.903%, 20.809% 7.693%, 20.815% 7.483%, 20.815% 7.483%, 20.819% 7.286%, 20.824% 7.091%, 20.829% 6.897%, 20.834% 6.704%, 20.839% 6.512%, 20.844% 6.321%, 20.849% 6.132%, 20.854% 5.944%, 20.859% 5.757%, 20.864% 5.571%, 20.864% 5.571%, 20.865% 5.571%, 20.865% 5.571%, 20.865% 5.569%, 20.866% 5.567%, 20.866% 5.563%, 20.866% 5.558%, 20.867% 5.55%, 20.867% 5.54%, 20.867% 5.526%, 20.868% 5.509%, 20.868% 5.509%, 20.873% 5.334%, 20.878% 5.163%, 20.883% 4.998%, 20.888% 4.838%, 20.893% 4.682%, 20.898% 4.529%, 20.904% 4.38%, 20.909% 4.234%, 20.914% 4.089%, 20.919% 3.947%, 20.919% 3.947%, 20.924% 3.812%, 20.929% 3.68%, 20.934% 3.55%, 20.939% 3.423%, 20.944% 3.297%, 20.949% 3.173%, 20.955% 3.05%, 20.960% 2.93%, 20.965% 2.811%, 20.971% 2.693%);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1101;
+    position: relative;
+}
+
+.mobile-toggle span {
+    width: 28px;
+    height: 3px;
+    background: #2c3e50;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+@media (max-width: 1200px) {
+    .logo-wrapper .logo {
+        height: 15px;
+    }
+}
+
+/* Mobile Styles */
+/* @media (max-width: 968px) { */
+@media (max-width: 1200px) {
+    /* body {
+        padding-top: 110px;
+    } */
+
+    .modern-header {
+        height: 70px;
+    }
+
+    .header-container {
+        padding: 0 1rem;
+    }
+
+    .responsive-banner {
+        top: 57px;
+    }
+
+    .megamenu-wrapper {
+        top: 110px;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        justify-content: flex-end;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease;
+        gap: 0 !important;
+        align-items: flex-start;
+        overflow-y: auto;
+        z-index: 1100;
+        justify-content: flex-start;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu>li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu>li>a {
+        padding: 1rem clamp(0.4rem, 0.8vw, 1.2rem);
+        font-size: clamp(14px, 0.9vw, 16px);
+    }
+
+    /* .nav-menu>li>a {
+        padding: 1rem 1.5rem;
+        width: 100%;
+        justify-content: space-between;
+        border-radius: 0;
+    } */
+
+    .nav-menu>li.active>a {
+        background: #FF0000;
+        border-radius: 0;
+    }
+
+    .nav-menu>li>a::after {
+        display: none;
+    }
+
+    /* Mobile Megamenu */
+    .megamenu-wrapper {
+        position: static;
+        transform: none;
+        padding: 0;
+        pointer-events: auto;
+        top: auto;
+        width: 100%;
+        z-index: 1050;
+    }
+
+    .megamenu {
+        position: static;
+        transform: none;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        background: #f7fafc;
+    }
+
+    .nav-menu>li.has-megamenu.active .megamenu {
+        max-height: 2000px;
+    }
+
+    .megamenu-content {
+        padding: 1rem 1.5rem;
+    }
+
+    .megamenu-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+.responsive-footer-banner-core {
+    height: 17px;
+    background-color: #FF0000;
+    width: 100%;
+    position: absolute;
+    bottom: 93%;
+    left: 0;
+    z-index: 1;
+    clip-path: polygon(100% 0, 100% 50.021%, 20.849% 50.02%, 20.849% 50.02%, 20.824% 50.11%, 20.8% 50.374%, 20.777% 50.802%, 20.756% 51.384%, 20.736% 52.109%, 20.718% 52.969%, 20.702% 53.952%, 20.688% 55.049%, 20.677% 56.25%, 20.669% 57.545%, 20.596% 72.491%, 20.596% 72.491%, 20.567% 77.198%, 20.527% 81.573%, 20.477% 85.578%, 20.419% 89.173%, 20.353% 92.321%, 20.28% 94.983%, 20.202% 97.12%, 20.118% 98.694%, 20.03% 99.667%, 19.939% 100%, 0 100%, 0 50.041%, 20.315% 50.041%, 20.315% 50.041%, 20.318% 50.039%, 20.322% 50.033%, 20.325% 50.022%, 20.329% 50.007%, 20.332% 49.987%, 20.335% 49.961%, 20.339% 49.929%, 20.342% 49.891%, 20.346% 49.846%, 20.349% 49.794%, 20.349% 49.794%, 20.352% 49.773%, 20.355% 49.745%, 20.358% 49.712%, 20.361% 49.673%, 20.363% 49.63%, 20.366% 49.581%, 20.369% 49.528%, 20.372% 49.47%, 20.375% 49.408%, 20.378% 49.342%, 20.378% 49.342%, 20.379% 49.32%, 20.381% 49.293%, 20.383% 49.261%, 20.385% 49.225%, 20.386% 49.185%, 20.388% 49.142%, 20.389% 49.096%, 20.391% 49.049%, 20.393% 49%, 20.394% 48.951%, 20.394% 48.951%, 20.396% 48.926%, 20.397% 48.899%, 20.398% 48.872%, 20.399% 48.842%, 20.4% 48.812%, 20.401% 48.781%, 20.402% 48.748%, 20.403% 48.714%, 20.404% 48.679%, 20.405% 48.643%, 20.405% 48.643%, 20.407% 48.574%, 20.409% 48.504%, 20.411% 48.433%, 20.413% 48.36%, 20.415% 48.285%, 20.417% 48.209%, 20.419% 48.13%, 20.421% 48.05%, 20.423% 47.967%, 20.425% 47.882%, 20.425% 47.882%, 20.428% 47.798%, 20.43% 47.706%, 20.433% 47.606%, 20.435% 47.501%, 20.437% 47.391%, 20.439% 47.277%, 20.441% 47.159%, 20.443% 47.038%, 20.445% 46.916%, 20.447% 46.792%, 20.447% 46.792%, 20.449% 46.675%, 20.452% 46.555%, 20.454% 46.434%, 20.456% 46.311%, 20.458% 46.186%, 20.459% 46.058%, 20.461% 45.928%, 20.463% 45.794%, 20.465% 45.658%, 20.466% 45.518%, 20.466% 45.518%, 20.468% 45.381%, 20.47% 45.244%, 20.471% 45.104%, 20.473% 44.964%, 20.474% 44.821%, 20.476% 44.677%, 20.477% 44.531%, 20.479% 44.382%, 20.48% 44.232%, 20.481% 44.079%, 20.481% 44.079%, 20.483% 43.924%, 20.484% 43.769%, 20.485% 43.614%, 20.487% 43.456%, 20.488% 43.297%, 20.489% 43.136%, 20.49% 42.971%, 20.491% 42.803%, 20.492% 42.631%, 20.493% 42.454%, 20.566% 27.508%, 20.566% 27.508%, 20.568% 27.046%, 20.571% 26.585%, 20.573% 26.127%, 20.576% 25.67%, 20.579% 25.215%, 20.581% 24.763%, 20.584% 24.314%, 20.587% 23.868%, 20.59% 23.424%, 20.594% 22.985%, 20.594% 22.985%, 20.602% 21.903%, 20.611% 20.841%, 20.621% 19.8%, 20.632% 18.779%, 20.643% 17.778%, 20.654% 16.799%, 20.666% 15.841%, 20.678% 14.904%, 20.691% 13.989%, 20.704% 13.096%, 20.704% 13.096%, 20.707% 12.924%, 20.71% 12.755%, 20.713% 12.587%, 20.716% 12.421%, 20.718% 12.255%, 20.721% 12.091%, 20.724% 11.926%, 20.727% 11.762%, 20.73% 11.596%, 20.733% 11.43%, 20.733% 11.43%, 20.736% 11.24%, 20.739% 11.053%, 20.743% 10.867%, 20.746% 10.684%, 20.749% 10.503%, 20.753% 10.323%, 20.756% 10.145%, 20.76% 9.969%, 20.763% 9.795%, 20.767% 9.621%, 20.767% 9.621%, 20.771% 9.4%, 20.776% 9.182%, 20.78% 8.965%, 20.785% 8.75%, 20.79% 8.537%, 20.795% 8.325%, 20.799% 8.113%, 20.804% 7.903%, 20.809% 7.693%, 20.815% 7.483%, 20.815% 7.483%, 20.819% 7.286%, 20.824% 7.091%, 20.829% 6.897%, 20.834% 6.704%, 20.839% 6.512%, 20.844% 6.321%, 20.849% 6.132%, 20.854% 5.944%, 20.859% 5.757%, 20.864% 5.571%, 20.864% 5.571%, 20.865% 5.571%, 20.865% 5.571%, 20.865% 5.569%, 20.866% 5.567%, 20.866% 5.563%, 20.866% 5.558%, 20.867% 5.55%, 20.867% 5.54%, 20.867% 5.526%, 20.868% 5.509%, 20.868% 5.509%, 20.873% 5.334%, 20.878% 5.163%, 20.883% 4.998%, 20.888% 4.838%, 20.893% 4.682%, 20.898% 4.529%, 20.904% 4.38%, 20.909% 4.234%, 20.914% 4.089%, 20.919% 3.947%, 20.919% 3.947%, 20.924% 3.812%, 20.929% 3.68%, 20.934% 3.55%, 20.939% 3.423%, 20.944% 3.297%, 20.949% 3.173%, 20.955% 3.05%, 20.96% 2.93%, 20.965% 2.811%, 20.971% 2.693%);
+}
+
+@media (max-width: 639px) {
+    .responsive-footer-banner-core {
+        height: 19px;
+        background-color: #9FA4A6;
+        width: 100%;
+        position: absolute;
+        bottom: 91%;
+        left: 0;
+        z-index: 1;
+        clip-path: polygon(100% 0, 100% 50.021%, 20.849% 50.02%, 20.849% 50.02%, 20.824% 50.11%, 20.8% 50.374%, 20.777% 50.802%, 20.756% 51.384%, 20.736% 52.109%, 20.718% 52.969%, 20.702% 53.952%, 20.688% 55.049%, 20.677% 56.25%, 20.669% 57.545%, 20.596% 72.491%, 20.596% 72.491%, 20.567% 77.198%, 20.527% 81.573%, 20.477% 85.578%, 20.419% 89.173%, 20.353% 92.321%, 20.28% 94.983%, 20.202% 97.12%, 20.118% 98.694%, 20.03% 99.667%, 19.939% 100%, 0 100%, 0 50.041%, 20.315% 50.041%, 20.315% 50.041%, 20.318% 50.039%, 20.322% 50.033%, 20.325% 50.022%, 20.329% 50.007%, 20.332% 49.987%, 20.335% 49.961%, 20.339% 49.929%, 20.342% 49.891%, 20.346% 49.846%, 20.349% 49.794%, 20.349% 49.794%, 20.352% 49.773%, 20.355% 49.745%, 20.358% 49.712%, 20.361% 49.673%, 20.363% 49.63%, 20.366% 49.581%, 20.369% 49.528%, 20.372% 49.47%, 20.375% 49.408%, 20.378% 49.342%, 20.378% 49.342%, 20.379% 49.32%, 20.381% 49.293%, 20.383% 49.261%, 20.385% 49.225%, 20.386% 49.185%, 20.388% 49.142%, 20.389% 49.096%, 20.391% 49.049%, 20.393% 49%, 20.394% 48.951%, 20.394% 48.951%, 20.396% 48.926%, 20.397% 48.899%, 20.398% 48.872%, 20.399% 48.842%, 20.4% 48.812%, 20.401% 48.781%, 20.402% 48.748%, 20.403% 48.714%, 20.404% 48.679%, 20.405% 48.643%, 20.405% 48.643%, 20.407% 48.574%, 20.409% 48.504%, 20.411% 48.433%, 20.413% 48.36%, 20.415% 48.285%, 20.417% 48.209%, 20.419% 48.13%, 20.421% 48.05%, 20.423% 47.967%, 20.425% 47.882%, 20.425% 47.882%, 20.428% 47.798%, 20.43% 47.706%, 20.433% 47.606%, 20.435% 47.501%, 20.437% 47.391%, 20.439% 47.277%, 20.441% 47.159%, 20.443% 47.038%, 20.445% 46.916%, 20.447% 46.792%, 20.447% 46.792%, 20.449% 46.675%, 20.452% 46.555%, 20.454% 46.434%, 20.456% 46.311%, 20.458% 46.186%, 20.459% 46.058%, 20.461% 45.928%, 20.463% 45.794%, 20.465% 45.658%, 20.466% 45.518%, 20.466% 45.518%, 20.468% 45.381%, 20.47% 45.244%, 20.471% 45.104%, 20.473% 44.964%, 20.474% 44.821%, 20.476% 44.677%, 20.477% 44.531%, 20.479% 44.382%, 20.48% 44.232%, 20.481% 44.079%, 20.481% 44.079%, 20.483% 43.924%, 20.484% 43.769%, 20.485% 43.614%, 20.487% 43.456%, 20.488% 43.297%, 20.489% 43.136%, 20.49% 42.971%, 20.491% 42.803%, 20.492% 42.631%, 20.493% 42.454%, 20.566% 27.508%, 20.566% 27.508%, 20.568% 27.046%, 20.571% 26.585%, 20.573% 26.127%, 20.576% 25.67%, 20.579% 25.215%, 20.581% 24.763%, 20.584% 24.314%, 20.587% 23.868%, 20.59% 23.424%, 20.594% 22.985%, 20.594% 22.985%, 20.602% 21.903%, 20.611% 20.841%, 20.621% 19.8%, 20.632% 18.779%, 20.643% 17.778%, 20.654% 16.799%, 20.666% 15.841%, 20.678% 14.904%, 20.691% 13.989%, 20.704% 13.096%, 20.704% 13.096%, 20.707% 12.924%, 20.71% 12.755%, 20.713% 12.587%, 20.716% 12.421%, 20.718% 12.255%, 20.721% 12.091%, 20.724% 11.926%, 20.727% 11.762%, 20.73% 11.596%, 20.733% 11.43%, 20.733% 11.43%, 20.736% 11.24%, 20.739% 11.053%, 20.743% 10.867%, 20.746% 10.684%, 20.749% 10.503%, 20.753% 10.323%, 20.756% 10.145%, 20.76% 9.969%, 20.763% 9.795%, 20.767% 9.621%, 20.767% 9.621%, 20.771% 9.4%, 20.776% 9.182%, 20.78% 8.965%, 20.785% 8.75%, 20.79% 8.537%, 20.795% 8.325%, 20.799% 8.113%, 20.804% 7.903%, 20.809% 7.693%, 20.815% 7.483%, 20.815% 7.483%, 20.819% 7.286%, 20.824% 7.091%, 20.829% 6.897%, 20.834% 6.704%, 20.839% 6.512%, 20.844% 6.321%, 20.849% 6.132%, 20.854% 5.944%, 20.859% 5.757%, 20.864% 5.571%, 20.864% 5.571%, 20.865% 5.571%, 20.865% 5.571%, 20.865% 5.569%, 20.866% 5.567%, 20.866% 5.563%, 20.866% 5.558%, 20.867% 5.55%, 20.867% 5.54%, 20.867% 5.526%, 20.868% 5.509%, 20.868% 5.509%, 20.873% 5.334%, 20.878% 5.163%, 20.883% 4.998%, 20.888% 4.838%, 20.893% 4.682%, 20.898% 4.529%, 20.904% 4.38%, 20.909% 4.234%, 20.914% 4.089%, 20.919% 3.947%, 20.919% 3.947%, 20.924% 3.812%, 20.929% 3.68%, 20.934% 3.55%, 20.939% 3.423%, 20.944% 3.297%, 20.949% 3.173%, 20.955% 3.05%, 20.96% 2.93%, 20.965% 2.811%, 20.971% 2.693%);
+    }
+}
+
+
+/* Large Laptop */
+@media (max-width: 1440px) {
+
+    .nav-menu>li>a {
+        font-size: 14px;
+        padding: 1rem 0.7rem;
+    }
+}
+
+/* Small Laptop */
+@media (max-width: 1200px) {
+
+    .nav-menu>li>a {
+        font-size: 13px;
+        padding: 1rem 0.5rem;
+    }
+
+    .header-container {
+        padding: 0 0.5rem;
+    }
+}
+</style>
+
+    <link rel="stylesheet" href="r/glfl/424/files/theme/42/v65/870909094085976188.css" type="text/css" />
+
+    
+    <link rel="stylesheet" href="r/glfl/424/files/static/v473/custom.min.css" type="text/css" />
+<link rel="stylesheet" href="r/glfl/424/files/static/v473/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="r/glfl/424/files/static/v473/slick-theme.min.css" type="text/css" />
+<link rel="stylesheet" href="r/glfl/424/files/static/v473/slick.min.css" type="text/css" />
+<style type="text/css">
+/* body {
+  overflow: hidden; 
+}
+
+.t-Body-contentInner,.t-Body-mainContent{
+    padding: 0% !important;
+    padding-block-end: 0px !important;
+    padding-block-start: 0px !important;
+    padding-inline-end: 0px !important;
+    padding-inline-start: 0px !important; 
+}
+.t-Header-navBar {
+display:flex !important;
+}
+.t-NavigationBar-item {
+    padding-left: 15px;
+} */
+
+
+
+:root {
+    /* Theme tokens */
+    /* --card-bg-start: #3d3678; */
+    /* top-left */
+    /* --card-bg-end: #1a1a30; */
+    /* bottom-right */
+    --card-border: #9FA4A6;
+    /* grey/lavender top border */
+    --text-strong: #ffffff;
+    --text-muted: #c9c9d3;
+    --icon-color: #9FA4A6;
+    --shadow: 0 18px 40px rgba(20, 16, 50, .45);
+    --radius: 6px;
+    --gap: 16px;
+
+    /* spacing scale */
+    --s-1: 4px;
+    --s-2: 8px;
+    --s-3: 12px;
+    --s-4: 16px;
+    --s-5: 20px;
+    --s-6: 24px;
+    --s-7: 32px;
+}
+
+
+.t-Body-contentInner>.container {
+    max-width: 100% !important;
+}
+
+.snapshot-card {
+    position: relative;
+    /* width: min(680px, 92vw); */
+    background: linear-gradient(160deg, var(--card-bg-start), var(--card-bg-end));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    /* for the notch edge alignment */
+    isolation: isolate;
+    /* keeps internal blend effects contained */
+}
+
+/* Decorative angled shapes (very subtle) */
+.snapshot-card::before,
+.snapshot-card::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 auto;
+    width: 55%;
+    height: 55%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0));
+    transform: skewY(-8deg) translate(8%, 18%);
+    filter: blur(0.2px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.snapshot-card::after {
+    inset: 0 auto auto 0;
+    width: 35%;
+    height: 35%;
+    background: linear-gradient(25deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
+    transform: skewY(6deg) translate(-8%, -18%);
+}
+
+/* --- Top strip + notch --- */
+.card-top {
+    /* position: relative; */
+    height: 14px;
+    background: var(--card-border);
+}
+
+.card-top::after {
+    /* small raised notch */
+    content: "";
+    position: absolute;
+    left: 72px;
+    /* adjust to match your design */
+    top: 0;
+    width: 110px;
+    height: 10px;
+    background: var(--card-border);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transform: translateY(-4px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .35) inset,
+        0 3px 6px rgba(9, 9, 18, .25);
+}
+
+/* --- Content --- */
+.card-body {
+    position: relative;
+    z-index: 1;
+    padding: 28px 28px 26px 28px;
+}
+
+.company {
+    font-weight: 700;
+    font-size: clamp(18px, 2.1vw, 24px);
+    letter-spacing: 0.2px;
+    margin: 0 0 var(--s-6) 0;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: var(--s-3);
+    align-items: start;
+    padding: 10px 0;
+    color: var(--text-muted);
+    line-height: 1.55;
+}
+
+.item+.item {
+    border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    color: var(--icon-color);
+    opacity: .95;
+    flex: none;
+}
+
+.label {
+    font-size: 12px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #e2dcff;
+    opacity: .9;
+    margin-right: 6px;
+    font-weight: 600;
+}
+
+.content {
+    font-weight: 500;
+    color: #e6e6f2;
+}
+
+/* --- Hover subtlety (optional) --- */
+.snapshot-card:hover {
+    transform: translateY(-1px);
+    transition: transform .2s ease;
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 420px) {
+    .card-body {
+        padding: 22px 18px 20px;
+    }
+
+    .company {
+        margin-bottom: var(--s-5);
+    }
+
+    .item {
+        grid-template-columns: 22px 1fr;
+    }
+}
+</style>
+
+    <link rel="icon" href="/i/favicon.ico" /><link rel="apple-touch-icon" href="/i/favicon-180x180.png" />
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><meta http-equiv="Cache-Control" content="no-cache" /><meta name="theme-color" content="&#x23;000000" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Gujarat&#x20;Lease&#x20;Financing&#x20;Limited" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="manifest" href="&#x2F;tpl&#x2F;r&#x2F;glfl&#x2F;gl&#x2F;manifest.json&#x3F;v&#x3D;24.1.6-295075761322&#x26;lang&#x3D;en" crossorigin="use-credentials" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body
+    class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions no-anim t-PageTemplate--standard   apex-side-nav apex-icons-fontapex apex-theme-investments-theme"
+      id="t_PageBody">
+    <a href="#main" id="t_Body_skipToContent">Skip to Main Content</a>
+    <form role="none" action="wwv_flow.accept?p_context=gl/home/9909612136008" method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate  autocomplete="off">
+<input type="hidden" name="p_flow_id" value="424" id="pFlowId" /><input type="hidden" name="p_flow_step_id" value="1" id="pFlowStepId" /><input type="hidden" name="p_instance" value="9909612136008" id="pInstance" /><input type="hidden" name="p_page_submission_id" value="NTM5MTAxMzc2ODM1OTI3MTg4NDIzNDUwODM2NjgyOTI3ODU2MjA&#x2F;m6UJKvYUgBJasNem6PsptJ8oxXLZly6ud5ZJBTu6SW_gLiZL31af5ZLRci1DlBh2l4maXH14VXrMX4XdxvENXA" id="pPageSubmissionId" /><input type="hidden" name="p_request" value="" id="pRequest" /><input type="hidden" name="p_reload_on_submit" value="S" id="pReloadOnSubmit" /><input type="hidden" value="gl&#x2F;home&#x2F;9909612136008" id="pContext" /><input type="hidden" value="53910137683592718842345083668292785620" id="pSalt" />
+
+    <!-- Mobile Overlay -->
+    <div id="mobileOverlay" aria-hidden="true"></div>
+
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <a href="/tpl/r/glfl/gl/home?session=9909612136008">
+                    <img src="r/glfl/424/files/static/v473/glfl_logo.gif" alt="Gujarat Lease Financing Limited" class="logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-menu" id="navMenu">
+                    <!-- Home -->
+                    <li><a href="/tpl/r/glfl/gl/home?session=9909612136008">Home</a></li>
+                    <!-- About Us -->
+                    <li><a href="/tpl/r/glfl/gl/about-us?session=9909612136008">About Us</a></li>
+
+                    <!-- share holding -->
+                    <li><a href="/tpl/r/glfl/gl/share_holding?session=9909612136008">Share Holding Pattern</a></li>
+
+                    <!-- policy -->
+                    <li><a href="/tpl/r/glfl/gl/policy?session=9909612136008">Policy</a></li>
+                    
+                    <!-- Financial -->
+                    <li><a href="/tpl/r/glfl/gl/financial?session=9909612136008">Financial</a></li>
+
+                    <!-- share holder blog -->
+                     <li><a href="/tpl/r/glfl/gl/share_holder?session=9909612136008">Share Holder Blog</a></li>
+
+                    <!-- Disclosure - reg 30 of LODR -->
+                     <li><a href="/tpl/r/glfl/gl/disclosure?session=9909612136008">Disclosure - Reg 30 of LODR</a></li>
+
+                    <!-- Annual Return -->
+                     <li><a href="/tpl/r/glfl/gl/annual_report?session=9909612136008">Annual Return</a></li>
+
+                    <!-- Other Category -->
+                     <li><a href="/tpl/r/glfl/gl/others_category?session=9909612136008">Others Category</a></li>
+                </ul>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+
+        </div>
+    </header><div class="t-Body">
+    <div class="t-Body-nav" id="t_Body_nav" role="navigation" aria-label="Application">
+  <div class="a-TreeView t-TreeNav js-defaultCollapsed js-defaultCollapsed js-navCollapsed--hidden t-TreeNav--styleA" id="t_TreeNav" data-id="1_tree" aria-label="Main Navigation">
+    <ul>
+<li data-current="true" data-id="" data-disabled="" data-icon="fa&#x20;fa-home" data-shortcut="">
+  <a href="/tpl/r/glfl/gl/home?session=9909612136008" title="" style="display: none;" target="">Home</a>
+  <div class="a-TreeView-node a-TreeView-node--topLevel" aria-hidden="true">
+    <div role="none" class="a-TreeView-row"></div>
+    <div role="none" class="a-TreeView-content">
+      <span class="fa fa-file-o fa&#x20;fa-home"></span>
+      <span class="a-TreeView-label">Home</span>
+    </div>
+  </div>
+</li>
+    </ul>
+  </div>
+</div>
+<script >
+(() => {
+  const pref = "ORA_WWV_apex.toggleCore.nav.424.preferenceForExpanded",
+        nav  = document.getElementById('t_TreeNav').classList,
+        body = document.getElementById('t_PageBody');
+  if ( !sessionStorage.getItem( pref ) ) { sessionStorage.setItem( pref, !nav.contains('js-defaultCollapsed') ); }
+  if ( nav.contains('js-navCollapsed--default') ) {
+      body?.classList.add('js-navCollapsed--icons');
+      if ( sessionStorage.getItem( pref ) === "false" ) { body?.classList.add('js-navCollapsed'); }
+  }
+  if ( sessionStorage.getItem( pref ) === "true" && window.matchMedia("(min-width: " + getComputedStyle(document.documentElement).getPropertyValue("--js-mq-lg") + ")").matches) { body?.classList.add('js-navExpanded'); }
+  for (const label of document.querySelectorAll(".a-TreeView .a-TreeView-label")) {
+      label.textContent = label.textContent.replaceAll(/\[(.*?)\]/ig, '');
+  }
+})();
+</script>
+    <div class="t-Body-main">
+        <div class="t-Body-title" id="t_Body_title"></div>
+        <div class="t-Body-content" id="t_Body_content">
+            <main id="main" class="t-Body-mainContent">
+                <span id="APEX_SUCCESS_MESSAGE" data-template-id="6042336381788241853_S" class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE" data-template-id="6042336381788241853_E" class="apex-page-error u-hidden"></span>
+                <div class="t-Body-fullContent"></div>
+                <div class="t-Body-contentInner"><div class="container">
+<div class="row ">
+<div class="col col-12 apex-col-auto col-start col-end" ><div class="t-Region t-Region--scrollBody" id="R5169638492094941361"  role="region" aria-label="Section&#x20;1" >
+ <div class="t-Region-header">
+  <div class="t-Region-headerItems t-Region-headerItems--title">
+    <span class="t-Region-headerIcon"><span class="t-Icon " aria-hidden="true"></span></span>
+    <h2 class="t-Region-title" id="R5169638492094941361_heading" data-apex-heading>Section 1</h2>
+  </div>
+  <div class="t-Region-headerItems t-Region-headerItems--buttons"><span class="js-maximizeButtonContainer"></span></div>
+ </div>
+ <div class="t-Region-bodyWrap">
+   <div class="t-Region-buttons t-Region-buttons--top">
+    <div class="t-Region-buttons-left"></div>
+    <div class="t-Region-buttons-right"></div>
+   </div>
+   <div class="t-Region-body">
+     <div class="t-Region-orderBy"></div>
+     <section class="ti-hero">
+    <style>
+        /* =========================
+        HERO SECTION
+        ========================= */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden !important;
+        }
+
+        .ti-hero {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* =========================
+        CAROUSEL
+        ========================= */
+        .carousel {
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel-inner,
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* =========================
+        CAPTION
+        ========================= */
+        .carousel-caption-custom {
+            background: linear-gradient(90deg, #00000080 0%, #fff0 95%) no-repeat;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: clamp(1rem, 5vw, 4rem);
+            z-index: 1;
+        }
+
+        .carousel-text-wrapper {
+            max-width: 700px;
+            color: #fff;
+        }
+
+        .carousel-heading {
+            margin: 0;
+            font-size: clamp(1rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .carousel-title {
+            margin: 0;
+            font-size: clamp(1rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffcc28;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* =========================
+        ANIMATION
+        ========================= */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .carousel-item.active .carousel-text-wrapper {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* =========================
+        TABLET
+        ========================= */
+        @media (max-width: 768px) {
+            .carousel-caption-custom {
+                padding: 1.5rem;
+            }
+
+            .carousel-subtitle {
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .carousel-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* =========================
+        MOBILE
+        ========================= */
+        @media (max-width: 576px) {
+            .carousel-caption-custom {
+                padding: 1.25rem;
+            }
+
+            .carousel-text-wrapper {
+                max-width: 100%;
+            }
+
+            .carousel-subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+
+            .carousel-title {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+        }
+
+        @media (max-width: 384px) {
+            .carousel-caption-custom {
+                padding: 1rem;
+            }
+
+            .carousel-subtitle {
+                font-size: 0.7rem;
+            }
+
+            .carousel-title {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide animate__animated animate__flipInX"
+        data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="r/glfl/424/files/static/v473/Designer (1).png" alt="Gujarat Lease Financing Limited">
+                <div class="carousel-caption-custom">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+     
+   </div>
+   <div class="t-Region-buttons t-Region-buttons--bottom">
+    <div class="t-Region-buttons-left"></div>
+    <div class="t-Region-buttons-right"></div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+</div></div>
+            </main>
+ 
+            <div class="ti-scroll-top" id="tiScrollTop">↑</div>
+        </div>
+    </div>
+</div>
+<div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div><input type="hidden" id="pPageFormRegionChecksums" value="&#x5B;&#x5D;">
+<input type="hidden" id="pPageItemsRowVersion" value="" /><input type="hidden" id="pPageItemsProtected" value="&#x2F;PY6Nt_x7XBHd6d7qdNBXktUEKu_u1NpOAKIGdTmxCy5izabQatkas-q8HIcmrTq4R_iP2pl86zT0xuUeybUpGw" /></form>
+
+
+<script>
+var apex_img_dir = "\u002Fi\u002F";
+var apex = {env: {APP_USER: "nobody",APP_ID: "424",APP_PAGE_ID: "1",APP_SESSION: "9909612136008",APP_FILES: "r\u002Fglfl\u002F424\u002Ffiles\u002Fstatic\u002Fv473\u002F",WORKSPACE_FILES: "r\u002Fglfl\u002Ffiles\u002Fstatic\u002Fv1\u002F",APEX_VERSION: "24.1.6",APEX_BASE_VERSION: "24.1"},
+libVersions:{cropperJs:"1.6.1",domPurify:"3.1.6",fontapex:"2.3",fullcalendar:"6.1.11",hammer:"2.0.8",jquery:"3.6.4",jqueryUi:"1.13.2",maplibre:"4.0.1",markedJs:"12.0.1",prismJs:"1.29.0",oraclejet:"16.0.10",tinymce:"6.8.4",turndown:"7.1.3",monacoEditor:"0.47.0",lessJs:"4.2.0"}};
+</script>
+<script src="/i/libraries/apex/minified/desktop_all.min.js?v=24.1.6"></script>
+<script src="wwv_flow.js_messages?p_app_id=424&p_lang=en&p_version=24.1.6-295075761322"></script>
+
+
+<script src="/i/libraries/apex/minified/widget.stickyWidget.min.js?v=24.1.6"></script>
+<script src="/i/themes/theme_42/24.1/js/theme42.min.js?v=24.1.6"></script>
+
+
+
+<script src="r/glfl/424/files/static/v473/bootstrap.bundle.min.js"></script>
+<script src="r/glfl/424/files/static/v473/bootstrap.min.js"></script>
+<script src="r/glfl/424/files/static/v473/slick.min.js"></script>
+
+
+
+<script src="/i/libraries/apex/minified/widget.treeView.min.js?v=24.1.6"></script>
+
+
+
+
+
+<script type="text/javascript">
+apex.jQuery( function() {
+apex.page.init( this, function() {
+try {
+(function(){apex.jQuery('body').addClass('t-PageBody--leftNav');})();
+} catch(e) {apex.debug.error(e)};
+apex.item.waitForDelayLoadItems().done(function() {
+try {
+apex.theme42.initializePage.noSideCol();
+
+(function () {
+    const BREAKPOINT = 968;
+
+    const ready = (fn) => {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fn);
+        } else {
+            fn();
+        }
+    };
+
+    ready(function () {
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const header = document.querySelector('.modern-header');
+        const megamenuItems = document.querySelectorAll('.has-megamenu');
+
+        if (!header) return;
+
+        const isMobile = () => window.innerWidth <= BREAKPOINT;
+
+        // Close all menus
+        const closeAllMenus = () => {
+            megamenuItems.forEach(item => item.classList.remove('active'));
+            if (navMenu) navMenu.classList.remove('active');
+            if (mobileToggle) {
+                mobileToggle.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+            }
+            if (mobileOverlay) {
+                mobileOverlay.classList.remove('active');
+                mobileOverlay.setAttribute('aria-hidden', 'true');
+            }
+            document.body.style.overflow = '';
+
+            // Close all nested submenus
+            document.querySelectorAll('.has-submenu').forEach(sub => {
+                sub.classList.remove('active');
+            });
+        };
+
+        // ===== Hamburger toggle =====
+        if (mobileToggle && navMenu && mobileOverlay) {
+            mobileToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+
+                const willOpen = !navMenu.classList.contains('active');
+
+                mobileToggle.classList.toggle('active', willOpen);
+                navMenu.classList.toggle('active', willOpen);
+                mobileOverlay.classList.toggle('active', willOpen);
+                mobileOverlay.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+                document.body.style.overflow = willOpen ? 'hidden' : '';
+                mobileToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+
+                if (!willOpen) {
+                    megamenuItems.forEach(item => item.classList.remove('active'));
+                }
+            });
+
+            // Overlay click closes everything
+            mobileOverlay.addEventListener('click', function () {
+                closeAllMenus();
+            });
+        }
+
+        // ===== Desktop & Mobile: Click-based megamenu =====
+        megamenuItems.forEach(item => {
+            const link = item.querySelector('a');
+            if (!link) return;
+
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isActive = item.classList.contains('active');
+
+                // Close all other megamenus
+                megamenuItems.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+
+                // Toggle current megamenu
+                item.classList.toggle('active', !isActive);
+            });
+        });
+
+        // ===== Nested submenu toggle =====
+        document.querySelectorAll('.has-submenu > a').forEach(submenuLink => {
+            submenuLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('.has-submenu');
+                const isActive = parentLi.classList.contains('active');
+
+                // Close other submenus at same level
+                const siblings = parentLi.parentElement.querySelectorAll('.has-submenu');
+                siblings.forEach(sibling => {
+                    if (sibling !== parentLi) sibling.classList.remove('active');
+                });
+
+                // Toggle current submenu
+                parentLi.classList.toggle('active', !isActive);
+            });
+        });
+
+        // ===== Header scroll effect =====
+        const onScroll = () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        };
+        document.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // ===== Close on ESC =====
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeAllMenus();
+        });
+
+        // ===== Close mobile menu on resize to desktop =====
+        window.addEventListener('resize', function () {
+            if (!isMobile()) {
+                closeAllMenus();
+            }
+        });
+
+        // ===== Click outside to close =====
+        document.addEventListener('click', function (e) {
+            const insideHeader = e.target.closest('.modern-header');
+            if (!insideHeader) {
+                closeAllMenus();
+            }
+        });
+
+        // Prevent clicks inside megamenu from closing it
+        document.querySelectorAll('.megamenu').forEach(menu => {
+            menu.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+    });
+})();
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
+    const breakpoint = 968;
+    // Utility - lock/unlock body scroll
+    function lockBody(lock) {
+        if (lock) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
+    }
+    // toggle mobile menu visibility
+    function toggleMobileMenu(show) {
+        if (!navMenu) return;
+        if (show === undefined) navMenu.classList.toggle('active');
+        else if (show) navMenu.classList.add('active');
+        else navMenu.classList.remove('active');
+        // aria
+        const expanded = navMenu.classList.contains('active');
+        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        lockBody(expanded);
+    }
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+    }
+    // Accordion behavior for parents (click to expand on mobile)
+    const parents = document.querySelectorAll('.has-mega');
+    parents.forEach(parent => {
+        // set initial aria
+        const link = parent.querySelector('.nav-link');
+        if (link) link.setAttribute('aria-haspopup', 'true');
+        // handle click on the parent link
+        parent.querySelector('.nav-link').addEventListener('click', function (e) {
+            if (window.innerWidth <= breakpoint) {
+                e.preventDefault(); // prevent navigation, treat as accordion toggle
+                parent.classList.toggle('active');
+                // update aria-hidden on menu
+                const menu = parent.querySelector('.mega-menu');
+                const isOpen = parent.classList.contains('active');
+                if (menu) menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+                this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+            // on desktop, default link behavior remains (hover handles showing)
+        });
+    });
+    // Close mobile menu on outside click (when open)
+    document.addEventListener('click', function (e) {
+        if (!navMenu) return;
+        if (!navMenu.classList.contains('active')) return;
+        // if click is outside navMenu and outside the toggle
+        if (!navMenu.contains(e.target) && !(mobileToggle && mobileToggle.contains(e.target))) {
+            toggleMobileMenu(false);
+        }
+    });
+    // Close on ESC
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            toggleMobileMenu(false);
+            // close any open accordion
+            parents.forEach(p => p.classList.remove('active'));
+        }
+    });
+    // Reset states on resize (if switching to desktop)
+    let resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            // if now desktop width, ensure mobile nav closed & accordions reset
+            if (window.innerWidth > breakpoint) {
+                toggleMobileMenu(false);
+                parents.forEach(p => {
+                    p.classList.remove('active');
+                    const menu = p.querySelector('.mega-menu');
+                    if (menu) menu.setAttribute('aria-hidden', 'true');
+                    const link = p.querySelector('.nav-link');
+                    if (link) link.setAttribute('aria-expanded', 'false');
+                });
+            }
+        }, 120);
+    });
+});
+
+
+function scrollToSection() {
+    window.location.href = 'target-page.html'; // Navigate to the target page
+    setTimeout(() => {
+        const target = document.getElementById('targetSection');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 500); // Adjust timeout as needed for page load
+}
+
+
+
+
+// (function () {
+//     'use strict';
+
+//     // ========== HEADER SCROLL EFFECT ==========
+//     const header = document.getElementById('tiHeader');
+//     const scrollToTop = document.getElementById('tiScrollTop');
+
+//     function handleScroll() {
+//         const scrollY = window.scrollY;
+
+//         // Header background on scroll
+//         if (scrollY > 50) {
+//             header.classList.add('scrolled');
+//         } else {
+//             header.classList.remove('scrolled');
+//         }
+
+//         // Scroll to top button visibility
+//         if (scrollY > 300) {
+//             scrollToTop.classList.add('visible');
+//         } else {
+//             scrollToTop.classList.remove('visible');
+//         }
+//     }
+
+//     window.addEventListener('scroll', handleScroll);
+
+//     // ========== MOBILE MENU TOGGLE ==========
+//     const mobileToggle = document.getElementById('tiMobileToggle');
+//     const nav = document.getElementById('tiNav');
+
+//     if (mobileToggle && nav) {
+//         mobileToggle.addEventListener('click', function (e) {
+//             e.stopPropagation();
+//             nav.classList.toggle('active');
+//             this.classList.toggle('active');
+//         });
+
+//         // Close menu when clicking outside
+//         document.addEventListener('click', function (e) {
+//             if (!e.target.closest('.ti-header-container')) {
+//                 nav.classList.remove('active');
+//                 mobileToggle.classList.remove('active');
+//             }
+//         });
+
+//         // Close menu when clicking a link
+//         nav.querySelectorAll('a').forEach(link => {
+//             link.addEventListener('click', function () {
+//                 nav.classList.remove('active');
+//                 mobileToggle.classList.remove('active');
+//             });
+//         });
+//     }
+
+//     // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
+//     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//         anchor.addEventListener('click', function (e) {
+//             e.preventDefault();
+//             const targetId = this.getAttribute('href');
+//             if (targetId === '#') return;
+
+//             const target = document.querySelector(targetId);
+//             if (target) {
+//                 const offsetTop = target.offsetTop - 70;
+//                 window.scrollTo({
+//                     top: offsetTop,
+//                     behavior: 'smooth'
+//                 });
+//             }
+//         });
+//     });
+
+//     // ========== SCROLL TO TOP BUTTON ==========
+//     if (scrollToTop) {
+//         scrollToTop.addEventListener('click', function () {
+//             window.scrollTo({
+//                 top: 0,
+//                 behavior: 'smooth'
+//             });
+//         });
+//     }
+
+//     // ========== INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS ==========
+//     const observerOptions = {
+//         threshold: 0.15,
+//         rootMargin: '0px 0px -50px 0px'
+//     };
+
+//     const observer = new IntersectionObserver(function (entries) {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add('visible');
+//                 observer.unobserve(entry.target);
+//             }
+//         });
+//     }, observerOptions);
+
+//     // Observe all fade-in elements
+//     document.querySelectorAll('.ti-fade-in').forEach(el => {
+//         observer.observe(el);
+//     });
+
+//     // ========== PARALLAX EFFECT FOR HERO ==========
+//     const heroContent = document.querySelector('.ti-hero-content');
+
+//     function handleParallax() {
+//         if (!heroContent) return;
+
+//         const scrolled = window.pageYOffset;
+//         const heroHeight = document.querySelector('.ti-hero').offsetHeight;
+
+//         if (scrolled < heroHeight) {
+//             heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+//             heroContent.style.opacity = 1 - (scrolled / heroHeight);
+//         }
+//     }
+
+//     window.addEventListener('scroll', handleParallax);
+
+//     // ========== CARD HOVER EFFECTS ==========
+//     const cards = document.querySelectorAll('.ti-card');
+
+//     cards.forEach(card => {
+//         card.addEventListener('mouseenter', function () {
+//             this.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+//         });
+//     });
+
+//     // ========== PAGE LOAD ANIMATION ==========
+//     // ========== PAGE LOAD ANIMATION ==========
+//     window.addEventListener('load', function () {
+//         document.body.style.opacity = '0';
+//         setTimeout(function () {
+//             document.body.style.transition = 'opacity 0.5s ease';
+//             document.body.style.opacity = '1';
+//         }, 100);
+//     });
+//     // ========== INITIALIZE ==========
+//     handleScroll();
+//     handleParallax();
+
+   
+// })();
+// // ==========================================
+// // APEX DYNAMIC ACTION COMPATIBILITY
+// // ==========================================
+// // Refresh observer after APEX dynamic actions
+// $(document).on('apexafterrefresh', function () {
+//     document.querySelectorAll('.ti-fade-in').forEach(function (el) {
+//         el.classList.remove('visible');
+//     });
+// });
+
+apex.page.warnOnUnsavedChanges();
+} finally {
+apex.event.trigger(apex.gPageContext$,'apexreadyend');
+};
+});
+});
+});apex.pwa.publicKey = ''
+apex.pwa.init( { serviceWorkerPath:'\u002Ftpl\u002Fr\u002Fglfl\u002Fgl\u002Fsw.js?v=24.1.6-295075761322\u0026lang=en' } );
+</script>
+
+</body>
+
+
+
+
+
+</html>

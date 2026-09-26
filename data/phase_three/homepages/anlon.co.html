@@ -1,0 +1,1914 @@
+ 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title>ANLON</title>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://www.anlon.co/assets/fassets/css/style.css">
+    <link rel="stylesheet" href="https://www.anlon.co/assets/fassets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eaeaea;
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            margin-left: 15px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .logo-text span {
+            color: #DA312A;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #DA312A;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b82722;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #2c3e50;
+            color: #2c3e50;
+        }
+
+        .btn-outline:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        /* Mega Menu Styles */
+        .mainmenu-wrapper {
+            background: white;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            width: 100%;
+            z-index: 99;
+            width: 100%;
+            background: #ffffff;
+        }
+
+        nav .wrapper {
+            position: relative;
+            max-width: 1200px;
+            padding: 0 30px;
+            height: 70px;
+            line-height: 70px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .wrapper .logo a {
+            color: #333333;
+            font-size: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .wrapper .logo img {
+            max-height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .wrapper .logo a:hover img {
+            transform: scale(1.1);
+        }
+
+        .wrapper .nav-links {
+            display: inline-flex;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 0px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li.active a,
+        .nav-links li a:hover {
+            color: #DA312A;
+        }
+
+        .mega-box li a:hover {
+            background: #f2f2f2;
+            transform: translateY(-2px);
+        }
+
+        .nav-links .mobile-item {
+            display: none;
+        }
+
+        .nav-links .drop-menu {
+            position: absolute;
+            background: #ffffff;
+            width: 180px;
+            line-height: 45px;
+            top: 85px;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-links li:hover .drop-menu,
+        .nav-links li:hover .mega-box {
+            transition: all 0.3s ease;
+            top: 70px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .drop-menu li a {
+            width: 100%;
+            display: block;
+            padding: 0 0 0 15px;
+            font-weight: 400;
+            border-radius: 0px;
+        }
+
+        .mega-box {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            padding: 0 30px;
+            top: 85px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .mega-box .content {
+            background: #ffffff;
+            padding: 25px 40px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 0 0 8px 8px;
+        }
+
+        .mega-box .content .row {
+            width: 25%;
+            line-height: 45px;
+        }
+        
+        .mega-box .content .row > div {
+            width: 100% !important;
+            flex: none !important;
+            margin-bottom: 15px;
+        }
+        
+        /* Fix flex container inside mega menu row */
+        .mega-box .content .row > div > strong {
+            margin-bottom: 5px;
+            display: block;
+            font-size: 17px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .mega-box .content .row > div > ul {
+            padding-left: 15px;
+        }
+
+        .content .row header {
+            color: #DA312A;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            gap: 8px;
+        }
+
+        .content .row header i {
+            font-size: 16px;
+        }
+
+        .content .row .mega-links {
+            margin-left: 0;
+        }
+
+        .row .mega-links li {
+            padding: 0;
+        }
+
+        .row .mega-links li a {
+            padding: 8px 15px;
+            color: #333333;
+            font-size: 15px;
+            display: block;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .row .mega-links li a:hover {
+            color: #DA312A;
+            background: #f9f9f9;
+            padding-left: 18px;
+        }
+
+        .wrapper .ham-btn {
+            color: #333333;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .wrapper .ham-btn.close-btn {
+            position: absolute;
+            right: 30px;
+            top: 10px;
+        }
+
+        /* Airports two-column layout */
+        .airports-columns {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .airport-column {
+            flex: 1;
+        }
+        
+        .airport-column strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        @media screen and (max-width: 970px) {
+            .wrapper .ham-btn {
+                display: block;
+            }
+
+            .wrapper .nav-links {
+                position: fixed;
+                height: 100vh;
+                width: 100%;
+                max-width: 500px;
+                top: 0;
+                left: -100%;
+                background: #ffffff;
+                display: block;
+                padding: 50px 10px;
+                line-height: 50px;
+                overflow-y: auto;
+                box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+                transition: all 0.3s ease;
+            }
+
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #ffffff;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #f2f2f2;
+            }
+
+            #menu-btn:checked~.nav-links {
+                left: 0%;
+            }
+
+            #menu-btn:checked~.ham-btn.menu-btn {
+                display: none;
+            }
+
+            #close-btn:checked~.ham-btn.menu-btn {
+                display: block;
+            }
+
+            .nav-links li {
+                margin: 15px 10px;
+            }
+
+            .nav-links li a {
+                padding: 0 20px;
+                display: block;
+                font-size: 20px;
+            }
+
+            .nav-links .drop-menu {
+                position: static;
+                opacity: 1;
+                top: 65px;
+                visibility: visible;
+                padding-left: 20px;
+                width: 100%;
+                max-height: 0px;
+                overflow: hidden;
+                box-shadow: none;
+                transition: all 0.3s ease;
+            }
+
+            #showDrop:checked~.drop-menu,
+            #showMega:checked~.mega-box {
+                max-height: 100%;
+            }
+
+            .nav-links .desktop-item {
+                display: none;
+            }
+
+            .nav-links .mobile-item {
+                display: block;
+                color: #333333;
+                font-size: 20px;
+                font-weight: 500;
+                padding-left: 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links .mobile-item:hover {
+                background: #f2f2f2;
+            }
+
+            .drop-menu li {
+                margin: 0;
+            }
+
+            .drop-menu li a {
+                border-radius: 5px;
+                font-size: 18px;
+            }
+
+            .mega-box {
+                position: static;
+                top: 65px;
+                opacity: 1;
+                visibility: visible;
+                padding: 0 20px;
+                max-height: 0px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                width: 100%;
+                left: 0;
+            }
+
+            .mega-box .content {
+                box-shadow: none;
+                flex-direction: column;
+                padding: 20px 20px 0 20px;
+            }
+
+            .mega-box .content .row {
+                width: 100%;
+                margin-bottom: 15px;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                line-height: normal;
+            }
+
+            .mega-box .content .row:nth-child(1),
+            .mega-box .content .row:nth-child(2) {
+                border-top: 0px;
+            }
+
+            .content .row .mega-links {
+                border-left: 0px;
+                padding-left: 15px;
+            }
+
+            .row .mega-links li {
+                margin: 0;
+            }
+
+            .content .row header {
+                font-size: 19px;
+                justify-content: flex-start;
+            }
+            
+            /* Mobile-specific fixes for the airports section */
+            .airports-columns {
+                flex-direction: column;
+            }
+            
+            .airport-column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .airport-column:last-child {
+                margin-bottom: 0;
+            }
+            
+            .mega-box .content .row > div {
+                width: 100% !important;
+            }
+        }
+
+        nav input {
+            display: none;
+        }
+
+        /* Content Styles */
+        .content-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .content-section h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+    </style>
+</head>
+
+
+<section class="mainmenu-wrapper stricky">
+    <nav>
+        <div class="wrapper">
+            <div class="logo">
+            <a href="https://www.anlon.co/home">
+                     <img src="https://www.anlon.co/assets/anlonlogo.png" alt="ANLON Logo">
+                </a>
+            </div>
+            <input type="radio" name="slider" id="menu-btn">
+            <input type="radio" name="slider" id="close-btn">
+            <ul class="nav-links">
+                <label for="close-btn" class="ham-btn close-btn"><i class="fas fa-times"></i></label>
+            <li class="active"><a href="https://www.anlon.co/home">Home</a></li>
+            <!--<li ><a href="https://www.anlon.co/eds">Digital Solutions</a></li>-->
+          <li>
+    <a href="#" class="desktop-item">Products</a>
+    <input type="checkbox" id="showMega">
+    <label for="showMega" class="mobile-item">Products</label>
+    <div class="mega-box">
+        <div class="content">
+            <!-- Airports -->
+            <div class="row" style="width:50%;">
+                <header><i class="fas fa-plane-departure"></i> Airports</header>
+                <div class="airports-columns">
+                    <!-- Terminal Column -->
+                    <div class="airport-column">
+                        <strong style="padding:0px 15px;">Terminal</strong>
+                        <ul class="mega-links">
+                            <li><a href="https://www.anlon.co/products/airport_interiors">Airport Interiors</a></li>
+                            <li><a href="https://www.anlon.co/products/baggage_handling_system">Baggage Handling System</a></li>
+                            <li><a href="https://www.anlon.co/products/line_lazer">Line Lazer</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Ground Support Column -->
+                    <div class="airport-column">
+                        <strong style="padding:0px 15px;">Ground Support</strong>
+                        <ul class="mega-links">
+                            <li><a href="https://www.anlon.co/products/runway_rubber_removal">Runway Rubber Removal</a></li>
+                            <li><a href="https://www.anlon.co/products/runway_sweeper">Runway Sweepers</a></li>
+                            <!--<li><a href="https://www.anlon.co/products/runway_bay_cleaning">Runway & Bay Cleaning</a></li>-->
+                            <li><a href="https://www.anlon.co/products/aircraft_crash_fire_tender">Aircraft Crash Fire Tender</a></li>
+                            <li><a href="https://www.anlon.co/products/disabled_aircraft_recovery_kit">Disabled Aircraft Recovery Kit</a></li>
+                            <li><a href="https://www.anlon.co/products/ambulift">Ambulifts</a></li>
+                            <li><a href="https://www.anlon.co/products/side_loader">Side Loaders</a></li>
+                            <li><a href="https://www.anlon.co/products/rescue_system">Rescue Systems</a></li>
+                            <li><a href="https://www.anlon.co/products/friction_testing">Friction Tester</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Municipality -->
+            <div class="row" >
+                <header><i class="fas fa-city"></i> Municipality</header>
+                <ul class="mega-links">
+                    <li><a href="https://www.anlon.co/products/road_sweeping_machines">Road Sweeping Machines</a></li>
+                    <li><a href="https://www.anlon.co/products/grass_cutting_collecting">Grass Cutting & Collecting</a></li>
+                </ul>
+            </div>
+
+            <!-- Industrial equipment -->
+            <div class="row">
+                <header><i class="fas fa-fan"></i> Industrial equipment</header>
+                <ul class="mega-links">
+                    <li><a href="https://www.anlon.co/products/power_transmission_system">Power Transmission System</a></li>
+                    <li><a href="https://www.anlon.co/products/heated_ventilation_air_conditioning">Heated & Ventilated/Air Cooling</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
+
+                  <li ><a href="https://www.anlon.co/services">Services</a></li>
+                  <li ><a href="https://www.anlon.co/investors">Investor</a></li>
+                  <li ><a href="https://www.anlon.co/about">About Us</a></li>
+                  <li ><a href="https://www.anlon.co/contact_us">Contact</a></li>
+              
+                </ul>
+            <label for="menu-btn" class="ham-btn menu-btn"><i class="fas fa-bars"></i></label>
+        </div>
+    </nav>
+</section>
+
+</html><style type="text/css">
+.slide-text
+{
+	width:50%;
+	float:left;
+	margin-top:0px !important;
+	
+}
+
+/* ================
+   Slider styles
+   =============== */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slider-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-slide.active {
+  opacity: 1;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.6);
+  border: none;
+  border-radius: 4px;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-arrow.left {
+  left: 10px;
+}
+
+.slider-arrow.right {
+  right: 10px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.slider-dots span {
+  display: block;
+  width: 24px;
+  height: 5px;
+  background: white;
+  border-radius: 24%;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.slider-dots span.active {
+  opacity: 1;
+  background: #DA312A;
+}
+
+
+
+<!-- Modern CSS Styling -->
+  .product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+
+  .product-card .card-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .product-card .card-body {
+    padding: 20px;
+    flex-grow: 1;
+  }
+
+  .product-card .card-body h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #d8322b;
+  }
+
+  .product-card .card-body p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 767px) {
+    .section-title h2 {
+      font-size: 26px;
+    }
+
+    .product-card .card-body h5 {
+      font-size: 16px;
+    }
+
+    .product-card .card-body p {
+      font-size: 14px;
+    }
+  }
+</style>
+
+
+<!--Slider Section-->
+<section class="slider-container" id="mySlider">
+      <div class="slider-slide active" 
+         data-desktop-image="https://www.anlon.co/assets/slider/desktop/slide1.jpg" 
+         data-mobile-image="https://www.anlon.co/assets/slider/mobile/slide1-mobile.jpg">
+    </div>
+      <div class="slider-slide " 
+         data-desktop-image="https://www.anlon.co/assets/slider/desktop/slide2.jpg" 
+         data-mobile-image="https://www.anlon.co/assets/slider/mobile/slide2-mobile.jpg">
+    </div>
+      <div class="slider-slide " 
+         data-desktop-image="https://www.anlon.co/assets/slider/desktop/slide3.jpg" 
+         data-mobile-image="https://www.anlon.co/assets/slider/mobile/slide3-mobile.jpg">
+    </div>
+      <div class="slider-slide " 
+         data-desktop-image="https://www.anlon.co/assets/slider/desktop/slide4.jpg" 
+         data-mobile-image="https://www.anlon.co/assets/slider/mobile/slide4-mobile.jpg">
+    </div>
+      <div class="slider-slide " 
+         data-desktop-image="https://www.anlon.co/assets/slider/desktop/slide5.jpg" 
+         data-mobile-image="https://www.anlon.co/assets/slider/mobile/slide5-mobile.jpg">
+    </div>
+      <div class="slider-slide " 
+         data-desktop-image="https://www.anlon.co/assets/slider/desktop/slide6.jpg" 
+         data-mobile-image="https://www.anlon.co/assets/slider/mobile/slide6-mobile.jpg">
+    </div>
+      <div class="slider-slide " 
+         data-desktop-image="https://www.anlon.co/assets/slider/desktop/slide7.jpg" 
+         data-mobile-image="https://www.anlon.co/assets/slider/mobile/slide7-mobile.jpg">
+    </div>
+      <div class="slider-slide " 
+         data-desktop-image="https://www.anlon.co/assets/slider/desktop/slide8.jpg" 
+         data-mobile-image="https://www.anlon.co/assets/slider/mobile/slide8-mobile.jpg">
+    </div>
+  
+  <!-- Arrows -->
+  <button class="slider-arrow left" onclick="changeSlide(-1)">&#10094;</button>
+  <button class="slider-arrow right" onclick="changeSlide(1)">&#10095;</button>
+
+  <!-- Dots -->
+  <div class="slider-dots" id="sliderDots">
+          <span class="active" onclick="goToSlide(0)"></span>
+          <span class="" onclick="goToSlide(1)"></span>
+          <span class="" onclick="goToSlide(2)"></span>
+          <span class="" onclick="goToSlide(3)"></span>
+          <span class="" onclick="goToSlide(4)"></span>
+          <span class="" onclick="goToSlide(5)"></span>
+          <span class="" onclick="goToSlide(6)"></span>
+          <span class="" onclick="goToSlide(7)"></span>
+          <span class="" onclick="goToSlide(8)"></span>
+          <span class="" onclick="goToSlide(9)"></span>
+      </div>
+</section>
+
+
+<section class="about-section" style="background:#ececec">
+	<div class="container">
+		<div class="section-title text-center">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 style="color:#000">About ANLON</h2>
+					<!--<span class="decor"></span>-->
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-7 col-sm-12">
+				<div class="text font-20">
+					<p style="color:#000"><span class="bold thm-color">ANLON Technology Solutions Limited  </span> stands at the forefront of innovation and reliability as a premier manufacturer and assembler of advanced Runway Rubber Removal Machine firefighting, rescue, and infrastructure solutions. Specializing in serving airports, multinational corporations, fire stations, and critical infrastructure sectors, we deliver state-of-the-art equipment designed to meet the highest standards of safety, efficiency, and performance. Our comprehensive product portfolio encompasses cutting-edge solutions tailored to address the unique challenges of modern emergency response and operational maintenance.
+</p>
+				</div>
+				
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+            
+				<div class="video-box wow fadeInRight" style="visibility: visible; animation-name: fadeInRight; box-shadow:0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%); border-radius:10px" >
+					<img src="https://www.anlon.co/	
+/assets/product/RRM-01.jpeg
+" alt="image" class="tran7s">
+					
+
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class=" col-sm-12">
+				<div class="text font-20">
+				
+                    <p style="color:#000">The goal of ATS is to form strategic partnerships with reputed international manufacturers and service providers to offer value added services to customers who are looking for products and services for their various projects in sectors like Aviation, Refineries, Transport, Energy, Mines, etc.
+</p>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+
+<section class="about-section" style="background:#ececec; padding-top:30px; padding-bottom:30px;" >
+	<div class="container">
+		<div class="section-title text-center">
+			<div class="row">
+
+				<div class="col-md-12">
+					<h2 style="color:#000">Expertise </h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		    	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+            
+				<div class="video-box wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft; box-shadow:0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%); border-radius:10px" >
+					<img src="https://www.anlon.co/assets/expertise.jpg
+" alt="image" class="tran7s">
+					
+
+				</div>
+				
+			</div>
+			<div class="col-md-7 col-sm-12">
+				<div class="text font-20" >
+					<p style="color:#000">The Team at ATS is the best in the industry, as we believe it is our staffs who are the greatest asset of our company. A string of qualified factory trained engineers operate across the length and span of the country rendering prompt services & support for all the products supplied by us and our original quipment manufacturers. Each person comes with years of experience in the industry, both national and internal levels.</p>
+					<p style="color:#000">ATS would continuously strive on developing expertise to support its customers in activities like defining requirements, qualifying suitable products/services against their requirements. We further coordinate technical interactions, providing assistance to international companies in understanding the commercial and logistics systems prevalent in the country, assisting contract formations, order processing, successful installation /commissioning etc </p>
+                    <p style="color:#000">We have a wide network of qualified and experienced senior engineers located in all the metro cities and main industrial Hubs. Our factory trained Engineers and technicians have the capability to maintain our heavy sophisticated equipment post warranty period by entering into Annual Maintenance Contract and Comprehensive Maintenance Contract</p>
+				</div>
+				
+			</div>
+		
+			
+		</div>
+	</div>
+</section>
+
+<!-- Services Section END-->
+    <style>
+        .services-section {
+            background-image: url('https://thewebmax.org/indusza/images/background/map-bg-dark2.png');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px 90px;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .wt-small-separator {
+            font-family: "Heebo", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #ea130e;
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        .wt-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #000;
+            max-width: 630px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .service-box {
+            flex: 1 1 calc(33.333% - 30px);
+            border: 1px solid #e7e7e7;
+            padding: 40px;
+            box-sizing: border-box;
+            min-width: 280px;
+        }
+
+        .icon {
+            color: #ea130e;
+            margin-bottom: 30px;
+        }
+
+        .icon svg {
+            width: 80px;
+            height: 80px;
+        }
+
+        .service-box h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .service-box p {
+            font-size: 16px;
+            font-weight:500;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .site-button-link {
+            color: #ea130e;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .site-button-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 992px) {
+            .service-box {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+
+<section class="services-section">
+    <div class="services-container">
+        <div class="section-head">
+            <div class="wt-small-separator">Our Services</div>
+            <h2 class="wt-title">We Provide Best Services</h2>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-box">
+                <div class="icon">
+                    <!-- SVG Icon -->
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="80" height="80">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+</svg>
+                </div>
+                <h4> Innovative Fire safety solutions </h4>
+                <p>Pioneering advanced fire safety solutions through innovation and precision engineering.
+Safeguarding tomorrow with reliable, technology-driven fire protection systems.</p>
+                <a href="services" class="site-button-link">Read More</a>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-box">
+                <div class="icon">
+                    <!-- SVG Icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="80" height="80">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+</svg>
+
+                </div>
+                <h4>Mechanical Construction</h4>
+                <p>You can dream, create, design, and build the most wonderful place in the world. But it requires people.</p>
+                <a href="services" class="site-button-link">Read More</a>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-box">
+                <div class="icon">
+                    <!-- SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="80" height="80">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+                </div>
+                <h4>Experiential and digital solutions</h4>
+                <p>You can dream, create, design, and build the most wonderful place in the world. But it requires people.</p>
+                <a href="services" class="site-button-link">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section END-->
+
+<!-- Testimonial Section START-->
+
+<section class="testimonial_section">
+    <h2 style="font-size:32px; font-weight:700; color:#222;">Our Promoters</h2>
+  <div class="testimonial">
+    <div class="testim_content">
+      <!--<p class="highlight"><i>“Pivot creates innovative design solutions that inspire.”</i></p>-->
+      <p class="full_testim">
+     Mr. Unnikrishnan Nair P M, Anlon’s visionary Promoter, has been the driving force behind the company’s growth since inception. With over 28 years of industry experience and a Mechanical Engineering degree from Bangalore University, he blends technical expertise with strong leadership.
+
+As Chairman and Managing Director, he shapes Anlon’s strategic vision, oversees corporate operations, and continues to lead its innovation and success in the market.
+      </p>
+      <p class="name">Mr. Unnikrishnan Nair P M</p>
+      <p class="company">Chairman & Managing Director</p>
+    </div>
+    <img src="/UNNI sir.jpg" alt="Client photo">
+  </div>
+  
+  <div class="testimonial">
+    <div class="testim_content">
+      <!--<p class="highlight"><i>“Connecting talent with opportunity and creating workplaces where everyone belongs.”</i></p>-->
+      <p class="full_testim">
+    Mrs. Beena Unnikrishnan has been a key pillar of Anlon Technology Solutions since its inception. As Whole-Time Director and a promoter post-IPO, she actively contributes to major decision-making both within and beyond board meetings. In addition to her strategic role, she oversees critical functions like HR, making her an invaluable asset to Anlon’s core team.
+      </p>
+      <p class="name">Mrs. Beena Unnikrishnan</p>
+      <p class="company">Co-Founder & Promoter</p>
+    </div>
+    <img src="/beena mam.jpg" alt="Client photo">
+  </div>
+</section>
+
+<style>
+.testimonial_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Fixed typo from align-item to align-items */
+  justify-content: center;
+  gap: 36px;
+  width: 100%;
+  margin: 6% auto;
+  padding: 0 15px;
+}
+
+.testimonial {
+  background: #ececec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  max-width: 70%;
+  width: 100%;
+  gap:30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.testim_content {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+.testimonial img {
+  height: 200px;
+  width: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Alternate layout for even testimonials */
+.testimonial:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.highlight {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.full_testim {
+  color: #34495e;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  color: #7f8c8d;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial_section {
+    padding: 0 10px;
+    margin: 15% auto;
+    gap: 24px;
+  }
+
+  .testimonial {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 2rem;
+    gap: 24px;
+  }
+
+  .testimonial:nth-child(even) {
+    flex-direction: column; /* Override desktop row-reverse */
+  }
+
+  .testim_content {
+    padding: 0;
+    text-align: center; /* Center-align text for mobile */
+  }
+
+  .testimonial img {
+    width: 60%;
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .highlight {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .full_testim {
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .company {
+    font-size: 14px;
+  }
+}
+
+/* For smaller phones */
+@media screen and (max-width: 480px) {
+  .highlight {
+    font-size: 18px;
+  }
+
+  .full_testim {
+    font-size: 15px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .testimonial {
+    padding: 1.5rem;
+  }
+}
+
+</style>
+
+<!-- Testimonial Section END-->
+
+
+
+
+<section class="our-services" style="background:#f7f7f7; padding: 60px 0;">
+  <div class="container">
+    <div class="section-title">
+      <div class="row align-items-center mb-5">
+        <div class="col-md-8 col-sm-12">
+          <h2 style="font-size:32px; font-weight:700; color:#222;">Our Products</h2>
+          <p style="font-size:18px; color:#555; line-height:1.6;">
+            We have built an enviable reputation in consumer goods, heavy industry, high-tech, manufacturing, medical,
+            recreational vehicle, and transportation sectors.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Product Card Template -->
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" onclick="location.href='https://www.anlon.co/products'" style="cursor:pointer;">
+        <div class="product-card">
+          <div class="card-img">
+            <img src="https://www.anlon.co/uploads/Image_1.PNG" alt="Mobile Fire Fighting Rescue">
+          </div>
+          <div class="card-body">
+            <h5>Mobile Fire Fighting Rescue</h5>
+            <p>ATS, in partnership with ROSENBAUER, offers complete mobile fire fighting and rescue solutions using world-class technology.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat this block for each product -->
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" onclick="location.href='https://www.anlon.co/products'" style="cursor:pointer;">
+        <div class="product-card">
+          <div class="card-img">
+            <img src="https://www.anlon.co/assets/product/PowerTransSystems1.jpg" alt="Power Transmission Systems">
+          </div>
+          <div class="card-body">
+            <h5>Power Transmission Systems</h5>
+            <p>We provide after-sales and service for Twin Disc power systems used in Rosenbauer equipment.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" onclick="location.href='https://www.anlon.co/products/runway_rubber_removal'" style="cursor:pointer;">
+        <div class="product-card">
+          <div class="card-img">
+            <img src="https://www.anlon.co/assets/product/RRM-dsad.png" alt="Runway Rubber Removal">
+          </div>
+          <div class="card-body">
+            <h5>Runway Rubber Removal Machine</h5>
+            <p>Our Runway Rubber Removal Machine uses high-pressure water to safely remove tire rubber from airport runways, restoring friction for safer landings.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" onclick="location.href='https://www.anlon.co/products'" style="cursor:pointer;">
+        <div class="product-card">
+          <div class="card-img">
+            <img src="https://www.anlon.co/halliday fricti9on testing .jpg" alt="Friction Testing Systems">
+          </div>
+          <div class="card-body">
+            <h5>Airport Surface Friction Tester</h5>
+            <p>Friction tester machines play a crucial role in measuring and monitoring runway surface conditions. They provide accurate data that enables airport authorities to make informed decisions and maintain safe friction levels for aircraft operations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" onclick="location.href='https://www.anlon.co/products'" style="cursor:pointer;">
+        <div class="product-card">
+          <div class="card-img">
+            <img src="https://d3v9db8ug40up8.cloudfront.net/styles/large/s3/2024-07/MB6_0573_edited_1.jpg?itok=M1ByrMYh" alt="Commercial Sweeping Machine">
+          </div>
+          <div class="card-body">
+            <h5>Commercial & Industrial Sweeping Machine</h5>
+            <p>We provide Bucher Municipal’s industry-leading road cleaning solutions for public and private areas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" onclick="location.href='https://www.anlon.co/products/runway_sweeper'" style="cursor:pointer;">
+        <div class="product-card">
+          <div class="card-img">
+            <img src="https://d3v9db8ug40up8.cloudfront.net/styles/product_tile_large/s3/2023-05/MaxPowa%20V95t%20aero%20-%20Airport_0.jpg?h=63bf57a8&itok=7av96dE0" alt="Runway Sweeping Machines">
+          </div>
+          <div class="card-body">
+            <h5>Runway Sweeping Machines</h5>
+            <p>specialized cleaning vehicles designed specifically for maintaining airport runways. Their primary purpose is to remove fine debris, ferrous metals and dust removal on airport runways and other hazardous materials that can cause damage to aircraft and compromise safety.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" onclick="location.href='https://www.anlon.co/products'" style="cursor:pointer;">
+        <div class="product-card">
+          <div class="card-img">
+            <img src="https://www.anlon.co/assets/product/disabled_aircraft.jpg" alt="Disabled Aircraft Recovery Kit">
+          </div>
+          <div class="card-body">
+            <h5>Disabled Aircraft Recovery Kit</h5>
+            <p>Our solution helps airports recover disabled aircrafts safely and efficiently using advanced recovery systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Company logos START-->
+
+<style>
+    .logos-section {
+        padding: 80px 0;
+        background: #F7F7F7;
+    }
+
+    .logo-slider-container {
+        width: min(100%, 90vw);
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            #000 5% 95%,
+            transparent
+        );
+    }
+
+    .slider-track {
+        display: flex;
+        width: max-content;
+        animation: slide 40s linear infinite;
+    }
+
+    .slider-track:hover {
+        animation-play-state: paused;
+    }
+
+    .logo-item {
+        width: 200px;
+        height: 100px;
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        padding: 0 24px;
+        transition: filter 0.3s;
+    }
+
+    .logo-item img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        transition: transform 0.3s;
+    }
+
+    .logo-item:hover img {
+        transform: scale(1.1);
+        filter: grayscale(0);
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .logo-item {
+            width: 150px;
+            padding: 0 15px;
+        }
+    }
+</style>
+
+<section class="logos-section">
+  <!--  <div class="section-header text-center">-->
+		<!--			<h2 style="color:#000">Partners with ANLON</h2>-->
+		<!--</div>-->
+    <div class="logo-slider-container">
+        <div class="slider-track">
+            <!-- Original Set -->
+            <div class="logo-item"><img src="/assets/company-loop-logos/adani.png" alt="Adani"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/hal.png" alt="HAL"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Delhi.png" alt="Delhi"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Bengaluru.png" alt="Bengaluru"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Mumbai.png" alt="Mumbai"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Hyderabad.png" alt="Hyderabad"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Goa.png" alt="Goa"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Trivandrum.png" alt="Trivandrum"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Pune.png" alt="Pune"></div>
+            
+            <!-- Mirrored Set for Seamless Loop -->
+            <div class="logo-item"><img src="/assets/company-loop-logos/adani.png" alt="Adani"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/hal.png" alt="HAL"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Delhi.png" alt="Delhi"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Bengaluru.png" alt="Bengaluru"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Mumbai.png" alt="Mumbai"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Hyderabad.png" alt="Hyderabad"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Goa.png" alt="Goa"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Trivandrum.png" alt="Trivandrum"></div>
+            <div class="logo-item"><img src="/assets/company-loop-logos/Pune.png" alt="Pune"></div>
+        </div>
+    </div>
+</section>
+    
+<!-- Company logos END-->    
+    
+<!--<section class="contact-section" style="background: url(https://www.anlon.co/assets/fassets/images/background/contact.jpg);">-->
+<!--	<div class="container">-->
+				
+<!--		<div class="row">-->
+<!--			<div class="col-md-6">-->
+<!--				<div class="section-title">-->
+<!--					<h2>Request a Call Back</h2>-->
+<!--				</div>-->
+<!--				<p><span>For Business: </span> For Business inquiry fill our short feedback form or you can also send us an email and we'll get in touch shortly, or Toll Free Number - (+91) 8095550088.</p>-->
+<!--				<p><span>Note: </span> Your details are kept strictly confidential as per our Company Privacy Policy.</p>-->
+<!--			</div>-->
+			<!--Form Column -->
+<!--            	<div class="column form-column col-lg-6 col-md-12 col-sm-12 col-xs-12">-->
+                	<!--form-box-->
+<!--                    <div class="form-box default-form">-->
+<!--                        <div class="default-form">-->
+<!--                            <form action="https://www.anlon.co/contact_us" class="" method="post" >-->
+<!--                                <div class="row clearfix">-->
+                                
+<!--                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">-->
+<!--                                        <div class="g-input f1 mb-30">-->
+<!--				                            <select class="text-capitalize selectpicker" data-style="g-select" data-width="100%">-->
+<!--				                                <option value="0" selected="">I would like to discuss:</option>-->
+<!--				                                <option value="1">I would like to discuss:</option>-->
+<!--				                                <option value="2">I would like to discuss:</option>-->
+<!--				                                <option value="3">I would like to discuss:</option>-->
+<!--				                            </select>-->
+<!--				                        </div>-->
+<!--                                    </div>-->
+                                
+<!--                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">-->
+<!--                                        <input type="text" name="username" value="" placeholder="Your Name *" required>-->
+<!--                                    </div>-->
+        
+<!--                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">-->
+<!--                                        <input type="email" name="email" value="" placeholder="Your Mail *" required>-->
+<!--                                    </div>-->
+                                    
+<!--                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">-->
+<!--                                        <input type="text" name="phone" value="" placeholder="Phone Number">-->
+<!--                                    </div>-->
+                                    
+<!--                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">-->
+<!--                                        <button type="submit" class="thm-btn"name="add">submit</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--		</div>-->
+<!--	</div>	-->
+<!--</section>-->
+
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider-slide');
+const dots = document.querySelectorAll('.slider-dots span');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+    dots[i].classList.toggle('active', i === index);
+  });
+  currentSlide = index;
+}
+
+function changeSlide(direction) {
+  let newIndex = currentSlide + direction;
+  if (newIndex < 0) newIndex = slides.length - 1;
+  if (newIndex >= slides.length) newIndex = 0;
+  showSlide(newIndex);
+}
+
+function goToSlide(index) {
+  showSlide(index);
+}
+
+function updateSliderImages() {
+    const isMobile = window.innerWidth <= 768;
+    document.querySelectorAll('.slider-slide').forEach(slide => {
+      const imageUrl = isMobile ? slide.dataset.mobileImage : slide.dataset.desktopImage;
+      slide.style.backgroundImage = `url('${imageUrl}')`;
+    });
+  }
+
+window.addEventListener('load', updateSliderImages);
+window.addEventListener('resize', updateSliderImages);
+  
+// Optional: autoplay
+setInterval(() => {
+  changeSlide(1);
+}, 3000); // Change every 5 seconds
+
+</script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a6d;
+            --secondary: #e63946;
+            --accent: #2a9d8f;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.3s ease;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #0d1b36, var(--primary));
+            color: white;
+            padding: 70px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://www.anlon.co/assets/fassets/images/background/contact.jpg) center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-grid {
+            display: flex;
+            justify-content:space-between;
+            /*grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));*/
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column {
+           min-width: 140px;
+        }
+        .footer-column h3 {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover i {
+            transform: scale(1.2);
+        }
+        
+        .contact-split {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-column {
+            flex: 1 1 300px;
+            min-width: 250px;
+        }
+
+        
+        .contact-info {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            color: var(--accent);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-info div p {
+            margin-bottom: 5px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copyright {
+            opacity: 0.8;
+        }
+        
+        .copyright a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-links-bottom {
+            display: flex;
+            list-style: none;
+        }
+        
+        .footer-links-bottom li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        .footer-links-bottom li:not(:last-child)::after {
+            content: '|';
+            position: absolute;
+            right: -15px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .footer-links-bottom a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links-bottom a:hover {
+            color: var(--accent);
+        }
+        
+        /*.scroll-to-top {*/
+        /*    position: fixed;*/
+        /*    bottom: 30px;*/
+        /*    right: 30px;*/
+        /*    width: 50px;*/
+        /*    height: 50px;*/
+        /*    background: var(--accent);*/
+        /*    color: white;*/
+        /*    border-radius: 50%;*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*    justify-content: center;*/
+        /*    cursor: pointer;*/
+        /*    transition: var(--transition);*/
+        /*    opacity: 0;*/
+        /*    transform: translateY(20px);*/
+        /*    z-index: 99;*/
+        /*    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);*/
+        /*}*/
+        
+        /*.scroll-to-top.visible {*/
+        /*    opacity: 1;*/
+        /*    transform: translateY(0);*/
+        /*}*/
+        
+        /*.scroll-to-top:hover {*/
+        /*    background: #21867a;*/
+        /*    transform: translateY(-5px);*/
+        /*}*/
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            
+            .nav-links li {
+                margin: 0 8px;
+            }
+            
+            .nav-links a {
+                padding: 6px 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+           
+            .footer-grid {
+               flex-direction: column;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .footer-links-bottom {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .footer-links-bottom li {
+                margin: 0 10px;
+            }
+            
+            .footer-links-bottom li:not(:last-child)::after {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo img {
+                height: 50px;
+            }
+            
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+    </style>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <img src="https://www.anlon.co/black _logo.png" alt="Anlon Logo" class="footer-logo">
+                    <div class="footer-about">
+                        <p>Championing Life-Saving Solutions for Tomorrow’s Infrastructure.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Products -->
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.anlon.co/home"><i class="fas fa-arrow-right"></i> Home</a></li>
+                        <li><a href="https://www.anlon.co/products"><i class="fas fa-arrow-right"></i> Products</a></li>
+                        <li><a  href="https://www.anlon.co/investors"><i class="fas fa-arrow-right"></i> Investors</a></li>
+                        <li><a href="https://www.anlon.co/about"><i class="fas fa-arrow-right"></i> About Us</a></li>
+                        <li><a href="https://www.anlon.co/contact_us"><i class="fas fa-arrow-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h3>Contact Details</h3>
+                    <div class="contact-split">
+                        <!-- Address Column -->
+                        <div class="contact-column">
+                            <div class="contact-info">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <p><strong>Registered Office:</strong></p>
+                                    <p>No. 406, 93 East Building, Shanti Nagar,Mahakali Caves Road, Andheri East,Mumbai - 400 093 Maharashtra State, India.</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <i class="fas fa-building"></i>
+                                <div>
+                                    <p><strong>Corporate Office:</strong></p>
+                                    <p>Plot No. 40, Adinarayanahosahalli Industrial Area,</p>
+                                    <p>4th Phase, Doddaballapura - 561205.</p>
+                                    <p>Bengaluru Rural District.Karnataka State, India.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Contact/Email Column -->
+                       
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                 <div class="contact-column">
+                            <div class="contact-info">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <p>office.anlon@anlon.co.in</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <p>+91 8095550088</p>
+                                    <p>+91 22 12345678</p>
+                                </div>
+                            </div>
+                </div>
+                </div>
+
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container footer-bottom-content">
+                    <div class="copyright">
+                        <p>Copyright © 2024 <a href="#">ANLON Technology Solutions Limited</a>. All Rights Reserved.</p>
+                    </div>
+                    <ul class="footer-links-bottom">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <!--<div class="scroll-to-top" id="scrollToTop">-->
+    <!--    <i class="fas fa-chevron-up"></i>-->
+    <!--</div>-->
+    
+    <script>
+        // Scroll to Top Functionality
+        const scrollToTop = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTop.classList.add('visible');
+            } else {
+                scrollToTop.classList.remove('visible');
+            }
+        });
+        
+        scrollToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+

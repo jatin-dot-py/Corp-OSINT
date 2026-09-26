@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- custom css  -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>EMA Partners | Home</title>
+
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+
+    <style>
+        figcaption.service-card-info-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 162px;
+        }
+
+        .service-card-cta {
+            text-decoration: none;
+            color: black;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .card {
+                padding: 1em 1em;
+                display: grid;
+                grid-template-columns: 1fr 1.5fr;
+                gap: 1em;
+                align-items: center;
+                border-radius: 15px;
+                background: rgb(238, 238, 238);
+                height: 100%;
+                display: flex;
+            }
+        }
+
+    </style>
+
+    <style>
+         .video-section {
+            height: 560px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section-info-wrapper {
+            position: absolute;
+            top: 22%;
+            left: 7%;
+            right: 7%;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        video {
+            outline: none;
+            border:1px solid white;
+            display: none;
+        }
+
+        @media only screen and (min-width: 1025px) {
+            .info-wrapper{
+                display: grid;
+                grid-template-columns: 1fr 3fr ;
+                align-items: center;
+            }
+
+            .info-wrapper p{
+                margin: 0%;
+            }
+
+            .section-info-wrapper {
+                position: absolute;
+                top: 0;
+                left: 7%;
+                right: 7%;
+                bottom: 0;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .info-wrapper .section-title{
+                margin: 0;
+                font-size: 32px;
+            }
+
+            .info-wrapper p {
+                font-size: 16px;
+            }
+
+            
+            .video-section {
+                height: 300px;
+            }
+
+            .hero-section-video {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        
+
+        @media only screen and (max-width: 1024px) {
+            video {
+                scale: 3.4;
+            }
+
+            .video-section {
+                height: 400px;
+            }
+
+            .section-info-wrapper {
+                top: 0%;
+                left: 7%;
+                right: 7%;
+                bottom: 0%;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .section-description{
+                font-size: 16px;
+            }
+
+            .section-info-wrapper {
+                display: flex;
+                align-items: center;
+            }
+
+            .hero-section-video{
+                height: 100%;
+                width: 100%;
+                scale: none;
+            }
+
+            .hero-section {
+                overflow: visible;
+                
+            }
+
+        }   
+
+        .section-title{
+            margin-left: 0%;
+        }
+
+       .card-info-item-description {
+            font-size: 16px;
+        }
+
+        .service-card-info-wrapper p {
+            font-size: 16px;
+        }
+
+        .video-section {
+            background: rgb(239, 239, 239);
+        }
+
+        video {
+            display: block;
+            opacity: 100%;
+            width: 100%;
+        }
+
+        .about-section-video{
+            display: none;
+        }
+
+        .hero-section-video{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-section{
+            overflow: hidden;
+        }
+
+        .highlight-orange {
+    color: #DC5408;
+}
+
+.card-logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.learn-more-link {
+    display: block;
+    margin-top: 8px;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.learn-more-link.highlight-orange {
+    color: #DC5408 !important;
+}
+
+.learn-more-link:hover {
+    color: #DC5408 !important;
+    text-decoration: underline;
+}
+
+.highlight-orange {
+    color: #DC5408;
+}
+
+/* Only cards containing Learn More */
+.card-img-with-link {
+    position: relative;
+    align-self: stretch;
+
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+/* Keep logo vertically aligned with EMA Partners logo */
+.card-img-with-link .card-img {
+    margin: 0;
+}
+
+/* Learn More at bottom-left */
+.card-img-with-link .learn-more-link {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+
+    color: #DC5408 !important;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.card-img-with-link .learn-more-link:hover {
+    color: #DC5408 !important;
+    text-decoration: underline;
+}
+
+.hero-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-section-img-wrapper {
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+}
+
+.hero-section-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* @media only screen and (max-width: 1024px) {
+
+    .hero-section-img-wrapper {
+        height: 400px;
+    }
+
+    .hero-section-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        scale: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .hero-section-img-wrapper {
+        height: 300px;
+    }
+} */
+
+@media only screen and (max-width: 1400px) {
+   .card-img{
+        height: 28px!important;
+    }
+}
+    </style>
+</head>
+
+<body>
+ <!-- navbar  -->
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+        <a class="navbar-brand" href="./index.html">
+            <img class="logo-img" src="./assets/img/ema-logo.png" alt="" srcset="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="./about-us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="./services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="./expertise.html">Expertise</a>
+                </li>
+                 
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="./investor-relation.html">Investor Relations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="./media-&-insight.html">Media & Insights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link border rounded contact-us-cta" target="_blank" aria-current="page" href="./contact-us.html">Contact Us</a>
+                </li>
+                <li class="nav-item nav-search-item d-none">
+                    <span class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feather feather-search">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- hero section start -->
+    <section class="hero-section" id="heroSection">
+        <div class="container-full-with">
+            <div class="hero-content-wrapper">
+                <div class="hero-section-img-wrapper">
+                    <video loop autoplay muted preload="auto" width="100%" height="100%" class="hero-section-video" style="margin-top: 0;">
+                        <source src="./assets/videos/bg-video-5.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-section-title-wrapper">
+                    <h1 class="hero-content-title">
+                        <!-- Connecting Visionaries with Opportunities -->
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero section end  -->
+
+        <!-- video section  -->
+        <section class="video-section">
+            <!-- video start  -->
+            <div class="video-wrapper">
+                <video autoplay loop muted class="about-section-video">
+                    <source src="./assets/videos/bg-video-3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container">
+                <!-- content start  -->
+                <div class="section-info-wrapper">
+                    <div class="info-wrapper">
+                        <div class="section-title-wrapper">
+                            <h1 class="section-title text-color-navy">
+                                About Us
+                            </h1>
+                        </div>
+                        <p class="section-description">
+                            EMA Partners stands as trusted partners, offering comprehensive solutions cater to the diverse needs of
+                            clients, enhancing their leadership capabilities. We've placed thousands of impactful leaders, driving
+                            positive change in organizations and society. Through our partnerships, we provide expert leadership
+                            assessments and advisory services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+
+    <section class="about-section" style="display: none;">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h1 class="section-title text-color-navy">
+                    About Us
+                </h1>
+            </div>
+            <p class="section-description">
+                EMA Partners stands as trusted partners, offering comprehensive solutions cater to the diverse needs of
+                clients, enhancing their leadership capabilities. We've placed thousands of impactful leaders, driving
+                positive change in organizations and society. Through our partnerships, we provide expert leadership
+                assessments and advisory services.
+            </p>
+        </div>
+        </div>
+    </section>
+
+
+
+    <section class="empowring-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title text-color-navy" style="font-weight: bold;">
+                    Empowering <span class="newLine highlight-orange" style="line-height: 28px; font-weight: 300;"> Industries with visionary leadership</span>
+                </h1>
+            </div>
+
+            <div class="company-card-grid-wrapper">
+                <div class="company-card-grid">
+                    <!-- card 1 -->
+                   
+                        <figure class="card shadow p-3 mb-1  border">
+                            <div class="card-img-wrapper">
+                                <img style="height: 41px;     margin-bottom: 28px;" class="card-img" src="./assets/img/ema-logo.png" alt="" srcset="">
+                            </div>
+                            <figcaption class="card-info-wrapper">
+                                <p class="card-info-item card-info-item-description">
+                                    Leading executive search brand with over 2 decades of expertise in assessing and hiring leaders at the Board, C-Suite and Senior Executive levels across industries
+                                </p>
+                            </figcaption>
+                        </figure>
+
+                   
+                    <!-- card 2 -->
+<figure class="card shadow p-3 mb-1 border">
+    <div class="card-img-wrapper card-img-with-link">
+         <div class="card-logo-content">
+        <img style="height: 35px;"
+            class="card-img jamesDouglas-logo"
+            src="./assets/img/companies-logo/JD_India_logo.png"
+            alt="James Douglas India">
+
+             <a href="https://jamesdouglas.co.in/"
+            class="learn-more-link highlight-orange"
+            target="_blank">
+            Learn More
+        </a>
+        </div>
+    </div>
+
+    <figcaption class="card-info-wrapper">
+        <p class="card-info-item card-info-item-description">
+            Professional search brand providing talent acquisition solutions across mid and senior level aided by technology and internally developed proprietary processes
+        </p>
+
+       
+    </figcaption>
+</figure>
+
+
+<!-- card 3 -->
+<figure class="card shadow p-3 mb-1 border">
+    <div class="card-img-wrapper card-img-with-link">
+        <div class="card-logo-content">
+        <img style="height: 50px;"
+            class="card-img"
+            src="./assets/img/companies-logo/taggd-logo.png"
+            alt="Taggd">
+
+             <a href="https://taggd.in/"
+             class="learn-more-link highlight-orange"
+            target="_blank">
+            Learn More
+        </a>
+        </div>
+    </div>
+
+    <figcaption class="card-info-wrapper">
+        <p class="card-info-item card-info-item-description">
+            EMA Partners India Limited acquired Taggd to create one of India's largest integrated talent solutions platforms, spanning executive search, RPO and project-based hiring solutions.
+        </p>
+
+       
+    </figcaption>
+</figure>
+                   
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" >
+        <div class="container">
+            <div class="service-list-wrapper service-list-grid">
+                <!-- service card 1 -->
+                <a href="./about-us.html#executiveLeadership" class="service-card-cta">
+                    <figure class="service-card shadow bg-white  border">
+                        <div class="service-img-wrapper">
+                            <img class="service-img" src="./assets/img/services-img/team-management-2.png" alt="" srcset="">
+                        </div>
+                        <figcaption class="service-card-info-wrapper">
+                            <div class="group">
+                                <h5 class="service-card-info-item service-card-info-item-title">
+                                    Management Team
+                                </h5>
+                                <p class="service-card-info-item service-card-info-item-descri
+                                ption">
+                                    Meet our seasoned management team driving EMA Partners’ vision, strategy and success.
+                                </p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </a>
+                <!-- service card 2  -->
+                <a href="./investor-relation.html" class="service-card-cta">
+                    <figure class="service-card shadow bg-white  border">
+                        <div class="service-img-wrapper">
+                            <img class="service-img" src="./assets/img/services-img/Investor Relations.jpg" alt=""
+                                srcset="">
+                        </div>
+                        <figcaption class="service-card-info-wrapper">
+                            <div class="group">
+                                <h5 class="service-card-info-item service-card-info-item-title">
+                                    Investor Relations
+                                </h5>
+                                <p class="service-card-info-item service-card-info-item-descri
+                            ption">
+                                    Explore our investor section for key insights and updates on our financial performance
+                                </p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="./media-&-insight.html" class="service-card-cta">
+                    <!-- service card 3 -->
+                    <figure class="service-card shadow bg-white  border">
+                        <div class="service-img-wrapper">
+                            <img class="service-img" src="./assets/img/services-img/News%20&%20Insights.jpg" alt="" srcset="">
+                        </div>
+                        <figcaption class="service-card-info-wrapper">
+                            <div class="group">
+                                <h5 class="service-card-info-item service-card-info-item-title">
+                                    Media & Insights
+                                </h5>
+                                <p class="service-card-info-item service-card-info-item-descri
+                            ption">
+                                    Stay informed with the latest news and insights on our firm’s developments and trends.
+                                </p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <footer>
+        <div class="footer-nav">
+            <div class="container">
+                <a href="#" class="footer-logo-link">
+                    <img class="footer-logo" src="./assets/img/ema-logo.png" alt="" srcset="">
+                </a>
+
+                <div class="footer-nav-grid">
+                    <div class="footer-nav-wrapper">
+                        <ul class="footer-primary-nav">
+                            <li class="footer-nav-item">
+                                <a href="./about-us.html" class="footer-nav-link">About Us</a>
+                            </li>
+                          
+                            <li class="footer-nav-item">
+                                <a href="./services.html" class="footer-nav-link">Services</a>
+                            </li>
+                            <li class="footer-nav-item">
+                                <a href="./expertise.html" class="footer-nav-link">Expertise</a>
+                            </li>
+                            <li class="footer-nav-item">
+                                <a href="./privacy-policy.html" class="footer-nav-link">Privacy Policy</a>
+                            </li>
+                            <li class="footer-nav-item">
+                                <a href="./terms-and-conditions.html" class="footer-nav-link">Terms and Conditions</a>
+                            </li>
+                            <li class="footer-nav-item">
+                                <a href="./media-&-insight.html" class="footer-nav-link">Media & Insights</a>
+                            </li>
+                            <li class="footer-nav-item">
+                                <a href="./contact-us.html" class="footer-nav-link">Contact Us</a>
+                            </li>
+                            <li class="footer-nav-item">
+                                <a href="./investor-relation.html" class="footer-nav-link">Investor Relations</a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        
+       <div class="container">
+        <div class="footer-bar">
+            <div class="col-left">
+                <h5 class="footer-text">Join the Conversation</h5>
+                <div class="social-media-list">
+                    <a href="https://www.facebook.com/emapartners/" target="_blank" class="social-media-link">
+                        <img class="social-media-icon"  src="./assets/img/icons/facebook.png" alt="" srcset="">
+                    </a>
+                    <a href="https://x.com/emapartners" target="_blank" class="social-media-link">
+                        <img class="social-media-icon"  src="./assets/img/icons/twitter.png" alt="" srcset="">
+                    </a>
+                    <a href="https://www.linkedin.com/company/ema-partners/" target="_blank" class="social-media-link">
+                        <img class="social-media-icon"  src="./assets/img/icons/linkedin.png" alt="" srcset="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-right">
+                <img class="aesc-img" src="./assets/img/member-of-aesc.png" alt="" srcset="">
+                <p class="copyright-text">Copyright @ 2024 EMA Partners</p>
+            </div>
+        </div>
+       </div>
+
+       <a href="#heroSection" class="scroll-up-cta">
+        <span class="up-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </span>
+    </a>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl491285'},{'dcenter':'sg2'},{'cp_id':'10016521'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>

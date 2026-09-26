@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indifra Limited - Infrastructure Management</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- fonts -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@600&display=swap" rel="stylesheet">
+
+    <script src="./js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var closeButton = document.getElementById('closeButton');
+            var container = document.getElementById('container');
+        
+            closeButton.addEventListener('click', function() {
+                container.style.display = 'none';
+            });
+        });
+
+        $(document).ready(function () {
+            $(".contact-form-btn").click(function () {
+                // Check if all fields are not empty
+                if ($(".contact-form-txt").val() !== "" &&
+                    $(".contact-form-phone").val() !== "" &&
+                    $(".contact-form-email").val() !== "" &&
+                    $(".contact-form-txtarea").val() !== "") {
+        
+                    // Clear input values
+                    $(".contact-form-txt").val("");
+                    $(".contact-form-phone").val("");
+                    $(".contact-form-email").val("");
+                    $(".contact-form-txtarea").val("");
+        
+                    // Display submission alert
+                    var submissionAlert = $("<div class='submission-alert'>Form submitted successfully!</div>");
+                    $("body").append(submissionAlert);
+        
+                    // Hide the alert after 5 seconds
+                    setTimeout(function () {
+                        submissionAlert.fadeOut("slow", function () {
+                            $(this).remove();
+                        });
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo"><img src="./images/logo.png" alt="" style="width: 170px; height: auto;"></a>
+        <div class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#service">services</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="investor.html">investor</a></li>
+                <!-- <li><a href="#">career</a></li> -->
+                <li><a href="#contact">contact</a></li>
+                <!-- <li><a href="#faq">FAQ</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <h1>Building the Future with</h1>
+        <h1>Safety, Innovation, and Excellence</h1>
+        <!-- <h2>with IT Company Services</h2> -->
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </section>
+
+    <section id="about" class="about">
+        <h1 class="heading">about us</h1>
+        <div class="row">
+            <div class="content">
+                <h3>Infrastructural Innovation, Powered</h3>
+                <p>Indifra Limited is a leading player in infrastructure management, gas pipeline laying, and electrical appliances distribution. 
+                    We are committed to delivering excellence, safety, and innovative solutions across our diversified ventures. 
+                    From creating state-of-the-art office spaces to being a preferred distributor of V Guard appliances, 
+                    our journey is marked by growth, reliability, and customer satisfaction.
+                </p>
+                <!-- <a href="#"><button class="btn">Read More</button></a> -->
+            </div>
+        </div>
+    </section>
+
+    <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+        <div class="container">
+            <div class="row">
+                <div class="section-head col-sm-12" id="service">
+                    <h1>Our Services</h1>
+                    <p>The nexus of innovation and infrastructure, offering premier gas pipeline services, comprehensive construction project management, agile wholesale distribution of electrical appliances. Paving the path towards a smarter, safer, and sustainable future, Indifra is the growth partner of choice.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="item"> <span class="icon feature_box_col_one"><i class="fas fa-fire"></i></span>
+                        <h6>Gas Pipeline Management</h6>
+                        <ul style="text-align: left;">
+                            <li><p>Expertise in installing gas pipelines both overground and underground, adhering to stringent safety protocols and industry standards.</p></li>
+                            <li><p>Comprehensive maintenance and repair services, ensuring a safe and seamless supply of gas.</p></li>
+                            <li style="visibility: hidden;"><p> Comprehensive maintenance and repair services, ensuring a safe and seamless supply of gas.</p></li>
+                            
+                        </ul>
+                        
+                       
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="item"> <span class="icon feature_box_col_two"><i class="fas fa-building"></i></span>
+                        <h6>Infrastructure Management</h6>
+                        <ul style="text-align: left;">
+                            <li><p>Proficient in managing turn-key construction projects, overseeing from initial design to final execution while maintaining project timelines and budget.</p></li>
+                            <li><p>Specialized in equipment and machinery installation, optimizing layout for enhanced operational efficiency.</p></li>
+                            <li><p>Craft bespoke interior design and architecture solutions, merging aesthetics with functionality.</p></li>
+                        </ul>
+                        
+                            
+                           
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="item"> <span class="icon feature_box_col_three"><i class="fas fa-bolt"></i></span>
+                        <h6>Master Distribution Network</h6>
+                        <ul style="text-align: left;">
+                            <li><p>Undertake wholesale distribution of electrical appliances, catering to diverse customer needs with a broad product range.</p></li>
+                            <li><p>Expertise in inventory management, ensuring optimal stock levels and efficient supply chain management.</p></li>
+                            <li><p>Provide robust sales and marketing support, helping to drive customer engagement and business growth.</p></li>
+                        </ul>
+                        
+                        
+                        
+                            
+                    </div>
+                </div>
+                <!-- <div class="col-lg-3 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
+                        <h6>IT Hardware and Peripherals Supply</h6>
+                        <ul style="text-align: left;">
+                            <li><p>Reliable supply of state-of-the-art computer hardware, software, and peripherals, sourced from trusted manufacturers.</p></li>
+                            <li><p>Comprehensive product demonstration and training services, enabling users to leverage technology effectively.</p></li>
+                        </ul>
+                        
+                            
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <section class="counters">
+        <div class="container">
+            <div>
+                <i class="far fa-clock fa-4x"></i>
+                <div class="counter" data-target="100000">+0</div>
+                <h3>Domestic and Industrial Piped Natural Gas Connections</h3>
+            </div>
+            <div>
+                <i class="fas fa-gift fa-4x"></i>
+                <div class="counter" data-target="1000">+0</div>
+                <h3>Clients in Distribution Network</h3>
+            </div>
+            <div>
+                <i class="fas fa-users fa-4x"></i>
+                <div class="counter" data-target="35000">+0</div>
+                <h3>Square metre land developed for turn key projects</h3>
+            </div>
+        </div>
+    </section>
+
+    <div class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                    <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
+
+                    <p>Indifra Limited's portfolio of completed projects showcases our unwavering commitment to excellence. From cutting-edge constructions to masterful distribution networks, each venture represents our dedication to delivering exceptional results. Explore our projects to witness the caliber of our work across diverse sectors.
+                    </p>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+
+                    <div class="item"> <span class="icon feature_box_col_four"><i class="fas fa-industry"></i></span>
+                        <h6>Construction of a Chemical Factory</h6>
+
+                        <p>A comprehensive turn-key project was carried out for Sanjopin Industries, creating a state-of-the-art synthetic organic chemicals factory. The facility now stands as a testament to quality, sustainability, and meticulous execution.<br><br><br><br></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_five"><i class="fas fa-bolt"></i></span>
+                        <h6>Single-Handedly made a Distribution Network for Electrical Appliances</h6>
+                        <p>As a key distributor for V Guard appliances in Gujarat, a wide range of high-quality electrical products is delivered, cementing a strong presence in the market. The partnership with V Guard stands as a successful expansion in business, fulfilling the growing needs for reliable and efficient appliances.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="item"> <span class="icon feature_box_col_six"><i class="fas fa-fire"></i></span>
+                        <h6>Installation and Laying of Gas Pipeline</h6>
+                        <p>Successful execution of projects for Adani Gas Limited and CGSML, a benchmark for exceptional services and stringent timeline adherence has been set. This has bolstered reputation as a reliable vendor in the gas pipeline management market.<br><br><br><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="communicate">
+        <h3>Connect with Indifra: Let's Transform Your Infrastructure</h3>
+        <p>Reach out to Indifra to discuss and transform your infrastructure. <br>
+            Our team is here to collaborate with you and deliver innovative solutions for your project's success.</p>
+        <a href="#contact"><button class="btn">Contact Now</button></a>
+    </div>
+    <!-- 
+<div class="testimonials mt-100">
+    <div class="container">
+        <div class="section-header" style="text-align: center;">
+            <h2 style="margin-top: -15rem;">Testimonials</h2>
+            <p style="font-size: 2rem;">
+                See what people have to say about us
+            </p>
+        </div>
+
+        <div class="owl-carousel testimonials-carousel">
+            <div class="testimonial-item row align-items-center">
+                <div class="testimonial-img">
+                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
+                </div>
+                <div class="testimonial-text">
+                    <h3>Person-1</h3>
+                    <h4>Designation</h4>
+                    <p>
+                        Testimonial
+
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-item row align-items-center">
+                <div class="testimonial-img">
+                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
+                </div>
+                <div class="testimonial-text">
+                    <h3>Person-2</h3>
+                    <h4>Designation</h4>
+                    <p>
+                        Testimonial
+
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-item row align-items-center">
+                <div class="testimonial-img">
+                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
+                </div>
+                <div class="testimonial-text">
+                    <h3>Person-3</h3>
+                    <h4>Designation</h4>
+                    <p>
+                        Testimonial
+
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-item row align-items-center">
+                <div class="testimonial-img">
+                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
+                </div>
+                <div class="testimonial-text">
+                    <h3>Person-4</h3>
+                    <h4>Designation</h4>
+                    <p>
+                        Testimonial
+
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-item row align-items-center">
+                <div class="testimonial-img">
+                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
+                </div>
+                <div class="testimonial-text">
+                    <h3>Person-5</h3>
+                    <h4>Designation</h4>
+                    <p>
+                        Testimonial
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+    <div class="clients mt-100">
+        <div class="container">
+            <div class="section-header">
+                <h2>Brand Enhancing Partner</h2>
+                <p>
+                    We are dedicated to driving the success of our clients through our tailored infrastructure solutions and unwavering commitment to excellence.
+                </p>
+            </div>
+            <div class=""">
+                <div class="logo-slider">
+                    <div class="logo-slide-track">
+                        <div class="slide">
+                            <img src="images\client\adanu-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\csgm.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\sanju-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\v-guard.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\adanu-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\csgm.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\sanju-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\v-guard.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\adanu-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\csgm.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\sanju-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\v-guard.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\adanu-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\csgm.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\sanju-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\v-guard.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\adanu-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\csgm.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\sanju-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\v-guard.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\adanu-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\csgm.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\sanju-removebg-preview.png" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="images\client\v-guard.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <!-- <img src="./images/client/adanu.png" alt="Client Logo">
+                <img src="./images/client/cgu.jpg" alt="Client Logo">
+                <img src="./images/client/sanju.jpg" alt="Client Logo">
+                <img src="./images/client/vigu.jpg" alt="Client Logo"> -->
+                <!-- <img src="./images/image.png" alt="Client Logo">
+                <img src="./images/image.png" alt="Client Logo">
+                <img src="./images/image.png" alt="Client Logo">
+                <img src="./images/image.png" alt="Client Logo"> -->
+            </div>
+        </div>
+    </div>
+    <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- <section class="team" style="margin-top: 7rem;">
+  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
+  <p></p>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>Schott Watkins</h3>
+              <span>Web Developer</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>Nicole Bell</h3>
+              <span>Mobile Developer</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>John Doe</h3>
+              <span>Graphic Designer</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="card">
+          <div class="image">
+              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
+          </div>
+          <div class="info">
+              <h3>Rose Matthews</h3>
+              <span>Web Designer</span>
+              <div class="icons">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section> -->
+
+    <section id="contact" class="contact">
+        <h1 class="heading">get in touch</h1>
+    </section>
+    <div class="contact-in">
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d230.3068663919679!2d72.91116418680681!3d22.54504907696432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1689093425436!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-form">
+             <form> 
+                <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number"
+                    maxlength="10" class="contact-form-phone">
+                <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
+                <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
+                <input type="submit" value="Submit" name="submit" class="contact-form-btn">
+             </form> 
+        </div>
+    </div>
+
+    <!-- <section class="faq">
+        <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
+        <div class="row">
+            <div class="accordion-container">
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <span>+</span>
+                        <h3>How much will it cost?</h3>
+                    </div>
+                    <div class="accordion-body">
+                        <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll
+                            ask you a few questions about the nature of the site, what sort of interactivity the site
+                            will have, your graphic design needs, etc.
+                            Then we’ll be able to give you a ballpark figure.
+                            If you’re still interested, we’ll come to your place of business and come up with a firm
+                            quote.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <span>+</span>
+                        <h3>How long it takes to design?</h3>
+                    </div>
+                    <div class="accordion-body">
+                        <p>The time limit of any assignment is normally dictated by the client. If you have any time
+                            limit in mind we will attempt to assemble it for you.
+                            The main general delay in the making of a website is waiting for the content of the pages to
+                            be sent to us by the client.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <span>+</span>
+                        <h3>How do I associate with IT Company?</h3>
+                    </div>
+                    <div class="accordion-body">
+                        <p>The process begins when you contact us with your requirements. We analyze your requirements
+                            and respond to you.
+                            On the basis of the further discussion, you can choose an engagement model that suits you
+                            the best.
+                            After that, we begin the process of development.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <span>+</span>
+                        <h3>Can you help my current site look more professional?</h3>
+                    </div>
+                    <div class="accordion-body">
+                        <p>Yes. Give us your requirements and we have experienced expertise to help you give a
+                            new professional look that really wonders!</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <span>+</span>
+                        <h3>When do I pay?</h3>
+                    </div>
+                    <div class="accordion-body">
+                        <p>For most projects, equal payments are made at the start, midway, and the end of the project,
+                            but we can work with you to set up a schedule that meets your needs.
+                            We understand that this is a big investment and want to help you budget for the expense in
+                            whatever way possible.
+                            We accept checks, PayPal, and all major credit cards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+  
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#home">Home</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
+                            <!-- <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li> -->
+                            <!-- <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
+                            <!-- <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li> -->
+                            <!-- <li><i class="ion-ios-arrow-forward"></i> <a href="#">Career</a></li> -->
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
+                            <!-- <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
+                        <h4>Contact Us</h4>
+                        <p>
+                            9 Krishna Villa, Nr. Aamrakunj Society, Karamsad, V.V Nagar Road, Anand GJ 388325 IN 
+                            <br>
+                            <strong>Phone:</strong> +91 88888 45001<br>
+                            <strong>Email:</strong> contact@indifra.com<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
+                            <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                            <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
+                            <a
+                                href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i
+                                    class="ion-logo-googleplus"></i></a>
+                        </div>
+
+                    </div>
+
+                   
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+                    Copyright &copy; 2023 INDIFRA.COM. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+</body>
+
+</html>

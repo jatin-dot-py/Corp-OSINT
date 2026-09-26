@@ -1,0 +1,83 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mantra Capital Limited</title>
+      <style>
+        body {
+          font-family: Roboto, Arial, Helvetica, sans-serif;
+          background: #fff;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          text-align: center;
+        }
+        #mantra-redirect {
+          max-width: 720px;
+          margin: 0 auto;
+          padding: 32px 24px;
+          border-radius: 12px;
+        }
+        #mantra-redirect h2 {
+          margin: 0 0 10px;
+          font-size: 20px;
+          line-height: 1.4;
+          color: #006668;
+        }
+        #mantra-redirect p {
+          margin: 8px 0 20px;
+          font-size: 15px;
+          color: #333;
+        }
+        #mantra-redirect a {
+          display: inline-block;
+          padding: 10px 20px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 600;
+          background: #006668;
+          color: #fff;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="mantra-redirect">
+        <img src="https://savanifinancials.co.in/wp-content/uploads/2025/05/MC_LOGO-Vertical_RGB_DUO-e1747225203337.png"
+             alt="Mantra Capital Logo"
+             style="width:160px;height:auto;margin-bottom:24px;display:block;margin-left:auto;margin-right:auto;">
+
+        <h2>Savani Financials Limited is now <strong>Mantra Capital Limited</strong>.</h2>
+        <p>You’ll be redirected to our new website in <span id="mc-count">10</span> seconds.</p>
+        <p style="margin-top:14px;font-size:13px;color:#666;">
+          If the redirect doesn’t happen automatically, click below.
+        </p>
+        <a href="https://mantracapital.in">Visit now</a>
+      </div>
+
+      <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        var redirectUrl = "https://mantracapital.in";
+        var seconds = 10;
+        var countEl = document.getElementById("mc-count");
+        if (!countEl) return;
+        var remaining = seconds;
+        countEl.textContent = remaining;
+        var timer = setInterval(function(){
+          remaining -= 1;
+          if (remaining <= 0){
+            clearInterval(timer);
+            window.location.href = redirectUrl;
+          } else {
+            countEl.textContent = remaining;
+          }
+        }, 1000);
+      });
+      </script>
+    </body>
+    </html>
+    

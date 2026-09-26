@@ -1,0 +1,3309 @@
+<!doctype html>
+<html lang="en">
+    <head >
+        
+        <meta charset="utf-8"/>
+<meta name="robots" content="INDEX,FOLLOW"/>
+<meta name="title" content="Dangee Home"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<title>Dangee Home</title>
+<link  rel="stylesheet" type="text/css"  media="all" href="https://www.dangeedums.com/pub/static/version1707852201/_cache/merged/6b23278c772d241475227c59e0fb1c8a.min.css" />
+<link  rel="stylesheet" type="text/css"  media="screen and (min-width: 768px)" href="https://www.dangeedums.com/pub/static/version1707852201/frontend/Smartwave/porto/en_US/css/styles-l.min.css" />
+<link  rel="stylesheet" type="text/css"  media="print" href="https://www.dangeedums.com/pub/static/version1707852201/frontend/Smartwave/porto/en_US/css/print.min.css" />
+
+<link  rel="icon" type="image/x-icon" href="https://www.dangeedums.com/pub/media/favicon/websites/1/favicon.png" />
+<link  rel="shortcut icon" type="image/x-icon" href="https://www.dangeedums.com/pub/media/favicon/websites/1/favicon.png" />
+            <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2C400%2C400italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic&amp;v1&amp;subset=latin%2Clatin-ext" type="text/css" media="screen"/>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+    <!--  domain code is here -->
+    <meta name="facebook-domain-verification" content="td3o2dnbrkrabkrvne00nbi4jp9jjm" />
+
+    <!-- Google tag (gtag.js) -->
+    
+    
+
+    <!-- Google Tag Manager -->
+    
+    <!-- End Google Tag Manager -->
+
+
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.dangeedums.com/pub/media/porto/web/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.dangeedums.com/pub/media/porto/web/css/animate.css">
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.dangeedums.com/pub/media/porto/web/css/header/type19.css">
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.dangeedums.com/pub/media/porto/web/css/custom.css">
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.dangeedums.com/pub/media/porto/configed_css/design_default.css">
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.dangeedums.com/pub/media/porto/configed_css/settings_default.css">
+    
+
+
+ 
+    </head>
+    <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "https://www.dangeedums.com/pub/static/version1707852201/frontend/Smartwave/porto/en_US/images/loader-2.gif"}}' class="ldr-div cms-dangee-home am-porto-cmtb cms-index-index page-layout-1column">
+        <style type="text/css">
+    .google_map_locator .search_content_block.pickup-lctn { padding: 0px; background: none; }
+    .google_map_locator .search_content_block.pickup-lctn.store-pickup-lctn .mage-error { position: relative; }
+</style>
+    
+    
+    
+    
+    <style type="text/css">
+    #google_map_locator_product{
+    background-color: #D1D1D1;    }
+    </style>               
+    <div class="google_map_locator" id="google_map_locator_product" style="display: none;">
+        <h2 class="text-center">Enter Your Location</h2>
+        <div class="page messages" id="location-error-main-div">
+            <div data-placeholder="messages"></div>
+            <div data-bind="scope: 'messages'">
+                <div>
+                    <div role="alert" class="messages" id="location-error-div" style="display: none;">
+                        <div class="message-error error message" data-ui-id="message-error">
+                            <div id="location-error-txt"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="form francy"
+                   action="https://www.dangeedums.com/storepickup/index/ajaxsavelocation/"
+                   id="francy-form"
+                   name="francy-form"
+                   method="post"
+                   data-hasrequired="* Required Fields"
+                   data-mage-init='{"validation":{}}'>
+            <div class="text-center">
+                <!-- <input type="radio" name="shipping" id="pickup" value="pickup" data-validate="{'validate-one-required-by-name':true}">
+                <label for="pickup">
+                    PICKUP                </label> -->
+
+                <input type="hidden" name="shipping" id="delivery" value="delivery" checked="checked" data-validate="{'validate-one-required-by-name':true}">
+                <!-- <label for="delivery">
+                    DELIVERY                </label> -->
+            </div>       
+            <div id="search_content_block" class="search_content_block pickup-lctn store-pickup-lctn center-content">
+                <div class="store-pickup-lctn-inner">
+                    <div class="search_block search-block-inner">
+                        <input type="text" name="search" placeholder="Search for Landmark/Street Address/Area" id="searchstore-ajax" class="error-input" autocomplete="off" data-validate="{required:true}" />  
+                    </div>
+                </div>
+                <button class="srch-btn ajaxlocation" type="button">Submit</button>
+                <br/>
+                <a href="javascript:;" class="locate_me"><img src="https://www.dangeedums.com/pub/media/storepickup/images/locate-me.png" alt="Locate me" /> Locate me</a>
+                <br/>
+                <span style="color: #000; font-weight: bold; display: block;">Search Landmark/Street Address/Area Then press submit.</span>
+                <input type="hidden" name="address" id="address_field" value="" data-validate="{required:true}" />
+                <input type="hidden" name="lat" id="lat" value="" data-validate="{required:true}" />
+                <input type="hidden" name="lng" id="lng" value="" data-validate="{required:true}" />
+                <input type="hidden" name="referer" id="referer" value="" />
+
+                
+            </div>
+            <p>Your Selected Address : <span id="address_selected"></span></p>
+            <div class="stores_container d-none">
+                
+                <div class="stores_list str-pkp-lctn">
+
+                    <div class="total_maps store_title" id="total_maps">
+                        Store  List <span id="totalstorecount">1&nbsp;STORES </span>
+                    </div>
+                    <div class="store_block">
+                        <ul>
+                                                                <li class=" liststores" id="liststores0">
+                                        <div class="store clearfix">
+                                            <div class="storeThumnb">
+                                                <img src="https://www.dangeedums.com/pub/media/storepickup/default/Store.png">
+                                            </div>
+                                            <div class="store_content">
+                                                                                                <p class="store-title">Ahmedabad                                                    <input style="display: none;" type="checkbox" name="storeids[]" class="checkbox_store" id="checkbox_store0" value="87_88">
+                                                </p>
+                                                    <p>Phone No: 9898088885</p>
+                                                    <p>Ahmedabad</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                            </ul>
+                    </div>
+
+                </div>
+            </div>
+        </form>    
+
+        <div class="map_locator_rightside" style="display: none;">
+          <div class="map" >         
+                <div id="map_canvas_ajax"></div> <!-- style="height:550px;" -->
+          </div> 
+        </div> 
+
+    </div>
+
+    
+        
+
+
+    <noscript>
+        <div class="message global noscript">
+            <div class="content">
+                <p>
+                    <strong>JavaScript seems to be disabled in your browser.</strong>
+                    <span>For the best experience on our site, be sure to turn on Javascript in your browser.</span>
+                </p>
+            </div>
+        </div>
+    </noscript>
+
+
+
+<div class="page-wrapper"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDCXJHV7"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="page-header type19 header-newskin" >
+
+    <!--<div class="pg-loader">
+    <img src="" width="500px" height="100px" />
+</div>-->
+
+    <div class="block block-customer-login block-header-customer-login">
+    <div class="block-content" aria-labelledby="block-customer-login-heading">
+        <form class="form form-login"
+              action="https://www.dangeedums.com/customer/account/loginPost/"
+              method="post"
+              id="header-login-form"
+              data-mage-init='{"validation":{}}'>
+            <input name="form_key" type="hidden" value="K5YEXysKE9L170mw" />            <fieldset class="fieldset login" data-hasrequired="* Required Fields">
+                <div class="field email required">
+                    <div class="control">
+                        <input name="login[username]" value=""  autocomplete="off" id="email" type="email" class="input-text" title="Email" data-validate="{required:true, 'validate-email':true}" placeholder="Email">
+                    </div>
+                </div>
+                <div class="field password required">
+                    <div class="control">
+                        <input name="login[password]" type="password"  autocomplete="off" class="input-text" id="pass" title="Password" data-validate="{required:true}" placeholder="Password">
+                    </div>
+                </div>
+                <div class="actions-toolbar">
+                    <div class="primary"><button type="submit" class="action login primary" name="send" id="send2"><span>Sign In</span></button></div>
+                    <div class="secondary"><a class="action remind" href="https://www.dangeedums.com/customer/account/forgotpassword/"><span>Forgot Your Password?</span></a></div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+            <div class="header content">
+                <strong class="logo">
+        <img src="https://www.dangeedums.com/pub/media/logo/websites/1/DD_new_logo_Black.png"
+             alt=""
+             width="300"             height="30"        />
+    </strong>
+            
+<div data-block="minicart" class="minicart-wrapper">
+    <a class="action showcart" href="https://www.dangeedums.com/checkout/cart/"
+       data-bind="scope: 'minicart_content'">
+        <span class="text">Cart</span>
+        <span class="counter qty empty"
+              data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+            <span class="counter-number">
+            <!-- ko if: getCartParam('summary_count') --><!-- ko text: getCartParam('summary_count') --><!-- /ko --><!-- /ko -->
+            <!-- ko ifnot: getCartParam('summary_count') -->0<!-- /ko -->
+            </span>
+            <span class="counter-label">
+                <!-- ko i18n: 'items' --><!-- /ko -->
+            </span>
+        </span>
+    </a>
+        
+    
+</div>
+
+
+            <span data-action="toggle-nav" class="action nav-toggle"><span>Toggle Nav</span></span>
+            <div class="block block-search">
+    <div class="block block-title"><strong>Search</strong></div>
+    <div class="block block-content">
+        <form class="form minisearch" id="search_mini_form" action="https://www.dangeedums.com/catalogsearch/result/" method="get">
+            <div class="field search">
+                <label class="label" for="search" data-role="minisearch-label">
+                    <span>Search</span>
+                </label>
+                <div class="control">
+                    <input id="search"
+                           data-mage-init='{"quickSearch":{
+                                "formSelector":"#search_mini_form",
+                                "url":"https://www.dangeedums.com/search/ajax/suggest/",
+                                "destinationSelector":"#search_autocomplete"}
+                           }'
+                           type="text"
+                           name="q"
+                           value=""
+                           placeholder="Search..."
+                           class="input-text"
+                           maxlength="128"
+                           role="combobox"
+                           aria-haspopup="false"
+                           aria-autocomplete="both"
+                           autocomplete="off"/>
+                    <div id="search_autocomplete" class="search-autocomplete"></div>
+                    <div class="nested">
+    <a class="action advanced" href="https://www.dangeedums.com/catalogsearch/advanced/" data-action="advanced-search">
+        Advanced Search    </a>
+</div>
+        <div class="search-category" style="position:absolute; top: 0; right: 35px; width: 151px">
+        <select id="mpsearch-category">
+                            <option value="0">All Categories</option>
+                            <option value="25">Baked Treats</option>
+                            <option value="26">Beverages</option>
+                            <option value="71">Brownies</option>
+                            <option value="4">Cake </option>
+                            <option value="49">Cake (450gm)</option>
+                            <option value="65">Cakes (400gm)</option>
+                            <option value="32">Cakes (500gm)</option>
+                            <option value="33">Cakes Mini (200gm)</option>
+                            <option value="24">Chocolates</option>
+                            <option value="5">Cupcakes</option>
+                            <option value="10">Designer Cake</option>
+                            <option value="75">DRY CAKE</option>
+                            <option value="44">Hamper</option>
+                            <option value="18">Ice Creams</option>
+                            <option value="73">JAR CAKE</option>
+                            <option value="6">Pastries</option>
+                            <option value="31">Regular Cakes</option>
+                            <option value="34">Savories</option>
+                    </select>
+    </div>
+        
+    
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit"
+                        title="Search"
+                        class="action search">
+                    <span>Search</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+            <div class="panel header">
+                <a class="action skip contentarea" href="#contentarea"><span>Skip to Content</span></a>
+                                <div class="switcher language switcher-language" data-ui-id="language-switcher" id="switcher-language" style="display: none;">
+    <strong class="label switcher-label"><span>Language</span></strong>
+    <div class="actions dropdown options switcher-options">
+        <div class="action toggle switcher-trigger" id="switcher-language-trigger">
+            <strong class="view-default">
+                                <span>Default Store View</span>
+            </strong>
+        </div>
+        <ul class="dropdown switcher-dropdown"
+            data-mage-init='{"dropdownDialog":{
+                "appendTo":"#switcher-language > .options",
+                "triggerTarget":"#switcher-language-trigger",
+                "closeOnMouseLeave": false,
+                "triggerClass":"active",
+                "parentClass":"active",
+                "buttons":null}}'>
+                                                <li class="view-dangee_dums_4 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_4","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ,"}}'>
+                                                        AHD - 4D Square</a>
+                    </li>
+                                                                <li class="view-dangee_dums_5 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_5","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzU,"}}'>
+                                                        AHD - AEC Cross Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_6 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_6","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzY,"}}'>
+                                                        AHD - Ambawadi</a>
+                    </li>
+                                                                <li class="view-dangee_dums_8 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_8","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzg,"}}'>
+                                                        AHD - Bodakdev</a>
+                    </li>
+                                                                <li class="view-dangee_dums_9 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_9","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzk,"}}'>
+                                                        AHD - Chandlodiya</a>
+                    </li>
+                                                                <li class="view-dangee_dums_10 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_10","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzEw"}}'>
+                                                        AHD - CTM</a>
+                    </li>
+                                                                <li class="view-dangee_dums_11 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_11","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzEx"}}'>
+                                                        AHD - Drive In</a>
+                    </li>
+                                                                <li class="view-dangee_dums_12 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_12","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzEy"}}'>
+                                                        AHD - Hansol</a>
+                    </li>
+                                                                <li class="view-dangee_dums_13 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_13","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzEz"}}'>
+                                                        AHD - Haridarshan</a>
+                    </li>
+                                                                <li class="view-dangee_dums_14 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_14","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE0"}}'>
+                                                        AHD - IOC Road (Chandkheda)</a>
+                    </li>
+                                                                <li class="view-dangee_dums_15 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_15","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE1"}}'>
+                                                        AHD - Isanpur</a>
+                    </li>
+                                                                <li class="view-dangee_dums_17 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_17","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE3"}}'>
+                                                        AHD - K K Nagar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_18 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_18","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE4"}}'>
+                                                        AHD - Khokhra</a>
+                    </li>
+                                                                <li class="view-dangee_dums_19 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_19","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE5"}}'>
+                                                        AHD - Maninagar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_21 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_21","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzIx"}}'>
+                                                        AHD - Mithakhali</a>
+                    </li>
+                                                                <li class="view-dangee_dums_23 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_23","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzIz"}}'>
+                                                        AHD - Naranpura</a>
+                    </li>
+                                                                <li class="view-dangee_dums_24 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_24","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI0"}}'>
+                                                        AHD - Naroda</a>
+                    </li>
+                                                                <li class="view-dangee_dums_86 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_86","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzg2"}}'>
+                                                        AHD - New Stadium</a>
+                    </li>
+                                                                <li class="view-dangee_dums_26 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_26","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI2"}}'>
+                                                        AHD - Nikol</a>
+                    </li>
+                                                                <li class="view-dangee_dums_35 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_35","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzM1"}}'>
+                                                        AHD - Paldi</a>
+                    </li>
+                                                                <li class="view-dangee_dums_36 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_36","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzM2"}}'>
+                                                        AHD - Prahladnagar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_27 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_27","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI3"}}'>
+                                                        AHD - Prernatirth</a>
+                    </li>
+                                                                <li class="view-dangee_dums_28 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_28","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI4"}}'>
+                                                        AHD - Pritam Nagar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_29 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_29","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI5"}}'>
+                                                        AHD - Relief Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_31 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_31","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzMx"}}'>
+                                                        AHD - Sattadhar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_32 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_32","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzMy"}}'>
+                                                        AHD - Science City</a>
+                    </li>
+                                                                <li class="view-dangee_dums_34 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_34","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzM0"}}'>
+                                                        AHD - Shantivan</a>
+                    </li>
+                                                                <li class="view-dangee_dums_39 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_39","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzM5"}}'>
+                                                        AHD - South Bopal</a>
+                    </li>
+                                                                <li class="view-dangee_dums_41 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_41","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQx"}}'>
+                                                        AHD - Thaltej</a>
+                    </li>
+                                                                <li class="view-dangee_dums_42 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_42","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQy"}}'>
+                                                        AHD - Usmanpura</a>
+                    </li>
+                                                                <li class="view-dangee_dums_43 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_43","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQz"}}'>
+                                                        AHD - Vastrapur</a>
+                    </li>
+                                                                <li class="view-dangee_dums_45 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_45","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ1"}}'>
+                                                        AHD - Vijay Cross Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_46 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_46","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ2"}}'>
+                                                        AHD - Vishala Circle</a>
+                    </li>
+                                                                <li class="view-dangee_dums_47 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_47","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ3"}}'>
+                                                        AHD - Yums - Bopal</a>
+                    </li>
+                                                                <li class="view-dangee_dums_48 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_48","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ4"}}'>
+                                                        AHD - Yums - Panjrapole</a>
+                    </li>
+                                                                <li class="view-dangee_dums_84 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_84","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzg0"}}'>
+                                                        AHD - Yums - Shahibaug</a>
+                    </li>
+                                                                <li class="view-dangee_dums_49 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_49","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ5"}}'>
+                                                        AHD - Yums - Shyamal</a>
+                    </li>
+                                                                <li class="view-dangee_dums_50 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_50","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzUw"}}'>
+                                                        AND - Amul Dairy Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_88 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_88","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzg4"}}'>
+                                                        AND - V V Nagar Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_55 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_55","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzU1"}}'>
+                                                        BRD - Karelibag</a>
+                    </li>
+                                                                <li class="view-dangee_dums_57 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_57","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzU3"}}'>
+                                                        BRD - Manjalpur</a>
+                    </li>
+                                                                <li class="view-dangee_dums_60 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_60","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzYw"}}'>
+                                                        BRD - Vasna Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_61 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_61","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzYx"}}'>
+                                                        BRD - Waghodiya</a>
+                    </li>
+                                                                                            <li class="view-dangee_dums_62 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_62","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzYy"}}'>
+                                                        GNR - Infocity</a>
+                    </li>
+                                                </ul>
+    </div>
+</div>
+                <div class="top-links-area">
+                    <div class="top-links-icon"><a href="javascript:void(0)">links</a></div>
+                    <ul class="header links profile-nav">        <li class="greet welcome" data-bind="scope: 'customer'">
+            <!-- ko if: customer().fullname  -->
+            <span class="logged-in" data-bind="text: new String('Welcome, %1!').replace('%1', customer().fullname)">
+            </span>
+            <!-- /ko -->
+            <!-- ko ifnot: customer().fullname  -->
+            <span class="not-logged-in" data-bind='html:"Welcome to Dangee Dums!"'></span>
+                        <!-- /ko -->
+        </li>
+        
+    	<li>
+		<a href="javascript:;" class="level-top selectlocation_link"><span>Change Location</span></a>
+	</li>
+
+        <li class="authorization-link" data-label="or">
+            <a href="javascript:void(0)" class="mt_signin" >
+                Sign In            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="mt_create_account">
+                Create an Account            </a>
+        </li>
+
+    <li class="item link compare hide" data-bind="scope: 'compareProducts'" data-role="compare-products-link">
+    <a class="action compare" title="Compare Products"
+       data-bind="attr: {'href': compareProducts().listUrl}, css: {'': !compareProducts().count}"
+    >
+    	<em class="hidden-xs"></em>
+    	<!-- <em class="porto-icon-chart hidden-xs"></em> -->
+        Compare        (<span class="counter qty" data-bind="text: compareProducts().countCaption"></span>)
+    </a>
+</li>
+
+<ul class="header links"><li><a href="https://www.dangeedums.com/customer/account/" >My Account</a></li><li class="link wishlist" data-bind="scope: 'wishlist'">
+    <a href="https://www.dangeedums.com/wishlist/">My Wish List        <!-- ko if: wishlist().counter -->
+        <span data-bind="text: wishlist().counter" class="counter qty"></span>
+        <!-- /ko -->
+    </a>
+</li>
+
+
+</ul></ul>                </div>
+            </div>
+        </div>
+            <div class="sections nav-sections">
+                <div class="section-items nav-sections-items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+                                            <div class="section-item-title nav-sections-item-title" data-role="collapsible">
+                    <a class="nav-sections-item-switch" data-toggle="switch" href="#store.menu">Menu</a>
+                </div>
+                <div class="section-item-content nav-sections-item-content" id="store.menu" data-role="content">
+<nav class="navigation sw-megamenu " role="navigation">
+    <ul>
+        &nbsp;<li class="ui-menu-item level0 fullwidth parent "><div class="open-children-toggle"></div><a href="https://www.dangeedums.com/cakes" class="level-top" title="Cake "><span>Cake </span></a><div class="level0 submenu"><div class="container"><div class="row"><ul class="subchildmenu col-md-12 mega-columns columns4"><li class="ui-menu-item level1 "><a href="https://www.dangeedums.com/cakes/regular-cakes" title="Regular Cakes"><span>Regular Cakes</span></a></li><li class="ui-menu-item level1 "><a href="https://www.dangeedums.com/cakes/500-grams-cakes" title="Cakes (500gm)"><span>Cakes (500gm)</span></a></li><li class="ui-menu-item level1 "><a href="https://www.dangeedums.com/cakes/mini-cakes" title="Cakes Mini (200gm)"><span>Cakes Mini (200gm)</span></a></li><li class="ui-menu-item level1 "><a href="https://www.dangeedums.com/cakes/450-gms" title="Cake (450gm)"><span>Cake (450gm)</span></a></li><li class="ui-menu-item level1 "><a href="https://www.dangeedums.com/cakes/cakes-400gm" title="Cakes (400gm)"><span>Cakes (400gm)</span></a></li></ul></div></div></div></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/jar-cake" class="level-top" title="JAR CAKE"><span>JAR CAKE</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/pastries" class="level-top" title="Pastries"><span>Pastries</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/dry-cake" class="level-top" title="DRY CAKE"><span>DRY CAKE</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/cupcakes" class="level-top" title="Cupcakes"><span>Cupcakes</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/brownies" class="level-top" title="Brownies"><span>Brownies</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/chocolates" class="level-top" title="Chocolates"><span>Chocolates</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/baked-treats" class="level-top" title="Baked Treats"><span>Baked Treats</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/ice-creams" class="level-top" title="Ice Creams"><span>Ice Creams</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/savories" class="level-top" title="Savories"><span>Savories</span></a></li><li class="ui-menu-item level0 classic "><a href="https://www.dangeedums.com/designer-cake" class="level-top" title="Designer Cake"><span>Designer Cake</span></a></li><li class="ui-menu-item level0 fullwidth "><a href="https://www.dangeedums.com/hamper" class="level-top" title="Hamper"><span>Hamper</span></a></li>
+    <li class="ui-menu-item level0">
+    <a href="javascript:;" class="level-top selectlocation_link"><span>Change Location</span></a>
+</li>
+
+    </ul>
+</nav>
+
+
+</div>
+                                            <div class="section-item-title nav-sections-item-title" data-role="collapsible">
+                    <a class="nav-sections-item-switch" data-toggle="switch" href="#store.links">Account</a>
+                </div>
+                <div class="section-item-content nav-sections-item-content" id="store.links" data-role="content"><!-- Account links --></div>
+                                            <div class="section-item-title nav-sections-item-title" data-role="collapsible">
+                    <a class="nav-sections-item-switch" data-toggle="switch" href="#store.settings">Settings</a>
+                </div>
+                <div class="section-item-content nav-sections-item-content" id="store.settings" data-role="content"><div class="switcher language switcher-language" data-ui-id="language-switcher" id="switcher-language-nav" style="display: none;">
+    <strong class="label switcher-label"><span>Language</span></strong>
+    <div class="actions dropdown options switcher-options">
+        <div class="action toggle switcher-trigger" id="switcher-language-trigger-nav">
+            <strong class="view-default">
+                                <span>Default Store View</span>
+            </strong>
+        </div>
+        <ul class="dropdown switcher-dropdown"
+            data-mage-init='{"dropdownDialog":{
+                "appendTo":"#switcher-language-nav > .options",
+                "triggerTarget":"#switcher-language-trigger-nav",
+                "closeOnMouseLeave": false,
+                "triggerClass":"active",
+                "parentClass":"active",
+                "buttons":null}}'>
+                                                <li class="view-dangee_dums_4 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_4","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ,"}}'>
+                                                        AHD - 4D Square</a>
+                    </li>
+                                                                <li class="view-dangee_dums_5 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_5","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzU,"}}'>
+                                                        AHD - AEC Cross Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_6 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_6","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzY,"}}'>
+                                                        AHD - Ambawadi</a>
+                    </li>
+                                                                <li class="view-dangee_dums_8 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_8","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzg,"}}'>
+                                                        AHD - Bodakdev</a>
+                    </li>
+                                                                <li class="view-dangee_dums_9 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_9","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzk,"}}'>
+                                                        AHD - Chandlodiya</a>
+                    </li>
+                                                                <li class="view-dangee_dums_10 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_10","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzEw"}}'>
+                                                        AHD - CTM</a>
+                    </li>
+                                                                <li class="view-dangee_dums_11 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_11","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzEx"}}'>
+                                                        AHD - Drive In</a>
+                    </li>
+                                                                <li class="view-dangee_dums_12 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_12","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzEy"}}'>
+                                                        AHD - Hansol</a>
+                    </li>
+                                                                <li class="view-dangee_dums_13 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_13","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzEz"}}'>
+                                                        AHD - Haridarshan</a>
+                    </li>
+                                                                <li class="view-dangee_dums_14 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_14","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE0"}}'>
+                                                        AHD - IOC Road (Chandkheda)</a>
+                    </li>
+                                                                <li class="view-dangee_dums_15 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_15","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE1"}}'>
+                                                        AHD - Isanpur</a>
+                    </li>
+                                                                <li class="view-dangee_dums_17 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_17","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE3"}}'>
+                                                        AHD - K K Nagar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_18 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_18","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE4"}}'>
+                                                        AHD - Khokhra</a>
+                    </li>
+                                                                <li class="view-dangee_dums_19 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_19","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzE5"}}'>
+                                                        AHD - Maninagar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_21 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_21","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzIx"}}'>
+                                                        AHD - Mithakhali</a>
+                    </li>
+                                                                <li class="view-dangee_dums_23 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_23","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzIz"}}'>
+                                                        AHD - Naranpura</a>
+                    </li>
+                                                                <li class="view-dangee_dums_24 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_24","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI0"}}'>
+                                                        AHD - Naroda</a>
+                    </li>
+                                                                <li class="view-dangee_dums_86 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_86","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzg2"}}'>
+                                                        AHD - New Stadium</a>
+                    </li>
+                                                                <li class="view-dangee_dums_26 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_26","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI2"}}'>
+                                                        AHD - Nikol</a>
+                    </li>
+                                                                <li class="view-dangee_dums_35 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_35","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzM1"}}'>
+                                                        AHD - Paldi</a>
+                    </li>
+                                                                <li class="view-dangee_dums_36 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_36","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzM2"}}'>
+                                                        AHD - Prahladnagar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_27 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_27","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI3"}}'>
+                                                        AHD - Prernatirth</a>
+                    </li>
+                                                                <li class="view-dangee_dums_28 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_28","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI4"}}'>
+                                                        AHD - Pritam Nagar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_29 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_29","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzI5"}}'>
+                                                        AHD - Relief Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_31 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_31","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzMx"}}'>
+                                                        AHD - Sattadhar</a>
+                    </li>
+                                                                <li class="view-dangee_dums_32 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_32","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzMy"}}'>
+                                                        AHD - Science City</a>
+                    </li>
+                                                                <li class="view-dangee_dums_34 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_34","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzM0"}}'>
+                                                        AHD - Shantivan</a>
+                    </li>
+                                                                <li class="view-dangee_dums_39 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_39","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzM5"}}'>
+                                                        AHD - South Bopal</a>
+                    </li>
+                                                                <li class="view-dangee_dums_41 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_41","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQx"}}'>
+                                                        AHD - Thaltej</a>
+                    </li>
+                                                                <li class="view-dangee_dums_42 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_42","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQy"}}'>
+                                                        AHD - Usmanpura</a>
+                    </li>
+                                                                <li class="view-dangee_dums_43 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_43","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQz"}}'>
+                                                        AHD - Vastrapur</a>
+                    </li>
+                                                                <li class="view-dangee_dums_45 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_45","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ1"}}'>
+                                                        AHD - Vijay Cross Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_46 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_46","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ2"}}'>
+                                                        AHD - Vishala Circle</a>
+                    </li>
+                                                                <li class="view-dangee_dums_47 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_47","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ3"}}'>
+                                                        AHD - Yums - Bopal</a>
+                    </li>
+                                                                <li class="view-dangee_dums_48 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_48","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ4"}}'>
+                                                        AHD - Yums - Panjrapole</a>
+                    </li>
+                                                                <li class="view-dangee_dums_84 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_84","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzg0"}}'>
+                                                        AHD - Yums - Shahibaug</a>
+                    </li>
+                                                                <li class="view-dangee_dums_49 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_49","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzQ5"}}'>
+                                                        AHD - Yums - Shyamal</a>
+                    </li>
+                                                                <li class="view-dangee_dums_50 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_50","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzUw"}}'>
+                                                        AND - Amul Dairy Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_88 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_88","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzg4"}}'>
+                                                        AND - V V Nagar Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_55 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_55","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzU1"}}'>
+                                                        BRD - Karelibag</a>
+                    </li>
+                                                                <li class="view-dangee_dums_57 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_57","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzU3"}}'>
+                                                        BRD - Manjalpur</a>
+                    </li>
+                                                                <li class="view-dangee_dums_60 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_60","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzYw"}}'>
+                                                        BRD - Vasna Road</a>
+                    </li>
+                                                                <li class="view-dangee_dums_61 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_61","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzYx"}}'>
+                                                        BRD - Waghodiya</a>
+                    </li>
+                                                                                            <li class="view-dangee_dums_62 switcher-option">
+                        <a href="#" data-post='{"action":"https:\/\/www.dangeedums.com\/stores\/store\/redirect\/","data":{"___store":"dangee_dums_62","___from_store":"default","uenc":"aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20vP19fX3N0b3JlPWRhbmdlZV9kdW1zXzYy"}}'>
+                                                        GNR - Infocity</a>
+                    </li>
+                                                </ul>
+    </div>
+</div>
+</div>
+                    </div>
+    </div>
+    </header><main id="maincontent" class="page-main"><a id="contentarea" tabindex="-1"></a>
+<div class="page messages"><div data-placeholder="messages"></div>
+<div data-bind="scope: 'messages'">
+    <div data-bind="visible: isVisible(), click: removeAll">
+        <!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+        <div role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages">
+            <div data-bind="attr: {
+                class: 'message-' + message.type + ' ' + message.type + ' message',
+                'data-ui-id': 'message-' + message.type
+            }">
+                <div data-bind="html: message.text"></div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: messages().messages && messages().messages.length > 0 -->
+        <div role="alert" data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages">
+            <div data-bind="attr: {
+                class: 'message-' + message.type + ' ' + message.type + ' message',
+                'data-ui-id': 'message-' + message.type
+            }">
+                <div data-bind="html: message.text"></div>
+            </div>
+        </div>
+        <!-- /ko -->
+  </div>
+</div>
+
+</div><div class="columns"><div class="column main"><input name="form_key" type="hidden" value="yZ0sS6XC6vL62cqG" /><div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
+    
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    
+</div>
+
+
+
+
+<div class="widget block block-static-block">
+    <style>
+body.layout-fullwidth .header.content {
+max-width:100%;
+}
+.footer li {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.footer-top a {
+font-size:14px;
+}
+.checkout-index-index .page-main.onepage-category {
+background: #f5f5f5;
+}
+.checkout-index-index .page-main .columns {
+max-width: 1200px;
+    margin: 60px auto;
+}
+
+.page-main .block {
+margin-bottom: 0;
+}
+.sidebar.sidebar-main {
+
+padding-top:30px;
+}
+@media (min-width: 768px) {
+.page-header.type19 .block-search {
+    margin-left: 20%;
+    width: 500px;
+}
+}
+@media (max-width: 767px) {
+        .page-header.type19 .logo {    margin: 22px 0 0 0;}
+        .page-header.type19 {    background-color: #d0b7b5;}
+}
+</style></div>
+<style type="text/css">
+    .cms-dangee-home #maincontent.onepage-category{
+        padding: 0;
+        margin: 0;
+    }
+    .cms-dangee-home .page-main .columns {
+        padding: 0 !important;
+    }
+    .all-category {
+        padding: 60px 80px;
+    }
+    .category-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .category-list li {
+        padding: 0 20px;
+        width: 12.5%;
+        text-align: center;
+        margin: 0;
+    }
+    .category-list li strong {
+        display: block;
+        margin-top: 10px;
+    }
+    .cols {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 -15px;
+    }
+    .cols.cols5 .colm {
+        width: 20%;
+        padding: 0 15px;
+    }
+    .cols.cols4 .colm {
+        width: 25%;
+    }
+    figure {
+        margin: 0;
+    }
+    .yummy-cakes-banner { padding: 0 80px }
+    .yummy-cakes-banner .col figure img { width:100% }
+    .yummy-cakes-banner h5 { background:#efe5e4; text-align:center; text-transform:uppercase; margin:0; padding:20px 0; }
+    .hero-title { display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px }
+    .hero-title h3 { margin: 0 }
+    .featured-product-banner {
+        padding: 100px 80px;
+    }
+    .featured-product-banner .products-grid .product-item .product-item-info {
+        background: #efe5e4;
+        color: #000000;
+    }
+    .featured-product-banner .product-item-photo {
+        background: #FFF;
+        border: 1px solid #efe5e4;
+        min-height: 328px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .shop-main-banner { padding: 0 80px }
+    .safe-box { padding: 100px 80px; }
+    .safe-box .cols .colm {text-align:center}
+    .main-banner-bottom { padding: 0 80px }
+    .customers-stories { padding:100px 80px; }
+    .customers-stories .item { text-align: center }
+    .customers-stories .item figure img { margin: 0 auto 20px }
+    @media (max-width: 767px) {
+        .page-header.type19 .logo {    margin: 22px 0 0 0;}
+        .page-header.type19 {    background-color: #d0b7b5;}
+        .all-category {     padding: 40px 20px; }
+        .category-list li { width:50% }
+        .yummy-cakes-banner {
+            padding: 0 20px;
+        }
+        .cols.cols5 .colm { width:50%;}
+        .yummy-cakes-banner h5 { font-size:14px }
+        .featured-product-banner {
+            padding: 40px 20px;
+        }
+        .shop-main-banner {
+            padding: 0 20px;
+        }
+        .safe-box {
+            padding: 20px 20px;
+        }
+        .cols.cols4 .colm {
+            width: 100%;
+        }
+        .main-banner-bottom { padding: 0 20px }
+        .customers-stories { padding: 40px 20px }
+    }
+</style>
+<section class="main-banner">
+    <div class="hero-banner owl-carousel">
+        <div class="item">
+            <figure>
+                <a href="https://www.dangeedums.com/cake-of-the-day" title="Cream Nahi Cake Khao">
+<img src="https://www.dangeedums.com/pub/media/wysiwyg/home-hero-banner.jpg" alt="Cream Nahi Cake Khao"  />
+                </a>
+            </figure>
+        </div>
+        <div class="item">
+            <figure>
+                <a href="https://www.dangeedums.com/shop/cakes" title="Baked Perfection Mouthwatering Cake">
+                    <img src="https://www.dangeedums.com/pub/media/wysiwyg/dangee-hero-banner.jpg" alt="Baked Perfection Mouthwatering Cake" />
+                </a>
+            </figure>
+        </div>
+    </div>
+<!--
+    <figure><a href="https://www.dangeedums.com/shop/cakes" title="Baked Perfection Mouthwatering Cake"> <img src="https://www.dangeedums.com/pub/media/wysiwyg/dangee-hero-banner.jpg" alt="Baked Perfection Mouthwatering Cake" /> </a> </figure>
+    -->
+</section>
+
+<section class="all-category">
+    <ul class="category-list">
+        <li> <a href="https://www.dangeedums.com/cakes" title="CAKES"> <img src="https://www.dangeedums.com/pub/media/wysiwyg/category_Cake_1.jpg" alt="Cakes" /><strong> CAKE </strong></a> </li>
+        <li> <a href="https://www.dangeedums.com/cupcakes" title="CUP CAKE  "> <img src="https://www.dangeedums.com/pub/media/wysiwyg/category_Cup_Cake.jpg" alt="CUP CAKE" /><strong>CUP CAKE </strong></a> </li>
+        <li> <a href="https://www.dangeedums.com/pastries" title="PASTRIES"> <img src="https://www.dangeedums.com/pub/media/wysiwyg/category_Pastris.jpg" alt="PASTRIES" /><strong> PASTRIES </strong></a> </li>
+        <li> <a href="https://www.dangeedums.com/chocolates" title="CHOCOLATE"> <img src="https://www.dangeedums.com/pub/media/wysiwyg/category_Chocolate.jpg" alt="CHOCOLATE" /><strong>CHOCOLATE</strong></a> </li>
+        <li> <a href="https://www.dangeedums.com/baked-treats" title="BAKED TREATS"><img src="https://www.dangeedums.com/pub/media/wysiwyg/category_Baked_Treats.jpg" alt="BAKED TREATS" /> <strong>BAKED TREATS</strong></a> </li>
+        <li> <a href="https://www.dangeedums.com/ice-creams" title="ICE CREAM"><img src="https://www.dangeedums.com/pub/media/wysiwyg/category_Ice_Cream.jpg" alt="ICE CREAM" /> <strong>ICE CREAM</strong></a> </li>
+        <li> <a href="https://www.dangeedums.com/savories" title="Savouries"><img src="https://www.dangeedums.com/pub/media/wysiwyg/category_Savouries.jpg" alt="SAVOURIES" /> <strong> SAVOURIES </strong></a> </li>
+        <li> <a href="https://www.dangeedums.com/party-kit" title="PARTY KIT"><img src="https://www.dangeedums.com/pub/media/wysiwyg/category_Party_Kit.jpg" alt="PARTY KIT" /> <strong>PARTY KIT</strong></a> </li>
+    </ul>
+</section>
+<section class="yummy-cakes-banner">
+    <div class="hero-title">
+        <h3>Yummy Cakes</h3>
+
+    </div>
+    <div class="cols cols5">
+        <div class="colm">
+            <figure>
+                <a href="https://www.dangeedums.com/birthday" title="Birthday">
+                    <img src="https://www.dangeedums.com/pub/media/wysiwyg/yummy-cakes-01.png" alt="Birthday" />
+                    <h5>Birthday</h5>
+                </a>
+            </figure>
+        </div>
+        <div class="colm">
+            <figure>
+                <a href="https://www.dangeedums.com/anniversary" title="Anniversary">
+                    <img src="https://www.dangeedums.com/pub/media/wysiwyg/yummy-cakes-02.png" alt="Anniversary" />
+                    <h5>Anniversary</h5>
+                </a>
+            </figure>
+        </div>
+        <div class="colm">
+            <figure>
+                <a href="https://www.dangeedums.com/designer-cake/baby-shower" title="Baby Shower">
+                    <img src="https://www.dangeedums.com/pub/media/wysiwyg/Baby-shower.jpg" alt="baby shower" />
+                    <h5>Baby shower</h5>
+                </a>
+            </figure>
+        </div>
+        <div class="colm">
+            <figure>
+                <a href="https://www.dangeedums.com/engagement-wedding" title="Engagement & Wedding">
+                    <img src="https://www.dangeedums.com/pub/media/wysiwyg/Engagement-wedding.jpg" alt="Engagement & Wedding" />
+                    <h5>Engagement & Wedding</h5>
+                </a>
+            </figure>
+        </div>
+        <div class="colm">
+            <figure>
+                <a href="https://www.dangeedums.com/corporate" title="Corporate">
+                    <img src="https://www.dangeedums.com/pub/media/wysiwyg/Corporate.jpg" alt="corporate" />
+                    <h5>Corporate</h5>
+                </a>
+            </figure>
+        </div>
+    </div>
+</section>
+<section class="featured-product-banner">
+    <div class="hero-title">
+        <h3>Our Blockbusters</h3>
+    </div>
+    <div id="featured_product" class="owl-top-narrow">
+        <style type="text/css">
+    .gray-layout{ z-index: 3; text-align: center; background: gray; width: 100%; height: 100%; position: absolute; vertical-align: middle; opacity: 0.6; }
+    .grey-layout-label { color: #fff; opacity: 1; z-index: 4; top: 50%; position: relative;}
+
+</style>
+    <div class="message info empty"><div>We can't find products matching the selection.</div></div>
+
+    </div>
+</section>
+<section class="shop-main-banner">
+    <figure><a href="https://www.dangeedums.com/shop/ice-creams" title="Book your ice cream"> <img src="https://www.dangeedums.com/pub/media/wysiwyg/Ice-Cream_1_.jpg" alt="" /></a></figure>
+</section>
+<section class="safe-box">
+    <div class="cols cols4">
+        <div class="colm">
+            <figure></figure>
+            <h6>Safe & Hygienic Bakery</h6>
+        </div>
+        <div class="colm">
+            <figure></figure>
+            <h6>20 Million People Trust Us</h6>
+        </div>
+        <div class="colm">
+            <figure></figure>
+            <h6>100% Safe & Secure Payments</h6>
+        </div>
+        <div class="colm">
+            <figure></figure>
+            <h6>Same Day Delivery</h6>
+        </div>
+    </div>
+</section>
+<section class="main-banner-bottom">
+    <figure><a href="https://www.dangeedums.com/shop/hamper" title="Hampers: Happniess Multiplied"><img src="https://www.dangeedums.com/pub/media/wysiwyg/home_copy.jpg" alt="Hampers: Happniess Multiplied" /> </a> </figure>
+</section>
+
+<section class="customers-stories">
+    <div class="customer-banner owl-carousel">
+        <div class="item">
+            <figure> <img src="https://www.dangeedums.com/pub/media/wysiwyg/icon.png" alt="" /> </figure>
+            <p>Good service friendly people liked it very much</p>
+        </div>
+        <div class="item">
+            <figure> <img src="https://www.dangeedums.com/pub/media/wysiwyg/icon.png" alt="" /> </figure>
+            <p>Good service friendly people liked it very much</p>
+        </div>
+        <div class="item">
+            <figure><img src="https://www.dangeedums.com/pub/media/wysiwyg/icon.png" alt="" /> </figure>
+            <p>Good service friendly people liked it very much</p>
+        </div>
+    </div>
+</section>
+
+
+</div></div></main><footer class="page-footer"><div class="footer">
+            <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="custom-block"><div class="row">
+    <div class="col-md-3">
+        <div class="block">
+            <div class="block-title"><strong><span>DANGEE DUMS</span></strong></div>
+            <div class="block-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="links">
+                            <li><a href="https://www.dangeedums.com/about-us/" title="About Us">About Us</a></li>
+                            <li><a href="https://www.dangeedums.com/history/" title="HISTORY">HISTORY</a></li>
+                            <li><a href="https://www.dangeedums.com/store-format/" title="DANGEE DUMS">DANGEE DUMS</a></li>
+                            <li><a href="https://www.dangeedums.com/franchise/" title="FRANCHISE">FRANCHISE</a></li>
+                            <li><a href="https://www.dangeedums.com/investor-center/" title="INVESTOR CENTER">INVESTOR CENTER</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="block">
+            <div class="block-title"><strong><span>Client Testimonial</span></strong></div>
+            <div class="block-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="links">
+                            <li><a href="https://www.dangeedums.com/testimonials?limit=all&p=2/" title="Testimonaials">Testimonaials</a></li>
+                            <li><a href="https://www.dangeedums.com/feedback/" title="Feedback form">Feedback form</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="block">
+            <div class="block-title"><strong><span>Contact Us</span></strong></div>
+            <div class="block-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="links">
+                            <li><a href="https://www.dangeedums.com/storepickup/" title="Store Location">Store Location</a></li>
+                            <li><a href="https://www.dangeedums.com/contact/" title="Contact Info">Contact Info</a></li>
+                            <li><a href="https://www.dangeedums.com/current-opening/" title="Current Opening">Current Opening</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="block">
+            <div class="block-title"><strong><span>Policy Info</span></strong></div>
+            <div class="block-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="links">
+                            <li><a href="https://www.dangeedums.com/payments/" title="Payments">Payments</a></li>
+                            <li><a href="https://www.dangeedums.com/cancellations-and-returns/" title="Cancellations & Returns">Cancellations & Returns</a></li>
+                            <li><a href="https://www.dangeedums.com/shipping-and-delivery/" title="Shipping & Delivery">Shipping & Delivery</a></li>
+                            <li><a href="https://www.dangeedums.com/privacy-policy/" title="Privacy Policy">Privacy Policy</a></li>
+                            <li><a href="https://www.dangeedums.com/terms-and-conditions/" title="Terms and conditions">T&C's</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div></div>                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="footer-middle">
+            <div class="container">
+                                <div class="row">
+                    <div class="col-lg-12"><div class="row">
+    <div class="col-md-12">
+        <div class="block-middle2">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="block">
+                        <div class="subcribe">
+                            <div class="block-title"><strong><span>Subscribe to our newsletter</span></strong></div>
+                            <div class="block newsletter">
+    <div class="content">
+        <form class="form subscribe"
+            novalidate
+            action="https://www.dangeedums.com/newsletter/subscriber/new/"
+            method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+            id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <label class="label" for="footer_newsletter"><span>Sign Up for Our Newsletter:</span></label>
+                <div class="control">
+                    <input name="email" type="email" id="footer_newsletter"
+                                data-validate="{required:true, 'validate-email':true}" placeholder="Email Address"/>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="action subscribe primary" title="Subscribe" type="submit">
+                    <span>Subscribe</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="social-icons"> 
+                        <a href="https://www.facebook.com/Dangeedumss" title="Facebook" target="_blank"><i class="porto-icon-facebook"></i></a> 
+                        <a href="https://twitter.com/DangeeDums" title="Twitter" target="_blank"><i class="porto-icon-twitter"></i></a> 
+                        <a href="https://www.youtube.com/channel/UCWqqvk6eSyt9NiHcENBr2_w/" title="Youtube" target="_blank"><i class="porto-icon-youtube"></i></a>
+                        <a href="https://www.instagram.com/dangeedums/" title="Instagram" target="_blank"><i class="porto-icon-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="block-bottom">
+            <div class="row">
+                <div class="col-md-8">
+                    <address style="float:left;font-size:13px;">© Dangee Dums <span id="copyright-year"></span>. All Rights Reserved</address>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>                </div>
+            </div>
+        </div>
+        </div>
+<a href="javascript:void(0)" id="totop"><em class="porto-icon-up-open"></em></a>
+</footer>
+
+<style type="text/css">
+span.back_link {
+    float: left;
+    width: 100%;
+    font-size: 15px;
+    color: #343a40;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 7px;
+}  
+</style>
+
+    <div class="mobile-sendotp-popup login-pup" style="display: none">
+        <div class="main-contai">
+            <!-- <div class="left-img-part" style="background-image: url()">
+            </div> -->
+            <div class="right-contet-part">
+                <div class="main-title">
+                    <div class="tit-item">
+                        <span class="login-otp-title active">
+                            Login With Mobile                         </span>
+                        <span class="login-email-title">
+                            Login With Password                         </span>
+                    </div>
+                    <p class="err-msg" style="display: none"></p>
+                    <p class="success-msg" style="display: none"></p>
+                    <div class="frm-container">
+                        <div class="otl-login-form-contain">
+                            <form class="form form-otp-login"
+                                  method="post"
+                                  id="otp-login-form"
+                                  data-mage-init='{"validation":{}}'>
+                                    <input type="hidden" name="redirect_url" value="https://www.dangeedums.com/" />
+
+                                <fieldset class="fieldset login-otp step1"
+                                          data-hasrequired="&#x2A;&#x20;Required&#x20;Fields">
+                                    <div class="field mobilenumber required">
+                                        <div class="control">
+                                            <input name="mobile_number"
+                                                   id="mobilenumber" type="text" class="input-text"
+                                                   title="Mobile&#x20;Number"
+                                                   placeholder="Mobile&#x20;Number"
+                                                   data-validate="{required:true}">
+
+                                        </div>
+                                    </div>
+                                    <div class="actions-toolbar-otp">
+                                        <div class="primary">
+                                            <button type="button" class="request-otp-btn pop-bnt" name="send">
+                                                <span>Request OTP</span></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset login-otp step2"
+                                          data-hasrequired="&#x2A;&#x20;Required&#x20;Fields"
+                                          style="display: none">
+                                    <div class="field mobilenumber required">
+                                        <div class="control">
+                                            <input name="loginotp"
+                                                   id="loginotp" type="text" class="input-text"
+                                                   title="OTP"
+                                                   placeholder="OTP"
+                                                   data-validate="{required:true}">
+
+                                        </div>
+                                    </div>
+                                    <div class="actions-toolbar-otp">
+                                        <div class="primary">
+                                            <button type="button" class="resend-login-otp-btn withresend pop-bnt"
+                                                    name="send">
+                                                <span>Resend OTP</span></button>
+                                            <button type="button" class="submit-login-otp-btn withresend pop-bnt"
+                                                    name="send">
+                                                <span>Submit OTP</span></button>
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="password-login-form-contain" style="display: none">
+                            <form class="form form-password-login"
+                                  method="post"
+                                  id="password-login-form"
+                                  data-mage-init='{"validation":{}}'>
+                                <input type="hidden" name="redirect_url" value="https://www.dangeedums.com/" />  
+                                <fieldset class="fieldset login-password"
+                                          data-hasrequired="&#x2A;&#x20;Required&#x20;Fields">
+                                    <div class="field email required lgn-pswd-txt">
+                                        <p>Add +91 before mobile number</p>
+                                        <div class="control">
+                                            <input name="emailmobile"
+                                                   id="emailmobilenumber" type="text" class="input-text"
+                                                   title="Email&#x20;&#x2F;&#x20;Mobile&#x20;Number"
+                                                   data-validate="{required:true}"
+                                                   placeholder="Email / Mobile Number"
+                                            >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="field password required">
+                                        <div class="control">
+                                            <input name="mobpassword"
+                                                   type="password" autocomplete="off"
+                                                   class="input-text" id="logpassword"
+                                                   title="Password"
+                                                   placeholder="Password"
+                                                   data-validate="{required:true}">
+                                        </div>
+                                    </div>
+                                    <div class="actions-toolbar-otp">
+                                        <div class="primary">
+                                            <button type="button" class="password-login-btn pop-bnt" name="send">
+                                                <span>Login</span></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <div class="customer-create-form-contain" style="display: none">
+                            <form class="form form-create-account"
+                                  method="post"
+                                  id="create-account-form"
+                                  data-mage-init='{"validation":{}}'>
+
+                                 <input type="hidden" name="redirect_url" value="https://www.dangeedums.com/" /> 
+
+                                <fieldset class="fieldset login-password register-step1"
+                                          data-hasrequired="&#x2A;&#x20;Required&#x20;Fields">
+
+                                    <div class="field firstname required">
+                                        <div class="control">
+                                            <input name="firstname"
+                                                   id="firstname" type="text" class="input-text"
+                                                   title="First&#x20;Name"
+                                                   data-validate="{required:true}"
+                                                   placeholder="First Name"
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="field lastname required">
+                                        <div class="control">
+                                            <input name="lastname"
+                                                   id="lastname" type="text" class="input-text"
+                                                   title="Last&#x20;Name"
+                                                   data-validate="{required:true}"
+                                                   placeholder="Last Name"
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="field mobilenumber required">
+                                        <div class="control">
+                                            <input name="mobile_number"
+                                                   id="regmobilenumber" type="text" class="input-text"
+                                                   title="Mobile&#x20;Number"
+                                                   placeholder="Mobile&#x20;Number"
+                                                   data-validate="{required:true}">
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="field email required">
+                                        <div class="control">
+                                            <input name="email"
+                                                   id="email" type="text" class="input-text"
+                                                   title="Email"
+                                                   data-validate="{required:true, 'validate-email':true}"
+                                                   placeholder="Email"
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="field password required">
+                                        <div class="control">
+                                            <input name="mobpassword"
+                                                   type="password" autocomplete="off"
+                                                   class="input-text" id="password"
+                                                   title="Password"
+                                                   placeholder="Password"
+                                                   data-validate="{required:true}">
+                                        </div>
+                                    </div>
+
+                                    <div class="actions-toolbar-otp">
+                                        <div class="primary">
+                                            <button type="button" class="create-account-btn pop-bnt">
+                                                <span>Create Account</span></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="fieldset login-password register-step2"
+                                          data-hasrequired="&#x2A;&#x20;Required&#x20;Fields"
+                                          style="display: none">
+                                    <div class="field mobilenumber required">
+                                        <div class="control">
+                                            <input name="registerotp"
+                                                   id="registerotp" type="text" class="input-text"
+                                                   title="OTP"
+                                                   placeholder="OTP"
+                                                   data-validate="{required:true}">
+
+                                        </div>
+                                    </div>
+                                    <div class="actions-toolbar-otp">
+                                        <div class="primary">
+                                            <button type="button" class="resend-create-account-btn withresend pop-bnt"
+                                                    name="send">
+                                                <span>Resend OTP</span></button>
+                                            <button type="button" class="submit-create-account-btn withresend pop-bnt"
+                                                    name="send">
+                                                <span>Submit OTP</span></button>
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                            </form>
+                        </div>
+
+                        <div class="forget-form-contain" style="display: none">
+
+                            <form class="form form-forget-password"
+                                  method="post"
+                                  id="forget-form"
+                                  data-mage-init='{"validation":{}}'>
+
+                                <fieldset class="fieldset forgot-pass-step1"
+                                          data-hasrequired="&#x2A;&#x20;Required&#x20;Fields">
+                                    <div class="field mobilenumber required">
+                                        <div class="control">
+                                            <input name="mobile_number"
+                                                   id="fogmobilenumber" type="text" class="input-text"
+                                                   title="Mobile&#x20;Number"
+                                                   placeholder="Mobile&#x20;Number"
+                                                   data-validate="{required:true}">
+                                        </div>
+                                    </div>
+
+                                    <div class="actions-toolbar-otp">
+                                        <div class="primary">
+                                            <button type="button" class="forgot-btn-req pop-bnt">
+                                                <span>Request OTP</span></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="fieldset forgot-pass-step2"
+                                          data-hasrequired="&#x2A;&#x20;Required&#x20;Fields"
+                                          style="display: none">
+                                    <div class="field forgototp required">
+                                        <div class="control">
+                                            <input name="forgototp"
+                                                   id="forgototp" type="text" class="input-text"
+                                                   title="OTP&#x20;Number"
+                                                   placeholder="OTP&#x20;Number"
+                                                   data-validate="{required:true}">
+                                        </div>
+                                    </div>
+
+                                    <div class="actions-toolbar-otp">
+                                        <div class="primary">
+                                            <button type="button" class="resend-forgot-otp-btn withresend pop-bnt"
+                                                    name="send">
+                                                <span>Resend OTP</span></button>
+                                            <button type="button" class="forgot-btn-verify withresend pop-bnt">
+                                                <span>Verify OTP</span></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+
+                                <fieldset class="fieldset forgot-pass-step3"
+                                          data-hasrequired="&#x2A;&#x20;Required&#x20;Fields"
+                                          style="display: none">
+                                    <div class="field forgototp required">
+                                        <div class="control">
+                                            <input name="newpassword"
+                                                   id="newpassword" type="password" class="input-text"
+                                                   title="New&#x20;Password"
+                                                   placeholder="New&#x20;Password"
+                                                   data-validate="{required:true}">
+                                        </div>
+                                    </div>
+
+                                    <div class="field forgototp required">
+                                        <div class="control">
+                                            <input name="confirmnewpassword"
+                                                   id="confirmnewpassword" type="password" class="input-text"
+                                                   title="Confirm&#x20;New&#x20;Password"
+                                                   placeholder="Confirm&#x20;New&#x20;Password"
+                                                   data-validate="{required:true}">
+                                        </div>
+                                    </div>
+
+                                    <div class="actions-toolbar-otp">
+                                        <div class="primary">
+                                            <button type="button" class="forgot-submit-password-btn pop-bnt"
+                                                    name="send">
+                                                <span>Submit</span></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                        </div>
+                    </div>
+
+                    <div class="footer-box-link">
+                      <span class="back_link"  style="display: none; ">
+                            Back                        </span>
+                        <span class="create-acc-title">
+                            Create Account                         </span>
+                        <span class="for-accout-title">
+                             Forgot Password ?                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+            
+    
+    
+
+    <style>
+        .tit-item {
+            float: left;
+            width: 100%;
+        }
+
+        .withresend.pop-bnt {
+            width: 48%;
+            float: left;
+            margin-right: 4%;
+        }
+
+        .mobile_login_popup.modal-slide .action-close {
+            margin: 15px;
+            padding: 0;
+        }
+
+        button.submit-login-otp-btn.withresend.pop-bnt {
+            margin-right: 0;
+        }
+
+        p.err-msg {
+            float: left;
+            width: 100%;
+            margin-top: 25px;
+            margin-bottom: 0;
+            color: #f00;
+            font-weight: bold;
+        }
+
+        p.success-msg {
+            float: left;
+            width: 100%;
+            margin-top: 25px;
+            margin-bottom: 0;
+            color: #006400;
+            font-weight: bold;
+        }
+
+        button.submit-create-account-btn.withresend.pop-bnt {
+            margin-right: 0;
+        }
+
+        button.forgot-btn-verify.withresend.pop-bnt {
+            margin-right: 0;
+        }
+
+        .footer-box-link {
+            float: left;
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        input#mobilenumber, input#fogmobilenumber, #forget-form input, .frm-container input {
+            height: 40px;
+        }
+
+        fieldset.fieldset.login-password input {
+            height: 40px;
+        }
+
+        button.pop-bnt {
+            color: #ffffff;
+            background-color: #cf9b48;
+            width: 100%;
+            font-size: 13px;
+            padding: 12px 0;
+            font-weight: bold;
+            border: snow;
+            box-shadow: 0px 0px 3px 1px #8f8f8f;
+            margin-top: 10px;
+            text-transform: uppercase;
+            height: auto;
+        }
+
+        .frm-container {
+            float: left;
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        .right-contet-part .fieldset > .field, .right-contet-part .fieldset > .fields > .field {
+            margin: 0 0 10px;
+        }
+
+        fieldset.fieldset.login-otp {
+            text-align: center;
+        }
+
+        fieldset.fieldset.login-password {
+            text-align: center;
+        }
+
+        .main-title {
+            float: left;
+            width: 100%;
+        }
+
+        .mobile_login_popup header.modal-header {
+            position: absolute;
+            top: 0px;
+            right: -42px;
+            background-color: #fff;
+        }
+
+        .mobile_login_popup .modal-content {
+            padding: 0;
+        }
+
+        .mobile_login_popup .modal-inner-wrap {
+            max-width: 750px;
+        }
+
+        .mobile-sendotp-popup {
+            width: 100%;
+            float: left;
+            border-bottom: 8px solid##090B10;
+        }
+
+        .main-contai {
+            float: left;
+            width: 100%;
+            border-bottom: 8px solid#f79b5a;
+        }
+
+        span.create-acc-title {
+            float: left;
+            width: 100%;
+            font-size: 15px;
+            color: #1979c3;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 7px;
+        }
+
+        span.for-accout-title {
+            float: left;
+            width: 100%;
+            font-size: 15px;
+            color: #012b72;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .tit-item span {
+            width: calc(50% - 20px);
+            /*float: left;*/
+            text-align: center;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: border-bottom 0.5s ease;
+            padding: 5px 0;
+        }
+
+        .tit-item span.active {
+            border-bottom: 4px solid#f79b5a;
+        }
+
+        .left-img-part {
+            width: 350px;
+            float: left;
+            height: 545px;
+            background-position: center;
+        }
+
+        img.bacx-image {
+            float: left;
+            width: 100%;
+            background-size: cover;
+            max-height: 505px;
+        }
+
+        .right-contet-part {
+            width: 360px;
+            float: left;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .modal-popup .action-close:before {
+            font-size: 17px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .mobile_login_popup .modal-inner-wrap {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 840px) {
+            .mobile_login_popup .modal-inner-wrap {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .left-img-part {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .mobile_login_popup.modal-popup.modal-slide._inner-scroll .modal-inner-wrap {
+                min-height: auto;
+                margin: 3rem auto;
+                overflow-y: initial;
+                background-color: #fff;
+            }
+
+            .mobile_login_popup.modal-popup.modal-slide {
+                left: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .right-contet-part {
+                width: calc(100% - 40px);
+            }
+
+            .mobile_login_popup header.modal-header {
+                top: -34px;
+                right: 0px;
+            }
+
+            .mobile_login_popup.modal-popup.modal-slide .action-close {
+                margin: 15px 20px;
+                padding: 0;
+            }
+        }
+
+    </style>
+
+<div class="rule-popup-modal-wrapper"></div></div>    <script>
+    var BASE_URL = 'https://www.dangeedums.com/';
+    var require = {
+        "baseUrl": "https://www.dangeedums.com/pub/static/version1707852201/frontend/Smartwave/porto/en_US"
+    };
+</script>
+<script  type="text/javascript"  src="https://www.dangeedums.com/pub/static/version1707852201/_cache/merged/80e7b20b9a5853b3a5d5ba15d51dbf11.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTB5K0EFYG"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DTB5K0EFYG');
+    </script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WDCXJHV7');</script>
+<script type="text/javascript">
+        require([
+            'jquery'
+        ], function ($) {
+            $(document).ready(function(){
+                $("body").addClass("layout-fullwidth");
+                $("body").addClass("wide");
+                                                $(".drop-menu > a").off("click").on("click", function(){
+                    if($(this).parent().children(".nav-sections").hasClass("visible"))
+                        $(this).parent().children(".nav-sections").removeClass("visible");
+                    else
+                        $(this).parent().children(".nav-sections").addClass("visible")
+                });
+            });
+                        var scrolled = false;
+            $(window).scroll(function(){
+                if(!$('.page-header').hasClass('type10') && !$('.page-header').hasClass('type22')) {
+                    if($(window).width()>=992){
+                        if(140<$(window).scrollTop() && !scrolled){
+                            $('.page-header').addClass("sticky-header");
+                            scrolled = true;
+                            if(!$(".page-header").hasClass("type12")) {
+                                $('.page-header .minicart-wrapper').after('<div class="minicart-place hide"></div>');
+                                var minicart = $('.page-header .minicart-wrapper').detach();
+                                if($(".page-header").hasClass("type8") || $(".page-header").hasClass("type25"))
+                                    $('.page-header .menu-wrapper').append(minicart);
+                                else
+                                    $('.page-header .navigation').append(minicart);
+                                                                var logo_image = $('<div>').append($('.page-header .header > .logo').clone()).html();
+                                if($(".page-header").hasClass("type8") || $(".page-header").hasClass("type25"))
+                                    $('.page-header .menu-wrapper').prepend('<div class="sticky-logo">'+logo_image+'</div>');
+                                else
+                                    $('.page-header .navigation').prepend('<div class="sticky-logo">'+logo_image+'</div>');
+                                                            } else {
+                                                                $('.page-header.type12 .logo').append('<span class="sticky-logo"><img src=""/></span>');
+                                $('.page-header .logo > img').addClass("hide");
+                                                            }
+                                                                                    $(".sticky-logo img").attr("src","https://www.dangeedums.com/pub/media/porto/sticky_logo/default/DD_new_logo_White.png");
+                                                                                }
+                        if(140>=$(window).scrollTop() && scrolled){
+                            $('.page-header').removeClass("sticky-header");
+                            scrolled = false;
+                            if(!$(".page-header").hasClass("type12")) {
+                                var minicart;
+                                if($(".page-header").hasClass("type8") ||  $(".page-header").hasClass("type25"))
+                                    minicart = $('.page-header .menu-wrapper .minicart-wrapper').detach();
+                                else
+                                    minicart = $('.page-header .navigation .minicart-wrapper').detach();
+                                $('.minicart-place').after(minicart);
+                                $('.minicart-place').remove();
+                                $('.page-header .minicart-wrapper-moved').addClass("minicart-wrapper").removeClass("minicart-wrapper-moved").removeClass("hide");
+                            }
+                                                        if($(".page-header").hasClass("type8") || $(".page-header").hasClass("type25"))
+                                $('.page-header .menu-wrapper > .sticky-logo').remove();
+                            else if($(".page-header").hasClass("type12")) {
+                                $('.page-header .sticky-logo').remove();
+                                $('.page-header .logo > img').removeClass("hide");;
+                            } else
+                                $('.page-header .navigation > .sticky-logo').remove();
+                                                    }
+                    }
+                }
+            });
+                    });
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwktza_GO-2HF0Rh2-uQq_6grWA-q8T8w&libraries=places,geometry"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script>
+
+        directionsService = new google.maps.DirectionsService();
+        var geocoder = new google.maps.Geocoder();
+        markerImg = 'https://www.dangeedums.com/pub/static/version1707852201/frontend/Smartwave/porto/en_US/FME_StorePickup/images/marker.png';
+        distUnit = 'km';
+        var map = null;
+        var circle = null;
+        var gmarkers = '';
+
+        function initMap(sel) {
+            require(["jquery"], function($) {
+                textdirection = $('.address_direction_block').html('');
+                $('.address_direction_block').hide();
+                $('.liststores').show();
+
+            });
+            directionsDisplay = new google.maps.DirectionsRenderer();
+            myData = '';
+            var locations, i, j;
+            var locations = [{"gmaps_id":"87","timetable_id":"0","store_name":"Ahmedabad","store_phone":"9898088885","store_fax":"","region":"","region_id":"544","postcode":"380013","city":"Ahmedabad","country_id":"IN","address":"Ahmedabad","identifier":"ahmeddabad","store_id":"0","store_description":"Ahmedabad","meta_description":null,"meta_keyword":null,"latitude":"23.0401471","longitude":"72.5706721","zoom_level":"1","creation_time":"2021-04-26 07:47:56","update_time":"2022-12-09 08:36:32","is_active":"1","mage_store_code":"dangee_dums_87","mage_store_id":"88"}];
+
+            for (j = 0; j < locations.length; j++) {
+                var gid = locations[j]['gmaps_id'];
+                var lat = locations[j]['latitude'];
+                var lng = locations[j]['longitude'];
+                var title = locations[j]['store_name'];
+                var description = locations[j]['store_description'];
+                var mmzoomlevel = locations[j]['zoom_level'];
+
+            }
+            if (!(myData)) {
+                var lat = 22.6948598;
+                var lng = 72.8424178;
+                var mmzoomlevel = 9;
+            }
+            var uluru = {
+                lat: eval(lat),
+                lng: eval(lng)
+            };
+            map = new google.maps.Map(document.getElementById('map_canvas_ajax'), {
+                zoom: eval(mmzoomlevel),
+                mapTypeIds: google.maps.MapTypeId.ROADMAP,
+                center: new google.maps.LatLng(uluru)
+            });
+            directionsDisplay.setMap(map);
+
+            var locations, i;
+            var locations = [{"gmaps_id":"87","timetable_id":"0","store_name":"Ahmedabad","store_phone":"9898088885","store_fax":"","region":"","region_id":"544","postcode":"380013","city":"Ahmedabad","country_id":"IN","address":"Ahmedabad","identifier":"ahmeddabad","store_id":"0","store_description":"Ahmedabad","meta_description":null,"meta_keyword":null,"latitude":"23.0401471","longitude":"72.5706721","zoom_level":"1","creation_time":"2021-04-26 07:47:56","update_time":"2022-12-09 08:36:32","is_active":"1","mage_store_code":"dangee_dums_87","mage_store_id":"88"}];
+            var contentString = new Array("");
+            gmarkers = [];
+            var infowindow = new google.maps.InfoWindow();
+            for (i = 0; i < locations.length; i++) {
+
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
+                    map: map,
+                    icon: markerImg,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+                gmarkers.push(marker);
+                contentString[i] = '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    '</div>' +
+                    '<h3 id="firstHeading" class="firstHeading">' + locations[i]['store_name'] + '</h3>' +
+                    '<div id="bodyContent">' + locations[i]['store_description'] + '</div>' +
+                    '</div>';
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        var content = contentString;
+
+                        infowindow.setContent(contentString[i]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+            document.getElementById("totalstorecount").innerHTML = i + "&nbsp;STORES";
+            var mcOptions = {
+                gridSize: 50,
+                maxZoom: 6,
+                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+            };
+            var markerCluster = new MarkerClusterer(map, gmarkers, mcOptions);
+        }
+
+         function initLocateMap(latitude, longitude) {
+            var fme_radius = "12";
+            var radius = parseInt(fme_radius, 10)*1000;
+
+            require(["jquery"], function($) {
+                textdirection = $('.address_direction_block').html('');
+                $('.address_direction_block').hide();
+                $('.liststores').show();
+
+                directionsDisplay = new google.maps.DirectionsRenderer();
+                myData = '';
+                var locations, i, j;
+                var locations = [{"gmaps_id":"87","timetable_id":"0","store_name":"Ahmedabad","store_phone":"9898088885","store_fax":"","region":"","region_id":"544","postcode":"380013","city":"Ahmedabad","country_id":"IN","address":"Ahmedabad","identifier":"ahmeddabad","store_id":"0","store_description":"Ahmedabad","meta_description":null,"meta_keyword":null,"latitude":"23.0401471","longitude":"72.5706721","zoom_level":"1","creation_time":"2021-04-26 07:47:56","update_time":"2022-12-09 08:36:32","is_active":"1","mage_store_code":"dangee_dums_87","mage_store_id":"88"}];
+
+                for (j = 0; j < locations.length; j++) {
+                    console.log(locations[j]);
+                    var gid = locations[j]['gmaps_id'];
+                    var lat = locations[j]['latitude'];
+                    var lng = locations[j]['longitude'];
+                    var title = locations[j]['store_name'];
+                    var description = locations[j]['store_description'];
+                    var mmzoomlevel = locations[j]['zoom_level'];
+
+                }
+                var lat = latitude;
+                var lng = longitude;
+                console.log("lat: "+lat, "lng: "+lng);
+                var mmzoomlevel = 9;
+                var uluru = {
+                    lat: eval(lat),
+                    lng: eval(lng)
+                };
+                map = new google.maps.Map(document.getElementById('map_canvas_ajax'), {
+                    zoom: eval(mmzoomlevel),
+                    mapTypeIds: google.maps.MapTypeId.ROADMAP,
+                    center: new google.maps.LatLng(uluru)
+                });
+                directionsDisplay.setMap(map);
+
+                var locations, i;
+                var locations = [{"gmaps_id":"87","timetable_id":"0","store_name":"Ahmedabad","store_phone":"9898088885","store_fax":"","region":"","region_id":"544","postcode":"380013","city":"Ahmedabad","country_id":"IN","address":"Ahmedabad","identifier":"ahmeddabad","store_id":"0","store_description":"Ahmedabad","meta_description":null,"meta_keyword":null,"latitude":"23.0401471","longitude":"72.5706721","zoom_level":"1","creation_time":"2021-04-26 07:47:56","update_time":"2022-12-09 08:36:32","is_active":"1","mage_store_code":"dangee_dums_87","mage_store_id":"88"}];
+                var contentString = new Array("");
+                gmarkers = [];
+                var infowindow = new google.maps.InfoWindow();
+                for (i = 0; i < locations.length; i++) {
+
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
+                        map: map,
+                        icon: markerImg,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    });
+                    gmarkers.push(marker);
+                    contentString[i] = '<div id="content">' +
+                        '<div id="siteNotice">' +
+                        '</div>' +
+                        '<h3 id="firstHeading" class="firstHeading">' + locations[i]['store_name'] + '</h3>' +
+                        '<div id="bodyContent">' + locations[i]['store_description'] + '</div>' +
+                        '</div>';
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                        return function() {
+                            var content = contentString;
+
+                            infowindow.setContent(contentString[i]);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+                document.getElementById("totalstorecount").innerHTML = i + "&nbsp;STORES";
+                var mcOptions = {
+                    gridSize: 50,
+                    maxZoom: 6,
+                    imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+                };
+                var markerCluster = new MarkerClusterer(map, gmarkers, mcOptions);
+
+
+
+                var latlng = new google.maps.LatLng(lat, lng);
+                geocoder.geocode( { 'latLng': latlng}, function(results, status) {
+                  if (status == google.maps.GeocoderStatus.OK) {
+                    side_bar_html = "";
+                    var place_data = results[0];
+                    console.log(place_data.formatted_address);
+                    // map.setCenter(results[0].geometry.location);
+                    var searchCenter = results[0].geometry.location;
+                    console.log(searchCenter);
+
+                    var bounds = new google.maps.LatLngBounds();
+                    var foundMarkers = 0;
+                    console.log("gmarkers",gmarkers);
+                    for (var i=0; i<gmarkers.length;i++) {
+
+                      if (google.maps.geometry.spherical.computeDistanceBetween(gmarkers[i].getPosition(),searchCenter) < radius) {
+                        console.log("sdasdasd",i);
+                        document.getElementById('liststores'+i).style.display='block';
+                        document.getElementById('checkbox_store'+i).checked = true;
+                        jQuery('#address_selected').text(place_data.formatted_address);
+                        jQuery('#searchstore-ajax').val(place_data.formatted_address);
+                        document.getElementById('address_field').value = place_data.formatted_address;
+                        document.getElementById('lat').value = lat;
+                        document.getElementById('lng').value = lng;
+
+                        bounds.extend(gmarkers[i].getPosition())
+                        gmarkers[i].setMap(map); 
+                        foundMarkers++;
+                      } else {
+                        console.log("not in range");
+                          document.getElementById('liststores'+i).style.display='none';
+                          document.getElementById('checkbox_store'+i).checked = false;
+                        if (gmarkers[i] && gmarkers[i].setMap) {
+                            gmarkers[i].setMap(null);
+                        }
+                       
+                      }
+                    }
+                    document.getElementById("totalstorecount").innerHTML = foundMarkers+"&nbsp;STORES";
+
+                      } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                      }
+                });
+                $('body').trigger('processStop');
+            });
+        }
+        
+
+        function codeAddress() {
+            var address = document.getElementById('searchstore-ajax').value;
+            if(address) {
+            var fme_radius = "12";
+            var radius = parseInt(fme_radius, 10)*1000;
+            geocoder.geocode( { 'address': address}, function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                side_bar_html = "";
+                console.log(results[0]);
+                // map.setCenter(results[0].geometry.location);
+                var searchCenter = results[0].geometry.location;
+                console.log(searchCenter);
+
+                var bounds = new google.maps.LatLngBounds();
+                var foundMarkers = 0;
+
+                for (var i=0; i<gmarkers.length;i++) {
+
+                  if (google.maps.geometry.spherical.computeDistanceBetween(gmarkers[i].getPosition(),searchCenter) < radius) {
+                    console.log('if: '+i);
+                    document.getElementById('liststores'+i).style.display='block';
+                    document.getElementById('checkbox_store'+i).checked = true;
+
+                    bounds.extend(gmarkers[i].getPosition())
+                    gmarkers[i].setMap(map); 
+                    foundMarkers++;
+                  } else {
+                        console.log('else: '+i);
+                      document.getElementById('liststores'+i).style.display='none';
+                      document.getElementById('checkbox_store'+i).checked = false;
+                    if (gmarkers[i] && gmarkers[i].setMap) {
+                        gmarkers[i].setMap(null);
+                    }
+                   
+                  }
+                }
+                document.getElementById("totalstorecount").innerHTML = foundMarkers+"&nbsp;STORES";
+
+                  } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                  }
+            });
+          }
+        }
+    </script>
+<script type="text/javascript">
+                    function initit() {
+                        // var options = {
+                        //     types: ['(regions)'],
+                        //     componentRestrictions: {country: ["in"]}
+                        // };
+                        var southWest = new google.maps.LatLng(22.2510131, 71.1983994 ); 
+                        var northEast = new google.maps.LatLng(22.2556707,71.20400219999999 ); 
+                        var gujaratBounds = new google.maps.LatLngBounds( southWest, northEast );
+
+                        var options = {
+                            bounds: gujaratBounds,
+                            componentRestrictions: { country: 'in'}
+                        };
+
+                        var input = document.getElementById('searchstore-ajax');
+                        var autocomplete = new google.maps.places.Autocomplete(input,options);
+
+                        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+                            codeAddress();
+                            var place = autocomplete.getPlace();
+                            
+                            jQuery('#address_selected').text(place.formatted_address);
+                            document.getElementById('address_field').value = place.formatted_address;
+                            document.getElementById('lat').value = place.geometry.location.lat();
+                            document.getElementById('lng').value = place.geometry.location.lng();
+                        });
+                    }
+                    google.maps.event.addDomListener(window, 'load', initit);
+                </script>
+<script type="text/javascript">
+        require(['jquery', 'jquery/ui'], function($) {
+            $(document).ready(function() {
+
+                $("#searchstore-ajax").keypress(function(e) {
+                    var code = (e.keyCode ? e.keyCode : e.which);
+                    if(code == 13) { //Enter keycode
+                        return false;
+                    }
+                });
+
+                initMap();
+
+                $('input[type=radio][name=shipping]').change(function() {
+                    if (this.value == 'pickup') {
+                        codeAddress();
+                    }
+                    else if (this.value == 'delivery') {
+                        codeAddress()
+                    }
+                });
+            });
+
+            $('.locate_me').click(function(){
+                $('body').trigger('processStart');
+                getLocation();
+                $('#location-error-txt').text('');
+                $('#location-error-div').hide();
+                $('#location-error-main-div').hide();
+            });
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition, positionError);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                    alert('Geolocation is not enabled. Please enable to use this feature.'); 
+                }
+                /*
+                $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+                  //console.log(resp);
+                  var countryCode = (resp && resp.loc) ? showCurrentPosition(resp) : "";
+                });
+                */
+            }
+            function showPosition(position) {
+                console.log(position.coords);
+                initLocateMap(position.coords.latitude, position.coords.longitude);
+            }
+            function positionError(error) {
+                $('body').trigger('processStop');
+                if (error.PERMISSION_DENIED) {
+                  console.log("Error: permission denied");
+                  /*  Your custom modal here. */
+                   alert('Geolocation is not enabled. Please enable to use this feature.'); 
+                } else {
+                  /*  Handle other kinds of errors. */
+                  console.log("Other kind of error: " + error);
+                  alert("Error: Geolocation doesn't work yet."); 
+                }
+            }
+        });
+    </script>
+<script>
+        require.config({
+            deps: [
+                'jquery',
+                'mage/translate',
+                'jquery/jquery-storageapi'
+            ],
+            callback: function ($) {
+                'use strict';
+
+                var dependencies = [],
+                    versionObj;
+
+                $.initNamespaceStorage('mage-translation-storage');
+                $.initNamespaceStorage('mage-translation-file-version');
+                versionObj = $.localStorage.get('mage-translation-file-version');
+
+                
+                if (versionObj.version !== 'a441faa413f015e9c6b40dc23bbd5b6164e28f25') {
+                    dependencies.push(
+                        'text!js-translation.json'
+                    );
+
+                }
+
+                require.config({
+                    deps: dependencies,
+                    callback: function (string) {
+                        if (typeof string === 'string') {
+                            $.mage.translate.add(JSON.parse(string));
+                            $.localStorage.set('mage-translation-storage', string);
+                            $.localStorage.set(
+                                'mage-translation-file-version',
+                                {
+                                    version: 'a441faa413f015e9c6b40dc23bbd5b6164e28f25'
+                                }
+                            );
+                        } else {
+                            $.mage.translate.add($.localStorage.get('mage-translation-storage'));
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "mage/cookies": {
+                "expires": null,
+                "path": "/",
+                "domain": ".www.dangeedums.com",
+                "secure": false,
+                "lifetime": "3600"
+            }
+        }
+    }
+</script>
+<script>
+    require.config({
+        map: {
+            '*': {
+                wysiwygAdapter: 'mage/adminhtml/wysiwyg/tiny_mce/tinymce4Adapter'
+            }
+        }
+    });
+</script>
+<script type="text/javascript">
+require([
+    'jquery'
+], function ($) {
+    $(document).ready(function(){
+        var href = $(".header.links .authorization-link > a").attr("href");
+        if(href.indexOf("logout") == -1) {
+            $(".block-header-customer-login").detach().appendTo(".authorization-link");
+            $(".block-header-customer-login").click(function(e){
+                e.stopPropagation();
+            })
+            $("html,body").click(function(){
+                if($(".block-header-customer-login").hasClass("open"))
+                    $(".block-header-customer-login").removeClass("open");
+            });
+            $(".header.links .authorization-link > a").off("click").on("click", function(){
+                if(!$(".block-header-customer-login").hasClass("open"))
+                    $(".block-header-customer-login").addClass("open");
+                else
+                    $(".block-header-customer-login").removeClass("open");
+                    
+                return false;
+            });
+        }
+    });
+});
+</script>
+<script>
+        window.checkout = {"shoppingCartUrl":"https:\/\/www.dangeedums.com\/checkout\/cart\/","checkoutUrl":"https:\/\/www.dangeedums.com\/checkout\/","updateItemQtyUrl":"https:\/\/www.dangeedums.com\/checkout\/sidebar\/updateItemQty\/","removeItemUrl":"https:\/\/www.dangeedums.com\/checkout\/sidebar\/removeItem\/","imageTemplate":"Magento_Catalog\/product\/image_with_borders","baseUrl":"https:\/\/www.dangeedums.com\/","minicartMaxItemsVisible":5,"websiteId":"1","maxItemsToDisplay":10,"storeId":"1","customerLoginUrl":"https:\/\/www.dangeedums.com\/customer\/account\/login\/referer\/aHR0cHM6Ly93d3cuZGFuZ2VlZHVtcy5jb20v\/","isRedirectRequired":false,"autocomplete":"off","captcha":{"user_login":{"isCaseSensitive":false,"imageHeight":50,"imageSrc":"","refreshUrl":"https:\/\/www.dangeedums.com\/captcha\/refresh\/","isRequired":false,"timestamp":1790396731}}};
+    </script>
+<script type="text/x-magento-init">
+    {
+        "[data-block='minicart']": {
+            "Magento_Ui/js/core/app": {"components":{"minicart_content":{"children":{"subtotal.container":{"children":{"subtotal":{"children":{"subtotal.totals":{"config":{"display_cart_subtotal_incl_tax":1,"display_cart_subtotal_excl_tax":0,"template":"Magento_Tax\/checkout\/minicart\/subtotal\/totals"},"children":{"subtotal.totals.msrp":{"component":"Magento_Msrp\/js\/view\/checkout\/minicart\/subtotal\/totals","config":{"displayArea":"minicart-subtotal-hidden","template":"Magento_Msrp\/checkout\/minicart\/subtotal\/totals"}}},"component":"Magento_Tax\/js\/view\/checkout\/minicart\/subtotal\/totals"}},"component":"uiComponent","config":{"template":"Magento_Checkout\/minicart\/subtotal"}}},"component":"uiComponent","config":{"displayArea":"subtotalContainer"}},"item.renderer":{"component":"uiComponent","config":{"displayArea":"defaultRenderer","template":"Magento_Checkout\/minicart\/item\/default"},"children":{"item.image":{"component":"Magento_Catalog\/js\/view\/image","config":{"template":"Magento_Catalog\/product\/image","displayArea":"itemImage"}},"checkout.cart.item.price.sidebar":{"component":"uiComponent","config":{"template":"Magento_Checkout\/minicart\/item\/price","displayArea":"priceSidebar"}}}},"extra_info":{"component":"uiComponent","config":{"displayArea":"extraInfo"}},"promotion":{"component":"uiComponent","config":{"displayArea":"promotion"}}},"config":{"itemRenderer":{"default":"defaultRenderer","simple":"defaultRenderer","virtual":"defaultRenderer"},"template":"Magento_Checkout\/minicart\/content"},"component":"Magento_Checkout\/js\/view\/minicart"}},"types":[]}        },
+        "*": {
+            "Magento_Ui/js/block-loader": "https://www.dangeedums.com/pub/static/version1707852201/frontend/Smartwave/porto/en_US/images/loader-1.gif"
+        }
+    }
+    </script>
+<script src="https://www.dangeedums.com/pub/media/mageplaza/search/default_0.js"></script>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'Magento_Catalog/js/price-utils',
+        'mpDevbridgeAutocomplete'
+    ], function ($, priceUtils) {
+        "use strict";
+
+        var baseUrl = 'https://www.dangeedums.com/',
+            baseImageUrl = 'https://www.dangeedums.com/pub/media/catalog/product/',
+            priceFormat = {"pattern":"\u20b9%s","precision":2,"requiredPrecision":2,"decimalSymbol":".","groupSymbol":",","groupLength":3,"integerRequired":false},
+            displayInfo = ["price","image"];
+
+        var categorySelect = $('#mpsearch-category'),
+            searchInput = $('#search');
+        if (categorySelect.length) {
+            categorySelect.on('change', function () {
+                searchInput.focus();
+
+                if ($(this).val() === 0) {
+                    $(this).removeAttr('name');
+                } else {
+                    $(this).attr('name', 'cat');
+                }
+            });
+        }
+
+        searchInput.devbridgeAutocomplete({
+            lookup: mageplazaSearchProducts,
+            lookupLimit: 10,
+            maxHeight: 2000,
+            minChars: 1,
+            lookupFilter: function (suggestion, query, queryLowerCase) {
+                if (categorySelect.length) {
+                    var categoryId = categorySelect.val();
+                    if (categoryId > 0 && ($.inArray(categoryId, suggestion.c) === -1)) {
+                        return false;
+                    }
+                }
+
+                return suggestion.value.toLowerCase().indexOf(queryLowerCase) !== -1;
+            },
+            onSelect: function (suggestion) {
+                window.location.href = correctProductUrl(suggestion.u);
+            },
+            formatResult: function (suggestion, currentValue) {
+                var html = '<a href="' + correctProductUrl(suggestion.u) + '">';
+
+                if ($.inArray('image', displayInfo) !== -1) {
+                    html += '<div class="suggestion-left"><img class="img-responsive" src="' + correctProductUrl(suggestion.i, true) + '" alt="" /></div>';
+                }
+
+                html += '<div class="suggestion-right">';
+                html += '<div class="product-line product-name">' + suggestion.value + '</div>';
+
+                if ($.inArray('price', displayInfo) !== -1) {
+                    html += '<div class="product-line product-price">Price: ' + priceUtils.formatPrice(suggestion.p, priceFormat) + '</div>';
+                }
+
+                if ($.inArray('description', displayInfo) !== -1 && suggestion.d) {
+                    html += '<div class="product-des"><p class="short-des">' + suggestion.d + '...</p></div>';
+                }
+
+                html += '</div></a>';
+
+                return html;
+            }
+    //		onSearchComplete: function (query, suggestion) {
+    //			$('.autocomplete-suggestions').append("<div id='view_all'><a href='javascript:void(0)' id='search-view-all'>View all >></a></div>");
+    //			$('#search-view-all').on('click', function(){
+    //			   $('#search_mini_form').submit();
+    //            });
+    //		}
+        });
+
+        function correctProductUrl(urlKey, isImage) {
+            if (urlKey.search('http') !== -1) {
+                return urlKey;
+            }
+
+            return ((typeof isImage !== 'undefined') ? baseImageUrl : baseUrl) + urlKey;
+        }
+    });
+    </script>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
+                        }
+                    }
+                }
+            }
+        }
+        </script>
+<script type="text/x-magento-init">
+{"[data-role=compare-products-link]": {"Magento_Ui/js/core/app": {"components":{"compareProducts":{"component":"Magento_Catalog\/js\/view\/compare-products"}}}}}
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "wishlist": {
+                        "component": "Magento_Wishlist/js/view/wishlist"
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'Smartwave_Megamenu/js/sw_megamenu'
+    ], function ($) {
+        $(".sw-megamenu").swMegamenu();
+    });
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                        "messages": {
+                            "component": "Magento_Theme/js/view/auto/messages"
+                        }
+                    }
+                }
+            }
+    }
+</script>
+<script>
+        window.authenticationPopup = {"autocomplete":"off","customerRegisterUrl":"https:\/\/www.dangeedums.com\/customer\/account\/create\/","customerForgotPasswordUrl":"https:\/\/www.dangeedums.com\/customer\/account\/forgotpassword\/","baseUrl":"https:\/\/www.dangeedums.com\/"};
+    </script>
+<script type="text/x-magento-init">
+        {
+            "#authenticationPopup": {
+                "Magento_Ui/js/core/app": {"components":{"authenticationPopup":{"component":"Magento_Customer\/js\/view\/authentication-popup","children":{"messages":{"component":"Magento_Ui\/js\/view\/messages","displayArea":"messages"},"captcha":{"component":"Magento_Captcha\/js\/view\/checkout\/loginCaptcha","displayArea":"additional-login-form-fields","formId":"user_login","configSource":"checkout"}}}}}            },
+            "*": {
+                "Magento_Ui/js/block-loader": "https\u003A\u002F\u002Fwww.dangeedums.com\u002Fpub\u002Fstatic\u002Fversion1707852201\u002Ffrontend\u002FSmartwave\u002Fporto\u002Fen_US\u002Fimages\u002Floader\u002D1.gif"
+            }
+        }
+    </script>
+<script type="text/x-magento-init">
+{"*":{"Magento_Customer\/js\/section-config":{"sections":{"stores\/store\/switch":"*","directory\/currency\/switch":"*","*":["messages"],"customer\/account\/logout":["recently_viewed_product","recently_compared_product"],"customer\/account\/loginpost":"*","customer\/account\/createpost":"*","customer\/account\/editpost":"*","customer\/ajax\/login":["checkout-data","cart","captcha"],"catalog\/product_compare\/add":["compare-products"],"catalog\/product_compare\/remove":["compare-products"],"catalog\/product_compare\/clear":["compare-products"],"sales\/guest\/reorder":["cart"],"sales\/order\/reorder":["cart"],"checkout\/cart\/add":["cart"],"checkout\/cart\/delete":["cart"],"checkout\/cart\/updatepost":["cart"],"checkout\/cart\/updateitemoptions":["cart"],"checkout\/cart\/couponpost":["cart"],"checkout\/cart\/estimatepost":["cart"],"checkout\/cart\/estimateupdatepost":["cart"],"checkout\/onepage\/saveorder":["cart","checkout-data","last-ordered-items"],"checkout\/sidebar\/removeitem":["cart"],"checkout\/sidebar\/updateitemqty":["cart"],"rest\/*\/v1\/carts\/*\/payment-information":["cart","checkout-data","last-ordered-items","instant-purchase"],"rest\/*\/v1\/guest-carts\/*\/payment-information":["cart"],"rest\/*\/v1\/guest-carts\/*\/selected-payment-method":["cart","checkout-data"],"rest\/*\/v1\/carts\/*\/selected-payment-method":["cart","checkout-data","instant-purchase"],"authorizenet\/directpost_payment\/place":["cart","checkout-data"],"customer\/address\/*":["instant-purchase"],"customer\/account\/*":["instant-purchase"],"vault\/cards\/deleteaction":["instant-purchase"],"multishipping\/checkout\/overviewpost":["cart"],"paypal\/express\/placeorder":["cart","checkout-data"],"paypal\/payflowexpress\/placeorder":["cart","checkout-data"],"paypal\/express\/onauthorization":["cart","checkout-data"],"persistent\/index\/unsetcookie":["persistent"],"review\/product\/post":["review"],"braintree\/paypal\/placeorder":["cart","checkout-data"],"wishlist\/index\/add":["wishlist"],"wishlist\/index\/remove":["wishlist"],"wishlist\/index\/updateitemoptions":["wishlist"],"wishlist\/index\/update":["wishlist"],"wishlist\/index\/cart":["wishlist","cart"],"wishlist\/index\/fromcart":["wishlist","cart"],"wishlist\/index\/allcart":["wishlist","cart"],"wishlist\/shared\/allcart":["wishlist","cart"],"wishlist\/shared\/cart":["cart"],"additional_promotions\/action\/addpromoproductstocart":["cart","checkout-data"],"buynow\/cart\/add":["cart"]},"clientSideSections":["checkout-data","cart-data"],"baseUrls":["https:\/\/www.dangeedums.com\/"]}}}</script>
+<script type="text/x-magento-init">
+{"*":{"Magento_Customer\/js\/customer-data":{"sectionLoadUrl":"https:\/\/www.dangeedums.com\/customer\/section\/load\/","expirableSectionLifetime":60,"expirableSectionNames":["cart","persistent"],"cookieLifeTime":"3600","updateSessionUrl":"https:\/\/www.dangeedums.com\/customer\/account\/updateSession\/"}}}</script>
+<script type="text/x-magento-init">
+{"*":{"Magento_Customer\/js\/invalidation-processor":{"invalidationRules":{"website-rule":{"Magento_Customer\/js\/invalidation-rules\/website-rule":{"scopeConfig":{"websiteId":1}}}}}}}</script>
+<script type="text/x-magento-init">
+    {
+        "body": {
+            "pageCache": {"url":"https:\/\/www.dangeedums.com\/page_cache\/block\/render\/","handles":["default","cms_index_index","cms_page_view","cms_index_index_id_dangee-home"],"originalRequest":{"route":"cms","controller":"index","action":"index","uri":"\/"},"versionCookieName":"private_content_version"}        }
+    }
+</script>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'owl.carousel/owl.carousel.min'
+    ], function ($) {
+        $("#featured_product .owl-carousel").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            loop: true,
+            navRewind: true,
+            margin: 10,
+            nav: true,
+            navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
+            dots: false,
+            responsive: {
+                0: {
+                    items:2
+                },
+                768: {
+                    items:3
+                },
+                992: {
+                    items:4
+                },
+                1200: {
+                    items:5
+                }
+            }
+        });
+        $(".customer-banner").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            loop: true,
+            navRewind: true,
+            margin: 10,
+            nav: false,
+            dots: true,
+            responsive: {
+                0: {
+                    items:2
+                },
+                768: {
+                    items:2
+                },
+                992: {
+                    items:3
+                },
+                1200: {
+                    items:3
+                }
+            }
+        });
+        $(".hero-banner").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            loop: true,
+            navRewind: true,
+            margin: 10,
+            nav: false,
+            dots: true,
+            items:1,
+            responsive: {
+                0: {
+                    items:1
+                },
+                768: {
+                    items:1
+                },
+                992: {
+                    items:1
+                },
+                1200: {
+                    items:1
+                }
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+        require([
+            'jquery',
+            'owl.carousel/owl.carousel.min'
+        ], function ($) {
+            $('#copyright-year').text(new Date().getFullYear());
+        });
+    </script>
+<script>
+    require(['jquery'],function ($) {
+        $.each(jQuery('.action.primary'), function (i) {
+            $(this).addClass('disabled');
+            $(this).attr('disabled',true);
+        });
+    })
+</script>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "storage-manager": {
+                            "component": "Magento_Catalog/js/storage-manager",
+                            "appendTo": "",
+                            "storagesConfiguration" :
+                                         {"recently_viewed_product":{"requestConfig":{"syncUrl":"https:\/\/www.dangeedums.com\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"recently_compared_product":{"requestConfig":{"syncUrl":"https:\/\/www.dangeedums.com\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"product_data_storage":{"updateRequestConfig":{"url":"https:\/\/www.dangeedums.com\/rest\/default\/V1\/products-render-info"},"allowToSendRequest":null}}                        }
+                    }
+                }
+            }
+        }
+</script>
+<script type="text/x-magento-init">
+            {
+                "input[name='mobile_number']": {
+                    "Meetanshi_Mobilelogin/js/internationalTelephoneInput": {"nationalMode":false,"utilsScript":"https:\/\/www.dangeedums.com\/pub\/static\/version1707852201\/frontend\/Smartwave\/porto\/en_US\/Meetanshi_Mobilelogin\/js\/utils.min.js","preferredCountries":["IN"],"onlyCountries":["IN"]}                }
+            }
+
+
+
+
+        </script>
+<script>
+        require(
+            [
+                'jquery',
+                'mage/url',
+                'Magento_Ui/js/modal/modal'
+            ],
+            function ($,
+                      url,
+                      modal) {
+                var sendoption = {
+                    type: 'popup',
+                    modalClass: 'mobile_login_popup',
+                    responsive: true,
+                    innerScroll: true,
+                    clickableOverlay: false,
+                    buttons: []
+                };
+
+                modal(sendoption, jQuery('.mobile-sendotp-popup'));
+
+                jQuery(window).load(function () {
+                    jQuery('.mt_signin').click(function (e) {
+                        jQuery('.mobile-sendotp-popup').modal('openModal');
+                        jQuery('.login-otp-title').click();
+                    });
+
+                    jQuery('.mt_create_account').click(function (e) {
+                        jQuery('.mobile-sendotp-popup').modal('openModal');
+                        jQuery('.create-acc-title').click();
+                    });
+
+                    if (window.location.href.indexOf("customer/account/create") > -1) {
+                        // jQuery('.mobile-sendotp-popup').modal('openModal');
+                        // jQuery('.create-acc-title').click();
+                    }
+
+                    if (window.location.href.indexOf("customer/account/login") > -1) {
+                        // jQuery('.mobile-sendotp-popup').modal('openModal');
+                        // jQuery('.login-otp-title').click();
+                    }
+
+                });
+
+                jQuery('.mt_signin').click(function (e) {
+                    jQuery('.mobile-sendotp-popup').modal('openModal');
+                    jQuery('.login-otp-title').click();
+                });
+
+                jQuery('.mt_create_account').click(function (e) {
+                    jQuery('.mobile-sendotp-popup').modal('openModal');
+                    jQuery('.create-acc-title').click();
+                });
+
+                jQuery('.tit-item span').click(function (e) {
+                    jQuery('.tit-item span').removeClass('active');
+                    jQuery(this).addClass('active');
+                });
+
+                jQuery('.login-otp-title').click(function (e) {
+                    jQuery('.otl-login-form-contain').fadeIn();
+                    jQuery('.password-login-form-contain').hide();
+                    jQuery('.customer-create-form-contain').hide();
+                    jQuery('.forget-form-contain').hide();
+                });
+
+                jQuery('.login-email-title').click(function (e) {
+                    jQuery('.otl-login-form-contain').hide();
+                    jQuery('.password-login-form-contain').fadeIn();
+                    jQuery('.customer-create-form-contain').hide();
+                    jQuery('.forget-form-contain').hide();
+                });
+
+                jQuery('.create-acc-title').click(function (e) {
+                    jQuery('.otl-login-form-contain').hide();
+                    jQuery('.password-login-form-contain').hide();
+                    jQuery('.customer-create-form-contain').fadeIn();
+                    jQuery('.forget-form-contain').hide();
+                    jQuery('.tit-item span').removeClass('active');
+                });
+
+                jQuery('.for-accout-title').click(function (e) {
+                    jQuery('.otl-login-form-contain').hide();
+                    jQuery('.password-login-form-contain').hide();
+                    jQuery('.customer-create-form-contain').hide();
+                    jQuery('.forget-form-contain').fadeIn();
+                    jQuery('.tit-item span').removeClass('active');
+                });
+
+                jQuery('.back_link').click(function (e) {
+                    jQuery('p.success-msg').hide();
+                    jQuery('p.err-msg').hide();
+                    
+                    jQuery('.back_link').hide();
+                    var tabopn= jQuery('.back_link').attr('data-id');
+                  
+                    if(tabopn == 'login-otp'){
+                      jQuery('fieldset.fieldset.login-otp.step1').fadeIn();
+                      jQuery('fieldset.fieldset.login-otp.step2').hide();
+                    }
+                    else if(tabopn == 'register-otp')
+                    {
+                      jQuery('customer-create-form-contain').fadeIn();
+                      jQuery('fieldset.fieldset.login-password.register-step1').show();
+                      jQuery('fieldset.fieldset.login-password.register-step2').hide(); 
+                    }
+                    else if(tabopn == 'forget-otp' || tabopn == 'forget-otp-verify')
+                    {
+                      jQuery('forget-form-contain').fadeIn();
+                      jQuery('fieldset.fieldset.forgot-pass-step1').show();
+                      jQuery('fieldset.fieldset.forgot-pass-step2').hide();
+                      jQuery('fieldset.fieldset.forgot-pass-step3').hide();
+                    }else{
+                        // default otp action
+                    }
+                    jQuery('.back_link').attr('data-id','default_otp');
+                });
+
+
+                jQuery('.request-otp-btn').click(function (e) {
+                    if (jQuery('#otp-login-form').valid()) {
+
+                        var mobilenumber = jQuery('#mobilenumber').val();
+                        var getUrl = url.build('mobilelogin/otp/send');
+                        var otptype = 'login';
+                        var resend = 0;
+
+                        jQuery.ajax({
+                            url: getUrl,
+                            type: 'POST',
+                            data: {
+                                mobilenumber: mobilenumber,
+                                otptype: otptype,
+                                resendotp: resend,
+                                oldmobile: 0
+                            },
+                            showLoader: true,
+                            success: function (response) {
+                                if (response.succeess === "true") {
+                                    jQuery('fieldset.fieldset.login-otp.step1').hide();
+                                    jQuery('p.success-msg').text(response.successmsg);
+                                    jQuery('p.success-msg').show().delay(5000).fadeOut();
+                                    jQuery('fieldset.fieldset.login-otp.step2').fadeIn();
+
+                                    jQuery('.back_link').show();
+                                    jQuery('.back_link').attr("data-id",'login-otp');
+                                    
+                                }
+                                else {
+                                    jQuery('p.err-msg').text(response.errormsg);
+                                    jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                }
+                            },
+                            error: function (data) {
+
+                            }
+                        });
+                    }
+                });
+
+
+                jQuery('.resend-login-otp-btn').click(function (e) {
+                    var mobilenumber = jQuery('#mobilenumber').val();
+                    var getUrl = url.build('mobilelogin/otp/send');
+                    var otptype = 'login';
+                    var resend = 1;
+
+                    jQuery.ajax({
+                        url: getUrl,
+                        type: 'POST',
+                        data: {
+                            mobilenumber: mobilenumber,
+                            otptype: otptype,
+                            resendotp: resend,
+                            oldmobile: 0
+                        },
+                        showLoader: true,
+                        success: function (response) {
+                            if (response.succeess === "true") {
+                                jQuery('p.success-msg').text(response.successmsg);
+                                jQuery('p.success-msg').show().delay(5000).fadeOut();
+                            }
+                            else {
+                                jQuery('p.err-msg').text(response.errormsg);
+                                jQuery('p.err-msg').show().delay(5000).fadeOut();
+                            }
+                        },
+                        error: function (data) {
+
+                        }
+                    });
+                });
+
+
+                jQuery('.submit-login-otp-btn').click(function (e) {
+                    if (jQuery('#otp-login-form').valid()) {
+                        var mobilenumber = jQuery('#mobilenumber').val();
+                        var otpcode = jQuery('#loginotp').val();
+                        var redirect_url = jQuery("#otp-login-form input[name=redirect_url]").val();
+                        var getUrl = url.build('mobilelogin/otp/verify');
+                        var otptype = 'login';
+
+                        jQuery.ajax({
+                            url: getUrl,
+                            type: 'POST',
+                            data: {
+                                mobilenumber: mobilenumber,
+                                redirect_url: redirect_url,
+                                otptype: otptype,
+                                otpcode: otpcode,
+                                oldmobile: 0
+                            },
+                            showLoader: true,
+                            success: function (response) {
+                                if (response.succeess === "true") {
+                                    jQuery('p.success-msg').text(response.successmsg);
+                                    jQuery('p.success-msg').show().delay(5000).fadeOut();
+                                    if (response.customurl == "false") {
+                                        window.location.href = redirect_url
+                                    }else{
+                                       location.href = response.customurl;  
+                                    }
+                                }
+                                else {
+                                    jQuery('p.err-msg').text(response.errormsg);
+                                    jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                }
+                            },
+                            error: function (data) {
+                            }
+                        });
+
+                    }
+                });
+
+
+                jQuery('.password-login-btn').click(function (e) {
+                    if (jQuery('#password-login-form').valid()) {
+              
+                        var emailmobile = jQuery('#emailmobilenumber').val();
+                        var mobpassword = jQuery('#logpassword').val();
+                        var redirect_url = jQuery("#password-login-form input[name=redirect_url]").val();
+                        var getUrl = url.build('mobilelogin/account/login');
+
+                        jQuery.ajax({
+                            url: getUrl,
+                            type: 'POST',
+                            data: {
+                                emailmobile: emailmobile,
+                                mobpassword: mobpassword,
+                                redirect_url: redirect_url,
+                            },
+                            showLoader: true,
+                            success: function (response) {
+                                if (response.succeess === "true") {
+                                    jQuery('p.success-msg').text(response.successmsg);
+                                    jQuery('p.success-msg').show().delay(5000).fadeOut();
+                                    if (response.customurl == "false") {
+                                        window.location.href = redirect_url
+                                    }else{
+                                       location.href = response.customurl;  
+                                    }
+                                }
+                                else {
+                                    jQuery('p.err-msg').text(response.errormsg);
+                                    jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                }
+                            },
+                            error: function (data) {
+                            }
+                        });
+
+                    }
+                });
+
+
+                jQuery('.create-account-btn').click(function (e) {
+                    if (jQuery('#create-account-form').valid()) {
+
+                        var mobilenumber = jQuery('#regmobilenumber').val();
+                        var getUrl = url.build('mobilelogin/otp/send');
+                        var otptype = 'register';
+                        var resend = 0;
+                        var email = jQuery('.login-password.register-step1 #email').val();
+
+                        jQuery.ajax({
+                            url: getUrl,
+                            type: 'POST',
+                            data: {
+                                mobilenumber: mobilenumber,
+                                otptype: otptype,
+                                resendotp: resend,
+                                email: email,
+                                oldmobile: 0
+                            },
+                            showLoader: true,
+                            success: function (response) {
+                                if (response.succeess === "true") {
+                                    jQuery('fieldset.fieldset.login-password.register-step1').hide();
+                                    jQuery('fieldset.fieldset.login-password.register-step2').fadeIn();
+                                    jQuery('p.success-msg').text(response.successmsg);
+                                    jQuery('p.success-msg').show().delay(5000).fadeOut();
+
+                                    jQuery('.back_link').show();
+                                    jQuery('.back_link').attr("data-id",'register-otp');
+                                }
+                                else {
+                                    jQuery('p.err-msg').text(response.errormsg);
+                                    jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                }
+                            },
+                            error: function (data) {
+
+                            }
+                        });
+                    }
+                });
+
+
+                jQuery('.resend-create-account-btn').click(function (e) {
+                    var mobilenumber = jQuery('#regmobilenumber').val();
+                    var getUrl = url.build('mobilelogin/otp/send');
+                    var otptype = 'register';
+                    var resend = 1;
+                    var email = jQuery('.login-password.register-step1 #email').val();
+
+
+                    jQuery.ajax({
+                        url: getUrl,
+                        type: 'POST',
+                        data: {
+                            mobilenumber: mobilenumber,
+                            otptype: otptype,
+                            resendotp: resend,
+                            email: email,
+                            oldmobile: 0
+                        },
+                        showLoader: true,
+                        success: function (response) {
+                            if (response.succeess === "true") {
+                                jQuery('p.success-msg').text(response.successmsg);
+                                jQuery('p.success-msg').show().delay(5000).fadeOut();
+                            }
+                            else {
+                                jQuery('p.err-msg').text(response.errormsg);
+                                jQuery('p.err-msg').show().delay(5000).fadeOut();
+                            }
+                        },
+                        error: function (data) {
+
+                        }
+                    });
+                });
+
+                jQuery('.submit-create-account-btn').click(function (e) {
+                    if (jQuery('#create-account-form').valid()) {
+
+                        var mobilenumber = jQuery('#regmobilenumber').val();
+                        var otpcode = jQuery('#registerotp').val();
+                        var redirect_url = jQuery("#create-account-form input[name=redirect_url]").val();
+                        var getUrl = url.build('mobilelogin/otp/verify');
+                        var otptype = 'register';
+
+                        jQuery.ajax({
+                            url: getUrl,
+                            type: 'POST',
+                            data: {
+                                mobilenumber: mobilenumber,
+                                otptype: otptype,
+                                otpcode: otpcode,
+                                oldmobile: 0
+                            },
+                            showLoader: true,
+                            success: function (response) {
+                                if (response.succeess === "true") {
+                                    jQuery('p.success-msg').text(response.successmsg);
+                                    jQuery('p.success-msg').show().delay(5000).fadeOut();
+
+                                    var firstname = jQuery('#firstname').val();
+                                    var lastname = jQuery('#lastname').val();
+                                    var mobile = jQuery('#regmobilenumber').val();
+                                    var email = jQuery('.login-password.register-step1 #email').val();
+                                    var password = jQuery('#password').val();
+                                    var getUrl = url.build('mobilelogin/account/create');
+
+                                    jQuery.ajax({
+                                        url: getUrl,
+                                        type: 'POST',
+                                        data: {
+                                            firstname: firstname,
+                                            mobile: mobile,
+                                            email: email,
+                                            password: password,
+                                            lastname: lastname
+                                        },
+                                        showLoader: true,
+                                        success: function (response) {
+                                            if (response.succeess === "true") {
+                                                jQuery('p.success-msg').text(response.successmsg);
+                                                jQuery('p.success-msg').show().delay(5000).fadeOut();
+                                                // location.href = response.customurl;
+                                                window.location.href = redirect_url
+                                            }
+                                            else {
+                                                jQuery('p.err-msg').text(response.errormsg);
+                                                jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                            }
+                                        },
+                                        error: function (data) {
+                                        }
+                                    });
+
+                                }
+                                else {
+                                    jQuery('p.err-msg').text(response.errormsg);
+                                    jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                }
+                            },
+                            error: function (data) {
+                            }
+                        });
+
+                    }
+                });
+
+
+                jQuery('.forgot-btn-req').click(function (e) {
+
+
+                    if (jQuery('#forget-form').valid()) {
+
+                        var mobilenumber = jQuery('#fogmobilenumber').val();
+                        var getUrl = url.build('mobilelogin/otp/send');
+                        var otptype = 'forgot';
+                        var resend = 0;
+
+                        jQuery.ajax({
+                            url: getUrl,
+                            type: 'POST',
+                            data: {
+                                mobilenumber: mobilenumber,
+                                otptype: otptype,
+                                resendotp: resend,
+                                oldmobile: 0
+                            },
+                            showLoader: true,
+                            success: function (response) {
+                                if (response.succeess === "true") {
+                                    jQuery('fieldset.fieldset.forgot-pass-step1').hide();
+                                    jQuery('fieldset.fieldset.forgot-pass-step2').fadeIn();
+                                    jQuery('p.success-msg').text(response.successmsg);
+                                    jQuery('p.success-msg').show().delay(5000).fadeOut();
+
+                                    jQuery('.back_link').show();
+                                    jQuery('.back_link').attr("data-id",'forget-otp');
+                                }
+                                else {
+                                    jQuery('p.err-msg').text(response.errormsg);
+                                    jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                }
+                            },
+                            error: function (data) {
+
+                            }
+                        });
+                    }
+                });
+
+                jQuery('.resend-forgot-otp-btn').click(function (e) {
+
+                    var mobilenumber = jQuery('#fogmobilenumber').val();
+                    var getUrl = url.build('mobilelogin/otp/send');
+                    var otptype = 'forgot';
+                    var resend = 1;
+
+                    jQuery.ajax({
+                        url: getUrl,
+                        type: 'POST',
+                        data: {
+                            mobilenumber: mobilenumber,
+                            otptype: otptype,
+                            resendotp: resend,
+                            oldmobile: 0
+                        },
+                        showLoader: true,
+                        success: function (response) {
+                            if (response.succeess === "true") {
+                                jQuery('fieldset.fieldset.forgot-pass-step1').hide();
+                                jQuery('fieldset.fieldset.forgot-pass-step2').fadeIn();
+                                jQuery('p.success-msg').text(response.successmsg);
+                                jQuery('p.success-msg').show().delay(5000).fadeOut();
+                            }
+                            else {
+                                jQuery('p.err-msg').text(response.errormsg);
+                                jQuery('p.err-msg').show().delay(5000).fadeOut();
+                            }
+                        },
+                        error: function (data) {
+
+                        }
+                    });
+                });
+
+                jQuery('.forgot-btn-verify').click(function (e) {
+                    if (jQuery('#forget-form').valid()) {
+
+                        var mobilenumber = jQuery('#fogmobilenumber').val();
+                        var otpcode = jQuery('#forgototp').val();
+                        var getUrl = url.build('mobilelogin/otp/verify');
+                        var otptype = 'forgot';
+
+                        jQuery.ajax({
+                            url: getUrl,
+                            type: 'POST',
+                            data: {
+                                mobilenumber: mobilenumber,
+                                otptype: otptype,
+                                otpcode: otpcode,
+                                oldmobile: 0
+                            },
+                            showLoader: true,
+                            success: function (response) {
+                                if (response.succeess === "true") {
+                                    jQuery('fieldset.fieldset.forgot-pass-step2').hide();
+                                    jQuery('fieldset.fieldset.forgot-pass-step3').fadeIn();
+                                    jQuery('p.success-msg').text(response.successmsg);
+                                    jQuery('p.success-msg').show().delay(5000).fadeOut();
+
+                                    jQuery('.back_link').show();
+                                    jQuery('.back_link').attr("data-id",'forget-otp-verify');
+                                }
+                                else {
+                                    jQuery('p.err-msg').text(response.errormsg);
+                                    jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                }
+                            },
+                            error: function (data) {
+                            }
+                        });
+
+                    }
+                });
+
+                jQuery('.forgot-submit-password-btn').click(function (e) {
+                    if (jQuery('#forget-form').valid()) {
+
+                        var mobilenumber = jQuery('#fogmobilenumber').val();
+                        var password = jQuery('#newpassword').val();
+                        var confirmpassword = jQuery('#confirmnewpassword').val();
+                        var getUrl = url.build('mobilelogin/otp/resetpassword');
+
+                        if (password == confirmpassword) {
+                            jQuery.ajax({
+                                url: getUrl,
+                                type: 'POST',
+                                data: {
+                                    mobilenumber: mobilenumber,
+                                    password: password
+                                },
+                                showLoader: true,
+                                success: function (response) {
+                                    if (response.succeess === "true") {
+                                        jQuery('fieldset.fieldset.forgot-pass-step3').hide();
+                                        jQuery('fieldset.fieldset.forgot-pass-step1').fadeIn();
+                                        jQuery('.login-email-title').click();
+                                        jQuery('p.success-msg').text(response.successmsg);
+                                        jQuery('p.success-msg').show().delay(5000).fadeOut();
+
+                                        jQuery('.back_link').hide();
+                                    }
+                                    else {
+                                        jQuery('p.err-msg').text(response.errormsg);
+                                        jQuery('p.err-msg').show().delay(5000).fadeOut();
+                                    }
+                                },
+                                error: function (data) {
+                                }
+                            });
+                        } else {
+                            jQuery('p.err-msg').text('Password and confirm password are not same.');
+                            jQuery('p.err-msg').show().delay(5000).fadeOut();
+                        }
+                    }
+                });
+
+
+            }
+        );
+    </script>
+<script type="text/javascript">
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+            ) {
+
+            var popupTpl = '<aside ' +
+            'class="modal-<%= data.type %> <%= data.modalClass %> ' +
+            '<% if(data.responsive){ %><%= data.responsiveClass %><% } %> ' +
+            '<% if(data.innerScroll){ %><%= data.innerScrollClass %><% } %>"'+
+            'data-role="modal"' +
+            'data-type="<%= data.type %>"' +
+            'tabindex="0">'+
+            '    <div data-role="focusable-start" tabindex="0"></div>'+
+            '    <div class="modal-inner-wrap"'+
+            'data-role="focusable-scope">'+
+            '    <div '+
+            'class="modal-content" '+
+            'data-role="content">' +
+            '<button '+
+            'class="action-close" '+
+            'data-role="closeBtn" '+
+            'type="button">'+
+             '<span><%= data.closeText %></span>' +
+             '</button>' +
+            '</div>'+
+            '   </div>'+
+            '   </aside>';
+
+            var modalOptions = {
+                type: 'popup',
+                responsive: false,
+                innerScroll: false,
+                buttons: [],
+                popupTpl: popupTpl,
+                modalClass: 'rule-popup',
+                closeText: 'X',
+                modalCloseBtnHandler: function(){
+                    this.closeModal();
+                    displayNextPopupAndSetCookie();
+                }
+            };
+
+            var popupIdExistsInArray = function(popupId, popupArray){
+                for(var i=0; i<popupArray.length; i++){
+                    if(popupArray[i]['id'] == popupId){
+                        return true;
+                    }
+                }
+                return false;
+            };
+
+            window.lastChainedDisplayedPopupIndex = 0;
+            window.popupsReponse = null;
+
+            var displayNextPopupAndSetCookie = function (){
+                var popupIndex = window.lastChainedDisplayedPopupIndex;
+
+                if(window.popupsReponse == null
+                    || ! (popupIndex in window.popupsReponse)){
+                    return;
+                }
+
+                var popupId = window.popupsReponse[popupIndex]['id'];
+                var popupHtml = window.popupsReponse[popupIndex]['html'];
+
+                var popupDisplayedCookieValue = $.cookie('rule_popup_displayed');
+                var displayedPopups = [];
+                if(popupDisplayedCookieValue != null){
+                    displayedPopups = popupDisplayedCookieValue.split(",");
+                }
+                window.lastChainedDisplayedPopupIndex = popupIndex + 1;
+
+                if($.inArray(popupId, displayedPopups) == -1){
+                    $(".rule-popup-modal-wrapper").html(popupHtml);
+                    $('.rule-popup-modal-wrapper').modal('openModal');
+                    displayedPopups.push(popupId);
+                    var popupDisplayedNewCookieValue = displayedPopups.join(",");
+                    $.cookie('rule_popup_displayed', popupDisplayedNewCookieValue);
+                }else{
+                    displayNextPopupAndSetCookie();
+                }
+            };
+
+            $(document).ready(function(){
+                modal(modalOptions, $('.rule-popup-modal-wrapper'));
+
+                $.ajax({
+                    url: "https://www.dangeedums.com/additional_promotions/action/getRulePopup/",
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (response) {
+                        if(!$.isEmptyObject(response)){
+                            window.popupsReponse = response;
+
+                            displayNextPopupAndSetCookie();
+                        }
+                    }
+                });
+            });
+        }
+    );
+</script>
+</body>
+</html>

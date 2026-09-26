@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ratna Group</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XWZH385Z2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-1XWZH385Z2');
+  </script>
+
+  <!-- Fav icon -->
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css" />
+  <!-- Custom CSS -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"> -->
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body>
+
+  <a class="text-uppercase fw-normal enquire-btn" style="cursor: pointer" data-bs-toggle="modal"
+    data-bs-target="#requestform">
+    <p class="d-flex align-items-center m-0">
+      <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fff"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect>
+        <line x1="7" y1="8" x2="17" y2="8"></line>
+        <line x1="7" y1="12" x2="17" y2="12"></line>
+        <line x1="7" y1="16" x2="13" y2="16"></line>
+      </svg> Enquire
+    </p>
+  </a>
+
+  <!-- Popup Overlay -->
+  <div id="reraPopup" class="rera-overlay">
+    <div class="popup">
+      <img src="assets/img/poppu.png" alt="vector Img" decoding="async" />
+      <h2>RERA DISCLAIMER</h2>
+      <p> No information given on this Website creates a warranty or expands the scope of any warranty that cannot be
+        disclaimed under applicable law. Your use of the Website is solely at your own risk. </p>
+      <p> We further declare that none of the images, material, stock photography, projections, details, descriptions
+        and other information that are currently available and/or displayed on the website including details of the
+        projects/developments undertaken by the company including depictions by banners/posters of the project, should
+        be deemed to be or constitute advertisements, solicitations, marketing, offer for sale, invitation to offer,
+        invitation to acquire, including within the purview of the RERA. </p>
+      <p> You are therefore requested to directly verify all details and aspects of any proposed booking/acquisition of
+        units/premises, directly with our authorised sales team. Please do not rely on the information contained on this
+        website, until our revision and update is complete. </p>
+      <p> Please note, that we will not be accepting any bookings or allotments based on the images, material, stock
+        photography, projections, details, descriptions that are currently available and/or displayed on the Website. We
+        advise you to contact our Sales Team for further information. </p>
+      <p>
+        <strong>We thank you for your patience and understanding.</strong>
+      </p>
+      <div class="checkbox-area">
+        <label for="agree">
+          <input type="checkbox" id="agree" /> I Agree </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- header start -->
+  <div id="header"></div>
+  <!-- header end --><!-- preloader -->
+  <div class="preloader">
+    <div class="frame frame1"></div>
+    <div class="frame frame2">PREMIUM बनेगा POSSIBLE</div>
+    <div class="frame frame3"></div>
+    <div class="frame frame4">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 734 146" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M0.496094 8.51485V16.4434H44.3591C87.5016 16.4434 88.3277 16.5463 94.5398 22.761C102.481 30.6999 103.161 46.4797 95.9423 55.4016C91.1661 61.3075 89.7662 61.5005 45.7616 62.2854L0.496094 63.096V70.6488V78.2042H20.1257H39.7554L70.9497 110.613C101.627 142.487 102.311 143.009 112.319 142.137L122.494 141.252L92.0771 109.728L61.6573 78.2042H73.6209C98.019 78.2042 112.821 65.6642 115.273 42.9105C116.828 28.4971 111.424 15.9828 100.034 7.61932C93.4487 2.78653 88.4821 2.2101 46.6366 1.43809L0.496094 0.586304V8.51485ZM180.506 4.36658C155.922 11.2941 140.253 26.7394 132.847 51.3434C124.774 78.1708 130.67 103.114 149.548 121.993C173.766 146.211 218.208 147.932 244.655 125.678L252.686 118.92V132.016V145.112H261.693H270.7V74.3442V3.57656H261.693C252.833 3.57656 252.686 3.75412 252.686 14.3512V25.1259L245.609 18.3477C231.075 4.42834 202.253 -1.76318 180.506 4.36658ZM643.166 4.50554C600.695 16.4202 580.327 65.0955 600.901 105.515C608.886 121.205 615.95 127.868 632.289 135.112C657.117 146.118 694.996 140.958 709.459 124.597L714.606 118.776L715.892 131.301C717.12 143.238 717.57 143.864 725.542 144.631L733.906 145.439V74.5063V3.57656H724.899C716.039 3.57656 715.892 3.75412 715.892 14.3512V25.1259L708.815 18.3477C694.127 4.27651 665.495 -1.76061 643.166 4.50554ZM283.566 13.87V24.1635H310.587H337.607V84.7843V145.408L348.544 144.615L359.481 143.825L360.165 73.7008L360.85 3.57656H322.208H283.566V13.87ZM371.061 74.2747V145.112H382.641H394.221V84.7277V24.3436L420.598 23.6102L446.975 22.8768V13.87V4.86324L409.018 4.15042L371.061 3.44017V74.2747ZM463.702 74.3442V145.112H472.709H481.716L481.757 99.4345C481.798 56.9225 482.2 53.0598 487.547 43.7057C495.473 29.8481 504.794 23.6643 519.956 22.2052C529.838 21.2556 535.602 22.303 544.666 26.688C563.729 35.9186 565.214 40.7669 566.197 97.0078L567.041 145.408L575.204 144.615L583.364 143.825L583.354 93.6444C583.343 39.771 582.237 34.3772 568.539 21.446C548.824 2.83543 514.503 0.110232 491.366 15.3188L481.716 21.6622V12.6194C481.716 4.00116 481.294 3.57656 472.709 3.57656H463.702V74.3442ZM175.246 25.005C169.008 28.2963 160.431 35.9238 156.185 41.9532C149.306 51.7191 148.465 54.9693 148.465 71.7708C148.465 88.5775 149.304 91.8148 156.185 101.558C179.87 135.089 230.8 129.991 247.887 92.3809C267.812 48.5204 218.077 2.39281 175.246 25.005ZM638.452 25.005C632.214 28.2963 623.637 35.9289 619.391 41.9635C612.533 51.7088 611.671 55.0156 611.671 71.5804C611.671 87.9084 612.587 91.5471 619.038 100.858C627.79 113.485 648.035 124.525 662.438 124.525C682.48 124.525 702.153 111.496 711.013 92.3577C717.714 77.8826 717.13 63.6853 709.173 47.7175C696.209 21.6982 664.191 11.4176 638.452 25.005Z"
+          fill="white" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    document.body.classList.add("noscroll");
+    setTimeout(() => {
+      document.querySelector(".preloader").classList.add("refod");
+      document.body.classList.remove("noscroll");
+    }, 6000);
+  </script>
+
+  <main>
+
+    <section class="hero-banner">
+      <div class="hero-section position-relative overflow-hidden rounded-4">
+        <!-- <img src="assets/img/hero-banner1.png" alt="Hero" class="img-fluid w-100 h-100 object-fit-cover position-absolute top-0 start-0 z-0" /> -->
+
+        <video class="banner-video" src="assets/video/hero-banner.mp4" muted="" loop="" autoplay=""
+          playsinline=""></video>
+
+        <!-- <video
+            class="banner-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none">
+            <source src="assets/video/hero-banner.mp4" type="video/mp4">
+            <source src="assets/video/hero-banner.webm" type="video/webm">
+          </video> -->
+
+        <!-- Play Button -->
+        <!-- <button class="play-button position-absolute top-50 start-50 translate-middle btn btn-light rounded-circle shadow"><svg
+          xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none"><path d="M6.31738 18.4779V13.051C6.31738 6.31322 11.0887 3.55408 16.9271 6.92298L21.6375 9.6364L26.3479 12.3498C32.1863 15.7187 32.1863 21.237 26.3479 24.6059L21.6375 27.3193L16.9271 30.0327C11.0887 33.4016 6.31738 30.6425 6.31738 23.9047V18.4779Z" stroke="#292D32" stroke-width="2.28659" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></button> -->
+        <!-- Logo Text -->
+        <div class="ratna-banner-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="734" height="146" viewBox="0 0 734 146" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M0.496094 8.51485V16.4434H44.3591C87.5016 16.4434 88.3277 16.5463 94.5398 22.761C102.481 30.6999 103.161 46.4797 95.9423 55.4016C91.1661 61.3075 89.7662 61.5005 45.7616 62.2854L0.496094 63.096V70.6488V78.2042H20.1257H39.7554L70.9497 110.613C101.627 142.487 102.311 143.009 112.319 142.137L122.494 141.252L92.0771 109.728L61.6573 78.2042H73.6209C98.019 78.2042 112.821 65.6642 115.273 42.9105C116.828 28.4971 111.424 15.9828 100.034 7.61932C93.4487 2.78653 88.4821 2.2101 46.6366 1.43809L0.496094 0.586304V8.51485ZM180.506 4.36658C155.922 11.2941 140.253 26.7394 132.847 51.3434C124.774 78.1708 130.67 103.114 149.548 121.993C173.766 146.211 218.208 147.932 244.655 125.678L252.686 118.92V132.016V145.112H261.693H270.7V74.3442V3.57656H261.693C252.833 3.57656 252.686 3.75412 252.686 14.3512V25.1259L245.609 18.3477C231.075 4.42834 202.253 -1.76318 180.506 4.36658ZM643.166 4.50554C600.695 16.4202 580.327 65.0955 600.901 105.515C608.886 121.205 615.95 127.868 632.289 135.112C657.117 146.118 694.996 140.958 709.459 124.597L714.606 118.776L715.892 131.301C717.12 143.238 717.57 143.864 725.542 144.631L733.906 145.439V74.5063V3.57656H724.899C716.039 3.57656 715.892 3.75412 715.892 14.3512V25.1259L708.815 18.3477C694.127 4.27651 665.495 -1.76061 643.166 4.50554ZM283.566 13.87V24.1635H310.587H337.607V84.7843V145.408L348.544 144.615L359.481 143.825L360.165 73.7008L360.85 3.57656H322.208H283.566V13.87ZM371.061 74.2747V145.112H382.641H394.221V84.7277V24.3436L420.598 23.6102L446.975 22.8768V13.87V4.86324L409.018 4.15042L371.061 3.44017V74.2747ZM463.702 74.3442V145.112H472.709H481.716L481.757 99.4345C481.798 56.9225 482.2 53.0598 487.547 43.7057C495.473 29.8481 504.794 23.6643 519.956 22.2052C529.838 21.2556 535.602 22.303 544.666 26.688C563.729 35.9186 565.214 40.7669 566.197 97.0078L567.041 145.408L575.204 144.615L583.364 143.825L583.354 93.6444C583.343 39.771 582.237 34.3772 568.539 21.446C548.824 2.83543 514.503 0.110232 491.366 15.3188L481.716 21.6622V12.6194C481.716 4.00116 481.294 3.57656 472.709 3.57656H463.702V74.3442ZM175.246 25.005C169.008 28.2963 160.431 35.9238 156.185 41.9532C149.306 51.7191 148.465 54.9693 148.465 71.7708C148.465 88.5775 149.304 91.8148 156.185 101.558C179.87 135.089 230.8 129.991 247.887 92.3809C267.812 48.5204 218.077 2.39281 175.246 25.005ZM638.452 25.005C632.214 28.2963 623.637 35.9289 619.391 41.9635C612.533 51.7088 611.671 55.0156 611.671 71.5804C611.671 87.9084 612.587 91.5471 619.038 100.858C627.79 113.485 648.035 124.525 662.438 124.525C682.48 124.525 702.153 111.496 711.013 92.3577C717.714 77.8826 717.13 63.6853 709.173 47.7175C696.209 21.6982 664.191 11.4176 638.452 25.005Z"
+              fill="white" />
+          </svg>
+        </div>
+        <!-- Customer Response -->
+        <div class="customer-response">
+          <span class="customer-title">Follow Us</span>
+          <div class="avatars d-flex flex-row-reverse">
+            <a href="https://www.youtube.com/channel/UCfBm9hOaUSbMXuyIVofkbew" target="_blank" class="avatar-img">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M23.4936 6.49797C23.357 6.01474 23.0896 5.57414 22.7181 5.22029C22.3465 4.86643 21.8839 4.61172 21.3766 4.48165C19.5081 4 12 4 12 4C12 4 4.49186 4 2.62343 4.48165C2.11606 4.61171 1.65346 4.86642 1.28193 5.22028C0.910402 5.57414 0.642976 6.01473 0.506421 6.49797C0.156854 8.31279 -0.0124627 10.1549 0.000713624 12C-0.0124609 13.8451 0.156856 15.6872 0.506421 17.502C0.64299 17.9852 0.91042 18.4258 1.28195 18.7797C1.65347 19.1335 2.11606 19.3883 2.62343 19.5183C4.49186 20 12 20 12 20C12 20 19.5081 20 21.3766 19.5184C21.8839 19.3883 22.3465 19.1336 22.718 18.7797C23.0896 18.4259 23.357 17.9853 23.4936 17.502C23.8431 15.6872 24.0124 13.8451 23.9993 12C24.0124 10.155 23.8431 8.31281 23.4936 6.49797ZM9.60013 15.4286V8.57142L15.8312 12L9.60013 15.4286Z"
+                  fill="#1B4B95" />
+              </svg>
+            </a>
+            <a href="https://in.linkedin.com/company/ratna-group" target="_blank" class="avatar-img">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M17.14 2H6.85999C4.17999 2 2 4.18 2 6.86V17.14C2 19.82 4.17999 22 6.85999 22H17.14C19.82 22 22 19.82 22 17.14V6.86C22 4.18 19.82 2 17.14 2ZM8.92001 9.17C8.36001 9.17 7.89001 8.71 7.89001 8.15C7.89001 7.58 8.35 7.12 8.91 7.12H8.92001C9.49001 7.12 9.95001 7.58 9.95001 8.15C9.95001 8.71 9.49001 9.17 8.92001 9.17ZM9.64999 10.72V15.85C9.64999 16.27 9.31999 16.6 8.89999 16.6C8.48999 16.6 8.14999 16.27 8.14999 15.85V10.72C8.14999 10.3 8.48999 9.97 8.89999 9.97C9.31999 9.97 9.64999 10.3 9.64999 10.72ZM15.85 15.85C15.85 16.27 15.51 16.6 15.1 16.6C14.68 16.6 14.35 16.27 14.35 15.85V13.51C14.35 12.88 14.22 12.77 14.12 12.68C14 12.57 13.79 12.5 13.53 12.49C13.32 12.5 13.11 12.57 12.99 12.68C12.89 12.77 12.76 12.88 12.76 13.51V15.85C12.76 16.27 12.43 16.6 12.01 16.6C11.6 16.6 11.26 16.27 11.26 15.85V13.51C11.26 12.6 11.48 12.02 11.99 11.56C12.38 11.21 12.91 11.02 13.53 10.99C14.2 11.02 14.73 11.21 15.13 11.56C15.63 12.02 15.85 12.6 15.85 13.51V15.85Z"
+                  fill="#1B4B95" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/ratnagroup/" target="_blank" class="avatar-img">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <g clip-path="url(#clip0_1006_1475)">
+                  <path
+                    d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7ZM18.5 6.75C18.5 6.41848 18.3683 6.10054 18.1339 5.86612C17.8995 5.6317 17.5815 5.5 17.25 5.5C16.9185 5.5 16.6005 5.6317 16.3661 5.86612C16.1317 6.10054 16 6.41848 16 6.75C16 7.08152 16.1317 7.39946 16.3661 7.63388C16.6005 7.8683 16.9185 8 17.25 8C17.5815 8 17.8995 7.8683 18.1339 7.63388C18.3683 7.39946 18.5 7.08152 18.5 6.75ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z"
+                    fill="#1B4B95" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1006_1475">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/ratnagroup.co.in" target="_blank" class="avatar-img">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.0142 1.99902C6.49116 1.99902 2.01416 6.47602 2.01416 11.999C2.01416 16.814 5.45917 20.888 10.0152 21.804L10.0142 14.999H8.01416V11.999H10.0142V8.99902C10.0252 7.36502 11.3152 6.01802 13.0142 5.99902H16.0142V8.99902C16.0142 8.99902 14.3102 8.99902 14.0142 8.99902C13.4952 8.99802 13.0142 9.42902 13.0142 9.99902V11.999H16.0142L15.0142 14.999H13.0142L13.0212 21.961C18.0532 21.439 22.0142 17.169 22.0142 11.999C22.0142 6.47602 17.5372 1.99902 12.0142 1.99902Z"
+                  fill="#1B4B95" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-area position-relative mt-50 py-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 about-left-are">
+            <h2 class="about-title position-absolute text-uppercase fw-medium m-0"> We Are On A Journey Of Making <br />
+              Premium Possible For All </h2>
+            <ul>
+              <li class="mb-60">
+                <h3 class="fw-light m-0">
+                  <span class="timer" data-from="0" data-to="25" data-speed="3000">25</span>
+                  <sup>+</sup>
+                </h3>
+                <p class="fw-light m-0">Years Experience</p>
+              </li>
+              <li class="mb-60">
+                <h3 class="fw-light m-0">
+                  <span class="timer" data-from="0" data-to="4000" data-speed="3000">4000</span>
+                  <sup>+</sup>
+                </h3>
+                <p class="fw-light m-0">Happy Clients</p>
+              </li>
+              <li>
+                <h3 class="fw-light m-0">
+                  <!-- <img src="assets/img/rupe.svg" alt="rupey"  decoding="async" /> -->
+                  <span class="timer" data-from="0" data-to="25" data-speed="3000">25</span>L <sup>+</sup>
+                </h3>
+                <p class="fw-light m-0">Sq.Ft Built</p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9">
+            <div class="about-video-are position-relative">
+              <div class="video-area">
+                <!-- <img src="assets/img/about-bg.png" alt="about-bg" /> -->
+
+                <!-- <video class="about-video" src="assets/video/home-about.mp4" muted="" loop="" autoplay="" playsinline=""></video> -->
+
+                <video class="about-video" src="assets/video/home-about.mp4" muted autoplay playsinline>
+                </video>
+
+              </div>
+              <!-- <div class="view-more-btn position-absolute"><button class="text-uppercase fw-normal" type="button">
+                  Know More
+                </button></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="discover-main py-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 discover-top">
+            <h2 class="title mb-3"> Discover your ideal property with <span>RATNA</span>, where expertise meets trust
+            </h2>
+            <p class="m-0"> We specialize in residential, commercial, and retail developments, designed with precision,
+              purpose, and enduring value. </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 discover-bottom pt-50">
+            <div class="horizontal-slider">
+              <!-- LEFT CONTENT -->
+              <div id="contents">
+                <div class="content active swiper-slide-active" data-tab="0">
+                  <img src="assets/img/reci-1.png" alt="icon" decoding="async" />
+                  <h2 class="m-0">Residential</h2>
+                  <p class="m-0"> Experience refined living in our thoughtfully designed residences, equipped with
+                    modern amenities and located in well-connected neighborhoods that cater to comfort and convenience.
+                  </p>
+                  <a class="project-btn" href="residential-properties.html">View More</a>
+                </div>
+                <div class="content swiper-slide-next" data-tab="1">
+                  <img src="assets/img/reci-1.png" alt="icon" decoding="async" />
+                  <h2 class="m-0">Commercial</h2>
+                  <p class="m-0"> Discover well-planned commercial spaces built to enhance productivity, with flexible
+                    layouts, smart infrastructure, and strategic locations ideal for growing businesses. </p>
+                  <a class="project-btn" href="commercial-properties.html">View More</a>
+                </div>
+                <div class="content" data-tab="2">
+                  <img src="assets/img/reci-1.png" alt="icon" decoding="async" />
+                  <h2 class="m-0">Upcoming</h2>
+                  <p class="m-0"> Explore our upcoming developments that blend contemporary design with practical
+                    functionality, promising quality spaces crafted for the needs of tomorrow. </p>
+                  <a class="project-btn" href="#">View More</a>
+                </div>
+                <div class="content" data-tab="3">
+                  <img src="assets/img/reci-1.png" alt="icon" decoding="async" />
+                  <h2 class="m-0">Leasing Opportunities</h2>
+                  <p class="m-0"> Choose from a range of ready-to-move spaces designed for efficiency and ease, backed
+                    by seamless leasing support and well-maintained infrastructure. </p>
+                  <a class="project-btn" href="leasing-opportunities.html">View More</a>
+                </div>
+              </div>
+              <!-- RIGHT ACCORDION IMAGES -->
+              <div class="image-tabs">
+                <div class="panel active swiper-slide-active" data-tab="0">
+                  <img src="assets/img/residential-img.jpg" decoding="async" />
+                  <div class="panel-title">
+                    <span>
+                      <span>01</span> Residential </span>
+                    <img src="assets/img/slide-arrow.svg" alt="arrow-icon" decoding="async" />
+                  </div>
+                </div>
+                <div class="panel swiper-slide-next" data-tab="1">
+                  <img src="assets/img/commercial-img.jpg" decoding="async" />
+                  <div class="panel-title">
+                    <span>
+                      <span>02</span> Commercial </span>
+                    <img src="assets/img/slide-arrow.svg" alt="arrow-icon" decoding="async" />
+                  </div>
+                </div>
+                <div class="panel" data-tab="2">
+                  <img src="assets/img/upcoming-img.jpg" decoding="async" />
+                  <div class="panel-title">
+                    <span>
+                      <span>03</span> Upcoming </span>
+                    <img src="assets/img/slide-arrow.svg" alt="arrow-icon" decoding="async" />
+                  </div>
+                </div>
+                <div class="panel" data-tab="3">
+                  <img src="assets/img/leasing-img.jpg" decoding="async" />
+                  <div class="panel-title">
+                    <span>
+                      <span>04</span> Leasing Opportunities </span>
+                    <img src="assets/img/slide-arrow.svg" alt="arrow-icon" decoding="async" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- services video Section -->
+    <section class="services-video position-relative py-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center pb-50">
+            <h2 class="title m-0"> Make Your Dream Of Your Own Space Come True </h2>
+          </div>
+        </div>
+        <div class="row service-bg">
+          <div class="col-md-8 p-0">
+            <p> Owning a space that truly reflects you is not just a dream, it’s a milestone. At Ratna, we turn that
+              milestone into reality through thoughtfully planned residences and commercial spaces that finely blend
+              quality, design, and value. </p>
+          </div>
+          <div class="col-md-4 p-0">
+            <div class="inner-video round border-bottom-0 border-end-0">
+              <h3>Commitment</h3>
+              <div class="youtube-video-area position-relative">
+                <iframe class="w-100 h-100"
+                  src="https://www.youtube.com/embed/-Gr2JqIeW-I?autoplay=1&mute=1&controls=0&loop=1&playlist=-Gr2JqIeW-I&playsinline=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </iframe>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-0"></div>
+          <div class="col-md-4 p-0">
+            <div class="inner-video round border-end-0 border-bottom-0 overflow-hidden position-relative">
+              <h3>Clarity</h3>
+              <!-- <div class="youtube-video-area position-relative"><iframe
+                    class="w-100 h-100"
+                    src="https://www.youtube.com/embed/-U9Iq2Zi2Qk?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe></div> -->
+            </div>
+          </div>
+          <div class="col-md-4 p-0">
+            <div class="inner-video border-end-0 border-bottom-0">
+              <h3>Comfort</h3>
+              <div class="youtube-video-area position-relative">
+                <iframe class="w-100 h-100"
+                  src="https://www.youtube.com/embed/AQQjRpVvF1I?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&fs=0&loop=1&playlist=AQQjRpVvF1I"
+                  title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-0">
+            <div class="inner-video round border-end-0 border-bottom-0 overflow-hidden position-relative">
+              <h3>Trust</h3>
+              <div class="youtube-video-area position-relative">
+                <iframe class="w-100 h-100"
+                  src="https://www.youtube.com/embed/fxDr_WiHXaI?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&fs=0&loop=1&playlist=fxDr_WiHXaI"
+                  title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-0">
+            <div class="inner-video border-end-0 border-bottom-0 overflow-hidden position-relative">
+              <h3>Transparency</h3>
+              <!-- <div class="youtube-video-area position-relative"><iframe
+                  class="w-100 h-100"
+                  src="https://www.youtube.com/embed/-U9Iq2Zi2Qk?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe></div> -->
+            </div>
+          </div>
+          <div class="col-md-4 p-0">
+            <div class="inner-video border-end-0 border-bottom-0">
+              <h3>Transformation</h3>
+              <!-- <div class="youtube-video-area position-relative"><iframe
+                  class="w-100 h-100"
+                  src="https://www.youtube.com/embed/-U9Iq2Zi2Qk?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- services Section -->
+    <section class="discover-homes position-relative py-100">
+      <div class="container">
+        <div class="ffdd d-flex justify-content-between align-items-center pb-70">
+          <h2 class="title m-0">Find A Space That Fulfills Your Needs</h2>
+          <a href="residential-properties.html" type="button" class="secondary-button">View All</a>
+        </div>
+      </div>
+      <div class="container-l">
+        <div class="owl-carousel owl-theme d-flex flex-nowrap overflow-auto hide-scrollbar">
+          <!-- Card 1 -->
+          <div class="property-card">
+            <div class="top-area">
+              <h3 class="bhk-text m-0">3 & 2 BHK</h3>
+              <p class="status m-0">Ongoing</p>
+            </div>
+            <div class="card-header">
+              <span class="line"></span>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <img src="assets/img/projects/rosedale/logo.svg" alt="logo" decoding="async" />
+                  <p class="m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.247 18.969C9.39711 17.9254 10.4615 16.7911 11.43 15.577C13.47 13.014 14.711 10.487 14.795 8.24C14.8282 7.32679 14.6771 6.41626 14.3505 5.56278C14.024 4.7093 13.5288 3.9304 12.8945 3.27259C12.2602 2.61478 11.4998 2.09157 10.6588 1.7342C9.81775 1.37684 8.91331 1.19265 7.9995 1.19265C7.08569 1.19265 6.18125 1.37684 5.34022 1.7342C4.49918 2.09157 3.73881 2.61478 3.10451 3.27259C2.4702 3.9304 1.975 4.7093 1.64846 5.56278C1.32192 6.41626 1.17076 7.32679 1.204 8.24C1.289 10.487 2.531 13.014 4.57 15.577C5.53846 16.7911 6.60289 17.9254 7.753 18.969C7.86367 19.069 7.946 19.1417 8 19.187L8.247 18.969ZM7.262 20.134C7.262 20.134 0 14.018 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8C16 14.018 8.738 20.134 8.738 20.134C8.334 20.506 7.669 20.502 7.262 20.134ZM8 10.8C8.74261 10.8 9.4548 10.505 9.9799 9.9799C10.505 9.4548 10.8 8.74261 10.8 8C10.8 7.25739 10.505 6.5452 9.9799 6.0201C9.4548 5.495 8.74261 5.2 8 5.2C7.25739 5.2 6.5452 5.495 6.0201 6.0201C5.495 6.5452 5.2 7.25739 5.2 8C5.2 8.74261 5.495 9.4548 6.0201 9.9799C6.5452 10.505 7.25739 10.8 8 10.8ZM8 12C6.93913 12 5.92172 11.5786 5.17157 10.8284C4.42143 10.0783 4 9.06087 4 8C4 6.93913 4.42143 5.92172 5.17157 5.17157C5.92172 4.42143 6.93913 4 8 4C9.06087 4 10.0783 4.42143 10.8284 5.17157C11.5786 5.92172 12 6.93913 12 8C12 9.06087 11.5786 10.0783 10.8284 10.8284C10.0783 11.5786 9.06087 12 8 12Z"
+                        fill="#2C2C2C" />
+                    </svg> Shela, Ahmadabad
+                  </p>
+                </div>
+                <a href="https://ratnacorp.com/rosedale/" class="view-btn" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+                    <path
+                      d="M17.9095 4.90955C18.1439 4.67523 18.1439 4.29533 17.9095 4.06102L14.0912 0.242641C13.8569 0.00832597 13.477 0.0083257 13.2426 0.242641C13.0083 0.476955 13.0083 0.856854 13.2426 1.09117L16.6368 4.48528L13.2426 7.87939C13.0083 8.11371 13.0083 8.49361 13.2426 8.72792C13.477 8.96224 13.8569 8.96224 14.0912 8.72792L17.9095 4.90955ZM0.514719 4.48528L0.514719 5.08528H17.4853L17.4853 4.48528L17.4853 3.88528H0.514719L0.514719 4.48528Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="main-img-area">
+              <img src="assets/img/projects/rosedale/banner.webp" class="card-img-top" alt="Rosedale"
+                decoding="async" />
+            </div>
+            <div class="card-body">
+              <img src="assets/img/projects/rosedale/logo-w.svg" alt="logo" decoding="async" />
+              <p class="m-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.247 21.2141C13.3971 20.1705 14.4615 19.0362 15.43 17.8221C17.47 15.2591 18.711 12.7321 18.795 10.4851C18.8282 9.57191 18.6771 8.66137 18.3505 7.8079C18.024 6.95442 17.5288 6.17551 16.8945 5.51771C16.2602 4.8599 15.4998 4.33668 14.6588 3.97932C13.8177 3.62196 12.9133 3.43777 11.9995 3.43777C11.0857 3.43777 10.1813 3.62196 9.34022 3.97932C8.49918 4.33668 7.73881 4.8599 7.10451 5.51771C6.4702 6.17551 5.975 6.95442 5.64846 7.8079C5.32192 8.66137 5.17076 9.57191 5.204 10.4851C5.289 12.7321 6.531 15.2591 8.57 17.8221C9.53846 19.0362 10.6029 20.1705 11.753 21.2141C11.8637 21.3141 11.946 21.3868 12 21.4321L12.247 21.2141ZM11.262 22.3791C11.262 22.3791 4 16.2631 4 10.2451C4 8.12339 4.84285 6.08855 6.34315 4.58826C7.84344 3.08797 9.87827 2.24512 12 2.24512C14.1217 2.24512 16.1566 3.08797 17.6569 4.58826C19.1571 6.08855 20 8.12339 20 10.2451C20 16.2631 12.738 22.3791 12.738 22.3791C12.334 22.7511 11.669 22.7471 11.262 22.3791ZM12 13.0451C12.7426 13.0451 13.4548 12.7501 13.9799 12.225C14.505 11.6999 14.8 10.9877 14.8 10.2451C14.8 9.50251 14.505 8.79032 13.9799 8.26522C13.4548 7.74012 12.7426 7.44512 12 7.44512C11.2574 7.44512 10.5452 7.74012 10.0201 8.26522C9.495 8.79032 9.2 9.50251 9.2 10.2451C9.2 10.9877 9.495 11.6999 10.0201 12.225C10.5452 12.7501 11.2574 13.0451 12 13.0451ZM12 14.2451C10.9391 14.2451 9.92172 13.8237 9.17157 13.0735C8.42143 12.3234 8 11.306 8 10.2451C8 9.18425 8.42143 8.16684 9.17157 7.41669C9.92172 6.66654 10.9391 6.24512 12 6.24512C13.0609 6.24512 14.0783 6.66654 14.8284 7.41669C15.5786 8.16684 16 9.18425 16 10.2451C16 11.306 15.5786 12.3234 14.8284 13.0735C14.0783 13.8237 13.0609 14.2451 12 14.2451Z"
+                    fill="white" />
+                </svg> Shela, Ahmadabad
+              </p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="property-card">
+            <div class="top-area">
+              <h3 class="bhk-text m-0"> 4 BHK
+                <!-- <span>Penthouse</span> -->
+              </h3>
+              <p class="status m-0">Ongoing</p>
+            </div>
+            <div class="card-header">
+              <span class="line"></span>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <img src="assets/img/projects/montrose/logo.svg" alt="logo" decoding="async" />
+                  <p class="m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.247 18.969C9.39711 17.9254 10.4615 16.7911 11.43 15.577C13.47 13.014 14.711 10.487 14.795 8.24C14.8282 7.32679 14.6771 6.41626 14.3505 5.56278C14.024 4.7093 13.5288 3.9304 12.8945 3.27259C12.2602 2.61478 11.4998 2.09157 10.6588 1.7342C9.81775 1.37684 8.91331 1.19265 7.9995 1.19265C7.08569 1.19265 6.18125 1.37684 5.34022 1.7342C4.49918 2.09157 3.73881 2.61478 3.10451 3.27259C2.4702 3.9304 1.975 4.7093 1.64846 5.56278C1.32192 6.41626 1.17076 7.32679 1.204 8.24C1.289 10.487 2.531 13.014 4.57 15.577C5.53846 16.7911 6.60289 17.9254 7.753 18.969C7.86367 19.069 7.946 19.1417 8 19.187L8.247 18.969ZM7.262 20.134C7.262 20.134 0 14.018 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8C16 14.018 8.738 20.134 8.738 20.134C8.334 20.506 7.669 20.502 7.262 20.134ZM8 10.8C8.74261 10.8 9.4548 10.505 9.9799 9.9799C10.505 9.4548 10.8 8.74261 10.8 8C10.8 7.25739 10.505 6.5452 9.9799 6.0201C9.4548 5.495 8.74261 5.2 8 5.2C7.25739 5.2 6.5452 5.495 6.0201 6.0201C5.495 6.5452 5.2 7.25739 5.2 8C5.2 8.74261 5.495 9.4548 6.0201 9.9799C6.5452 10.505 7.25739 10.8 8 10.8ZM8 12C6.93913 12 5.92172 11.5786 5.17157 10.8284C4.42143 10.0783 4 9.06087 4 8C4 6.93913 4.42143 5.92172 5.17157 5.17157C5.92172 4.42143 6.93913 4 8 4C9.06087 4 10.0783 4.42143 10.8284 5.17157C11.5786 5.92172 12 6.93913 12 8C12 9.06087 11.5786 10.0783 10.8284 10.8284C10.0783 11.5786 9.06087 12 8 12Z"
+                        fill="#2C2C2C" />
+                    </svg> Wapa, Ahmadabad
+                  </p>
+                </div>
+                <a href="https://ratnacorp.com/montrose/" class="view-btn" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+                    <path
+                      d="M17.9095 4.90955C18.1439 4.67523 18.1439 4.29533 17.9095 4.06102L14.0912 0.242641C13.8569 0.00832597 13.477 0.0083257 13.2426 0.242641C13.0083 0.476955 13.0083 0.856854 13.2426 1.09117L16.6368 4.48528L13.2426 7.87939C13.0083 8.11371 13.0083 8.49361 13.2426 8.72792C13.477 8.96224 13.8569 8.96224 14.0912 8.72792L17.9095 4.90955ZM0.514719 4.48528L0.514719 5.08528H17.4853L17.4853 4.48528L17.4853 3.88528H0.514719L0.514719 4.48528Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="main-img-area">
+              <img src="assets/img/projects/montrose/banner.webp" class="card-img-top" decoding="async"
+                alt="Rosedale" />
+            </div>
+            <div class="card-body">
+              <img src="assets/img/projects/montrose/logo-w.svg" alt="logo" decoding="async" />
+              <p class="m-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.247 21.2141C13.3971 20.1705 14.4615 19.0362 15.43 17.8221C17.47 15.2591 18.711 12.7321 18.795 10.4851C18.8282 9.57191 18.6771 8.66137 18.3505 7.8079C18.024 6.95442 17.5288 6.17551 16.8945 5.51771C16.2602 4.8599 15.4998 4.33668 14.6588 3.97932C13.8177 3.62196 12.9133 3.43777 11.9995 3.43777C11.0857 3.43777 10.1813 3.62196 9.34022 3.97932C8.49918 4.33668 7.73881 4.8599 7.10451 5.51771C6.4702 6.17551 5.975 6.95442 5.64846 7.8079C5.32192 8.66137 5.17076 9.57191 5.204 10.4851C5.289 12.7321 6.531 15.2591 8.57 17.8221C9.53846 19.0362 10.6029 20.1705 11.753 21.2141C11.8637 21.3141 11.946 21.3868 12 21.4321L12.247 21.2141ZM11.262 22.3791C11.262 22.3791 4 16.2631 4 10.2451C4 8.12339 4.84285 6.08855 6.34315 4.58826C7.84344 3.08797 9.87827 2.24512 12 2.24512C14.1217 2.24512 16.1566 3.08797 17.6569 4.58826C19.1571 6.08855 20 8.12339 20 10.2451C20 16.2631 12.738 22.3791 12.738 22.3791C12.334 22.7511 11.669 22.7471 11.262 22.3791ZM12 13.0451C12.7426 13.0451 13.4548 12.7501 13.9799 12.225C14.505 11.6999 14.8 10.9877 14.8 10.2451C14.8 9.50251 14.505 8.79032 13.9799 8.26522C13.4548 7.74012 12.7426 7.44512 12 7.44512C11.2574 7.44512 10.5452 7.74012 10.0201 8.26522C9.495 8.79032 9.2 9.50251 9.2 10.2451C9.2 10.9877 9.495 11.6999 10.0201 12.225C10.5452 12.7501 11.2574 13.0451 12 13.0451ZM12 14.2451C10.9391 14.2451 9.92172 13.8237 9.17157 13.0735C8.42143 12.3234 8 11.306 8 10.2451C8 9.18425 8.42143 8.16684 9.17157 7.41669C9.92172 6.66654 10.9391 6.24512 12 6.24512C13.0609 6.24512 14.0783 6.66654 14.8284 7.41669C15.5786 8.16684 16 9.18425 16 10.2451C16 11.306 15.5786 12.3234 14.8284 13.0735C14.0783 13.8237 13.0609 14.2451 12 14.2451Z"
+                    fill="white" />
+                </svg> Wapa, Ahmadabad
+              </p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="property-card">
+            <div class="top-area">
+              <h3 class="bhk-text m-0">3 BHK</h3>
+              <p class="status m-0">Ongoing</p>
+            </div>
+            <div class="card-header">
+              <span class="line"></span>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <img src="assets/img/projects/glamouere/logo.svg" alt="logo" decoding="async" />
+                  <p class="m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.247 18.969C9.39711 17.9254 10.4615 16.7911 11.43 15.577C13.47 13.014 14.711 10.487 14.795 8.24C14.8282 7.32679 14.6771 6.41626 14.3505 5.56278C14.024 4.7093 13.5288 3.9304 12.8945 3.27259C12.2602 2.61478 11.4998 2.09157 10.6588 1.7342C9.81775 1.37684 8.91331 1.19265 7.9995 1.19265C7.08569 1.19265 6.18125 1.37684 5.34022 1.7342C4.49918 2.09157 3.73881 2.61478 3.10451 3.27259C2.4702 3.9304 1.975 4.7093 1.64846 5.56278C1.32192 6.41626 1.17076 7.32679 1.204 8.24C1.289 10.487 2.531 13.014 4.57 15.577C5.53846 16.7911 6.60289 17.9254 7.753 18.969C7.86367 19.069 7.946 19.1417 8 19.187L8.247 18.969ZM7.262 20.134C7.262 20.134 0 14.018 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8C16 14.018 8.738 20.134 8.738 20.134C8.334 20.506 7.669 20.502 7.262 20.134ZM8 10.8C8.74261 10.8 9.4548 10.505 9.9799 9.9799C10.505 9.4548 10.8 8.74261 10.8 8C10.8 7.25739 10.505 6.5452 9.9799 6.0201C9.4548 5.495 8.74261 5.2 8 5.2C7.25739 5.2 6.5452 5.495 6.0201 6.0201C5.495 6.5452 5.2 7.25739 5.2 8C5.2 8.74261 5.495 9.4548 6.0201 9.9799C6.5452 10.505 7.25739 10.8 8 10.8ZM8 12C6.93913 12 5.92172 11.5786 5.17157 10.8284C4.42143 10.0783 4 9.06087 4 8C4 6.93913 4.42143 5.92172 5.17157 5.17157C5.92172 4.42143 6.93913 4 8 4C9.06087 4 10.0783 4.42143 10.8284 5.17157C11.5786 5.92172 12 6.93913 12 8C12 9.06087 11.5786 10.0783 10.8284 10.8284C10.0783 11.5786 9.06087 12 8 12Z"
+                        fill="#2C2C2C" />
+                    </svg> Wapa, Ahmadabad
+                  </p>
+                </div>
+                <a href="https://ratnacorp.com/glamouere/" class="view-btn" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+                    <path
+                      d="M17.9095 4.90955C18.1439 4.67523 18.1439 4.29533 17.9095 4.06102L14.0912 0.242641C13.8569 0.00832597 13.477 0.0083257 13.2426 0.242641C13.0083 0.476955 13.0083 0.856854 13.2426 1.09117L16.6368 4.48528L13.2426 7.87939C13.0083 8.11371 13.0083 8.49361 13.2426 8.72792C13.477 8.96224 13.8569 8.96224 14.0912 8.72792L17.9095 4.90955ZM0.514719 4.48528L0.514719 5.08528H17.4853L17.4853 4.48528L17.4853 3.88528H0.514719L0.514719 4.48528Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="main-img-area">
+              <img src="assets/img/projects/glamouere/banner.webp" class="card-img-top" alt="Rosedale"
+                decoding="async" />
+            </div>
+            <div class="card-body">
+              <img src="assets/img/projects/glamouere/logo-w.svg" alt="logo" decoding="async" />
+              <p class="m-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.247 21.2141C13.3971 20.1705 14.4615 19.0362 15.43 17.8221C17.47 15.2591 18.711 12.7321 18.795 10.4851C18.8282 9.57191 18.6771 8.66137 18.3505 7.8079C18.024 6.95442 17.5288 6.17551 16.8945 5.51771C16.2602 4.8599 15.4998 4.33668 14.6588 3.97932C13.8177 3.62196 12.9133 3.43777 11.9995 3.43777C11.0857 3.43777 10.1813 3.62196 9.34022 3.97932C8.49918 4.33668 7.73881 4.8599 7.10451 5.51771C6.4702 6.17551 5.975 6.95442 5.64846 7.8079C5.32192 8.66137 5.17076 9.57191 5.204 10.4851C5.289 12.7321 6.531 15.2591 8.57 17.8221C9.53846 19.0362 10.6029 20.1705 11.753 21.2141C11.8637 21.3141 11.946 21.3868 12 21.4321L12.247 21.2141ZM11.262 22.3791C11.262 22.3791 4 16.2631 4 10.2451C4 8.12339 4.84285 6.08855 6.34315 4.58826C7.84344 3.08797 9.87827 2.24512 12 2.24512C14.1217 2.24512 16.1566 3.08797 17.6569 4.58826C19.1571 6.08855 20 8.12339 20 10.2451C20 16.2631 12.738 22.3791 12.738 22.3791C12.334 22.7511 11.669 22.7471 11.262 22.3791ZM12 13.0451C12.7426 13.0451 13.4548 12.7501 13.9799 12.225C14.505 11.6999 14.8 10.9877 14.8 10.2451C14.8 9.50251 14.505 8.79032 13.9799 8.26522C13.4548 7.74012 12.7426 7.44512 12 7.44512C11.2574 7.44512 10.5452 7.74012 10.0201 8.26522C9.495 8.79032 9.2 9.50251 9.2 10.2451C9.2 10.9877 9.495 11.6999 10.0201 12.225C10.5452 12.7501 11.2574 13.0451 12 13.0451ZM12 14.2451C10.9391 14.2451 9.92172 13.8237 9.17157 13.0735C8.42143 12.3234 8 11.306 8 10.2451C8 9.18425 8.42143 8.16684 9.17157 7.41669C9.92172 6.66654 10.9391 6.24512 12 6.24512C13.0609 6.24512 14.0783 6.66654 14.8284 7.41669C15.5786 8.16684 16 9.18425 16 10.2451C16 11.306 15.5786 12.3234 14.8284 13.0735C14.0783 13.8237 13.0609 14.2451 12 14.2451Z"
+                    fill="white" />
+                </svg> Wapa, Ahmadabad
+              </p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="property-card">
+            <div class="top-area">
+              <h3 class="bhk-text m-0">3 & 4 BHK</h3>
+              <p class="status m-0">Ongoing</p>
+            </div>
+            <div class="card-header">
+              <span class="line"></span>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <img src="assets/img/projects/re45/logo.svg" alt="logo" decoding="async" />
+                  <p class="m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.247 18.969C9.39711 17.9254 10.4615 16.7911 11.43 15.577C13.47 13.014 14.711 10.487 14.795 8.24C14.8282 7.32679 14.6771 6.41626 14.3505 5.56278C14.024 4.7093 13.5288 3.9304 12.8945 3.27259C12.2602 2.61478 11.4998 2.09157 10.6588 1.7342C9.81775 1.37684 8.91331 1.19265 7.9995 1.19265C7.08569 1.19265 6.18125 1.37684 5.34022 1.7342C4.49918 2.09157 3.73881 2.61478 3.10451 3.27259C2.4702 3.9304 1.975 4.7093 1.64846 5.56278C1.32192 6.41626 1.17076 7.32679 1.204 8.24C1.289 10.487 2.531 13.014 4.57 15.577C5.53846 16.7911 6.60289 17.9254 7.753 18.969C7.86367 19.069 7.946 19.1417 8 19.187L8.247 18.969ZM7.262 20.134C7.262 20.134 0 14.018 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8C16 14.018 8.738 20.134 8.738 20.134C8.334 20.506 7.669 20.502 7.262 20.134ZM8 10.8C8.74261 10.8 9.4548 10.505 9.9799 9.9799C10.505 9.4548 10.8 8.74261 10.8 8C10.8 7.25739 10.505 6.5452 9.9799 6.0201C9.4548 5.495 8.74261 5.2 8 5.2C7.25739 5.2 6.5452 5.495 6.0201 6.0201C5.495 6.5452 5.2 7.25739 5.2 8C5.2 8.74261 5.495 9.4548 6.0201 9.9799C6.5452 10.505 7.25739 10.8 8 10.8ZM8 12C6.93913 12 5.92172 11.5786 5.17157 10.8284C4.42143 10.0783 4 9.06087 4 8C4 6.93913 4.42143 5.92172 5.17157 5.17157C5.92172 4.42143 6.93913 4 8 4C9.06087 4 10.0783 4.42143 10.8284 5.17157C11.5786 5.92172 12 6.93913 12 8C12 9.06087 11.5786 10.0783 10.8284 10.8284C10.0783 11.5786 9.06087 12 8 12Z"
+                        fill="#2C2C2C" />
+                    </svg> Link In Road, Ahmadabad
+                  </p>
+                </div>
+                <a href="https://ratnacorp.com/re45/" class="view-btn" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+                    <path
+                      d="M17.9095 4.90955C18.1439 4.67523 18.1439 4.29533 17.9095 4.06102L14.0912 0.242641C13.8569 0.00832597 13.477 0.0083257 13.2426 0.242641C13.0083 0.476955 13.0083 0.856854 13.2426 1.09117L16.6368 4.48528L13.2426 7.87939C13.0083 8.11371 13.0083 8.49361 13.2426 8.72792C13.477 8.96224 13.8569 8.96224 14.0912 8.72792L17.9095 4.90955ZM0.514719 4.48528L0.514719 5.08528H17.4853L17.4853 4.48528L17.4853 3.88528H0.514719L0.514719 4.48528Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="main-img-area">
+              <img src="assets/img/projects/re45/banner.webp" class="card-img-top" alt="Rosedale" decoding="async" />
+            </div>
+            <div class="card-body">
+              <img src="assets/img/projects/re45/logo-w.svg" alt="logo" decoding="async" />
+              <p class="m-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.247 21.2141C13.3971 20.1705 14.4615 19.0362 15.43 17.8221C17.47 15.2591 18.711 12.7321 18.795 10.4851C18.8282 9.57191 18.6771 8.66137 18.3505 7.8079C18.024 6.95442 17.5288 6.17551 16.8945 5.51771C16.2602 4.8599 15.4998 4.33668 14.6588 3.97932C13.8177 3.62196 12.9133 3.43777 11.9995 3.43777C11.0857 3.43777 10.1813 3.62196 9.34022 3.97932C8.49918 4.33668 7.73881 4.8599 7.10451 5.51771C6.4702 6.17551 5.975 6.95442 5.64846 7.8079C5.32192 8.66137 5.17076 9.57191 5.204 10.4851C5.289 12.7321 6.531 15.2591 8.57 17.8221C9.53846 19.0362 10.6029 20.1705 11.753 21.2141C11.8637 21.3141 11.946 21.3868 12 21.4321L12.247 21.2141ZM11.262 22.3791C11.262 22.3791 4 16.2631 4 10.2451C4 8.12339 4.84285 6.08855 6.34315 4.58826C7.84344 3.08797 9.87827 2.24512 12 2.24512C14.1217 2.24512 16.1566 3.08797 17.6569 4.58826C19.1571 6.08855 20 8.12339 20 10.2451C20 16.2631 12.738 22.3791 12.738 22.3791C12.334 22.7511 11.669 22.7471 11.262 22.3791ZM12 13.0451C12.7426 13.0451 13.4548 12.7501 13.9799 12.225C14.505 11.6999 14.8 10.9877 14.8 10.2451C14.8 9.50251 14.505 8.79032 13.9799 8.26522C13.4548 7.74012 12.7426 7.44512 12 7.44512C11.2574 7.44512 10.5452 7.74012 10.0201 8.26522C9.495 8.79032 9.2 9.50251 9.2 10.2451C9.2 10.9877 9.495 11.6999 10.0201 12.225C10.5452 12.7501 11.2574 13.0451 12 13.0451ZM12 14.2451C10.9391 14.2451 9.92172 13.8237 9.17157 13.0735C8.42143 12.3234 8 11.306 8 10.2451C8 9.18425 8.42143 8.16684 9.17157 7.41669C9.92172 6.66654 10.9391 6.24512 12 6.24512C13.0609 6.24512 14.0783 6.66654 14.8284 7.41669C15.5786 8.16684 16 9.18425 16 10.2451C16 11.306 15.5786 12.3234 14.8284 13.0735C14.0783 13.8237 13.0609 14.2451 12 14.2451Z"
+                    fill="white" />
+                </svg> Link In Road, Ahmadabad
+              </p>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="property-card">
+            <div class="top-area">
+              <h3 class="bhk-text m-0">3 BHK</h3>
+              <p class="status m-0">Ongoing</p>
+            </div>
+            <div class="card-header">
+              <span class="line"></span>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <img src="assets/img/projects/trident-exp/logo.svg" alt="logo" decoding="async" />
+                  <p class="m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.247 18.969C9.39711 17.9254 10.4615 16.7911 11.43 15.577C13.47 13.014 14.711 10.487 14.795 8.24C14.8282 7.32679 14.6771 6.41626 14.3505 5.56278C14.024 4.7093 13.5288 3.9304 12.8945 3.27259C12.2602 2.61478 11.4998 2.09157 10.6588 1.7342C9.81775 1.37684 8.91331 1.19265 7.9995 1.19265C7.08569 1.19265 6.18125 1.37684 5.34022 1.7342C4.49918 2.09157 3.73881 2.61478 3.10451 3.27259C2.4702 3.9304 1.975 4.7093 1.64846 5.56278C1.32192 6.41626 1.17076 7.32679 1.204 8.24C1.289 10.487 2.531 13.014 4.57 15.577C5.53846 16.7911 6.60289 17.9254 7.753 18.969C7.86367 19.069 7.946 19.1417 8 19.187L8.247 18.969ZM7.262 20.134C7.262 20.134 0 14.018 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8C16 14.018 8.738 20.134 8.738 20.134C8.334 20.506 7.669 20.502 7.262 20.134ZM8 10.8C8.74261 10.8 9.4548 10.505 9.9799 9.9799C10.505 9.4548 10.8 8.74261 10.8 8C10.8 7.25739 10.505 6.5452 9.9799 6.0201C9.4548 5.495 8.74261 5.2 8 5.2C7.25739 5.2 6.5452 5.495 6.0201 6.0201C5.495 6.5452 5.2 7.25739 5.2 8C5.2 8.74261 5.495 9.4548 6.0201 9.9799C6.5452 10.505 7.25739 10.8 8 10.8ZM8 12C6.93913 12 5.92172 11.5786 5.17157 10.8284C4.42143 10.0783 4 9.06087 4 8C4 6.93913 4.42143 5.92172 5.17157 5.17157C5.92172 4.42143 6.93913 4 8 4C9.06087 4 10.0783 4.42143 10.8284 5.17157C11.5786 5.92172 12 6.93913 12 8C12 9.06087 11.5786 10.0783 10.8284 10.8284C10.0783 11.5786 9.06087 12 8 12Z"
+                        fill="#2C2C2C" />
+                    </svg> Vaishnodevi, Ahmadabad
+                  </p>
+                </div>
+                <a href="https://ratnacorp.com/trident-experia" class="view-btn" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+                    <path
+                      d="M17.9095 4.90955C18.1439 4.67523 18.1439 4.29533 17.9095 4.06102L14.0912 0.242641C13.8569 0.00832597 13.477 0.0083257 13.2426 0.242641C13.0083 0.476955 13.0083 0.856854 13.2426 1.09117L16.6368 4.48528L13.2426 7.87939C13.0083 8.11371 13.0083 8.49361 13.2426 8.72792C13.477 8.96224 13.8569 8.96224 14.0912 8.72792L17.9095 4.90955ZM0.514719 4.48528L0.514719 5.08528H17.4853L17.4853 4.48528L17.4853 3.88528H0.514719L0.514719 4.48528Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="main-img-area">
+              <img src="assets/img/projects/trident-exp/banner.webp" class="card-img-top" decoding="async"
+                alt="Rosedale" />
+            </div>
+            <div class="card-body">
+              <img src="assets/img/projects/trident-exp/logo-w.svg" alt="logo" decoding="async" />
+              <p class="m-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.247 21.2141C13.3971 20.1705 14.4615 19.0362 15.43 17.8221C17.47 15.2591 18.711 12.7321 18.795 10.4851C18.8282 9.57191 18.6771 8.66137 18.3505 7.8079C18.024 6.95442 17.5288 6.17551 16.8945 5.51771C16.2602 4.8599 15.4998 4.33668 14.6588 3.97932C13.8177 3.62196 12.9133 3.43777 11.9995 3.43777C11.0857 3.43777 10.1813 3.62196 9.34022 3.97932C8.49918 4.33668 7.73881 4.8599 7.10451 5.51771C6.4702 6.17551 5.975 6.95442 5.64846 7.8079C5.32192 8.66137 5.17076 9.57191 5.204 10.4851C5.289 12.7321 6.531 15.2591 8.57 17.8221C9.53846 19.0362 10.6029 20.1705 11.753 21.2141C11.8637 21.3141 11.946 21.3868 12 21.4321L12.247 21.2141ZM11.262 22.3791C11.262 22.3791 4 16.2631 4 10.2451C4 8.12339 4.84285 6.08855 6.34315 4.58826C7.84344 3.08797 9.87827 2.24512 12 2.24512C14.1217 2.24512 16.1566 3.08797 17.6569 4.58826C19.1571 6.08855 20 8.12339 20 10.2451C20 16.2631 12.738 22.3791 12.738 22.3791C12.334 22.7511 11.669 22.7471 11.262 22.3791ZM12 13.0451C12.7426 13.0451 13.4548 12.7501 13.9799 12.225C14.505 11.6999 14.8 10.9877 14.8 10.2451C14.8 9.50251 14.505 8.79032 13.9799 8.26522C13.4548 7.74012 12.7426 7.44512 12 7.44512C11.2574 7.44512 10.5452 7.74012 10.0201 8.26522C9.495 8.79032 9.2 9.50251 9.2 10.2451C9.2 10.9877 9.495 11.6999 10.0201 12.225C10.5452 12.7501 11.2574 13.0451 12 13.0451ZM12 14.2451C10.9391 14.2451 9.92172 13.8237 9.17157 13.0735C8.42143 12.3234 8 11.306 8 10.2451C8 9.18425 8.42143 8.16684 9.17157 7.41669C9.92172 6.66654 10.9391 6.24512 12 6.24512C13.0609 6.24512 14.0783 6.66654 14.8284 7.41669C15.5786 8.16684 16 9.18425 16 10.2451C16 11.306 15.5786 12.3234 14.8284 13.0735C14.0783 13.8237 13.0609 14.2451 12 14.2451Z"
+                    fill="white" />
+                </svg> Vaishnodevi, Ahmadabad
+              </p>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="property-card">
+            <div class="top-area">
+              <h3 class="bhk-text m-0">4 BHK</h3>
+              <p class="status m-0">Completed</p>
+            </div>
+            <div class="card-header">
+              <span class="line"></span>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <img src="assets/img/projects/turquoise_grandeure/baneer-logo.svg" alt="logo" decoding="async" />
+                  <p class="m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.247 18.969C9.39711 17.9254 10.4615 16.7911 11.43 15.577C13.47 13.014 14.711 10.487 14.795 8.24C14.8282 7.32679 14.6771 6.41626 14.3505 5.56278C14.024 4.7093 13.5288 3.9304 12.8945 3.27259C12.2602 2.61478 11.4998 2.09157 10.6588 1.7342C9.81775 1.37684 8.91331 1.19265 7.9995 1.19265C7.08569 1.19265 6.18125 1.37684 5.34022 1.7342C4.49918 2.09157 3.73881 2.61478 3.10451 3.27259C2.4702 3.9304 1.975 4.7093 1.64846 5.56278C1.32192 6.41626 1.17076 7.32679 1.204 8.24C1.289 10.487 2.531 13.014 4.57 15.577C5.53846 16.7911 6.60289 17.9254 7.753 18.969C7.86367 19.069 7.946 19.1417 8 19.187L8.247 18.969ZM7.262 20.134C7.262 20.134 0 14.018 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8C16 14.018 8.738 20.134 8.738 20.134C8.334 20.506 7.669 20.502 7.262 20.134ZM8 10.8C8.74261 10.8 9.4548 10.505 9.9799 9.9799C10.505 9.4548 10.8 8.74261 10.8 8C10.8 7.25739 10.505 6.5452 9.9799 6.0201C9.4548 5.495 8.74261 5.2 8 5.2C7.25739 5.2 6.5452 5.495 6.0201 6.0201C5.495 6.5452 5.2 7.25739 5.2 8C5.2 8.74261 5.495 9.4548 6.0201 9.9799C6.5452 10.505 7.25739 10.8 8 10.8ZM8 12C6.93913 12 5.92172 11.5786 5.17157 10.8284C4.42143 10.0783 4 9.06087 4 8C4 6.93913 4.42143 5.92172 5.17157 5.17157C5.92172 4.42143 6.93913 4 8 4C9.06087 4 10.0783 4.42143 10.8284 5.17157C11.5786 5.92172 12 6.93913 12 8C12 9.06087 11.5786 10.0783 10.8284 10.8284C10.0783 11.5786 9.06087 12 8 12Z"
+                        fill="#2C2C2C" />
+                    </svg> Wapa, Ahmadabad
+                  </p>
+                </div>
+                <a href="https://ratnacorp.com/turquoise-grandeure/" class="view-btn" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+                    <path
+                      d="M17.9095 4.90955C18.1439 4.67523 18.1439 4.29533 17.9095 4.06102L14.0912 0.242641C13.8569 0.00832597 13.477 0.0083257 13.2426 0.242641C13.0083 0.476955 13.0083 0.856854 13.2426 1.09117L16.6368 4.48528L13.2426 7.87939C13.0083 8.11371 13.0083 8.49361 13.2426 8.72792C13.477 8.96224 13.8569 8.96224 14.0912 8.72792L17.9095 4.90955ZM0.514719 4.48528L0.514719 5.08528H17.4853L17.4853 4.48528L17.4853 3.88528H0.514719L0.514719 4.48528Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="main-img-area">
+              <img src="assets/img/projects/turquoise_grandeure/banner.webp" class="card-img-top" decoding="async"
+                alt="Rosedale" />
+            </div>
+            <div class="card-body">
+              <img src="assets/img/projects/turquoise_grandeure/baneer-logo-w.svg" alt="logo" decoding="async" />
+              <p class="m-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.247 21.2141C13.3971 20.1705 14.4615 19.0362 15.43 17.8221C17.47 15.2591 18.711 12.7321 18.795 10.4851C18.8282 9.57191 18.6771 8.66137 18.3505 7.8079C18.024 6.95442 17.5288 6.17551 16.8945 5.51771C16.2602 4.8599 15.4998 4.33668 14.6588 3.97932C13.8177 3.62196 12.9133 3.43777 11.9995 3.43777C11.0857 3.43777 10.1813 3.62196 9.34022 3.97932C8.49918 4.33668 7.73881 4.8599 7.10451 5.51771C6.4702 6.17551 5.975 6.95442 5.64846 7.8079C5.32192 8.66137 5.17076 9.57191 5.204 10.4851C5.289 12.7321 6.531 15.2591 8.57 17.8221C9.53846 19.0362 10.6029 20.1705 11.753 21.2141C11.8637 21.3141 11.946 21.3868 12 21.4321L12.247 21.2141ZM11.262 22.3791C11.262 22.3791 4 16.2631 4 10.2451C4 8.12339 4.84285 6.08855 6.34315 4.58826C7.84344 3.08797 9.87827 2.24512 12 2.24512C14.1217 2.24512 16.1566 3.08797 17.6569 4.58826C19.1571 6.08855 20 8.12339 20 10.2451C20 16.2631 12.738 22.3791 12.738 22.3791C12.334 22.7511 11.669 22.7471 11.262 22.3791ZM12 13.0451C12.7426 13.0451 13.4548 12.7501 13.9799 12.225C14.505 11.6999 14.8 10.9877 14.8 10.2451C14.8 9.50251 14.505 8.79032 13.9799 8.26522C13.4548 7.74012 12.7426 7.44512 12 7.44512C11.2574 7.44512 10.5452 7.74012 10.0201 8.26522C9.495 8.79032 9.2 9.50251 9.2 10.2451C9.2 10.9877 9.495 11.6999 10.0201 12.225C10.5452 12.7501 11.2574 13.0451 12 13.0451ZM12 14.2451C10.9391 14.2451 9.92172 13.8237 9.17157 13.0735C8.42143 12.3234 8 11.306 8 10.2451C8 9.18425 8.42143 8.16684 9.17157 7.41669C9.92172 6.66654 10.9391 6.24512 12 6.24512C13.0609 6.24512 14.0783 6.66654 14.8284 7.41669C15.5786 8.16684 16 9.18425 16 10.2451C16 11.306 15.5786 12.3234 14.8284 13.0735C14.0783 13.8237 13.0609 14.2451 12 14.2451Z"
+                    fill="white" />
+                </svg> Wapa, Ahmadabad
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="owl-custom-nav d-flex gap-3">
+          <button id="prevBtn" class="slider-arrow-btn" aria-label="Previous">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="15" viewBox="0 0 29 15" fill="none">
+              <path
+                d="M0.744728 8.45547C0.369824 8.08056 0.369824 7.47273 0.744727 7.09782L6.85413 0.98842C7.22903 0.613517 7.83687 0.613517 8.21177 0.988421C8.58668 1.36332 8.58668 1.97116 8.21177 2.34607L2.7812 7.77665L8.21178 13.2072C8.58668 13.5821 8.58668 14.19 8.21177 14.5649C7.83687 14.9398 7.22903 14.9398 6.85413 14.5649L0.744728 8.45547ZM28.5765 7.77665L28.5764 8.73665H1.42355L1.42355 7.77665L1.42355 6.81665H28.5764L28.5765 7.77665Z" />
+            </svg>
+          </button>
+          <button id="nextBtn" class="slider-arrow-btn" aria-label="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="15" viewBox="0 0 29 15" fill="none">
+              <path
+                d="M28.2553 8.45547C28.6302 8.08056 28.6302 7.47273 28.2553 7.09782L22.1459 0.98842C21.771 0.613517 21.1631 0.613517 20.7882 0.988421C20.4133 1.36332 20.4133 1.97116 20.7882 2.34607L26.2188 7.77665L20.7882 13.2072C20.4133 13.5821 20.4133 14.19 20.7882 14.5649C21.1631 14.9398 21.771 14.9398 22.1459 14.5649L28.2553 8.45547ZM0.423549 7.77665L0.42355 8.73665H27.5764L27.5765 7.77665L27.5764 6.81665H0.42355L0.423549 7.77665Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loction Section -->
+    <section class="map-area-main">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="title m-0">An Ideal Property Awaits Your Decision</h2>
+          </div>
+        </div>
+      </div>
+      <div class="google-map-area">
+        <span class="overlay-bg"></span>
+        <img src="assets/img/google-map.webp" alt="google map" decoding="async" />
+        <div class="outher-area">
+          <img class="area1" src="assets/img/area-location.gif" alt="location area" decoding="async" />
+          <img class="area2" src="assets/img/area-location.gif" alt="location area" decoding="async" />
+          <img class="area3" src="assets/img/area-location.gif" alt="location area" decoding="async" />
+          <img class="area4" src="assets/img/area-location.gif" alt="location area" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- footer start -->
+  <div id="footer"></div>
+  <!-- footer end -->
+
+</body>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  const owl = $(".owl-carousel").owlCarousel({
+    margin: 24,
+    loop: true,
+    autoWidth: true,
+    items: 4,
+    dots: false,
+    nav: false,
+  });
+  // Custom Navigation Buttons
+  $("#prevBtn").click(function () {
+    owl.trigger("prev.owl.carousel");
+  });
+  $("#nextBtn").click(function () {
+    owl.trigger("next.owl.carousel");
+  });
+</script>
+
+<script>
+  const contents = document.querySelectorAll(".content");
+  const panels = document.querySelectorAll(".panel");
+  let current = 0;
+  const total = contents.length;
+  let autoplayInterval;
+  // Update slides (left content + right image)
+  function updateSlides(newIndex) {
+    contents.forEach((c, i) => {
+      c.classList.remove("swiper-slide-prev", "swiper-slide-active", "swiper-slide-next");
+      if (i === newIndex) {
+        c.classList.add("swiper-slide-active");
+      } else if (i === (newIndex - 1 + total) % total) {
+        c.classList.add("swiper-slide-prev");
+      } else if (i === (newIndex + 1) % total) {
+        c.classList.add("swiper-slide-next");
+      }
+    });
+    panels.forEach((p, i) => {
+      p.classList.remove("swiper-slide-prev", "swiper-slide-active", "swiper-slide-next");
+      if (i === newIndex) {
+        p.classList.add("swiper-slide-active");
+      } else if (i === (newIndex - 1 + total) % total) {
+        p.classList.add("swiper-slide-prev");
+      } else if (i === (newIndex + 1) % total) {
+        p.classList.add("swiper-slide-next");
+      }
+    });
+    current = newIndex;
+  }
+  // Next & Prev functions
+  function nextSlide() {
+    updateSlides((current + 1) % total);
+  }
+
+  function prevSlide() {
+    updateSlides((current - 1 + total) % total);
+  }
+  // Panel click (manual navigation)
+  panels.forEach((panel) => {
+    panel.addEventListener("click", () => {
+      const newTab = parseInt(panel.dataset.tab);
+      if (newTab === current) return;
+      updateSlides(newTab);
+      // resetAutoplay();
+    });
+  });
+</script>
+
+<script>
+  (function ($) {
+    $.fn.countTo = function (options) {
+      options = options || {};
+      return $(this).each(function () {
+        var settings = $.extend({}, $.fn.countTo.defaults, {
+          from: $(this).data("from"),
+          to: $(this).data("to"),
+          speed: $(this).data("speed"),
+          refreshInterval: $(this).data("refresh-interval"),
+          decimals: $(this).data("decimals"),
+        }, options);
+
+        var loops = Math.ceil(settings.speed / settings.refreshInterval),
+          increment = (settings.to - settings.from) / loops;
+
+        var self = this,
+          $self = $(this),
+          loopCount = 0,
+          value = settings.from,
+          data = $self.data("countTo") || {};
+
+        $self.data("countTo", data);
+
+        if (data.interval) clearInterval(data.interval);
+
+        data.interval = setInterval(updateTimer, settings.refreshInterval);
+        render(value);
+
+        function updateTimer() {
+          value += increment;
+          loopCount++;
+          render(value);
+
+          if (loopCount >= loops) {
+            clearInterval(data.interval);
+            value = settings.to;
+            render(value);
+          }
+        }
+
+        function render(value) {
+          $self.text(value.toFixed(settings.decimals));
+        }
+      });
+    };
+
+    $.fn.countTo.defaults = {
+      from: 0,
+      to: 0,
+      speed: 1000,
+      refreshInterval: 100,
+      decimals: 0
+    };
+  })(jQuery);
+
+  jQuery(function ($) {
+
+    let counterStarted = false;
+
+    $(window).on("scroll", function () {
+      if (!counterStarted && $(window).scrollTop() > 300) {
+        counterStarted = true;
+        $(".timer").each(function () {
+          $(this).countTo();
+        });
+      }
+    });
+
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    // Toggle dropdown
+    $('.selected').on('click', function (e) {
+      e.stopPropagation(); // stop bubbling
+      $('.drop-content').toggleClass('active');
+    });
+
+    // Click outside → close dropdown
+    $(document).on('click', function () {
+      $('.drop-content').removeClass('active');
+    });
+
+    // Navbar toggle
+    $('.navbar-toggler').on('click', function (e) {
+      e.preventDefault();
+      $(this).toggleClass('show');
+      $('.navbar-collapse').toggleClass('show');
+    });
+  });
+</script>
+
+<script>
+  const overlay = document.getElementById("reraPopup");
+  const checkbox = document.getElementById("agree");
+  // Show popup on load
+  window.addEventListener("load", () => {
+    if (checkbox) checkbox.checked = false;
+    setTimeout(() => {
+      if (overlay) overlay.classList.add("active");
+    }, 10000);
+  });
+  // Hide popup when checkbox checked
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      overlay.classList.remove("active");
+    }
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    if ($("#header").length) {
+      $("#header").load("header.html");
+    }
+    if ($("#footer").length) {
+      $("#footer").load("footer.html");
+    }
+  });
+</script>
+
+</html>

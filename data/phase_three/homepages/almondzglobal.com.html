@@ -1,0 +1,815 @@
+﻿
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>Almondz Global Securities Limited, An Almondz Group Company</title>
+    <!-- CSS Files-->
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/superfish.css">
+    <link rel="stylesheet" href="stylesheets/blue.css">
+    <link rel="stylesheet" href="stylesheets/slider.css">
+    <!-- skin color -->
+    <link rel="stylesheet" href="stylesheets/responsive.css">
+    <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    <link href="clientslider/js/layout.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="javascripts/ks.js"></script>
+
+    <style>
+        :root {
+            --font-size: 14px;
+        }
+
+        /* FORCE every element to use the updated size */
+       <!-- * {
+            font-size: var(--font-size) !important;
+        }-->
+
+        body {
+         
+            background-color: white;
+            color: black;
+            transition: 0.2s ease;
+        }
+
+        button {
+            padding: 8px 14px;
+         
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        #increase { background-color: #007bff; }
+        #decrease { background-color: #dc3545; }
+        #contrast { background-color: #6c757d; }
+        #reset    { background-color: #444; }
+        
+        .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+    }
+
+    /* Popup Box */
+    .popup-box {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      margin: 5% auto;
+      text-align: center;
+    }
+
+    .popup-box img {
+      width: 70%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #fff;
+      color: #000;
+      font-size: 20px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      line-height: 30px;
+      font-weight: bold;
+    }
+        
+        
+        
+      </style>
+</head>
+<body>
+<div class="popup-overlay" id="imagePopup">
+  <div class="popup-box">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <img src="images/notice1.jpeg" alt="Popup Image"/>
+  </div>
+</div>
+    <div class="modal1popup1">
+        <div class="modalcontent">
+            <h4>NBFC</h4>
+            <p>
+                NBFC – Avonmore Capital & Management Services Ltd was incorporated in 1991,LISTED,Holding Company of Almondz Group and Almondz Finanz Limited (AFL) was incorporated in 2006 as a wholly owned subsidiary company Almondz Global
+                Securities Limited. Both are registered with Reserve Bank of India as a non-deposit accepting Non Banking Financial
+                Company (NBFC-ND).  Engaged in providing loans to corporate as well as trading of debt and equity.
+            </p>
+            <a href="#" class="button" id="close2">Close</a>
+        </div>
+    </div>
+    <div class="modal1popup2">
+        <div class="modalcontent">
+            <h4>WEALTH MANAGEMENT</h4>
+            <p>
+                Almondz distributes plethora of products which satisfies the financial needs of various categories of investors under one roof. Our product offerings include:
+
+                * Mutual Funds
+                *Fixed Income products
+                *Equity IPO’s
+                *Tax Savings Instruments
+                *Structured Products
+                *Equity & Commodity broking
+                *Life Insurance & General Insurance products
+                *RealEstate
+            </p>
+            <a href="#" class="button" id="close3">Close</a>
+        </div>
+    </div>
+    <div class="modal1popup3">
+        <div class="modalcontent">
+            <h4>HEALTHCARE</h4>
+            <p>
+                Skiffle Healthcare Services Ltd., a 100% subsidiary of Almondz Global Securities Ltd., was incorporated in 2012 to set up Super-Specialized Eye Care Centres in and around Delhi.  At present the Company has five Eye Centres under the name & style of “Dev Eye Centre” covering 3 States viz. Haryana, Uttar Pradesh and Delhi.
+            </p>
+            <a href="#" class="button" id="close4">Close</a>
+        </div>
+    </div>
+    <div class="modal1popup6">
+        <div class="modalcontent">
+            <h4>COMMODITIES</h4>
+            <p>
+                Almondz Commodities Pvt. Ltd is a subsidiary of Avonmore Capital Management Services Ltd. It enables the retail & corporate investors to diversify their portfolio and enjoy the benefits of commodity trading in MCX & NCDEX.
+            </p>
+            <a href="#" class="button" id="close7">Close</a>
+        </div>
+    </div>
+   <!-- <div class="modal1popup4">
+        <div class="modalcontent">
+            <h4>INSURANCE</h4>
+            <p>
+                Willis Towers Watson India Insurance Brokers Private Limited is one the Companies of Almondz Group, a leading and diversified financial services group with presence in merchant banking, infrastructure advisory, debt portfolio management, retail and distribution of financial products and commodity broking.
+                <br />
+                Willis Towers Watson India Insurance Brokers Private Limited is licensed by IRDA as to act as a Direct Insurance Broker (License Number DB/176/03. Certificate Number 209) since 2003 and is also a member of the Insurance Brokers Association of India.
+            </p>
+            <a href="#" class="button" id="close5">Close</a>
+        </div>
+    </div>-->
+    <!--<div class="modal1popup5">
+        <div class="modalcontent">
+            <h4>DISTRIBUTION</h4>
+            <p>
+                One of the largest Indian distributors of third party financial products. One-stop shop for a range of products like IPOs, FPOs,Corporate Debt, Mutual Funds and Insurance, products. Providing complete financial services solutions to our clients.
+            </p>
+            <a href="#" class="button" id="close6">Close</a>
+        </div>
+    </div>-->
+    
+    <div class="modal1popup2">
+        <div class="modalcontent">
+            <h4>WEALTH MANAGEMENT</h4>
+            <p>
+                Almondz distributes plethora of products which satisfies the financial needs of various categories of investors under one roof. Our product offerings include:
+                <br />
+                Mutual Funds,
+                Fixed Income products,
+                Equity IPO’s,
+                Tax Savings Instruments,
+                Structured Products,
+                Equity & Commodity broking,
+                Life Insurance & General Insurance products,
+                RealEstate.
+            </p>
+            <a href="#" class="button" id="close8">Close</a>
+        </div>
+    </div>
+    <div class="modal1popup8">
+        <div class="modalcontent">
+            <h4>INFRASTRUCTURE CONSULTANCY</h4>
+            <p>
+                Almondz Global Infra – Consultant Limited (AGICL) is a Public Limited Company and Wholly Owned Subsidiary of Almondz Global Securities Limited (AGSL). AGICL provides professional advisory and consultancy services in the areas of management, engineering, industrial, technical and financial for all infrastructure sectors.
+            </p>
+            <a href="#" class="button" id="close9">Close</a>
+        </div>
+    </div>
+
+    <!-- HIDDEN PANEL
+    ================================================== -->
+    <!--<div id="panel">
+        <div class="row">
+            <div class="twelve columns">
+                <img src="images/info.png" class="pics" alt="info">
+                <div class="infotext">
+                    INVITATION FOR EXPRESSION OF INTEREST (EOI) FOR EMPANELMENT OF REPUTED INDEPENDENT CONSULTANTS / FREELANCERS / INDIVIDUALS / FIRMS FOR INFRASTRUCTURE PROJECTS <a href="EOI_AGICL.pdf" target="_blank">click here for AGICL details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="slide">
+        <a href="#" class="btn-slide"></a>
+    </p>-->
+    <!-- HEADER
+    ================================================== -->
+    <div class="row">
+        <div class="headerlogo three columns">
+            <div class="logo">
+                <a href="index.html">
+                    <h4><img src="images/logo.png" width="190" height="80"></h4>
+                </a>
+            </div>
+        </div>
+        <div class="headermenu nine columns noleftmarg">
+            <nav id="nav-wrap">
+                <ul id="example" class="sf-menu">
+                    <li class="current">
+                        <a href="index.html">Home</a>
+                        <!--<ul>
+                                        <li><a href="index2.html">Without slider</a></li>
+                                    </ul>
+                        -->
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                        <ul style="z-index:9999;">
+                            <li><a href="vision.html">Vision</a></li>
+                            <!--<li><a href="recognitions.html">Recognitions</a></li>-->
+                            <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                            <li><a href="ourteam.html">Team Almondz</a></li>
+                            <li><a href="financials.html">Financials</a></li>
+                            <li><a href="corporategovernance.html">Corporate Governance</a></li>
+                            <li><a href="shareholdersinfo.html">Shareholders Information</a></li>
+                            <li><a href="contactdetails.html">Contact Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Business Lines</a>
+                        <ul>
+                           <!-- <li><a href="corporate-finance.html">Corporate Finance</a></li>-->
+                            <!--<li><a href="debtpms.html">Debt PMS</a></li>-->
+                            <!--<li><a href="distributionof-financial-products.html">Distribution of financial products</a></li>-->
+                            <li><a href="equity-broking.html">Equity Broking</a></li>
+                            <li><a href="debt-portfolio-management.html">Debt Portfolio management</a></li>
+                            <li><a href="wealth-management.html">Wealth management</a></li>
+                            <!--<li><a href="http://www.almondz.com/Commodity_Home/Commodity_Home.aspx"  target="_blank">Commodity Broking</a></li>-->
+                        </ul>
+                    </li>
+                 
+                     <li>
+                        <a href="#">For Investors</a>
+                        <ul>
+                         <li>
+                        <a href="offerdocuments.html">Offer Documents</a>
+                    </li>
+                     <li><a href="#">Investor Charter</a>
+                            <ul>
+                            <li><a href="pdf/ipo_fpo.pdf" target="_blank">IPOs, FPOs (including OFS)</a></li>
+                       
+                            <li><a href="pdf/right_issues.pdf" target="_blank">Right Issues</a></li>
+                            <li><a href="pdf/qualified_placement.pdf" target="_blank">Qualified Institutional Placement (QIPs)</a></li>
+                          <li><a href="pdf/placement.pdf" target="_blank">Preferential Placement </a></li>
+                            <li><a href="pdf/sme_ipo.pdf" target="_blank">SME IPO and FPO including OFS</a></li>
+                              <li><a href="pdf/buyback_securities.pdf" target="_blank">Buyback of Securities</a></li>
+                               <li><a href="pdf/delisting_shares.pdf" target="_blank">Delisting of Equity Shares</a></li>
+                                <li><a href="pdf/substantial_takeovers.pdf" target="_blank">Substantial Acquisitions of Shares and Takeovers</a></li>
+                                     <li><a href="pdf/Public_issue_debt_securities.pdf" target="_blank">Public issue of debt securities</a></li>
+                                  <li><a href="pdf/Public _issue_ non-convertible_redeemable_preference_shares.pdf" target="_blank">Public issue of non-convertible redeemable preference shares</a></li>
+                                   <li><a href="pdf/Private_placement_non-convertible_securities.pdf" target="_blank">Private placement of non-convertible securities</a></li>
+                        </ul>
+                               
+                               
+                               </li>
+
+                                <li><a href="#">Investor Grievance</a>
+                            <ul>
+                            <li><a href="pdf/investors_ipo_fpo.pdf" target="_blank">IPOs & FPOs</a></li>
+                       
+                            <li><a href="pdf/investors_right_issues.pdf" target="_blank">Right Issues</a></li>
+                            <li><a href="pdf/investors_buybacks.pdf" target="_blank">Buyback</a></li>
+                          <li><a href="pdf/investors_SAST.pdf" target="_blank">SAST</a></li>
+                            <li><a href="pdf/investors_Delisting.pdf" target="_blank">Delisting</a></li>
+                              <li><a href="pdf/investors_Preferential.pdf" target="_blank">Preferential Issue</a></li>
+                               <li><a href="pdf/investors_SME_IPD_FPO.pdf" target="_blank">SME IPOs & FPOs</a></li>
+                                <li><a href="pdf/investors_QIPs.pdf" target="_blank">QIPs</a></li>
+                                  <li><a href="pdf/investors_Collective_Data.pdf" target="_blank">Collective Data</a></li>
+                                      <li><a href="pdf/Debt_securities.pdf" target="_blank">Debt securities</a></li>
+                                      <li><a href="pdf/Non-convertible_redeemable_preference_shares.pdf" target="_blank">Non-convertible redeemable preference shares</a></li>
+                                        <li><a href="pdf/Investor _Private_placement_non-convertible_securities.pdf" target="_blank">Private placement of non-convertible securities</a></li>
+                                          <li><a href="pdf/Collective_Data-Debt_Securities.pdf" target="_blank">Collective Data-Debt Securities</a></li>
+                        </ul>
+                               
+                               
+                               </li>
+                     <!--  <li>
+                        <a href="Disclosure_under_regulation.html">Disclosure Under Regulation 46 of SEBI- LODR</a>
+                    </li>-->
+
+                        </ul>
+                    </li>
+                    <!--<li>
+                    <a href="#">Pages</a>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                    </li>-->
+                    <li>
+                        <a href="ourgroup.html">Group Almondz</a>
+                        <!--<ul>
+                            <li><a href="columns.html">Columns</a></li>
+                            <li><a href="elements.html">Elements</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                        </ul>-->
+                    </li>
+                    <li>
+                        <a href="ourpresence.html">Our Presence</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav id="nav" role="navigation">
+                <a href="#nav" title="Show navigation">Show navigation</a>
+                <a href="#" title="Hide navigation">Hide navigation</a>
+                <ul class="clearfix">
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="#" aria-haspopup="true"><span>About Us</span></a>
+                        <ul>
+                            <li><a href="vision.html">Vision</a></li>
+                            <!--<li><a href="recognitions.html">Recognitions</a></li>-->
+                            <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                            <li><a href="ourteam.html">Team Almondz</a></li>
+                            <li><a href="financials.html">Financials</a></li>
+                            <li><a href="corporategovernance.html">Corporate Governance</a></li>
+                            <li><a href="shareholdersinfo.html">Shareholders Information</a></li>
+                            <li><a href="contactdetails.html">Contact Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#" aria-haspopup="true"><span>Business Lines</span></a>
+                        <ul>
+                            <li><a href="corporate-finance.html">Corporate Finance</a></li>
+                            <li><a href="distributionof-financial-products.html">Distribution of financial products</a></li>
+                            <li><a href="http://www.almondz.com/" target="_blank">Equity Broking</a></li>
+                            <li><a href="distributionof-financial-products.html">Commodity Broking</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="services.html">Group Services</a></li>
+                    <li><a href="ourgroup.html">Group Almondz</a></li>
+                    <li><a href="ourpresence.html">Our Presence</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <!-- SLIDER
+    ================================================== -->
+    <div id="ei-slider" class="ei-slider">
+        <ul class="ei-slider-large">
+            <li>
+                <img src="images/slideshow/2.jpg" alt="image01" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Growth Tomorrow</h2>
+                    <h3>is an opportunity today...</h3>
+                </div>
+            </li>
+            <li>
+                <img src="images/slideshow/7.jpg" alt="image02" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Growth Tomorrow</h2>
+                    <h3>is an opportunity today...</h3>
+                </div>
+            </li>
+        </ul>
+        <!-- slider-thumbs -->
+        <ul class="ei-slider-thumbs">
+            <li class="ei-slider-element">Current</li>
+            <li><a href="#">Slide 1</a><img src="images/slideshow/large/2.jpg" class="slideshowthumb" alt="thumb01" /></li>
+            <li><a href="#">Slide 2</a><img src="images/slideshow/large/7.jpg" class="slideshowthumb" alt="thumb02" /></li>
+            <li><a href="#">Slide 3</a><img src="images/slideshow/large/1.jpg" class="slideshowthumb" alt="thumb03" /></li>
+        </ul>
+    </div>
+    <div class="minipause">
+    </div>
+    <!-- SUBHEADER
+    ================================================== -->
+    <div id="subheader">
+        <div class="row">
+            <div class="twelve columns">
+                <p class="text-center">
+                    "Our vision is to provide a comprehensive range of financial services for businesses and individual investors, to create value for these clients and for our employees and shareholders, and to grow as a stringently compliant organisation."
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- ANIMATED COLUMNS
+    ================================================== -->
+    <!-- CONTENT
+    ================================================== -->
+
+    <div class="row">
+        <div class="one columns"></div>
+        <div class="ten columns">
+            <div class="centersectiontitle">
+                <h4 style="font-size:18px;">GROUP SERVICES</h4>
+            </div>
+            <ul class="ca-menu">
+                <li>
+                    <a href="#" class="nbfc">
+                        <span class="ca-icon"><i class="fa fa-briefcase"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">NBFC</h2>
+                            <h3 class="ca-sub">NBFC – Almondz Finanz Limited (AFL) was incorporated in 2006...</h3>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="wealthman">
+                        <span class="ca-icon"><i class="fa fa-money"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">WEALTH MANAGEMENT</h2>
+                            <h3 class="ca-sub">Almondz distributes plethora of products which satisfies the ...</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="infconsul">
+                        <span class="ca-icon"><i class="fa fa-medkit"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">INFRASTRUCTURE CONSULTANCY</h2>
+                            <h3 class="ca-sub">Almondz Global Infra – Consultant Limited (AGICL) is a Public Limited Company and...</h3>
+                        </div>
+                    </a>
+          <!--      </li>
+                <li>
+                    <a href="#" class="ins">
+                        <span class="ca-icon"><i class="fa fa-plus-square"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">INSURANCE</h2>
+                            <h3 class="ca-sub">Willis Towers Watson India Insurance Brokers Private Limited is licensed by IRDA as to act as a Direct ...</h3>
+                        </div>
+                    </a>
+                </li>-->
+                <!--<li>
+                    <a href="#" class="distr">
+                        <span class="ca-icon"><i class="fa fa-bar-chart"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">DISTRIBUTION</h2>
+                            <h3 class="ca-sub">One of the largest Indian distributors of third party financial products...</h3>
+                        </div>
+                    </a>
+                </li>-->
+             <!--   <li>
+                    <a href="#" class="comm">
+                        <span class="ca-icon"><i class="fa fa-line-chart"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">COMMODITIES</h2>
+                            <h3 class="ca-sub">Almondz Commodities Pvt. Ltd is a subsidiary of Almondz Global...</h3>
+                        </div>
+                    </a>
+                </li>-->
+
+                   
+              <!--  <li class="lastdiv">
+                    <a href="#" class="infconsul">
+                        <span class="ca-icon"><i class="fa fa-graduation-cap"></i></span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">INFRASTRUCTURE CONSULTANCY</h2>
+                            <h3 class="ca-sub">Almondz Global Infra – Consultant Limited (AGICL) is a Public Limited Company and...</h3>
+                        </div>
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+        <div class="one columns"></div>
+    </div>
+
+    <div class="row">
+        <div class="twelve columns">
+            <div class="centersectiontitle1">
+                <h4>ALMONDZ GLOBAL</h4>
+            </div>
+        </div>
+        <div class="nine columns">
+            <h5>Almondz global at a glance</h5>
+            <p>
+               Almondz Global Securities Limited, a listed company, is a financial services provider since 1994 which offers depository participant services, wealth management advisory and equity broking services. The company is a member of: National Stock Exchange of India Limited (NSE); Bombay Stock Exchange Limited, (BSE); and Central Depository Services (India) Ltd., (CDSL)&nbsp;&nbsp; (for depository services).
+            </p>
+            
+            <p>
+                We have experienced & professional Board supported by a team of over 350+ professionals & Support Staff.
+            </p>
+            <h5>Our Vision</h5>
+            <p>
+                To provide a comprehensive range of financial services for businesses and individual investors, to create value for these clients and for our employees and shareholders, and to grow as a stringently compliant organisation.
+
+            </p>
+            <p>
+                <a href="vision.html" class="readmore">Learn more</a>
+            </p>
+        </div>
+        <div class="three columns">
+            <h5></h5>
+            <ul>
+                <li><a href="vision.html">Our Vision</a></li>
+                <!--<li><a href="recognitions.html">Recognitions</a></li>-->
+                <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                <li><a href="ourteam.html">Team Almondz</a></li>
+                <li><a href="financials.html">Financials</a></li>
+                <li><a href="corporategovernance.html">Corporate Governance</a></li>
+                <li><a href="contactdetails.html">Contact Details</a></li>
+                <li><a href="shareholdersinfo.html">Shareholder Information</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="hr">
+    </div>
+    <!-- TESTIMONIALS
+    ================================================== -->
+    <div class="row">
+        <div class="twelve columns">
+            <div id="testimonials">
+                <blockquote>
+                    <p>
+                        AGSL’s client base in the Corporate Finance segment covers all leading Public Sector Undertakings (PSUs), large Corporates and the vast and increasingly important segment of SMEs. In the Debt markets, the company has relationships with over 4000 leading Provident Funds. In the Distribution of Third-party financial products, AGSL has built a large base of retail customers as well as country-wide network of franchisees. In Equity Broking, AGSL is serving both the Retail and the Institutional Investors.
+                        <!-- <cite>Martin - NY</cite>-->
+                    </p>
+                </blockquote>
+                <blockquote>
+                    <p>
+                        The company has a strong presence across major cities and is manned by teams of qualified & experienced professionals.
+                        <!--<cite>Sandra - LA</cite>-->
+                    </p>
+                </blockquote>
+                <blockquote>
+                    <p>
+                        AGSL’s client base in the Corporate Finance segment covers all leading Public Sector Undertakings (PSUs), large Corporates and the vast and increasingly important segment of SMEs. In the Debt markets, the company has relationships with over 4000 leading Provident Funds. In the Distribution of Third-party financial products, AGSL has built a large base of retail customers as well as country-wide network of franchisees. In Equity Broking, AGSL is serving both the Retail and the Institutional Investors. <!--<cite>Jason - MA</cite>-->
+                    </p>
+                </blockquote>
+                <blockquote>
+                    <p>
+                        The company has a strong presence across major cities and is manned by teams of qualified & experienced professionals.
+                        <!--<cite>Sandra - LA</cite>-->
+                    </p>
+                </blockquote>
+            </div>
+            <marquee>
+            </marquee>
+            </font></b></o:p><o:p>
+                <font face="Tahoma" size="2">
+                    <marquee>
+                    </marquee>
+                </font>
+            </o:p> <p>
+                <o:p>
+                    <font size="2">
+                        <!--<marquee scrollamount="4">
+                            <span style="font-size:8.5pt;font-family:Tahoma;color:#076177">
+                                <font color="#000000" size="2">
+                                    <strong>
+                                        Latest News
+                                    </strong> : On 13th May 2016, Securities Appellate Tribunal (SAT) has passed Orders in the Matter of Almondz Global Securities Limited. For full Text of Orders, <a href="satorder.html"> click here -</a>
+                                </font>
+                            </span>
+                        </marquee>-->
+                        <!--end testimonials-->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="twelve columns">
+            <div id="associates">
+                <h5><!--<img src="images/logo.png" width="60" height="25" style="margin:-3px 0 0; float: left;">-->Associate Companies/Subsidiary Companies</h5>
+                <div id="pic_list_1" class="scroll_horizontal">
+                    <a class="clientnext"></a><a class="clientprev"></a>
+                    <div class="box">
+                        <ul class="list">
+                            <!--<li><a href="#"><img src="clientslider/logo.png"></a></li>-->
+                            <li><a href="http://www.almondz.com/" target="_blank"><img src="clientslider/logo1.png"></a></li>
+                 <!--       <li><a href="https://www.wtwindiainsurancebrokers.com/" target="_blank"><img src="clientslider/logo2.png"></a></li>-->
+                            <li><a href="http://www.almondzglobalinfra.com/" target="_blank"><img src="clientslider/logo3.png"></a></li>
+                            <li><a href="#"><img src="clientslider/logo4.png"></a></li>
+                         <!--   <li><a href="http://www.deveyecentre.com/" target="_blank"><img src="clientslider/logo5.png"></a></li>-->
+                            <li><a href="http://www.almondzfinancial.com/" target="_blank"><img src="clientslider/almondzwealthadvisorsltd.png"></a></li>
+                            <li><a href="http://premiergreen.co.in/" target="_blank"><img src="clientslider/logo5555.png"></a></li>
+                               <li><a href="http://avonmorecapital.in/" target="_blank"><img src="clientslider/logo9.png"></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="list">
+                        <li><a href="#"><img src="clientslider/logo.png"></a></li>
+                        <li><a href="#"><img src="clientslider/logo1.png"></a></li>
+                        <li><a href="#"><img src="clientslider/logo2.png"></a></li>
+                        <li><a href="#"><img src="clientslider/logo3.png"></a></li>
+                        <li><a href="#"><img src="clientslider/logo4.png"></a></li>
+                        <li><a href="#"><img src="clientslider/logo5.png"></a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <!--end testimonials-->
+        </div>
+    </div>
+
+
+
+    <!-- FOOOTER
+    ================================================== -->
+    <div id="footer">
+        <footer class="row">
+            <p class="back-top floatright">
+                <a href="#top"><span></span></a>
+            </p>
+            <p class="back-top floatright">
+                <a href="#top"><span></span></a>
+            </p>
+            <div style="width:100%;">
+                <a href="termsofuse.html">Terms & Conditions</a>
+                <span style="padding:0px 13px 0px 13px;">|</span>
+                <a href="privacypolicy.html">Privacy Policy</a>
+                <span style="padding:0px 13px 0px 13px;">|</span>
+                <a href="sitemap.html">Sitemap</a>
+                <span style="padding:0px 13px 0px 13px;">|</span>
+                <a href="disclaimer.html">Disclaimer</a>
+                <span style="padding:0px 13px 0px 13px;">|</span>
+                <a href="careers.html">Careers</a>
+                <span style="padding:0px 13px 0px 13px;">|</span>
+                <a href="trackrecord.html">Track Record of Public Issues</a>
+            </div>
+            <!--<div class="four columns">
+                <h1>OFFICES & POLICIES</h1>
+                <ul>
+                <li><a href="termsofuse.html">Terms of Use</a></li>
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                </ul>
+
+            </div>
+            <div class="four columns">
+                <h1>COMPANY INFO</h1>
+                <ul>
+                <li><a href="http://www.sebi.gov.in" target="_blank">SEBI</a></li>
+                <li><a href="#">IFSC</a></li>
+                <li><a href="#">RBI</a></li>
+                <li><a href="#">MCA</a></li>
+                </ul>
+            </div>
+            <div class="four columns">
+                &nbsp;
+
+            </div>-->
+        </footer>
+    </div>
+    <div class="copyright">
+        <div class="row">
+            <div class="six columns">
+                &copy;<span class="small">Copyright © 2007, All Rights Reserved. Almondz Global Securities Limited. </span>
+            </div>
+            <!--<div class="six columns">
+                <span class="small floatright">Design by <a target="_blank" href="http://www.wowthemes.net/premium-themes-templates/">WowThemesNet</a> </span>
+            </div>-->
+        </div>
+    </div>
+    <!-- JAVASCRIPTS
+    ================================================== -->
+    <!-- Javascript files placed here for faster loading -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="clientslider/js/jquery.cxscroll.min.js"></script>
+    <script>
+        $("#pic_list_1").cxScroll();
+        $('#pic_list_2').cxScroll({
+            direction: 'left',
+            step: 3
+        });
+        $('#pic_list_3').cxScroll({
+            direction: 'bottom',
+            speed: 500,
+            time: 1500,
+            plus: false,
+            minus: false
+        });
+        $('#pic_list_4').cxScroll({
+            direction: 'top'
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".nbfc").click(function () {
+                $(".modal1popup1").show();
+
+            });
+            $(".wealthman").click(function () {
+                $(".modal1popup2").show();
+            });
+            $(".healthc").click(function () {
+                $(".modal1popup3").show();
+            });
+            $(".ins").click(function () {
+                $(".modal1popup4").show();
+            });
+            $(".distr").click(function () {
+                $(".modal1popup5").show();
+            });
+            $(".comm").click(function () {
+                $(".modal1popup6").show();
+            });
+            $(".infconsul").click(function () {
+                $(".modal1popup8").show();
+            });
+
+
+
+            document.getElementById('close2').onclick = function () {
+                $(".modal1popup1").hide();
+
+            };
+
+            document.getElementById('close8').onclick = function () {
+                $(".modal1popup2").hide();
+
+            };
+            document.getElementById('close4').onclick = function () {
+                $(".modal1popup3").hide();
+
+            };
+            document.getElementById('close5').onclick = function () {
+                $(".modal1popup4").hide();
+
+            };
+            document.getElementById('close6').onclick = function () {
+                $(".modal1popup5").hide();
+
+            };
+            document.getElementById('close7').onclick = function () {
+                $(".modal1popup6").hide();
+
+            };
+            document.getElementById('close9').onclick = function () {
+                $(".modal1popup8").hide();
+
+            };
+
+
+
+
+        });
+
+    </script>
+
+    <script src="javascripts/foundation.min.js"></script>
+    <script src="javascripts/jquery.easing.1.3.js"></script>
+    <script src="javascripts/elasticslideshow.js"></script>
+    <script src="javascripts/jquery.carouFredSel-6.0.5-packed.js"></script>
+    <script src="javascripts/jquery.cycle.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/modernizr.foundation.js"></script>
+    <script src="javascripts/slidepanel.js"></script>
+    <script src="javascripts/scrolltotop.js"></script>
+    <script src="javascripts/hoverIntent.js"></script>
+    <script src="javascripts/superfish.js"></script>
+    <script src="javascripts/responsivemenu.js"></script>
+
+    <script>
+        function openPopup() {
+            document.getElementById("imagePopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("imagePopup").style.display = "none";
+            sessionStorage.setItem("popupShown", "true");
+        }
+
+        window.onload = function () {
+            if (!sessionStorage.getItem("popupShown")) {
+                setTimeout(openPopup, 2000); // show after 2 seconds
+            }
+        };
+</script>
+</body>
+
+</html>

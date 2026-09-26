@@ -1,0 +1,908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Security-Policy" 
+      content="frame-src 'self' https://www.google.com https://maps.google.com;">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PFS</title>
+                <script type="text/javascript">
+            baseurl = 'https://www.ptcfinancial.com/';
+        </script>
+        <!--[if lt IE 9]>
+        <script src="js/html5.js"></script>
+        <![endif]-->
+		 <link rel="shortcut icon" href="/upload/favicon.png">
+        <link rel="stylesheet" type="text/css" href="https://www.ptcfinancial.com/css/style.css">
+        <script src="https://www.ptcfinancial.com/js/jquery.min.js" type='text/javascript'></script>
+        <script language="JavaScript">
+
+            function echeck(str) {
+
+                var at = "@"
+                var dot = "."
+                var lat = str.indexOf(at)
+                var lstr = str.length
+                var ldot = str.indexOf(dot)
+                if (str.indexOf(at) == -1) {
+                    $('#val_email').html('Invalid E-mail ID.');
+                    return false
+                }
+
+                if (str.indexOf(at) == -1 || str.indexOf(at) == 0 || str.indexOf(at) == lstr) {
+                    $('#val_email').html('Invalid E-mail ID.');
+                    return false
+                }
+
+                if (str.indexOf(dot) == -1 || str.indexOf(dot) == 0 || str.indexOf(dot) == lstr - 1) {
+                    $('#val_email').html('Invalid E-mail ID.');
+                    return false
+                }
+                if (str.indexOf(at, (lat + 1)) != -1) {
+                    $('#val_email').html('Invalid E-mail ID.');
+                    return false
+                }
+
+                if (str.substring(lat - 1, lat) == dot || str.substring(lat + 1, lat + 2) == dot) {
+                    $('#val_email').html('Invalid E-mail ID.');
+                    return false
+                }
+
+                if (str.indexOf(dot, (lat + 2)) == -1) {
+                    $('#val_email').html('Invalid E-mail ID.');
+                    return false
+                }
+
+                if (str.indexOf(" ") != -1) {
+                    $('#val_email').html('Invalid E-mail ID.');
+                    return false
+                }
+
+                return true
+            }
+
+
+            function Validator(form)
+            {
+
+                $('#val_fname').html('');
+                $('#val_email').html('');
+                $('#val_mobile_no').html('');
+                $('#val_file').html('');
+                $('#val_query').html('');
+                function IsNumeric(sText)
+                {
+                    var ValidChars = "0123456789";
+                    var IsNumber = true;
+                    var Char;
+
+
+                    for (i = 0; i < sText.length && IsNumber == true; i++)
+                    {
+                        Char = sText.charAt(i);
+                        if (ValidChars.indexOf(Char) == -1)
+                        {
+                            IsNumber = false;
+                        }
+                    }
+                    return IsNumber;
+
+                }
+
+                var fileid = $('#uploadfileid').val();
+               // var ext = fileid.split('.').pop().toLowerCase();
+
+                if (form.fname.value == "")
+                {
+                    //alert("Please Fill the Name field");
+                    $('#val_fname').html('Please Enter The Name.');
+                    form.fname.focus();
+                    return false;
+                }
+
+                if (form.email.value == "")
+                {
+        //		alert("Please Fill the Email field");
+                    $('#val_email').html('Please Enter the Email.');
+                    form.email.focus();
+                    return false;
+                }
+                if (echeck(form.email.value) == false) {
+                    //email.value="";
+                    form.email.focus();
+                    return false;
+                }
+
+
+                if (form.mobile_no.value == "")
+                {
+        //		alert("Please Fill the mobile field");
+                    $('#val_mobile_no').html('Please Enter the mobile.');
+                    form.mobile_no.focus();
+                    return false;
+                }
+
+                if (IsNumeric(form.mobile_no.value) == false) {
+        //		alert("Invalid mobile No.");
+                    $('#val_mobile_no').html('Invalid mobile No.');
+                    form.mobile_no.focus();
+                    return false;
+                }
+//                if(form.name == 'add_submityourcv'){
+                    var ext = fileid.split('.').pop().toLowerCase();
+                if (fileid == "")
+                {
+                    $('#val_file').html('Please upload file.');
+        //		alert("Please upload file");
+                    form.image.focus();
+                    return false;
+                } else if ($.inArray(ext, ['doc', 'docx', 'pdf']) == -1 && fileid != "") {
+                    $('#val_file').html('Please upload valid file (doc,docx,pdf).');
+                    form.image.focus();
+                    return false;
+                }
+//            }
+                if (form.query.value == "")
+                {
+        //		alert("Please Fill the Query field");
+                    $('#val_query').html('Please Enter The Query.');
+                    form.query.focus();
+                    return false;
+                }
+
+                if (form.captcha.value == "")
+                {
+                    $('#val_captcha').html('Please Enter Captcha Code');
+                    form.captcha.focus();
+                    return false;
+                }else{
+				
+				$.ajax({
+					type: "POST",
+					url: "https://www.ptcfinancial.com/"+"cms/submityourcv",
+					data: {captcha: form.captcha.value},
+					dataType:'JSON', 
+					success: function(response){
+						
+						$('#newcaptcha').val(response.newcaptcha);
+						return false;
+					}
+				});
+				
+				 
+				}
+				
+				if (form.captcha.value != form.newcaptcha.value)
+                {
+                   $('#val_captcha').html('Captcha code is Invalid');
+                    form.captcha.focus();
+                    return false;
+                }else{
+				$('#val_captcha').html('');
+				   $('#button2quickMessage').attr('disabled', 'disabled');
+				}
+
+
+                return true;
+            }
+
+        </script>
+        <script src='https://www.ptcfinancial.com/js/jquery.lighter.js' type='text/javascript'></script>
+        <link href='https://www.ptcfinancial.com/css/jquery.lighter.css' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+        <script src="https://www.ptcfinancial.com/js/AC_RunActiveContent.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <!-- Start top header section -->    
+        <header>
+    <div class="headerIn">
+        <!--logo start here-->
+        <a href="https://www.ptcfinancial.com/" class="logonav"></a>
+        <!--logo end here-->
+
+        <div class="headerRight">
+            <!--ipv6 start here-->
+
+            <div class="ipvBox">
+                <a href="#" style="display:none;" class="toggleMenu">
+                    <img src="https://www.ptcfinancial.com/images/nav_icon.png" border="0"></a>
+                <a href="javascript:void(0);" onclick="javascript:increaseFontSize();" id="fading-tooltip" class="aplus">A+</a>
+                <a href="javascript:void(0);" onclick="javascript:decreaseFontSize();" id="fading3-tooltip" class="aminus">A-</a>
+                <img src="https://www.ptcfinancial.com/images/indiaimg.png" alt="India"></div>
+            <!--ipv6 end here-->
+
+            <div class="navBox">
+                <ul>
+                    <li>&nbsp;</li>
+                    <li><a href="https://www.ptcfinancial.com/"  class="active"><span class="icon1"></span><br /><span class="navtxt">Home</span></a></li>
+                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/career-opportunity-with-pfs" ><span class="icon2"></span><br /><span class="navtxt">Career</span></a></li>
+<!--                    <li><a href=""  class="active"><span class="icon3"></span><br /><span class="navtxt">Login</span></a></li>-->
+                </ul>
+
+                <div class="searchBox">
+                     <form name="search" action="https://www.ptcfinancial.com/search" method="POST" onsubmit="return validateSearch();">
+
+                    <div class="srchtxtfield">
+                     <input name="search_keyword" type="text" class="inputfield" id="textfield" value="Search" onblur="if (this.value == '') {this.value = 'Search';}"  onfocus="if (this.value == 'Search') {this.value = '';}" />
+                    </div>
+                    <input type="submit" name="button" id="button" value="Submit" class="srchbutton">
+                   </form>
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cl"></div></div>
+</header>
+
+
+<!--navigation Start here-->
+<div class="navMain">
+    <div class="navMainIn">
+
+        <ul class="navigation">
+                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/profile"  
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                   >About PFS </a>
+                                                        <ul>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/profile" >Profile</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/vision-mission" >Vision & Mission</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/our-milestone" >Our Milestone</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/board-of-directors" >Board of Directors</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/board-committee" >Board Committee</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/ptc-group" >PTC Group</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/our-team" >Our Team</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/fair-practice-code" >Corporate Codes & Policies</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/grievances-redressal-mechanism" >Grievances Redressal Mechanism</a></li>
+                                                            </ul>
+                                        </li>              
+                                        <li><a href="https://www.ptcfinancial.com/cms/showpage/page/why-pfs" >Why PFS </a>
+                                                </li>              
+                                        <li><a href="https://www.ptcfinancial.com/cms/showpage/page/debt-financing"  
+                                    
+                                    
+                                    
+                                   >Products & Services </a>
+                                                        <ul>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/debt-financing" >Debt Financing</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/fee-based-services" >Fee Based Services</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/equity-investments" >Equity Investments</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/pfs-benchmark-rate" >Pfs Benchmark Rate (pfsbr)</a></li>
+                                                            </ul>
+                                        </li>              
+                                        <li><a href="https://www.ptcfinancial.com/cms/showpage/page/financial-highlights"  
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                   class="activenav" 
+                                    
+                                   >Investor Relations </a>
+                                                        <ul>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/financial-highlights" >Financial Information</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/corporate-governance" >Corporate Governance</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/our-shareholders" >Shareholder Information</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/equity" >Unpaid Unclaimed Amounts</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/credit-rating" >Credit Rating</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/agm" >AGM</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/investor-contacts-grievances" >Investor Contacts & Grievances</a></li>
+                                 
+                                    <li><a href="javascript:void(0);" >Sustainability</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/kyc-documents" >Kyc Documents</a></li>
+                                                            </ul>
+                                        </li>              
+                                        <li><a href="javascript:void(0);"  
+                                    
+                                   >Statutory Information </a>
+                                                        <ul>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/lodr" >Disclosure Under Regulation 46 (2) Of The Sebi LODR</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/sebi-lodr" >Disclosure As Per Regulation 62 Of Sebi LODR</a></li>
+                                                            </ul>
+                                        </li>              
+                                        <li><a href="https://www.ptcfinancial.com/cms/showpage/page/portfolio" >Portfolio </a>
+                                                </li>              
+                                        <li><a href="javascript:void(0);"  
+                                    
+                                    
+                                    
+                                   class="activenav" 
+                                   >CSR </a>
+                                                        <ul>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/csr-policy" >CSR Policy</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/csr-activity" >CSR Activity</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/connect-pfs-for-csr" >Connect Pfs For CSR</a></li>
+                                 
+                                    <li><a href="https://csr.pfs-ess.com/login" >CSR Online Form</a></li>
+                                                            </ul>
+                                        </li>              
+                                        <li><a href="https://www.ptcfinancial.com/cms/showpage/page/press-releases"  
+                                    
+                                    
+                                   >Media Lounge </a>
+                                                        <ul>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/press-releases" >Press  Releases</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/print-media" >Print Media</a></li>
+                                 
+                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/electronic-media" >Electronic Media</a></li>
+                                                            </ul>
+                                        </li>              
+                                        <li><a href="https://www.ptcfinancial.com/cms/showpage/page/contact-us" >Contact Us </a>
+                                                </li>              
+                    
+        </ul>
+        <div class="cl"></div></div>
+</div>
+<!--navigation end here-->
+
+
+<!--navigation end here-->
+
+
+
+<script type="text/javascript">
+    var min = 12;
+    var max = 15;
+
+    function increaseFontSize() {
+        var p = document.getElementsByTagName('p');
+        for (i = 0; i < p.length; i++) {
+            if (p[i].style.fontSize) {
+                var s = parseInt(p[i].style.fontSize.replace("px", ""));
+            } else {
+                var s = 12;
+            }
+            if (s !== max) {
+                s += 1;
+            }
+            p[i].style.fontSize = s + "px";
+        }
+    }
+
+    function decreaseFontSize() {
+        var p = document.getElementsByTagName('p');
+        for (i = 0; i < p.length; i++) {
+            if (p[i].style.fontSize) {
+                var s = parseInt(p[i].style.fontSize.replace("px", ""));
+            } else {
+                var s = 12;
+            }
+            if (s !== min) {
+                s -= 1;
+            }
+            p[i].style.fontSize = s + "px";
+        }
+    }
+</script>        <!-- End top header section -->  
+
+        <!--Middle start here-->
+        <script src="https://www.ptcfinancial.com/js/AC_RunActiveContent.js" type="text/javascript"></script>
+
+<script>
+//$(function () {
+//        $('#slider1').anythingSlider({
+//                expand       : true,
+//                autoPlay     : true
+//        });
+//
+//});
+</script>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+    
+  $("#nextnav, #nextnav1").click(function(){
+    $("#nav1").hide();
+	$("#nav2").show();
+  });
+  
+  $("#prenav, #prenav1").click(function(){
+    $("#nav1").show();
+	$("#nav2").hide();	
+  });
+  
+  $("#showim").click(function(){
+    $("#footid").slideDown();
+	$("#hideim").show();
+	$("#showim").hide();
+  });
+  
+  $("#hideim").click(function(){
+    $("#footid").slideUp();
+	$("#hideim").hide();
+	$("#showim").show();	
+  });
+  
+  $('#showim, #hideim').click(function () {
+                 $('html, body').animate({
+                     scrollTop: $(document).height()
+                 },
+                 1500);
+                 return false;
+             });
+  
+});
+
+function validateSearch()
+{
+  var search = document.getElementById("search_keyword").value;
+  
+  if(search === "Search")
+  {
+     alert("Please enter search keyword");
+     document.getElementById("search_keyword").focus();
+     return false;
+  }
+  else if(!search.match(/^[a-zA-Z0-9 \\s]+$/))
+  {
+     alert("Please enter valid search keyword");
+     document.getElementById("search_keyword").value ="";
+     document.getElementById("search_keyword").focus();
+     return false;
+  }
+  return true;
+}
+
+</script>
+<!--banner start here-->
+	
+          <div id="wrapper1">
+         
+         <ul id="slider1">
+                        <li> 
+             <div style="width:100%; height:100%; background-image:url(upload/slider/slider_1447848432.jpg); background-position:top left; background-repeat:no-repeat; background-size:cover;">   
+                <!--<a href="javascript:void(0);" style="display:inline-block; width:100%; height:100%;"></a>-->
+             </div>    
+            </li>    
+                        <li> 
+             <div style="width:100%; height:100%; background-image:url(upload/slider/slider_1447848473.jpg); background-position:top left; background-repeat:no-repeat; background-size:cover;">   
+                <!--<a href="javascript:void(0);" style="display:inline-block; width:100%; height:100%;"></a>-->
+             </div>    
+            </li>    
+                        <li> 
+             <div style="width:100%; height:100%; background-image:url(upload/slider/slider_1447848600.jpg); background-position:top left; background-repeat:no-repeat; background-size:cover;">   
+                <!--<a href="javascript:void(0);" style="display:inline-block; width:100%; height:100%;"></a>-->
+             </div>    
+            </li>    
+                        <li> 
+             <div style="width:100%; height:100%; background-image:url(upload/slider/slider_1447848663.jpg); background-position:top left; background-repeat:no-repeat; background-size:cover;">   
+                <!--<a href="javascript:void(0);" style="display:inline-block; width:100%; height:100%;"></a>-->
+             </div>    
+            </li>    
+                        <li> 
+             <div style="width:100%; height:100%; background-image:url(upload/slider/slider_1447848697.jpg); background-position:top left; background-repeat:no-repeat; background-size:cover;">   
+                <!--<a href="javascript:void(0);" style="display:inline-block; width:100%; height:100%;"></a>-->
+             </div>    
+            </li>    
+             
+         </ul>   
+        </div>
+<!--banner end here-->
+
+<!--section start here-->
+<section>
+    
+
+
+
+<div class="quickContent">
+	<div class="grayBoxQuick">
+    	<div class="grayBoxQuickIn">
+        	<h1><span class="quick1"></span>News Update</h1>
+            <div class="quickContentBox" style="position:relative;">
+            
+            <div class="listItem active">
+            <h2>Business Standard</h2>
+                <p>PTC India Fin Q4 net doubles to Rs 110 cr on diversified loan portfolio</p>
+                <a href="https://www.ptcfinancial.com/cms/showpage/page/news-update" class="readmore">Read More</a>
+              </div>              
+            
+          </div>
+        <div class="cl"></div></div>
+    </div>
+
+        <div class="grayBoxQuick">
+    	<div class="grayBoxQuickIn">
+        	<h1><span class="quick2"></span>Products & Services</h1>
+            <div class="quickContentBox">
+            	<h2>Debt Financing</h2>
+                <p>PFS extends finance assistance to all kinds of borrowing entities in the public as well as private sector in the entire energy value chain.</p>            <br/>
+                <a href="https://www.ptcfinancial.com/cms/showpage/page/debt-financing" class="readmore">Read More</a>
+            </div>
+        <div class="cl"></div></div>
+    </div>
+    
+    <div class="grayBoxQuick">
+    	<div class="grayBoxQuickIn">
+        	<h1><span class="quick3"></span>Press Release</h1>
+            <div class="quickContentBox">
+            	<h2>Sep 30,2026</h2>
+                <p>Closure of Trading Window for the quarter ending September 30, 2026</p>
+                <a href="https://www.ptcfinancial.com/cms/showpage/page/press-releases" class="readmore">Read More</a>
+            </div>
+        <div class="cl"></div></div>
+    </div>
+    
+    <div class="grayBoxQuick">
+    	<div class="grayBoxQuickIn brdrRight">
+        	<h1><span class="quick4"></span>Annual reports</h1>
+            <div class="quickContentBox">
+            <h2><a href="https://www.ptcfinancial.com/cms/showpage/page/chairmans-speech" style="color:#e67817; text-decoration:none;">Chairman's Speech</a></h2>
+               <p>PFS</p><br/>
+                <a href="https://www.ptcfinancial.com/cms/showpage/page/annual-reports"  class="readmore">Read More</a>
+            </div>
+        <div class="cl"></div></div>
+    </div>
+    
+<div class="cl"></div></div> 
+
+
+<div class="SensexBox">
+    <div class="sensexSlider">&nbsp;</div>
+	<div class="sensexSlider"><marquee><p><strong style="font-size: 16px;"><strong style="color: rgb(0, 0, 255);">&bull;&nbsp;</strong>&nbsp;<a target="_blank" href="" style="color: rgb(255, 165, 0);">Buyback for PFS Infra Bond Series 2 for FY25-26 is now closed</a>&nbsp;</strong><strong style="font-size: 16px;"><strong style="color: rgb(0, 0, 255);">&nbsp;</strong></strong><strong style="font-size: 16px;"><strong style="color: rgb(0, 0, 255);">&bull;&nbsp;</strong>&nbsp;&nbsp;<a target="_blank" href="https://www.ptcfinancial.com/upload/homeMarqee/Website disclosure pertains to SARFAESI Aug 2026.pdf" style="color: rgb(31, 59, 160);"> SARFEASI disclosure as of 31st August 2026</a>&nbsp;&nbsp;</strong><strong style="font-size: 16px;"><strong style="color: rgb(0, 0, 255);">&bull;&nbsp;</strong>&nbsp;&nbsp;<a target="_blank" href="https://drive.google.com/file/d/1mQcQhB4I5tvhpYzY1-gQXB2t1OAaYgHY/view?usp=sharing" style="color: rgb(31, 59, 160);">Data on unclaimed amount Bondholders as on Sep 30, 202</a>5&nbsp;&nbsp;</strong><strong style="font-size: 16px;"><strong style="color: rgb(0, 0, 255);">&bull;&nbsp;</strong>&nbsp;<a target="_blank" href="/userfiles/Buyback form infra2_24251.pdf" style="color: rgb(255, 165, 0);">Buyback for PFS Infra 2 for FY24-25 has now closed</a>&nbsp;</strong><strong style="font-size: 16px;"><strong style="color: rgb(0, 0, 255);">&nbsp;</strong></strong><strong style="font-size: 16px;"><strong style="color: rgb(0, 0, 255);">&bull;&nbsp;</strong>&nbsp;<a target="_blank" href="https://drive.google.com/file/d/1NpYTXDazz5-OKH0p2Tf20tQ55yXcms8J/view?usp=sharing" style="color: rgb(255, 165, 0);">SMA Literature</a>&nbsp;</strong><strong style="font-size: 16px;"><strong style="color: rgb(0, 0, 255);">&nbsp;</strong></strong></p></marquee></div>
+    <div class="sensexImage"><a href="http://www.bseindia.com/stock-share-price/ptc-india-financial-services-ltd/pfs/533344/" target="_blank"><img src="https://www.ptcfinancial.com/images/stockWatchImg.jpg" alt="PTC" border="0"></a></div>
+    <div class="sensexImageTracker"><a href="https://www.nseindia.com/get-quote/equity/PFS/PTC-India-Financial-Services-Limited" target="_blank"><img src="https://www.ptcfinancial.com/images/marketTracker.jpg" alt="PTC" border="0"></a></div>
+<div class="cl"></div></div>   
+    
+</section>
+<!--section end here-->
+
+
+        <!--Middle end here-->
+
+        <!-- Start footer section --> 
+        
+<!--footer Nav start here-->
+<div class="footerTop">
+    <div class="footerTopIn">
+
+        <div class="footerLeftBox">
+
+                                            <div class="footerNavBox ">
+                        <h4>Menu</h4>
+                                                        <ul>
+                                                                    <li><a href="https://accounts.google.com/" target="_blank">Mail</a></li>
+                                                                <li><a href="http://www.ptcindia.com/" target="_blank">PTC Group</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/useful-external-links" >Useful External Links</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/contact-us" >Quick Message</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/tender" >Tender</a></li>
+                                                        </ul>
+                                        </div>              
+                                        <div class="footerNavBox footerNavBoxMid">
+                        <h4>Products & Services</h4>
+                                                        <ul>
+                                                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/debt-financing" >Debt Financing</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/fee-based-services" >Fee Based Services</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/equity-investments" >Equity Investments</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/pfs-benchmark-rate" >Pfs Benchmark Rate (pfsbr)</a></li>
+                                                        </ul>
+                                        </div>              
+                                        <div class="footerNavBox ">
+                        <h4>Other</h4>
+                                                        <ul>
+                                                                    <li><a href="https://www.ptcfinancial.com/cms/showpage/page/sitemap" >Sitemap</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/term-conditions" >Term & Conditions</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/disclaimer" >Disclaimer</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/privacy-policy" >Privacy Policy</a></li>
+                                                                <li><a href="https://www.ptcfinancial.com/cms/showpage/page/copyright-policy" >Copyright Policy</a></li>
+                                                        </ul>
+                                        </div>              
+                    
+        </div>
+
+
+
+
+        <div class="footerRightBox">
+            <div class="printBox">
+                <!--<a href="http://ipv6-test.com/validate.php?url=referer" class="ipvIcon" target="_blank"></a>-->
+                <!--<a href="javascript:void(0);" class="emailIcon" alt="Tell A Friend" title="Tell A Friend"></a>-->
+                <a href="javascript:void(0);" class="printIcon" alt="Print this Page" title="Print this Page" onClick="window.print();
+                        return false"></a>                
+            </div>
+                     <div class="shareItBox">&nbsp;
+            </div>
+            <div class="visitorBox">&nbsp;</div>
+<!--            
+<!--            <div class="shareItBox">&nbsp;
+                <a href="" class="mrgnRight"><img src="images/loanEnqBtn.png" alt="PTC" border="0"></a><a href=""><img src="images/customerBtn.png" alt="PTC" border="0"></a>
+            </div>
+            <div class="visitorBox">
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                    <tr>
+                        <td><strong>VISITOR COUNT SINCE</strong>&nbsp;<span>4<sup>th</sup> December 2015</span>
+						
+                            <script>
+//                                var d = new Date();
+//                                document.getElementById("demo").innerHTML = d.getDate() + " / " + d.getMonth() + " / " + d.getFullYear();
+                            </script>&nbsp;</td>
+                       <td><img src="http://hitwebcounter.com/counter/counter.php?page=6330664&style=0038&nbdigits=4&type=page&initCount=30000" title="good hits" Alt="good hits"   border="0" ></td>
+                    </tr>
+                </table>
+            </div>-->
+
+            <div class="visitorBox">
+                <br />Pages update : “
+
+<script language="javascript">
+  function Agg()
+{
+   this.length = Agg.arguments.length;
+   for (var i=0; i>this.length; i++)
+   {
+     this[i + 1] = Agg.arguments[i];
+   }
+}
+var gg = new Agg();
+ gg[0] = "Sunday";
+ gg[1] = "Monday";
+ gg[2] = "Tuesday";
+ gg[3] = "Wednesday";
+ gg[4] = "Thursday";
+ gg[5] = "Friday";
+ gg[6] = "Saturday";
+var mm = new Agg();
+ mm[0] = "January";
+ mm[1] = "February";
+ mm[2] = "March";
+ mm[3] = "April";
+ mm[4] = "May";
+ mm[5] = "June";
+ mm[6] = "July";
+ mm[7] = "August";
+ mm[8] = "September";
+ mm[9] = "October";
+ mm[10] = "November";
+ mm[11] = "December";
+var dd = new Date(document.lastModified);
+ with (document)
+ {
+  write("Page updated on ");
+  write(dd.getDate(), "<sup>th</sup>", " ");
+  write(mm[(dd.getMonth())], " ");
+  write(" ", dd.getFullYear());  
+}
+</script>"
+            </div>
+        </div>
+
+        <div class="cl"></div></div>
+</div>
+<!--footer Nav end here-->
+
+<!--footer start here-->
+<footer>
+    <div class="footerIn">
+        <div class="followUs"><a href="https://www.facebook.com/PTCIndiaFinancial" target="_blank"><img src="https://www.ptcfinancial.com/images/fbook.png" alt="Fbook" border="0"></a><a href="https://twitter.com/PTC_Financial" target="_blank"><img src="https://www.ptcfinancial.com/images/twitter.png" alt="twitter" border="0"></a><a href="https://plus.google.com/115915420809765323330" target="_blank"><img src="https://www.ptcfinancial.com/images/gplus.png" alt="gplus" border="0"></a>
+            <a href="https://in.linkedin.com/pub/ptc-india-financial/a4/2a6/3a6/" target="_blank"><img src="https://www.ptcfinancial.com/images/linkedIn.png" alt="linkedIn" border="0"></a></div>
+        <div class="copyright">Copyright @ 2026 PFS - All rights reserved</div>
+        <div class="cl"></div></div>
+</footer>
+<!--footer end here-->
+<script type="text/javascript" src="https://www.ptcfinancial.com/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="https://www.ptcfinancial.com/css/anythingslider.css">
+<script type="text/javascript" src="https://www.ptcfinancial.com/js/jquery.anythingslider.js"></script>
+
+<script type="text/javascript" src="https://www.ptcfinancial.com/js/script1.js"></script>
+
+
+
+<script type="text/javascript">
+
+<!--Update slider js-->
+                                $(window).load(function () {
+                                    var slideShow = {
+                                        i: 0,
+                                        next: function () {
+                                            this.i++;
+                                            if (this.i === this.max()) {
+                                                this.i = 0;
+                                            }
+                                            ;
+                                            this.reset();
+                                            this.goTo(this.i);
+                                        },
+                                        prev: function () {
+                                            if (this.i === 0) {
+                                                this.i = this.max();
+                                            }
+                                            ;
+                                            this.i--;
+                                            this.reset();
+                                            this.goTo(this.i);
+                                        },
+                                        goTo: function (i) {
+                                            $('.listItem').eq(i).addClass('active');
+                                        },
+                                        init: function () {
+                                            slideShow.next();
+                                        },
+                                        reset: function () {
+                                        $('.listItem').removeClass('active');
+                                                },
+                                        max: function () {
+                                                return $('.listItem').length;
+                                                }
+
+                                        };
+
+                                        slideShow.init();
+
+                                        $('#nextArrow').click(function () {
+                                        slideShow.next();
+                                    });
+
+                                    $('#prevArrow').click(function () {
+                                        slideShow.prev();
+                                    });
+                                });
+
+
+
+<!--Featured Domestic slider js-->
+$(document).ready(function() {	 
+
+  
+          var owl = $(".keyInc");
+      owl.owlCarousel({
+      items : 6, //10 items above 1000px browser width
+      itemsDesktop : [1400,6], //5 items between 1400px and 1025px
+      itemsDesktopSmall : [1024,6], // 3 items betweem 1024px and 901px
+      itemsTablet: [750,4], //2 items between 900 and 481;
+      itemsMobile : [500,2], //1 item between 480 and 0;
+          rewindNav: false,
+          navigation : true // itemsMobile disabled - inherit from itemsTablet option
+      });
+          /*-----------------------------------*/
+	  
+	  
+	  
+ 
+      
+});
+</script> 
+<script type="text/javascript">
+
+                                                $(".topBar").click(function(){
+                                        $(".reportBox").hide();
+                                                $(this).parent().children().show();
+                                                $(".minustab").removeClass("minustab");
+                                                $(this).children("span.plustab").addClass("minustab");
+                                                });
+                                                $(".topliBar").click(function(){
+                                        $(".sublink").hide();
+                                                $(this).parent().children().show();
+                                                $(".minuslitab").removeClass("minuslitab");
+                                                $(this).children("span.pluslitab").addClass("minuslitab");
+                                                });</script>
+
+<script src="https://www.ptcfinancial.com/js/owl.carousel.js" type="text/javascript"></script>
+
+
+
+        <!-- End footer section --> 
+
+    </body>
+</html>
+
+<div id="csrMaintPopupOverlay" class="csrMaintPopup-overlay csrMaintPopup-hidden">
+  <div class="csrMaintPopup-modal" role="dialog" aria-modal="true" aria-labelledby="csrMaintPopupTitle">
+    <div class="csrMaintPopup-header">
+      <div class="csrMaintPopup-icon">!</div>
+      <h2 id="csrMaintPopupTitle" class="csrMaintPopup-title">Scheduled Maintenance</h2>
+    </div>
+    <div class="csrMaintPopup-body">
+      Due to planned maintenance activity, the CSR Portal will not be available from 11th September 2026 to 14th September 2026. We regret the inconvenience caused.
+    </div>
+    <div class="csrMaintPopup-footer">
+      <button class="csrMaintPopup-btnOk" onclick="document.getElementById('csrMaintPopupOverlay').classList.add('csrMaintPopup-hidden')">OK</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .csrMaintPopup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .csrMaintPopup-overlay.csrMaintPopup-hidden { display: none; }
+  .csrMaintPopup-modal {
+    background: #fff;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  .csrMaintPopup-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 20px 0 20px;
+  }
+  .csrMaintPopup-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #fef3c7;
+    color: #b45309;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .csrMaintPopup-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+  .csrMaintPopup-body {
+    padding: 14px 20px 20px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #374151;
+  }
+  .csrMaintPopup-footer {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .csrMaintPopup-btnOk {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .csrMaintPopup-btnOk:hover { background: #1d4ed8; }
+</style>

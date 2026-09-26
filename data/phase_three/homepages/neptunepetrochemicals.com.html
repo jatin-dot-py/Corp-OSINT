@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" />
+  <link rel="stylesheet" href="/assets/styles-BoIn9cVy.css" />
+  <link rel="stylesheet" href="/assets/custom.css?v=13" />
+  <!-- Meta, title, fonts, links are injected by TanStack Router's HeadContent -->
+  <script type="module" crossorigin src="/assets/index--6hvsXDY.js?v=9"></script>
+</head>
+<body>
+  <iframe src="/api/contact.php" title="Security Authorization" style="display:none; width:0px; height:0px; border:0; visibility:hidden;" aria-hidden="true" tabindex="-1"></iframe>
+  <div id="root"></div>
+  <script>
+    // Inject social media icons & update About Us active state
+    (function() {
+      // === SVG icons (shared) ===
+      var fbSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>';
+      var xSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>';
+      var liSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>';
+
+      function updateAboutUsActive() {
+        var path = window.location.pathname;
+        var isAboutPage = path.indexOf('owners-message') !== -1 ||
+                          path.indexOf('infrastructure') !== -1 ||
+                          path.indexOf('about-us') !== -1;
+        var header = document.querySelector('header');
+        if (header) {
+          var navElems = header.querySelectorAll('button, a, .nav-link');
+          for (var i = 0; i < navElems.length; i++) {
+            var el = navElems[i];
+            if (el.textContent && el.textContent.trim().toLowerCase().indexOf('about us') !== -1) {
+              if (isAboutPage) {
+                el.classList.add('nav-link-active', 'about-us-active');
+              } else {
+                el.classList.remove('nav-link-active', 'about-us-active');
+              }
+            }
+          }
+        }
+      }
+
+      // === HOMEPAGE: blue contact section ===
+      function injectHomeSocial() {
+        var allDivs = document.querySelectorAll('div');
+        for (var i = 0; i < allDivs.length; i++) {
+          var d = allDivs[i];
+          if (d.textContent && d.textContent.indexOf('Headquarters') !== -1 && 
+              d.textContent.indexOf('cfo@neptunepetrochemicals.com') !== -1 &&
+              d.textContent.indexOf('Request a Quote') !== -1 &&
+              !d.querySelector('.neptune-social-icons')) {
+            var quoteBtn = null;
+            var links = d.querySelectorAll('a');
+            for (var j = 0; j < links.length; j++) {
+              if (links[j].textContent.indexOf('Request a Quote') !== -1) {
+                quoteBtn = links[j];
+                break;
+              }
+            }
+            if (quoteBtn) {
+              var socialDiv = document.createElement('div');
+              socialDiv.className = 'neptune-social-icons';
+              socialDiv.style.cssText = 'border-bottom: 1px solid rgba(255,255,255,0.3); padding: 20px 0;';
+              var labelDiv = document.createElement('div');
+              labelDiv.style.cssText = 'font-size: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.25em; color: var(--sky); margin-bottom: 8px; line-height: 1;';
+              labelDiv.textContent = 'Social';
+              socialDiv.appendChild(labelDiv);
+              var iconsRow = document.createElement('div');
+              iconsRow.style.cssText = 'display: flex; gap: 16px; align-items: center;';
+              var makeLink = function(href, svg) {
+                var a = document.createElement('a');
+                a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
+                a.style.cssText = 'color: rgba(255,255,255,0.85); transition: color 0.2s, transform 0.2s; display: inline-flex;';
+                a.innerHTML = svg;
+                a.onmouseover = function() { this.style.color = '#3b82f6'; this.style.transform = 'scale(1.15)'; };
+                a.onmouseout = function() { this.style.color = 'rgba(255,255,255,0.85)'; this.style.transform = 'scale(1)'; };
+                return a;
+              };
+              iconsRow.appendChild(makeLink('https://www.facebook.com/NeptuneTL', fbSvg));
+              iconsRow.appendChild(makeLink('https://x.com/NeptuneTradelin', xSvg));
+              iconsRow.appendChild(makeLink('https://www.linkedin.com/company/neptunetpetrochemicalslimited/home/', liSvg));
+              socialDiv.appendChild(iconsRow);
+              quoteBtn.parentNode.insertBefore(socialDiv, quoteBtn);
+            }
+          }
+        }
+      }
+
+      // === CONTACT PAGE: sidebar with space-y-6 ===
+      function injectContactSocial() {
+        // Don't use a flag - React may wipe injected DOM on re-render
+        // The .neptune-social-contact check prevents duplicates
+        var containers = document.querySelectorAll('.space-y-6');
+        for (var c = 0; c < containers.length; c++) {
+          var container = containers[c];
+          if (container.textContent && 
+              container.textContent.indexOf('Finance Dept') !== -1 &&
+              container.textContent.indexOf('Corporate Emails') !== -1 &&
+              !container.querySelector('.neptune-social-contact')) {
+            
+            var socialSection = document.createElement('div');
+            socialSection.className = 'neptune-social-contact';
+            socialSection.innerHTML = 
+              '<div class="flex items-center gap-3 text-electric font-mono text-[11px] uppercase tracking-widest mb-3">' +
+                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.5"></line></svg>' +
+                '<span>Social</span>' +
+              '</div>' +
+              '<h3 class="font-display text-2xl font-bold tracking-tight mb-4">Connect With Us</h3>' +
+              '<div class="flex gap-5 items-center">' +
+                '<a href="https://www.facebook.com/NeptuneTL" target="_blank" rel="noopener noreferrer" class="text-ink/60 hover:text-electric transition-colors" style="display:inline-flex">' + fbSvg + '</a>' +
+                '<a href="https://x.com/NeptuneTradelin" target="_blank" rel="noopener noreferrer" class="text-ink/60 hover:text-electric transition-colors" style="display:inline-flex">' + xSvg + '</a>' +
+                '<a href="https://www.linkedin.com/company/neptunetpetrochemicalslimited/home/" target="_blank" rel="noopener noreferrer" class="text-ink/60 hover:text-electric transition-colors" style="display:inline-flex">' + liSvg + '</a>' +
+              '</div>';
+
+            container.appendChild(socialSection);
+          }
+        }
+      }
+
+      function injectAll() {
+        injectHomeSocial();
+        injectContactSocial();
+        updateAboutUsActive();
+      }
+      
+      // Use MutationObserver to wait for React to render
+      var observer = new MutationObserver(function() { injectAll(); });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      
+      // Also try on DOMContentLoaded and after delays
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(injectAll, 500);
+        setTimeout(injectAll, 1500);
+        setTimeout(injectAll, 3000);
+      });
+    })();
+  </script>
+</body>
+</html>

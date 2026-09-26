@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Dhruva Capital Services Ltd.</title>
+
+    <meta name="description" content="Dhruva Capital is a Non-Banking Financial Company (NBFC) registered with RBI, providing financial solutions including Business Loans, MSME Loans, Home Loans, and more.">
+    <meta name="keywords" content="Dhruva Capital, NBFC, Business Loan, MSME Loan, Home Loan, Financial Services, Investment Services">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dhruva Capital">
+    <meta property="og:title" content="Dhruva Capital - Leading NBFC in India | Financial Solutions &amp; Investment Services">
+    <meta property="og:description" content="Dhruva Capital is a Non-Banking Financial Company (NBFC) registered with RBI, providing financial solutions including Business Loans, MSME Loans, Home Loans, and more.">
+    <meta property="og:url" content="https://www.dhruvacapital.com">
+    <meta property="og:image" content="https://www.dhruvacapital.com/images/ogg.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dhruva Capital - Leading NBFC in India">
+    <meta name="twitter:description" content="Financial solutions including Business Loans, MSME Loans, Home Loans, and more. RBI Registered NBFC listed on BSE.">
+    <meta name="twitter:image" content="https://www.dhruvacapital.com/images/ogg.png">
+    <link rel="canonical" href="https://www.dhruvacapital.com">
+
+    <link rel="icon" href="https://www.dhruvacapital.com/images/favicon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preload" as="style" href="https://www.dhruvacapital.com/build/assets/app-oyfiLTbM.css" /><link rel="modulepreload" as="script" href="https://www.dhruvacapital.com/build/assets/app-BmjX8162.js" /><link rel="stylesheet" href="https://www.dhruvacapital.com/build/assets/app-oyfiLTbM.css" /><script type="module" src="https://www.dhruvacapital.com/build/assets/app-BmjX8162.js"></script></head>
+<body class="font-sans antialiased">
+    <nav
+    class="sticky top-0 left-0 right-0 z-50 transition-all duration-300 bg-white"
+    x-data="{ isScrolled: false, isMobileMenuOpen: false, isMobileProductsOpen: false }"
+    :class="isScrolled ? 'shadow-lg' : ''"
+    x-init="window.addEventListener('scroll', () => { isScrolled = window.scrollY > 20 }); $watch('isMobileMenuOpen', (open) => { document.body.style.overflow = open ? 'hidden' : '' })"
+    @keydown.escape.window="if (isMobileMenuOpen) { isMobileMenuOpen = false; isMobileProductsOpen = false }"
+>
+    <div class="container-custom">
+        <div class="flex items-center justify-between h-20">
+            <a href="https://www.dhruvacapital.com" class="flex items-center space-x-3">
+                <div class="relative h-12 w-auto">
+                    <img src="https://www.dhruvacapital.com/images/logo/cropped-logo-blue-new.png" alt="Dhruva Capital Logo"
+                         class="h-full w-auto object-contain">
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-8">
+                                                            <a href="https://www.dhruvacapital.com"
+                           class="font-medium transition-colors duration-200 relative group text-gray-700">
+                            Home
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/about"
+                           class="font-medium transition-colors duration-200 relative group text-gray-700">
+                            About Us
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+                        </a>
+                                                                                <div class="relative group"
+                             x-data="{
+                                openProducts: false,
+                                hoverTimer: null,
+                                openMenu() {
+                                    if (this.hoverTimer) clearTimeout(this.hoverTimer);
+                                    this.openProducts = true;
+                                },
+                                closeMenuWithDelay() {
+                                    if (this.hoverTimer) clearTimeout(this.hoverTimer);
+                                    this.hoverTimer = setTimeout(() => { this.openProducts = false; }, 120);
+                                },
+                                closeMenu() {
+                                    if (this.hoverTimer) clearTimeout(this.hoverTimer);
+                                    this.openProducts = false;
+                                }
+                             }"
+                             @mouseenter="openMenu()"
+                             @mouseleave="closeMenuWithDelay()"
+                             @focusin="openMenu()"
+                             @focusout="if (!$el.contains($event.relatedTarget)) closeMenu()"
+                             @keydown.escape.prevent.stop="closeMenu()">
+                            <a href="https://www.dhruvacapital.com/products"
+                               x-ref="productsTrigger"
+                               aria-haspopup="true"
+                               :aria-expanded="openProducts ? 'true' : 'false'"
+                               @keydown.arrow-down.prevent="openMenu(); $nextTick(() => $refs.firstProductLink && $refs.firstProductLink.focus())"
+                               class="font-medium transition-colors duration-200 relative group text-gray-700 inline-flex items-center gap-1">
+                                Products
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                                <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+                            </a>
+                            <div x-show="openProducts"
+                                 x-transition:enter="transition ease-out duration-150"
+                                 x-transition:enter-start="opacity-0 -translate-y-1"
+                                 x-transition:enter-end="opacity-100 translate-y-0"
+                                 x-transition:leave="transition ease-in duration-100"
+                                 x-transition:leave-start="opacity-100 translate-y-0"
+                                 x-transition:leave-end="opacity-0 -translate-y-1"
+                                 class="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50">
+                                <div class="max-h-96 overflow-y-auto border border-gray-200 rounded-lg shadow-xl p-4 bg-white overflow-hidden" style="width: 36rem; min-width: 36rem;">
+                                    <div class="grid grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gray-500">Business</h4>
+                                            <ul class="space-y-1">
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/business/business-loan"
+                                                            x-ref="firstProductLink"                                                            class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Business Loan
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/business/invoice-discounting"
+                                                                                                                      class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Invoice Discounting
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/business/loan-against-property-business"
+                                                                                                                      class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Loan Against Property (Business)
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/business/cvce-loan"
+                                                                                                                      class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            CV/CE Loan
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/business/lease-rental-discounting"
+                                                                                                                      class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Lease Rental Discounting
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/business/construction-finance"
+                                                                                                                      class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Construction Finance
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gray-500">Individual</h4>
+                                            <ul class="space-y-1">
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/individual/evcv-loan"
+                                                           class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            EV/CV Loan
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/individual/loan-against-property"
+                                                           class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Loan Against Property
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/individual/affordable-home-loan"
+                                                           class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Affordable Home Loan
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/individual/gold-loan"
+                                                           class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Gold Loan
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="https://www.dhruvacapital.com/individual/personal-loan"
+                                                           class="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                                            Personal Loan
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                                                <a href="https://www.dhruvacapital.com/dla"
+                           class="font-medium transition-colors duration-200 relative group text-gray-700">
+                            DLA
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/committee"
+                           class="font-medium transition-colors duration-200 relative group text-gray-700">
+                            Committee
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/policies"
+                           class="font-medium transition-colors duration-200 relative group text-gray-700">
+                            Policies
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/investor-desk"
+                           class="font-medium transition-colors duration-200 relative group text-gray-700">
+                            Investor&#039;s Desk
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/contact"
+                           class="font-medium transition-colors duration-200 relative group text-gray-700">
+                            Contact Us
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+                        </a>
+                                                    <a href="tel:+916289131033"
+                   class="fintech-btn-primary fintech-btn-compact">
+                    +91 6289131033
+                </a>
+            </div>
+
+            <button @click="isMobileMenuOpen = !isMobileMenuOpen; if (!isMobileMenuOpen) { isMobileProductsOpen = false; }"
+                    class="lg:hidden inline-flex items-center justify-center rounded-md border border-[color:var(--color-primary)]/25 bg-white p-2 text-[color:var(--color-primary)] shadow-sm transition-all duration-200 hover:bg-[color:var(--color-primary)]/5"
+                    :class="isMobileMenuOpen ? 'text-[color:var(--color-accent)] border-[color:var(--color-accent)]/35' : ''"
+                    aria-label="Toggle menu">
+                <svg x-show="!isMobileMenuOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg x-show="isMobileMenuOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    
+    <div
+        class="lg:hidden fixed inset-0 z-[90] bg-gray-900/45 backdrop-blur-sm"
+        x-show="isMobileMenuOpen"
+        x-cloak
+        x-transition:enter="transition-opacity ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition-opacity ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @click="isMobileMenuOpen = false; isMobileProductsOpen = false"
+        aria-hidden="true"
+    ></div>
+
+    <aside
+        class="lg:hidden fixed inset-y-0 left-0 z-[100] flex w-[min(20rem,100vw)] max-w-[90vw] flex-col border-r border-gray-200 bg-white shadow-2xl"
+        x-show="isMobileMenuOpen"
+        x-cloak
+        @click.stop
+        x-transition:enter="transform transition ease-out duration-300"
+        x-transition:enter-start="-translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transform transition ease-in duration-250"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="-translate-x-full"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Main navigation"
+    >
+        <div class="flex items-center justify-between border-b border-gray-100 px-4 py-4 shrink-0">
+            <span class="text-sm font-semibold uppercase tracking-wider text-gray-500">Menu</span>
+            <button
+                type="button"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-600 transition hover:bg-gray-100 hover:text-[color:var(--color-primary)]"
+                @click="isMobileMenuOpen = false; isMobileProductsOpen = false"
+                aria-label="Close menu"
+            >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 py-4">
+            <div class="flex flex-col gap-1">
+                                                            <a href="https://www.dhruvacapital.com"
+                           class="rounded-lg px-3 py-3 text-base font-medium text-gray-800 transition hover:bg-gray-50"
+                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                            Home
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/about"
+                           class="rounded-lg px-3 py-3 text-base font-medium text-gray-800 transition hover:bg-gray-50"
+                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                            About Us
+                        </a>
+                                                                                <div class="rounded-lg border border-transparent py-1">
+                            <button
+                                type="button"
+                                class="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-base font-medium text-gray-800 transition hover:bg-gray-50"
+                                @click="isMobileProductsOpen = !isMobileProductsOpen"
+                                :aria-expanded="isMobileProductsOpen ? 'true' : 'false'"
+                            >
+                                <span>Products</span>
+                                <svg class="h-5 w-5 shrink-0 text-gray-500 transition-transform duration-200" :class="isMobileProductsOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div
+                                class="mt-1 space-y-3 border-l-2 border-[color:var(--color-primary)]/20 pl-3"
+                                x-show="isMobileProductsOpen"
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 -translate-x-1"
+                                x-transition:enter-end="opacity-100 translate-x-0"
+                                x-transition:leave="transition ease-in duration-150"
+                                x-transition:leave-start="opacity-100 translate-x-0"
+                                x-transition:leave-end="opacity-0 -translate-x-1"
+                            >
+                                <a href="https://www.dhruvacapital.com/products" class="block rounded-md px-2 py-2 text-sm font-semibold text-[color:var(--color-primary)] hover:bg-[color:var(--color-primary)]/5" @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                    View all products
+                                </a>
+                                <div>
+                                    <h4 class="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Business</h4>
+                                                                            <a href="https://www.dhruvacapital.com/business/business-loan"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Business Loan
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/business/invoice-discounting"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Invoice Discounting
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/business/loan-against-property-business"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Loan Against Property (Business)
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/business/cvce-loan"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            CV/CE Loan
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/business/lease-rental-discounting"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Lease Rental Discounting
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/business/construction-finance"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Construction Finance
+                                        </a>
+                                                                    </div>
+                                <div>
+                                    <h4 class="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Individual</h4>
+                                                                            <a href="https://www.dhruvacapital.com/individual/evcv-loan"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            EV/CV Loan
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/individual/loan-against-property"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Loan Against Property
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/individual/affordable-home-loan"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Affordable Home Loan
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/individual/gold-loan"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Gold Loan
+                                        </a>
+                                                                            <a href="https://www.dhruvacapital.com/individual/personal-loan"
+                                           class="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                                            Personal Loan
+                                        </a>
+                                                                    </div>
+                            </div>
+                        </div>
+                                                                                <a href="https://www.dhruvacapital.com/dla"
+                           class="rounded-lg px-3 py-3 text-base font-medium text-gray-800 transition hover:bg-gray-50"
+                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                            DLA
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/committee"
+                           class="rounded-lg px-3 py-3 text-base font-medium text-gray-800 transition hover:bg-gray-50"
+                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                            Committee
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/policies"
+                           class="rounded-lg px-3 py-3 text-base font-medium text-gray-800 transition hover:bg-gray-50"
+                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                            Policies
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/investor-desk"
+                           class="rounded-lg px-3 py-3 text-base font-medium text-gray-800 transition hover:bg-gray-50"
+                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                            Investor&#039;s Desk
+                        </a>
+                                                                                <a href="https://www.dhruvacapital.com/contact"
+                           class="rounded-lg px-3 py-3 text-base font-medium text-gray-800 transition hover:bg-gray-50"
+                           @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                            Contact Us
+                        </a>
+                                                </div>
+        </div>
+
+        <div class="shrink-0 border-t border-gray-100">
+            <a href="https://www.dhruvacapital.com"
+               class="block px-2 pt-2 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[color:var(--color-primary)]/25 rounded-sm"
+               @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                <img src="https://www.dhruvacapital.com/images/logo/cropped-logo-blue-new.png"
+                     alt="Dhruva Capital"
+                     class="mx-auto block h-auto w-full object-contain object-center">
+            </a>
+            <div class="px-4 pb-4 pt-4">
+                <a href="tel:+916289131033"
+                   class="fintech-btn-primary flex w-full items-center justify-center py-3 text-center"
+                   @click="isMobileMenuOpen = false; isMobileProductsOpen = false">
+                    +91 6289131033
+                </a>
+            </div>
+        </div>
+    </aside>
+</nav>
+
+
+    <main class="min-h-screen">
+            
+    <section class="fintech-hero-gradient relative overflow-hidden py-14 sm:py-16 md:py-20 lg:py-24">
+        <div class="pointer-events-none absolute inset-0 opacity-10" style="background-image: linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 28px 28px;"></div>
+        <img
+            src="https://www.dhruvacapital.com/images/bg-abstract-graphics.png"
+            alt=""
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-70 -top-30 z-0 hidden select-none opacity-35 lg:block"
+            style="width:700px;"
+        >
+        <img
+            src="https://www.dhruvacapital.com/images/bg-abstract-graphics.png"
+            alt=""
+            aria-hidden="true"
+            class="pointer-events-none absolute -bottom-30 -left-70 z-0 hidden select-none opacity-28 lg:block"
+            style="width:700px; transform: rotate(180deg);"
+        >
+        <div class="container-custom relative z-10">
+            <div class="grid items-center gap-y-8 gap-x-10 md:gap-y-10 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
+                
+                <div class="order-2 w-full max-w-2xl text-left lg:order-1 lg:max-w-none">
+                    <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/85 sm:text-sm" style="color:#e5e7eb;">RBI Listed NBFC</p>
+                    <h1 class="text-3xl font-extrabold leading-[1.15] text-white sm:text-4xl md:text-[2.35rem] lg:text-5xl lg:leading-tight" style="color:#ffffff;">
+                        Accelerate Your Financial Growth with Smart Lending
+                    </h1>
+                    <p class="mt-4 max-w-xl text-base leading-relaxed text-gray-300 sm:text-[1.05rem] md:text-lg" style="color:#d1d5db;">
+                        Dhruva Capital Services Ltd. is an RBI-registered NBFC delivering secure, transparent, and
+                        growth-focused lending solutions for individuals and businesses.
+                    </p>
+                    <div class="mt-7 flex flex-wrap justify-start gap-3 sm:mt-8">
+                        <a href="https://www.dhruvacapital.com/products" class="fintech-btn-primary min-h-11 w-full min-w-[10rem] sm:w-auto">
+                            Get Started Free
+                        </a>
+                        <a href="https://www.dhruvacapital.com/products" class="min-h-11 w-full min-w-[10rem] rounded-lg border border-white px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white hover:text-[#1F1B4D] sm:w-auto">
+                            Explore Solutions
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-1 relative mx-auto w-full max-w-md sm:max-w-lg lg:order-2 lg:mx-0 lg:max-w-none">
+                    <img
+                        src="https://www.dhruvacapital.com/images/hero-banner-dhruva.webp"
+                        alt="Dhruva Capital hero banner visual"
+                        class="hero-visual-float mx-auto w-full max-w-md rounded-2xl sm:max-w-lg lg:max-w-xl"
+                    >
+                    <div class="absolute -left-35 top-5 hidden rounded-2xl border border-white/70 bg-white/90 px-4 py-3 shadow-[0_18px_35px_-18px_rgba(15,23,42,0.55)] backdrop-blur-md lg:block">
+                        <div class="flex items-center gap-2.5">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200">
+                                <i data-lucide="clock-3" class="h-4 w-4"></i>
+                            </span>
+                            <div class="text-left">
+                                <p class="text-[11px] uppercase tracking-wide text-[color:var(--color-text-muted)]">Approval TAT</p>
+                                <p class="text-sm font-semibold text-[color:var(--color-text-primary)]">Fast-track approvals</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -right-3 bottom-10 hidden rounded-2xl border border-white/70 bg-white/90 px-4 py-3 shadow-[0_18px_35px_-18px_rgba(15,23,42,0.55)] backdrop-blur-md lg:block">
+                        <div class="flex items-center gap-2.5">
+                            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-blue-700 ring-1 ring-blue-200">
+                                <i data-lucide="badge-check" class="h-4 w-4"></i>
+                            </span>
+                            <div class="text-left">
+                                <p class="text-[11px] uppercase tracking-wide text-[color:var(--color-text-muted)]">Approval Rate</p>
+                                <p class="text-sm font-semibold text-[color:var(--color-text-primary)]">High approval standards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-30 bg-white pb-0 pt-0 md:pt-0">
+        <div class="container-custom max-w-6xl">
+            <div class="relative z-30 mt-6 transform rounded-2xl border border-white/35 bg-white/60 p-[1px] shadow-[0_24px_60px_-28px_rgba(15,23,42,0.55)] backdrop-blur-lg md:mt-0 md:-translate-y-1/2 md:-mb-[8rem]">
+                <div class="rounded-2xl bg-white/70 px-4 py-6 backdrop-blur-md sm:px-6 sm:py-7 md:px-8 md:py-8">
+                <!-- <div class="mb-5 border-b border-white/45 pb-4 text-center">
+                    <h2 class="text-2xl font-extrabold text-[color:var(--color-text-primary)]">Trust Section</h2>
+                </div> -->
+                <div class="grid grid-cols-2 items-center gap-6 text-center md:grid-cols-4">
+                    <div class="group rounded-xl bg-white px-3 py-4 transition-all duration-300 hover:scale-105 hover:bg-[linear-gradient(to_bottom,rgba(30,58,138,0.12)_0%,rgba(42,47,122,0.10)_55%,rgba(198,40,40,0.12)_100%)]">
+                        <div class="mx-auto mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--color-primary)]/10 text-[color:var(--color-primary)] ring-1 ring-[color:var(--color-primary)]/20 transition-all duration-300">
+                            <i data-lucide="users" class="h-5 w-5"></i>
+                        </div>
+                        <p class="text-xl font-semibold text-gray-900 transition-colors duration-300 group-hover:text-white md:text-2xl">Trusted nationwide</p>
+                        <p class="text-base font-medium text-gray-600 transition-colors duration-300 group-hover:text-white/90">Borrower relationships</p>
+                    </div>
+                    <div class="group rounded-xl bg-white px-3 py-4 transition-all duration-300 hover:scale-105 hover:bg-[linear-gradient(to_bottom,rgba(30,58,138,0.12)_0%,rgba(42,47,122,0.10)_55%,rgba(198,40,40,0.12)_100%)]">
+                        <div class="mx-auto mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--color-primary)]/10 text-[color:var(--color-primary)] ring-1 ring-[color:var(--color-primary)]/20 transition-all duration-300">
+                            <i data-lucide="hand-coins" class="h-5 w-5"></i>
+                        </div>
+                        <p class="text-xl font-semibold text-gray-900 transition-colors duration-300 group-hover:text-white md:text-2xl">Strong lending scale</p>
+                        <p class="text-base font-medium text-gray-600 transition-colors duration-300 group-hover:text-white/90">Credit facilitation</p>
+                    </div>
+                    <div class="group rounded-xl bg-white px-3 py-4 transition-all duration-300 hover:scale-105 hover:bg-[linear-gradient(to_bottom,rgba(30,58,138,0.12)_0%,rgba(42,47,122,0.10)_55%,rgba(198,40,40,0.12)_100%)]">
+                        <div class="mx-auto mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--color-primary)]/10 text-[color:var(--color-primary)] ring-1 ring-[color:var(--color-primary)]/20 transition-all duration-300">
+                            <i data-lucide="clock-3" class="h-5 w-5"></i>
+                        </div>
+                        <p class="text-xl font-semibold text-gray-900 transition-colors duration-300 group-hover:text-white md:text-2xl">Deep experience</p>
+                        <p class="text-base font-medium text-gray-600 transition-colors duration-300 group-hover:text-white/90">Experience</p>
+                    </div>
+                    <div class="group rounded-xl bg-white px-3 py-4 transition-all duration-300 hover:scale-105 hover:bg-[linear-gradient(to_bottom,rgba(30,58,138,0.12)_0%,rgba(42,47,122,0.10)_55%,rgba(198,40,40,0.12)_100%)]">
+                        <div class="mx-auto mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--color-accent)]/10 text-[color:var(--color-accent)] ring-1 ring-[color:var(--color-accent)]/20 transition-all duration-300">
+                            <i data-lucide="shield-check" class="h-5 w-5"></i>
+                        </div>
+                        <p class="text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-white">RBI Listed NBFC</p>
+                        <p class="text-base font-medium text-gray-600 transition-colors duration-300 group-hover:text-white/90">Regulated Entity</p>
+                    </div>
+                </div>
+        </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pb-14 pt-20 md:pb-20 md:pt-28">
+        <div class="container-custom">
+            <div class="mb-10 mt-4 text-center md:mt-8">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--color-accent)]">Product Section</p>
+                <h2 class="mt-2 text-3xl font-extrabold text-[color:var(--color-text-primary)] md:text-4xl">Lending Solutions for Every Need</h2>
+                <a href="https://www.dhruvacapital.com/products" class="fintech-btn-outline mt-6">
+                    View All Products
+                </a>
+            </div>
+
+            <div class="flex flex-col gap-6 lg:grid lg:grid-cols-3 lg:gap-6">
+                                    <article
+                        data-product-card
+                        class="flex w-full flex-col rounded-[2rem] border border-slate-100/80 bg-white p-6 shadow-sm transition hover:shadow-md md:rounded-[2.25rem]"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex shrink-0 items-center justify-center shrink-0">
+    <i data-lucide="briefcase" class="h-10 w-10 text-[color:var(--color-accent)]"></i>
+</div>
+                            <h3 class="font-product-heading min-w-0 flex-1 text-left leading-snug text-[color:var(--color-text-primary)]">
+                                Business Loan
+                            </h3>
+                        </div>
+                        <p class="mt-4 flex-1 text-sm leading-relaxed text-gray-600">
+                            Working capital and expansion finance tailored for MSMEs and growth-stage businesses.
+                        </p>
+                        <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+                            <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary fintech-btn-compact gap-1">
+                                Apply Now
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                            <a href="https://www.dhruvacapital.com/business/business-loan" class="fintech-btn-outline fintech-btn-compact gap-1">
+                                Learn More
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </article>
+                                    <article
+                        data-product-card
+                        class="flex w-full flex-col rounded-[2rem] border border-slate-100/80 bg-white p-6 shadow-sm transition hover:shadow-md md:rounded-[2.25rem]"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex shrink-0 items-center justify-center shrink-0">
+    <i data-lucide="car" class="h-10 w-10 text-[color:var(--color-accent)]"></i>
+</div>
+                            <h3 class="font-product-heading min-w-0 flex-1 text-left leading-snug text-[color:var(--color-text-primary)]">
+                                EV/CV Loan
+                            </h3>
+                        </div>
+                        <p class="mt-4 flex-1 text-sm leading-relaxed text-gray-600">
+                            Finance your electric or commercial vehicle with transparent pricing and practical repayment plans.
+                        </p>
+                        <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+                            <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary fintech-btn-compact gap-1">
+                                Apply Now
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                            <a href="https://www.dhruvacapital.com/individual/evcv-loan" class="fintech-btn-outline fintech-btn-compact gap-1">
+                                Learn More
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </article>
+                                    <article
+                        data-product-card
+                        class="flex w-full flex-col rounded-[2rem] border border-slate-100/80 bg-white p-6 shadow-sm transition hover:shadow-md md:rounded-[2.25rem]"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex shrink-0 items-center justify-center shrink-0">
+    <i data-lucide="house" class="h-10 w-10 text-[color:var(--color-accent)]"></i>
+</div>
+                            <h3 class="font-product-heading min-w-0 flex-1 text-left leading-snug text-[color:var(--color-text-primary)]">
+                                Loan Against Property
+                            </h3>
+                        </div>
+                        <p class="mt-4 flex-1 text-sm leading-relaxed text-gray-600">
+                            Unlock property value for personal or business needs without selling your asset.
+                        </p>
+                        <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+                            <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary fintech-btn-compact gap-1">
+                                Apply Now
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                            <a href="https://www.dhruvacapital.com/individual/loan-against-property" class="fintech-btn-outline fintech-btn-compact gap-1">
+                                Learn More
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </article>
+                                    <article
+                        data-product-card
+                        class="flex w-full flex-col rounded-[2rem] border border-slate-100/80 bg-white p-6 shadow-sm transition hover:shadow-md md:rounded-[2.25rem]"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex shrink-0 items-center justify-center shrink-0">
+    <i data-lucide="house" class="h-10 w-10 text-[color:var(--color-accent)]"></i>
+</div>
+                            <h3 class="font-product-heading min-w-0 flex-1 text-left leading-snug text-[color:var(--color-text-primary)]">
+                                Affordable Home Loan
+                            </h3>
+                        </div>
+                        <p class="mt-4 flex-1 text-sm leading-relaxed text-gray-600">
+                            Affordable housing finance with customer-friendly terms for first-time and existing home buyers.
+                        </p>
+                        <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+                            <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary fintech-btn-compact gap-1">
+                                Apply Now
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                            <a href="https://www.dhruvacapital.com/individual/affordable-home-loan" class="fintech-btn-outline fintech-btn-compact gap-1">
+                                Learn More
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </article>
+                                    <article
+                        data-product-card
+                        class="flex w-full flex-col rounded-[2rem] border border-slate-100/80 bg-white p-6 shadow-sm transition hover:shadow-md md:rounded-[2.25rem]"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex shrink-0 items-center justify-center shrink-0">
+    <i data-lucide="coins" class="h-10 w-10 text-[color:var(--color-accent)]"></i>
+</div>
+                            <h3 class="font-product-heading min-w-0 flex-1 text-left leading-snug text-[color:var(--color-text-primary)]">
+                                Gold Loan
+                            </h3>
+                        </div>
+                        <p class="mt-4 flex-1 text-sm leading-relaxed text-gray-600">
+                            Get quick liquidity against your gold with secure handling and minimal documentation.
+                        </p>
+                        <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+                            <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary fintech-btn-compact gap-1">
+                                Apply Now
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                            <a href="https://www.dhruvacapital.com/individual/gold-loan" class="fintech-btn-outline fintech-btn-compact gap-1">
+                                Learn More
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </article>
+                                    <article
+                        data-product-card
+                        class="flex w-full flex-col rounded-[2rem] border border-slate-100/80 bg-white p-6 shadow-sm transition hover:shadow-md md:rounded-[2.25rem]"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex shrink-0 items-center justify-center shrink-0">
+    <i data-lucide="file-text" class="h-10 w-10 text-[color:var(--color-accent)]"></i>
+</div>
+                            <h3 class="font-product-heading min-w-0 flex-1 text-left leading-snug text-[color:var(--color-text-primary)]">
+                                Invoice Discounting
+                            </h3>
+                        </div>
+                        <p class="mt-4 flex-1 text-sm leading-relaxed text-gray-600">
+                            Improve working capital by unlocking funds tied up in unpaid invoices.
+                        </p>
+                        <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+                            <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary fintech-btn-compact gap-1">
+                                Apply Now
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                            <a href="https://www.dhruvacapital.com/business/invoice-discounting" class="fintech-btn-outline fintech-btn-compact gap-1">
+                                Learn More
+                                <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-scroll bg-cover bg-center py-16 md:bg-fixed" style="background-image: linear-gradient(135deg, rgba(31,27,77,0.88) 0%, rgba(42,47,122,0.84) 55%, rgba(30,58,138,0.82) 100%), url('https://www.dhruvacapital.com/images/bg-abstract-graphics.png');">
+        <div class="container-custom">
+            <div class="mb-10 text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] !text-white">How It Works</p>
+                <h2 class="mt-2 text-3xl font-extrabold !text-white">Simple Steps to Get Started</h2>
+            </div>
+            <div class="grid gap-8 md:grid-cols-4">
+                                    <div class="relative rounded-2xl border border-[color:var(--color-primary)]/10 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--color-primary)] text-white shadow-md ring-4 ring-[color:var(--color-primary)]/10">
+                            1
+                        </div>
+                        <p class="font-bold text-[color:var(--color-text-primary)]">Apply</p>
+                                                    <div class="absolute left-[58%] top-10 hidden h-[2px] w-[88%] bg-gradient-to-r from-[color:var(--color-primary)]/50 to-[color:var(--color-primary)]/10 md:block"></div>
+                                            </div>
+                                    <div class="relative rounded-2xl border border-[color:var(--color-primary)]/10 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--color-primary)] text-white shadow-md ring-4 ring-[color:var(--color-primary)]/10">
+                            2
+                        </div>
+                        <p class="font-bold text-[color:var(--color-text-primary)]">Verify</p>
+                                                    <div class="absolute left-[58%] top-10 hidden h-[2px] w-[88%] bg-gradient-to-r from-[color:var(--color-primary)]/50 to-[color:var(--color-primary)]/10 md:block"></div>
+                                            </div>
+                                    <div class="relative rounded-2xl border border-[color:var(--color-primary)]/10 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--color-primary)] text-white shadow-md ring-4 ring-[color:var(--color-primary)]/10">
+                            3
+                        </div>
+                        <p class="font-bold text-[color:var(--color-text-primary)]">Approve</p>
+                                                    <div class="absolute left-[58%] top-10 hidden h-[2px] w-[88%] bg-gradient-to-r from-[color:var(--color-primary)]/50 to-[color:var(--color-primary)]/10 md:block"></div>
+                                            </div>
+                                    <div class="relative rounded-2xl border border-[color:var(--color-primary)]/10 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--color-primary)] text-white shadow-md ring-4 ring-[color:var(--color-primary)]/10">
+                            4
+                        </div>
+                        <p class="font-bold text-[color:var(--color-text-primary)]">Disburse</p>
+                                            </div>
+                            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-16">
+        <div class="container-custom">
+            <div class="mb-10 text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--color-accent)]">Why Choose Us</p>
+                <h2 class="mt-2 text-3xl font-extrabold text-[color:var(--color-text-primary)]">Built for Reliable Lending</h2>
+            </div>
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <article class="fintech-card rounded-2xl p-6 shadow-lg hover:scale-105 transition-all">
+    <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-primary)]/10">
+        <svg class="h-5 w-5 text-[color:var(--color-primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M13 2 4 14h7l-1 8 10-13h-7l0-7z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-[color:var(--color-text-primary)]">Fast Processing</h3>
+    <p class="mt-2 text-sm text-[color:var(--color-text-secondary)]">Quick eligibility checks and approval workflows for faster disbursals.</p>
+</article>
+                <article class="fintech-card rounded-2xl p-6 shadow-lg hover:scale-105 transition-all">
+    <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-primary)]/10">
+        <svg class="h-5 w-5 text-[color:var(--color-primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2H3V7zm0 4h18v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6zm13 2h4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-[color:var(--color-text-primary)]">Transparent Charges</h3>
+    <p class="mt-2 text-sm text-[color:var(--color-text-secondary)]">Clear pricing with no hidden surprises across products and tenures.</p>
+</article>
+                <article class="fintech-card rounded-2xl p-6 shadow-lg hover:scale-105 transition-all">
+    <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-primary)]/10">
+        <svg class="h-5 w-5 text-[color:var(--color-primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2 4 5v6c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V5l-8-3z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-[color:var(--color-text-primary)]">Secure &amp; Compliant</h3>
+    <p class="mt-2 text-sm text-[color:var(--color-text-secondary)]">Strong governance and RBI-compliant lending processes you can trust.</p>
+</article>
+                <article class="fintech-card rounded-2xl p-6 shadow-lg hover:scale-105 transition-all">
+    <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-primary)]/10">
+        <svg class="h-5 w-5 text-[color:var(--color-primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 18v-2a2 2 0 0 1 2-2h1m8 4v-2a2 2 0 0 0-2-2h-1M8 14a4 4 0 1 1 8 0m-4 8v-3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-[color:var(--color-text-primary)]">Expert Support</h3>
+    <p class="mt-2 text-sm text-[color:var(--color-text-secondary)]">Dedicated relationship support from application to final disbursal.</p>
+</article>
+            </div>
+        </div>
+    </section>
+
+    <section class="fintech-hero-gradient relative overflow-hidden py-16 md:py-24">
+        <div class="pointer-events-none absolute inset-0 opacity-10" style="background-image: linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 28px 28px;"></div>
+        <img
+            src="https://www.dhruvacapital.com/images/bg-abstract-graphics.png"
+            alt=""
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-70 -top-30 z-0 hidden select-none opacity-35 md:block"
+            style="width:700px;"
+        >
+        <img
+            src="https://www.dhruvacapital.com/images/bg-abstract-graphics.png"
+            alt=""
+            aria-hidden="true"
+            class="pointer-events-none absolute -bottom-30 -left-70 z-0 hidden select-none opacity-28 md:block"
+            style="width:700px; transform: rotate(180deg);"
+        >
+        <div class="container-custom relative z-10">
+            <div class="mb-10 text-center">
+                <h2 class="!mt-0 text-3xl !text-white md:text-4xl">
+                    <span class="font-normal">Tools to help</span> <span class="font-extrabold">you decide</span>
+                </h2>
+            </div>
+
+            <div class="fintech-card mx-auto max-w-5xl rounded-2xl p-5 shadow-xl md:p-8">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <label for="calc-product-type" class="sr-only">Loan product</label>
+                    <select id="calc-product-type" class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-[color:var(--color-text-primary)] shadow-sm focus:border-[color:var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]/20">
+                        <option value="personal">Personal Loan</option>
+                        <option value="business">Business Loan</option>
+                        <option value="home">Affordable Home Loan</option>
+                        <option value="gold">Gold Loan</option>
+                    </select>
+                </div>
+
+                <div class="mb-6 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Calculator type">
+                    <button type="button" role="tab" aria-selected="true" data-calc-tab="emi" class="calc-tab-btn rounded-full px-5 py-2.5 text-sm font-semibold transition">EMI Calculator</button>
+                    <button type="button" role="tab" aria-selected="false" data-calc-tab="prepayment" class="calc-tab-btn rounded-full px-5 py-2.5 text-sm font-semibold transition">Pre-Payment Calculator</button>
+                    <button type="button" role="tab" aria-selected="false" data-calc-tab="eligibility" class="calc-tab-btn rounded-full px-5 py-2.5 text-sm font-semibold transition">Eligibility Calculator</button>
+                </div>
+
+                
+                <div id="panel-emi" class="calc-panel grid gap-8 lg:grid-cols-2" data-panel="emi">
+                    <div class="space-y-6">
+                        <div>
+                            <div class="mb-2 flex items-center justify-between gap-2">
+                                <span class="text-sm font-medium text-[color:var(--color-text-primary)]">Loan amount</span>
+                                <div class="flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-[color:var(--color-text-primary)]">
+                                    <span class="text-slate-500">₹</span>
+                                    <input id="emi-amount-input" type="text" inputmode="numeric" autocomplete="off" class="ml-1 w-28 border-0 bg-transparent p-0 text-right outline-none" value="1,00,000">
+                                </div>
+                            </div>
+                            <input id="emi-amount" type="range" min="40000" max="3500000" step="10000" value="100000" class="calc-range mt-2 w-full">
+                            <div class="mt-1 flex justify-between text-xs text-[color:var(--color-text-muted)]">
+                                <span>Lower sample bound</span>
+                                <span>Upper sample bound</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                                <span class="text-sm font-medium text-[color:var(--color-text-primary)]">Loan duration</span>
+                                <div class="flex items-center gap-2">
+                                    <div class="inline-flex rounded-lg border border-slate-200 p-0.5 text-xs font-semibold">
+                                        <button type="button" id="tenure-unit-yr" class="tenure-unit rounded-md px-3 py-1 transition" data-unit="yr">Yr</button>
+                                        <button type="button" id="tenure-unit-mo" class="tenure-unit rounded-md px-3 py-1 transition" data-unit="mo">Mo</button>
+                                    </div>
+                                    <input id="emi-duration-input" type="number" min="1" max="72" value="2" class="w-14 rounded-lg border border-slate-200 px-2 py-1 text-center text-sm font-semibold text-[color:var(--color-text-primary)]">
+                                </div>
+                            </div>
+                            <input id="emi-duration-range" type="range" min="1" max="6" step="1" value="2" class="calc-range mt-2 w-full">
+                            <div id="emi-duration-labels" class="mt-1 flex justify-between text-xs text-[color:var(--color-text-muted)]">
+                                <span>Shorter term</span>
+                                <span>Longer term</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2 flex items-center justify-between gap-2">
+                                <span class="text-sm font-medium text-[color:var(--color-text-primary)]">Rate of interest</span>
+                                <div class="flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-[color:var(--color-text-primary)]">
+                                    <input id="emi-rate-input" type="text" inputmode="decimal" class="w-14 border-0 bg-transparent p-0 text-right outline-none" value="10.99">
+                                    <span class="text-slate-500">%</span>
+                                </div>
+                            </div>
+                            <input id="emi-rate" type="range" min="10.99" max="35" step="0.01" value="10.99" class="calc-range mt-2 w-full">
+                            <div class="mt-1 flex justify-between text-xs text-[color:var(--color-text-muted)]">
+                                <span>Lower indicative band (p.a.)</span>
+                                <span>Upper policy cap (p.a.)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="rounded-2xl bg-[color:var(--color-accent)] px-5 py-4 text-center text-white shadow-md">
+                            <p class="text-sm font-medium !text-white">Monthly EMI</p>
+                            <p id="emi-result" class="mt-1 !text-[25px] font-bold !text-white tracking-tight">₹0*</p>
+                        </div>
+                        <div class="flex flex-1 flex-col rounded-2xl border border-slate-100 bg-white p-4 shadow-sm md:flex-row md:items-center md:gap-6">
+                            <div id="emi-pie" class="mx-auto h-36 w-36 shrink-0 rounded-full border border-slate-100 shadow-inner" style="background: conic-gradient(rgb(30 64 175) 0deg 0deg, rgb(198 40 40) 0deg 360deg);" role="img" aria-label="Principal versus interest breakdown"></div>
+                            <div class="mt-4 flex-1 space-y-3 md:mt-0">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-800" aria-hidden="true"></span>
+                                    <span class="text-[color:var(--color-text-secondary)]">Total Amount Payable</span>
+                                    <span id="emi-total-payable" class="ml-auto font-semibold text-[color:var(--color-text-primary)]">₹0*</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-[color:var(--color-accent)]" aria-hidden="true"></span>
+                                    <span class="text-[color:var(--color-text-secondary)]">Total Interest Payable</span>
+                                    <span id="emi-total-interest" class="ml-auto font-semibold text-[color:var(--color-text-primary)]">₹0*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary w-full">Apply Now</a>
+                    </div>
+                </div>
+
+                
+                <div id="panel-prepayment" class="calc-panel hidden grid gap-8 lg:grid-cols-2" data-panel="prepayment">
+                    <div class="space-y-6">
+                        <p class="text-sm text-[color:var(--color-text-secondary)]">Adjust your loan details and one-time prepayment to see a revised EMI.</p>
+                        <div>
+                            <div class="mb-2 flex items-center justify-between gap-2">
+                                <span class="text-sm font-medium text-[color:var(--color-text-primary)]">Loan amount</span>
+                                <div class="flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold">
+                                    <span class="text-slate-500">₹</span>
+                                    <input id="pre-amount-input" type="text" inputmode="numeric" class="ml-1 w-28 border-0 bg-transparent p-0 text-right outline-none" value="1,00,000">
+                                </div>
+                            </div>
+                            <input id="pre-amount" type="range" min="40000" max="3500000" step="10000" value="100000" class="calc-range mt-2 w-full">
+                        </div>
+                        <div>
+                            <div class="mb-2 flex items-center justify-between gap-2">
+                                <span class="text-sm font-medium text-[color:var(--color-text-primary)]">Prepayment amount</span>
+                                <div class="flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold">
+                                    <span class="text-slate-500">₹</span>
+                                    <input id="prepay-amount-input" type="text" inputmode="numeric" class="ml-1 w-24 border-0 bg-transparent p-0 text-right outline-none" value="10,000">
+                                </div>
+                            </div>
+                            <input id="prepay-amount" type="range" min="0" max="500000" step="5000" value="10000" class="calc-range mt-2 w-full">
+                        </div>
+                        <div>
+                            <div class="mb-2 flex items-center justify-between gap-2">
+                                <span class="text-sm font-medium text-[color:var(--color-text-primary)]">Rate of interest (p.a.)</span>
+                                <div class="flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold">
+                                    <input id="pre-rate-input" type="text" inputmode="decimal" class="w-14 border-0 bg-transparent p-0 text-right outline-none" value="10.99">
+                                    <span class="text-slate-500">%</span>
+                                </div>
+                            </div>
+                            <input id="pre-rate" type="range" min="10.99" max="35" step="0.01" value="10.99" class="calc-range mt-2 w-full">
+                        </div>
+                        <div>
+                            <div class="mb-2 flex items-center justify-between gap-2">
+                                <span class="text-sm font-medium text-[color:var(--color-text-primary)]">Remaining tenure (months)</span>
+                                <input id="pre-tenure-input" type="number" min="6" max="120" value="24" class="w-16 rounded-lg border border-slate-200 px-2 py-1 text-center text-sm font-semibold">
+                            </div>
+                            <input id="pre-tenure" type="range" min="6" max="120" step="1" value="24" class="calc-range mt-2 w-full">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="rounded-2xl bg-[color:var(--color-accent)] px-5 py-4 text-center text-white shadow-md">
+                            <p class="text-sm font-medium text-white/90">Revised Monthly EMI</p>
+                            <p id="prepay-emi-result" class="mt-1 text-3xl font-bold tracking-tight md:text-4xl">₹0*</p>
+                        </div>
+                        <div class="rounded-2xl border border-slate-100 bg-white p-4 text-sm shadow-sm">
+                            <p class="text-[color:var(--color-text-secondary)]">Interest saved vs. original schedule (indicative)</p>
+                            <p id="prepay-interest-saved" class="mt-2 text-xl font-bold text-[color:var(--color-primary)]">₹0*</p>
+                        </div>
+                        <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary w-full">Apply Now</a>
+                    </div>
+                </div>
+
+                
+                <div id="panel-eligibility" class="calc-panel hidden grid gap-8 lg:grid-cols-2" data-panel="eligibility">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-[color:var(--color-text-primary)]">Monthly income <span id="eligibility-income-value" class="font-normal text-[color:var(--color-text-muted)]">(use slider)</span></label>
+                            <input id="eligibility-income" type="range" min="15000" max="300000" step="5000" value="80000" class="calc-range w-full">
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-[color:var(--color-text-primary)]">Existing EMIs <span id="eligibility-emi-value" class="font-normal text-[color:var(--color-text-muted)]">(use slider)</span></label>
+                            <input id="eligibility-emi" type="range" min="0" max="100000" step="2500" value="10000" class="calc-range w-full">
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-[color:var(--color-text-primary)]">Preferred tenure <span id="eligibility-tenure-value" class="font-normal text-[color:var(--color-text-muted)]">(use slider)</span></label>
+                            <input id="eligibility-tenure" type="range" min="12" max="240" step="12" value="48" class="calc-range w-full">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="rounded-2xl bg-[color:var(--color-accent)] px-5 py-4 text-center text-white shadow-md">
+                            <p class="text-sm font-medium text-white/90">Indicative profile fit</p>
+                            <p id="eligibility-result" class="mt-1 text-xl font-bold !text-white md:text-2xl">—*</p>
+                        </div>
+                        <p class="text-sm text-[color:var(--color-text-secondary)]">Based on indicative FOIR. Final eligibility depends on credit policy and verification.</p>
+                        <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary w-full">Apply Now</a>
+                    </div>
+                </div>
+
+                <p class="mt-6 text-xs leading-relaxed text-[color:var(--color-text-secondary)]">
+                    <strong class="text-[color:var(--color-text-primary)]">Disclaimer:</strong> The aforementioned values are indicative only. Actual EMI, interest, and eligibility are subject to internal credit assessment, documentation, and prevailing policy.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-16">
+        <div class="container-custom">
+            <div class="mb-10 text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--color-accent)]">Testimonials</p>
+                <h2 class="mt-2 text-3xl font-extrabold text-[color:var(--color-text-primary)]">What Our Clients Say</h2>
+                                </div>
+
+            <div class="grid gap-6 md:grid-cols-3">
+                                    <article class="fintech-card rounded-2xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                        <div class="mb-3 flex items-center gap-3">
+                            <div class="h-12 w-12 overflow-hidden rounded-full bg-[color:var(--color-background-light)]">
+                                <img src="https://www.dhruvacapital.com/images/user-avatar.svg" alt="Amit Sharma" class="h-full w-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="text-base font-semibold text-[color:var(--color-text-primary)]">Amit Sharma</h3>
+                                <p class="text-sm text-amber-500">★★★★★</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[color:var(--color-text-secondary)]">Quick sanction and transparent process. The team guided me through every step.</p>
+                    </article>
+                                    <article class="fintech-card rounded-2xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                        <div class="mb-3 flex items-center gap-3">
+                            <div class="h-12 w-12 overflow-hidden rounded-full bg-[color:var(--color-background-light)]">
+                                <img src="https://www.dhruvacapital.com/images/user-avatar.svg" alt="Sneha Agarwal" class="h-full w-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="text-base font-semibold text-[color:var(--color-text-primary)]">Sneha Agarwal</h3>
+                                <p class="text-sm text-amber-500">★★★★★</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[color:var(--color-text-secondary)]">Very smooth loan experience and professional support from onboarding to disbursal.</p>
+                    </article>
+                                    <article class="fintech-card rounded-2xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                        <div class="mb-3 flex items-center gap-3">
+                            <div class="h-12 w-12 overflow-hidden rounded-full bg-[color:var(--color-background-light)]">
+                                <img src="https://www.dhruvacapital.com/images/user-avatar.svg" alt="Rajesh Gupta" class="h-full w-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="text-base font-semibold text-[color:var(--color-text-primary)]">Rajesh Gupta</h3>
+                                <p class="text-sm text-amber-500">★★★★★</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[color:var(--color-text-secondary)]">Reliable NBFC partner for our business expansion requirements. Highly recommended.</p>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pb-8 pt-2">
+        <div class="container-custom">
+            <div class="mb-8 text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--color-accent)]">Coming soon</p>
+                <h2 class="mt-2 text-3xl font-extrabold text-[color:var(--color-text-primary)]">Dhruva loan app — in development</h2>
+                <p class="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-[color:var(--color-text-secondary)]">
+                    We are building a secure mobile experience to track applications, repayments, and documents in one place.
+                    Google Play and App Store links will be added here once the app is live.
+                </p>
+            </div>
+
+            <div class="relative mx-auto flex max-w-4xl items-end justify-center gap-3 opacity-90 md:gap-6">
+                <div class="w-28 overflow-hidden rounded-[1.6rem] border-4 border-slate-900 shadow-xl md:w-40 md:-mb-2">
+                    <img src="https://www.dhruvacapital.com/images/phone.png" alt="Preview of the Dhruva loan app interface (under development)" class="h-full w-full object-cover">
+                </div>
+                <div class="w-32 overflow-hidden rounded-[1.9rem] border-4 border-slate-900 shadow-2xl md:w-48">
+                    <img src="https://www.dhruvacapital.com/images/phone.png" alt="Preview of the Dhruva loan app interface (under development)" class="h-full w-full object-cover">
+                </div>
+                <div class="w-28 overflow-hidden rounded-[1.6rem] border-4 border-slate-900 shadow-xl md:w-40 md:-mb-2">
+                    <img src="https://www.dhruvacapital.com/images/phone.png" alt="Preview of the Dhruva loan app interface (under development)" class="h-full w-full object-cover">
+                </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600">
+                    App stores — coming soon
+                </span>
+                <a href="https://www.dhruvacapital.com/contact" class="fintech-btn-primary fintech-btn-compact">
+                    Contact us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="relative bg-[color:#1f1b4d] py-8 md:h-0 md:min-h-0 md:overflow-visible md:py-0">
+        <div class="container-custom">
+            <div class="relative z-10 mx-auto overflow-hidden rounded-2xl border border-red-400/80 px-5 py-8 text-center shadow-[0_0_0_1px_rgba(239,68,68,0.45),0_0_40px_rgba(239,68,68,0.35),0_24px_45px_-25px_rgba(15,23,42,0.78)] md:-mb-24 md:-translate-y-1/2 md:px-6 md:py-12" style="background:linear-gradient(138deg,#111742 0%,#1b2167 70%,#6f1d3a 100%);">
+                <div class="pointer-events-none absolute -bottom-12 -right-8 h-44 w-44 rounded-full bg-red-500/45 blur-3xl"></div>
+                <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(239,68,68,0.24)_0%,rgba(239,68,68,0.1)_24%,transparent_48%)]"></div>
+                <h2 class="relative text-2xl font-extrabold tracking-tight !text-white md:text-3xl">Get approved swiftly. Apply now!</h2>
+                <p class="relative mt-1 text-sm italic !text-white md:text-base">Digital-first journey. Apply now!</p>
+                <a href="https://www.dhruvacapital.com/products" class="fintech-btn-primary relative mt-3">
+                    Apply Now
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="bg-[color:var(--color-primary)] text-white">
+    <div class="container-custom pt-12 md:pt-40">
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+            <div class="space-y-4">
+                <a href="https://www.dhruvacapital.com" class="inline-flex items-center gap-3">
+                    <div class="flex w-33 items-center justify-center overflow-hidden rounded-xl border border-white/35 bg-white">
+                        <img src="https://www.dhruvacapital.com/images/logo/cropped-logo-blue-new.png" alt="Dhruva Capital Logo" class="h-30 object-contain" loading="lazy">
+                    </div>
+                </a>
+                <p class="text-sm leading-relaxed text-white/80">
+                    Dhruva Capital Services Ltd. is an RBI-registered NBFC focused on transparent,
+                    compliant, and growth-centric financial solutions.
+                </p>
+                <p class="inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-white">
+                    RBI Registered NBFC
+                </p>
+            </div>
+
+            <div>
+                <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-white/70">Quick Links</h3>
+                <ul class="space-y-2">
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/about" class="text-sm text-white/85 transition-all hover:text-white">
+                                About Us
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/products" class="text-sm text-white/85 transition-all hover:text-white">
+                                Products
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/investor-desk" class="text-sm text-white/85 transition-all hover:text-white">
+                                Investor&#039;s Desk
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/committee" class="text-sm text-white/85 transition-all hover:text-white">
+                                Committee
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/policies" class="text-sm text-white/85 transition-all hover:text-white">
+                                Policies
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/contact" class="text-sm text-white/85 transition-all hover:text-white">
+                                Contact Us
+                            </a>
+                        </li>
+                                    </ul>
+            </div>
+
+            <div>
+                <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-white/70">Products</h3>
+                <ul class="space-y-2">
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/business/business-loan" class="text-sm text-white/85 transition-all hover:text-white">
+                                Business Loan
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/individual/evcv-loan" class="text-sm text-white/85 transition-all hover:text-white">
+                                EV/CV Loan
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/individual/loan-against-property" class="text-sm text-white/85 transition-all hover:text-white">
+                                Loan Against Property
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/individual/affordable-home-loan" class="text-sm text-white/85 transition-all hover:text-white">
+                                Affordable Home Loan
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/individual/gold-loan" class="text-sm text-white/85 transition-all hover:text-white">
+                                Gold Loan
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.dhruvacapital.com/business/invoice-discounting" class="text-sm text-white/85 transition-all hover:text-white">
+                                Invoice Discounting
+                            </a>
+                        </li>
+                                    </ul>
+            </div>
+
+            <div>
+                <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-white/70">Contact</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="tel:+916289131033" class="inline-flex items-center gap-2 text-sm text-white/85 hover:text-white">
+                            <span>+91 6289131033</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@dhruvacapital.com" class="inline-flex items-center gap-2 text-sm text-white/85 hover:text-white">
+                            <span>info@dhruvacapital.com</span>
+                        </a>
+                    </li>
+                    <li class="pt-1">
+                        <p class="text-xs leading-relaxed text-white/70">
+                            <span class="font-semibold text-white/85">1600310837</span> — Please save this as our verified calling number for Dhruva Capital. Our customer care team may contact you from this number.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-white/70">Compliance</h3>
+                <ul class="space-y-2 text-sm text-white/85">
+                    <li>RBI Registered NBFC</li>
+                    <li>BSE Listed Entity</li>
+                    <li>CIN: L67120RJ1995PLC009479</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="mt-10 border-t border-white/15 pt-10">
+            <div class="grid gap-10 lg:grid-cols-3 lg:gap-12">
+                <div class="space-y-4">
+                    <p class="text-sm text-white/85">Lending &amp; financial solutions</p>
+                                    </div>
+
+                <div class="space-y-4">
+                    <p class="text-lg font-bold tracking-tight text-white">Dhruva Capital</p>
+                    <p class="text-sm text-white/80">NBFC services you can trust</p>
+                                    </div>
+
+                <div>
+                    <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-white/70">Follow Us</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="inline-flex h-9 w-9 cursor-default items-center justify-center rounded border border-white/25 bg-white/10 text-white/50" title="Social profiles coming soon" aria-hidden="true"><i class="fab fa-facebook-f text-sm"></i></span>
+                        <span class="inline-flex h-9 w-9 cursor-default items-center justify-center rounded border border-white/25 bg-white/10 text-white/50" title="Social profiles coming soon" aria-hidden="true"><i class="fab fa-x-twitter text-sm"></i></span>
+                        <span class="inline-flex h-9 w-9 cursor-default items-center justify-center rounded border border-white/25 bg-white/10 text-white/50" title="Social profiles coming soon" aria-hidden="true"><i class="fab fa-instagram text-sm"></i></span>
+                        <span class="inline-flex h-9 w-9 cursor-default items-center justify-center rounded border border-white/25 bg-white/10 text-white/50" title="Social profiles coming soon" aria-hidden="true"><i class="fab fa-youtube text-sm"></i></span>
+                        <span class="inline-flex h-9 w-9 cursor-default items-center justify-center rounded border border-white/25 bg-white/10 text-white/50" title="Social profiles coming soon" aria-hidden="true"><i class="fab fa-linkedin-in text-sm"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-t border-white/15">
+        <div class="container-custom py-5">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/85">
+                    <li><a href="https://www.dhruvacapital.com/contact" class="transition hover:text-white">Legal Disclaimer</a></li>
+                    <li><a href="https://www.dhruvacapital.com/contact" class="transition hover:text-white">Privacy Policy</a></li>
+                    <li><a href="https://www.dhruvacapital.com/contact" class="transition hover:text-white">Fraud Advisory</a></li>
+                    <li><a href="https://www.dhruvacapital.com/sitemap.xml" class="transition hover:text-white">Sitemap</a></li>
+                </ul>
+                <p class="text-sm text-white/80 md:text-right">
+                    Copyright © 2026 Dhruva Capital Services Ltd. All rights reserved.
+                </p>
+            </div>
+            <p class="mt-4 text-center text-xs leading-relaxed text-white/70 md:text-left">
+                <span class="font-semibold text-white/85">Partnered bank:</span> IDFC Bank.
+                <span class="mx-1.5 text-white/35" aria-hidden="true">·</span>
+                <span class="font-semibold text-white/85">Powered by</span> RazorpayX.
+                <span class="mx-1.5 text-white/35" aria-hidden="true">·</span>
+                <span class="font-semibold text-white/85">Payment gateway:</span> Razorpay.
+            </p>
+            <div class="mt-4 flex flex-col items-center gap-3 border-t border-white/10 pt-4 text-center md:flex-row md:justify-between md:text-left">
+                <p class="text-xs text-white/60">
+                    Images used on this website are copyrighted by their respective owners. Source websites: Unsplash (www.unsplash.com) and Freepik (www.freepik.com).
+                </p>
+                <ul class="flex shrink-0 items-center gap-4 text-xs uppercase tracking-wide text-white/60">
+                    <li>
+                        <a href="https://www.dhruvacapital.com" class="hover:text-white">Home</a>
+                    </li>
+                    <li>
+                        <a href="https://www.dhruvacapital.com/contact" class="hover:text-white">Support</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+(() => {
+    if (window.lucide) {
+        window.lucide.createIcons({
+            attrs: {
+                'stroke-width': 2,
+                'stroke-linecap': 'round',
+                'stroke-linejoin': 'round',
+            }
+        });
+    }
+})();
+
+(() => {
+    const fmt = (value) => `₹${Math.round(value).toLocaleString('en-IN')}`;
+    const fmtStar = (value) => `${fmt(value)}*`;
+
+    const parseIn = (str) => {
+        const n = Number(String(str ?? '').replace(/,/g, '').trim());
+        return Number.isFinite(n) ? n : 0;
+    };
+
+    const formatIn = (n) => Math.round(n).toLocaleString('en-IN');
+
+    const computeEmi = (principal, annualPct, months) => {
+        const r = (annualPct / 12) / 100;
+        if (!principal || !months) return 0;
+        if (r === 0) return principal / months;
+        const f = Math.pow(1 + r, months);
+        return (principal * r * f) / (f - 1);
+    };
+
+    const emiAmount = document.getElementById('emi-amount');
+    const emiAmountInput = document.getElementById('emi-amount-input');
+    const emiDurationRange = document.getElementById('emi-duration-range');
+    const emiDurationInput = document.getElementById('emi-duration-input');
+    const emiDurationLabels = document.getElementById('emi-duration-labels');
+    const tenureUnitYr = document.getElementById('tenure-unit-yr');
+    const tenureUnitMo = document.getElementById('tenure-unit-mo');
+    const emiRate = document.getElementById('emi-rate');
+    const emiRateInput = document.getElementById('emi-rate-input');
+    const emiResult = document.getElementById('emi-result');
+    const emiTotalPayable = document.getElementById('emi-total-payable');
+    const emiTotalInterest = document.getElementById('emi-total-interest');
+    const emiPie = document.getElementById('emi-pie');
+
+    const preAmount = document.getElementById('pre-amount');
+    const preAmountInput = document.getElementById('pre-amount-input');
+    const prepayAmount = document.getElementById('prepay-amount');
+    const prepayAmountInput = document.getElementById('prepay-amount-input');
+    const preRate = document.getElementById('pre-rate');
+    const preRateInput = document.getElementById('pre-rate-input');
+    const preTenure = document.getElementById('pre-tenure');
+    const preTenureInput = document.getElementById('pre-tenure-input');
+    const prepayEmiResult = document.getElementById('prepay-emi-result');
+    const prepayInterestSaved = document.getElementById('prepay-interest-saved');
+
+    const eligibilityIncome = document.getElementById('eligibility-income');
+    const eligibilityExistingEmi = document.getElementById('eligibility-emi');
+    const eligibilityTenure = document.getElementById('eligibility-tenure');
+    const eligibilityIncomeValue = document.getElementById('eligibility-income-value');
+    const eligibilityEmiValue = document.getElementById('eligibility-emi-value');
+    const eligibilityTenureValue = document.getElementById('eligibility-tenure-value');
+    const eligibilityResult = document.getElementById('eligibility-result');
+
+    if (!emiAmount || !emiResult) return;
+
+    let tenureMode = 'yr';
+
+    const setTenureMode = (mode) => {
+        let prevMonths;
+        if (tenureMode === 'yr') prevMonths = Number(emiDurationRange.value) * 12;
+        else prevMonths = Number(emiDurationRange.value);
+
+        tenureMode = mode;
+
+        if (mode === 'yr') {
+            emiDurationRange.min = 1;
+            emiDurationRange.max = 6;
+            emiDurationRange.step = 1;
+            const years = Math.min(6, Math.max(1, Math.round(prevMonths / 12) || 1));
+            emiDurationRange.value = String(years);
+            emiDurationInput.min = 1;
+            emiDurationInput.max = 6;
+            emiDurationInput.value = years;
+            if (emiDurationLabels) {
+                emiDurationLabels.innerHTML = '<span>Shorter term</span><span>Longer term</span>';
+            }
+        } else {
+            emiDurationRange.min = 12;
+            emiDurationRange.max = 72;
+            emiDurationRange.step = 6;
+            const mo = Math.min(72, Math.max(12, Math.round(prevMonths / 6) * 6 || 24));
+            emiDurationRange.value = String(mo);
+            emiDurationInput.min = 12;
+            emiDurationInput.max = 72;
+            emiDurationInput.value = mo;
+            if (emiDurationLabels) {
+                emiDurationLabels.innerHTML = '<span>Fewer months</span><span>More months</span>';
+            }
+        }
+
+        tenureUnitYr?.classList.toggle('active', mode === 'yr');
+        tenureUnitMo?.classList.toggle('active', mode === 'mo');
+    };
+
+    const getEmiMonths = () => {
+        const v = Number(emiDurationRange.value);
+        if (tenureMode === 'yr') return v * 12;
+        return v;
+    };
+
+    const syncDurationFromRange = () => {
+        emiDurationInput.value = tenureMode === 'yr' ? Number(emiDurationRange.value) : Number(emiDurationRange.value);
+    };
+
+    const syncRangeFromDurationInput = () => {
+        let v = Number(emiDurationInput.value);
+        if (tenureMode === 'yr') {
+            v = Math.min(6, Math.max(1, v || 1));
+            emiDurationRange.value = String(v);
+        } else {
+            v = Math.min(72, Math.max(12, v || 12));
+            const rounded = Math.round(v / 6) * 6;
+            emiDurationRange.value = String(rounded);
+            emiDurationInput.value = rounded;
+        }
+    };
+
+    const updatePie = (principal, totalInterest) => {
+        if (!emiPie) return;
+        const total = principal + totalInterest;
+        if (total <= 0) {
+            emiPie.style.background = 'conic-gradient(rgb(148 163 184) 0deg 360deg)';
+            return;
+        }
+        const deg = (principal / total) * 360;
+        emiPie.style.background = `conic-gradient(rgb(30 64 175) 0deg ${deg}deg, rgb(198 40 40) ${deg}deg 360deg)`;
+    };
+
+    const calcEmi = () => {
+        const principal = Number(emiAmount.value);
+        const monthlyRatePct = Number(emiRate.value);
+        const months = getEmiMonths();
+
+        if (emiAmountInput) emiAmountInput.value = formatIn(principal);
+        if (emiRateInput) emiRateInput.value = Number(monthlyRatePct).toFixed(2);
+
+        const emi = computeEmi(principal, monthlyRatePct, months);
+        const totalPay = emi * months;
+        const totalInt = Math.max(0, totalPay - principal);
+
+        emiResult.textContent = Number.isFinite(emi) ? fmtStar(emi) : '₹0*';
+        emiTotalPayable.textContent = Number.isFinite(totalPay) ? fmtStar(totalPay) : '₹0*';
+        emiTotalInterest.textContent = Number.isFinite(totalInt) ? fmtStar(totalInt) : '₹0*';
+        updatePie(principal, totalInt);
+    };
+
+    const clampAmountInput = () => {
+        let v = parseIn(emiAmountInput?.value);
+        const min = Number(emiAmount.min);
+        const max = Number(emiAmount.max);
+        v = Math.min(max, Math.max(min, v || min));
+        emiAmount.value = String(v);
+        if (emiAmountInput) emiAmountInput.value = formatIn(v);
+    };
+
+    const calcPrepay = () => {
+        const principal = Number(preAmount.value);
+        const rate = Number(preRate.value);
+        const months = Number(preTenure.value);
+
+        if (preAmountInput) preAmountInput.value = formatIn(principal);
+        if (preAmount) preAmount.value = String(principal);
+        const maxPre = Math.max(0, principal - 10000);
+        let prepay = 0;
+        if (prepayAmount) {
+            prepayAmount.max = String(Math.min(500000, maxPre));
+            prepay = Math.min(maxPre, Math.max(0, Number(prepayAmount.value)));
+            prepayAmount.value = String(prepay);
+            if (prepayAmountInput) prepayAmountInput.value = formatIn(prepay);
+        }
+        if (preRateInput) preRateInput.value = Number(rate).toFixed(2);
+        if (preTenureInput) preTenureInput.value = months;
+
+        const newPrincipal = Math.max(0, principal - prepay);
+        const emiNew = computeEmi(newPrincipal, rate, months);
+        const emiOld = computeEmi(principal, rate, months);
+
+        const totalIntOld = Math.max(0, emiOld * months - principal);
+        const totalIntNew = Math.max(0, emiNew * months - newPrincipal);
+        const saved = Math.max(0, totalIntOld - totalIntNew);
+
+        prepayEmiResult.textContent = Number.isFinite(emiNew) ? fmtStar(emiNew) : '₹0*';
+        prepayInterestSaved.textContent = Number.isFinite(saved) ? fmtStar(saved) : '₹0*';
+    };
+
+    const calcEligibility = () => {
+        const income = Number(eligibilityIncome.value);
+        const existingEmi = Number(eligibilityExistingEmi.value);
+        const tenureMonths = Number(eligibilityTenure.value);
+        const foir = 0.55;
+
+        const netEligibleEmi = Math.max((income * foir) - existingEmi, 0);
+        const annualRate = 0.12;
+        const monthlyRate = annualRate / 12;
+        const pvFactor = monthlyRate === 0
+            ? tenureMonths
+            : (1 - Math.pow(1 + monthlyRate, -tenureMonths)) / monthlyRate;
+        const amount = netEligibleEmi * pvFactor;
+
+        if (eligibilityIncomeValue) {
+            eligibilityIncomeValue.textContent = income < 60000 ? '(leaner profile)' : income < 150000 ? '(balanced profile)' : '(stronger profile)';
+        }
+        if (eligibilityEmiValue) {
+            eligibilityEmiValue.textContent = existingEmi < 15000 ? '(lighter obligations)' : existingEmi < 40000 ? '(moderate obligations)' : '(heavier obligations)';
+        }
+        if (eligibilityTenureValue) {
+            eligibilityTenureValue.textContent = tenureMonths <= 36 ? '(shorter horizon)' : tenureMonths <= 84 ? '(mid horizon)' : '(longer horizon)';
+        }
+
+        let band = 'Illustrative — on review*';
+        if (!Number.isFinite(amount) || amount <= 0) {
+            band = 'Limited headroom*';
+        } else if (amount < 500000) {
+            band = 'Conservative comfort*';
+        } else if (amount < 1500000) {
+            band = 'Balanced comfort*';
+        } else {
+            band = 'Higher comfort*';
+        }
+        eligibilityResult.textContent = band;
+    };
+
+    const tabButtons = document.querySelectorAll('[data-calc-tab]');
+    const panels = document.querySelectorAll('.calc-panel');
+
+    tabButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const tab = btn.getAttribute('data-calc-tab');
+            tabButtons.forEach((b) => b.setAttribute('aria-selected', b === btn ? 'true' : 'false'));
+            panels.forEach((p) => {
+                const show = p.getAttribute('data-panel') === tab;
+                p.classList.toggle('hidden', !show);
+                if (show) p.classList.add('grid');
+            });
+        });
+    });
+
+    tenureUnitYr?.addEventListener('click', () => { setTenureMode('yr'); syncDurationFromRange(); calcEmi(); });
+    tenureUnitMo?.addEventListener('click', () => { setTenureMode('mo'); syncDurationFromRange(); calcEmi(); });
+
+    emiAmount.addEventListener('input', () => {
+        if (emiAmountInput) emiAmountInput.value = formatIn(Number(emiAmount.value));
+        calcEmi();
+    });
+
+    emiAmountInput?.addEventListener('blur', () => {
+        clampAmountInput();
+        calcEmi();
+    });
+
+    emiAmountInput?.addEventListener('input', () => {
+        const v = parseIn(emiAmountInput.value);
+        if (v >= Number(emiAmount.min)) emiAmount.value = String(Math.min(Number(emiAmount.max), Math.max(Number(emiAmount.min), v)));
+    });
+
+    emiDurationRange.addEventListener('input', () => {
+        syncDurationFromRange();
+        calcEmi();
+    });
+
+    emiDurationInput?.addEventListener('input', () => {
+        syncRangeFromDurationInput();
+        calcEmi();
+    });
+
+    emiRate.addEventListener('input', () => {
+        if (emiRateInput) emiRateInput.value = Number(emiRate.value).toFixed(2);
+        calcEmi();
+    });
+
+    emiRateInput?.addEventListener('input', () => {
+        let v = parseIn(emiRateInput.value);
+        if (v < 10.99) v = 10.99;
+        if (v > 35) v = 35;
+        emiRate.value = String(v);
+        calcEmi();
+    });
+
+    emiRateInput?.addEventListener('blur', () => {
+        if (emiRateInput) emiRateInput.value = Number(emiRate.value).toFixed(2);
+        calcEmi();
+    });
+
+    [preAmount, prepayAmount, preRate, preTenure].forEach((el) => el?.addEventListener('input', calcPrepay));
+    preAmountInput?.addEventListener('input', () => {
+        let v = parseIn(preAmountInput.value);
+        const min = Number(preAmount.min);
+        const max = Number(preAmount.max);
+        v = Math.min(max, Math.max(min, v || min));
+        preAmount.value = String(v);
+    });
+    preAmountInput?.addEventListener('blur', () => {
+        clampPreAmount();
+        calcPrepay();
+    });
+    prepayAmountInput?.addEventListener('input', () => {
+        const max = Number(prepayAmount?.max) || 500000;
+        let v = parseIn(prepayAmountInput.value);
+        v = Math.min(max, Math.max(0, v));
+        if (prepayAmount) prepayAmount.value = String(v);
+    });
+    prepayAmountInput?.addEventListener('blur', () => {
+        clampPrepayAmount();
+        calcPrepay();
+    });
+    preTenureInput?.addEventListener('input', () => {
+        preTenure.value = preTenureInput.value;
+        calcPrepay();
+    });
+
+    const clampPreAmount = () => {
+        let v = parseIn(preAmountInput?.value);
+        const min = Number(preAmount.min);
+        const max = Number(preAmount.max);
+        v = Math.min(max, Math.max(min, v || min));
+        preAmount.value = String(v);
+        if (preAmountInput) preAmountInput.value = formatIn(v);
+    };
+
+    const clampPrepayAmount = () => {
+        const principal = Number(preAmount.value);
+        const max = Math.max(0, principal - 10000);
+        let v = parseIn(prepayAmountInput?.value);
+        v = Math.min(max, Math.max(0, v));
+        prepayAmount.value = String(v);
+        if (prepayAmountInput) prepayAmountInput.value = formatIn(v);
+    };
+
+    [eligibilityIncome, eligibilityExistingEmi, eligibilityTenure].forEach((el) => el.addEventListener('input', calcEligibility));
+
+    const syncPrepayFromEmi = () => {
+        if (!preAmount || !emiAmount) return;
+        preAmount.value = emiAmount.value;
+        if (preAmountInput) preAmountInput.value = formatIn(Number(emiAmount.value));
+        if (preRate && emiRate) {
+            preRate.value = emiRate.value;
+            if (preRateInput) preRateInput.value = Number(emiRate.value).toFixed(2);
+        }
+        const m = getEmiMonths();
+        if (preTenure) preTenure.value = String(m);
+        if (preTenureInput) preTenureInput.value = m;
+    };
+
+    setTenureMode('yr');
+    syncDurationFromRange();
+    calcEmi();
+    syncPrepayFromEmi();
+    calcPrepay();
+    calcEligibility();
+
+    document.getElementById('calc-product-type')?.addEventListener('change', () => {
+        syncPrepayFromEmi();
+        calcPrepay();
+    });
+})();
+</script>
+</body>
+</html>
+

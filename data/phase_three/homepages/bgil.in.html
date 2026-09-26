@@ -1,0 +1,1125 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /><title>
+	Bharatiya Global Infomedia Ltd. | IT Base Product | Parking Management System&copy;
+    | RFID Base Solution | Token Less Two Factor Authentication&copy; | MobileApplication |
+    Offshore Development India - BGIL Solutions
+</title><meta http-equiv="Content-Type" content="text/html;" /><meta content="BGIL specializes in the field of Safety, Security and Automation : Safety, Security and Automation, BGIL Tokenless Two Factor Authentication© allows organizations to better manage remote login security by negating the need to issue and recall hardware tokens as personnel changes occur or Tokens fail or are prone to get lost., The key concept of Safety, Security &amp; Automation is for an organization to design, implement and maintain a coherent suite of processes and systems for effectively managing infrastructure safety &amp; security, thus ensuring safe and secure environment within the organization. As with all management processes, safety and security Management must remain effective and efficient in the long term, adapting to changes in the internal organization and external environment" name="description" /><meta content="Parking, RFID, Smart card, canteen, cafeteria, visitor, smart campus, Parking Guidance, web based applications development India, Custom application development, Bharatiya Global Infomedia Ltd., Controller, AVCC, Vehicle Counter, License Plate Recognition, ANPR, LPR, BGIL Solutions" name="keywords" /><link href="css/style.css" type="text/css" rel="stylesheet" />
+    <!-- Star Menu Link-->
+    <link href="css/jqueryslidemenu.css" type="text/css" rel="stylesheet" />
+    <!--[if lte IE 7]>
+<STYLE type=text/css>
+html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
+</STYLE>
+<![endif]-->
+    <!-- end Menu Link -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+    <script src="css/jqueryslidemenu.js" type="text/javascript"></script>
+    <!-- Js fadding image code here -->
+    <script type="text/javascript">
+
+var fadeimages=new Array()
+//SET IMAGE PATHS. Extend or contract array as needed
+fadeimages[0]=["ssa/Images/BGIL_RFID-Related-Technolog.jpg"] //plain image syntax
+fadeimages[1]=["ssa/Images/hrr.jpg"]
+//fadeimages[1]=["ssa/Images/building-solution1.jpg"]
+fadeimages[2]=["ssa/Images/Facility-Management-Solutio.jpg"] //image with link and target syntax
+fadeimages[3]=["ssa/Images/Personal-Management-Solutio.jpg"]
+fadeimages[4]=["ssa/Images/Customized-Solutions.jpg"] //image with link syntax
+fadeimages[5]=["ssa/Images/Header_ETS_PMS.jpg"] //image with link and target syntax
+fadeimages[6]=["ssa/Images/Header_ETS_PGS.jpg"]
+fadeimages[7]=["ssa/Images/Header_ETS_TMS.jpg"]
+//fadeimages[8]=["ssa/Images/Master_Header_AVCC.jpg"]
+fadeimages[8]=["ssa/Images/Automatic-Payment-Station-(APS).jpg"]
+fadeimages[9]=["ssa/Images/Header_ETS_LPRS.jpg"] //image with link syntax
+fadeimages[10]=["ssa/Images/Red-Light-Violation-Detection.jpg"] //image with link syntax
+fadeimages[11]=["ssa/Images/Master_Header_FMS_SC.jpg"]
+fadeimages[12]=["ssa/Images/Master_Header_FMS_VMS.jpg"]
+fadeimages[13]=["ssa/Images/Master_Header_FMS_CMS.jpg"]
+fadeimages[14]=["ssa/Images/Master_Header_FMS_ATS.jpg"]
+fadeimages[15]=["ssa/Images/Master_Header_FMS_LTS.jpg"]
+fadeimages[16]=["ssa/Images/Master_Header_PMS_LMS.jpg"]
+fadeimages[17]=["ssa/Images/Master_Header_PMS_SIS.jpg"]
+fadeimages[18]=["ssa/Images/Master_Header_PMS_TAS.jpg"]
+fadeimages[19]=["ssa/Images/CS_ABS.jpg"]
+fadeimages[20]=["ssa/Images/CS_BGSM.jpg"]
+fadeimages[21]=["ssa/Images/CS_IConverter.jpg"]
+fadeimages[22]=["ssa/Images/building-solution.jpg"]
+fadeimages[23]=["ssa/Images/Traffic-Engineering-Solutio.jpg"] //image with link syntax
+fadeimages[24]=["ssa/Images/centralised.jpg"]
+fadeimages[25]=["ssa/Images/surveillence-1.jpg"]
+fadeimages[26]=["ssa/Images/smart-city.jpg"] //image with link syntax
+fadeimages[27]=["ssa/Images/surveillence-1.jpg"]
+fadeimages[28]=["ssa/Images/Master_Header_PMS_ETS.jpg"] //image with link and target syntax
+fadeimages[29]=["ssa/Images/food-court-management-system.jpg"] //image with link and target syntax
+fadeimages[30]=["ssa/Images/Fleet-Management-System.jpg"] //image with link and target syntax
+fadeimages[31]=["ssa/Images/Ticket-Dispensing-System.jpg"] //image with link and target syntax
+fadeimages[32]=["ssa/Images/Under-Vehicle-Surveillance-System.jpg"] //image with link and target syntax
+fadeimages[33]=["ssa/Images/handheld-device.jpg"] //image with link and target syntax
+fadeimages[34]=["ssa/Images/Automatic-Payment-Station-(APS).jpg"] //image with link and target syntax
+fadeimages[35]=["ssa/Images/Secure-Your-Sector-(RWA).jpg"] //image with link and target syntax
+fadeimages[36]=["ssa/Images/rwa.jpg"] //image with link and target syntax
+
+var fadebgcolor="Blue"
+
+////NO need to edit beyond here/////////////
+
+var fadearray=new Array() //array to cache fadeshow instances
+var fadeclear=new Array() //array to cache corresponding clearinterval pointers
+
+var dom=(document.getElementById) //modern dom browsers
+var iebrowser=document.all
+
+function fadeshow(theimages, fadewidth, fadeheight, borderwidth, delay, pause, displayorder){
+this.pausecheck=pause
+this.mouseovercheck=0
+this.delay=delay
+this.degree=10 //initial opacity degree (10%)
+this.curimageindex=0
+this.nextimageindex=1
+fadearray[fadearray.length]=this
+this.slideshowid=fadearray.length-1
+this.canvasbase="canvas"+this.slideshowid
+this.curcanvas=this.canvasbase+"_0"
+if (typeof displayorder!="undefined")
+theimages.sort(function() {return 0.5 - Math.random();}) 
+this.theimages=theimages
+this.imageborder=parseInt(borderwidth)
+this.postimages=new Array() //preload images
+for (p=0;p<theimages.length;p++){
+this.postimages[p]=new Image()
+this.postimages[p].src=theimages[p][0]
+}
+
+var fadewidth=fadewidth+this.imageborder*0
+var fadeheight=fadeheight+this.imageborder*0
+
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers (ie: Firefox)
+document.write('<div id="master'+this.slideshowid+'" style="position:relative;width:'+fadewidth+'px;height:'+fadeheight+'px;overflow:hidden;"><div id="'+this.canvasbase+'_0" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></div><div id="'+this.canvasbase+'_1" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></div></div>')
+else
+document.write('<div><img name="defaultslide'+this.slideshowid+'" src="'+this.postimages[0].src+'"></div>')
+
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers such as Firefox
+this.startit()
+else{
+this.curimageindex++
+setInterval("fadearray["+this.slideshowid+"].rotateimage()", this.delay)
+}
+}
+
+function fadepic(obj){
+if (obj.degree<100){
+obj.degree+=10
+if (obj.tempobj.filters&&obj.tempobj.filters[0]){
+if (typeof obj.tempobj.filters[0].opacity=="number") //if IE6+
+obj.tempobj.filters[0].opacity=obj.degree
+else //else if IE5.5-
+obj.tempobj.style.filter="alpha(opacity="+obj.degree+")"
+}
+else if (obj.tempobj.style.MozOpacity)
+obj.tempobj.style.MozOpacity=obj.degree/101
+else if (obj.tempobj.style.KhtmlOpacity)
+obj.tempobj.style.KhtmlOpacity=obj.degree/100
+else if (obj.tempobj.style.opacity&&!obj.tempobj.filters)
+obj.tempobj.style.opacity=obj.degree/101
+}
+else{
+clearInterval(fadeclear[obj.slideshowid])
+obj.nextcanvas=(obj.curcanvas==obj.canvasbase+"_0")? obj.canvasbase+"_0" : obj.canvasbase+"_1"
+obj.tempobj=iebrowser? iebrowser[obj.nextcanvas] : document.getElementById(obj.nextcanvas)
+obj.populateslide(obj.tempobj, obj.nextimageindex)
+obj.nextimageindex=(obj.nextimageindex<obj.postimages.length-1)? obj.nextimageindex+1 : 0
+setTimeout("fadearray["+obj.slideshowid+"].rotateimage()", obj.delay)
+}
+}
+
+fadeshow.prototype.populateslide=function(picobj, picindex){
+  var slideHTML=""
+  if (this.theimages[picindex][1]!="") //if associated link exists for image
+ //slideHTML='<"'+this.theimages[picindex][1]+'" '+this.theimages[picindex][2]+'">'
+ slideHTML+='<img src="'+this.postimages[picindex].src+'" border="'+this.imageborder+'px">'
+ if (this.theimages[picindex][1]!="") //if associated link exists for image
+ slideHTML+=''
+ picobj.innerHTML=slideHTML
+}
+
+
+fadeshow.prototype.rotateimage=function(){
+if (this.pausecheck==1) //if pause onMouseover enabled, cache object
+var cacheobj=this
+if (this.mouseovercheck==1)
+setTimeout(function(){cacheobj.rotateimage()}, 100)
+else if (iebrowser&&dom||dom){
+this.resetit()
+var crossobj=this.tempobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+crossobj.style.zIndex++
+fadeclear[this.slideshowid]=setInterval("fadepic(fadearray["+this.slideshowid+"])",50)
+this.curcanvas=(this.curcanvas==this.canvasbase+"_0")? this.canvasbase+"_1" : this.canvasbase+"_0"
+}
+else{
+var ns4imgobj=document.images['defaultslide'+this.slideshowid]
+ns4imgobj.src=this.postimages[this.curimageindex].src
+}
+this.curimageindex=(this.curimageindex<this.postimages.length-1)? this.curimageindex+1 : 0
+}
+
+fadeshow.prototype.resetit=function(){
+this.degree=10
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+if (crossobj.filters&&crossobj.filters[0]){
+if (typeof crossobj.filters[0].opacity=="number") //if IE6+
+crossobj.filters(0).opacity=this.degree
+else //else if IE5.5-
+crossobj.style.filter="alpha(opacity="+this.degree+")"
+}
+else if (crossobj.style.MozOpacity)
+crossobj.style.MozOpacity=this.degree/101
+else if (crossobj.style.KhtmlOpacity)
+crossobj.style.KhtmlOpacity=this.degree/100
+else if (crossobj.style.opacity&&!crossobj.filters)
+crossobj.style.opacity=this.degree/101
+}
+
+
+fadeshow.prototype.startit=function(){
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+this.populateslide(crossobj, this.curimageindex)
+if (this.pausecheck==1){ //IF SLIDESHOW SHOULD PAUSE ONMOUSEOVER
+var cacheobj=this
+var crossobjcontainer=iebrowser? iebrowser["master"+this.slideshowid] : document.getElementById("master"+this.slideshowid)
+crossobjcontainer.onmouseover=function(){cacheobj.mouseovercheck=1}
+crossobjcontainer.onmouseout=function(){cacheobj.mouseovercheck=0}
+}
+this.rotateimage()
+}
+
+</script>
+    <!-- end fadding js code here-->
+    <!--[if IE 6 ]>
+<STYLE type=text/css>@import "css/style_ie.css";</STYLE>
+<![endif]-->
+    <script src="../web_pagedesign/js/main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+<script type="text/javascript" src="js/crawler.js"></script>
+<!-- Analytices -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51600280-1', 'bgil.in');
+  ga('send', 'pageview');
+
+</script>
+<!-- Analytices -->
+
+</head>
+<body onload="MM_preloadImages('Images/get_quote_r.jpg','Images/portfolio1.jpg','Images/careers1.jpg','Images/contact_us.jpg')">
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODYwNzU0NzU5ZGQVz0rchejQZXb/hgR7ZzlGJMEmC+XyAejNa6Y2zTMKmQ==" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+	 <div id="BGIL_main">
+            <div id="top_bar">
+                <div id="top_bar_in">
+                    <div class="logo"><a href="http://www.bgil.in/home.html"><img alt="BGIL_Logo" src="Images/BGIL_Logo.png" /></a> 
+                    </div>
+                    <div id="navbar">
+                        <ul>
+                            <li id="top_selected">
+                                <label><span>Home</span></label></li>
+                            <li>
+                                <a href="Company.html"><span>Company</span></a> 
+                            </li>
+							<li><a href="Careers.html"><span>Careers</span></a></li>
+                            <!--<li>
+                                <a href="ops.aspx"><span>Support</span></a> 
+                            </li>-->
+                            <li>
+                                <a href="Site_map.html"><span>Sitemap</span></a> 
+                            </li>
+                            <li>
+                                <a href="ContactUs.aspx"><span>Contact Us</span></a> 
+                            </li>
+                        </ul>
+                    </div>
+                   <div id="bgildiv">
+                        <h1 id="bgilheader">Bharatiya Global Infomedia Ltd.</h1><span id="iso">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( An ISO 9001 : 2008 Company )</span>
+                    </div>
+					<div id="socialdiv" style="float: right; margin-top: 35px;margin-right: -260px;">
+                        <a href="https://www.facebook.com/BharatiyaGlobalInfomediaLimited" target="_blank" ><img src="Images/facebook.png"/></a>
+						<a href="https://twitter.com/BGIL60" target="_blank" ><img src="Images/twitter.png" /></a>
+						<a href="http://www.linkedin.com/pub/bharatiya-global-infomedia-ltd/88/273/822" target="_blank"><img src="Images/linkedin.png"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="clr">
+            </div>
+            <div class="flash_BGIL">
+                <!-- Fadding Jquery Image -->
+                <div style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 978px; PADDING-TOP: 0px; HEIGHT: auto">
+                    <script type="text/javascript">
+			new fadeshow(fadeimages, 978, 200, 0, 2000, 5, "R")
+			</script>
+                </div>
+                <!-- end Fadding Jquery Image -->
+                <!-- <![endif]-->
+            </div>
+            <div class="clr">
+            </div>
+            <!-- adding a div -->
+           <div>
+    <div id="myslidemenu" class="jqueryslidemenu">
+      <ul>
+        <!-- start solution menu li -->
+        <li><a href="#">Products & Solutions</a>
+            <!-- adding -->
+            <ul>
+              <li><a href="/ssa/SSA.html">Safety, Security &amp; Automation</a>
+                <ul>
+                    <li><a href="/ssa/tes.html">Traffic Engineering Solutions</a>
+                    <ul>
+                      <li><a href="/ssa/Parking Management System.html">Parking Management System<sup>&copy;</sup></a> </li>
+                      <li><a href="/ssa/Parking Guidance System.html">Parking Guidance System</a> </li>
+                      <li><a href="/ssa/Toll Management System.html">Toll Management System<sup>&copy;</sup></a> </li>
+                      <li><a href="/ssa/AVCCS.html">Automatic Vehicle Counter-cum-Classifier System</a> </li>
+                      <li><a href="/ssa/License Plate Recognition System.html">Automatic Number Plate Recognition System<sup>&copy;</sup></a> </li>
+                      <li><a href="/ssa/Under Vehicle Surveillance System.html">Under Vehicle Surveillance System</a> </li>
+                      <li><a href="/ssa/TicketDispensingSystem.html">Ticket Dispensing System<sup>&copy;</sup></a></li>
+                      </ul>
+                    </li>
+              <li><a href="/ssa/fms.html">Facility Management Solutions</a>
+            <ul>
+                          <li><a href="/ssa/Smart Campus.html">Smart Campus</a></li>
+                    <li><a href="/ssa/Visitor Management System.html">Visitor Management System</a></li>
+                    <li><a href="/ssa/Cafeteria Management System.html">Canteen Management System<sup>&copy;</sup></a></li>
+                    <li><a href="/ssa/Asset Tracking System.html">Asset Tracking System<sup>&copy;</sup></a></li>
+                    <li><a href="/ssa/Laptop Tracking System.html">Laptop Tracking System</a></li>
+                    <li><a href="/ssa/File Tracking System.html">File Tracking System</a></li>
+                    <li><a href="/ssa/Lighting Management System.html">Lighting Management System</a></li>
+                    <li><a href="/ssa/CCTV_Access Controt.html">CCTV, Access Control, Perimeter Fencing etc.</a></li>
+                  </ul>
+                    </li>
+              <li><a href="/ssa/pms.html">Personnel Management Solutions</a>
+            <ul>
+                           <li><a href="/ssa/Employee Tracking System.html">Employee Tracking System<sup>&copy;</sup></a></li>
+                    <li><a href="/ssa/Time-Attendance System.html">Time-Attendance System</a></li>
+                    <li><a href="/ssa/Library Management System.html">Library Automation & Management System</a></li>
+                    <li><a href="/ssa/Student Information System.html">Student Information System</a></li>
+                        </ul>
+                    </li>
+              <li><a href="/ssa/cs.html">Customized Solutions</a>
+            <ul>
+                          <li><a href="#">Automated Binning System</a></li>
+                          <li><a href="#">BGIL?s Intelligent Converters</a></li>
+                          <li><a href="#">GSM based Mast or I/O Controllers</a></li>
+                          <li><a href="#">GSM Logic Controller</a></li>
+                          <li><a href="#">Boom Barriers, Loop Detectors</a></li>
+                          <li><a href="#">LED Panels ( Single/Multi Line)</a></li>
+                          <li><a href="#">Other Customizable Converters, Counters etc</a></li>
+                          <li><a href="#">Kiosk Application</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              </li>
+			  
+			  <li><a href="#">Building Solution</a>
+            <ul>
+                   <li style="color: #009900;"><a href="/bms/Building Management Systems.html">Building Management Systems</a></li>
+									<li><a href="/bms/Services And Technologies.html">Services And Technologies <sup>&copy;</sup></a></li>
+									<li><a href="/bms/i-BMS Systems Offered.html">i-BMS Systems Offered</a></li>
+									<li><a href="/bms/Energy Services.html">Energy Services</a></li>
+									<!-- <li><a href="Energy savings.html">Energy savings</a></li> -->
+									<!-- <li><a href="Performance Contracting.html">Performance Contracting</a></li> -->
+									<li><a href="/bms/Lighting Control.html">Lighting Control</a></li>
+									<li><a href="/bms/Maintenance Services.html">Maintenance Services</a></li>
+            </ul>
+        </li>
+				
+		<li><a href="#">Trading</a>
+            <ul>
+		<li><a href="#">MEP</a>
+            <ul>
+                   	<li style="color: #009900;"><a href="#">HVAC Elecrical</a></li>
+					<li style="color: #009900;"><a href="#">Fire Fighting Equipment</a></li>
+					<li style="color: #009900;"><a href="#">Cable of All Type</a></li>
+			</ul>
+        </li>
+		<li><a href="#">Computer Hardware</a>
+            <!--<ul>
+                   	<li style="color: #009900;"><a href="#">HVAC Elecrical</a></li>
+					<li style="color: #009900;"><a href="#">Fire Fighting Equipment</a></li>
+					<li style="color: #009900;"><a href="#">Cable of All Type</a></li>
+			</ul>-->
+        </li>
+				</ul>
+        </li>
+              <!--<li><a href="TTFA.html">Tokenless Two Factor Authentication<sup>&copy;</sup></a></li>-->
+            <!--<li><a href="../Mobile_App.html">Mobile Application</a>-->
+              
+          </ul>
+          <!-- adding end -->
+        </li>
+		
+		
+		
+        <!-- end solution menu li -->
+        <!-- <li><a href="#">Digital Post Production</a>
+    <ul>
+    <li><a href="../DigitalVisualEffects.html">Digital Visual Effects</a></li>
+    <li><a href="../DigitalGrading.html">Digital Grading</a></li>
+    <li><a href="../FilmRestoration.html">Film Restoration</a></li>
+    <li><a href="../FilmPackaging.html">Film Packaging</a></li>
+    <li><a href="../FilmScanning.html">Film Scanning</a></li>
+    <li><a href="../FilmRecording.html">Film Recording</a></li>
+    <li><a href="../Graphics.html">Graphics</a></li>
+    </ul>
+    </li> -->
+    
+       
+        <li><a href="#">Associates</a>
+            <ul>
+              <li><a href="/Our_Sales_Partners.html">Sales Associates</a></li>
+              <li><a href="/Our_Technology_Partners.html">Technology Associates</a></li>
+            
+            </ul>
+        </li>
+        
+         
+         <li><a href="/Our_Customer.html">Project Sites</a></li>
+        
+        <li><a href="#">Learning Center</a>
+            <ul>
+              <li><a href="/CaseStudies.html">Case Studies</a></li>
+             <li><a href="#">Technologies</a></li>
+            </ul>
+        </li>
+        <li><a href="/investor.html">Investor</a></li>
+		<li><a href="/lics.aspx" target="_blank">Live Project</a></li>
+		<li><a href="#" target="_blank">Studio</a></li>
+		<!--<li><a href="http://bgilfilms.com/" target="_blank">Group Company</a></li>-->
+		<li><a href="http://bgil.in/ContactUs.aspx" target="_blank">Enquiry</a></li>
+		<!-- <li style="width: 92px; height: 29px;"><a href="#" target="_blank" style="height: 13px;"><img src="Images/CustomerCare.jpg"  style="margin-left: -10px; margin-top: -8px;"/></a></li> -->
+      </ul>
+      <br style="clear: left" />
+    
+      </div>
+   
+  </div>
+            <div class="clr">      </div>
+            <!-- adding a div -->
+            <div class="main_div_BGIL_home">
+    <!--<div id="left_BGIL_home">
+      <div class="left_con">
+        <div>
+          <div class="right_con_img" ><img src="Images/web.jpg" alt="BGIL"  /></div>
+          <h1  class="right_con_h1">Safety, Security &amp; Automation</h1>
+        </div>
+        <div class="clr"></div>
+        <div class="right_con_p">
+          <p class="home_txt"  align="justify">We are specialists in the field of Safety, Security and Automation. Whether you are protecting your workplace from terrorism, loss prevention or sabotage, our integrated Physical Security Solutions will be there to protect your assets and premises...</p>
+          <br />
+          <a class="Btn_a_type" href="ssa/SSA.html"><span> Read More </span></a></div>
+      </div>
+      <div class="right_con">
+        <div>
+          <div class="right_con_img" ><img src="Images/web2.jpg" alt="BGIL" /></div>
+          <h1 class="right_con_h1">Tokenless Two Factor Authentication<sup>&copy;</sup></h1>
+        </div>
+        <div class="clr"></div>
+        <div class="right_con_p">
+          <p class="home_txt" align="justify">BGIL Tokenless Two Factor Authentication<sup>&copy;</sup> allows organizations to better manage remote login security by negating the need to issue and recall hardware tokens as personnel changes occur or Tokens fail or are prone to get lost...</p>
+          <br />
+          <a class="Btn_a_type" href="TTFA.html"><span>Read More</span></a></div>
+      </div>
+      <div class="left_con">
+        <div>
+          <div class="right_con_img" ><img src="Images/web5.jpg" alt="BGIL"  /></div>
+          <h1  class="right_con_h1">Mobile Applications</h1>
+        </div>
+        <div class="clr"></div>
+        <div class="right_con_p">
+          <p class="home_txt" align="justify">We promise to deliver future technology mobile applications. Promoting the inherent strengths of the mobile industry, evaluating and recommending standards and prospect practices to the industry....</p>
+          <br />
+          <a class="Btn_a_type" href="Mobile_App.html"><span>Read More</span></a></div>
+      </div>
+      <div class="right_con">
+        <div>
+          <div class="right_con_img" ><img src="Images/web6.jpg" alt="BGIL"  /></div>
+          <h1  class="right_con_h1" align="justify">Quality Assurance </h1>
+        </div>
+        <div class="clr"></div>
+        <div class="right_con_p">
+          <p class="home_txt" align="justify">Quality Assurance describes the process to ensure quality control, Pre defined specification based development and user based application. We understand the fact that an application must be designed and developed by keeping quality in mind... </p>
+          <br />
+          <a class="Btn_a_type" href="Quality_Ass.html"><span>Read More</span></a></div>
+      </div>
+    </div>-->
+	
+	<div style="margin-bottom: 10px; background-color: #cbe6b3;">
+		<img src="new.gif"><strong style="font-size: 17px;color: blue;">New Product</strong><marquee behavior="alternate" style="margin-top: -20px;margin-left: 180px;"><a href="ssa/rwa-secure-your-sector.html" style="font-size: 15px; color: red;">Home Automation for RWA Sector</a>  <a href="#" style="font-size: 15px; color: red;"> || Jewellery Tracking System</a> <a href="#" style="font-size: 15px; color: red;"> || Smart Campus System</a></marquee> 
+		<hr>
+		</div>
+	<!--Project Client -->
+				<div>
+			<div><h3>Our Clients / Project Sites</h3> </div>
+			<div class="marquee" id="mycrawler2">
+			
+			<img src="project-slide/DHFLPramericaLogo.png" />
+			<img src="project-slide/bharti-axa-logo.png" />
+			<img src="project-slide/aon_logo.gif" />
+			<img src="project-slide/R-City-mall.jpg"  />
+			<img src="project-slide/runwall-green.jpg"  />
+			<img src="project-slide/adobe.gif"  />
+			
+			<img src="project-slide/trauma-center.jpg" />
+			<img src="project-slide/infosys.jpg"  />
+			<img src="project-slide/devinder-vihar.jpg"  />
+			<!--<img src="project-slide/mpisbt.jpg"  />-->
+			
+			
+			<img src="project-slide/medanta.jpg" />
+			<img src="project-slide/ongc.jpg" />
+		
+			<img src="project-slide/cipla.jpg"  />
+			
+			<img src="project-slide/mahagun.jpg" />
+			<img src="project-slide/hscc.jpg" />
+			<img src="project-slide/infinite-mall.jpg"  />
+			<img src="project-slide/dmh.jpg"  />
+			
+			<img src="project-slide/Indian-Oil.jpg" />
+			<img src="project-slide/airtel-11.jpg" />
+			<img src="project-slide/gail.jpg"  />
+			<img src="project-slide/Nokia.jpg"  />
+			
+			<img src="project-slide/Hindustan_Unilever_ltd.jpg"  />
+			<img src="project-slide/mea.jpg"  />
+			<img src="project-slide/ICICI_Bank.jpg"  />
+			<img src="project-slide/Airpot_Authority_of_India.jpg"  />
+			
+			<img src="project-slide/evalue_Service.jpg"  />
+			
+			<img src="project-slide/light.jpg" />
+			<img src="project-slide/Haldiram.jpg"  />
+			
+			<!--<img src="project-slide/Pricewater.jpg"  />-->
+			<!--<img src="project-slide/Oman.jpg"  />-->
+			<img src="project-slide/indianrail.jpg"  />
+			<img src="project-slide/zte.jpg"  />
+			
+			<img src="project-slide/HT.jpg"  />
+			<img src="project-slide/PDPL.jpg"  />
+			<img src="project-slide/IAI.jpg"  />
+			<img src="project-slide/Paramount.jpg" />
+			
+			<img src="project-slide/XL.jpg"  />
+			<img src="project-slide/infinite.jpg"  />
+			<img src="project-slide/isbt.jpg"  />
+			<!--<img src="project-slide/Madhushudan.jpg"  />-->
+			
+			<img src="project-slide/elkosta.jpg"  />
+			<img src="project-slide/millenium.jpg" />
+			<img src="project-slide/BAMU_Aurangabad.jpg"  />
+			<img src="project-slide/Ministry-of-defence.jpg" />
+			
+			<img src="project-slide/net4logo.jpg" />
+			<img src="project-slide/Napino.jpg" />
+			<img src="project-slide/SPS_Apollo_Hospital.jpg" />
+			<img src="project-slide/IndiaTV.jpg" />
+			
+			<img src="project-slide/pwc.jpg" />
+			<img src="project-slide/bptp-1.jpg" />
+			<img src="project-slide/niit techno.jpg" />
+			<img src="project-slide/logo-indus.jpg" />
+			
+			<img src="project-slide/rahejalogo.jpg" />
+			<img src="project-slide/nestle_logo.jpg" />
+			<img src="project-slide/aiimslogo.jpg" />
+			<img src="project-slide/niit limited.jpg" />
+			
+			<img src="project-slide/sms_semag.jpg" />
+			<img src="project-slide/sesagoalogo.jpg" />
+			<img src="project-slide/v3s-infratech-logo.jpg" />
+			<img src="project-slide/northenrailwaylogo.jpg" />
+			
+			<img src="project-slide/lodha.jpg" />
+			<img src="project-slide/c&amp;c.jpg" />
+			<img src="project-slide/metlife.jpg" />
+			
+			
+			<img src="project-slide/Jhonson.jpg" />
+			<img src="project-slide/Tyco.jpg" />
+			<img src="project-slide/Siemens.jpg" />
+			
+			<img src="project-slide/schneider.jpg" />
+			<img src="project-slide/tcs.jpg" />
+			<img src="project-slide/firepro.jpg" />
+			<img src="project-slide/wipro.jpg" />
+			
+			<img src="project-slide/hcl.jpg" />
+			<!--<img src="project-slide/zimco.jpg" />-->
+			<img src="project-slide/AutoCoplogo.jpg" />
+			<img src="project-slide/ncc.jpg" />
+			
+			<img src="project-slide/UTC_Chubb_Alba.jpg" />
+			<img src="project-slide/Bajaj Electricals.jpg" />
+			<img src="project-slide/Somfy_logo_oranje.jpg" />
+			<img src="project-slide/DKEELogo01.png" />
+			
+			<img src="project-slide/url.jpg" />
+			<img src="project-slide/sirit-copy.jpg" />
+			<img src="project-slide/Palas.jpg" />
+			<!--<img src="project-slide/Aliens.jpg" />-->
+			
+			<img src="project-slide/dell.jpg" />
+			<img src="project-slide/sybase.jpg" />
+			<img src="project-slide/zebra.jpg" />
+			<img src="project-slide/FAAC.jpg" />
+			
+			<img src="project-slide/orizin.jpg" />
+			<img src="project-slide/visiontech.jpg" />
+			<img src="project-slide/Kritical.jpg" />
+			<img src="project-slide/protocol.jpg" />
+			
+			<img src="project-slide/HID.jpg" />
+			<img src="project-slide/Honewell.jpg" />
+			<img src="project-slide/Intelliflex.jpg" />
+			<img src="project-slide/Motrola.jpg" />
+			</div>
+
+			<script type="text/javascript">
+			marqueeInit({
+			uniqueid: 'mycrawler2',
+			style: {
+			
+			'width': '980px',
+			'height': '80px'
+			},
+			inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+			mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+			moveatleast: 2,
+			neutral: 150,
+			savedirection: true,
+			random: true
+			});
+			</script>
+		</div>
+				
+				<!--Project Client -->
+	
+	
+	<div id="left_BGIL_home" style="width: 758px; margin: 0px 0 16px 0;">
+	<div style="width:230px; float:left;">
+	<div id="client_quote" style="margin:0;">
+                            <div id="home-news">
+                                <h1>Building Solution</h1>
+                                <div id="contact_im" style="padding: 10px;">
+									<ul>
+									<li ><a href="bms/Building Management Systems.html">Building Management Systems</a></li>
+									<li><a href="bms/Services And Technologies.html">Services And Technologies <sup>&copy;</sup></a></li>
+									<li><a href="bms/i-BMS Systems Offered.html">i-BMS Systems Offered</a></li>
+									<li><a href="bms/Energy Services.html">Energy Services</a></li>
+									<!-- <li><a href="Energy savings.html">Energy savings</a></li> -->
+									<!-- <li><a href="Performance Contracting.html">Performance Contracting</a></li> -->
+									<li><a href="bms/Lighting Control.html">Lighting Control</a></li>
+									<li><a href="bms/Maintenance Services.html">Maintenance Services</a></li>
+								   </ul>								   
+                                </div>
+                            </div>
+							
+	
+	</div>
+	
+	<div id="left_BGIL_home" style=" border-right: 0px solid #ececec; margin-top: 2px; ">
+        <div id="left_div_inner">
+			<div id="client_quote1" style="margin-top: 0;">
+                    <div id="home-news">
+                            <h1>Customized Solutions</h1>
+                                <div id="contact_im" style="padding: 10px;">
+									<ul>
+									<li><a href="ssa/cs.html">Automated Binning System</a></li>
+									<li><a href="ssa/cs.html">BGIL's Intelligent Converters</a></li>
+									<li><a href="ssa/cs.html">GSM based Mast or I/O Controllers</a></li>
+									<li><a href="ssa/cs.html">GSM Logic Controller</a></li>
+									<li><a href="ssa/cs.html">Boom Barriers, Loop Detectors</a></li>
+									<li><a href="ssa/cs.html">LED Panels ( Single/Multi Line)</a></li>
+									<li><a href="ssa/cs.html">Other Customizable Converters, etc</a></li>
+									<li><a href="ssa/cs.html">Kiosk Application</a></li>
+									</ul>									   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+	
+	<div id="left_BGIL_home" style=" border-right: 0px solid #ececec; margin-top: 2px;    width: 230px; ">
+        <div id="left_div_inner">
+			<div id="client_quote1" style="margin-top: 0;">
+                    <div id="home-news">
+                            <h1>Video Gallery</h1>
+                                <div id="contact_im" style="width:220px;">
+								    <a href="http://www.bgil.in/examples/gallery.html"><img alt="BGIL" src="http://www.bgil.in/examples/images/1.jpg" width="225" /></a>
+									<!-- <iframe  width="220" src="http://www.youtube.com/embed/40DbkNNUkp8" rel="0"></iframe> -->
+									<!-- <object width="220"  data="https://www.youtube.com/v/40DbkNNUkp8"></object> -->
+								</div>
+                            </div>
+							<div style="MARGIN: 8px 0px 0px"><img alt="BGIL" src="Images/line_left.jpg" width="225" /> 
+                        </div>
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+	</div>
+	
+	
+	
+	
+	
+	
+	
+<!--	<div style="clear:both;">-->
+	
+	
+    <div style="width:527px; float:left;">
+		
+	  <div style="float:left; margin-left:5px; margin-bottom:10px;">
+	  <!--<div>Traffic Engineering Solution</div>-->
+	   <div><img src="/Images/scts.jpg" border="0" style="width:255px"></div>
+	  <div><img src="http://bgil.in/ssa/Images/scts1.jpg" border="0" style="width:255px"></div>
+	  
+	  <ul style="margin-top: 15px;margin-left: -39px; font-size: 11px; line-height: 20px; color:#398AA5;">
+					  <!-- <li><a href="ssa/Parking Management System.html">Parking Management System<sup>&copy;</sup></a> </li>
+                      <li><a href="ssa/Parking Guidance System.html">Parking Guidance System</a> </li>
+                      <li><a href="ssa/Toll Management System.html">Toll Management System<sup>&copy;</sup></a> </li>
+                      <li><a href="ssa/AVCCS.html">Automatic Vehicle Counter Cum Classifier System</a> </li>
+                      <li><a href="ssa/License Plate Recognition System.html">Automatic Number Plate Recognition System<sup>&copy;</sup></a> </li>
+                      <li><a href="ssa/Under Vehicle Surveillance System.html">Under Vehicle Surveillance System</a> </li>
+                      <li><a href="ssa/TicketDispensingSystem.html">Ticket Dispensing System<sup>&copy;</sup></a></li>
+					  <li><a href="ssa/Ticket Dispenser.html">Ticket Dispenser</a></li>
+					  <li><a href="ssa/Fleet management system.html">Fleet Management System</a></li>
+					  <li><a href="ssa/CCTV_Access Controt.html">CCTV, Access Control,Perimeter Fencing etc.</a></li>
+					  <li><a href="#">Automatic Payment Station</a></li> -->
+					  
+<li><a href="ssa/Parking Management System.html">Parking Management System(PMS)<sup>&copy;</sup></a></li>
+<li><a href="ssa/Parking Guidance System.html">Parking Guidance System (PGS)<sup>&copy;</sup></a></li>
+<li><a href="ssa/Toll Management System.html">Toll Management System<sup>&copy;</sup></a></li>
+<li><a href="ssa/License Plate Recognition System.html">Automatic Number Plate Recognition System<sup>&copy;</sup></a></li>
+<li><a href="ssa/Under Vehicle Surveillance System.html">Under Vehicle Surveillance System</a></li>
+<li><a href="ssa/TicketDispensingSystem.html">Ticket Dispensing System<sup>&copy;</sup></a></li>
+<li><a href="ssa/Automatic-Payment-Station.html">Automatic Payment  Station (APS)</a></li>
+<li><a href="ssa/Fleet management system.html">Fleet Management System<sup>&copy;</sup></a></li>
+<li><a href="#">City Bus Surveillance system</a></li>
+<li><a href="ssa/CCTV_Access Controt.html">CCTV & Auto Surveillance</a></li>
+<li><a href="#">Boom Barrier, Access Control</a></li>
+<li><a href="#">Pedestrian Access Control System</a></li>
+<li><a href="#">Perimeter Fencing etc</a></li>
+<li><a href="#">Intelligent Master Controller<sup>&copy;</sup></a></li>
+<li><a href="ssa/rwa-secure-your-sector.html">RWA Mgt System (Secure Your Sector)</a></li>
+
+
+								   </ul>								   
+	  
+	  </div>
+	  <div style="float:left; margin-left:5px;margin-bottom:10px;">
+	  <!--<div>Facility Management System</div>-->
+	   <div><img src="/Images/ses.jpg" border="0" style="width:255px"></div>
+	  <div><img src="http://bgil.in/ssa/Images/ses1.png" border="0" style="width:255px"></div>
+	  <ul style="margin-top: 15px;margin-left: -39px; font-size: 11px; line-height: 20px; color:#398AA5;">
+					<!-- <li><a href="ssa/Smart Campus.html">Smart Campus</a></li>
+                    <li><a href="ssa/Visitor Management System.html">Visitor Management System</a></li>
+                    <li><a href="ssa/Cafeteria Management System.html">Canteen Management System<sup>&copy;</sup></a></li>
+                    <li><a href="ssa/Asset Tracking System.html">Asset Tracking System<sup>&copy;</sup></a></li>
+                    <li><a href="ssa/Laptop Tracking System.html">Laptop Tracking System</a></li>
+                    <li><a href="ssa/File Tracking System.html">File Tracking System</a></li>
+                    <li><a href="ssa/Lighting Management System.html">Lighting Management System</a></li>
+                    <li><a href="ssa/Event Management System.html">Event Management System</a></li>
+					<li><a href="ssa/Employee Tracking System.html">Employee Tracking System<sup>&copy;</sup></a></li>
+                    <li><a href="ssa/Time-Attendance System.html">Time-Attendance System</a></li>
+                    <li><a href="ssa/Library Management System.html">Library Automation & Management System</a></li>
+                    <li><a href="ssa/Student Information System.html">Student Information System</a></li>
+					<li><a href="ssa/Smart School Management System">Smart School Management System</a></li>
+					
+					<li><a href="ssa/Pedestrian Access Control System.html">Pedestrian Access Control System</a></li>
+					
+					<li><a href="ssa/Pilgrimage Management System.html">Pilgrimage Management System</a></li> -->
+					
+<li><a href="ssa/Smart Campus.html">Smart Campus<sup>&copy;</sup></a></li>
+<li><a href="ssa/Visitor Management System.html">Visitor Management System<sup>&copy;</sup></a></li>
+<li><a href="ssa/Cafeteria Management System.html">Canteen Management System<sup>&copy;</sup></a></li>
+<li><a href="ssa/Asset Tracking System.html">Asset Tracking System<sup>&copy;</sup></a></li>
+<li><a href="ssa/Laptop Tracking System.html">Laptop Tracking System<sup>&copy;</sup></a></li>
+<li><a href="ssa/File Tracking System.html">File Tracking System<sup>&copy;</sup></a></li>
+<li><a href="ssa/Lighting Management System.html">Lighting Management System</a></li>
+<li><a href="ssa/Event Management System.html">Event Management System</a></li>
+<li><a href="ssa/Employee Tracking System.html">Employee Tracking System<sup>&copy;</sup></a></li>
+<li><a href="ssa/Time-Attendance System.html">Time-Attendance System</a></li>
+<li><a href="ssa/Library Management System.html">Library Automation & Management System</a></li>
+<li><a href="ssa/Student Information System.html">Student Information System</a></li>
+<li><a href="ssa/Smart School Management System">Smart School Management System</a></li>
+<li><a href="ssa/Pilgrimage Management System.html">Pilgrimage Management System<sup>&copy;</sup></a></li>
+<li><a href="#">Club Mgt System<sup>&copy;</sup></a></li>
+<li><a href="#">Food Court Mgt System<sup>&copy;</sup></a></li>
+<li><a href="http://www.bgil.in/examples/images/Jewellery.ppsx">Jewellery Tracking System </a></li>
+
+								   </ul>								 
+		</div>
+	  
+	  <div style="clear:both;"></div>
+	  <div><img src="/Images/event.jpg" border="0" style="width:520px; height:38px;"></div>
+	  <div style="float:left; margin-left:5px;margin-bottom:10px; width: 510px;">
+	  
+	 <!--  <div class="marquee" id="mycrawler2" style="width: 515px;margin-bottom: 5px;">
+			
+			<a href="#"><img src="event/14.jpg" style="margin-left:5px; margin-right:5px;"/></a>
+			<a href="#"><img src="event/15.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/16.jpg" style="margin-left:5px;"/></a>
+		
+			<a href="#"><img src="event/8.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/9.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/10.JPG" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/11.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/12.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/13.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/1.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/2.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/3.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/4.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/5.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/6.jpg" style="margin-left:5px;"/></a>
+			<a href="#"><img src="event/7.jpg" style="margin-left:5px;"/></a>
+			
+			<script type="text/javascript">
+			marqueeInit({
+			uniqueid: 'mycrawler2',
+			style: {
+			
+			'width': '690px',
+			'height': '80px'
+			},
+			inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+			mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+			moveatleast: 2,
+			neutral: 150,
+			savedirection: true,
+			random: true
+			});
+			</script>
+			</div> -->
+	  
+	  <!--<div>Personal Management System</div>-->
+	
+	  <!-- <div><img src="http://bgil.in/ssa/Images/SSA_PMS.jpg" border="0" style="width:255px"></div> -->
+		
+		
+		
+		<marquee behavior="scroll" direction="up" onmouseover="this.stop();" scrolldelay="200" onmouseout="this.start();" style="height: 125px;padding: 20px;margin-top: 13px;">
+	 <ul style="margin-top: 15px; margin-left: -39px; font-size: 11px; line-height: 20px; color:#398AA5;">
+	
+	<li style="border-bottom: solid 1px; margin-top: -150px;"><a href="#">With a list of 46 products range BGIL is a true Product based company having 19 IPRs (probably only company in India) into Applications related to automation of Security, Surveillance & Safety, Communication (Mobile Applications).</a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">'BGIL' has a top ranking clientele which includes Fortune 500 companies, having successfully delivered more than 370 projects till date including few 'first one of its kind' projects in India. </a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">During the period BGIl's experienced team have successfully developed a complete products started last year namely 'Automatic Parking Ticket Dispenser', 'Parking Exit Verifier and Kiosk based Smart Card Dispenser', 'Smart Card Drop-Box and Access
+Control System' which offers import substitute and has a good marketable aspects. 
+
+</a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">
+Company has upgraded its existing version of 'Automated Payment Station' (APS) with unique features like acceptance of Debit/Credit Card along with cash payment option(s), can be integrated with central server control system</a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">'FORTIS' Hospital is the next one in the series of 'Health & Care' segment cliental besides 'Medanta Hospital' 'AIIMS' 'Lata Mangeshkar Hospital' recently for VMS/PMS. </a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">BGIL has designed & developed state of art intelligent  'Fleet Management System' & 'Pilgrimage Management System' </a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">BGIL has successfully upgraded online version of its Automatic Parking system  at 9 site of DIMTS at C.P. </a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">AIIMS has also awarded the comprehensive AMC of  PMS after successful implementation of the same.</a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">Canteen Management System (CMS) at 5 sites of Price water house Coopers (PWC) have been upgraded to centralized online system PAN INDIA Basis. </a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">PMS & PGS projects of Adobe Noida have successfully been completed & handed over; Adobe Bangalore is in progressâ€¦</a></li>
+	
+	<!-- <li style="border-bottom: solid 1px;"><a href="#">BGIL Has appointed PGSECTECH as one of its Franchisee cum SI.</a></li>
+	
+	<li style="border-bottom: solid 1px;"><a href="#">BGIL has won two project of PMS & PGS namely  â€˜NAFAâ€™ kalina Santacruz, Mumbai & INSIGNIA CST Road, Santacruz, Mumbai , both belongs to Dheraj Reality, Mumbai </a></li> -->
+	
+	<li style="border-bottom: solid 1px;"><a href="#">After the successful PMS implementation at Sector 132 ADOBE awarded a new site at their Bangalore Head Office; this will be the second site by ADOBE;  BGIL is expecting one more site  soon.    </a></li>
+	
+	 <li style="border-bottom: solid 1px;"><a href="#">BGIL has successfully implemented RFID based Parking Mgt System with complete parking accessories at ADOBE site NOIDA.    </a></li>
+	 
+	 <li style="border-bottom: solid 1px;"><a href="#">BGIL has recently upgraded its all its CMS installations PAN INDIA basis  at  PRICE WATER HOUSE (PWC).    </a></li>
+	 
+	 <li style="border-bottom: solid 1px;"><a href="#">BGIL has been successfully implemented parking mangement system at R CITY MALL & RUNWALL GREENS.    </a></li>
+	 
+	 <li style="border-bottom: solid 1px;"><a href="#">BGIL has emerged as a leader in other segments also viz. Facility Management  Solutions besides Parking  & Traffic Engineering Solutions having recently won Visitor Mgt Systems from AON HEWITT, Visitor Tracking Solution from MEDANTA HOSPITAL .    </a></li>
+	 
+	 <li style="border-bottom: solid 1px;"><a href="#">BGIL won three new clients namely AON HEWITTE, MEDANTA Hospital, R-CITY MALL, RUNWALL GREEN.  </a></li>
+	 
+	 <li style="border-top: solid 1px;"><a href="#">BGIL has Completed Parking Management System(PMS) at six NDMC-DIMTS sites successfully, rest are under progress...!</a></li>
+	<li style="border-top: solid 1px; border-bottom: solid 1px;"><a href="#">BGIL has been awarded a Prestigious order of RFID Based Parking Management System from Adobe... </a></li>
+	<li style="border-bottom: solid 1px; margin-bottom: -229px;"><a href="#">Sites like ISBT Mohali, Wipro, (ONGC), SESA Goa have been Re-started... </a></li>
+	
+                    
+	</ul>	
+	   
+	  
+	  </marquee>		
+	  
+	 
+	  
+	  
+	  
+	  
+	  
+	  </div>
+	  <!-- <div style="float:left; margin-left:5px;margin-bottom:10px; width: 255px;">
+	 	 
+	 <marquee behavior="scroll" direction="up" onmouseover="this.stop();" scrolldelay="500" onmouseout="this.start();" style="height: 100px;">
+	 <ul style="margin-top: 15px; margin-left: -39px;    font-size: 11px; line-height: 20px; color:#398AA5;">
+					<li><a href="ssa/Employee Tracking System.html">Employee Tracking System<sup>&copy;</sup></a></li>
+                    <li><a href="ssa/Time-Attendance System.html">Time-Attendance System</a></li>
+                    <li><a href="ssa/Library Management System.html">Library Automation </br>& Management System</a></li>
+                    <li><a href="ssa/Student Information System.html">Student Information System</a></li>
+	</ul>	
+	  
+	  </marquee>							   
+	  
+	  </div> -->
+	  
+	  
+	  
+	 
+	  
+	  
+	  
+	</div>
+	
+	
+	  
+	  
+	 
+    </div>
+	
+	
+	
+	
+
+                <!-- create new div here for news -->
+                <div id="right_BGIL_home" style="width: 226px; margin: -21px 2px -13px 0px;">
+                    <div id="right_div_inner" style="margin: 2px 0 0 6px;">
+					<!-- <div id="drhp"><a href="Download_PDF/BGIL - Final Prospectus.pdf" target="_blank">
+<img border="0" src="Images/button1.gif"" width="220" height="57" />
+</a></div>-->
+
+	
+						<div id="client_quote1">
+                            <div id="home-news">
+                                <h1>BGIL Milestones 
+                                </h1>
+                                <div id="contact_im">
+                                    <div class="group">
+                                     <iframe align="middle" src="News/News-1.html" frameborder="1" width="220" height="135"scrolling="auto">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+                <!-- end new div for news -->
+                 <div id="right_BGIL_home" style="width: 226px; margin: -4px 2px 22px 0px;">
+                    <div id="right_div_inner" style="margin: 2px 0 0 6px;">
+                        <div id="client_quote1">
+                            <h1>Key Features 
+                            </h1>
+                            <div id="contact_im">
+                                <ul>
+                                    <li class="home_right">
+                                        <img alt="BGIL" src="Images/icon_right_03.gif" />Successful Implementation 
+                                    </li>
+                                    <li class="home_right">
+                                        <img alt="BGIL" src="Images/icon_right_06.jpg" />Satisfied Customer Base 
+                                    </li>
+                                    <li class="home_right">
+                                        <img alt="BGIL" src="Images/application.gif" />Proven Implementation Methodology 
+                                    </li>
+                                    <li class="home_right">
+                                        <img alt="BGIL" src="Images/RangeofSkills.gif" />Range of Skills 
+                                    </li>
+                                    <li class="home_right">
+                                        <img alt="BGIL" src="Images/Trained.gif" />Trained Staff on Service Offerings 
+                                    </li>
+                                    <li class="home_right" style="BACKGROUND: none transparent scroll repeat 0% 0%">
+                                        <img alt="BGIL" src="Images/icon_right_10.jpg" />On time Delivery 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="MARGIN: 8px 0px 0px"><img alt="BGIL" src="Images/line_left.jpg" width="225" /> 
+                        </div>
+                    </div>
+                </div>
+				
+				 <div id="right_BGIL_home" style="width: 226px; margin: -4px 2px 22px 0px;">
+                    <div id="right_div_inner" style="margin: 2px 0 0 6px;">
+                        <div id="client_quote1">
+                            <h1>BGIL - A Bird's Eye View 
+                            </h1>
+                            <div id="contact_im">
+                                
+                            <a href="http://www.bgil.in/gallery/gallery.html"><img alt="BGIL" src="event/14.jpg" width="220"/></a>
+                               
+                            </div>
+                        </div>
+                        <div style="MARGIN: 8px 0px 0px"><img alt="BGIL" src="Images/line_left.jpg" width="225" /> 
+                        </div>
+                    </div>
+                </div>
+				
+				
+                <div class="clr">
+                </div>
+                <div class="p_end_border">
+                </div>
+				
+				
+				
+				
+				
+                <div class="clr">
+                </div>
+                <div id="button_slab">
+                    <div class="one"><img height="130" alt="BGIL" src="Images/difference.jpg" width="221" /> 
+                    </div>
+                    <div class="one_img_button"><a onmouseover="MM_swapImage('get_quote','','Images/get_quote_r.jpg',1)" onmouseout="MM_swapImgRestore()" href="ContactUs.aspx"><img id="get_quote" height="128" alt="Get Quote " src="Images/get_quote.jpg" width="100" /></a> 
+                    </div>
+                    <div class="one_img_button"><a onmouseover="MM_swapImage('portfolio','','Images/portfolio1.jpg',1)" onmouseout="MM_swapImgRestore()" href="Download_PDF/BGIL_Portfolio.pdf"><img id="portfolio" height="128" alt="BGIL's Portfolio" src="Images/portfolio.jpg" width="100" /></a> 
+                    </div>
+                    <div class="one_img_button"><a onmouseover="MM_swapImage('Careers','','Images/careers1.jpg',1)" onmouseout="MM_swapImgRestore()" href="Careers.html"><img id="Careers" height="128" alt="Careers" src="Images/careers.jpg" width="100" /></a> 
+                    </div>
+                    <div class="one_img_button"><a onmouseover="MM_swapImage('contact_us','','Images/contact_us.jpg',1)" onmouseout="MM_swapImgRestore()" href="http://www.apsa-india.org/" target="_blank"><img id="contact_us" height="128" alt="Contact BGIL Solutions" src="Images/contact_us_r.jpg" width="100" /></a> 
+                    </div>
+                </div>
+            </div>
+			
+			
+			
+			
+			
+			
+        </div>
+        <div class="clr">
+        </div>
+        <div id="footer">
+            <div id="footer_in">
+                <div class="download_portfolio">
+                    <div class="p_pdf_icon"><a class="p_pdf_icon" href="#" target="_blank"></a>
+                    </div>
+                    <div class="clr">
+                    </div>
+                    
+                </div>
+                <div class="footer_link_holder">
+                    <div class="p_nav_main">
+                       
+                        <div id="footer_link">
+                            <ul>
+                                <li>
+                                    <a href="home.html">Home</a> 
+                                </li>
+                                <li>
+                                    <a href="ssa/SSA.html">Solutions</a> 
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Blogs</a> 
+                                </li>
+                                <li>
+                                <a href="Careers.html"><span>Careers</span></a> 
+								</li>
+								<li>
+                                    <a href="Site_map.html">Sitemap</a> 
+                                </li>
+                                <li>
+                                    <a href="ContactUs.aspx">Contact Us</a> 
+                                </li>
+                            </ul>
+                        </div>
+                        <!--</div>-->
+                        <div class="clr">
+                        </div>
+                        <!--<br />-->
+                        <!--<div class="heading1">Copyright</div>-->
+                        <div class="n_copyright">BGIL All Rights Reserved Copyright 2009-2010 
+                        </div>
+                        <div class="clr">
+                        </div>
+                        <br />
+                    </div>
+                    <div>
+                        <!--<div class="p_partner_main">
+          <div style="width:122px; float:left;">
+
+            <div class="p_partner"></div>
+          </div>-->
+                        <!--<div class="p_bgil_logo_main">
+            <div class="p_bgil"><a href="http://www.bgil.in/" target="_blank" class="p_bgil_link"></a></div>
+            <div class="p_bgil_logo_br"></div>
+            <div class="p_bgil"><a href="http://www.bgilfilms.in/" target="_blank" class="p_bgil_link"></a></div>
+          </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+    </form>
+	<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K6CHR4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6CHR4');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sawaca Enterprises Limited</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	//Set Default State of each portfolio piece
+	$(".paging").show();
+	$(".paging a:first").addClass("active");
+		
+	//Get size of images, how many there are, then determin the size of the image reel.
+	var imageWidth = $(".window").width();
+	var imageSum = $(".image_reel img").size();
+	var imageReelWidth = imageWidth * imageSum;
+	
+	//Adjust the image reel to its new size
+	$(".image_reel").css({'width' : imageReelWidth});
+	
+	//Paging + Slider Function
+	rotate = function(){	
+		var triggerID = $active.attr("rel") - 1; //Get number of times to slide
+		var image_reelPosition = triggerID * imageWidth; //Determines the distance the image reel needs to slide
+
+		$(".paging a").removeClass('active'); //Remove all active class
+		$active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
+		
+		//Slider Animation
+		$(".image_reel").animate({ 
+			left: -image_reelPosition
+		}, 500 );
+		
+	}; 
+	
+	//Rotation + Timing Event
+	rotateSwitch = function(){		
+		play = setInterval(function(){ //Set timer - this will repeat itself every 3 seconds
+			$active = $('.paging a.active').next();
+			if ( $active.length === 0) { //If paging reaches the end...
+				$active = $('.paging a:first'); //go back to first
+			}
+			rotate(); //Trigger the paging and slider function
+		}, 3000); //Timer speed in milliseconds (3 seconds)
+	};
+	
+	rotateSwitch(); //Run function on launch
+	
+	//On Hover
+	$(".image_reel a").hover(function() {
+		clearInterval(play); //Stop the rotation
+	}, function() {
+		rotateSwitch(); //Resume rotation
+	});	
+	
+	//On Click
+	$(".paging a").click(function() {	
+		$active = $(this); //Activate the clicked paging
+		//Reset Timer
+		clearInterval(play); //Stop the rotation
+		rotate(); //Trigger rotation immediately
+		rotateSwitch(); // Resume rotation
+		return false; //Prevent browser jump to link anchor
+	});	
+	
+});
+</script>
+
+</head>
+
+<body>
+<div class="top"></div>
+<div class="main">
+ <div id="wrap">
+  <div id="header">
+   <div class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></div>
+   <div class="slogan"><img src="images/slogan-left.png" alt="" />Accelerating forward in customer service excellence!<img src="images/slogan-right.png" alt="" /></div>
+   <div class="social"><a href="#"><img src="images/tw.gif" alt="" /></a><a href="#"><img src="images/fb.gif" alt="" /></a></div>
+    <ul id="nav">
+     <li><a href="#" class="active">Home</a></li>
+     
+     <!--<li><a href="products.html">Products</a>
+        <ul>
+            <li><a href="erp-for-healthcare.html">ERP for Healthcare</a></li>
+            <li><a href="erp-for-infrastructure-company.html">ERP for Infrastructure Company</a></li>
+            <li><a href="erp-for-engineering-company.html">ERP for Engineering Company</a></li>
+            <li><a href="erp-for-glass-industries.html">ERP for Glass Industries</a></li>
+            <li><a href="erp-for-jeweler-business.html">ERP for Jeweler Business</a></li>
+            <li><a href="erp-for-cargo-management.html">ERP for Cargo Management</a></li>
+            <li><a href="erp-for-hotel-management.html">ERP for Hotel Management</a></li>
+            <li><a href="erp-for-restaurant-management.html">ERP for Restaurant Management</a></li>
+            <li><a href="erp-for-automobile-industries.html">ERP for Automobile Industries</a></li>
+            <li><a href="erp-for-automobile-workshop.html">ERP for Automobile Workshop</a></li>
+            <li><a href="erp-for-plywood-and-mica-industry.html">ERP for Plywood and Mica Industry</a></li>
+        </ul>     
+     </li>-->
+     <li><a href="investors.html">Investors</a>
+      <ul>
+	  <li><a href="policies.html">POLICIES</a></li>
+    <li><a href="right-issue.html">Right Issue</a></li>
+       <li><a href="results.html">Results</a></li>
+       <li><a href="notices.html">NOTICES</a></li>
+		<li><a href="annual-reports.html">Annual Reports</a></li>
+		<li><a href="share-holding-pattern.html">Share Holding Pattern</a></li>
+		<li><a href="share-holder-info.html">Shareholder Info</a></li>
+        <li><a href="corpo-gov-report.html">CORPORATE GOVERNANCE REPORT</a></li>
+        <li><a href="annual-submissions.html">Annual Submissions</a></li>
+          <li><a href="notice-by-advertisement.html">Notice By Advertisement</a></li>
+       <li><a href="secretarial-compliance-report.html">Secretarial Compliance Report</a></li>
+       <li><a href="related-party-transaction-report.html" >Related Party Transaction Report</a></li>
+<li><a href="statutory-documents.html" >Statutory Documents</a></li><li><a href="details-of-name-change.html" >Details of Name Change</a></li> <li><a href="statement-of-deviation.html" >Statement of Deviation</a></li> 
+      </ul>
+     </li>
+     <li><a href="business.html">BUSINESS</a></li>
+     <li><a href="our-team.html">BOARD OF DIRECTORS</a></li>
+<!--<li><a href="customer.html">Customer</a></li>-->
+<li><a href="right-issue.html">Right Issue</a></li>
+     <li><a href="careers.html">Careers</a></li>
+     <!--<li><a href="franchise.html">Franchise</a></li>-->
+     <li class="last"><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </div>
+<!--   <div class="banner">
+        <div class="main_view">
+         <div class="window">	
+          <div style="" class="image_reel">
+          <a href="#"><img src="images/banner.jpg" alt=""></a>
+           <a href="#"><img src="images/banner1.jpg" alt=""></a>
+           <a href="#"><img src="images/banner2.jpg" alt=""></a>
+          </div>
+         </div>
+         <div style="display: block;" class="paging">
+         <a href="#" rel="1"></a>
+          <a href="#" rel="2"></a>
+          <a href="#" rel="3"></a>
+         </div>
+        </div>
+   </div>-->
+  <div class="contentpart">
+   <div class="leftpart">
+    <h2>Welcome to <strong>SEL</strong></h2>
+    
+   <p>Sawaca Enterprises Limited is Ahmadabad based company, was established in 1994. Founded on the principles of quality, honesty, integrity and versatility. At presently we are indulged into business of Trading and Export of Machineries and Local trading of Metal scrap and Cotton bales.</p>
+    <p align="center"><span style="font-size:18px; color:#0e81b1;">MISSION & VISION</span></p>
+    <p><strong><span style="font-size:14px;">Our Mission</span></strong><Br/>
+    Our mission is to cater needs of our customers and, at the same time, to expand our sourcing points by creating strategic alliances with our key suppliers to best create value for our clients. We want to generate value for all our stakeholders by making the most optimal use of all available resources and opportunities in an ethical, lawful and efficient manner.</p>
+    <p>Our mission further extends into our external environment, and our commitment to working together with our business partners, community organizations and interested stakeholders to improve our environmental quality and progress towards a clean and safer place to live and work for our future generations.</p>
+    <Br />
+    
+    <table width="100%" border="0">
+  <tr>
+    <td><img src="images/metal-img-1.jpg" /></td>
+    <td><img src="images/metal-img-2.jpg" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+    
+    <p><strong><span style="font-size:14px;">Our Vision</span></strong><Br/>
+      To actively pursue long lasting relationships by partnering with our customers providing quality service built upon integrity, honesty, and professionalism and stand committed in meeting our employees and customers needs by exceeding their expectations</p><Br /><Br /><Br /><Br />
+    
+   </div><div class="clear"></div>
+   <div class="line"></div>
+  </div>
+  <div class="footer">
+   <div class="left">Copyright (c) 2016 Sawaca Enterprises Limited</div>
+   <div class="right"><a href="#">Privacy Policy</a>  |  <a href="#">Terms of Services</a></div>
+  </div>
+ </div>
+</div>
+<div class="bottom"><p>&nbsp;</p></div>
+</body>
+</html>

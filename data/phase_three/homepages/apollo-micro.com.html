@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo Micro Systems</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mobile-styles.css">
+    <link rel="preload" href="/fonts/AMS-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/AMS-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/AMS-Italic.woff2" as="font" type="font/woff2" crossorigin>
+
+    <style>
+                /* Modal background */
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+        }
+
+        /* Modal image */
+        .modal-content {
+        position: relative;
+        width: auto;
+        max-width: 90%;
+        max-height: 75vh;  
+        border-radius: 5px;
+        animation: zoomIn 0.4s;
+        }
+
+        @keyframes zoomIn {
+        from {transform: scale(0.7);}
+        to {transform: scale(1);}
+        }
+
+        /* Close button */
+        .close {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+        .modal-inner {
+        display: flex;
+        flex-direction: column;   /* stack vertically */
+        align-items: center;      /* center horizontally */
+        justify-content: center;
+        }
+
+        .caption {
+        margin-top: 10px;         /* space below image */
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        }
+        .modal.show {
+        display: flex;
+        }
+
+        /* IDL Acquisition Modal */
+        #idlAcquisitionModal {
+            z-index: 3000;
+        }
+
+        .acquisition-modal-content {
+            background: linear-gradient(135deg, #00406e 0%, #1a2f5f 100%);
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            border-radius: 12px;
+            padding: 0;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            animation: modalSlideIn 0.5s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .acquisition-modal-header {
+            padding: 30px 40px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .acquisition-modal-header h2 {
+            color: #fff;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .acquisition-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .acquisition-logos .ams {
+            max-width: 150px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        .acquisition-logos .idl {
+            max-width: 150px;
+            height: auto;
+            filter: brightness(0) invert(-1) ;
+        }
+
+        .acquisition-modal-body {
+            padding: 40px;
+            background: #fff;
+        }
+
+        .acquisition-announcement {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .acquisition-announcement h3 {
+            color: #00406e;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .acquisition-announcement p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .close-acquisition-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 768px) {
+            .acquisition-modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .acquisition-modal-header, .acquisition-modal-body{
+                padding: 1rem;
+            }
+
+            .acquisition-modal-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .acquisition-logos {
+                gap: 15px;
+            }
+
+            .acquisition-logos .ams,
+            .acquisition-logos .idl {
+                max-width: 100px;
+            }
+
+            .acquisition-announcement h3 {
+                font-size: 1.4rem;
+            }
+
+            .acquisition-announcement p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="position-relative home-page">
+    <header class="d-block d-lg-none header-background" id="stickyheader">
+        <div class="row py-2 justify-content-between align-items-center header-background">
+            <div class="col-4 text-start">
+                <div class="header-icons-div">
+                    <a href="https://www.facebook.com/apollomicrosystemslimited" target="_blank"
+                        class="text-decoration-none">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://x.com/apollo_micro?t=9TF0ITsWzXapblzHihrXKQ&s=08" target="_blank"
+                        class="text-decoration-none">
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/apollo-microsystems-limited/" target="_blank"
+                        class="text-decoration-none">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/apollomicrosystemsltd/profilecard/?igsh=d2JwOW9vdzF5YzM="
+                        target="_blank" class="text-decoration-none">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-8 text-end ribbonline px-0">
+                <a href="#" class="ribbonline-txt">NSE 123.19 INR &nbsp; BSE 123.19 INR</a>
+            </div>
+        </div>
+        <div class="container-fluid position-relative pt-0">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container-fluid p-0 d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <a class="navbar-brand" href="./">
+                            <img src="./assets/ams-logo.png" alt="AMS" class="header-logo">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <!-- <span class="navbar-toggler"> -->
+                        <i class="fa-solid fa-bars mb-0"></i>
+                        <!-- </span> -->
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown">About Us</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="./corporate-info.html">Corporate Info</a></li>
+                                    <li><a class="dropdown-item" href="./corporate-social-responsibility.html">CSR</a></li>
+                                    <li><a class="dropdown-item" href="./events.html">Events</a></li>
+                                    <li><a class="dropdown-item last-child" href="./suppliers.html">Suppliers</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown products-dropdown">
+                                <a class="nav-link custom-menu-toggle" href="#" id="navbarDropdown" aria-expanded="false">
+                                    Business Verticals
+                                </a>
+                                <ul class="products-dropdown-menu custom-menu" style="max-height: 500px;" aria-labelledby="navbarDropdown">
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#"> Air Defence</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item" href="./aerial-bombs-page.html">Aerial Bombs</a></li>
+                                            <li><a class="custom-menu-item last-child" href="./drone-delivery-systems-page.html">Drone Delivery Systems</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#"> Land Defence</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item last-child" href="#">MRCR</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#"> Land Defence</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item last-child" href="#">MRCR</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle last-child" href="#">Sea Defence</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item" href="./amecs-migm.html">MIGM</a></li>
+                                            <li><a class="custom-menu-item" href="./amecs-moored-mine.html">MOORED Mine</a></li>
+                                            <li><a class="custom-menu-item" href="./limpet-mine-page.html">LIMPET Mine</a></li>
+                                            <li><a class="custom-menu-item" href="./mini-torpedo-page.html">MINI Torpedo</a></li>
+                                            <li><a class="custom-menu-item" href="./rocket-rgb-60-page.html">RGB 60 Rocket</a></li>
+                                            <li><a class="custom-menu-item last-child" href="#">Kamakazhe Boat</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#"> Space Defence</a>
+                                        
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#"> IT & CyberSecurity</a>
+                                        
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Home Land Security</a>
+                                        
+                                    </li>
+                                </ul>
+                            </li>
+                        
+                            <li class="nav-item dropdown products-dropdown">
+                                <a class="nav-link custom-menu-toggle" href="#"  id="navbarDropdown" aria-expanded="false">
+                                    Products
+                                </a>
+                                <ul class="products-dropdown-menu custom-menu" aria-labelledby="navbarDropdown">
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle d-flex align-items-center justify-content-between" href="#">
+                                            Actuation Systems
+                                            <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                                        </a>
+                                        <ul class="power-submenu-items custom-menu actuation-systems-submenu">
+                                            <!-- <li><a class="custom-menu-item" href="#">Aircraft</a></li>
+                                        <li><a class="custom-menu-item last-child" href="#">Missile</a></li> -->
+                                        <li><a class="custom-menu-item" href="./actuator-control-electronics-Unit.html">ACEU</a></li>
+                                        <li><a class="custom-menu-item" href="./swarm.html">SWARM</a></li>
+                                        <li><a class="custom-menu-item" href="./nwsa-75.html">NWSA</a></li>
+                                        <li><a class="custom-menu-item" href="./qdac.html">QDAC</a></li>
+                                        <li><a class="custom-menu-item" href="./ad-II-stage-1.html">AD-2</a></li>
+                                        <li><a class="custom-menu-item" href="./ema-system-for-itcm-and-slcm.html">EMA System</a></li>
+                                        <li><a class="custom-menu-item" href="./kusha-actuator.html">Kusha Actuator</a></li>
+                                        <li><a class="custom-menu-item" href="./ngram-actuator.html">NGRAM Actuator</a></li>
+                                        <li><a class="custom-menu-item" href="./qrsam-actuator.html">QRSAM Actuator</a></li>
+                                        <li><a class="custom-menu-item last-child" href="./rema.html">REMA</a></li>
+                                        <!-- <li class="tal-submenu">
+                                            <a class="custom-menu-item tal-toggle d-flex justify-content-between align-items-center" href="#">
+                                              REMA
+                                              <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                            </a>
+                                            <ul class="tal-menu">
+                                                <li><a class="tal-menu-item" href="./rema-20ip.html">20iP</a></li>
+                                                <li><a class="tal-menu-item" href="./rema-25.html">25</a></li>
+                                                <li><a class="tal-menu-item" href="./rema-40.html">40</a></li>
+                                                <li><a class="tal-menu-item" href="./rema-50.html">50</a></li>
+                                                <li><a class="tal-menu-item" href="./rema-75.html">75</a></li>
+                                            </ul>
+                                        </li> -->
+                                        <!-- <li><a class="custom-menu-item last-child" href="#">SWARN</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">AI Engine</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item" href="./aitdes.html">AI-TDES</a></li>
+                                            <li><a class="custom-menu-item last-child" href="./aiobc.html">AI-OBC</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Avionics</a>
+                                        <ul class="power-submenu-items custom-menu avionics-submenu">
+                                        <li><a class="custom-menu-item" href="./100-channel-data-acquisition-system-pcb.html">100-CH DAS</a></li>
+                                        <li><a class="custom-menu-item" href="./afcs.html">AFCS</a></li>
+                                        <li><a class="custom-menu-item" href="./lem.html">LEM</a></li>
+                                        <li><a class="custom-menu-item" href="./dsp.html">DSP-ASTRA</a></li>
+                                        <li><a class="custom-menu-item" href="./fcs-mk-2.html">FCS MK-II</a></li>
+                                        <li><a class="custom-menu-item" href="./iapt-tara.html">IAPT-TARA</a></li>
+                                        <li><a class="custom-menu-item" href="./iau-akash-ng.html">IAU-AKASH NG</a></li>
+                                        <li><a class="custom-menu-item" href="./iau-limitel-mirv.html">IAU LIMITEL- MIRV</a></li>
+                                        <li><a class="custom-menu-item" href="./iau-qrsam.html">IAU – QRSAM</a></li>
+                                        <li><a class="custom-menu-item" href="./imru.html">IMRU</a></li>
+                                        <li><a class="custom-menu-item" href="./mlp-rudram.html">MLP-RUDRAM</a></li>
+                                        <li><a class="custom-menu-item" href="./miu-4.html">MIU-IV</a></li>
+                                        <li><a class="custom-menu-item" href="./miu-relay-unit.html">MIU & Relay Unit (MRU MK1-N2N3)</a></li>
+                                        <li><a class="custom-menu-item" href="./pdu.html">PDU-I</a></li>
+                                        <li><a class="custom-menu-item" href="./seeker-processing-module-glided-bomb.html">SPM-GB</a></li>
+                                        <li><a class="custom-menu-item last-child" href="./uniac-pinaka.html">UNIAC</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Avionics Bus Products</a>
+                                        <ul class="power-submenu-items custom-menu avionics-bus-products-submenu">
+                                            <!-- <li><a class="custom-menu-item" href="#">1553B addon cards</a></li> -->
+                                            <li><a class="custom-menu-item" href="./data-bus-coupler.html">Data Bus Coupler</a></li>
+                                            <li><a class="custom-menu-item last-child" href="./inline-coupler.html">Inline Coupler</a></li>
+                                            <!-- <li class="tal-submenu">
+                                                <a class="custom-menu-item tal-toggle last-child d-flex justify-content-between align-items-center" href="#">
+                                                Bus Couplers
+                                                <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                                </a>
+                                                <ul class="tal-menu">
+                                                    <li><a class="custom-menu-item" href="./data-bus-coupler.html">Data Bus Coupler</a></li>
+                                                    <li><a class="custom-menu-item last-child" href="./inline-coupler.html">Inline Coupler</a></li>
+                                                </ul>
+                                            </li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Automated Test Equipment</a>
+                                        <ul class="power-submenu-items custom-menu automated-test-equipment-submenu">
+                                            <!-- <li><a class="custom-menu-item" href="./id-lcs.html">ID-LCS</a></li> -->
+                                            <li><a class="custom-menu-item" href="./ilcs.html">ILCS</a></li>
+                                            <li><a class="custom-menu-item" href="#">IMRU Test Simulator</a></li>
+                                            <li><a class="custom-menu-item" href="#">IRU Test Simulator</a></li>
+                                            <li><a class="custom-menu-item" href="./msu.html">MSU</a></li>
+                                            <li><a class="custom-menu-item" href="./puwvs.html">PUWVS</a></li>
+                                            <li><a class="custom-menu-item" href="#">PDU Test Simulator</a></li>
+                                            <li><a class="custom-menu-item" href="#">CCSC Test Simulator</a></li>
+                                            <li><a class="custom-menu-item" href="ccrs-migm.html">CCRS-MIGM</a></li>
+                                            <li><a class="custom-menu-item" href="ccrs-moored-mine.html">CCRS-Moored Mine</a></li>
+                                            <li><a class="custom-menu-item" href="./tal-dars.html">TAL - DARS TEST PANEL</a></li>
+                                            <li><a class="custom-menu-item" href="./tal-htp.html">TAL - HOMING TEST PANEL</a></li>
+                                            <li><a class="custom-menu-item last-child" href="./usm.html">USM</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Communication Systems</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item last-child" href="./acoustic-modem.html">ACOUSTIC MODEM</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Composite Systems</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <!-- No items listed -->
+                                             <li><a class="custom-menu-item" href="./composite-containers.html">Composite Containers</a></li>
+                                             <li><a class="custom-menu-item" href="./carrying-cases.html">Carrying Cases</a></li>
+                                             <li><a class="custom-menu-item" href="./antenna-and-radomes.html">Antenna & Radomes</a></li>
+                                             <li><a class="custom-menu-item" href="./composite-mines.html">Composite Mines</a></li>
+                                             <li><a class="custom-menu-item" href="./composite-battery-container.html">Composite Battery Container</a></li>
+                                             <li><a class="custom-menu-item last-child" href="./composite-covers.html">Composite Covers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle"  href="#">Ground Support Equipment</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item" href="./a1-prime.html">A1-PRIME</a></li>
+                                            <li><a class="custom-menu-item" href="./a4.html">A4</a></li>
+                                            <li><a class="custom-menu-item" href="./integrated-relay-unit.html">IRU</a></li>
+                                            <li><a class="custom-menu-item" href="./pmu.html">PMU</a></li>
+                                            <li><a class="custom-menu-item" href="./cmem.html">CMEM</a></li>
+                                            <li><a class="custom-menu-item" href="./tct-5-Controller.html">TCT-5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Navigation Systems</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item last-child" href="#">FINGS</a></li>
+                                            <!-- <li><a class="custom-menu-item last-child" href="#">UNIAC</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Power Supply Systems</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item" href="./pdu-uav.html">PDU UAV (Archer)</a></li>
+                                            <li><a class="custom-menu-item" href="./psru.html">PSRU</a></li>
+                                            <li><a class="custom-menu-item" href="./torpedo-dc-dc-converter.html">Torpedo - DC-DC CONVERTER</a></li>
+                                            <li><a class="custom-menu-item" href="./tx-dc-dc-converter.html">TX - DC-DC CONVERTER</a></li>
+                                            <li><a class="custom-menu-item last-child" href="#">VAR - POWER SUPPLY UNIT</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">RF Systems</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item" href="./wim.html">WIM</a></li>
+                                            <li><a class="custom-menu-item last-child" href="dsp-rf.html">DSP-RF</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Satellite Data Handling</a>
+                                        <ul class="power-submenu-items custom-menu ">
+                                            <li><a class="custom-menu-item" href="#">TOT-ISRO</a></li>
+                                            <li><a class="custom-menu-item" href="#">Data Handling System</a></li>
+                                            <li><a class="custom-menu-item last-child" href="#">PDAS</a></li>
+                                            <li><a class="custom-menu-item" href="#">TOT-ISRO</a></li>
+                                            <li><a class="custom-menu-item" href="#">Data Handling System</a></li>
+                                            <li><a class="custom-menu-item last-child" href="#">PDAS</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Sonar Systems</a>
+                                        <ul class="power-submenu-items custom-menu sonar-systems-submenu">
+                                            <li><a class="custom-menu-item" href="./mcs.html">MCS</a></li>
+                                            <li><a class="custom-menu-item" href="./efos.html">EFOS</a></li>
+                                            <li><a class="custom-menu-item" href="./sam-lrshm.html">SAM-LRSHM</a></li>
+                                            <!-- <li><a class="custom-menu-item" href="#">SAM MC & PC</a></li> -->
+                                            <!-- <li><a class="custom-menu-item" href="./sam-qr.html">SAM For QRSAM</a></li> -->
+                                            <li><a class="custom-menu-item" href="./adm-II.html">ADM-II Influence FUZE & ADM-III STM FUZE ASSEMBLY</a></li>
+                                            <li><a class="custom-menu-item" href="./idas.html">IDAS</a></li>
+                                            <li><a class="custom-menu-item" href="./ehwt.html">EHWT-Homing</a></li>
+                                            <li><a class="custom-menu-item" href="./egs.html">EGS</a></li>
+                                            <li><a class="custom-menu-item" href="./seu-gimbal.html">GIMBAL-SEU</a></li>
+                                            <li><a class="custom-menu-item" href="./alwt-homing.html">ALWT-Homing</a></li>
+                                            <!-- <li><a class="custom-menu-item" href="#">SPE</a></li> -->
+                                            <li><a class="custom-menu-item" href="./ucs-ics.html">UCS-ICS</a></li>
+                                            <li><a class="custom-menu-item" href = "amecs-migm.html">AMECS-MIGM</a></li>
+                                            <li><a class="custom-menu-item" href="amecs-moored-mine.html">AMECS-Moored Mine</a></li>
+                                            <li><a class="custom-menu-item" href="./gnc-kit.html">GNC KIT</a></li>
+                                            <!-- <li><a class="custom-menu-item" href="./altimeter.html">Altimeter</a></li>
+                                            <li><a class="custom-menu-item" href="./doppler-velocity-log.html">Doppler Velocity Log</a></li>
+                                            <li><a class="custom-menu-item last-child" href="./side-scan-sonar.html">Side Scan Sonar</a></li> -->
+                                            <li class="tal-submenu">
+                                                <a class="custom-menu-item tal-toggle last-child d-flex justify-content-between align-items-center" href="#">
+                                                TAL
+                                                <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                                </a>
+                                                <ul class="tal-menu">
+                                                    <li><a class="tal-menu-item" href="./tal-fec.html">FE CAGE</a></li>
+                                                    <li><a class="tal-menu-item" href="./tal-instrumentation.html">INSTRUMENTATION</a></li>
+                                                    <li><a class="tal-menu-item" href="./tal-nc.html">NOSE CONE</a></li>
+                                                    <li><a class="tal-menu-item last-child" href="./tal-spu.html">SPU</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle" href="#">Telemetry </a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item last-child" href="./its-tara.html">ITS-TARA</a></li>
+                                            <!-- <li><a class="custom-menu-item" href="#">ITS-PGAD</a></li>
+                                            <li><a class="custom-menu-item last-child" href="#">PCM ENCODER</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="custom-submenu power-submenu">
+                                        <a class="custom-menu-item custom-menu-toggle last-child " href="#">Warhead & Propulsion Systems</a>
+                                        <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item" href="./fuzes-draft.html">Fuzes and Components</a></li>
+                                            <li><a class="custom-menu-item" href="#">Propulsion Systems</a></li>
+                                            <li><a class="custom-menu-item last-child" href="#">Warhead</a></li>
+                                            <!-- <li><a class="custom-menu-i tem" href="#">MIGM - AMECS</a></li>
+                                            <li><a class="custom-menu-item" href="./ccrs-migm.html">MIGM - CCRS</a></li>
+                                            <li><a class="custom-menu-item" href="#">MM - AMECS</a></li>
+                                            <li><a class="custom-menu-item" href="./integrated-MIU-relay-unit.html">IMRU</a></li>
+                                            <li><a class="custom-menu-item" href="./sam-lrgb.html">SAM LRGB</a></li>
+                                            <li><a class="custom-menu-item" href="#">APS FUZE</a></li>
+                                            <li><a class="custom-menu-item" href="./sdd-uran.html">SDD URAN (SAM)</a></li>
+                                            <li><a class="custom-menu-item" href="./sam-pralay.html">SAM Pralay</a></li>
+                                            <li><a class="custom-menu-item" href="./sam-pgad.html">SAM PGAD</a></li>
+                                            <li><a class="custom-menu-item" href="#">PDU-I</a></li>
+                                            <li><a class="custom-menu-item" href="#">MIU-IV</a></li>
+                                            <li><a class="custom-menu-item" href="./mui-relay-unit.html">MIU &Relay Unit (MRU MK1)</a></li>
+                                            <li><a class="custom-menu-item" href="./command-control-signal-conditioning-unit.html">CCSC</a></li>
+                                            <li><a class="custom-menu-item" href="./pdu.html">PDU UAV (Archer)</a></li>
+                                            <li><a class="custom-menu-item last-child" href="./vpsu.html">VARUNASTRA POWER SUPPLY UNIT</a></li> -->
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id = "navbarDropdown">Home Land Security</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="./hand-held-anti-drone-system.html">Handheld Anti-Drone System</a></li>
+                                    <li><a class="dropdown-item" href="./high-end-uav-detecting-and-jamming-system.html">UAV Detecting and Jamming System</a></li>
+                                    <li><a class="dropdown-item last-child" href="./portable-bomb-jammer.html">Portable Bomb Jammer</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown">
+                                    Services
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="./hardware-design-services.html">Hardware Design</a></li>
+                                    <li><a class="dropdown-item" href="./software-services.html">Software Design</a></li>
+                                    <li><a class="dropdown-item" href="#">Manufacturing</a></li>
+                                    <li><a class="dropdown-item" href="./environmental-testing-services.html">Environmental Testing</a></li>
+                                    <li><a class="dropdown-item" href="#">Inertial System Calibration</a></li>
+                                    <li class="tal-submenu last-child">
+                                        <a class="custom-menu-item tal-toggle last-child d-flex justify-content-between align-items-center" href="#">Engineering Design
+                                        <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                        </a>
+                                        <ul class="tal-menu">
+                                            <li><a class="tal-menu-item" href="./electronic-manufacturing-services.html">Electronic - CAD Services</a></li>
+                                            <li><a class="tal-menu-item last-child" href="./mechanical-precision-engineering-services.html">Mechanical - CAD Services</a></li>
+                                        </ul>
+                                    </li>                                    
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" data-toggle="dropdown">
+                                    Infrastructure
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Unit-I</a></li>
+                                    <li><a class="dropdown-item" href="#">Unit-II</a></li>
+                                    <li><a class="dropdown-item last-child" href="#">Unit-III</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./careers.html">Careers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./news.html">News</a>
+                            </li>
+                            <li class="custom-weapon-dropdown">
+                                <a href="#" class="custom-weapon-link">Investors</a>
+                                <div class="custom-weapon-submenu">
+                                    <div class="container-fluid sm-padding-none">
+                                        <div class="row">
+                                            <div class="col-12 sm-padding-none">
+                                                <ul class="list-unstyled mb-0 d-lg-flex">
+                                                    <li class="col-12 col-lg-3">
+                                                        <a href="./investor-relations.html#shareholders-section"
+                                                            class="custom-weapon-link-heading">Shareholders' Information</a>
+                                                        <ul class="custom-weapon-submenu-internal">
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./disclosures-under-regulation-46-and-62-of-sebi-lord-regulations-2015.html">
+                                                                    Disclosures
+                                                                    under Regulation 46 and 62 of SEBI (LODR)
+                                                                    Regulations, 2015</a></li>
+
+                                                            <li><a class="custom-weapon-subitem"
+                                                                            href="./related-party-transaction-disclosure-reg-23-9.html">Related Party Transactions Disclosure – Regulation 23(9)</a>
+                                                                    </li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./reconciliation-of-share-capital-audit-report.html">Reconciliation of Share Capital Audit Report</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./certificates-pertaining-to-preferential-offer.html">Certificates pertaining to Preferential Offer</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./integrated-filing-financial.html">Integrated Filing (Finance)</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./integrated-filing-governance.html">Integrated Filing (Governance)</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./shareholding-pattern.html">Shareholding Pattern</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./corporate-governance.html">Corporate Governance Report</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./voting-results.html">Voting Results</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./scrutinizers-report.html">Scrutinizers Report</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./corporate-announcements.html">Corporate Announcements</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./policies.html">Policies</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./investor-contacts.html">Investor Contacts</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./unpaid-unclaimed-dividend.html">Unpaid & Unclaimed Dividend</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./brsr-reports.html">BRSR Reports</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./postal-ballot.html">Postal Ballot</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./prospectus.html">Prospectus</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./board-meeting-outcome.html">Board Meeting Outcome</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./notices-of-general-meetings.html">Notices of General Meetings</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./intimation-of-record-date.html">Intimation of Record Date</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="col-12 col-lg-2">
+                                                        <a href="./investor-relations.html#financial-reporting-section"
+                                                            class="custom-weapon-link-heading">Financial Reporting</a>
+                                                        <ul class="custom-weapon-submenu-internal">
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./financial-reporting.html?tab=annual-reports-ratings#tabs-section">AnnualReports</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./financial-reporting.html?tab=quarterly-results#tabs-section">Quarterly Results</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./financial-reporting.html?tab=financial-presentations#tabs-section">Financial Presentations</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./financial-reporting.html?tab=csr-reports#tabs-section">CSR Reports</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./financial-reporting.html?tab=credit-ratings#tabs-section">Credit Ratings</a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="col-12 col-lg-3">
+                                                        <!-- <a href="./investor-relations.html#subsidiaries-section"
+                                                            class="custom-weapon-link-heading">Subsidiaries</a> -->
+                                                        <!-- <a href="./investor-relations.html#subsidiaries-section"
+                                                            class="custom-weapon-link-heading">Subsidiaries</a> -->
+                                                        <a href="#"
+                                                            class="custom-weapon-link-heading">Subsidiaries</a>
+                                                        <ul class="custom-weapon-submenu-internal">
+                                                            <li><a class="custom-weapon-subitem" href="#">Ananya SIP RF Technologies Private Limited</a></li>
+                                                            <li><a class="custom-weapon-subitem" href="#">Apollo Defence Industires Private Limited</a></li>
+                                                            <li><a class="custom-weapon-subitem" href = "#">Apollo Strategic Technologies Private Limited</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="col-12 col-lg-2">
+                                                        <a href="./investor-relations.html#shares-section"
+                                                            class="custom-weapon-link-heading">Shares</a>
+                                                        <ul class="custom-weapon-submenu-internal">
+                                                            <li><a class="custom-weapon-subitem" href="#">Stock Quote</a></li>
+                                                            <li><a class="custom-weapon-subitem" href="#">Stock Chart</a></li>
+                                                            <li><a class="custom-weapon-subitem" href="#">Historical Stock Price</a></li>
+                                                            <li><a class="custom-weapon-subitem" href="#">Investment Calculator</a></li>
+                                                            <li><a class="custom-weapon-subitem" href="#">Dividend & Shares</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="col-12 col-lg-2">
+                                                        <a href="./investor-relations.html#resource-center-section"
+                                                            class="custom-weapon-link-heading">Resource Centre</a>
+                                                        <ul class="custom-weapon-submenu-internal">
+                                                            <li><a class="custom-weapon-subitem" href="#">Other Important Documents</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Platform</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contact-us.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="justify-content-lg-end d-lg-block d-none">
+                        <div class="header-icons-div">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-square-x-twitter"></i>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>    
+    <header class="stickyheader d-lg-block d-none">
+        <div class="container-fluid p-0">
+            <div class="row py-lg-2 bg-black align-items-center">
+                <div class="col-12 col-lg-6 text-lg-start text-center">
+                    <div class="header-icons-div">
+                        <a href="https://www.facebook.com/apollomicrosystemslimited" target="_blank"
+                            class="text-decoration-none">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://x.com/apollo_micro?t=9TF0ITsWzXapblzHihrXKQ&s=08" target="_blank"
+                            class="text-decoration-none">
+                            <i class="fa-brands fa-square-x-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/apollo-microsystems-limited/" target="_blank"
+                            class="text-decoration-none">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/apollomicrosystemsltd/profilecard/?igsh=d2JwOW9vdzF5YzM="
+                            target="_blank" class="text-decoration-none">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-end ribbonline">
+                    <a href="#" class="ribbonline-txt">NSE 123.19 INR &nbsp; &nbsp; BSE 123.19 INR</a>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-center bg-white py-2">
+                <div class="col-12 col-lg-6 p-0 ">
+                    <div class="d-flex align-items-center">
+                        <a class="navbar-brand ms-2" href="./">
+                            <img src="./assets/ams-new-logo.png" alt="AMS" class="header-logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-end text-center p-0 d-none">
+                    <form id="searchform" method="post" name="searchform">
+                        <input type="text" name="searchfor" placeholder="Search" id="menu_sbox" autocomplete="off">
+                        <input type="button" id="menu_sbutt" value="SEARCH" name="search_butt" class="me-3">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <button class="navbar-toggler d-lg-none ms-auto" type="button">
+            <i class="fa-solid fa-bars mb-0"></i>
+        </button>
+        <div class="row justify-content-center">
+            <div class="col-12 p-0">
+                <div id="menu_items">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown">About Us</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./corporate-info.html">Corporate Info</a></li>
+                                <li><a class="dropdown-item" href="./corporate-social-responsibility.html">CSR</a></li>
+                                <li><a class="dropdown-item" href="./events.html">Events</a></li>
+                                <li><a class="dropdown-item last-child" href="./suppliers.html">Suppliers</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown products-dropdown">
+                            <a class="nav-link custom-menu-toggle" href="#" role="button" id="navbarDropdown" aria-expanded="false">
+                                Business Verticals
+                            </a>
+                            <ul class="products-dropdown-menu custom-menu" aria-labelledby="navbarDropdown">
+                                <li class="custom-submenu warhead-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#"> Air Defence</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item" href="./aerial-bombs-page.html">Aerial Bombs</a></li>
+                                        <li><a class="custom-menu-item last-child" href="./drone-delivery-systems-page.html">Drone Delivery Systems</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#"> Land Defence</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item last-child" href="#">MRCR</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#"> Sea</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item last-child" href="#">MRCR</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#"> Space</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item last-child" href="#">MRCR</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#"> IT-Telecom</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item last-child" href="#">MRCR</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu warhead-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Home Land Security</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item" href="./amecs-migm.html">MIGM</a></li>
+                                        <li><a class="custom-menu-item" href="./amecs-moored-mine.html">MOORED Mine</a></li>
+                                        <li><a class="custom-menu-item" href="./limpet-mine-page.html">LIMPET Mine</a></li>
+                                        <li><a class="custom-menu-item" href="./mini-torpedo-page.html">MINI Torpedo</a></li>
+                                        <li><a class="custom-menu-item" href="./rocket-rgb-60-page.html">RGB 60 Rocket</a></li>
+                                        <li><a class="custom-menu-item last-child" href="#">Kamakazhe Boat</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                      
+                        <li class="nav-item dropdown products-dropdown">
+                            <a class="nav-link custom-menu-toggle" href="#" role="button" id="navbarDropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="products-dropdown-menu custom-menu" aria-labelledby="navbarDropdown">
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Actuation Systems</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu actuation-systems-submenu">
+                                        <!-- <li><a class="custom-menu-item" href="#">Aircraft</a></li>
+                                        <li><a class="custom-menu-item last-child" href="#">Missile</a></li> -->
+                                        <li><a class="custom-menu-item" href="./actuator-control-electronics-Unit.html">ACEU</a></li>
+                                        <li><a class="custom-menu-item" href="./swarm.html">SWARM</a></li>
+                                        <li><a class="custom-menu-item" href="./nwsa-75.html">NWSA</a></li>
+                                        <li><a class="custom-menu-item" href="./qdac.html">QDAC</a></li>
+                                        <li><a class="custom-menu-item" href="./ad-II-stage-1.html">AD-2</a></li>
+                                        <li><a class="custom-menu-item" href="./ema-system-for-itcm-and-slcm.html">EMA System</a></li>
+                                        <li><a class="custom-menu-item" href="./kusha-actuator.html">Kusha Actuator</a></li>
+                                        <li><a class="custom-menu-item" href="./ngram-actuator.html">NGRAM Actuator</a></li>
+                                        <li><a class="custom-menu-item" href="./qrsam-actuator.html">QRSAM Actuator</a></li>
+                                        <li><a class="custom-menu-item last-child" href="./rema.html">REMA</a></li>
+                                        <!-- <li class="tal-submenu">
+                                            <a class="custom-menu-item tal-toggle d-flex justify-content-between align-items-center" href="#">
+                                              REMA
+                                              <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                            </a>
+                                            <ul class="tal-menu">
+                                                <li><a class="tal-menu-item" href="./rema-20ip.html">20iP</a></li>
+                                                <li><a class="tal-menu-item" href="./rema-25.html">25</a></li>
+                                                <li><a class="tal-menu-item" href="./rema-40.html">40</a></li>
+                                                <li><a class="tal-menu-item" href="./rema-50.html">50</a></li>
+                                                <li><a class="tal-menu-item" href="./rema-75.html">75</a></li>
+                                            </ul>
+                                        </li> --> 
+                                        <!-- <li><a class="custom-menu-item last-child" href="#">SWARN</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">AI Engine</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item" href="./aitdes.html">AI-TDES</a></li>
+                                        <li><a class="custom-menu-item last-child" href="./aiobc.html">AI-OBC</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu warhead-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Avionics</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu avionics-submenu">
+                                        <li><a class="custom-menu-item" href="./100-channel-data-acquisition-system-pcb.html">100-CH DAS</a></li>
+                                        <li><a class="custom-menu-item" href="./afcs.html">AFCS</a></li>
+                                        <li><a class="custom-menu-item" href="./lem.html">LEM</a></li>
+                                        <li><a class="custom-menu-item" href="./dsp.html">DSP-ASTRA</a></li>
+                                        <li><a class="custom-menu-item" href="./fcs-mk-2.html">FCS MK-II</a></li>
+                                        <li><a class="custom-menu-item" href="./iapt-tara.html">IAPT-TARA</a></li>
+                                        <li><a class="custom-menu-item" href="./iau-akash-ng.html">IAU-AKASH NG</a></li>
+                                        <li><a class="custom-menu-item" href="./iau-limitel-mirv.html">IAU LIMITEL- MIRV</a></li>
+                                        <li><a class="custom-menu-item" href="./iau-qrsam.html">IAU – QRSAM</a></li>
+                                        <li><a class="custom-menu-item" href="./imru.html">IMRU</a></li>
+                                        <li><a class="custom-menu-item" href="./mlp-rudram.html">MLP-RUDRAM</a></li>
+                                        <li><a class="custom-menu-item" href="./miu-4.html">MIU-IV</a></li>
+                                        <li><a class="custom-menu-item" href="./miu-relay-unit.html">MIU & Relay Unit (MRU MK1-N2N3)</a></li>
+                                        <li><a class="custom-menu-item" href="./pdu.html">PDU-I</a></li>
+                                        <li><a class="custom-menu-item" href="./seeker-processing-module-glided-bomb.html">SPM-GB</a></li>
+                                        <li><a class="custom-menu-item last-child" href="./uniac-pinaka.html">UNIAC</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Avionics Bus Products</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu avionics-bus-products-submenu">
+                                        <!-- <li><a class="custom-menu-item" href="#">1553B addon cards</a></li> -->
+                                        <li class="tal-submenu">
+                                            <a class="custom-menu-item tal-toggle last-child d-flex justify-content-between align-items-center" href="#">
+                                            Bus Couplers
+                                            <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                            </a>
+                                            <ul class="tal-menu">
+                                                <li><a class="tal-menu-item" href="./data-bus-coupler.html">Data Bus Coupler</a></li>
+                                                <li><a class="tal-menu-item last-child" href="./inline-coupler.html">Inline Coupler</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Automated Test Equipment</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu automated-test-equipment-submenu">
+                                        <!-- <li><a class="custom-menu-item" href="./id-lcs.html">ID-LCS</a></li> -->
+                                        <li><a class="custom-menu-item" href="./ilcs.html">ILCS</a></li>
+                                        <li><a class="custom-menu-item" href="#">IMRU Test Simulator</a></li>
+                                        <li><a class="custom-menu-item" href="#">IRU Test Simulator</a></li>
+                                        <li><a class="custom-menu-item" href="./msu.html">MSU</a></li>
+                                        <li><a class="custom-menu-item" href="./puwvs.html">PUWVS</a></li>
+                                        <li><a class="custom-menu-item" href="#">PDU Test Simulator</a></li>
+                                        <li><a class="custom-menu-item" href="#">CCSC Test Simulator</a></li>
+                                        <li><a class="custom-menu-item" href="ccrs-migm.html">CCRS-MIGM</a></li>
+                                        <li><a class="custom-menu-item" href="ccrs-moored-mine.html">CCRS-Moored Mine</a></li>
+                                        <li><a class="custom-menu-item" href="./tal-dars.html">TAL - DARS TEST PANEL</a></li>
+                                        <li><a class="custom-menu-item" href="./tal-htp.html">TAL - HOMING TEST PANEL</a></li>
+                                        <li><a class="custom-menu-item last-child" href="./usm.html">USM</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Communication Systems</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item last-child" href="./acoustic-modem.html">ACOUSTIC MODEM</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Composite Systems</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                            <!-- No items listed -->
+                                             <li><a class="custom-menu-item" href="./composite-containers.html">Composite Containers</a></li>
+                                             <li><a class="custom-menu-item" href="./carrying-cases.html">Carrying Cases</a></li>
+                                             <li><a class="custom-menu-item" href="./antenna-and-radomes.html">Antenna & Radomes</a></li>
+                                             <li><a class="custom-menu-item" href="./composite-mines.html">Composite Mines</a></li>
+                                             <li><a class="custom-menu-item" href="./composite-battery-container.html">Composite Battery Container</a></li>
+                                             <li><a class="custom-menu-item last-child" href="./composite-covers.html">Composite Covers</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Ground Support Equipment</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu content-overflow mb-0">
+                                        <li><a class="custom-menu-item" href="./a1-prime.html">A1-PRIME</a></li>
+                                        <li><a class="custom-menu-item" href="./a4.html">A4</a></li>
+                                        <li><a class="custom-menu-item" href="./integrated-relay-unit.html">IRU</a></li>
+                                        <li><a class="custom-menu-item" href="./pmu.html">PMU</a></li>
+                                        <li><a class="custom-menu-item" href="./cmem.html">CMEM</a></li>
+                                        <li><a class="custom-menu-item" href="./tct-5-Controller.html">TCT-5</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Navigation Systems</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item last-child" href="#">FINGS</a></li>
+                                        <!-- <li><a class="custom-menu-item last-child" href="#">UNIAC</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Power Supply Systems</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item" href="./command-control-signal-conditioning-unit.html">CCSC</a></li>
+                                        <li><a class="custom-menu-item" href="./pdu-uav.html">PDU UAV (Archer)</a></li>
+                                        <li><a class="custom-menu-item" href="./psru.html">PSRU</a></li>
+                                        <li><a class="custom-menu-item" href="./torpedo-dc-dc-converter.html">Torpedo - DC-DC CONVERTER</a></li>
+                                        <li><a class="custom-menu-item" href="./tx-dc-dc-converter.html">TX - DC-DC CONVERTER</a></li>
+                                        <li><a class="custom-menu-item last-child" href="#">VAR - POWER SUPPLY UNIT</a></li>                    
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">RF Systems</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                        <li><a class="custom-menu-item" href="./wim.html">WIM</a></li>
+                                        <li><a class="custom-menu-item last-child" href="dsp-rf.html">DSP-RF</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Satellite Data Handling</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu ">
+                                        <li><a class="custom-menu-item" href="#">TOT-ISRO</a></li>
+                                        <li><a class="custom-menu-item" href="#">Data Handling System</a></li>
+                                        <li><a class="custom-menu-item last-child" href="#">PDAS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <a class="custom-menu-item custom-menu-toggle px-3 d-flex justify-content-between align-items-center" href="#">
+                                        Sonar Systems
+                                        <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                    </a>
+                                    <ul class="power-submenu-items custom-menu sonar-systems-submenu mb-0">
+                                        <li><a class="custom-menu-item" href="./adm-II.html">ADM-II Influence FUZE & ADM-III STM FUZE ASSEMBLY</a></li>
+                                        <li><a class="custom-menu-item" href="./egs.html">EGS</a></li>
+                                        <li><a class="custom-menu-item" href="./efos.html">EFOS</a></li>
+                                        <li><a class="custom-menu-item" href="./ehwt.html">EHWT-Homing</a></li>
+                                        <li><a class="custom-menu-item" href="./seu-gimbal.html">GIMBAL-SEU</a></li>
+                                        <li><a class="custom-menu-item" href="./idas.html">IDAS</a></li>
+                                        <li><a class="custom-menu-item" href="./mcs.html">MCS</a></li>
+                                        <li><a class="custom-menu-item" href="./alwt-homing.html">ALWT-Homing</a></li>
+                                        <!-- <li><a class="custom-menu-item" href="#">SPE</a></li> -->
+                                        <li><a class="custom-menu-item" href="./ucs-ics.html">UCS-ICS</a></li>
+                                        <li><a class="custom-menu-item" href = "amecs-migm.html">AMECS-MIGM</a></li>
+                                        <li><a class="custom-menu-item" href="amecs-moored-mine.html">AMECS-Moored Mine</a></li>
+                                        <li><a class="custom-menu-item" href="./gnc-kit.html">GNC KIT</a></li>
+                                        <!-- <li><a class="custom-menu-item" href="./altimeter.html">Altimeter</a></li>
+                                        <li><a class="custom-menu-item" href="./doppler-velocity-log.html">Doppler Velocity Log</a></li>
+                                        <li><a class="custom-menu-item" href="./side-scan-sonar.html">Side Scan Sonar</a></li> -->
+                                        <!-- <li><a class="custom-menu-item" href="#">SAM MC & PC</a></li> -->
+                                        <!-- <li><a class="custom-menu-item" href="./sam-qr.html">SAM For QRSAM</a></li> -->
+                                        <li><a class="custom-menu-item" href="./sam-lrshm.html">SAM-LRSHM</a></li>
+                                        <li class="tal-submenu">
+                                            <a class="custom-menu-item tal-toggle last-child d-flex justify-content-between align-items-center" href="#">
+                                            TAL
+                                            <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                            </a>
+                                            <ul class="tal-menu">
+                                                <li><a class="tal-menu-item" href="./tal-fec.html">FE CAGE</a></li>
+                                                <li><a class="tal-menu-item" href="./tal-instrumentation.html">INSTRUMENTATION</a></li>
+                                                <li><a class="tal-menu-item" href="./tal-nc.html">NOSE CONE</a></li>
+                                                <li><a class="tal-menu-item last-child" href="./tal-spu.html">SPU</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>  
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Telemetry</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu">
+                                            <li><a class="custom-menu-item last-child" href="./its-tara.html">ITS-TARA</a></li>
+                                            <!-- <li><a class="custom-menu-item" href="#">ITS-PGAD</a></li>
+                                            <li><a class="custom-menu-item last-child" href="#">PCM ENCODER</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="custom-submenu power-submenu">
+                                    <div class="d-flex justify-content-between py-0 px-3 align-items-center custom-menu-item custom-menu-toggle">
+                                        <a class="custom-menu-item px-0 border-bottom-0" href="#">Warhead & Propulsion Systems</a>
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="custom-menu-toggle">
+                                                <i class="fa-solid fa-chevron-right text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="power-submenu-items custom-menu mb-0">
+                                        <li><a class="custom-menu-item" href="./fuzes-draft.html">Fuzes and Components</a></li>
+                                        <li><a class="custom-menu-item" href="#">Propulsion Systems</a></li>
+                                        <li><a class="custom-menu-item last-child" href="#">Warhead</a></li>
+                                        <!-- <li><a class="custom-menu-item" href="#">APS FUZE</a></li>
+                                        <li><a class="custom-menu-item" href="./command-control-signal-conditioning-unit.html">CCSC</a></li>
+                                        <li><a class="custom-menu-item" href="./integrated-MIU-relay-unit.html">IMRU</a></li>
+                                        <li><a class="custom-menu-item" href="./mui-relay-unit.html">MIU &Relay Unit (MRU MK1)</a></li>
+                                        <li><a class="custom-menu-item" href="#">MIU-IV</a></li>
+                                        <li class="tal-submenu">
+                                            <a class="custom-menu-item tal-toggle d-flex justify-content-between align-items-center" href="#">
+                                            MIGM
+                                            <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                            </a>
+                                            <ul class="tal-menu">
+                                                <li><a class="tal-menu-item"  href="#">AMECS</a></li>
+                                                <li><a class="tal-menu-item" href="./ccrs-migm.html">CCRS</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="custom-menu-item" href="#">MM - AMECS</a></li>
+                                        <li><a class="custom-menu-item" href="#">PDU-I</a></li>
+                                        <li><a class="custom-menu-item" href="./pdu.html">PDU UAV (Archer)</a></li>
+                                        <li class="tal-submenu">
+                                            <a class="custom-menu-item tal-toggle d-flex justify-content-between align-items-center" href="#">
+                                            SAM
+                                            <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                            </a>
+                                            <ul class="tal-menu">
+                                                <li><a class="tal-menu-item" href="./sam-lrgb.html">LRGB</a></li>
+                                                <li><a class="tal-menu-item" href="./sam-pgad.html">PGAD</a></li>
+                                                <li><a class="tal-menu-item" href="./sam-pralay.html">Pralay</a></li>
+                                                <li><a class="tal-menu-item last-child" href="./sdd-uran.html">SDD URAN</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="custom-menu-item last-child" href="./vpsu.html">VARUNASTRA POWER SUPPLY UNIT</a></li> -->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id = "navbarDropdown">Home Land Security</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./hand-held-anti-drone-system.html">Handheld Anti-Drone System</a></li>
+                                <li><a class="dropdown-item" href="./high-end-uav-detecting-and-jamming-system.html">UAV Detecting and Jamming System</a></li>
+                                <li><a class="dropdown-item" href="./portable-bomb-jammer.html">Portable Bomb Jammer</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./hardware-design-services.html">Hardware Design</a></li>
+                                <li><a class="dropdown-item" href="./software-services.html">Software Design</a></li>
+                                <li><a class="dropdown-item" href="#">Manufacturing</a></li>
+                                <li><a class="dropdown-item" href="./environmental-testing-services.html">Environmental Testing</a></li>
+                                <li><a class="dropdown-item" href="#">Inertial System Calibration</a></li>
+                                <li class="tal-submenu last-child">
+                                    <a class="custom-menu-item tal-toggle last-child d-flex justify-content-between align-items-center" href="#">Engineering Design
+                                        <i class="fa-solid fa-chevron-right text-dark ms-2"></i>
+                                    </a>
+                                    <ul class="tal-menu">
+                                        <li><a class="tal-menu-item" href="./electronic-manufacturing-services.html">Electronic - CAD Services</a></li>
+                                        <li><a class="tal-menu-item last-child" href="./mechanical-precision-engineering-services.html">Mechanical - CAD Services</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown">
+                                Infrastructure
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Unit-I</a></li>
+                                <li><a class="dropdown-item" href="#">Unit-II</a></li>
+                                <li><a class="dropdown-item last-child" href="#">Unit-III</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./careers.html">Careers</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./news.html">News</a>
+                        </li>
+
+                        <li class="custom-weapon-dropdown">
+                            <a href="#" class="custom-weapon-link">Investors</a>
+                            <div class="custom-weapon-submenu">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="./investor-relations.html"
+                                                class="custom-weapon-link-heading text-center mb-2">Investor
+                                                Relations</a>
+                                            <ul class="list-unstyled mb-0 d-lg-flex">
+                                                <li class="col-12 col-lg-3">
+                                                    <a href="./investor-relations.html#shareholders-section"
+                                                        class="custom-weapon-link-heading">Shareholders' Information</a>
+                                                     <ul class="custom-weapon-submenu-internal">
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./disclosures-under-regulation-46-and-62-of-sebi-lord-regulations-2015.html">
+                                                                    Disclosures
+                                                                    under Regulation 46 and 62 of SEBI (LODR)
+                                                                    Regulations, 2015</a></li>
+
+                                                            <li><a class="custom-weapon-subitem"
+                                                                            href="./related-party-transaction-disclosure-reg-23-9.html">Related Party Transactions Disclosure – Regulation 23(9)</a>
+                                                                    </li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./reconciliation-of-share-capital-audit-report.html">Reconciliation of Share Capital Audit Report</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./certificates-pertaining-to-preferential-offer.html">Certificates pertaining to Preferential Offer</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./integrated-filing-financial.html">Integrated Filing (Finance)</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./integrated-filing-governance.html">Integrated Filing (Governance)</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./shareholding-pattern.html">Shareholding Pattern</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./corporate-governance.html">Corporate Governance Report</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./voting-results.html">Voting Results</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./scrutinizers-report.html">Scrutinizers Report</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./corporate-announcements.html">Corporate Announcements</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./policies.html">Policies</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./investor-contacts.html">Investor Contacts</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./unpaid-unclaimed-dividend.html">Unpaid & Unclaimed Dividend</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./brsr-reports.html">BRSR Reports</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./postal-ballot.html">Postal Ballot</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./prospectus.html">Prospectus</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./board-meeting-outcome.html">Board Meeting Outcome</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./notices-of-general-meetings.html">Notices of General Meetings</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                    href="./intimation-of-record-date.html">Intimation of Record Date</a></li>
+                                                        </ul>
+                                                </li>
+                                                <li class="col-12 col-lg-3">
+                                                    <a href="./investor-relations.html#financial-reporting-section"
+                                                        class="custom-weapon-link-heading">Financial Reporting</a>
+                                                    <ul class="custom-weapon-submenu-internal">
+                                                        <li><a class="custom-weapon-subitem"
+                                                                href="./financial-reporting.html?tab=annual-reports-ratings#tabs-section">Annual
+                                                                Reports</a></li>
+                                                        <li><a class="custom-weapon-subitem"
+                                                                href="./financial-reporting.html?tab=quarterly-results#tabs-section">Quarterly
+                                                                Results</a></li>
+                                                        <li><a class="custom-weapon-subitem"
+                                                                href="./financial-reporting.html?tab=financial-presentations#tabs-section">Financial
+                                                                Presentations</a></li>
+                                                        <li><a class="custom-weapon-subitem"
+                                                                href="./financial-reporting.html?tab=csr-reports#tabs-section">CSR
+                                                                Reports</a></li>
+                                                        <li><a class="custom-weapon-subitem"
+                                                                href="./financial-reporting.html?tab=credit-ratings#tabs-section">Credit
+                                                                Ratings</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li class="col-12 col-lg-2">
+                                                    <!-- <a href="./investor-relations.html#subsidiaries-section"
+                                                        class="custom-weapon-link-heading">Subsidiaries</a> -->
+                                                    <a href="#"
+                                                        class="custom-weapon-link-heading">Subsidiaries</a>
+                                                    <ul class="custom-weapon-submenu-internal">
+                                                        <li><a class="custom-weapon-subitem"
+                                                            href="#">Ananya
+                                                            SIP RF Technologies Private Limited</a></li>
+                                                            <li><a class="custom-weapon-subitem"
+                                                                href="#">Apollo
+                                                                Defence Industires Private Limited</a></li>
+                                                            <li><a class="custom-weapon-subitem" href="#">Apollo Strategic Technologies Private Limited</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="col-12 col-lg-2">
+                                                    <a href="./investor-relations.html#shares-section"
+                                                        class="custom-weapon-link-heading">Shares</a>
+                                                    <ul class="custom-weapon-submenu-internal">
+                                                        <li><a class="custom-weapon-subitem" href="#">Stock Quote</a>
+                                                        </li>
+                                                        <li><a class="custom-weapon-subitem" href="#">Stock Chart</a>
+                                                        </li>
+                                                        <li><a class="custom-weapon-subitem" href="#">Historical Stock
+                                                                Price</a></li>
+                                                        <li><a class="custom-weapon-subitem" href="#">Investment
+                                                                Calculator</a></li>
+                                                        <li><a class="custom-weapon-subitem" href="#">Dividend & Shares</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="col-12 col-lg-2">
+                                                    <a href="./investor-relations.html#resource-center-section"
+                                                        class="custom-weapon-link-heading">Resource Centre</a>
+                                                    <ul class="custom-weapon-submenu-internal">
+                                                        <li><a class="custom-weapon-subitem" href="#">Other Important
+                                                                Documents</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact-us.html">Contact Us</a>
+                        </li>
+
+                        <li class="nav-items d-block d-lg-none p-2">
+                            <div class="header-icons-div">
+                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-brands fa-square-x-twitter"></i>
+                                <i class="fa-brands fa-linkedin"></i>
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner-section">
+        <video src="./assets/banner-video2.mp4" class="banner-video" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+        </video>
+        <!-- <video src="./assets/Submarine_Torpedo.mp4" class="banner-video" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+        </video> -->
+    </section>
+
+    <section class="video-section d-none">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="custom-iframe-container">
+                        <iframe src="https://www.youtube.com/embed/bDyFvvSzSEs?si=EyUR2V86OvzqVX00"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-carousel pb-0">
+        <div class="container" onclick="if (!window.__cfRLUnblockHandlers) return false; " data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+            <h4 class="section-heading section-4 mb-3">
+                <strong>Business Verticals</strong>
+            </h4>
+            <div class="divider mb-4">
+            </div>
+            <div>
+                <div class="swiper-cont">
+                    <div class="swiper swiper5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card2">
+                                    <img src="./assets/verticals/missile-defence.jpg" alt="Missile Defence"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Missile Defence</h6>
+                                        <!-- <p>We are a leading Weapon Systems Electronics Supplier, aspiring to build
+                                            complete weapon platforms.</p> -->
+                                            <p> "Offering solutions from Fuzing to Fire Control: End-to-End Solutions for Tactical and Strategic Missile Systems."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card2">
+                                    <img src="./assets/verticals/ground-defence.jpg" alt="Ground Defence"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Ground Defence</h6>
+                                        <p>"Delivering Next-Gen Battlefield Electronics, Smart Munitions & Armoured Combat System Integration."</p>
+                                        <!-- <p>Ground defence systems are extremely rugged constructions. AMS has key design
+                                            strengths to build systems to meet harsh weather conditions. </p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card2">
+                                    <img src="./assets/verticals/air-defence.jpg" alt="Air Defence" class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Air Defence</h6>
+                                        <!-- <p>We are a CEMILAC Certified company with enormous experience in developing
+                                            Safety Critical Systems. Our Systems are DO-178B Level A certified with
+                                            Airworthiness certification.</p> -->
+                                            <p>"Enabling Aerial Supremacy with Guided Rockets, Fuzing Systems , Electro-Optic Control Units & other Avionics."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card2">
+                                    <img src="./assets/verticals/space-systems.png" alt="Ground Defence"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Space Systems</h6>
+                                        <p>"Offering Precision Electronics & Embedded Technologies for Launch Vehicles, Satellites & Space Defence."</p>
+                                        <!-- <p>Ground defence systems are extremely rugged constructions. AMS has key design
+                                            strengths to build systems to meet harsh weather conditions. </p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card2">
+                                    <img src="./assets/verticals/naval-defence.jpg" alt="Naval Defence"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Naval Defence</h6>
+                                        <!-- <p>We are pioneers in developing SONAR systems for surface vessels, submarines &
+                                            deep-sea research applications.</p> -->
+                                            <p>"Driving Underwater Warfare with Indigenously Engineered systems in Smart Mines, Homing Systems & Maritime Combat Electronics."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card2">
+                                    <img src="./assets/verticals/homeland-security.jpg" alt="Home Land Security"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Home Land Security</h6>
+                                        <p>"Delivering mission-critical surveillance, intelligence, and command-control solutions for national security and public safety."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card2">
+                                    <img src="./assets/verticals/it-and-telecom.jpg" alt="IT & Telecom"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">IT & CyberSecurity</h6>
+                                        <p>"Providing robust, AI-driven cybersecurity framework, Digital Forensics to safeguard critical infrastructure, defence networks, and enterprise systems."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev prev-button d-none"></div>
+                        <div class="swiper-button-next next-button d-none"></div>
+
+                    </div>
+                    <div class="mt-3 technologies-button-cont">
+                        <button class="btn btn-light me-2" id="slide-prev-5" onclick="if (!window.__cfRLUnblockHandlers) return false; previousButton5()" data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-light" id="slide-next-5" onclick="if (!window.__cfRLUnblockHandlers) return false; nextButton5()" data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-carousel pb-0">
+        <div class="container" onclick="if (!window.__cfRLUnblockHandlers) return false; " data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+            <h4 class="section-heading section-4 mb-3">
+                <strong>Services</strong>
+            </h4>
+            <div class="divider mb-4">
+            </div>
+            <div>
+                <div class="swiper-cont">
+                    <div class="swiper swiper4 z-3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-center">
+                                <a href="./hardware-design-services.html">
+                                    <div class="image-carousel-card1">
+                                        <img src="./assets/services/hardware-design.jpg" alt="Hardware Design Services"
+                                            class="hover-image">
+                                        <div class="image-border-text">
+                                            <h6 class="text-white bottom-heading mb-0 mt-3">Hardware Design Services
+                                            </h6>
+                                            <!-- <p>CAD/PCB Layout,Board Design,RTL design,HDL Coding,integrated FPGA's,DSP's
+                                                and
+                                                Micro Processors</p> -->
+                                                <p>"Offering High-Reliability Electronics, PCBs & Custom Hardware Architectures Engineered for Harsh Defence Environments."</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <a href="./software-services.html">
+                                    <div class="image-carousel-card1 ">
+                                        <img src="./assets/services/it-and-software-design.jpg"
+                                            alt="Software Design Services" class="hover-image">
+                                        <div class="image-border-text">
+                                            <h6 class="text-white bottom-heading mb-0 mt-3">Software Design Services
+                                            </h6>
+                                            <p>"Offering Embedded, Mission-Critical & Defence-Grade Software Development for Real-Time, Safety-Critical Systems."</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/services/engineering-design.jpg"
+                                        alt="Engineering Design Services" class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Engineering Design Services</h6>
+                                        <!-- <p>CAD Drafting,3D Modeling,MOLD Design,Material Selection,Structural and
+                                            Thermal Analysis</p> -->
+                                            <p>"Offering Mechanical, Thermal & Structural Design Solutions Backed by Advanced Simulation and Compliance Engineering for complex Aerospace & Defence Environments."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <a href="./manufacturing-services-page.html">
+                                    <div class="image-carousel-card1">
+                                        <img src="./assets/services/manufacturing-services.jpg"
+                                            alt="Manufacturing Services" class="hover-image">
+                                        <div class="image-border-text">
+                                            <h6 class="text-white bottom-heading mb-0 mt-3">Manufacturing Services</h6>
+                                            <!-- <p>Advanced Automated SMT Lines,AOI Sytems and 3D X-RAY Machines for BGA
+                                                components</p> -->
+                                                <p>"Precision Build-to-Spec and Build-to-Print Manufacturing with Full Traceability for Defence & Industrial Applications."</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/services/lds-shaker-systems.png"
+                                        alt="Environmental Testing Services" class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Environmental Testing Services
+                                        </h6>
+                                        <p>"In-House Environmental Validation Including EMI-EMC, Vibration, Shock, and Thermal Qualification as per MIL Standards."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/services/inertial-calibration-system.png"
+                                        alt="Inertial System Calibration Services" class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Inertial System Calibration
+                                            Services</h6>
+                                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+                                            veritatis dolorum autem officia tempore atque sint unde cupiditate
+                                            necessitatibus aspernatur?</p> -->
+                                            <p>"Advanced Calibration Labs for IMUs, Accelerometers & Gyroscopes Ensuring Navigational Accuracy & Reliability."</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev services-prev-button d-none"></div>
+                        <div class="swiper-button-next services-next-button d-none"></div>
+
+                    </div>
+                    <div class="mt-3 technologies-button-cont ">
+                        <button class="btn btn-light me-2" id="slide-prev-4" onclick="if (!window.__cfRLUnblockHandlers) return false; previousButton4()" data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-light" id="slide-next-4" onclick="if (!window.__cfRLUnblockHandlers) return false; nextButton4()" data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="section-carousel pb-0">
+        <div class="container" onclick="if (!window.__cfRLUnblockHandlers) return false; " data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+            <h4 class="section-heading section-4 mb-3">
+                <strong>Products</strong>
+            </h4>
+            <div class="divider mb-4">
+            </div>
+            <div>
+                <div class="swiper-cont">
+                    <div class="swiper swiper3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/tal-homing-head.png" alt="TAL HOMING HEAD"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">HOMMING HEAD</h6>
+                                        <p>"We offer Homming system for Light weight & Heavy weight Torpedoes with unique features."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/seu-gimbal.png" alt="TAL SPU" class="hover-image" >
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">EO/IR GIMBAL</h6>
+                                        <p>"Offering Avionic Qualified EO/IR Gimbal with state of the art Image Processing Hardware and Software."</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/TCT-5.png" alt="TCT" class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Missile Launcher Controller(RML)</h6>
+                                        <p>"Platform Levelling & Launcher Controller with Unique Sensor Data fusion Hardware and Software."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/GNC_Kit.png" alt="GNC" class="uniac-hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">GNC Kit</h6>
+                                        <p>"Offering Precision Guided Kits for different Calibre Precision Guided Rockets and Bombs."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/vshorads.png" alt="VSHORADS"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">VSHORADS</h6>
+                                        <p>The main function of SAM is to incorporate in various safeties and to
+                                            detonate the warhead when required. The Safety Arming Mechanism is vital
+                                            link between missile and warhead which plays vital role in keeping missile
+                                            in safe condition during handling, transportation, storage and launch
+                                            phases.</p>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="swiper-slide text-center">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/ngram_actuator.png" alt="PSRU" class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">Missile Fin Actuator</h6>
+                                        <p>"Missile Fin Actuators engineered to meet varied Missile Platforms."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center d-none">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/PSSU.jpg" alt="PSSU" class="hover-image">
+                                    <div class="image-border-text2">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">PSSU</h6>
+                                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+                                            veritatis dolorum autem officia tempore atque sint unde cupiditate
+                                            necessitatibus aspernatur?</p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center d-none">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/QDAC.jpg" alt="QDAC" class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">QDAC</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+                                            veritatis dolorum autem officia tempore atque sint unde cupiditate
+                                            necessitatibus aspernatur?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center d-none">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/SWARM-ACTUATOR-8.jpg" alt="SWARM ACTUATOR"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">SWARM ACTUATOR</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+                                            veritatis dolorum autem officia tempore atque sint unde cupiditate
+                                            necessitatibus aspernatur?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide text-center d-none">
+                                <div class="image-carousel-card1">
+                                    <img src="./assets/product-images/TAL-FE-CAGE-6.jpg" alt="TAL FE CAGE"
+                                        class="hover-image">
+                                    <div class="image-border-text">
+                                        <h6 class="text-white bottom-heading mb-0 mt-3">TAL FE CAGE</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
+                                            veritatis dolorum autem officia tempore atque sint unde cupiditate
+                                            necessitatibus aspernatur?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev d-none"></div>
+                        <div class="swiper-button-next d-none"></div>
+                    </div>
+                    <div class="mt-3 technologies-button-cont">
+                        <button class="btn btn-light me-2" id="slide-prev-3" onclick="if (!window.__cfRLUnblockHandlers) return false; previousButton3()" data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-light" id="slide-next-3" onclick="if (!window.__cfRLUnblockHandlers) return false; nextButton3()" data-cf-modified-772ed76e5d10b5c2f616fbe6-="">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="sectionfive pb-0">
+        <div class="container">
+            <h3 class="section-heading mb-3">
+                <strong>Our Esteemed Clientele</strong>
+            </h3>
+            <div class="divider mb-3"></div>
+            <div class="swiper-cont mt-3">
+
+                <div class="swiper swiper2 client-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/DRDO.jpg" alt="DRDO" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/bdl.png" alt="bdl" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/BEL.jpg" alt="BEL" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/HAL.jpg" alt="HAL" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/indian-airforce.jpg" alt="indian-airforce" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/Aeronautical_Development_Agency_logo.jpg"
+                                alt="Aeronautical_Development_Agency_logo" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/indian-army-log.jpg" alt="indian-army-log" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/Indian-navy-logo.png" alt="INDIAN NAVY" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/ISRO.png" alt="ISRO" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/ARDE.jpg" alt="ARDE" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/IRDE.jpg" alt="IRDE" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/CVRDE.jpg" alt="CVRDE" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/NPOL.png" alt="NPOL" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/NSTL_LOGO.jpg" alt="NSTL" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/VRDE.jpg" alt="VRDE" class="carousel-image">
+                            </div>
+                            
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/bharat_forge_ltd_logo.jfif" alt="BHARAT FORGE" class="carousel-image">
+                            </div>
+
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/BSF.png" alt="BSF" class="carousel-image">
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <img src="./assets/logos/BHEL_logo.png" alt="BHEL_logo" class="carousel-image">
+                            </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/TATA-POWER.jpg" alt="TATA-POWER" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/TATASTREEL.jpg" alt="TATASTREEL" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/XILINX.png" alt="XILINX" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/ZOO-PARK.jpg" alt="ZOO-PARK" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/IOCL.jpg" alt="IOCL" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/L&T.jpg" alt="L&T" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/logo-ecil.webp" alt="logo-ecil" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/nic-logo.jpg" alt="nic-logo" class="carousel-image">
+                        </div>
+                        
+                        <!-- <div class="swiper-slide text-center">
+                            <img src="./assets/logos/OFB.jpg" alt="OFB" class="carousel-image">
+                        </div> -->
+                        
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/Solar.jpg" alt="Solar" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/Brahmos.jpg" alt="Brahmos" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/CSIR-Logo.png" alt="CSIR-Logo" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/GMR.jpg" alt="GMR" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/HBLPOWER.NS_BIG-3757730c.png" alt="HBLPOWER.NS_BIG-3757730c"
+                                class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/INCOIS.png" alt="INCOIS" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center d-none">
+                            <img src="./assets/logos/40-years.png" alt="40-years" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/adani_defence_and_aerospace_logo.jpg" alt="Adani Logo" class="carousel-image">
+                        </div>
+                        <!-- <div class="swiper-slide text-center">
+                            <img src="./assets/logos/bharat-forge-bfl-kalyani9757.jpg"
+                                alt="Bharat Forge BFL Kalyani" class="carousel-image">
+                        </div> -->
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/nmdc-logo.jpeg"
+                                alt="bharat-forge-bfl-kalyani9757" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <img src="./assets/logos/spmcil-logo.jpeg"
+                                alt="bharat-forge-bfl-kalyani9757" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev swiper-prev d-none"></div>
+                    <div class="swiper-button-next swiper-next d-none"></div>
+                </div>
+                <div class="clients-button-cont">
+                    <button class="btn btn-light me-2" id="client-prev" onclick="if (!window.__cfRLUnblockHandlers) return false; previousClient()" data-cf-modified-772ed76e5d10b5c2f616fbe6-=""><i
+                            class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-light" id="client-next" onclick="if (!window.__cfRLUnblockHandlers) return false; nextClient()" data-cf-modified-772ed76e5d10b5c2f616fbe6-=""><i
+                            class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-3">
+        <div class="container">
+            <h3 class="section-heading mb-3">
+                <strong>News Watch</strong>
+            </h3>
+            <div class="divider"></div>
+            <!-- Slider main container -->
+            <div class="swiper swiper1">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide h-100">
+                        <div class="card h-100">
+                            <div class="sec3-image">
+                                <img src="./assets/events/aero.JPG" alt="" class="image-section-3">
+                                <!-- <div class="sec3-content">
+                                    <p class="mb-0">07/02/2024</p>
+                                </div> -->
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Aero India Participation</p>
+                                <div class="text-end">
+                                    <i class="fa-solid fa-arrow-right ps-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="card h-100">
+                            <div class="sec3-image">
+                                <img src="./assets/events/unit-ii-inauguration.JPG" alt="" class="image-section-3">
+                                <!-- <div class="sec3-content">
+                                    <p class="mb-0">07/02/2024</p>
+                                </div> -->
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">⁠Inauguration of Unit II</p>
+                                <div class="text-end">
+                                    <i class="fa-solid fa-arrow-right ps-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="card h-100">
+                            <div class="sec3-image">
+                                <img src="./assets/events/unit-iii-bhoomi-puja.jpg" alt="" class="image-section-3">
+                                <!-- <div class="sec3-content">
+                                    <p class="mb-0">07/02/2024</p>
+                                </div> -->
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">⁠Bhoomi Pooja of Unit III Phase I</p>
+                                <div class="text-end">
+                                    <i class="fa-solid fa-arrow-right ps-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="card h-100">
+                            <div class="sec3-image">
+                                <img src="./assets/events/unit-III.jpg" alt="" class="image-section-3">
+                                <!-- <div class="sec3-content">
+                                    <p class="mb-0">07/02/2024</p>
+                                </div> -->
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Signing of MOU with GRSE</p>
+                                <div class="text-end">
+                                    <i class="fa-solid fa-arrow-right ps-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100 d-none">
+                        <div class="card h-100">
+                            <div class="sec3-image">
+                                <img src="./assets/news-img-1.avif" alt="" class="image-section-3">
+                                <div class="sec3-content">
+                                    <p class="mb-0">07/02/2024</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">American Rheinmetall Vehicles and GM Defense
+                                    deliver prototypes for first phase of U.S. Army's Common
+                                    Tactical
+                                    Truck Program</p>
+                                <div class="text-end">
+                                    <i class="fa-solid fa-arrow-right ps-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100 d-none">
+                        <div class="card h-100">
+                            <div class="sec3-image">
+                                <img src="./assets/news-img-1.avif" alt="" class="image-section-3">
+                                <div class="sec3-content">
+                                    <p class="mb-0">07/02/2024</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">American Rheinmetall Vehicles and GM Defense
+                                    deliver prototypes for first phase of U.S. Army's Common
+                                    Tactical
+                                    Truck Program</p>
+                                <div class="text-end">
+                                    <i class="fa-solid fa-arrow-right ps-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev d-none"></div>
+                <div class="swiper-button-next d-none"></div>
+            </div>
+            <div class="d-flex justify-content-end mt-3 d-block d-lg-none">
+                <button class="btn btn-primary me-2" id="slide-back" onclick="if (!window.__cfRLUnblockHandlers) return false; prev()" data-cf-modified-772ed76e5d10b5c2f616fbe6-=""><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <button class="btn btn-primary" id="slide-forward" onclick="if (!window.__cfRLUnblockHandlers) return false; next()" data-cf-modified-772ed76e5d10b5c2f616fbe6-=""><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black py-3">
+        <div class="container">
+            <div class="row">
+                  <div class="col-12 col-lg-6 mb-3 mb-lg-0 text-center text-lg-start d-flex flex-row align-items-center align-items-lg-start gap-3 justify-content-lg-start ">
+                    <div class="copyright text-white">Copyright &copy; 2025 Apollo Micro Systems</div>
+                     <a href="./terms-use.html" class="tou">Terms of Use</a>
+                </div>
+                <div class="col-12 col-lg-6 justify-content-center d-flex align-items-center justify-content-lg-end">
+                    <a href="https://www.facebook.com/apollomicrosystemslimited" target="_blank"
+                        class="text-decoration-none">
+                        <i class="fa-brands fa-facebook text-white me-2"></i>
+                    </a>
+                    <a href="https://x.com/apollo_micro?t=9TF0ITsWzXapblzHihrXKQ&s=08" target="_blank"
+                        class="text-decoration-none">
+                        <i class="fa-brands fa-square-x-twitter text-white me-2"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/apollo-microsystems-limited/" target="_blank"
+                        class="text-decoration-none">
+                        <i class="fa-brands fa-linkedin text-white me-2"></i>
+                    </a>
+                    <a href="https://www.instagram.com/apollomicrosystemsltd/profilecard/?igsh=d2JwOW9vdzF5YzM="
+                        target="_blank" class="text-decoration-none">
+                        <i class="fa-brands fa-instagram text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+        <script src="./js/header.js" type="772ed76e5d10b5c2f616fbe6-text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous" type="772ed76e5d10b5c2f616fbe6-text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous" type="772ed76e5d10b5c2f616fbe6-text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" type="772ed76e5d10b5c2f616fbe6-text/javascript"></script>
+
+   <script src="./js/main.js" type="772ed76e5d10b5c2f616fbe6-text/javascript"></script>
+
+    <!-- Image Modal -->
+<div id="eventModal" class="modal">
+  <span class="close" onclick="if (!window.__cfRLUnblockHandlers) return false; closeModal()" data-cf-modified-772ed76e5d10b5c2f616fbe6-="">&times;</span>
+  <div class="modal-inner">
+    <img class="modal-content" id="modalImage" alt="">
+  </div>
+</div>
+
+    <!-- IDL Acquisition Announcement Modal -->
+    <div id="idlAcquisitionModal" class="modal">
+        <div class="acquisition-modal-content">
+            <span class="close-acquisition-modal" onclick="if (!window.__cfRLUnblockHandlers) return false; closeAcquisitionModal(event)" data-cf-modified-772ed76e5d10b5c2f616fbe6-="">&times;</span>
+            <div class="acquisition-modal-header">
+                <h2>Strategic Acquisition</h2>
+                <div class="acquisition-logos">
+                    <img src="./assets/ams-logo.png" alt="Apollo Micro Systems" class="acquisition-logo ams">
+                    <img src="./assets/idl.jpeg" alt="IDL Explosives Limited" class="acquisition-logo idl">
+                </div>
+            </div>
+            <div class="acquisition-modal-body">
+                <div class="acquisition-announcement">
+                    <h3>Apollo Micro Systems Welcomes IDL Explosives Limited</h3>
+                    <!-- <p><strong>November 2025</strong> - Apollo Micro Systems Limited has successfully acquired 100% of IDL Explosives Limited for ₹107 crore, marking a significant milestone in our expansion strategy.</p> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<script type="772ed76e5d10b5c2f616fbe6-text/javascript">
+  function openModal(imgSrc, caption) {
+    let modal = document.getElementById("eventModal");
+    let modalImg = document.getElementById("modalImage");
+
+    modal.style.display = "flex";
+    modal.classList.add("show");
+    modalImg.src = imgSrc;
+  }
+
+  function closeModal() {
+    let modal = document.getElementById("eventModal");
+    modal.classList.remove("show");
+    setTimeout(() => { modal.style.display = "none"; }, 200);
+  }
+
+  // Attach event listeners to all .image-section-3 images
+  document.querySelectorAll(".image-section-3").forEach(img => {
+    let caption = img.closest(".card").querySelector(".card-text")?.innerText || "";
+    img.addEventListener("click", () => openModal(img.src, caption));
+  });
+
+  // IDL Acquisition Modal Functions
+  function closeAcquisitionModal(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    let modal = document.getElementById("idlAcquisitionModal");
+    if (modal) {
+      modal.classList.remove("show");
+      setTimeout(() => { 
+        modal.style.display = "none"; 
+      }, 300);
+    }
+  }
+
+  // Show acquisition modal on page load
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+      let modal = document.getElementById("idlAcquisitionModal");
+      if (modal) {
+        modal.style.display = "flex";
+        modal.classList.add("show");
+      }
+    }, 500); // Small delay for better UX
+
+    // Close modal when clicking outside
+    const modal = document.getElementById("idlAcquisitionModal");
+    if (modal) {
+      modal.addEventListener("click", function(e) {
+        if (e.target === this) {
+          closeAcquisitionModal();
+        }
+      });
+
+      // Also add event listener to close button (backup method)
+      const closeBtn = modal.querySelector(".close-acquisition-modal");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeAcquisitionModal(e);
+        });
+      }
+    }
+  });
+</script>
+
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="772ed76e5d10b5c2f616fbe6-|49" defer></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"0a43666f3b3247b5893c6ade8113e525","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4147e7ace342ee9',t:'MTc5MDQ0OTA0Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>

@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+	<title>MANOMAY TEX INDIA LTD. | Leading Denim Manufacturer</title>
+	<meta name="keywords" content="MANOMAY TEX INDIA LTD, Denim Fabric, Denims, Denim Manufacturer, Denim Fabric in Bhilwara, Denim Fabric in Ichalkaranji">
+	<meta name="description" content="MANOMAY TEX INDIA LTD - India's leading denim fabric manufacturer with 17 million meters annual capacity. Premium quality denim since 2009.">
+	<link rel="canonical" href="https://manomaytexindia.com/">
+	<link rel="shortcut icon" href="images/logo.ico">
+	
+	<!-- Preload Critical Resources -->
+	<link rel="preload" href="images/denim-banner-1.png" as="image">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	
+	<!-- CSS Files -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+	
+	<!-- Custom Styles with Logo Colors -->
+	<style>
+		:root {
+			--primary: #1a365d;
+			--primary-dark: #0f2744;
+			--primary-light: #2c5282;
+			--secondary: #4a6fa5;
+			--accent: #f79f39;
+			--accent-dark: #e08a20;
+			--neutral: #e6e6e6;
+			--text-dark: #1a1a1a;
+			--text-light: #6b7280;
+			--white: #ffffff;
+			--bg-light: #f8fafc;
+			--bg-cream: #f1f5f9;
+			--gradient-primary: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+			--gradient-accent: linear-gradient(135deg, #f79f39 0%, #ffb347 50%, #f79f39 100%);
+			--shadow-sm: 0 2px 8px rgba(26,54,93,0.08);
+			--shadow-md: 0 4px 20px rgba(26,54,93,0.12);
+			--shadow-lg: 0 8px 40px rgba(26,54,93,0.15);
+			--transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			font-family: 'Outfit', sans-serif;
+			font-weight: 400;
+			color: var(--text-dark);
+			line-height: 1.7;
+			background: var(--white);
+			overflow-x: hidden;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Playfair Display', serif;
+			font-weight: 600;
+			line-height: 1.3;
+			color: var(--primary);
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			transition: var(--transition);
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+
+		/* ===== HEADER ===== */
+		.header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+			background: rgba(255,255,255,0.98);
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+			box-shadow: var(--shadow-sm);
+			transition: var(--transition);
+		}
+
+
+		/* ===== HERO SECTION - Full Viewport Gallery ===== */
+		.hero {
+			position: relative;
+			height: 100vh;
+			min-height: 500px;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.hero-slider {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.hero-slide {
+			position: absolute;
+			inset: 0;
+			opacity: 0;
+			transition: opacity 1.2s ease;
+		}
+
+		.hero-slide.active {
+			opacity: 1;
+		}
+
+		.hero-slide img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		/* Darker navy solid overlay for hero */
+		.hero-overlay {
+			position: absolute;
+			inset: 0;
+			background: rgba(26,54,93,0.7);
+			pointer-events: none;
+		}
+
+		.hero-content {
+			position: relative;
+			z-index: 10;
+			text-align: center;
+			color: var(--white);
+			padding: 0 20px;
+			max-width: 900px;
+		}
+
+		.hero-content h1 {
+			font-size: clamp(2.2rem, 5vw, 4rem);
+			color: var(--white);
+			margin-bottom: 20px;
+			text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+			line-height: 1.2;
+		}
+
+		.hero-content p {
+			font-size: clamp(1rem, 2vw, 1.25rem);
+			color: rgba(255,255,255,0.9);
+			margin-bottom: 35px;
+			max-width: 650px;
+			margin-left: auto;
+			margin-right: auto;
+			line-height: 1.8;
+		}
+
+		.hero-btns {
+			display: flex;
+			gap: 15px;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.hero-indicators {
+			position: absolute;
+			bottom: 30px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 10px;
+			z-index: 10;
+		}
+
+		.hero-indicators span {
+			width: 12px;
+			height: 12px;
+			background: rgba(255,255,255,0.5);
+			border-radius: 50%;
+			cursor: pointer;
+			transition: var(--transition);
+			border: 2px solid transparent;
+		}
+
+		.hero-indicators span:hover {
+			background: rgba(255,255,255,0.8);
+		}
+
+		.hero-indicators span.active {
+			background: var(--accent);
+			border-color: var(--white);
+			transform: scale(1.2);
+		}
+
+		/* ===== VIDEO FEATURE SECTION ===== */
+		.video-feature {
+			position: relative;
+			height: 70vh;
+			min-height: 450px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+
+		.video-feature video {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		/* Softer overlay for video section */
+		.video-feature::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 100%);
+			z-index: 1;
+			pointer-events: none;
+		}
+
+		.video-feature-content {
+			position: relative;
+			z-index: 10;
+			text-align: center;
+			color: var(--white);
+			padding: 40px;
+			max-width: 800px;
+			background: rgba(26,54,93,0.8);
+			border-radius: 16px;
+			backdrop-filter: blur(10px);
+		}
+
+		.video-feature-content h2 {
+			font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+			color: var(--white);
+			margin-bottom: 15px;
+		}
+
+		.video-feature-content p {
+			font-size: 16px;
+			color: rgba(255,255,255,0.9);
+			margin-bottom: 25px;
+			line-height: 1.7;
+		}
+
+		/* ===== BUTTONS ===== */
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			padding: 14px 32px;
+			font-size: 14px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			border-radius: 50px;
+			border: none;
+			cursor: pointer;
+			transition: var(--transition);
+		}
+
+		.btn-primary {
+			background: var(--gradient-accent);
+			color: var(--text-dark);
+		}
+
+		.btn-primary:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 10px 30px rgba(247,159,57,0.4);
+		}
+
+		.btn-outline {
+			background: transparent;
+			border: 2px solid var(--white);
+			color: var(--white);
+		}
+
+		.btn-outline:hover {
+			background: var(--white);
+			color: var(--primary);
+		}
+
+		.btn-secondary {
+			background: var(--primary);
+			color: var(--white);
+		}
+
+		.btn-secondary:hover {
+			background: var(--primary-dark);
+			transform: translateY(-3px);
+			box-shadow: 0 10px 30px rgba(111,48,65,0.3);
+		}
+
+		/* ===== PRODUCTION DRIVERS SECTION ===== */
+		.drivers-section {
+			background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--primary-dark) 100%);
+			padding: 60px 0;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.drivers-section::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+			pointer-events: none;
+		}
+
+		.drivers-grid {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			gap: 24px;
+			align-items: center;
+			justify-items: center;
+			position: relative;
+			z-index: 1;
+		}
+
+		.driver-hex {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			max-width: 180px;
+			aspect-ratio: 1;
+			clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+			padding: 20px;
+			text-align: center;
+			transition: var(--transition);
+		}
+
+		.driver-hex:hover {
+			transform: scale(1.05);
+		}
+
+		.driver-hex.driver-white {
+			background: rgba(255,255,255,0.95);
+			color: var(--primary);
+		}
+
+		.driver-hex.driver-orange {
+			background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+			color: var(--white);
+		}
+
+		.driver-value {
+			font-family: 'Playfair Display', serif;
+			font-size: clamp(18px, 2vw, 24px);
+			font-weight: 700;
+			line-height: 1.2;
+			margin-bottom: 8px;
+		}
+
+		.driver-label {
+			font-size: 11px;
+			line-height: 1.3;
+			opacity: 0.95;
+		}
+
+		.driver-hex.driver-white .driver-label {
+			color: var(--text-light);
+		}
+
+		/* ===== SECTION STYLES ===== */
+		.section {
+			padding: 80px 0;
+		}
+
+		.section-header {
+			text-align: center;
+			max-width: 700px;
+			margin: 0 auto 50px;
+		}
+
+		.section-tag {
+			display: inline-block;
+			color: var(--accent);
+			font-size: 13px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			margin-bottom: 15px;
+		}
+
+		.section-title {
+			font-size: clamp(1.8rem, 4vw, 2.8rem);
+			margin-bottom: 15px;
+		}
+
+		.section-subtitle {
+			color: var(--text-light);
+			font-size: 16px;
+		}
+
+		/* ===== SERVICES GRID ===== */
+		.services-section {
+			background: var(--bg-cream);
+		}
+
+		.services-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 25px;
+		}
+
+		.service-card {
+			background: var(--white);
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: var(--shadow-sm);
+			transition: var(--transition);
+			cursor: pointer;
+		}
+
+		.service-card:hover {
+			transform: translateY(-8px);
+			box-shadow: var(--shadow-lg);
+		}
+
+		.service-image {
+			position: relative;
+			height: 180px;
+			overflow: hidden;
+		}
+
+		.service-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: var(--transition);
+		}
+
+		.service-card:hover .service-image img {
+			transform: scale(1.1);
+		}
+
+		.service-overlay {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to top, rgba(111,48,65,0.9) 0%, transparent 60%);
+			display: flex;
+			align-items: flex-end;
+			padding: 20px;
+			opacity: 0;
+			transition: var(--transition);
+		}
+
+		.service-card:hover .service-overlay {
+			opacity: 1;
+		}
+
+		.service-overlay a {
+			color: var(--white);
+			font-size: 13px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.service-content {
+			padding: 20px;
+		}
+
+		.service-content h3 {
+			font-size: 18px;
+			margin-bottom: 8px;
+		}
+
+		.service-content p {
+			color: var(--text-light);
+			font-size: 14px;
+			line-height: 1.6;
+		}
+
+		/* ===== MEDIA SECTION ===== */
+		.media-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 20px;
+		}
+
+		.media-item {
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: var(--shadow-sm);
+			transition: var(--transition);
+		}
+
+		.media-item:hover {
+			transform: scale(1.03);
+			box-shadow: var(--shadow-md);
+		}
+
+		.media-item img {
+			width: 100%;
+			height: 180px;
+			object-fit: cover;
+		}
+
+		/* ===== BROCHURE CTA ===== */
+		.brochure-section {
+			background: var(--gradient-primary);
+			padding: 70px 0;
+			text-align: center;
+		}
+
+		.brochure-section h2 {
+			color: var(--white);
+			font-size: clamp(1.6rem, 3vw, 2.2rem);
+			margin-bottom: 12px;
+		}
+
+		.brochure-section p {
+			color: rgba(255,255,255,0.85);
+			font-size: 17px;
+			margin-bottom: 30px;
+		}
+
+		.brochure-btns {
+			display: flex;
+			gap: 15px;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		/* ===== LOCATIONS ===== */
+		.locations-section {
+			background: var(--bg-light);
+		}
+
+		.locations-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 25px;
+		}
+
+		.location-card {
+			background: var(--white);
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: var(--shadow-sm);
+		}
+
+		.location-map {
+			height: 200px;
+		}
+
+		.location-map iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+
+		.location-info {
+			padding: 20px 25px;
+		}
+
+		.location-info h4 {
+			font-size: 16px;
+			color: var(--primary);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 12px;
+		}
+
+		.location-info p {
+			color: var(--text-light);
+			font-size: 14px;
+			line-height: 1.6;
+		}
+
+		.location-info .phone {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-top: 12px;
+			color: var(--text-dark);
+			font-weight: 600;
+			font-size: 14px;
+		}
+
+		.location-info .phone i {
+			color: var(--accent);
+		}
+
+		/* ===== FOOTER ===== */
+		.footer {
+			background: var(--primary);
+			color: var(--white);
+			padding: 50px 0 25px;
+		}
+
+		.footer-grid {
+			display: grid;
+			grid-template-columns: 2fr 1fr 1fr 1fr;
+			gap: 40px;
+			padding-bottom: 35px;
+			border-bottom: 1px solid rgba(255,255,255,0.15);
+		}
+
+		.footer-brand img {
+			height: 55px;
+			margin-bottom: 15px;
+			filter: brightness(0) invert(1);
+		}
+
+		.footer-brand p {
+			color: rgba(255,255,255,0.75);
+			font-size: 14px;
+			line-height: 1.7;
+		}
+
+		.footer-title {
+			font-size: 14px;
+			color: var(--accent);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-bottom: 20px;
+			font-family: 'Outfit', sans-serif;
+			font-weight: 600;
+		}
+
+		.footer-links {
+			list-style: none;
+		}
+
+		.footer-links li {
+			margin-bottom: 10px;
+		}
+
+		.footer-links a {
+			color: rgba(255,255,255,0.75);
+			font-size: 14px;
+			transition: var(--transition);
+		}
+
+		.footer-links a:hover {
+			color: var(--accent);
+			padding-left: 5px;
+		}
+
+		.footer-bottom {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-top: 25px;
+			font-size: 13px;
+			color: rgba(255,255,255,0.6);
+		}
+
+		.social-links {
+			display: flex;
+			gap: 12px;
+		}
+
+		.social-links a {
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			background: rgba(255,255,255,0.1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--white);
+			transition: var(--transition);
+			font-size: 14px;
+		}
+
+		.social-links a:hover {
+			background: var(--accent);
+			color: var(--primary);
+		}
+
+		/* ===== MOBILE MENU ===== */
+		.mobile-menu {
+			position: fixed;
+			top: 0;
+			right: -100%;
+			width: 280px;
+			height: 100vh;
+			background: var(--white);
+			z-index: 1001;
+			padding: 80px 25px 25px;
+			transition: var(--transition);
+			box-shadow: var(--shadow-lg);
+			overflow-y: auto;
+		}
+
+		.mobile-menu.active {
+			right: 0;
+		}
+
+		.mobile-menu ul {
+			list-style: none;
+		}
+
+		.mobile-menu ul li {
+			border-bottom: 1px solid var(--neutral);
+		}
+
+		.mobile-menu ul li a {
+			display: block;
+			padding: 15px 0;
+			font-size: 15px;
+			font-weight: 500;
+			color: var(--text-dark);
+		}
+
+		.mobile-menu ul li a:hover {
+			color: var(--primary);
+		}
+
+		.menu-overlay {
+			position: fixed;
+			inset: 0;
+			background: rgba(0,0,0,0.5);
+			z-index: 1000;
+			opacity: 0;
+			visibility: hidden;
+			transition: var(--transition);
+		}
+
+		.menu-overlay.active {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		/* ===== RESPONSIVE ===== */
+		@media (max-width: 1024px) {
+			.header-inner {
+				padding: 12px 20px;
+			}
+
+			.services-grid,
+			.media-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			.drivers-grid {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 20px;
+			}
+
+			.footer-grid {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 30px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.hero {
+				height: 100vh;
+			}
+
+			.video-feature {
+				height: 60vh;
+				min-height: 400px;
+			}
+
+			.video-feature-content h2 {
+				font-size: 1.6rem;
+			}
+
+			.video-feature-content p {
+				font-size: 15px;
+			}
+
+			.section {
+				padding: 50px 0;
+			}
+
+			.services-grid,
+			.locations-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.media-grid {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 15px;
+			}
+
+			.drivers-grid {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 18px;
+			}
+
+			.driver-value {
+				font-size: 16px;
+			}
+
+			.driver-label {
+				font-size: 10px;
+			}
+
+			.footer-grid {
+				grid-template-columns: 1fr;
+				gap: 25px;
+			}
+
+			.footer-bottom {
+				flex-direction: column;
+				gap: 15px;
+				text-align: center;
+			}
+
+			.brochure-btns {
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.btn {
+				padding: 12px 28px;
+				font-size: 13px;
+			}
+
+			.location-map {
+				height: 180px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.media-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.logo img {
+				height: 40px;
+			}
+
+			.hero {
+				height: 100vh;
+			}
+
+			.drivers-section {
+				padding: 40px 0;
+			}
+
+			.drivers-grid {
+				grid-template-columns: 1fr;
+				gap: 16px;
+			}
+
+			.driver-hex {
+				max-width: 160px;
+				margin: 0 auto;
+			}
+
+			.driver-value {
+				font-size: 18px;
+			}
+
+			.section-title {
+				font-size: 1.5rem;
+			}
+
+			.service-image {
+				height: 160px;
+			}
+
+			.media-item img {
+				height: 200px;
+			}
+		}
+
+	/* ===== MAINTENANCE BANNER ===== */
+	.maintenance-banner {
+		position: fixed;
+		top: 80px;
+		left: 0;
+		right: 0;
+		z-index: 999;
+		background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+		border-bottom: 2px solid #f59e0b;
+		padding: 12px 20px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+		animation: slideDown 0.5s ease;
+	}
+
+	.maintenance-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+
+	.maintenance-icon {
+		background: #f59e0b;
+		color: white;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.maintenance-text {
+		flex: 1;
+	}
+
+	.maintenance-text strong {
+		color: #92400e;
+		font-weight: 600;
+	}
+
+	.maintenance-text p {
+		margin: 0;
+		color: #78350f;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	@keyframes slideDown {
+		from {
+			transform: translateY(-100%);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.maintenance-banner {
+			top: 70px;
+			padding: 10px 15px;
+		}
+		
+		.maintenance-icon {
+			width: 28px;
+			height: 28px;
+			font-size: 14px;
+		}
+		
+		.maintenance-text p {
+			font-size: 12px;
+		}
+	}
+	</style>
+</head>
+<body>
+
+	<!-- Header -->
+	<header class="header" id="header">
+		<div class="header-inner">
+			<a href="index.html" class="logo">
+				<img src="images/manomay_logo.png" alt="Manomay Tex India">
+			</a>
+			<a href="https://manomayindia.in/home" target="_blank" class="logo">
+				<img src="images/manomayindia.png" alt="Manomay India">
+			</a>
+			<nav>
+				<ul class="nav-menu">
+					<li><a href="index.html">Home</a></li>
+					<li class="dropdown">
+						<a href="#">About MTIL <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px;opacity:0.7;"></i></a>
+						<div class="dropdown-content">
+							<a href="about.html">Overview</a>
+							<a href="chairmans_message.html">Chairman's Message</a>
+							<a href="managing-director.html">Managing Director Message</a>
+							<a href="journey.html">Milestones</a>
+							<a href="team.html">Leadership</a>
+						</div>
+					</li>
+					<li class="dropdown">
+						<a href="#">Infrastructure <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px;opacity:0.7;"></i></a>
+						<div class="dropdown-content">
+							<a href="quality_testing.html">Quality & Testing</a>
+							<a href="capacity.html">Capacity</a>
+							<a href="sustainability.html">Sustainability</a>
+						</div>
+					</li>
+					<li><a href="investorrelations.html">Investor Relations</a></li>
+					<li><a href="media.html">Media</a></li>
+					<li class="dropdown">
+						<a href="#">Brochure <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px;opacity:0.7;"></i></a>
+						<div class="dropdown-content">
+							<a href="manomay-denim-brochure.pdf" target="_blank">Denim Collection 2026</a>
+							<a href="manomay-ECRU-collection.pdf" target="_blank">ECRU Collection 2026</a>
+						</div>
+					</li>
+					<li class="dropdown">
+						<a href="#">Products <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px;opacity:0.7;"></i></a>
+						<div class="dropdown-content">
+							<a href="product.html">Denim Collection</a>
+							<a href="denim.html">Our Denims</a>
+						</div>
+					</li>
+					<li><a href="contact.php">Get in Touch</a></li>
+					<li><a href="career.php">Career</a></li>
+				</ul>
+			</nav>
+			
+			<div class="menu-toggle" id="menuToggle">
+				<span></span>
+				<span></span>
+				<span></span>
+</div>
+</div>
+	</header>
+
+	<!-- Maintenance Banner (temporarily disabled)
+	<div class="maintenance-banner">
+		<div class="maintenance-content">
+			<div class="maintenance-icon">
+				<i class="fas fa-tools"></i>
+			</div>
+			<div class="maintenance-text">
+				<p><strong>Website Under Maintenance</strong> - We are currently updating our Investor Relations section to ensure SEBI compliance. Some sections may be temporarily unavailable.</p>
+			</div>
+		</div>
+	</div>
+	-->
+
+	<!-- Mobile Menu -->
+	<div class="menu-overlay" id="menuOverlay"></div>
+	<div class="mobile-menu" id="mobileMenu">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About MTIL</a></li>
+			<li><a href="chairmans_message.html">Chairman's Message</a></li>
+			<li><a href="managing-director.html">Managing Director Message</a></li>
+			<li><a href="journey.html">Milestones</a></li>
+			<li><a href="team.html">Leadership</a></li>
+			<li><a href="quality_testing.html">Infrastructure</a></li>
+			<li><a href="capacity.html">Capacity</a></li>
+			<li><a href="sustainability.html">Sustainability</a></li>
+			<li><a href="investorrelations.html">Investor Relations</a></li>
+			<li><a href="media.html">Media</a></li>
+			<li><a href="manomay-denim-brochure.pdf" target="_blank">Denim Collection 2026</a></li>
+			<li><a href="manomay-ECRU-collection.pdf" target="_blank">ECRU Collection 2026</a></li>
+			<li><a href="product.html">Products</a></li>
+			<li><a href="denim.html">Our Denims</a></li>
+			<li><a href="contact.php">Get in Touch</a></li>
+			<li><a href="career.php">Career</a></li>
+		</ul>
+	</div>
+
+	<!-- Hero Section with Content -->
+	<section class="hero">
+		<div class="hero-slider">
+			<div class="hero-slide active">
+				<img src="images/pexels-castorlystock-4109761.jpg" alt="Premium Denim Fabrics" loading="eager">
+</div>
+			<div class="hero-slide">
+				<img src="images/" alt="Denim Manufacturing Excellence" loading="lazy">
+</div>
+			<div class="hero-slide">
+				<img src="images/home_final_4.png" alt="Sustainable Denim Production" loading="lazy">
+</div>
+</div>
+		<div class="hero-overlay"></div>
+		
+		<div class="hero-content">
+			<h1>Leading Name in India's Denim Industry</h1>
+			<p>Crafting premium quality denim fabrics with innovation, sustainability, and excellence since 2009. 38 million meters of annual production capacity.</p>
+			<div class="hero-btns">
+				<a href="product.html" class="btn btn-primary">
+					Explore Products <i class="fas fa-arrow-right"></i>
+				</a>
+				<a href="about.html" class="btn btn-outline">
+					Learn More
+				</a>
+</div>
+		</div>
+		
+		<div class="hero-indicators">
+			<span class="active" data-slide="0"></span>
+			<span data-slide="1"></span>
+			<span data-slide="2"></span>
+		</div>
+	</section>
+
+	<!-- Video Feature Section -->
+	<section class="video-feature">
+		<video autoplay muted loop playsinline>
+			<source src="Video/manomay-denim.mp4" type="video/mp4">
+		</video>
+		<div class="video-feature-content">
+			<h2>Experience Our Garment Excellence</h2>
+			<p>From raw materials to finished fabric, discover how we craft premium denim with precision and innovation.</p>
+			<a href="https://manomayindia.in/home" target="_blank" class="btn btn-primary">
+				Discover Our Story <i class="fas fa-arrow-right"></i>
+			</a>
+</div>
+	</section>
+
+	<!-- Production Drivers Section -->
+	<section class="drivers-section">
+		<div class="container">
+			<div class="drivers-grid">
+				<div class="driver-hex driver-white">
+					<span class="driver-value">~38 Million Meters</span>
+					<span class="driver-label">Million Meters of Denim Fabrics Manufactured in FY25</span>
+				</div>
+				<div class="driver-hex driver-orange">
+					<span class="driver-value">48 Million Meters</span>
+					<span class="driver-label">Denim Production capacity per annum</span>
+				</div>
+				<div class="driver-hex driver-white">
+					<span class="driver-value">1.74 Billion Meters Per Annum</span>
+					<span class="driver-label">Denim Total installed capacity of The Indian Denim Industry</span>
+				</div>
+				<div class="driver-hex driver-orange">
+					<span class="driver-value">17640 Ton</span>
+					<span class="driver-label">Spinning Production capacity per annum in FY25</span>
+				</div>
+				<div class="driver-hex driver-white">
+					<span class="driver-value">1202</span>
+					<span class="driver-label">On the roll employees as on 31.03.2025</span>
+				</div>
+				<div class="driver-hex driver-orange">
+					<span class="driver-value">~78 Inches</span>
+					<span class="driver-label">Capacity to produce high width stretch denim</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section class="section services-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">What We Offer</span>
+				<h2 class="section-title">Start Your Fabric Search</h2>
+				<p class="section-subtitle">Discover our comprehensive range of premium denim products and services</p>
+</div>
+			
+			<div class="services-grid">
+				<a href="product.html" class="service-card">
+					<div class="service-image">
+						<img src="images/home_product.png" alt="Denim Products" loading="lazy">
+						<div class="service-overlay">
+							<span>Explore <i class="fas fa-arrow-right"></i></span>
+</div>
+</div>
+					<div class="service-content">
+						<h3>Denim Products</h3>
+						<p>Premium quality denims designed for comfort and style</p>
+</div>
+				</a>
+				
+				<a href="quality_testing.html" class="service-card">
+					<div class="service-image">
+						<img src="images/home_infra.png" alt="Infrastructure" loading="lazy">
+						<div class="service-overlay">
+							<span>Explore <i class="fas fa-arrow-right"></i></span>
+</div>
+</div>
+					<div class="service-content">
+						<h3>Infrastructure</h3>
+						<p>State-of-the-art manufacturing facilities</p>
+</div>
+				</a>
+				
+				<a href="capacity.html" class="service-card">
+					<div class="service-image">
+						<img src="images/home_capacity.png" alt="Capacity" loading="lazy">
+						<div class="service-overlay">
+							<span>Explore <i class="fas fa-arrow-right"></i></span>
+</div>
+</div>
+					<div class="service-content">
+						<h3>Capacity</h3>
+						<p>48 million meters annual production capacity</p>
+</div>
+				</a>
+				
+				<a href="journey.html" class="service-card">
+					<div class="service-image">
+						<img src="images/home_global_presence.png" alt="Global Presence" loading="lazy">
+						<div class="service-overlay">
+							<span>Explore <i class="fas fa-arrow-right"></i></span>
+</div>
+</div>
+					<div class="service-content">
+						<h3>Global Presence</h3>
+						<p>Exporting to 15+ countries worldwide</p>
+</div>
+				</a>
+</div>
+</div>
+	</section>
+
+	<!-- Media Section -->
+	<section class="section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">In The News</span>
+				<h2 class="section-title">Media Coverage</h2>
+				<p class="section-subtitle">See what the media is saying about Manomay Tex India Limited</p>
+</div>
+			
+			<div class="media-grid">
+				<a href="media.html" class="media-item">
+					<img src="images/home_page_media_9.png" alt="Media Coverage" loading="lazy">
+				</a>
+				<a href="media.html" class="media-item">
+					<img src="images/home_page_media_8.png" alt="Media Coverage" loading="lazy">
+				</a>
+				<a href="media.html" class="media-item">
+					<img src="images/home_page_media_7.png" alt="Media Coverage" loading="lazy">
+				</a>
+				<a href="media.html" class="media-item">
+					<img src="images/home_page_media_5.png" alt="Media Coverage" loading="lazy">
+				</a>
+</div>
+</div>
+	</section>
+
+	<!-- Brochure CTA -->
+	<section class="brochure-section">
+		<div class="container">
+			<h2>Download Our Corporate Brochure</h2>
+			<p>Discover how we bring tomorrow's products today</p>
+			<div class="brochure-btns">
+				<a href="manomay-denim-brochure.pdf" target="_blank" class="btn btn-primary">
+					<i class="fas fa-download"></i> Denim Collection 2026
+				</a>
+				<a href="manomay-ECRU-collection.pdf" target="_blank" class="btn btn-outline">
+					<i class="fas fa-download"></i> ECRU Collection 2026
+				</a>
+</div>
+</div>
+	</section>
+
+	<!-- Locations Section -->
+	<section class="section locations-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Find Us</span>
+				<h2 class="section-title">Our Global Presence</h2>
+				<p class="section-subtitle">Visit our offices and manufacturing units across India</p>
+</div>
+
+			<div class="locations-grid">
+				<div class="location-card">
+					<div class="location-map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.6734684394837!2d74.61735871500723!3d25.079054183951293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3968bd09f7f75917%3A0xa9e3afba523a911a!2sMANOMAY%20TEX%20INDIA%20LTD!5e0!3m2!1sen!2sin!4v1677516373849!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+					<div class="location-info">
+						<h4>Registered Office</h4>
+						<p>32 Heera Panna Market, Pur Road<br>Bhilwara, Rajasthan 311001</p>
+						<div class="phone">
+							<i class="fas fa-phone"></i>
+							+91 1482 - 246983
+</div>
+    </div>
+</div>
+				
+				<div class="location-card">
+					<div class="location-map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.4365708356827!2d74.61992331500728!3d25.087078983947517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA1JzEzLjUiTiA3NMKwMzcnMTkuNiJF!5e0!3m2!1sen!2sin!4v1572977748639!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+					<div class="location-info">
+						<h4>Denim Manufacturing Unit</h4>
+						<p>Aaraji No. 5,6,7 Near Toll Plaza<br>Jojro ka Kheda, Bhilwara Chittor Road, Gangrar, Rajasthan 312901</p>
+</div>
+</div>
+
+				<div class="location-card">
+					<div class="location-map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3612.385847188922!2d74.56868047537931!3d25.122642877759077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA3JzIxLjUiTiA3NMKwMzQnMTYuNSJF!5e0!3m2!1sen!2sin!4v1714216803427!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+					<div class="location-info">
+						<h4>Spinning Manufacturing Unit</h4>
+						<p>Aaraji no 983, 989, 990, 991, 992/1568, 993/1570<br>Village - Undawa, Tehsil-Gangrar, Chittorgarh 312901</p>
+</div>
+</div>
+</div>
+</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer-brand">
+					<img src="images/manomay_logo.png" alt="Manomay Tex India">
+					<p>India's leading denim fabric manufacturer with state-of-the-art facilities and a commitment to quality, sustainability, and innovation.</p>
+</div>
+
+				<div>
+					<h4 class="footer-title">Quick Links</h4>
+					<ul class="footer-links">
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="product.html">Products</a></li>
+						<li><a href="quality_testing.html">Infrastructure</a></li>
+						<li><a href="media.html">Media</a></li>
+						<li><a href="career.php">Careers</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h4 class="footer-title">Investors</h4>
+					<ul class="footer-links">
+						<li><a href="investorrelations.html">Investor Relations</a></li>
+						<li><a href="annual_report.html">Annual Reports</a></li>
+						<li><a href="policies.html">Policies</a></li>
+						<li><a href="corporate-governance.html">Governance</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h4 class="footer-title">Contact</h4>
+					<ul class="footer-links">
+						<li><a href="contact.php">Get in Touch</a></li>
+						<li><a href="career.php">Careers</a></li>
+						<li><a href="https://manomaytexindia.com:2096/" target="_blank">Email Login</a></li>
+					</ul>
+				</div>
+</div>
+
+			<div class="footer-bottom">
+				<p>&copy; 2025 Manomay Tex India. All Rights Reserved.</p>
+				<div class="social-links">
+					<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+					<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+	<!-- Scripts -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Header scroll effect
+			const header = document.getElementById('header');
+			window.addEventListener('scroll', function() {
+				if (window.scrollY > 50) {
+					header.classList.add('scrolled');
+				} else {
+					header.classList.remove('scrolled');
+				}
+			});
+
+			// Mobile menu
+			const menuToggle = document.getElementById('menuToggle');
+			const mobileMenu = document.getElementById('mobileMenu');
+			const menuOverlay = document.getElementById('menuOverlay');
+
+			function toggleMenu() {
+				menuToggle.classList.toggle('active');
+				mobileMenu.classList.toggle('active');
+				menuOverlay.classList.toggle('active');
+				document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+			}
+
+			menuToggle.addEventListener('click', toggleMenu);
+			menuOverlay.addEventListener('click', toggleMenu);
+
+			// Close menu on link click
+			mobileMenu.querySelectorAll('a').forEach(link => {
+				link.addEventListener('click', toggleMenu);
+			});
+
+			// Hero slider
+			const slides = document.querySelectorAll('.hero-slide');
+			const indicators = document.querySelectorAll('.hero-indicators span');
+			let currentSlide = 0;
+			let slideInterval;
+
+			function showSlide(index) {
+				slides.forEach(s => s.classList.remove('active'));
+				indicators.forEach(i => i.classList.remove('active'));
+				slides[index].classList.add('active');
+				indicators[index].classList.add('active');
+			}
+
+			function nextSlide() {
+				currentSlide = (currentSlide + 1) % slides.length;
+				showSlide(currentSlide);
+			}
+
+			function startSlider() {
+				slideInterval = setInterval(nextSlide, 4000);
+			}
+
+			indicators.forEach((indicator, index) => {
+				indicator.addEventListener('click', () => {
+					clearInterval(slideInterval);
+					currentSlide = index;
+					showSlide(currentSlide);
+					startSlider();
+  });  
+});
+
+			startSlider();
+		});
+	</script>
+
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl466820'},{'dcenter':'sg2'},{'cp_id':'5841463'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>

@@ -1,0 +1,2576 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+
+        /*#mysec {
+            overflow-x: hidden;
+        }
+
+
+        #mysec {
+            margin: 10px !important;
+        }
+
+            #mysec .py-100 {
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+
+            #mysec .bg-grey {
+                background-color: #f7f7f7;
+            }
+
+            #mysec .xl-font {
+                font-size: 36px;
+            }
+
+            #mysec .fw-700 {
+                font-weight: 700;
+            }
+
+            #mysec .mb-50 {
+                margin-bottom: 50px;
+            }
+
+            #mysec .mb-30 {
+                margin-bottom: 30px;
+            }
+
+            #mysec .position-relative {
+                position: relative;
+            }
+
+            #mysec .client-carousel .item {
+                display: inline-block;
+                padding: 10px;
+            }
+
+            #mysec .project-logo {
+                max-width: 150px;
+                margin: 0 auto;
+            }
+
+                #mysec .project-logo img {
+                    width: 100%;
+                    height: auto;
+                    max-height: 300px;
+                    object-fit: contain;
+                }
+
+            #mysec .client-logo-listing {
+                display: flex;
+                gap: 20px;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            #mysec .infinite-slider {
+                display: flex;
+                animation: scroll 40s linear infinite;
+            }
+
+            #mysec .infinite-slider-right {
+                display: flex;
+                animation: scroll-right 40s linear infinite;
+            }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes scroll-right {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(100%);
+            }
+        }*/
+
+        .containernew {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1 1 calc(33.33% - 20px);
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px 0;
+        }
+
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+
+        .icon {
+            font-size: 2.5em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 100%; /* Stack cards on top of each other on smaller screens */
+                margin-bottom: 20px;
+            }
+        }
+
+        .client-logo {
+            max-width: 100%; /* Makes the image responsive */
+            height: auto;
+            margin: 10px;
+            filter: grayscale(0%); /* Optional: make logos grayscale */
+            transition: filter 0.3s;
+        }
+
+            .client-logo:hover {
+                filter: grayscale(0%); /* Optional: color logos on hover */
+            }
+
+        .experience-section {
+            /*background-color:#eeeeee;*/
+            display: flex;
+            /*background-color:#f8f9fa;*/
+            padding: 40px;
+            align-items: center;
+            /*justify-content: space-between;*/
+        }
+
+        .left-image {
+            max-width: 30%;
+            flex-shrink: 0;
+        }
+
+        .experience-content {
+            text-align: center;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+
+        .experience-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .experience-subtext {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+
+        .stats-section {
+            max-width: 30%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stats-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .stats-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .stats-label {
+            color: #6c757d;
+        }
+
+        .services-section {
+            padding: 40px;
+            /*background-color: #f8f9fa;*/
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 300px; /* Set a fixed height for all slides */
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff; /* White background for the card */
+            border-radius: 12px; /* Rounded corners for the card */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+            overflow: hidden;
+            transition: transform 0.3s ease; /* Smooth hover effect */
+            width: 200px;
+        }
+
+            /* Add a hover effect to the cards */
+            .swiper-slide:hover {
+                transform: translateY(-10px); /* Lift the card slightly on hover */
+            }
+
+            .swiper-slide .home-services-link {
+                text-decoration: none;
+                color: inherit;
+                /;
+            }
+
+            .swiper-slide:hover .home-services-link {
+                color: blue; /* Change text color on hover */
+                text-decoration: none; /* Ensure no underline on hover */
+            }
+        /* Make sure the content inside each slide fits well */
+        .elementor-testimonial {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            text-align: center;
+        }
+
+        .home-services-heading {
+            font-size: 18px;
+            font-weight: bold;
+            /*color: #007bff;*/
+            color: black;
+        }
+
+        .home-services-link {
+            text-decoration: none;
+            color: #343a40;
+        }
+
+
+
+        .swiper-pagination-bullet {
+            background-color: #007bff;
+        }
+
+        hr {
+            margin: 10px 0;
+            border: 1px solid #007bff;
+            width: 50px;
+        }
+
+        .elementor-testimonial__footer img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+
+
+
+
+        .custom-carousel-container {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            height: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .custom-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #333;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        .custom-control-prev, .custom-control-next {
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+        }
+
+        .custom-control-prev-icon, .custom-control-next-icon {
+            background-color: #fff;
+        }
+
+        .custom-caption h3 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .custom-caption p {
+            font-size: 1.2rem;
+        }
+
+        #serviceOfferingsSection {
+            /*background: linear-gradient(135deg, #f9f9f9 0%, #f4f4f4 50%, #ffffff 100%);*/
+            background-color: white;
+            padding: 8px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-img {
+            height: 80px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            margin: 0 auto !important;
+            padding: 10px !important;
+        }
+
+        .item {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .project-logo {
+            height: 100px !important;
+            width: auto !important;
+        }
+
+
+
+        .modal-content {
+            border-radius: 15px;
+        }
+
+        .modal-header {
+            border-bottom: none;
+        }
+
+        .modal-body p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn-close {
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        #quoteForm .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header-carousel {
+            margin-top: 0;
+            position: relative;
+            z-index: 1; /* Lower than the navbar */
+        }
+
+        .header-carousel-item {
+            height: 100vh; /* Fullscreen carousel height */
+            position: relative;
+        }
+
+            .header-carousel-item img {
+                height: 100%;
+                object-fit: cover; /* Properly scales the image */
+            }
+
+            .client-carousel {
+    overflow: hidden; /* Prevents scrolling outside */
+    position: relative;
+    width: 100%;
+}
+
+.client-logo-listing {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollLeft 20s linear infinite;
+}
+
+/* Reverse direction for alternating effect */
+.infinite-slider-right {
+    animation: scrollRight 20s linear infinite;
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+/* Ensuring smooth looping */
+.client-logo-listing .item {
+    flex: 0 0 auto;
+    margin: 0 20px; /* Space between logos */
+}
+
+ .service-card {
+            background-color: #f8fcfd; 
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            color:black;
+        }
+        .service-card:hover {
+            background-color: #e0f7fa; 
+            transform: translateY(-5px);
+        }
+        /* Add this CSS */
+.blue-icon {
+  filter: invert(36%) sepia(77%) saturate(1493%) hue-rotate(190deg) brightness(96%) contrast(101%);
+}
+
+    </style>
+
+
+
+
+
+
+<meta charset="utf-8" /><title>
+	Clear Secured Services
+</title><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta name="keywords" /><meta name="description" /><link rel="icon" href="img/newcsslogoicon.ico" type="image/x-icon" />
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G0JD6TCG8N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G0JD6TCG8N');
+</script>
+    <!-- Bootstrap CSS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap JS (required for dropdown and modal behavior) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+<script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" /><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" /> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" /><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /><link href="lib/animate/animate.min.css" rel="stylesheet" /><link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" /><link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" /><link href="css/style.css" rel="stylesheet" />
+    <style>
+        .sticky-top {
+    transition: top 0.3s;
+}
+
+
+       
+       
+
+
+
+.navbar {
+    position: absolute; /* Position the navbar over the header section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Ensures the navbar appears on top of the header */
+    background: transparent; 
+    /* Fully transparent background */
+    box-shadow: none; /* Remove shadow if any */
+    transition: background-color 0.3s ease-in-out; /* For smooth color transition on scroll (optional) */
+}
+
+.navbar .nav-link, 
+.navbar .navbar-brand {
+    color: white!important; 
+    transition: color 0.3s ease-in-out;
+}
+
+#navbarCollapse{
+    color:white!important;
+}
+
+.navbar .nav-link:hover {
+    color: #4ac0e6 !important; /* Optional: Add a hover effect */
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #4ac0e6;
+    color: white;
+}
+
+.modal-body {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+ /*.contact-row {
+    position: absolute;
+    top: 50%; 
+    left: 20px; 
+    right: 20px; 
+    background-color: #4ac0e6;
+    color: white;
+    border-radius: 15px;
+    padding: 20px 0;
+    z-index: 10;
+}*/
+     
+/*#contact1{
+    width: calc(100% - 40px);
+  height: 55px;
+  position: absolute;
+  top: calc(22vh - 75px); 
+  left: 20px; 
+  right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 8px; 
+  z-index: 10; 
+}*/
+
+.contact-row {
+    position: relative; 
+    background-color: #4ac0e6;
+    color: white;
+    border-radius: 15px;
+    padding: 15px 20px;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
+    text-align: center; 
+}
+
+.contact-row .col {
+    flex: 1; 
+    margin: 5px 0; 
+}
+
+#contact1 {
+    margin: 0 auto; 
+    margin-top:0px !important;
+    width: calc(100% - 40px);
+    max-width: 1200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+      top: calc(15vh - 75px); 
+
+}
+
+@media (max-width: 768px) {
+    .contact-row {
+        flex-direction: column; 
+    }
+
+    .contact-row .col {
+        text-align: center; 
+    }
+}
+
+@media (min-width: 769px) {
+    .contact-row {
+        flex-direction: row; 
+    }
+}
+
+/*#chat-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#chat-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#chat-body {
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#messages .user-msg {
+    text-align: right;
+    margin: 5px 0;
+}
+
+#messages .bot-msg {
+    text-align: left;
+    margin: 5px 0;
+}
+
+#user-input {
+    width: calc(100% - 50px);
+    padding: 5px;
+}
+
+#send-btn {
+    width: 50px;
+    padding: 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}*/
+
+/* Chat Icon */
+/*.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: deepskyblue;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}*/
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px;  /* Distance from the right */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/*.chat-icon {
+    position: fixed;
+    bottom: 20px; 
+    right: 80px;  
+    z-index: 1000; 
+    background-color: #007bff; 
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.chat-icon:hover {
+    background-color: dodgerblue;
+}
+
+#chat-box {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    display: none;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#chat-header {
+    background: deepskyblue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+#chat-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    width: calc(100% - 60px);
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#send-btn {
+    background: deepskyblue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}*/
+
+  #chat-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 85px;
+            width: 50px;
+            height: 50px;
+            /*background-color: #007bff;*/
+            background-color:deepskyblue;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #chat-icon:hover {
+            transform: scale(1.1);
+        }
+
+        #chat-icon:hover #tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+        #chat-icon svg {
+            width: 30px;
+            height: 30px;
+        }
+         
+        /* Chatbot Window */
+        #chatbot {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            max-width: 90%;
+            height: 450px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #chatbot-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f1f1f1;
+        }
+
+        #chatbot-input {
+            display: flex;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        #chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #chatbot-input button {
+            margin-left: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #chatbot-input button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .message.user {
+            text-align: right;
+        }
+
+        .message.bot {
+            text-align: left;
+        }
+
+        .message span {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .message.user span {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .message.bot span {
+            background-color: #eaeaea;
+            color: #333;
+        }
+        #close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    outline: none;
+}
+
+#close-btn:hover {
+    color: #ccc;
+}
+
+#tooltip {
+    position: absolute;
+    bottom: 70px; /* Position above the chat icon */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+@media (max-width: 768px) {
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .logo img {
+        width: 60%; /* Adjust logo size for smaller screens */
+    }
+}
+
+#rating-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+#rating-stars {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#rating-stars .star {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+#rating-stars .star.selected {
+    color: gold;
+}
+
+#submit-rating {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#submit-rating:hover {
+    background-color: #45a049;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    z-index: 1000;
+}
+
+   /*.dropdown-submenu {
+            position: relative !important;
+        }
+
+            .dropdown-submenu .dropdown-menu {
+                top: 0 !important;
+                left: 100% !important;
+                margin-top: -1px !important;
+                display: none !important;
+                position: absolute !important;
+            }
+
+            .dropdown-submenu:hover .dropdown-menu {
+                display: block !important;
+            }*/
+
+   .dropdown-submenu {
+    position: relative !important;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: -22px !important;                 /* Keeps it vertically aligned */
+    left: 100% !important;             /* Shifts submenu to the right of parent */
+    margin-left: 0 !important;
+    margin-top: -1px !important;       /* Adjust for border/padding if needed */
+    display: none !important;
+    position: absolute !important;
+    z-index: 1050 !important;
+    transform: translateY(-1px);       /* ✅ Makes it pixel-perfect aligned */
+    border-radius: 0;                  /* Optional: flat style like the reference site */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Optional: adds soft shadow */
+}
+
+
+/* Show submenu only on hover */
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block !important;
+}      
+
+
+@media (max-width: 991px) {
+    .dropdown-submenu .dropdown-menu {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin: 0 0 0 1rem !important;
+        display: none !important;
+    }
+
+    .dropdown-submenu.show .dropdown-menu {
+        display: block !important;
+    }
+}
+
+
+ 
+
+
+   /* Main dropdown positioning */
+
+   .button-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.chat-option {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.chat-option:hover {
+    background-color: #0056b3;
+}
+.clicked-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+@media (max-width: 991px) {  
+    .navbar-collapse {
+        /*background-color: rgba(0, 0, 0, 0.9); /* Dark background with slight transparency */
+        background-color:deepskyblue;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .navbar-nav .nav-link,  
+    .navbar-nav .dropdown-toggle {
+        color: black !important; /* Ensuring text color stays visible */
+    }
+
+    /*.dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.9) !important; /* Background for dropdown menus */
+    }*/
+
+    .dropdown-menu .dropdown-item {
+        color: black !important;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+    }
+}
+
+
+    </style>
+  
+</head>
+<body>
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="v4lxo7UFIDt4N+q7S8aA3fd/yKZ74uf/DzKMew4iRQNVuB10LRlnM6gvUeFaU4y2dZ+Si/C7e2VR3z7LH7yIRlBWureuro0wpRDRlYU6iUs=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90059987" />
+</div>
+         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Topbar Start -->
+      
+        <!-- Topbar End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid sticky-top px-0">
+            <div class="position-absolute bg-dark" style="left: 0; top: 0; width: 100%; height: 100%;">
+            </div>
+            <div class="container-fluid px-0">
+
+                        <nav class="navbar navbar-expand-lg" style="background: transparent;">
+
+                    <a href="index.aspx" class="navbar-brand p-0">
+                         <img src="img/newcsslogo2.png" style="height:75px;width:160px;" alt="Logo"> 
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" style="padding-right:100px!important;" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+
+                             
+
+                             <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle"  style="color:white!important; font-weight:bold;"  data-bs-toggle="dropdown">About Us</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="ourstory.aspx" class="dropdown-item" style="font-size:14px;">About CSS</a>
+
+                                    <a href="history.aspx" class="dropdown-item" style="font-size:14px;">Our History</a>
+
+                                    <a href="leaders.aspx" class="dropdown-item" style="font-size:14px;">Management</a>
+
+
+                                   
+                                </div>
+                            </div>
+
+                             <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle"  style="color:white!important; font-weight:bold;" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <div class="dropdown-submenu">
+<a href="" class="dropdown-item d-flex justify-content-between align-items-center" style="font-size:14px;">
+    Soft Services
+    <i class="fas fa-angle-right ms-2"></i>
+</a>                                        <div class="dropdown-menu">
+                                            <a href="housekeeping.aspx" class="dropdown-item"  style="font-size:14px;">Housekeeping</a>
+                                            <a href="Security.aspx" class="dropdown-item"  style="font-size:14px;">Security & Guarding</a>
+                                            <a href="Payment_management.aspx" class="dropdown-item"  style="font-size:14px;"> Payment Management</a>
+                                            <a href="staffing.aspx" class="dropdown-item"  style="font-size:14px;"> Staffing Services</a>
+
+                                        </div>
+                                    </div>
+                                     
+                                    <a href="Hard_services.aspx" class="dropdown-item"  style="font-size:14px;">Hard Services</a>
+                                    <a href="infrastructure.aspx" class="dropdown-item"  style="font-size:14px;">Infrastructure Solutions</a>
+                                     <a href="Buisness_support.aspx" class="dropdown-item"  style="font-size:14px;">Business Support</a>
+                                    <a href="Telecomservices.aspx" class="dropdown-item"  style="font-size:14px;">Telecom Services</a>
+                                    <a href="CashVan.aspx" class="dropdown-item"  style="font-size:14px;">Cash Van Transportation</a>
+
+
+                                      </div>
+                            </div>
+
+
+
+
+                             <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle"  style="color:white!important; font-weight:bold;" data-bs-toggle="dropdown">Investor Corner</a>
+                                <div class="dropdown-menu m-0">
+                                    <div class="dropdown-submenu">
+<a href="" class="dropdown-item d-flex justify-content-between align-items-center" style="font-size:14px;">
+    Corporate Governance
+    <i class="fas fa-angle-right ms-2"></i>
+</a>                                        <div class="dropdown-menu">
+                                            <a href="committees.aspx" class="dropdown-item"  style="font-size:14px;">Committees Composition</a>
+                                        </div>
+                                    </div>
+                                      <div class="dropdown-submenu">
+                                        <a href="" class="dropdown-item d-flex justify-content-between align-items-center"  style="font-size:14px;">IPO Documents<i class="fas fa-angle-right ms-2"></i></a>
+                                        <div class="dropdown-menu">
+                                            <a href="Files/DRHP_CSSL.pdf"  class="dropdown-item"  style="font-size:14px;">DRHP</a>
+                                            <a href="Files/RHP_CSSL.pdf"  class="dropdown-item"  style="font-size:14px;">Red Herring Prospectus</a>
+                                           <a href="Files/Prospectus - CSSL.pdf"    class="dropdown-item"  style="font-size:14px;">Prospectus</a>
+                                           <a href="other_documents.aspx"    class="dropdown-item"  style="font-size:14px;">Others</a>
+
+                                        </div>
+                                    </div>
+                                    <a href="policies.aspx" class="dropdown-item"  style="font-size:14px;">Policies</a>
+                                    <a href="material_contracts.aspx" class="dropdown-item"  style="font-size:14px;">Material Contracts and Documents</a>
+                                 <div class="dropdown-submenu">
+                                        <a href="" class="dropdown-item d-flex justify-content-between align-items-center"  style="font-size:14px;">Investor Information<i class="fas fa-angle-right ms-2"></i></a>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item"  style="font-size:14px;">Annual Return</a>
+                                            <a href="Files/Investor Information/Shareholding_Patter-Pre Issue.pdf" class="dropdown-item"  style="font-size:14px;">Shareholding pattern</a>
+                                           <a href="Files/Investor Information/Financial_Results_FY_2025-26 H1.pdf" class="dropdown-item"  style="font-size:14px;">Financial Results</a>
+                                             <a href="notices_and_outcomes.aspx" class="dropdown-item"  style="font-size:14px;">Notices and outcome</a>
+                                            <a href="#" class="dropdown-item"  style="font-size:14px;">Voting Results</a>
+                                           <a href="annual_report.aspx" class="dropdown-item"  style="font-size:14px;">Annual Reports</a>
+                                           <a href="stock_exchange_disclosures.aspx" class="dropdown-item"  style="font-size:14px;">Stock Exchange Disclosures</a>
+                                            <a href="#" class="dropdown-item"  style="font-size:14px;">Group Companies</a>
+                                            <a href="#" class="dropdown-item"  style="font-size:14px;">Investor Grievance</a>
+                                            <a href="#" class="dropdown-item"  style="font-size:14px;">AGM</a>
+
+                                        </div>
+                                    </div>
+
+                                      </div>
+                            </div>
+
+
+
+                            
+                            
+                           
+
+                             
+
+
+                        
+                           
+
+ 
+
+
+
+
+                                                       
+
+ 
+
+
+
+                            
+
+                           <a href="career.aspx"  style="color:white!important; font-weight:bold;" class="nav-item nav-link">Careers</a>
+
+                            <a href="contact.aspx"  style="color:white!important; font-weight:bold;" class="nav-item nav-link">Contact Us</a>
+                        </div>
+                       
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+  
+
+        <!-- Navbar & Hero End -->
+
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h4 class="modal-title mb-0" id="exampleModalLabel">Search by keyword</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+
+    <div>
+        
+
+    
+
+    <div class="header-carousel owl-carousel">
+        <div class="header-carousel-item mx-auto">
+            <div class="header-carousel-item-img-2">
+
+                      <img src="img/housekeeping1.jpeg" class="img-fluid w-100" alt="Image">
+   
+                   </div>
+            <div class="carousel-caption">
+                <div class="carousel-caption-inner text-left p-3">
+
+                    <h3 class="text-white mb-4" style="font-size: 40px;"> Integrated Facility Management Services</h3>
+
+                    <a class="btn btn-dark rounded-pill py-3 px-5" href="#" data-bs-toggle="modal" data-bs-target="#quoteModal">Request a Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- About Start -->
+    <div class="container-fluid about bg-light py-5 " style="margin-bottom: 0px!important; background-color: #ffffff!important;">
+        <div class="container py-5 " style="margin-bottom: 0px!important;">
+            <div class="row g-5 align-items-center ">
+                <div class="col-lg-6 col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                    <div class="about-img">
+
+                                                <img src="img/css-about.png" class="img-fluid w-100 rounded-top bg-white" alt="Image">
+
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                    <h1 class="display-5 mb-4">Adding Value to your Vision</h1>
+
+                    <h4 class="" style="color:#ee0304">About Us</h4>
+                    <p class="text ps-4 mb-4" style="text-align: justify;">
+Clear Secured Services Limited is India’s leading business services company, dedicated to delivering exceptional housekeeping and technology solutions to banks, financial institutions, organized retail, and e-commerce companies. With a robust presence in Manpower Facility Services, Technology Solutions, and Managed Services, CSSL offers a comprehensive array of services.
+ CSSL includes meticulous housekeeping and cleaning, advanced e-surveillance, reliable repair and maintenance, professional manpower support, total infrastructure solutions, security services, and office support. Our commitment to excellence ensures that we meet the diverse needs of our clients while driving operational efficiency across all sectors we serve.
+
+
+
+
+                     </p>
+                  
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    
+
+
+    <!-- Services Start -->
+    
+    <!-- Services End -->
+
+
+    <section id="serviceOfferingsSection">
+
+        <div class="container-fluid service py-5 mt-0 " style="margin-top: 0px!important; margin-bottom: 0px!important; padding: 0px!important; background-color: white!important;">
+            <div class="container py-5" style="margin-top: 0px!important; margin-bottom: 0px!important; padding: 0px!important;">
+                <h1 class="display-4 text-center mb-4 mt-0 ">Our Services</h1>
+
+                <div class="row p-2">
+                    <div class="col-lg-3" data-wow-delay="0.1s">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
+                            <div class="carousel-inner" style="">
+                                <div class="carousel-item active" style="padding-top: 35px !important; background-color: white !important;">
+                                    <div>
+                                        <h4>Our Mission</h4>
+                                        <p>At CSS, we are committed to delivering exceptional Integrated Facility Management services, creating safe, clean, and healthy environments that enhance the quality of work.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="carousel-item" style="padding-top: 35px !important; background-color: white!important;">
+
+                                    <div>
+                                        <h4>Our Vision</h4>
+                                        <p>To become India's leading Integrated Facility Management organization, renowned for setting benchmarks of excellence, innovation, and exceptional service delivery.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" style="padding-top: 35px !important; background-color: white!important;">
+                                    <div>
+                                        <h4>Our Values</h4>
+
+         <p>We strive for excellence in every aspect of our operations, upholding the highest standards of professionalism, integrity, and customer satisfaction.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                            <!-- Carousel controls -->
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <img src="img/logo1.png" style="width: 200px;" />
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="col-lg-9 wow fadeInLeft" data-wow-delay="0.1s">
+
+                        <section class="services-section">
+                            <div class="elementor-swiper">
+                                <div class="elementor-main-swiper swiper">
+                                    <div class="swiper-wrapper">
+                                        <!-- Slide 1 -->
+                                       
+
+                                        <!-- Slide 2 -->
+                                        <div class="swiper-slide">
+                                            <div class="elementor-testimonial">
+                                                <div class="elementor-testimonial__content">
+                                                    
+                                                    <a href="housekeeping.aspx" class="home-services-link">
+                                                        <div class="elementor-testimonial__footer">
+                                                            <img src="img/housekeeping.svg" alt="Sanitization Icon" class="blue-icon">
+                                                        </div>
+                                                        <br />
+                                                        <span class="home-services-heading">Housekeeping and Cleaning Services</span>
+                                                        
+                                                        <br />
+
+                                                        At CSS, our Housekeeping and Cleaning services are focused on delivering pristine environments to our clients' needs.                             </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 3 -->
+                                        <div class="swiper-slide">
+                                            <div class="elementor-testimonial">
+                                                <div class="elementor-testimonial__content">
+                                                    <a href="Repair_and_Maintenance.aspx" class="home-services-link">
+                                                        <div class="elementor-testimonial__footer">
+                                                            <img src="img/repair-mechanism.svg" alt="Soft Services Icon" class="blue-icon">
+                                                        </div>
+                                                        <br />
+                                                        <span class="home-services-heading">Repair and Maintenance Services</span>
+
+                                                        
+                                                        <br />
+
+                                                        CSS’s Repair and Maintenance services are tailored to keep your facilities running smoothly.                            </a>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 4 -->
+                                        <div class="swiper-slide">
+                                            <div class="elementor-testimonial">
+                                                <div class="elementor-testimonial__content">
+                                                    <a href="ManPowerSupport.aspx" class="home-services-link">
+                                                        <div class="elementor-testimonial__footer">
+                                                            <img src="img/public-people-group.svg" alt="Technical Services Icon" class="blue-icon">
+                                                        </div>
+                                                        <br />
+
+                                                        <span class="home-services-heading">Professional Manpower Support </span>
+                                                        
+                                                        <br />
+
+                                                        We offers professional manpower support tailored to meet your operational needs.                            </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="elementor-testimonial">
+                                                <div class="elementor-testimonial__content">
+                                                    <a href="Infrastructure.aspx" class="home-services-link">
+                                                        <div class="elementor-testimonial__footer">
+                                                            <img src="img/infrastructure.svg" alt="Technical Services Icon" class="blue-icon">
+                                                        </div>
+                                                        <br />
+
+                                                        <span class="home-services-heading">Total Infrastructure Solutions </span>
+                                                        
+                                                        <br />
+
+                                                        comprehensive Total Infrastructure Solutions designed to support your organization's diverse needs.                             </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="elementor-testimonial">
+                                                <div class="elementor-testimonial__content">
+                                                    <a href="Security.aspx" class="home-services-link">
+                                                        <div class="elementor-testimonial__footer">
+                                                            <img src="img/security-high-symbolic.svg" alt="Technical Services Icon" class="blue-icon">
+                                                        </div>
+                                                        <br />
+
+                                                        <span class="home-services-heading">Security Services </span>
+                                                        
+                                                        <br />
+
+                                                        CSS offers comprehensive Security Services tailored to safeguard your assets and ensure a safe environment. </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="elementor-testimonial">
+                                                <div class="elementor-testimonial__content">
+                                                    <a href="OfficeSupport.aspx" class="home-services-link">
+                                                        <div class="elementor-testimonial__footer">
+                                                            <img src="img/office-briefcase.svg" alt="Technical Services Icon" class="blue-icon">
+                                                        </div>
+                                                        <br />
+
+                                                        <span class="home-services-heading">Office Support </span>
+                                                        
+                                                        <br />
+
+                                                        CSS provides efficient Office Support services designed to enhance your operational productivity.
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Pagination -->
+                                    <br />
+                                    <br />
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- clients list -->
+    <section id="mysec" class="py-100 bg-grey" style="background-color: white!important;">
+        <div class="container-fluid container-xxl">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-8 mb-4 text-center">
+                    <h2 class="xl-font fw-700">Trusted by Elite and High-Achieving Clients Nationally</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="client-carousel position-relative mb-30">
+                <div class="infinite-slider client-logo-listing">
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css4.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/INDUSTOWER.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/janis_care_logo.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css19.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css5.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+               
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/kotak_life_insurance.jpg" class="logo-img" alt="" >
+                        </div>
+                    </div>
+
+                       <div class="item">
+                        <div class="project-logo">
+                            <img src="img/Nuziveedu-Seeds-Logo.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+
+                       <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css13.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+
+                 
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="client-carousel position-relative mb-30">
+                <div class="infinite-slider-right client-logo-listing">
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css13.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/ministry_of_railway.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css12.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/nacof.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/oil_and_natural_gas.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css6.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/reliance-foundation.jpg" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/reliance-projects-services.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="client-carousel position-relative mb-30">
+                <div class="infinite-slider client-logo-listing">
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/runwal-omkar.jpg" class="logo-img" alt="">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/skipper-limited.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css7.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css25.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/tsi.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/trent.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css22.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/writer-home-logo.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                
+                      <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css10.png" class="logo-img" alt="HITACHI CASH MANAGEMENT SERVICES PRIVATE LIMITED" >
+                        </div>
+                    </div>
+
+                     <div class="item">
+                        <div class="project-logo">
+                            <img src="img/brink.png" class="logo-img" alt="Brink" >
+                        </div>
+                    </div>
+                      
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="client-carousel position-relative mb-30">
+                <div class="infinite-slider-right client-logo-listing">
+
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css36.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css9.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/bandhan-bank.jpg" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/chapter 24.png" class="logo-img" alt="" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/cmsnewlogo.png" class="logo-img" alt="CMS INFO SYSTEMS LTD." >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/compass-india.png" class="logo-img" alt="COMPASS INDIA FOOD SERVICES PRIVATE LIMITED
+" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css30.png" class="logo-img" alt="DIEBOLD NIXDORF INDIA PVT. LTD." >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/DUA LIMA RETAIL.png" class="logo-img" alt="DUA LIMA RETAIL PRIVATE LIMITED" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="project-logo">
+                            <img src="img/css31.png" class="logo-img" alt="EURONET SERVICES INDIA PRIVATE LIMITED">
+                        </div>
+                    </div>
+
+                     <div class="item">
+                        <div class="project-logo">
+                            <img src="img/financial-software.png" class="logo-img" alt="FINANCIAL SOFTWARE AND SYSTEMS PVT. LTD">
+                        </div>
+                    </div>
+
+                     <div class="item">
+                        <div class="project-logo">
+                            <img src="img/green-gas.png" class="logo-img" alt="GREEN GAS LTD. (DELHI)">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="container experience-section">
+        <div class="row">
+
+            <div class="col-lg-4  wow fadeInLeft" data-wow-delay="0.1s">
+
+                <!-- Left Image -->
+                <div>
+                    <img src="img/c17.jpg" alt="Security Team" class="img-fluid left-image">
+                </div>
+            </div>
+            <!-- Middle Header Section -->
+
+            <div class="col-lg-4  wow fadeInLeft" data-wow-delay="0.1s">
+
+                <div class="experience-content">
+                    <p class="experience-text">Over 17 years of <span class="">EXPERIENCE</span></p>
+                    <p class="experience-subtext">in delivering workplace excellence</p>
+                </div>
+            </div>
+
+            <!-- Right Statistics Section -->
+            <div class="col-lg-4  wow fadeInLeft" data-wow-delay="0.1s">
+
+                <div class="stats-section">
+                    <div class="stats-card">
+                        <p class="stats-number" data-target="44">0</p>
+                        <p class="stats-label">clients</p>
+                    </div>
+                    <div class="stats-card">
+                        <p class="stats-number" data-target="17">0</p>
+                        <p class="stats-label">cities</p>
+                    </div>
+                    <div class="stats-card">
+                        <p class="stats-number" data-target="2800">0</p>
+                        <p class="stats-label">employees</p>
+                    </div>
+                    <div class="stats-card">
+                        <p class="stats-number" data-target="15">0</p>
+                        <p class="stats-label">branches</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+         <section class="py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Segments We Serve</h2>
+       <div class="row g-3">
+   
+    <div class="col-md-3">
+        <div class="service-card text-center">
+
+                        <i class="fas fa-industry fa-2x mb-3" style="color:#047ccc"; ></i>
+
+            <div>Government</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="service-card text-center">
+            <i class="fas fa-laptop-code fa-2x mb-3" style="color:#047ccc"></i>
+            <div> Information Technology</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="service-card text-center">
+            <i class="fas fa-hard-hat fa-2x mb-3" style="color:#047ccc"></i>
+            <div>Retail</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="service-card text-center">
+
+                        <i class="fas fa-prescription-bottle-alt fa-2x mb-3" style="color:#047ccc"></i>
+
+            <div>Hospitality</div>
+        </div>
+    </div>
+  
+
+            
+
+           </div>
+       <div class="row g-3 justify-content-center text-center">
+
+     <div class="col-md-3">
+        <div class="service-card text-center">
+            <i class="fas fa-photo-video fa-2x mb-3" style="color:#047ccc"></i>
+            <div>Tele Communication</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="service-card text-center">
+            <i class="fas fa-university fa-2x mb-3" style="color:#047ccc"></i>
+            <div>Banking</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="service-card text-center">
+            <i class="fas fa-truck-moving fa-2x mb-3" style="color:#047ccc"></i>
+            <div>Real Estate </div>
+        </div>
+
+    </div>
+</div>
+    </div>
+</section>
+    <!-- Blog Start -->
+  
+    <!-- Blog End -->
+
+
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="quoteModalLabel">Partner. Strategize. Prosper.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Our local sales and support team will connect with you within 24 hours to help you with your queries.</p>
+                    <form id="quoteForm">
+                        <div class="mb-3">
+                            
+                            <input type="text" class="form-control" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            
+                            <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+                        </div>
+                        <div class="mb-3">
+                            
+                            <input type="text" class="form-control" id="company" placeholder="Subject" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            
+                            <textarea class="form-control" id="requirements" rows="3" placeholder="Requirements"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary rounded-pill px-5">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.infinite-slider').hover(function () {
+                $(this).css('animation-play-state', 'paused');
+            }, function () {
+                $(this).css('animation-play-state', 'running');
+            });
+            $('.infinite-slider-right').hover(function () {
+                $(this).css('animation-play-state', 'paused');
+            }, function () {
+                $(this).css('animation-play-state', 'running');
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const counters = document.querySelectorAll(".stats-number");
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute("data-target");
+                    const current = +counter.innerText;
+
+                    const increment = Math.ceil(target / 100);
+
+                    if (current < target) {
+                        counter.innerText = current + increment;
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target + "+";
+                    }
+                };
+                updateCount();
+            });
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const servicesSwiper = new Swiper('.elementor-main-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    }
+                }
+            });
+        });
+    </script>
+
+   
+
+    <script>
+        document.getElementById("quoteForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Thank you! Your request has been submitted.");
+            var form = document.getElementById("quoteForm");
+            form.reset();
+            var modal = bootstrap.Modal.getInstance(document.getElementById('quoteModal'));
+            modal.hide();
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sliders = document.querySelectorAll(".client-logo-listing");
+
+            sliders.forEach((slider) => {
+                const clone = slider.innerHTML;
+                slider.innerHTML += clone; // Duplicate logos for a seamless loop
+            });
+        });
+
+    </script>
+
+
+    </div>
+
+
+
+
+       
+
+        <div class="">
+    <!-- Contact Row -->
+    <div id="contact1" class="contact-row py-3" style="background-color: #047ccc; color: white;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Call Us Section -->
+                <div class="col-12 col-md-4 text-center text-md-start mb-2 mb-md-0">
+                    <i class="fas fa-phone-alt me-2"></i>
+                    <span>Call Us: <strong>022-20850085</strong></span>
+                </div>
+
+                <!-- Email Section -->
+                <div class="col-12 col-md-4 text-center mb-2 mb-md-0">
+                    <i class="fas fa-envelope me-2"></i>
+                    <span>Have Questions? <strong>info@cssindia.in</strong></span>
+                </div>
+
+                <!-- Quote Section -->
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <i class="fas fa-file-alt me-2"></i>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#quoteModal" style="color: white; text-decoration: underline;" onclick="">Get A Quote - Click to Submit a Form</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+          
+                        <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <div class="footer-item">
+                                <img src="img/newcsslogo2.png" style="height:75px;width:160px;" />
+
+                                <p class="mb-3">
+                                    Block no. 15 Corporate Park, VN Purav Marg, Swastik Park, Chembur, Mumbai, Maharashtra 400071
+
+                                </p>
+
+                                
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                         <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Our Services</h4>
+
+                            <a href="housekeeping.aspx"><i class="fas fa-angle-right me-2"></i> Housekeeping And Cleaning</a>
+                            <a href="Security.aspx"><i class="fas fa-angle-right me-2"></i> Security Services</a>
+                            <a href="staffing.aspx"><i class="fas fa-angle-right me-2"></i> Staffing Services</a>
+                            <a href="Payment_Management.aspx"><i class="fas fa-angle-right me-2"></i>Payment Management</a>
+                            <a href="infrastructure.aspx"><i class="fas fa-angle-right me-2"></i> Infrastructure Solution</a>
+                            <a href="Buisness_support.aspx"><i class="fas fa-angle-right me-2"></i> Business Support</a>
+                              <a href="Telecomservices.aspx"><i class="fas fa-angle-right me-2"></i> Telecom Services</a>
+                            <a href="CashVan.aspx"><i class="fas fa-angle-right me-2"></i> CashVan Services</a>
+
+                         </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                      
+
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+
+                            <a href="leaders.aspx"><i class="fas fa-angle-right me-2"></i> Board And KMP</a>
+
+
+                            <a href="ourstory.aspx"><i class="fas fa-angle-right me-2"></i> Our Story</a>
+                            <a href="career.aspx"><i class="fas fa-angle-right me-2"></i> Careers</a>
+                            <a href="contact.aspx"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item-post d-flex flex-column">
+                         
+
+                              
+                
+                <hr class="my-2">
+
+                <!-- Social Media Links Section -->
+                <div class="text-center">
+                    <h5 style="color:white!important">Follow Us</h5>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.linkedin.com/company/clearsecuredservicesltd/" target="_blank" class="me-3">
+                            <i class="fab fa-linkedin fa-2x text-primary"></i>
+                        </a>
+                        <a href="https://www.facebook.com/csspvt" target="_blank" class="me-3">
+                            <i class="fab fa-facebook fa-2x text-primary"></i>
+                        </a>
+                        <a href="https://www.instagram.com/clearsecuredservices/" target="_blank" class="me-3">
+                            <i class="fab fa-instagram fa-2x text-primary"></i>
+                        </a>
+                       
+                    </div>
+                </div>
+
+                            
+                        </div>
+
+
+                      
+                    </div>
+                </div>
+
+                            
+                         
+
+    <!-- Chatbot Window -->
+    <div id="chatbot">
+        <div id="chatbot-header">ComfyBot
+                    <button id="close-btn">&times;</button> <!-- Close button -->
+
+        </div>
+       <div id="chatbot-messages">
+        <div class="chat-message bot">
+
+          Hello! 👋 Welcome to Your CSS’s Comfy Bot, your trusted Facility Management Partner.
+        </div>
+        <div class="button-options">
+            <button class="chat-option" data-value="Product Tour">e-surveillance</button>
+            <button class="chat-option" data-value="Demo">Housekeeping And Cleaning</button>
+            <button class="chat-option" data-value="Pricing">Repair And Maintenance</button>
+            <button class="chat-option" data-value="Product Questions">ManPower Support</button>
+            <button class="chat-option" data-value="Customer Product Support">Infrastructure Solutions</button>
+            <button class="chat-option" data-value="Careers">Security Services</button>
+            <button class="chat-option" data-value="Partner with Us">Office Support</button>
+        </div>
+    </div>
+        <div id="chatbot-input">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+        </div>
+        
+    </div>
+    </div>
+</div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-primary"><i class="fas fa-copyright text-light me-2"></i>Clear Secured Services Ltd.</a>, All rights reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom text-primary" href="https://premade.co.in">Premade Innovations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+
+
+        <!-- Back to Top -->
+                                     
+        <a href="#" class="btn btn-lg-square back-to-top" style="background-color:#047ccc;"><i class="fa fa-arrow-up" style="color:white !important;"></i></a>   
+
+     
+        <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="quoteModalLabel">Partner. Strategize. Prosper.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Our local sales and support team will connect with you within 24 hours to help you with your queries.</p>
+                    <form id="quoteForm">
+                        <div class="mb-3">
+                            
+                            <input type="text" class="form-control" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            
+                            <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+                        </div>
+                        <div class="mb-3">
+                            
+                            <input type="text" class="form-control" id="company" placeholder="Subject" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            
+                            <textarea class="form-control" id="requirements" rows="3" placeholder="Requirements"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary rounded-pill px-5">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="modal fade" id="workingModal" tabindex="-1" aria-labelledby="workingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="workingModalLabel">Oops, Sorry!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Oops, sorry! We are working on that. Please check back later.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+       
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+        <script> 
+            let lastScrollTop = 0;
+            const navbar = document.querySelector('.sticky-top');
+
+            window.addEventListener('scroll', function () {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down, hide navbar
+                    navbar.style.top = '-100px';
+                } else {
+                    // Scrolling up, show navbar
+                    navbar.style.top = '0';
+                }
+                lastScrollTop = scrollTop;
+            });
+
+        </script>
+
+        <script>
+            window.addEventListener("scroll", function () {
+                const header = document.querySelector(".sticky-top");
+                if (window.scrollY > 50) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            });
+
+        </script>
+
+        <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link, .navbar-nav .dropdown-item");
+        const currentPath = window.location.pathname;
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
+
+        <script>
+            function openQuoteForm() {
+                document.getElementById('quotePopup').style.display = 'flex';
+            }
+
+            function closeQuoteForm() {
+
+                document.getElementById('quotePopup').style.display = 'none';
+            }
+
+        </script>
+
+
+        <script>
+            window.addEventListener("scroll", function () {
+                var navbar = document.querySelector(".navbar");
+                if (window.scrollY > 50) {
+                    navbar.style.backgroundColor = "rgba(255, 255, 255, 0.9)"; 
+                    navbar.style.color = "#000"; 
+                    navbar.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)"; 
+                } else {
+                    navbar.style.backgroundColor = "transparent";
+                    navbar.style.color = "white"; 
+                    navbar.style.boxShadow = "none";
+                }
+            });
+        </script>
+       
+
+
+
+  
+
+      
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const chatIcon = document.getElementById("chat-icon");
+                const chatbot = document.getElementById("chatbot");
+                const messagesDiv = document.getElementById("chatbot-messages");
+                const messageInput = document.getElementById("message-input");
+                const sendBtn = document.getElementById("send-btn");
+                const closeBtn = document.getElementById("close-btn");
+
+                // Toggle chatbot visibility
+                if (chatIcon) {
+                    chatIcon.addEventListener("click", () => {
+                        chatbot.style.display = chatbot.style.display === "flex" ? "none" : "flex";
+                    });
+                }
+
+                // Close chatbot
+                if (closeBtn) {
+                    closeBtn.addEventListener("click", () => {
+                        chatbot.style.display = "none";
+                    });
+                }
+
+                // Handle Send button click
+                if (sendBtn) {
+                    sendBtn.addEventListener("click", () => {
+                        const userMessage = messageInput.value.trim();
+                        if (userMessage) {
+                            handleUserInput(userMessage);
+                            messageInput.value = ""; // Clear input after sending
+                        }
+                    });
+                }
+
+                // Handle Chat Option button clicks
+                document.querySelectorAll(".chat-option").forEach((button) => {
+                    button.addEventListener("click", function () {
+                        const selectedService = this.textContent.trim();
+                        handleUserInput(selectedService, true); // Pass true for button styling
+                    });
+                });
+
+                // Function to handle user input and call the API
+                function handleUserInput(userMessage, isButton) {
+                    if (isButton === undefined) {
+                        isButton = false; // ✅ Set default value inside the function
+                    }
+
+                    addMessage("user", userMessage, isButton);
+                    //for Live
+                    //fetch("/css/api/ChatBot", {
+                    //    method: "POST",
+                    //    headers: { "Content-Type": "application/json" },
+                    //    body: JSON.stringify({ message: userMessage }),
+                    //})
+
+                    //for local
+                    fetch("/api/ChatBot", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ message: userMessage }),
+                    })
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then(function (data) {
+                            addMessage("bot", data);
+                            console.log("success executed");
+                        })
+                        .catch(function (error) {
+                            console.error("Error:", error);
+                            addMessage("bot", "Sorry, an error occurred while fetching the response.");
+                        });
+                }
+
+
+                    // Function to add messages to chat with proper class names
+                function addMessage(sender, text, isButton) {
+                    if (isButton === undefined) {
+                        isButton = false; // ✅ Set default value manually
+                    }
+
+                    const message = document.createElement("div");
+                    message.classList.add("message", sender);
+
+                    const messageText = document.createElement("span"); // Use <span> for styling
+                    messageText.textContent = text;
+
+                    if (isButton && sender === "user") {
+                        // If the message comes from a button click, style it as a button
+                        messageText.classList.add("chat-option", "clicked-button");
+                    }
+
+                    message.appendChild(messageText);
+                    messagesDiv.appendChild(message);
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }
+
+                    });
+
+            // ✅ Added missing closing parenthesis here
+
+
+        </script>
+        
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const submenuLinks = document.querySelectorAll(".dropdown-submenu > a");
+
+    submenuLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (window.innerWidth < 992) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parent = this.parentElement;
+
+                // Check if submenu is already open
+                const isOpen = parent.classList.contains("show");
+
+                // Close ALL submenus
+                document.querySelectorAll(".dropdown-submenu").forEach(el => {
+                    el.classList.remove("show");
+                });
+
+                // Toggle: open only if it was closed
+                if (!isOpen) {
+                    parent.classList.add("show");
+                }
+                // If it's already open, we just removed it, so nothing else to do
+            }
+        });
+    });
+
+    // Close all submenus when clicking outside
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".dropdown-menu")) {
+            document.querySelectorAll(".dropdown-submenu").forEach(el => {
+                el.classList.remove("show");
+            });
+        }
+    });
+});
+</script>
+
+
+
+
+
+
+
+         
+    
+    </form>
+
+</body>
+</html>

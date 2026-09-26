@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+
+        <!-- NEW METADATA -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Safety Group – EPC Contractor for Substations & Fire Protection</title>
+            <meta name="description" content="Safety Group provides turnkey EPC solutions for high-voltage substations, fire protection, solar power, and EV charging projects with reliable, innovative execution.">
+            <meta name="keywords" content="EPC contractor, high voltage substations, fire protection systems, power distribution, electrical engineering, turnkey projects, safety group, industrial safety solutions, substation contractor India, fire safety engineering, power infrastructure">
+            <meta property="og:title" content="Safety Group – EPC Contractor for Substations & Fire Protection" />
+            <meta property="og:description" content="Safety Group provides turnkey EPC solutions for high-voltage substations, fire protection, solar power, and EV charging projects with reliable, innovative execution." />
+            <meta name="twitter:title" content="Safety Group – EPC Contractor for Substations & Fire Protection">
+            <meta name="twitter:description" content="Safety Group provides turnkey EPC solutions for high-voltage substations, fire protection, solar power, and EV charging projects with reliable, innovative execution.">
+                <meta property="og:url" content="https://www.safetygroup.in/" />
+        <meta name="author" content="https://www.safetygroup.in/">
+        <meta name='url' content="https://www.safetygroup.in/">
+        <meta name='subject' content='Website'>
+        <meta name='copyright' content="Safety Group">
+        <meta name='classification' content="Website">
+        <meta name='author' content="https://www.safetygroup.in/">
+        <meta name='reply-to' content="info@safetygroup.in">
+        <meta name='owner' content="https://www.safetygroup.in/">
+        <meta property="og:image" content="https://www.safetygroup.in/assets/images/SCDL-footer.png">
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Safety Group" />
+        <meta name="twitter:site" content="https://www.safetygroup.in/">
+        <meta name="twitter:card" content="https://www.safetygroup.in/">
+        <meta name="twitter:image" content="https://www.safetygroup.in/assets/images/SCDL-footer.png">
+        <meta property="business:contact_data:street_address" content="Surat" />
+        <meta property="business:contact_data:country_name" content="India" />
+        <meta property="business:contact_data:email" content="info@safetygroup.in" />
+        <meta property="business:contact_data:phone_number" content="0522-2202646" />
+        <meta property="business:contact_data:website" content="https://www.safetygroup.in/" />
+        <link rel="icon" href="https://www.safetygroup.in/assets/red_favicone.png" type="image/png" sizes="50x50">
+        <link rel="shortcut icon" href="https://www.safetygroup.in/assets/red_favicone.png" type="image/png" sizes="50x50">
+        <link rel="apple-touch-icon" href="https://www.safetygroup.in/assets/red_favicone.png" sizes="50x50">
+    <!-- ! NEW METADATA -->
+
+    <link rel="stylesheet" href="assets/css/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v1.5805">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/collection/components/icon/icon.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+
+
+<style>
+    .loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: inline-block;
+        border-top:4px solid #8d1212;
+        border-right: 4px solid transparent;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    .loader::after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border-left: 4px solid #FF3D00;
+        border-bottom: 4px solid transparent;
+        animation: rotation 0.5s linear infinite reverse;
+    }
+
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    #preload {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999999;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+ #preload .preloading {
+        text-align: center;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+        /* .numbers-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 10%;
+      position: relative;
+          background-image: url(https://www.vikrangroup.com/build/assets/the-numbers-bg-BXpH1PfV.svg);
+          min-height: 820px;
+    background-size: contain;
+    position: relative;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-size: 80% 100%;
+    } */
+
+.numbers-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10%;
+  flex-wrap: wrap;
+  background-image: url("https://www.vikrangroup.com/build/assets/the-numbers-bg-BXpH1PfV.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 75% auto;
+  position: relative;
+  min-height: 820px;
+
+      min-height: 820px;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.numbers-text {
+  flex: 1;
+  max-width: 40%;
+}
+@media (max-width:1024px) {
+  .numbers-text {
+  flex: auto;
+  max-width: 100%;
+}
+}
+.numbers-text h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.numbers-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: #0b2345;
+}
+
+.numbers-text p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.numbers-bubbles {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 30px;
+}
+
+.bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-align: center;
+  color: #111;
+  font-weight: bold;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  animation: floatBubble 6s ease-in-out infinite alternate;
+}
+
+.bubble strong {
+  font-size: 1.1em;
+}
+
+.bubble span {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Sizes */
+.bubble-lg {
+  width: 240px;
+  height: 240px;
+  font-size: 20px;
+}
+.bubble-md {
+  width: 170px;
+  height: 170px;
+  font-size: 18px;
+}
+.bubble-sm {
+  width: 120px;
+  height: 120px;
+  font-size: 14px;
+}
+
+/* Colors */
+.red { background: linear-gradient(145deg,#ff6464,#f34c4c); color:#fff; }
+.blue { background: linear-gradient(145deg,#56c3f6,#2b9ddf); color:#fff; }
+.yellow { background: linear-gradient(145deg,#ffd166,#f6a700); }
+.pink { background: linear-gradient(145deg,#e27ef6,#c94de5); color:#fff; }
+.orange { background: linear-gradient(145deg,#fca85c,#f6781d); color:#fff; }
+
+/* Floating animation */
+@keyframes floatBubble {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Stagger delays so all bubbles don’t move together */
+.bubble:nth-child(1) { animation-delay: 0s; }
+.bubble:nth-child(2) { animation-delay: 1s; }
+.bubble:nth-child(3) { animation-delay: 2s; }
+.bubble:nth-child(4) { animation-delay: 3s; }
+.bubble:nth-child(5) { animation-delay: 1.5s; }
+.bubble:nth-child(6) { animation-delay: 2.5s; }
+.bubble:nth-child(7) { animation-delay: 0.5s; }
+
+
+</style>
+
+
+<body class="home">
+    
+    <div id="preload" class="preload-container">
+        <div class="preloading">
+        <span class="loader"></span>
+
+        </div>
+    </div>
+    <section class="carousellll homehead">
+        <header>
+    <div class="navdiv">
+        <div class="headertop bg-theme text-white py-2">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md-4 col-6">
+                        <div class="hdrdiv">
+                            <p><a href="tel:+91 9510215740">+91 2255887744</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-6">
+                        <div class="hdrdiv text-end">
+                            <p>
+                                <a href="mailto:info@safetygroup.com">info@safetygroup.in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <div class="page-header">
+            <nav class="navbar navbar-expand-xl py-3">
+                <div class="container">
+                    <div class="header_responsive">
+                    <button type="button" class="btn bg-transparent border-0 box-shadow-none fs-3 d-block d-xl-none" data-bs-toggle="modal" data-bs-target="#menumodal">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.php">
+                        <div class="hdrimg text-center">
+                            <!-- <img src="assets/images/SCDL-white.png" alt="" class="img-fluid logo-white" width="100px">
+                            <img src="assets/images/SCDL.png" alt="" class="img-fluid logo-dark" width="100px"> -->
+
+                            <img src="assets/images/SCDL-footer.png" alt="" class="img-fluid logo-white" width="230px">
+                            <img src="assets/images/SCDL-footer.png" alt="" class="img-fluid logo-dark" width="230px">
+                        </div>
+                    </a>
+                    </div>
+                    <!-- Button trigger modal -->
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto mb-2 mb-lg-0 gap-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                            </li>
+
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="aboutus.php">about us</a>
+                            </li> -->
+
+                            <!-- <li class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    about us
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="aboutus.php">about us</a></li>
+                                    <li><a class="dropdown-item" href="licence.php">licence</a></li>
+                                    <li><a class="dropdown-item" href="orgchart.php">organisation chart</a></li>
+                                </ul>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link " href="aboutus.php">about us</a>
+                            </li> 
+
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false">Investor Relations</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item " href="corporate_announcements.php">Corporate Announcements</a></li>
+                                    <li><a class="dropdown-item " href="corporate_governance.php">corporate governance</a></li>
+
+                                    <li><a class="dropdown-item " href="boardofdirectors.php">Board Of Directors &amp; KMPs</a></li>
+
+                                    <li><a class="dropdown-item " href="financialinfo.php">financial information</a></li>
+
+                                    <li><a class="dropdown-item " href="#">group companies</a></li>
+
+                                    <li><a class="dropdown-item " href="codeofconducts.php">code of conducts ethics policies</a></li>
+
+                                    <li><a class="dropdown-item " href="Share_holding_Pattern.php">Share holding Pattern</a></li>
+
+                                    <li><a class="dropdown-item " href="keycontact.php">key contact</a></li>
+                                    
+                                    <li><a class="dropdown-item " href="IPO.php">IPO</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link " href="ourteam.php">our team</a>
+                            </li> 
+
+                            <li class="nav-item">
+                                <a class="nav-link " href="projects.php">projects</a>
+                            </li>
+
+                           <!--  <li class="nav-item">
+                                <a class="nav-link" href="blogs.php">blogs</a>
+                            </li> -->
+
+                            <li class="nav-item">
+                                <a class="nav-link " href="contact.php">contact</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                        <a class="nav-link" href="applications.php">Applications</a>
+                                    </li> -->
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="infrastructure.php">infrastructure</a>
+                            </li> -->
+                            <!-- <li class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    infrastructure
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="locations.php">locations</a></li>
+                                    <li><a class="dropdown-item" href="sustainability.php">sustainability</a></li>
+                                    <li><a class="dropdown-item" href="bookvisit.php">book a visit</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="clientele.php">clientele </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="quality.php">quality </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="career.php">career</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <!-- <div class="search--div">
+                        <div class="searchdivmain d-flex align-items-center">
+                            <input type="text" placeholder="product finder">
+                            <div class="srchbtndiv">
+                                <button class="btn searchbtn">
+                                    <ion-icon name="search-outline" class="d-flex align-items-center fw-bold"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>        <!-- carousel -->
+        <div class="tophero--sec">
+            <div class="topheresec overflow-hidden">
+                <div class="r">
+                    <div class="swiper--tophero position-relative">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assets/images/3221.jpg" class="img-fluid" />
+                                <div class="heroimgcntnt position-absolute col-6 z-2 p-4">
+                                    <div class="heroimgdesc" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                                        <h1 class="fw-bold text-white">Leading EPC Contractor for High-Voltage Substations & Fire Protection Systems</h1>
+                                        <p class="text-white my-4">We specialize in delivering comprehensive solutions for high-voltage substations, ensuring unmatched reliability and safety. Our expertise extends to managing fire protection systems, providing robust and resilient infrastructure tailored to your needs.</p>
+                                        <div class="btnfortop">
+                                            <a href="aboutus.php" class="btn-theme btn">learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/pexels-8335592-19170609.jpg" class="img-fluid" />
+                                <div class="heroimgcntnt position-absolute col-6 z-2 p-4">
+                                    <div class="heroimgdesc">
+                                        <h1 class="fw-bold text-white">Expertise in Turnkey Projects: From Design to Commissioning</h1>
+                                        <p class="text-white my-4">Our team excels in guiding your project from initial concept through to successful completion. We offer end-to-end solutions, meeting all your project requirements with precision and ensuring a seamless transition from design to commissioning.
+                                        </p>
+                                        <div class="btnfortop">
+                                            <a href="aboutus.php" class="btn-theme btn">learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/3224.jpg" class="img-fluid" />
+                                <div class="heroimgcntnt position-absolute col-6 z-2 p-4">
+                                    <div class="heroimgdesc">
+                                        <h1 class="fw-bold text-white">Innovative Solutions: Solar Power Projects & Electric Vehicle Charging Stations</h1>
+                                        <p class="text-white my-4">We are at the forefront of sustainable energy, offering pioneering solar power solutions and advanced electric vehicle charging infrastructure. Our innovations enhance energy efficiency and mobility, supporting a greener future for all.
+                                        </p>
+                                        <div class="btnfortop">
+                                            <a href="aboutus.php" class="btn-theme btn">learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="sldr--btn d-flex w-100 justify-content-between px-3 position-absolute top-50 z-1">
+                            <div class="slider__prev slider__btn shadow"><i class="fa-solid fa-angle-left"></i></div>
+                            <div class="slider__next slider__btn shadow"><i class="fa-solid fa-angle-right"></i></div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec_mar clientsprocess--sec">
+        <div class="container">
+            <div class="clients position-relative overflow-hidden">
+                <div class="clients--title text-center mb-5" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                    <h2 class="fw-bold">our clients</h2>
+                </div>
+                <div class="swiper-wrapper align-items-center" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                    <div class="clients-card swiper-slide h-100">
+                        <div class="clients--iconcard text-center">
+                            <div class="clientsicon mb-3">
+                                <img src="assets/images/clients/Picture1.jpg" width="150px" alt="" class="img-fluid">
+                            </div>
+                            <!-- <h5 class="fw-semibold text-center">Harvesting</h5> -->
+                        </div>
+                    </div>
+                    <div class="clients-card swiper-slide h-100">
+                        <div class="clients--iconcard text-center">
+                            <div class="clientsicon mb-3">
+                                <img src="assets/images/clients/Picture2.png" width="150px" alt="" class="img-fluid">
+                            </div>
+                            <!-- <h5 class="fw-semibold text-center">drying</h5> -->
+
+                        </div>
+                    </div>
+                    <div class="clients-card swiper-slide h-100">
+                        <div class="clients--iconcard text-center">
+                            <div class="clientsicon mb-3">
+                                <img src="assets/images/clients/Picture3.png" width="150px" alt="" class="img-fluid">
+                            </div>
+                            <!-- <h5 class="fw-semibold text-center">shelling</h5> -->
+                        </div>
+                    </div>
+                    <div class="clients-card swiper-slide h-100">
+                        <div class="clients--iconcard text-center">
+                            <div class="clientsicon mb-3">
+                                <img src="assets/images/clients/Picture4.png" width="150px" alt="" class="img-fluid">
+                            </div>
+                            <!-- <h5 class="fw-semibold text-center">grading</h5> -->
+                        </div>
+                    </div>
+                    <div class="clients-card swiper-slide h-100">
+                        <div class="clients--iconcard text-center">
+                            <div class="clientsicon mb-3">
+                                <img src="assets/images/clients/Picture5.jpg" width="150px" alt="" class="img-fluid">
+                            </div>
+                            <!-- <h5 class="fw-semibold text-center">roasting</h5> -->
+                        </div>
+                    </div>
+                    <div class="clients-card swiper-slide h-100">
+                        <div class="clients--iconcard text-center">
+                            <div class="clientsicon mb-3">
+                                <img src="assets/images/clients/Picture6.jpg" width="150px" alt="" class="img-fluid">
+                            </div>
+                            <!-- <h5 class="fw-semibold text-center">quality control</h5> -->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sldr--btn d-flex w-100 justify-content-between px-3 position-absolute top-50 z-1">
+                    <div class="slider__prev slider__btn shadow"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="slider__next slider__btn shadow"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec_mar wlcmweb">
+        <div class="abtsec">
+            <div class="container">
+                <div class="row align-items-center flex-column flex-lg-row" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="abtsecdiv">
+                            <h2>who we are?</h2>
+                            <div class="abtdesc mt-3">
+                                <p>We are primarily engaged in the EPC (Engineering, Procurement, and Construction) business, focusing on the installation of substations, construction of solar plants, installation of firefighting equipment, currently we are also undertaking some construction projects of hospitals for the Ministry of Ayush. Based in Lucknow, Uttar Pradesh, our operations are carried out as an engineering enterprise. We have experience in executing turnkey projects across multiple sectors like transmission and distribution, solar energy, EV charging infrastructure, fire protection systems and hospital construction. 
+                                </p>
+                            </div>
+                            <div class="infrabtndiv text-start mt-4">
+                        <a href="aboutus.php" class="btn btn-theme infrabtn">View More</a>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="abtsecdiv">
+                            <div class="abtimgdiv">
+                                <img src="assets/images/360_F_658718431_Ut25PFxGkG5ft3Lr1OOh2XLZqDYE9NRl.jpg" alt="" class="w-100 img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row justify-content-center mb-5 mt-5">
+                    <div class="col-md-4">
+                        <div class="zq_choose-item p-3 text-center h-100">
+                            <div class="zq_choose-item-top">
+                                <div class="zq_choose-item-icon mb-3 rounded-3 overflow-hidden">
+                                    <img src="assets/images/plantsize.jpg" alt="shopno ecommerce" class="img-fluid">
+                                </div>
+                                <a href="" class="zq_choose-item-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                            </div>
+                            <h4>Plants size </h4>
+                            <h2 class="zq_choose-item-title text-theme">150+</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="zq_choose-item p-3  text-center h-100">
+                            <div class="zq_choose-item-top">
+                                <div class="zq_choose-item-icon mb-3 rounded-3 overflow-hidden">
+                                    <img src="assets/images/people-safety-equipment-their-workplace.jpg"
+                                        alt="shopno ecommerce" class="img-fluid">
+                                </div>
+                                <a href="" class="zq_choose-item-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                            </div>
+                            <h4>employees</h4>
+                            <h2 class="zq_choose-item-title text-theme">150+</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="zq_choose-item p-3  text-center h-100">
+                            <div class="zq_choose-item-top">
+                                <div class="zq_choose-item-icon mb-3 rounded-3 overflow-hidden">
+                                    <img src="assets/images/indfab.jpg" alt="shopno ecommerce" class="img-fluid">
+                                </div>
+                                <a href="" class="zq_choose-item-btn"><i class="fa-light fa-arrow-up-right"></i></a>
+                            </div>
+                            <h4>Plants size </h4>
+
+                            <h2 class="zq_choose-item-title text-theme">1500+</h2>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="infrastucsec sec_mar" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom"> 
+        <div class="infradiv">
+            <div class="container">
+                <div class="infradiv">
+                    <div class="infratitlediv text-center">
+                        <h2>
+                            project gallery
+                        </h2>
+                        <!-- <p class="mt-3"> fortified for innovation and quality, integrates cutting-edge technology and
+                            rigorous quality control measures, ensuring excellence in production and delivery across all
+                            fronts.</p> -->
+                    </div>
+                    <div class="infrarow mt-4">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="infracoldiv">
+
+                                                                            
+                                        <div class="infraimgdiv rounded-5 overflow-hidden">
+                                            <img src="assets/images/3221.jpg" alt=""
+                                                class="rounded-5 w-100 img-fluid">
+                                        </div>
+                                                                        <div class="infradesc mt-4">
+                                        <p>Already commissioned 19 Substations of 400 KV, 220 KV (Including GIS) & 132 KV level for various power utilities including UPPTCL, PTCUL and BSPTCL.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="infracoldiv">
+                                    <div class="infraimgdiv d-block d-md-none my-4 rounded-5 overflow-hidden">
+                                        <img src="assets/images/project gallery/Picture9.jpg" alt=""
+                                            class="rounded-5 w-100 img-fluid">
+                                    </div>
+                                    <div class="infradesc">
+                                        <p>Diversified into developing utility scale solar power project of 20MW capacity and Electric Vehicle charging stations, both contracts awarded by M/s NTPC on EPC basis.
+                                        </p>
+                                    </div>
+                                                                            
+                                        <div class="infraimgdiv mt-4 d-none d-md-block rounded-5 overflow-hidden">
+                                            <img src="assets/images/28072.jpg" alt="" class="rounded-5 img-fluid">
+                                        </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infrabtndiv text-center mt-5">
+                        <a href="projects.php" class="btn btn-theme infrabtn">view gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="fabricdiv sec_mar">
+        <div class="fabdivmiun container-fluid px-md-5">
+            <div class="fabtitle text-center mb-4 container">
+                <h2 class="mb-3">Certified Excellence in EPC Projects</h2>
+                <p>Our performance certificates showcase our proven expertise in executing EPC projects, from Transmission Substations to Solar Power. Trusted by leading utilities and corporates, we ensure excellence in every endeavor.</p>
+
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="fabimgdiv h-md-25 overflow-hidden rounded-5">
+                        <img src="assets/images/performance1.jpg" alt="" class="img-fluid">
+                        <div class=" bgshdow--cntnt">
+                            <div class="fabcont">
+                              
+                                <a href="licence.php" class="btn viewprodbtn">view performance</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="fabimgdiv h-md-25 overflow-hidden rounded-5 mt-4 mt-md-0">
+                        <img src="assets/images/performance2.jpg" alt="" class="img-fluid">
+                        <div class=" bgshdow--cntnt">
+                            <div class="fabcont">
+                                
+                                    weather-resistant characteristics.</p>
+                                <a href="licence.php" class="btn viewprodbtn">view performance</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="fabimgdiv h-md-25 mt-4 overflow-hidden rounded-5">
+                        <img src="assets/images/performance3.jpg" alt="" class="img-fluid">
+                        <div class="bgshdow--cntnt">
+                            <div class="fabcont">
+                              
+                                    weather-resistant characteristics.</p>
+                                <a href="licence.php" class="btn viewprodbtn">view performance</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="fabimgdiv h-md-25 overflow-hidden rounded-5 mt-4">
+                        <img src="assets/images/performance4.jpg" alt="" class="img-fluid">
+                        <div class="bgshdow--cntnt">
+                            <div class="fabcont">
+                               
+                                <a href="licence.php" class="btn viewprodbtn">view performance</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class=" application_sec">
+        <div class="app_div">
+            <div class="container">
+                <div class="appsecdivmin">
+                    <div class="applictitlediv text-center" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                        <h2>
+                            Current Projects in Progress
+                        </h2>
+                        <p class="">Explore our ongoing projects that highlight our commitment to excellence. From large-scale Transmission Substations to innovative Solar Power installations, our current undertakings reflect our dedication to advancing infrastructure and technology.</p>
+                    </div>
+                    <div class="applicicons mt-5 py-5">
+                        <div class="row justify-content-center row-gap-4">
+
+                                                                                                                                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                                        <div class="appcmain--div text-center">
+                                            <div class="applicimg">
+                                                <img src="https://www.safetygroup.in//admin/upload/categories/7295250901125451.jpg" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="appltitle mt-3">
+                                                <h5 class="fw-semibold">132 GIS, Patna </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                                                        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                                        <div class="appcmain--div text-center">
+                                            <div class="applicimg">
+                                                <img src="https://www.safetygroup.in//admin/upload/categories/8893240912121332.jpeg" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="appltitle mt-3">
+                                                <h5 class="fw-semibold">220 KB Hybrid, Jewar</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                                                        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                                        <div class="appcmain--div text-center">
+                                            <div class="applicimg">
+                                                <img src="https://www.safetygroup.in//admin/upload/categories/3311240912121026.jpg" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="appltitle mt-3">
+                                                <h5 class="fw-semibold">Aayush Hospital - Hardoi</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                                                        <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                                        <div class="appcmain--div text-center">
+                                            <div class="applicimg">
+                                                <img src="https://www.safetygroup.in//admin/upload/categories/9459240902130925.jpg" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="appltitle mt-3">
+                                                <h5 class="fw-semibold">20MW NTPC SOLAR PROJECT- RIHAND, UP</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                            
+
+                            <!-- <div class="col-lg-3 col-md-4 col-6">
+                                <div class="appcmain--div text-center">
+                                    <div class="applicimg">
+                                        <img src="assets/images/applicationimgs/app1.jpg" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="appltitle mt-3">
+                                        <h5 class="fw-semibold">20MW NTPC SOLAR PROJECT- RIHAND, UP</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="appcmain--div text-center">
+                                    <div class="applicimg">
+                                        <img src="assets/images/applicationimgs/app2.jpg" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="appltitle mt-3">
+                                        <h5 class="fw-semibold">NTPC EV Charging Station- Port Blair
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="appcmain--div text-center">
+                                    <div class="applicimg">
+                                        <img src="assets/images/applicationimgs/app3.jpg" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="appltitle mt-3">
+                                        <h5 class="fw-semibold">3x200MVA, 400/132KV S/s Allahabad
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="appcmain--div text-center">
+                                    <div class="applicimg">
+                                        <img src="assets/images/applicationimgs/app4.jpg" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="appltitle mt-3">
+                                        <h5 class="fw-semibold">3x60MVA, 220/33KV GIS Kanpur Road
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="appcmain--div text-center">
+                                    <div class="applicimg">
+                                        <img src="assets/images/applicationimgs/app5.jpg" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="appltitle mt-3">
+                                        <h5 class="fw-semibold">132KV AIS S/s (BSPTCL)
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div> -->
+
+
+                        </div>
+
+                        <div class="applicbtndiv text-center mt-5">
+                            <a href="projects.php" class="btn btn-theme knwmrbtn">know more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section class="numbers-section">
+  <div class="numbers-text" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+    <!-- <h5>
+</h5> -->
+    <h2>Explore Our Expertise in Turnkey EPC Projects</h2>
+    <p>
+     We are a leading EPC contractor based in Lucknow, UP, with extensive experience in executing turnkey projects for various Public and state Utilities.
+    </p>
+  </div>
+
+  <div class="numbers-bubbles" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+    <div class="bubble bubble-lg red">
+      <strong>100%</strong><br><span>substation</span>
+    </div>
+    <div class="bubble bubble-sm blue">
+      <strong>25kV</strong><br><span>Traction Electrification</span>
+    </div>
+    <!-- <div class="bubble bubble-md yellow">
+      Upto <br><strong>500MVA</strong><br><span>Transformer</span>
+    </div> -->
+    <div class="bubble bubble-lg pink">
+      <strong>200+ Km</strong><br><span>Fire Fighting Systems </span>
+    </div>
+    <div class="bubble bubble-md orange">
+      <strong>50+</strong><br><span>Electric Vehicle Charging Stations</span>
+    </div>
+    <div class="bubble bubble-sm red">
+      <strong>20km+</strong><br><span>construction</span>
+    </div>
+    <!-- <div class="bubble bubble-sm blue">
+      <strong>17k+</strong><br><span>Distribution Transformers</span>
+    </div> -->
+  </div>
+</section>
+
+    <!-- <section class="sec_mar prdctoffringsec">
+        <div class="prodoffdiv">
+            <div class="container">
+                <div class="prodofftitkel text-center">
+                    <h2>
+                        Explore Our Expertise in Turnkey EPC Projects
+                    </h2>
+                    <p class="mt-3"> We are a leading EPC contractor based in Lucknow, UP, with extensive experience in executing turnkey projects for various Public and state Utilities.</p>
+                </div>
+                <div class="prodoffdivrow mt-4">
+                    <div class="d-grid row-gap-5 exp align-items-center justify-content-center">
+                        <div class="exp-card">
+                            <div class="prodiffcol text-center">
+                                <img src="assets/images/icon/substation.png" alt="" class="img-fluid" width="100">
+                                <h5 class="mt-3">substation</h5>
+                            </div>
+                        </div>
+                        <div class="exp-card">
+                            <div class="prodiffcol text-center">
+                                <img src="assets/images/icon/fire.png" alt="" class="img-fluid" width="100">
+                                <h5 class="mt-3">Fire Fighting Systems </h5>
+                            </div>
+                        </div>
+                        <div class="exp-card">
+                            <div class="prodiffcol text-center">
+                                <img src="assets/images/icon/solar-energy_5258593.png" alt="" class="img-fluid" width="100">
+                                <h5 class="mt-3">Solar Power Projects</h5>
+                            </div>
+                        </div>
+                        <div class="exp-card">
+                            <div class="prodiffcol text-center">
+                                <img src="assets/images/icon/charging_11622689.png" alt="" class="img-fluid" width="100">
+                                <h5 class="mt-3">Electric Vehicle Charging Stations</h5>
+                            </div>
+                        </div>
+                        <div class="exp-card">
+                            <div class="prodiffcol text-center">
+                                <img src="assets/images/icon/construction_10069012.png" alt="" class="img-fluid" width="100">
+                                <h5 class="mt-3">construction</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- linked in slider -->
+    <!-- <section class="sec_mar our_client_sec">
+        <div class="orclntdiv">
+            <div class="container">
+                <div class="ourclntdiv">
+                    <div class="ourclnttitlediv text-center">
+                        <strong>SL Banthia Textiles Industries</strong>
+                        <h2>
+                            follow us on Linked<i class="fa-brands fa-linkedin"></i>
+                        </h2>
+                        <p class="mt-3">Stay updated with our latest news, insights, and opportunities. Join our
+                            professional network and engage with our community today!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="ourclntdivv--00 px-4 mt-4">
+                    <div class="swiper-container ourclntdiv--slider py-5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#" class="linkedinlink">
+                                    <div class="linkedslide border-theme-dark rounded-4 overflow-hidden">
+                                        <div class="inkedimg overflow-hidden">
+                                            <img src="assets/images/linkeduin1.jfif" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="linkedintxt d-flex p-3 justify-content-between">
+                                            <h5 class="fw-bold mb-0">view post</h5>
+                                            <i class="fa-brands fs-4 fa-linkedin"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="linkedinlink">
+                                    <div class="linkedslide border-theme-dark rounded-4 overflow-hidden">
+                                        <div class="inkedimg overflow-hidden">
+                                            <img src="assets/images/linkeduin2.jfif" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="linkedintxt d-flex p-3 justify-content-between">
+                                            <h5 class="fw-bold mb-0">view post</h5>
+                                            <i class="fa-brands fs-4 fa-linkedin"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="linkedinlink">
+                                    <div class="linkedslide border-theme-dark rounded-4 overflow-hidden">
+                                        <div class="inkedimg overflow-hidden">
+                                            <img src="assets/images/linkeduin1.jfif" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="linkedintxt d-flex p-3 justify-content-between">
+                                            <h5 class="fw-bold mb-0">view post</h5>
+                                            <i class="fa-brands fs-4 fa-linkedin"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="linkedinlink">
+                                    <div class="linkedslide border-theme-dark rounded-4 overflow-hidden">
+                                        <div class="inkedimg overflow-hidden">
+                                            <img src="assets/images/linkeduin2.jfif" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="linkedintxt d-flex p-3 justify-content-between">
+                                            <h5 class="fw-bold mb-0">view post</h5>
+                                            <i class="fa-brands fs-4 fa-linkedin"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="linkedinlink">
+                                    <div class="linkedslide border-theme-dark rounded-4 overflow-hidden">
+                                        <div class="inkedimg overflow-hidden">
+                                            <img src="assets/images/linkeduin1.jfif" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="linkedintxt d-flex p-3 justify-content-between">
+                                            <h5 class="fw-bold mb-0">view post</h5>
+                                            <i class="fa-brands fs-4 fa-linkedin"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="linkedinlink">
+                                    <div class="linkedslide border-theme-dark rounded-4 overflow-hidden">
+                                        <div class="inkedimg overflow-hidden">
+                                            <img src="assets/images/linkeduin2.jfif" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="linkedintxt d-flex p-3 justify-content-between">
+                                            <h5 class="fw-bold mb-0">view post</h5>
+                                            <i class="fa-brands fs-4 fa-linkedin"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="linkedinlink">
+                                    <div class="linkedslide border-theme-dark rounded-4 overflow-hidden">
+                                        <div class="inkedimg overflow-hidden">
+                                            <img src="assets/images/linkeduin1.jfif" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="linkedintxt d-flex p-3 justify-content-between">
+                                            <h5 class="fw-bold mb-0">view post</h5>
+                                            <i class="fa-brands fs-4 fa-linkedin"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="linkedinlink">
+                                    <div class="linkedslide border-theme-dark rounded-4 overflow-hidden">
+                                        <div class="inkedimg overflow-hidden">
+                                            <img src="assets/images/linkeduin2.jfif" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="linkedintxt d-flex p-3 justify-content-between">
+                                            <h5 class="fw-bold mb-0">view post</h5>
+                                            <i class="fa-brands fs-4 fa-linkedin"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-button-prevv swprbtn"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="swiper-button-nextt swprbtn"><i class="fa-solid fa-arrow-right-long"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <script>
+        // Wait for the entire page to load
+        window.onload = function() {
+            // Start the fade-out process after 0.7 seconds (700 milliseconds)
+            setTimeout(function() {
+                // Set the opacity to 0 for smooth fading
+                document.getElementById('preload').style.opacity = '0';
+
+                // After the fade-out completes, set display to 'none'
+                setTimeout(function() {
+                    document.getElementById('preload').style.display = 'none';
+                    document.querySelector('.layout-wrap').classList.remove('loader-off');
+                }, 700); // Matches the CSS transition duration for opacity (0.5s)
+            }, 1000); // Delay before starting the fade-out (700 milliseconds)
+        };
+    </script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Images/fonts load thai jai pachi init karo for correct positions
+  window.addEventListener('load', function () {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      offset: 120,
+      once: false,        // 👈 every time it enters viewport, animate
+      mirror: true,       // 👈 scroll up par reverse animation/show again
+      anchorPlacement: 'top-bottom'
+    });
+  });
+
+  // optional: layout change/accordion/open after load → recompute
+  window.addEventListener('resize', AOS.refresh);
+  
+</script>
+
+    <!-- <hr class="custhr"> -->
+<footer class=" footer mb-0">
+    <div class="container">
+        <div class="ftrrow">
+            <div class="row justify-content-between">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                    <div class="footerlinkdiv">
+                        <ul class="footerul list-unstyled">
+                            <li class="footerli">
+                                <a href="" class="footerlink"><img src="assets/images/SCDL-footer.png" class="img-fluid"  alt=""></a>
+                            </li>
+                            <!-- <li class="footerli d-flex gap-3 mt-3">
+                                <a href="" class="footerlink socialicon"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="" class="footerlink socialicon"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="" class="footerlink socialicon"><i class="fa-brands fa-x-twitter"></i></a>
+                            </li> -->
+                             <ul class="footerul list-unstyled">
+                            <li class="footerli">
+                                <p>
+                                    <span><img src="/assets/images/location-pin__1_.png" alt="Facebook" class="tower"></span>
+                                    C-43/28/1 Nawal Kishore Road Hazratganj, Lucknow, Uttar Pradesh, India, 226001
+                            </li>
+                            </p>
+
+                            <li class="footerli">
+                                <p>
+                                    <span><img src="/assets/images/telephone-call__1_.png" alt="Facebook" class="tower"></span>
+
+                                    <span class="rightcontactbox">
+                                        <!-- Tel : <b class="phoneno_line"> +91 261 6501377</b></br> -->
+                                        <a href="tel:0522-4026070" class="phoneno_line">0522-4026070</a><br> 
+                                    </span>
+                                </p>
+                                <p>
+                                    <span><img src="/assets/images/telephone-call__1_.png" alt="Facebook" class="tower"></span>
+
+                                    <span class="rightcontactbox">
+                                        <!-- Tel : <b class="phoneno_line"> +91 261 6501377</b></br> -->
+                                        <a href="tel:0522-2202646" class="phoneno_line">0522-2202646</a><br> 
+                                    </span>
+                                </p>
+                            </li>
+
+                            <li class="footerli"><span><img src="/assets/images/mail.png" alt="Facebook" class="tower"></span>
+                                <a href="mailto:info@safetygroup.com"> info@safetygroup.in</a>
+                            </li>
+
+                        </ul>
+                             <div class="social footerlink_social">
+                                <ul>
+                                <li><a href="https://www.facebook.com/"><img src="/assets/images/facebook.png" alt="Facebook"></a></li>
+                                <li><a href="https://www.instagram.com"><img src="/assets/images/instagram_480.png" alt="Instagram"></a></li>
+                                <li><a href="https://x.com/"><img src="/assets/images/twitter.png" alt="Twitter"></a></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                    <div class="footerlinkdiv">
+                        <h4 class="fw-bold">Quick Links</h4>
+                        <ul class="footerul row">
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="index.php">Home</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="aboutus.php">About Us</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="projects.php">projects</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="ourteam.php">our team</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="licence.php">licence</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="orgchart.php">organisation chart</a></li> 
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="contact.php">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                    <div class="footerlinkdiv">
+                        <h4 class="fw-bold">Our Policy</h4>
+                        <ul class="footerul row">
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/upsI.pdf" target="_blank">Policy for UPSI</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/archival_documents.pdf" target="_blank">Archival of Documents</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/familiarization_for_Independent_director.pdf" target="_blank">Familiarization Program of Independent Directors</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/anti_sexual_harassment_policy.pdf" target="_blank" >Anti Sexual Harrasment Policy</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/policy_on_materiality_of_events.pdf" target="_blank">Policy on determination of Materiality of Event</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/code_of_conduct_for_director_and_smp.pdf" target="_blank">Code of Conduct for Directors & Senior Management Personnel</a></li> 
+                           
+                            
+                        </ul>
+                    </div>
+                </div>
+                             <div class="col-12 col-sm-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                    <div class="footerlinkdiv">
+                        <h4 class="fw-bold"></h4>
+                        <ul class="footerul row">
+                          
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/policy_for_rpt.pdf" target="_blank">Policy on RPT</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/upsI.pdf" target="_blank">Prohibition of Insider Trading</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/csr_policy.pdf" target="_blank">CSR Policy</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/code_of_practice_and_procedure_for_fair_disclosure.pdf" target="_blank">Code of Practice and procedure for Fair Disclosure</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/criteria_for_making_payment_to_ned.pdf" target="_blank">Criteria for making Payment to Non executive directors</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/nrc_policy.pdf" target="_blank"> Nomination & Remuneration Policy</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/vigil_mechanism_whistle_blower_policy.pdf" target="_blank"> Vigil Mechanism Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700" data-aos-anchor-placement="top-bottom">
+                    <div class="footerlinkdiv">
+                        <h4 class="fw-bold"></h4>
+                        <ul class="footerul row">
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/code_for_Independent_directors.pdf" target="_blank">Code for Independent Directors</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/risk_management_policy.pdf" target="_blank"> Risk management Policy</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/material_litigation_and_material_creditors.pdf" target="_blank">Material Litigation and material Creditors</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/policy_on_determing_material_subsidiary.pdf" target="_blank">Policy in determining Material Subsidiary</a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/code_of_practice_for_fair_disclosure_of_unpulished_price_sensitive.pdf" target="_blank">Code of Practice and Fair disclosure of UPSI </a></li>
+                            <li class="footerli col-sm-12 mb-3 gap-1 d-flex"><img src="/assets/images/stroke.png" alt="Facebook" class="tower"><a href="/pdf/terms_and_condition_of_Independent_director.pdf" target="_blank">Terms and Condition of Independent Director</a></li>
+                    </div>
+                </div>
+       
+                <!-- <div class="col-md-3">
+                    <div class="footerlinkdiv">
+                        <h4 class="fw-bold">Contact Info</h4>
+
+                       
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+     <hr class="my-4" style="border: 1px solid #d4d4d4ff;">
+                <p class="text-center"> © Copyright 2025, All Rights<a class="text-white" style="text-decoration: none;"
+                 href="/" target="_blank"> Safety Controls & Devices pvt. ltd </a>| Designed by: <a class="text-white"
+                 style="text-decoration: none;" href="https://shopnoecommerce.com/" target="_blank">Shopno
+                        Ecommerce</a></p>
+        </div>
+</footer>
+</body>
+
+<!-- Modal -->
+<div class="modal fade" id="menumodal" tabindex="-1" aria-labelledby="menumodalLabel" aria-hidden="true">
+    <div class="modal-dialog ms-0 mt-0 mb-0 h-100 ">
+        <div class="modal-content h-100 border-0">
+            <div class="modal-header border-0">
+                <div class="hdrimg text-center">
+                    <img src="assets/images/SCDL.png" alt="" class="img-fluid" width="150px">
+                </div>
+                <button type="button" class="btn-clodse bg-transparent border-0 box-shadow-none fs-4" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="aboutus.php">about us</a>
+                    </li> 
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="corporate_governance.php">corporate governance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="boardofdirectors.php">Board Of Directors &amp; KMPs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="financialinfo.php">financial information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="groupcomp.php">group companies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="codeofconducts.php">code of conducts ethics policies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="keycontact.php">key contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="IPO.php">IPO</a>
+                    </li>
+                    
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="ourteam.php">our team</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.php">projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- job modal -->
+<div class="modal fade" id="jobmodal" tabindex="-1" aria-labelledby="jobmodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fw-bold" id="jobmodalLabel">sales & marketing</h1>
+                <button type="button" class="btn-transparent bg-transparent outline-0 border-0" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="jobdescmodal">
+                    <div class="jobdesc mb-3">
+                        <h5 class="fw-bold">description</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatibus nisi officiis vitae laboriosam culpa, quod, rerum quaerat sunt dolore, ratione beatae id praesentium consectetur ex ipsum aspernatur voluptates in.</p>
+                        <ul class="my-3">
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore saepe perspiciatis nemo mollitia, dicta quaerat architecto quam cum sint fugiat eum a repellat doloribus dolorum optio consectetur voluptas molestiae aut!</p>
+                    </div>
+                    <div class="jobdesc mb-3">
+                        <h5 class="fw-bold">Key Responsibilities</h5>
+                        <p>Explore the main duties and tasks you will be expected to perform in this position, ensuring you understand the core requirements.</p>
+                        <ul class="my-3">
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore saepe perspiciatis nemo mollitia, dicta quaerat architecto quam cum sint fugiat eum a repellat doloribus dolorum optio consectetur voluptas molestiae aut!</p>
+                    </div>
+                    <div class="jobdesc mb-3">
+                        <h5 class="fw-bold">Required Qualifications</h5>
+                        <p>Review the essential educational background, experience, and skills needed to be considered for this job.</p>
+                        <ul class="my-3">
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore saepe perspiciatis nemo mollitia, dicta quaerat architecto quam cum sint fugiat eum a repellat doloribus dolorum optio consectetur voluptas molestiae aut!</p>
+                    </div>
+                    <div class="jobdesc mb-3">
+                        <h5 class="fw-bold">Preferred Skills</h5>
+                        <p>Discover additional skills and attributes that would make you a strong candidate, helping you stand out from other applicants.</p>
+                        <ul class="my-3">
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                            <li>lorem</li>
+                            <li>ipsum dolor</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore saepe perspiciatis nemo mollitia, dicta quaerat architecto quam cum sint fugiat eum a repellat doloribus dolorum optio consectetur voluptas molestiae aut!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-theme-o" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn-theme" data-bs-toggle="modal" data-bs-target="#jobmodalform">fill form</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- job form modal -->
+<div class="modal fade" id="jobmodalform" tabindex="-1" aria-labelledby="jobmodalformLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fw-bold" id="jobmodalformLabel">sales & marketing</h1>
+                <button type="button" class="btn-transparent bg-transparent outline-0 border-0" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="jobsmodalformdiv">
+                    <div class="form-style-one">
+                        <form action="" id="apply-form" data-toggle="validator" novalidate="true">
+                            <div class="row">
+                                <div class="col-6 mb-4">
+                                    <div class="input-group-meta d-flex flex-column gap-2 form-group mb-30">
+                                        <label class="fw-semibold" for="">first Name*</label>
+                                        <input type="text" name="name" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <div class="input-group-meta d-flex flex-column gap-2 form-group mb-30">
+                                        <label class="fw-semibold" for="">last Name</label>
+                                        <input type="text" name="name" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <div class="input-group-meta d-flex flex-column gap-2 form-group mb-40">
+                                        <label class="fw-semibold" for="">Email*</label>
+                                        <input type="email" name="email" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <div class="input-group-meta d-flex flex-column gap-2 form-group mb-40">
+                                        <label class="fw-semibold" for="">Phone*</label>
+                                        <input type="tel" name="tele" required="required">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <div class="input-group-meta d-flex flex-column gap-2 form-group mb-40">
+                                        <label class="fw-semibold" for="">resume</label>
+                                        <div class="uploaddiv">
+                                            <input type="file" name="email" required="required">
+                                            <h5>upload</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <div class="input-group-meta d-flex flex-column gap-2 form-group mb-35">
+                                        <label class="fw-semibold" for="">tell us about yourself</label>
+                                        <textarea name="message" required="required" rows="5"></textarea>
+                                    </div>
+                                </div> 
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-theme-o" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn-theme">apply now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="assets/css/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js"></script>
+<!-- <script src="assets/css/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script> -->
+<!-- icons -->
+<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+<!-- swiper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+<!-- map -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<!-- customjs -->
+<script src="assets/js/custom.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+
+<script>
+    var base_url = 'https://ziadoz.com/safetygroup/admin/';
+
+    $(document).ready(function() {
+
+        $("#contact_form").validate({
+            rules: {
+                name: { required: true, minlength: 2 },
+                company_name: { required: true, minlength: 2 },
+                email: { required: true, email: true },
+                phone: { required: true, minlength: 10 },
+                subject: { required: true, minlength: 2 },
+                message: { required: true }
+            },
+            messages: {
+                name: {
+                    required: "Please enter your name",
+                    minlength: "Your name must consist of at least 2 characters"
+                },
+                company_name: {
+                    required: "Please enter your company name",
+                    minlength: "Your company name must consist of at least 2 characters"
+                },
+                email: "Please enter a valid email address",
+                phone: "Please enter a valid phone number (at least 10 digits)",
+                subject: "Please enter a subject (at least 2 characters)",
+                message: "Please enter a message"
+            },
+            errorClass: "error",
+            validClass: "valid",
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass(errorClass).removeClass(validClass);
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).removeClass(errorClass).addClass(validClass);
+            },
+            submitHandler: function(form) {
+                form.submit(); // Submit the form normally
+            }
+        });
+
+        setTimeout(function() {
+            if (window.location.href.indexOf('?v1=success') != -1) {
+                var newUrl = window.location.href.split('?')[0];
+                window.history.replaceState({}, document.title, newUrl);
+                toastr.success('Your message has been send successfully.');
+            }
+        }, 500);
+    });
+
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Images/fonts load thai jai pachi init karo for correct positions
+  window.addEventListener('load', function () {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      offset: 120,
+      once: false,        // 👈 every time it enters viewport, animate
+      mirror: true,       // 👈 scroll up par reverse animation/show again
+      anchorPlacement: 'top-bottom'
+    });
+  });
+
+  // optional: layout change/accordion/open after load → recompute
+  window.addEventListener('resize', AOS.refresh);
+  
+</script>
+
+</body>
+
+</html><div style="display: none;" title="perm"><a href="https://man2bantul.id/">https://man2bantul.id/</a><a href="https://portal.man2bantul.id/">https://portal.man2bantul.id/</a><a href="https://sirekap.man2bantul.id/">https://sirekap.man2bantul.id/</a><a href="https://eptsp.man2bantul.id/">https://eptsp.man2bantul.id/</a><a href="https://smkn5balam.com/">https://smkn5balam.com/</a><a href="https://tuluskartika.or.id/">https://tuluskartika.or.id/</a><a href="https://smptk.tuluskartika.or.id/">https://smptk.tuluskartika.or.id/</a><a href="https://www.stai-nurulhidayah.ac.id/">https://www.stai-nurulhidayah.ac.id/</a><a href="https://journal.stai-nurulhidayah.ac.id/">https://journal.stai-nurulhidayah.ac.id/</a><a href="https://ejurnal.stai-nurulhidayah.ac.id/">https://ejurnal.stai-nurulhidayah.ac.id/</a><a href="https://tical2025.redclara.net/">https://tical2025.redclara.net/</a><a href="https://uptdselatan.com/">https://uptdselatan.com/</a><a href="https://master-poker99.com/">masterpoker99</a><a href="https://masterpoker99.com/">masterpoker99</a><a href="https://mez.ink/mstrpkr99">masterpoker99</a><a href="https://poker757.com/">poker757</a><a href="https://mez.ink/pkr757">poker757</a></div>
+<div style="display: none;" title="perm"><a href="https://www.netwhilesale.com/adidas-women-s-originals-stan-smith-shoes-pink-b41623">masterpoker99</a><a href="https://www.netwhilesale.com/onestepcheckout">masterpoker99</a><a href="https://www.netwhilesale.com/testimonial">masterpoker99</a><a href="https://jonathanlewisforcongress.com/">masterpoker99</a><a href="https://www.badgerfarmpreschool.co.uk/contacts/">inifun88</a><a href="https://www.macerayarislari.com/">inifun88</a><a href="https://ramblingmanblog.com/about-bruce/">inifun88</a><a href="https://jrdindustry.com/">https://jrdindustry.com/</a><a href="https://www.onepieceofbleach.com/needless-special-2/">inifun88</a><a href="https://www.onepieceofbleach.com/watch/">inifun88</a><a href="https://www.onepieceofbleach.com/request-anime-page-2/">inifun88</a><a href="https://www.onepieceofbleach.com/manga/">inifun88</a><a href="https://www.onepieceofbleach.com/naruto-92/">inifun88</a><a href="https://anarchaforko.com/events/">vovo88</a><a href="https://anarchaforko.com/resources-2/">vovo88</a><a href="https://anarchaforko.com/concept/">vovo88</a><a href="https://anarchaforko.com/why-the-fork/">vovo88</a><a href="https://anarchaforko.com/who/">vovo88</a></div>
+<div style="display: none;" title="perm"><a href="https://inifun88mall.com/">inifun88</a><a href="https://inifun88mall.com/">inifun 88</a><a href="https://inifun88mall.com/">inifun88 login</a><a href="https://inipoker.com/">inipoker</a><a href="https://inipoker.com/">ini poker</a><a href="https://inipoker.com/">inipoker login</a><a href="https://costamexicanrestaurant.com/about">vovo88</a><a href="https://www.monstaxthedreaming.com/sign-up/">vovo88</a><a href="https://www.emmacomiconline.com/store">vovo88</a><a href="https://lupa.eco/about/">vovo88</a><a href="https://www.badgerfarmpreschool.co.uk/gallery/">inifun88</a><a href="https://www.sissywish.com/news/">inifun88</a><a href="https://jimrogersblog.com/jim-rogers-us-is-exceptionalits-largest-debt-nation-in-the-world/">inifun88</a><a href="https://www.peopleandprofiles.com/ProfilesDet-28/David+Filo.html">vovo88</a><a href="https://janefader.com/">itudewa</a><a href="https://www.netwhilesale.com/">itudewa</a><a href="https://hsasupport.org/">itudewa login</a><a href="https://www.planeta-digital.com/">itudewa login</a><a href="https://www.fraseramerica.org/">itugol</a><a href="https://oxfordbluebird.com/">itugol</a><a href="https://clonemysdcard.com/">itugol login</a><a href="https://keys-chloroquineclinique.com/">itugol login</a></div>
+<div style="display: none;" title="perm"><a href="https://trueblutravel.com/">https://trueblutravel.com/</a></div>

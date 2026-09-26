@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css">
+
+#marqueecontainer{
+position: relative;
+width: 300px; /*marquee width */
+height: 440px; /*marquee height */
+background-color: white;
+overflow: hidden;
+border: 2px solid #5292da;
+padding: 2px;
+padding-left: 4px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+/***********************************************
+* Cross browser Marquee II- © Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+
+var delayb4scroll=2000 //Specify initial delay before marquee starts to scroll on page (2000=2 seconds)
+var marqueespeed=1 //Specify marquee scroll speed (larger is faster 1-10)
+var pauseit=1 //Pause marquee onMousever (0=no. 1=yes)?
+
+////NO NEED TO EDIT BELOW THIS LINE////////////
+
+var copyspeed=marqueespeed
+var pausespeed=(pauseit==0)? copyspeed: 0
+var actualheight=''
+
+function scrollmarquee(){
+if (parseInt(cross_marquee.style.top)>(actualheight*(-1)+8)) //if scroller hasn't reached the end of its height
+cross_marquee.style.top=parseInt(cross_marquee.style.top)-copyspeed+"px" //move scroller upwards
+else //else, reset to original position
+cross_marquee.style.top=parseInt(marqueeheight)+8+"px"
+}
+
+function initializemarquee(){
+cross_marquee=document.getElementById("vmarquee")
+cross_marquee.style.top=0
+marqueeheight=document.getElementById("marqueecontainer").offsetHeight
+actualheight=1000 //height of marquee content (much of which is hidden from view)
+if (window.opera || navigator.userAgent.indexOf("Netscape/7")!=-1){ //if Opera or Netscape 7x, add scrollbars to scroll and exit
+cross_marquee.style.height=marqueeheight+"px"
+cross_marquee.style.overflow="scroll"
+return
+}
+setTimeout('lefttime=setInterval("scrollmarquee()",30)', delayb4scroll)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializemarquee, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializemarquee)
+else if (document.getElementById)
+window.onload=initializemarquee
+
+
+</script>
+<script src="//www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
+<script type="text/javascript">
+    /*
+    *  How to use the Feed Control to grab, parse and display feeds.
+    */
+    
+    google.load("feeds", "1");
+    
+    function OnLoad() {
+      // Create a feed control
+      var feedControl = new google.feeds.FeedControl();
+	  feedControl.setNumEntries(10); 
+    
+      // Add two feeds.
+      feedControl.addFeed("http://feeds.feedburner.com/nseindia/ann", "");
+	           
+      // Draw it.
+      feedControl.draw(document.getElementById("content"));
+    }
+    
+    google.setOnLoadCallback(OnLoad);
+    </script>
+<title>:: Naysaa Securities LTD. ::</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+<link href="naysaastyle.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style3 {	font-family: Verdana;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="stmenu.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="simplegallery.js">
+
+/***********************************************
+* Simple Controls Gallery- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+var mygallery=new simpleGallery({
+	wrapperid: "simplegallery1", //ID of main gallery container,
+	dimensions: [627, 334], //width/height of gallery in pixels. Should reflect dimensions of the images exactly
+	imagearray: [
+			
+		["s2.jpg", "", "", ""],		
+		["s3.jpg", "", "", ""],
+		["s4.jpg", "", "", ""],
+		["s5.jpg", "", "", ""]
+				
+		
+						
+	],
+	autoplay: [true, 2500, 8], //[auto_play_boolean, delay_btw_slide_millisec, cycles_before_stopping_int]
+	persist: false, //remember last viewed slide and recall within same session?
+	fadeduration: 500, //transition duration (milliseconds)
+	oninit:function(){this.showhidenavpanel('show')//event that fires when gallery has initialized/ ready to run
+		//Keyword "this": references current gallery instance (ie: try this.navigate("play/pause"))
+	},
+	onslide:function(curslide, i){ //event that fires after each slide is shown
+		//Keyword "this": references current gallery instance
+		//curslide: returns DOM reference to current slide's DIV (ie: try alert(curslide.innerHTML)
+		//i: integer reflecting current image within collection being shown (0=1st image, 1=2nd etc)
+	}
+})
+
+</script>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+//-->
+</script>
+<link href="naysaastyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<body onLoad="MM_preloadImages('images/roll_17.jpg','images/roll_18.jpg','images/roll_19.jpg','images/roll_20.jpg','images/roll_21.jpg','images/roll_22.jpg')">
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr align="left" valign="top">
+    <td width="281"><img src="images/index_01.jpg" width="266" height="79" alt=""></td>
+    <td align="center" valign="middle"><embed width="720" allowscriptaccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="http://img1.moneycontrol.com/tv/flash/tickerModule_v4.swf?userid=&amp;cFlag=0&amp;xmlfile_top=http://mctvread.moneycontrol.com/output/upper.xml&amp;xmlfile_bot=http://mctvread.moneycontrol.com/output/lower.xml" style="border-width: 0px; height: 65px"/></td>
+  </tr>
+</table>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr align="left" valign="top">
+    <td width="34"><img src="images/index_03.jpg" width="34" height="60" alt=""></td>
+    <td align="center" valign="middle"><a href="http://www.dhtml-menu-builder.com"  style="display:none;visibility:hidden;">Javascript DHTML Drop Down Menu Powered by dhtml-menu-builder.com</a>
+<script type="text/javascript">
+<!--
+stm_bm(["menu0743",900,"","blank.gif",0,"","",0,0,250,0,1000,1,0,0,"","",0,0,1,2,"default","hand","",1,25],this);
+stm_bp("p0",[0,4,0,0,0,0,0,0,100,"",-2,"",-2,50,0,0,"#999999","","",3,0,0,"#000000"]);
+stm_ai("p0i0",[2,"","index_04.jpg","roll_04.jpg",112,60,0,"index.asp","_self","","","","",0,0,0,"","",0,0,0,0,1,"",0,"",0,"","",3,3,0,0,"#E6EFF9","#000000","#000000","#000000","8pt Verdana","8pt Verdana",0,0,"","","","",0,0,0]);
+stm_aix("p0i1","p0i0",[2,"","index_05.jpg","index_05.jpg",21,60,0,""]);
+stm_aix("p0i2","p0i0",[2,"","index_06.jpg","roll_06.jpg",129,60,0,"#","_self","","","","",0,0,0,"arrow_r.gif","arrow_r.gif"]);
+stm_bpx("p1","p0",[1,4,0,0,0,0,12]);
+stm_aix("p1i0","p0i0",[0,"Profile","","",-1,-1,0,"aboutus.asp","_self","","","flashdian.gif","flashdian1.gif",12,5,0,"","",0,0,0,0,1,"#000000",0,"#CCCCCC",0,"","",3,3,1,1,"#000000","#999999","#FFFFFF","#000000","10pt 'Arial','Verdana'","10pt 'Arial','Verdana'"],130,30);
+stm_aix("p1i1","p1i0",[0,"Mission","","",-1,-1,0,"mission.asp"],130,30);
+stm_aix("p1i2","p1i0",[0,"Vision","","",-1,-1,0,"vision.asp"],130,30);
+stm_aix("p1i3","p1i0",[0,"Our Values","","",-1,-1,0,"our-values.asp"],130,30);
+stm_ep();
+stm_aix("p0i3","p0i1",[2,"","index_07.jpg","index_07.jpg",26]);
+stm_aix("p0i4","p0i2",[2,"","index_08.jpg","roll_08.jpg"]);
+stm_bpx("p2","p1",[]);
+stm_aix("p2i0","p1i0",[0,"Equity & IPO","","",-1,-1,0,"equity_ipo.asp"],150,30);
+stm_aix("p2i1","p1i0",[0,"Mutual Funds","","",-1,-1,0,"mutual_funds.asp"],150,30);
+stm_aix("p2i2","p1i0",[0,"Derivatives","","",-1,-1,0,"derivatives.asp"],150,30);
+stm_aix("p2i3","p1i0",[0,"NRI Offerings","","",-1,-1,0,"NRI_offerings.asp"],150,30);
+stm_aix("p2i4","p1i0",[0,"Fixed Deposit & Bonds","","",-1,-1,0,"fixed_deposit_bonds.asp"],150,30);
+stm_aix("p2i5","p1i0",[0,"Loans & Realty","","",-1,-1,0,"loans_realty.asp"],150,30);
+stm_ep();
+stm_aix("p0i5","p0i1",[2,"","index_09.jpg","index_09.jpg",29]);
+stm_aix("p0i6","p0i2",[2,"","index_10.jpg","roll_10.jpg"]);
+stm_bpx("p3","p1",[]);
+stm_aix("p3i0","p0i0",[0,"Live TV","","",-1,-1,0,"live-tv.asp","_self","","","flashdian.gif","flashdian1.gif",12,5,0,"","",0,0,0,0,1,"#000000",0,"#CCCCCC",0,"","",3,3,1,1,"#000000","#999999","#FFFFFF","#000000","8pt 'Arial','Verdana'","8pt 'Arial','Verdana'"],130,30);
+stm_aix("p3i1","p3i0",[0,"BSE Market Tracker","","",-1,-1,0,"bse-market-tracker.asp"],130,30);
+stm_aix("p3i2","p3i0",[0,"NSE Market Tracker","","",-1,-1,0,"nse-market-tracker.asp"],130,30);
+stm_aix("p3i3","p3i0",[0,"NSE Online Chart","","",-1,-1,0,"nse-online-chart.asp"],130,30);
+stm_ep();
+stm_aix("p0i7","p0i1",[2,"","index_11.jpg","index_11.jpg",36]);
+stm_aix("p0i8","p0i0",[2,"","index_12.jpg","roll_12.jpg",129,60,0,"beourpartner.asp"]);
+stm_aix("p0i9","p0i1",[2,"","index_13.jpg","index_13.jpg",38]);
+stm_aix("p0i10","p0i0",[2,"","index_14.jpg","roll_14.jpg",129,60,0,"contactus.asp"]);
+stm_ep();
+stm_em();
+//-->
+</script>
+
+
+
+</td>
+    <td width="44"><img src="images/index_15.jpg" width="44" height="60" alt=""></td>
+  </tr>
+</table>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr align="left" valign="top">
+    <td width="627"><div id="simplegallery1"></div></td>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><a href="http://120.63.160.1/ehastakshar/login.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image37','','images/roll_17.jpg',1)"><img src="images/index_17.jpg" name="Image37" width="358" height="53" border="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="marketupdates.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image38','','images/roll_18.jpg',1)"><img src="images/index_18.jpg" name="Image38" width="358" height="54" border="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="investorrelations.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image39','','images/roll_19.jpg',1)"><img src="images/index_19.jpg" name="Image39" width="358" height="57" border="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="ipoapplicationform.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image40','','images/roll_20.jpg',1)"><img src="images/index_20.jpg" name="Image40" width="358" height="55" border="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="downloads.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image41','','images/roll_21.jpg',1)"><img src="images/index_21.jpg" name="Image41" width="358" height="59" border="0"></a></td>
+        </tr>
+        <tr>
+          <td><a href="openanaccount.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image42','','images/roll_22.jpg',1)"><img src="images/index_22.jpg" name="Image42" width="358" height="56" border="0"></a></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="images/index_23.jpg" width="985" height="71" alt=""></td>
+  </tr>
+</table>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr align="left" valign="top">
+          <td><img src="images/index_24.jpg" width="80" height="65" alt=""></td>
+          <td width="151" height="65" background="images/index_25.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="top"><div align="justify"> Naysaa Securities is a professionally managed firm, offers investment advisory services</div></td>
+            </tr>
+          </table></td>
+          <td><img src="images/index_26.jpg" width="91" height="65" alt=""></td>
+          <td width="149" height="65" background="images/index_27.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="left" valign="top" class="top"><div align="justify"> Need help analyzing stocks? Try our step-by-step guide to company research.
+
+</div></td>
+            </tr>
+          </table><div align="justify"></div><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          </table></td>
+          <td><img src="images/index_28.jpg" width="91" height="65" alt=""></td>
+          <td width="152" height="65" background="images/index_29.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="top"><div align="justify">The&nbsp;key&nbsp;to&nbsp;achieving successful stock market forecasting is obtaining best&nbsp;possible results</div></td>
+            </tr>
+          </table></td>
+          <td><img src="images/index_30.jpg" width="88" height="65" alt=""></td>
+          <td width="146" height="65" background="images/index_31.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="top"><div align="justify"> Email : <a href="mailto:naysaa@naysaasecurities.com" class="top"> naysaa@<br>
+                naysaasecurities.com<br>
+              </a><br>
+                Tel.:- +91-
+
+
+ 26760404<br>
+              </div></td>
+            </tr>
+          </table></td>
+          <td><img src="images/index_32.jpg" width="37" height="65" alt=""></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr align="left" valign="top">
+          <td><img src="images/index_33.jpg" width="160" height="32" alt=""></td>
+          <td><a href="aboutus.asp"><img src="images/index_34.jpg" alt="" width="71" height="32" border="0"></a></td>
+          <td><img src="images/index_35.jpg" width="169" height="32" alt=""></td>
+          <td><a href="aboutus.asp"><img src="images/index_36.jpg" alt="" width="71" height="32" border="0"></a></td>
+          <td><img src="images/index_37.jpg" width="167" height="32" alt=""></td>
+          <td><a href="aboutus.asp"><img src="images/index_38.jpg" alt="" width="76" height="32" border="0"></a></td>
+          <td><img src="images/index_39.jpg" width="167" height="32" alt=""></td>
+          <td><a href="contactus.asp"><img src="images/index_40.jpg" alt="" width="71" height="32" border="0"></a></td>
+          <td><img src="images/index_41.jpg" width="33" height="32" alt=""></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="images/index_42.jpg" width="985" height="23" alt=""></td>
+  </tr>
+</table>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr align="left" valign="top">
+    <td><img src="images/index_43.jpg" width="599" height="42" alt=""></td>
+    <td><img src="images/index_44.jpg" width="30" height="42" alt=""></td>
+    <td><img src="images/index_45.jpg" width="356" height="42" alt=""></td>
+  </tr>
+</table>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr align="left" valign="top">
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="599" height="101" align="left" valign="top" background="images/index_46.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr align="left" valign="top">
+                <td width="60">&nbsp;</td>
+                <td class="txt"><div align="justify">                  Naysaa Securities is a professionally managed firm, offers investment advisory services and investment related tools and services for Indian Stock Market. Naysaa Securities has been formed to enable the investors to gain maximum out of Indian Stock Market.<br>
+                    <br>
+                    Naysaa Securities Limited has rich of experience in Indian Stock Market and we utilize our experience for our clients profits. Our clients are our main assets and their's profit is our's profit.<br>
+                    <br>
+                    <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td align="right"><a href="aboutus.asp" class="txt">Read More... </a></td>
+                      </tr>
+                      <tr>
+                        <td align="right">&nbsp;</td>
+                      </tr>
+                    </table>
+                </div></td>
+                <td width="20">&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td background="images/index_46.jpg"><table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr align="center" valign="top">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><span class="style3">US Market</span></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr align="center" valign="top">
+                <td width="20">&nbsp;</td>
+                <td><span class="img-hiten"><img src="http://charts.reuters.com/reuters/enhancements/chartapi/chart_api.asp?width=160&amp;height=150&amp;symbol=.SPX&amp;duration=1&amp;showLastClose=1&amp;headerType=quote&amp;primarySymbolDisplay=" alt="  Chart (us!spx)" border="0" style="height: 140px; width: 152px; text-align: center;"/></span></td>
+                <td width="10">&nbsp;</td>
+                <td><span class="img-hiten"><img src="http://charts.reuters.com/reuters/enhancements/chartapi/chart_api.asp?width=160&amp;height=150&amp;symbol=.DJI&amp;duration=1&amp;showLastClose=1&amp;headerType=quote&amp;primarySymbolDisplay=" alt="Dow Chart (us!dji)" border="0" style="height: 141px; width: 152px"/></span></td>
+                <td width="10">&nbsp;</td>
+                <td><span class="img-hiten"><img src="http://charts.reuters.com/reuters/enhancements/chartapi/chart_api.asp?width=160&amp;height=150&amp;symbol=.IXIC&amp;duration=1&amp;showLastClose=1&amp;headerType=quote&amp;primarySymbolDisplay=" alt="NASDAQ Chart (us!comp)" border="0" style="height: 141px; width: 152px"/></span></td>
+                </tr>
+              <tr align="center" valign="top">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr align="center" valign="top">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><span class="style3"> India Market</span></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+              <tr align="center" valign="top">
+                <td>&nbsp;</td>
+                <td><span class="img-hiten"><img src="http://charts.reuters.com/reuters/enhancements/chartapi/chart_api.asp?width=160&amp;height=150&amp;symbol=.BSESN&amp;duration=1&amp;showLastClose=1&amp;headerType=quote&amp;primarySymbolDisplay=Sensex" alt="Sensex Chart (in!sen)" border="0" style="height: 141px; width: 152px"/></span></td>
+                <td>&nbsp;</td>
+                <td><span class="img-hiten"><img src="http://charts.reuters.com/reuters/enhancements/chartapi/chart_api.asp?width=160&amp;height=150&amp;symbol=.NSEI&amp;duration=1&amp;showLastClose=1&amp;headerType=quote&amp;primarySymbolDisplay=Nifty" alt="Nifty Chart (in!nsx)" border="0" style="height: 141px; width: 152px"/></span></td>
+                <td>&nbsp;</td>
+                <td><span class="img-hiten"><img src="http://charts.reuters.com/reuters/enhancements/chartapi/chart_api.asp?width=160&amp;height=150&amp;symbol=.BSEMC&amp;duration=1&amp;showLastClose=1&amp;headerType=quote&amp;primarySymbolDisplay=BSE+Mid-Cap" alt="BSE Mid-Cap Chart (in!BMX)" border="0" style="height: 141px; width: 152px"/></span></td>
+                </tr>
+              <tr align="center" valign="top">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        <td background="images/index_47.jpg"><img src="images/index_47.jpg" width="30" height="462" alt=""></td>
+        <td width="356" height="462" background="images/index_48.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr align="left" valign="top">
+            <td class="txt"><div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed"> <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<div id="vmarquee" style="position: absolute; width: 98%;">
+  <div id="content">
+    <div align="justify"><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/ZO768-joXrs/AnnouncementDetail.jsp" target="_blank">Reliance Mutual Fund - Reliance Int. Fund - QIF - SIII - IP- DP - DPO - Suspension of Trading </a><br>
+      Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: RMFINQIDP3 of Reliance Mutual ... <a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/beCy1JEQSEs/AnnouncementDetail.jsp" target="_blank"></a>
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/beCy1JEQSEs/AnnouncementDetail.jsp" target="_blank">UTI Mutual Fund - UTI Fixed Income Interval Fund - QIP I - RDR - Suspension of Trading</a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFIQIPRRI of UTI Mutual Fund ...
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/BXUjhVMyAYA/AnnouncementDetail.jsp" target="_blank">UTI Mutual Fund - UTI Fixed Income Interval Fund - QIP I - RDP - Suspension of Trading </a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFIQIPRPI of UTI Mutual Fund ...
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/7CGNwdJY44M/AnnouncementDetail.jsp" target="_blank">UTI Mutual Fund - UTI Fixed Income Interval Fund - QIP I - RG - Suspension of Trading</a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFIQIPRGI of UTI Mutual Fund ...
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/fTcQikej55o/AnnouncementDetail.jsp" target="_blank">UTI Mutual Fund - UTI Fixed Income Interval Fund - MIP - I - RDR - Suspension of Trading</a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFIMIPRRI of UTI Mutual Fund ...
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/5fUfWnVfdBo/AnnouncementDetail.jsp" target="_blank">UTI Mutual Fund - UTI Fixed Income Interval Fund - MIP - I - RDP - Suspension of Trading</a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFIMIPRPI of UTI Mutual Fund ...
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/IEoLrChdv4E/AnnouncementDetail.jsp" target="_blank">UTI Mutual Fund - UTI Fixed Income Interval Fund - MIP - I - RG - Suspension of Trading </a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFIMIPRGI of UTI Mutual Fund ...
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/lBS6NFBeqWE/AnnouncementDetail.jsp" target="_blank">UTI Mutual Fund - UTI Fixed Income Interval Fund - MIP - I - IDP - Suspension of Trading</a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFIMIPIPI of UTI Mutual Fund ...
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/XBvGCOYl1os/AnnouncementDetail.jsp" target="_blank">UTI MF- UTI FIIF - QIP - I - DPDP - Suspension of Trading</a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFDQIPIPI of UTI Mutual Fund ...
+      <p><a href="http://feedproxy.google.com/%7Er/nseindia/ann/%7E3/2u8H6c62HCU/AnnouncementDetail.jsp" target="_blank">UTI MF- UTI FIIF - QIP - I - DPG - Suspension of Trading</a><br>
+        Members of the Exchange are hereby informed that the trading in the units of the scheme , Symbol: UTFDQIPIGI of UTI Mutual Fund ...
+    </div>
+  </div>
+</div>
+</body>
+</html>
+</td>
+            <td width="40">&nbsp;</td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="985" height="80" align="left" valign="top" background="images/index_50.jpg"><table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="20" colspan="3"><img src="images/spacer.gif" width="1" height="10"></td>
+        </tr>
+      <tr align="center" valign="top">
+        <td width="55">&nbsp;</td>
+        <td class="txt">          <strong>Attention Investors</strong>          <br>
+          &quot;Prevent Unauthorised transactions in your account --&gt; Update your mobile numbers/email IDs with your STOCK brokers. Receive information of your transactions directly from Exchange on your mobile/email at the end of the day<br>1. Stock Brokers can accept securities as margin from clients only by way of pledge in the depository system w.e.f. September 01, 2020.<br>2. Update your email id and mobile number with your stock broker / depository participant and receive OTP directly from depository on your email id and/or mobile number to create pledge.<br>3. Check your securities / MF / bonds in the consolidated account statement issued by NSDL/CDSL every month.<br>
+          <strong>.......... Issued in the interest of investors&quot;</strong><br>
+<img src="images/clientmessage.gif"></td>
+        <td width="55">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<link href="naysaastyle.css" rel="stylesheet" type="text/css">
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="985" height="84" align="left" valign="top" background="images/index_51.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr align="center" valign="top">
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr align="center" valign="top">
+          <td width="45">&nbsp;</td>
+          <td class="txt"><a href="index.asp" class="txt">Home</a> | <a href="investorrelations.asp" class="txt">Investor Relations</a> | <a href="downloads.asp" class="txt">Download</a> | <a href="beourpartner.asp" class="txt">Be our Partner</a> | <a href="#" class="txt">Login for online Trading</a> | <a href="discliamer.asp" class="txt">Disclaimer</a> | <a href="https://www.scores.gov.in/scores/complaintRegister.html" class="txt" target="_blank">SEBI Complaint Redressal System</a> | <a href="contactus.asp" class="txt">Contact Us</a></td>
+          <td width="52">&nbsp;</td>
+        </tr>
+        <tr align="center" valign="top">
+          <td>&nbsp;</td>
+          <td class="txt">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr align="center" valign="top">
+          <td>&nbsp;</td>
+          <td class="txt">Sebi Registration : INZ000004630&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright Naysaa Securities. All Rights Reserved</td>
+          <td>&nbsp;</td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+</body>
+</html>

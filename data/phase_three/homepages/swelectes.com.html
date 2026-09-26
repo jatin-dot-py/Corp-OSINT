@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWELECT Energy Systems - Leading Renewable Energy Solutions Provider</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <meta name="title" content="SWELECT Energy Systems - Leading Renewable Energy Solutions Provider">
+    <meta name="description" content="Discover SWELECT's renewable energy solutions, including solar power and sustainable technologies for a greener future.">
+    <meta name="robots" content="index, follow">
+    <link rel="preload" as="image" href="/images/pattern.svg" type="image/svg+xml">
+    <meta property="og:title" content="SWELECT Energy Systems - Leading Renewable Energy Solutions Provider">
+    <meta property="og:description" content="Discover SWELECT's renewable energy solutions, including solar power and sustainable technologies for a greener future.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <style>
+    /* ═══════════════════════════════════════
+       UPDATES SECTION
+    ═══════════════════════════════════════ */
+
+    .sw-updates-section {
+        width: 100%;
+        background: #ffffff;
+        border-top: 1px solid #e0e8f5;
+        border-bottom: 1px solid #e0e8f5;
+    }
+
+    .sw-panel {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px 40px 20px;
+    }
+
+    /* ── Row 1: UPDATES label + line ── */
+    .sw-row-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .sw-pulse-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #034ea2;
+        flex-shrink: 0;
+        animation: swPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes swPulse {
+        0%   { box-shadow: 0 0 0 0   rgba(3,78,162,0.55); }
+        65%  { box-shadow: 0 0 0 7px rgba(3,78,162,0);    }
+        100% { box-shadow: 0 0 0 0   rgba(3,78,162,0);    }
+    }
+
+    .sw-label {
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: #034ea2;
+        white-space: nowrap;
+    }
+
+    .sw-label-line {
+        flex: 1;
+        height: 1px;
+        background: #e0e8f5;
+    }
+
+    /* ── Row 2: platform icon + name + date + counter ── */
+    .sw-row-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .sw-platform-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .sw-platform-icon svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+    .sw-platform-icon.hidden {
+        display: none;
+    }
+
+    .sw-platform-name {
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #034ea2;
+        opacity: 0.6;
+    }
+    .sw-platform-name.hidden {
+        display: none;
+    }
+
+    .sw-dot-sep {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: #c5d5ec;
+        flex-shrink: 0;
+    }
+    .sw-dot-sep.hidden {
+        display: none;
+    }
+
+    .sw-date-text {
+        font-family: 'Outfit', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        color: #a8bed8;
+    }
+
+    .sw-new-badge {
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #e53935;
+        border: 1px solid rgba(229,57,53,0.3);
+        padding: 2px 7px;
+        border-radius: 3px;
+        background: rgba(229,57,53,0.06);
+        display: none;
+    }
+    .sw-new-badge.visible {
+        display: inline-block;
+    }
+
+    .sw-meta-spacer {
+        flex: 1;
+    }
+
+    .sw-counter {
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: rgba(3,78,162,0.35);
+        white-space: nowrap;
+    }
+
+    /* ── Row 3: update text (wraps fully) ── */
+    .sw-row-text {
+        margin-bottom: 18px;
+        min-height: 80px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .sw-update-text {
+        font-family: 'Outfit', sans-serif;
+        font-size: 15.5px;
+        font-weight: 400;
+        line-height: 1.7;
+        color: #2c3e50;
+        letter-spacing: 0.01em;
+        white-space: normal;
+        word-break: break-word;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.32s ease, transform 0.32s ease;
+    }
+
+    .sw-update-text.exit {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    .sw-update-text.enter {
+        animation: swEnter 0.38s ease forwards;
+    }
+
+    @keyframes swEnter {
+        from { opacity: 0; transform: translateY(-6px); }
+        to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    /* ── Row 4: progress bar + arrows + view all ── */
+    .sw-row-bottom {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .sw-progress-track {
+        flex: 1;
+        height: 2px;
+        background: #e0e8f5;
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .sw-progress-fill {
+        height: 100%;
+        width: 0%;
+        background: #034ea2;
+        border-radius: 2px;
+    }
+
+    /* dots */
+    .sw-dots {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+    }
+
+    .sw-prog-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #c8d8f0;
+        cursor: pointer;
+        transition: background 0.25s, width 0.25s;
+        flex-shrink: 0;
+    }
+    .sw-prog-dot.cur {
+        background: #034ea2;
+        width: 16px;
+        border-radius: 3px;
+    }
+
+    /* arrows grouped */
+    .sw-arrows {
+        display: flex;
+        align-items: center;
+        gap: 1px;
+        background: rgba(3,78,162,0.05);
+        border: 1px solid rgba(3,78,162,0.12);
+        border-radius: 6px;
+        padding: 3px;
+        flex-shrink: 0;
+    }
+
+    .sw-arrow {
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: none;
+        color: rgba(3,78,162,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background 0.16s, color 0.16s, transform 0.12s;
+        padding: 0;
+        outline: none;
+    }
+    .sw-arrow svg {
+        width: 15px;
+        height: 15px;
+    }
+    .sw-arrow:hover {
+        background: rgba(3,78,162,0.1);
+        color: #034ea2;
+        transform: scale(1.08);
+    }
+    .sw-arrow:active {
+        transform: scale(0.92);
+    }
+
+    /* view all */
+    .sw-view-all {
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(3,78,162,0.5);
+        text-decoration: none;
+        border: 1px solid rgba(3,78,162,0.15);
+        padding: 5px 14px;
+        border-radius: 4px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+    }
+    .sw-view-all::after {
+        content: '›';
+        font-size: 14px;
+        line-height: 1;
+    }
+    .sw-view-all:hover {
+        color: #034ea2;
+        border-color: rgba(3,78,162,0.4);
+        background: rgba(3,78,162,0.05);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+        .sw-panel { padding: 20px 24px 16px; }
+        .sw-update-text { font-size: 14.5px; }
+        .sw-view-all { display: none; }
+    }
+    @media (max-width: 600px) {
+        .sw-panel { padding: 18px 16px 14px; }
+        .sw-update-text { font-size: 14px; }
+        .sw-counter { display: none; }
+    }
+    </style>
+
+</head>
+
+<body>
+    <style>
+    header {
+        background: #fff;
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    }
+
+
+    .header-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+
+    .hamburger span {
+        width: 24px;
+        height: 3px;
+        background: #000;
+        transition: 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .logo-holder img {
+        width: 215px;
+        display: block;
+    }
+
+    nav.main-nav {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-grow: 1;
+    }
+
+    .menu-item {
+        position: relative;
+    }
+
+    .menu-link {
+        color: #000;
+        text-decoration: none;
+        padding: 8px 5px;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .menu-item .menu-link::after {
+        content: "▼";
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        min-width: 200px;
+        z-index: 999;
+    }
+
+    .submenu a {
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #000;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .submenu a:hover {
+        background: #f0f0f0;
+    }
+
+    .menu-item:hover .submenu {
+        display: flex;
+    }
+
+    .right-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .language {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-search {
+        position: relative;
+    }
+
+    .header-search button {
+        background: transparent;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .header-search img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header-search-menu {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background: #fff;
+        padding: 10px;
+        width: 200px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    .header-search-menu input {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #ccc;
+    }
+
+    .header-search-menu.show {
+        display: block;
+    }
+
+    /* Language dropdown */
+    .language-selector {
+        position: relative;
+        display: inline-block;
+        font-family: Arial, sans-serif;
+    }
+
+    .lang-btn {
+        background: none;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .lang-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        list-style: none;
+        padding: 6px 0;
+        margin: 4px 0 0;
+        min-width: 140px;
+        z-index: 1000;
+    }
+
+    .lang-menu li {
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .lang-menu li:hover {
+        background: #f5f5f5;
+    }
+
+    .lang-menu.show {
+        display: block;
+    }
+
+
+
+
+    @media (max-width: 1440px) {
+        nav.main-nav {
+            gap: 0.5rem;
+        }
+
+        .right-actions {
+            gap: 0.5rem;
+        }
+    }
+
+    @media (max-width: 1375px) {
+        .menu-link {
+            font-size: 15px;
+        }
+
+        .logo-holder img {
+            width: 210px;
+        }
+    }
+
+    @media (max-width: 1280px) {
+        .menu-link {
+            font-size: 13px;
+        }
+
+        .header-right {
+            gap: 0.5rem;
+        }
+
+    }
+
+
+    @media (max-width: 1100px) {
+        .hamburger {
+            display: flex;
+        }
+
+        nav.main-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 10px;
+            z-index: 998;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav.main-nav.show {
+            display: flex;
+        }
+
+        .menu-item:hover .submenu {
+            display: none;
+        }
+
+        .menu-item.open .submenu {
+            display: flex;
+            position: static;
+            background: #fff;
+            box-shadow: none;
+            padding-left: 10px;
+        }
+
+        .menu-link {
+            justify-content: space-between;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .menu-item {
+            position: relative;
+            width: 100%;
+        }
+
+        .right-actions {
+            justify-content: flex-end;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .logo-holder img {
+            width: 150px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .logo-holder img {
+            width: 100px;
+        }
+    }
+
+</style>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2NGXBR9" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="header-left">
+                <a href="/" class="logo-holder">
+                    <img src="/images/logo-swelect.svg" alt="Logo" />
+                </a>
+            </div>
+
+            <div class="header-right">
+                <!-- Navigation Menu -->
+                <nav class="main-nav" id="mainNav">
+                    <div class="menu-item">
+                        <a href="#" class="menu-link" onclick="toggleSubMenu(event)">Our Company</a>
+                        <div class="submenu">
+                            <a href="/aboutus.php">About Us</a>
+                            <a href="/csr.php">CSR</a>
+                            <a href="/credentials.php">Credentials</a>
+                            <a href="/partner-program.php">Partner Program</a>
+                            <a href="/esg.php">ESG</a>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#" class="menu-link" onclick="toggleSubMenu(event)">Manufacturing</a>
+                        <div class="submenu">
+                            <a href="/manufacturing/shpv.php">PV Module – SHPV</a>
+                            <a href="/manufacturing/mms-and-bos.php">MMS & BOS</a>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#" class="menu-link" onclick="toggleSubMenu(event)">Products</a>
+                        <div class="submenu">
+                            <a href="/products/pv-module.php">PV Module</a>
+                            <a href="/products/module-mounting-structures.php">Module Mounting Structures</a>
+                            <a href="/products/electrical-balance-of-systems.php">Electrical Balance of Systems</a>
+                            <!--<a href="/manufacturing/mms-and-bos.php">MMS & BOS</a>-->
+                            <a href="/products/solar-water-pump.php">Solar Pumps</a>
+                            <a href="/products/spgs-kit.php">SPGS Kits</a>
+                            <a href="/products/micro-inverter-kits.php">Micro Inverter Kits</a>
+                            <a href="/products/solar-with-bess.php">BESS</a>
+                            <a href="/products/solar-hybrid-solutions.php">Wind Hybrid</a>
+                            <a href="/products/power-products.php">Power Products</a>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#" class="menu-link" onclick="toggleSubMenu(event)">Solutions</a>
+                        <div class="submenu">
+                            <a href="/solutions/residential.php">Residential</a>
+                            <a href="/solutions/epc-contracts.php">EPC</a>
+                            <a href="/solutions/energy-sales.php">Energy Sales</a>
+                            <a href="/solutions/maintenance.php">O&M</a>
+
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <a href="#" class="menu-link" onclick="toggleSubMenu(event)">Resources</a>
+                        <div class="submenu">
+                            <a href="/knowledgehub/downloads.php">Downloads</a>
+                            <a href="/knowledgehub/blog.php">Blog</a>
+                            <a href="/media-page.php">Media Updates</a>
+                            <a href="/knowledgehub/news.php">News</a>
+                        </div>
+                    </div>
+                    <a href="/investors.php" class="menu-link">Investors</a>
+
+                    <div class="menu-item">
+                        <a href="/contact.php" class="menu-link" onclick="toggleSubMenu(event)">Contact Us</a>
+                        <div class="submenu">
+                            <a href="/contact.php#contact-details">Contact Details</a>
+                            <a href="/career.php">Career</a>
+
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Right-side Language & Search -->
+                <div class="right-actions">
+                    <!-- Language Dropdown -->
+                    <div id="google_translate_element" style="display:none;"></div>
+
+                    <div class="language-selector">
+                        <button class="lang-btn" onclick="toggleLangMenu()">
+                            EN <span>▼</span>
+                        </button>
+                        <ul class="lang-menu" id="langMenu">
+                            <li onclick="changeLanguage('en')">English</li>
+                            <li onclick="changeLanguage('fr')">Français</li>
+                            <li onclick="changeLanguage('de')">Deutsch</li>
+                            <li onclick="changeLanguage('es')">Español</li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="search-icon header-search">
+                        <button type="button" title="search" onclick="searchToggle()">
+                            <img style="filter: invert(1);" src="/images/search.svg" alt="Search" />
+                        </button>
+
+                        <div class="header-search-menu" id="searchBox">
+                            <input type="text" placeholder="Search..." id="searchArray" onkeyup="searchFunction()" />
+                            <div id="resultHolder"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hamburger OUTSIDE header-left -->
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    <!-- <marquee class="header-marquee">
+        Join us at Smarter E India Expo 2026 | 25 - 27 Feb 2026 | Helipad Exhibition Centre, Gandhinagar | Hall 2, Stall K-101
+    </marquee> -->
+
+    </header>
+
+
+    <!-- <div class="stock-sec stock-floating">
+        <div class="stock-sec">
+            <div class="stock-div-flex">
+                 <div>
+                                <h2 data-aos="fade-up" data-aos-delay="800">SWELECT Energy Systems</h2>
+                            </div> 
+                <div class="price-flex">
+                    <p>Current Market Price</p>
+                    <div id="price">Fetching live price...</div>
+                     <span id="arrow-icon"></span> 
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--    <script>-->
+    <!--        function toggleMenu() {-->
+    <!--            const nav = document.getElementById("mainNav");-->
+    <!--            const burger = document.getElementById("hamburger");-->
+    <!--            nav.classList.toggle("show");-->
+    <!--            burger.classList.toggle("active");-->
+    <!--        }-->
+
+    <!--        function toggleSubMenu(e) {-->
+    <!--    if (window.innerWidth <= 1100) {-->
+    <!--        const parent = e.target.closest(".menu-item");-->
+    <!--        const allItems = document.querySelectorAll(".main-nav .menu-item");-->
+    <!--        allItems.forEach(item => {-->
+    <!--            if (item !== parent) item.classList.remove("open");-->
+    <!--        });-->
+    <!--        parent.classList.toggle("open");-->
+    <!--        e.preventDefault();-->
+    <!--    }-->
+    <!--}-->
+
+
+    <!--        function searchToggle() {-->
+    <!--    document.getElementById("searchBox").classList.toggle("show");-->
+    <!--}-->
+
+
+    <!--        function searchFunction() {-->
+
+    <!--        }-->
+    <!--    </script>-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const nav = document.getElementById("mainNav");
+            const searchBtn = document.querySelector(".header-search button");
+            const searchBox = document.getElementById("searchBox");
+            const menuItems = document.querySelectorAll(".main-nav .menu-item");
+
+            hamburger.addEventListener("click", () => {
+                nav.classList.toggle("show");
+                hamburger.classList.toggle("active");
+            });
+
+            searchBtn.addEventListener("click", () => {
+                searchBox.classList.toggle("show");
+            });
+
+            menuItems.forEach(item => {
+                item.querySelector(".menu-link").addEventListener("click", e => {
+                    if (window.innerWidth <= 1100) {
+                        e.preventDefault();
+                        menuItems.forEach(i => i !== item && i.classList.remove("open"));
+                        item.classList.toggle("open");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <!-- <script>
+        const API_KEY = '4f8a117273msh96f7375396c22c6p186bdejsn00e25a9a8cb8'; // replace with your X-RapidAPI-Key
+        const API_HOST = 'apidojo-yahoo-finance-v1.p.rapidapi.com'; // usually 'apidojo-yahoo-finance-v1.p.rapidapi.com'
+
+        const symbol = 'SWELECTES.NS'; // NSE: SWELECT Energy Systems
+
+        async function fetchStockData() {
+            const url = `https://${API_HOST}/stock/v3/get-chart?interval=5m&symbol=${symbol}&range=1d&region=IN`;
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': API_KEY,
+                    'X-RapidAPI-Host': API_HOST
+                }
+            };
+
+            try {
+                const res = await fetch(url, options);
+                const data = await res.json();
+
+                const result = data.chart.result[0];
+                const timestamps = result.timestamp;
+                const prices = result.indicators.quote[0].close;
+
+                // Filter out null price points
+                const validPoints = prices.map((price, i) => ({
+                    time: timestamps[i],
+                    price: price
+                })).filter(p => p.price !== null);
+
+                // Extract clean labels and price values
+                const labels = validPoints.map(p => {
+                    const d = new Date(p.time * 1000);
+                    return d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2);
+                });
+                const cleanPrices = validPoints.map(p => p.price);
+
+                // Update current price display
+                const currentPrice = cleanPrices[cleanPrices.length - 1];
+                const previousPrice = cleanPrices[cleanPrices.length - 2];
+
+                document.getElementById('price').innerText = `₹${currentPrice.toFixed(2)}`;
+
+                // const arrowIcon = document.getElementById('arrow-icon');
+
+                // if (currentPrice > previousPrice) {
+                //     arrowIcon.className = 'arrow-up';
+                //     arrowIcon.innerHTML = `
+                //         <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.59 5.58L20 12l-8-8-8 8z"/></svg>
+                //     `;
+                // } else if (currentPrice < previousPrice) {
+                //     arrowIcon.className = 'arrow-down';
+                //     arrowIcon.innerHTML = `
+                //         <svg viewBox="0 0 24 24"><path d="M4 12l1.41-1.41L11 16.17V4h2v12.17l5.59-5.58L20 12l-8 8-8-8z"/></svg>
+                //     `;
+                // } else {
+                //     arrowIcon.className = 'arrow-stable';
+                //     arrowIcon.innerHTML = `
+                //         <svg viewBox="0 0 24 24"><path d="M4 12h16v2H4z"/></svg>
+                //     `;
+                // } 
+
+
+                // Draw the chart
+                drawChart(labels, cleanPrices);
+            } catch (err) {
+                console.error(err);
+                document.getElementById('price').innerText = 'Error fetching data.';
+            }
+        }
+
+        function drawChart(labels, data) {
+            new Chart(document.getElementById("stockChart"), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Price (INR)",
+                        data: data,
+                        borderColor: "#3e95cd",
+                        fill: false,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Intraday Price Movement'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Price (₹)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        fetchStockData();
+    </script> -->
+
+    <!-- Load Google Translate script -->
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>    <main>
+
+        <!-- section1 — Banner -->
+        <section class="banner">
+            <video src="/videos/banner-video.mp4" autoplay muted loop></video>
+            <div class="banner-text">
+                <h1 data-aos="fade-up" data-aos-delay="0">Powering the World <br>Responsibly</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Your trusted partner in Solar, Wind and Storage solutions</p>
+            </div>
+            <div class="sidebar1">
+                <div class="sb-line"></div>
+                <a href="#about" class="side-con"><div class="side-circle"></div><p>About Us</p></a>
+                <a href="#manufacturing" class="side-con"><div class="side-circle"></div><p>Manufacturing</p></a>
+                <a href="#product" class="side-con"><div class="side-circle"></div><p>Products</p></a>
+                <a href="#solutions" class="side-con"><div class="side-circle"></div><p>Solutions</p></a>
+                <a href="#knwoledge-hub" class="side-con"><div class="side-circle"></div><p>Knowledge hub</p></a>
+                <a href="#investors" class="side-con"><div class="side-circle"></div><p>Investors</p></a>
+                <a href="#esg" class="side-con"><div class="side-circle"></div><p>ESG</p></a>
+            </div>
+        </section>
+
+
+        <!-- section2 — Stats -->
+        <section class="stats">
+            <div class="container stats-flex">
+                <div class="stats-sec">
+                    <p class="count" data-target="41">0</p>
+                    <p>Years of industry expertise</p>
+                </div>
+                <div class="stat-line"></div>
+                <div class="stats-sec">
+                    <p class="roll-gw" data-final="1">0</p>
+                    <p>Experience</p>
+                </div>
+                <div class="stat-line"></div>
+                <div class="stats-sec">
+                    <p class="roll-gw" data-final="1">0</p>
+                    <p>PV Module Manufacturing Capacity</p>
+                </div>
+                <div class="stat-line"></div>
+                <div class="stats-sec">
+                    <p class="roll-gw" data-final="1">0</p>
+                    <p>MMS Manufacturing Capacity</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- section3 — About -->
+        <section class="about fence-bg-rt" id="about">
+            <div class="abt-flex">
+                <div class="sidebar-holder">
+                    <div class="sidebar1 side-non">
+                        <div class="sb-line"></div>
+                        <a href="#about" class="side-con active"><div class="side-circle"></div><p>About Us</p></a>
+                        <a href="#manufacturing" class="side-con"><div class="side-circle"></div><p>Manufacturing</p></a>
+                        <a href="#product" class="side-con"><div class="side-circle"></div><p>Products</p></a>
+                        <a href="#solutions" class="side-con"><div class="side-circle"></div><p>Solutions</p></a>
+                        <a href="#knwoledge-hub" class="side-con"><div class="side-circle"></div><p>Knowledge hub</p></a>
+                        <a href="#investors" class="side-con"><div class="side-circle"></div><p>Investors</p></a>
+                        <a href="#esg" class="side-con"><div class="side-circle"></div><p>ESG</p></a>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 data-aos="fade-up" data-aos-delay="0">About Us</h2>
+                    <p data-aos="fade-up" data-aos-delay="100">SWELECT Energy Systems Ltd. (formerly known as Numeric
+                        Power Systems Ltd.) is a leading renewable energy player and a trusted partner in clean energy.
+                        With 41+ years of expertise in Clean power/energy and 1 GW+ of solar experience, we deliver
+                        Solar, Wind, ESS, EPC, O&M and IPP solutions for Corporates, Industries and home segments.</p>
+                    <p data-aos="fade-up" data-aos-delay="200">Guided by our promise - Responsible, Innovative,
+                        Sustainable Energy solutions - SWELECT powers progress today, building a greener, stronger,
+                        tomorrow. Powering the World responsibly is just not a tagline; it's our mission.</p>
+                    <a href="aboutus.php">Read more</a>
+                    <div class="about-icon-flex">
+                        <div data-aos="fade-up" data-aos-delay="0">
+                            <video src="images/home/video/industry.mp4" autoplay muted loop playsinline></video>
+                            <p>Industries</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            <video src="images/home/video/bank.mp4" autoplay muted loop playsinline></video>
+                            <p>Banks</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400">
+                            <video src="images/home/video/hospital.mp4" autoplay muted loop playsinline></video>
+                            <p>Hospitals</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="600">
+                            <video src="images/home/video/government.mp4" autoplay muted loop playsinline></video>
+                            <p>Government Buildings</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="800">
+                            <video src="images/home/video/corporate.mp4" autoplay muted loop playsinline></video>
+                            <p>Corporate Sector</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- section4 — Manufacturing -->
+        <section class="solar" id="manufacturing">
+            <div class="swiper solarSlide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/home/state-of-art.jpg" alt="State-of-the-Art Solar PV Manufacturing">
+                        <div class="solar-text">
+                            <div class="solar-con">
+                                <h2 data-aos="fade-up" data-aos-delay="0">State-of-the-Art Solar PV Module Manufacturing at SHPV</h2>
+                                <p data-aos="fade-up" data-aos-delay="200">SWELECT HHV Solar Photovoltaics Pvt. Ltd.
+                                    (SHPV), a fully owned subsidiary of SWELECT ENERGY SYSTEMS LIMITED, operates a
+                                    cutting-edge 1 GW+ manufacturing facility in Coimbatore. This automated facility
+                                    ensures top-tier production quality and efficiency. SHPV modules meet global
+                                    standards such as IEC, UL, MCS, CEC, and BIS, and are listed in the Approved List
+                                    of Models and Manufacturers (ALMM) by the Ministry of New and Renewable Energy
+                                    (MNRE). This facility produces both Mono PERC and TOPCON modules from 365 Wp to
+                                    630 Wp for both mono facial and bifacial applications.</p>
+                                <a href="/manufacturing/shpv.php" data-aos="fade-up" data-aos-delay="400">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/home/comprehensive-solutions.jpg" alt="comprehensive solutions">
+                        <div class="solar-text">
+                            <div class="solar-con">
+                                <h2 data-aos="fade-up" data-aos-delay="0">MMS and Electrical BoS Manufacturing facility</h2>
+                                <p data-aos="fade-up" data-aos-delay="200">SWELECT offers a complete range of Electrical
+                                    and Mechanical Balance of Systems (BOS), including Module Mounting Structures (MMS),
+                                    AJBs, ACDBs, and DCDBs, from its state-of-the-art facility in Salem. The plant's
+                                    roll forming machines have an annual production capacity of 750 MW+ of MMS, ensuring
+                                    a lifespan of over 20 years. Additionally, this facility also manufacturers Power
+                                    Products including Servo Stabilizers, Isolation Transformers, Electrical Switch
+                                    boards and Distribution boards.</p>
+                                <a href="/manufacturing/mms-and-bos.php" data-aos="fade-up" data-aos-delay="400">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="sidebar1 side-grey">
+                <div class="sb-line"></div>
+                <a href="#about" class="side-con"><div class="side-circle"></div><p>About Us</p></a>
+                <a href="#manufacturing" class="side-con active"><div class="side-circle"></div><p>Manufacturing</p></a>
+                <a href="#product" class="side-con"><div class="side-circle"></div><p>Products</p></a>
+                <a href="#solutions" class="side-con"><div class="side-circle"></div><p>Solutions</p></a>
+                <a href="#knwoledge-hub" class="side-con"><div class="side-circle"></div><p>Knowledge hub</p></a>
+                <a href="#investors" class="side-con"><div class="side-circle"></div><p>Investors</p></a>
+                <a href="#esg" class="side-con"><div class="side-circle"></div><p>ESG</p></a>
+            </div>
+        </section>
+
+
+        <!-- section5 — Products -->
+        <section class="products fence-bg-lt" id="product">
+            <div class="products-flex">
+                <div class="sidebar-holder sbh">
+                    <div class="sidebar1 side-non">
+                        <div class="sb-line"></div>
+                        <a href="#about" class="side-con"><div class="side-circle"></div><p>About Us</p></a>
+                        <a href="#manufacturing" class="side-con"><div class="side-circle"></div><p>Manufacturing</p></a>
+                        <a href="#product" class="side-con active"><div class="side-circle"></div><p>Products</p></a>
+                        <a href="#solutions" class="side-con"><div class="side-circle"></div><p>Solutions</p></a>
+                        <a href="#knwoledge-hub" class="side-con"><div class="side-circle"></div><p>Knowledge hub</p></a>
+                        <a href="#investors" class="side-con"><div class="side-circle"></div><p>Investors</p></a>
+                        <a href="#esg" class="side-con"><div class="side-circle"></div><p>ESG</p></a>
+                    </div>
+                </div>
+                <div class="products-container">
+                    <div class="products-container-head">
+                        <h2>Products</h2>
+                        <div>
+                            <img src="images/home/arrow-right.svg" alt="arrow-right" onclick="prevCard()">
+                            <img src="images/home/left.svg" alt="arrow-left" onclick="nextCard()">
+                        </div>
+                    </div>
+                    <div class="products-accord">
+                        <div class="products-con" data-custom-num=1>
+                            <span>Solar PV Module</span>
+                            <div class="products-one">
+                                <h3 data-aos="fade-up" data-aos-delay="0">Solar PV Module</h3>
+                                <p data-aos="fade-up" data-aos-delay="200">SWELECT's Solar PV Modules feature advanced
+                                    technology, including 10BB half-cut cells and robust construction, ensuring
+                                    long-term performance. Certified to global standards such as IEC, UL, and BIS,
+                                    these modules are ideal for diverse applications, from residential rooftops to
+                                    large-scale solar farms.</p>
+                                <a href="/products/pv-module.php" data-aos="fade-up" data-aos-delay="400">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                            </div>
+                            <video autoplay loop muted><source src="/images/home/product-video/pv-module.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="products-con" data-custom-num=2>
+                            <span>Module Mounting Structures</span>
+                            <div class="products-one">
+                                <h3>Module Mounting <br> Structures</h3>
+                                <p>Complete and customised range of C Purlins, Hat Purlins and other Sheet metal
+                                    structures required for roof top, ground mount as well as specialised solar power
+                                    projects.</p>
+                                <a href="/manufacturing/mms-and-bos.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                            </div>
+                            <video autoplay loop muted><source src="/images/home/product-video/mms.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="products-con" data-custom-num=3>
+                            <span>Electrical BOS</span>
+                            <div class="products-one">
+                                <h3>Electrical BOS</h3>
+                                <p>All range of Array Junction Boxes, String Combiner Boxes, AC & DC Decoupling
+                                    circuits for various solar applications.</p>
+                                <a href="/manufacturing/mms-and-bos.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                            </div>
+                            <video autoplay loop muted><source src="/images/home/product-video/Electrical BOS-new.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="products-con" data-custom-num=4>
+                            <span>Solar Water Pumps</span>
+                            <div class="products-one">
+                                <h3>Solar Water Pumps</h3>
+                                <p>SWELECT's Solar Water Pumps feature drive power-matched three-phase AC pumps and DC
+                                    Pumps with advanced IGBT power modules, ensuring high efficiency, low noise, and
+                                    long lifespan. With MPPT technology (&gt;99% efficiency), LCD display, Remote
+                                    monitoring system and RS485/Wi-Fi interface, these pumps are ideal for drinking
+                                    water supply, agriculture, desalination, scenic fountains, and industrial
+                                    applications.</p>
+                                <a href="/products/solar-water-pump.php">Learn More <img src="images/home/Vector.svg" alt=""></a>
+                            </div>
+                            <video autoplay loop muted><source src="/images/home/product-video/solar-water.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="products-con" data-custom-num=5>
+                            <span>SPGS kits</span>
+                            <div class="products-one">
+                                <h3>SPGS (Solar Power <br> Generation System) kits</h3>
+                                <p>Packaged solutions consisting of solar PV modules, Solar Inverters, Electrical and
+                                    Mechanical BOS along with Cables, Electrical Protection systems, Data Monitoring
+                                    Systems.</p>
+                            </div>
+                            <video autoplay loop muted><source src="/images/home/product-video/Electrical BOS-new.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="products-con" data-custom-num=6>
+                            <span>BESS</span>
+                            <div class="products-one">
+                                <h3>BESS Solutions</h3>
+                                <p>Battery Energy Storage Systems (BESS) store excess renewable energy from solar
+                                    generation and help regulate reliable energy transmission across the grid. While
+                                    solar energy is valuable on its own, BESS enables more strategic deployment,
+                                    enhancing grid stability and efficiency.</p>
+                                <a href="/products/solar-with-bess.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                            </div>
+                            <video autoplay loop muted><source src="/images/home/product-video/Bess-new.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="products-con" data-custom-num=7>
+                            <span>Wind Solar Hybrid Solutions</span>
+                            <div class="products-one">
+                                <h3>Wind - Solar Hybrid <br> Solutions</h3>
+                                <p>Wind Solar Hybrid systems are the ideal solution for Industries looking to maximise
+                                    their purchase of renewable energy – it provides option to combine Solar power and
+                                    Wind power simultaneously for a single consumer.</p>
+                                <a href="/products/solar-hybrid-solutions.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                            </div>
+                            <video autoplay loop muted><source src="/images/home/product-video/wind-solar.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="products-con" data-custom-num=8>
+                            <span>Power Products</span>
+                            <div class="products-one">
+                                <h3>Power Products</h3>
+                                <ul class="power-products-list">
+                                    <li>Servo Stabilisers</li>
+                                    <li>Isolation Transformers</li>
+                                    <li>Electrical &amp; General-purpose Switchboards and</li>
+                                    <li>Distribution boards</li>
+                                </ul>
+                                <a href="/products/power-products.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                            </div>
+                            <video autoplay loop muted><source src="/images/home/product-video/power-products-new.mp4" type="video/mp4"></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products mobile -->
+            <div class="product--mobile padding">
+                <h2>Products</h2>
+                <ul class="custom-accordion-list">
+                    <li class="custom-accordion-item" onclick="toggleAccordion(0)">
+                        <div class="custom-accordion-title" id="title1" tabindex="0" role="button" aria-expanded="false" aria-controls="panel1"><span>Solar PV module</span></div>
+                        <div class="custom-accordion-panel" id="panel1" role="region" aria-labelledby="title1">
+                            <p>SWELECT's Solar PV Modules feature advanced technology, including 10BB half-cut cells
+                                and robust construction, ensuring long-term performance.</p>
+                            <video autoplay loop muted><source src="/images/home/product-video/pv-module.mp4" type="video/mp4"></video>
+                            <a href="/products/pv-module.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                        </div>
+                    </li>
+                    <li class="custom-accordion-item" onclick="toggleAccordion(1)">
+                        <div class="custom-accordion-title" id="title2" tabindex="0" role="button" aria-expanded="false" aria-controls="panel2"><span>Module Mounting Structures</span></div>
+                        <div class="custom-accordion-panel" id="panel2" role="region" aria-labelledby="title2">
+                            <p>Complete and customised range of C Purlins, Hat Purlins and other Sheet metal structures
+                                required for roof top, ground mount as well as specialised solar power projects.</p>
+                            <video autoplay loop muted><source src="/images/home/product-video/mms.mp4" type="video/mp4"></video>
+                            <a href="/manufacturing/mms-and-bos.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                        </div>
+                    </li>
+                    <li class="custom-accordion-item" onclick="toggleAccordion(2)">
+                        <div class="custom-accordion-title" id="title3" tabindex="0" role="button" aria-expanded="false" aria-controls="panel3"><span>Electrical BOS</span></div>
+                        <div class="custom-accordion-panel" id="panel3" role="region" aria-labelledby="title3">
+                            <p>All range of Array Junction Boxes, String Combiner Boxes, AC & DC Decoupling circuits
+                                for various solar applications.</p>
+                            <video autoplay loop muted><source src="/images/home/product-video/Electrical BOS-new.mp4" type="video/mp4"></video>
+                            <a href="/manufacturing/mms-and-bos.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                        </div>
+                    </li>
+                    <li class="custom-accordion-item" onclick="toggleAccordion(3)">
+                        <div class="custom-accordion-title" id="title4" tabindex="0" role="button" aria-expanded="false" aria-controls="panel4"><span>Solar Water Pumps</span></div>
+                        <div class="custom-accordion-panel" id="panel4" role="region" aria-labelledby="title4">
+                            <p>SWELECT's Solar Water Pumps feature drive power-matched three-phase AC pumps and
+                                advanced IGBT power modules, ensuring high efficiency, low noise, and long lifespan.</p>
+                            <video autoplay loop muted><source src="/images/home/product-video/solar-water.mp4" type="video/mp4"></video>
+                            <a href="/products/solar-water-pump.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                        </div>
+                    </li>
+                    <li class="custom-accordion-item" onclick="toggleAccordion(4)">
+                        <div class="custom-accordion-title" id="title5" tabindex="0" role="button" aria-expanded="false" aria-controls="panel5"><span>SPGS kits</span></div>
+                        <div class="custom-accordion-panel" id="panel5" role="region" aria-labelledby="title5">
+                            <p>Packaged solutions consisting of solar PV modules, Solar Inverters, Electrical and
+                                Mechanical BOS along with Cables, Electrical Protection systems, Data Monitoring Systems.</p>
+                            <video autoplay loop muted><source src="/images/home/product-video/spgs.mp4" type="video/mp4"></video>
+                        </div>
+                    </li>
+                    <li class="custom-accordion-item" onclick="toggleAccordion(5)">
+                        <div class="custom-accordion-title" id="title6" tabindex="0" role="button" aria-expanded="false" aria-controls="panel6"><span>BESS Solutions</span></div>
+                        <div class="custom-accordion-panel" id="panel6" role="region" aria-labelledby="title6">
+                            <p>Battery Energy Storage Systems (BESS) are storage devices used to store excess renewable
+                                energy produced by solar Energy generating systems.</p>
+                            <video autoplay loop muted><source src="/images/home/product-video/Bess-new.mp4" type="video/mp4"></video>
+                            <a href="/products/solar-with-bess.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                        </div>
+                    </li>
+                    <li class="custom-accordion-item" onclick="toggleAccordion(6)">
+                        <div class="custom-accordion-title" id="title7" tabindex="0" role="button" aria-expanded="false" aria-controls="panel7"><span>Wind Solar Hybrid Solutions</span></div>
+                        <div class="custom-accordion-panel" id="panel7" role="region" aria-labelledby="title7">
+                            <p>Wind Solar Hybrid systems are the ideal solution for Industries looking to maximise
+                                their purchase of renewable energy.</p>
+                            <video autoplay loop muted><source src="/images/home/product-video/wind-solar.mp4" type="video/mp4"></video>
+                            <a href="/products/solar-hybrid-solutions.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                        </div>
+                    </li>
+                    <li class="custom-accordion-item" onclick="toggleAccordion(7)">
+                        <div class="custom-accordion-title" id="title8" tabindex="0" role="button" aria-expanded="false" aria-controls="panel8"><span>Servo Stabilizers</span></div>
+                        <div class="custom-accordion-panel" id="panel8" role="region" aria-labelledby="title8">
+                            <p>SWELECT's Servo Stabilizers offer reliable voltage regulation for various applications,
+                                from CNC machines to medical equipment.</p>
+                            <video autoplay loop muted><source src="/images/home/product-video/power-products-new.mp4" type="video/mp4"></video>
+                            <a href="/products/power-products.php">Learn More <img src="images/home/Vector.svg" alt="Vector"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- section6 — Solutions -->
+        <section class="solutions" id="solutions">
+            <div class="swiper Solutions">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url(images/home/solution0.jpg); background-repeat: no-repeat;">
+                        <div class="sol-con"><div class="sol-con-text"><div>
+                            <h2 data-aos="fade-up" data-aos-delay="0">Rooftop Solar Power Generating Systems</h2>
+                            <p data-aos="fade-up" data-aos-delay="200">At SWELECT, we offer innovative and
+                                high-performance rooftop solar solutions designed to meet the diverse energy needs of
+                                residential, commercial, and industrial customers. Harnessing the power of the sun, our
+                                rooftop solar systems provide a sustainable and cost-effective alternative to
+                                conventional energy sources, helping you reduce electricity bills while contributing to
+                                a greener planet.</p>
+                            <a href="/solutions/epc-contracts.php" data-aos="fade-up" data-aos-delay="400">Read more</a>
+                        </div></div></div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url(images/home/solution1.jpg); background-repeat: no-repeat;">
+                        <div class="sol-con"><div class="sol-con-text"><div>
+                            <h2 data-aos="fade-up" data-aos-delay="0">Energy Sales / IPP Division</h2>
+                            <p data-aos="fade-up" data-aos-delay="200">SWELECT's Energy Sales division provides
+                                industrial and commercial consumers with direct access to renewable energy. This
+                                solution enables businesses to fulfil their Renewable Purchase Obligation (RPO)
+                                commitments under the Electricity Act 2003 while enjoying the benefits of green energy
+                                at competitive prices.</p>
+                            <a href="/solutions/energy-sales.php" data-aos="fade-up" data-aos-delay="400">Read more</a>
+                        </div></div></div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url(images/home/solution2.jpg); background-repeat: no-repeat;">
+                        <div class="sol-con"><div class="sol-con-text"><div>
+                            <h2 data-aos="fade-up" data-aos-delay="0">EPC Division</h2>
+                            <p data-aos="fade-up" data-aos-delay="200">SWELECT's EPC division offer comprehensive solar
+                                project solutions from concept design to plant commissioning ensuring adherence to
+                                time, cost and quality parameters. Our expert team ensures seamless execution of solar
+                                power projects, including site surveys, engineering, procurement, and construction.</p>
+                            <a href="/solutions/epc-contracts.php" data-aos="fade-up" data-aos-delay="400">Read more</a>
+                        </div></div></div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url(images/home/solution3.jpg); background-repeat: no-repeat;">
+                        <div class="sol-con"><div class="sol-con-text"><div>
+                            <h2 data-aos="fade-up" data-aos-delay="0">Operation and Maintenance</h2>
+                            <p data-aos="fade-up" data-aos-delay="200">SWELECT ensures your solar power systems perform
+                                at their best with our comprehensive Operation &amp; Maintenance (O&amp;M) services.
+                                Our expert team provides regular inspections, cleaning, and preventive maintenance to
+                                maximize energy output and efficiency.</p>
+                            <p data-aos="fade-up" data-aos-delay="400">With advanced real-time monitoring, we quickly
+                                resolve issues to minimize downtime, guaranteeing safety, reliability, and consistent
+                                performance. We also offer customized Annual Maintenance Contracts (AMCs) tailored to
+                                your needs.</p>
+                            <a href="/solutions/maintenance.php" data-aos="fade-up" data-aos-delay="600">Read more</a>
+                        </div></div></div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="sidebar1">
+                <div class="sb-line"></div>
+                <a href="#about" class="side-con"><div class="side-circle"></div><p>About Us</p></a>
+                <a href="#manufacturing" class="side-con"><div class="side-circle"></div><p>Manufacturing</p></a>
+                <a href="#product" class="side-con"><div class="side-circle"></div><p>Products</p></a>
+                <a href="#solutions" class="side-con active"><div class="side-circle"></div><p>Solutions</p></a>
+                <a href="#knwoledge-hub" class="side-con"><div class="side-circle"></div><p>Knowledge hub</p></a>
+                <a href="#investors" class="side-con"><div class="side-circle"></div><p>Investors</p></a>
+                <a href="#esg" class="side-con"><div class="side-circle"></div><p>ESG</p></a>
+            </div>
+        </section>
+
+
+        <!-- section7 — Knowledge Hub -->
+        <section class="events fence-bg-rt" id="knwoledge-hub">
+            <div class="events-flex">
+                <div class="sidebar-holder">
+                    <div class="sidebar1 side-non">
+                        <div class="sb-line"></div>
+                        <a href="#about" class="side-con"><div class="side-circle"></div><p>About Us</p></a>
+                        <a href="#manufacturing" class="side-con"><div class="side-circle"></div><p>Manufacturing</p></a>
+                        <a href="#product" class="side-con"><div class="side-circle"></div><p>Products</p></a>
+                        <a href="#solutions" class="side-con"><div class="side-circle"></div><p>Solutions</p></a>
+                        <a href="#knwoledge-hub" class="side-con active"><div class="side-circle"></div><p>Knowledge hub</p></a>
+                        <a href="#investors" class="side-con"><div class="side-circle"></div><p>Investors</p></a>
+                        <a href="#esg" class="side-con"><div class="side-circle"></div><p>ESG</p></a>
+                    </div>
+                </div>
+                <div class="events-con-holder">
+                    <h2 data-aos="fade-up" data-aos-delay="0">Knowledge Hub</h2>
+                    <div class="events-con-flex">
+                        <a href="/blog/journey-of-a-solar-panel.php" class="events-content" data-aos="fade-up" data-aos-delay="200">
+                            <div><img src="images/home/events1.jpg" alt="events"></div>
+                            <div class="events-content--text">
+                                <h3>The Journey of a Solar Panel: From Factory to Installation</h3>
+                                <p>At SWELECT, our 1 GW+ facility in Coimbatore ensures every solar panel meets high
+                                    standards of precision, performance, and durability for a sustainable future.</p>
+                            </div>
+                            <div class="event-date"><p>19</p><p>Jun</p></div>
+                        </a>
+                        <a href="/blog/solar-panels-fuelling-global-renewable-energy.php" class="events-content" data-aos="fade-up" data-aos-delay="400">
+                            <div><img src="images/home/events2.jpg" alt="events"></div>
+                            <div class="events-content--text">
+                                <h3>Empowering the Future: Solar Panels Fuelling Global Renewable Energy</h3>
+                                <p>SWELECT advances renewable energy with high-efficiency solar panels from our
+                                    Coimbatore facility, driving global sustainability and cleaner solutions.</p>
+                            </div>
+                            <div class="event-date"><p>11</p><p>May</p></div>
+                        </a>
+                    </div>
+                    <a href="/knowledgehub/blog.php" data-aos="fade-up" data-aos-delay="600">View all</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- section8 — Investors -->
+        <section class="investorHome" id="investors">
+            <div class="investorHome-flex">
+                <div class="investorHome-img">
+                    <img src="images/home/home-investors.jpg" alt="Investors">
+                </div>
+                <div class="investorHome-text">
+                    <div>
+                        <h2 data-aos="fade-up" data-aos-delay="0">To our Investors</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">With a relentless passion for innovation and a
+                            diverse portfolio of leading technologies, SWELECT is continuing to electrify the world
+                            while simultaneously decarbonizing it. Our legacy in power conditioning solutions has
+                            significantly contributed to India's IT, banking, and process automation sectors, setting
+                            a high standard for product quality and service. Building on this robust foundation, we
+                            have seamlessly transitioned into the green energy space, adopting a holistic approach to
+                            solar power solutions.</p>
+                        <a href="investors.php" data-aos="fade-up" data-aos-delay="400">Read more</a>
+                        <div>
+                            <p data-aos="fade-up" data-aos-delay="600">Link to the ODR Portal: <a href="https://smartodr.in/login" target="_blank">https://smartodr.in/login</a></p>
+                        </div>
+                        <div>
+                            <p data-aos="fade-up" data-aos-delay="600"><a href="pdf/Special Window for Transfer and Dematerialisation of Physical Securities.pdf" target="_blank">Ease of Doing Investment – Special Window for Transfer and Dematerialisation of Physical Securities</a></p>
+                        </div>
+                        <div>
+                            <p data-aos="fade-up" data-aos-delay="600"><a href="/pdf/Second 100 days Campaign/Website update.pdf" target="_blank">Second 100 days Campaign - "Saksham Niveshak"- for KYC and other related updates and to prevent the Transfer of Unpaid / Unclaimed Dividends to the IEPF</a></p>
+                        </div>
+                         <div>
+                            <p data-aos="fade-up" data-aos-delay="600"><a href="/pdf/SEBI Investor Facilitation/SEBI Investor facilitation.pdf" target="_blank">Securities and Exchange Board of India (SEBI), Southern Regional Office (SRO), Chennai is organizing an "Investor Facilitation Camp" with the objective to facilitate investors in resolving their service requests, queries or grievances related to Depositories and RTA services</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sb-holder-color sidebar-holder-investors">
+                <div class="sidebar1 side-grey side-inv">
+                    <div class="sb-line"></div>
+                    <a href="#about" class="side-con"><div class="side-circle"></div><p>About Us</p></a>
+                    <a href="#manufacturing" class="side-con"><div class="side-circle"></div><p>Manufacturing</p></a>
+                    <a href="#product" class="side-con"><div class="side-circle"></div><p>Products</p></a>
+                    <a href="#solutions" class="side-con"><div class="side-circle"></div><p>Solutions</p></a>
+                    <a href="#knwoledge-hub" class="side-con"><div class="side-circle"></div><p>Knowledge hub</p></a>
+                    <a href="#investors" class="side-con active"><div class="side-circle"></div><p>Investors</p></a>
+                    <a href="#esg" class="side-con"><div class="side-circle"></div><p>ESG</p></a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- section9 — ESG -->
+        <section class="esg" id="esg">
+            <div class="sb-holder-color sidebar-holder">
+                <div class="sidebar1">
+                    <div class="sb-line"></div>
+                    <a href="#about" class="side-con"><div class="side-circle"></div><p>About Us</p></a>
+                    <a href="#manufacturing" class="side-con"><div class="side-circle"></div><p>Manufacturing</p></a>
+                    <a href="#product" class="side-con"><div class="side-circle"></div><p>Products</p></a>
+                    <a href="#solutions" class="side-con"><div class="side-circle"></div><p>Solutions</p></a>
+                    <a href="#knwoledge-hub" class="side-con"><div class="side-circle"></div><p>Knowledge hub</p></a>
+                    <a href="#investors" class="side-con"><div class="side-circle"></div><p>Investors</p></a>
+                    <a href="#esg" class="side-con active"><div class="side-circle"></div><p>ESG</p></a>
+                </div>
+            </div>
+            <div class="esg-slider">
+                <h2 data-aos="fade-up" data-aos-delay="0">Environmental, Social and Governance</h2>
+                <div class="esg-s-flex">
+                    <div class="swiper esgSlide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+                                <div class="esg-content">
+                                    <div class="esg--img"><img src="images/home/enviornmental-sustainabilty1.jpg" alt="Environmental Sustainability"></div>
+                                    <div class="esg-text">
+                                        <h3>Environmental Sustainability:</h3>
+                                        <p>A strong commitment to sustainability drives our efforts while producing
+                                            high-efficiency, eco-friendly solar solutions. We leverage advanced
+                                            technology and innovation to minimize environmental impact.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
+                                <div class="esg-content">
+                                    <div class="esg--img"><img src="images/home/social-responsibility.jpg" alt="Social Responsibility"></div>
+                                    <div class="esg-text">
+                                        <h3>Social Responsibility:</h3>
+                                        <p>Promoting diversity and inclusion, with a significant representation of
+                                            women in our workforce, is a key focus. Through our community development
+                                            initiatives, we ensure long-term positive social impact.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="600">
+                                <div class="esg-content">
+                                    <div class="esg--img"><img src="images/home/esg-home3.jpg" alt="Governance"></div>
+                                    <div class="esg-text">
+                                        <h3>Governance:</h3>
+                                        <p>SWELECT upholds transparency, integrity, and accountability, ensuring the
+                                            highest standards of corporate governance in all operations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <a href="esg.php">View all</a>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="floaters">
+    <div class="floaters-flex">
+        <a href="/contact.php#map-contact" aria-label="View map location"><img src="/images/call.svg" alt=""></a>
+        <a href="/contact.php#enquiry" aria-label="Make an enquiry"><img src="/images/enquiry.svg" alt=""></a>
+        <a href="/knowledgehub/downloads.php" aria-label="Download resources"><img src="/images/downloads.svg"
+                alt=""></a>
+    </div>
+</div>
+
+
+<footer>
+    <div class="formPreloader" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    <!-- <div class="footer">
+        <div class="footer-flex">
+            <div class="footer-one">
+                <div class="ft-ct-flex">
+                    <a href="tel:18004259600">Toll Free: 1800 425 9600</a>
+                    <div class="split">
+                        <p class="sp">Email:</p>
+                        <a href="mailto:info@swelectes.com">info@swelectes.com</a>
+                    </div>
+
+                    <div class="split">
+                        <p>For Sales Enquiries:</p>
+                        <a href="mailto:enquiries@swelectes.com">enquiries@swelectes.com</a>
+                    </div>
+
+                    <div class="footer-sm">
+                        <a href="https://linkedin.com/company/swelect-energy-systems-ltd" target="_blank"
+                            aria-label="LinkedIn">
+                            <img src="/images/linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.facebook.com/swelectes/" target="_blank" aria-label="Facebook">
+                            <img src="/images/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="https://x.com/SwelectEnergy" target="_blank" aria-label="Twitter">
+                            <img src="/images/x.svg" alt="X (Twitter)">
+                        </a>
+                        <a href="https://www.instagram.com/swelect_energy_systems/" target="_blank"
+                            aria-label="Instagram">
+                            <img src="/images/icon_instagram.svg" alt="Instagram">
+                        </a>
+                        <a class="youtube" href="https://www.youtube.com/@SWELECTEnergySystems" target="_blank"
+                            aria-label="YouTube">
+                            <img src="/images/youtube.svg" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <small class="line-footer"></small>
+
+            <div class="footer-two">
+                <div class="office--add">
+                    <p>Corporate Office</p>
+                    <address>
+                        SWELECT ENERGY SYSTEMS LIMITED<br>
+                        SWELECT House,<br>
+                        No. 5, Sir P. S. Sivasamy Salai,<br>
+                        Mylapore, Chennai – 600 004,<br>
+                        Tamil Nadu, India.
+                    </address>
+                    <div class="ft-call">
+                        <div class="footer-con-img">
+                            <a href="tel:+919176001012">+91 91760 01012</a>
+                        </div>
+                        <div class="footer-con-img">
+                            <a href="tel:+914424993266">+91 44 2499 3266</a>
+                        </div>
+                        <div class="footer-con-img">
+                            <a href="tel:+914424995179">+91 44 2499 5179</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <small class="line-footer"></small>
+
+            <div class="footer-col3 office--add">
+                <p>Global Presence</p>
+                <address>India</address>
+                <address>USA</address>
+                <address>Europe</address>
+                <address>Singapore</address>
+            </div>
+
+            <small class="line-footer"></small>
+
+            <div class="footer-col4 office--add">
+                <p>Quick Links</p>
+                <div class="footer-nav">
+                    <div class="footer-nav-list">
+                        <a href="/products/pv-module.php">Solar PV Module</a>
+                        <a href="/manufacturing/mms-and-bos.php">MMS & BOS</a>
+                        <a href="/products/solar-water-pump.php">Solar Water Pumps</a>
+                        <a href="/products/solar-with-bess.php">BESS Solutions</a>
+                        <a href="/products/solar-hybrid-solutions.php">Hybrid Solutions</a>
+                        <a href="/products/power-products.php">Power Products</a>
+                    </div>
+                    <div class="footer-nav-list">
+                        <a href="/solutions/energy-sales.php">Energy Sales</a>
+                        <a href="/solutions/epc-contracts.php">EPC Division</a>
+                        <a href="/solutions/maintenance.php">O&M Services</a>
+                        <a href="/partner-program.php">Partner Program</a>
+                        <a href="/investors.php">Investors</a>
+                        <a href="/career.php">Career</a>
+                    </div>
+                </div>
+            </div>
+
+            <small class="line-footer"></small>
+
+            <div class="footer-col5 office--add">
+                <p>Enquire</p>
+                <form class="footer-enquire" id="footerForm" name="footerForm">
+                    <div class="careerform-inputs">
+                        <input type="text" name="name4" id="name4" placeholder="Name" />
+                        <small id="alert_name4"></small>
+                    </div>
+                    <div class="careerform-inputs">
+                        <input type="tel" name="phone4" id="phone4" placeholder="Phone" maxlength="10"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\..*)\./g, '$1');" />
+                        <small id="alert_phone4"></small>
+                    </div>
+                    <div class="careerform-inputs">
+                        <input type="text" name="message4" id="message4" placeholder="Message" />
+                        <small id="alert_message4"></small>
+                    </div>
+                    <button type="button" onclick="return contactForm3Validates();" aria-label="Submit Form">
+                        <img src="/images/footer-submit.png" alt="Submit" />
+                    </button>
+
+
+                    <div class="response_message_div">
+                        <img src="/images/check.png" alt="Success icon" width="40px" height="40px">
+                        <p class="response_message_p"></p>
+                    </div>
+                    <p class="error_message error_message2"></p>
+
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+
+    <div class="footer-new-div">
+        <div class="footer-flex-div">
+
+            <div class="footer-card">
+                
+    <a href="tel:1800 425 9600">Toll Free: 1800 425 9600</a>
+
+    <div class="footer-card-one-column">
+        
+                    <div class="footer-column-div">
+                        <p>Email:</p>
+                        <a href="mailto:info@swelectes.com">info@swelectes.com</a>
+                    </div>
+                    <div class="footer-column-div">
+                        <a href="/privacy-policy.php">Privacy Policy</a>
+                    </div>
+                    
+                    <!--<div class="footer-column-div">
+                        <a href="/test3.php">Test3</a>
+                    </div>-->
+                    
+                    <div class="footer-column-div">
+                        <p>For Sales Enquiries:</p>
+                        <a href="mailto:enquiries@swelectes.com">enquiries@swelectes.com</a>
+                    </div>
+                    <div class="footer-icons-div">
+                        <a href="https://linkedin.com/company/swelect-energy-systems-ltd" target="_blank"
+                            aria-label="LinkedIn">
+                            <img src="/images/linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.facebook.com/swelectes/" target="_blank" aria-label="Facebook">
+                            <img src="/images/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="https://x.com/SwelectEnergy" target="_blank" aria-label="Twitter">
+                            <img src="/images/x.svg" alt="X (Twitter)">
+                        </a>
+                        <a href="https://www.instagram.com/swelect_energy_systems/" target="_blank"
+                            aria-label="Instagram">
+                            <img src="/images/icon_instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="https://www.youtube.com/@SWELECTEnergySystems" target="_blank"
+                            aria-label="YouTube">
+                            <img src="/images/youtube.svg" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-card">
+                <p>Corporate Office</p>
+
+                <div class="footer-card-two-column">
+                    <address>
+                        SWELECT ENERGY SYSTEMS LIMITED<br>
+                        SWELECT House,<br>
+                        No. 5, Sir P. S. Sivasamy Salai,<br>
+                        Mylapore, Chennai – 600 004,<br>
+                        Tamil Nadu, India.
+                    </address>
+
+                    <div class="footer-column-div">
+                        <div class="footer-con-img">
+                            <a href="tel:+919176001012">+91 91760 01012</a>
+                        </div>
+                        <div class="footer-con-img">
+                            <a href="tel:+914424993266">+91 44 2499 3266</a>
+                        </div>
+                        <div class="footer-con-img">
+                            <a href="tel:+914424995179">+91 44 2499 5179</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer-card">
+                <p>Global Presence</p>
+
+                <div class="footer-column-div">
+                    <address>India</address>
+                    <address>USA</address>
+                    <address>Europe</address>
+                    <address>Singapore</address>
+                </div>
+            </div>
+
+            <div class="footer-card">
+                <p>Quick Links</p>
+
+                <div class="footer-card-inner-flex">
+                    <div class="footer-column-div">
+                        <a href="/products/pv-module.php">Solar PV Module</a>
+                        <a href="/manufacturing/mms-and-bos.php">MMS & BOS</a>
+                        <a href="/products/solar-water-pump.php">Solar Water Pumps</a>
+                        <a href="/products/solar-with-bess.php">BESS Solutions</a>
+                        <a href="/products/solar-hybrid-solutions.php">Hybrid Solutions</a>
+                        <a href="/products/power-products.php">Power Products</a>
+                    </div>
+                    <div class="footer-column-div">
+                        <a href="/solutions/energy-sales.php">Energy Sales</a>
+                        <a href="/solutions/epc-contracts.php">EPC Division</a>
+                        <a href="/solutions/maintenance.php">O&M Services</a>
+                        <a href="/partner-program.php">Partner Program</a>
+                        <a href="/investors.php">Investors</a>
+                        <a href="/career.php">Career</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-card">
+                <p>Enquire</p>
+                <form class="footer-enquire" id="footerForm" name="footerForm">
+                    <div class="careerform-inputs">
+                        <input type="text" name="name4" id="name4" placeholder="Name" />
+                        <small id="alert_name4"></small>
+                    </div>
+                    <div class="careerform-inputs">
+                        <input type="tel" name="phone4" id="phone4" placeholder="Phone" maxlength="10"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\..*)\./g, '$1');" />
+                        <small id="alert_phone4"></small>
+                    </div>
+                    <div class="careerform-inputs">
+                        <input type="text" name="message4" id="message4" placeholder="Message" />
+                        <small id="alert_message4"></small>
+                    </div>
+                    <button type="button" onclick="return contactForm3Validates();" aria-label="Submit Form">
+                        <img src="/images/footer-submit.png" alt="Submit" />
+                    </button>
+
+
+                    <div class="response_message_div">
+                        <img src="/images/check.png" alt="Success icon" width="40px" height="40px">
+                        <p class="response_message_p"></p>
+                    </div>
+                    <p class="error_message error_message2"></p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="copyrights">
+        <div class="container copyrights-flex">
+            <p>Copyrights &copy;
+                2026 SWELECT ENERGY SYSTEMS Ltd.
+            </p>
+        </div>
+    </div>
+<style>
+/* FORCE FOOTER TEXT COLOR TO BLACK */
+footer,
+footer p,
+footer a,
+footer span,
+footer li,
+footer address,
+footer small {
+  color: #000 !important;
+}
+
+/* Keep links black even on hover */
+footer a:hover {
+  color: #000 !important;
+}
+</style>
+</footer>
+
+<!-- Popup Overlay -->
+<!-- <div class="zoho-popup-overlay" id="zohoPopup">
+    <div class="zoho-popup-content">
+
+        
+        <span class="zoho-close-btn" id="zohoClose">&times;</span>
+
+        
+        <iframe src='https://crm.zoho.in/crm/WebFormServeServlet?rid=40690a565fa98814d296acc081b3c6c50f3802b89a874a06f8676b0f52c1fb7f7744ae265d116df2c6e4d299c8778ebegid45e2f49a6cb1097f1f20ff8a944ce3155ab555786c8df1f38304c172bb5acff8'>
+        </iframe>
+
+    </div>
+</div>
+
+<script>
+    function wfa_pstMesgFrmFom(evt) {
+        if (evt.origin === 'https://crm.zoho.in' || evt.origin === 'https://crm.zohopublic.in') {
+            var loc_obj = JSON.stringify({
+                origin: window.location.origin,
+                pathname: window.location.pathname,
+                search: window.location.search,
+                hash: window.location.hash
+            });
+            evt.source.postMessage(('prnt_wnd_pg_lc_rc_frm_prwindow_' + loc_obj), evt.origin);
+        }
+    }
+    window.addEventListener('message', wfa_pstMesgFrmFom, false);
+</script> -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const popup = document.getElementById("zohoPopup");
+        const openBtn = document.querySelector(".footer-popup-btn");
+        const closeBtn = document.getElementById("zohoClose");
+
+        // Open popup
+        openBtn.addEventListener("click", function() {
+            popup.classList.add("active");
+            document.body.style.overflow = "hidden"; // prevent background scroll
+        });
+
+        // Close popup
+        closeBtn.addEventListener("click", function() {
+            popup.classList.remove("active");
+            document.body.style.overflow = "auto";
+        });
+
+        // Close when clicking outside content
+        popup.addEventListener("click", function(e) {
+            if (e.target === popup) {
+                popup.classList.remove("active");
+                document.body.style.overflow = "auto";
+            }
+        });
+
+    });
+</script>
+
+<script src="/js/lang.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script>
+    const RECAPTCHA_SITE_KEY = "6LcWxlksAAAAAFd97f66TzzZOVDPD8p37WomMlsL";
+</script>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LcWxlksAAAAAFd97f66TzzZOVDPD8p37WomMlsL"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Swiper Init -->
+    <script>
+        var swiper = new Swiper(".solarSlide", {
+            effect: "fade",
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        });
+        var swiper = new Swiper(".Solutions", {
+            spaceBetween: 30,
+            effect: "fade",
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper(".esgSlide", {
+                slidesPerView: 1,
+                spaceBetween: 60,
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                breakpoints: {
+                    1366: { slidesPerView: 3, spaceBetween: 60 },
+                    1024: { slidesPerView: 2, spaceBetween: 40 },
+                    768:  { slidesPerView: 2, spaceBetween: 40 },
+                },
+            });
+        });
+    </script>
+
+    <!-- Accordion -->
+    <script>
+        const toggleAccordion = (index) => {
+            const accordionItems = document.getElementsByClassName("custom-accordion-item");
+            for (let i = 0; i < accordionItems.length; i++) {
+                const panel = accordionItems[i].querySelector(".custom-accordion-panel");
+                const title = accordionItems[i].querySelector(".custom-accordion-title");
+                if (index === i) {
+                    const isOpen = accordionItems[index].classList.toggle("expanded");
+                    accordionItems[index].classList.toggle("rotated");
+                    title.setAttribute("aria-expanded", isOpen);
+                    panel.style.minHeight = isOpen ? panel.scrollHeight + "px" : "0px";
+                } else {
+                    accordionItems[i].classList.remove("expanded");
+                    accordionItems[i].classList.remove("rotated");
+                    title.setAttribute("aria-expanded", "false");
+                    panel.style.minHeight = "0px";
+                }
+            }
+        };
+        document.querySelectorAll(".custom-accordion-title").forEach((title, index) => {
+            title.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") toggleAccordion(index);
+            });
+        });
+    </script>
+
+    <!-- Products -->
+    <script>
+        window.addEventListener("load", productHeightSet());
+        window.addEventListener("change", productHeightSet());
+        function productHeightSet() {
+            const productCon = document.querySelectorAll(".products-accord .products-con");
+            let finalHeight = 0;
+            for (let i = 0; i < productCon.length; i++) {
+                finalHeight = productCon[i].offsetHeight >= finalHeight ? productCon[i].offsetHeight : finalHeight;
+            }
+            for (let j = 1; j < productCon.length; j++) {
+                productCon[j].style.left = "calc(105% + " + 2.5 * j + "rem)";
+            }
+            for (let k = 0; k < productCon.length; k++) {
+                productCon[k].style.height = finalHeight + "px";
+            }
+            productCon[0].classList.add('active');
+        }
+        function nextCard() {
+            const getActiveElement = document.querySelector(".products-accord .products-con.active").getAttribute("data-custom-num");
+            const getAllElements = document.querySelectorAll(".products-accord .products-con");
+            if (getActiveElement < getAllElements.length) {
+                for (let i = 0; i < getAllElements.length; i++) getAllElements[i].classList.remove("active");
+                getAllElements[getActiveElement].style.left = getActiveElement * 2.5 + "rem";
+                getAllElements[getActiveElement].classList.add("active");
+            }
+        }
+        const getAllCards = document.querySelectorAll(".products-accord .products-con");
+        getAllCards.forEach((card) => {
+            card.addEventListener('click', () => {
+                for (let i = 0; i < getAllCards.length; i++) {
+                    getAllCards[i].classList.remove("active");
+                    if (i < card.getAttribute('data-custom-num')) {
+                        getAllCards[i].style.left = i * 2.5 + 'rem';
+                    } else {
+                        getAllCards[i].style.left = 'calc(105% + ' + i * 2.5 + 'rem)';
+                    }
+                }
+                card.classList.add('active');
+            });
+        });
+        function prevCard() {
+            const getActiveElement = document.querySelector(".products-accord .products-con.active").getAttribute("data-custom-num");
+            const getAllElements = document.querySelectorAll(".products-accord .products-con");
+            if (getActiveElement > 1) {
+                for (let i = 0; i < getAllElements.length; i++) getAllElements[i].classList.remove("active");
+                getAllElements[getActiveElement - 1].style.left = "calc(105% + " + getActiveElement * 2.5 + "rem)";
+                getAllElements[getActiveElement - 2].classList.add("active");
+            }
+        }
+    </script>
+
+    <!-- Stats counter -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll('.count');
+            const rollGWs  = document.querySelectorAll('.roll-gw');
+            const runCount = (el, target) => {
+                let count = 0;
+                const increment = target / 80;
+                const update = () => {
+                    count += increment;
+                    if (count < target) {
+                        el.innerText = Math.floor(count) + (target === 750 ? ' MW+' : '');
+                        requestAnimationFrame(update);
+                    } else {
+                        el.innerText = target + (target === 750 ? ' MW+' : '');
+                    }
+                };
+                update();
+            };
+            const runGW = (el, finalVal) => {
+                let n = 0;
+                const iv = setInterval(() => {
+                    el.innerText = Math.floor(Math.random() * 10);
+                    if (++n >= 15) { clearInterval(iv); el.innerText = finalVal + ' GW+'; }
+                }, 100);
+            };
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const el = entry.target;
+                    if (entry.isIntersecting) {
+                        if (el.classList.contains("count"))   runCount(el, parseFloat(el.getAttribute('data-target')));
+                        if (el.classList.contains("roll-gw")) runGW(el, parseInt(el.getAttribute("data-final")));
+                    } else {
+                        el.innerText = "0";
+                    }
+                });
+            }, { threshold: 0.6 });
+            counters.forEach(el => obs.observe(el));
+            rollGWs.forEach(el  => obs.observe(el));
+        });
+    </script>
+
+    <!-- Stock -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const API_KEY  = '4f8a117273msh96f7375396c22c6p186bdejsn00e25a9a8cb8';
+        const API_HOST = 'apidojo-yahoo-finance-v1.p.rapidapi.com';
+        const symbol   = 'SWELECTES.NS';
+        async function fetchStockData() {
+            const url = `https://${API_HOST}/stock/v3/get-chart?interval=5m&symbol=${symbol}&range=1d&region=IN`;
+            try {
+                const res  = await fetch(url, { method:'GET', headers:{ 'X-RapidAPI-Key':API_KEY, 'X-RapidAPI-Host':API_HOST } });
+                const data = await res.json();
+                const result      = data.chart.result[0];
+                const timestamps  = result.timestamp;
+                const prices      = result.indicators.quote[0].close;
+                const validPoints = prices.map((p,i) => ({ time:timestamps[i], price:p })).filter(p => p.price !== null);
+                const labels      = validPoints.map(p => { const d=new Date(p.time*1000); return d.getHours()+':'+(('0'+d.getMinutes()).slice(-2)); });
+                const cleanPrices = validPoints.map(p => p.price);
+                const cur2        = cleanPrices[cleanPrices.length-1];
+                const prev        = cleanPrices[cleanPrices.length-2];
+                if (document.getElementById('price')) document.getElementById('price').innerText = `₹${cur2.toFixed(2)}`;
+                const ai = document.getElementById('arrow-icon');
+                if (ai) {
+                    if (cur2 > prev)      { ai.className='arrow-up';     ai.innerHTML='<svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.59 5.58L20 12l-8-8-8 8z"/></svg>'; }
+                    else if (cur2 < prev) { ai.className='arrow-down';   ai.innerHTML='<svg viewBox="0 0 24 24"><path d="M4 12l1.41-1.41L11 16.17V4h2v12.17l5.59-5.58L20 12l-8 8-8-8z"/></svg>'; }
+                    else                  { ai.className='arrow-stable'; ai.innerHTML='<svg viewBox="0 0 24 24"><path d="M4 12h16v2H4z"/></svg>'; }
+                }
+                if (document.getElementById('stockChart')) drawChart(labels, cleanPrices);
+            } catch(e) { console.error(e); }
+        }
+        function drawChart(labels, data) {
+            new Chart(document.getElementById('stockChart'), {
+                type: 'line',
+                data: { labels, datasets: [{ label:'Price (INR)', data, borderColor:'#3e95cd', fill:false, tension:0.1 }] },
+                options: { responsive:true, plugins:{ legend:{display:false}, title:{display:true,text:'Intraday Price Movement'} }, scales:{ x:{title:{display:true,text:'Time'}}, y:{title:{display:true,text:'Price (₹)'}} } }
+            });
+        }
+        fetchStockData();
+    </script>
+
+    <!-- UPDATES SECTION SCRIPT -->
+    <script>
+    (function () {
+        'use strict';
+
+        var SLIDE_DUR = 30000; /* 30 seconds */
+        var DATA_URL  = '/media-data/media-data.json';
+
+        var ICONS = {
+            linkedin:
+                '<svg viewBox="0 0 24 24" fill="rgba(10,102,194,0.9)"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5C.02 2.12 1.13 1 2.5 1S4.98 2.12 4.98 3.5zM.5 8.5H4.5V24H.5V8.5zM8.5 8.5h3.84v2.13h.05C12.9 9.09 14.58 8 16.5 8c4.24 0 5.02 2.79 5.02 6.42V24h-4V15.3c0-2.07-.04-4.73-2.88-4.73-2.89 0-3.33 2.26-3.33 4.59V24H8.5V8.5z"/></svg>',
+            instagram:
+                '<svg viewBox="0 0 24 24" fill="rgba(193,53,132,0.9)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.613.074-3.067.46-4.204 1.596C1.712 2.805 1.326 4.259 1.252 5.872 1.194 7.152 1.18 7.56 1.18 12c0 4.44.014 4.848.072 6.128.074 1.613.46 3.067 1.596 4.204 1.137 1.136 2.591 1.522 4.204 1.596C8.333 23.986 8.741 24 12 24c3.259 0 3.667-.014 4.947-.072 1.613-.074 3.067-.46 4.204-1.596 1.136-1.137 1.522-2.591 1.596-4.204.058-1.28.072-1.688.072-6.128 0-4.44-.014-4.848-.072-6.128-.074-1.613-.46-3.067-1.596-4.204C19.014.532 17.56.146 15.947.072 14.667.014 14.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>',
+            youtube:
+                '<svg viewBox="0 0 24 24" fill="rgba(255,0,0,0.85)"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>',
+            website:
+                '<svg viewBox="0 0 24 24" fill="rgba(3,78,162,0.8)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>'
+        };
+
+        /* DOM */
+        var elText    = document.getElementById('swText');
+        var elDate    = document.getElementById('swDateText');
+        var elPlatNm  = document.getElementById('swPlatName');
+        var elPlatIco = document.getElementById('swPlatIcon');
+        var elDotSep  = document.getElementById('swDotSep');
+        var elNew     = document.getElementById('swNewBadge');
+        var elDots    = document.getElementById('swDots');
+        var elFill    = document.getElementById('swFill');
+        var elCounter = document.getElementById('swCounter');
+        var btnPrev   = document.getElementById('swPrev');
+        var btnNext   = document.getElementById('swNext');
+
+        /* State */
+        var posts = [], cur = 0, slideTimer = null, fillRaf = null, fillStart = 0;
+
+        function platKey(p) { return (p || '').toLowerCase().trim(); }
+
+        function fmtDate(str) {
+            if (!str) return '';
+            return new Date(str).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+        }
+
+        function cleanText(s) {
+            if (!s) return '';
+            return s.replace(/[\u{1F000}-\u{1FFFF}]/gu, '')
+                    .replace(/[\u{2600}-\u{27BF}]/gu, '')
+                    .replace(/\s{2,}/g, ' ')
+                    .trim();
+        }
+
+        /* Build nav dots */
+        function buildDots() {
+            elDots.innerHTML = '';
+            posts.forEach(function(_, i) {
+                var d = document.createElement('div');
+                d.className = 'sw-prog-dot' + (i === 0 ? ' cur' : '');
+                (function(idx){ d.addEventListener('click', function(){ goTo(idx); }); })(i);
+                elDots.appendChild(d);
+            });
+        }
+
+        function updateDots() {
+            elDots.querySelectorAll('.sw-prog-dot').forEach(function(d, i){
+                d.classList.toggle('cur', i === cur);
+            });
+            elCounter.textContent = (cur + 1) + ' / ' + posts.length;
+        }
+
+        /* Progress bar */
+        function startFill() {
+            if (fillRaf) cancelAnimationFrame(fillRaf);
+            elFill.style.transition = 'none';
+            elFill.style.width = '0%';
+            fillStart = Date.now();
+            (function tick(){
+                var pct = Math.min(100, (Date.now() - fillStart) / SLIDE_DUR * 100);
+                elFill.style.width = pct + '%';
+                if (pct < 100) fillRaf = requestAnimationFrame(tick);
+            })();
+        }
+
+        /* Render a slide */
+        function renderSlide(idx) {
+            var post = posts[idx];
+            var key  = platKey(post.platform);
+            var isOther = (key === 'other' || key === '');
+
+            /* platform icon */
+            if (isOther) {
+                elPlatIco.innerHTML = '';
+                elPlatIco.classList.add('hidden');
+            } else {
+                elPlatIco.innerHTML = ICONS[key] || ICONS.website;
+                elPlatIco.classList.remove('hidden');
+            }
+
+            /* platform name */
+            if (isOther) {
+                elPlatNm.textContent = '';
+                elPlatNm.classList.add('hidden');
+                elDotSep.classList.add('hidden');
+            } else {
+                elPlatNm.textContent = post.platform;
+                elPlatNm.classList.remove('hidden');
+                elDotSep.classList.remove('hidden');
+            }
+
+            /* date */
+            elDate.textContent = fmtDate(post.date);
+
+            /* NEW badge — only on the very first (newest) post */
+            elNew.classList.toggle('visible', idx === 0);
+
+            /* text transition */
+            elText.classList.remove('enter');
+            elText.classList.add('exit');
+            setTimeout(function(){
+                elText.textContent = cleanText(post.title || post.text || post.content || '');
+                elText.classList.remove('exit');
+                void elText.offsetWidth;
+                elText.classList.add('enter');
+            }, 340);
+        }
+
+        /* Navigation */
+        function goTo(n) {
+            if (!posts.length) return;
+            cur = ((n % posts.length) + posts.length) % posts.length;
+            clearTimeout(slideTimer);
+            updateDots();
+            startFill();
+            renderSlide(cur);
+            slideTimer = setTimeout(function(){ goTo(cur + 1); }, SLIDE_DUR);
+        }
+
+        btnPrev.addEventListener('click', function(){ goTo(cur - 1); });
+        btnNext.addEventListener('click', function(){ goTo(cur + 1); });
+
+        document.addEventListener('keydown', function(e){
+            if (e.key === 'ArrowLeft')  goTo(cur - 1);
+            if (e.key === 'ArrowRight') goTo(cur + 1);
+        });
+
+        /* Fallback data */
+        var FALLBACK = [
+            { platform:'LinkedIn',  date: new Date().toISOString(),
+              title: 'SWELECT achieves 1 GW+ solar manufacturing milestone at its Coimbatore facility, reinforcing its position as a leading clean energy solutions provider in India.' },
+            { platform:'Website',   date: new Date(Date.now()-86400000).toISOString(),
+              title: 'Next-generation TOPCON bifacial modules up to 630 Wp now available, delivering superior yield across utility, commercial and rooftop solar installations.' },
+            { platform:'Instagram', date: new Date(Date.now()-172800000).toISOString(),
+              title: 'SHPV modules carry BIS, IEC, UL and ALMM certification — built to global standards and powering projects across India.' },
+            { platform:'YouTube',   date: new Date(Date.now()-259200000).toISOString(),
+              title: 'Tour our Salem MMS facility: 750 MW+ annual capacity and a 20-year guaranteed lifespan on every module mounting structure we manufacture.' },
+            { platform:'other',     date: new Date(Date.now()-345600000).toISOString(),
+              title: 'SWELECT Energy Systems is committed to powering the world responsibly through solar, wind, and energy storage solutions for a greener tomorrow.' }
+        ];
+
+        /* Init */
+        fetch(DATA_URL)
+            .then(function(r){ if (!r.ok) throw new Error(); return r.json(); })
+            .then(function(data){
+                posts = data.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+                buildDots();
+                goTo(0);
+            })
+            .catch(function(){
+                posts = FALLBACK;
+                buildDots();
+                goTo(0);
+            });
+
+    })();
+    </script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+    </script>
+
+</body>
+</html>

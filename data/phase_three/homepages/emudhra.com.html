@@ -1,0 +1,3063 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PS44SJ5');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+
+    <!-- SEO: Hreflang tags for regional versions -->
+    <link rel="alternate" hreflang="en" href="https://emudhra.com/en/">
+    <link rel="alternate" hreflang="en-in" href="https://emudhra.com/en-in/">
+    <link rel="alternate" hreflang="en-ae" href="https://emudhra.com/en-ae/">
+    <link rel="alternate" hreflang="en-us" href="https://emudhra.com/en-us/">
+    <link rel="alternate" hreflang="en-my" href="https://emudhra.com/en-my/">
+    <link rel="alternate" hreflang="en-ph" href="https://emudhra.com/en-ph/">
+    <link rel="alternate" hreflang="en-ke" href="https://emudhra.com/en-ke/">
+    <link rel="alternate" hreflang="x-default" href="https://emudhra.com/en/">
+    
+    <link rel="canonical" href="https://emudhra.com/en-in/">
+
+
+    <!-- PrivaTrust CMP — cookie consent banner (regions from PRIVATRUST_REGIONS: India + EU) -->
+    <script src="https://privatrust.io/privatrustcoreapi/sdk.min.js" data-client-key="82633e7f-2cc1-4fc6-b7f8-2a06fb0bcfa0" data-profile-key="34b8a223-0331-4889-b9c3-01fac3a63ab7"></script>
+    
+<style>
+  /* ── 1) Consistent backdrop behind banner AND preferences modal ───────── */
+  #ptc-consent-overlay{
+    position:fixed; top:0; right:0; bottom:0; left:0;
+    z-index:2147482000;                 /* below the SDK banner (--dsz1) & modal (--dsz3), above the page */
+    background:rgba(0,0,0,0.55);
+    opacity:0; visibility:hidden;
+    transition:opacity .25s ease, visibility .25s ease;
+  }
+  #ptc-consent-overlay.is-visible{ opacity:1; visibility:visible; }
+  @media (prefers-reduced-motion: reduce){ #ptc-consent-overlay{ transition:none; } }
+  /* Keep the SDK's own overlay functional (backdrop click closes the modal) but
+     transparent, so our single overlay is the only dim in every state. */
+  #ds-overlay{ background:transparent !important; }
+
+  /* ── 2) eMudhra brand theme for the consent UI ────────────────────────── */
+  :root{ --dsp:#1C64F2 !important; }    /* accent: primary button, links, toggle "on" */
+  #ds-banner, #ds-modal, #ds-banner *, #ds-modal *{
+    font-family:'DM Sans', sans-serif !important;             /* site font */
+  }
+  #ds-banner .ds-btn-primary, #ds-modal .ds-btn-primary{
+    background:#1C64F2 !important; color:#fff !important;      /* eMudhra blue button */
+  }
+  #ds-banner .ds-btn-primary:hover, #ds-modal .ds-btn-primary:hover{
+    background:#1A56DB !important;                             /* darker blue on hover, like the site */
+  }
+  #ds-banner .ds-btn-link, #ds-modal .ds-btn-link,
+  #ds-banner .ds-bd a, #ds-modal .ds-md a{ color:#1C64F2 !important; }   /* links */
+  #ds-banner .ds-btn, #ds-modal .ds-btn{ border-radius:8px !important; } /* match site radius */
+
+  /* ── 3) Bigger, more vibrant, and responsive ──────────────────────────── */
+  /* Rounder card + stronger shadow (all screen sizes). */
+  :root{ --dsr-banner:16px !important; --dsr-modal:18px !important; }
+  #ds-banner, #ds-modal #ds-mi{ box-shadow:0 20px 60px rgba(16,24,40,0.22) !important; }
+
+  /* Larger on tablet/desktop only. max-width uses vw so it always fits the
+     viewport; below 641px we leave the SDK's own responsive/full-width layout. */
+  @media (min-width:641px){
+    #ds-banner{ width:780px !important; max-width:min(94vw,780px) !important; }
+    #ds-modal #ds-mi{ width:900px !important; max-width:min(96vw,900px) !important; }
+  }
+
+  /* More generous spacing + larger heading (scales the bigger banner up). */
+  #ds-banner .ds-banner-scroll{ padding:28px 32px 14px !important; }
+  #ds-banner .ds-bt, #ds-modal .ds-mh-t, #ds-modal .ds-mt{ font-size:20px !important; }
+  #ds-banner .ds-bd, #ds-modal .ds-md{ font-size:15px !important; line-height:1.6 !important; }
+
+  /* Bolder, brand-coloured buttons. The link-style button ("Manage Preferences")
+     has no bg/border, so it's excluded — it stays a plain text link with no padding. */
+  #ds-banner .ds-btn:not(.ds-btn-link), #ds-modal .ds-btn:not(.ds-btn-link){
+    padding:11px 20px !important; font-size:14px !important; font-weight:600 !important;
+  }
+  #ds-banner .ds-btn-primary, #ds-modal .ds-btn-primary{
+    box-shadow:0 4px 14px rgba(28,100,242,0.30) !important;      /* subtle blue glow on the main CTA */
+  }
+  #ds-banner .ds-btn-secondary, #ds-modal .ds-btn-secondary{
+    border:1.5px solid #1C64F2 !important; color:#1C64F2 !important; background:#fff !important;
+  }
+  #ds-banner .ds-btn-secondary:hover, #ds-modal .ds-btn-secondary:hover{
+    background:#EBF5FF !important;                               /* light-blue hover */
+  }
+
+  /* Close (×) button — circular grey chip, top-right of the banner. */
+  #ds-banner .ds-banner-scroll .ds-bx{
+    position:absolute !important;
+    top:16px !important; right:16px !important;
+    background:#e4e5ec !important;
+    line-height:25px !important;
+    width:25px !important; height:25px !important;
+    border-radius:50% !important;
+    text-align:center !important;
+  }
+
+  /* Phones: dial padding / heading / buttons back down so it stays comfortable. */
+  @media (max-width:575px){
+    #ds-banner .ds-banner-scroll{ padding:16px 16px 8px !important; }
+    #ds-banner .ds-bt, #ds-modal .ds-mh-t, #ds-modal .ds-mt{ font-size:16px !important; }
+    #ds-banner .ds-btn:not(.ds-btn-link), #ds-modal .ds-btn:not(.ds-btn-link){ padding:10px 16px !important; }
+  }
+</style>
+<script>
+(function () {
+  "use strict";
+  var OVERLAY_ID = "ptc-consent-overlay";
+  var IDS = ["ds-banner", "ds-modal"];   // dim while EITHER the banner or the preferences modal is up
+  var savedOverflow = null, ticking = false;
+
+  function getOverlay() {
+    var el = document.getElementById(OVERLAY_ID);
+    if (!el) {
+      el = document.createElement("div");
+      el.id = OVERLAY_ID;
+      el.setAttribute("aria-hidden", "true");   // decorative; the banner/modal carry the a11y semantics
+      document.body.appendChild(el);
+    }
+    return el;
+  }
+
+  // Real, layout-based visibility (offsetParent is unreliable for position:fixed elements).
+  function isVisible(id) {
+    var n = document.getElementById(id);
+    if (!n) return false;
+    var cs = window.getComputedStyle(n);
+    if (cs.display === "none" || cs.visibility === "hidden" || parseFloat(cs.opacity) === 0) return false;
+    var r = n.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
+  function consentUiVisible() {
+    for (var i = 0; i < IDS.length; i++) { if (isVisible(IDS[i])) return true; }
+    return false;
+  }
+
+  function apply() {
+    ticking = false;
+    var show = consentUiVisible();
+    var el = getOverlay();
+    if (show) {
+      el.classList.add("is-visible");
+      if (savedOverflow === null) {                 // lock background scroll while dimmed
+        savedOverflow = document.body.style.overflow || "";
+        document.body.style.overflow = "hidden";
+      }
+    } else {
+      el.classList.remove("is-visible");
+      if (savedOverflow !== null) {                 // restore exactly what was there before
+        document.body.style.overflow = savedOverflow;
+        savedOverflow = null;
+      }
+    }
+  }
+
+  function schedule() {                              // coalesce mutation bursts into one check per frame
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(apply);
+  }
+
+  function init() {
+    try {
+      getOverlay();
+      apply();                                       // handle UI already present at load
+      new MutationObserver(schedule).observe(document.body, {
+        childList: true, subtree: true, attributes: true, attributeFilter: ["class", "style"]
+      });
+    } catch (e) { /* fail safe: no overlay is better than a broken page */ }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    eMudhra | Digital Signature &amp; PKI Services in India
+  </title>
+  <meta name="description"
+    content="eMudhra is India&#39;s leading provider of digital signature solutions, PKI services, and enterprise identity management. Trusted by millions. Available in India.">
+  <meta name="keywords"
+    content="electronic signature solution, e-signature software, digital signature, paperless workflow, secure document signing, eSign, eMudhra, document automation, online signature solution">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="icon" href="/images/favicon.png" sizes="60x60">
+  <link rel="stylesheet" href="/css/common/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/css/common/select2.min.css" />
+  <link rel="stylesheet" href="/css/stylesheet.css">
+  <link rel="stylesheet" href="/css/box-icons.css">
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/40916122.js"></script>
+  <!-- End of HubSpot Embed Code -->
+    <!-- Organization Schema - eMudhra Corporation -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "eMudhra Limited",
+  "legalName": "eMudhra Limited",
+  "url": "https://emudhra.com/",
+  "description": "eMudhra is a globally trusted Certifying Authority providing digital signature solutions, PKI services, and enterprise identity management. Trusted by millions worldwide.",
+  "logo": "https://emudhra.com/images/brandlogos/logo.png",
+  "foundingDate": "2008",
+  "areaServed": ["IN", "US", "AE", "NL", "CO", "SG", "ID", "KE", "PH"],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91 8046156902",
+      "contactType": "business inquiries",
+      "availableLanguage": ["en"]
+    }
+  ],
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "eMudhra Digital Campus, No 12-P1-A & 12-P1-B, Hi-Tech Defence And Aerospace Park (IT Sector), Jala Hobli",
+      "addressLocality": "B.K. Palya",
+      "addressRegion": "Bengaluru",
+      "postalCode": "562149",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "97 Cedar Grove Lane, Suite 202",
+      "addressLocality": "Somerset",
+      "addressRegion": "New Jersey",
+      "postalCode": "08873",
+      "addressCountry": "US"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "#1604 Fortune Executive Tower, Cluster T, JLT",
+      "addressLocality": "Dubai",
+      "addressRegion": "Dubai",
+      "postalCode": "32620",
+      "addressCountry": "AE"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Wilhelmina Van Pruisenweg 104",
+      "addressLocality": "The Hague",
+      "addressRegion": "South Holland",
+      "postalCode": "2595AN",
+      "addressCountry": "NL"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle 95 # 71-45, Interior 7 Apartment 1703",
+      "addressLocality": "Bogota",
+      "addressRegion": "Bogota",
+      "addressCountry": "CO"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Philip Street, #03-01, Royal One Philip",
+      "addressLocality": "Singapore",
+      "postalCode": "048692",
+      "addressCountry": "SG"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "MidPlaza 1, 7th Floor, Jalan Jenderal Sudirman KAV 10-11",
+      "addressLocality": "Jakarta",
+      "postalCode": "10220",
+      "addressCountry": "ID"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Office 1, 4th Floor, Mirage Towers 3, Waiyaki Way",
+      "addressLocality": "Nairobi",
+      "postalCode": "0606",
+      "addressCountry": "KE"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "9th Floor, Tower 3, Uptown Bonifacio, 36th Street, Fort Bonifacio (BGC)",
+      "addressLocality": "Taguig City",
+      "addressRegion": "Metro Manila",
+      "postalCode": "1634",
+      "addressCountry": "PH"
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/emudhra/",
+    "https://www.facebook.com/eMudhra/",
+    "https://www.youtube.com/channel/UCHw3wmhVx7Qe3Bqjb_BX8Gw",
+    "https://x.com/eMudhra"
+  ]
+}
+</script>
+
+</head>
+
+<body class="mt-home mt-details">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS44SJ5" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  
+
+
+    <header class="ems-sticky-top" id="header">
+    <!-- Top Header -->
+
+    <!-- Main Navigation -->
+    <nav class="ems-navheader navbar navbar-expand-lg">
+      <div class="container d-block">
+        <div class="row">
+          <div class="col-12 ems-navheader__container">
+            <div class="d-flex align-items-center">
+              <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" id="top-hamburger">
+                <span class="navbar-toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                  aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"></span>
+              </button>
+              <div class="ems-headerlogo-wrappr">
+                <a class="qx-brandlogo" href="/en-in/">
+                  <img src="/images/brandlogos/logo.png" alt="eMudhra logo" />
+                </a>
+              </div>
+            </div>
+
+            <a href="/en-in/contact-us"
+              class="d-none align-items-center justify-content-between d-md-none" id="top-contact">
+              <button class="ems-btn ems-btn--default ems-btn-login-h-mb">Contact Us</button>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <div
+                class="ems-headerlogo-wrappr-mb d-flex flex-wrap d-lg-none align-items-center justify-content-between w-100">
+                <a class="qx-brandlogo d-md-none" href="/en-in/">
+                  <img src="/images/brandlogos/logo.png" alt="eMudhra Logo" />
+                </a>
+
+                <span class="nav-close d-inline-block d-lg-none" id="navClose">&#x2715;</span>
+              </div>
+              <ul class="ems-navlist navbar-nav ms-auto">
+                <li class="nav-item nav-item-header">
+                  <a class="nav-link mb-accordion" aria-current="page" href="#">Products</a>
+                  <!--Dropdown-->
+                  <div class="nav-dropdown nav-dropdown--lg">
+                    <div class="ems-h-dropdown ">
+                      <div class="row feature-container">
+                        <div class="col-12 feature-container__item">
+                          <!-- All Product (converted into Tab Menu + Content) -->
+
+
+                          <div class="megamenu-tab-content-wrapper" id="tab-all">
+
+                            <div class="megamenu-lists row h-100">
+
+                              <!-- Left Tab Menu -->
+                              <div class="gray col-lg-3 p-0 feature-container__item">
+
+                                <div class="megamenu-tab-wrapper">
+                                  <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                                    <h3 class="text-capitalize">Featured Products</h3>
+                                  </div>
+                                  <ul id="tabs-nav" class="products-tabs">
+                                    <li class="ems-color-neu800 fs-16 active" data-tab="products-one"><span>eSignature
+                                        Solution</span></li>
+                                    <li class="ems-color-neu800 fs-16" data-tab="products-two"><span>Identity & Access
+                                        Solution</span></li>
+                                    <li class="ems-color-neu800 fs-16" data-tab="products-three"><span>CLM & SSL/TLS
+                                        Certificates</span></li>
+                                    
+                                      <li class="ems-color-neu800 fs-16" data-tab="products-five"><span>eMudhra
+                                          Digital</span></li>
+                                      <li class="ems-color-neu800 fs-16" data-tab="products-six"><span>Privacy & Data Governance</span></li>
+                                      
+                                  </ul>
+                                </div>
+                              </div>
+
+                              <!-- Right Tab Content -->
+                              <div class="col-lg-9 p-0 feature-container__item">
+                                <div class="megamenu-list">
+                                  <div class="megamenu-content-wrapper">
+                                    <div id="tabs-content">
+                                      <!-- TAB: emsigner -->
+                                      <div id="products-one" class="tab-content products-tab-content active">
+                                        <div class="row h-100">
+                                          <div class="col-lg-8">
+                                            <div class="product-hero row align-items-center">
+                                              <div class="col-lg-12">
+                                                <a href="/en-in/emsigner/"
+                                                  class="sub_brand d-flex align-items-center gap-3">
+                                                  <img src="/images/home/product/emsigner-fav.svg" alt="emSigner"
+                                                    class="brand-mark">
+                                                  <div class="title">
+                                                    <h4 class="main-title">emSigner</h4>
+                                                    <p class="sub-title">Sign smarter. Approve faster. Go fully
+                                                      paperless with ease.</p>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                            <!-- Feature Cards -->
+                                            <div class="row feature-cards g-3">
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/emsigner/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/esign.svg" alt="Workflow Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Features</h5>
+                                                      <p>Automate multi-level approvals, accelerate document signing,
+                                                        and monitor workflow progress in real time.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/emsigner/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/manufacturing.svg" alt="BulkSign Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Use Cases</h5>
+                                                      <p>Streamline bulk signing for HR, finance, legal, procurement,
+                                                        and other enterprise operations.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/emsigner/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/esignature-resources.svg"
+                                                      alt="Document Certificates Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Resources</h5>
+                                                      <p>Access implementation guides, technical documentation, and best
+                                                        practices for eSignature deployment.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/emsigner/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/instant-sign.svg" alt="Pricing Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Pricing</h5>
+                                                      <p>Flexible plans for individuals, SMBs, and large enterprises
+                                                        with scalable usage tiers.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Case Studies for emSigner -->
+                                          <div class="col-lg-4">
+                                            <div class="h-caseStudy-listWrap h-100">
+                                              <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                                                <h3 class="text-capitalize">Customer Stories</h3>
+                                              </div>
+                                              <div class="ems-h-dropdown__body">
+                                                <ul class="ems-drp-link-lg p-0">
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link"
+                                                      href="/en-in/emsigner/case-studies-fab">
+                                                      <div class="ems-drp-link__img">
+                                                        <img src="/images/dropdown/casestudy/fab.png"
+                                                          alt="Banking & Financial Services">
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Banking</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">FAB drives an enterprise-wide paperless initiative...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link"
+                                                      href="/en-in/emsigner/case-studies-mercedes-benz">
+                                                      <div class="ems-drp-link__img">
+                                                        <img src="/images/dropdown/casestudy/mercedes.png"
+                                                          alt="Automobile">
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Automotive</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">Mercedes curbs employment fraud by going digital...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link"
+                                                      href="/en-in/emsigner/case-studies-cisco">
+                                                      <div class="ems-drp-link__img">
+                                                        <img src="/images/dropdown/casestudy/cisco.png" alt="Customer case study for emSigner - Cisco">
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Networking hardware &amp; software</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">emSigner plays an instrumental role in streamlining processes...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                              <a class="link-arr fs-16 ems-color-primary600 fw-500 text-capitalize d-inline-block mb-2 mt-3"
+                                                href="/en-in/emsigner/case-studies">View All Case Studies</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- TAB: SecurePass -->
+                                      <div id="products-two" class="tab-content products-tab-content">
+                                        <div class="row h-100">
+                                          <div class="col-lg-8">
+                                            <div class="product-hero row align-items-center">
+                                              <div class="col-lg-12">
+                                                <a href="/en-in/securepass/"
+                                                  class="sub_brand d-flex align-items-center gap-3">
+                                                  <img src="/images/home/product/securepass-fav.svg" alt="SecurePass"
+                                                    class="brand-mark">
+                                                  <div class="title">
+                                                    <h4 class="main-title">SecurePass</h4>
+                                                    <p class="sub-title">Converged identity platform for authentication,
+                                                      access management and identity governance</p>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                            <!-- Feature Cards -->
+                                            <div class="row feature-cards g-3">
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/securepass/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/esign.svg" alt="Workflow Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Features</h5>
+                                                      <p>Enforce adaptive authentication, SSO, and centralized
+                                                        governance to strengthen access control across your enterprise.
+                                                      </p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/securepass/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/manufacturing.svg" alt="BulkSign Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Use Cases</h5>
+                                                      <p>Simplify secure logins, user provisioning, and access
+                                                        management for internal systems and apps.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/securepass/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/esignature-resources.svg"
+                                                      alt="Document Certificates Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Resources</h5>
+                                                      <p>Find documentation, configuration guides, and best practices
+                                                        for identity and access management.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/securepass/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/instant-sign.svg" alt="Pricing Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Pricing</h5>
+                                                      <p>Tiered pricing designed for individuals, SMBs, and enterprise
+                                                        deployments with flexible scalability.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Case Studies for SecurePass -->
+                                          <div class="col-lg-4">
+                                            <div class="h-caseStudy-listWrap h-100">
+                                              <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                                                <h3 class="text-capitalize">Case Studies</h3>
+                                              </div>
+                                              <div class="ems-h-dropdown__body">
+                                                <ul class="ems-drp-link-lg p-0">
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link"
+                                                      href="/en-in/resources/life-insurance-india-securepass-idam">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--bfsi">
+                                                        <i class="bx bxs-bank"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">BFSI</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">India's Largest Life Insurance Provider Scales Digital Identity for 50M+ Users</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link"
+                                                      href="/en-in/resources/central-government-department-in-india-secures-employee">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--govt">
+                                                        <i class="bx bxs-landmark"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Government</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">Central Govt Department in India Secures Employee Access Across a Large Workforce</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                              <a class="link-arr fs-16 ems-color-primary600 fw-500 text-capitalize d-inline-block mb-2 mt-3"
+                                                href="/en-in/case-studies">View All Case Studies</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+
+                                      <!-- TAB: SSL/TLS -->
+                                      <div id="products-three" class="tab-content products-tab-content">
+                                        <div class="row h-100">
+                                          <div class="col-lg-8">
+                                            <div class="product-hero row align-items-center">
+                                              <div class="col-lg-12">
+                                                <a href="/en-in/certinext/"
+                                                  class="sub_brand d-flex align-items-center gap-3">
+                                                  <img src="/images/home/product/certinext-fav.svg" alt="CertiNext"
+                                                    class="brand-mark">
+                                                  <div class="title">
+                                                    <h4 class="main-title">CertiNext</h4>
+                                                    <p class="sub-title">Buy, discover, provision and manage lifecycle
+                                                      of SSL/TLS certificates</p>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                            <!-- Feature Cards -->
+                                            <div class="row feature-cards g-3">
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/certinext/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/esign.svg" alt="Workflow Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Features</h5>
+                                                      <p>Issue, renew, and revoke digital certificates for users,
+                                                        devices, and services with complete lifecycle management.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/certinext/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/manufacturing.svg" alt="BulkSign Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Use Cases</h5>
+                                                      <p>Secure internal systems, apps, and communications through
+                                                        PKI-based authentication and encryption.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/certinext/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/esignature-resources.svg"
+                                                      alt="Document Certificates Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Resources</h5>
+                                                      <p>Access guides, technical manuals, and workflows for PKI and
+                                                        certificate lifecycle management.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/certinext/" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/instant-sign.svg" alt="Pricing Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Pricing</h5>
+                                                      <p>Flexible subscription models to support small teams, large
+                                                        enterprises, and global deployments.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Case Studies for CertiNext -->
+                                          <div class="col-lg-4">
+                                            <div class="h-caseStudy-listWrap h-100">
+                                              <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                                                <h3 class="text-capitalize">Case Studies</h3>
+                                              </div>
+                                              <div class="ems-h-dropdown__body">
+                                                <ul class="ems-drp-link-lg p-0">
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link"
+                                                      href="/en-in/resources/large-bank-india-certinext">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--bfsi">
+                                                        <i class="bx bxs-bank"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">BFSI</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">India's Largest Commercial Bank Deploys CertiNext for Enterprise CLM</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link"
+                                                      href="/en-in/resources/digital-government-services-authority-in-the-middle-east">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--govt">
+                                                        <i class="bx bxs-landmark"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Government</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">Digital Government Authority in the Middle East Establishes Certificate Governance</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link"
+                                                      href="/en-in/resources/cable-and-internet-service-provider-in-southeast-asia">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--telecom">
+                                                        <i class="bx bxs-buildings"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Telecommunication</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">Cable &amp; Internet Provider in Southeast Asia Centralises Certificate Management</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                              <a class="link-arr fs-16 ems-color-primary600 fw-500 text-capitalize d-inline-block mb-2 mt-3"
+                                                href="/en-in/case-studies">View All Case Studies</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      
+                                      <div id="products-five" class="tab-content products-tab-content">
+                                        <div class="row h-100">
+                                          <div class="col-lg-8">
+                                            <div class="product-hero row align-items-center">
+                                              <div class="col-lg-12">
+                                                <a href="https://emudhradigital.com/" target="_blank"
+                                                  class="sub_brand d-flex align-items-center gap-3">
+                                                  <img src="/images/home/product/emudhra-digital-fav.svg" alt="eMudhra Digital"
+                                                    class="brand-mark">
+                                                  <div class="title">
+                                                    <h4 class="main-title">eMudhra Digital</h4>
+                                                    <p class="sub-title">A comprehensive platform for issuance of digital signature certificates to individuals and corporates. 100% paperless, instant delivery.</p>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                            <!-- Feature Cards -->
+                                            <div class="row feature-cards g-3">
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="https://emudhradigital.com/" target="_blank" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/esign.svg" alt="DSC Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Digital Signature Certificate</h5>
+                                                      <p>Get Class 2 & Class 3 DSC for GST, MCA, Income Tax, EPFO, and more government filings.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="https://emudhradigital.com/" target="_blank" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/instant-sign.svg" alt="3-Click Purchase Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">3-Click Purchase</h5>
+                                                      <p>Simplified process to buy your DSC in just 3 clicks with instant verification and delivery.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="https://emudhradigital.com/" target="_blank" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/one_enterprise_paperless.svg" alt="Paperless Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">100% Paperless</h5>
+                                                      <p>Complete the entire process online with Aadhaar-based eKYC. No physical documents required.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="https://emudhradigital.com/" target="_blank" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/home/icons/trust.svg" alt="Government Approved Icon">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Government Approved</h5>
+                                                      <p>Licensed Certifying Authority under CCA, India. Valid for all statutory and regulatory filings.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Popular Uses -->
+                                          <div class="col-lg-4">
+                                            <div class="h-caseStudy-listWrap h-100">
+                                              <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                                                <h3 class="text-capitalize">Popular Uses</h3>
+                                              </div>
+                                              <div class="ems-h-dropdown__body">
+                                                <ul class="ems-drp-link-lg p-0">
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="https://emudhradigital.com/" target="_blank">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--gst">
+                                                        <i class="bx bxs-receipt"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">GST Returns</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">File GST returns securely with DSC authentication ...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="https://emudhradigital.com/" target="_blank">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--mca">
+                                                        <i class="bx bxs-building-house"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">MCA Filings</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">ROC filings, annual returns, and company registrations...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="https://emudhradigital.com/" target="_blank">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--tender">
+                                                        <i class="bx bxs-file-doc"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">e-Tendering</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">Participate in government tenders on GeM, CPPP, and state portals...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                              <a class="link-arr fs-16 ems-color-primary600 fw-500 text-capitalize d-inline-block mb-2 mt-3"
+                                                href="https://emudhradigital.com/" target="_blank">Buy DSC Now</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- TAB: PrivaTrust (Privacy & Data Governance) -->
+                                      <div id="products-six" class="tab-content products-tab-content">
+                                        <div class="row h-100">
+                                          <div class="col-lg-8">
+                                            <div class="product-hero row align-items-center">
+                                              <div class="col-lg-12">
+                                                <a href="/en-in/privatrust/"
+                                                  class="sub_brand d-flex align-items-center gap-3">
+                                                  <img src="/images/home/product/privatrust-fav.svg" alt="PrivaTrust"
+                                                    class="brand-mark">
+                                                  <div class="title">
+                                                    <h4 class="main-title">PrivaTrust</h4>
+                                                    <p class="sub-title">Unified privacy & data governance platform for DPDP, GDPR, and HIPAA compliance.</p>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                            <!-- Feature Cards -->
+                                            <div class="row feature-cards g-3">
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/privatrust/feature-consent-management" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/icons/navigation/esignature-legality-guide.svg" alt="Consent Management">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Consent Management</h5>
+                                                      <p>Centralized consent collection, verification, and lifecycle governance across digital channels.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/privatrust/feature-data-discovery-classification" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/icons/navigation/product-comparasion.svg" alt="Data Discovery">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Data Discovery & Classification</h5>
+                                                      <p>AI-powered discovery and classification across 50+ data sources with 99%+ accuracy.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/privatrust/feature-dsar-management" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/icons/navigation/human-resource.svg" alt="DSAR Management">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">DSAR Management</h5>
+                                                      <p>Automated data subject rights request processing with 90% effort reduction.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                              <div class="col-12 col-md-6 col-lg-6">
+                                                <a href="/en-in/privatrust/feature-remediation-hub" class="feature-card">
+                                                  <div class="md-flex">
+                                                    <img src="/images/icons/navigation/workflow.svg" alt="Remediation Hub">
+                                                    <div class="title-content">
+                                                      <h5 class="mb-2">Remediation Hub</h5>
+                                                      <p>Automated remediation with compliance gap tracking and audit trails.</p>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Use Cases -->
+                                          <div class="col-lg-4">
+                                            <div class="h-caseStudy-listWrap h-100">
+                                              <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                                                <h3 class="text-capitalize">Use Cases</h3>
+                                              </div>
+                                              <div class="ems-h-dropdown__body">
+                                                <ul class="ems-drp-link-lg p-0">
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="/en-in/privatrust/usecases-banking-financial">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--bfsi">
+                                                        <i class="bx bxs-bank"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Banking &amp; Financial</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">DPDP/RBI compliance, customer data protection...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="/en-in/privatrust/usecases-healthcare">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--health">
+                                                        <i class="bx bxs-heart"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Healthcare</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">HIPAA, patient consent, PHI discovery...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                  <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="/en-in/privatrust/usecases-government">
+                                                      <div class="ems-drp-link__img ems-cs-icon-box ems-cs-icon--govt">
+                                                        <i class="bx bxs-landmark"></i>
+                                                      </div>
+                                                      <div class="col-9 col-md-10 col-lg-8">
+                                                        <h4 class="fs-14 ems-color-neu800 fw-600 mb-lg-1">Government</h4>
+                                                        <p class="fs-14 ems-color-neu500 mb-lg-1">Citizen data protection, air-gapped deployments...</p>
+                                                      </div>
+                                                    </a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                              <a class="link-arr fs-16 ems-color-primary600 fw-500 text-capitalize d-inline-block mb-2 mt-3"
+                                                href="/en-in/privatrust/">Explore PrivaTrust</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      
+
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-item-header">
+                  <a class="nav-link mb-accordion" aria-current="page" href="#">Use Cases</a>
+                  <!--Dropdown-->
+                  <div class="nav-dropdown nav-dropdown--lg">
+                    <div class="ems-h-dropdown ">
+                      <div class="row feature-container">
+                        <div class="col-12 col-lg-9 feature-container__item">
+
+                          <div class="megamenu-tab-content-wrapper" id="tab-all">
+
+                            <div class="megamenu-lists row h-100">
+
+                              <!-- Left Tab Menu -->
+                              <div class="gray col-lg-3 p-0 feature-container__item">
+                                <div class="megamenu-tab-wrapper">
+                                  <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                                    <h3 class="text-capitalize">Use Cases</h3>
+                                  </div>
+                                  <ul id="industry-tabs-nav" class="industry-tabs">
+                                    <li class="ems-color-neu800 fs-16 active" data-tab="industry-one">
+                                      <span>emSigner</span>
+                                    </li>
+                                    <li class="ems-color-neu800 fs-16" data-tab="industry-two"><span>SecurePass</span>
+                                    </li>
+                                    <li class="ems-color-neu800 fs-16" data-tab="industry-three"><span>CertiNext</span>
+                                    </li>
+                                    
+                                    <li class="ems-color-neu800 fs-16" data-tab="industry-four"><span>PrivaTrust</span>
+                                    </li>
+                                    
+                                  </ul>
+                                </div>
+                              </div>
+                              <!-- Right Tab Content -->
+                              <div class="col-lg-9 p-0 feature-container__item">
+                                <div class="megamenu-list">
+                                  <div class="megamenu-content-wrapper">
+                                    <div id="industry-tabs-content">
+
+                                      <!-- TAB: eSignature -->
+                                      <div id="industry-one" class="tab-content industry-tab-content active">
+                                        <!-- <div class="product-hero row align-items-center">
+                                                                <div class="col-lg-12">
+                                                                  <a href="" target="_blank" class="sub_brand d-flex align-items-center gap-3">
+                                                                    <div class="title">
+                                                                    <h4 class="main-title"></h4>
+                                                                    <p class="sub-title"></p>
+                                                                    </div>
+                                                                  </a>
+                                                                </div>
+                                                              </div> -->
+                                        <div class="row feature-cards g-3">
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/emsigner/usecases-retail-banking" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/navigation/banking.svg" alt="Workflow Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Retail Banking</h5>
+                                                  <p>Digital-first customer onboarding and account services.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/emsigner/usecases-manufacturing" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/manufacturing.svg" alt="BulkSign Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Manufacturing</h5>
+                                                  <p>Streamline contracts and supply chain workflows.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/emsigner/usecases-healthcare" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/navigation/healthcare.svg"
+                                                  alt="Healthcare Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Healthcare</h5>
+                                                  <p>Digital workflows for patient and compliance needs.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/emsigner/usecases-logistics" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/navigation/services-and-logistics.svg"
+                                                  alt="Services Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Services & Logistics</h5>
+                                                  <p>Seamless contracts and delivery docs.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/emsigner/usecases-education" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/navigation/education.svg" alt="Education Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Education</h5>
+                                                  <p>Effortless admissions and certifications.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/emsigner/usecases-insurance" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/navigation/insurance.svg" alt="Insurance Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Insurance</h5>
+                                                  <p>Fast claims and policy management.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- 2 -->
+
+                                      <div id="industry-two" class="tab-content industry-tab-content">
+                                        <div class="product-hero row align-items-center">
+
+                                        </div>
+                                        <div class="row feature-cards g-3">
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/securepass/usecases-government" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/svg/Navigations/UseCases/GovernmentServices.svg"
+                                                  alt="Government Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Government Services</h5>
+                                                  <p>Secure and simplify citizen services with trusted digital identity.
+                                                  </p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/securepass/usecases-finacialservices" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/svg/Navigations/UseCases/FinancialServices.svg"
+                                                  alt="Financial Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Financial Services</h5>
+                                                  <p>Protect financial assets with continuous identity verification.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/securepass/usecases-manufacturing" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/svg/Navigations/UseCases/Manufacturing.svg"
+                                                  alt="Manufacturing Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Manufacturing</h5>
+                                                  <p>Enable trusted access across people, systems, and machines.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/securepass/usecases-automotive" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/svg/Navigations/UseCases/Automotive.svg"
+                                                  alt="Automotive Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Automotive</h5>
+                                                  <p>Secure vehicles and data through unified digital identity.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/securepass/usecases-telecom" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/svg/Navigations/UseCases/Telecom.svg"
+                                                  alt="Telecom Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Telecom</h5>
+                                                  <p>Manage users and networks under one secure identity.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/securepass/usecases-defence" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/svg/Navigations/UseCases/Defence.svg"
+                                                  alt="Defense Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Defense</h5>
+                                                  <p>Safeguard classified systems with military-grade identity controls.
+                                                  </p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- 3 -->
+
+                                      <div id="industry-three" class="tab-content industry-tab-content">
+                                        <div class="product-hero row align-items-center">
+
+                                        </div>
+                                        <div class="row feature-cards g-3">
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/certinext/usecases-CLM-government" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/drop-icon-5.svg" alt="Government Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Government Services</h5>
+                                                  <p>Ensuring Continuity and Security in Critical Services</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/certinext/usecases-CLM-manufacturing" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/drop-icon-manufaucturing.svg"
+                                                  alt="Manufacturing Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Manufacturing</h5>
+                                                  <p>Securing IoT, 5G, and Connected Vehicle (CV2X) Infrastructure</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/certinext/usecases-CLM-telecom" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/drop-icon-4.svg" alt="Telecom Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Telecom</h5>
+                                                  <p>Reliable Certificate Management for 5G and CV2X Networks</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/certinext/usecases-CLM-finacialservices" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/drop-icon-6.svg" alt="Financial Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Financial Services</h5>
+                                                  <p>Implementing Zero Trust Across Financial IT Infrastructure</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/certinext/usecases-CLM-automotive" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/drop-icon-automative.svg" alt="Financial Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Automotive</h5>
+                                                  <p>Enhancing Security for IoT and Electric Vehicle (EV) Ecosystems</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/certinext/usecases-CLM-defence" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/icons/drop-icon-4.svg" alt="Financial Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Defense</h5>
+                                                  <p>Future-proofing Security with Post Quantum Cryptography</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                        </div>
+                                      </div>
+
+                                      <!-- 5 -->
+
+                                      <div id="industry-five" class="tab-content industry-tab-content">
+                                        <div class="product-hero row align-items-center">
+                                          <div class="col-lg-12">
+                                            <a href="" class="sub_brand d-flex align-items-center gap-3">
+                                              <div class="title">
+                                                <h4 class="main-title">Building Trust in InsurTech</h4>
+                                                <p class="sub-title">Simplifying policy and claims management while
+                                                  protecting sensitive information.</p>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                        <div class="row feature-cards g-3">
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/esign.svg" alt="Workflow Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">eSignature Solution</h5>
+                                                  <p>Automate policy approvals and claims docs.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/manufacturing.svg" alt="BulkSign Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Identity & Access</h5>
+                                                  <p>Secure agent and policyholder access.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/esignature-resources.svg"
+                                                  alt="Document Certificates Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Digital Trust</h5>
+                                                  <p>Protect policy docs and claims with certificates.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/instant-sign.svg" alt="Pricing Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Use Cases</h5>
+                                                  <p>Policy issuance, claims approvals and agent onboarding.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- 6 -->
+
+                                      <div id="industry-six" class="tab-content industry-tab-content">
+                                        <div class="product-hero row align-items-center">
+                                          <div class="col-lg-12">
+                                            <a href="" class="sub_brand d-flex align-items-center gap-3">
+                                              <div class="title">
+                                                <h4 class="main-title"> Enabling Digital Learning Environments </h4>
+                                                <p class="sub-title">Digitizing approvals, securing records and enabling
+                                                  smooth academic operations.</p>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                        <div class="row feature-cards g-3">
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/esign.svg" alt="Workflow Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">eSignature Solution</h5>
+                                                  <p>Simplify approvals and document workflows for institutions.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/manufacturing.svg" alt="BulkSign Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Identity & Access</h5>
+                                                  <p>Secure student, faculty and staff access.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/esignature-resources.svg"
+                                                  alt="Document Certificates Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Digital Trust</h5>
+                                                  <p>Protect student records and institutional data.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/instant-sign.svg" alt="Pricing Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Use Cases</h5>
+                                                  <p>Enrollment forms, approvals and transcripts.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- TAB: PrivaTrust (India only) -->
+                                      
+                                      <div id="industry-four" class="tab-content industry-tab-content">
+                                        <div class="product-hero row align-items-center">
+                                          <div class="col-lg-12">
+                                            <a href="/en-in/privatrust/"
+                                              class="sub_brand d-flex align-items-center gap-3">
+                                              <div class="title">
+                                                <h4 class="main-title">Privacy & Data Governance for Every Industry</h4>
+                                                <p class="sub-title">Unified compliance across DPDP, GDPR, HIPAA and more.</p>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                        <div class="row feature-cards g-3">
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/privatrust/usecases-banking-financial" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/esign.svg" alt="Banking Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Banking & Financial</h5>
+                                                  <p>DPDP/RBI compliance, customer data protection, consent management.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/privatrust/usecases-healthcare" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/manufacturing.svg" alt="Healthcare Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Healthcare</h5>
+                                                  <p>HIPAA, patient consent, PHI discovery and classification.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/privatrust/usecases-ecommerce" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/esignature-resources.svg" alt="E-Commerce Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">E-Commerce</h5>
+                                                  <p>Multi-region consent, preference management, cookie compliance.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/privatrust/usecases-government" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/instant-sign.svg" alt="Government Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Government</h5>
+                                                  <p>Citizen data protection, air-gapped deployments, audit trails.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/privatrust/usecases-technology" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/integration.svg" alt="Technology Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Technology & SaaS</h5>
+                                                  <p>Privacy by design, developer data governance, SOC2 compliance.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          <div class="col-12 col-md-6 col-lg-6">
+                                            <a href="/en-in/privatrust/usecases-telecom" class="feature-card">
+                                              <div class="md-flex">
+                                                <img src="/images/home/icons/trust.svg" alt="Telecom Icon">
+                                                <div class="title-content">
+                                                  <h5 class="mb-2">Telecom</h5>
+                                                  <p>TRAI compliance, subscriber data management, consent tracking.</p>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      
+
+                                    </div><!-- /tabs-content -->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-3 feature-container__item">
+                          <div class="h-100">
+
+                            <div class="h-100">
+
+                              <div class="feature-cards mt-2">
+                                <a href="https://emudhra.com/hubfs/emudhradocs/documents/landing-pdf/e-book-the-future-of-digital-signatures-in-the-age-of-genai.pdf"
+                                  class="industry-common">
+                                  <h3 class="ems-color-neu800 fs-16 mb-2">The Future of Digital Signatures</h3>
+                                  <p>How GenAI is transforming trust, security and signing workflows.
+                                  </p>
+                                  <svg class="ems-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 11L11 1M11 1H1M11 1V11" stroke="#111928" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
+                                </a>
+                              </div>
+                              <div class="industry-swiper mt-3">
+                                <a href="https://www.gartner.com/reviews/market/electronic-signature/vendor/emudhra/product/emsigner"
+                                  target="_blank">
+                                  <img src="/images/home/industry/em-industry-slide.svg" alt="industry">
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="nav-item nav-item-header">
+                  <a class="nav-link mb-accordion" href="#">Resources</a>
+                  <div class="nav-dropdown nav-dropdown--md">
+                    <div class="ems-h-dropdown ">
+                      <div class="row feature-container">
+
+                        <div class="col-12 col-lg-6 feature-container__item">
+                          <div class="resources_item">
+                            <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                              <h3 class="text-capitalize">Document Library</h3>
+                            </div>
+                            <div class="ems-h-dropdown__body">
+                              <!--Respources-->
+                              <ul class="ems-drp-link-list p-0 ems-drp-link-list--w100 d-flex flex-wrap">
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/resources">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/navigation/how-emsigner-works.svg"
+                                        alt="Navigation">
+                                    </div>
+                                    <div class="col-10 col-lg-9">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-0">All Resources</h4>
+
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/case-studies">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid"
+                                        src="/images/icons/navigation/esignature-legality-guide.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10 col-lg-9">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-0">Case Studies</h4>
+
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/datasheets">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/navigation/videos.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10 col-lg-9">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-0">Datasheets</h4>
+
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/faq">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/navigation/release-notes.svg"
+                                        alt="Navigation">
+                                    </div>
+                                    <div class="col-10 col-lg-9">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-0">FAQs</h4>
+
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="ems-h-dropdown__head mb-3 mt-4 mb-lg-4">
+                              <h3 class="text-capitalize">Connect With Us</h3>
+                            </div>
+                            <div class="ems-h-dropdown__body">
+                              <!--Respources-->
+                              <ul class="ems-drp-link-list p-0 ems-drp-link-list--w100 d-flex flex-wrap">
+
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/webinars">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid"
+                                        src="/images/icons/navigation/how-to-trust-service-works.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10 col-lg-9">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-0">Webinars</h4>
+
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/reports">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/navigation/support-center.svg"
+                                        alt="Navigation">
+                                    </div>
+                                    <div class="col-10 col-lg-9">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-0">Reports</h4>
+
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/podcasts">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid"
+                                        src="/images/icons/navigation/how-to-trust-service-works.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10 col-lg-9">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-0">Podcasts</h4>
+
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/events">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid"
+                                        src="/images/icons/navigation/videos.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10 col-lg-9">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-0">Events</h4>
+
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Blogs-->
+                        <div class="col-12 col-lg-6 feature-container__item">
+                          <div>
+                            <div class="ems-h-dropdown__head mb-3 mb-lg-4">
+                              <h3 class="text-capitalize">latest blog posts</h3>
+                            </div>
+                            <div class="ems-h-dropdown__body">
+                              <ul class="ems-drp-link-lg p-0">
+                                                
+                                                <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="/en-in/blog/what-is-machine-identity">
+                                                        <div class="ems-drp-link__img blogs_pro">
+                                                            <img class="img-fluid" src="/images/blog/thumbnails/what-is-machine-identity.svg" alt="BOT IDENTITY — What Is Machine…">
+                                                        </div>
+                                                        <div class="col-9 col-md-10 col-lg-8">
+                                                            <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">What Is Machine Identity? Human vs Non-Human Identities</h4>
+                                                            <p class="fs-14 ems-color-neu500 mb-lg-1">Discover the significance of machine identities, how they differ from human identities, and the importance of securing them in modern cybersecurity.</p>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                
+                                                <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="/en-in/blog/what-is-post-quantum-cryptography-emudhra">
+                                                        <div class="ems-drp-link__img blogs_pro">
+                                                            <img class="img-fluid" src="/images/blog/thumbnails/what-is-post-quantum-cryptography-emudhra.svg" alt="QUANTUM READY — What Is Post-Quantum…">
+                                                        </div>
+                                                        <div class="col-9 col-md-10 col-lg-8">
+                                                            <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">What Is Post-Quantum Cryptography? A Beginner&#39;s Guide</h4>
+                                                            <p class="fs-14 ems-color-neu500 mb-lg-1">Discover the essentials of post-quantum cryptography, its importance, and how to prepare your organization for the quantum computing era.</p>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                
+                                                <li class="ems-drp-link-lg__item">
+                                                    <a class="d-flex ems-drp-link" href="/en-in/blog/what-is-a-consent-management-platform">
+                                                        <div class="ems-drp-link__img blogs_pro">
+                                                            <img class="img-fluid" src="/images/blog/thumbnails/what-is-a-consent-management-platform.svg" alt="MANAGE CONSENT — What Is a Consent…">
+                                                        </div>
+                                                        <div class="col-9 col-md-10 col-lg-8">
+                                                            <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">What Is a Consent Management Platform (CMP)?</h4>
+                                                            <p class="fs-14 ems-color-neu500 mb-lg-1">Discover how a Consent Management Platform (CMP) captures and enforces user consent for personal data, ensuring compliance with modern privacy laws.</p>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                
+                                            </ul>
+
+                            </div>
+                            <a class="link-arr ems-color-primary600 fw-500 text-capitalize"
+                              href="/en-in/blog">All Blog Posts</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-item-header">
+                  <a class="nav-link mb-accordion" href="#">About Us</a>
+                  <div class="nav-dropdown nav-dropdown--sm">
+                    <div class="ems-h-dropdown ">
+                      <div class="row feature-container">
+
+                        <div class="col-12 feature-container__item">
+                          <div class="common-backdrop">
+                            <div class="ems-h-dropdown__body">
+                              <!--Developers Portal-->
+                              <ul class="ems-drp-link-list p-0 d-md-flex flex-wrap">
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/our-history">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/ems-drp-img.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">Our History & Purpose</h4>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/leadership">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/ems-drp-img.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">Leadership</h4>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/board-directors">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/ems-drp-img.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">Board of Directors</h4>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/investors">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/ems-drp-img.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">Investor</h4>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/corporate-social-responsibility">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/ems-drp-img.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">CSR</h4>
+                                    </div>
+                                  </a>
+                                </li>
+
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-item-header">
+                  <a class="nav-link mb-accordion" href="#"
+                    onclick="event.preventDefault(); yourFunction();">Partners</a>
+                  <div class="nav-dropdown nav-dropdown--sm">
+                    <div class="ems-h-dropdown ">
+                      <div class="row feature-container">
+
+                        <div class="col-12 feature-container__item">
+                          <div class="common-backdrop">
+
+                            <div class="ems-h-dropdown__body">
+                              <!--Partners-->
+                              <ul class="ems-drp-link-list p-0 d-md-flex flex-wrap">
+                                <li class="ems-drp-link-list__item">
+                                  <a class="ems-drp-link d-flex flex-wrap" href="/en-in/partners">
+                                    <div class="ems-drp-link__icon">
+                                      <img class="img-fluid" src="/images/icons/ems-drp-img.svg" alt="Navigation">
+                                    </div>
+                                    <div class="col-10">
+                                      <h4 class="fs-16 ems-color-neu800 fw-600 mb-lg-1">Become a Partner</h4>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-item-header box-icon-none d-md-none">
+                  <a class="nav-link" href="/en-in/contact-us">Contact Us</a>
+                </li>
+                <li class="nav-item nav-item-header box-icon-none d-md-none">
+                  <a class="nav-link" href="/en-in/">All Products</a>
+                </li>
+                <li class="nav-item nav-item-header box-icon-none d-md-none">
+                  <div class="country-dropdown">
+                    <button id="toggleMenu"><img src="/images/flags/india.svg" alt="India"> India</button>
+                    <ul id="countryList" class="country-list">
+                      <li data-region="en"><img src="/images/flags/global.svg" alt="Global"> Global</li>
+                      <li data-region="en-in"><img src="/images/flags/india.svg" alt="India"> India</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <div class="d-flex align-items-center header-flex-end justify-content-between d-none d-md-flex">
+                <div class="country-dropdown">
+                  <button id="toggleMenu"><img src="/images/flags/india.svg" alt="India"> India</button>
+                  <ul id="countryList" class="country-list">
+                    <li data-region="en"><img src="/images/flags/global.svg" alt="Global"> Global</li>
+                    <li data-region="en-in"><img src="/images/flags/india.svg" alt="India"> India</li>
+                  </ul>
+                </div>
+                <div class="d-none d-md-flex">
+                  <a class="ems-navlink ems-btn ems-btn--info" href="/en-in/contact-us">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="ems-main-wrapper">
+    <div class="ems-bggradient-multi">
+      <!-- Banner -->
+      <section class="banner-section home-banner mt-md-4">
+        <div class="container">
+          <div class="row ems-flex-v-top ems-banner__row">
+            <div class="banner-content col-xl-7 col-lg-7 col-md-7 col-12">
+              <h1 class="tagline mb-md-3 mb-2">
+                Your Digital Trust and Cybersecurity,<span>
+                    Powered by <strong>
+                        eMudhra
+                      </strong>
+                  </span>
+              </h1>
+              <p class="description mb-md-2 mb-1"><strong>Sign, Secure, Succeed</strong>. eMudhra's trusted digital solutions make compliance easy, workflows faster, and ensure data privacy.</p>
+              <p class="fs-14 mt-0 mb-0" style="color: #9CA3AF; line-height: 1.5;">Used for GST, MCA, Income Tax, Tender submissions, EPFO filings, and more</p>
+              <p class="description mt-3 mb-0">eMudhra's identity, authentication management, and cybersecurity solutions enable large enterprises to thrive in the AI economy.</p>
+              <!-- Numbers Strip -->
+              <style>
+                .em-hero-numbers { display: flex; margin-top: 20px; border-radius: 14px; padding: 0; overflow: hidden;
+                  background: linear-gradient(135deg, #1E3A5F 0%, #2D5F8A 100%); }
+                .em-hero-numbers .ns { flex: 1; display: flex; align-items: center; gap: 10px; padding: 16px 14px; position: relative;
+                  opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+                .em-hero-numbers .ns.visible { opacity: 1; transform: translateY(0); }
+                .em-hero-numbers .ns:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: rgba(255,255,255,0.25); }
+                .em-hero-numbers .ns .si { width: 36px; height: 36px; min-width: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.2); }
+                .em-hero-numbers .ns .si svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+                .em-hero-numbers .ns .st h4 { font-size: 1.35rem; font-weight: 700; color: #fff; margin: 0; line-height: 1.2; white-space: nowrap; }
+                .em-hero-numbers .ns .st h4 .sfx { color: #FFEEDD; }
+                .em-hero-numbers .ns .st p { font-size: 0.7rem; color: rgba(255,255,255,0.8); margin: 2px 0 0; line-height: 1.25; }
+                @media (max-width: 991px) { .em-hero-numbers { flex-wrap: wrap; margin-bottom: 30px; } .em-hero-numbers .ns { flex: 1 1 50%; } .em-hero-numbers .ns:nth-child(2)::after { display: none; } }
+                @media (max-width: 575px) { .em-hero-numbers .ns { flex: 1 1 50%; padding: 12px 10px; gap: 8px; }
+                  .em-hero-numbers .ns .si { width: 30px; height: 30px; min-width: 30px; border-radius: 8px; }
+                  .em-hero-numbers .ns .si svg { width: 15px; height: 15px; }
+                  .em-hero-numbers .ns .st h4 { font-size: 1.1rem; } .em-hero-numbers .ns .st p { font-size: 0.65rem; } }
+              </style>
+              <div class="em-hero-numbers" id="hero-counter-box">
+                <div class="ns" style="transition-delay:0s"><div class="si"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="st"><h4><span class="hero-counter" data-number="1000">1,000</span><span class="sfx">+</span></h4><p>Large Enterprise Customers</p></div></div>
+                <div class="ns" style="transition-delay:.1s"><div class="si"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="st"><h4><span class="hero-counter" data-number="100">100</span>M<span class="sfx">+</span></h4><p>Digital Certificates Issued</p></div></div>
+                <div class="ns" style="transition-delay:.2s"><div class="si"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="st"><h4>4.6<span class="sfx">&#9733;</span></h4><p>Rating on Gartner Peer Insights</p></div></div>
+                <div class="ns" style="transition-delay:.3s"><div class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="st"><h4><span class="hero-counter" data-number="50">50</span><span class="sfx">+</span></h4><p>Countries with Active Customers</p></div></div>
+              </div>
+              <script>
+              (function() {
+                var box = document.getElementById('hero-counter-box');
+                if (!box) return;
+                // JS enabled: reset the static seeded fallback to 0 so the count-up
+                // starts cleanly from 0 with no flash of the final value. Non-JS /
+                // HTML-scrape keeps the seeded value already rendered in the span.
+                box.querySelectorAll('.hero-counter').forEach(function(el) { el.textContent = '0'; });
+                var animated = false;
+                var observer = new IntersectionObserver(function(entries) {
+                  entries.forEach(function(e) {
+                    if (e.isIntersecting && !animated) {
+                      animated = true;
+                      box.querySelectorAll('.ns').forEach(function(el) {
+                        var delay = parseFloat(el.style.transitionDelay) * 1000 || 0;
+                        setTimeout(function() { el.classList.add('visible'); }, delay);
+                      });
+                      box.querySelectorAll('.hero-counter').forEach(function(el) {
+                        var target = parseInt(el.getAttribute('data-number'), 10) || 0;
+                        var duration = 1800, startTime = null;
+                        function step(ts) {
+                          if (!startTime) startTime = ts;
+                          var progress = Math.min((ts - startTime) / duration, 1);
+                          var ease = 1 - Math.pow(1 - progress, 3);
+                          el.textContent = Math.ceil(ease * target).toLocaleString('en');
+                          if (progress < 1) requestAnimationFrame(step);
+                        }
+                        requestAnimationFrame(step);
+                      });
+                      observer.disconnect();
+                    }
+                  });
+                }, { threshold: 0.3 });
+                observer.observe(box);
+              })();
+              </script>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-5 offset-lg-1 text-center">
+              <div class="sidebar">
+                <h3 class="fs-14">Featured Products</h3>
+                <!-- Unified Stack Product List Styles -->
+                <style>
+                  .em-product-stack {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    background: #fff;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+                  }
+                  .em-product-item {
+                    position: relative;
+                  }
+                  /* 1. Visual Dividers - solid light-grey bottom border */
+                  .em-product-item:not(:last-child) {
+                    border-bottom: 1px solid #E5E7EB;
+                  }
+                  .em-product-item .product-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    padding: 17px 18px;
+                    padding-left: 20px;
+                    background: #fff;
+                    text-decoration: none;
+                    position: relative;
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                    border-left: 4px solid transparent;
+                    border-radius: 4px;
+                    /* 4. Explicit cursor cue on entire row */
+                    cursor: pointer;
+                  }
+                  .em-product-item .product-link:hover {
+                    transform: scale(1.02);
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+                    z-index: 10;
+                    border-left-color: #f26739;
+                    border-radius: 4px;
+                  }
+                  .em-product-item .product-link:hover .product-name {
+                    color: #f26739;
+                  }
+                  .em-product-item .product-link:hover .product-arrow-btn {
+                    transform: translateY(-50%) scale(1.1);
+                    background: #E54E1B;
+                  }
+                  /* 3. Strict vertical centering - icon container */
+                  .em-product-item .product-icon {
+                    width: 40px;
+                    height: 40px;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
+                  .em-product-item .product-icon img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                  }
+                  /* 3. Strict vertical centering - text block */
+                  .em-product-item .product-info {
+                    flex: 1;
+                    text-align: left;
+                    padding-right: 48px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  }
+                  .em-product-item .product-name {
+                    font-size: 14.5px;
+                    font-weight: 600;
+                    color: #1F2A37;
+                    margin: 0 0 3px 0;
+                    transition: color 0.2s ease;
+                    line-height: 1.3;
+                  }
+                  .em-product-item .product-tagline {
+                    font-size: 12.5px;
+                    color: var(--neutral-500, #6B7280);
+                    margin: 0;
+                    line-height: 1.4;
+                  }
+                  /* Bold Orange Action Button - strictly centered */
+                  .em-product-item .product-arrow-btn {
+                    position: absolute;
+                    right: 16px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 34px;
+                    height: 34px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #f26739;
+                    border-radius: 50%;
+                    transition: all 0.2s ease;
+                  }
+                  .em-product-item .product-arrow-btn svg {
+                    width: 18px;
+                    height: 18px;
+                    stroke: #fff;
+                    stroke-width: 2.5;
+                  }
+                  @media (max-width: 767px) {
+                    .em-product-item .product-link {
+                      padding: 18px 14px;
+                      padding-left: 16px;
+                    }
+                    .em-product-item .product-icon {
+                      width: 38px;
+                      height: 38px;
+                    }
+                    .em-product-item .product-info {
+                      padding-right: 44px;
+                    }
+                    .em-product-item .product-arrow-btn {
+                      width: 30px;
+                      height: 30px;
+                      right: 12px;
+                    }
+                    .em-product-item .product-arrow-btn svg {
+                      width: 16px;
+                      height: 16px;
+                    }
+                  }
+                </style>
+                
+                <ul class="em-product-stack">
+                  
+                  <li class="em-product-item">
+                    <a href="https://emudhradigital.com/" class="product-link" target="_blank">
+                      <div class="product-icon">
+                        <img src="/images/home/product/emudhra-digital-fav.svg" alt="eMudhra Digital">
+                      </div>
+                      <div class="product-info">
+                        <h4 class="product-name">eMudhra Digital</h4>
+                        <p class="product-tagline">Buy Digital Signature Certificate in 3 clicks. 100% paperless.</p>
+                      </div>
+                      <span class="product-arrow-btn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+                  
+                  <li class="em-product-item">
+                    <a href="/en-in/emsigner" class="product-link">
+                      <div class="product-icon">
+                        <img src="/images/home/product/emsigner-fav.svg" alt="emSigner">
+                      </div>
+                      <div class="product-info">
+                        <h4 class="product-name">emSigner</h4>
+                        <p class="product-tagline">Sign smarter. Approve faster. Go fully paperless with ease.</p>
+                      </div>
+                      <span class="product-arrow-btn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+                  
+                  <li class="em-product-item">
+                    <a href="/en-in/securepass" class="product-link">
+                      <div class="product-icon">
+                        <img src="/images/home/product/securepass-fav.svg" alt="SecurePass">
+                      </div>
+                      <div class="product-info">
+                        <h4 class="product-name">SecurePass</h4>
+                        <p class="product-tagline">Converged identity platform for authentication, access management and identity governance</p>
+                      </div>
+                      <span class="product-arrow-btn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+                  
+                  <li class="em-product-item">
+                    <a href="/en-in/certinext" class="product-link">
+                      <div class="product-icon">
+                        <img src="/images/home/product/certinext-fav.svg" alt="CertiNext">
+                      </div>
+                      <div class="product-info">
+                        <h4 class="product-name">CertiNext</h4>
+                        <p class="product-tagline">Buy, discover, provision and manage lifecycle of SSL/TLS certificates</p>
+                      </div>
+                      <span class="product-arrow-btn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+                  
+
+                  
+                  <li class="em-product-item">
+                    <a href="/en-in/privatrust" class="product-link">
+                      <div class="product-icon">
+                        <img src="/images/home/product/privatrust-fav.svg" alt="PrivaTrust">
+                      </div>
+                      <div class="product-info">
+                        <h4 class="product-name">PrivaTrust</h4>
+                        <p class="product-tagline">Unified privacy & data governance platform for DPDP, GDPR & HIPAA compliance</p>
+                      </div>
+                      <span class="product-arrow-btn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+                  
+
+                </ul>
+                <div class="box-btm" hidden>
+                  <a class="ems-btn ems-btn--info px-4 fs-14" href="/en-in/contact-us">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Trust -->
+      <section class="ems-space100 sec-workflow">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-xl-4 ems-leadcontent text-left">
+              <h2 class="ems-section-title fs-16 mb-3">
+                Trusted Globally
+              </h2>
+              <h3 class="h2">
+                Customers mean everything to us.
+              </h3>
+              <p class="fs-18 my-2">
+                We build trust by delivering secure, reliable, and customer-first solutions.
+              </p>
+              <div class="ems-btns-group ems-btns-group--lg ems-btns-equal">
+                <a class="ems-btn ems-btn--info" href="/en-in/case-studies" target="_blank">Case
+                  Studies</a>
+              </div>
+            </div>
+            <div class="col-md-7 col-xl-7 text-center offset-lg-1">
+              <div class="custom-brand justify-content-center">
+                
+                  
+                    
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/icicbank.svg" alt="ICICI Bank">
+                      </div>
+                      
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/tcs.svg" alt="TCS">
+                      </div>
+                      
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/infosys.svg" alt="Infosys">
+                      </div>
+                      
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/benz.svg" alt="Mercedes-Benz">
+                      </div>
+                      
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/airtel.svg" alt="Airtel">
+                      </div>
+                      
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/db.svg" alt="Deutsche Bank">
+                      </div>
+                      
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/tata-motors.svg" alt="Tata Motors">
+                      </div>
+                      
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/tm.svg" alt="Telekom Malaysia">
+                      </div>
+                      
+                      <div class="custom-bg">
+                        <img class="img-fluid" src="/images/home/client/amazon.svg" alt="Amazon">
+                      </div>
+                      
+                        
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Client logos -->
+
+    </div>
+
+    <section class="ems-space100 ems-bggradient-sec position-relative" hidden>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-xl-10 mx-auto ems-leadcontent text-center">
+            <h2 class="ems-section-title fs-16 mb-3">Usecases</h2>
+            <h3 class="h2"></h3>
+            <p class="fs-18 my-2"></p>
+          </div>
+        </div>
+        <div class="row d-flex pt-4 pt-md-5">
+          <div class="ems-tabs-container">
+            <ul class="nav nav-pills ems-tabs-vertical" id="pills-tab" role="tablist">
+              <li class="nav-item show" role="presentation">
+                <button class="mb-2 nav-link active" id="pills-workflows-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-workflows" type="button" role="tab" aria-controls="pills-workflows"
+                  aria-selected="true">
+                  eSignature of automation
+                </button>
+                <div class="nav-item-content d-md-none">
+                  <p>Regulation and controls on privacy & protection of personal data</p>
+                </div>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="mb-2 nav-link" id="pills-security-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-security" type="button" role="tab" aria-controls="pills-security"
+                  aria-selected="false">
+                  Authentication & Access
+                </button>
+                <div class="nav-item-content d-md-none">
+                  <p>Assessment of effectiveness of internal controls on protection of consumer data</p>
+                </div>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="mb-2 nav-link" id="pills-signatures-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-signatures" type="button" role="tab" aria-controls="pills-signatures"
+                  aria-selected="false">
+                  Data Privacy
+                </button>
+                <div class="nav-item-content d-md-none">
+                  <p>FDA's regulation for electronic documentation and electronic signatures</p>
+
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" hidden>
+                <button class="mb-2 nav-link" id="pills-scale-tab" data-bs-toggle="pill" data-bs-target="#pills-scale"
+                  type="button" role="tab" aria-controls="pills-scale" aria-selected="false">
+                  HIPAA
+                </button>
+                <div class="nav-item-content d-md-none">
+                  <p>Certification towards ensuring privacy, security, and integrity of protected healthcare data</p>
+                  <!-- only mobile -->
+                  <img class="ems-imgfit d-md-none" src="/images/home/features/features-four.png"
+                    alt="Scale Without Limits" />
+                </div>
+              </li>
+              <li class="nav-item" role="presentation" hidden>
+                <button class="mb-2 nav-link" id="pills-globalstandards-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-globalstandards" type="button" role="tab" aria-controls="pills-scale"
+                  aria-selected="false">
+                  ISO
+                </button>
+                <div class="nav-item-content d-md-none">
+                  <p>Standards organization defining several quality adherence specifications.</p>
+
+                </div>
+              </li>
+
+
+            </ul>
+
+            <div class="tab-content d-none d-md-block" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-workflows" role="tabpanel"
+                aria-labelledby="pills-workflows-tab" tabindex="0">
+                <h3 class="fs-20">Workflows</h3>
+
+              </div>
+              <div class="tab-pane fade" id="pills-security" role="tabpanel" aria-labelledby="pills-security-tab"
+                tabindex="0">
+                <h3 class="fs-20">Security</h3>
+
+              </div>
+              <div class="tab-pane fade" id="pills-signatures" role="tabpanel" aria-labelledby="pills-signatures-tab"
+                tabindex="0">
+                <h3 class="fs-20">signatures</h3>
+
+              </div>
+              <div class="tab-pane fade" id="pills-scale" role="tabpanel" aria-labelledby="pills-scale-tab"
+                tabindex="0">
+                <h3 class="fs-20">scale</h3>
+
+              </div>
+              <div class="tab-pane fade" id="pills-globalstandards" role="tabpanel"
+                aria-labelledby="pills-globalstandards-tab" tabindex="0">
+                <h3 class="fs-20">Global Standards</h3>
+
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ems-space100 ems-section-overflow pt-2">
+      <div class="container">
+        <div class="row pb-md-5 pb-4">
+          <div class="col-md-10 mx-auto text-center ems-leadcontent">
+            <h2 class="ems-section-title fs-16 mb-3">Trusted Digital Security</h2>
+            <h3 class="h2">
+              Securing the Digital Future with Quantum Ready Trusted Solutions
+            </h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="slider-wrapper ems-sliderfluid-wrapper">
+              <div class="swiper mySwiperReviews pb-md-4 ems-sliderfluid-swiper ems-slider-vw100" data-no-autoplay="true">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="ems-review-listitem">
+                      <div class="swiper-icons">
+                        <img src="/images/home/icons/one_enterprise_paperless.svg"
+                          alt="Enterprise Paperless Transformation">
+                      </div>
+                      <h4 class="fs-20 fw-700">
+                        Enterprise Paperless Transformation
+                      </h4>
+                      <p class="ems-review-listitem__des">
+                        Drive complete digitalization of enterprise processes with secure, legally compliant, and efficient paperless workflows.
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-review-listitem">
+                      <div class="swiper-icons">
+                        <img src="/images/home/icons/two_zero_trust.svg"
+                          alt="Zero Trust Adoption">
+                      </div>
+                      <h4 class="fs-20 fw-700">
+                        Zero Trust Adoption
+                      </h4>
+                      <p class="ems-review-listitem__des">
+                        Enable robust security by verifying every user and device before granting access to resources.
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-review-listitem">
+                      <div class="swiper-icons">
+                        <img src="/images/home/icons/three_iot_trusted.svg" alt="IoT Trusted Communication">
+                      </div>
+                      <h4 class="fs-20 fw-700">
+                        IoT Trusted Communication
+                      </h4>
+                      <p class="ems-review-listitem__des">Secure connected devices with trusted identities and encrypted
+                        communication across IoT ecosystems.</p>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-review-listitem">
+                      <div class="swiper-icons">
+                        <img src="/images/home/icons/four_cryptography.svg"
+                          alt="Cryptography">
+                      </div>
+                      <h4 class="fs-20 fw-700">
+                        Cryptography
+                      </h4>
+                      <p class="ems-review-listitem__des">
+                        Deliver cutting-edge cryptographic solutions to protect data, communications, and transactions at scale.
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-review-listitem">
+                      <div class="swiper-icons">
+                        <img src="/images/home/icons/five_epassport.svg" alt="ePassport">
+                      </div>
+                      <h4 class="fs-20 fw-700">
+                        ePassport
+                      </h4>
+                      <p class="ems-review-listitem__des">Provide secure, standards-compliant digital passport solutions
+                        ensuring identity integrity and global interoperability.</p>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-review-listitem">
+                      <div class="swiper-icons">
+                        <img src="/images/home/icons/six_certificate.svg"
+                          alt="Certificate Automation">
+                      </div>
+                      <h4 class="fs-20 fw-700">
+                        Certificate Automation
+                      </h4>
+                      <p class="ems-review-listitem__des">
+                        Automate certificate lifecycle management to eliminate manual errors and ensure continuous compliance.
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-review-listitem">
+                      <div class="swiper-icons">
+                        <img src="/images/home/icons/seven_data.svg" alt="Data Privacy">
+                      </div>
+                      <h4 class="fs-20 fw-700">
+                        Data Privacy
+                      </h4>
+                      <p class="ems-review-listitem__des">Safeguard sensitive data through advanced privacy controls,
+                        encryption, and regulatory compliance.</p>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-review-listitem">
+                      <div class="swiper-icons">
+                        <img src="/images/home/icons/eight_tls.svg" alt="TLS & Other Certificates">
+                      </div>
+                      <h4 class="fs-20 fw-700">
+                        TLS & Other Certificates
+                      </h4>
+                      <p class="ems-review-listitem__des">Offer end-to-end management and automation of TLS and other
+                        digital certificates for secure operations.</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ems-blogs ems-bg-purple ems-space100 position-relative">
+      <div class="container">
+        <section class="video-section">
+          <video id="bgVideo" autoplay muted loop>
+            <source src="/images/home/resources/eMudhra_helping_you.mp4" type="video/mp4">
+          </video>
+
+
+          <div class="video-controls">
+            <button class="control-btn" id="playPauseBtn">
+              <!-- Pause Icon Default -->
+              <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+              </svg>
+              <!-- Play Icon -->
+              <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:none;">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+          </div>
+        </section>
+    </section>
+    <section class="ems-blogs  ems-space100 position-relative">
+      <div class="container">
+        <div class="col-md-12 ems-leadcontent text-center mb-4 mb-md-5">
+          <h2 class="ems-section-title fs-16 mb-3">Product Suite</h2>
+          <h3 class="h2">Interoperability that Drives Business Value</h3>
+        </div>
+        <style>.em-prduct-item .ems-cardthumbnail__logo{margin-top:0;margin-bottom:0}.em-prduct-item .ems-cardthumbnail__body{flex-grow:1}</style>
+        <div class="row ems-mob-static em-prduct-item">
+          <div class="col-md-6 col-lg-3 col-12 d-flex">
+            <a href="/en-in/certinext" class="ems-cardthumbnail">
+              <div class="ems-cardthumbnail__logo mb-1">
+                <img class="ems-imgfit ems-brandlogo" src="/images/home/product/certinext-logo.svg" alt="CertiNext" />
+              </div>
+              <div class="ems-cardthumbnail__body">
+                <p class="fs-16">An integrated enterprise platform for Managed PKI, certificate lifecycle and key
+                  automation, enabling crypto-agility, policy enforcement, and seamless trust management across complex
+                  digital ecosystems.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3 col-12 d-flex">
+            <a href="/en-in/emsigner" class="ems-cardthumbnail">
+              <div class="ems-cardthumbnail__logo mb-1">
+                <img class="ems-imgfit ems-brandlogo" src="/images/home/product/emsigner-logo.svg" alt="emSigner" />
+              </div>
+              <div class="ems-cardthumbnail__body">
+                <p class="fs-16">A comprehensive, secure eSignature suite that streamlines digital workflows, enables
+                  bulk signing, eSeal, and eSign, ensuring legally compliant and frictionless approvals at enterprise
+                  scale.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3 col-12 d-flex">
+            <a href="/en-in/securepass" class="ems-cardthumbnail">
+              <div class="ems-cardthumbnail__logo mb-1">
+                <img class="ems-imgfit ems-brandlogo" src="/images/home/product/securepass-logo.svg" alt="SecurePass" />
+              </div>
+              <div class="ems-cardthumbnail__body">
+                <p class="fs-16">A scalable Identity Management suite powering Zero Trust security with adaptive
+                  authentication, privileged access, and customer identity management for seamless, secure digital
+                  experiences.</p>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-3 col-12 d-flex">
+            <a href="https://emudhradigital.com/" target="_blank" class="ems-cardthumbnail">
+              <div class="ems-cardthumbnail__logo mb-1">
+                <img class="ems-imgfit ems-brandlogo" src="/images/home/product/emudhra-digital-logo.svg" alt="eMudhra Digital" />
+              </div>
+              <div class="ems-cardthumbnail__body">
+                <p class="fs-16">A comprehensive platform for issuance of digital signature certificates to individuals
+                  and corporates. 100% paperless, instant delivery.</p>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- Datasheets, Webinars & Use Cases -->
+    <section class="ems-space120 ems-bggradient-topbtm ems-space100">
+      <div class="container">
+        <div class="row gx-4 align-items-center">
+          <div class="col-md-5 col-xl-5 ems-leadcontent ems-leadcontent-overide pb-4 pb-md-0">
+            <div class="ems-stickside">
+              <h2 class="ems-section-title fs-16 mb-3">Resources</h2>
+              <h3 class="h2">Datasheets, Webinars & Use Cases</h3>
+              <p class="fs-18 my-2">Explore datasheets, webinars, and real-world use cases that showcase how our
+                solutions empower organizations to enhance security, ensure compliance, and drive digital growth.</p>
+            </div>
+          </div>
+          <div class="col-md-7 col-xl-7">
+            <div class="ems-solution-card ems-recbox">
+              <a href="https://emudhra.com/en-in/emsigner/case-studies" target="_blank">
+                <div class="ems-figure-recbox emsig-figure-recbox emsig-figure-recbox-default border-0">
+                  <img class="ems-imgfit max-280 recbox-screen emsig-figure-recbox__fig"
+                    src="/images/home/resources/client-case-study.jpg" alt="Datasheets, Webinars & Use Cases">
+                </div>
+                <h4 class="fs-24 ems-color-neu800 mt-3">Datasheets, Webinars & Use Cases</h4>
+                <p class="ems-solution-card__des">See how leading enterprises are driving digital transformation and
+                  achieving secure, scalable growth with our solutions.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News & Updates -->
+    <section class="ems-space100 position-relative">
+      <div class="container mb-4">
+        <h2 class="ems-section-title bg-white fs-16 mb-3">Newsroom</h2>
+      </div>
+      <style>
+        .em-newsroom-cta { position: relative; border-radius: 20px; overflow: hidden; min-height: 320px; display: flex; align-items: center; }
+        .em-newsroom-cta__bg { position: absolute; inset: 0; }
+        .em-newsroom-cta__bg img { width: 100%; height: 100%; object-fit: cover; }
+        .em-newsroom-cta__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(17,24,39,0.92) 0%, rgba(30,58,95,0.85) 100%); }
+        .em-newsroom-cta__inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 3rem; }
+        .em-newsroom-cta__content { max-width: 520px; }
+        .em-newsroom-cta__label { display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #FF8C42; margin-bottom: 16px; }
+        .em-newsroom-cta__content h3 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.3; }
+        .em-newsroom-cta__content p { font-size: 1.05rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 24px; }
+        .em-newsroom-cta__btn { display: inline-block; padding: 12px 28px; background: transparent; color: #fff; font-weight: 600; font-size: 0.95rem; border: 1px solid #fff; border-radius: 8px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease; }
+        .em-newsroom-cta__btn:hover { background: #fff; color: #111928; }
+        .em-newsroom-cta__headlines { display: flex; flex-direction: column; gap: 12px; min-width: 340px; }
+        .em-newsroom-cta__headlines a { display: flex; align-items: flex-start; gap: 12px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px 18px; text-decoration: none; transition: background 0.2s ease; backdrop-filter: blur(4px); }
+        .em-newsroom-cta__headlines a:hover { background: rgba(255,255,255,0.14); }
+        .em-newsroom-cta__headlines .nh-date { flex-shrink: 0; background: rgba(255,138,66,0.15); border-radius: 8px; padding: 6px 10px; text-align: center; min-width: 52px; }
+        .em-newsroom-cta__headlines .nh-date span { display: block; font-size: 0.7rem; color: #FF8C42; line-height: 1.2; font-weight: 600; }
+        .em-newsroom-cta__headlines .nh-date span.nh-month { font-size: 0.65rem; font-weight: 400; text-transform: uppercase; }
+        .em-newsroom-cta__headlines .nh-text { font-size: 0.88rem; color: rgba(255,255,255,0.85); line-height: 1.45; }
+        @media (max-width: 991px) { .em-newsroom-cta__inner { flex-direction: column; gap: 2rem; align-items: flex-start; } .em-newsroom-cta__headlines { min-width: auto; width: 100%; } }
+        @media (max-width: 767px) { .em-newsroom-cta { min-height: auto; } .em-newsroom-cta__inner { padding: 2rem; } .em-newsroom-cta__content h3 { font-size: 1.5rem; } }
+      </style>
+      <div class="container">
+        <div class="em-newsroom-cta">
+          <div class="em-newsroom-cta__bg">
+            <img src="/images/home/resources/news.jpg" alt="News & Updates">
+          </div>
+          <div class="em-newsroom-cta__overlay"></div>
+          <div class="em-newsroom-cta__inner">
+            <div class="em-newsroom-cta__content">
+              <span class="em-newsroom-cta__label">Newsroom</span>
+              <h3>News & Updates</h3>
+              <p>Stay updated with the latest announcements, product updates, and industry insights shaping the future of trust and security.</p>
+              <a href="https://emudhra.com/en-in/press-release" target="_blank" class="em-newsroom-cta__btn">View All Updates &rarr;</a>
+            </div>
+            <div class="em-newsroom-cta__headlines">
+              <a href="https://emudhra.com/en-in/press-release/emudhra-behavioral-trust-risks-autonomous-ai-systems" target="_blank">
+                <div class="nh-date"><span>11</span><span class="nh-month">Mar 2026</span></div>
+                <span class="nh-text">eMudhra Highlights Emerging 'Behavioral Trust' Risks in Autonomous AI Systems</span>
+              </a>
+              <a href="https://emudhra.com/en-in/press-release/emudhra-strong-authentication-nis2-dora-cybersecurity" target="_blank">
+                <div class="nh-date"><span>05</span><span class="nh-month">Mar 2026</span></div>
+                <span class="nh-text">eMudhra Calls for Strong Authentication as NIS2 and DORA Expand Enterprise Cybersecurity Obligations</span>
+              </a>
+              <a href="https://emudhra.com/en-in/press-release/emudhra-ai-trust-infrastructure" target="_blank">
+                <div class="nh-date"><span>26</span><span class="nh-month">Feb 2026</span></div>
+                <span class="nh-text">eMudhra Introduces Trust Infrastructure for AI Economy</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case studies -->
+    <section class="ems-space100 position-relative pt-2" style="overflow: hidden;">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-xl-4 pe-0 ems-leadcontent">
+            <h2 class="ems-section-title bg-white fs-16 mb-3">Industry Recognition</h2>
+            <h3 class="h2">Recognized by industry experts</h3>
+            <p class="fs-18">Independent research firms and global analysts have consistently recognized eMudhra for its
+              innovation, leadership, and trusted digital solutions.</p>
+          </div>
+          <div class="col-md-8 pt-5 pt-md-0">
+            <div class="slider-wrapper ems-sliderfluid-wrapper">
+              <div class="swiper mySwiperCasestudies pb-4 pe-3 ems-sliderfluid-swiper ems-slider-vw75">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="ems-cardthumbnail ems-cardthumbnail--innerborder">
+                      <div class="ems-cardthumbnail__fig ems-flex-v-center">
+                        <img class="ems-img-cover mx-auto ems-brandlogo" src="/images/home/gartner_logo.svg"
+                          alt="Gartner" />
+                      </div>
+                      <div class="ems-cardthumbnail__body">
+                        <h3 class="ems-cardthumbnail__heading">
+                          Gartner
+                        </h3>
+                        <p>emSigner recognized in Gartner's eSignature Market Guide Report as an 'Enterprise Full
+                          Service eSignature Solution Provider'. emSigner and emCA have been mentioned in a number of
+                          Gartner reports over the years</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-cardthumbnail ems-cardthumbnail--innerborder">
+                      <div class="ems-cardthumbnail__fig ems-flex-v-center">
+                        <img class="ems-img-cover mx-auto ems-brandlogo" src="/images/home/idc_logo.svg" alt="IDC" />
+                      </div>
+                      <div class="ems-cardthumbnail__body">
+                        <h3 class="ems-cardthumbnail__heading">
+                          IDC
+                        </h3>
+                        <p>eMudhra is ranked 1st amongst 42 vendors in the 'Identity and Digital Trust' space in India
+                          in IDC's semi-annual market tracker. eMudhra has consistently led the space and expanded to
+                          operate in more than 30 countries today where aim to make a difference.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-cardthumbnail ems-cardthumbnail--innerborder">
+                      <div class="ems-cardthumbnail__fig ems-flex-v-center">
+                        <img class="ems-img-cover mx-auto ems-brandlogo" src="/images/home/frost_sullivan_logo.svg"
+                          alt="Frost & Sullivan" />
+                      </div>
+                      <div class="ems-cardthumbnail__body">
+                        <h3 class="ems-cardthumbnail__heading">
+                          Frost & Sullivan
+                        </h3>
+                        <p>Read Frost & Sullivan's report focused on understanding the current market landscape of PKI
+                          where growth is expected to continue at more than 30% YoY. The report also talks about how
+                          eMudhra is placed in the industry and our leadership position in India.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="ems-cardthumbnail ems-cardthumbnail--innerborder">
+                      <div class="ems-cardthumbnail__fig ems-flex-v-center">
+                        <img class="ems-img-cover mx-auto ems-brandlogo" src="/images/home/G2-Star.svg" alt="G2" />
+                      </div>
+                      <div class="ems-cardthumbnail__body">
+                        <h3 class="ems-cardthumbnail__heading">
+                          G2
+                        </h3>
+                        <p>emSigner by eMudhra is consistently placed in the Leader's Quadrant on G2, earning leadership
+                          badges across multiple regions including MEA, APAC, and India.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ems-space100 position-relative text-center pt-2">
+
+      <div class="container">
+        <h2 class="ems-section-title bg-white fs-16 mb-3">Stay Connected</h2>
+        <h3 class="h2 mb-4">Partner and Connect</h3>
+        <div class="info-section">
+          <a href="/en-in/partners" class="info-card">
+            <!-- Handshake / Partner -->
+            <img src="/images/home/icons/handshake.svg" alt="Partner">
+            <p>Partner with Us</p>
+          </a>
+
+          
+          <a href="https://www.linkedin.com/company/emudhra/" target="_blank" class="info-card">
+            <!-- LinkedIn -->
+            <img src="/images/home/icons/linkedin.svg" alt="LinkedIn">
+            <p>Follow us on LinkedIn</p>
+          </a>
+          
+        </div>
+      </div>
+    </section>
+    <!-- Awards -->
+
+
+    <section class="ems-space100 ems-bg-purple text-center">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-10 ems-leadcontent mx-auto">
+            <h2 class="ems-section-title fs-16 mb-3">Awards</h2>
+            <h3 class="h2">Recognized for Excellence</h3>
+            <p class="fs-18 mb-3 pb-4">Our industry accolades reflect our commitment to innovation customer satisfaction
+              and our global reach. These recognitions inspire us to keep pushing boundaries in secure digital
+              transformation.</p>
+          </div>
+        </div>
+        <div class="award-layout">
+          <div class="award-box">
+            <div class="ems-cardthumbnail__fig ems-award">
+              <img src="/images/home/awards/frost.png" alt="eSignature Category">
+            </div>
+            <div class="rating-text">
+              <p>Global PKI-as-a-Service Competitive Strategy Leadership Award</p>
+            </div>
+          </div>
+
+
+          <div class="award-box">
+            <div class="ems-cardthumbnail__fig ems-award">
+              <img src="/images/home/awards/esign-lead-asia.png" alt="esign-lead-asia">
+            </div>
+            <div class="rating-text">
+              <p>emSigner - eSignature Category</p>
+            </div>
+          </div>
+
+
+          <div class="award-box">
+            <div class="ems-cardthumbnail__fig ems-award">
+              <img src="/images/home/awards/great-place-to-work.png" alt="Great Place to Work 2026">
+            </div>
+            <div class="rating-text">
+              <p>Great Place to Work&reg; Certified - 2026</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="ems-bggradient-pri" id="footer-india">
+    <section class="ems-space100">
+
+      <div class="container em-get-foot">
+        <h2 class="h2 text-center">Ready to Try?</h2>
+        <div class="mt-4 pt-3 text-center">
+          <a href="/en-in/contact-us" class="ems-btn ems-btn--info">Connect with sales</a>
+        </div>
+      </div>
+    </section>
+    <footer class="ems-footer pt-4 pt-md-5 pb-3">
+      <div class="container">
+        <div class="ems-footer-container">
+          <!-- Left wrapper -->
+          <div class="ems-footer__left-wrap">
+            <a href="/en-in/">
+              <img class="brand" src="/images/brandlogos/logo.png" alt="eMudhra logo" />
+            </a>
+            <p class="fs-16 mt-3 mt-md-4">Empowering digital transformation through trusted identity, signatures, and
+              secure enterprise solutions.</p>
+          </div>
+          <!-- Right wrapper -->
+          <div class="ems-footer__right-wrap pt-4 mt-4 pt-md-0 mt-md-0">
+
+            <div class="ems-footermenu-list">
+              <div class="ems-footermenu-item mb-3 mb-md-0">
+                <h6 class="fs-14 ems-footermenu-heading fw-600 mb-3">Company</h6>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/our-history">Our History & Purpose</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/leadership">Leadership</a>
+                
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/board-directors">Board of Directors</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/investors">Investor</a>
+                
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/environment-social-and-governance">ESG</a>
+                
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/corporate-social-responsibility">CSR</a>
+                
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/sitemap">Sitemap</a>
+              </div>
+            </div>
+            <div class="ems-footermenu-list">
+              <div class="ems-footermenu-item mb-2 mb-md-0">
+                <h6 class="fs-14 ems-footermenu-heading fw-600 mb-3">Contact</h6>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/contact-us">Contact Sales</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/media-contacts">Media Contacts</a>
+              </div>
+              <div class="ems-footermenu-item mb-3 mb-md-0">
+                <h6 class="fs-14 ems-footermenu-heading fw-600 mb-3">FAQs</h6>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/faq/what-is-pki-and-how-does-it-work">What is PKI</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/faq/what-is-identity-and-access-management-iam-solution">What is IAM</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/faq/what-is-certificate-lifecycle-management">What is CLM</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/faq/what-is-ca-ssl-tls-security-emudhra">What is SSL/TLS</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/faq/what-is-zero-trust-security-and-how-does-it-work">What is Zero Trust</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/faq/what-is-multi-factor-authentication">What is MFA</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/faq/difference-between-mfa-and-2fa">Two-Factor
+                  Authentication</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/faq/what-is-a-key-management-system-kms">Key Management System</a>
+              </div>
+
+            </div>
+            <div class="ems-footermenu-list">
+              <div class="ems-footermenu-item mb-2 mb-md-0">
+                <h6 class="fs-14 ems-footermenu-heading fw-600 mb-3">Legal</h6>
+                <a class="ems-footermenu-link d-block mb-2"
+                  href="/en-in/emsigner/esignature-legality-guide">eSignature Legality Guide</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/terms-of-use">Terms of Use</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/disclaimer">Legal Disclaimer</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/privacy-policy">Privacy Policy</a>
+                <a class="ems-footermenu-link d-block mb-2" href="#" onclick="if(window.PrivaTrustCMP&&PrivaTrustCMP.showPreferences){PrivaTrustCMP.showPreferences();}return false;">Cookie Preferences</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/cookie-policy">Cookie Policy</a>
+              </div>
+
+              <div class="ems-footermenu-item mb-3 mb-md-0">
+                <h6 class="fs-14 ems-footermenu-heading fw-600 mb-3">Partners</h6>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/partners">Become a Partner</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/partners">Meet our Partners</a>
+              </div>
+            </div>
+            <div class="ems-footermenu-list">
+              <div class="ems-footermenu-item mb-3 mb-md-0">
+                <h6 class="fs-14 ems-footermenu-heading fw-600 mb-3">Resources</h6>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/blog">Blog</a>
+                
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/press-release">Press
+                  Release</a>
+                
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/case-studies">Case Studies</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/datasheets">Datasheets</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/webinars">Webinars</a>
+                <a class="ems-footermenu-link d-block mb-2" href="/en-in/reports">Reports</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ems-footer-sub mt-4 pt-4 border-top">
+          <p class="fs-12 mb-2 mb-md-0">© 2026 eMudhra. All rights reserved.</p>
+          <div class="ems-footer-socialnav">
+
+            <a href="https://www.linkedin.com/company/emudhra/">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_27_11891)">
+                  <path
+                    d="M17.0324 0H4.96762C2.22408 0 0 2.23438 0 4.99062V17.0094C0 19.7656 2.22408 22 4.96762 22H17.0324C19.7759 22 22 19.7656 22 17.0094V4.99062C22 2.23438 19.7759 0 17.0324 0Z"
+                    fill="#111928" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.80723 8.52772H11.5869V9.95917H11.6273C12.0144 9.26157 12.961 8.52772 14.3725 8.52772C17.3077 8.52772 17.8504 10.3628 17.8504 12.75V17.7971H14.9518L14.9513 13.3021C14.9513 12.2743 14.9303 10.9516 13.444 10.9516C11.9349 10.9516 11.7033 12.0701 11.7033 13.2274V17.7971H8.80723V8.52772ZM7.16453 5.71794C7.16453 6.55366 6.48906 7.23226 5.65719 7.23226C4.82488 7.23226 4.14941 6.55366 4.14941 5.71794C4.14941 4.88178 4.82488 4.20361 5.65719 4.20361C6.48906 4.20361 7.16453 4.88178 7.16453 5.71794ZM4.14941 8.52772H7.16453V17.7971H4.14941V8.52772Z"
+                    fill="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_27_11891">
+                    <rect width="22" height="22" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+            </a>
+            <a href="https://www.facebook.com/eMudhra/">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_27_11896)">
+                  <path
+                    d="M17.0323 0H4.9677C2.22412 0 0 2.23442 0 4.99071V17.0093C0 19.7656 2.22412 22 4.9677 22H17.0323C19.7759 22 22 19.7656 22 17.0093V4.99071C22 2.23442 19.7759 0 17.0323 0Z"
+                    fill="#111928" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.3325 22.0003H8.34254V14.3667H6.07422V10.9898H8.34254V9.53462C8.34254 5.77324 10.0369 4.02979 13.7126 4.02979C14.4095 4.02979 15.612 4.1671 16.1039 4.30438V7.36561C15.8442 7.33816 15.3934 7.32448 14.8331 7.32448C13.0294 7.32448 12.3325 8.01084 12.3325 9.79544V10.9898H15.9255L15.3082 14.3667H12.3325V22.0003Z"
+                    fill="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_27_11896">
+                    <rect width="22" height="22" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCHw3wmhVx7Qe3Bqjb_BX8Gw">
+              <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.7609 4.1998C23.7609 4.1998 23.5266 2.54512 22.8047 1.81855C21.8906 0.862305 20.8688 0.857617 20.4 0.801367C17.0438 0.557617 12.0047 0.557617 12.0047 0.557617H11.9953C11.9953 0.557617 6.95625 0.557617 3.6 0.801367C3.13125 0.857617 2.10938 0.862305 1.19531 1.81855C0.473438 2.54512 0.24375 4.1998 0.24375 4.1998C0.24375 4.1998 0 6.14512 0 8.08574V9.90449C0 11.8451 0.239062 13.7904 0.239062 13.7904C0.239062 13.7904 0.473437 15.4451 1.19062 16.1717C2.10469 17.1279 3.30469 17.0951 3.83906 17.1982C5.76094 17.3811 12 17.4373 12 17.4373C12 17.4373 17.0438 17.4279 20.4 17.1889C20.8688 17.1326 21.8906 17.1279 22.8047 16.1717C23.5266 15.4451 23.7609 13.7904 23.7609 13.7904C23.7609 13.7904 24 11.8498 24 9.90449V8.08574C24 6.14512 23.7609 4.1998 23.7609 4.1998ZM9.52031 12.1123V5.36699L16.0031 8.75137L9.52031 12.1123Z"
+                  fill="#111928" />
+              </svg>
+
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- Fixed Bottom Mobile Navigation Bar -->
+  <div class="mobile-bottom-bar" id="mobileBottomBar">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center">
+        <button class="bottom-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <a href="/en-in/contact-us" class="bottom-contact-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M18.3327 14.0999V16.5999C18.3337 16.8319 18.2862 17.0617 18.1936 17.2744C18.1011 17.487 17.9654 17.6779 17.7951 17.8348C17.6248 17.9917 17.4237 18.1111 17.2045 18.1855C16.9853 18.2599 16.7528 18.2875 16.5227 18.2666C13.9536 17.988 11.4893 17.1117 9.32525 15.7083C7.31136 14.4288 5.60434 12.7218 4.32525 10.7083C2.91602 8.53426 2.03944 6.05908 1.76602 3.47992C1.74518 3.25042 1.77245 3.01855 1.84632 2.79988C1.9202 2.58121 2.03881 2.38049 2.19478 2.21017C2.35075 2.03985 2.54065 1.90395 2.75238 1.81077C2.96412 1.71759 3.19304 1.66927 3.42435 1.66992H5.92435C6.32924 1.66564 6.72136 1.81507 7.028 2.08948C7.33464 2.36388 7.53493 2.74345 7.59102 3.15325C7.69566 4.00007 7.89246 4.8308 8.17768 5.63325C8.2872 5.92615 8.31137 6.24559 8.24729 6.55244C8.18322 6.85929 8.03347 7.14114 7.81602 7.36325L6.74102 8.43825C7.92783 10.5284 9.63859 12.2392 11.7285 13.4259L12.8035 12.3509C13.0256 12.1335 13.3075 11.9837 13.6143 11.9196C13.9212 11.8556 14.2406 11.8797 14.5335 11.9892C15.336 12.2745 16.1667 12.4713 17.0135 12.5759C17.4286 12.6324 17.8124 12.8369 18.0876 13.1492C18.3628 13.4615 18.5098 13.8609 18.501 14.2708"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="/js/jquery-3.6.0.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/swiper-bundle.min.js"></script>
+  <script src="/js/vivus.min.js"></script>
+  <script src="/js/semantic.min.js"></script>
+  <script src="/js/plugins/parsley-min.js"></script>
+  <script src="/js/home.js"></script>
+  <script src="/js/select-dropdown.js"></script>
+  <script src="/js/header.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabs = document.querySelectorAll('.nav-link');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+          const allNavItems = document.querySelectorAll('.nav-item');
+
+          allNavItems.forEach(navItem => {
+            navItem.classList.remove('show');
+            navItem.querySelector('.nav-link').classList.remove('active');
+          });
+
+          this.parentElement.classList.add('show');
+          this.classList.add('active');
+
+          if (window.innerWidth <= 768) { // Adjust breakpoint as needed
+            const elementPosition = this.parentElement.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - 100; // Subtract 100px offset
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+
+        });
+      });
+
+      // Ensure the first tab is active and shown by default
+      const firstTab = document.querySelector('.nav-link.active');
+      if (firstTab) {
+        firstTab.parentElement.classList.add('show');
+      }
+    });
+
+  </script>
+  <script>
+    const video = document.getElementById("bgVideo");
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const playIcon = document.getElementById("playIcon");
+    const pauseIcon = document.getElementById("pauseIcon");
+
+    playPauseBtn.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+        playIcon.style.display = "none";
+        pauseIcon.style.display = "block";
+      } else {
+        video.pause();
+        playIcon.style.display = "block";
+        pauseIcon.style.display = "none";
+      }
+    });
+  </script>
+
+
+
+</body>
+
+</html>

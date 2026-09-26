@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head id="Head1"><link id="fabicon" rel="shortcut icon" href="image/favicon.ico" /><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" /><meta id="keywords" name="keywords" content=" " /><meta id="description" name="description" content=" " /><style id="dockStyles" type="text/css">
+       #HeaderControl .rdMiddle .rdLeft,#HeaderControl .rdMiddle .rdRight,#HeaderControl .rdBottom .rdLeft,#HeaderControl .rdBottom .rdRight,#HeaderControl .rdBottom .rdCenter,#HeaderControl .rdTop .rdLeft,#HeaderControl .rdTop .rdRight{display: none !important;} #HeaderControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #HeaderControl .rdTop .rdCenter,#HeaderControl .rdTop .rdLeft,#HeaderControl .rdTop .rdRight{height: 0px !important;} #HeaderControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#widgetsControl .rdMiddle .rdLeft,#widgetsControl .rdMiddle .rdRight,#widgetsControl .rdBottom .rdLeft,#widgetsControl .rdBottom .rdRight,#widgetsControl .rdBottom .rdCenter,#widgetsControl .rdTop .rdLeft,#widgetsControl .rdTop .rdRight{display: none !important;} #widgetsControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #widgetsControl .rdTop .rdCenter,#widgetsControl .rdTop .rdLeft,#widgetsControl .rdTop .rdRight{height: 0px !important;} #widgetsControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#MenuControl .rdMiddle .rdLeft,#MenuControl .rdMiddle .rdRight,#MenuControl .rdBottom .rdLeft,#MenuControl .rdBottom .rdRight,#MenuControl .rdBottom .rdCenter,#MenuControl .rdTop .rdLeft,#MenuControl .rdTop .rdRight{display: none !important;} #MenuControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #MenuControl .rdTop .rdCenter,#MenuControl .rdTop .rdLeft,#MenuControl .rdTop .rdRight{height: 0px !important;} #MenuControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#HomepagecontentControl .rdMiddle .rdLeft,#HomepagecontentControl .rdMiddle .rdRight,#HomepagecontentControl .rdBottom .rdLeft,#HomepagecontentControl .rdBottom .rdRight,#HomepagecontentControl .rdBottom .rdCenter,#HomepagecontentControl .rdTop .rdLeft,#HomepagecontentControl .rdTop .rdRight{display: none !important;} #HomepagecontentControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #HomepagecontentControl .rdTop .rdCenter,#HomepagecontentControl .rdTop .rdLeft,#HomepagecontentControl .rdTop .rdRight{height: 0px !important;} #HomepagecontentControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}</style>
+ <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+    
+    
+    
+    <style type="text/css"> 
+ 
+.RadDock RadDock_Default
+{
+	border-width:0px !important;
+	border-style:none !important;
+	border-color:White !important;
+}
+    
+
+
+
+.RadDockZone
+{
+	padding:0px !important;
+}
+
+</style>
+    <script language="javascript" type="text/javascript">
+  
+
+
+    </script>
+    <style type="text/css"> 
+ 
+ .navbar-inverse
+ {
+ 	z-index:99 !important;
+ }
+ #MenuControl_C
+ { 
+ 	overflow:visible !important;
+  z-index:9999999 !important;
+ }
+ #MenuControl
+ {
+ 	 z-index:99999999 !important;
+ }
+ .marquee {
+  
+  overflow: hidden;
+
+}
+ 
+  
+</style>
+    <title>
+	steptwo.in
+</title><link rel="stylesheet" type="text/css" href="/usercss/afterloginbar.css" /><link rel="stylesheet" type="text/css" href="/usercss/animate.min.css" /><script language="javascript" type="text/javascript" src="/usercss/apopper.min.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/blog.css" /><link rel="stylesheet" type="text/css" href="/usercss/bootstrap-responsive.css" /><link rel="stylesheet" type="text/css" href="/usercss/bootstrap.min.css" /><script language="javascript" type="text/javascript" src="/usercss/bootstrap.min.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/ca-style.css" /><link rel="stylesheet" type="text/css" href="/usercss/hit-counter.css" /><script language="javascript" type="text/javascript" src="/usercss/jquery.easing.1.3.js"> </script><script language="javascript" type="text/javascript" src="/usercss/jquery.min.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/login.css" /><link rel="stylesheet" type="text/css" href="/usercss/menu-style.css" /><script language="javascript" type="text/javascript" src="/usercss/menu.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/Res-Style.css" /><script language="javascript" type="text/javascript" src="/usercss/responsiveslides.min.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/slider-style.css" /><meta property="og:title" content="www.steptwo.in" /><meta property="og:description" content=".img-radius{border:1px #ccc solid; border-radius:10px; padding:1px;}
+.service-heading{font-size:1" /><meta property="og:url" content="https://www.steptwo.in/NewTheme10.aspx" /><link href="/WebResource.axd?d=ClmfUzDrqv0rJ6V3fESUQU2l9Ofwsuvus1HowIx1vMDsqCORKxLGTMWzYIFBrVbfY-vBwI_-u-sB0Zz7bCntVZ6eC8BxrRHLhZDCfqlO_r25UoMMuy0LEr_J6ekHuc69dvLeCDEdn2eNySshIfS1H77mTDIyX2T4bnjNQyszfH41&amp;t=634145324960000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=HmO4CDaS5MFdNv0Mxy57vC-6WA0srNVR-JByKI6tLaAoJBAyjIhYFbrOmj2raAWCPAV1mJxvtg7IxbQb9jRYl0hVnnbELgO7_ABMjsDI6KsuNmBUnNm_lp8P894MXFiWG0SkF1x8wzhOZrgXN3RsEg2&amp;t=634145324960000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body id="body1" leftmargin="0px" bottommargin="0px" rightmargin="0px" topmargin="0px" style="margin: 0px; padding: 0px; overflow-x: hidden;">
+    <form name="form2" method="post" action="./NewTheme10.aspx" id="form2" style="background-color:#ffffff">
+<div>
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="welVaokGNoQ+/qmOeDbR004ptMaW6/TGH0qdQJpEQo1g0v3ver/JlI5M/NvgMkKPIsZTDkoeSRraYsXjZV1HLEDrHe6MN80uGSxZb/zEIxm4C22G0LFEIXQrzZPqDthv/leOoomMRyrhH7UyiVClhQZBZvLzQSn8ZplheF5QfVD8dtHtvxbR+zknYoLEthJaiiUdNyDNpo6NcGOZl5oMZMQEkUNNCwP1RXnoKWxxjpamdD8zXqr4ZxSCu5Gr417bA4eLSDa1Z1uAFqoVZ45/DzJc+ZU1YVrwXPOgTJv38IXCU6/TbtwJH1ovHZR009UYjonp3tdI+/DqA65z1OIUbJkD5k7rZW0Sh9ueSKpuMfBZkuaY4jTMshPhI4hM1lAiDdMSgwEmy8mec1UsbpIuWBqESnSZX/vI6iw1VhDPIu7y4dZssrOLGen3Zdip5AmuSUZV1q/rk7JJT7XCHK76Y8F+1sjsg0mCOPMI+6F5ogHubwdj5FDfA0oFXwfNJFFtGrALVz8MgWeJwb42yRrtZ6Dy0bPmbJ4lNJen4yG8+cWA+jRRH6chS30pZrepI6KvYPEcvx3iXV78Xct8btKwqsIX/j/vP2DwePSDOhTt82Qc8eGqZ2wUOE11XH4XRbRpgpYG3IC/se1VR+1ET8Y/4OXcOuCV/OAYRSRm1Crjqe2OKGO/Mja55b9lCAHT4kW5qCX54xWsfM44GBFQ8oecuRPAqImeH/Q9Cb+f0bkA3bYw6+eN3yUPOg7dnyT5dAArFh8r0FoGlnZsKptFkRzANJubOnbsiRAfXej+ATOMqyu8KfhhFginUrA6FhfZiSe0R+OmhTl0HCGktPUDWVhxESM5713xAaT17otfV+nwlajXzfm1m86Zi04hoWuIqLfFjLLZ/KyksAZpKzzBW/Wwm5UNlGhhQC4cEeoueXswvuMlhbGmTBFMqT0wkhyPsf7Yz725+tdafPecF6Bmb0gZ6QyA2XC1LFfIoSeFcHcRhwkjMXTDWMnEM00w9KWg0rLyLs1YMUjImcDiSvCStRWu8890pAtcmNBiRH232NBTedY0UCxHYXvQEdgpf4BoOG8wHXfzGgoX9eJ4p2r3+yMYRhICeP+nIWd1j7J0sPzmd/8DOpkB1UTpGAuqDt6NbFt3eynOLJAck3szmJoFY6kqj0Nkz6CoSQ6KiMUVxEpBAF2iFXBHcvobx5Ilz00IpCwNjryCu7m19yLSHRdyQklR29zGrrkqYH01T9OJS5TIQsjOiEFUeYaL0x0pbgiGYv7fw+1r3N85/guZ6HCHBz/0NL6FEZ+Lgfj8X035SLpv33t6zwOp0Bv09ZffINGyp/e2xnec0KWygDRzcBI8mLuLRstazjGsLUquXoBZTxftrQQmfmQg7TcP8nE/lcrkqHOyxoDhDRvnfaeNiMM1PNIaxZUTeX/lIM3c6ihqxrSk6IFmQfOARitjfCF5lHGm4m1JHHy2BP8eRXW8uca9M4RlyCo+ayEbBwtBEA6/ub2gLSzNc6uZu6oO4i1HeqV0ip400WUVCdkCgUXaE+Xvq2Jh52Um+Oj/HSwjLA7WXGDy51eUnoNCvlehy9cI49O2CUX2NPxDgv+XCN3QcoAymRVPL3mw+Q8QxRnApC1N8fRe2uDj1E3dzr20cVvPoAZ40W05KSfMbqlaa2dJQGjPwRd4WDq5AdFLoHAfBCY06/TF8GcB7/MO1fA7IueQt8MYrZfwK7k+u6unURlY5wfSGHBJx845DyGMofadMtp5X/vN4HBUAIqGx7KDjM5BLBUDgKRgaGb+5AYJz4CHvIwaP4SoNVmrgPQz3dtL9sSCwB9dJfR778l9pART1GwJUEk05bKDrPt1kGxGDIfp5dFc64pUenz4x5Ggo7x7CnJRrR6+2NvEX8y3+hnhjjOtnjYeC6NlNd1GpKRSxMpgzgdRdn/mPO4/2vFdsUCZtMiwL78t3Rokpj71ajddG78HA6jIOyaa4fNxdPyC1FlDxzeJggHERAmYHVeC9u3kb183QmUVeG+/P8q5351/Ont3uIALzG7vHzV0qggM4B+NuYas8a5rcGnI6eQjTp6zheFs71pclTvh2cAEJB9iqL2umhXCIfA/eh0EDUILdZ9EW/aIXeT/+u5FPKchFamo0xSmq0hg+9LTzu4yp7FK4gnSpMJjPRFUrWfPfeXBpmv5eRxb3WOKeJKSMjnO0wjWj4Ua32IupJlGihlWiCEaQQlKpc60S9caP7pH69Z/aMH3qNuVrk8mMukaZ09K9QMyb8hDbexkAxfRJr1/cbYYlg4ojqcN54mWpYEpoFiLLelXPqexXLWnj7nFKTsN+gN1SbzpTv8ClVLUwatvn+XqwEJRUL3irY6suynH+d+yHfgfuwDpmZQkAjJoK3OV0PNBG6TBouuf0hY0Zd9NCHkw8tr9/t29giVkNd/h48QqPauc17WNCLVSx15Kihx8lm/BO8Xe0W2VGZiPLrRxlqtqZDUPCsyYKEzOwKanrfaSCswUXtr1jpwNy4ZyghqVnqSRvRoAhD5UNaVAbR0ez1vi6mFIXHnCdtnWnRCvjNAcsybre7ssZnJdxUJadbwNc5r5lPgqWJNz9snI6c6qn0SNVy1f+LrwL3+e0BBKpmJ80OMWhVRtbZKKzShcIj7uleroy4ku0qZU6ELMgowLcbEGlWVzYOsUEb0BAeEHGFrFT0/sc+uclqQYwr7kElYk8Fbwxr/HdejCqtm8VrvyeA/Yn5jvV+KzciziyPCnr0DA5abu5Y720EERnLHyCuVHmD1B8VAIUDlKNmGD2MRg6TtkdJHp3uXUSuK8SLmEl3HPF9YAlCtTK6WKpAlUTvh19CqlX4pP+D73CoHzkneref06TGR/S0ri7PRWt0seR+9G9PX5wA0RKk2T8RS6Jkb5utSy6+aSd29ZNXY95far15VNG6EcBDX+TnCjHN7ta3Bt4QeO8HI5E0ZO02vvJHAi/IBv6/IUpWIOTOjqRw92Dw0WqFmQp/dKZ2EtQ/TcCmsvIFkZbaezxk8WK97U1maEp9A9VM8/Y2wkykb6FifHIPoXudLgHyRnn/YOnESq+RAtaC9bfC7Sxgse3QNejfAtVHORCmbkD//6HAIVvU2f3Xa5XCycIT475AthwtxWs4XwJk0M3tS2XJRmjHDgeybTFC95yjLYKC31pTm3p9YpfIUXBtbiPxMToQx7ZJBuKvDutnSSnV6nx1Qxa3qh7aa78Rp2ydE8inxRIinQnluVvFWFwjZhwE5uHNEJMf+iw7ZDoHTXeFmK3XKZtWklfWJxm91QOJDSpb0U/HY1gnMyQoZypNm2FfID8wFsQecCl2HWmjEHEaTHQ4+iBWKn+YGwi0tS4IGMSfFXXepr0Q/v6pVoehEJBcOkdmQZYYezj3N54Cl/OhAbmTM1eK+b/nMFiikiipM9ENdaN3HP8YLpeTVaoJoAg8Q1b0d03mPFQPh390ysNX2g9LB95bsX4EAuV7PEGvAyjoJuwa8ycoowORMC+H9h2DSECfwCRso6Zj7f3lWWg7OXLhzvOLK8pyb4xaNFy4t04xHsJZgK/R/fWxO8RJXy21jf5y6+u6lzFgO987Aa3xsLQxsFjeHmGbW3j4MlbjpbwtdcIh3FJ6K+6oIhP/B9V3dRXpI39WggfnNpDjpUrUTz0mofARxRSSGIhMn2+egsFaoslyiP9sNyr/SDpYR8w87W6NoIvKVfiE+Fly1D2EX2PdDWjipJSKaRJrAN7RV8RsHo1b7mKwMdLAujkfRwJ2zrzdbM14TgKhbLa+TmZSdjTVDhlwqaqVeJUPzibpfYKTYSwwOooKjfO9HtcwwOdkrXrPefv8ITRpvw8Nm3nLW4H396JiW2Yxv62wuAx72Ti620lYysK6rH7BLFm+4ouSTIMQxSM1VwkUoApHP5idRHZP2BhjoXhZ8tt94PNXBH9sHZI95fEGerBaTNFBuwhMrE8v+BreXPDMvLK3n1If2M44O5BXApbTTscNj+ZHk1G57UXwn7BIgRq6H/A9vndGzF60/M07ZFqA1dTPVxuqQC9M1dURuJMv0gaOxICmx0Th+ia2J8FM5F1yqBlWhtRIXT5yDoSoD4Vf+1hSbY4MQbJyU5pYV9+Zy0G6O/22cyOjLcYrCpEOVItUjvKMtC0ZQZdBHuexn0c6nEBsnKgsxBczFn7vGFBlLY3BhA646jgcRzF5K9gpv1D8xBDqSwUzxVEEmYIShN5E9/h+P8C0qCJngGLv/I9fyDEaGrtglC2GF5PuduNSi8CSVDffi4/VuMK9a0pkUV+mLn7RMSpRSJqGg/+Q2yOnsZN8fS9hQ3RLCOM20btvPN+MzL6wHITpNkNq/woZxQT3XmVvNA1Bim/S86SIcMz2g61VBYafXYI1RMp+7vJgKyw4eIDSPY4q9JIE4gy7bBrLY7Jbhx5Dsl5BUZgMDSoFqvEF6Yy1cJ0EdcClLPQTd3MmYVgN2oCXgEiGqTp6qq9OIMNyOUbh7USM1QYV1OqQyX0sbHvGFOgzZEDb+RbGGsYZ+bC+bQSc4oGh5/U+E1Gx8JaDEs/UlqCT/dPcIfZWxomrTPmbWWtRLfokN+YfNMyCa6yu+xCr7jeiJ78OUEnasEUZLveWOLc2xbWCRZh2cqA4zZYRdAmZNbL5coAa+gExAjGxAM46fq6CBaWzilGFgY6j6y7QqseJQ6eAXoQoG1ebTZzOJVnUzaK/QWoEATAKBYY1gIbv3aVkzVIroRrROAT4F15UPpVUuwMI7n2XNvGzjMs31nrajKWYBeqyyYDnFFuVOgasyyVOUQQxLY1x3HFAkqSlTFwlco4yE9Om0Y95mUMm8Gm0/AYYiQ4PNw4WSEMsGaSO+uQ+xS91mshozNV8s8xKAqqYIQZ5p/XrJI5dr4bzvMlMJzMk5QXXvi0aeHi6NtXO1gLOKgTeYOlHcT5Tor8nGfEFBj2FQcCMEl8bI1RVoMH5JSNDZVbvVCWDr6FyyNRwveJEpQZ9JWzbiilbWLP9Qq5sQ1vL6gtj+JA0BMoZ1qWsG+syUSyhQ6fBLRgB5tYGVUys2cSZiO1LhF72ExmKbFXs+bhsZ7E1xU87iK6eQgx7A/BDSxXM2U8Ha779fZKkdj+BSD/WyPJSo3fiOXiTyWxpO9c8mG86qqSIlnpEwfEm6PCpjewdpSw18tEY4z7h4WX2oxODbxDa7Tb2A8tyffAzgE7uCclyBHLhFfcTmwyLOWzs0FN9bA9b695klqFRBtjvRpoRYf51FDPDtkgPdfWjNE4MHyv3cgALn6/MRkfIGDxs0IUe1+XlEuyUKc+14WwqE/i9wr9wB5AKQSqEANN9Hz+5fsPoVsuqNrNvgeoOEeXP5+xk4UfMDhspCuO3QlsKGbdZlrjCW57E7KDLaihvOojjowtbKZH6klKy/zxYyeagnSl5y6v251Ww4Nd7ceppfen292rpgVcriqc6iJeNxFwodFOTzlHZx0W5fy+OCypJQ8fL7UpfX/k6OkeA89WJOomqwb9SdiwUHeTgIeTHHVC82JJfHpp4bgk+p1l9B2Zv3oFTSK7bTmZxXiCGOZ9g8dL1nxTLQmO0uqhTG7YEOIGSLoWFilRcEMwTdV/n3v9NWNig3M9gCIV4qbWocSNKZ0J3dnLnOQ2n3VuNX8CphYPznNvB0+1wmMPay2YBd1Hn8RS1pnTLVlUSmfbFex2EBB3xQRTNbm96kdbn49+gEfAHBjQbPC93dOUJXJ8QL/9igsW43iHWLWyqLIecMah363EfqbFjiyWH09WR+1vUjWRpJ0fDopgFWs7BhMm33RJl7R7FmWAQOeNra2pHg0MG7LiV8h0nBEwG2JijQd+OqFo7u3La3c5Q1E27EI10JKhoSuHKTvNZc86bjgHNT0htGbep+PRHJ0Hiu8V/ExMZxy8Qa0dmRh+1eE99XI1MU9Vh0U2VylSrQ1ZeFnmW7r960CjyKFx0/o5vZCaUYPuZeorYnhl3jQB+8sCOF0DnaSpBPp6zO29OHe8rOMCxp/rfKVqLSLMxYTwGVfm3cnV7MEwijj0HlYpD/WSLguq3YDecS6PyYVmhfUi/Ru9k5i2e5kwvnB61dkgRNpgDHoLK2uH4Gr4WvCdihG+y3dp/zxxXOXDzFX8BR5GaLwzAaTaWnamZ1hhHwU2SN/vXz2UD9AL6FYVe6xUcO5MJ95EaCxkePKxL+02I0xzJxKcxS5fsBYSS4mYVnUdlx6UBy0cBDvsPLKifMEbOcDHh4WSbEi55TZy+u2ZyBD1mvlN43z0VQN6l8TV0yW3HKr+yUCYreynWf3iiRTksQLK5vuW28MW+dyq6Kq7ObvTQtpmh+sFo8EFrJO2TlyGv+Gg5F6SB5AkwpXkox2uSwLxf5WQ99G7yxCr0l5ENUpfG42kj7+14Gfz0Sqbmqt93X4gjB00YCrT/zcL36vZhi9w6nLkWznYPzDON4F5N5zJoT60A0NsK8PFmVi4EEPeHotKJCUS8BwVUgTaIIhuxhPDUEqPkij65irhyvW6Wn5s5H0QDXkB1zgoc3XXBRIznHkVstMvid0kv8OuIevrOSw2LjTETn3bdGj2S9/1eJ4PcOhDFBnUF9PHmA1GFTKA2iav2W1sziHQllx4LQ9Mssf+PklVgkZxicgtm4qy9+3EicQ0p23kV8XVzAq9z2eB+ps6VLQpJXsQD8+CeFaMJGdFZDSLtQbbiW+Ji0+/nDQgE0uBLwLGLWuckPGPB8Wm0QLWJEN3Ja04lxSVJrkrWpGjkrAQfAlxiYioZs2z3jbJvK9cTC+6VW9XtG4ld0QqWlQ+E5SMlLZ15oCu/fwStGCdkyxbDyl93FI/m4fOGeFhkK+/m++3v2dh+sSJye/26jmpjzN6ytMOLx8ZQYKXi2ayxXiluc+PUb8hMdtP2MMd1Ln/GaOG04+b/rBaLMKggo/NIoIx2DCMDYy05DisD/ATJCPY9Y4iV6676y3xSfMkjUA7bVeMucS1qv9YIfRjCBkvFQV8lnOybN0PR1O70YE8boMnbrcewQzMEt/A20hydRsX9CordqSzZph0rzFKVrwiFD0jRRNhLG9vjj8sOdJnXnCKgLnIeZ/DYdko2rZh4OJwLFgFCc+r1935RBgV7tDrX//E0XvedRPDoGUw1FUwUYDjlNgidYBgH47+WqBqZZtndcmReFc18hdpY9D1b5kOGrIsVZAU7d1luMPLOpUPKt/+NeXLaNPCUcwt2zcaY2PVLq/74GgQFtttilEvtoNFn9W1xZ3lcMGP8BWvFvZOobndHRUC7ZlWAZvua7RkvqJ1k/RkZNH8nmCb42HSxEUwcr96J335Kr9tQtMWUxI4C5bOz35Z1SdOI3t9qCeuM3bU1uY1hTxi4heDoPQZ7oQk3rEvrI5S3Wo+2NBZhtQI/xudb/BxmodbpmsQCogv4PjDckB+P4f0A3hZFH9YkTYI07PvJ9K9mcOrwaOaT8kmAkm3ZS6Csg7F5vOfJ5QcLAaEtAJ28gVzJpkQeA72l3O78adHtckikl3N5VflSp+TybxZSaIH3A0Y9sHjf0sG/3+xdjwicdxzKxxO7Vvbq8K357wsRr88EaxCOtfn/rLCzOeLUn+tBLPkRHlD9Hm4HXqX/1vZrKDdMwGMR3dhJG/bFpLvHBA1gfSYQ2uNm4BoPLN2o/yjGQAdxqjqovH6ENy6itl3p1xoA/5qYG3H948puvDa0CYBfXW5vjspw9899OWZ7cofAoYHxUFfxMklx88dMBLSWJjvpcCK3N7tt4hovpBENlKLqHqAPTVSkNduOoPaRRchAa27x+yCSoMWxze49ndt3XxPqWBV7nbWaxhsITN4X/YM2HK6pP0WoGkEBSSdcHgup/P4fqWKUWqgMAK87VeuXpwGYA2EU2rZO5uQKdCyDYlGMKlmfml3NT/VXeYh4avTjHBbYJy943g0QUARAcA/LNoQKTfQxWnfE8gE2pYwfM1xwLVOS0ENFFqVtlToLP53Pp4Kqw9V6PDXwv7UdGxhiTUQKjfUX9ivtjPGUIU7aOYKfha+2daMiBYuu+VPq4IAMSPSEzy4wnhyPU9ymtpfXqBnBl2zYtV+DvStxeQ8yeFmenmnnFD9xtJLNu2jvpAPHp9Y3SfMsf5v3ucGJCALS+aGAF4XWMOYb0BlQq0WQ7lDw2UWzCxeQ5G7lkXsobQaWNrkQKoUC/sqUVD5GUjNzGNNLwG6XhkteBL8B2Q+Nxjb2rxAgJVOTSr+qOC/P1+yoXNcPqqhKPBolJGjdmYFxdXHqTpRI/d23crFMR4ASel0moiXtQfjCuQVx3Pcsca/7tG1mM77y3i/bSJKZblq0JLaswf/bMne4g8rd/Mrr2knYOtWr9rIxe5BorjrAh3id1CPIibdvYJPOCKv9NZnteczdrp/BTbxvTwDVULq3SwqqDKud8DYUgHDBQiVOgN22kFC6/qpMY4+0hibv8bxP35idj+zapDXXaHJk6NNl6J76bSHoY71PA0qNZrp6CkfGmLN3oxtHIKmL+nozM/A96f7/K2YS93tQJGEFj2MmaGcCQqRnnFuuZdQm+hSZg3cM5haRv8MaeMVFnI9oBc9SbYrDtF5vBsHBtkV9bIfw5neRC4088hv29BOZc4eNprSZLskVtf5JHjbQfe3f4e2968uTqetF851uX2mcXNnylyZmnhxQv5L9DQatx5wNRni+i5CwBiIvCnttPSC5PBxl0BAJ6f3IPyTtJSEtZYO7/FUDixn9dFSHwNNmY2wAfRVI32HOnHIZOC2Ory7FYTBDG4vpmpECLZW4su4XNu0Sw7MXB2DVB5YcEEuH/R7kfSsGn0D87hCTufKLQDJOQzAAb0BFHWK/Bk/Tekp7VlgZZkqj1SeB2Q+Qt1emDwo3HMWzK91jg6XmOlMzKyr4nV8QrBgnxpKQ04t3TtIbTvVsZqcmouZRQUmIZm8muCZLokYW//33KQ/b+0Nlpomn7hW028858GG6m5etbEqP6ZD70SpIIuEhcJBnXT0Htt+1+oWzJyKUcKur32Ye9i2H5XC1NtEMfhhsZUkpZI2SDh0i/1clVQC6jkVcF07OcWgny+EjR0o2lw8TncpRzeNyQZUlXfM3Qn79AIMm2FDcQyTg530CkcIjf+faOC40avA3229L4lo1w8uL2QUrP8sS3KRsGzd3BG2DRJBHJwtPELo/cz0poItSQC2Y/MlkjLVNMowHYeLG6DIogvDDuyLXOB9iM4JROvrNQpiB1WWATG42MxGF5cocYhowESk4hTkBaRP+v1UBO3i/hGDLAUpnYGXA2jSiT0KXx8FhJrhl3zKnbQPE08twNsdHKK0J5najMCD6maFrfIhkKr7RGLWY2UeVBeBmagB5etyJq4xNt6LUqU5jWdQIS75/UWcO5UXFks5FqtBYtDEOy00OGxeKKgFn+OO+cHBj4UjLjTsC1iT5THbzaoPahonxwIQUk1poFpQrGuE7WwcxlLAzotjUJx1BF4Mwvy8Yo/0TcD+LUjFZgaUi38kktcpwK45vBUvzpWcUOrldnHK4LHAmFOAwFJmh2/LsEO43H5MUblwr14e+Ull5xjrdc0uZDQZCkQGWjDWN5RiQv8gHITTTix07LtpvQSsWoy95otpeJwQgCtFNgvGcEzNAgmyITXipW7DOMHCyDyofYO/1EzFrMdhuR/IWto0JgonibWzVmjbHfph1CJu62bppJC4ertvXzoyyaBruiJKlKaCdRh0Mo/wJnMMcgajXWiN6fxSA2voGeNMWF+61hD9fR+2dFmgOAeQP+XU6mhgvZwChVdNUySXDrI4S785QDWPvnk09j8JHktfrxnWjfHyZaolMH8JGamHkNqtg+t8DQsioBqQyu1qZzmsAdN3/DYOgQ/q67zM2BA9ObRCwVy2Wap7tUwFslSJYLcAcVdX9RQIDaflVen5EUoK2YHu29CN2c4N3GIlFmQ3U35LAzErxlTkYXJqfbaITbp6FOkKidjG0AXkE0BzeUg7peNnMTkP5LSYxfnyLg0pKREk2C0hiRZUw0Hot5UDn3iU/nJH56l4RrhSZ9Yuj8EZA7T/zJybOwD3uMfWMGpT1EbN3IrIxwUoFPWSzuisyPQkDgWoc5E83Ks6H6X2LAc0vkpIooRCPP17bsTDKqKxSohh+h5ehpzx1eXv4DHSo9esnRw6TSiGgS4LrvtOt6t1D5IQlajaoNgcMR6FQ6jx5y32akclUPmTyJzgRI8Kkq82e7Xpwv3Yt20PQ5qm3oF7qk3sFGgbQzrxV9xnPZjRdJY+IXETScvxV2hRNm4II04wKKaikyfEHBv8llCEY65o1O2836VKRLoDDW1Fmr9ZGHO6aFGIXE0mb0w3MOPOAwGKWfvBHUeKQixbWxZuSA/vb70TDWh1c7gY6jciV5/wAsZ6uQSU42vhwyzUrlA1M8KnOVJ/BRmidr0QzGHI2F8JNeq9tvBKCm66tqx2RNzoKcsh5D+Ydd+bMts6s/UoXVrDC0e3thBQMp1LLMxi/7+znt9xFTagUE5gZoyT52gHapoMyFtbOKfMRQR27k1PAWt/Kr0xybgAp7gxVlfdKq3FtcylwJguAwYGUADV717PWSC54HL1JhP7SJUkFitVZQGrY59y3+LsHdkAVcFFPRaZDoUneTLopIcbfvpL4njWOyt2SaO3P8qnH6VqlUssyX92bdheKMCkASvujRFzVzMEVpF76EvypQc9PpH8J8t669b/OZx+/K4inygUvU/l1LkpHbyT9JjZkUCKZa3nKf4+I/u6s/aEq4QYtX7pJmOaf53OVIYo+pcIOalt7D43rgMVeP6G11mUD3m4mlUSllFc0B1plIAJfnZLmtaPTr/UOKJ9QAwCly9IbXJjjCJHzG+l7hTnVGtwjfQdN4b5qTV4GDZEmpNIF2RWURkZnxl0E/56lVUoUn1xxWL2fG+iDo1HROR3y+uYTH2/D81jyYl2TEaozvpkSk8BoVMsq6+03nHRqDgyS9Lpjxy2w3ep5T0VbOkwGq1SGcUZ8QehEYZnDT+hNXnrGjctVCcGMQuJfEpVZherGCRIMMGUtINEwBiWznR1QO37pu94CutdkGlCGityLZ3BZm18GhcPtDm0LrF4TQOlEYfLfs1RkiZOaURfyjPsvB+0zjBUmaffA6QZMANPD8PW4DiMOc5qyYofbIUhNhipqnYxCFiE/lT0WK523/FZjQP24MD8ZzNQd81wOHl6z/Yqym8bBnqzQirI1Ae15+rRvMColgo2cV/E6FBIAALAzTJyXP5FxAw9K0vXN0PM3bkWpgBEZDcOtAkHjbkq9jOUTf6ZNyR/6QNgROs2Dut56ZdgMvinVwTlilOPo5eJeJvwjDaXQkzg8cddtxKHh6mswtqfTWKbwzoFC/FXERJ0wbEK+7faNtbV5pTG49kg83Er2qEE/a8942baCTwR6bVs1m5u29Ht+Q/b7ZZTmu8Vpl8vn5LdUAJh6jjSOwtX0e0kONVWulDURLdWunrPafYIHD4NsjquCODa4klumljhLYh9+jIJpzepygTLe5BDkLf09hiadkC+dA1JZ/aeqWxYuJ2pWTkSEnfNE/bRS5eF25ZlDkTbMCkthjn28P3YBTIE3DLiWdHyZPBCCXis1f+XSYxMk5MJcddqLtHDndVeRLF15v3m5pyFy1LrxYcwkn49KodkWSJz2g6Sg/GdGaq4eoDtG5TpGQkAGkiLuoIZ8QXHWNuVdMeMmY+1X4zIbEOlzasnBIUf3njoq9kzE+/bDJcYO5Nf5fm4tHEg6jNU519T0QM/rpoPQHqAp0YOH8xHTFHSX005RAdFbkOVRtNS8S0RGOPDzhZIk6obRulPWwBmQF+hXY4QTfMCl6Na9JFPtsrZnMRcdyZqH82sZIFBG6OtJG+FlYwOkwqMPITWyVmKIW9mBOINU4y4P2iO3nk0TVvyWcsub44Ev0BZYCremVqBIw4ACdsejUU/0TNETqi4hjRqBX8GwkYfhpovnIIibpgiVZV8kbpbkGUo9a0rXqMsScpGiYznsISBZLq/2I9rU45WCAu7k3zCYLBHfXRH2seNrXFTSJVxNu+RPEMezqgQEz7uFAjHQfY1oWUl2sIny5mM242knDiLKsj17G/GcbgiDgnoqkzVWU2ZTm4lg7MXFZKZXWk66CdW/TcP5im+EKvWkONlZ2lGcTMUY3ScwQEJkhYe0ywRMZ1SDRe6jY/6IL7nAuv2jE+PuXXhkXZzslUOoEpzsAcPa9yZAZ0p3/VRlB4YqDM5vU5L3VKJMoxuHyA68dKmWeqFawiaGu0tEOt6k/ia7svNXmShOFusiyRDyk2nijAtNTzvaZx7XAfVvlYtl30kJ/xpPS5bm62aYCBixNZE6ZdFQm6DsDwRPieNC9YCfLWy7ScXM1lECq55SGk/fcgwo1FCM8Zc6/zeIpCtgGz836QPp0Ngtg4t1M89M+o+MWgnfQwQrwu9KXAAgNBAwoqpXSWg7nAQMUM8b7ATLSsxPqY6+Y3Qtwp7ga5kUMFKQYLzHISArXd5aa4fGcy7OyHv+K0kQQMx0l7vrp7ImNq4e7xyr9VPB2MxljOskTwlGzgDrGvcA57f8r9ydZRnkDsELavn2WJksgWXgAJFYR7Cd1IpN31PdR6UtOxj/MMcabl+o39ThBGAxui+qrWU8jSOVNs+cC0oXm/bosWWVg45ToszcN+fA4nSbRquNPr9xTrR7QnEvjEX4UusYvAPe6VyomRIu9/Su5US3hL0vBvWv315/O1yyFFgPufC5NmquxYANyLz3ozNVVbBCBxE7U+4J7da/k4xpJSJPVz2ysUY4YgjDgOBvIwDhRIqq1XtZR+pA4wPPXjRCiAQqfW6UAhQZCupzyUn3YvjVNJO836kqW5CHo+95IWRw64/CIjt5sO9jDth8PQhv2EbzIi1ej2tZusgCDlBkYCwtGAplrhpzrY7aSM8LTht5N+o9XRkUAgP/yPW6xI27+DzmbGLyCykKlPrVzXrwx/pnGKgD3CaoV4MISg/kx20BEfUb8clz5Z2GYqsmjFE2Ld1BsnqxZ53B5hO22gAaQq/rXDOzIykONod0hqOgwQu8Prznm9II1CEFG44sQcP9agkkVihu9UNYQJijxFXlWqoQ2+/J64cASrJKvucNtjhPQ/FZ8JpfCiJ+hScey/BWxQ93c3wHQA+KNZdz/bP5xD3EQSWTWLc49RO2xKsLWI4P6DpMe6WXbGsIeLCkic2bXmEkZFRjtLD6zu2RwRuxzWxspmJl6tvlFcJbGm5Wa7SpzhfC0aS/MvU2aqi8790xy2mVutuFMo9Ib9CncrtB5G/QMAEke1Av6dtzUWaOJU+EG1JHr3mE/rJ454FPyhizE80aCwzoIMSAf280lh6FWfMz66PmvNCRTq06UKJg6SWybl/XNHL0NH55NJzY++hROLv8Av+iQVvmeX3hH08Ym7vtHThG+xR6l2WJrVfoqzxe2XT+qzndDMNRhmZFIleq+TM3DJ2vFl/ZDSxDcDkGpQM6nPjM9fzDGxblMp8QnEoU46muG38crgD3E7x+G82RBgfr4vvKY2WSeY39YaDohw68lWMPqjx9l4jdsX/NldnCiuJQvv92RyiX2t5cSrpnf+a8YQWccuVtC8Wi7Xh98fJQ7nQwiWzvFpVlGwLEHkT3wN+aZ0c6CPe6KkGAhHFJ+AgVUYl4Q8kmAhZxinDJoZa/g0a8qh5aYFl70D3m1hquMhw+4Tfj1Qhp/LDQhExpaddT1mYKyWOZoRKx0xB/HeK3AnBlUdY3A2qeboTrK6kpfJZR3Im6VLoMjMMH0sTJtavBPmqpjgpU0eRZA/Q33vmQlR/t7OAuZEv6TTcoY8Ob7WR3oLexDogoMoa9hOWzBCcQFX1RsAoBswKLNjf22HBY2p1cavBjGbS2u4IGt/HFWePcTQKo/bJ1OPl4DqKrNmEpn7+C1+Amm2uw8e8RUjcfnmCYburU0FJh5qWvMsAX2om8HNJjZ1XslQ8/ohyxlNsooIlFylUk9rLLqx22YlzdsiMAdi6vKlcbcsOWqsc/ctfP+wkQeWHgVj74sxW7beafJ+3yLaOJ2TX/cD+T4rtbE2lh1JvxtP9uBtcAd0fXUYXpfHA+rKAFuKCG7BPkR/09jhv1fcixZkNSXGcJ6Okd1DSntFC200rk4SXe2j4WsqYI6iixPaxsUfqIDkk5wIcEffOriYJ+cBbAltFcbuCh/UPciDcUI6UPYhLRgI+SreO54Xjog7TafY0p6RQy83cehkTePn/3zSxpeXXS+RMvRfpbWnYLtXmrk1h2Gs23vVgrNKX2qPSUtM0lpNTVFMWcK6vInCLpv54kIg181KBFLQWMloZV3aoVqFxUl+fBtcWLEJXdvmdcCtIu2KeqI7AOfi6+ONcrKCqNnFr0j4bMuyTnyoeY7pTrjjphWl+T0WvnqH6wRn6MBbA1w0g8Ls94qIxhKb7b3YgvFemR7Net0cq0mZsRJuZiS7//vFDAQENylz6N0UveirHfgepCarNCtKxRCCkAfxXeaZ8+pqsOHT+06tN4hNJKVtKjmpVDXhidLJIyZCYtDcMUbInoI+oC5QYVKKodNXf/tJaO2M+zmQg1GyK+QlSFNpvUa3c15MneLAK3PSOm/uB06YswOnHz5CdFdp4rLhFmqJgwMh072NMRElCIanzn8ByWctdeMUN4gElSxjcGaDGY5goeHafN5HEe5XHmV9LxXrPUlBhUD1eP/G8tj3amDuSWq7bOzZxda6Az+UvQK9yNfVPPcF2MNXI4qj84QGI70zT68qycd30I3pYhLxdTqfw/GSYEzQVda9zkXT0Jn0NxUrNGwo6Zk133aqd/bI59qEmoe6bLf6Y1LMzox7f8uvAkh2Z8cmIEIwmzdI2wu8m+JhBjdYpoOrlf4RSzgqySPAhG7Q+uaFodXCyS7lrQ4dY4oGWRfD1C+g8IuabVM5OnB4HfKUP1+yBT85FBErmKEHV8zwjwCfJW2lMhHrZzgLviMgwnshhdtxRHPLswbla/oUDZ1gh4T9cqfoH8xuJQxP4VjbmQpDaztuYOBCm1E1bWriQttmAfw9QizwNIIbvOlnqRdOBPZZO+x7dI6zjBU+N0cZJSMlcHqLoiDWeUAHv//iI6mE5uXL9V1BpaSmcF/aQbysJDo/1GT+VbAK+WSnfL2C58wCEHqI9rl73/ME/MJwP04ah6Hcm/N4efxJlkuDNEyJoTOwJCbG3PtAMKCwSn2NjhkFUkOjrukVEzsrF1qxuJCow+67NfSHcjzDp8IConxaapWdUZG1jCF2MKFY8RGDduqudKQ3dpXmhjF9DZ+lC0oKLnt31K48RayBQbBezdUEc54OuECR6SgNnwk3Yom0U5JD1NBQ1bjxBTobbORCGr6myh3/5y14IM/s3BjFy4CZodz+yQWtiNJTuTRLAjWjqLdP1AaDsjei8CpBrYBw+zThFPgzFgNz1xTpu0d5I9VfaFNMprd06NUD5WdQBCKofjs8jxWAXnIKWoJQuu4uuCmawMGmoKPYmKFBnFXix4IbRDtWZ6YTl6eTZ+UD32xKAHhQ28ipNdSVfjkZ9csqv6vfkroClQvB85CKTM/wVbm0oUxQVcnrie7Yn7TItYDqQnNgEASAOxqiCXa5I/yr8XTj2xeKAfkXijoTOCnp1w9OaaOqspfwF6iTfazlnDYEfQg/fEvz6+TiR4CjK2lrk751uHAyknGIfCnYYJec8sikMs5eWM3Bz6jmr991YMdCRfNZrGV+X3w8xKZ52vwrwafPI7bDouVAoUUwjPGWxejV41bU5PxXnjUQEyo7Z+tD9fJy90w4pwxfEJQK+/4KJ7VTsN5w8ULXfFccfumJW0RY88eId3x+LSMO0xF0Yre9+c9swgnI4JzSBCqgpCTDNGmGUvZL50hVxCH61H4OgQ4CnzZisZMjI7hQMDkD9VjNfJj/40lmGPoofUeAxgYy/+9hGLT8OrPpgsQyvj5EhvrtY1PnUmo8Hl24oZSiRQMbXdkVF2yxMxmKVQSAsbZft5pC19d6H24ZFpoxjvOMdjxJZpS5U0NlGCzTK8mk0hixPszRzh5FHHjBzvezOZFOdr5trH+9tJGb/HSxRA9/SzcVlGQpDCYGQFU7s20XlMGz0uqz7UdXRMsRiDHQgg0ja1f1AkTM98dNqD5aPLZQUpWFGDN+dK8poQIkZnzdVhdY7dTvCKJav3wvLaFJuMIsRFZYIm1OAwrtaHdb5QPu9DTpCsU1wfRamg4dvRWWS0SwArhiF8EejmG7OCYd1/Eblafj9x5Mc/a+rmVO4ZxfjUk2nxnKHewsVXYZnwddZuqI0a6snvPr3TcxynNWkOeDMC5q/5KqkhyJu9t1IWkOx5tuGG80g+IzIOpkXW2r1JJ1jPOR89xAhzal0/pOAXKgHWzhIbwaD+WJAbDdnH86xfw7Leyig1eZjIC/Clks/IVXCKnpOxDPF3RyDpkXC1A3uFj2PfyjL9+hQbeJxAmBXoVlbNMtEUZapzs46Qbm3ZRFOY+VBuITSIJPUPy7uTkEz4ALSXHEsgJtxIMfgPw653Em9L0hog39q9bvWCxIs04YrroEOz/oPiwJycaP+k1hpWLD3Vcuth0qpj9SPs7Q8VNvbvPsqE4RvseAaRcbqmHvkfBWLbCPtvmL/28Bi/iVKrDiXom3ksFgV/BQSRwlPe4O7+YcIsxQeG56cc7hiS+BwctPds1MGxzzF+y4rW+xoN0hzKIGk8036zd+0iFbBIJf0vHsqHDUeu+zI0bF42MPvy7rpVYk+0g4JS9OTlD5AHiD/qD7mQayCTWv1sxaU7NEj7AqK+U2Emi1hBg56V4kpgDtHhFtjtnq92Q6SdcTADyjt52hCG9mFJD8JKiQTcF+ab2k4PyE+bDIWtCvPDmsI+NdNPLvHs6fKWi9udOMFiujULAacjELmvGJ/kz0n1n6JnO0Go5lLVxmJyY+5u0XKel7HckqLKooZ837LHny1UtFaVTfBf7cvSC4SrUSIy05JnuaIjDF4NxFx2odk7TjV/3i4lU3sBL4IN8m6UNBHC1ZZRz8aATpY8uIuJhdyGPcsBkRY6rOTAh4zmu1Zh/uGd1oHuUQO0TQSuYx2PkE2kzIIBzvooKWl0OLd/MTewycLDvDxI6ikc1K3A3AQ0eRxtJ2uQwOAJca0FoVOxxUyt6BejHHmDxLcfaVm+mbyaB7L+TN75Dqo9xZRDyn/jUzsWFqSz3YU7Lpv2F5zmcg/gb2J8KujwQNoFNrkO/noaoSUn0wLseHnFQkeKBPomZzbWzYTMiTwUX6iNI64p0fOMmHU88zG51OmVojj4oiKTX+c6l3a9aFwA9JVSJ0S291B7M2wVU8pnL2r6yP14Szd1jAcCvVW9EqLCw7/oKxdVrz4+E4OLyxsObKo9z+JZ4mwBG5ts7bTTJnNuKp2MQUsOi+EVBZBkNi+/g6AXlptOJ3X1ZbUZKyhW3Amqk6etsmLjSeMsxKvR891Od50Oepd4B4tE0X93RnHq2Tj9iII0dgNwK90tLFUUac/2R80dmLx3CORvl9fASUKMQGmNotiyula8xCJ7N1UaRpmyP/jeghv4YJzyhWx57uHQ7LDO7dk8bPTjGuz1YaS7OjbpNWdgc0A4qENBXlqvaL9R9Zdc6Agn47X0U12Y3oUs6ZGPjBJ0QEXV/pUCji6zAzxw/PkgyMCvQizjJrlXgNw1ZY1qQOQCDpOB8y+rEx0WA7ZR+3unQjd3jHGu25tWBsRHQi2LMVyhRhhqwPSPFoYzUHeFTHlgezzp1rKXUPuS1scp9vr5n9elrU8G87gWb26aYqYVJpLLnTH35tsfwwi10AaixD4VCGctEKQquB1i0cQEWYHiI8xDk1MLQMwxJ+ELxnnqIEIGugzvRJo5RoBgqFDqTEnNPhKiJcu52/BzpDgloH8Ud14lj7wCo5sCxDM7y0Mn24NCuFYq4APSe8bxrnFLvmozwOxvv5N4h1yQmkfNLBQpFtFC9z6IOFavSXxKmTrSkYo8jQ736JLdlXjvQLc9aeoIcTh0D7BoQPX3+OS2NSU2kLyvYhjfGqiqXE4JZD8a30b3VRujjTlXwDDZ++wAayFubBpBepqvR5OWdTGpAbbxFBSKkWoaB4+rFEBN1ilJ9+mADMX9ualSiJdGmwoxDX+yplkFkjnMLpJC6UVJ7fW4ngUQq45WO2uotGIq8GWzueMzL5bjoBCXmiAm5CBS8Mkw2MwCmza7de2vSPUaQwQhy7DVc+TOcZ2o94c0m6Ypo2rYNhjihpQJLaiY4Q+yLy7Dd1QO5II8Anu1Aqi//ylVH7rfDJnnwjldEGwyq3l68lpqJFWNHWYEinuCumr2ZD48tMl+HwfmN7CRTFvvkNiRoYN7ENDhsM16xjw03ViQ5/Xmxs1/Fhpe4MY5KvIwz1hTML4HsiJkA3z9p927IIeX9wvHh5DGO23oVVyWHzvPmcWZtrBtHER/a0D0WWE+jYqdQ+VGNq7VUsUDNmYGkOOT45ZA4zef+28QTcD41T8/4sXUK8yP1CxGUiYL6+NOpkkTFnwn99NNqow1gnBkokzLNxlXUk0+xS43SI7k3+5yttkLSU0OokgECKWtftaWmJipUrai4++s7vZMKFtg63lDeJr+j91U0KHM2KNdJTRa0k5/LK6FnPzVBAQ/AcOwyjjEpumcFFTcXJM0ZIkBp9XspyB46tWaITLHZXbE5XoEsCxEjGeW4bfTLLwsD4eHc+hQ3olzBPQcEymBIUw4vo+ZyQmxZPn2m/OWhaDwRm5G3ssDmuLqhdsMiuHXWjTER0vdD3yX904Lws8jaRDbGhfUDAyaopMmbnspWWbZbuWdCNk6LaVuu9ncNsI9PdVlL3iiWWzy/hK7RuxlZq6gA7TFRaZ8ZGGdOQq0bNioPGnAcpIZDuDO8ir7Z2V3Z3JhcyDLXOAsUivyANxeLhDBxknZ/nRcAzN4WpA07Mk3f7KNhGLoEELRf9Rbe5qEqT37U3UWbsp2gaKil1sPTSKijFiqGoS5eLvKwOibLsQch1q9rCgBSV8JTiMX4Y1TGeYAtCRbG6fvBNO9VN4tYYRJ/CeXwcIeL38IytScS/H66xbhLugPLfZdo30sCu160a4yjnKgfUbLsdXkVGc17lFGRn5L+a/nRp7XGjpPYszpupxISHuDU+UhfcSxaJGSJa4+YdP48QnE1gRkdAH6H25OdYrXxNLvshCo/SP2fLw/Ba7X0hvyDW7koS6aW2VQsMHIWBdndzXZsLJxYUlSKcq7Qz89DubQySbshia3TjkPhDdFEMeTJJ09USHpdt3VUTOtl8vGcfhRkYfqr7/L66ZqClJQ51Va7t8SZGZY+4KndbaBu+LPPNKA1Db9xPoW72zVNGF4falXU/Ls0l7qPF5/3DGOsnQKxksDhlBziwHrszaO3vAOi6Ut3FmAukt1teg0L6BY4KkQsDKP5MMthkg4f7bQ1T2T0DxcuFh5hiYTU5u/D1sWaG6UMyzM1p+JP0/YCcbyodJZybsq+sEj84y25b6oJy5oPRdgRkc8vExRSycgYLATrN+a/zBYSDjPN1Z3J9z5l9euRjymqxq6xGMhyq4yFwjs9ZR+uyX8dknO3H5PE9r0ouLTs4H6Uw04uO3q5o29tyUNSvQJo+EKRqtlLn03WLJYaDJVONU0KSbGvSliUYuIMB60uwlFmm7spwNHoP5PLsppM5+dV+MjF6E2oSc0qe211MYUZbNm81iXIx4ohupZ6064J6JRsglOznCi8YTpEVxlbtVXWwHV2A9LaKBfztU0er/+Rp1e4pJ/O+ruMnAcLDA1aq+EIDRtC91U6zdNpvrIMkMkCGc229eoEjf5tepjPrg2vew0uJaKMEf5Wici8ToADumsFZCr4ZdAZ+RwSU4dr/OsVhxz0frA8SKfUNhHThPs5+P+FesqF6VZ0uF2rErO7bzPsPlad1LQd9+O7MqqTmzaXwhNNTxWnH80xj41F64llbiw/sbMYc2Qbjsi+vZLMSZMN3LmQPRVCrhlC1NMsm7aQvr/mK7/6T3JNp2QTjstBWqujmPSV0zuaM/Mcgp9I14NcD+kL22PutVIzZWZz0zOkx6P4NhWUABspOxhblgOAULAerd02QEDOYElCifW5t3xMLSINH7q9XzHqCAFxz3gOwarw4SXeUVJt8Fy6oBrH9FItG845BLU/oe9CX1c+HUHHDoRNnmRRQ7e0eoeDdDGnYWPW1i9Mf9rcONyHTQSJWGFsz93yncx+hb1h+ETJ4MAYdI8DrBU+qKQwsw0p6ZWA5Q27PCeJ/ImGtMsGo6svItdvs88CFKyTMMEdK3P18HQYYb/PDhnhcHq8KcGN936KjJne/b8Dj8R6L6S1q0JB2Lhoap7eta6pavoY/AN/KxwmkAX9t5DTgkSz4pL6e1ACMt1nUWqVmuEZ+PQQxaTF3DStFYIYaFsRsTcYg0NNIpBJ7CGE+d0YstscyTEVhlG8woaEib8DrCUQXsclB2H6yG+rgVL5DxQ//WoBHJgNOxD/RXhntgjjcj+XTuX6Fr9FYcubkyP0n1KAa2wHRCBoX7i9zpOiZ3Fw84Sd7DNsyM3eXhQDj6Kv8aPkgcS7AzHHB02dfB2jEl3NZt4br9c7hS4qOe99qfx7rR3d5Auhh6fwtLiOTTp0siS/gWThc6Ozm859IIddRZS0EAXwatl8GwfpwaaDGrZFxmDFZTa/Jp4kDgyGUyZ5Q0kNHE/Q0k7X4fuL2nAPWWtuGrqfZ/1HWFxfmUPHywjppc4/Sct9DYJ3l0K3tC9W+cJeaA05heho8OKxwha7TX2ELYv1kPzqPuVgs8Eag9rQOZS6sGJWHglQGNBa1ZsQPbgsJUUs2h2rrJRTdfcAMhqmnaIumZneyQM3v2tYaEY5JNNpSN7zWrG2363UiQsvOlqySghJs0hTu66S+nAlcQZFke2UYx+HZaaXOew2vF+eMrqNyvWE+m0i6gE7uZHumwPi4Z/IKBLSP3zPDKx+YOx9B6ttHwUVTYErSYj8SZVi9fvDgk287cx/QLEj+H5CvdgE0qnLhNJfxM53ESbHtNY4qvLe10WGQ4bZNDiEn9Bvr29wB0tlWjOCi9izqu1e5qpCRUeoOPn78cJNTdpJA3LkMc5x+HUURjLfqWpnAVD936k/G1/KaeVYr5Ja3maD/SKyPw5KIvlimnFn0En/Q3b83aDN/MCFdOKMavacmuPDSvrWTYiMA8YlvAkxLePkaN7/w7TKwAEJBfpJFfj/2UyQKUmK5ofqz1RDRGFd+DKpMW2MReUiSy9Hb7mNNsSVBNISV3lct4YycJ4WQd1e9awbnOSQ9ujURjL+EmU9v8u2on4kI6rbm8JMsA6WA9J0IIwJMOTKA0A6PNzouQym7WUbi+K+xoVuFzOyjJUCpzdEY1SYPp26Svue2ifn75zCL70J4Bv9wJ1kaQoP0zSO5Q8OUbLomfpOZ4TeC6TJPz04coNHSDVgrKQs+D6PVQmwo+d2vLNHCRUw7LrNqUSbcJaIcmpHNd7QgLE/VsHSHdLeWgRleztGAtdb3ZyNSpG0T95l2kSlboh1zlTsE3Ol4qSc1sCza2rOdV4dfZYPjphYYX2cbh/s/f+In75oeSU5H0a92jmWKmPpw2Tj1U3C41NIVY+UoIuMNyXqtCWaUiSSgTNL8vDjm8aJ+gzDTBEr4zqWqrrwj4J2uX6WVWlbrzmljRn0fvhIjXLV3CzpaO6GN6OwQmvAWTe9eaO56fVsycNv3fVWxmz875QxfI1rH8T/S4SW/To27ggLaGOqx7E5qxIU0K1rRJ4LwsJ0lNdbw0d53CdvF/pc0XGT30PH8I/HYJkUi/HxdTGY0ifT85qJq4567VU5QJt4aEn9rIo2ENzuUNHJhdafxnP7pCjAO9RFkxIrCuMhlArvWhkjqwoJyxkSX3Yq+srtM/sm3p4y8xonXhYnPTzZkNniQSiEoR0bD+I/KyDugvZjqBtpiea8//oBZyVFnLaVTrGg5bBXSTJzreltMKwaw1bAfkS7MSvghEbxycy5EVK89d6aoHbA5KdfaZaTr/TOY9QaWiujHLFr0gsY1kL6BmmibQBTb5t33kpIYZSyLvFJggkRP33IEQh1zOEwkx4QUWC/2bcUZia1F72grqCdGcqUeZhD3KNX/zIyoSCZ8NdYKNjM3OuvSTUfm8/BeLNbEYfCA2OQoTTqKpWKogfjrCw+SCcKuVEhPiGmqOwMe7LJmr6RVlz8P+YEp1E80Ezn3lEkxR7XSE/QQf1i8CMKBhuQC4aBf/lT2fYOLE96k247HpS6PzSz1HFpIa8Kgp9L8YQRgsFU8Q8govR55q0L2r16Q4SCrC2CuP8g2mwx5ZEbRHuDADWf9vxe/MdQ9zzRyeZlzon1C4GmajvJ/sDSOkWXybW1FKmRhq/LimM+YQOjjKg+QW2ps2tV6Te7sSfM1C9PC3S04l+FBFGPOvFR2rSlQbturH6nsnPfezc5nqomyIljUhtC25yHptzNl0ym/Xa9RjxFkZOvNoCAx8qeCcUB8ze0/eZsV/lfRaevyJWUMULRy/zJzSvQYxbjG6mYmtHnL3q+dIRMASM38r6C0D4MarSFG0EcSTBWcZo0I+RQdeTE90QfnfpbPIXb/QlR9Lc6ivBGQ6Cxm7rrB/O5S1qyr/PdauQ6IYcmYGYEbi+f0Lq6i4KDAELf+sXuo9ToV0nqnYidNvgCWuOAQwFeRwm4h9ym5dvw/1G/1M/mqAVoD0X5Dwq7EkdmxUx850IyKIbv5ECVUM+mRYI+94y60UG3faKq+BmTyukY4qqfYDcd+dmhNG+l5HqvrNFpa/QZTl6aisX1wyN+uK4FRZCVBKPenRuT4JdW9eVz6KKW1NtwPBZEGMuFWLw5/sXnKqJIkFG5A+WnaL43Ou0/YWIHptJJf0YOKkmZek71bZw3SPM5Y+PbHopEP1jsfG6O7grfpPgsetbi237cSh8lP/+AB7qsUWBfCaNTLdtMbGmKkOWWDUsXKBrb8Phr1GQ/z/EZmI7fVtxV/Km1BE4C5qMkplZ7Hlcy0Y6dLfy6UsoZkCEopFKbSqcWC/7qhU6IzMO2tKIGNrnNkdDN6FjDNZu/kCXDXYbCL7Mkzk4JttApljDsAD9MzYpwRsIfotmb5Rv95o7R4fmWLxgGKveKIB07yBNIeenn5N7ybTbNHgxPQf4D71TBf6uuEpzrk+K17OXOq+zSKwf61zMYNoH+uVtGycHhM7Pa13mfOvc536wjX9IHYLsXfu+nllPpX8xC4q36UYPRicYwGKTzizjqd5d+Oc18h5N+mbeQEx/ENHGc78TR6NBqf7inW6tAl2MpsiAeeJ1wA/Y1h0VfoFnb1g8Mplh/BMJabdIgp7n5FNzkkl/usfGLaQqpFPFxHnrgsk0qmYODqluPVy6o/jO470WRAE3QAj/orRyvJJw/qHG1hqsMxb/UOBeAJfGHUldnceBwOH6h6vq2k9KdunFSzcQPoeK34FZwU3LOw7sI+MoYUsnEDI5+ABq5MmIK5cEmVpM55xXkHwhW1sBmLNKnhPQW6WxaGUfRHEMLTn3nbYhbRuBiu/K1BvXp1MRQD65prxqY/3DLnwNTxoFvscp61rl6HCf+cbhKzHl9Z/UhD+flcFJG6ko1P6/n+qIj5YATpkGCgOafjResgEUZKOPg3emvQMVXDulwKQlz3UTyW697w+/erF0NAg4k2S8RS66t7MsTn0HHuulUxENl1DbQ0vpUbveOgXf3DNe5QnkhJS7b/NPYh0xUbeu1cS6W5CH7j2gkOyWvzKVl4oW3/LdH+AHcXxJRDFEbyJnM8+WWWJObad5S5JHmHvSDZPuS0Qa7Ydce053GzTYa2KoDWaYeWFSiBZAqIcCc/ze2q5a6Gakr1TXhMCRav9bdwfGadRP+f7c6SF/4Y763Qg1l+CRI5Ad60ICZJcxtAGjc1HRZoN2/YHWuIxixrrvBXuICU81BfbrSfCFa/01lEX4mqQgZ21wg3vghFreQ+ffc6PEm2R7HxNEFPQfsb3RwJjs9/c9gS47V/4vg73jGm0ia3FtEBHBz8ejXfbNPMTDj0swAJuh6W1Qkrwq9mdaIXCiKjP6bYMXZlAtp1bFmMggYYC/7kDeFj4wnrvQIvOTTLfo3e9id/FCUjdaRLJoLjXnWcAFNDkTQr2WL3C36ltMmLJkk35uTFGbdAp1r3rfvHr0qJDBTuOaiZHYN2JdbFAWB9ZszKA/BWYaQNE3sgn422KSRHQxMi9YwI5vI2CMNh616GPsTwMp/FLony3+JU6+HpjJYKwe54hs66mNwqfjBAqz3wbXc0XHapdS8QRQB5T4XPhXTc2bBxY6WmcgbTmWnS/CtgEjCEF6/w+fX++Dvmqte7nkD8Oe6r+D1to3y5wfA9LQvj+XnxbtbVPIEsd+3HQ4CeSlgLIYRu1Izov3odhtDa6HniNQJgehwrHM+Syr3LYgZog0YHbov89ZGCnyinnD7U5BZHjBvpITlLr/4Bfmo6Ar+oNdtuZpoPIxV+HxMpYMAhDIlEignpaiDjSrSrBblkPvIuhspEovd0u64sd8qPu5YQBjs7Bdg95GxKWeBKbSoNxzzp4dzvCGYFu368nxo0eeE/t2gKHOfameEQGRuRbdCyh6jNufKDV98J0jgRTXPfPgkVKgu6bTstn6hRPotlAFUvlXybXzV338nydw3L9XdD6wxtVFBJQ6OnN9k0+qgWUGkwhdf5C7tG+GT8py/MWd/sN9jSyedfIEsRgWmsXJ8nuXidHBrfpxnHfm6twBoixD425iCas2GGVpBxXHVozG9lOjlT1FMOL70q+Y4Iv44kKGsXSAI7RwbGXXFeuSWzciXCP6AZt3PkqEae87mIKmqw/Lw4H1aK1qUyehQ9cJAWiAHzfpc7+uIeeWDrZxtdL/XwLzYVPWzfM0w2awOkhpRxzODLWe4+dV/NyVhbTiWCgsZglCp0QsCnXCLMIIxgcyILRqykAoPbLRjiHOFP9EjXsVuNLzBR/cyFDD/nyCrpq2VSi2np5M9ySs4OZmcGKc1o6uFUWiA9dxyZresIPCIDNQrJZKkTvSKuCVWAoNN7YaftNaX5S0XXtwqSljXYle9uADkL5qMywP4NlgJjCuWfVM3sF+ZIw05H3dYMYgbYcvQl/sKp1ny+RmVn/dm2WkY6+xl2jRU0jXUKFOgW2RuRgEKR8T96CDen/mcgK0T5Z9q9fVGYaGJdObbJ1tEIr5nVmpC8IEn9bkhN54/5jjaXVNDiM/OVNyses8GeOv1/oiBx9+b39eEXFazlOIZIynfyzQMkBNnYw4usniEpzOad8MUb1z7bqHhGE1o+KnDzQQ7j4FlbXj5SkQB9PJ3AdUaZnzkStncmuEQN2z4mRMZZ7y6wnjzsisWwG91Rmjjxk2jkhWEAdoYmwx3CHx12Q0zjZuSYRVenIsQ+Ye1TcFGDNqoJ9yoOuXAGGcivhyMI6nCIoC1ufz0VJkkZtAv/XkeG+wvQy17c52hDykqVGMXymszIVgtV8RGzLfoQAsaONel9srgLqiBJ4s8oN7yAVGWfz0hO3GbSF6erk8+FxKKVQDOM0j7Q9/oqWkkIdjGvl/m2uurU4VtD20MngcatuGG6L8xEmMRvJZJ38WQpe5wYxyRvWNoGuG/7+3zNSOB+71eCm8fjMqXHUzkyUO96GBy/GXQ+H9RqGFuFmN+m3fiLz1km0zd72+py5muNVJ0QazDp3JUS7WlHovb3rAcfxgB3Z6MAznzFM6ZRncTJy2wMrphFRuV9HD+gzkXIhqf9MedK080gZJ+vE3hlnr4XMh/xgaVAmxYV49TDO0MUqeQuJccNBWDk94INN/cidZzwy+d+mx++Zf8xTM6v68n/wRt16Y4Hvg7jP6/HAgXDfFXI1Z0q+Qzicgq+2t8GeGaCIwMFiD9Ib1KNT2MWgnQ/uPfjVOx9mZR+VeF16SSFExGvfFqoEJ9+bvFZmMtHsYzJqZ1rNYp8vwFQtN3Le9Iyyb9MlbghJlmukTtPGiOP6zT8VHGcVTtlgplmc5pCYv9bjOWvnhW4QZD2FGOtJncnCW+i+OljXAsgilGP85Vj1ZeqmuYVRMqusOjrgjh1P+4DSNC4oRIQ2OFpxcBvDoJRvuxKt1KHTbahGKBq9GkrhFb4UFX5kP/kyigZurevoibZ9pPpJFEu0nkqTCRXY0/Nz4JJFVYHxO0cQMclgwlCl/Ew56iScKEKVmWK+ARxh5Uv9UcvOGVG/RE0oNw2s0J5l/pK8cKpXbGc6ZdJDvcuMy9rHDtJeD4MmbP2ok5OjUpw+VzoK0pV3kMMIdv2cCV3UhU/jEBdT1wYctk7ZsLT6IxYYOysDsPmXvrRjfJlzfUF/4zyaPTk7s9xIP+WDwJdUP7HEFWCIcqZNDk4GtbV9Jf91i/KbXa+GY3ntdZpH+ZCfKLoW6pmuFRobc54gwKzMilTTnblz9jtv45H/45WThEFxIIL+uTinOrlDDnls9PlHiHdJv03L2vAHvXuVP2+VBFC3y4GN/ND5GTs3JzyfRI1lbJjwYQPD/4hnbK7yJMjBZFxkeKY9PUNCpK2J4uQBTDB4yjmtFd3N2dIvLr5/Gs2bpTy8Wq/bXKe8wbh5pBx9dv4SWHsYEo5+BRhhqFi9IP7qOpZd3O+17xFba4hqrio36UDOjZ7PghXG9DLSdw5xah4HP0QmN3mVVMP2dJc7rRXhfX1D5gMqX9VbSTDSByCr2TnlbUt+JGqrJ30ouKRZz24T7hA5nIlMxvF0ILgyzRaVTRHRKIYqsQ+WkZp1yeRAPifydsuovGr8PRER6noJa2Gyc84TjeXdO0mF0RS/gxYCqv/Jz+blwDR2184uq1u0K6eAcFtHlUh/BK/1U0uuarlxpa+5fszlWwqYTFG3UN725ACcilxlmCemkx9oSzV+DPYy9D79vBiMjd1CZKF6agXNIKVypFzG/tsvdDrXJKeivFK8gFO4eqFDt59YuE3jf97HJlxYZqM9+cB205DUYnWgl3nKgVBQq9tnhZarLvIZwn1RmPtn4ay5PWmZSBpRuDod803woGx+Mk90xiBc2LdXAOO0mcKCxObqBRC7Hbeo+AC1EJzlfs+ZxHaSLaTMVW0z4GklPMtrkEDH08zhXNhkXc3vBQeSl7tsxG6CiBSivQB04gaosVEGW9mV9EM3MTPyEhtuZy55Oehyqccay17QbKlgYSNQbNhqc9Guq+843uGq+WVUxNX8JRh3O97tMdcYItUWO7ThRuSkSiyH7UYQqNI5yGQcCwB9G+5MrCWtV9CreMqz03gyXZhvY7sOR65Um+o+MJRtP31czTzQF5sfT+8X7uC/E1hZP0iqQyTtII3lxmUunEiC7a3MkdvkIefS89edu5+RVU3BUU4oeBp0n6lP7+b+MnUN5gZ4VFRwrkgx5b1IPC9iS/FnqAm+t1Sqegtl3Xm2rkHw6YhbgsjzP+N10Th/e0EPww//mFM6UoJnMz4/ZMzoyqI+1eHlOcjtw53OqYE5ViNL96wUZBLLGd6w6PYqY28R5LyxHGyu9MiS5GHA11RotsHit4MQXfI/teajnyLtAYh6Fwz5DHwfeY69AGNIg2OQZx356RLnPTZX1lrh6Z1o4iVghD7G7CFXiolTLCtXpzuwJlAzkrGzrwC48OYbVcMKrqZun0fYekiAHfqFJ0bwvOR1c61zM5tRqt0Og0be10BCD5GMnmI/RQzS713xy3XFYZwQ0iwC9YLmsEBdQPChaHofTTPBDIMdDCxnNhOHXUWipMzAiVBRKSvkfeomgRMV0xGgJHRV+muSbuRgzC2ZF+GqWp5p02vb2crbj/VztZFf10uogM=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form2'];
+if (!theForm) {
+    theForm = document.form2;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=n8SYWIAn0xdvwsh5apej0VM8kC3Spf_9BDVRPW0Xm4tdOjFmgLL8XEu4wX6Pa_a9EeGw55OrSbiNds-Z_yfprYZm-_aEvUBoZTDZAOEAGGg1&amp;t=638901739900000000" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3aa8328cc8-0a99-4e41-8fe3-b58afac64e45%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2010.2.713.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a1814ab69-dbf3-46be-b5e4-1b4e7d85f183%3a16e4e7cd%3af7645509%3a854aa0a7%3a874f8ea2%3a5a6d9d23" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6393C27E" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="Bg1Ya6i6o6s5C1I//mQ6sDreRznEdUaqUMIdd9mvH4rWlIBCKTSbYIwchhnEQ1TRkJam/dzlQFCpXkAG5N83PL0YrclXSr/LkxNy8kIm3HZNlMzecaqzUPcREvpLlF8OoTzlBLHdWznfrLqQJhxcWw==" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('RadScriptManager1', 'form2', [], [], [], 90, '');
+//]]>
+</script>
+
+    <center>
+        <input type="hidden" name="hdn" id="hdn" />
+        <div id="Div_body" style="height:auto;overflow:hidden;background-color:#ffffff;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 table-responsive">
+                        
+                            <div id="RadDockZone2" class="RadDockZone RadDockZone_Default rdHorizontal container-fluid" style="border-style:None;width:100%;min-width:10px;min-height:10px;margin: 0px; padding: 0px; height: auto; min-height: 0px; margin: 0px;
+                                z-index: 100;">
+	<!-- 2010.2.713.40 --><div id="HeaderControl" class="RadDock RadDock_Default col-md-12" style="height:120px;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="HeaderControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+<script language="javascript" type="text/javascript">
+
+  
+
+</script>
+  <script type="text/javascript">
+var Analog_Color="#ffffff";
+//alert(col);
+Analog_Color=Analog_Color.substring(1,7);
+//alert(col);
+
+var clocksize=75;
+var colnumbers=Analog_Color;
+var colseconds=Analog_Color;
+var colminutes=Analog_Color;
+var colhours=Analog_Color;
+
+var numstyle = 0;
+var font_family = 'helvetica,arial,sans-serif';
+var localZone = 1;
+var mytimezone = 0;
+var dst = 0;
+var city = '';
+var country = '';
+var fix = 1;
+var xpos=0;
+var ypos=0;
+</script>
+<script type="text/javascript" language="javascript">
+
+var dayname = new Array ('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'); var am = 'AM'; var pm = 'PM';
+
+// you should not need to alter the below code
+var pi = Math.PI; var d = document; var pi2 = pi/2; var rad = (+clocksize) / 2; var ctrX = (+xpos) + rad; var ctrY = (+ypos) + rad; var hourln = 1; var minln = secln = 2; for(var i = 0; i < (rad / 2) + (rad / 16); i++) {hourln += 1;} for(var i = 0; i < (rad / 2) - (rad / 8); i++) {minln += 2;secln += 2;} var font_size = rad / 4; var offset = 16;  var clocknum = [[,1,2,3,4,5,6,7,8,9,10,11,12],[,'I','II','III','IIII','V','VI','VII','VIII','IX','X','XI','XII'],[,'�','�','-','�','�','<span style="font-size:60%">|</span>','�','�','-','�','�','<span style="font-size:60%">||</span>']]; if (numstyle < 0 || numstyle > 2) numstyle = 0; function timeZone(now,loc,mtz,dst) {if (loc) {var dow = now.getDay(); var second = now.getSeconds(); var minute = now.getMinutes(); var hour = now.getHours();} else {now.setUTCMinutes(now.getUTCMinutes() + (mtz + dst)*60); var dow = now.getUTCDay(); var second = now.getUTCSeconds(); var minute = now.getUTCMinutes(); var hour = now.getUTCHours();} if (hour > 11) {moa = pm; hour -= 12;} else moa = am; return [dow,moa,hour,minute,second];} function commonClock(n) {n.style.position = 'absolute'; n.style.top = '0'; n.style.left = '0'; n.style.visibility = 'hidden';} 
+function displayClock() 
+{
+if (!d.getElementById) return; 
+    var ctx = document.createElement('div'); 
+    if ( fix) {ctx.style.position = 'relative'; 
+    ctx.style.margin = 'auto'; 
+    ctx.style.width = (clocksize + offset * 2) + 'px'; 
+    ctx.style.height = (clocksize + offset * 2) + 'px'; 
+    ctx.style.overflow = 'visible';
+} 
+var cn = []; for (var i = 12; i > 0; i--) 
+{
+    cn[i] = document.createElement('div'); 
+    cn[i].id = 'cnum' + i; commonClock(cn[i]); 
+    cn[i].style.width = (offset * 2) + 'px'; 
+    cn[i].style.height = (offset * 2) + 'px'; 
+    cn[i].style.fontFamily = font_family; cn[i].style.fontSize = font_size + 'px'; 
+    cn[i].style.color = '#' + colnumbers; cn[i].style.textAlign = 'center'; 
+    cn[i].style.paddingTop = '10px'; 
+    cn[i].style.zIndex = 1000; cn[i].innerHTML = clocknum[numstyle][i]; 
+    ctx.appendChild(cn[i]);
+} 
+var mn = []; 
+for (i = minln; i > 0; i--) 
+{
+    mn[i] = document.createElement('div'); 
+    mn[i].id = 'cmin' + i; 
+    commonClock(mn[i]);
+    mn[i].style.width = '1px'; mn[i].style.height = '1px';
+    mn[i].style.fontSize = '1px'; 
+    mn[i].style.backgroundColor = '#' + colminutes; mn[i].style.zIndex = 997; 
+    ctx.appendChild(mn[i]);
+} 
+var hr = []; 
+for (i = hourln; i > 0; i--) 
+{
+    hr[i] = document.createElement('div'); 
+    hr[i].id = 'chour' + i; commonClock(hr[i]); 
+    hr[i].style.width = '2px'; 
+    hr[i].style.height = '2px'; 
+    hr[i].style.fontSize ='2px'; 
+    hr[i].style.backgroundColor = '#' + colhours; 
+    hr[i].style.zIndex = 998; ctx.appendChild(hr[i]);
+} 
+var sc = []; 
+for (i = secln; i > 0; i--) 
+{
+    sc[i] = document.createElement('div'); 
+    sc[i].id = 'csec' + i; 
+    commonClock(sc[i]); 
+    sc[i].style.width = '1px'; sc[i].style.height = '1px'; 
+    sc[i].style.fontSize ='1px'; 
+    sc[i].style.backgroundColor = '#' + colseconds; 
+    sc[i].style.zIndex = 999; ctx.appendChild(sc[i]);
+} 
+    var am = document.createElement('div'); 
+    am.id = 'ampm'; commonClock(am); 
+    am.style.width = ((xpos + rad) * 2) + 'px'; 
+    am.style.fontFamily = font_family; 
+    am.style.fontSize = (font_size * 2 / 3) + 'px'; 
+    am.style.color = '#' + colnumbers; 
+    am.style.textAlign = 'center'; 
+    am.style.paddingTop = '10px'; 
+    am.style.zIndex = 990; 
+    ctx.appendChild(am); 
+    var zn = document.createElement('div'); 
+    zn.id = 'zone'; commonClock(zn); 
+    zn.style.width = ((xpos + rad) * 2) + 'px'; 
+    zn.style.fontFamily = font_family; zn.style.fontSize = (font_size * 2 / 3) + 'px'; 
+    zn.style.color = '#' + colnumbers; zn.style.textAlign = 'center'; 
+    zn.style.paddingTop = '10px'; zn.style.zIndex = 990; 
+    ctx.appendChild(zn); 
+    try
+    {
+    d.getElementById('clock_a').appendChild(ctx); 
+    }
+    catch(e)
+    {
+    }
+for (var i = 12; i > 0; i--) 
+{
+    try
+    {
+    d.getElementById('cnum' + i).style.top = (ctrY - offset + rad * Math.sin(i * pi / 6 - pi2))+'px'; 
+    d.getElementById('cnum' + i).style.left = (ctrX - offset + rad * Math.cos(i * pi / 6 - pi2))+'px'; 
+    d.getElementById('cnum' + i).style.visibility = 'visible';
+    }
+    catch(e)
+    {
+    }
+} 
+updateClock();
+
+} 
+function moveClock(l, e, f) 
+{
+try
+{
+for (var i = l; i > 0; i--) 
+{
+    d.getElementById(e + i).style.top = (ctrY + i * Math.sin(f))+'px';
+    d.getElementById(e + i).style.left = (ctrX + i * Math.cos(f))+'px';
+    d.getElementById(e + i).style.visibility = 'visible';
+}
+}
+catch(e)
+{
+}
+} 
+function updateClock() 
+{
+   try
+   {
+    var now = new Date(); 
+    var theTime = timeZone(now,localZone,mytimezone,dst); 
+    d.getElementById('ampm').style.top = (ypos + rad/3)+'px'; 
+    d.getElementById('ampm').innerHTML = theTime[1] + '<br />' + dayname[theTime[0]]; 
+    d.getElementById('ampm').style.visibility = 'visible'; 
+    if (!localZone)
+    {
+    d.getElementById('zone').style.top = (ctrY + (rad/10))+'px'; 
+    d.getElementById('zone').innerHTML = city + '<br />' + country; 
+    d.getElementById('zone').style.visibility = 'visible';
+    
+    }
+     
+     moveClock(secln, 'csec', pi * theTime[4] / 30 - pi2); 
+     moveClock(minln, 'cmin', pi * theTime[3] / 30 - pi2); 
+     moveClock(hourln, 'chour', pi * theTime[2] / 6 + pi * (+now.getMinutes())/360 - pi2); 
+     setTimeout('updateClock()', 100);
+     }
+     catch(e)
+     {
+     }
+}
+
+window.onload = displayClock;
+
+</script>
+<script language="JavaScript" type="text/javascript">
+
+function curTime()
+{
+var now=new Date()
+var hrs=now.getHours()
+var min=now.getMinutes()
+var sec=now.getSeconds()
+var don="AM"
+if (hrs>=12){ don="PM" }
+if (hrs>12) { hrs-=12 }
+if (hrs==0) { hrs=12 }
+if (hrs<10) { hrs="0"+hrs }
+if (min<10) { min="0"+min }
+if (sec<10) { sec="0"+sec }
+if(navigator.appName.indexOf("Microsoft Internet Explorer") != -1)
+{
+    clock.innerHTML=hrs+":"+min+":"+sec+" "+don
+}
+else
+{
+    document.getElementById("clock").textContent=hrs+":"+min+":"+sec+" "+don
+}
+setTimeout("curTime()",1000)
+
+}
+</script>
+ <style type="text/css">
+.IE8Fix
+{
+    text-align:left;
+    z-index: 100;
+}
+.imstyle			
+ {			
+     float:left;			
+     padding:0px;			    
+     margin:0px;			
+     border:0px;			
+ }	
+</style>
+
+<table class="table-responsive" style="width:100%; height:20%; margin-top:0px;margin-left:0px;margin-right:0px;margin-bottom:0px;padding-bottom:0px; padding-top:0px; border-spacing:0px; vertical-align:top;"  cellpadding ="0" cellspacing = "0" border="0">
+        <tr id="HeaderControl_C_ctl00_imageheader" style="width:100%; margin:0 ; ">
+						<td colspan="3" style="width:100%; border:0;  margin:0 ;">
+                
+            </td>
+					</tr>
+					
+        <tr id="HeaderControl_C_ctl00_tr_HeaderBackImage" valign="top" style="">
+						<td id="HeaderControl_C_ctl00_Header" style="width:100%; height:100%" valign="top" class="IE8Fix"><html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+  <tbody>    
+    <tr>
+    <td style="border-top:10px #0b49a2 solid;" align="center"><img src="Image/header-1.jpg" border="0"></td>
+  </tr>
+</tbody></table></body></html></td>
+					</tr>
+					
+      </table>
+
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="HeaderControl_ClientState" name="HeaderControl_ClientState" type="hidden" />
+	</div><div id="MenuControl" class="RadDock RadDock_Default col-md-12" style="height:50px;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="MenuControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+
+ <nav class="navbar navbar-expand-md bg-light " style="z-index:155555555555;" >
+ <div class="container-fluid" style="z-index:1010192;">
+                   
+        	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNavDropdown" style="z-index:1010192;">
+           
+             
+                    <ul class="navbar-nav nav-fill" id="submenu1">
+						<li class="nav-item"><a href="/resource/home.aspx" class="nav-link" title="Home">Home</a></li><li class="nav-item"><a href="/resource/WhoWeAre.aspx" class="nav-link" title="Who We Are">Who We Are</a></li><li class="nav-item"><a href="/resource/Partners.aspx" class="nav-link" title="Management Team">Management Team</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Investor Relation&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" id="submenu2">
+							<li><a href="/resource/Investor-Relation/GENERAL_INFORMATION.aspx" class="dropdown-item" title="General Information">General Information</a></li><li><a href="/resource/Investor-Relation/financial_result.aspx" class="dropdown-item" title="Financial">Financial</a></li><li><a href="/resource/Investor-Relation/Annual_Report.aspx" class="dropdown-item" title="Annual Report">Annual Report</a></li><li><a href="/resource/Investor-Relation/Quarterly_compliences.aspx" class="dropdown-item" title="Corporate Governance">Corporate Governance</a></li><li><a href="/resource/Investor-Relation/Shareholding_Pattern.aspx" class="dropdown-item" title="Shareholding Pattern">Shareholding Pattern</a></li><li><a href="/resource/Investor-Relation/Secretrial_Audit_Report.aspx" class="dropdown-item" title="Secretrial Audit Report">Secretrial Audit Report</a></li><li><a href="/resource/Investor-Relation/Notice_Board_Meeting.aspx" class="dropdown-item" title="Notice of Board Meeting">Notice of Board Meeting</a></li><li><a href="/resource/Investor-Relation/clause.aspx" class="dropdown-item" title="Compliance Certificate">Compliance Certificate</a></li><li><a href="/resource/Investor-Relation/agm_notice.aspx" class="dropdown-item" title="AGM Notice">AGM Notice</a></li><li><a href="/resource/Investor-Relation/Scrutinizer_Report.aspx" class="dropdown-item" title="Scrutinizer&#39;s Report">Scrutinizer's Report</a></li><li><a href="/resource/Investor-Relation/miscellaneous.aspx" class="dropdown-item" title="Miscellaneous">Miscellaneous</a></li><li><a href="/resource/Investor-Relation/Disclosure_Policy.aspx" class="dropdown-item" title="Disclosure of Policy">Disclosure of Policy</a></li><li><a href="/resource/Investor-Relation/Disclosure_Newspaper.aspx" class="dropdown-item" title="Disclosure thru Newspaper">Disclosure thru Newspaper</a></li><li><a href="/resource/Investor-Relation/Annual-Return.aspx" class="dropdown-item" title="Annual Return">Annual Return</a></li><li><a href="/resource/Investor-Relation/STATEMENTS-OF-DEVIATION-OR-VARIATION.aspx" class="dropdown-item" title="Statements of Deviation Or Variation">Statements of Deviation Or Variation</a></li>
+						</ul></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Policy&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" id="submenu3">
+							<li><a href="/resource/Policy/Terms_Conditions.aspx" class="dropdown-item" title="Terms &amp; Conditions">Terms & Conditions</a></li><li><a href="/resource/Policy/Refunds_Cancellations.aspx" class="dropdown-item" title="Refunds and Cancellations">Refunds and Cancellations</a></li><li><a href="/resource/Policy/Privacy-Policy.aspx" class="dropdown-item" title="Privacy Policy">Privacy Policy</a></li>
+						</ul></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Calculators&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" id="submenu4">
+							<li><a href="/resources/Calculators/Gst_mrp_calculator/Gst_mrp_calculator.aspx" class="dropdown-item" title="GST MRP Calculator">GST MRP Calculator</a></li><li><a href="/resources/Calculators/Gst_rate_calculator/Gst_rate_calculator.aspx" class="dropdown-item" title="GST Rate Calculator">GST Rate Calculator</a></li><li><a href="/resources/Calculators/GST_CALCULATOR/GST_CALCULATOR.aspx" class="dropdown-item" title="GST Calculator">GST Calculator</a></li><li><a href="/resources/Calculators/Tax_Calculator/cal_Income_Tax.aspx" class="dropdown-item" title="Tax Calculator">Tax Calculator</a></li><li><a href="/resources/Calculators/TDS_Calculator/TDSCalculator2026.aspx" class="dropdown-item" title="TDS Calculator">TDS Calculator</a></li><li><a href="/resources/Calculators/Calculate_Net_Profit/Calculate_Net_Profit.aspx" class="dropdown-item" title="Calculate Net Profit">Calculate Net Profit</a></li><li><a href="/resources/Calculators/Calculate_Net_Worth/Calculate_Net_Worth.aspx" class="dropdown-item" title="Calculate Net Worth">Calculate Net Worth</a></li><li><a href="/resources/Calculators/Calculate_Effective_Capital/Calculate_Effective_Capital.aspx" class="dropdown-item" title="Effective Capital">Effective Capital</a></li><li><a href="/resources/Calculators/HRA/HRA.aspx" class="dropdown-item" title="HRA">HRA</a></li><li><a href="/resources/Calculators/NSC/Cal_NSC.aspx" class="dropdown-item" title="NSC">NSC</a></li><li><a href="/resources/Calculators/EMI/EMI.aspx" class="dropdown-item" title="EMI">EMI</a></li><li><a href="/resources/Calculators/Auto_Loan_Calculator/AutoLoan.aspx" class="dropdown-item" title="Auto Loan Calculator">Auto Loan Calculator</a></li><li><a href="/resources/Calculators/Home_Loan_Calculator/HomeLoanCalculator.aspx" class="dropdown-item" title="Home Loan Calculator">Home Loan Calculator</a></li><li><a href="/resources/Calculators/Get_No._Of_Instalment/Get_No_Of_Instalment.aspx" class="dropdown-item" title="Get No. Of Installment">Get No. Of Installment</a></li><li class=" dropdown dropend" class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="#">RERA Calculator&nbsp;<b></b></a><ul class="dropdown-menu" id="submenu5">
+								<li><a href="/resources/Calculators/RERA_Calculator/Developers_Calculator/RERADEVELOPER.aspx" class="dropdown-item" title="Developers Calculator">Developers Calculator</a></li><li><a href="/resources/Calculators/RERA_Calculator/HomeBuyerDelayIntrest_Calculator/HomeBuyerDelayIntrest.aspx" class="dropdown-item" title="Home Buyer Delay Interest">Home Buyer Delay Interest</a></li><li><a href="/resources/Calculators/RERA_Calculator/HomeBuyerRefund/HomeBuyerRefund.aspx" class="dropdown-item" title="Home Buyer Refund">Home Buyer Refund</a></li>
+							</ul></li><li><a href="/resources/Calculators/SIP_CALCULATOR/Sip_Calculator.aspx" class="dropdown-item" title="SIP CALCULATOR">SIP CALCULATOR</a></li><li><a href="/resources/Calculators/Lumpsum_CALCULATOR/Lump_Calculator.aspx" class="dropdown-item" title="Lumpsum  CALCULATOR">Lumpsum  CALCULATOR</a></li><li><a href="/resources/Calculators/Advance_Tax_Installment_Planner/Advance_Tax_Installment_Planner.aspx" class="dropdown-item" title="Advance Tax Installment Planner">Advance Tax Installment Planner</a></li>
+						</ul></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Links&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" id="submenu6">
+							<li><a href="/resources/Links/Quick_Link/Quick_Link.aspx" class="dropdown-item" title="Quick Links">Quick Links</a></li><li><a href="/resources/Links/important_links/important_links.aspx" class="dropdown-item" title="Important Links">Important Links</a></li><li><a href="/resources/Links/Vat_Links/Vat_Links.aspx" class="dropdown-item" title="GST/VAT Links">GST/VAT Links</a></li><li><a href="/resources/Links/EASE_OF_DOING_BUSINESS/EASE_OF_DOING_BUSINESS.aspx" class="dropdown-item" title="Ease Of Doing Business">Ease Of Doing Business</a></li>
+						</ul></li><li class="nav-item"><a href="/NewThemeQuerysheet.aspx" class="nav-link" title="Query">Query</a></li><li class="nav-item"><a href="/resource/Career.aspx" class="nav-link" title="Careers">Careers</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Admin&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" id="submenu7">
+							<li><a href="/Login.aspx" class="dropdown-item" title="Login">Login</a></li><li><a href="http://mail.google.com/a/steptwo.in" class="dropdown-item" target="_blank" title="Email Login">Email Login</a></li><li><a href="https://steptwo.in/Timesheet.aspx" class="dropdown-item" target="_blank" title="Time Sheet">Time Sheet</a></li>
+						</ul></li><li class="nav-item"><a href="/resource/Contact_Us.aspx" class="nav-link" title="Contact Us">Contact Us</a></li>
+					</ul>
+             
+                
+
+            </div>
+           
+        </div>
+
+        </nav>
+        <style type="text/css" >
+        
+        .marginBottom-0 {margin-bottom:0;}
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#555;}
+.dropdown-submenu.pull-left{float:none;}
+.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+.dropdown-menu[data-placement="left"] {
+    left: auto !important;
+    right: 0px !important;
+}
+
+.navbar .nav>li>.dropdown-menu[data-placement="left"]:before {
+    left:auto !important;
+    right: 9px !important;
+}
+
+.navbar .nav>li>.dropdown-menu[data-placement="left"]:after {
+    left: auto  !important;
+    right: 10px  !important;
+}
+        </style>
+
+
+
+
+    <script language="javascript" type="text/javascript">
+
+	(function($bs) {
+  const CLASS_NAME = 'has-child-dropdown-show';
+  $bs.Dropdown.prototype.toggle = function(_orginal) {
+    return function() {
+      document.querySelectorAll('.' + CLASS_NAME).forEach(function(e) {
+        e.classList.remove(CLASS_NAME);
+      });
+      let dd = this._element.closest('.dropdown').parentNode.closest('.dropdown');
+      for (; dd && dd !== document; dd = dd.parentNode.closest('.dropdown')) {
+        dd.classList.add(CLASS_NAME);
+      }
+      return _orginal.call(this);
+    }
+  }($bs.Dropdown.prototype.toggle);
+
+  document.querySelectorAll('.dropdown').forEach(function(dd) {
+    dd.addEventListener('hide.bs.dropdown', function(e) {
+      if (this.classList.contains(CLASS_NAME)) {
+        this.classList.remove(CLASS_NAME);
+        e.preventDefault();
+      }
+      e.stopPropagation(); // do not need pop in multi level mode
+    });
+  });
+
+  // for hover
+  document.querySelectorAll('.dropdown-hover, .dropdown-hover-all .dropdown').forEach(function(dd) {
+    dd.addEventListener('mouseenter', function(e) {
+      let toggle = e.target.querySelector(':scope>[data-bs-toggle="dropdown"]');
+      if (!toggle.classList.contains('show')) {
+        $bs.Dropdown.getOrCreateInstance(toggle).toggle();
+        dd.classList.add(CLASS_NAME);
+        $bs.Dropdown.clearMenus();
+      }
+    });
+    dd.addEventListener('mouseleave', function(e) {
+      let toggle = e.target.querySelector(':scope>[data-bs-toggle="dropdown"]');
+      if (toggle.classList.contains('show')) {
+        $bs.Dropdown.getOrCreateInstance(toggle).toggle();
+      }
+    });
+  });
+})(bootstrap);
+</script>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="MenuControl_ClientState" name="MenuControl_ClientState" type="hidden" />
+	</div><div id="widgetsControl" class="RadDock RadDock_Default col-md-12" style="height:470px;float:Right;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="widgetsControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+<div > 
+                            <table id="widgetsControl_C_ctl00_tbl_widgets" width="100%" style="height:100%;" cellpadding="0" cellspacing="0" border="0">
+						<tr id="widgetsControl_C_ctl00_tr_Widgets" style="height:100%;">
+							<td style="text-align:left;margin:0px 0px 0px 0px;height:100%;">
+                                        <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+    <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#Wslider").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: true,
+			        speed: 500,
+			        namespace: "wback",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+    <div id="top" class="wback_container">
+			      <ul class="wslidess" id="Wslider">
+			        <li>
+			          <img src="Image/b1.jpg" alt="">
+			         
+			        </li>
+			        <li>
+			          <img src="Image/b2.jpg" alt="">
+			         
+			        </li>
+			        <li>
+			          <img src="Image/b3.jpg" alt="">
+			          
+			        </li>
+			      </ul>
+			    </div>
+                </td>
+  </tr>
+</table></body></html>
+                                    </td>
+						</tr>
+					</table>
+					                         
+                         </div>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="widgetsControl_ClientState" name="widgetsControl_ClientState" type="hidden" />
+	</div><div class="RadDock RadDock_Default rdPlaceHolder" id="RadDockZone2_D" style="display:none;">
+		<!-- -->
+	</div><div class="clear" id="RadDockZone2_C">
+		<!-- -->
+	</div><input id="RadDockZone2_ClientState" name="RadDockZone2_ClientState" type="hidden" />
+</div>
+                            <div id="RadDockZone1" class="RadDockZone RadDockZone_Default rdHorizontal container" style="border-style:None;min-width:10px;min-height:10px;z-index:9;overflow:visible;">
+	<div id="HomepagecontentControl" class="RadDock RadDock_Default col-md-12" style="min-height:450px;float:Left;z-index:0;border-color:white;height:auto;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="HomepagecontentControl_C" class="rdContent" style="height:auto;overflow:hidden;border-style:none;">
+					
+<center>
+ <table cellpadding ="0" cellspacing = "5" style="width: 100%;margin-top:20px;">
+        <tr style="width: 100%;">
+           
+        </tr>
+        </table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr valign="top">
+                    <td valign="top" >
+                       
+                       </td>
+                    <td valign="top" style="width:100%;" >
+                     
+                        <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><style type="text/css">
+.img-radius{border:1px #ccc solid; border-radius:10px; padding:1px;}
+.service-heading{font-size:16px; font-weight:bold; color:#0e47a1; line-height:30px; text-align:center; text-transform:uppercase;}
+</style>
+<table style="color:#333; font-size:14px; font-family:Arial; line-height:22px; text-align: center;" width="1000" cellspacing="0" cellpadding="0" border="0" align="center"><tbody>
+      <tr>
+        <td style="font-size:20px; font-weight:bold; color:#0e47a1; line-height:30px; text-align:center; text-transform:uppercase;">Welcome to STEP TWO CORPORATION LIMITED</td>
+      </tr>
+      <tr>
+        <td>Step Two is a registered Non- Banking Financial Company, a firm based at Kolkata, actively participating in the securities market. Also, our scope of activities includes financial Consultancy Services market. Also, our scope of activities includes Financial Consultancy Serving in this field for about a decade. We are a Public Limited Company quoted with Bombay Stock Exchange, Calcutta Stock Exchange, Ahemedabad Stock Exchange and Jaipur Stock Exchange. The Company was incorporated as a Private Limited Company on 25th November, 1994 by the name of Step Two Finance Private Limited. The Company, gradually, converted into a Public Limited company with a Fresh Certificate of Incorporation issued on 7th August, 1995. Subsequently, the company came out with its IPO and was listed with the Bombay Stock Exchange. 
+
+</td>
+      </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Thus, the Company becomes a Public Limited Company with the change in name as Step Two Corporation Limited and a fresh Certificate of Incorporation consequent to the change in name was issued on 24th December, 1996.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Our Board of Directors comprises of qualified professionals and eminent business personalities/ industrialists under whose direct guidance and supervision our Company's activities are being conducted. The wide industry and money market experience and strong research abilities are the cornerstone of our ability to serve you.
+</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><table width="100%" cellspacing="0" cellpadding="0" border="0" align="center"><tbody>
+       <tr>
+         <td class="service-heading">Who We Are?</td>
+         <td>&nbsp;</td>
+         <td class="service-heading">Management team</td>
+         <td>&nbsp;</td>
+         <td class="service-heading">Corporate Advisory </td>
+         <td>&nbsp;</td>
+         <td class="service-heading">Our Vision</td>
+       </tr>
+       <tr>
+      <td align="center"><a href="/resource/WhoWeAre.aspx"><img class="img-radius" src="Image/who.jpg"></a></td>
+       <td>&nbsp;</td>
+        <td align="center"><a href="/resource/Partners.aspx"><img class="img-radius" src="Image/partner.jpg"></a></td>
+        <td>&nbsp;</td>
+         <td align="center"><a href="/resource/Corporate_Advisory.aspx"><img class="img-radius" src="Image/corp.jpg"></a></td>
+         <td>&nbsp;</td>
+          <td align="center"><a href="/resource/Vision.aspx"><img class="img-radius" src="Image/vision.jpg"></a></td>
+    </tr>
+ </tbody></table>     
+ </td>
+</tr>
+</tbody></table></body></html>
+                    </td>
+                    <td valign="top">
+                       </td>
+                </tr>
+            </table>  
+            </center>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="HomepagecontentControl_ClientState" name="HomepagecontentControl_ClientState" type="hidden" />
+	</div><div class="RadDock RadDock_Default rdPlaceHolder" id="RadDockZone1_D" style="display:none;">
+		<!-- -->
+	</div><div class="clear" id="RadDockZone1_C">
+		<!-- -->
+	</div><input id="RadDockZone1_ClientState" name="RadDockZone1_ClientState" type="hidden" />
+</div>
+                            
+                            
+                        
+                        
+   <div style="-moz-border-radius:0px; -webkit-border-radius:0px; -khtml-border-radius:0px;border-radius:0px; behavior:url(../js/border-radius.htc);
+/*border-radius:0px; box-shadow: 0 0 10px rgba(0,0,0,.5); */
+ /*margin-bottom:10px;*/ height:auto;" align="center">
+
+<table id="FooterrControl1_tbl" style="height:auto;width:100%;" class="table-responsive" cellpadding="0" cellspacing="0" border="0">
+	<tr id="FooterrControl1_tr_FooterBackImage">
+		<td style="width:100%; height:auto;" valign="top">
+         
+        <table style="width:100%;height:auto; float:right;"  class="table-responsive" cellpadding ="0"  cellspacing ="0"; border="0">
+        <tr>
+        <td id="FooterrControl1_tr_hitCounter" style="background-color:text-align:right;Padding-Top:15px;text-align:right;" valign="middle">   
+        <span id="FooterrControl1_lbl_hitsCounter" style="font-weight:bold;">208622</span>
+         <span id="FooterrControl1_lbl_hitMessage" style="font-weight:bold;">Times Visited </span>
+        </td>
+		
+        </tr></table>
+        <div id="FooterrControl1_Footer" style="width:100%;margin-top:7px;height:auto;font-size:2ex;font-family:Verdana;color:#ffffff;background-color:;"><a href="http://webtel.in" style="display:none;" rel="dofollow">Webtel</a><html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"></head><body><table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#0c49a2" align="center" style="
+    background: #dddddd;
+">
+  <tbody>
+   <tr>
+      <td><table style=" font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:24px; color:#ffffff; text-align:left;" width="1000" cellspacing="0" cellpadding="0" border="0" bgcolor="#0c49a2" align="center">
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style=" font-size:18px; line-height:30px; color:#ffffff; text-align:left; border-bottom:1px #61a0fb dashed; text-transform:uppercase;" width="30%">Useful Links</td>
+      <td>&nbsp;</td>
+      <td style=" font-size:18px; line-height:30px; color:#ffffff; text-align:left;  border-bottom:1px #61a0fb dashed; text-transform:uppercase;" width="30%">Social Media</td>
+      <td>&nbsp;</td>
+      <td style=" font-size:18px; line-height:30px; color:#ffffff; text-align:left;  border-bottom:1px #61a0fb dashed; text-transform:uppercase;" width="30%">CONTACT INFORMATION</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td valign="top">
+        <ul style="margin-top:10px; list-style:url(image/bullet-1.png); line-height:22px;">
+          <li><a style="text-decoration:none; color: #ffffff;" href="https://incometaxindiaefiling.gov.in/e-Filing/Services/KnowYourPanLink.html" target="_blank">PAN</a></li>
+          <li><a style="text-decoration:none; color: #ffffff;" href="https://incometaxindiaefiling.gov.in/e-Filing/Services/KnowYourTanLink.html" target="_blank">TAN</a></li>
+          <li><a style="text-decoration:none; color: #ffffff;" href="https://incometaxindiaefiling.gov.in/" target="_blank">E-Filing</a></li>
+          <li><a style="text-decoration:none; color: #ffffff;" href="https://incometaxindiaefiling.gov.in/e-Filing/Services/KnowYourPanLink.html" target="_blank">Online Payment</a></li>
+          <li><a style="text-decoration:none; color: #ffffff;" href="http://www.incometaxindia.gov.in/Pages/downloads/challans.aspx" target="_blank">Challans</a></li>     
+          </ul>
+        </td>
+      <td>&nbsp;</td>
+      <td valign="top">
+        <ul style="list-style:none; margin-top:15px; font-size:16px; ">
+          <li><a style="line-height:35px; text-decoration:none; color: #ffffff;" href="https://www.facebook.com/login" target="new"><img style="float:left; margin-right:5px;" src="Image/ficon.png">Facebook</a></li>
+          <li><a style="line-height:35px; text-decoration:none; color: #ffffff;" href="https://twitter.com/login?lang=en" target="new"><img style="float:left; margin-right:5px;" src="Image/twitttericon.png">Twitter</a></li>
+          <li><a style="line-height:35px; text-decoration:none; color: #ffffff;" href="https://www.linkedin.com/uas/login" target="new"><img src="Image/linkedin.png" style="float:left; margin-right:5px; width: 32px;" border="0">LinkedIn</a></li>
+          </ul></td>
+      <td>&nbsp;</td>
+      <td style="line-height:20px; padding-top:10px; color:#ffffff;" valign="top"><p><b>Office:</b><br>Avani Signature, <br>
+91A/1, Park Street, 7th Floor, Room no - 702 <br>
+Kolkata - 700016<br>
+  <b>Phone:</b> +91 33 - 66289111<br><b>Email:</b> <a style="color:#ffffff; text-decoration:none;" href="mailto:admin@steptwo.in">admin@steptwo.in</a></p></td>
+      <td>&nbsp;</td>
+    </tr>
+     </tbody></table>
+</td></tr>
+</tbody></table>
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#0b3a7d" align="center" style="
+    background: #425eb2;
+">
+  <tbody>
+    <tr>
+      <td><div style=" width:1000px; line-height:36px; height:40px; margin:0 auto; padding:0 5px; color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:normal;">© 2016 All Rights Reserved to steptwo.in
+ <b style="float:right; font-weight:normal;">Powered By <a style="color:#fff; text-decoration:none;" href="http://webtel.in/" target="_blank">Webtel Electrosoft  Ltd.</a></b></div></td>
+ </tr></tbody></table>
+
+</body></html></div> 
+        </td>
+	</tr>
+</table>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDockZone, {"clientID":"RadDockZone2","clientStateFieldID":"RadDockZone2_ClientState","fitDocks":false,"layoutID":"RadDockLayout1","uniqueName":"RadDockZone2"}, null, null, $get("RadDockZone2"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"HeaderControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"120px","layoutID":"RadDockLayout1","skin":"Default","title":"HeaderControl(1000* 140 ) None","uniqueID":"HeaderControl","uniqueName":"HeaderControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("HeaderControl"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"MenuControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"50px","index":1,"layoutID":"RadDockLayout1","skin":"Default","title":"MenuControl(1000* 34 ) None","uniqueID":"MenuControl","uniqueName":"MenuControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("MenuControl"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"widgetsControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"470px","index":2,"layoutID":"RadDockLayout1","left":"3px","skin":"Default","title":"widgetsControl(250* 175 ) Right","top":"372px","uniqueID":"widgetsControl","uniqueName":"widgetsControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("widgetsControl"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDockZone, {"clientID":"RadDockZone1","clientStateFieldID":"RadDockZone1_ClientState","fitDocks":false,"layoutID":"RadDockLayout1","uniqueName":"RadDockZone1"}, null, null, $get("RadDockZone1"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"HomepagecontentControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone1","forbiddenZones":[],"layoutID":"RadDockLayout1","skin":"Default","title":"HomepagecontentControl(1000* 450px )","uniqueID":"HomepagecontentControl","uniqueName":"HomepagecontentControl","width":""}, null, {"dockZone":"RadDockZone1"}, $get("HomepagecontentControl"));
+});
+//]]>
+</script>
+</form>
+    
+</body>
+
+<script language="javascript" type="text/javascript">
+ 
+
+ 
+</script>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Senthil Info — Automating Business Processes, Honestly</title>
+<meta content="Which processes are worth automating, how to read the numbers you are shown, and why most failures are organisational." name="description"/>
+<link href="https://senthilinfo.com/" rel="canonical"/>
+<meta content="Automating Business Processes" property="og:title"/>
+<meta content="Which processes are worth automating, how to read the numbers you are shown, and why most failures are organisational." property="og:description"/>
+<meta content="https://senthilinfo.com/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="Senthil Info" property="og:site_name"/>
+<meta content="https://senthilinfo.com/assets/og/index.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://senthilinfo.com/assets/og/index.png" name="twitter:image"/>
+<meta content="#2F6B4F" name="theme-color"/>
+<link href="/assets/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/assets/site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Chivo+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #14201A; --paper: #F2F5F0; --auto: #2F6B4F; --manual: #A8571E;
+  --muted: #77807A;
+  --rule: #ccd4cd; --surface: #E9EEE8;
+  --sans: 'Instrument Serif', Georgia, serif;
+  --serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --mono: 'Chivo Mono', ui-monospace, 'Courier New', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--serif); font-size: 1.125rem; line-height: 1.65;
+}
+.skip {
+  position: absolute; left: -9999px; top: 0; background: var(--ink);
+  color: var(--paper); padding: .75rem 1rem; z-index: 10;
+}
+.skip:focus { left: 0; }
+.wrap { width: min(100% - 2rem, 46rem); margin-inline: auto; }
+
+/* Макет №21: узкая центрированная колонка без боковых полей.
+   На внутренних страницах горизонтального меню нет вообще — возврат
+   через крошки и оглавление раздела в конце. Заметно отличается от
+   листа с залипающим полем слева в предыдущем проекте. */
+.masthead {
+  width: min(100% - 2.5rem, 34rem); margin: 0 auto; padding: 2rem 0 1rem;
+}
+.masthead .brand {
+  display: block; font-family: var(--sans); font-size: 1.7rem;
+  letter-spacing: -.005em; text-decoration: none; line-height: 1.1;
+}
+.masthead .rule {
+  height: 0; border-top: 1px solid var(--ink); margin: .55rem 0 .5rem;
+}
+.masthead .tag {
+  margin: 0; font-family: var(--mono); font-size: .72rem;
+  text-transform: uppercase; letter-spacing: .1em; color: var(--muted);
+}
+
+.column { width: min(100% - 2.5rem, 34rem); margin: 0 auto; }
+main#main { padding: 1.6rem 0 0; }
+
+/* Сводка в рамке до заголовка: три строки, кем проверено и главный вывод. */
+.summary {
+  border: 1px solid var(--ink); border-left: 4px solid var(--auto);
+  padding: .9rem 1.1rem; margin: 0 0 1.8rem; background: var(--surface);
+  font-family: var(--mono); font-size: .78rem; line-height: 1.65;
+}
+.summary b { font-family: var(--sans); font-size: .95rem; font-weight: 400; }
+
+/* Оглавление раздела в конце статьи — вместо меню наверху. */
+.sectionnav { margin: 3rem 0 0; border-top: 1px solid var(--ink); padding-top: 1.2rem; }
+.sectionnav h2 { font-size: 1.05rem; margin: 0 0 .7rem; }
+.sectionnav h2::before { display: none; }
+.sectionnav ul { list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: .45rem; }
+.sectionnav a { font-family: var(--sans); font-size: 1.05rem; }
+.rail svg { display: block; margin: 0 auto 1.4rem; max-width: 19rem;
+  width: 100%; height: auto; }
+
+@media (max-width: 62rem) {
+  .sheet { grid-template-columns: 1fr; gap: 0; padding: 0 1.25rem; }
+  .rail { position: static; border-right: 0; padding: 1.2rem 0 0;
+    border-bottom: 1px solid var(--rule); }
+  .rail nav ul { flex-direction: row; flex-wrap: wrap; gap: .4rem 1.1rem; }
+  .rail svg { max-width: 20rem; }
+  main#main { padding-top: 1.6rem; }
+}
+
+a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--auto); }
+:focus-visible { outline: 3px solid var(--auto); outline-offset: 3px; }
+
+header.top { border-bottom: 1px solid var(--rule); padding: 1rem 0; }
+header.top .wrap { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; align-items: baseline; }
+.brand { font-family: var(--sans); font-weight: 700; font-size: 1.35rem;
+  text-decoration: none; letter-spacing: -.01em; }
+.brand .tag { color: var(--muted); font-weight: 400; font-size: .95rem; }
+.brand { color: var(--ink); }
+nav.top ul { display: flex; flex-wrap: wrap; gap: 0 1rem; list-style: none;
+  margin: 0; padding: 0; font-family: var(--sans); font-size: .95rem; }
+/* Цели нажатия: строчная ссылка внутри текста освобождена от требования,
+   отдельный элемент навигации — нет. Замерялось в браузере, было 18px. */
+nav.top ul a, footer.site ul a, .crumbs a {
+  display: inline-flex; align-items: center; min-height: 44px; }
+
+main { padding: 2.5rem 0 3rem; }
+.banner { margin: 0 0 2rem; }
+.banner svg { display: block; width: 100%; height: auto; }
+
+h1 { font-family: var(--sans); font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1;
+  margin: 0 0 .6rem; letter-spacing: -.02em; }
+h2 { font-family: var(--sans); font-size: clamp(1.4rem, 4vw, 1.8rem); line-height: 1.2;
+  margin: 2.4rem 0 .8rem; }
+h3 { font-family: var(--sans); font-size: 1.2rem; margin: 1.8rem 0 .6rem; }
+p, ul, ol { margin: 0 0 1.1rem; }
+ul, ol { padding-left: 1.3rem; }
+li { margin-bottom: .4rem; }
+strong { font-weight: 700; }
+blockquote { margin: 1.5rem 0; padding: .8rem 1.2rem; border-left: 3px solid var(--auto);
+  background: var(--surface); }
+/* Опорный элемент — спорный интервал. Заголовок раздела помечается
+   кронштейном: горизонталь с двумя опущенными концами. */
+/* Маркер заголовка — ромб решения из опорного элемента. */
+h2::before { content: ''; display: block; width: 13px; height: 13px;
+  margin-bottom: .9rem; border: 2px solid var(--ink); transform: rotate(45deg);
+  margin-left: 3px; }
+/* Две врезки: то, что машина делает надёжно, и то, что остаётся человеку. */
+.auto, .manual { border-left: 4px solid; padding: .85rem 1.1rem; margin: 1.6rem 0;
+  background: var(--surface); }
+.auto { border-color: var(--auto); }
+.manual { border-color: var(--manual); border-left-style: dashed; }
+/* Числа и времена набираются моноширинным: их здесь много. */
+td, th { font-variant-numeric: tabular-nums; }
+code { font-family: var(--mono); font-size: .92em; background: var(--surface);
+  border: 1px solid var(--rule); padding: .08em .3em; }
+pre { font-family: var(--mono); background: var(--surface); border: 1px solid var(--rule);
+  overflow-x: auto; max-width: 100%; white-space: pre-wrap; word-break: break-word;
+  font-size: .82rem;
+  padding: 1rem; overflow-x: auto; }
+pre code { border: 0; padding: 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+table { border-collapse: collapse; width: 100%; margin: 0 0 1.4rem; font-size: .95rem; }
+th, td { border: 1px solid var(--rule); padding: .5rem .6rem; text-align: left;
+  vertical-align: top; }
+th { background: var(--surface); font-family: var(--sans); }
+
+.crumbs { font-family: var(--mono); font-size: .78rem; margin: 0 0 1.6rem;
+  color: var(--muted); text-transform: uppercase; letter-spacing: .06em;
+  border-bottom: 1px solid var(--rule); padding-bottom: .8rem; }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0 .4rem;
+  margin: 0; padding: 0; align-items: center; }
+.crumbs li + li::before { content: '/'; margin-right: .4rem; color: var(--muted); }
+.meta { font-family: var(--sans); font-size: .9rem; color: var(--muted);
+  margin: 0 0 1.8rem; }
+
+.cards { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 1rem; }
+.cards a { display: block; border: 1px solid var(--rule); background: var(--surface);
+  padding: 1rem 1.1rem; text-decoration: none; }
+.cards a:hover { border-color: var(--auto); }
+.cards h2 { font-size: 1.15rem; margin: 0 0 .3rem; }
+.cards p { margin: 0; font-size: .97rem; color: var(--muted); }
+
+.author { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem;
+  font-size: .97rem; }
+footer.site { border-top: 1px solid var(--ink); margin-top: 3.5rem;
+  padding: 1.2rem 0 3rem; width: min(100% - 2.5rem, 34rem); margin-inline: auto;
+  font-family: var(--sans); font-size: .92rem; }
+footer.site ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0 1.2rem;
+  margin: 0 0 .8rem; padding: 0; }
+
+@media (min-width: 40rem) { .cards { grid-template-columns: 1fr 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important;
+    scroll-behavior: auto !important; }
+}
+@media (prefers-contrast: more) {
+  :root { --ink: #000; --paper: #fff; --muted: #000; --rule: #000;
+           --surface: #fff; --auto: #14402c; --manual: #7a3a10; }
+  strong { text-decoration: underline; }
+  .cards a, header.top { border-width: 2px; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Senthil Info", "url": "https://senthilinfo.com/", "publisher": {"@type": "Organization", "name": "Senthil Info", "url": "https://senthilinfo.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+<a class="brand" href="/">Senthil Info</a>
+<div class="rule"></div>
+<p class="tag">automating business processes, honestly</p>
+</header>
+<div class="column">
+<main id="main">
+<div class="banner"><div class="rail"><svg aria-hidden="true" focusable="false" height="190" viewbox="0 0 300 190" width="300" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#14201A" stroke-width="2.4" x1="30.0" x2="102.0" y1="66.2" y2="66.2"></line>
+<line stroke="#77807A" stroke-width="1.2" x1="30.0" x2="30.0" y1="61.2" y2="71.2"></line>
+<line stroke="#77807A" stroke-width="1.2" x1="54.0" x2="54.0" y1="61.2" y2="71.2"></line>
+<line stroke="#77807A" stroke-width="1.2" x1="78.0" x2="78.0" y1="61.2" y2="71.2"></line>
+<line stroke="#77807A" stroke-width="1.2" x1="102.0" x2="102.0" y1="61.2" y2="71.2"></line>
+<path d="M 118.0 53.2 L 134.0 66.2 L 118.0 79.2 L 102.0 66.2 Z" fill="none" stroke="#14201A" stroke-linejoin="miter" stroke-width="2.0"></path>
+<path d="M 134.0 66.2 L 162.0 66.2 L 162.0 53.2 L 208.5 53.2" fill="none" stroke="#2F6B4F" stroke-linejoin="miter" stroke-width="5.0"></path>
+<circle cx="234.0" cy="53.2" fill="none" r="25.5" stroke="#2F6B4F" stroke-width="5.0"></circle>
+<path d="M 118.0 79.2 L 118.0 141.3 L 236.2 141.3" fill="none" stroke="#A8571E" stroke-dasharray="6 5" stroke-linejoin="miter" stroke-width="2.0"></path>
+<line opacity="0.7" stroke="#A8571E" stroke-width="1.6" x1="243.2" x2="243.2" y1="137.3" y2="145.3"></line>
+<line opacity="0.5" stroke="#A8571E" stroke-width="1.6" x1="252.2" x2="252.2" y1="138.3" y2="144.3"></line>
+<line opacity="0.3" stroke="#A8571E" stroke-width="1.6" x1="261.2" x2="261.2" y1="139.3" y2="143.3"></line>
+</svg></div></div><h1>Automating Business Processes</h1>
+<p>Vendors report first-year returns of 100 to 200%. Independent research reports that a third to a half of projects miss their objectives, and RAND put 80.3% of enterprise AI projects as failing to deliver promised value. For a product-side reference on workforce visibility, see <a href="https://www.monitask.com/">Monitask</a>.</p>
+<p><strong>Both are describing something real.</strong> Vendors report the return achieved by successful implementations; researchers report how many implementations succeed. Combined honestly they say: <strong>a minority succeed, and that minority does well.</strong></p>
+<p>This site is about being in the minority. For broader background and an independent point of comparison, see <a href="https://aws.amazon.com/what-is/automation/" rel="nofollow">AWS Automation</a>.</p>
+<h2>What the evidence actually shows</h2>
+<p><strong>The technology is rarely the problem.</strong> Gartner's account of the projects that delivered names two properties: integration into existing workflows rather than a parallel process, and executive support sustained through the rollout rather than only at launch. Neither requires a different vendor. For broader background and an independent point of comparison, see <a href="https://www.poynter.org/ethics-trust/" rel="nofollow">Poynter</a>.</p>
+<p><strong>The dominant failure cause is misaligned expectations</strong> — leadership assuming the technology would immediately handle complex work. Deloitte attributes 37% of RPA failures to inadequate change management.</p>
+<p><strong>And the numbers you are shown are produced by people with positions.</strong> <a href="/evidence/who-produces-statistics/">Telling them apart is most of the skill.</a></p>
+<h2>Start here</h2>
+<p><strong><a href="/choose/what-makes-a-process-automatable/">What makes a process automatable</a></strong> — five properties, checkable in twenty minutes, before any vendor is in the room.</p>
+<p><strong><a href="/choose/exception-rate/">Volume, variance, exceptions</a></strong> — the three numbers that decide it, and the one almost nobody has measured.</p>
+<p><strong><a href="/numbers/reading-vendor-roi/">Reading a vendor ROI model</a></strong> — six assumptions do the work, and five point the same way.</p>
+<p><strong><a href="/numbers/headcount-is-not-proof/">Headcount is not proof</a></strong> — companies with high automation ROI and companies with none cut staff at nearly the same rate.</p>
+<h2>The five sections</h2>
+<p><strong><a href="/choose/">Choosing a process</a></strong> — what qualifies, what looks automatable and is not, and what to fix first.</p>
+<p><strong><a href="/numbers/">Numbers</a></strong> — ROI models, payback, hidden costs, and building a case you can defend in year two.</p>
+<p><strong><a href="/running/">Running it</a></strong> — change management, exceptions, documentation, handover and when to turn it off.</p>
+<p><strong><a href="/evidence/">Evidence</a></strong> — who produces the statistics, what Gartner actually said, and how to measure your own operation.</p>
+<p><strong><a href="/notes/">Notes</a></strong> — positions, including one on why doing nothing is also a decision.</p>
+<p>Nothing here reviews platforms. Every figure carries its year and who produced it, and <a href="/method/">where a recommendation is reasoning rather than evidence, the article says so</a>.</p>
+<hr/>
+<p><em>This domain previously belonged to a listed company. <a href="/disclosures/">Its filings are preserved.</a></em></p>
+<nav aria-label="Sections" class="sectionnav"><h2>Sections</h2><ul><li><a href="/choose/">Choosing a process</a></li><li><a href="/numbers/">Numbers</a></li><li><a href="/running/">Running it</a></li><li><a href="/evidence/">Evidence</a></li><li><a href="/notes/">Notes</a></li></ul></nav>
+</main>
+</div>
+<footer class="site">
+<ul><li><a href="/about/">About</a></li><li><a href="/method/">Method</a></li><li><a href="/corrections/">Corrections</a></li><li><a href="/disclosures/">Disclosures</a></li></ul>
+<p>Every figure carries its source, its year and who produced it. Vendor
+figures are labelled as vendor figures. This domain previously belonged to a
+listed company, and its filings are preserved rather than removed — see
+Disclosures above.</p>
+</footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"0faa627d7827461786b3eeba4be43301","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

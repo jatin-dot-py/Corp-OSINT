@@ -1,0 +1,2097 @@
+<!doctype html>
+<html>
+
+<head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.4",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+<title>Magadh Sugar: Leading Sugar Producer with Ethanol &amp; Power Co-generation</title>
+<link data-rocket-prefetch href="https://fonts.googleapis.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://cdn.jsdelivr.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://cdnjs.cloudflare.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.google.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://unpkg.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://ajax.googleapis.com" rel="dns-prefetch"><link rel="preload" data-rocket-preload as="image" href="https://magadhsugar.com/wp-content/uploads/2025/09/bannerImg2.webp" fetchpriority="high">
+    
+    <meta http-equiv="content-language" content="en-us">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+                    
+
+
+
+    
+<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+<meta name="description" content="Magadh Sugar &amp; Energy Ltd is a key player in sugar Producer, ethanol manufacturing, and power co-generation in India. With state-of-the-art facilities in Bihar, we have been committed to sustainable industrial growth since 1932."/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://magadhsugar.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Magadh Sugar: Leading Sugar Producer with Ethanol &amp; Power Co-generation" />
+<meta property="og:description" content="Magadh Sugar &amp; Energy Ltd is a key player in sugar Producer, ethanol manufacturing, and power co-generation in India. With state-of-the-art facilities in Bihar, we have been committed to sustainable industrial growth since 1932." />
+<meta property="og:url" content="https://magadhsugar.com/" />
+<meta property="og:site_name" content="Magadh Sugar" />
+<meta property="og:updated_time" content="2025-10-21T11:37:37+00:00" />
+<meta property="article:published_time" content="2024-03-05T13:52:41+00:00" />
+<meta property="article:modified_time" content="2025-10-21T11:37:37+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Magadh Sugar: Leading Sugar Producer with Ethanol &amp; Power Co-generation" />
+<meta name="twitter:description" content="Magadh Sugar &amp; Energy Ltd is a key player in sugar Producer, ethanol manufacturing, and power co-generation in India. With state-of-the-art facilities in Bihar, we have been committed to sustainable industrial growth since 1932." />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="magadhsugaruser" />
+<meta name="twitter:label2" content="Time to read" />
+<meta name="twitter:data2" content="Less than a minute" />
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Place","@id":"https://magadhsugar.com/#place","address":{"@type":"PostalAddress","streetAddress":"Birla Building, 5th Floor, 9/1, R.N. Mukherjee Road","addressRegion":"Kolkata","postalCode":"700001","addressCountry":"India"}},{"@type":"Organization","@id":"https://magadhsugar.com/#organization","name":"Magadh Sugar &amp; Energy Limited","url":"https://magadhsugar.com","address":{"@type":"PostalAddress","streetAddress":"Birla Building, 5th Floor, 9/1, R.N. Mukherjee Road","addressRegion":"Kolkata","postalCode":"700001","addressCountry":"India"},"logo":{"@type":"ImageObject","@id":"https://magadhsugar.com/#logo","url":"https://magadhsugar.com/wp-content/uploads/2024/03/Magadh-Logo.png","contentUrl":"https://magadhsugar.com/wp-content/uploads/2024/03/Magadh-Logo.png","caption":"Magadh Sugar","inLanguage":"en-US","width":"652","height":"142"},"location":{"@id":"https://magadhsugar.com/#place"}},{"@type":"WebSite","@id":"https://magadhsugar.com/#website","url":"https://magadhsugar.com","name":"Magadh Sugar","publisher":{"@id":"https://magadhsugar.com/#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"https://magadhsugar.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://magadhsugar.com/#webpage","url":"https://magadhsugar.com/","name":"Magadh Sugar: Leading Sugar Producer with Ethanol &amp; Power Co-generation","datePublished":"2024-03-05T13:52:41+00:00","dateModified":"2025-10-21T11:37:37+00:00","about":{"@id":"https://magadhsugar.com/#organization"},"isPartOf":{"@id":"https://magadhsugar.com/#website"},"inLanguage":"en-US"},{"@type":"Person","@id":"https://magadhsugar.com/author/magadhsugaruser/","name":"magadhsugaruser","url":"https://magadhsugar.com/author/magadhsugaruser/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/59c1bedf4a0b9cc1370d697ddce0537e28663bdb8646a46f66555976e7ade67e?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/59c1bedf4a0b9cc1370d697ddce0537e28663bdb8646a46f66555976e7ade67e?s=96&amp;d=mm&amp;r=g","caption":"magadhsugaruser","inLanguage":"en-US"},"worksFor":{"@id":"https://magadhsugar.com/#organization"}},{"@type":"Article","headline":"Magadh Sugar: Leading Sugar Producer with Ethanol &amp; Power Co-generation","keywords":"sugar","datePublished":"2024-03-05T13:52:41+00:00","dateModified":"2025-10-21T11:37:37+00:00","author":{"@id":"https://magadhsugar.com/author/magadhsugaruser/","name":"magadhsugaruser"},"publisher":{"@id":"https://magadhsugar.com/#organization"},"description":"Magadh Sugar &amp; Energy Ltd is a key player in sugar Producer, ethanol manufacturing, and power co-generation in India. With state-of-the-art facilities in Bihar, we have been committed to sustainable industrial growth since 1932.","name":"Magadh Sugar: Leading Sugar Producer with Ethanol &amp; Power Co-generation","@id":"https://magadhsugar.com/#richSnippet","isPartOf":{"@id":"https://magadhsugar.com/#webpage"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"https://magadhsugar.com/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://magadhsugar.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmagadhsugar.com%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://magadhsugar.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmagadhsugar.com%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='css2-css' href='https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&#038;display=swap&#038;ver=7.1.2' media='' />
+<link rel='stylesheet' id='css2-2-css' href='https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&#038;family=Oswald:wght@200..700&#038;display=swap&#038;ver=7.1.2' media='' />
+<link data-minify="1" rel='stylesheet' id='bootstrap-min-css' href='https://magadhsugar.com/wp-content/cache/min/1/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css?ver=1790224727' media='' />
+<link data-minify="1" rel='stylesheet' id='jquery.fancybox-css' href='https://magadhsugar.com/wp-content/cache/min/1/ajax/libs/fancybox/3.5.7/jquery.fancybox.css?ver=1790224727' media='' />
+<link data-minify="1" rel='stylesheet' id='all.min.css-css' href='https://magadhsugar.com/wp-content/cache/min/1/ajax/libs/font-awesome/6.4.0/css/all.min.css?ver=1790224727' media='' />
+<link data-minify="1" rel='stylesheet' id='slick-theme.min-css' href='https://magadhsugar.com/wp-content/cache/background-css/1/magadhsugar.com/wp-content/cache/min/1/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css?ver=1790224727&wpr_t=1790421863' media='' />
+<link data-minify="1" rel='stylesheet' id='owl.carousel.min-css' href='https://magadhsugar.com/wp-content/cache/background-css/1/magadhsugar.com/wp-content/cache/min/1/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css?ver=1790224727&wpr_t=1790421863' media='' />
+<link data-minify="1" rel='stylesheet' id='aos-css' href='https://magadhsugar.com/wp-content/cache/min/1/wp-content/themes/magadh/assets/css-front-page/aos.css?ver=1790224728' media='' />
+<link data-minify="1" rel='stylesheet' id='slick-css' href='https://magadhsugar.com/wp-content/cache/min/1/wp-content/themes/magadh/assets/css-front-page/slick.css?ver=1790224728' media='' />
+<link data-minify="1" rel='stylesheet' id='style-css' href='https://magadhsugar.com/wp-content/cache/background-css/1/magadhsugar.com/wp-content/cache/min/1/wp-content/themes/magadh/assets/css-front-page/style.css?ver=1790224728&wpr_t=1790421863' media='' />
+<link rel="https://api.w.org/" href="https://magadhsugar.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://magadhsugar.com/wp-json/wp/v2/pages/8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://magadhsugar.com/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://magadhsugar.com/' />
+<link rel="icon" href="https://magadhsugar.com/wp-content/uploads/2024/08/Magadh-favicon.png" sizes="32x32" />
+<link rel="icon" href="https://magadhsugar.com/wp-content/uploads/2024/08/Magadh-favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://magadhsugar.com/wp-content/uploads/2024/08/Magadh-favicon.png" />
+<meta name="msapplication-TileImage" content="https://magadhsugar.com/wp-content/uploads/2024/08/Magadh-favicon.png" />
+<style id="wp-custom-css">
+
+
+</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>    <meta name="google-site-verification" content="0gjAbcq_UBWZONiwK11b73CV9ALzU7ut2VXbGs04aN0" />
+    
+    <!-- Google tag (gtag.js) --> 
+    <script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-91GZ2N2ZSB"></script> <script type="rocketlazyloadscript"> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-91GZ2N2ZSB'); </script>
+    <!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TV3B8GF8');</script>
+<!-- End Google Tag Manager -->
+<link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='https://magadhsugar.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1790224728' media='all' />
+
+<style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle">.slick-loading .slick-list{--wpr-bg-b9c5f44e-dc24-4c38-b8a7-424aaad34633: url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/ajax-loader.gif');}.owl-carousel .owl-video-play-icon{--wpr-bg-8b29373d-5615-40cd-9345-9bf395a3abff: url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.video.play.png');}.productMain .slick-next::before{--wpr-bg-3d733305-e8fc-44a7-8780-b3be8141b78e: url('https://magadhsugar.com/wp-content/themes/magadh/assets/images/products/curved-arrow2.png');}.productMain .slick-prev::before{--wpr-bg-97eac29c-b6f5-4fa5-9d6e-00807a811f9d: url('https://magadhsugar.com/wp-content/themes/magadh/assets/images/products/curved-arrow.png');}.item-descSec2::after{--wpr-bg-d8b30f8b-3cdc-46be-826c-74d69785d749: url('https://magadhsugar.com/wp-content/themes/magadh/assets/images/triangle22.png');}.item-descSec2::before{--wpr-bg-d535b9b2-5531-429e-9ac1-0be09d5d8292: url('https://magadhsugar.com/wp-content/themes/magadh/assets/images/triangle22.png');}.bannerWrap .slick-next::after,.bannerWrap .slick-prev::after{--wpr-bg-7ff1946a-a738-4f8e-a1bf-8130bdec5bb4: url('https://magadhsugar.com/wp-content/themes/magadh/assets/images/arrows.png');}</style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = [{"selector":".slick-loading .slick-list","style":".slick-loading .slick-list{--wpr-bg-b9c5f44e-dc24-4c38-b8a7-424aaad34633: url('https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/slick-carousel\/1.9.0\/ajax-loader.gif');}","hash":"b9c5f44e-dc24-4c38-b8a7-424aaad34633","url":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/slick-carousel\/1.9.0\/ajax-loader.gif"},{"selector":".owl-carousel .owl-video-play-icon","style":".owl-carousel .owl-video-play-icon{--wpr-bg-8b29373d-5615-40cd-9345-9bf395a3abff: url('https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/OwlCarousel2\/2.3.4\/assets\/owl.video.play.png');}","hash":"8b29373d-5615-40cd-9345-9bf395a3abff","url":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/OwlCarousel2\/2.3.4\/assets\/owl.video.play.png"},{"selector":".productMain .slick-next","style":".productMain .slick-next::before{--wpr-bg-3d733305-e8fc-44a7-8780-b3be8141b78e: url('https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/products\/curved-arrow2.png');}","hash":"3d733305-e8fc-44a7-8780-b3be8141b78e","url":"https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/products\/curved-arrow2.png"},{"selector":".productMain .slick-prev","style":".productMain .slick-prev::before{--wpr-bg-97eac29c-b6f5-4fa5-9d6e-00807a811f9d: url('https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/products\/curved-arrow.png');}","hash":"97eac29c-b6f5-4fa5-9d6e-00807a811f9d","url":"https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/products\/curved-arrow.png"},{"selector":".item-descSec2","style":".item-descSec2::after{--wpr-bg-d8b30f8b-3cdc-46be-826c-74d69785d749: url('https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/triangle22.png');}","hash":"d8b30f8b-3cdc-46be-826c-74d69785d749","url":"https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/triangle22.png"},{"selector":".item-descSec2","style":".item-descSec2::before{--wpr-bg-d535b9b2-5531-429e-9ac1-0be09d5d8292: url('https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/triangle22.png');}","hash":"d535b9b2-5531-429e-9ac1-0be09d5d8292","url":"https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/triangle22.png"},{"selector":".bannerWrap .slick-next,.bannerWrap .slick-prev","style":".bannerWrap .slick-next::after,.bannerWrap .slick-prev::after{--wpr-bg-7ff1946a-a738-4f8e-a1bf-8130bdec5bb4: url('https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/arrows.png');}","hash":"7ff1946a-a738-4f8e-a1bf-8130bdec5bb4","url":"https:\/\/magadhsugar.com\/wp-content\/themes\/magadh\/assets\/images\/arrows.png"}]; const rocket_excluded_pairs = [];</script><meta name="generator" content="WP Rocket 3.20.1.2" data-wpr-features="wpr_lazyload_css_bg_img wpr_delay_js wpr_lazyload_images wpr_preconnect_external_domains wpr_oci wpr_minify_css wpr_preload_links wpr_desktop" /></head>
+
+<body class="home wp-singular page-template-default page page-id-8 wp-custom-logo wp-theme-magadh">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV3B8GF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <a href="javascript:void(0);" class="slideFromBtn" id="FromBtn">quick connect</a>
+    <!--header start-->
+    <header  class="inner-header">
+        <div  class="headerOne">
+            <div  class="container-auto">
+                <div class="heaOneMain">
+                    <div class="heaOneCon">
+                        <div class="headerCall"><a href="tel:+4733378901"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/header/call.png"><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/header/call.png" alt=""></noscript>
+                                <h6>+47 333 78 901</h6>
+                            </a></div>
+                        <div class="headerCall"><a href="mailto:someone@example.com"><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/header/email (1).png" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/header/email%20(1).png"><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/header/email (1).png" alt=""></noscript>
+                                <h6>someone@example.com</h6>
+                            </a></div>
+                    </div>
+                    <div class="heaOneSo">
+                        <a class="bRGrey bLGrey" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="bRGrey" href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="bRGrey" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a class="bRGrey" href="#"><i class="fa-brands fa-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div  class="headerTwo ">
+            <div  class="container-auto">
+                <div class="headerTwoMain">
+                                            <div class="headerLogo">
+                            <a href="https://magadhsugar.com"><img src="https://magadhsugar.com/wp-content/uploads/2024/03/Magadh-Logo.png" alt=""></a>
+                        </div>
+                                        <div class="menuWrap mobiDesk">
+                        <div  class="menu-header-menu-container"><ul id="menu-header-menu" class="menu"><li id="menu-item-203" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-203"><a href="https://magadhsugar.com/" aria-current="page">Home</a></li>
+<li id="menu-item-946" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-946"><a>About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-902" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-902"><a href="https://magadhsugar.com/company/">Company Profile</a></li>
+	<li id="menu-item-1515" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1515"><a>Leadership Team</a>
+	<ul class="sub-menu">
+		<li id="menu-item-935" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-935"><a href="https://magadhsugar.com/leadership-team/">Board of Directors</a></li>
+		<li id="menu-item-937" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-937"><a href="https://magadhsugar.com/leadership-team/?select=team">Board Committees</a></li>
+		<li id="menu-item-936" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-936"><a href="https://magadhsugar.com/leadership-team/?select=committees">Senior Management Team</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1210" class="has-menu-children menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1210"><a>Our Offerings</a>
+<ul class="sub-menu">
+	<li id="menu-item-1033" class="menu-item menu-item-type-post_type menu-item-object-products menu-item-1033"><a href="https://magadhsugar.com/products/sugar/">Sugar</a></li>
+	<li id="menu-item-1032" class="menu-item menu-item-type-post_type menu-item-object-products menu-item-1032"><a href="https://magadhsugar.com/products/ethanol/">Ethanol</a></li>
+	<li id="menu-item-1031" class="menu-item menu-item-type-post_type menu-item-object-products menu-item-1031"><a href="https://magadhsugar.com/products/power/">Power (Renewable Energy)</a></li>
+</ul>
+</li>
+<li id="menu-item-919" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-919"><a>Investors</a>
+<ul class="sub-menu">
+	<li id="menu-item-2402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2402"><a href="#">Disclosures under Regulation 46 of the LODR</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2707"><a href="https://magadhsugar.com/company/">Details of Business</a></li>
+		<li id="menu-item-2708" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2708"><a href="https://magadhsugar.com/wp-content/uploads/2025/06/MAGADH-SUGAR-ENERGY-LIMITED.pdf">Memorandum of Association and Articles of Association</a></li>
+		<li id="menu-item-1930" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1930"><a href="#">Board of Directors &#038; Board Committees</a>
+		<ul class="sub-menu">
+			<li id="menu-item-2377" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a href="https://magadhsugar.com/board-of-director/">Board of Directors</a></li>
+			<li id="menu-item-2378" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2378"><a href="https://magadhsugar.com/board-committees/#investorInn">Board Committees</a></li>
+			<li id="menu-item-2490" class="newItem menu-item menu-item-type-custom menu-item-object-custom menu-item-2490"><a href="https://magadhsugar.com/wp-content/uploads/2024/07/independent-directors-terms-magadh.pdf">Terms and conditions of appointment of Independent Directors</a></li>
+			<li id="menu-item-2491" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2491"><a href="https://magadhsugar.com/wp-content/uploads/2025/03/MSEL-Famprog-1.pdf">Familiarisation Programme</a></li>
+		</ul>
+</li>
+		<li id="menu-item-1189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1189"><a href="https://magadhsugar.com/codes-and-policies/">Codes &#038; Policies</a></li>
+		<li id="menu-item-1931" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1931"><a href="https://magadhsugar.com/financial-results/">Financial Information</a>
+		<ul class="sub-menu">
+			<li id="menu-item-2379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2379"><a href="https://magadhsugar.com/financial-results/#investorInn">Financial Results</a></li>
+			<li id="menu-item-2383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2383"><a href="https://magadhsugar.com/annual-report/#investorInn">Annual Report</a></li>
+			<li id="menu-item-2381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2381"><a href="https://magadhsugar.com/press-release/#investorInn">Press Release</a></li>
+			<li id="menu-item-2380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2380"><a href="https://magadhsugar.com/investor-presentation/#investorInn">Investor Presentation</a></li>
+			<li id="menu-item-2610" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2610"><a href="https://magadhsugar.com/earnings-call-transcript/">Earnings Call/Transcript</a></li>
+		</ul>
+</li>
+		<li id="menu-item-1191" class="corporateMenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1191"><a href="#">Corporate Governance</a>
+		<ul class="sub-menu">
+			<li id="menu-item-2385" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2385"><a href="https://magadhsugar.com/shareholding-pattern/#investorInn">Shareholding Pattern</a></li>
+			<li id="menu-item-2388" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2388"><a href="https://magadhsugar.com/closure-of-trading-window/#investorInn">Closure of Trading Window</a></li>
+			<li id="menu-item-2389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2389"><a href="#">Board Meeting</a>
+			<ul class="sub-menu">
+				<li id="menu-item-2611" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2611"><a href="https://magadhsugar.com/notice-of-board-meeting/#investorInn">Notice</a></li>
+				<li id="menu-item-2834" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2834"><a href="https://magadhsugar.com/board-meeting-outcome/">Outcome</a></li>
+			</ul>
+</li>
+			<li id="menu-item-2613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2613"><a href="#">AGM</a>
+			<ul class="sub-menu">
+				<li id="menu-item-2738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2738"><a href="https://magadhsugar.com/notice-voting-outcome-scrutiniser-report/">Notice, Outcome, Voting &#038; Scrutiniser Report</a></li>
+			</ul>
+</li>
+			<li id="menu-item-2615" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2615"><a href="https://magadhsugar.com/postal-ballot/">Postal Ballot</a>
+			<ul class="sub-menu">
+				<li id="menu-item-2619" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2619"><a href="https://magadhsugar.com/postal-ballot/">Notice , Voting &#038; Scrutiniser Report</a></li>
+			</ul>
+</li>
+			<li id="menu-item-2498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2498"><a href="#">Stock Exchange Disclosures</a>
+			<ul class="sub-menu">
+				<li id="menu-item-2620" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2620"><a href="https://magadhsugar.com/disclosures-under-regulation-30/">Disclosures under Regulation 30</a></li>
+			</ul>
+</li>
+			<li id="menu-item-3029" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3029"><a href="#">Newspaper Publications</a>
+			<ul class="sub-menu">
+				<li id="menu-item-3027" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3027"><a href="https://magadhsugar.com/newspaper-publications/">Financial Results</a></li>
+				<li id="menu-item-2773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2773"><a href="https://magadhsugar.com/notice-to-shareholders/">Notice to shareholders</a></li>
+			</ul>
+</li>
+			<li id="menu-item-2823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2823"><a href="https://magadhsugar.com/investor-grievance-redressal/">Investor Grievance Redressal</a></li>
+			<li id="menu-item-2622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2622"><a href="https://magadhsugar.com/annual-return/">Annual Return</a></li>
+			<li id="menu-item-2391" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2391"><a href="https://magadhsugar.com/annual-secretarial-compliance-report/#investorInn">Secretarial Compliance Report</a></li>
+			<li id="menu-item-2792" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2792"><a href="https://magadhsugar.com/kmps-designated-for-determining-materiality/">KMPs Designated For Determining Materiality</a></li>
+			<li id="menu-item-1190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1190"><a href="https://magadhsugar.com/credit-rating/">Credit Rating</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-1929" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1929"><a href="#">Shareholders&#8217; Information</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2395" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2395"><a href="#">Unclaimed Dividend</a>
+		<ul class="sub-menu">
+			<li id="menu-item-2450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2450"><a href="https://magadhsugar.com/unpaid-dividend/">Statement of Unpaid Dividend</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2396" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2396"><a href="#">Transfer of shares to IEPF</a>
+		<ul class="sub-menu">
+			<li id="menu-item-2397" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2397"><a href="#">IEPF Notice</a></li>
+			<li id="menu-item-2398" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2398"><a href="https://magadhsugar.com/nodal-officer/#investorInn">Nodal Officer</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-2902" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2902"><a href="https://magadhsugar.com/downloads/">Downloads</a></li>
+</ul>
+</li>
+<li id="menu-item-909" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-909"><a href="https://magadhsugar.com/infrastructure/">Infrastructure</a></li>
+<li id="menu-item-908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-908"><a href="https://magadhsugar.com/corporate-social-responsibility/">Sustainability</a></li>
+<li id="menu-item-927" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-927"><a href="https://magadhsugar.com/people-and-career/">Career</a></li>
+<li id="menu-item-943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-943"><a href="https://magadhsugar.com/contact-us/">Contact Us</a></li>
+</ul></div>                    </div>
+                    <div class="mobileHumm">
+                        <div class="hamMenu" id="hamMenu" onclick="menuBtn()">
+                            <div ></div>
+                        </div>
+                                                    <div class="headerRightS">
+                                <a href="https://www.birla-sugar.com/" class="birlaLogo">
+                                    <img src="https://magadhsugar.com/wp-content/uploads/2024/03/borla-logo.png" alt="">
+                                </a>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div  class="mobileNav" id="mobileNav">
+        <span class="sideMenuC"><i class="fa-regular fa-circle-xmark"></i></span>
+        <div  class="menuWrap ">
+            <div class="menu-header-menu-container"><ul id="menu-header-menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-203"><a href="https://magadhsugar.com/" aria-current="page">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-946"><a>About Us</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-902"><a href="https://magadhsugar.com/company/">Company Profile</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1515"><a>Leadership Team</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-935"><a href="https://magadhsugar.com/leadership-team/">Board of Directors</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-937"><a href="https://magadhsugar.com/leadership-team/?select=team">Board Committees</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-936"><a href="https://magadhsugar.com/leadership-team/?select=committees">Senior Management Team</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="has-menu-children menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1210"><a>Our Offerings</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-products menu-item-1033"><a href="https://magadhsugar.com/products/sugar/">Sugar</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-products menu-item-1032"><a href="https://magadhsugar.com/products/ethanol/">Ethanol</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-products menu-item-1031"><a href="https://magadhsugar.com/products/power/">Power (Renewable Energy)</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-919"><a>Investors</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2402"><a href="#">Disclosures under Regulation 46 of the LODR</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2707"><a href="https://magadhsugar.com/company/">Details of Business</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2708"><a href="https://magadhsugar.com/wp-content/uploads/2025/06/MAGADH-SUGAR-ENERGY-LIMITED.pdf">Memorandum of Association and Articles of Association</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1930"><a href="#">Board of Directors &#038; Board Committees</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2377"><a href="https://magadhsugar.com/board-of-director/">Board of Directors</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2378"><a href="https://magadhsugar.com/board-committees/#investorInn">Board Committees</a></li>
+			<li class="newItem menu-item menu-item-type-custom menu-item-object-custom menu-item-2490"><a href="https://magadhsugar.com/wp-content/uploads/2024/07/independent-directors-terms-magadh.pdf">Terms and conditions of appointment of Independent Directors</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2491"><a href="https://magadhsugar.com/wp-content/uploads/2025/03/MSEL-Famprog-1.pdf">Familiarisation Programme</a></li>
+		</ul>
+</li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1189"><a href="https://magadhsugar.com/codes-and-policies/">Codes &#038; Policies</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1931"><a href="https://magadhsugar.com/financial-results/">Financial Information</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2379"><a href="https://magadhsugar.com/financial-results/#investorInn">Financial Results</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2383"><a href="https://magadhsugar.com/annual-report/#investorInn">Annual Report</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2381"><a href="https://magadhsugar.com/press-release/#investorInn">Press Release</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2380"><a href="https://magadhsugar.com/investor-presentation/#investorInn">Investor Presentation</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2610"><a href="https://magadhsugar.com/earnings-call-transcript/">Earnings Call/Transcript</a></li>
+		</ul>
+</li>
+		<li class="corporateMenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1191"><a href="#">Corporate Governance</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2385"><a href="https://magadhsugar.com/shareholding-pattern/#investorInn">Shareholding Pattern</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2388"><a href="https://magadhsugar.com/closure-of-trading-window/#investorInn">Closure of Trading Window</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2389"><a href="#">Board Meeting</a>
+			<ul class="sub-menu">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2611"><a href="https://magadhsugar.com/notice-of-board-meeting/#investorInn">Notice</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2834"><a href="https://magadhsugar.com/board-meeting-outcome/">Outcome</a></li>
+			</ul>
+</li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2613"><a href="#">AGM</a>
+			<ul class="sub-menu">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2738"><a href="https://magadhsugar.com/notice-voting-outcome-scrutiniser-report/">Notice, Outcome, Voting &#038; Scrutiniser Report</a></li>
+			</ul>
+</li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2615"><a href="https://magadhsugar.com/postal-ballot/">Postal Ballot</a>
+			<ul class="sub-menu">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2619"><a href="https://magadhsugar.com/postal-ballot/">Notice , Voting &#038; Scrutiniser Report</a></li>
+			</ul>
+</li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2498"><a href="#">Stock Exchange Disclosures</a>
+			<ul class="sub-menu">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2620"><a href="https://magadhsugar.com/disclosures-under-regulation-30/">Disclosures under Regulation 30</a></li>
+			</ul>
+</li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3029"><a href="#">Newspaper Publications</a>
+			<ul class="sub-menu">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3027"><a href="https://magadhsugar.com/newspaper-publications/">Financial Results</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2773"><a href="https://magadhsugar.com/notice-to-shareholders/">Notice to shareholders</a></li>
+			</ul>
+</li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2823"><a href="https://magadhsugar.com/investor-grievance-redressal/">Investor Grievance Redressal</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2622"><a href="https://magadhsugar.com/annual-return/">Annual Return</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2391"><a href="https://magadhsugar.com/annual-secretarial-compliance-report/#investorInn">Secretarial Compliance Report</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2792"><a href="https://magadhsugar.com/kmps-designated-for-determining-materiality/">KMPs Designated For Determining Materiality</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1190"><a href="https://magadhsugar.com/credit-rating/">Credit Rating</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1929"><a href="#">Shareholders&#8217; Information</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2395"><a href="#">Unclaimed Dividend</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2450"><a href="https://magadhsugar.com/unpaid-dividend/">Statement of Unpaid Dividend</a></li>
+		</ul>
+</li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2396"><a href="#">Transfer of shares to IEPF</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2397"><a href="#">IEPF Notice</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2398"><a href="https://magadhsugar.com/nodal-officer/#investorInn">Nodal Officer</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2902"><a href="https://magadhsugar.com/downloads/">Downloads</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-909"><a href="https://magadhsugar.com/infrastructure/">Infrastructure</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-908"><a href="https://magadhsugar.com/corporate-social-responsibility/">Sustainability</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-927"><a href="https://magadhsugar.com/people-and-career/">Career</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-943"><a href="https://magadhsugar.com/contact-us/">Contact Us</a></li>
+</ul></div>        </div>
+    </div>
+    <!-- <div  class="sidebarForm">
+        <h5 class="sidebarHead">Share your details &amp; we'll get back to you!</h5>
+        <a href="javascript:void()" class="sideMenuClose"><i class="fa-regular fa-circle-xmark"></i></a>
+            </div> -->
+
+    <div class="sidebarForm">
+        <div  class="fromDiv2">
+            <div>
+                <!-- <h6 class="sectionMainTitleCC">CONTACT US</h6> -->
+                <h5 class="sectionMainTitle">Get in Touch</h5>
+                <h5 class="sidebarHead">Share your details &amp; we'll get back to you!</h5>
+                <a href="javascript:void()" class="sideMenuClose"><i class="fa-regular fa-circle-xmark"></i></a>
+            </div>
+            
+<div  class="wpcf7 no-js" id="wpcf7-f1439-o1" lang="en-US" dir="ltr" data-wpcf7-id="1439">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/#wpcf7-f1439-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="1439" /><input type="hidden" name="_wpcf7_version" value="6.1.4" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1439-o1" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" /><input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</fieldset>
+<div class="row five">
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><label for="name">Name:</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" value="" type="text" name="your-name" /></span>
+			</p>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><label for="email">Email:</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" value="" type="email" name="your-email" /></span>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><label for="phone">Phone:</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" maxlength="10" minlength="10" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone" value="" type="tel" name="your-phone" /></span>
+			</p>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><label for="companyname">Company Name</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-company"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Company Name" value="" type="text" name="your-company" /></span>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><span class="wpcf7-form-control-wrap" data-name="general-enquiry"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" name="general-enquiry"><option value="">Enquiry Type</option><option value="Investor">Investor</option><option value="Other">Other</option></select></span>
+			</p>
+		</div>
+		<div class="form-group d-none">
+			<p><span class="wpcf7-form-control-wrap" data-name="product-enquiry"><select class="wpcf7-form-control wpcf7-select form-control" aria-invalid="false" name="product-enquiry"><option value="">&#8212;Please choose an option&#8212;</option><option value="Sugar">Sugar</option><option value="Ethanol">Ethanol</option><option value="Power">Power</option></select></span>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="form-group">
+	<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message" name="your-message"></textarea></span>
+	</p>
+</div>
+<div class="pt-btn-container newBtn">
+	<div class="cCap">
+		<p><input type="hidden" name="_wpcf7_captcha_challenge_captcha-118" value="2643769811" /><img class="wpcf7-form-control wpcf7-captchac wpcf7-captcha-captcha-118" width="84" height="28" alt="captcha" src="https://magadhsugar.com/wp-content/uploads/wpcf7_captcha/2643769811.png" /><br />
+<span class="wpcf7-form-control-wrap" data-name="captcha-118"><input size="4" maxlength="4" class="wpcf7-form-control wpcf7-captchar" autocomplete="off" aria-invalid="false" placeholder="Enter Captcha" value="" type="text" name="captcha-118" /></span>
+		</p>
+	</div>
+	<p><input class="wpcf7-form-control wpcf7-submit has-spinner pt-button pt-button-flat" type="submit" value="Submit" /><br />
+	</p>
+</div><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+            			<div  class="sidebarAddress">
+                
+				<p>Address: Birla Building, 5th Floor, 9/1, R.N. Mukherjee Road, Kolkata &#8211; 700 001 India</p>
+				                <p>Phone No: <a href="tel:913322430497">+91 33 2243 0497</a></p>
+								                <p>Email: <a href="mailto:birlasugar@birla-sugar.com">birlasugar@birla-sugar.com</a>
+                </p>
+				            </div>
+        </div>
+    </div>
+
+    <div  class="mobileNewHum">
+        <div  class="mobileNewHumInn">
+            <a class="hamMenu" id="hamMenu" onclick="menuBtn()" href="javascript:void()">
+                MENU
+            </a>
+        </div>
+        <a href="javascript:void(0);" class="slideFromBtn slideFromBtnMob" id="FromBtnMob">quick connect</a>
+    </div>
+
+
+</body>
+<main class="homePage">
+    <section class="bannerWrap">
+        <div class="homeBanner homeBannerSlider">
+                                <div class="homeBannerSliderInn">
+                        <div class="container">
+                            <div class="row eachBanner">
+                                <div class="col-lg-6 leftBox">
+                                    <figure class="bannerImg1">
+                                        <!-- <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/bannerImg1.png" /><noscript><img src="assets/images/bannerImg1.png" alt="" /></noscript> -->
+                                        <video src="https://magadhsugar.com/wp-content/uploads/2024/09/SUGER_HD_compressed.webm" muted="" loop="" autoplay=""></video>
+                                    </figure>
+                                    <figure class="bannerImg2">
+                                        <img fetchpriority="high" src="https://magadhsugar.com/wp-content/uploads/2025/09/bannerImg2.webp" alt="" />
+                                        <img class="arrowIcon" src="https://magadhsugar.com/wp-content/uploads/2024/10/arrow-banner.png" alt="" />
+                                    </figure>
+                                </div>
+                                <div class="col-lg-6 rightBox">
+                                    <div class="rightBoxCont">
+                                        <h1 class="bannerTitle">From Farm To Table</h1>
+                                        <p>Our commitment to pure and <br>premium sugar</p>
+                                                                                    <div class="btnHolder">
+                                                <a class="readMoreBtn" href="https://magadhsugar.com/products/sugar/">Sugar</a>
+                                                <a href="https://magadhsugar.com/wp-content/uploads/2024/09/SUGER_HD_compressed.webm" data-fancybox="" class="vidPlayBtn">
+                                                    <span><i class="fa-solid fa-play"></i></span>
+                                                    Play Video
+                                                </a>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <div class="homeBannerSliderInn">
+                        <div class="container">
+                            <div class="row eachBanner">
+                                <div class="col-lg-6 leftBox">
+                                    <figure class="bannerImg1">
+                                        <!-- <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/bannerImg1.png" /><noscript><img src="assets/images/bannerImg1.png" alt="" /></noscript> -->
+                                        <video src="https://magadhsugar.com/wp-content/uploads/2024/09/ETHANOL_HD_compressed.webm" muted="" loop="" autoplay=""></video>
+                                    </figure>
+                                    <figure class="bannerImg2">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2025/09/ethanol-br-2.webp" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2025/09/ethanol-br-2.webp" alt="" /></noscript>
+                                        <img class="arrowIcon" src="https://magadhsugar.com/wp-content/uploads/2024/10/arrow-banner.png" alt="" />
+                                    </figure>
+                                </div>
+                                <div class="col-lg-6 rightBox">
+                                    <div class="rightBoxCont">
+                                        <h1 class="bannerTitle">Fueling Tomorrow</h1>
+                                        <p>Our ethanol powers progress for today and tomorrow</p>
+                                                                                    <div class="btnHolder">
+                                                <a class="readMoreBtn" href="https://magadhsugar.com/products/ethanol/">Ethanol</a>
+                                                <a href="https://magadhsugar.com/wp-content/uploads/2024/09/ETHANOL_HD_compressed.webm" data-fancybox="" class="vidPlayBtn">
+                                                    <span><i class="fa-solid fa-play"></i></span>
+                                                    Play Video
+                                                </a>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <div class="homeBannerSliderInn">
+                        <div class="container">
+                            <div class="row eachBanner">
+                                <div class="col-lg-6 leftBox">
+                                    <figure class="bannerImg1">
+                                        <!-- <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/bannerImg1.png" /><noscript><img src="assets/images/bannerImg1.png" alt="" /></noscript> -->
+                                        <video src="https://magadhsugar.com/wp-content/uploads/2024/09/POWER_HD_compressed.webm" muted="" loop="" autoplay=""></video>
+                                    </figure>
+                                    <figure class="bannerImg2">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2025/09/energy-br-2.webp" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2025/09/energy-br-2.webp" alt="" /></noscript>
+                                        <img class="arrowIcon" src="https://magadhsugar.com/wp-content/uploads/2024/10/arrow-banner.png" alt="" />
+                                    </figure>
+                                </div>
+                                <div class="col-lg-6 rightBox">
+                                    <div class="rightBoxCont">
+                                        <h1 class="bannerTitle">Greening The Grid</h1>
+                                        <p>Our biofuel based co-generation power plants paving the path to clean energy</p>
+                                                                                    <div class="btnHolder">
+                                                <a class="readMoreBtn" href="https://magadhsugar.com/products/power/">Power</a>
+                                                <a href="https://magadhsugar.com/wp-content/uploads/2024/09/POWER_HD_compressed.webm" data-fancybox="" class="vidPlayBtn">
+                                                    <span><i class="fa-solid fa-play"></i></span>
+                                                    Play Video
+                                                </a>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+    </section>
+    <section class="bannerWrap d-none">
+        <div class="bnrSliderWrap bannerSlider">
+                                <div class="eachBannerWrap">
+                        <div class="container">
+                            <div class="row eachBanner">
+                                <div class="col-md-6 leftBox">
+                                                                            <figure class="bannerImg1">
+                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Sugarcane field" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/06/bannerImg1.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/06/bannerImg1.png" alt="Sugarcane field" /></noscript>
+                                        </figure>
+                                                                                                                <figure class="bannerImg2">
+                                            <img class="bannerImg2Img" src="https://magadhsugar.com/wp-content/uploads/2025/09/bannerImg2.webp" alt="" />
+                                            <img class="arrowIcon" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/arrow-banner.png" /><noscript><img class="arrowIcon" src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/arrow-banner.png" alt="" /></noscript>
+                                        </figure>
+                                                                    </div>
+                                <div class="col-md-6 rightBox">
+                                    <div class="rightBoxCont">
+                                                                                    <h1 class="bannerTitle">
+                                                From Farm To Table                                            </h1>
+                                                                                                                            <p>
+                                                Our commitment to pure and premium sugar                                            </p>
+                                                                                <div class="btnHolder">
+                                                                                            <a class="readMoreBtn" href="https://magadhsugar.com/products/sugar/">
+                                                    Sugar                                                </a>
+                                                                                                                                        <a href="https://www.youtube.com/watch?v=88ppHh7J1Is" data-fancybox="" class="vidPlayBtn">
+                                                    <span><i class="fa-solid fa-play"></i></span>
+                                                    Play Video
+                                                </a>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <div class="eachBannerWrap">
+                        <div class="container">
+                            <div class="row eachBanner">
+                                <div class="col-md-6 leftBox">
+                                                                            <figure class="bannerImg1">
+                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ethanol Tanker" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/06/ethanol-br.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/06/ethanol-br.png" alt="Ethanol Tanker" /></noscript>
+                                        </figure>
+                                                                                                                <figure class="bannerImg2">
+                                            <img class="bannerImg2Img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2025/09/ethanol-br-2.webp" /><noscript><img class="bannerImg2Img" src="https://magadhsugar.com/wp-content/uploads/2025/09/ethanol-br-2.webp" alt="" /></noscript>
+                                            <img class="arrowIcon" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/arrow-banner.png" /><noscript><img class="arrowIcon" src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/arrow-banner.png" alt="" /></noscript>
+                                        </figure>
+                                                                    </div>
+                                <div class="col-md-6 rightBox">
+                                    <div class="rightBoxCont">
+                                                                                    <h1 class="bannerTitle">
+                                                Fuelling Tomorrow                                            </h1>
+                                                                                                                            <p>
+                                                Our ethanol powers progress for today and tomorrow                                            </p>
+                                                                                <div class="btnHolder">
+                                                                                            <a class="readMoreBtn" href="https://magadhsugar.com/products/ethanol/">
+                                                    Ethanol                                                </a>
+                                                                                                                                        <a href="https://www.youtube.com/watch?v=88ppHh7J1Is" data-fancybox="" class="vidPlayBtn">
+                                                    <span><i class="fa-solid fa-play"></i></span>
+                                                    Play Video
+                                                </a>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <div class="eachBannerWrap">
+                        <div class="container">
+                            <div class="row eachBanner">
+                                <div class="col-md-6 leftBox">
+                                                                            <figure class="bannerImg1">
+                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Energy Power Generation" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/06/energy-br.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/06/energy-br.png" alt="Energy Power Generation" /></noscript>
+                                        </figure>
+                                                                                                                <figure class="bannerImg2">
+                                            <img class="bannerImg2Img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2025/09/energy-br-2.webp" /><noscript><img class="bannerImg2Img" src="https://magadhsugar.com/wp-content/uploads/2025/09/energy-br-2.webp" alt="" /></noscript>
+                                            <img class="arrowIcon" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/arrow-banner.png" /><noscript><img class="arrowIcon" src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/arrow-banner.png" alt="" /></noscript>
+                                        </figure>
+                                                                    </div>
+                                <div class="col-md-6 rightBox">
+                                    <div class="rightBoxCont">
+                                                                                    <h1 class="bannerTitle">
+                                                Greening The Grid                                            </h1>
+                                                                                                                            <p>
+                                                Our  biofuel based co-generation power plants paving the path to clean energy                                            </p>
+                                                                                <div class="btnHolder">
+                                                                                            <a class="readMoreBtn" href="https://magadhsugar.com/products/energy/">
+                                                    Energy                                                </a>
+                                                                                                                                        <a href="https://www.youtube.com/watch?v=88ppHh7J1Is" data-fancybox="" class="vidPlayBtn">
+                                                    <span><i class="fa-solid fa-play"></i></span>
+                                                    Play Video
+                                                </a>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+    </section>
+
+    <section class="aboutWrap">
+        <div class="container">
+            <div class="row">
+                                    <div class="col-lg-6 aboutLeft">
+                        <h2>
+                            Built For The Long-Term                        </h2>
+                        <p><strong>Magadh Sugar &amp; Energy Limited</strong> is a key part of the prestigious K.K. Birla Group of Sugar Companies, benefiting from decades of expertise in the sugar industry. Our units, originally established in 1932, were restructured through strategic mergers and demergers on March 19, 2015. Our core operations focus on producing sugar and its by-products: Ethanol and Power Co-generation using biofuel. Led by our Chairman, Sri Chandra Shekhar Nopany, and supported by a team of skilled executives, we are dedicated to sustained growth and excellence in execution.</p>
+<p>We operate three advanced sugar complexes in Bihar: Narkatiaganj, Sidhwalia, and Hasanpur. Our facilities have a total crushing capacity of 21,500 TCD, a distillery capacity of 155 KLPD, and a power co-generation capacity of 38 MW. Our strong infrastructure reflects our commitment to sustainable performance excellence.</p>
+                                                    <a class="readMoreBtn" href="https://magadhsugar.com/company/">
+                                Read More                            </a>
+                                            </div>
+                                                    <div class="col-lg-6 aboutRight">
+                        <figure class="layerBg">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2025/10/Gemini_Generated_Image_a9dggga9dggga9dg.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2025/10/Gemini_Generated_Image_a9dggga9dggga9dg.png" alt="" /></noscript>
+                            <img class="imgLayer" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/imgLayer.png" /><noscript><img class="imgLayer" src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/imgLayer.png" alt="" /></noscript>
+                        </figure>
+                    </div>
+                            </div>
+        </div>
+    </section>
+            <section class="productWrap d-none">
+            <div class="container-fluid">
+                <div class="proD">
+                    <h2>
+                        Products                    </h2>
+                </div>
+                <div class="productHome productMain">
+                                            <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="" alt="" />
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                                                            </span>
+                                    <p>
+                                                                            </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="" alt="" />
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                                                            </span>
+                                    <p>
+                                                                            </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="" alt="" />
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                                                            </span>
+                                    <p>
+                                                                            </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </section>
+    
+    <section class="productWrap productWrapNew">
+        <div class="container-fluid">
+            <div class="proD">
+                <h2>
+                    Products                </h2>
+            </div>
+            <div class="productHome productMain">
+                                        <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Raw Sugar" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/magadhsudar.webp" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/07/magadhsudar.webp" alt="Raw Sugar" /></noscript>
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                        Sugar                                    </span>
+                                    <p>
+                                        Experience the essence of our commitment to sweetness in every crystal. They are sourced from the finest sugarcane cultivated in tropical and sub-tropical regions. It undergoes a careful process to meet high standards.                                    </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/products/sugar/">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                        <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ethanol Tanker" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/ethanol.webp" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/07/ethanol.webp" alt="Ethanol Tanker" /></noscript>
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                        Ethanol                                    </span>
+                                    <p>
+                                        Our ethanol is an eco-friendly biofuel made from molasses. It is produced through a detailed process involving fermentation and distillation to ensure compliance with environmental standards.                                    </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/products/ethanol/">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                        <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/DJI_0198-2-scaled.jpg" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/07/DJI_0198-2-scaled.jpg" alt="" /></noscript>
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                        Power                                    </span>
+                                    <p>
+                                        Discover the transformative power of renewable energy with us, where sustainability meets efficiency in every watt generated. We generate power through an environmentally friendly process utilizing in-house generated bagasse.                                    </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/products/energy/">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                        <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Raw Sugar" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/magadhsudar.webp" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/07/magadhsudar.webp" alt="Raw Sugar" /></noscript>
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                        Sugar                                    </span>
+                                    <p>
+                                        Experience the essence of our commitment to sweetness in every crystal. They are sourced from the finest sugarcane cultivated in tropical and sub-tropical regions. It undergoes a careful process to meet high standards.                                    </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/products/sugar/">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                        <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ethanol Tanker" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/ethanol.webp" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/07/ethanol.webp" alt="Ethanol Tanker" /></noscript>
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                        Ethanol                                    </span>
+                                    <p>
+                                        Our ethanol is an eco-friendly biofuel made from molasses. It is produced through a detailed process involving fermentation and distillation to ensure compliance with environmental standards.                                    </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/products/ethanol/">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                        <div class="item">
+                            <div class="slickDiv">
+                                <div class="proSlickDivImg">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="power of renewable energy" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/facility-power-1.jpg" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/07/facility-power-1.jpg" alt="power of renewable energy" /></noscript>
+                                </div>
+                                <div class="proSlickDivText">
+                                    <span>
+                                        Power                                    </span>
+                                    <p>
+                                        Discover the transformative power of renewable energy with us, where sustainability meets efficiency in every watt generated. We generate power through an environmentally friendly process utilizing in-house generated bagasse.                                    </p>
+                                    <a class="readMoreBtn" href="https://magadhsugar.com/products/energy/">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+            <section class="homeVideo d-none">
+            <div class="homeVideoInn">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Sugarcane field" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/06/video-sec.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/06/video-sec.png" alt="Sugarcane field" /></noscript>
+                <a href="https://www.youtube.com/watch?v=88ppHh7J1Is" target="_blank" data-fancybox="https://www.youtube.com/watch?v=88ppHh7J1Is" class="playBtn"><i class="fa-solid fa-play"></i></a>
+            </div>
+        </section>
+                <section class="homeCounter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 homeCounterHead">
+                        <div>
+                            <h2>
+                                Solution That Make Changes                            </h2>
+                            <p>
+                                                            </p>
+                        </div>
+                        <!--                     <a class="btnDefault"
+                        href="">
+                                            </a>
+                     -->
+                    </div>
+                                            <div class="col-lg-3 col-md-6">
+                            <div class="homeCounDiv">
+                                <div class="homeCounDivIcon">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Measuring Jar" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/06/measuring-jug-1.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/06/measuring-jug-1.png" alt="Measuring Jar" /></noscript>
+                                </div>
+                                <div class="homeCounDivText">
+                                    <span class="homeCounSpan"><span class="counter">
+                                            21500                                            <span></span>
+                                        </span>
+                                        TONNES                                    </span>
+                                    <span class="homeCounPara">
+                                        Sugarcane crushing capacity/day                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-lg-3 col-md-6">
+                            <div class="homeCounDiv">
+                                <div class="homeCounDivIcon">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Distillery" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/06/distillery-1.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/06/distillery-1.png" alt="Distillery" /></noscript>
+                                </div>
+                                <div class="homeCounDivText">
+                                    <span class="homeCounSpan"><span class="counter">
+                                            155                                            <span></span>
+                                        </span>
+                                        KLPD                                    </span>
+                                    <span class="homeCounPara">
+                                        Producing distillery                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-lg-3 col-md-6">
+                            <div class="homeCounDiv">
+                                <div class="homeCounDivIcon">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="power-plant" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/06/power-plant-1.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/06/power-plant-1.png" alt="power-plant" /></noscript>
+                                </div>
+                                <div class="homeCounDivText">
+                                    <span class="homeCounSpan"><span class="counter">
+                                            38                                            <span></span>
+                                        </span>
+                                        MW                                    </span>
+                                    <span class="homeCounPara">
+                                        Power production                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-lg-3 col-md-6">
+                            <div class="homeCounDiv">
+                                <div class="homeCounDivIcon">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Group of People" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/06/team-1.png" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/06/team-1.png" alt="Group of People" /></noscript>
+                                </div>
+                                <div class="homeCounDivText">
+                                    <span class="homeCounSpan"><span class="counter">
+                                            5000                                            <span></span>
+                                        </span>
+                                                                            </span>
+                                    <span class="homeCounPara">
+                                        People                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                                        <!-- <div class="col-lg-3">
+              <div class="homeCounDiv">
+                <div class="homeCounDivIcon">
+                  <img src="assets/images/distillery 1.png" alt="" data-lazy-src="http://assets/images/distillery%201.png" /><noscript><img src="assets/images/distillery 1.png" alt="" /></noscript>
+                </div>
+                <div class="homeCounDivText">
+                  <span class="homeCounSpan"
+                    ><span class="counter">155 </span> KLPD</span
+                  >
+                  <span class="homeCounPara">Producing distillery</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="homeCounDiv">
+                <div class="homeCounDivIcon">
+                  <img src="assets/images/power-plant 1.png" alt="" data-lazy-src="http://assets/images/power-plant%201.png" /><noscript><img src="assets/images/power-plant 1.png" alt="" /></noscript>
+                </div>
+                <div class="homeCounDivText">
+                  <span class="homeCounSpan"
+                    ><span class="counter">38 </span> Mw</span
+                  >
+                  <span class="homeCounPara">Power production</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="homeCounDiv">
+                <div class="homeCounDivIcon">
+                  <img src="assets/images/team 1.png" alt="" data-lazy-src="http://assets/images/team%201.png" /><noscript><img src="assets/images/team 1.png" alt="" /></noscript>
+                </div>
+                <div class="homeCounDivText">
+                  <span class="homeCounSpan"
+                    ><span class="counter">5</span><span>K</span> people</span
+                  >
+                  <span class="homeCounPara">Lorem ipsum dolor sit </span>
+                </div>
+              </div>
+            </div> -->
+                </div>
+            </div>
+        </section>
+                <section class="sustainbilityWarp sustainbilityWarpNew">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sustainbilityHaed">
+                            <h2>
+                                Corporate Social Responsibility                            </h2>
+                            <p><span style="font-weight: 400;">Our Corporate Social Responsibility (CSR) initiatives are driven by the vision of creating an equitable and inclusive society. We are dedicated to supporting sustainable transformation and social integration through active collaboration with the government, NGOs, and other organizations. Our partnerships focus on promoting rural education and community upliftment.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sustainbilityDesk">
+                <div class="owl-carousel sustainbility sustainbilitySlider owl-theme sustainbilityDeskSSS">
+                                            <div class="item active">
+                            <div class="item-desc">
+                                <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="School" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/vlcsnap-2024-07-08-16h13m18s403.png" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/vlcsnap-2024-07-08-16h13m18s403.png" alt="School" /></noscript>
+                                <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                <div class="item-descSec1">
+                                    <span>
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=education" class="">Education</a>
+
+                                    </span>
+                                    <p>
+                                        We see education as a powerful catalyst for change. Our efforts are aimed at improving the educational infrastructure in rural Bihar, creating better learning opportunities for students.
+                                    </p>
+                                    <!-- <div class="sustainbilityBtnDiv">
+                                        <a href="</?php echo $details_link['url']; ?>"
+                                            class="sustainbilityBtn"></?php echo $details_link['title']; ?></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item ">
+                            <div class="item-desc">
+                                <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ambulance for healthcare assistance" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/healtcare-scaled.jpg" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/healtcare-scaled.jpg" alt="Ambulance for healthcare assistance" /></noscript>
+                                <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                <div class="item-descSec1">
+                                    <span>
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=healthcare" class="">Healthcare</a>
+
+                                    </span>
+                                    <p>
+                                        Committed to social welfare, we provide healthcare assistance to marginalized communities, ensuring access to essential medical services.                                    </p>
+                                    <!-- <div class="sustainbilityBtnDiv">
+                                        <a href="</?php echo $details_link['url']; ?>"
+                                            class="sustainbilityBtn"></?php echo $details_link['title']; ?></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item ">
+                            <div class="item-desc">
+                                <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="yatri shed" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/rural-development1.jpg" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/rural-development1.jpg" alt="yatri shed" /></noscript>
+                                <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                <div class="item-descSec1">
+                                    <span>
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=rural-development" class="">Rural Development</a>
+
+                                    </span>
+                                    <p>
+                                        Our contributions to rural development include constructing facilities such as a yatri shed in the Gopalganj district, enhancing the well-being and convenience of the local community.                                    </p>
+                                    <!-- <div class="sustainbilityBtnDiv">
+                                        <a href="</?php echo $details_link['url']; ?>"
+                                            class="sustainbilityBtn"></?php echo $details_link['title']; ?></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+            <div class="sustainbilityMobiS d-none">
+                <div class="sustainbility sustainbilitySlider  sustainbilityMobi ">
+                                            <div class="item active">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Education                                    </span>
+                                    <p>
+                                        We see education as a powerful catalyst for change. Our efforts are aimed at improving the educational infrastructure in rural Bihar, creating better learning opportunities for students.
+                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=education" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="School" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/vlcsnap-2024-07-08-16h13m18s403.png" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/vlcsnap-2024-07-08-16h13m18s403.png" alt="School" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Read More                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=education" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item ">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Healthcare                                    </span>
+                                    <p>
+                                        Committed to social welfare, we provide healthcare assistance to marginalized communities, ensuring access to essential medical services.                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=healthcare" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ambulance for healthcare assistance" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/healtcare-scaled.jpg" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/healtcare-scaled.jpg" alt="Ambulance for healthcare assistance" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Read More                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=healthcare" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item ">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Rural Development                                    </span>
+                                    <p>
+                                        Our contributions to rural development include constructing facilities such as a yatri shed in the Gopalganj district, enhancing the well-being and convenience of the local community.                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=rural-development" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="yatri shed" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/rural-development1.jpg" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/rural-development1.jpg" alt="yatri shed" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Read More                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=rural-development" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </section>
+                <section class="sustainbilityWarp d-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sustainbilityHaed">
+                            <h2>
+                                Corporate Social Responsibility                            </h2>
+                            <p><span style="font-weight: 400;">Our Corporate Social Responsibility (CSR) initiatives are driven by the vision of creating an equitable and inclusive society. We are dedicated to supporting sustainable transformation and social integration through active collaboration with the government, NGOs, and other organizations. Our partnerships focus on promoting rural education and community upliftment.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sustainbilityDesk">
+                <div class="owl-carousel sustainbility sustainbilitySlider owl-theme sustainbilityDeskSSS">
+                                            <div class="item active">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Education                                    </span>
+                                    <p>
+                                        We see education as a powerful catalyst for change. Our efforts are aimed at improving the educational infrastructure in rural Bihar, creating better learning opportunities for students.
+                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=education" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="School" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/vlcsnap-2024-07-08-16h13m18s403.png" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/vlcsnap-2024-07-08-16h13m18s403.png" alt="School" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Education                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=education" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item ">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Healthcare                                    </span>
+                                    <p>
+                                        Committed to social welfare, we provide healthcare assistance to marginalized communities, ensuring access to essential medical services.                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=healthcare" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ambulance for healthcare assistance" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/healtcare-scaled.jpg" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/healtcare-scaled.jpg" alt="Ambulance for healthcare assistance" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Healthcare                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=healthcare" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item ">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Rural Development                                    </span>
+                                    <p>
+                                        Our contributions to rural development include constructing facilities such as a yatri shed in the Gopalganj district, enhancing the well-being and convenience of the local community.                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=rural-development" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="yatri shed" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/rural-development1.jpg" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/rural-development1.jpg" alt="yatri shed" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Rural Development                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=rural-development" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+            <div class="sustainbilityMobiS d-none">
+                <div class="sustainbility sustainbilitySlider  sustainbilityMobi ">
+                                            <div class="item active">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Education                                    </span>
+                                    <p>
+                                        We see education as a powerful catalyst for change. Our efforts are aimed at improving the educational infrastructure in rural Bihar, creating better learning opportunities for students.
+                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=education" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="School" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/vlcsnap-2024-07-08-16h13m18s403.png" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/vlcsnap-2024-07-08-16h13m18s403.png" alt="School" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Read More                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=education" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item ">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Healthcare                                    </span>
+                                    <p>
+                                        Committed to social welfare, we provide healthcare assistance to marginalized communities, ensuring access to essential medical services.                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=healthcare" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ambulance for healthcare assistance" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/healtcare-scaled.jpg" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/healtcare-scaled.jpg" alt="Ambulance for healthcare assistance" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Read More                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=healthcare" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="item ">
+                            <div class="item-desc">
+                                <div class="item-descSec1">
+                                    <span>
+                                        Rural Development                                    </span>
+                                    <p>
+                                        Our contributions to rural development include constructing facilities such as a yatri shed in the Gopalganj district, enhancing the well-being and convenience of the local community.                                    </p>
+                                    <div class="sustainbilityBtnDiv">
+                                        <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=rural-development" class="sustainbilityBtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="item-descSec2">
+                                    <img class="item-descSec2Img1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="yatri shed" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/07/rural-development1.jpg" /><noscript><img class="item-descSec2Img1" src="https://magadhsugar.com/wp-content/uploads/2024/07/rural-development1.jpg" alt="yatri shed" /></noscript>
+                                    <!-- <img class="item-descSec2Img2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://assets/images/Vector.png"><noscript><img class="item-descSec2Img2" src="assets/images/Vector.png" alt=""></noscript> -->
+                                </div>
+                            </div>
+                            <div class="item-desc2">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" /><noscript><img src="https://magadhsugar.com/wp-content/themes/magadh/assets/images/sustainbility-bg.png" alt="" /></noscript>
+                                <span>
+                                    Read More                                </span>
+                                <div class="sustainbilityBtnDiv sustainbilityBtnDivClose">
+                                    <a href="https://magadhsugar.com/corporate-social-responsibility/?tab=rural-development" class="sustainbilityBtn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </section>
+                <section class="blogWarp d-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 BlogWarpHead">
+                        <div>
+                            <h2>
+                                Our Blog Posts                            </h2>
+                        </div>
+                                            </div>
+                </div>
+                <div class="row">
+                                                                <div class="col-lg-7">
+                            <div class="blogBox">
+                                <div class="blogImg">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="blog2" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/03/blog2-1.jpeg" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/03/blog2-1.jpeg" alt="blog2" /></noscript>
+                                </div>
+                                <div class="blogText">
+                                    <div class="blogDate">
+                                        <span><i class="fa-regular fa-calendar-days"></i>
+                                            06 Jun 2024                                        </span>
+                                        <span><i class="fa-regular fa-user"></i> Admin</span>
+                                    </div>
+                                    <h6>
+                                        LOREM IPSUM DOLOR SIT AMET CONSECTETUR 1                                    </h6>
+                                    <p>
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos dolorum veniam magni quo.
+                                    </p>
+                                    <a class="btnDefault" href="https://magadhsugar.com/lorem-ipsum-dolor-sit-amet-consectetur-2-copy/">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                                                                <div class="col-lg-5">
+
+                                                                <div class="blogBox blogBoxAside">
+                                        <div class="blogImg">
+                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/03/blog3-1.jpeg" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/03/blog3-1.jpeg" alt="" /></noscript>
+                                        </div>
+                                        <div class="blogText">
+                                            <div class="blogDate">
+                                                <span><i class="fa-regular fa-calendar-days"></i>
+                                                    07 Mar 2024                                                </span>
+                                                <span><i class="fa-regular fa-user"></i> Admin</span>
+                                            </div>
+                                            <p>
+                                                LOREM IPSUM DOLOR SIT AMET CONSECTETUR 2                                            </p>
+                                            <div class="sustainbilityBtnDiv blogBtn">
+                                                <a href="https://magadhsugar.com/lorem-ipsum-dolor-sit-amet-consectetur/" class="sustainbilityBtn">Read
+                                                    More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                <div class="blogBox blogBoxAside">
+                                        <div class="blogImg">
+                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="blog2" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/03/blog2-1.jpeg" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/03/blog2-1.jpeg" alt="blog2" /></noscript>
+                                        </div>
+                                        <div class="blogText">
+                                            <div class="blogDate">
+                                                <span><i class="fa-regular fa-calendar-days"></i>
+                                                    07 Feb 2024                                                </span>
+                                                <span><i class="fa-regular fa-user"></i> Admin</span>
+                                            </div>
+                                            <p>
+                                                LOREM IPSUM DOLOR SIT AMET CONSECTETUR 4                                            </p>
+                                            <div class="sustainbilityBtnDiv blogBtn">
+                                                <a href="https://magadhsugar.com/lorem-ipsum-dolor-sit-amet-consectetur-2/" class="sustainbilityBtn">Read
+                                                    More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                <div class="blogBox blogBoxAside">
+                                        <div class="blogImg">
+                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://magadhsugar.com/wp-content/uploads/2024/03/blog1-1.jpeg" /><noscript><img src="https://magadhsugar.com/wp-content/uploads/2024/03/blog1-1.jpeg" alt="" /></noscript>
+                                        </div>
+                                        <div class="blogText">
+                                            <div class="blogDate">
+                                                <span><i class="fa-regular fa-calendar-days"></i>
+                                                    05 Mar 2024                                                </span>
+                                                <span><i class="fa-regular fa-user"></i> Admin</span>
+                                            </div>
+                                            <p>
+                                                LOREM IPSUM DOLOR SIT AMET CONSECTETUR 3                                            </p>
+                                            <div class="sustainbilityBtnDiv blogBtn">
+                                                <a href="https://magadhsugar.com/hello-world/" class="sustainbilityBtn">Read
+                                                    More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                        </div>
+                                    </div>
+            </div>
+        </section>
+    </main>
+
+<section class="homeFrom">
+  <div class="container">
+    <div class="homeFromInn">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mapItemsHome">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117894.3721329797!2d88.30776668097397!3d22.57165449814155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a5d9dfa303%3A0x931d216953440ebe!2sBirla%20Buildings%20Limited!5e0!3m2!1sen!2sin!4v1718878168640!5m2!1sen!2sin"
+              width="" height="" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="fromDiv2">
+            <div>
+              <!-- <h6 class="sectionMainTitleCC">Contact Us</h6> -->
+              <h5 class="sectionMainTitle">Contact Us</h5>
+              <p class="sectionMainTitlePara">Please fill in the below form for questions, feedback, or inquiries. We
+                value your communication!</p>
+            </div>
+            
+<div class="wpcf7 no-js" id="wpcf7-f1439-o2" lang="en-US" dir="ltr" data-wpcf7-id="1439">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/#wpcf7-f1439-o2" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="1439" /><input type="hidden" name="_wpcf7_version" value="6.1.4" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1439-o2" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" /><input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</fieldset>
+<div class="row five">
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><label for="name">Name:</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" value="" type="text" name="your-name" /></span>
+			</p>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><label for="email">Email:</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" value="" type="email" name="your-email" /></span>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><label for="phone">Phone:</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" maxlength="10" minlength="10" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone" value="" type="tel" name="your-phone" /></span>
+			</p>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><label for="companyname">Company Name</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-company"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Company Name" value="" type="text" name="your-company" /></span>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6">
+		<div class="form-group">
+			<p><span class="wpcf7-form-control-wrap" data-name="general-enquiry"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" name="general-enquiry"><option value="">Enquiry Type</option><option value="Investor">Investor</option><option value="Other">Other</option></select></span>
+			</p>
+		</div>
+		<div class="form-group d-none">
+			<p><span class="wpcf7-form-control-wrap" data-name="product-enquiry"><select class="wpcf7-form-control wpcf7-select form-control" aria-invalid="false" name="product-enquiry"><option value="">&#8212;Please choose an option&#8212;</option><option value="Sugar">Sugar</option><option value="Ethanol">Ethanol</option><option value="Power">Power</option></select></span>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="form-group">
+	<p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message" name="your-message"></textarea></span>
+	</p>
+</div>
+<div class="pt-btn-container newBtn">
+	<div class="cCap">
+		<p><input type="hidden" name="_wpcf7_captcha_challenge_captcha-118" value="2773248835" /><img class="wpcf7-form-control wpcf7-captchac wpcf7-captcha-captcha-118" width="84" height="28" alt="captcha" src="https://magadhsugar.com/wp-content/uploads/wpcf7_captcha/2773248835.png" /><br />
+<span class="wpcf7-form-control-wrap" data-name="captcha-118"><input size="4" maxlength="4" class="wpcf7-form-control wpcf7-captchar" autocomplete="off" aria-invalid="false" placeholder="Enter Captcha" value="" type="text" name="captcha-118" /></span>
+		</p>
+	</div>
+	<p><input class="wpcf7-form-control wpcf7-submit has-spinner pt-button pt-button-flat" type="submit" value="Submit" /><br />
+	</p>
+</div><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footerWrap footerWrapHome">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-4 mtRM_30">
+        <div class="foterAbout">
+                      <div class="footerLogo">
+              <a href="https://magadhsugar.com"><img src="https://magadhsugar.com/wp-content/uploads/2024/03/Magadh-Logo.png" alt=""></a>
+            </div>
+                                <p>Magadh Sugar & Energy Limited is a key part of the prestigious K.K. Birla Group of Sugar Companies, benefiting from decades of expertise in the sugar industry. Our units, originally established in 1932, were restructured through strategic mergers and demergers on March 19, 2015. </p>
+                                <div class="socialIcon">
+                                                <a href="https://www.facebook.com/magadhsugarenergyltd"><i class="fa-brands fa-facebook-f"></i></a>
+                                                                                                                                <a href="https://www.instagram.com/magadhsugarenergyltd/"><i class="fa-brands fa-instagram"></i></a>
+                                                                                                                                <a href="https://in.linkedin.com/company/magadhsugarenergyltd"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                            <!-- <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.skype.com/"><i class="fa-brands fa-skype"></i></a> -->
+            </div>
+                  </div>
+      </div>
+      <div class="col-md-6 col-lg-2 mtRM_30">
+        <h5 class="footHe">Our Offerings</h5>
+        <div class="footParaDiv">
+          <div class="menu-quick-links-container"><ul id="menu-quick-links" class="menu"><li id="menu-item-2038" class="menu-item menu-item-type-post_type menu-item-object-products menu-item-2038"><a href="https://magadhsugar.com/products/sugar/">Sugar</a></li>
+<li id="menu-item-2037" class="menu-item menu-item-type-post_type menu-item-object-products menu-item-2037"><a href="https://magadhsugar.com/products/ethanol/">Ethanol</a></li>
+<li id="menu-item-2039" class="menu-item menu-item-type-post_type menu-item-object-products menu-item-2039"><a href="https://magadhsugar.com/products/power/">Power</a></li>
+</ul></div>        </div>
+      </div>
+      <div class="col-md-6 col-lg-2 mtRM_30">
+        <h5 class="footHe">Useful Links</h5>
+        <div class="footParaDiv">
+          <div class="menu-footer-useful-links-container"><ul id="menu-footer-useful-links" class="menu"><li id="menu-item-1115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1115"><a href="https://magadhsugar.com/company/">Company Profile</a></li>
+<li id="menu-item-2040" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2040"><a href="https://magadhsugar.com/financial-results/">Financial Information</a></li>
+<li id="menu-item-2042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2042"><a href="https://magadhsugar.com/infrastructure/">Infrastructure</a></li>
+<li id="menu-item-2041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2041"><a href="https://magadhsugar.com/corporate-social-responsibility/">Sustainability</a></li>
+<li id="menu-item-1118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1118"><a href="https://magadhsugar.com/people-and-career/">Career</a></li>
+<li id="menu-item-1116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1116"><a href="https://magadhsugar.com/contact-us/">Contact Us</a></li>
+</ul></div>        </div>
+      </div>
+      <div class="col-md-12 col-lg-4 mtRM_30">
+        <h5 class="footHe">Contact Us</h5>
+        <div class="footAdd">
+                      <p>Address: <span>Birla Building, 5th Floor, 9/1, R.N. Mukherjee Road, Kolkata - 700 001 India
+</span></p>
+                                <p>Phone No: <a
+                href="tel:+913322430497">+91 33 2243 0497</a>
+            </p>
+                    <p>Email: <a
+              href="mailto:birlasugar@birla-sugar.com">birlasugar@birla-sugar.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer2">
+    <div class="container">
+      <div class="footer2Main">
+        <h6>Copyright © 2026 Magadh Sugar All Rights || Reserved. Design &amp; Developed by :<a href="https://www.promotedge.com/" target="_blank"> PromotEdge</a></h6>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/magadh/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://magadhsugar.com","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="rocket_lazyload_css-js-extra">
+var rocket_lazyload_css_data = {"threshold":"300"};
+//# sourceURL=rocket_lazyload_css-js-extra
+</script>
+<script id="rocket_lazyload_css-js-after">
+!function o(n,c,a){function u(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(s)return s(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return u(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var s="function"==typeof require&&require,e=0;e<a.length;e++)u(a[e]);return u}({1:[function(e,t,r){"use strict";{const c="undefined"==typeof rocket_pairs?[]:rocket_pairs,a=(("undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs).map(t=>{var e=t.selector;document.querySelectorAll(e).forEach(e=>{e.setAttribute("data-rocket-lazy-bg-"+t.hash,"excluded")})}),document.querySelector("#wpr-lazyload-bg-container"));var o=rocket_lazyload_css_data.threshold||300;const u=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&c.filter(e=>t.target.matches(e.selector)).map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,a.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{u.unobserve(e),e.setAttribute("data-rocket-lazy-bg-"+t.hash,"loaded")}))})})},{rootMargin:o+"px"});function n(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&c.forEach(t=>{try{document.querySelectorAll(t.selector).forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&(u.observe(e),(t.elements||=[]).push(e))})}catch(e){console.error(e)}})}n(),function(){const r=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType)return(t=new r(t)).observe(e,{attributes:!0,childList:!0,subtree:!0}),t}}()(document.querySelector("body"),n)}},{}]},{},[1]);
+//# sourceURL=rocket_lazyload_css-js-after
+</script>
+<script type="rocketlazyloadscript" id="jquery.countup-js" data-rocket-src="https://magadhsugar.com/wp-content/themes/magadh/assets/js-front-page/jquery.countup.js?ver=3.6.2"></script>
+<script type="rocketlazyloadscript" id="jquery.waypoints-js" data-rocket-src="https://magadhsugar.com/wp-content/themes/magadh/assets/js-front-page/jquery.waypoints.min.js?ver=3.6.2"></script>
+<script type="rocketlazyloadscript" id="bootstrap-js" data-rocket-src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js?ver=3.6.2"></script>
+<script type="rocketlazyloadscript" id="aos-js" data-rocket-src="https://magadhsugar.com/wp-content/themes/magadh/assets/js-front-page/aos.js?ver=3.6.2"></script>
+<script type="rocketlazyloadscript" id="owl.carousel-js" data-rocket-src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js?ver=3.6.2"></script>
+<script type="rocketlazyloadscript" id="slick-js" data-rocket-src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js?ver=3.6.2"></script>
+<script type="rocketlazyloadscript" id="custom-js" data-rocket-src="https://magadhsugar.com/wp-content/themes/magadh/assets/js-front-page/custom.js?ver=3.6.2"></script>
+<script type="rocketlazyloadscript" id="google-recaptcha-js" data-rocket-src="https://www.google.com/recaptcha/api.js?render=6LemDTEqAAAAADI6zW2qGWTTO88nHyMge4GMD2xe&#038;ver=3.0"></script>
+<script type="rocketlazyloadscript" id="wp-polyfill-js" data-rocket-src="https://magadhsugar.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"></script>
+<script type="rocketlazyloadscript" id="wpcf7-recaptcha-js-before">
+var wpcf7_recaptcha = {
+    "sitekey": "6LemDTEqAAAAADI6zW2qGWTTO88nHyMge4GMD2xe",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+//# sourceURL=wpcf7-recaptcha-js-before
+</script>
+<script type="rocketlazyloadscript" id="wpcf7-recaptcha-js" data-rocket-src="https://magadhsugar.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=6.1.4"></script>
+<script type="rocketlazyloadscript" id="wp-hooks-js" data-rocket-src="https://magadhsugar.com/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js" data-rocket-src="https://magadhsugar.com/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script type="rocketlazyloadscript" id="swv-js" data-rocket-src="https://magadhsugar.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.4"></script>
+<script type="rocketlazyloadscript" id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/magadhsugar.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script type="rocketlazyloadscript" id="contact-form-7-js" data-rocket-src="https://magadhsugar.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.4"></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://magadhsugar.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><div class="mobile-nav__overlay"></div>
+<script type="rocketlazyloadscript" data-rocket-src=""></script>
+
+<script type="rocketlazyloadscript" data-rocket-src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://unpkg.com/splitting/dist/splitting.js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+<!--  -->
+
+
+
+<script type="rocketlazyloadscript">
+  AOS.init({
+    duration: 1200,
+  });
+</script>
+<script type="rocketlazyloadscript">
+  jQuery(".counter").countUp();
+</script>
+
+<!-- <script type="rocketlazyloadscript">
+   $(".navbtnClick1").click(function () {
+      $(".navBtn1").toggleClass("show-tabNav");
+      //   $(".show-tabNav").toggleClass("navBtn1");
+
+      // $("#tab-1").addClass("active-tab");
+   });
+</script> -->
+<script type="rocketlazyloadscript">
+  // HERO SLIDER
+  var menu = [];
+  jQuery(".swiper-slide").each(function(index) {
+    menu.push(jQuery(this).find(".slide-inner").attr("data-text"));
+  });
+  var interleaveOffset = 0.5;
+  var swiperOptions = {
+    loop: true,
+    speed: 1000,
+    parallax: true,
+    // autoplay: {
+    //    delay: 6500,
+    //    disableOnInteraction: false,
+    // },
+    autoplay: false,
+    watchSlidesProgress: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    on: {
+      progress: function() {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          var slideProgress = swiper.slides[i].progress;
+          var innerOffset = swiper.width * interleaveOffset;
+          var innerTranslate = slideProgress * innerOffset;
+          swiper.slides[i].querySelector(".slide-inner").style.transform =
+            "translate3d(" + innerTranslate + "px, 0, 0)";
+        }
+      },
+
+      touchStart: function() {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          swiper.slides[i].style.transition = "";
+        }
+      },
+
+      setTransition: function(speed) {
+        var swiper = this;
+        for (var i = 0; i < swiper.slides.length; i++) {
+          swiper.slides[i].style.transition = speed + "ms";
+          swiper.slides[i].querySelector(".slide-inner").style.transition =
+            speed + "ms";
+        }
+      },
+    },
+  };
+
+  var swiper = new Swiper(".swiper-container", swiperOptions);
+
+  // DATA BACKGROUND IMAGE
+  var sliderBgSetting = $(".slide-bg-image");
+  sliderBgSetting.each(function(indx) {
+    if ($(this).attr("data-background")) {
+      $(this).css(
+        "background-image",
+        "url(" + $(this).data("background") + ")"
+      );
+    }
+  });
+</script>
+<script type="rocketlazyloadscript">
+  $(document).ready(function() {
+    //alert('here');
+
+    $(".tabsSec3 a").click(function() {
+      $(".panel").hide();
+      $(".tabsSec3 a.active").removeClass("active");
+      $(this).addClass("active");
+
+      var panel = $(this).attr("href");
+      $(panel).fadeIn(1000);
+
+      return false; // prevents link action
+    }); // end click
+
+    $(".tabsSec3 li:first a").click();
+  }); // end ready
+</script>
+<script type="rocketlazyloadscript">
+  // external js: isotope.pkgd.js
+
+  // init Isotope
+  //  var $grid = $(".grid").isotope({
+  //    itemSelector: ".element-item",
+  //    layoutMode: "fitRows",
+  //  });
+  // filter functions
+  var filterFns = {
+    // show if number is greater than 50
+    numberGreaterThan50: function() {
+      var number = $(this).find(".number").text();
+      return parseInt(number, 10) > 50;
+    },
+    // show if name ends with -ium
+    ium: function() {
+      var name = $(this).find(".name").text();
+      return name.match(/ium$/);
+    },
+  };
+  // bind filter button click
+  $(".filters-button-group").on("click", "button", function() {
+    var filterValue = $(this).attr("data-filter");
+    // use filterFn if matches value
+    filterValue = filterFns[filterValue] || filterValue;
+    $grid.isotope({
+      filter: filterValue
+    });
+  });
+  // change is-checked class on buttons
+  $(".button-group").each(function(i, buttonGroup) {
+    var $buttonGroup = $(buttonGroup);
+    $buttonGroup.on("click", "button", function() {
+      $buttonGroup.find(".is-checked").removeClass("is-checked");
+      $(this).addClass("is-checked");
+    });
+  });
+</script>
+<script type="rocketlazyloadscript">
+  $(document).ready(function() {
+    $(".acc-container .acc:nth-child(1) .acc-head").addClass("active");
+    $(".acc-container .acc:nth-child(1) .acc-content").slideDown();
+    $(".acc-head").on("click", function() {
+      if ($(this).hasClass("active")) {
+        $(this).siblings(".acc-content").slideUp();
+        $(this).removeClass("active");
+      } else {
+        $(".acc-content").slideUp();
+        $(".acc-head").removeClass("active");
+        $(this).siblings(".acc-content").slideToggle();
+        $(this).toggleClass("active");
+      }
+    });
+  });
+</script>
+<script type="rocketlazyloadscript">
+  $(".tab-link2").click(function() {
+    var tabID = $(this).attr("data-tab");
+
+    $(this).addClass("active").siblings().removeClass("active");
+
+    $("#tab-" + tabID)
+      .addClass("active")
+      .siblings()
+      .removeClass("active");
+  });
+</script>
+<script type="rocketlazyloadscript">
+  // $(".productHome").on("init", function () {
+  //   $(".slick-active").prev().removeClass("nextdiv").addClass("prevdiv");
+  //   $(".slick-active").next().removeClass("prevdiv").addClass("nextdiv");
+  // });
+  // $(".productHome")
+  //   .slick({
+  //     slidesToShow: 3,
+  //     slidesToScroll: 1,
+  //     // autoplay: true,
+  //     autoplaySpeed: 2000,
+  //     dots: false,
+  //     arrows: true,
+  //     infinite: true,
+  //     centerMode: true,
+  //     centerPadding: "30px",
+  //     adaptiveHeight: false,
+  //     responsive: [
+  //       {
+  //         breakpoint: 1281,
+  //         settings: {
+  //           slidesToShow: 3,
+  //           slidesToScroll: 1,
+  //           infinite: true,
+  //           dots: false,
+  //           arrows: false,
+  //           centerPadding: "30px",
+  //         },
+  //       },
+  //       {
+  //         breakpoint: 992,
+  //         settings: {
+  //           slidesToShow: 1,
+  //           slidesToScroll: 1,
+  //           centerPadding: "0px",
+  //         },
+  //       },
+  //     ],
+  //   })
+  //   .on("afterChange", function () {
+  //     $(".slick-active").prev().removeClass("nextdiv").addClass("prevdiv");
+  //     $(".slick-active").next().removeClass("prevdiv").addClass("nextdiv");
+  //   });
+
+  $(".productHome")
+    .slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      // autoplay: true,
+      autoplaySpeed: 2000,
+      dots: false,
+      arrows: true,
+      loop: true,
+      infinite: true,
+      centerMode: true,
+      centerPadding: "30px",
+      adaptiveHeight: false,
+      responsive: [{
+          breakpoint: 1281,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+            arrows: true,
+            centerPadding: "30px",
+          },
+        },
+        {
+          breakpoint: 1200,
+          settings: {
+            centerMode: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: true,
+            centerPadding: "10px",
+
+          },
+        },
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerPadding: "0px",
+          },
+        },
+      ],
+    })
+  $(".productHome").on("afterChange", function() {
+    $(".slick-current").removeClass("nextdiv , prevdiv");
+    $(".slick-slide").removeClass("nextdiv , prevdiv");
+    $(".slick-current").prev().removeClass("nextdiv").addClass("prevdiv");
+    $(".slick-current").next().removeClass("prevdiv").addClass("nextdiv");
+  });
+</script>
+<script type="rocketlazyloadscript">
+  $(".sustainbilityDeskSSS").owlCarousel({
+    // autoWidth: true,
+    loop: true,
+    dots: true,
+    // center: true,
+    slideBy: 1,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    responsive: {
+      300: {
+        items: 1,
+      },
+      1024: {
+        items: 2,
+        // center: false,
+      },
+    },
+    // onTranslated: function (event) {
+    //   $(".sustainbility .item").removeClass("active");
+    //   $(".sustainbility .owl-item.center")
+    //     .children()
+    //     .first()
+    //     .addClass("active");
+
+    // },
+  });
+
+
+
+
+  $(document).ready(function() {
+    function setActiveSlide(index) {
+      $(".sustainbility .item").removeClass("active");
+      $(".sustainbility .item").eq(index).addClass("active");
+    }
+
+    $(".sustainbility").on("init", function() {
+      $(".slick-active").prev().removeClass("nextdiv").addClass("prevdiv");
+      $(".slick-active").next().removeClass("prevdiv").addClass("nextdiv");
+    });
+
+    // Initialize Slick slider
+    var slickSlider = $(".sustainbilityMobi").slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      dots: true,
+      centerMode: true,
+      centerPadding: '60px',
+      responsive: [{
+        breakpoint: 1140,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+          centerPadding: '0px',
+        }
+      }]
+    }).on("afterChange", function() {
+      $(".slick-active").prev().removeClass("nextdiv").addClass("prevdiv");
+      $(".slick-active").next().removeClass("prevdiv").addClass("nextdiv");
+    });
+
+    // Set active class for initial slide
+    setActiveSlide(slickSlider.slick('slickCurrentSlide'));
+
+    // Add event listener for slide change
+    slickSlider.on('afterChange', function(event, slick, currentSlide) {
+      setActiveSlide(currentSlide);
+    });
+
+    // Click event for .item elements
+    $(".sustainbility .item").click(function() {
+      $(".sustainbility .item").not($(this)).removeClass("active");
+      $(this).toggleClass("active");
+    });
+  });
+</script>
+
+<script type="rocketlazyloadscript">
+  // investor page
+
+  $(".investStickyBtn").click(function() {
+    $(".body_nav").toggleClass("active");
+    $('.invToggleSec').toggleClass('active');
+    $(this).toggleClass('active');
+  });
+
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    var documentHeight = $(document).height();
+    var windowHeight = $(window).height();
+    var scrollEnd = documentHeight - windowHeight - 150; // 500px from the end
+
+    if (scroll >= 150 && scroll <= scrollEnd) {
+      $(".investors").addClass("sidebarSticky");
+      $(".body_nav").addClass("sideSticky");
+    } else {
+      $(".investors").removeClass("sidebarSticky");
+      $(".body_nav").removeClass("sideSticky");
+    }
+  });
+
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    var documentHeight = $(document).height();
+    var windowHeight = $(window).height();
+    var scrollEnd = documentHeight - windowHeight - 250; // 500px from the end
+
+    if (scroll >= 350 && scroll <= scrollEnd) {
+      $(".investors").addClass("sidebarSticky");
+      $(".body_nav").addClass("sideSticky");
+    } else {
+      $(".investors").removeClass("sidebarSticky");
+      $(".body_nav").removeClass("sideSticky");
+    }
+  });
+
+</script>
+<script type="rocketlazyloadscript">
+  $(".invAccDiv").click(function () {
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+      $(this).next(".investorsTabDivCont").slideUp(300);
+    } else {
+      $(".invAccDiv").removeClass("active");
+      $(".investorsTabDivCont").slideUp(300);
+      $(this).addClass("active");
+      $(this).next(".investorsTabDivCont").slideDown(300);
+    }
+  });
+</script>
+<script id='mob_menu_toggle'>
+    if (jQuery(".mobile-nav__overlay").length) {
+        jQuery(".mobile-nav__overlay").on("click", function(e) {
+            jQuery(".mobileNav").removeClass("active");
+            jQuery("#hamMenu").removeClass("active");
+            jQuery(this).removeClass("active");
+            e.preventDefault();
+        });
+
+        // $(".mobileNav .toggleBtn").click(function() {
+        //     if ($(this).hasClass('activeToggle')) {
+        //         $(this).removeClass("activeToggle");
+        //         $(this).next("ul").slideUp(300);
+        //     } else {
+        //         $(this).parent('.menu-item').prevAll('.menu-item').find('.toggleBtn').removeClass("activeToggle");
+        //         $(this).parent('.menu-item').nextAll('.menu-item').find('.toggleBtn').removeClass("activeToggle");
+        //         $(this).parent('.menu-item').prevAll('.menu-item').find('ul').slideUp(300);
+        //         $(this).parent('.menu-item').nextAll('.menu-item').find('ul').slideUp(300);
+        //         $(this).addClass("activeToggle");
+        //         $(this).next("ul").slideDown(300);
+        //     }
+        // })
+    }
+</script>
+
+
+<!--Thank You page Redirection after successful submitting all contact forms  -->
+
+<!-- <script type="rocketlazyloadscript">
+document.addEventListener('wpcf7mailsent', function(event) {
+    // IDs of the forms to exclude from redirection
+    var excludeForms = [109]; 
+
+    if (!excludeForms.includes(event.detail.contactFormId)) {
+        window.location.href = '';
+    }
+}, false);
+</script> -->
+
+
+<script type="rocketlazyloadscript">
+document.addEventListener('wpcf7mailsent', function(event) {
+    window.location.href = 'https://magadhsugar.com/thank-you/';
+}, false);
+</script>
+
+
+
+</body>
+
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1790421863 -->

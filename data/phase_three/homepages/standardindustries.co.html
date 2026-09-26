@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Standard Industries Ltd.
+</title><link href="css/stdtextm.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/stmenu.js"></script>
+    <script type="text/javascript" src="css/jquery.min.js"> </script>
+    <script type="text/javascript" src="css/jquery.simplyscroll.js"></script>
+    <link rel="stylesheet" href="css/jquery.simplyscroll.css" media="all" type="text/css" />
+    <script type="text/javascript">
+        (function ($) {
+            $(function () { //on DOM ready
+                $("#scroller").simplyScroll({
+                    autoMode: 'loop'
+                });
+            });
+        })(jQuery);
+    </script>
+    <script type="text/javascript">
+
+        <!--
+        function MM_preloadImages() { //v3.0
+            var d = document; if (d.images) {
+                if (!d.MM_p) d.MM_p = new Array();
+                var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; } 
+            }
+        }
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+        }
+        //-->
+    </script>
+    
+
+    <script type="text/javascript" language="JavaScript">
+        /// <summary>
+        /// This function will be called when user clicks the Get Quotes button.
+        /// </summary>
+        /// <returns>Always return false.</returns>
+        function SendRequest()
+        {
+            var txtSymbol = document.getElementById("txtSymbol");
+            // Refresh the page.
+            window.location = "default.aspx?s=" + txtSymbol.value;
+            return false;
+        }
+
+        /// <summary>
+        /// The functyion will be called when a keyboard key is pressed in the textbox.
+        /// </summary>
+        /// <param name="e">Onkeypress event.</param>
+        /// <returns>Return true if user presses Enter key; otherwise false.</returns>        
+        function CheckEnter(e)
+        {
+            if ((e.keyCode && e.keyCode == 13) || (e.which && e.which == 13))
+                // Enter is pressed in the textbox.
+                return SendRequest();
+            return true;
+        }
+
+        /// <summary>
+        /// The function will be called when user changes the chart type to another type.
+        /// </summary>
+        /// <param name="type">Chart type.</param>
+        /// <param name="num">Stock number.</param>
+        /// <param name="symbol">Stock symobl.</param>
+        function changeChart(type, num, symbol)
+        {
+            // All the DIVs are inside the main DIV and defined in the code-behind class.
+//            var div1d=document.getElementById("div1d_"+num);
+//            var div5d = document.getElementById("div5d_" + num);
+//            var div3m = document.getElementById("div3m_" + num);
+//            var div6m = document.getElementById("div6m_" + num);
+//            var div1y = document.getElementById("div1y_" + num);
+//            var div2y = document.getElementById("div2y_" + num);
+//            var div5y = document.getElementById("div5y_" + num);
+//            var divMax = document.getElementById("divMax_" + num);
+//            var divChart = document.getElementById("imgChart_" + num);
+//            // Set innerHTML property.
+//            div1d.innerHTML = "1d";
+//            div5d.innerHTML="5d";
+//            div3m.innerHTML="3m";
+//            div6m.innerHTML="6m";
+//            div1y.innerHTML="1y";
+//            div2y.innerHTML="2y";
+//            div5y.innerHTML="5y";
+//            divMax.innerHTML="Max";
+//            // Use a random number to defeat cache.
+//            var rand_no = Math.random();
+//            rand_no = rand_no * 100000000;
+//            // Display the stock chart.
+//            switch(type)
+//            {
+////            case 1: // 5 days
+////                div5d.innerHTML="<b>5d</b>";
+////                divChart.src = "http://ichart.finance.yahoo.com/w?s=" + symbol + "&" + rand_no;
+////                break;
+////            case 2: // 3 months 
+////                div3m.innerHTML="<b>3m</b>";
+////                divChart.src = "http://chart.finance.yahoo.com/c/3m/" + symbol + "?" + rand_no;
+////                break;
+////            case 3: // 6 months 
+////                div6m.innerHTML = "<b>6m</b>";
+////                divChart.src = "http://chart.finance.yahoo.com/c/6m/" + symbol + "?" + rand_no;
+////                break;
+////            case 4: // 1 year
+////                div1y.innerHTML = "<b>1y</b>";
+////                divChart.src = "http://chart.finance.yahoo.com/c/1y/" + symbol + "?" + rand_no;
+////                break;
+////            case 5: // 2 years 
+////                div2y.innerHTML = "<b>2y</b>";
+////                divChart.src = "http://chart.finance.yahoo.com/c/2y/" + symbol + "?" + rand_no;
+////                break;
+////            case 6: // 5 years
+////                div5y.innerHTML = "<b>5y</b>";
+////                divChart.src = "http://chart.finance.yahoo.com/c/5y/" + symbol + "?" + rand_no;
+////                break;
+////            case 7: // Max
+////                divMax.innerHTML = "<b>msx</b>";
+////                divChart.src = "http://chart.finance.yahoo.com/c/my/" + symbol + "?" + rand_no;
+////                break;
+////            case 0: // 1 day
+////            default:                
+////                div1d.innerHTML = "<b>1d</b>";
+////                divChart.src = "http://ichart.finance.yahoo.com/b?s=" + symbol + "&" + rand_no;
+////                break;
+//            }
+        }
+    </script>
+
+    <style type="text/css">
+        .headbd
+        {
+            font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+            color: #6d6e71;
+            line-height: 20pt;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .stock
+        {
+            font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+            font-size: 22pt;
+            color: #006681;
+            line-height: 20pt;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .headWgSh
+        {
+            font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+            color: #6d6e71;
+            line-height: 20pt;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body onload="MM_preloadImages('images/menu02dn.jpg')">
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTg1NTA0MDYxD2QWAmYPZBYCAgMPZBYCAgEPZBYKZg88KwAJAQAPFgQeCERhdGFLZXlzFgAeC18hSXRlbUNvdW50AgFkFgJmD2QWAgIBDxYCHgRUZXh0BaIDPHA+V2l0aCBhIHByZXN0aWdpb3VzIGJyYW5kIHBvc2l0aW9uIGluIHRoZSBtYXJrZXQsIFN0YW5kYXJkIEluZHVzdHJpZXMgTGltaXRlZCAoZXJzdHdoaWxlIFN0YW5kYXJkIE1pbGxzIENvLiBMdGQuKSwgaGFzIGFsd2F5cyBiZWVuIGhlbGQgYXMgb25lIG9mIHRoZSBwcmVtaWVyIGNvbXBhbmllcyB0byBncmFjZSB0aGUgaW5kdXN0cnkuIFdpdGggb3ZlciBhIGh1bmRyZWQgeWVhcnMgb2YgZXhwZXJpZW5jZSBpbiB2YXJpb3VzIGZpZWxkcywgaW5jbHVkaW5nJm5ic3A7IHRleHRpbGVzIGFuZCBjaGVtaWNhbHMsIHdlIGhhdmUgYWx3YXlzIHN0cml2ZWQgdG8gYmUgJ25vdGhpbmcgbGVzcyB0aGFuIGJyaWxsaWFudCZyc3F1bzsmbmJzcDsgaW4gZGVsaXZlcmluZyBvdXIgY3VzdG9tZXJzIHdpdGggdGhlIGJlc3QgcHJvZHVjdHMuPC9wPmQCAQ8PFgIfAmVkZAICDw8WAh8CZWRkAgMPDxYCHwJlZGQCBg88KwAJAQAPFgQfABYAHwECAWQWAmYPZBYEAgEPDxYCHwIFDk1hcmNoIDMxJyAyMDIyZGQCAw8WAh8CBekNPGRpdiBzdHlsZT0ibWFyZ2luLXRvcDoxMy4zcHQ7bWFyZ2luLXJpZ2h0Oi4yNWluO21hcmdpbi1ib3R0b206JiMxMDswaW47bWFyZ2luLWxlZnQ6MGluO21hcmdpbi1ib3R0b206LjAwMDFwdDt0ZXh0LWFsaWduOmp1c3RpZnkiPg0KPGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6JnF1b3Q7QXJpYWwmcXVvdDssJnF1b3Q7c2Fucy1zZXJpZiZxdW90OzsmIzEwO21zby1mYXJlYXN0LWZvbnQtZmFtaWx5OiZxdW90O1RpbWVzIE5ldyBSb21hbiZxdW90Ozttc28tZmFyZWFzdC1sYW5ndWFnZTpFTi1JTiI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogbWVkaXVtOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPlN0YW5kYXJkIEluZHVzdHJpZXMgTGltaXRlZCAoU0lMKSAoQXNzaWdub3IpIGhhcyBlbnRlcmVkIGludG8gU3VwcGxlbWVudGFsIE1PVSwgQWdyZWVtZW50cywgRGVlZCBvZiBBc3NpZ25tZW50IGFuZCBvdGhlciBjb25uZWN0ZWQgZG9jdW1lbnRzIHdpdGggU3VwcG9ydCBQcm9wZXJ0aWVzIFByaXZhdGUgTGltaXRlZCZuYnNwOyAoU1BQTCkgKEFzc2lnbmVlKSAoSy4gUmFoZWphIEdyb3VwIENvbXBhbnkpIHRvIHRyYW5zZmVyIGFuZCBhc3NpZ24gdW50byB0aGVtIGxlYXNlaG9sZCByaWdodHMgaW4gNjIuMjUgYWNyZXMgb2YgdGhlIENvbXBhbnkmcnNxdW87cyBsZWFzZWhvbGQgcHJvcGVydHkgc2l0dWF0ZWQgYXQgUGxvdCBOby4gNCwgVHJhbnMgVGhhbmUgQ3JlZWsgSW5kdXN0cmlhbCBBcmVhIGluIHRoZSB2aWxsYWdlcyBvZiBHaGFuc29saSAmYW1wOyBTYXZhbGksIFRhbHVrYSBUaGFuZSAoJmxkcXVvO1Byb3BlcnR5JnJkcXVvOyksIGZvciBhbiBvdmVyYWxsIGNvbnNpZGVyYXRpb24gb2YgUnMuIDQyNy4zMyBjcm9yZXMgKFJ1cGVlcyBGb3VyIEh1bmRyZWQgYW5kIFR3ZW50eSBTZXZlbiBjcm9yZXMgYW5kIHRoaXJ0eSB0aHJlZSBsYWtocyBvbmx5KS48L3NwYW4+PC9zcGFuPjxvOnA+PC9vOnA+PC9zcGFuPjwvZGl2Pg0KPGRpdj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiBtZWRpdW07Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+VGhpcyB0cmFuc2ZlciwgYXNzaWdubWVudCBhbmQgY29uc2lkZXJhdGlvbiB3YXMgc3ViamVjdCB0byB2YXJpb3VzIGNvbmRpdGlvbnMgcHJlY2VkZW50IGdldHRpbmcgc2F0aXNmaWVkIChpbmNsdWRpbmcgYXBwcm92YWwgb2YgTUlEQykgYW5kIG90aGVyIHRlcm1zIGFuZCBjb25kaXRpb25zIHNwZWNpZmllZCBpbiB0aGUgTU9VIHJlYWQgd2l0aCBTdXBwbGVtZW50YWwgTU9VLjwvc3Bhbj48L3NwYW4+PG86cD48L286cD48L2Rpdj4NCjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogbWVkaXVtOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPk9uIHJlY2VpcHQgb2YgYXBwcm92YWwgZGF0ZWQgMjM8c3VwPnJkPC9zdXA+IE1hcmNoLCAyMDIyLCBmcm9tIE1JREMsIGEgRGVlZCBvZiBUcmFuc2ZlciBhbmQgQXNzaWdubWVudCBBZ3JlZW1lbnQgKERUQUEpIGRhdGVkIDMxc3QgTWFyY2gsIDIwMjIgb2YgTGVhc2Vob2xkIGxhbmQgaW4gcmVsYXRpb24gdG8gdGhlIHNhaWQgcHJvcGVydHkgYWxvbmd3aXRoIFBvd2VyIFN1Yi1TdGF0aW9uIHNpdHVhdGVkIHdpdGhpbiB0aGUgc2FtZSBQbG90LCB3YXMgZXhlY3V0ZWQgYmV0d2VlbiBTSUwgYW5kIFNQUEwgZm9yIGFuIG92ZXJhbGwgY29uc2lkZXJhdGlvbiBvZiBScy4gJm5ic3A7NDI3LjMzIGNyb3Jlcy48L3NwYW4+PC9zcGFuPjxvOnA+PC9vOnA+PC9kaXY+DQo8L2Rpdj5kZPFcDrgRIf9W9/G2JJ4duu2kZtVcU5g0qVjCSPzP9Gn5" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAK6iv4vNMD365k1bHQbwT961FsbjAmwmC2mJrHy1qMAkG/o5xKz3/2YgBXsGBjiY0uKcoWEPGZUfg+GbfYLHT71" />
+</div>
+    <div>
+        <div align="center">
+            <table width="1004" border="0" cellspacing="0" cellpadding="0" class="tablebor">
+                <tr>
+                    <td>
+                        <table width="1002" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="40" class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                                <td width="922">
+                                  
+                                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td>
+                                                <img src="images/spacer.gif" width="922" height="20" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdpart">
+                                                <img src="images/spacer.gif" width="922" height="2" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdlogo">
+                                             
+                                                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="417">
+                                                            <img src="images/Logo.jpg" width="417" height="43" />
+                                                        </td>
+                                                      
+                                                         <td width="600">
+                                                            &nbsp;
+                                                        </td>
+                                                        <td>
+                                                            <table width="92" border="0" cellspacing="0" cellpadding="0">
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="default.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image15','','images/menu01dn.jpg',1)">
+                                                                            <img src="images/menu01up.jpg" name="Image15" width="36" height="43" border="0" id="Image15" /></a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src="images/spacer.gif" width="20" height="43" />
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="contactus.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','images/menu02dn.jpg',1)">
+                                                                            <img src="images/menu02up.jpg" name="Image6" width="36" height="43" border="0" id="Image6" /></a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdpart">
+                                                <img src="images/spacer.gif" width="922" height="2" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="images/spacer.gif" width="922" height="2" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td width="40" class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="tableimg">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                                        <tr>
+                                            <td>
+                                                <ul id="scroller">
+                                                    <li>
+                                                        <img src="images/homescroll01.jpg" width="350" height="290" /></li>
+                                                    <li>
+                                                        <img src="images/homescroll02.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll03.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll04.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll05.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll06.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll07.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll08.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll09.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll10.jpg" width="350" height="290"></li>
+                                                    <li>
+                                                        <img src="images/homescroll11.jpg" width="350" height="290"></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                                <td class="tdmenu">
+                                 
+                                    <script type="text/javascript" src="js/stdrose.js"></script>
+                                </td>
+                                <td class="tdside">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                                <td valign="top" class="tdcontent">
+                                    <div align="left">
+                                        
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <div align="left">
+                    <span class="textheadbr">Welcome</span> <span class="textheadgry">to our Website</span></div>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" class="tdheadpart">
+                <img src="images/parthead.gif" width="500" height="2" />
+            </td>
+        </tr>
+        <tr>
+            
+            <td align="left" class="line18">
+                <div align="justify">With a prestigious brand position in the market, Standard Industries Limited has always been held as one of the premier companies to grace the industry, having over a hundred years of experience in various fields, including textiles and chemicals. We have always strived to be ‘nothing less than brilliant’ in delivering our customers with the best products.</div>
+                <div align="right">
+                    <a href="aboutus.aspx" class="otherlinks">&gt;&gt; view more</a></div>
+            </td>
+            <td>
+                
+            </td>
+            </tr>
+            <tr>
+           <!-- <td>
+                <div align="right">
+                    <a href="aboutus.aspx" class="otherlinks">&gt;&gt; view more</a></div>
+            </td>-->
+        </tr>
+        <tr>
+            <td align="left">
+                <img src="images/spacer.gif" width="800" height="30" />
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <table width="862" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="516">
+                            <span class="textheadbr">Stock</span> <span class="textheadgry">Updates</span>
+                        </td>
+                        <td width="30">&nbsp;
+                            
+                        </td>
+                        <td width="316">
+                            <span class="textheadbr">Latest</span> <span class="textheadgry">Announcements</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="tdheadpart">
+                            <img src="images/parthead.gif" width="500" height="2" />
+                        </td>
+                        <td>&nbsp;
+                            
+                        </td>
+                        <td align="left" class="tdheadpart">
+                            <img src="images/parthead.gif" width="300" height="2" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table width="416" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="153" valign="bottom">
+                                        <img src="images/stockupdate.jpg" width="153" height="153" />
+                                    </td>
+                                    <td width="363" valign="top" class="tdltpad20">
+                                        <table width="343" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td class="headbd">
+                                                    STANDARD INDUSTRIES LTD.<br />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/spacer.gif" width="200" height="70" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span id="ContentPlaceHolder1_lblStock" class="stock"></span>
+                                                    &nbsp; &nbsp;<span id="ContentPlaceHolder1_lblchange" class="headWgSh"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/spacer.gif" width="200" height="10" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text9">
+                                                    Last Update :&nbsp;
+                                                    <span id="ContentPlaceHolder1_lblTime"></span>
+                                                    &nbsp;IST
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/spacer.gif" width="200" height="70" /><div>
+                                                        <table>
+                                                            <tr style="display: none" valign="top">
+                                                                <td>
+                                                                    <input name="ctl00$ContentPlaceHolder1$txtSymbol" type="text" id="ContentPlaceHolder1_txtSymbol" onkeypress="return CheckEnter(event);" value="YHOO" />
+                                                                    <input onclick="return SendRequest();" type="button" value="Get Quotes" />
+                                                                    <br />
+                                                                    <span>e.g. &quot;YHOO or YHOO GOOG&quot; </span>
+                                                                    <div id="ContentPlaceHolder1_divService">
+                                                                        <!-- Main DIV: this DIV contains contains text and DIVs that displays stock quotes and chart. -->
+                                                                    </div>
+                                                                    
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div align="left">
+                                                        <a href="http://www.bseindia.com/stockinfo/index.htm?scrip_cd=530017" target="_blank"
+                                                            class="grey" style="text-decoration: underline;">
+                                                Click here for more details
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>&nbsp;
+                            
+                        </td>
+                        <td valign="top">
+                            <table id="ContentPlaceHolder1_DataList1" cellspacing="0" style="border-collapse:collapse;">
+	<tr>
+		<td>
+                                    <table class="tdltpad20 line18">
+                                        <tr>
+                                            <td valign="top">
+                                                <span id="ContentPlaceHolder1_DataList1_Label1_0" style="font-weight:bold;">March 31' 2022</span>
+                                            </td>
+                                            <caption>
+                                            </caption>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: justify">
+                                                <div style="margin-top:13.3pt;margin-right:.25in;margin-bottom:&#10;0in;margin-left:0in;margin-bottom:.0001pt;text-align:justify">
+<div><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;&#10;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-language:EN-IN"><span style="font-size: medium;"><span style="font-family: Arial;">Standard Industries Limited (SIL) (Assignor) has entered into Supplemental MOU, Agreements, Deed of Assignment and other connected documents with Support Properties Private Limited&nbsp; (SPPL) (Assignee) (K. Raheja Group Company) to transfer and assign unto them leasehold rights in 62.25 acres of the Company&rsquo;s leasehold property situated at Plot No. 4, Trans Thane Creek Industrial Area in the villages of Ghansoli &amp; Savali, Taluka Thane (&ldquo;Property&rdquo;), for an overall consideration of Rs. 427.33 crores (Rupees Four Hundred and Twenty Seven crores and thirty three lakhs only).</span></span><o:p></o:p></span></div>
+<div><span style="font-size: medium;"><span style="font-family: Arial;">This transfer, assignment and consideration was subject to various conditions precedent getting satisfied (including approval of MIDC) and other terms and conditions specified in the MOU read with Supplemental MOU.</span></span><o:p></o:p></div>
+<div><span style="font-size: medium;"><span style="font-family: Arial;">On receipt of approval dated 23<sup>rd</sup> March, 2022, from MIDC, a Deed of Transfer and Assignment Agreement (DTAA) dated 31st March, 2022 of Leasehold land in relation to the said property alongwith Power Sub-Station situated within the same Plot, was executed between SIL and SPPL for an overall consideration of Rs. &nbsp;427.33 crores.</span></span><o:p></o:p></div>
+</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+	</tr>
+</table>
+                            <div align="right">
+                                <a href="Announcement_CMS.aspx" class="otherlinks">&gt;&gt; view more</a></div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+
+                                    </div>
+                                </td>
+                                <td class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                                <td>
+                                   
+                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="tdpart">
+                                                <img src="images/spacer.gif" width="922" height="2" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdpad30">
+                                                <div align="center">
+                                                    <a href="default.aspx" class="botmenu">Home</a> | <a href="aboutus.aspx" class="botmenu">
+                                                        Our Group</a> | <a href="annualrpt.aspx" class="botmenu">Investor Relations</a>
+                                                    | <a href="textiles.aspx" class="botmenu">Business</a> | <a href="stdsaltworks.aspx"
+                                                        class="botmenu">Subsidiary Companies</a> | <a href="mediarm.aspx" class="botmenu">Media
+                                                            Room</a><br />
+                                                    <a href="contactus.aspx" class="botmenu">Contact Details</a> | <a href="privacy.aspx"
+                                                        class="botmenu">Privacy Policy</a> | <a href="disclaimer.aspx" class="botmenu">Disclaimer</a>
+                                                    | <a href="sitemap.aspx" class="botmenu">Sitemap</a></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="tdpartblue">
+                                    <img src="images/spacer.gif" width="1002" height="4" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                                <td class="tdcopyright">
+                                    Copyright &#169; &nbsp;<img src="images/stanMafat.jpg" width="191" height="13" />
+                                </td>
+                                <td class="tdside">
+                                    <img src="images/spacer.gif" width="40" height="30" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

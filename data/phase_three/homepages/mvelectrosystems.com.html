@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+     <meta charset="UTF-8">
+    
+     <title>MV Electrosystems Ltd.</title>
+
+
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--=====FAB ICON=======-->
+    <link rel="shortcut icon" href="assets/img/logo/fav-logo4.png" type="image/x-icon">
+
+    <!--===== CSS LINK =======-->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/aos.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/plugins/mobile.css">
+    <link rel="stylesheet" href="assets/css/plugins/owlcarousel.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/sidebar.css">
+    <link rel="stylesheet" href="assets/css/plugins/slick-slider.css">
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Mysuru:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+   /*   body {
+            font-family: Arial, sans-serif;
+        }*/
+
+        .carouselww {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            height: 70%;
+            width: 300%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: zoomEffect 9s infinite;
+        }
+
+        .carouselww-captionww {
+            position: absolute;
+            bottom: 20%;
+            left: 8%;
+           /* left: 50%;*/
+           /* transform: translateX(-50%);*/
+           /* text-align: center;*/
+            text-align: left; 
+            color: white;
+        }
+   
+         @font-face { font-family: clanot-narrowbold; src: url('assets/css/fonts/clanot-narrowbold.ttf'); }
+
+        .carouselww-captionww h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: bounceText 1s infinite;
+            line-height: 1.2; 
+           /* font-family: "clanot-narrowbold", serif!important;  */
+            text-transform: uppercase;
+        }
+
+        .carouselww-captionww p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        .btn-transparent {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s; border-radius:50px;
+        }
+
+        .btn-transparent:hover {
+            background: white;
+            color: #333;
+        }
+
+        .arrowww {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .arrowww-leftww {
+            left: 5px;
+        }
+
+        .arrowww-rightww {
+            right: 15px;
+        }
+
+      /*  @keyframes bounceText {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }*/
+        }
+
+        @keyframes zoomEffect {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carouselww-captionww h2 {
+                font-size: 26px;
+            }
+
+            .carouselww-captionww p {
+                font-size: 1rem;
+            }
+        }
+.tracking-in-expand-fwd-top {
+	-webkit-animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both!important;
+	        animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both!important;
+}
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand-fwd-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-expand-fwd-top {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px) translateY(-500px);!important;
+            transform: translateZ(-700px) translateY(-500px);!important;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand-fwd-top {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px) translateY(-500px);
+            transform: translateZ(-700px) translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+    </style>
+	
+	
+    <!--=====  JS SCRIPT LINK =======-->
+    <script src="assets/js/plugins/jquery-3-6-0.min.js"></script>
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css'>
+
+</head>
+
+
+<body class="homepage4-body">
+
+
+<!--===== PROGRESS STARTS=======-->
+<div class="paginacontainer">
+     <div class="progress-wrap">
+       <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+       </svg>
+     </div>
+   </div>
+ <!--===== PROGRESS ENDS=======-->
+
+   <!--=====HEADER START=======-->
+   <header>
+   <div class="header-area homepage4 header header-sticky d-none d-lg-block " id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="header-elements">
+          <div class="site-logo">
+            <a href="index.php"><img src="assets/img/logo/logo5.png" alt=""></a>
+          </div>
+          <div class="main-menu">
+            <ul>
+
+              <li><a href="index.php">Home</a></li>
+
+
+              <!--  <li><a href="about-us.php">Our Company </a>  </li>-->
+
+
+              <li><a href="#"> Our Company <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-padding">
+
+                  <li><a href="about-us.php"> About Us </a></li>
+                  <li><a href="infrastructure.php"> Infrastructure </a></li>
+                  <li><a href="engineering-excellence-and-rd.php"> Engineering Excellence and R&D </a></li>
+                  <li><a href="quality-assurance-standards.php"> Quality Assurance & Standards </a></li>
+
+                </ul>
+              </li>
+
+
+
+              <li><a href="product.php"> Our Products <i class="fa-solid fa-angle-down"></i></a>
+
+                <ul class="dropdown-padding">
+
+                  <li><a href="railway-power-conversions-ystems.php"> Rolling Stock Electrics & Propulsion Systems</a> </li>
+
+                  <li><a href="switchgear-and-panels.php">Switchgear & Panels</a> </li>
+
+                  <li><a href="cable-protection-management-solutions.php">Cable Protection and Interconnect Products</a> </li>
+                  <li><a href="electrical-electronic-systems.php">Overhead Electrification Products</a> </li>
+                  <li><a href="traction-motors-transformers.php">Traction Motors and Transformers</a> </li>
+                  <li><a href="connector-cable-subsystem.php">Embedded Systems</a> </li>
+                </ul>
+              </li>
+
+
+
+
+
+              <li><a href="news.php">News</a></li>
+
+              <!-- <li><a href="#">Downloads</a></li> -->
+
+              <!-- <li><a href="careers.php">Careers</a></li>-->
+              <li><a href="download-catalogue.php" target="_blank"> Download </a></li>
+
+              <!-- <li><a href="live-demo.php"> Media </a></li>-->
+
+
+
+
+              <!--<li><a href="#"> Media  <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-padding">
+ <li><a href="news.php">News  </a></li>
+                
+                    </ul>
+                  </li>-->
+
+
+              <!-- <li><a href="investor-relations.php">Investor Relations</a></li> -->
+              <li><a href="investor-relations.php">Investor Relations <i class="fa-solid fa-angle-down"></i></a>
+
+                <ul class="dropdown-padding">
+                  <li><a href="financials-and-annual-returns.php"> Financials And Annual Returns</a></li>
+                  <li><a href="public-issued-documents.php">Public Issue Documents</a></li>
+                  <li><a href="advertisement.php">Advertisement</a></li>
+                  <li><a href="investor-contact.php">Investor Contact</a></li>
+                  <li><a href="policies-codes.php">Policies and Codes</a></li>
+                  <li><a href="material-contracts-documents.php">Material Contracts & Documents</a></li>
+                  <li><a href="material-creditors.php">Material Creditors</a></li>
+                </ul>
+              </li>
+
+              <li><a href="contact-us.php">Contact Us </a></li>
+
+              <!--<li><a href="#"> More  <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-padding">
+
+ <li><a href="media.php"> Media </a></li>
+                   
+                
+                    </ul>
+                  </li>-->
+
+
+
+
+            </ul>
+          </div>
+
+          <div class="btn-area">
+            <a href="contact-us.php" class="header-btn12 hind-mysuru-medium pt-2"> Enquire Now <i class="fa-solid fa-arrow-right"></i><strong></strong></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>    
+  </header>
+  <!--=====HEADER END =======-->
+
+  <!--===== MOBILE HEADER STARTS =======-->
+ 
+
+
+ <div class="mobile-header mobile-haeder4 d-block d-lg-none">
+  <div class="container-fluid">
+    <div class="col-12">
+      <div class="mobile-header-elements">
+        <div class="mobile-logo">
+          <a href="index.php"><img src="assets/img/logo/logo2.png" alt="logo"></a>
+        </div>
+        <div class="mobile-nav-icon dots-menu">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="mobile-sidebar mobile-sidebar4">
+
+  <div class="logosicon-area">
+    <div class="logos">
+      <img src="assets/img/logo/logo2.png" alt="">
+    </div>
+    <div class="menu-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+   </div>
+
+  <div class="mobile-nav mobile-nav1">
+
+    <ul class="mobile-nav-list nav-list1">
+
+       <li><a href="index.php">Home</a></li>
+	  
+   
+	     <!--<li><a href="about-us.php">About Us</a>
+        
+      </li>-->
+	  
+
+
+<li><a href="#"> Our Company   </a>
+                    <ul class="sub-menu">
+
+ <li><a href="about-us.php"> About Us </a></li>
+ <li><a href="infrastructure.php"> Infrastructure </a></li>
+ <li><a href="engineering-excellence-and-rd.php"> Engineering Excellence and R&D </a></li>
+ <li><a href="quality-assurance-standards.php"> Quality Assurance & Standards </a></li>
+
+
+
+</ul>
+
+</li>
+
+
+<li><a href="product.php"> Our Product</a>
+
+<ul class="sub-menu">
+
+<!-- <li><a href="railway-power-conversions-ystems.php">Railway Power Conversion Systems</a> </li>
+
+ <li><a href="switchgear-and-panels.php">Switchgear & Panels</a> </li>
+ <li><a href="connector-cable-subsystem.php">Connector & Cable Assemblies</a> </li>
+ <li><a href="cable-protection-management-solutions.php">Cable Protection & Management Solutions</a> </li>
+ <li><a href="electrical-electronic-systems.php">Electrical & Electronic Systems</a> </li>
+ <li><a href="traction-motors-transformers.php">Traction Motors & Transformers</a> </li>-->
+
+
+ <li><a href="railway-power-conversions-ystems.php">Rolling Stock Electrics & Propulsion Systems</a> </li>
+ <li><a href="switchgear-and-panels.php">Switchgear & Panels</a> </li>
+ <li><a href="cable-protection-management-solutions.php">Cable Protection and Interconnect Products</a> </li>
+ <li><a href="electrical-electronic-systems.php">Overhead Electrification Products</a> </li>
+ <li><a href="traction-motors-transformers.php">Traction Motors and Transformers</a> </li>
+<li><a href="connector-cable-subsystem.php">Embedded Systems</a> </li> 
+
+</ul>
+
+</li>
+
+
+				 <li><a href="news.php">News</a></li> 
+                  
+<!-- <li><a href="#">Downloads</a></li> -->
+
+				  <!--<li><a href="careers.php">Careers</a></li>-->
+				  <li><a href="download-catalogue.php" target="_blank"> Download </a></li>
+
+
+<!--<li><a href="#"> Media </a>
+                    <ul class="sub-menu">
+
+ <li><a href="news.php">News  </a></li>
+
+
+                
+                    </ul>
+                  </li>-->
+
+
+
+
+<li><a href="investor-relations.php"> Investor Relations </a></li>
+<!--<li><a href="#"> More </a>
+                    <ul class="sub-menu">
+ <li><a href="media"> Media </a></li>
+
+
+
+</ul>
+
+</li>-->
+
+
+
+<li><a href="contact-us.php">Contact Us</a></li>
+
+</ul>
+
+    <div class="allmobilesection">
+      <a href="contact-us.php" class="header-btn12">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
+
+      <div class="single-footer">
+        <h3>Contact Info</h3>
+        <div class="footer1-contact-info">
+          <div class="contact-info-single">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <div class="contact-info-text">
+              <a href="tel:+91 9810092518">+91 9810092518</a>
+            </div>
+          </div>
+
+          <div class="contact-info-single">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-info-text">
+              <a href="mailto:sales@mvelectrosystems.com">sales@mvelectrosystems.com</a>
+            </div>
+          </div>
+
+          <div class="single-footer">
+            <h3>Our Location</h3>
+            
+            <div class="contact-info-single">
+              <div class="contact-info-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-info-text">
+                <a href="#">
+Baghola Tatarpur Road, Prithla Industrial Zone, Distt. Palwal, Haryana, India - 121102 </a>
+              </div>
+            </div>
+
+          </div>
+          <div class="single-footer">
+            <h3>Social Links</h3>
+            
+            <div class="social-links-mobile-menu">
+              <ul>
+               <!-- <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>-->
+            <!--    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>-->
+<!--   <li><a href="https://www.linkedin.com/company/mv-electrosystems-limited/"> <img src="imgs/lin.png" alt=""> <!--<i class="fa-brands fa-linkedin-in"></i>--</a></li>
+   <li><a href="https://www.youtube.com/@MVElectrosystemsLtd" target="_blank"> <img src="imgs/yt.png" alt=""> <!--<i class="fa-brands fa-youtube"></i>--</a></li>-->
+
+<a href="https://www.linkedin.com/company/mv-electrosystems-limited/"> <img src="imgs/lin.png" alt=""> <!--<i class="fa-brands fa-linkedin-in"></i>--></a>
+  <a href="https://www.youtube.com/@MVElectrosystemsLtd" target="_blank"> <img src="imgs/yt.png" alt=""> <!--<i class="fa-brands fa-youtube"></i>--></a>
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+
+
+ </div>
+</div>
+   <div class="space70"></div>   
+
+<!--===== MOBILE HEADER STARTS =======--> 
+
+<div class="col-lg- d-sm-block d-block d-sm-none">
+
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="imgs/SliderMobile1.jpg" class="d-block w-100" alt="Recommended">
+ <div class="carousel-caption d-none">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/SliderMobile2.jpg" class="d-block w-100" alt="Recommended">
+ <div class="carousel-caption d-none">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/SliderMobile3.jpg" class="d-block w-100" alt="Recommended">
+ <div class="carousel-caption d-none">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+   <div class="carousel-item">
+      <img src="imgs/SliderMobile4.jpg" class="d-block w-100" alt="Recommended">
+ <div class="carousel-caption d-none">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+   <div class="carousel-item">
+      <img src="imgs/SliderMobile1.jpg" class="d-block w-100" alt="Recommended">
+ <div class="carousel-caption d-none">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+     </div>
+
+
+<!--===== TESTIMONIAL AREA STARTS =======-->
+
+<div id="carouselExampleControls" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/img/slider11.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/slider12.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/slider13.jpg" class="d-block w-100" alt="...">
+    </div>
+
+   <div class="carousel-item">
+      <img src="assets/img/slider15.jpg" class="d-block w-100" alt="...">
+    </div>
+
+
+   <div class="carousel-item">
+      <img src="assets/img/slider16.jpg" class="d-block w-100" alt="...">
+    </div>
+
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+ <!--d-none d-md-block-->
+
+<!--<div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/img/slider11.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none">
+        <h2>First slide label</h2>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+
+
+
+    <div class="carousel-item">
+      <img src="assets/img/slider12.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+
+<div class="carousel-item">
+      <img src="assets/img/slider13.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none ">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+
+<div class="carousel-item">
+      <img src="assets/img/slider14.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none ">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+
+<div class="carousel-item">
+      <img src="assets/img/slider9.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>-->
+<!--===== TESTIMONIAL AREA ENDS =======-->
+
+
+<!--aaaaaaaaaaaaaaaaaaa-->
+
+
+
+<!--===== HERO AREA ENDS =======-->
+
+
+
+
+
+
+   <div class="space20"></div>
+
+
+
+
+
+
+
+<!--===== SERVICE AREA STARTS about15-section-area sp1 =======-->
+<div class="pd-0" style="background-color: #000">  <!-- service11-section-area sp1  - style="background-image: url(assets/img/pro-bg.png)"-->
+
+  <div class="containe">
+
+
+
+ <!--<div class="row">
+      <div class="col-lg-6 m-auto">
+
+<div class="case4-header heading8 text-center">
+                 <h2 class="text-anime-style-1 hind-mysuru-regular"> Corporate Film
+</span></h2>
+                </div>
+        
+      </div>
+    </div>-->
+
+
+
+    <div class="row">
+
+
+<!--
+<iframe width="100%" height="515" src="https://www.youtube.com/embed/T1H0d5aIM_c?si=MHSNu9HMIHIndEp2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+-->
+
+<!--<iframe width="100%" height="515" src="https://www.youtube.com/embed/VAigUIlihCo?si=gOhSyE724hv_-jtZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+-->
+<!--<iframe
+  width="100%"
+  height="665"
+  src="https://www.youtube.com/embed/VAigUIlihCo?autoplay=1&mute=1&loop=1&playlist=VAigUIlihCo"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>-->
+
+<div class="d-none d-md-block">
+  <iframe
+    src="https://www.youtube.com/embed/VAigUIlihCo?autoplay=1&mute=1&loop=1&playlist=VAigUIlihCo"
+    title="YouTube video player"
+    frameborder="0"
+     width="100%"
+     height="600"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="d-sm-block d-block d-sm-none">
+  <iframe
+    src="https://www.youtube.com/embed/VAigUIlihCo?autoplay=1&mute=1&loop=1&playlist=VAigUIlihCo"
+    title="YouTube video player"
+    frameborder="0"
+     width="100%"
+     height="220"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<!--/*<style>
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  border: 0;
+}*/
+
+
+@media (max-width: 480px) {
+  .video-container {
+    padding-bottom: 65%;
+  }
+}
+</style>*/-->
+
+      <!--<div class="col-lg-12 text-center">
+        <div class="space30"></div>
+   <div class="btn-area text-center "><a href="#" class="header-btn19 hind-mysuru-medium">View More Services <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>-->
+
+
+    </div>
+  </div>
+</div>
+<!--===== SERVICE AREA ENDS =======-->
+
+
+<div class="about15-section-area sp1 d-none d-md-block"  style="background-image: url(imgs/bg5.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">  <!-- service11-section-area sp1  - style="background-image: url(assets/img/pro-bg.png)"-->
+
+   <div class="space100"></div>
+<div class="space100"></div>
+   <div class="space100"></div>
+<div class="space100"></div>
+   <div class="space50"></div> 
+<div class="space50"></div>
+
+</div>
+
+
+<div class="about15-section-area sp1 d-sm-block d-block d-sm-none "  style="background-image: url(imgs/bg5.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">  <!-- service11-section-area sp1  - style="background-image: url(assets/img/pro-bg.png)"-->
+
+<!--   <div class="space100"></div>
+<div class="space100"></div>
+   <div class="space100"></div>-->
+<div class="space100"></div>
+   <div class="space50"></div> 
+<div class="space50"></div>
+
+</div>
+
+
+<!--aaa-->
+<!--===== ABOUT AREA ENDS =======-->
+
+
+
+<!--===== ABOUT AREA STARTS =======-->
+<!--<div class="about15-section-area sp1" id="about">
+<div class="row">
+      <div class="col-lg-6 m-auto">
+        <div class="service11-header text-center heading16 space-margin60">
+        
+          <div class="space24"></div>
+          <h2 class="text-anime-style-3 hind-mysuru-regular">Application Use Industries  <img src="assets/img/elements/line-img2.png" alt=""> </h2>
+        </div>
+      </div>
+    </div>
+
+    
+</div>-->
+<!--===== ABOUT AREA ENDS =======-->
+<div class="" style="margin-top:-100px; z-index:99999999999999999; position: relative; ">
+    <div class="container" style="background:#F9FAFB;">
+        <div class="row  col-lg-10 m-auto align-items-center">
+           
+         <div class="col-lg-9">
+                <div class="about15-header-area heading23">
+              <!--<h5 data-aos="fade-left" data-aos-duration="800">About Us <i class="fa-solid fa-angle-right"></i></h5> -->
+                   <!-- <div class="space16"></div>-->
+                  <!--  <h2 class="text-anime-style-3 hind-mysuru-regular">Who we are </h2>-->
+
+
+ 
+                  <!--  <div class="space24"></div>-->
+                    <p class="hind-mysuru-light" data-aos="fade-left" data-aos-duration="1000" align="justify">
+<div class="space30"></div>
+
+<strong>MV Electrosystems</strong> is a Technology & Innovation Driven Company engaged in providing end to end Solutions for Railway Rolling Stock Electrics & Traction Installation Products including: 
+
+<!--<strong>MV Electrosystems Ltd.</strong> is an ISO 9001:2015 certified, technology-driven engineering company headquartered in Faridabad, Haryana (near New Delhi). We specialize in the in-house design, development, and manufacturing of a comprehensive range of solutions for the rail transportation sector, including:-->
+
+<!--
+<strong>MV Electrosystems</strong> is a Technology & Innovation Company in Rail Transportation Segment with end to end Solutions in Rolling Stock Converter – Inverter Systems, Train Control Management Systems, Driver Displays,  Interconnect products & Cable Assemblies, Power/Control Panels & Switchgear, Electrical/Electronic Systems and Cable Protection & Management products.-->
+
+
+ </p>
+                    <div class="space8"></div>
+                    <!--<div class="list-area" data-aos="fade-left" data-aos-duration="1100">
+                        <ul>
+                            <li><img src="assets/img/icons/check16.svg" alt="">Railway Power Conversion Systems</li>
+
+  <li><img src="assets/img/icons/check16.svg" alt="">Train Control & Rail Traffic Management</li>
+<li><img src="assets/img/icons/check16.svg" alt="">Switchgear & Panels</li>
+
+
+                        
+                        </ul>
+                   
+                    </div>-->
+                    
+<div class="btn-area1 aos-init mt-3" data-aos="fade-left" data-aos-duration="1200">
+            <a href="about-us.php" class="header-btn19">Explore More<i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+
+                </div>
+            </div>
+
+<!-- <div class="col-lg-1"> </div>-->
+			 <!--<div class="col-lg-2 col-md-2 img-hide"> Download <br> Catalogue</div>-->
+			 <div class="col-lg-3 col-md-3">
+                <div class="mt-3"> <!--img1 image-anime reveal-->
+                 <a href="assets/pdf/MVElectrosystemCatalogue.pdf" target="_blank">   <img src="imgs/abou4.png" alt="icon"> </a>
+<br> 
+ <div class="space8"></div>
+<!-- <strong>Download Catalogue</strong>-->
+                </div>
+            </div>
+            <div class="space30"></div>
+          <!-- <div class="col-lg-3 col-md-6">
+                <div class="img1 image-anime reveal">
+                    <img src="assets/img/all-images/new-img/about-img2-h15.png" alt="">
+                </div>
+                <div class="space30"></div>
+                <div class="img1 image-anime reveal img-hide">
+                    <img src="assets/img/all-images/new-img/about-img3-h15.png" alt="">
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+
+<div class="space50"></div>
+
+
+
+<!--===== CASE AREA STARTS =======-->
+<div class="case4-section-area sp pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="case4-header heading8 text-center">
+         
+<!-- <h5 data-aos="fade-up" data-aos-duration="1000"><img src="assets/img/icons/logo-icons3.svg" alt="">Offering Quality Products in Automatic Suppression Systems</h5>-->
+
+                 <h2 class="text-anime-style-1 hind-mysuru-regular"> Our  Products
+</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12" data-aos="fade-up" data-aos-duration="1200">
+                <div class="cs_case_study_1_list">
+                  <div class="cs_case_study cs_style_1 cs_hover_active active">
+                    <a href="railway-power-conversions-ystems.php" class="cs_case_study_thumb cs_bg_filed" data-src="assets/img/why1.jpg"></a>
+                    <div class="content-area1">
+                      <a href="railway-power-conversions-ystems.php" class="hind-mysuru-regular">Rolling Stock Electrics & Propulsion Systems</a>
+                    </div>
+                    <div class="content-area">
+                     <!-- <img src="assets/img/icons/case-icon1.svg" alt="">-->
+                      <div class="space16"></div>
+                      <a href="railway-power-conversions-ystems.php" class="hind-mysuru-regular">Rolling Stock Electrics & Propulsion Systems</a>
+           <p class="hind-mysuru-light">MV Electrosystems Ltd. is a technology-driven engineering company specializing in the in-house design, development, and manufacturing of advanced propulsion systems for electric  </p>  <a href="railway-power-conversions-ystems.php" style="font-size:14px"> Explore More <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                  </div>
+
+                  
+
+
+                  <div class="cs_case_study cs_style_1 cs_hover_active">
+                    <a href="switchgear-and-panels.php" class="cs_case_study_thumb cs_case_study_thumb3 cs_bg_filed" data-src="assets/img/why3.jpg"></a>
+                    <div class="content-area1">
+                      <a href="switchgear-and-panels.php" class="hind-mysuru-regular">Switchgear & Panels</a>
+                    </div>
+                    <div class="content-area">
+                     
+                      <div class="space16"></div>
+                      <a href="switchgear-and-panels.php" class="hind-mysuru-regular">Switchgear & Panels</a>
+                     <p class="hind-mysuru-light">Switchgear is the backbone of any power distribution system—responsible for controlling, protecting, and isolating electrical equipment to ensure smooth and secure operation 
+
+</p>  <a href="switchgear-and-panels.php" style="font-size:14px"> Explore More <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                  </div>
+
+
+<div class="cs_case_study cs_style_1 cs_hover_active">
+                    <a href="cable-protection-management-solutions.php" class="cs_case_study_thumb cs_case_study_thumb5 cs_bg_filed" data-src="assets/img/why5.jpg"></a>
+                    <div class="content-area1">
+                      <a href="cable-protection-management-solutions.php" class="hind-mysuru-regular">Cable Protection and Interconnect products</a>
+                    </div>
+                    <div class="content-area">
+                       
+                        <div class="space16"></div>
+                      <a href="cable-protection-management-solutions.php" class="hind-mysuru-regular">Cable Protection and Interconnect products</a>
+                       <p class="hind-mysuru-light">In today’s demanding industrial and transportation environments, the reliability of any electrical system begins with how well its cables are protected. At MV Electrosystems Limited </p> 
+ <a href="cable-protection-management-solutions.php" style="font-size:14px"> Explore More <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                  </div>
+
+<div class="cs_case_study cs_style_1 cs_hover_active">
+                    <a href="electrical-electronic-systems.php" class="cs_case_study_thumb cs_case_study_thumb6 cs_bg_filed" data-src="assets/img/why6.jpg"></a>
+                    <div class="content-area1">
+                      <a href="electrical-electronic-systems.php" class="hind-mysuru-regular">Overhead Electrification products</a>
+                    </div>
+                    <div class="content-area">
+                      
+                        <div class="space16"></div>
+                      <a href="electrical-electronic-systems.php" class="hind-mysuru-regular">Overhead Electrification products</a>
+                       <p class="hind-mysuru-light">MV Electrosystems Limited (MVEL) is a trusted and leading manufacturer of Overhead Electrification (OHE) products, meeting the dynamic demands of global railway infrastructure. 
+
+
+
+</p>  <a href="electrical-electronic-systems.php" style="font-size:14px"> Explore More <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                  </div>
+
+
+
+<div class="cs_case_study cs_style_1 cs_hover_active">
+                    <a href="traction-motors-transformers.php" class="cs_case_study_thumb cs_case_study_thumb2 cs_bg_filed" data-src="assets/img/why2.jpg"></a>
+                    <div class="content-area1">
+                      <a href="traction-motors-transformers.php" class="hind-mysuru-regular">Traction Motors and Transformers</a>
+                    </div>
+                    <div class="content-area">
+                    
+                      <div class="space16"></div>
+                      <a href="traction-motors-transformers.php" class="hind-mysuru-regular">Traction Motors and Transformerss</a>
+                     <p class="hind-mysuru-light">A traction motor is an electric motor used in railway vehicles—including locomotives, EMUs, MEMUs, Vande Bharat trains, and metro systems.It converts electrical energy into mechanical torque to  
+
+</p>  <a href="traction-motors-transformers.php" style="font-size:14px"> Explore More <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                  </div>
+
+
+
+ <div class="cs_case_study cs_style_1 cs_hover_active">
+                    <a href="connector-cable-subsystem.php" class="cs_case_study_thumb cs_case_study_thumb4 cs_bg_filed" data-src="assets/img/why4.jpg"></a>
+                    <div class="content-area1">
+                      <a href="connector-cable-subsystem.php" class="hind-mysuru-regular">Embedded Systems</a>
+                    </div>
+                    <div class="content-area">
+                       
+                        <div class="space16"></div>
+                      <a href="connector-cable-subsystem.php" class="hind-mysuru-regular">Embedded Systems</a>
+                       <p class="hind-mysuru-light">In today’s highly connected and automated world, Embedded Systems function as the core intelligence behind real-time control, automation, and smart decision-making. At MV Electrosystems Limited 
+
+</p>  <a href="connector-cable-subsystem.php" style="font-size:14px"> Explore More <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+                </div>
+                <div class="space60 d-lg-block d-none"></div>
+                <div class="space34 d-lg-none d-block"></div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== CASE AREA ENDS =======-->
+
+
+
+<br>
+
+
+<!--===== BLOG AREA STARTS =======-->
+
+<!--===== BLOG AREA ENDS =======-->
+
+
+
+
+
+
+
+
+<!--===== FOOTER AREA STARTS =======-->
+<div class="footer4-section-area" style="background-color: #646464 ;  border-radius:25px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-logo-area">
+          <img src="assets/img/logo/logo2.png" alt="">
+          <p class="hind-mysuru-light">
+            MV Electrosystems is a Technology & <!--Innovation   Company in Rail Transportation Segment with end to end Solutions-->...
+            <a href="about-us.php" class="text-blac readmore"> <strong>Read More</strong> </a>
+          </p>
+
+          <ul>
+            <!-- <li><a href="#"><img src="assets/img/icons/facebook5.svg" alt=""></a></li>-->
+
+            <a href="https://www.linkedin.com/company/mv-electrosystems-limited/" target="_blank">
+              <li><img src="imgs/lin.png" alt=""></li>
+            </a>
+
+            <a href="https://www.youtube.com/@MVElectrosystemsLtd" target="_blank">
+              <li><img src="imgs/yt.png" alt=""></li>
+            </a>
+
+            <!--  <li><a href="#"><img src="assets/img/icons/twitter3.svg" alt=""></a></li>-->
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-logo-area1">
+          <h3 class="text-white hind-mysuru-regular">Company </h3>
+          <div class="space10"></div>
+          <ul>
+            <li><a href="about-us.php" class="hind-mysuru-light">About Us</a></li>
+            <li><a href="news.php" class="hind-mysuru-light">News</a></li>
+            <li><a href="download-catalogue.php" class="hind-mysuru-light">Downloads</a></li>
+            <li><a href="careers.php" class="hind-mysuru-light">Careers</a></li>
+            <li><a href="media.php" class="hind-mysuru-light">Media</a></li>
+            <!-- <li><a href="#" class="hind-mysuru-light">Enquiry Now</a></li>-->
+            <li><a href="investor-relations.php" class="hind-mysuru-light">Invester Relations </a></li>
+
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo-area1">
+          <h3 class="text-white  hind-mysuru-regular">Our Products</h3>
+          <div class="space10 "></div>
+          <ul>
+
+            <li><a href="railway-power-conversions-ystems.php" class="hind-mysuru-light">Rolling Stock Electrics & Propulsion Systems</a> </li>
+            <!--<li><a href="#" class="hind-mysuru-light">Train Control & Rail Traffic Management</a> </li>-->
+            <li><a href="switchgear-and-panels.php" class="hind-mysuru-light">Switchgear & Panels</a> </li>
+            <li><a href="connector-cable-subsystem.php" class="hind-mysuru-light">Connector & Cable Assemblies</a> </li>
+            <li><a href="cable-protection-management-solutions.php" class="hind-mysuru-light">Cable Protection & Management Solutions</a> </li>
+            <li><a href="connector-cable-subsystem.php" class="hind-mysuru-light">Embedded Systems</a> </li>
+            <li><a href="traction-motors-transformers.php" class="hind-mysuru-light">Traction Motors & Transformers</a> </li>
+
+
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-logo-area1">
+          <h3 class="text-white hind-mysuru-regular">Get in Touch</h3>
+          <div class="space10"></div>
+          <ul>
+
+            <!--   <li><a href="#"> <i class="fa-solid fa-envelope m-1"></i>  <span>  info@mvelectrosystems.com </span></a></li>-->
+
+            <li><a href="#" class="hind-mysuru-light"> <i class="fa-solid fa-location-dot m-0"></i> <strong>Manufacturing Facility:</strong> <br>Baghola Tatarpur Road, Prithla Industrial Zone, Distt. Palwal, Haryana, India - 121102 </a></li>
+            <li><a href="#" class="hind-mysuru-light"> <i class="fa-solid fa-location-dot m-0"></i> <strong>Corporate & Registered Office:</strong> <br>Plot No. 7, Site No 2, 14/3, Mathura Road, Faridabad - 121 003, Haryana, India</a></li>
+
+            <li><a href="#" class="hind-mysuru-light"> <i class="fa-solid fa-envelope m-1"></i> sales@mvelectrosystems.com </a></li>
+
+            <li><a href="tel:9810092518" class="hind-mysuru-light"> <i class="fa-solid fa-phone m-1"></i> +91 9211999711</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="space30 d-lg-block d-none"></div>
+    <div class="space30 d-lg-none d-block"></div>
+
+  </div>
+
+  <div style="background-color: #3c3c3c ;">
+    <div class="container">
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-area">
+            <div class="pera">
+              <p class="text-white hind-mysuru-light" align="center"> ⓒ Copyright 2025 <strong>MV Electrosystems Ltd.</strong> All rights reserved</p>
+            </div>
+
+            <!--<ul>
+              <li><a href="#" class="hind-mysuru-light text-white">Terms & Conditions</a></li>
+              <li><a href="#" class="hind-mysuru-light m-0 text-white"> Privacy Policy </a> </li>
+            </ul>-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<style>
+  /*.navbar-toggle .icon-bar {display: block;width: 100%;height: 2px;margin-bottom: 7px;border-radius: 1px;background-color: #000 ! important;}*/
+  .icon-bar-social {
+    position: fixed;
+    top: 70%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    width: 70px;
+    z-index: 9;
+  }
+
+  .icon-bar-social a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 17px;
+    padding: 7px 10px;
+    margin-bottom: 5px;
+    width: 40px;
+    float: right
+  }
+
+  .icon-bar-social a:hover {
+    padding: 7px 20px;
+    width: 55px;
+  }
+
+  .facebook2 {
+    background: #3B5998;
+    color: white;
+    font-size: 14px
+  }
+
+  .twitter2 {
+    background: #66CC00;
+    color: white;
+  }
+
+  .google2 {
+    background: #dd4b39;
+    color: white;
+  }
+
+  .instagram2 {
+    color: #fff;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+
+  .youtube2 {
+    background: #bb0000;
+    color: white;
+  }
+
+  .pinterest2 {
+    background: #0099FF;
+    color: white;
+  }
+
+  .linkedin2 {
+    background: #0099FF;
+    color: white;
+  }
+
+  .whatsapp2 {
+    background: #66CC00;
+    color: white;
+  }
+
+  /*.content {margin-left: 75px;font-size: 30px;}*/
+  .fa-facebook-f:before,
+  .fa-facebook:before {
+    font-size: 16px;
+  }
+
+  .fa-instagram:before {
+    content: "\f16d";
+    font-size: 16px;
+  }
+
+  .fa-pinterest-square:before {
+    content: "\f0d3";
+    font-size: 16px;
+  }
+
+  .fa-youtube-square:before {
+    content: "\f166";
+  }
+
+  .fa-youtube:before {
+    content: "\f167";
+  }
+
+  .fa-twitter-square:before {
+    content: "\f081";
+  }
+
+  .fa-phone:before {
+    content: "\f095";
+  }
+</style>
+
+
+
+
+<!--<div class="icon-bar-social">
+
+<!--<a href="#" target="_blank" class="facebook2"> <i class="fa-brands fa-facebook-f"></i> </a> -->
+
+<!--<a href="https://api.whatsapp.com/send?phone=919029062216&amp;text=Hey, I am interested So please reply me" class="whatsapp2" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>  </a> 
+
+<a href="https://www.linkedin.com/company/mv-electrosystems-limited/" class="pinterest2" target="_blank">  <i class="fa-brands fa-linkedin"></i> </a>
+
+
+<a href="https://www.youtube.com/watch?v=T1H0d5aIM_c&embeds_referring_euri=http%3A%2F%2Flocalhost%2F&source_ve_path=Mjg2NjY" class="youtube2" target="_blank"> <i class="fa-brands fa-youtube"></i> </i> </a> 
+
+
+<a href="#" target="_blank" class="instagram2">   <i class="fa-brands fa-instagram"></i> </a>
+
+</div>
+
+-->
+
+<!--<a href="https://api.whatsapp.com/send?phone=+919810092518&amp;text=Hi MV Electrosystems How may we help you !" target="_blank" rel="noopener noreferrer" style="position:fixed;bottom:10px;left:10px;z-index:9999;" data-action="share/whatsapp/share">
+<img src="assets/img/whatsapp.gif" alt="whastapp" title="tap to chat with us on whastapp" style="height:70px;"></a>-->
+
+
+<!--===== FOOTER AREA ENDS =======-->
+
+
+<!--===== JS SCRIPT LINK =======-->
+<script src="assets/js/plugins/bootstrap.min.js"></script>
+<script src="assets/js/plugins/fontawesome.js"></script>
+<script src="assets/js/plugins/aos.js"></script>
+<script src="assets/js/plugins/counter.js"></script>
+<script src="assets/js/plugins/gsap.min.js"></script>
+<script src="assets/js/plugins/ScrollTrigger.min.js"></script>
+<script src="assets/js/plugins/Splitetext.js"></script>
+<script src="assets/js/plugins/sidebar.js"></script>
+<script src="assets/js/plugins/magnific-popup.js"></script>
+<script src="assets/js/plugins/mobilemenu.js"></script>
+<script src="assets/js/plugins/owlcarousel.min.js"></script>
+<script src="assets/js/plugins/gsap-animation.js"></script>
+<script src="assets/js/plugins/nice-select.js"></script>
+<script src="assets/js/plugins/waypoints.js"></script>
+<script src="assets/js/plugins/slick-slider.js"></script>
+<script src="assets/js/plugins/circle-progress.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+</body>
+
+
+</html>

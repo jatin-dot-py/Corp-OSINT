@@ -1,0 +1,200 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Home Page</title>
+    <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        var currentPosition = 0;
+        var slideWidth = 1066;
+        var slides = $('.slide');
+        var numberOfSlides = slides.length;
+        setInterval(changePosition, 3000);
+        slides.wrapAll('<div id="slidesHolder"></div>');
+        slides.css({ 'float': 'left' });
+        $('#slidesHolder').css('width', slideWidth * numberOfSlides);
+        function changePosition() {
+            if (currentPosition == numberOfSlides - 1) {
+                currentPosition = 0;
+            }
+            else {
+                currentPosition++;
+            }
+            moveSlide();
+        }
+        function moveSlide() {
+            $('#slidesHolder').animate({ 'marginLeft': slideWidth * (-currentPosition) });
+        }
+    });
+</script>
+    
+ <style type="text/css">
+*{margin:0px;padding:0px;}
+body{font-family: Calibri;margin-left:0px;background-color:#87CEFA;padding:50px; height:670px; }
+ul#navbar ,ul.sub1{list-style-type:none;font-size:12pt;}
+ul#navbar li{width:207px;float:left;text-align:center;position:relative; line-height:38px;border-right: 1px solid white; margin-right:5px;top:-1px;left:0px; border-bottom: 2px solid white;height:39px;}
+ul#navbar a{text-decoration:none;display:block;width:212px;height:39px;background-color:#DC143C; 
+            color:white;font-weight :bold;line-height:40px;font-size:13pt;margin-right :0px;}
+ul#navbar{margin-left:0px;}
+ul#navbar .sub1 a{margin-top:0px;}
+h4{color:white; font-size:13pt; line-height:20px;}
+h5{font-family:Century Gothic;font-size:10pt;line-height:12px;text-align:center;color:white;margin-bottom:30px;}
+ul#navbar li:hover > a{background:url(images/311.jpg); color:#FFDD00;}
+h2{font-family: Century Gothic;text-align:center;text-decoration:underline;margin:2px 150px 10px 150px; top:25px; line-height:0px;}
+ul#navbar ul.sub1{display:none; position:absolute;top:39px;left:0px;height:106px; z-index:999;}
+ul#navbar li:hover .sub1{display:block;}
+.wrapper1 {border-top:1px solid black; padding:2px 0px 0px 0px; width: 1066px;}
+.footer-container {float:left; clear:both; margin-top:5px; padding: 0 0 20px 0; width:100%;}
+.footer-container .footer-lhs{float:left; width:400px}
+.footer-container li{list-style:none; float:left; padding:0 7px; line-height:11px; border-right:1px solid red;}
+.footer-container li a{color:black; text-decoration:none; font-size:10pt}
+.footer-container li a:hover{text-decoration:underline}
+.footer-container .footer-lhs{padding-left:0;}
+.img{margin:0px 0px 0px 80px;}
+.style2{text-align: right; font-size:10pt;}
+ul#navbar ,ul.sub2{list-style-type:none;font-size:12pt;}
+ul#navbar .sub2 a{margin-top:0px;font-size:11pt;}
+ul#navbar ul.sub2{display:none; position:absolute;top:1px;left:213px;height:106px; z-index:999;}
+ul#navbar ,ul.sub3{list-style-type:none;font-size:12pt;}
+ul#navbar .sub3 a{margin-top:0px;font-size:11pt;}
+ul#navbar ul.sub3{display:none; position:absolute;top:1px;left:213px;height:106px; z-index:999;}	 
+ul#navbar ul.sub2 li:hover .sub3{display:block;}	 
+ul#navbar ul.sub1 li:hover .sub2{display:block;}
+
+
+#slideshow #slideshowWindow{width:1066px;height:337px;margin:0;padding:0;position:relative;overflow:hidden;}
+#slideshow #slideshowWindow .slide{margin:0;padding:0;width:1066px;height:337px;float:left;position:relative;}
+ </style>
+ </head>
+ <body> 
+ <table class="style1"
+ style="width:1065px;height:105px;margin:-85px 70px 0px 112px;/*margin:-50px -50px 0px -50px;*/background-color: #FFD700">
+   <tr>  
+  <td rowspan="1"   valign="top">
+  <img id="img1" style=" margin:45px 50px 25px 215px;" "img src="images\25.png" alt="Investments Limited" />
+ </td>
+</tr>
+</table>
+ <form method="post" action="./" id="form1" style="width:1066px; float:none; height:670px; border-bottom:3px solid black;  margin:0px 90px 0px 112px; 
+      background-color:#ffffff">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTQ0OTkyOTMxNGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgMFDEltYWdlQnV0dG9uMgUMSW1hZ2VCdXR0b242BQxJbWFnZUJ1dHRvbjfo5XdKtcupGPulSV5cf+DssDgKhhSgLT2+LdmKsIzmCg==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=mYvB2KC9E4iI2vub95IgyeWPeTt1HiFCj01U6ChwU8WLj9dpdiBZYH0viWO-ElGtYTuu1nnS1DsoGqhbPEZd7_VVWtJA4rhUBTqjDONFkI01&amp;t=638901734248157332" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8D0E13E6" />
+	<input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="RWsHNKPVMK5-wmxqhHETSqwevmfssNZcSTV4ORRdsgxDDAByZ48P9vn5AdYHz-LtQgOyzRF8bylPqTohRz866D5NsaIksrKJNfhJSlx8lTQ1" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAASRrnzeN5lnUj7xInxpnPnkYs1X7aZmCc4CU0bkNVODW52D2iLtV1VlFg7GK6741UaC+UvBmaSglm0a4O1vpaRvMnCMSQhnzDsd16Rpsyapp28XUeDcmDLcq7ORovAC+mA=" />
+</div>
+<div>
+<ul id="navbar">
+   <li><a href="#">HOME</a></li>
+   <li><a href="#">ABOUT US</a>
+      <ul class="sub1">
+         <li> <a href="Company-Profile.aspx">Company Profile</a></li>
+         <li> <a href="Management.aspx">Management</a></li>
+         <li> <a href="Vision-Mission.aspx">Vision & Mission</a></li>
+      </ul>
+   </li>
+  <li><a href="#">INVESTORS</a>
+      <ul class="sub1">
+      <li><a href="CSRProjects.aspx">CSR Projects</a></li> 
+	  <li><a href="#"><h5>Disclosures under Regulation 46 of the LODR</h5></a> 
+      <ul class="sub2">
+          <li> <a href="Financials-audited.aspx">Financials</a></li>
+          <li> <a href="#">Stock Exchange Compliances</a>
+                 <ul class="sub3">
+                     <li><a href="Announcements.aspx">Announcements</a></li>
+                     <li><a href="Intimations.aspx">Board Meeting</a></li>
+                     <li> <a href="CorporateGovernanceReport.aspx">Corporate Governance Report</a></li>
+                     <!-- <li><a href="CerificateFromPCSUnderRegulation_40(9).aspx"><h5>Cerificate From PCS Under Regulation_40(9)</h5></a></li>
+                     <li><a href="CertificateUnderRegulation_7(3).aspx"><h5>Certificate Under Regulation_7(3)</h5></a></li>               -->
+                     <li><a href="ClosureOfTradingWindowForDealingInSecuritiesOfTheCompany.aspx">Closure Of Trading Window</a></li>
+                     <!-- <li><a href="InvestorComplaintsReport_Regulation_13.aspx"><h5>Investor Complaints Report_Regulation_13</h5></a></li> -->
+                     <li><a href="Shareholding-Pattern.aspx">Shareholding Pattern</a></li>
+                     <!-- <li><a href="SAST Reg-29.aspx">SAST</a></li> -->
+                     <!-- <li><a href="RecocillationOfShareCapital.aspx">Reconciliation of Share Capital</a></li>                              -->
+                     <li><a href="SecretarialAuditReportofSubsidiaries-2019-20.aspx"><h5>Secretarial Audit Report of Subsidiaries</h5></a></li> 
+                     <li><a href="SecretarialComplianceReport.aspx">Secretarial Compliance Report</a></li>
+					 <li><a href="Annual_Integrated_Reports.aspx">Annual/Integrated Reports</a></li>
+              </ul>
+          </li>
+		  <li> <a href="agm.aspx"><h5>General Meetings and Postal Ballot </h5></a></li>  
+          <li><a href="Policiesandcodes.aspx">Policies and Codes</a></li>   
+          <li><a href="IEPF.aspx">IEPF & Unclaimed Dividend</a></li>
+          <li><a href="pdfs/SIL_Commitees.pdf">List of Committees</a></li> 
+          <li> <a href="ImportantAnnouncementforPhysicalShareholders.aspx"><h5>Important Announcement for Physical Shareholders</h5></a></li> 
+		  <li><a href="pdfs/SIL-FamilarisationProg-IndependentDirectors.pdf"><h5>Familiarisation Programmes for Directors</h5></a></li> 
+		  <li><a href="pdfs/MOA and AOA.pdf">MOA & AOA</a></li>
+		  <li><a href="pdfs/SIL-BriefProfileofDirectors.pdf">Brief Profile of Directors</a></li>
+	</ul>
+	</li>
+<li><a href="SEBI.aspx"><h5>SEBI (Alternative Dispute Resolution Mechanism)</h5> </a></li>
+<li><a href="pdfs/SIL-SakhsamNiveshak.pdf"><h5>100 Days Campaign - "Saksham Niveshak" - IEPF</h5> </a></li>
+</ul>
+
+    </li> <li> <a href="News.aspx">NEWS</a></li>
+        <li> <a href="#">CONTACT US</a>
+        <ul class="sub1">
+            <li><a href="RegisteredOffice.aspx">Registered Office</a></li>
+            <li><a href="InvestorContacts.aspx">Investor Contacts</a></li>
+        </ul>
+        </li>
+</ul><br />
+<br />
+  <div id="slideshow">
+<div id="slideshowWindow">
+<div class="slide"><b></b><img src="images/6.jpg"  alt="image1" /> </div>
+<div class="slide"><b></b><img src="images/7.jpg"  alt="image2" /> </div>
+<div class="slide"><b></b><img src="images/9.jpg" alt="image3" /> </div>
+<div class="slide"><b></b><img src="images/16.jpg" alt="image4" /> </div>
+</div>
+</div>
+<marquee><span id="Span1"  style="color:#FF4500; font-size:large; font-weight:bold;"> WELCOME TO SIL INVESTMENTS LIMITED </span></marquee>
+<br />
+<input type="image" name="ImageButton2" id="ImageButton2" src="images/17.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ImageButton2&quot;, &quot;&quot;, false, &quot;&quot;, &quot;#&quot;, false, false))" style="height:234px;width:352px;" />
+<input type="image" name="ImageButton6" id="ImageButton6" src="images/3.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ImageButton6&quot;, &quot;&quot;, false, &quot;&quot;, &quot;#&quot;, false, false))" style="height:234px;width:352px;" />
+<input type="image" name="ImageButton7" id="ImageButton7" src="images/4.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ImageButton7&quot;, &quot;&quot;, false, &quot;&quot;, &quot;#&quot;, false, false))" style="height:234px;width:352px;" />
+
+
+<div class="wrapper1">
+<div class="footer-container">
+    <div class="style2">
+      <ul class="footer-lhs">
+      <li><a href="Feedback.aspx">Feedback</a></li>
+      <li><a href="Sitemap.aspx">Sitemap</a></li>
+      
+      
+      </ul>
+        ©<font color="#FF0000">SIL Investments Limited</font> 2014 - All Rights Reserved. 
+</div>
+</div>
+</div>
+</div>
+ <br />
+</form>
+</body>
+</html>

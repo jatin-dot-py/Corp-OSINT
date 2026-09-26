@@ -1,0 +1,4434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=5.0" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="xo4mnfh4DV7XuSbA11pljV4D8FWslQbjcFnPY0IQ">
+    <meta property="og:image" content="https://www.careratings.com/storage/app/admin/images/banner-2_1679044184_1679045152.jpg">
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+	<meta name="description" content="Home page">
+    <meta name="keywords" content="Home page">
+    <link rel="shortcut icon" href="https://www.careratings.com/public/frontend-assets/images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="preload" fetchpriority="high" href="https://www.careratings.com/storage/admin/images/Banner_Credit_quality_assessment25_480_1748980046.webp" as="image" media="(max-width: 649px)">
+    <link rel="preload" href="https://www.careratings.com/storage/admin/images/Banner_Credit_quality_assessment25_desktop_1743580285_1751618415.webp" as="image" media="(min-width: 650px)">
+	
+    <link href="https://www.careratings.com/public/frontend-assets/css/all.css" rel="stylesheet" />
+    <link href="https://www.careratings.com/public/frontend-assets/css/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="https://www.careratings.com/public/frontend-assets/css/style.css" rel="stylesheet" />
+    <link href="https://www.careratings.com/public/frontend-assets/css/new-custom-backend.css" rel="stylesheet" />
+    <link href="https://www.careratings.com/public/frontend-assets/css/responsive.css" rel="stylesheet" />
+
+    <link href="https://www.careratings.com/public/frontend-assets/css/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://www.careratings.com/public/frontend-assets/css/mapbox-gl-geocoder.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <!-- Docs styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CDNSFree2/Plyr/plyr.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://www.careratings.com/public/app-assets/assets/css/bootstrap-datepicker.min.css"> 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Google tag (gtag.js) old-->
+
+    <!-- <script async src=https://www.googletagmanager.com/gtag/js?id=UA-214539321-1></script>
+
+    <script>
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag(){dataLayer.push(arguments);}
+
+      gtag('js', new Date());
+
+     
+
+      gtag('config', 'UA-214539321-1');
+
+    </script> -->
+
+    <!-- Google tag (gtag.js) new_24_04_23 --> 
+    <script async src=https://www.googletagmanager.com/gtag/js?id=G-HC2FSMP4Z6></script>
+     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-HC2FSMP4Z6'); </script>
+
+    
+	<title>
+        CareEdge | Ratings
+</title>
+	<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+
+  // all elements wioth background images that should be lazy loaded 
+  const lazyImages = document.querySelectorAll('.lazybg');
+ 
+  // options for the observer
+  const backgroundOptions = {
+     threshold: 0,
+     rootMargin: "0px 0px 50px 0px"
+  };
+
+  // the observer
+  const imageObserver = new IntersectionObserver((entries, imageObserver) => {
+     entries.forEach(entry => {
+         if (entry.isIntersecting) {
+             showImageBackground(entry.target);
+             imageObserver.unobserve(entry.target);
+         }
+     });
+  }, backgroundOptions);
+
+    
+  // observe each image
+  lazyImages.forEach(image => {
+     imageObserver.observe(image);
+  });
+
+  // show background image
+  function showImageBackground(node) {
+     node.classList.remove('lazybg');
+  }
+});
+</script>
+    <style>
+        img#loader {
+            max-width: 110px;
+            margin: 20px auto 0;
+        }
+        img#loader_contactus {
+            max-width: 110px;
+            margin: 20px auto 0;
+        }
+        ul.parsley-errors-list {
+            list-style: none;
+        }
+
+        .parsley-required,.parsley-pattern,
+        .parsley-maxlength,
+        .parsley-custom-error-message,
+        .parsley-minlength,
+        .parsley-type,
+        .parsley-length,.parsley-equalto
+        .error-sign {
+            color: #FF0000;
+        }
+
+
+        .badge {
+            padding-left: 9px;
+            padding-right: 9px;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+        }
+
+        .label-warning[href],
+        .badge-warning[href] {
+            background-color: #c67605;
+        }
+
+        .shopping-cart-count {
+            font-size: 12px;
+            background: #ff0000;
+            color: #fff;
+            padding: 0 5px;
+            vertical-align: top;
+            margin-left: -16px;
+            margin-top: -30px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 10px;
+            padding: 5px 0px;
+            border-radius: 50px;
+        }
+        .register-text {
+  margin-top: 30px;
+  padding: 16px 35px;
+  background-color: #00d3c3;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'ProximaNova-Semibold' !important;
+  font-size: 14px;
+}
+.register-text:hover{
+    color:#fff;
+}        
+ 
+.lazybg {background-image: none !important}
+
+/* Keyboard-accessible dropdown: force visible when .show is applied */
+.navbar-nav .dropdown-menu.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Simple search results dropdown - sits above other content, no backdrop/blur */
+#res.results_php {
+    position: fixed;
+    z-index: 1050;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- Desktop Header -->
+    <header class="desktop_header">
+        <div class="top_header container-fluid desktop-top_header">
+            <ul class="top-list left-nav">
+                <li><a href="https://www.careedge.in/" target="_blank">CareEdge Group</a></li>
+                <li class="active">
+                    <a href="https://www.careratings.com/" target="_blank">CareEdge Ratings<span class="visually-hidden">product selected</span></a>
+                </li>
+				<li>
+					<a href="https://www.careedgeglobal.com/" target="_blank">CareEdge Global</a>
+				</li>
+				<li>
+                    <a href="https://careparrva.com/" target="_blank">CarePaRRVA</a>
+                </li>
+				<li>
+					<a href="https://www.careedgeesg.com" target="_blank">CareEdge ESG</a>
+				</li>
+                <li>
+                    <a href="https://careedgeadvisory.com/" target="_blank">CareEdge Advisory</a>
+                </li>
+                <li>
+                    <a href="https://www.careedgeanalytics.com/" target="_blank">CareEdge Analytics</a>
+                </li>
+                <li>
+                    <a href="https://www.careratingsnepal.com/" target="_blank">CareEdge Nepal</a>
+                </li>
+                <li>
+                    <a href="https://www.careratingsafrica.com/" target="_blank">CareEdge Africa</a>
+                </li>
+				 <li>
+                    <a href="https://www.careedgesouthafrica.com" target="_blank">CareEdge South Africa</a>
+                </li>
+            </ul>
+            <div class="list-inline m-0 right-nav">
+				<div class="list-inline m-0 right-nav">
+					<a href="https://www.careratings.com/careers" class="list-inline-item item-header">Careers</a>
+				</div>
+                <!-- <li class="list-inline-item">
+                    <a href="https://www.careratings.com/support" class="m-0">Contact</a>
+                </li> -->
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light desktop-menu">
+            <div class="container-fluid h-100 pe-0">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))">
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path>
+                        <path class="line line2" d="M 20,50 H 80"></path>
+                        <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path>
+                    </svg>
+                </button>
+
+                <a class="navbar-brand" 
+                    href="https://www.careratings.com">
+                    <img src="https://www.careratings.com/public/frontend-assets/images/CareEdge_ratings_logo.svg" alt="CareEdge_ratings_logo" width="162" height="41" />
+                </a>
+                <button type="button" class="loginCta">
+                    <span class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                        </svg>
+                    </span>
+                </button>
+
+                <!--DESKTOP MENU-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.careratings.com/find-ratings" title="Find Ratings here">Find Ratings</a>
+                        </li>
+                        <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle js-menu-toggle" href="#" role="button" id="getRatedDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-haspopup="true" aria-expanded="false">						
+                                Get Rated
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light" role="menu" aria-labelledby="getRatedDropdown">
+                              
+							   <li><a class="dropdown-item" href="https://www.careratings.com/rating_process" title="know our rating process">Rating Process</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/criteria_methodologies" title="check criteria or methods to explore">Criteria / Methodologies</a></li>
+								<li><a class="dropdown-item" href="https://www.careratings.com/activities_and_regulators" title="check Activities and Regulators">Activities and Regulators</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/rating_faqs" title="check FAQs">Rating FAQs</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/fee_structure" title="know our fee structure">Fee Structure</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/rating-symbols-and-definition" title="read about rating symbols and definition">Rating Symbols & Definition</a></li>
+                                
+                                <li><a class="dropdown-item" href="https://www.careratings.com/publications" title="check various publications">Publications</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/public/frontend-assets/images/pdf/Criteria_Complexity_of_Rated_Instruments.pdf" target="__blank" title="know the complexity of Rated Instruments">Complexity level of Rated instruments</a></li>
+                               <!-- <li><a class="dropdown-item" href="https://www.careratings.com/pd-benchmark" title="check PD Benchmark Report" >PD Benchmark</a></li>-->                                
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="capabilitiesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                CAPABILITIES
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light" role="menu" aria-labelledby="capabilitiesDropdown">
+                                <li><a class="dropdown-item" href="https://www.careratings.com/corporate-sector">CORPORATE SECTOR</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/financial-sector">FINANCIAL SECTOR</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.careratings.com/structured-finance">STRUCTURED FINANCE</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.careratings.com/infrastructure-sector">INFRASTRUCTURE SECTOR</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.careratings.com/other-rating-products">OTHER RATING PRODUCTS</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="insightsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                INSIGHTS
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light dropdown-display dropdown-newDegn" role="menu" aria-labelledby="insightsDropdown">
+                                <li>
+                                    <h2>economy</h2>
+                                    <ul class="dropDown-inner">
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/economy-updates">Economy Updates</a></li>
+                                        
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/morning_brief">Morning Brief</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h2>industry research</h2>
+                                    <ul class="dropDown-inner">
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/industry-research">Overview</a></li>
+                                        																																													<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Auto-and-Auto-Components/9">Auto and Auto Components</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Agri-and-Agri-Allied/10">Agri and Agri-Allied</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---BFSI/11">BFSI</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Building-Construction-Material/12">Building Construction Material</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Capital-Goods/13">Capital Goods</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Infrastructure/14">Infrastructure</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Manufacturing/15">Manufacturing</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Metals-and-Mining/16">Metals and Mining</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Services/17">Services</a></li>
+																																			<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Special-Studies/18">Special Studies</a></li>
+																					 
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown hide-in-s-lap show-in-s-lap">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="mediaDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                MEDIA & EVENTS
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light" role="menu" aria-labelledby="mediaDropdown">
+                                <li><a class="dropdown-item" href="https://www.careratings.com/events-and-webinars">Events and Webinars</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/media">Media</a></li>
+								<li><a class="dropdown-item" href="https://www.careratings.com/industry/press-release/24">Press Release</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="investorsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Investors
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light" role="menu" aria-labelledby="investorsDropdown">
+                                
+                                <li><a class="dropdown-item" href="https://www.careratings.com/investors">Disclosure under regulation 46 of SEBI Regulations, 2015</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/financial-performance">Financial Performance</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/shareholding-patterns">Shareholding Pattern</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/annual-reports">Annual Reports</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/corporate-announcements">Corporate Announcements</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/corporate-governance">Corporate Governance</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/buyback-of-shares">Buyback of Shares</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/investor-services">Investor Services - Forms for Download</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/dividend">Dividend</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/notices">Notice of abolition of Transfer of Physical Shares</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/investors-contact">Investors Contact</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/smart-odr">Smart ODR</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item hide-in-s-lap show-in-s-lap">
+                            <a class="nav-link" href="https://www.careratings.com/about-us">About us</a>
+                        </li>
+                        <li class="nav-item hide-in-s-lap show-in-s-lap">
+                            <a class="nav-link" href="https://www.careratings.com/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="secondary-menu">
+                        <button class="menu-icon" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+                            <svg width="100" height="100" viewBox="0 0 100 100">
+                                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                                <path class="line line2" d="M 20,50 H 80" />
+                                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                            </svg>
+                        </button>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="event.preventDefault();" class="dropdown-toggle">
+                                    MEDIA & EVENTS</a>
+                                <ul class="secondary-menu-list ">
+                                    <li><a href="https://www.careratings.com/events-and-webinars">Events and Webinars</a></li>
+                                    <li><a href="https://www.careratings.com/media">Media</a></li>
+									<li><a class="dropdown-item" href="https://www.careratings.com/industry/press-release/24">Press Release</a></li>
+                                     
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.careratings.com/about-us">
+                                    ABOUT US</a>
+                            </li>
+                            <li>
+                                <a href="https://www.careratings.com/contactus">
+                                    CONTACT US</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class=" d-none d-xl-block ">
+                        <ul class="search-call-icon">
+                            <li>
+
+                                <div class="searchbar1">
+									<label for="company-search" class="visually-hidden">
+										Search for ratings, company, or research
+									</label>
+									<span id="searchInstructions" class="sr-only">On entering data into this input field,  search results dialog will appear below</span>
+									<input type="text" placeholder="Find Ratings / Company / Research" id="company-search" oninput="myFunc(this.value)" value="" class="searchBarInput" hidden tabindex="-1">
+									<button type="button" class="search" id="searchIcon" aria-label="Open search"aria-expanded="false" aria-controls="company-search"></button>
+
+								</div>
+                                
+                                <!--a href="#" onclick="event.preventDefault();">
+                                    <svg id="Icons_Actions_ic-actions-search" data-name="Icons / Actions / ic-actions-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <rect id="Rectangle_157" data-name="Rectangle 157" width="24" height="24" fill="none"></rect>
+                                        <g id="ic-actions-search" transform="translate(3.62 3.55)">
+                                            <circle id="Ellipse_12" data-name="Ellipse 12" cx="7" cy="7" r="7" transform="translate(0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="1.5">
+                                            </circle>
+                                            <line id="Line_50" data-name="Line 50" x2="4.88" y2="4.88" transform="translate(11.88 12.02)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="1.5">
+                                            </line>
+                                        </g>
+                                    </svg>
+                                </a-->
+                            </li>
+                            <!-- <li>
+                                <a href="#" onclick="event.preventDefault();">
+                                    <svg id="Icons_Contact_ic-contact-phone" data-name="Icons / Contact / ic-contact-phone" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <rect id="Rectangle_193" data-name="Rectangle 193" width="24" height="24" fill="none"></rect>
+                                        <g id="ic-contact-phone" transform="translate(3.352 3.346)">
+                                            <path id="Path_89" data-name="Path 89" d="M3.75,6.087,6.14,3.7A2,2,0,0,1,9,3.7l1.36,1.36a2,2,0,0,1,0,2.83l-.89.9h0a16.48,16.48,0,0,0,5.64,5.65h0l.89-.9a2,2,0,0,1,2.83,0l1.34,1.33a2,2,0,0,1,0,2.83l-2.39,2.41a1,1,0,0,1-1.26.13h0A46,46,0,0,1,3.63,7.347h0A1,1,0,0,1,3.75,6.087Z" transform="translate(-3.461 -3.095)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </li> -->
+                            <li>
+                                                                <a href="https://www.careratings.com/shoppingcart">
+                                    <!-- <i class="fa" style="font-size:24px">&#xf07a;</i>-->
+                                    <img src="https://www.careratings.com/public/frontend-assets/images/Cart_Icon.svg" alt='Cart contains "0" items' width="24" height="24" loading="eager">
+                                    <span class='badge badge-warning shopping-cart-count'>0</span>
+                                </a>
+                                                            </li>
+                            <li>
+                                                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="login-cta">Login/Register</div> -->
+                                        <a class="btn btn-primary login-cta" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Login/Register</a>
+                                    </div>
+                
+            </div>
+        </nav>
+            </header>
+    <!--Mobile menu -->
+    <!--Mobile menu -->
+    <header class="mobile_header">
+        <!-- <div class="top_header container-fluid font-medium mobile-top_header">
+            <li class="sub-links">
+              <a href="#" onclick="event.preventDefault();">CARE Group</a>
+                <ul>
+                  <li><a href="http://qc.evolutionco.in/CareEdge-ratings/">CARE Ratings</a></li>
+                  <li><a href="#" onclick="event.preventDefault();">CARE Advisory & Research</a></li>
+                  <li><a href="#" onclick="event.preventDefault();">CARE Risk Solutions</a></li>
+                  <li><a href="#" onclick="event.preventDefault();">CARE Ratings Nepal</a></li>
+                  <li><a href="#" onclick="event.preventDefault();">CARE Ratings Africa</a></li>
+                </ul>
+            </li>
+          </div> -->
+        <div class="top_header container-fluid font-medium mobile-top_header">
+            <form>
+                <!-- <select name="Others Sites" onchange="window.open(this.value, '_blank')"> -->
+                <select aria-label="GroupSites" name="Others Sites" onchange="location = this.value;">
+                    <option value="https://www.careedge.in/"> CareEdge Group </option>
+                    <option value="https://www.careratingsindia.com/" selected>CareEdge Ratings</option>
+					<option value="https://www.careedgeglobal.com/">CareEdge Global</option>
+					<option value="https://www.careedgeesg.com/">CareEdge ESG</option>
+                    <option value="http://careedgeadvisory.com/">CareEdge Advisory & Research</option>
+                    <option value="https://www.careedgeanalytics.com/">CareEdge Analytics</option>
+                    <option value="https://careratingsnepal.com/">CareEdge Nepal</option>
+                    <option value="https://www.careratingsafrica.com/">CareEdge Africa</option>
+					<option value="https://careparrva.com/">CarePaRRVA</option>
+                </select>
+            </form>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light mobile-menu">
+            <div class="container-fluid h-100 pe-0">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false"  aria-label="Toggle navigation"
+                    onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))">
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <path class="line line1"
+                            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058">
+                        </path>
+                        <path class="line line2" d="M 20,50 H 80"></path>
+                        <path class="line line3"
+                            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942">
+                        </path>
+                    </svg>
+                </button>
+                <a class="navbar-brand" href="./">
+                    <img src="https://www.careratings.com/public/frontend-assets/images/CareEdge_ratings_logo.svg" alt="CareEdge_ratings_logo" width="162" height="41"/>
+                </a>
+                <div class=" d-xl-block call-login-icon">
+                    <ul class="search-call-icon">
+                        <li>
+                            <div class="searchbar1">
+                                <!-- <input type="text" placeholder="Find Ratings / Company / Research"
+                                    id="CompanyInputmobile" oninput="myFunc(this.value)" value="" class="searchBarInput"> -->
+									<span id="searchInstructions" class="sr-only">On entering data into this input field,  search results dialog will appear below</span><input type="text" id="company-search" class="searchBarInput" placeholder="Find Ratings / Company / Research" oninput="myFunc(this.value)" aria-describedby="searchInstructions" value="">
+                                <!-- <div class="search"></div> -->
+								<button class="search" aria-label="Clear search"></button>
+                            </div>
+
+                        </li>
+                        <!-- <li>
+                            <a href="#" onclick="event.preventDefault();">
+                                <svg id="Icons_Contact_ic-contact-phone" data-name="Icons / Contact / ic-contact-phone"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <rect id="Rectangle_193" data-name="Rectangle 193" width="24" height="24"
+                                        fill="none"></rect>
+                                    <g id="ic-contact-phone" transform="translate(3.352 3.346)">
+                                        <path id="Path_89" data-name="Path 89"
+                                            d="M3.75,6.087,6.14,3.7A2,2,0,0,1,9,3.7l1.36,1.36a2,2,0,0,1,0,2.83l-.89.9h0a16.48,16.48,0,0,0,5.64,5.65h0l.89-.9a2,2,0,0,1,2.83,0l1.34,1.33a2,2,0,0,1,0,2.83l-2.39,2.41a1,1,0,0,1-1.26.13h0A46,46,0,0,1,3.63,7.347h0A1,1,0,0,1,3.75,6.087Z"
+                                            transform="translate(-3.461 -3.095)" fill="none" stroke="#fff"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+                <button class="loginCta" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                    <span class="">
+                        <img src="https://www.careratings.com/public/frontend-assets/images/icons/noun-login.svg" loading="lazy" width="25" height="25" alt="Login/Register" >
+                    </span>
+                </button>
+                <!-- <a class="btn btn-primary loginCta" data-bs-toggle="modal" href="#exampleModalToggle_mobile"
+                        role="button"><span class="">
+                        <img src="images/icons/noun-login.svg">
+                    </span></a> -->
+
+
+
+                <!--MOBILE MENU-->
+
+
+                <div class="collapse navbar-collapse navbar-collapse-mob" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav dropdown ms-auto mb-2 mb-lg-0">
+                        <!--<li class="nav-item">
+                            <a class="nav-link" href="#" onclick="event.preventDefault();">What We Do</a>
+                        </li>-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" onclick="event.preventDefault();"
+                                >
+                                CareEdge Ratings
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light d-block">
+                                <li><a class="dropdown-item"
+                                        href="https://www.careratings.com/find-ratings">Find
+                                        Ratings</a></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" onclick="event.preventDefault();"
+                                        id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Get Rated
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/rating_process">Rating Process</a></li>
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/criteria_methodologies">Criteria / Methodologies</a></li>
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/activities_and_regulators">Activities and Regulators</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/rating_faqs">Rating FAQs</a></li>
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/fee_structure">Fee Structure</a></li>
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/rating-symbols-and-definition">Rating Symbols & Definition</a></li>
+                                       
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/publications">Publications</a></li>
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/public/frontend-assets/images/pdf/Criteria_Complexity_of_Rated_Instruments.pdf" target="__blank">Complexity level of Rated instruments</a></li>
+                                     <!--   <li><a class="dropdown-item" href="https://www.careratings.com/pd-benchmark">PD Benchmark</a></li>-->
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" onclick="event.preventDefault();"
+                                        id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        CAPABILITIES
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/corporate-sector">CORPORATE SECTOR</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/financial-sector">FINANCIAL SECTOR</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.careratings.com/structured-finance">STRUCTURED FINANCE</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.careratings.com/infrastructure-sector">INFRASTRUCTURE SECTOR</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://www.careratings.com/other-rating-products">OTHER RATING PRODUCTS</a>
+                                </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" onclick="event.preventDefault();"
+                                        id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        INSIGHTS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                        <li>
+                                            <h2>economy</h2>
+                                            <ul class="dropDown-inner">
+                                                <li><a class="dropdown-item" href="https://www.careratings.com/economy-updates">Economy Updates</a></li>
+                                               
+                                                <li><a class="dropdown-item" href="https://www.careratings.com/morning_brief">Morning Brief</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h2>industry research</h2>
+                                            <ul class="dropDown-inner">
+                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry-research">Overview</a></li>
+																																																												<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Auto-and-Auto-Components/9">Auto and Auto Components</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Agri-and-Agri-Allied/10">Agri and Agri-Allied</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---BFSI/11">BFSI</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Building-Construction-Material/12">Building Construction Material</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Capital-Goods/13">Capital Goods</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Infrastructure/14">Infrastructure</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Manufacturing/15">Manufacturing</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Metals-and-Mining/16">Metals and Mining</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Services/17">Services</a></li>
+																																						<li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry-Research---Special-Studies/18">Special Studies</a></li>
+																							 
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                   <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" onclick="toggleMenu(event)">MEDIA &amp; EVENTS</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/events-and-webinars">Events and Webinars</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/media">Media</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-item dropdown-toggle" href="#" onclick="event.preventDefault();"
+                                        id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Investors
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <li><a class="dropdown-item" href="https://www.careratings.com/investors">Disclosure under regulation 46 of SEBI Regulations, 2015</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/financial-performance">Financial Performance</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/shareholding-patterns">Shareholding Pattern</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/annual-reports">Annual Reports</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/corporate-announcements">Corporate Announcements</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/corporate-governance">Corporate Governance</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/buyback-of-shares">Buyback of Shares</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/investor-services">Investor Services ? Forms for Download</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/dividend">Dividend</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/notices">Notice of abolition of Transfer of Physical Shares</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/investors-contact">Investors Contact</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/smart-odr">Smart ODR</a></li>
+                                    </ul>
+                                </li>
+
+
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="https://www.careratings.com/about-us">About Us</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="https://www.careratings.com/contactus">Contact Us</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <!-- Modal popup for desktop-->
+  <div class="modal fade login-popup" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">Subscribe for the  Rating Rational</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body">
+                    <div class="login-regi-form">
+                        <form class="row form-style-1" name="get_otp_login_form" id="get_otp_login_form">
+                            <div class="row">
+                                <div class="alert alert-success print-success-msgg" style="display:none">
+                                    <ul></ul>
+                                </div>
+                                <div class="alert alert-danger print-error-msgg" style="display:none">
+                                    <ul></ul>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="email" name="EMAILADDRESS" id="EMAILADDRESS" class="form-control" placeholder="name@example.com" value="" required data-parsley-trigger="focusout" data-parsley-required-message="Enter Email">
+                                    <label for="floatingInput">Email ID*</label>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" name="PHONENUMBER" id="PHONENUMBER" class="form-control" placeholder="1234567890" required value="9822540715" data-parsley-trigger="focusout" data-parsley-required-message="Enter Phone Number">
+                                    <label for="floatingInput">Enter Phone Number</label>
+                                </div>
+                            </div> -->
+                            <div class="col-md-12">
+                                            <div class="form-floating">
+                                                <input id="password-field" type="password" class="form-control" name="PASSWORD" placeholder="password" required data-parsley-trigger="focusout" data-parsley-required-message="Enter Your Password">
+                                                <span toggle="#password-field" class="toggle-password fa fa-fw fa-eye-slash field-icon"></span>
+                                                <label for="floatingInput">Password*</label>
+
+                                            </div>
+                                        </div>
+                            <input type="hidden" name="_token" id="token_get_otp" value="xo4mnfh4DV7XuSbA11pljV4D8FWslQbjcFnPY0IQ">
+                            <button type="button" class="btn btn-primary mt-3 view-report-btn font-semi-bold" id="get_otp_login_btn">Login with OTP</button>
+                            <div class="content d-flex justify-content-between p-0">
+                                <a href="https://www.careratings.com/forgot_password" class="btn-link register-text">Forgot Password</a>
+                                <a href="https://www.careratings.com/register" class="btn-link ms-3 register-text">Register</a>
+                            </div>
+                            <img id="loader" loading="lazy" src="https://www.careratings.com/public/frontend-assets/images/loader.gif">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade login-otp" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="container height-100 d-flex justify-content-center align-items-center">
+                <form name="otp_validate_form" data-parsley-validate="" id="otp_validate_form" class="digit-group" data-autosubmit="false" autocomplete="off">
+                    <div class="position-relative">
+                        <div class="card p-2 text-center">
+                            <div class="row">
+                                <div class="alert alert-success print-success-msgg" style="display:none">
+                                    <ul></ul>
+                                </div>
+                                <div class="alert alert-danger print-error-msgg" style="display:none">
+                                    <ul></ul>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                            <h6>Please enter the one time password <br> to verify your account</h6>
+                            <div>
+                                <span>A code has been sent to</span>
+                                <small id="code_sent_user_email">*******9897</small>
+                            </div>
+                            <div class="digit-group">
+                                <input class="otp" onkeyup="tabChange(1)" type="text" id="digit-1" name="OTP[]" />
+                                <input class="otp" onkeyup="tabChange(2)" type="text" id="digit-2" name="OTP[]" />
+                                <input class="otp" onkeyup="tabChange(3)" type="text" id="digit-3" name="OTP[]" />
+                                <input class="otp" onkeyup="tabChange(4)" type="text" id="digit-4" name="OTP[]" />
+                            </div>
+                            <span class="err error-sign" id="otp_error"></span>
+                            <!-- <div class="mt-4">
+                                <button type="button" id="otp_validate_btn" class="btn btn-danger px-4 validate">Validate</button>
+                            </div> -->
+                            <div class="mt-4 mb-4">
+                                <!-- <button class="btn btn-danger px-4 validate ">Validate</button>  -->
+                                <button type="button" id="otp_validate_btn" class="btn btn-primary px-4 validate view-report-btn font-semi-bold">Validate</button>
+                            </div>
+                            <input type="hidden" name="EMAILADDRESS" id="email_address_validate_otp" value="">
+                            <input type="hidden" name="PHONENUMBER" id="mobile_number_validate_otp" value="">
+                            <input type="hidden" name="_token" id="token_validate_otp" value="xo4mnfh4DV7XuSbA11pljV4D8FWslQbjcFnPY0IQ">
+                            <div class="content d-flex justify-content-center align-items-center">
+                                <span>Didn't get the code?</span>
+                                <a id="resend_otp" class="btn-link ms-3 resend-text">Resend</a>
+                            </div>
+                            <img id="loader_resend" loading="lazy" src="https://www.careratings.com/public/frontend-assets/images/loader.gif">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- </div> -->
+
+    <div id="res" class="results hideResults results_php" role="region" tabindex="-1" aria-labelledby="modalH2">
+	<h1 class="sr-only">Search Results</h1>
+    <div class="callout" data-closable>
+                <button class="close-button" aria-label="Close" type="button" data-close id="closeSearchModal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="row" id="CompanyRowInput">
+            
+        </div>
+    </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const icon = document.getElementById('searchIcon');
+    const input = document.getElementById('company-search');
+
+    if(!icon || !input) return;
+
+    icon.addEventListener('click', function () {
+
+        const isHidden = input.hasAttribute('hidden');
+
+        if (isHidden) {
+
+            input.removeAttribute('hidden');
+            input.setAttribute('tabindex','0');
+            icon.setAttribute('aria-expanded','true');
+			icon.setAttribute('aria-label','Close search');
+            setTimeout(() => input.focus(), 50);
+
+        } else {
+
+            input.setAttribute('hidden','');
+            input.setAttribute('tabindex','-1');
+            icon.setAttribute('aria-expanded','false');
+			icon.setAttribute('aria-label','Open search');
+        }
+
+    });
+
+    document.addEventListener('keydown', function(e){
+
+        if(e.key === 'Escape' && !input.hasAttribute('hidden')){
+            input.setAttribute('hidden','');
+            input.setAttribute('tabindex','-1');
+            icon.setAttribute('aria-expanded','false');
+			icon.setAttribute('aria-label','Open search');
+            icon.focus();
+        }
+
+    });
+
+});
+</script>
+
+
+<script>
+	 var companyData = [];
+    var resultObject = [];
+     let results = document.getElementById("res");
+	 
+function myFunc(value){
+  if(value !== ""){
+    results.classList.remove("hideResults");
+    openSearchModal();
+  } else {
+    results.classList.add("hideResults");
+    closeSearchModal();
+  }
+}
+	
+
+
+
+
+
+	   $(document).ready(function() {
+
+        $(".close-button").on('click', function() {
+                $(".results").addClass("hideResults");
+                $("#company-search").val('');
+            });
+		 
+		  // alert("Hiiiii");
+		 
+          
+         
+	//    CommentrySectiondata();
+	   $("#company-search").keyup(function(){
+		
+		
+		var cinput = $("#company-search").val();
+        if(cinput.length>=3){ 
+            console.log(cinput);
+            headerSearchSectiondata(cinput);
+            // return true;
+        }
+		
+    });
+	
+	$("#CompanyInputmobile").keyup(function(){
+		
+		
+		var cinput = $("#CompanyInputmobile").val();
+        if(cinput.length>=4){ 
+            console.log(cinput);
+            headerSearchSectiondata(cinput);
+            // return true;
+        }
+    });
+	
+	
+	   
+
+
+    function headerSearchSectiondata(cinput){
+	   var ajaxurl = "https://www.careratings.com/header/searchlist";
+		 $.ajax({
+			type: "get",
+			url: ajaxurl,
+			data: {cinput:cinput},
+	   dataType: "JSON"
+		 }).done(function(response){
+	   if(response){
+		 
+		 // console.log(response.data);
+		
+		 
+            companyData = response.data;
+//             var foundValue = companyData.filter(obj=>obj.CompanyName==='IDBI INFO PVT LTD');
+
+// console.log(foundValue);
+            //  resultObject = search("IDBI", companyData);
+            //  let obj = companyData.find(x => x.CompanyName === 'IDBI');
+            // console.log(companyData.CompanyName);
+        //  $('#countryList').fadeIn();  
+        $("#CompanyRowInput").html(`
+    
+ 
+            <div class="col-lg-6">
+                <div class="organization-box">
+                    <h2 id="modalH2" class="heading-2 text-black mb-4 font-regular">Organization</h2>
+                    <ul>
+                        ${response.data.map(function(data, index){
+  return(`
+                    
+                        <li><a href="https://www.careratings.com/search?Id=${data.CompanyID}">${data.CompanyName}</a></li>
+                         
+  `)
+  }).join('')}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="reports-search-box">
+                    <h2 id="modalH2" class="heading-2 text-black mb-4 font-regular">Reports</h2>
+                    <ul>
+                        ${response.report.map(function(reportdata, index){
+  return(`
+
+
+
+                        
+                        <li><a href="https://www.careratings.com/uploads/newsfiles/${reportdata.pdf}">
+                                <p>${reportdata.title}</p>
+                                <!--<span class="date-report">7 October ,2022</span>-->
+                            </a>
+                        </li>
+                        
+                       
+
+
+                        `)
+  }).join('')}
+                    </ul>
+                </div>
+            </div>
+        
+   
+      
+  
+
+
+
+
+
+  
+  `);
+  
+   
+       
+       
+       
+       
+     } else {
+       $("#renderHtmlSearchdata").html("<div>No data Found.....</div>");
+     }
+       
+       });
+     }
+     //Form Submission
+     $("#loader").css('display', 'none');
+            var $selector = $("#get_otp_login_form");
+            form_get_otp2 = $selector.parsley();
+            validation = true;
+            $("#get_otp_login_btn").click(function(event) {
+                event.preventDefault();
+                form_get_otp2.validate();
+            });
+            form_get_otp2.subscribe('parsley:form:success', function(event) {
+                $("#loader").css('display', 'block');
+                let data = $("#get_otp_login_form").serialize();
+                $.ajax({
+                    url: "https://www.careratings.com/customergetotp",
+                    method: "post",
+                    data: data,
+                    success: function(response) {
+                        if ($.isEmptyObject(response.error)) {
+                            $('#get_certificate').css('display', 'block');
+                            $("#loader").css('display', 'none');
+                            $(".print-success-msg").find("ul").html('');
+                            $(".print-success-msg").css('display', 'none');
+                            $(".print-error-msgg").find("ul").html('');
+                            $(".print-error-msgg").css("display", "none");
+                            $(".print-reg-success-msg").find("ul").html('');
+                            $(".print-reg-success-msg").css('display', 'none');
+                            $(".print-reg-error-msg").find("ul").html('');
+                            $(".print-reg-error-msg").css('display', 'none');
+                            $(".print-success-msgg").find("ul").html('');
+                            $(".print-success-msgg").css('display', 'block');
+                            $(".print-success-msgg").find("ul").append('<li>' + response.success + '</li>');
+                            //pass to dashboard
+                            $('#exampleModalToggle').modal('toggle');
+                            $('#exampleModalToggle2').modal('show');
+                            if (response.email_address != '') {
+                                $("#email_address_validate_otp").val(response.email_address);
+                                $("#code_sent_user_email").text(response.email_address);
+                            }
+                            if (response.PHONENUMBER != '') {
+                                $("#mobile_number_validate_otp").val(response.PHONENUMBER);
+                            }
+                            // window.location.href = "https://www.careratings.com/user/dashboard";
+                            //end
+                        } else{
+							$("#loader").hide();
+							$("#loader_resend").hide();
+							printErrorMsgg(response.error);
+						}
+                    },
+                    error: function(response){
+						$("#loader").hide();
+						$("#loader_resend").hide();
+
+						if(response.responseJSON && response.responseJSON.error){
+							printErrorMsgg(response.responseJSON.error);
+						} else {
+							printErrorMsgg(['Something went wrong. Please try again.']);
+						}
+					}
+                });
+            });
+            /*
+              Validate form
+            */
+            var $selector = $("#otp_validate_form");
+            // form_validate_otp = $selector.parsley();
+            $("#otp_validate_btn").click(function(event) {
+                event.preventDefault();
+                var validation = true;
+                $('#otp_error').text('');
+                if ($('.otp').val() == '') {
+                    $('#otp_error').text('Please Enter Otp');
+                    validation = false;
+                };
+                if (validation) {
+                    let data = $("#otp_validate_form").serialize();
+                    $.ajax({
+                        url: "https://www.careratings.com/customervalidateotp",
+                        method: "post",
+                        data: data,
+                        success: function(response) {
+                            if ($.isEmptyObject(response.error)) {
+                                $(".print-success-msg").find("ul").html('');
+                                $(".print-success-msg").css('display', 'none');
+                                $(".print-error-msgg").find("ul").html('');
+                                $(".print-error-msgg").css("display", "none");
+                                $(".print-reg-success-msg").find("ul").html('');
+                                $(".print-reg-success-msg").css('display', 'none');
+                                $(".print-reg-error-msg").find("ul").html('');
+                                $(".print-reg-error-msg").css('display', 'none');
+                                $(".print-success-msgg").find("ul").html('');
+                                $(".print-success-msgg").css('display', 'block');
+                                $(".print-success-msgg").find("ul").append('<li>' + response.success + '</li>');
+                                //pass to dashboard
+                                window.location.href = "https://www.careratings.com/user/dashboard";
+                                //end
+                            } else {
+                                printErrorMsgg(response.error);
+                            }
+                        },
+                        error: function(response) {
+                            printErrorMsgg(response.error);
+                        }
+                    });
+                } else {
+                    return false;
+                }
+            });
+            /*
+              Resend the otp
+            */
+            $("#loader_resend").css('display', 'none');
+            $('#resend_otp').click(function() {
+                $("#loader_resend").css('display', 'block');
+                let data = $("#otp_validate_form").serialize();
+                $.ajax({
+                    url: "https://www.careratings.com/customergetotp",
+                    method: "post",
+                    data: data,
+                    success: function(response) {
+                        if ($.isEmptyObject(response.error)) {
+                            $("#loader_resend").css('display', 'none');
+                            $(".print-success-msg").find("ul").html('');
+                            $(".print-success-msg").css('display', 'none');
+                            $(".print-error-msgg").find("ul").html('');
+                            $(".print-error-msgg").css("display", "none");
+                            $(".print-reg-success-msg").find("ul").html('');
+                            $(".print-reg-success-msg").css('display', 'none');
+                            $(".print-reg-error-msg").find("ul").html('');
+                            $(".print-reg-error-msg").css('display', 'none');
+                            $(".print-success-msgg").find("ul").html('');
+                            $(".print-success-msgg").css('display', 'block');
+                            $(".print-success-msgg").find("ul").append('<li>' + response.success + '</li>');
+                            //pass to dashboard
+
+                            //end
+                        } else {
+                            printErrorMsgg(response.error);
+                        }
+                    },
+                    error: function(response) {
+                        printErrorMsgg(response.error);
+                    }
+                });
+            })
+	   });
+	   function printErrorMsgg(msg) {
+            $(".print-success-msgg").find("ul").html('');
+            $(".print-success-msgg").css('display', 'none');
+            $(".print-success-msg").find("ul").html('');
+            $(".print-success-msg").css('display', 'none');
+            $(".print-reg-success-msg").find("ul").html('');
+            $(".print-reg-success-msg").css('display', 'none');
+            $(".print-reg-error-msg").find("ul").html('');
+            $(".print-reg-error-msg").css('display', 'none');
+            $(".print-error-msgg").find("ul").html('');
+			$("#loader_resend").css('display', 'none');
+            // $(".print-error-msgg").css('display', 'block');
+            $.each(msg, function(key, value) {
+                $(".print-error-msgg").find("ul").append('<li>' + value + '</li>');
+            });
+        }
+
+        let tabChange = function (val) {
+  let ele = document.querySelectorAll(".digit-group input");
+  if (ele[val - 1].value != "") {
+    ele[val].focus();
+  } else if (ele[val - 1].value == "") {
+    ele[val - 2].focus();
+  }
+};
+
+// document.addEventListener('DOMContentLoaded', function () {
+    // Click event for dropdown toggle
+    // document.querySelectorAll('.dropdown-item.dropdown-toggle').forEach(function (toggle) {
+        // toggle.addEventListener('click', function (event) {
+            // event.preventDefault(); // Prevent default anchor tag behavior
+            // event.stopPropagation(); // Prevent click event from propagating to document
+
+            // Close other dropdowns except the clicked one
+            // document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+                // if (menu !== toggle.nextElementSibling) {
+                    // menu.classList.remove('show');
+                    // menu.style.display = 'none';
+                // }
+            // });
+
+            // Toggle 'show' class on the clicked dropdown menu
+            // var dropdownMenu = toggle.nextElementSibling;
+            // if (dropdownMenu.classList.contains('show')) {
+                // dropdownMenu.classList.remove('show');
+                // dropdownMenu.style.display = 'none';
+            // } else {
+                // dropdownMenu.classList.add('show');
+                // dropdownMenu.style.display = 'block';
+            // }
+        // });
+    // });
+
+    // Click on the document to close all dropdowns
+    // document.addEventListener('click', function (event) {
+        // if (!event.target.closest('.dropdown')) {
+            // document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+                // menu.classList.remove('show');
+                // menu.style.display = 'none';
+            // });
+        // }
+    // });
+// });
+
+/* -- Accessible keyboard navigation for nav dropdowns -- */
+(function () {
+    'use strict';
+
+    function openMenu(trigger, menu) {
+        menu.style.display = 'block';
+        menu.style.visibility = 'visible';
+        menu.style.opacity = '1';
+        menu.classList.add('show');
+        trigger.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu(trigger, menu) {
+        menu.style.display = '';
+        menu.style.visibility = '';
+        menu.style.opacity = '';
+        menu.classList.remove('show');
+        trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    function isOpen(menu) {
+        return menu.classList.contains('show') || menu.style.display === 'block';
+    }
+
+    function focusFirst(menu) {
+        var first = menu.querySelector('.dropdown-item:not(.disabled):not([disabled])');
+        if (first) first.focus();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        /* Add role="menuitem" to all dropdown links */
+        document.querySelectorAll('.navbar-nav .dropdown-menu .dropdown-item').forEach(function (el) {
+            el.setAttribute('role', 'menuitem');
+        });
+
+        var allDropdowns = Array.from(document.querySelectorAll('.navbar-nav li.nav-item.dropdown'));
+
+        function closeAll(except) {
+            allDropdowns.forEach(function (li) {
+                if (li === except) return;
+                var t = li.querySelector('[data-bs-toggle="dropdown"]');
+                var m = li.querySelector('.dropdown-menu');
+                if (t && m && isOpen(m)) closeMenu(t, m);
+            });
+        }
+
+        allDropdowns.forEach(function (li) {
+            var trigger = li.querySelector('[data-bs-toggle="dropdown"]');
+            var menu    = li.querySelector('.dropdown-menu');
+            if (!trigger || !menu) return;
+
+            /* -- Enter / Space / ArrowDown on the trigger -- */
+            trigger.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    if (isOpen(menu)) {
+                        closeMenu(trigger, menu);
+                    } else {
+                        closeAll(li);
+                        openMenu(trigger, menu);
+                        focusFirst(menu);
+                    }
+                }
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeMenu(trigger, menu);
+                    trigger.focus();
+                }
+            });
+
+            /* -- Arrow keys / Escape / Tab inside the open menu -- */
+            menu.addEventListener('keydown', function (e) {
+                var items = Array.from(menu.querySelectorAll('.dropdown-item:not(.disabled):not([disabled])'));
+                var idx   = items.indexOf(document.activeElement);
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    (items[idx + 1] || items[0]).focus();
+
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    (items[idx - 1] || items[items.length - 1]).focus();
+
+                } else if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeMenu(trigger, menu);
+                    trigger.focus();
+
+                } else if (e.key === 'Tab') {
+                    closeMenu(trigger, menu);
+                    /* no preventDefault ? let Tab move naturally */
+                }
+            });
+        });
+
+        /* -- Click outside any open menu closes it -- */
+        document.addEventListener('click', function (e) {
+            allDropdowns.forEach(function (li) {
+                if (!li.contains(e.target)) {
+                    var t = li.querySelector('[data-bs-toggle="dropdown"]');
+                    var m = li.querySelector('.dropdown-menu');
+                    if (t && m && isOpen(m)) closeMenu(t, m);
+                }
+            });
+        });
+
+    });
+}());
+
+const modal = document.getElementById("res");
+const closeBtn = document.getElementById("closeSearchModal");
+
+function openSearchModal() {
+    modal.classList.remove("hideResults");
+    modal.setAttribute("aria-hidden", "false");
+}
+
+function closeSearchModal() {
+    modal.classList.add("hideResults");
+    modal.setAttribute("aria-hidden", "true");
+}
+
+closeBtn.addEventListener("click", closeSearchModal);
+
+// Close the results dropdown on Escape, or when clicking anywhere outside it
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hideResults')) {
+        closeSearchModal();
+    }
+});
+
+document.addEventListener('click', function (e) {
+    if (modal.classList.contains('hideResults')) return;
+    const searchInput = document.getElementById('company-search');
+    const isInside = modal.contains(e.target) || (searchInput && searchInput.contains(e.target)) || e.target.id === 'searchIcon';
+    if (!isInside) {
+        closeSearchModal();
+    }
+});
+
+    </script>
+	<script>
+	const mainElement = document.querySelector('main');
+if (mainElement && !mainElement.id) {
+  mainElement.id = 'main-content';
+}
+
+const skipLink = document.createElement('a');
+skipLink.href = '#main-content';
+skipLink.textContent = 'Skip to main content';
+skipLink.className = 'skip-link';
+
+// Apply styles to keep it hidden until focused
+const styles = {
+  position: 'absolute',
+  top: '-40px',
+  left: '0',
+  background: '#000',
+  color: '#fff',
+  padding: '8px',
+  zIndex: '10000',
+  transition: 'top 0.3s'
+};
+
+Object.assign(skipLink.style, styles);
+
+// Add focus styles via a style tag for better persistence and CSS compliance
+const styleTag = document.createElement('style');
+styleTag.innerHTML = `
+  .skip-link:focus {
+    top: 0 !important;
+    outline: 2px solid #fff;
+  }
+`;
+document.head.appendChild(styleTag);
+
+document.body.prepend(skipLink);
+
+const data = {
+  success: true,
+  mainId: mainElement.id,
+  skipLinkInserted: !!document.querySelector('.skip-link')
+};
+	</script>
+	<script>
+	const container = document.querySelector('div#renderHtmlRecentInsightsSectiondata');
+const slides = container.querySelectorAll('.slick-slide[tabindex="0"]');
+const links = container.querySelectorAll('.slick-slide[tabindex="0"] a[tabindex="0"]');
+
+slides.forEach(slide => {
+  slide.setAttribute('data-old-tabindex', '0');
+  slide.setAttribute('tabindex', '-1');
+});
+
+const data = {
+  slidesCount: slides.length,
+  linksCount: links.length,
+  message: "Set tabindex='-1' on " + slides.length + " slick-slide elements to remove redundant tab stops."
+};
+	</script><section class="cookies" id="cookieNotice" style="display:none;">
+         <div class="container-fluid">
+            <div class="row justify-content-center">
+               <div class="col-lg-11 col-md-12">
+                  <div class="row gx-5">
+                     <div class="col-md-12">
+                        <div class="cookie-banner">
+                           <p><img src="./public/frontend-assets/images/cookies.svg" alt="cookies icon" width="22" height="22" class="img-fluid cookie-img">We use cookies to improve your journey and to personalize your web experience. By continuing to use this site, you are accepting the our <a href="#" onclick="event.preventDefault();">cookie policy.</a></p>
+                           <button class="cookie-close" onclick="acceptCookieConsent();">Accept</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+			
+		<main role="main">
+<style>
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+</style>
+
+<h1 class="sr-only">
+  CareEdge Ratings – Explore Capabilities, Reports, Events, Ratings, and App Details
+</h1>
+
+<p class="visually-hidden" id="carouselInstructions">
+    This is a carousel. Slides change automatically. Use the pause button, arrow keys, or the previous/next buttons to control it.
+</p>
+   <section class="home-slider-sec position-relative">
+      <!-- Swiper -->
+      <div class="swiper main-slider" role="region" aria-roledescription="carousel" aria-label="Main" aria-describedby="carouselInstructions" aria-live="off" id="main-content">
+         <button id="carouselToggle" class="btn btn-white" aria-controls="mainSlider" aria-pressed="false" style="position:absolute; top:10px; right:10px; z-index:10;">Pause</button>
+		 <div class="swiper-wrapper" id="renderHtmlHomeBannerSectiondata">
+            
+           
+           
+         </div>
+         <div class="swiper-button-next" role="button" tabindex="0" aria-label="Next slide"></div>
+         <div class="swiper-button-prev" role="button" tabindex="0" aria-label="Previous slide"></div>
+         <div class="swiper-pagination"></div>
+      </div>
+      <div class="recent-ratings-list">
+         <h2 class="heading-3">Recent Ratings</h2>
+         <div class="scrollbar">
+            <ul class="p-0 m-0" data-mcs-theme="light" id="renderHtmlCompanyRecentReportsHomeSection">
+               
+               
+               
+               
+            </ul>
+         </div>
+         <!-- <a href="javascript:void(0)" class="btn btn-link primary text-uppercase mt-auto">View More</a> -->
+      </div>
+      <div class="find-ratings">
+         <div class="container-fluid ">
+         <h2 class="heading-2 text-white m-0 font-regular pe-5 desktop-show1">Find Ratings</h2>
+            <form>
+               <h2 class="heading-2 text-white m-0 font-regular pe-5 desktop-hide1">Find Ratings</h2>
+			   <label for ="CompanybannerInputs" class="visually-hidden">
+				  Search Company to Find Ratings
+				</label>
+				<span id="searchInstructions" class="sr-only">On entering data into this input field,  search results dialog will appear below</span>
+               <input type="text" class="form-control company-name" id="CompanybannerInputs" oninput="myFunc1(this.value)" value=""
+                  placeholder="Search Company to Find Ratings " />
+               
+                 <div id="res3" class="results1 hideResults1">
+                    <div class="row" id="CompanybannerRowInput">
+                        
+                    </div>
+                </div>
+                
+               <a class="btn btn-white ms-auto desktop-hide1" id="navbtn" aria-label="Find Ratings" href="https://www.careratings.com/find-ratings">FIND RATINGS</a>
+               <button class="btn desktop-show1 arrow-btn ms-auto"  id="nextbtn" aria-label="nav btn"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+        <g id="Group_209" data-name="Group 209" transform="translate(-1728 -1881)">
+            <circle id="Ellipse_11" data-name="Ellipse 11" cx="22" cy="22" r="22" transform="translate(1728 1881)" fill="#fff"></circle>
+            <g id="Group_135" data-name="Group 135" transform="translate(1213 1811)">
+                <rect id="Rectangle_64" data-name="Rectangle 64" width="24" height="24" transform="translate(525 80)" fill="#00d3c3" opacity="0"></rect>
+                <path id="Union_11" data-name="Union 11" d="M.293,13.021a1,1,0,0,1,0-1.415l4.95-4.95L.293,1.707A1,1,0,0,1,1.707.293L7.364,5.95a1,1,0,0,1,0,1.414L1.707,13.021a1,1,0,0,1-1.415,0Z" transform="translate(530.515 95.828) rotate(-90)" fill="#00d3c3"></path>
+            </g>
+        </g>
+    </svg></button>
+               <div class="pms-cons-copm d-none">
+                  <ul class="p-0 m-0">
+                     <li class="d-flex border-0">
+                        <div class="flex-shrink-0">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="12.167" height="14.833"
+                              viewBox="0 0 12.167 14.833">
+                              <g id="ic-actions-file" transform="translate(0.75 0.75)">
+                                 <path id="Path_18" data-name="Path 18"
+                                    d="M11.24,2H5.333A1.333,1.333,0,0,0,4,3.333V14a1.333,1.333,0,0,0,1.333,1.333h8A1.333,1.333,0,0,0,14.667,14V6.613a.627.627,0,0,0-.12-.38L11.78,2.287A.667.667,0,0,0,11.24,2Z"
+                                    transform="translate(-4 -2)" fill="none" stroke="#fff"
+                                    stroke-linecap="round" stroke-linejoin="bevel" stroke-width="1.5"
+                                    fill-rule="evenodd" />
+                              </g>
+                           </svg>
+                        </div>
+                        <div class="flex-grow-1">
+                           <a class="m-0 d-block" href="#" onclick="event.preventDefault();" >PMS Construction Company</a>
+                           <span class="text-small text-light">24TH MAY 2021</span>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </form>
+         </div>
+      </div>
+   </section>
+
+   
+
+  
+
+
+
+
+
+<script>
+ var companyData = [];
+ var resultObject = [];
+  let results1 = document.getElementById("res3");
+
+ // Declared in outer scope so the toggle button (and keyboard handlers)
+ // can reach it. Previously this was `var mainslider` INSIDE the ajax
+ // .done() callback below, which meant the Pause/Play button click
+ // handler at the bottom of this script could not see it at all.
+ let mainslider;
+ const toggleBtn = document.getElementById("carouselToggle");
+ const sliderEl = document.querySelector(".main-slider");
+
+
+function myFunc1(value){
+if(value !== ""){
+ results1.classList.remove("hideResults1");
+}else{
+ results1.classList.add("hideResults1");
+}
+
+}
+
+
+
+
+
+
+   $(document).ready(function() {
+    
+    //  alert("Hiiiii");exit;
+    
+   
+      
+//    CommentrySectiondata();
+   $("#CompanybannerInputs").keyup(function(){
+    var cinput = $("#CompanybannerInputs").val();
+    if(cinput.length>=3){ 
+      console.log(cinput);
+   bannerSearchSectiondata(cinput);
+            // return true;
+        }
+  
+
+ });
+
+
+   
+
+
+ function bannerSearchSectiondata(cinput){
+   var ajaxurl = "https://www.careratings.com/header/searchlistinsights";
+    $.ajax({
+      type: "get",
+      url: ajaxurl,
+      data: {cinput:cinput},
+   dataType: "JSON"
+    }).done(function(response){
+   if(response){
+    
+                 
+    
+    
+   
+    
+         companyData = response.data;
+    //      console.log(companyData);
+    //      if(CommonContent['Title']){
+    //   console.log('tes');
+    // }else{
+    //   console.log('fail');
+    // }
+//             var foundValue = companyData.filter(obj=>obj.CompanyName==='IDBI INFO PVT LTD');
+
+// console.log(foundValue);
+         //  resultObject = search("IDBI", companyData);
+         //  let obj = companyData.find(x => x.CompanyName === 'IDBI');
+         // console.log(companyData.CompanyName);
+     //  $('#countryList').fadeIn();  
+     
+               
+     $("#CompanybannerRowInput").html(`
+
+
+
+   
+
+
+
+
+
+
+
+
+         <div class="col-lg-6">
+             <div class="organization-box">
+                 <h3 class="heading-2 text-black mb-4 font-regular">Organization</h3>
+                 <ul>
+                     ${response.data.map(function(data, index){
+return(`
+
+                     <li><a href="https://www.careratings.com/search?Id=${data.CompanyID}">${data.CompanyName}</a></li>
+                      
+`)
+}).join('')}
+                 </ul>
+             </div>
+         </div>
+         <div class="col-lg-6">
+             <div class="reports-search-box">
+             <!--<div class="no-data-list"><h3>No Data Found</h3></div>-->
+                 <h3 class="heading-2 text-black mb-4 font-regular">Press Release</h3>
+                 <ul>
+                
+                     ${response.report.map(function(reportdata, index){
+                      
+                        return(`
+
+
+
+                     
+                     <li><a target="_blank" href="https://www.careratings.com/./upload/CompanyFiles/PR/${reportdata.pdf}">
+                             <p>${reportdata.title}</p>
+                             <!--<span class="date-report">7 October ,2022</span>-->
+                         </a>
+                     </li>
+                     
+                    
+
+
+                     `)
+                      // }
+
+}).join('')}
+                 </ul>
+             </div>
+         </div>
+     
+
+   
+
+
+
+
+
+
+
+`);
+
+
+    
+    
+    
+    
+  } else {
+    $("#CompanybannerRowInput").html("<div>No data Found.....</div>");
+  }
+    
+    });
+  }
+  
+  
+
+
+
+
+
+    
+   });
+   
+  
+  
+
+
+
+  $(document).ready(function() {
+
+   var companyName = "IDBI";
+   var YearID = 2022;
+        var fdate = "";
+        var tdate = "";
+  CompanyRecentHomeReportsSection(companyName, YearID, fdate,tdate);
+
+
+  var PageId = "2";
+  var SectionId  = "2";
+  console.log(SectionId);
+  HomeBannerSection(PageId, SectionId);
+  
+  });
+  
+  function HomeBannerSection(PageId, SectionId){
+  var ajaxurl = "https://www.careratings.com/parentdata";
+    $.ajax({
+      type: "get",
+      url: ajaxurl,
+      data: {PageId:PageId, SectionId : SectionId},
+  dataType: "JSON"
+    }).done(function(response){
+  if(response){
+    
+    console.log(response.data);
+   
+        $("#renderHtmlHomeBannerSectiondata").html(`
+  
+        ${response.data.map(function(data, index){
+        return(`
+       
+
+        <div class="swiper-slide temp-class-1" role="region" aria-roledescription="slide" aria-label="${index + 1} of ${response.data.length}" role="tabpanel">
+		 
+		<style>
+		.main-slider .swiper-slide img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.swiper-pagination-horizontal {
+  background: rgba(0, 0, 0, 0.3); 
+  padding: 5px 10px !important;
+  border-radius: 10px;
+  width: auto !important;
+
+}
+		</style>
+		
+		<picture>
+			<source media="(max-width: 649px)" srcset="https://www.careratings.com/storage/${data.image1}" width="485" height="580">
+			<source media="(min-width: 650px)" srcset="https://www.careratings.com/storage/${data.image}" width="1356" height="592">
+			<img src="https://www.careratings.com/storage/${data.image}" class="img-fluid" alt="InsightEdge A CareEdge Podcast" width="1356" height="592">
+		</picture>
+		
+
+		
+			   
+			   
+               ${(data.title != null)?` 
+               <div class="banner-caption">
+               
+               
+               ${(data.title != null)?` 
+                  <h2 class="heading-1 mt-5 pt-5">${data.title}
+                  </h2>
+                  `:`
+                  <span></span>
+                  `}
+                  ${data.title1 != null?` 
+                  <h3 class="heading-3 mb-5 pb-3 pt-0">${data.title1}
+                  </h3>
+                  `:`
+                  <span></span>
+                  `}
+                  ${(data.buttonLink1 != null && data.buttonText != null)?`
+                  <a href="${data.buttonLink1}" class="btn btn-primary w-auto" target="_blank">${data.buttonText}</a>
+                  `:`
+                  <span></sapn>
+                  
+                  `}
+               </div>
+               `:`
+               <div class="banner-without-caption ">
+               ${(data.buttonLink1 != null && data.buttonText != null)?`
+                  <a href="${data.buttonLink1}" class="btn btn-primary w-auto">${data.buttonText}</a>
+                  `:`
+                  <span></sapn>
+                  
+                  `}
+                  </div>
+                  `}
+            </div>
+
+		
+
+      
+
+
+
+
+
+
+
+
+
+
+  
+        `)
+        }).join('')}
+  
+  
+        `);
+  
+  
+  
+        mainslider = new Swiper(".main-slider", {
+  grabCursor: true,
+  effect: "creative",
+  speed: 800,           // ← reduced from 1500 to 800ms (snappier transition)
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true, // arrow keys only act when the carousel is on-screen
+  },
+  autoplay: {
+    delay: 5000,        // ← slide visible for 5 seconds
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+  el: ".swiper-pagination",
+  clickable: true,
+  renderBullet: function (index, className) {
+    return `<button class="${className}" role="tab" 
+              id="slide-tab-${index}" 
+              aria-controls="slide-panel-${index}" 
+              aria-selected="${index === 0 ? 'true' : 'false'}" 
+              tabindex="${index === 0 ? '0' : '-1'}">
+              <span class="sr-only">Go to slide ${index + 1}</span>
+            </button>`;
+  },
+},
+  on: {
+    init: function () {
+      // Wrap bullets in a tablist
+      const pagination = document.querySelector(".swiper-pagination");
+      if (pagination) {
+        pagination.setAttribute("role", "tablist");
+        pagination.setAttribute("aria-label", "Slides");
+      }
+
+      // Set role=tabpanel on each slide
+      const slides = document.querySelectorAll(".main-slider .swiper-slide");
+      slides.forEach((slide, i) => {
+        slide.setAttribute("role", "tabpanel");
+        slide.setAttribute("id", `slide-panel-${i}`);
+        slide.setAttribute("aria-labelledby", `slide-tab-${i}`);
+      });
+    },
+
+    slideChange: function () {
+      const tabs = document.querySelectorAll(".swiper-pagination [role='tab']");
+      tabs.forEach((tab, i) => {
+        const isActive = i === this.realIndex;
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        tab.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+    },
+
+    autoplayStart: function () {
+      document.querySelector(".main-slider").setAttribute("aria-live", "off");
+    },
+    autoplayStop: function () {
+      document.querySelector(".main-slider").setAttribute("aria-live", "polite");
+    }
+  }
+});
+
+ if ($(window).width() > 1024) {
+   mainslider.on("slideChangeTransitionStart", function () {
+     gsap.fromTo(
+       ".banner-caption .heading-3",
+       { opacity: 0, y: 100 },
+       { opacity: 1, y: 0, duration: 1, delay: 1.3 }
+     );
+     gsap.fromTo(
+       ".banner-caption .heading-1",
+       { opacity: 0, y: 100 },
+       { opacity: 1, y: 0, duration: 1, delay: 1.4 }
+     );
+     gsap.fromTo(
+       ".banner-caption .know-more-btn",
+       { opacity: 0, y: 100 },
+       { opacity: 1, y: 0, duration: 1, delay: 1.5 }
+     );
+
+     // setTimeout(() =>{
+     //     //$('.swiper-slide-active .color_slide').css('transform', 'translateX(-200px)');
+     //    //  $('.swiper-slide-active img').css('clip-path', 'polygon(50% 0%, 100% 1%, 100% 100%, 0 100%, 0 0)');
+     // },500)
+   });
+ }
+
+ // ---- Accessibility wiring (added) ----
+ setupCarouselKeyboardControls();
+    
+    
+    
+    
+  } else {
+    $("#renderHtmlHomeBghghjhjannerSectiondata").html("<div>No data Found.....</div>");
+  }
+    
+    });
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  function CompanyRecentHomeReportsSection(companyName,YearID, fdate,tdate) {
+			  var ajaxurl = "https://www.careratings.com/rrcompany";
+			  $.ajax({
+				type: "get",
+				url: ajaxurl,
+				data: {
+				  companyName: companyName, YearID:YearID, fdate:fdate, tdate: tdate
+				},
+				dataType: "JSON"
+			  }).done(function(response) {
+				if (response) {
+		  
+				  console.log(response.data);
+		  
+				  $("#renderHtmlCompanyRecentReportsHomeSection").html(`
+					
+						  ${response.data.map(function(data, index){
+						  return(`
+							
+												
+                    <li class="d-flex">
+                  <div class="flex-shrink-0">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="12.167" height="14.833"
+                        viewBox="0 0 12.167 14.833">
+                        <g id="ic-actions-file" transform="translate(0.75 0.75)">
+                           <path id="Path_18" data-name="Path 18"
+                              d="M11.24,2H5.333A1.333,1.333,0,0,0,4,3.333V14a1.333,1.333,0,0,0,1.333,1.333h8A1.333,1.333,0,0,0,14.667,14V6.613a.627.627,0,0,0-.12-.38L11.78,2.287A.667.667,0,0,0,11.24,2Z"
+                              transform="translate(-4 -2)" fill="none" stroke="#fff" stroke-linecap="round"
+                              stroke-linejoin="bevel" stroke-width="1.5" fill-rule="evenodd" />
+                        </g>
+                     </svg>
+                  </div>
+                  <div class="flex-grow-1">
+                     <a class="m-0 d-block" href="https://www.careratings.com/search?Id=${data.CompanyID}">${data.CompanyName}</a>
+                     <span class="text-small text-light">${getOrdinalNum(data.PublishedDate)}</span>
+                  </div>
+               </li>
+                    
+                    
+                    
+                    
+
+
+											
+	  
+	  
+											 
+			
+					
+						  `)
+						  }).join('')}
+						  
+			
+						  
+					
+						  `);
+		  
+						//   renderEco();
+		  
+		  
+		  
+		  
+		  
+				} else {
+				  $("#renderHtmlCompanyRecentReportsHomeSection").html("<div>No data Found.....</div>");
+				}
+		  
+			  });
+	  
+	  
+			}
+
+ // ---------------------------------------------------------------
+ // Accessibility: keyboard + focus control for the auto-rotating
+ // carousel (WCAG 2.2.2 Pause, Stop, Hide). Called once, right after
+ // `mainslider` is created inside HomeBannerSection()'s ajax success.
+ // ---------------------------------------------------------------
+ function setupCarouselKeyboardControls() {
+
+   // 1) Pause/Play toggle button (now works because `mainslider`
+   //    is reachable — see the `let mainslider;` declared at the top).
+   toggleBtn.addEventListener("click", function () {
+     if (mainslider.autoplay.running) {
+       mainslider.autoplay.stop();
+       sliderEl.setAttribute("aria-live", "polite");
+       toggleBtn.textContent = "Play";
+       toggleBtn.setAttribute("aria-pressed", "true");
+     } else {
+       mainslider.autoplay.start();
+       sliderEl.setAttribute("aria-live", "off");
+       toggleBtn.textContent = "Pause";
+       toggleBtn.setAttribute("aria-pressed", "false");
+     }
+   });
+
+   // 2) Pause auto-rotation when a keyboard user tabs into any focusable
+   //    element inside the carousel (links, buttons in a slide, etc.),
+   //    and resume only once focus has actually left the carousel.
+   const sliderWrapper = document.querySelector('.main-slider .swiper-wrapper');
+
+   sliderWrapper.addEventListener('focusin', () => {
+     if (mainslider.autoplay.running) {
+       mainslider.autoplay.stop();
+       sliderEl.setAttribute("aria-live", "polite");
+       toggleBtn.textContent = "Play";
+       toggleBtn.setAttribute("aria-pressed", "true");
+     }
+   });
+
+   sliderWrapper.addEventListener('focusout', () => {
+     // small timeout lets document.activeElement update before we check it
+     setTimeout(() => {
+       if (!sliderWrapper.contains(document.activeElement)) {
+         mainslider.autoplay.start();
+         sliderEl.setAttribute("aria-live", "off");
+         toggleBtn.textContent = "Pause";
+         toggleBtn.setAttribute("aria-pressed", "false");
+       }
+     }, 0);
+   });
+
+   // 3) Roving-tabindex arrow key support for the pagination dots
+   //    (they already have role="tab"/tabindex from renderBullet above;
+   //    this adds the actual Left/Right key behaviour expected of tabs).
+   const pagination = document.querySelector('.swiper-pagination');
+   if (pagination) {
+     pagination.addEventListener('keydown', (e) => {
+       if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+
+       const tabs = Array.from(pagination.querySelectorAll('[role="tab"]'));
+       const currentIndex = tabs.findIndex(t => t.getAttribute('tabindex') === '0');
+       if (currentIndex === -1) return;
+
+       let newIndex = e.key === 'ArrowRight'
+         ? (currentIndex + 1) % tabs.length
+         : (currentIndex - 1 + tabs.length) % tabs.length;
+
+       e.preventDefault();
+       mainslider.slideToLoop(newIndex);
+       tabs[currentIndex].setAttribute('tabindex', '-1');
+       tabs[newIndex].setAttribute('tabindex', '0');
+       tabs[newIndex].focus();
+     });
+   }
+ }
+  </script>
+</main>   
+			
+		<section class="lazybg capabilities-sec bg-grey overflow-hidden" style="background-image:url(https://www.careratings.com/public/frontend-assets/images/capabilities.webp);">
+   <div class="container-fluid left-space pe-0" id="renderHtmlHomeCapabilitySectorSectiondata">
+      
+   </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+   // var data = [];
+   // var foundData = data.find(i => i.goalpoints_Id == id);
+   // 	console.log(foundData);
+   
+   //    data = response.data;
+   
+   
+      $(document).ready(function() {
+        
+         // alert("Hiiiii");
+        
+           var PageId = "2";
+      var SectionId  = "3";
+      console.log(SectionId);
+      HomeCapabilitySectorSectiondata(PageId, SectionId);
+      
+      
+      
+        
+      });
+      
+      function HomeCapabilitySectorSectiondata(PageId, SectionId){
+      var ajaxurl = "https://www.careratings.com/parentdata";
+        $.ajax({
+           type: "get",
+           url: ajaxurl,
+           data: {PageId:PageId, SectionId : SectionId},
+      dataType: "JSON"
+        }).done(function(response){
+      if(response){
+        
+        console.log(response.data);
+       
+        
+     
+        $("#renderHtmlHomeCapabilitySectorSectiondata").html(`
+   
+   ${response.data.map(function(data, index){
+   return(`
+   
+   <div class="row">
+         <div class="col-md-12">
+            <h2 class="heading-1 text-black">${data.title}</h2>
+         </div>
+      </div>
+      <div class="accordian-style-1 mt-5 row g-0">
+         <div class="col-md-5 col-xl-3">
+            <div class="accordian-title-box">
+               <span class="acc-title text-center"
+                  >${data.ChildView[0].blog_child_title}</span
+                  >
+               <span class="acc-count">1</span>
+            </div>
+         </div>
+         <div class="col-md-12 col-xl-9">
+            <div class="accordion">
+               ${data.ChildView.map(function(ChildViewData, index){
+     return`
+               
+               <div class="accordion-item">
+                  <h3 class="accordion-header">
+                     <button id="btnId${index}" class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapse${index}" >
+                        ${ChildViewData.blog_child_title}
+                     </button>
+                  </h3>
+                  <div
+                     id="collapse${index}"
+                     class="accordion-collapse collapse"
+					 role="region"
+						aria-labelledby="btnId${index}"
+                     >
+                     
+                     <div class="accordion-body">
+                         <p>${ChildViewData.blog_child_desc}</p>
+                         <a href="${ChildViewData.blog_child_buttonLink}" class="btn btn-link primary p-0 w-auto">Read
+                           ${ChildViewData.blog_child_buttonText}</a>
+                      </div>
+                  </div>
+               </div>
+                
+              `
+     }).join('')}
+              
+            </div>
+         </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+   
+   `)
+   }).join('')}
+   
+   
+   `);
+   
+   $("#collapse0").addClass('show');
+   $("#btnId0").removeClass('collapsed');
+   $("#btnId0").attr("aria-expanded", "true");
+      
+        
+        
+        
+        
+        
+      } else {
+        $("#renderHtmlHomeCapabilitySectorSectiondata").html("<div>No data Found.....</div>");
+      }
+        
+        });
+      }
+      
+      
+      
+      $(document).on("click", ".accordion-button", function () {
+			const isExpanded = $(this).attr("aria-expanded") === "true";
+
+			// reset all buttons
+			$(".accordion-button").attr("aria-expanded", "false");
+
+			// set current
+			$(this).attr("aria-expanded", isExpanded ? "false" : "true");
+		});
+      
+      
+      
+      
+      
+      
+      
+      </script>   
+			
+		<section class="news-grid news_grid_php">
+	<div class="container-fluid p-0">
+	   <div class="row g-0">
+		  <div class="col-md-12 webinars-newp col-xl-4">
+			 <div class="content-img-box position-relative webinar-box equal-height">
+			 <div class="swiper mySwiper_webinar1">
+						<div class="swiper-wrapper" id="renderHtmlFeaturedMediaSectiondata">
+					
+
+						</div>
+
+						  
+					  </div>
+			 </div>
+		  </div>
+		  <div class="col-md-12 col-xl-4" id="renderHtmlLatestPodcastsSectiondata">
+			
+		 </div>
+		  <div class="col-md-12 col-xl-4" id="renderHtmlLatestCommentrySectiondata">
+			
+		  </div>
+	   </div>
+	</div>
+ </section>
+
+
+
+ 
+
+<script>
+	
+  
+	
+	   $(document).ready(function() {
+		 
+		  // alert("Hiiiii");
+
+		  $(".play__btnOne").yu2fvl();
+
+$('body').on("click", ".play__btnOne", function () {
+  $("header").removeClass("fixed-header");
+});
+		 
+      var PageId = 6;
+   
+   
+	  FeaturedMediaCategorySectiondata(PageId);
+  
+   });
+   
+   function FeaturedMediaCategorySectiondata(PageId){
+	   var ajaxurl = "https://www.careratings.com/featureddata";
+		 $.ajax({
+			type: "get",
+			url: ajaxurl,
+			data: {PageId:PageId},
+	   dataType: "JSON"
+		 }).done(function(response){
+	   if(response){
+		 
+		 console.log(response.data);
+		
+		 
+	  
+		 $("#renderHtmlFeaturedMediaSectiondata").html(`
+  
+  
+  
+		
+  
+  
+  
+  
+	
+	${response.data.map(function(data, index){
+		var dateget = new Date()
+    var year = dateget.getFullYear();
+    var month = dateget.getMonth() + 1;
+    var day = dateget.getDate();
+    var datemain = year + '-' + month + '-' + day;
+    var date2 = new Date(datemain)
+    var date1 = new Date(data.Date);
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+	console.log(Difference_In_Days);
+	console.log(data);
+	return(`
+
+	
+							<div class="swiper-slide">
+							<img src="https://www.careratings.com/upload/video/Thumbnail_Image/${data.Image}" class="img-fluid" width="452" height="715" loading="lazy" alt="Graphical Representation Of video Poster" />
+							<div class="content-area">
+							   <h3 class="heading-3 font-bold ">Webinars</h3>
+							   <span class="text-small text-light mb-3 d-block">${getOrdinalNum(data.Date)}</span>
+							   <!-- <h3 class="heading-2 mb-4 font-light">${data.Title}</h3>
+							   <div class="d-flex align-items-center">
+								   ${data.Url !== null ? `
+                <a href="${data.Url}" class="play__btnOne btn btn-primary btn-default me-3">${data.butto}</a>
+            ` : `
+                <a href="${data.RegURL}" class="play__btnOne btn btn-primary btn-default me-3">Register</a>
+            `}
+								  <a href="https://www.careratings.com/events-and-webinars" class="btn btn-link primary p-0 w-auto">VIEW MORE</a> -->
+								  <h4 id="webinarTitle${index}" class="heading-2 mb-4 font-light">${data.Title}</h4>
+									<div class="d-flex align-items-center">
+									   ${data.Url !== null ? `
+										   <a 
+											  id="watchBtn${index}" 
+											  href="${data.Url}" 
+											  class="play__btnOne btn btn-primary btn-default me-3"
+											  aria-labelledby="watchBtn${index} ${data.Title}">
+											  ${data.butto}
+										   </a>
+									   ` : `
+										   <a 
+											  id="watchBtn${index}" 
+											  href="${data.RegURL}" 
+											  class="play__btnOne btn btn-primary btn-default me-3"
+											  aria-labelledby="watchBtn${index} ${data.Title}">
+											  Register
+										   </a>
+									   `}
+							   </div>
+							</div>
+						  </div>
+		
+    
+
+
+  
+	
+	`)
+	}).join('')}
+	
+
+
+
+
+
+	
+	`);
+
+
+	$("#renderHtmlLatestPodcastsSectiondata").html(`
+  
+  
+  
+		
+  	
+	${response.Podcast.map(function(PodcastData, index){
+
+    // 1. Define the transcript separately here
+    const transcriptHtml = `<details class="transcript-details mt-4"><summary class="cursor-pointer font-bold py-2 border-t border-gray-200" style="outline:none;">View Transcript</summary><div class="transcript-content text-sm leading-relaxed pt-3"><strong>Speaker:</strong> Ankush Pathrabbe, BFSI Analyst at CARE Ratings. <br><br><strong>FY26 Overview:</strong> New business premiums grew 15.7% YoY in FY26 compared to 5.1% in FY25. Momentum strengthened in March 2026 with a 23.5% YoY rise, driven by year-end seasonality and group single policy closures. <br><br><strong>Market Performance:</strong> Private insurers grew 16.7% while LIC grew 14.9%. LIC remains the leader with a 56.7% market share of new business premiums in FY26. <br><br><strong>Segments:</strong> Group single premiums rose 15.8% for LIC and 23.5% for private players. Single premium business grew 16.5% YoY, and non-single premiums rose 14.2%. The group segment expanded 19.2% overall. <br><br><strong>APE & Guidelines:</strong> Industry APE increased 14.5% (Private: 14.9%, LIC: 13.9%). The industry has adjusted to the revised surrender value guidelines effective October 1, 2024. Growth is expected to remain stable via product diversification and digital channels.</div></details>`;
+
+    // 2. Return your template
+    return(
+        index == 0 ? `
+            
+			<div class="grid-box latest-commentary-box light_audio__box">
+                <h3 class="heading-4 font-bold mb-5 pb-5 text-grey">Podcast</h3>
+                <div class="pt-5 mt-5">
+                    <span class="text-small text-grey mb-3 d-block" style="opacity: 0.85">${getOrdinalNum(PodcastData.Date)}</span>
+                    <h3 class="heading-2 text-grey font-regular">${PodcastData.Author}</h3>
+                </div>
+                <p class="text-grey pt-3 pb-2">${PodcastData.Title}</p>
+                <audio controls id="player">
+                    <source src="https://www.careratings.com/upload/Podcasts/${PodcastData.AudioFile}" type="audio/mpeg">
+                    Your browser does not support the audio element
+                </audio>
+                <div class="text-grey">
+                    ${transcriptHtml.replace('border-gray-200', 'border-white/20')}
+                </div>
+            </div>`			
+        : index == 1 ? `
+            <div class="grid-box bg-primary podcast-box">
+                <h3 class="heading-4 font-bold mb-5 text-white">Podcast</h3>
+                <div class="pt-5 mt-5">
+                    <span class="text-small text-white mb-3 d-block" style="opacity: 0.85">${getOrdinalNum(PodcastData.Date)}</span>
+                    <h3 class="heading-2 text-white font-regular">${PodcastData.Author}</h3>
+                </div>
+                <p class="text-white pt-3 pb-2">${PodcastData.Title}</p>
+                <audio controls id="player">
+                    <source src="https://www.careratings.com/upload/Podcasts/${PodcastData.AudioFile}" type="audio/mpeg">
+                    Your browser does not support the audio element
+                </audio>
+                <div class="text-white">
+                    ${transcriptHtml.replace('border-gray-200', 'border-white/20')}
+                </div>
+            </div>` 
+        : ''
+    );
+}).join('')}
+	
+
+
+
+
+
+	
+	`);
+	
+	const players = Array.from(document.querySelectorAll('#player')).map(p => new Plyr(p));
+
+// Watch for Plyr injecting its controls into the DOM
+const observer = new MutationObserver(() => {
+    document.querySelectorAll('.plyr__time--current[aria-label]').forEach(el => {
+        el.removeAttribute('aria-label');
+    });
+});
+
+observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+	
+	$("#renderHtmlLatestCommentrySectiondata").html(`
+  
+  
+  
+		
+  
+  
+	<div class="bg-secondary studies_main_box justify-content-start equal-height">
+				<div class="boxes-list align-items-start">
+				   <h4 class="heading-4 font-bold mb-4 text-grey">Latest Commentary</h4>
+				   
+  
+	
+	${response.Commentry.map(function(CommentryData, index){
+	return(`
+
+	
+				   <div class="study-box">
+					  <h3 class="heading-2 text-white mb-4 font-regular">${CommentryData.Title}</h3>
+					  <a href="https://www.careratings.com/${CommentryData.Url}" target="_blank" class="btn btn-link primary font-semibold p-0 w-auto" aria-labelledby="watchBtn${index} ${CommentryData.Title}">Read More</a>
+				   </div>
+				   
+				   
+
+  
+	
+	`)
+	}).join('')}
+	
+
+
+	<div class="mt-5">
+					  <a href="https://www.careratings.com/events-and-webinars" class="btn btn-primary mt-auto mb-3">VIEW ALL</a>
+				   </div>
+				</div>
+			 </div>	
+
+
+	
+	`);
+	
+	
+		
+		
+
+// Home page new slider js
+var swiper = new Swiper(".mySwiper_webinar1", {
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 0,
+  autoplay: true,
+  speed: 1000,
+  pagination: {
+  el: ".swiper-pagination",
+  type: "bullets",
+  clickable: true,
+  },
+  navigation: {
+  nextEl: ".swiper-button-next",
+  prevEl: ".swiper-button-prev",
+  },
+}); 
+		 
+		 
+	   } else {
+		 $("#renderHtmlFeaturedMediaSectiondata").html("<div>No data Found.....</div>");
+	   }
+		 
+		 });
+	   }
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   </script>
+
+
+
+   
+			
+		<style>
+section.budget-sec {
+    display: none;
+}
+</style>
+
+<section class="reports-sec padding-100" style="padding-bottom:0px;">
+   <div class="container-fluid">
+      <div class="row ">
+         <div class="col-md-12 d-flex justify-content-between col-lg-12  report-sec-head">
+            <h2 class="heading-1 text-dark mb-5">Reports</h2>
+
+            <div class="mt-xl-3 d-flex">
+               <div>
+               <div class="slider-arrows arrow-1 justify-content-end">
+                    <button type="button" class="prev-btn" aria-label="Previous">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
+						</svg>
+					</button>
+					<button type="button" class="next-btn" aria-label="Next">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-chevron-right" viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+							</path>
+						</svg>
+					</button>
+                  </div>
+               </div>
+               <div class="d-flex report-custom-btn1 flex-row-reverse ">
+                                
+                  <div class="dropdown-toggle" style="margin-left:5px;" id="renderHtmlRecentInsightsYeardata">
+                      
+                  
+                  </div>
+                  
+                  
+                  
+               </div>
+            </div>
+         </div>
+         
+
+         
+      <div class="row gx-5 mt-3">
+         <div class="col-md-12  col-lg-4">
+            <hr class="style-1" />
+            <h3 class="heading-2 text-dark">
+            Latest Industry<br> & Economic<br> Research
+            </h3>
+         </div>
+         
+         <div class="col-md-12  col-lg-8" id="renderHtmlRecentInsightsSectiondata">
+            
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+
+
+
+
+<script>
+
+
+function InsightsSliderdata() {
+
+    $(".commons-sliderInsights")
+    .on('init afterChange setPosition', function () {
+        $(this).find('.slick-slide').removeAttr('tabindex');
+    })
+    .slick({
+        infinite: false,
+        speed: 1000,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: ".arrow-1 .prev-btn",
+        nextArrow: ".arrow-1 .next-btn",
+        responsive: [
+            {
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 1099,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2.1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    centerMode: true,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1.1,
+                    slidesToScroll: 1,
+                    dots: true,
+                },
+            },
+        ],
+    });
+
+}
+  
+	
+	   $(document).ready(function() {
+		 
+		  // alert("Hiiiii");
+		 
+      var PageId = 6;
+      RecentInsightsYearsByCategorydata(PageId);
+      var SectionId  = "5";
+      
+   
+   
+   
+   // $("#Year_Id, #month_Id").change(function(){
+      $("body").on("change", "#InsightsYear_Id", function(){
+   var PageId = 6;
+      var SectionId  = "5";
+   
+   var YearID = $("#InsightsYear_Id").val();
+  
+   console.log(YearID);
+   RecentInsightsCategorySectiondata(PageId, YearID);
+ });
+
+
+
+
+   
+    
+   });
+      
+   function RecentInsightsCategorySectiondata(PageId, YearID){
+	   var ajaxurl = "https://www.careratings.com/insightsrecent";
+		 $.ajax({
+			type: "get",
+			url: ajaxurl,
+			data: {PageId:PageId, YearID:YearID},
+	   dataType: "JSON"
+		 }).done(function(response){
+	   if(response){
+		 
+		 console.log(response.data);
+		
+		 
+	  
+		 $("#renderHtmlRecentInsightsSectiondata").html(`
+  
+  
+  
+		
+  
+       <div class="row commons-sliderInsights  sliderGap-30" >
+               
+               
+               
+               
+               
+
+
+
+           
+  
+	
+	${response.data.map(function(data, index){
+	return(`
+
+	
+   <div class="item all 2022">
+                  <a href="https://www.careratings.com/uploads/newsfiles/${data.PDf}" target="_blank">
+                     <div class="card card-style-1">
+                        <span class="arrow-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="15.28"
+                              height="15.256" viewBox="0 0 15.28 15.256">
+                              <g id="ic-arrows-top" transform="translate(7.998 1.784) rotate(45)">
+                                 <line id="Line_60" data-name="Line 60" y1="13.182"
+                                    transform="translate(3.871 0.001)" fill="none" stroke="#fff"
+                                    stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2" />
+                                 <path id="Path_51" data-name="Path 51"
+                                    d="M15.035,7.523,11.678,4.167a.817.817,0,0,0-1.152,0L7.26,7.433"
+                                    transform="translate(-7.26 -3.929)" fill="none" stroke="#fff"
+                                    stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2" />
+                              </g>
+                           </svg>
+                        </span>
+                        <div class="card-body">
+                           <span class="text-grey text-small">${getOrdinalNum(data.Date)}</span>
+                           <p class="heading-3 text-white mt-3">${data.Title}</p>
+                        </div>
+                     </div>
+					 <span class="visually-hidden"> (opens in a new window)</span>
+                  </a>
+               </div>
+		
+   
+
+
+
+
+
+
+	
+  
+  
+	
+	`)
+	}).join('')}
+
+</div>
+            
+  
+
+	
+	`);
+	
+   InsightsSliderdata();
+	
+		 
+		 
+		 
+		 
+	   } else {
+		 $("#renderHtmlRecentInsightsSectiondata").html("<div>No data Found.....</div>");
+	   }
+		 
+		 });
+	   }
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+   function RecentInsightsYearsByCategorydata(PageId){
+   var ajaxurl = "https://www.careratings.com/insightsyear";
+    $.ajax({
+      type: "get",
+      url: ajaxurl,
+      data: {PageId:PageId},
+   dataType: "JSON"
+    }).done(function(response){
+   if(response){
+      var PageId = 6;
+      var SectionId  = "5";
+   var datafirstyear = response.dataYear[0]['year'];
+   RecentInsightsCategorySectiondata(PageId, datafirstyear);
+   
+    
+  
+    $("#renderHtmlRecentInsightsYeardata").html(`
+
+
+
+   
+
+
+
+    <select aria-label="YearofInsight" class="empInput form-control" name="InsightsYear_Id" id="InsightsYear_Id" style="border: 1px solid #858796;">
+      
+           
+           ${response.dataYear.map(function(dataYear, index){
+           return(`
+             
+                
+           
+                       
+            <option value="${dataYear.year}" id="${dataYear.year}">${dataYear.year}</option>
+                        
+                                                                
+                       
+   
+     
+           `)
+           }).join('')}
+           
+         </select> 
+
+
+
+
+
+
+`);
+
+
+
+    
+    
+    
+    
+   } else {
+    $("#renderHtmlRecentInsightsYeardata").html("<div>No data Found.....</div>");
+   }
+    
+    });
+   }
+   
+   
+   
+   
+   
+   
+	   
+	   
+	   </script>
+   
+			
+		<section class="budget-sec padding-100">
+    <div class="container-fluid" id="renderHtmlUnionBudgetSectiondata">
+       
+    </div>
+
+ </section>
+
+
+<script>
+
+  $(document).ready(function() {
+    var PageId = "2";
+    var SectionId  = "6";
+    console.log(SectionId);
+    UnionBudgetViewSection(PageId, SectionId);
+});
+
+// Function to handle YouTube video play and modal content
+function UnionBudgetViewSection(PageId, SectionId){
+    var ajaxurl = "https://www.careratings.com/medianewsdata";
+    $.ajax({
+        type: "get",
+        url: ajaxurl,
+        data: {PageId: PageId, SectionId: SectionId},
+        dataType: "JSON"
+    }).done(function(response){
+        if(response){
+            console.log(response.data);
+
+            $("#renderHtmlUnionBudgetSectiondata").html(`
+                ${response.data.map(function(data, index){
+                    // Convert YouTube URL to embed format
+                    let videoEmbedUrl = data.RegURL.replace("watch?v=", "embed/");
+                    return(`
+                    <div class="row">
+                        <div class="col-md-12 col-lg-4">
+                            <hr class="style-1" />
+                            <h3 class="heading-2 text-dark">${data.Title}</h3>
+                            <p class="heading-5 text-grey mb-5">${data.Description}</p>
+                            <div class="d-flex align-items-center">
+                                <a data-bs-toggle="modal" data-url="${videoEmbedUrl}" href="#exampleModalToggle-v1" class="play__btn play_php btn btn-primary me-3">WATCH VIDEO</a>
+                                <a href="media" class="btn btn-link primary p-0 w-auto">View MORE</a>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-8">
+                            <div class="video-box">
+                                <img src="${data.Image}" class="img-fluid" width="824" height="590" alt="video poster" loading="lazy" />
+                                <div class="vide_playbtn">
+                                    <a class="play__btn play_php"  role="button"   aria-haspopup="dialog"   aria-controls="exampleModalToggle-v1"   aria-label="Play video" data-bs-toggle="modal" data-url="${videoEmbedUrl}" href="#exampleModalToggle-v1" >
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal popup for desktop-->
+                    <div class="modal fade login-popup budgetVid-popup" id="exampleModalToggle-v1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel-v1" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="eventGal_modal-content">
+                                        <iframe loading="lazy" width="960" height="560" id="video_url_php" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `);
+                }).join('')}
+            `);
+
+            // Event listener to open the modal and set the YouTube video URL
+            $(".play_php").click(function() {
+                var videoUrl = $(this).data('url');
+                $("#video_url_php").attr('src', videoUrl);
+            });
+
+            // Clear iframe src when modal is closed
+            $('#exampleModalToggle-v1').on('hidden.bs.modal', function() {
+                $("#video_url_php").attr('src', '');
+            });
+        } else {
+            $("#renderHtmlUnionBudgetSectiondata").html("<div>No data Found.....</div>");
+        }
+    });
+}
+   // Clear the video iframe when the modal is closed
+jQuery('.btn-close').click(function (e) {
+    var $videoEl = jQuery(this).closest('.modal').find('iframe');
+    $videoEl.attr('src', '');
+});
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   </script>   
+			
+		<section class="care-rating-rec overview_php">
+    <div class="container-fluid" id="renderHtmlHomeOverviewSectiondata">
+       
+    </div>
+ </section>
+
+
+
+
+ 
+<script>
+
+
+
+
+   $(document).ready(function() {
+   var PageId = "2";
+   var SectionId  = "7";
+   console.log(SectionId);
+   HomeOverviewViewSection(PageId, SectionId);
+   
+   });
+   
+   function HomeOverviewViewSection(PageId, SectionId){
+   var ajaxurl = "https://www.careratings.com/parentdata";
+     $.ajax({
+       type: "get",
+       url: ajaxurl,
+       data: {PageId:PageId, SectionId : SectionId},
+   dataType: "JSON"
+     }).done(function(response){
+   if(response){
+     
+     console.log(response.data);
+    
+         $("#renderHtmlHomeOverviewSectiondata").html(`
+   
+         ${response.data.map(function(data, index){
+         return(`
+
+
+         <div class="row justify-content-center">
+          <div class="col-md-12 col-xxl-9">
+             <span class="e-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="434.982" height="447.471"
+                   viewBox="0 0 434.982 447.471">
+                   <g id="Group_8587" data-name="Group 8587" transform="translate(86.022 -176.042)"
+                      opacity="0.2">
+                      <path id="Path_11954" data-name="Path 11954"
+                         d="M-51.506,176.542l-28.088,97.1H218.945l31.3-97.1Z"
+                         transform="translate(98.031 -0.001)" fill="#fff" stroke="#a1a1a1"
+                         stroke-width="1" />
+                      <path id="Path_11955" data-name="Path 11955"
+                         d="M-54.476,186.239l-28.088,97.106H215.974l31.3-97.106Z"
+                         transform="translate(47.5 164.985)" fill="#fff" stroke="#a1a1a1" stroke-width="1" />
+                      <path id="Path_11956" data-name="Path 11956"
+                         d="M-57.268,195.937l-28.089,97.106H213.182l31.3-97.106Z"
+                         transform="translate(0 329.969)" fill="#fff" stroke="#a1a1a1" stroke-width="1" />
+                   </g>
+                </svg>
+             </span>
+             <p class="heading-2 font-regular">${data.desc}
+             </p>
+          </div>
+       </div>
+
+
+        
+
+
+
+
+
+   
+         `)
+         }).join('')}
+   
+   
+         `);
+   
+   
+   
+     
+     
+     
+     
+     
+   } else {
+     $("#AttendencedataTable tbody").html("<div>No data Found.....</div>");
+   }
+     
+     });
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   </script>   
+			
+		<section class="charts-sec">
+    <div class="container-fluid p-0">
+       <div class="row g-0">
+          <div class="col-md-12 col-xl-6">
+             <div class="chart-info bg-secondary">
+                <h3 class="heading-2 text-white">CareEdge Debt Quality Index (CDQI)</h3>
+                <a href="javascript:void(0)" class="btn btn-primary mt-3 view-report-btn font-semi-bold cdqi_report">VIEW REPORT</a>
+                <div class="chart-img mt-5 pt-5">
+                   <canvas loading="lazy" id="cdqi" width="799" height="400" title="CAREEDGE Debt Quality Index from January to September 2025" style="display: block; box-sizing: border-box; height: 266.7px; width: 533px;" role="img" aria-label="CAREEDGE Debt Quality Index from January to September 2025" aria-describedby="cdqi-desc"></canvas><div id="cdqi-desc" style="display:none;">Line graph showing the CAREEDGE Debt Quality Index from January to September 2025. The index starts at a moderate level in January, gradually increases through March, peaks around May, then slightly declines in June and July, and stabilizes at a high level from August to September, indicating improving debt quality over the period.</div>
+                   <!-- <img src="images/Graph.svg" class="img-fluid" /> -->
+                </div>
+             </div>
+          </div>
+          <div class="col-md-12 col-xl-6">
+             <div class="chart-info bg-primary">
+                <h3 class="heading-2 text-white">CareEdge Credit Quality Assessment</h3>
+                <a href="javascript:void(0)" class="btn btn-white mt-3 view-report-btn font-semi-bold mcr_report">VIEW REPORT</a>
+                <div class="chart-img mt-5 pt-5">
+                   <canvas loading="lazy" id="mcr" width="799" height="400" title="CAREEDGE Debt Quality Index trend from FY12 to H1 FY26" style="display:block; box-sizing:border-box; height:266.7px; width:533px;" role="img" aria-label="CAREEDGE Debt Quality Index trend from FY12 to H1 FY26" aria-describedby="dqindex-desc"></canvas><div id="dqindex-desc" style="display:none;">Line graph showing the CAREEDGE Debt Quality Index trend from FY12 to H1 FY26, remaining largely stable around the 1.0 level between FY12 and FY22, rising sharply from H1 FY22 to peak around H1 FY23, then declining significantly through H1 FY24, followed by moderate fluctuations with gradual recovery, ending at a higher level by H1 FY26 compared to the long-term average before FY22.</div>
+                   <!-- <img src="images/Graph.svg" class="img-fluid" />     -->
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+
+
+    
+
+ <script>
+	var mydata = [];
+
+   var childdata = [];
+  
+	
+	   $(document).ready(function() {
+		 
+		  // alert("Hiiiii");
+		 
+      var PageId = 6;
+    
+   ChartSectiondata(PageId);
+   
+    
+   });
+   
+   function ChartSectiondata(PageId){
+	   var ajaxurl = "https://www.careratings.com/chartdata";
+		 $.ajax({
+			type: "get",
+			url: ajaxurl,
+			data: {PageId:PageId},
+	   dataType: "JSON"
+		 }).done(function(response){
+	   if(response){
+		 $(".cdqi_report").attr('href','./upload/chart/'+response.CDQI[0].Category);
+       $(".mcr_report").attr('href','./upload/chart/'+response.MCR[0].Category);
+		 console.log(response.data);
+       mydata = response.data;
+       mydata1 = response.CDQICDQIIndex;
+		 mydata3 = response.MCRCreditRatio;
+       mydata4 = response.MCRQuarter;
+       mydata2 = response.CDQIChange;
+       var Quarter= response.MCRQuarter.map(function(MCRQuarterdata, index){
+         return MCRQuarterdata.Quarter;
+       });
+       var CreditRatio= response.MCRQuarter.map(function(MCRQuarterdata, index){
+         return MCRQuarterdata.CreditRatio;
+       });
+       var chartdate= response.data.map(function(data, index){
+         return getOrdinalChartNum(data.Months);
+       });
+       var chartCDQIIndex= response.data.map(function(data, index){
+         return data.CDQIIndex;
+       });
+       var chartChange= response.data.map(function(data, index){
+         return data.Change;
+       });
+       var chartScore= response.data.map(function(data, index){
+         return data.Score;
+       });
+         console.log(chartdate);
+         console.log("chartdate");
+         /* Chart Start*/
+
+
+         
+
+      var cdqi_1 = document.getElementById('cdqi').getContext('2d');
+      var cdqi = new Chart(cdqi_1, {
+         type: 'line',
+         data: {
+            labels: chartdate,
+            datasets: [{
+               label: 'CDQIIndex',
+               data: chartCDQIIndex,
+               backgroundColor: [
+                     'rgba(255, 255, 255, 1)',
+               ],
+               borderColor: [
+                     'rgba(255, 255, 255, 1)',
+               ],
+               borderWidth: 1,
+               tension: 0.4,
+               fill: false,
+            },
+
+            
+
+            ]
+         },
+         options: {
+            scales: {
+               y: {
+                     beginAtZero: false,
+                     ticks: {
+                     color: 'rgba(255, 255, 255, 1)'
+                     }
+               },
+               x: {
+                  beginAtZero: false,
+                  ticks: {
+                     color: 'rgba(255, 255, 255, 1)'
+                  },
+                  grid : {
+                     display : false,
+                  }
+               }
+            },
+            plugins: {
+               legend: {
+                     display: false
+               }
+            }
+         }
+      });
+
+
+
+         /*Chart End*/
+
+
+         /* MCR Chart Start  */
+
+         // chart start
+
+var mcr_1 = document.getElementById('mcr').getContext('2d');
+var mcr = new Chart(mcr_1, {
+    type: 'line',
+    data: {
+        labels: Quarter,
+        datasets: [{
+            label: 'CreditRatio',
+            data: CreditRatio,
+            backgroundColor: [
+                'rgba(255, 255, 255, 1)',
+            ],
+            
+            backgroundColor: [
+                'rgba(255, 255, 255, 1)',
+            ],
+            borderColor: [
+                'rgba(255, 255, 255, 1)',
+            ],
+            borderWidth: 1,
+            tension: 0.4,
+            fill: false,
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: false,
+                ticks: {
+                  color: 'rgba(255, 255, 255, 1)'
+                }
+            },
+            x: {
+              beginAtZero: false,
+              ticks: {
+                color: 'rgba(255, 255, 255, 1)'
+              },
+              grid : {
+                display : false,
+              }
+          }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+});
+
+         /* MCR Chart End*/
+	
+		 
+		 
+		 
+	   } else {
+		 $("#renderHtmlMediaSectiondata").html("<div>No data Found.....</div>");
+	   }
+		 
+		 });
+	   }
+	   
+	   
+	   
+   
+function getOrdinalChartNum(datec) {
+  if(datec != null){
+   //english_ordinal_suffix(); 
+  let msec = Date.parse(datec);
+  const d = new Date(msec);
+  var year = d.getFullYear();
+  var month = d.toLocaleString('default', { month: 'short' });
+  var number = d.getDate();
+  
+  
+
+  let selector;
+
+if (number <= 0) {
+  selector = 4;
+} else if ((number > 3 && number < 21) || number % 10 > 3) {
+  selector = 0;
+} else {
+  selector = number % 10;
+}
+
+const dayst = number + ['TH', 'ST', 'ND', 'RD', ''][selector];
+
+return month + ' ' + year;
+  }else{
+    return "";
+  }
+  
+};
+	   </script>
+
+   
+			
+		<section class="CareEdgeeventgallery-sec padding-100 eventGallery-modal yearDropDown-main">
+
+      <div class="container-fluid">
+          <div class="row justify-content-center">
+              <div class="col-md-12">
+                  <div class="d-flex justify-content-md-between flex-column flex-md-row">
+                      <div>
+                          <h3 class="heading-1 text-black">Events Gallery</h3>
+                      </div>
+
+                      <div class="mt-xl-3 custom-dropdown d-flex filter-dropdown  dropdown-menu-outiline  dropprevdown mb-5  mb-lg-0 ">
+                      <div class="row justify-content-center">
+              
+                  <div class="slider-arrows">
+                      <button type="button" class="prev-btn" aria-label="Previous">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-chevron-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
+        </path>
+    </svg>
+</button>
+<button type="button" class="next-btn" aria-label="Next">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-chevron-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+        </path>
+    </svg>
+</button>
+                  </div>              
+          </div>
+                          <div class="d-flex sasifb flex-row-reverse ">
+                        
+                            <div class="yearToggle" style="margin-left:5px;" id="renderHtmlHomeEventsGalleryYeardata">
+                                
+                            
+                            </div>
+                            
+                            
+                            
+                          </div>
+                      </div>
+
+
+
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+     
+
+
+      <div class="container-fluid" id="renderHtmlHomeEventsGallerySectiondata">
+      
+      </div>
+
+      <!-- Modal popup for desktop-->
+      <div class="modal fade login-popup eventGal-popup" id="exampleModalToggle-e1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel-e1" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body">
+                    <div class="eventGal_modal-content">
+                      <img class="eventGal-popup-img" src="" alt="" width="100%" />
+                      <div class="eventGal_modal_text">
+                        <p class="eventGal_modal_text-para">
+                        </p>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  <!-- Modal popup for desktop-->
+  
+
+  </section>
+
+
+  
+
+<script>
+  // var data = [];
+  // var foundData = data.find(i => i.goalpoints_Id == id);
+  // 	console.log(foundData);
+  
+  //    data = response.data;
+   
+  
+  
+     $(document).ready(function() {
+     
+      // alert("Hiiiii");
+     
+      // var PageId = 4;
+      var PageId = 3;
+      HomeEventsGalleryYearsByCategorydata(PageId);
+      var SectionId  = "9";
+      
+   
+   
+   // $("#Year_Id, #month_Id").change(function(){
+      $("body").on("change", "#Year_Id", function(){
+  //  var PageId = 4;
+  var PageId = 3;
+      var SectionId  = "9";
+   
+   var YearID = $("#Year_Id").val();
+  
+   console.log(YearID);
+   HomeEventsGalleryCategorySectiondata(PageId, SectionId, YearID);
+  });
+  
+    
+   });
+
+     $(document).on("click", ".openModal_php", function () {
+         var ImgUrl = $(this).data('url');
+         var desc = $(this).data('desc');
+         $(".modal-body .eventGal-popup-img").attr("src", ImgUrl );
+         $(".modal-body .eventGal_modal_text").html(desc);
+    });
+   
+   function HomeEventsGalleryCategorySectiondata(PageId, SectionId, YearID){
+     var ajaxurl = "https://www.careratings.com/mediadata";
+     $.ajax({
+      type: "get",
+      url: ajaxurl,
+      data: {PageId:PageId, SectionId : SectionId, YearID:YearID},
+     dataType: "JSON"
+     }).done(function(response){
+     if(response){
+     
+     console.log(response.data);
+    
+     
+    
+     $("#renderHtmlHomeEventsGallerySectiondata").html(`
+  
+  
+     <div class="CareEdgeeventgallery-slider left-space-sldier overflow-hidden mb-2 pt-0" >
+
+          
+
+  
+  
+  
+  
+  
+  ${response.data.map(function(data, index){
+    
+    
+    return(`
+  
+  
+  <div class="item latest">
+              <div class="card card-style-2">
+
+                  <a class="btn trigger openModal_php" data-bs-toggle="modal" href="#exampleModalToggle-e1" data-url="https://www.careratings.com/upload/video/Thumbnail_Image/${data.Image}" data-desc="${data.Description}" role="button">
+                      <div class="card-image position-relative">
+                          <img src="https://www.careratings.com/upload/video/Thumbnail_Image/${data.Image}" class="card-img-top img-fluid" width="523" height="523" loading="lazy" alt="{${data.Title}}">
+                          
+                          <label class="date-lable">${getOrdinalNum(data.Date)}</label>
+                      </div>
+                  </a>
+                  <div class="card-body border-0 p-0">
+                      <p class="heading-2 mt-4 mb-3">${data.Title}</p>
+
+                      
+                  </div>
+
+              </div>
+
+          </div>
+    
+          
+  
+  `)
+  }).join('')}
+  
+
+</div>
+          
+    
+  
+  
+  
+  `);
+  
+     
+  const EventsGallerySlider = (
+    sliderName,
+    dots,
+    fade,
+    infinite,
+    slidesToShow,
+    slidesToScroll,
+    prevArrow,
+    nextArrow,
+    variableWidth
+  ) => {
+    $(sliderName).slick({
+      dots: dots,
+      fade: fade,
+      infinite: infinite,
+      speed: 1000,
+      slidesToShow: slidesToShow,
+      slidesToScroll: slidesToScroll,
+      prevArrow: prevArrow,
+      nextArrow: nextArrow,
+      variableWidth: variableWidth,
+      responsive: [
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 1099,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+          },
+        },
+  
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+          },
+        },
+      ],
+    });
+  };
+  
+  
+  
+  
+  EventsGallerySlider(
+  ".CareEdgeeventgallery-slider",
+  false,
+  false,
+  false,
+  2,
+  1,
+  ".CareEdgeeventgallery-sec .prev-btn",
+  ".CareEdgeeventgallery-sec .next-btn",
+  false
+  );
+  
+  
+     
+     
+     
+     
+     
+     } else {
+     $("#renderHtmlHomeEventsGallerySectiondata").html("<div>No data Found.....</div>");
+     }
+     
+     });
+     }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+   function HomeEventsGalleryYearsByCategorydata(PageId){
+   var ajaxurl = "https://www.careratings.com/mediayear";
+    $.ajax({
+      type: "get",
+      url: ajaxurl,
+      data: {PageId:PageId},
+   dataType: "JSON"
+    }).done(function(response){
+   if(response){
+    
+    var SectionId  = "9";
+   var datafirstyear = response.dataYear[0]['year'];
+   HomeEventsGalleryCategorySectiondata(PageId, SectionId, datafirstyear);
+    
+  
+    $("#renderHtmlHomeEventsGalleryYeardata").html(`
+  
+  
+  
+   
+  
+  
+  
+    <select aria-label="YearOfEvent" class="empInput form-control" name="Year_Id" id="Year_Id" style="border: 1px solid #858796;">
+      
+           
+           ${response.dataYear.map(function(dataYear, index){
+           return(`
+             
+                
+           
+                       
+            <option value="${dataYear.year}" id="${dataYear.year}">${dataYear.year}</option>
+                        
+                                                                
+                       
+   
+     
+           `)
+           }).join('')}
+           
+         </select> 
+  
+  
+  
+  
+  
+  
+  `);
+  
+  
+  
+    
+    
+    
+    
+   } else {
+    $("#renderHtmlHomeEventsGalleryYeardata").html("<div>No data Found.....</div>");
+   }
+    
+    });
+   }
+   
+   
+
+   /**/
+  
+   
+   
+     </script>
+
+     <script>
+  
+$(document).ready(function(){
+  var modal = document.querySelector(".modal");
+var triggers = document.querySelectorAll(".trigger");
+var closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+  modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+  if (event.target === modal) {
+    toggleModal();
+  }
+}
+
+for (var i = 0, len = triggers.length; i < len; i++) {
+  triggers[i].addEventListener("click", toggleModal);
+}
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+});
+     </script>
+  
+
+
+
+   
+			
+		<section class="lazybg get-rated-sec" style="background-image: url(https://www.careratings.com/public/frontend-assets/images/get-rated.webp);">
+    <div class="container-fluid" id="renderHtmlHomeGetRatedSectiondata">
+       
+    </div>
+ </section>
+</main>
+
+
+
+
+
+
+
+<script>
+   // var data = [];
+   // var foundData = data.find(i => i.goalpoints_Id == id);
+   // 	console.log(foundData);
+   
+   //    data = response.data;
+   
+   
+      $(document).ready(function() {
+        
+         // alert("Hiiiii");
+        
+           var PageId = "2";
+      var SectionId  = "12";
+      console.log(SectionId);
+      HomeGetRatedSectiondata(PageId, SectionId);
+      
+      
+      
+        
+      });
+      
+      function HomeGetRatedSectiondata(PageId, SectionId){
+      var ajaxurl = "https://www.careratings.com/parentdata";
+        $.ajax({
+           type: "get",
+           url: ajaxurl,
+           data: {PageId:PageId, SectionId : SectionId},
+      dataType: "JSON"
+        }).done(function(response){
+      if(response){
+        
+        console.log(response.data);
+       
+        
+     
+        $("#renderHtmlHomeGetRatedSectiondata").html(`
+   
+   ${response.data.map(function(data, index){
+   return(`
+   <div class="row justify-content-center">
+          <div class="col-md-11">
+             <div class="row">
+                <div class="col-md-12">
+                   <h2 class="heading-1 text-white ">${data.title}</h2>
+                   <hr class="style-2" />
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-md-6 col-xl-3 col-xs-3 col-sm-3">
+                   <div class="card card-style-1 green">
+                      <a href="${data.buttonLink1}" class="arrow-link" aria-label="linked to contact page">
+                         <svg xmlns="http://www.w3.org/2000/svg"
+                            width="15.28" height="15.256" viewBox="0 0 15.28 15.256">
+                            <g id="ic-arrows-top" transform="translate(7.998 1.784) rotate(45)">
+                               <line id="Line_60" data-name="Line 60" y1="13.182"
+                                  transform="translate(3.871 0.001)" fill="none" stroke="#5dd4c4"
+                                  stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2"></line>
+                               <path id="Path_51" data-name="Path 51"
+                                  d="M15.035,7.523,11.678,4.167a.817.817,0,0,0-1.152,0L7.26,7.433"
+                                  transform="translate(-7.26 -3.929)" fill="none" stroke="#5dd4c4"
+                                  stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2"></path>
+                            </g>
+                         </svg>
+                      </a>
+                      <div class="card-body">
+
+
+                         <a href="${data.buttonLink1}" class="btn btn-primary mt-2">${data.buttonText}</a>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-12 col-xl-8 offset-xl-1">
+                   <p class="heading-2 text-white font-regular">${data.desc}</p>
+                </div>
+             </div>
+          </div>
+       </div>
+
+
+
+      
+
+
+
+   
+   `)
+   }).join('')}
+   
+   
+   `);
+   
+      
+      
+        
+        
+        
+        
+        
+      } else {
+        $("#renderHtmlHomeCapabilitySectorSectiondata").html("<div>No data Found.....</div>");
+      }
+        
+        });
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </script>   
+	<footer role="contentinfo">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-xxl-11">
+                <div class="row gx-5 gy-3">
+                    <div class="col-lg-6 col-xl-8 col-md-6">
+                        
+
+                        <div class="quick-links quick-links-new">
+                            <h2 class="footer-title"><span>CareEdge Ratings</span></h2>
+                            <ul class="quick-links-ul-main">
+                                <li class="sub-links-border">
+                                    <a href="find-ratings">Find Ratings</a>
+                                </li>
+
+                                <li class="sub-links">
+                                    <a href="#" onclick="event.preventDefault();" aria-expanded="false">Get Rated</a>
+
+                                    <ul>
+                                        <li><a class="dropdown-item" href="https://www.careratings.com/rating_process">Rating Process</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/criteria_methodologies">Criteria / Methodologies</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/rating_faqs">Rating FAQs</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/fee_structure">Fee Structure</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/rating-symbols-and-definition">Rating Symbols & Definition</a></li>
+                                
+                                <li><a class="dropdown-item" href="https://www.careratings.com/publications">Publications</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/public/frontend-assets/images/pdf/Criteria_Complexity_of_Rated_Instruments.pdf" target="__blank">Complexity level of Rated instruments</a></li>
+                                <li><a class="dropdown-item" href="https://www.careratings.com/pd-benchmark">PD Benchmark</a></li>
+
+                                        <!-- <li><a href="publications">Publications</a></li>
+                                        <li><a href="complexity-level-of-rated-instruments">Complexity level of Rated instruments</a></li>
+                                        <li><a href="pd-benchmark">PD Benchmark</a></li> -->
+                                    </ul>
+                                </li>
+
+                                <li class="sub-links">
+                                    <a href="#" onclick="event.preventDefault();" aria-expanded="false">Capabilities</a>
+
+                                    <ul>
+                                        <li><a href="corporate-sector">Corporate Sector</a></li>
+                                        <li><a href="financial-sector">Financial Sector</a></li>
+                                        <li><a href="structured-finance">Structured Finance </a></li>
+                                        <li><a href="infrastructure-sector">Infrastructure Sector</a></li>
+                                        <li><a href="other-rating-products">Other Rating Products</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="sub-links">
+                                    <a href="#" onclick="event.preventDefault();" aria-expanded="false">Insights</a>
+
+                                    <ul>
+                                    <li><a href="economy-updates">Economy Updates</a></li>    
+                                    
+                                    <li><a href="morning_brief">Morning Brief</a></li>
+                                    <li><a class="dropdown-item" href="https://www.careratings.com/industry-research">Overview</a></li>
+                                                                                                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Auto%20and%20Auto%20Components/9">Auto and Auto Components</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Agri%20and%20Agri-Allied/10">Agri and Agri-Allied</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20BFSI/11">BFSI</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Building%20Construction%20Material/12">Building Construction Material</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Capital%20Goods/13">Capital Goods</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Infrastructure/14">Infrastructure</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Manufacturing/15">Manufacturing</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Metals%20and%20Mining/16">Metals and Mining</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Services/17">Services</a></li>
+                                                                                <li><a class="dropdown-item" href="https://www.careratings.com/industry/Industry%20Research%20-%20Special%20Studies/18">Special Studies</a></li>
+                                                                                                                    </ul>
+                                </li>
+
+                                <li class="sub-links">
+                                    <a href="#" onclick="event.preventDefault();" aria-expanded="false">Media & Events</a>
+
+                                    <ul>
+                                        <li><a href="events-and-webinars">Events and Webinars</a></li>
+                                        <li><a href="media">Media</a></li>
+                                    </ul>
+                                </li>   
+
+                                <li class="sub-links">
+                                    <a href="#" onclick="event.preventDefault();" aria-expanded="false">Investors</a>
+
+                                    <ul>
+
+										<li><a class="dropdown-item" href="https://www.careratings.com/investors">Disclosure under regulation 46 of SEBI Regulations, 2015</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/financial-performance">Financial Performance</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/shareholding-patterns">Shareholding Pattern</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/annual-reports">Annual Reports</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/corporate-announcements">Corporate Announcements</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/corporate-governance">Corporate Governance</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/buyback-of-shares">Buyback of Shares</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/investor-services">Investor Services � Forms for Download</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/dividend">Dividend</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/notices">Notice of abolition of Transfer of Physical Shares</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/investors-contact">Investors Contact</a></li>
+										<li><a class="dropdown-item" href="https://www.careratings.com/smart-odr">Smart ODR</a></li>
+                                        
+                                        
+                                    </ul>
+                                </li>
+
+                                <li class="sub-links-border"><a href="https://www.careratings.com/about-us">About Us</a></li>
+                                <li class="sub-links-border"><a href="https://www.careratings.com/contactus">Contact Us</a></li>
+
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    
+                    <div class="col-lg-6 col-xl-4 col-md-6">
+                        <div class="footer-link-list">
+                            <!-- start -->
+                            <div class="footer-social-media">
+                                <h2 class="footer-title">Follow Us On</h2>
+                                <div class="social-media-links">
+                                    <!--<a href="javascript:void(0)">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            viewBox="0 0 50 50">
+                                            <g id="Facebook" transform="translate(-1506 -9808)">
+                                                <g id="Ellipse_29" data-name="Ellipse 29"
+                                                    transform="translate(1506 9808)" fill="none" stroke="#ffffff"
+                                                    stroke-width="1.5">
+                                                    <circle cx="25" cy="25" r="25" stroke="none" />
+                                                    <circle cx="25" cy="25" r="24.25" fill="none" />
+                                                </g>
+                                                <g id="Group_9" data-name="Group 9" transform="translate(1527 9826)">
+                                                    <path id="facebook-2" data-name="facebook"
+                                                        d="M12.318,2.491h1.369V.106A17.682,17.682,0,0,0,11.693,0C7.36,0,8.539,4.906,8.366,5.625H6.187V8.291H8.366V15h2.671V8.292h2.091l.332-2.666H11.036c.118-1.765-.476-3.135,1.282-3.135Z"
+                                                        transform="translate(-6.187 0)" fill="#ffffff" />
+                                                </g>
+                                            </g>
+                                        </svg>
+
+                                    </a>-->
+                                    <a href="https://www.linkedin.com/company/credit-analysis-&amp;-research-ltd--care-ratings-" target="_blank" aria-label="follow us on Linkedin" >
+
+                                        <svg class="linked_in_bg" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                                            <g id="Linked_In" data-name="Linked In" transform="translate(-1386 -9808)">
+                                                <g id="Ellipse_27" data-name="Ellipse 27"
+                                                    transform="translate(1386 9808)" fill="none" stroke="#ffffff"
+                                                    stroke-width="1.5">
+                                                    <circle cx="25" cy="25" r="25" stroke="none" />
+                                                    <circle cx="25" cy="25" r="24.25" fill="none" />
+                                                </g>
+                                                <g id="Group_11" data-name="Group 11" transform="translate(1404 9826)">
+                                                    <g id="linkedin" transform="translate(0 0)">
+                                                        <path id="Path_16" data-name="Path 16"
+                                                            d="M18.955,18.662h0V12.72c0-2.907-.626-5.146-4.024-5.146A3.527,3.527,0,0,0,11.758,9.32h-.047V7.845H8.489V18.661h3.355V13.305c0-1.41.267-2.774,2.014-2.774,1.721,0,1.746,1.609,1.746,2.864v5.266Z"
+                                                            transform="translate(-4.109 -3.812)" fill="#ffffff" />
+                                                        <path id="Path_17" data-name="Path 17"
+                                                            d="M.4,7.977H3.755V18.793H.4Z"
+                                                            transform="translate(-0.129 -3.942)" fill="#ffffff" />
+                                                        <path id="Path_18" data-name="Path 18"
+                                                            d="M1.945,0A1.955,1.955,0,1,0,3.891,1.945,1.946,1.946,0,0,0,1.945,0Z"
+                                                            fill="#ffffff" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+
+                                    </a>
+                                    <a href="https://twitter.com/CareEdge_Group" target="_blank" aria-label="follow us on Twitter account" >
+
+                                        <!--<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            viewBox="0 0 50 50">
+                                            <g id="Twitter" transform="translate(-1446 -9808)">
+                                                <g id="Ellipse_28" data-name="Ellipse 28"
+                                                    transform="translate(1446 9808)" fill="none" stroke="#ffffff"
+                                                    stroke-width="1.5">
+                                                    <circle cx="25" cy="25" r="25" stroke="none" />
+                                                    <circle cx="25" cy="25" r="24.25" fill="none" />
+                                                </g>
+                                                <g id="Group_10" data-name="Group 10"
+                                                    transform="translate(1463.086 9826.762)">
+                                                    <path id="twitter-2" data-name="twitter"
+                                                        d="M14.85,49.428a6.347,6.347,0,0,1-1.754.481,3.027,3.027,0,0,0,1.339-1.683,6.084,6.084,0,0,1-1.931.737,3.044,3.044,0,0,0-5.266,2.082,3.135,3.135,0,0,0,.071.694,8.617,8.617,0,0,1-6.275-3.184,3.045,3.045,0,0,0,.936,4.069,3.006,3.006,0,0,1-1.375-.375v.033a3.058,3.058,0,0,0,2.439,2.991,3.039,3.039,0,0,1-.8.1,2.692,2.692,0,0,1-.576-.052A3.073,3.073,0,0,0,4.5,57.443a6.117,6.117,0,0,1-3.775,1.3A5.706,5.706,0,0,1,0,58.7a8.571,8.571,0,0,0,4.67,1.366A8.605,8.605,0,0,0,13.335,51.4c0-.135,0-.264-.011-.394A6.073,6.073,0,0,0,14.85,49.428Z"
+                                                        transform="translate(0 -48)" fill="#ffffff" />
+                                                </g>
+                                            </g>
+                                        </svg>-->
+                                        
+<svg class="twitter_bg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Twitter_1.5px_border" data-name="Twitter 1.5px border" transform="translate(-10382 3260)">
+    <g id="Group_172912" data-name="Group 172912">
+      <g id="Ellipse_1628" data-name="Ellipse 1628" transform="translate(10382 -3260)" fill="rgba(255,255,255,0)" stroke="#fff" stroke-width="1.5">
+        <circle cx="20" cy="20" r="20" stroke="none"/>
+        <circle cx="20" cy="20" r="19.25" fill="none"/>
+      </g>
+      <path id="Twitter_logo" data-name="Twitter logo" d="M6.319,21.9l4.633,6.2L6.29,33.131H7.339l4.082-4.409,3.3,4.41h3.57L13.4,26.588,17.74,21.9H16.687l-3.759,4.06L9.89,21.9Zm1.543.773H9.5l7.243,9.685H15.1Z" transform="translate(10389.71 -3267.9)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
+
+
+                                    </a>
+                                    <a href="https://www.instagram.com/careedge_group/" target="_blank" aria-label="follow us on Instagram" >
+
+                                        <svg class="instagram_bg" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50"
+                                            viewBox="0 0 50 50">
+                                            <defs>
+                                                <clipPath id="clip-path">
+                                                    <rect id="Rectangle_4171" data-name="Rectangle 4171" width="14.998"
+                                                        height="15" fill="#ffffff" />
+                                                </clipPath>
+                                            </defs>
+                                            <g id="Facebook" transform="translate(-1506 -9808)">
+                                                <g id="Ellipse_29" data-name="Ellipse 29"
+                                                    transform="translate(1506 9808)" fill="none" stroke="#ffffff"
+                                                    stroke-width="1.5">
+                                                    <circle cx="25" cy="25" r="25" stroke="none" />
+                                                    <circle cx="25" cy="25" r="24.25" fill="none" />
+                                                </g>
+                                                <g id="Group_27058" data-name="Group 27058"
+                                                    transform="translate(1523.491 9826)">
+                                                    <g id="Group_27058-2" data-name="Group 27058"
+                                                        transform="translate(0 0)" clip-path="url(#clip-path)">
+                                                        <path id="Path_12761" data-name="Path 12761"
+                                                            d="M15,3.457v8.084a8.178,8.178,0,0,1-.182.84A3.74,3.74,0,0,1,11.225,15q-3.726.011-7.453,0a3.624,3.624,0,0,1-2.192-.7A3.706,3.706,0,0,1,0,11.154Q0,7.522,0,3.891a4.336,4.336,0,0,1,.056-.743A3.645,3.645,0,0,1,2.4.267,7.59,7.59,0,0,1,3.458,0h8.084c.105.018.21.036.316.056a3.669,3.669,0,0,1,2.866,2.316A7.286,7.286,0,0,1,15,3.457M10.625,7.5a3.125,3.125,0,1,0-3.117,3.126A3.134,3.134,0,0,0,10.625,7.5m.937-3.127a.935.935,0,1,0-.933-.941.938.938,0,0,0,.933.941"
+                                                            transform="translate(0 0)" fill="#ffffff" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+
+                                    </a>
+                                    
+                                    <a href="https://www.youtube.com/user/CARERatingsOnline" target="_blank" aria-label="check our our Youtube channel">
+
+                                        <svg class="youtube_bg" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50"
+                                            viewBox="0 0 50 50">
+                                            <defs>
+                                                <clipPath id="clip-path2">
+                                                    <rect id="Rectangle_4172" data-name="Rectangle 4172" width="19.971"
+                                                        height="14.014" fill="#ffffff" />
+                                                </clipPath>
+                                            </defs>
+                                            <g id="Facebook" transform="translate(-1506 -9808)">
+                                                <g id="Ellipse_29" data-name="Ellipse 29"
+                                                    transform="translate(1506 9808)" fill="none" stroke="#ffffff"
+                                                    stroke-width="1.5">
+                                                    <circle cx="25" cy="25" r="25" stroke="none" />
+                                                    <circle cx="25" cy="25" r="24.25" fill="none" />
+                                                </g>
+                                                <g id="Group_27059" data-name="Group 27059"
+                                                    transform="translate(1521.014 9826.493)">
+                                                    <g id="Group_27059-2" data-name="Group 27059"
+                                                        transform="translate(0 0)" clip-path="url(#clip-path2)">
+                                                        <path id="Path_12762" data-name="Path 12762"
+                                                            d="M9.935,0c2.05.081,4.1.153,6.151.247A10.709,10.709,0,0,1,17.53.418a2.526,2.526,0,0,1,2.118,2.211,23.894,23.894,0,0,1,.3,5.054c-.039,1.183-.153,2.363-.268,3.542a2.65,2.65,0,0,1-1.2,2.089,3.357,3.357,0,0,1-1.522.442,56.35,56.35,0,0,1-6.211.258C8.67,14,6.584,13.94,4.5,13.872a17.589,17.589,0,0,1-2-.2A2.507,2.507,0,0,1,.34,11.543,21.135,21.135,0,0,1,.015,7.987a30.15,30.15,0,0,1,.2-4.69A8.5,8.5,0,0,1,.41,2.256,2.55,2.55,0,0,1,2.664.364a54.465,54.465,0,0,1,5.876-.3c.464-.008.928,0,1.393,0,0-.021,0-.042,0-.064M8.007,4.052v5.972l5.186-2.986L8.007,4.052"
+                                                            transform="translate(0 0)" fill="#ffffff" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+
+                                    </a>
+									<a href="https://whatsapp.com/channel/0029VagO4gQ2f3EQ0DtMoR1H"
+									   target="_blank"
+									   aria-label="Join our WhatsApp Channel">
+
+										<svg class="whatsapp_bg"
+											 xmlns="http://www.w3.org/2000/svg"
+											 width="50"
+											 height="50"
+											 viewBox="0 0 50 50">
+
+											<!-- Outer Circle -->
+											<g fill="none" stroke="#ffffff" stroke-width="1.5">
+												<circle cx="25" cy="25" r="25"/>
+												<circle cx="25" cy="25" r="24.25"/>
+											</g>
+
+											<!-- WhatsApp Icon -->
+											<g transform="translate(14 13)">
+												<path d="M11.03 0C4.94 0 0 4.82 0 10.77c0 2.1.62 4.06 1.7 5.74L0 22l5.7-1.6a11.2 11.2 0 0 0 5.33 1.36c6.08 0 11.02-4.82 11.02-10.77C22.05 4.82 17.11 0 11.03 0zm6.4 15.26c-.27.74-1.6 1.4-2.2 1.44-.55.04-1.24.07-2.01-.12-.46-.12-1.05-.34-1.8-.66-3.16-1.34-5.22-4.6-5.38-4.8-.16-.2-1.28-1.7-1.28-3.25 0-1.56.82-2.32 1.12-2.64.3-.32.65-.4.86-.4h.62c.2 0 .47-.08.73.56.27.64.92 2.24 1 2.4.08.16.13.35.02.56-.1.22-.16.35-.32.54-.16.2-.34.44-.48.6-.16.16-.34.34-.15.66.19.32.84 1.38 1.8 2.24 1.24 1.1 2.3 1.44 2.64 1.6.35.16.55.14.75-.08.2-.22.86-1 .97-1.34.1-.34.4-.28.66-.18.27.1 1.7.8 1.99.94.3.14.5.22.57.34.06.12.06.7-.2 1.44z"
+													  fill="#ffffff"/>
+											</g>
+
+										</svg>
+									</a>
+                                </div>
+                            </div>
+                            <!-- end -->
+                            <div class="news-letter-subscribe">
+                                <h2 class="footer-title"><span>Subscribe To Our Newsletter</span></h2>
+                                <form name="newsletter_form" id="newsletter_form" action="https://www.careratings.com/newsletter" method="post">
+                                    <div class="form-group">
+                                        <div class="mb-4">
+                                            <label for="email" class="visually-hidden">
+                                                Enter Your Email Address
+                                            </label>
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter Your Email ID" required data-parsley-trigger="focusout" data-parsley-required-message="Enter Email">
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-success print-footer-success-msg"
+                                         role="status"
+                                         aria-live="polite"
+                                         aria-atomic="true"
+                                         style="display:none">
+                                    </div>
+                                    <div class="alert alert-danger print-footer-error-msg" style="display:none">
+                                        <ul></ul>
+                                    </div>
+                                    <input type="hidden" name="_token" id="token_newsletter_form" value="xo4mnfh4DV7XuSbA11pljV4D8FWslQbjcFnPY0IQ">
+                                    <div class="form-group">
+                                        <button type="button" id="newsletter_btn" class="btn btn-primary btn-default">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<style>
+	.extra-link {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.break-row {
+    flex-basis: 100%;
+    height: 0;
+}
+	</style>
+
+    <div class="copyright-footer container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-11">
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+                    <div class="col-xl-4">
+                        <p>&copy; 2026, CARE Ratings Limited. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-xl-5 text-xl-center">
+   <ul class="extra-link">
+    <li>
+        <a href="https://www.careratings.com/sitemap">SiteMap</a>
+       <span aria-hidden="true" style="color:#00d3c3;">|</span>
+    </li>
+
+    <li>
+        <a href="https://www.careratings.com/regulatory-disclosure">Regulatory Disclosures</a>
+        <span aria-hidden="true" style="color:#00d3c3;">|</span>
+    </li>
+
+    <li>
+        <a href="https://www.careratings.com/disclaimer">Disclaimer</a>
+       <span aria-hidden="true" style="color:#00d3c3;">|</span>
+    </li>
+
+    <li>
+        <a href="https://www.careratings.com/privacy_policy">Privacy Policy</a>
+    </li>
+
+    <!-- Break Row -->
+    <li class="break-row" aria-hidden="true"></li>
+
+    <li>
+        <a href="https://www.careratings.com/upload/pdf/Grievance_Listed.pdf" target="_blank">
+            Grievance (Listed)
+        </a>
+       <span aria-hidden="true" style="color:#00d3c3;">|</span>
+    </li>
+
+    <li>
+        <a href="https://www.careratings.com/upload/pdf/Grievance_Others.pdf" target="_blank">
+            Grievance (Others)
+        </a>
+      <span aria-hidden="true" style="color:#00d3c3;">|</span>
+    </li>
+
+    <li>
+        <a href="https://smartodr.in/login" target="_blank">
+            Smart ODR
+        </a>
+    </li>
+</ul>
+                    </div>
+                    <div class="col-xl-3 text-xl-end mt-xl-0 mt-3">
+                        <p> Designed & Developed By EvolutionCo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<button class="scrolltoTop show" aria-label="Back to Top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+        <g id="Group_209" data-name="Group 209" transform="translate(-1728 -1881)">
+            <circle id="Ellipse_11" data-name="Ellipse 11" cx="22" cy="22" r="22" transform="translate(1728 1881)" fill="#00d3c3"></circle>
+            <g id="Group_135" data-name="Group 135" transform="translate(1213 1811)">
+                <rect id="Rectangle_64" data-name="Rectangle 64" width="24" height="24" transform="translate(525 80)" fill="#fff" opacity="0"></rect>
+                <path id="Union_11" data-name="Union 11" d="M.293,13.021a1,1,0,0,1,0-1.415l4.95-4.95L.293,1.707A1,1,0,0,1,1.707.293L7.364,5.95a1,1,0,0,1,0,1.414L1.707,13.021a1,1,0,0,1-1.415,0Z" transform="translate(530.515 95.828) rotate(-90)" fill="#fff"></path>
+            </g>
+        </g>
+    </svg>
+</button>
+
+<script src="https://www.careratings.com/public/frontend-assets/js/all.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/custom.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/gsap.min.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/ScrollTrigger.min.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/filter_box.js"></script>
+
+<!--  <script src="js/animations.min.js"></script> -->
+<script src="https://www.careratings.com/public/frontend-assets/js/smoothscroll.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/chart.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/menu.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/audio.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/typeahead.js"></script>
+
+<script src="https://www.careratings.com/public/frontend-assets/js/mapbox-gl.js"></script>
+<script src="https://www.careratings.com/public/frontend-assets/js/contact-us-map.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+<script>
+  const players = Array.from(document.querySelectorAll('#player')).map(p => new Plyr(p));
+</script> 
+
+
+<script>
+$(document).ready(function(){
+
+    $(".select-all-input").one("click", function(){
+        $(".swiper-wrapper.second2").append('<div class="swiper-slide"><div class="card card-style-1"><div class="d-flex justify-content-between"><span class="text-grey text-small text-uppercase">24TH OCTOBER 2021</span></div><div class="card-body align-items-center"><p class="heading-3 text-white mb-1">Baramati Agro</p><span class="text-grey">? 1800</span><a href="#" class="btn btn-link primary p-0 d-block text-start mt-4">DOWNLOAD NOW</a></div></div></div>');
+    });
+
+    function printErrorMsg(msg) {
+        $(".print-footer-error-msg").find("ul").html('');
+        $(".print-footer-error-msg").css('display', 'block');
+        $.each(msg, function(key, value) {
+            $(".print-footer-error-msg").find("ul").append('<li>' + value + '</li>');
+        });
+    }
+
+    var $selector = $("#newsletter_form");
+    var form_get_otp = $selector.parsley();
+
+    $("#newsletter_btn").click(function(event) {
+        event.preventDefault();
+        form_get_otp.validate();
+    });
+
+    form_get_otp.subscribe('parsley:form:success', function(event) {
+    var formData = $("#newsletter_form").serialize();
+    $.ajax({
+        url: "https://www.careratings.com/newsletter",
+        method: "post",
+        data: formData,
+        success: function(response) {
+            if ($.isEmptyObject(response.error)) {
+                $(".print-footer-error-msg").css("display", "none");
+                $(".print-footer-success-msg")
+                    .attr("role", "status")
+                    .text(stripTags(response.success)) // <-- plain text, no <ul><li>/<p>
+                    .css({ 'display': 'block', 'padding': '8px' });
+            } else {
+                printErrorMsg(response.error);
+            }
+        },
+        error: function(xhr) {
+            var errMsg = (xhr.responseJSON && xhr.responseJSON.error)
+                ? xhr.responseJSON.error
+                : { general: 'Something went wrong. Please try again.' };
+            printErrorMsg(errMsg);
+        }
+    });
+});
+
+// Strips any HTML the backend might have wrapped the message in
+function stripTags(html) {
+    return $('<div>').html(html).text().trim();
+}
+
+function printErrorMsg(msg) {
+    $(".print-footer-error-msg")
+        .attr("role", "alert")
+        .empty();
+
+    var messages = [];
+    $.each(msg, function(key, value) {
+        messages.push(stripTags(value));
+    });
+
+    $(".print-footer-error-msg")
+        .text(messages.join(' ')) // plain text, joined if multiple
+        .css({ 'display': 'block', 'padding': '8px' });
+}
+
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script>
+$('[data-fancybox]').fancybox({
+  // Options will go here
+  buttons : [
+    'close'
+  ],
+  wheel : false,
+  transitionEffect: "slide",
+   // thumbs          : false,
+  // hash            : false,
+  loop            : true,
+  // keyboard        : true,
+  toolbar         : false,
+  // animationEffect : false,
+  // arrows          : true,
+  clickContent    : false
+});
+
+
+
+
+
+
+
+
+
+   
+function getOrdinalNum(datec) {
+  if(datec != null){
+   //english_ordinal_suffix(); 
+  let msec = Date.parse(datec);
+  const d = new Date(msec);
+  var year = d.getFullYear();
+  var month = d.toLocaleString('default', { month: 'long' });
+  var number = d.getDate();
+  
+  
+
+  let selector;
+
+if (number <= 0) {
+  selector = 4;
+} else if ((number > 3 && number < 21) || number % 10 > 3) {
+  selector = 0;
+} else {
+  selector = number % 10;
+}
+
+const dayst = number + ['TH', 'ST', 'ND', 'RD', ''][selector];
+
+return dayst +' '+ month.toUpperCase() + ' ' + year;
+  }else{
+    return "";
+  }
+  
+};
+
+document.querySelector('.dropdown').addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent default action
+            event.target.classList.add('disabled');
+        });
+</script>
+
+<style>
+:root {
+    --color-dark-blue-1: #00D3DC !important;
+}
+
+.reset-icon {
+    background-color: #fff !important;
+}
+
+button#reset-all {
+    background-color: #00D3DC !important;
+}
+
+.btn-reset-all{
+	color: #fff !important;
+}
+
+span.inner-short-key {
+    background-color: #1c304c !important;
+    color: #00D3DC !important;
+}
+
+a.copyright-text {
+    display: none !important;
+}
+
+
+</style>
+
+<script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+
+</body>
+
+</html>   

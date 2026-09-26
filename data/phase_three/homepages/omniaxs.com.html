@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>OMNIAXS - Global Multi-Asset Access Layer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+</head>
+<body data-page="home">
+  <div class="ambient" aria-hidden="true">
+    <div class="blob blob-tl"></div>
+    <div class="blob blob-tr"></div>
+    <div class="blob blob-cl"></div>
+    <div class="blob blob-br"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/index.html" aria-label="OMNIAXS Home">
+        <span class="brand-logo" aria-hidden="true"><span class="brand-logo-core">AX</span></span>
+        <div class="brand-name">
+          <div class="b1"><em>OMNIA</em>XS</div>
+          <div class="b2">阿克西姆全球控股</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/overview.html" data-page="overview">市场总览</a>
+        <a href="/connectors.html" data-page="connectors">连接器</a>
+        <a href="/workflow.html" data-page="workflow">执行链路</a>
+        <a href="/matrix.html" data-page="matrix">资产矩阵</a>
+        <a href="/developer.html" data-page="developer">开发者</a>
+        <a href="/compliance.html" data-page="compliance">合规</a>
+        <a href="/labs.html" data-page="labs">Labs</a>
+      </nav>
+
+      <div class="top-actions">
+        <a class="mode-pill" href="/user-login.html?next=/user-portal.html">USER</a>
+        <div class="lang" role="group" aria-label="Language selector">
+          <button class="active" data-lang="zh">ZH</button>
+          <button data-lang="en">EN</button>
+          <button data-lang="ja">JA</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap page-main">
+    <section class="hero reveal">
+      <article class="hero-main">
+        <div class="eyebrow">
+          <span class="dot"></span>
+          <span>Production Access Plane · API + Routing + Governance</span>
+        </div>
+
+        <h1 class="hero-title">
+          让全球多资产接入<br />
+          从碎片化连接升级为<br /><span class="hi">可治理、可审计、可扩展的统一平面</span>
+        </h1>
+
+        <p class="lead">
+          OMNIAXS 为交易团队提供统一接入、真实行情、交易执行和风控路由能力，让跨市场策略可在同一平台稳定运行。
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-secondary" href="/user-login.html?next=/user-portal.html">注册与登录</a>
+          <a class="btn btn-primary" href="/user-login.html?next=/user-portal.html">进入用户工作台</a>
+          <a class="btn btn-secondary" href="/docs.html">查看技术文档</a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><div id="kpi-connectors" class="val">--</div><div class="lbl">连接器目录</div></div>
+          <div class="kpi"><div id="kpi-types" class="val">--</div><div class="lbl">连接器类型</div></div>
+          <div class="kpi"><div id="kpi-ready" class="val">--</div><div class="lbl">Ready 阶段</div></div>
+          <div class="kpi"><div class="val">24/7</div><div class="lbl">平台可用性目标</div></div>
+        </div>
+      </article>
+
+      <aside class="hero-side">
+        <article class="side-card side-card-identity">
+          <div class="side-card-inner">
+            <div class="side-card-text">
+              <div class="side-card-eyebrow">Security</div>
+              <h3>企业级治理</h3>
+              <p>零信任架构，统一 API 密钥管理与自动化会话策略，账号安全默认开启。</p>
+            </div>
+            <div class="side-card-icon" aria-hidden="true">
+              <svg width="76" height="68" viewBox="0 0 76 68" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M38 7 L55 17 L55 37 L38 47 L21 37 L21 17 Z" stroke="#f0b429" stroke-opacity="0.55" stroke-width="1.3"/>
+                <path d="M38 15 L49 21 L49 33 L38 39 L27 33 L27 21 Z" stroke="#f0b429" stroke-opacity="0.3" stroke-width="0.8"/>
+                <rect x="31" y="27" width="14" height="9" rx="2" stroke="#f0b429" stroke-opacity="0.65" stroke-width="1.1"/>
+                <path d="M34 27 L34 23.5 Q38 19.5 42 23.5 L42 27" stroke="#f0b429" stroke-opacity="0.65" stroke-width="1.1" fill="none"/>
+                <circle cx="12" cy="15" r="2.5" stroke="#f0b429" stroke-opacity="0.45" stroke-width="1"/>
+                <line x1="14.2" y1="16.2" x2="21" y2="20" stroke="#f0b429" stroke-opacity="0.2" stroke-width="0.8"/>
+                <circle cx="64" cy="30" r="2.2" stroke="#f0b429" stroke-opacity="0.4" stroke-width="1"/>
+                <line x1="61.8" y1="30" x2="55" y2="29" stroke="#f0b429" stroke-opacity="0.2" stroke-width="0.8"/>
+                <circle cx="38" cy="58" r="2.5" stroke="#f0b429" stroke-opacity="0.4" stroke-width="1"/>
+                <line x1="38" y1="55.5" x2="38" y2="47" stroke="#f0b429" stroke-opacity="0.2" stroke-width="0.8"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article class="side-card side-card-catalog">
+          <div class="side-card-inner">
+            <div class="side-card-text">
+              <div class="side-card-eyebrow">Access</div>
+              <h3>全域连接</h3>
+              <p>单点接入股票、加密、外汇三大市场，机构级低延迟通道，按需扩展。</p>
+            </div>
+            <div class="side-card-icon" aria-hidden="true">
+              <svg width="76" height="68" viewBox="0 0 76 68" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="13" r="3.5" fill="#f0b429" fill-opacity="0.45"/>
+                <circle cx="11" cy="34" r="3" fill="#f0b429" fill-opacity="0.35"/>
+                <circle cx="11" cy="55" r="3.5" fill="#f0b429" fill-opacity="0.4"/>
+                <text x="16" y="16" font-size="6" fill="#f0b429" fill-opacity="0.5" font-family="monospace">EQ</text>
+                <text x="16" y="37" font-size="6" fill="#f0b429" fill-opacity="0.45" font-family="monospace">FX</text>
+                <text x="16" y="58" font-size="6" fill="#f0b429" fill-opacity="0.5" font-family="monospace">CR</text>
+                <path d="M26 13 Q50 18 54 34" stroke="#f0b429" stroke-opacity="0.28" stroke-width="0.9"/>
+                <path d="M26 34 Q44 34 54 34" stroke="#f0b429" stroke-opacity="0.38" stroke-width="0.9"/>
+                <path d="M26 55 Q50 50 54 34" stroke="#f0b429" stroke-opacity="0.28" stroke-width="0.9"/>
+                <circle cx="54" cy="34" r="4.5" stroke="#f0b429" stroke-opacity="0.7" stroke-width="1.3"/>
+                <circle cx="54" cy="34" r="2" fill="#f0b429" fill-opacity="0.45"/>
+                <line x1="58.5" y1="34" x2="70" y2="34" stroke="#f0b429" stroke-opacity="0.55" stroke-width="1.5"/>
+                <path d="M66 30 L71 34 L66 38" stroke="#f0b429" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article class="side-card side-card-governance">
+          <div class="side-card-inner">
+            <div class="side-card-text">
+              <div class="side-card-eyebrow">Workflow</div>
+              <h3>交易智能</h3>
+              <p>从执行到结算的全链路可观测性，实时审计每一笔交易。</p>
+            </div>
+            <div class="side-card-icon side-card-icon-ekg" aria-hidden="true">
+              <svg width="76" height="44" viewBox="0 0 76 44" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="22" x2="76" y2="22" stroke="#f0b429" stroke-opacity="0.1" stroke-width="0.5"/>
+                <polyline points="0,22 10,22 14,14 18,30 22,6 27,38 31,22 42,22 46,16 51,28 56,22 76,22" stroke="#f0b429" stroke-opacity="0.75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="ekg-line"/>
+                <circle cx="76" cy="22" r="2.5" fill="#f0b429" fill-opacity="0.45"/>
+              </svg>
+            </div>
+          </div>
+          <div class="side-card-live">
+            <span class="live-dot-green"></span>
+            <span class="live-label">SYSTEM LIVE · 0.2ms</span>
+          </div>
+        </article>
+      </aside>
+    </section>
+
+    <div class="ticker-outer reveal" role="marquee" aria-label="Global market ticker">
+      <div class="ticker-badge">
+        <div class="ticker-badge-dot"></div>
+        <div class="ticker-badge-label">LIVE</div>
+      </div>
+      <div class="ticker-scroll-area"><div class="ticker-track" id="tickerTrack"></div></div>
+    </div>
+
+    <section class="panel reveal">
+      <div class="sh">
+        <div>
+          <span class="s-eyebrow">Capability Map</span>
+          <h2>上线级能力结构</h2>
+          <p>平台围绕“接入、执行、治理、审计”四个面向构建，适配机构团队从 PoC 到生产切换的演进路径。</p>
+        </div>
+      </div>
+      <div class="page-grid">
+        <article class="card">
+          <h3>Identity & Access</h3>
+          <p>用户注册、邮箱验证、登录会话、API Key 生命周期、租户隔离、幂等保护。</p>
+          <div class="card-links"><a class="link-btn" href="/user-portal.html#auth-api">查看流程</a></div>
+        </article>
+        <article class="card">
+          <h3>Market & Execution</h3>
+          <p>统一行情接口、订单接口、仓位与账户快照，支持跨资产策略执行。</p>
+          <div class="card-links"><a class="link-btn" href="/overview.html">查看市场面</a></div>
+        </article>
+        <article class="card">
+          <h3>Connector Governance</h3>
+          <p>连接器状态治理、目录管理、告警聚合、运营可观测指标。</p>
+          <div class="card-links"><a class="link-btn" href="/connectors.html">查看目录</a></div>
+        </article>
+        <article class="card">
+          <h3>Approval & Provisioning</h3>
+          <p>接入申请、策略审批、自动化绑定与任务跟踪，保障接入秩序和权限边界。</p>
+          <div class="card-links"><a class="link-btn" href="/workflow.html">查看链路</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel reveal">
+      <div class="sh">
+        <div>
+          <span class="s-eyebrow">Connector Coverage</span>
+          <h2>全球连接器目录快照</h2>
+          <p>以下内容来自连接器目录接口，可直接映射后续接入排期并向用户完整展示平台资源广度。</p>
+        </div>
+      </div>
+      <div class="quick-links" id="home-catalog-summary">
+        <span class="tag">loading...</span>
+      </div>
+      <div class="tbl-wrap section-gap">
+        <table>
+          <thead>
+            <tr>
+              <th>Connector ID</th>
+              <th>Provider</th>
+              <th>Type</th>
+              <th>Assets</th>
+              <th>Regions</th>
+              <th>Connectivity</th>
+              <th>Stage</th>
+            </tr>
+          </thead>
+          <tbody id="home-catalog-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel reveal">
+      <div class="sh">
+        <div>
+          <span class="s-eyebrow">Live Data</span>
+          <h2>多市场行情视图</h2>
+          <p>行情组件实时拉取公开行情接口，验证前端渲染链路、符号归一化与基础监控布局。</p>
+        </div>
+      </div>
+      <div class="market-grid" id="marketGrid"></div>
+    </section>
+
+    <footer>
+      <div class="f-brand">
+        <span class="brand-logo brand-logo-sm" aria-hidden="true"><span class="brand-logo-core">AX</span></span>
+        <span style="font-size:.87rem;font-weight:700;color:var(--text-sub);">阿克西姆全球控股 · Axiom Global Holdings Limited</span>
+      </div>
+      <div class="f-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/status.html">Status</a>
+        <a href="/docs.html">Docs</a>
+      </div>
+      <div class="f-copy">Last updated: 2026-04-04 · Production readiness baseline</div>
+    </footer>
+  </main>
+
+  <script src="/assets/js/i18n-map.js"></script>
+  <script>
+    (function () {
+      if (!window.PMK_TEXT_MAP) return;
+      var EN = {
+        "企业级治理": "Enterprise Governance",
+        "零信任架构，统一 API 密钥管理与自动化会话策略，账号安全默认开启。": "Zero-trust architecture with unified API key management and automated session policies.",
+        "全域连接": "Universal Connectivity",
+        "单点接入股票、加密、外汇三大市场，机构级低延迟通道，按需扩展。": "Single-point access to Equities, Crypto, and FX with institutional-grade low latency.",
+        "交易智能": "Trading Intelligence",
+        "从执行到结算的全链路可观测性，实时审计每一笔交易。": "Full-stack observability from execution to settlement. Audit every tick in real-time.",
+        "阿克西姆全球控股": "Axiom Global Holdings",
+        "brand.footer.full": "Axiom Global Holdings Limited",
+        "让全球多资产接入": "Upgrade Global Multi-Asset Access",
+        "从碎片化连接升级为": "From fragmented connections to",
+        "可治理、可审计、可扩展的统一平面": "a governable, auditable, and scalable unified plane",
+        "OMNIAXS 为交易团队提供统一接入、真实行情、交易执行和风控路由能力，让跨市场策略可在同一平台稳定运行。": "OMNIAXS delivers unified access, live market data, order execution and risk-routing — letting cross-market strategies run stably on a single platform.",
+        "注册与登录": "Sign In / Register",
+        "进入用户工作台": "Open Trading Workspace",
+        "查看技术文档": "Developer Docs",
+        "连接器目录": "Connectors",
+        "连接器类型": "Asset Classes",
+        "Ready 阶段": "Ready Stage",
+        "平台可用性目标": "Platform Uptime Target",
+        "上线级能力结构": "Production-Grade Capability Map",
+        "平台围绕“接入、执行、治理、审计”四个面向构建，适配机构团队从 PoC 到生产切换的演进路径。": "Built around access, execution, governance, and audit — enabling institutional teams to scale from PoC to production.",
+        "全球连接器目录快照": "Global Connector Catalog",
+        "以下内容来自连接器目录接口，可直接映射后续接入排期并向用户完整展示平台资源广度。": "Live data from the connector catalog API — map against your access schedule and show platform coverage to stakeholders.",
+        "多市场行情视图": "Multi-Market Quote View",
+        "行情组件实时拉取公开行情接口，验证前端渲染链路、符号归一化与基础监控布局。": "Live quotes pulled from the public market API — verifying symbol normalization and rendering pipeline.",
+        "查看流程": "View Flow",
+        "查看市场面": "Market Overview",
+        "查看目录": "View Catalog",
+        "查看链路": "Execution Chain",
+        "市场总览": "Market Overview",
+        "连接器": "Connectors",
+        "执行链路": "Execution",
+        "资产矩阵": "Asset Matrix",
+        "开发者": "Developer",
+        "合规": "Compliance"
+      };
+      var JA = {
+        "企业级治理": "エンタープライズガバナンス",
+        "零信任架构，统一 API 密钥管理与自动化会话策略，账号安全默认开启。": "ゼロトラストアーキテクチャ、統合APIキー管理、自動セッションポリシー。",
+        "全域连接": "ユニバーサルコネクティビティ",
+        "单点接入股票、加密、外汇三大市场，机构级低延迟通道，按需扩展。": "株式・暗号資産・外為への単一アクセスポイント。機関投資家グレードの低遅延。",
+        "交易智能": "トレーディングインテリジェンス",
+        "从执行到结算的全链路可观测性，实时审计每一笔交易。": "執行から決済まで完全可観測。全ティックをリアルタイム監査。",
+        "阿克西姆全球控股": "アクシオム グローバル ホールディングス",
+        "brand.footer.full": "アクシオム グローバル ホールディングス リミテッド",
+        "让全球多资产接入": "グローバル・マルチアセットアクセスを",
+        "从碎片化连接升级为": "断片的な接続から",
+        "可治理、可审计、可扩展的统一平面": "ガバナンス・監査・拡張可能な統合プレーンへ",
+        "OMNIAXS 为交易团队提供统一接入、真实行情、交易执行和风控路由能力，让跨市场策略可在同一平台稳定运行。": "OMNIAXS は取引チームに統合アクセス、リアルタイム相場、注文執行、リスクルーティングを提供し、クロスマーケット戦略を単一プラットフォームで安定稼働させます。",
+        "注册与登录": "ログイン / 登録",
+        "进入用户工作台": "取引ワークスペースへ",
+        "查看技术文档": "開発者ドキュメント",
+        "连接器目录": "コネクタ",
+        "连接器类型": "アセットクラス",
+        "Ready 阶段": "稼働中",
+        "平台可用性目标": "稼働率目標",
+        "上线级能力结构": "本番稼働レベルのケイパビリティ",
+        "全球连接器目录快照": "グローバルコネクタカタログ",
+        "多市场行情视图": "マルチマーケット相場ビュー",
+        "查看流程": "フローを見る",
+        "查看市场面": "市場概要",
+        "查看目录": "カタログ",
+        "查看链路": "実行チェーン",
+        "市场总览": "市場概要",
+        "连接器": "コネクタ",
+        "执行链路": "実行",
+        "资产矩阵": "アセットマトリクス",
+        "开发者": "開発者",
+        "合规": "コンプライアンス"
+      };
+      Object.assign(window.PMK_TEXT_MAP.en, EN);
+      Object.assign(window.PMK_TEXT_MAP.ja, JA);
+    })();
+  </script>
+  <script src="/assets/js/common.js?v=20260407-home-fix"></script>
+  <script src="/assets/js/market.js?v=20260406-livefix2"></script>
+  <script>
+    async function loadHomeCatalog() {
+      const summary = document.getElementById("home-catalog-summary");
+      const tbody = document.getElementById("home-catalog-rows");
+      const kpiConnectors = document.getElementById("kpi-connectors");
+      const kpiTypes = document.getElementById("kpi-types");
+      const kpiReady = document.getElementById("kpi-ready");
+      if (!summary || !tbody || !kpiConnectors || !kpiTypes || !kpiReady) {
+        return;
+      }
+
+      try {
+        const response = await fetch("/public/v1/connectors/catalog");
+        const payload = await response.json();
+        const items = Array.isArray(payload?.data?.items) ? payload.data.items : [];
+
+        const byType = new Map();
+        let readyCount = 0;
+        items.forEach((item) => {
+          const type = String(item.provider_type || "unknown");
+          byType.set(type, (byType.get(type) || 0) + 1);
+          if (String(item.integration_stage || "") === "ready") {
+            readyCount += 1;
+          }
+        });
+
+        kpiConnectors.textContent = String(items.length);
+        kpiTypes.textContent = String(byType.size);
+        kpiReady.textContent = String(readyCount);
+
+        summary.innerHTML = "";
+        Array.from(byType.entries())
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 8)
+          .forEach(([type, count]) => {
+            const span = document.createElement("span");
+            span.className = "tag";
+            span.textContent = `${type}: ${count}`;
+            summary.appendChild(span);
+          });
+
+        tbody.innerHTML = "";
+        items.slice(0, 18).forEach((item) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td class="td-label">${item.connector_id || "-"}</td>
+            <td>${item.provider || "-"}</td>
+            <td>${item.provider_type || "-"}</td>
+            <td>${(item.asset_classes || []).join(", ")}</td>
+            <td>${(item.regions || []).join(", ")}</td>
+            <td>${(item.connectivity || []).join(", ")}</td>
+            <td>${item.integration_stage || "planned"}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (error) {
+        const lang = window.PMKCommon && typeof window.PMKCommon.getLanguage === "function"
+          ? window.PMKCommon.getLanguage()
+          : "zh";
+        const summaryCopy = {
+          zh: "目录不可用",
+          en: "Catalog unavailable",
+          ja: "カタログを利用できません",
+        };
+        const rowCopy = {
+          zh: "无法加载连接器目录，请检查网关与身份服务。",
+          en: "Failed to load connector catalog. Please check gateway and identity service.",
+          ja: "コネクタカタログを読み込めません。ゲートウェイと認証サービスを確認してください。",
+        };
+        summary.innerHTML = `<span class="tag">${summaryCopy[lang] || summaryCopy.zh}</span>`;
+        tbody.innerHTML = `<tr><td colspan="7">${rowCopy[lang] || rowCopy.zh}</td></tr>`;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadHomeCatalog);
+  </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"5b6b2d499ffd4f87833f994ef8cb879d","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4148600ad407894',t:'MTc5MDQ0OTM1MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+

@@ -1,0 +1,744 @@
+
+<!doctype html>
+<html lang="en" data-critters-container>
+<head>
+<script>
+  // Configuration for the flag
+  let environmentAllData = {
+    "ENVIRONMENT_NAME": "WEB_PROD",
+    "PLATFORM_NAME": "WEB",
+    "CONNECTION_SOURCE": "WEB",
+    "LIB_TYPE": "web_prod",
+    "apiBaseUrl": "https://pushengineweb.bajajfinserv.in/",
+    "ENVIRONMENT": "PROD"
+};
+</script>
+
+  <!-- Prefetch myaccount MFE chunks during browser idle time (WEB platform only) -->
+  <script>
+    if (environmentAllData && environmentAllData.CONNECTION_SOURCE === 'WEB') {
+      [
+        '/myaccount/runtime.js',
+        '/myaccount/polyfills.js',
+        '/myaccount/main.js'
+      ].forEach(function (href) {
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'script';
+        link.href = href;
+        link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+      });
+    }
+
+    if (environmentAllData && environmentAllData.CONNECTION_SOURCE === 'APP') {
+      const isOperationListCleared = localStorage.getItem("isOperationListCleared");
+      if(isOperationListCleared !== "true") {
+        localStorage.removeItem("operationListData");
+        localStorage.setItem("isOperationListCleared", "true");
+      }
+    }
+  </script>
+
+
+
+
+  <title>Bajaj Finserv: Loans, Cards, Insurance, Investments, Payments and more</title>
+  <meta name="keywords" content="Personal Loan, Fixed Deposit, Credit Card, Insta EMI Card, Insurance">
+  <meta name="description" content="Bajaj Finserv is India’s most diversified non-banking finance company. Visit the website to learn about our products. Get instant approval on loans, shop on EMIs, make an investment, get insurance and pay your bills.">
+  <link rel="canonical" href="https://www.bajajfinserv.in/">
+  <meta name="robots" content="index, follow">
+  <meta charset="utf-8">
+  <meta property="og:title" content="Bajaj Finserv: Loans, Cards, Insurance, Investments, Payments and more">
+  <meta property="og:description" content="Bajaj Finserv is India's most diversified non-banking finance company. Visit the website to learn about our products. Get instant approval on loans, shop on EMIs, make an investment, get insurance and pay your bills">
+  <meta property="og:site_name" content="https://www.bajajfinserv.in">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bajajfinserv.in/">
+  <meta property="og:image" content="https://cms-assets.bajajfinserv.in/is/image/bajajfinance/OG-thumbnail?scl=1&amp;fmt=png-alpha">
+  <meta property="og:locale" content="en">
+  <base href="/myaccount/">
+
+  <script>
+    try {
+      if (environmentAllData && environmentAllData.apiBaseUrl) {
+        var apiUrl = environmentAllData.apiBaseUrl;
+        var preconnectLink = document.createElement('link');
+        preconnectLink.rel = 'preconnect';
+        preconnectLink.href = apiUrl;
+      preconnectLink.crossOrigin = 'anonymous';
+        document.head.appendChild(preconnectLink);
+
+        var dnsLink = document.createElement('link');
+        dnsLink.rel = 'dns-prefetch';
+        dnsLink.href = apiUrl;
+        document.head.appendChild(dnsLink);
+      }
+    } catch (e) {
+      console.warn('Preconnect setup failed:', e);
+    }
+  </script>
+  <script>
+    let platformData = environmentAllData.CONNECTION_SOURCE;
+     
+    const dataQueue = new Map();
+    const loadedModulesMap = new Map();
+    const onboardingStatus = new Map();
+
+
+    function SubscribeOnboardingStatus(item, handler) {
+      onboardingStatus.set(item, handler);
+    }
+
+    function setOnboardingStatus(resultValue) {
+      onboardingStatus.get("onboardingStatus")(resultValue);
+      console.log("Onboarding status set to function called:");
+}
+
+
+    function subscribeLoadModules(key, handler) {
+        if (dataQueue.has(key)) {
+            const data = dataQueue.get(key);
+            handler(data?.[0], data?.[1]);
+            dataQueue.delete(key);
+        }
+        loadedModulesMap.set(key, handler);
+    }
+    function loadModules(resultValue, cartData) {
+        const handler = loadedModulesMap.get("loadModuleCall");
+        if (!handler) {
+            dataQueue.set("loadModuleCall", [resultValue, cartData]);
+        } else {
+            handler(resultValue, cartData);
+        }
+    }
+    function subscribeHompageLoadModules(key, handler) {
+        if (dataQueue.has(key)) {
+            const data = dataQueue.get(key);
+            handler(data?.[0], data?.[1]);
+            dataQueue.delete(key);
+        }
+        loadedModulesMap.set(key, handler);
+    }
+    // HOMEPAGE - Now loaded as remote MFE
+    function homepageLoadModules(resultValue, cartData) {
+        const handler = loadedModulesMap.get("homepageLoadModuleCall");
+        if (!handler) {
+            dataQueue.set("homepageLoadModuleCall", [resultValue, cartData]);
+        } else {
+            handler(resultValue, cartData);
+        }
+    }
+    if(environmentAllData.ENVIRONMENT === 'PROD'){
+    ['log','debug','error','warn','info','timeLog'].forEach(function(m){
+      window.console[m] = function(){};
+    });
+  }
+  // Stubs for native bridge calls that may arrive before scripts.js loads
+  if (typeof getHomepageStatus === 'undefined') {
+  function getHomepageStatus() {
+    if (window.location && window.location.href) {
+      return window.location.href.indexOf('homeDynamic') > -1 || window.location.href.indexOf('homepageDynamic') > -1;
+    }
+    return false;
+  }
+}
+  </script>
+  <script src="assets/js/envData.min.js" defer></script>
+  
+<script>
+  // ================= Idle scheduler (with fallback) =================
+  (function () {
+    function scheduleIdle(fn, timeout) {
+      // Adaptive timeout: if page is already loaded, fire almost immediately
+      if (timeout === undefined) {
+        if (document.readyState === 'complete') {
+          timeout = 50;   // Page fully loaded — fire ASAP
+        } else if (document.readyState === 'interactive') {
+          timeout = 200;  // DOM ready, subresources still loading
+        } else {
+          timeout = 3000; // Still loading — give browser room
+        }
+      }
+
+      try {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(fn, { timeout });
+        } else {
+          // Fallback to small timeout to avoid blocking the critical path
+          setTimeout(fn, Math.min(timeout, 500));
+        }
+      } catch {
+        setTimeout(fn, 0);
+      }
+    }
+    window.scheduleIdle = scheduleIdle;
+  })();
+
+  // ================= Idempotent script loader =================
+  (function () {
+    const loaded = new Set();
+
+    function loadScript(
+      src,
+      { async = true, defer = false, onload, attrs = {} } = {}
+    ) {
+      if (!src || loaded.has(src)) return null;
+      loaded.add(src);
+
+      const s = document.createElement('script');
+      s.src = src;
+      s.async = !!async;
+      if (defer) s.defer = true;
+
+      for (const [k, v] of Object.entries(attrs)) s.setAttribute(k, String(v));
+
+      if (typeof onload === 'function') s.addEventListener('load', onload);
+      s.addEventListener('error', () => {
+        console.warn('Failed to load script:', src);
+      });
+
+      document.head.appendChild(s);
+      return s;
+    }
+
+    window.loadScript = loadScript;
+  })();
+
+ // ================= PerformanceObserver for LCP =================
+(function () {
+  const state = {
+    lcpEntry: null,
+    lcpFinalized: false,
+    lcpSubscribers: [],
+    lcpObserver: null,
+  };
+
+  window.__bflOnLCP = function (cb) {
+    if (state.lcpFinalized && state.lcpEntry) { 
+      try { cb(state.lcpEntry); } catch (e) { console.error('Error in LCP subscriber:', e); } 
+    } else { 
+      state.lcpSubscribers.push(cb); 
+    }
+  };
+
+  function notifyLCP() {
+    if (!state.lcpFinalized || !state.lcpEntry || !state.lcpSubscribers.length) return;
+    const payload = state.lcpEntry;
+    const subs = state.lcpSubscribers.splice(0);
+    for (let i = 0; i < subs.length; i++) {
+      try {
+        subs[i](payload);
+      } catch (e) {
+        console.error('Error in LCP subscriber:', e);
+      }
+    }
+  }
+
+  function finalizeLCP() {
+    if (state.lcpFinalized) return;
+    state.lcpFinalized = true;
+    try { state.lcpObserver?.disconnect(); } catch {}
+    state.lcpObserver = null;
+    notifyLCP();
+  }
+
+  window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') finalizeLCP();
+  }, { once: true });
+
+  window.addEventListener('pagehide', finalizeLCP, { once: true });
+  window.addEventListener('pointerdown', finalizeLCP, { once: true, passive: true });
+  window.addEventListener('keydown', finalizeLCP, { once: true, passive: true });
+  window.addEventListener('scroll', finalizeLCP, { once: true, passive: true });
+
+  setTimeout(() => finalizeLCP(), 5000);
+
+  try {
+  const lcpObserver = new PerformanceObserver((list) => {
+    const entries = list.getEntries();
+    if (!entries || entries.length === 0) return;
+
+    const latestCandidate = entries[entries.length - 1];
+
+    if (!latestCandidate.element) {
+      state.lcpEntry = latestCandidate;
+    } else {
+      // Element reference exists — check if still connected
+      // to the document root.
+      if (latestCandidate.element.isConnected) {
+        state.lcpEntry = latestCandidate;
+      }
+    }
+  });
+  lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+  state.lcpObserver = lcpObserver;
+} catch {
+  console.warn('⚠️ LCP observer not supported');
+  finalizeLCP();
+}
+})();
+</script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="theme-color" content="#1976d2">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://ip-dynbanners.bajajfinserv.in" crossorigin>
+  <link rel="preconnect" href="https://cms-assets.bajajfinserv.in" crossorigin>
+  <!-- for SEO Schema type Organization -->
+
+   <!-- Google Tag Manager -->
+  <script>
+    //loading GTM script for WEB Platform
+  if (environmentAllData && environmentAllData.CONNECTION_SOURCE === 'WEB') {
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-M8JQCJL');
+      window.pdata = window.pdata || [];
+  }
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- swiper commented for checking -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js" defer></script> -->
+ <script> 
+    document.addEventListener("DOMContentLoaded", function (event) {
+      console.time('AppBoot');
+    });
+    var newDate = new Date().toLocaleString();
+    console.log("index page dataTime" + newDate)
+  </script>
+  <script>
+    if (environmentAllData && environmentAllData.CONNECTION_SOURCE !== 'WEB') {
+      const script1 = document.createElement('script');
+      script1.src = 'https://www.datadoghq-browser-agent.com/us3/v7/datadog-rum.js';
+      script1.type = 'text/javascript';
+      script1.crossOrigin = 'anonymous';
+      script1.async = false;
+      script1.onload = function () {
+        const script2 = document.createElement('script');
+        script2.src = 'https://bflcodepush.bajajfinserv.in/bflfiles/assets/script/datadog/init.js';
+        script2.type = 'text/javascript';
+        script2.async = false;
+        document.head.appendChild(script2);
+      };
+      document.head.appendChild(script1);
+    }
+  </script>
+<style>@charset "UTF-8";html{font-size:10px}body{background:#e5eaf7;font-family:Rubik-Regular,sans-serif;color:#666;margin:0;position:relative}*{margin:0;padding:0;outline:none!important;-webkit-overflow-scrolling:touch;box-sizing:border-box;-webkit-touch-callout:none;-webkit-user-select:initial;user-select:none}@font-face{font-family:Rubik;src:url(Rubik-VariableFont_wght.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:Rubik-Regular;src:url(Rubik-VariableFont_wght.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}body{font-family:Rubik}:root{--white:#fff;--pink-dark:#b01b54;--font-family:"Rubik", Helvetica;--font-weight-medium:500;--font-size-small:10px;--border-radius:4px;--padding-small:2px 4px;--height-small:16px;--flex-center:flex;--align-center:center;--justify-center:center;--width-fit:fit-content;--white-space-nowrap:nowrap}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8JQCJL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- FCP Skeleton: guard + inject + auto-hide (only on WEB homepage) -->
+  <script>
+    (function () {
+      if (typeof environmentAllData === 'undefined' || environmentAllData.PLATFORM_NAME !== 'WEB') return;
+      var p = location.pathname;
+      var hp = { '': 1, '/': 1, '/home': 1, '/hindi': 1, '/hindi/': 1, '/homepageDynamic/homeDynamic': 1, '/myaccount/hindi': 1, '/myaccount/home': 1, '/myaccount': 1, '/myaccount/': 1 };
+      if (!hp[p] && p.indexOf('/myaccount/hindi') !== 0 && p.indexOf('/myaccount/home') !== 0) return;
+      document.write('<script src="assets/js/skeleton-guard.js"><\/script>');
+    })();
+  </script>
+  <!-- End Google Tag Manager (noscript) -->
+  <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+    Bajaj Finserv
+  </h1>
+  <app-opt-header></app-opt-header>
+  <app-root></app-root>
+  <app-opt-footer></app-opt-footer>
+   <!--  B-26.1.1  -->
+ <script src="runtime.js" type="module"></script><script src="polyfills.js" type="module"></script><script src="scripts-v1.js.js" defer></script><script src="main-v1.js" type="module"></script></body>
+  <!-- Last clicked cookie script for other modules may use cookie value -->
+   
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.bajajfinserv.in/#organization",
+      "name": "Bajaj Finance",
+      "legalName": "Bajaj Finance Limited",
+      "alternateName": ["Bajaj Finserv", "BFL", "Bajaj"],
+      "description": "Bajaj Finserv is India’s most diversified non-banking finance company. Visit the website to learn about our products. Get instant approval on loans, shop on EMIs, make an investment, get insurance and pay your bills.",
+      "url": "https://www.bajajfinserv.in",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.bajajfinserv.in"
+      },
+      "foundingDate": "1987-03-25",
+      "foundingLocation": { "@type": "Place", "name": "Pune, Maharashtra, India" },
+      "telephone": "+91-8698010101",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4th Floor, Bajaj Finserv Corporate Office, Off Pune-Ahmednagar Road, Viman Nagar",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411014",
+        "addressCountry": "IN"
+      },
+      "image": "https://cms-assets.bajajfinserv.in/is/content/bajajfinance/bfl-logo-11-2026?scl=1&fmt=gif-alpha",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Bajaj Finserv Limited",
+        "description": "Bajaj Finserv Limited is the parent financial services holding company of the Bajaj Group, with businesses spanning lending, insurance, asset management, and digital platforms.",
+        "sameAs": ["https://en.wikipedia.org/wiki/Bajaj_Finserv"]
+      },
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "name": "Bajaj Housing Finance Limited",
+          "description": "A wholly-owned subsidiary of Bajaj Finance Limited offering housing finance solutions including home loans and loans against property.",
+          "url": "https://www.bajajfinserv.in",
+          "identifier": { "@type": "PropertyValue", "name": "CIN", "value": "L65910PN2008PLC132228" }
+        },
+        {
+          "@type": "Organization",
+          "name": "Bajaj Financial Securities Limited",
+          "description": "A subsidiary of Bajaj Finance Limited operating as Bajaj Broking — a SEBI-registered stockbroker and Depository Participant offering demat, trading, and margin trade financing (MTF).",
+          "url": "https://www.bajajfinserv.in",
+          "identifier": { "@type": "PropertyValue", "name": "LEI", "value": "335800KG7DOSVFPLL139" }
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Bajaj Finance Financial Products & Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Personal Loan", "url": "https://www.bajajfinserv.in" } },
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Home Loan", "url": "https://www.bajajfinserv.in" } },
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Business Loan", "url": "https://www.bajajfinserv.in" } },
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Gold Loan", "url": "https://www.bajajfinserv.in" } },
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Loan Against Property", "url": "https://www.bajajfinserv.in" } },
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Loan Against Securities", "url": "https://www.bajajfinserv.in" } },
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Two Wheeler Loan", "url": "https://www.bajajfinserv.in" } },
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "New Car Loan", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Used Car Loan", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "LoanOrCredit", "name": "Consumer Durable Loan", "url": "https://www.bajajfinserv.in" } },
+          { "@type": "Offer", "itemOffered": { "@type": "DepositAccount", "name": "Fixed Deposit", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "InvestmentFund", "name": "Mutual Funds", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "BrokerageAccount", "name": "Stock and Trading", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "FinancialProduct", "name": "Health Insurance", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "FinancialProduct", "name": "Life Insurance", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "FinancialProduct", "name": "Motor Insurance", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "PaymentService", "name": "Bajaj Pay", "url": "https://www.bajajfinserv.in" }},
+          { "@type": "Offer", "itemOffered": { "@type": "FinancialProduct", "name": "EMI Card", "url": "https://www.bajajfinserv.in" }}
+        ]
+      },
+      "contactPoint": [
+        { "@type": "ContactPoint", "contactType": "customer service", "telephone": "+91-8698010101", "email": "wecare@bajajfinserv.in", "availableLanguage": ["English", "Hindi"], "areaServed": "IN" },
+        { "@type": "ContactPoint", "contactType": "investor relations", "telephone": "+91-20-71576064", "email": "investors@bajajfinserv.in", "areaServed": "IN" }
+      ],
+      "identifier": [
+        { "@type": "PropertyValue", "name": "CIN", "value": "L65910MH1987PLC042961" },
+        { "@type": "PropertyValue", "name": "NSE Ticker", "value": "BAJFINANCE" },
+        { "@type": "PropertyValue", "name": "BSE Code", "value": "500034" },
+        { "@type": "PropertyValue", "name": "RBI Registration", "description": "Bajaj Finance Limited — Non-Deposit Taking NBFC (Upper Layer, per RBI scale-based regulation)" }
+      ],
+      "areaServed": { "@type": "Country", "name": "India" },
+      "knowsAbout": [
+        "Personal Loans", "Business Loans", "Home Loans", "Gold Loans",
+        "Fixed Deposits", "Mutual Funds", "EMI Finance",
+        "Digital Payments", "Loan Against Property",
+        "Two-Wheeler Loans", "Car Loans", "MSME Loans", "Consumer Durables Loans"
+      ],
+      "sameAs": [
+        "https://x.com/Bajaj_Finserv",
+        "https://www.youtube.com/c/bajajfinserv",
+        "https://en.wikipedia.org/wiki/Bajaj_Finance",
+        "https://www.facebook.com/bajaj.finance.in/",
+        "https://www.instagram.com/bajajfinance/"
+      ],
+      "naics": ["522291", "522292", "524113", "524126"],
+      "owns": [
+            {
+              "@type": "MobileApplication",
+              "name": "Bajaj Finance : UPI & Loan App",
+              "operatingSystem": "Android",
+              "applicationCategory": "FinanceApplication",
+              "url": "https://www.bajajfinserv.in",
+              "image": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/OG-thumbnail?scl=1&amp;fmt=png-alpha",
+              "author": {
+                         "@id": "https://www.bajajfinserv.in/#organization"
+                        },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.8,
+                "reviewCount": 7474443,
+                "bestRating": 5,
+                "worstRating": 1
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock"
+              }
+            },
+            {
+              "@type": "MobileApplication",
+              "name": "Bajaj Finance: Loans, UPI & FD",
+              "operatingSystem": "iOS",
+              "applicationCategory": "FinanceApplication",
+              "url": "https://www.bajajfinserv.in",
+              "image": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/OG-thumbnail?scl=1&amp;fmt=png-alpha",
+              "author": {
+                         "@id": "https://www.bajajfinserv.in/#organization"
+                        },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.7,
+                "reviewCount": 472581,
+                "bestRating": 5,
+                "worstRating": 1
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          ]
+    }
+    </script>
+     <!-- for SEO Schema type website -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Bajaj Finserv",
+      "alternateName": "Bajaj Finance",
+      "url": "https://www.bajajfinserv.in",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.bajajfinserv.in/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+<!-- Service Schema (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Loans, Cards, Insurance, Investments, Payments",
+    "provider": {
+      "@type": "Organization",
+      "name": "Bajaj Finserv",
+      "url": "https://www.bajajfinserv.in"
+    },
+    "areaServed": "IN",
+    "serviceType": "Financial Services",
+    "url": "https://www.bajajfinserv.in",
+    "description": "Bajaj Finserv offers loans, cards, insurance, investments, payments and more."
+  }
+  </script>
+ 
+  <!-- Breadcrumb Schema (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.bajajfinserv.in"
+      }
+    ]
+  }
+  </script>
+  <script>  
+  queueMicrotask(function() {    // Settings
+    var maxAgeInMinutes = 35; // Cookie validity in minutes
+    var cookieName = "campaignCookie"; // Name of the cookie to store UTM data
+    // Default UTM values (for organic/referral fallback)
+    var utmSource = "organic_bfl";
+    var utmMedium = "bfl";
+    var utmCampaign = "NA";
+    var utmKeyword = "NA";
+    var utmContent = "NA";
+    // List of known search engine domains to detect organic traffic
+    var searchEngines = [
+      "google.",
+      "bing.",
+      "yahoo.",
+      "duckduckgo.",
+      "baidu.",
+      "yandex.",
+      "ask.",
+      "aol.",
+      "ecosia.",
+      "naver.",
+      "seznam.",
+      "startpage.",
+      "qwant.",
+    ];
+    // Helper: Get cookie value by name
+    function getCookieValue(name) {
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var cookieArray = decodedCookie.split(";");
+      for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i];
+        while (cookie.charAt(0) === " ") {
+          cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name + "=") === 0) {
+          return cookie.substring(name.length + 1);
+        }
+      }
+      return false;
+    }
+    // Helper: Parse all URL parameters into an object
+    function getAllUrlParams(url) {
+      var queryString = url.split("?")[1] || "";
+      var params = queryString.split("&");
+      var allParams = {};
+      for (var i = 0; i < params.length; i++) {
+        var pair = params[i].split("=");
+        var key = decodeURIComponent(pair[0]);
+        var value = decodeURIComponent(pair[1] || "");
+        if (key && key !== '__proto__' && key !== 'constructor' && key !== 'prototype') {
+          if (allParams[key]) {
+            if (
+              Object.prototype.toString.call(allParams[key]) === "[object Array]"
+            ) {
+              allParams[key].push(value);
+            } else {
+              allParams[key] = [allParams[key], value];
+            }
+          } else {
+            allParams[key] = value;
+          }
+        }
+      }
+      return allParams;
+    }
+
+    // Helper: Create or overwrite UTM cookie
+    function createUTMCookie(
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      utmKeyword,
+      utmContent
+    ) {
+      var utmData = {
+        utm_source: utmSource,
+        utm_medium: utmMedium,
+        utm_campaign: utmCampaign,
+        utm_keyword: utmKeyword,
+        utm_content: utmContent,
+      };
+      var cookieValue = JSON.stringify(utmData);
+      var expiryDate = new Date(
+        new Date().getTime() + maxAgeInMinutes * 60000
+      ).toUTCString();
+      document['cookie'] =
+        cookieName +
+        "=" +
+        encodeURIComponent(cookieValue) +
+        "; path=/; expires=" +
+        expiryDate +
+        "; Secure; SameSite=Strict; HttpOnly";
+    }
+    // Sanitize UTM values to prevent cookie injection (CWE-20 / DOM Cookie Poisoning)
+    function sanitizeUTMValue(value) {
+      if (typeof value !== 'string') return '';
+      return value
+        .replace(/;/g, '')
+        .replace(/"/g, '')
+        .replace(/\r/g, '')
+        .replace(/\n/g, '')
+    }
+    // Main function to detect and store UTM/referral info
+    function fetch_utm() {
+      var params = getAllUrlParams(document.URL);
+      // Step 1: UTM parameters found in URL
+      if (params.utm_source) {
+        utmSource = sanitizeUTMValue(params.utm_source);
+        if (params.utm_medium) utmMedium = sanitizeUTMValue(params.utm_medium);
+        if (params.utm_campaign) utmCampaign = sanitizeUTMValue(params.utm_campaign);
+        if (params.utm_keyword) utmKeyword = sanitizeUTMValue(params.utm_keyword);
+        if (params.utm_content) utmContent = sanitizeUTMValue(params.utm_content);
+        createUTMCookie(utmSource, utmMedium, utmCampaign, utmKeyword, utmContent);
+        return;
+      }
+      // Step 2: Check if referrer is from a known search engine
+      var referrer = document.referrer;
+      var isOrganicSearch = false;
+      for (var i = 0; i < searchEngines.length; i++) {
+        if (referrer.indexOf(searchEngines[i]) > -1) {
+          isOrganicSearch = true;
+          break;
+        }
+      }
+      if (isOrganicSearch) {
+        createUTMCookie(utmSource, utmMedium, utmCampaign, utmKeyword, utmContent);
+        return;
+      }
+      // Step 3: Reuse values from existing cookie if available
+      var existingCookie = getCookieValue(cookieName);
+      if (existingCookie) {
+        var parsed;
+        try {
+          parsed = JSON.parse(existingCookie);
+        } catch (e) {
+          parsed = {};
+        }
+        createUTMCookie(
+          sanitizeUTMValue(parsed.utm_source || utmSource),
+          sanitizeUTMValue(parsed.utm_medium || utmMedium),
+          sanitizeUTMValue(parsed.utm_campaign || utmCampaign),
+          sanitizeUTMValue(parsed.utm_keyword || utmKeyword),
+          sanitizeUTMValue(parsed.utm_content || utmContent)
+        );
+        return;
+      }
+      // Step 4: Use document.referrer as fallback source
+      var docReferrer = document.referrer;
+      if (docReferrer && docReferrer !== "") {
+        docReferrer = sanitizeUTMValue(docReferrer); // Prevent DOM Cookie Poisoning
+        var hostname;
+        try {
+          hostname = document.createElement("a");
+          hostname.href = docReferrer;
+          utmSource = sanitizeUTMValue(hostname.hostname);
+        } catch (e) {
+          utmSource = docReferrer;
+        }
+        utmMedium = "referrer";
+        createUTMCookie(utmSource, utmMedium, utmCampaign, utmKeyword, utmContent);
+        return;
+      }
+      // Step 5: Default fallback values
+      createUTMCookie(utmSource, utmMedium, utmCampaign, utmKeyword, utmContent);
+    }
+    // Execute
+    fetch_utm();
+    // Updated Date - 30-May'25
+  }) 
+</script>
+<script>
+  // loadScript('https://www.googletagmanager.com/gtm.js?id=GTM-M8JQCJL', { async: true });
+  if (typeof __bflOnLCP === 'function') {
+    __bflOnLCP(() => {
+      loadScript('assets/js/last-click-cookie.min.js', { async: true });
+    });
+  } else if (typeof scheduleIdle === 'function') {
+    scheduleIdle(() => {
+      loadScript('assets/js/last-click-cookie.min.js', { async: true });
+    }, 5000);
+  } else {
+    loadScript('assets/js/last-click-cookie.min.js', { async: true });
+  }
+</script>
+
+</html>
+ 
+
+

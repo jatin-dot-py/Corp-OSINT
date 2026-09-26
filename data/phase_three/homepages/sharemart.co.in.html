@@ -1,0 +1,1909 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Market Creators
+</title><link href="../style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" language="javascript" src="JS/News.js"></script>
+    
+    <script type="text/javascript" src="/ModalPopups.js"></script>
+       
+    <script type="text/javascript" src="dragable-content.js"></script>
+
+    <script language="javascript" type="text/javascript" src="generic-drag.js"></script>
+
+<link href="/WebResource.axd?d=K4fKlrveZmfVgI12k7FSoJWyd0Hey4gAYYU86o8om13rYB3UbVeWqDKhb1fHawhAhn5byQqfWJrV5K-iMfqLbx5obUV2-BmoJTat4i3kbIvQB6-eKstBwZVweqYR4vHAvnFeZBTVlnfZKrh3i7YBDafu5ixPt5sLKmYgXJ03evB4KLDA0&amp;t=634033213132968750" type="text/css" rel="stylesheet" /></head>
+<style>
+            .popuphome {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, .75);
+                z-index: 999999;
+            }
+
+            .popuphome-inner {
+                max-width: 550px;
+                width: 90%;
+                padding: 0;
+                padding: 0 0 0 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                box-shadow: 0 2px 6px #000;
+                border-radius: 3px;
+                background: #fff;
+            }
+
+            .popuphome-closenew {
+                width: 30px;
+                height: 30px;
+                padding-top: 4px;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: ease .25s all;
+                -webkit-transform: translate(50%, -50%);
+                transform: translate(50%, -50%);
+                border-radius: 1000px;
+                background: #fff;
+                font-family: Arial, Sans-Serif;
+                font-size: 20px;
+                text-align: center;
+                line-height: 100%;
+                color: rgba(0, 0, 0, .8);
+                cursor: pointer;
+                text-decoration: none;
+            }
+        </style>
+<body>
+    <form name="form1" method="post" action="default.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" target="_blank">
+<div>
+<input type="hidden" name="Homectrl_HiddenField" id="Homectrl_HiddenField" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTM5NTU3NTU5OQ9kFgICAw9kFg4CBQ9kFgJmD2QWAmYPZBYCZg8PFgIeBFRleHQFA05TRWRkAgcPZBYCZg9kFgJmD2QWBAIBDxBkZBYBZmQCAw8WAh4JaW5uZXJodG1sBcgBJm5ic3A7NzMsODk1Ljc0Jm5ic3A7Jm5ic3A7Jm5ic3A7MzE1LjIwJm5ic3A7Jm5ic3A7Jm5ic3A7PGltZyBzcmM9Jy4uL2ltYWdlcy9BcnJvd3VwLmdpZidhbHQ9J3VwIGFycm93IGluZGljYXRpbmcgcG9zaXRpdmUgcHJpY2UgY2hhbmdlJyA+Jm5ic3A7Jm5ic3A7Jm5ic3A7PHNwYW4gY2xhc3M9J2dyZWVuY2xyJz48Yj4oMC40MyUpPC9iPjwvc3Bhbj5kAgkPZBYCZg9kFgJmD2QWAgIDDxYCHgdWaXNpYmxlaGQCCw9kFgICAQ9kFgJmD2QWCmYPFgIeBWNsYXNzBQ1iZ3doaXRlIGJvbGR2FgJmDw9kFgIeBXN0eWxlBQ9jdXJzb3I6ZGVmYXVsdDtkAgEPFgIfA2UWAmYPD2QWAh8EBQ9jdXJzb3I6cG9pbnRlcjtkAgIPFgIfA2UWAmYPD2QWAh8EBQ9jdXJzb3I6cG9pbnRlcjtkAgMPFgIeC18hSXRlbUNvdW50AgYWDGYPZBYCZg8VBQkyNS1TZXAtMjYFMDU6MzAsTG9jYWwgc3RvY2tzIGVuZGVkIG9uIGEgbWlsZGx5IHBvc2l0aXZlIG5vdGUHNTAyMjc2MixMb2NhbCBzdG9ja3MgZW5kZWQgb24gYSBtaWxkbHkgcG9zaXRpdmUgbm90ZWQCAQ9kFgJmDxUFCTI1LVNlcC0yNgUwNDozMCxMb2NhbCBzdG9ja3MgZW5kZWQgb24gYSBtaWxkbHkgcG9zaXRpdmUgbm90ZQc1MDIyNzQzLExvY2FsIHN0b2NrcyBlbmRlZCBvbiBhIG1pbGRseSBwb3NpdGl2ZSBub3RlZAICD2QWAmYPFQUJMjUtU2VwLTI2BTA0OjAwQlF1aWNrIFdyYXA6IE5pZnR5IENvbnN1bWVyIER1cmFibGVzIEluZGV4IHJlY29yZHMgYSBzdXJnZSBvZiAwLjk1JQc1MDIyNjE1LVF1aWNrIFdyYXA6IE5pZnR5IENvbnN1bWVyIER1cmFibGVzIEluZGV4IC4uLmQCAw9kFgJmDxUFCTI1LVNlcC0yNgUxMjozMDJTdG9ja3MgYnVpbGQgb24gc3Ryb25nIGdhaW5zIGZyb20gdGhlIGxhc3Qgc2Vzc2lvbgc1MDIyNDA3LVN0b2NrcyBidWlsZCBvbiBzdHJvbmcgZ2FpbnMgZnJvbSB0aGUgbGFzdC4uLmQCBA9kFgJmDxUFCTI1LVNlcC0yNgUxMTowMDxOSUZUWSByZW1haW5zIGZsYXQsIE5pZnR5IFJlYWx0eSByZW1haW5zIG9uIGludmVzdG9ycycgcmFkYXIHNTAyMjMyMS1OSUZUWSByZW1haW5zIGZsYXQsIE5pZnR5IFJlYWx0eSByZW1haW5zIG8uLi5kAgUPZBYCZg8VBQkyNS1TZXAtMjYFMDk6NDUeTG9jYWwgc3RvY2tzIHNlZSBsaW1pdGVkIGdhaW5zBzUwMjIzMDgeTG9jYWwgc3RvY2tzIHNlZSBsaW1pdGVkIGdhaW5zZAIEDxYCHwJoZAIND2QWAgIBDxYCHwUCBRYKZg9kFgYCAQ8WAh8BBWk8aW1nIHNyYz0nLi4vaW1hZ2VzL0Fycm93VXAuZ2lmJyBhbHQ9J3VwIGFycm93IGluZGljYXRpbmcgcG9zaXRpdmUgcHJpY2UgY2hhbmdlJyAvPiZuYnNwOyZuYnNwOyZuYnNwO0RKSUFkAgIPFQEJNTEsODM5LjY2ZAIDDw8WBh8ABQQwLjkxHglGb3JlQ29sb3IJDVoN/x4EXyFTQgIEZGQCAQ9kFgYCAQ8WAh8BBWw8aW1nIHNyYz0nLi4vaW1hZ2VzL0Fycm93VXAuZ2lmJyBhbHQ9J3VwIGFycm93IGluZGljYXRpbmcgcG9zaXRpdmUgcHJpY2UgY2hhbmdlJyAvPiZuYnNwOyZuYnNwOyZuYnNwO1MmUCA1MDBkAgIPFQEINyw3NjMuMjVkAgMPDxYGHwAFBDAuNDkfBgkNWg3/HwcCBGRkAgIPZBYGAgEPFgIfAQVxPGltZyBzcmM9Jy4uL2ltYWdlcy9BcnJvd0R3bi5naWYnIGFsdD0nZG93biBhcnJvdyBpbmRpY2F0aW5nIG5lZ2F0aXZlIHByaWNlIGNoYW5nZScgLz4mbmJzcDsmbmJzcDsmbmJzcDtIYW5nIFNlbmdkAgIPFQEJMjQsNTA3LjE2ZAIDDw8WBh8ABQUtMS4wMx8GCSYmlf8fBwIEZGQCAw9kFgYCAQ8WAh8BBW88aW1nIHNyYz0nLi4vaW1hZ2VzL0Fycm93VXAuZ2lmJyBhbHQ9J3VwIGFycm93IGluZGljYXRpbmcgcG9zaXRpdmUgcHJpY2UgY2hhbmdlJyAvPiZuYnNwOyZuYnNwOyZuYnNwO05pa2tlaSAyMjVkAgIPFQEJNjYsMzA4LjEwZAIDDw8WBh8ABQQxLjIxHwYJDVoN/x8HAgRkZAIED2QWBgIBDxYCHwEFbTxpbWcgc3JjPScuLi9pbWFnZXMvQXJyb3dVcC5naWYnIGFsdD0ndXAgYXJyb3cgaW5kaWNhdGluZyBwb3NpdGl2ZSBwcmljZSBjaGFuZ2UnIC8+Jm5ic3A7Jm5ic3A7Jm5ic3A7RlRTRSAxMDBkAgIPFQEJMTAsNjk0LjU3ZAIDDw8WBh8ABQQwLjE0HwYJDVoN/x8HAgRkZAIPD2QWAgIBD2QWAmYPZBYMAgEPDxYEHghDc3NDbGFzcwUJbG5rQWN0aXZlHwcCAmRkAgMPDxYEHwgFDGxua05vdEFjdGl2ZR8HAgJkZAIFDw8WBB8IBQxsbmtOb3RBY3RpdmUfBwICZGQCBw8WAh8CaGQCCQ8WAh8BBQ1ObyBEYXRhIEZvdW5kZAILDxYCHwJoFgJmD2QWAmYPFgIeBGhyZWYFFy4uL1Jlc2VhcmNoLmFzcHg/dHlwZT1EZAIRD2QWAmYPZBYCZg9kFhYCBQ8WAh8DBQl0YWJzZWxlY3QWAmYPDxYEHwgFDHRhYmxua3NlbGVjdB8HAgIWAh4GY3Vyc29yBQdkZWZhdWx0ZAIHDxYCHwMFDHRhYm5vdHNlbGVjdBYCZg8PFgQfCAUPdGFibG5rTm90c2VsZWN0HwcCAmRkAgkPFgIfAwUMdGFibm90c2VsZWN0FgJmDw8WBB8IBQ90YWJsbmtOb3RzZWxlY3QfBwICZGQCCw8WAh8DBQx0YWJub3RzZWxlY3QWAmYPDxYEHwgFD3RhYmxua05vdHNlbGVjdB8HAgJkZAINDxYCHwMFDHRhYm5vdHNlbGVjdBYCZg8PFgQfCAUPdGFibG5rTm90c2VsZWN0HwcCAmRkAg8PFgIfAwUMdGFibm90c2VsZWN0FgJmDw8WBB8IBQ90YWJsbmtOb3RzZWxlY3QfBwICZGQCEQ8WAh8CZxYCAgEPFgIfBQIFFgpmD2QWAmYPFQUXUmVsaWFuY2UgSW5kdXN0cmllcyBMdGQDNDc2FFJlbGlhbmNlIEluZHVzdHJpLi4uBzEyMjYuMDAFMTEuMjJkAgEPZBYCZg8VBQ1IREZDIEJhbmsgTHRkBDQ5ODcNSERGQyBCYW5rIEx0ZAY3MzUuODAENy42N2QCAg9kFgJmDxUFEUJoYXJ0aSBBaXJ0ZWwgTHRkBTE1NTQyEUJoYXJ0aSBBaXJ0ZWwgTHRkBzE3ODYuOTAENy41NGQCAw9kFgJmDxUFDklDSUNJIEJhbmsgTHRkBDU0MTgOSUNJQ0kgQmFuayBMdGQHMTMyNi41MAQ2LjQ0ZAIED2QWAmYPFQUTU3RhdGUgQmFuayBvZiBJbmRpYQQxMzc1E1N0YXRlIEJhbmsgb2YgSW5kaWEGOTgyLjUwBDYuMTNkAhMPFgIfAmhkAhUPFgIfAmhkAhcPFgIfAmhkAhkPFgIfAmhkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBRpUb3BwZXIxJFRvcExvZ2luMSRnb3NlYXJjaKTtacZ7iw9EU8OzzVQ1zuUoOlAf" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=tG-EMQSX-nEh-fYNnRedL3DYLt1IwweymDuWkzY7i0dLyBoYyLwGtJhQ4bZzTTNU3iuuY_6H_Rl9SJqo9VJfDqNGCKw1&amp;t=638314094380000000" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=rXw_izHDCBpTXLFgFQ97T3MTdwIsGtxqecayj-uW_4RFBq0HWiYlzTmMneSttdpuqB8jhX3M_Ck1TOFSEsdatteBRRBwjdVCU6JIHQXFfo_5hZydEeKh-4rWasCQTXl4oN71GHU_TOZ8htq4qKkH1ZCeiug1&amp;t=ffffffffce6d582c" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dk-Bpaz70bpPAHSVGwnNxWTB2Nm4vABXRlkntywP__DIljFyI9Ax_cLTvRk6x84KluzF30kEZzhjchKa3U1QOMH7PnHvvdpRnuWQGuitygb_ftX9d9vBvhvgH02zo5tEZtvlxe1D8032P5kDkkDAtqU9XZ01&amp;t=ffffffffa50b82b2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=VLkBtRJlbGSoY5uKxjZwAzLHIUbdfngrtbEyTq-JPhD-EohjCls0niiL9SFQKPbWTi_XhQcPg_BQI6-9l_lMZpIkRQmslQWYO_O77Di-17DSP8_4TWc4PyUZz2FETlm8jEgJZX8V6X6aaSchyq6e-vyikC0UXkh-hXFsZ7j47H05QNpM0&amp;t=ffffffffa50b82b2" type="text/javascript"></script>
+<script src="/default.aspx?_TSM_HiddenField_=Homectrl_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d3.0.30512.17815%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3ac6756652-1352-4664-9356-b246b450e2d0%3ae2e86ef9%3a9ea3f0e2%3a9e8e87e9%3a1df13a87%3a4c9865be%3aba594826%3a757f92c2%3a8ccd9c1b" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+null;if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWLQKZmbmtCQKn77XBDQLVgZ7qBQKbwcC0CgLCmdLlCgKmvfepBALMk7iaAgL+gK67DwL32IGgBgKd1IGgBgK+r59GAqesksoGAuSDmO8HAo/ixNoFApnBudsJAovv88cDAsTX7agPArP/tZQOArSywfsDAs2BmbQPAoKD5p4JAp6D5p4JAuThgooCAqDznIsIAsf+ubEMAq+A+N0KAqHj9PgFAq6FzdoLAvmQmQICsuO88QwCxr75nQQCpuyf3gcC9YrX1AsCjKu+8Q0Clr6BnggCoJme9wsCpurjxg0CyuTG8wkCzuTG8wkC+OycowUCwYeUkwUC2ar5oQICp5+DsQ0Cv6mqqwECyoam8AERkrg+e7SjmMA8rdQxNOZlt2GFJA==" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('Homectrl', document.getElementById('form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tTicker1$updtick','tMarketToday1$upd_markettoday','tHomeChart1$updchart','tMarketNews1$UpdMarketNews','tDailyAnalysis1$upddate','tMarketWatch1$Upd_Home_Expert_views'], [], [], 90);
+//]]>
+</script>
+
+    <div>
+        <table width="1000px" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+                <td>
+                    
+
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+
+        /* ---------- ZOOM CONTROL ---------- */
+        let zoomLevel = localStorage.getItem("zoomLevel")
+            ? parseFloat(localStorage.getItem("zoomLevel"))
+            : 1;
+
+        function applyZoom() {
+            document.body.style.zoom = zoomLevel;
+            localStorage.setItem("zoomLevel", zoomLevel);
+        }
+
+        function changeFont(step) {
+            zoomLevel += step * 0.1;
+
+            if (zoomLevel < 0.5) zoomLevel = 0.5;
+            if (zoomLevel > 2) zoomLevel = 2;
+
+            applyZoom();
+        }
+
+        function resetFont() {
+            zoomLevel = 1;
+            applyZoom();
+        }
+
+        /* ---------- SKIP TO CONTENT ---------- */
+        function skipContent(e) {
+            if (e) e.preventDefault();
+
+            const main = document.getElementById("mainContent");
+
+            if (main) {
+                main.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                setTimeout(function () {
+                    main.setAttribute("tabindex", "-1");
+                    main.focus();
+                }, 300);
+            }
+        }
+
+        const skipLink = document.querySelector('a[href="#mainContent"]');
+
+        if (skipLink) {
+            skipLink.addEventListener("click", skipContent);
+        }
+
+        /* ---------- THEME ---------- */
+        function setTheme(color, event) {
+            if (event) event.preventDefault();
+
+            document.body.classList.remove(
+                "bg-white",
+                "bg-black",
+                "bg-yellow",
+                "bg-blue",
+                "bg-orange"
+            );
+
+            document.body.classList.add(color);
+            document.body.style.color = color === "bg-black" ? "#fff" : "#000";
+
+            localStorage.setItem("themeColor", color);
+        }
+
+        /* ---------- LOAD SAVED SETTINGS ---------- */
+        applyZoom();
+
+        const savedColor = localStorage.getItem("themeColor");
+        if (savedColor) {
+            setTheme(savedColor);
+        }
+
+        /* ---------- GLOBAL FUNCTIONS ---------- */
+        window.changeFont = changeFont;
+        window.resetFont = resetFont;
+        window.skipContent = skipContent;
+        window.setTheme = setTheme;
+    });
+
+    /* ---------- ARIA PRESSED ---------- */
+    function setPressed(clicked) {
+        var links = document.querySelectorAll(".TopLink");
+
+        links.forEach(function (link) {
+            link.setAttribute("aria-pressed", "false");
+        });
+
+        clicked.setAttribute("aria-pressed", "true");
+    }
+</script>
+<script language="javascript" type="text/javascript">
+    function EmptyHome(ObjId)
+	{
+		if (ObjId.value == "Search Quotes / NAV / Insurance NAV")
+			ObjId.value = "";
+	}
+
+	function FillHome(ObjId)
+	{
+		if (ObjId.value == "")
+			ObjId.value ="Search Quotes / NAV / Insurance NAV";
+	}
+	function FunKeySubmitHome(event,txtCompanyName)
+	{
+	    var Key = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+		if(Key == 13)
+		{
+			var Scripid = txtCompanyName;
+			var boolval = SearchQuoteHome();
+			if(boolval)
+			return true;
+			else
+			return false;
+		}
+		if(Key ==33 || Key == 43 || Key ==48 || Key >= 35 && Key <= 38 || Key >= 40 && Key <=42 || Key == 64 || Key == 94 || Key == 95 || Key == 126)
+		{
+		
+			var Scripid = txtCompanyName;
+			var boolval = GetquotesInfoHome(txtCompanyName);
+			if(boolval)
+			return true;
+			else
+			return false;
+		}
+	}
+  
+    function GetquotesInfoHome(Obj)
+    {
+        alert("Special Characters are not allowed");
+	    Obj.focus();
+    }
+	function SearchQuoteHome()
+	{
+	    var srchtxt = document.getElementById('Topper1_txt_cmpname').value;   
+        var quoteselect = document.getElementById('Topper1_ddlgetquotes').value;
+        //var url = "/Markets/Company/Companylist.aspx?searchtxt=" + srchtxt + "&opt=" +  quoteselect;
+        var url;
+        //alert(quoteselect);
+        if(srchtxt == "Search Quotes / NAV / Insurance NAV")
+        {
+            alert("Please Enter the Few Characters");
+            document.getElementById('Topper1_txt_cmpname').focus();
+            return false;
+            
+        }
+        if (quoteselect == 'Quotes')
+        {
+            //alert('a');
+            url="/CompanyProfile/CompanySearch.aspx?id=401&schtxt="+srchtxt;
+        }
+        else if (quoteselect == 'NAV')
+        {
+            url="/MutualFund/MFSnapshot.aspx?id=3&var="+srchtxt;
+        }
+        else if (quoteselect == 'InsNAV')
+        {
+            url="/Insurance/InsuranceSearch.aspx?schtxt="+srchtxt;
+        }
+            window.location = url;
+    }
+	function etfgold()
+        {
+            var url = "/etfgold.htm";
+            var newWin=window.open(url, 'etfgold','x=0,y=0,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=728px,height=400px,screenX=0,screenY=0,left=170,top=200');	
+		    newWin.focus();
+        }
+</script>  
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td height="38px">
+            <script language="JavaScript" vqptag="doc_level_settings" is_vqp_html="1" vqp_datafile0="/Menu/new_menu1.js"
+                vqp_uid0="752319">cdd__codebase = "/Menu/";cdd__codebase752319 = "/Menu/";</script>
+            <script language="JavaScript" vqptag="datafile" src="/Menu/new_menu1.js"></script>
+            <script vqptag="placement" vqp_menuid="752319" language="JavaScript">create_menu(752319)</script>
+        </td>
+    </tr>
+
+     <tr>
+    <td width="967px" colspan="3" style="padding-top:5px;">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td>
+                    <div class="ticker-row">
+                    <input type="button" name="Topper1$btnTicker1" value="⏸" onclick="return toggleTicker('mqScroll1', this);__doPostBack('Topper1$btnTicker1','')" id="Topper1_btnTicker1" class="ticker-control-btn" />
+                    <span class="mq-container">
+                            <span class="mq-scroll" id="mqScroll1"  style="font-family:Arial;font-size:12px;color:#b92222;">Prevent Unauthorized Transactions in your Trading / demat account --> Update your
+                            Mobile Number & e mail id with your Broker / Depository Participant. Receive 
+                            alerts on your Registered Mobile for all Transactions / debit and other important
+                            transactions in your Trading / demat account directly from Exchanges & CDSL on 
+                            the same day..........Issued in the interest of investors.<br />
+                            KYC is one time exercise while dealing in securities markets - once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund etc.), you need not undergo the same process again when you approach another intermediary.<br />
+                             No need to issue cheques by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. No worries for refund as the money remains in investor's account.<br />
+                             <b>SCORES - Filing compliant on SCORES – Easy & quick</b>&nbsp;&nbsp;&nbsp;&nbsp;a. Register on SCORES portal.&nbsp;&nbsp;&nbsp;&nbsp;b. Mandatory details for filing complaints on SCORES : Name, PAN, Address, Mobile Number, Email ID.&nbsp;&nbsp;&nbsp;&nbsp;c. Benefits : Effective communication . Speedy redressal of the grievances 
+                               <b>Website :</b> <a href="https://scores.gov.in" style="color:Blue">https://scores.gov.in</a>
+
+                            </span>
+                        </span>
+                   </div>
+                </td>
+            </tr>
+          
+        </table>
+    </td>
+</tr>  
+
+    <tr>
+    <td width="967px" colspan="3" style="padding-top:5px;">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td>
+                          <div class="accessibility-toolbar" role="banner">
+            <ul style="list-style:none;display:flex">
+                <li>
+                    <a href="#mainContent"
+                       class="skip-link"
+                       style="color:#333ab7"
+                       onclick="skipContent(event)">
+                        Skip to main content
+                    </a>
+                </li>
+            </ul>
+        </div>
+                </td>
+            </tr>
+          
+        </table>
+    </td>
+</tr>  
+
+    <tr>
+		<td>
+		    <table class="topgreybg" border="0" cellspacing="0" cellpadding="0">
+		      <tr>
+			    <td width="295px"><img src="/images/Logo.gif" /></td>
+			    
+			    <td width="186px"></td>
+			    <td width="350px" style="padding-left:10px; padding-top:3px;">
+<script language="javascript" type="text/javascript">
+function test1()
+{
+    if(document.getElementById("Topper1_TopLogin1_text1").value == "USER NAME" || document.getElementById("Topper1_TopLogin1_text2").value == "PASSWORD")
+    {
+     alert("Please Enter User Name & Password");
+     return false;
+    }
+    if(document.getElementById("Topper1_TopLogin1_logdrp").value == "branch")
+    {
+        document.getElementById("form1").action = "https://my-eoffice.com/branch/postLogin.php";
+    }
+    else if(document.getElementById("Topper1_TopLogin1_logdrp").value == "hoffice")
+    {
+        document.getElementById("form1").action = "https://my-eoffice.com/arn/postLogin.php";
+    }
+    else if(document.getElementById("Topper1_TopLogin1_logdrp").value == "boffice")
+    {
+        document.getElementById("form1").action = "https://my-eoffice.com/emp/postLogin.php";
+    }
+    else if(document.getElementById("Topper1_TopLogin1_logdrp").value == "emp")
+    {
+        document.getElementById("form1").action = "https://my-eoffice.com/client/postLogin.php";
+    }
+    else if(document.getElementById("Topper1_TopLogin1_logdrp").value == "sb/sm")
+    {
+        document.getElementById("form1").action = "https://my-eoffice.com/advisors/postLogin.php";
+    }
+
+}
+</script>
+<table cellpadding="0" cellspacing="2"  width="99%" border="0">
+    <tr>
+        <td>
+            <input name="Topper1$TopLogin1$text1" type="text" value="USER NAME" id="Topper1_TopLogin1_text1" class="dropdown" />
+            <span id="Topper1_TopLogin1_Req_FName" style="color:Red;display:none;"></span>
+            <input type="hidden" name="Topper1$TopLogin1$VCE_FName_ClientState" id="Topper1_TopLogin1_VCE_FName_ClientState" />
+                <input type="hidden" name="Topper1$TopLogin1$TBWE1_ClientState" id="Topper1_TopLogin1_TBWE1_ClientState" />
+        </td>
+        </tr>
+    <tr>
+        <td>
+            <input name="Topper1$TopLogin1$text2" type="password" id="Topper1_TopLogin1_text2" class="dropdown" />
+            <span id="Topper1_TopLogin1_Req_FName1" style="color:Red;display:none;"></span>
+            <input type="hidden" name="Topper1$TopLogin1$VCE_FName1_ClientState" id="Topper1_TopLogin1_VCE_FName1_ClientState" />
+                <input type="hidden" name="Topper1$TopLogin1$TBWE11_ClientState" id="Topper1_TopLogin1_TBWE11_ClientState" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="Topper1_TopLogin1_logdrp">Select Login Type</label>
+
+        <select name="Topper1$TopLogin1$logdrp" id="Topper1_TopLogin1_logdrp" class="dropdown" style="width:150px;">
+	<option value="hoffice">Head Office / ARN Desk</option>
+	<option value="boffice">Backoffice Employee</option>
+	<option value="sb/sm">Sub-Broker/Sale Manager</option>
+	<option value="branch">Branch</option>
+	<option value="emp">Client</option>
+
+</select>
+        </td>
+        <td style="padding-left:2px;"><input type="image" name="Topper1$TopLogin1$gosearch" id="Topper1_TopLogin1_gosearch" src="/images/Go.gif" onclick="javascript:return test1();" style="border-width:0px;" /></td>
+    </tr>
+</table>
+</td>
+			    <td>
+			        <table width="379px" border="0" cellspacing="0" cellpadding="0">
+			            <tr><td height="30px"></td></tr>
+			            <tr>
+				            <td align=right>
+				                <table width="369px" height="23px" border="0" cellspacing="0" cellpadding="0">
+				                    <tr>
+					                    <td width="210px">
+					                        <input name="Topper1$txt_cmpname" type="text" value="Search Quotes / NAV / Insurance NAV" id="Topper1_txt_cmpname" class="dropdown" OnKeyPress="return FunKeySubmitHome(event,this)" onblur="FillHome(this);" onclick="javascript:EmptyHome(this);" style="width: 210px;" />
+                                        </td>
+					                    <td width="8px"></td>
+					                    <td>  
+					                        <select name="Topper1$ddlgetquotes" id="Topper1_ddlgetquotes" class="dropdown" style="width: 107px;">
+	<option value="Quotes">Quotes</option>
+	<option value="NAV">NAV</option>
+	<option value="InsNAV">Insurance NAV</option>
+
+</select>
+					                    </td>
+					                    <td width="7px"></td>
+					                    <td align="left" width="48px"><img src="/images/Go.gif" style="cursor:pointer" onclick="javascript:SearchQuoteHome()" /></td>
+				                    </tr>
+				                </table>
+				            </td>
+			            </tr>
+			            <tr><td height="25px"></td></tr>
+			        </table>
+			    </td>
+		    </tr>
+	        </table>
+		</td>
+	</tr>
+</table>
+
+<style>
+    /* This replaces the marquee but looks identical */
+.mq-container {
+    display: block; /* Essential to stay inside <p> without breaking design */
+    vertical-align: middle;
+    width: 930px; 
+    max-width: 930px;      /* Matches your original marquee width */
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.mq-scroll {
+    display: inline-block;
+    padding-left: 100%;    /* All lines start at the exact same 'gate' */
+    animation: same-speed 50s linear infinite; /* Same time = same speed */
+    font-family: Arial;
+    font-size: 11px;
+    color: #FFFFFF;
+}
+
+.static-label {
+    float: left;
+    width: 130px;
+    font-family: Arial;
+    font-size: 11px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+@keyframes same-speed {
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        /* Move by a fixed pixel distance. 
+           Increase this number if your longest text gets cut off. */
+        transform: translateX(-2200px); 
+    }
+}
+
+/* Pause on TAB key or Hover */
+.mq-container:focus, .mq-container:hover {
+    outline: none; 
+}
+.mq-container:focus .mq-scroll, .mq-container:hover .mq-scroll {
+    animation-play-state: paused;
+}
+
+.mq-scroll.paused {
+    animation-play-state: paused;
+}
+
+.ticker-control-btn {
+  /* background-color: #d66252;  */ 
+    border: none;
+    color: #1a1a1a;
+    cursor: pointer;
+    padding: 0 12px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    transition: background 0.2s;
+}
+
+.ticker-control-btn:hover {
+    background-color: grey;
+}
+
+.ticker-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.mq-container {
+    flex: 1;
+    overflow: hidden;
+}
+
+.ticker-control-btn {
+    flex-shrink: 0;
+}
+
+</style>
+
+<script>
+    function toggleTicker(tickerId, btn) {
+
+        var ticker = document.getElementById(tickerId);
+
+        if (ticker.classList.contains("paused")) {
+            ticker.classList.remove("paused");
+            btn.value = "⏸";
+            btn.setAttribute("aria-label", "Pause ticker content");
+        }
+        else {
+            ticker.classList.add("paused");
+            btn.value = "▶";
+            btn.setAttribute("aria-label", "Play ticker content");
+        }
+
+        return false;
+    }
+</script>
+
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="bggrey" width="1000px" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="9px">
+                            </td>
+                            <td>
+                                <table width="982px" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <table width="982px" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+                                                                        width="700" height="281">
+                                                                        <param name="WMode" value="Transparent">
+                                                                       
+                                                                        <img src="/images/Banner_new.png"   alt=""   role="presentation" />
+                                                                        <param name="quality" value="high">
+                                                                        
+                                                                    </object>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="700px" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <table width="495px" border="0" cellspacing="0" cellpadding="0">
+                                                                                    <tr>
+                                                                                        <td style="background-color:#141414;">
+                                                                                            <table width="400px" height="26px" border="0" cellspacing="0" cellpadding="0">
+                                                                                                <tr>
+                                                                                                    <td style="width:100px;">
+                                                                                                        <img src="images/MenuArrowLeft.gif" alt="" role="presentation" />
+                                                                                                    </td>
+                                                                                                    <td width="58px">
+                                                                                                        <a href="../markets/MarketHome.aspx">
+                                                                                                            <img border="0" src="images/Equity.gif" alt="" role="presentation" /></a>
+                                                                                                    </td>
+                                                                                                    <td style="background-color:Black; width:100px;">
+                                                                                                        <img src="images/MenuSepretor.gif" alt="" role="presentation" />
+                                                                                                    </td>
+                                                                                                    
+                                                                                                    <td width="84px">
+                                                                                                        <a href="../MutualFund/MutualHome.aspx">
+                                                                                                            <img border="0" src="images/MF.gif" alt="" role="presentation" /></a>
+                                                                                                    </td>
+                                                                                                    <td width="1px">
+                                                                                                        <img src="images/MenuSepretor.gif" />
+                                                                                                    </td>
+                                                                                                    <td width="34px">
+                                                                                                        <a href="../IPO/IPOHome.aspx">
+                                                                                                            <img border="0" src="images/Ipo.gif" alt="" role="presentation" /></a>
+                                                                                                    </td>
+                                                                                                    <td width="1px">
+                                                                                                        <img src="images/MenuSepretor.gif" />
+                                                                                                    </td>
+                                                                                                    <td width="76px">
+                                                                                                        <a href="../Derivatives/DerivativeHome.aspx">
+                                                                                                            <img border="0" src="images/Derivatives.gif" alt="" role="presentation" /></a>
+                                                                                                    </td>
+                                                                                                    <td width="1px">
+                                                                                                        <img src="images/MenuSepretor.gif" alt="" role="presentation" />
+                                                                                                    </td>
+                                                                                                    <td width="84px">
+                                                                                                        <a href="../Insurance/Insurance.aspx?id=1">
+                                                                                                            <img border="0" src="images/insurance.gif" alt="" role="presentation" /></a>
+                                                                                                    </td>
+                                                                                                    <td width="16px">
+                                                                                                        <img src="images/MenuArrowRight.gif" alt="" role="presentation" />
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td height="13px">
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                            <td>
+                                                                                <table width="205px" height="39px" background="images/welcomShareBG.gif" border="0"
+                                                                                    cellspacing="0" cellpadding="0">
+                                                                                    <tr>
+                                                                                        <td width="10px">
+                                                                                        </td>
+                                                                                        <td width="183px">
+                                                                                            <img src="images/WelcomeToShare.gif"   alt="" role="presentation"/>
+                                                                                        </td>
+                                                                                        <td width="12px">
+                                                                                            <img src="images/WelcomeToShareCurv.gif" alt="" role="presentation" />
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text" height="72px" style="text-align: justify;">
+                                                                    Share Mart is BSE listed public limited company incorporated in the year 1991 and
+                                                                    having its registered office at Baroda, Gujarat. Share Mart deals with a wide network
+                                                                    of Business Associated across the country and also directory with investors. We
+                                                                    have representation in the states of Gujarat, Maharashtra, Andhra Pradesh and Tamil
+                                                                    Nadu. We have earned the trustworthiness of satisfied investors and our work.
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="30px" bgcolor="#FFFFFF">
+                                                                    <table cellpadding="0" cellspacing="0" border="0" width="690px" align="center">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div id="Ticker1_updtick">
+	
+    <table width="100%" height="24px" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td width="628px" valign="middle" class="Tickertext"><marquee width='628px' id=MarqueeId  onmouseover=this.stop(); onmouseout=this.start(); trueSpeed scrollAmount="1" scrollDelay="35" direction="left" loop="repeat" width="100%" ><span class='Tickertext'>Friday, September 25, 2026 <span class='SenNift'>&nbsp;15 mins delay&nbsp;&nbsp;Sensex</span>&nbsp;:&nbsp;&nbsp;73,895.74</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=34'><span class='Tickertext'>Asian Paints</span></a>:&nbsp;2,445.00 &nbsp;<span class='greenclr'>[46.40]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=255'><span class='Tickertext'>Hind. Unilever</span></a>:&nbsp;1,940.00 &nbsp;<span class='greenclr'>[7.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=301'><span class='Tickertext'>ITC</span></a>:&nbsp;269.00 &nbsp;<span class='greenclr'>[1.20]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=345'><span class='Tickertext'>Trent</span></a>:&nbsp;2,666.00 &nbsp;<span class='redclr'>[38.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=348'><span class='Tickertext'>Larsen & Toubro</span></a>:&nbsp;3,879.00 &nbsp;<span class='greenclr'>[34.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=365'><span class='Tickertext'>M & M</span></a>:&nbsp;3,031.35 &nbsp;<span class='greenclr'>[66.35]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=476'><span class='Tickertext'>Reliance Industries</span></a>:&nbsp;1,226.00 &nbsp;<span class='greenclr'>[7.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=566'><span class='Tickertext'>Tata Steel</span></a>:&nbsp;187.70 &nbsp;<span class='redclr'>[0.70]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=1016'><span class='Tickertext'>Titan Company</span></a>:&nbsp;4,879.00 &nbsp;<span class='greenclr'>[49.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=1375'><span class='Tickertext'>SBI</span></a>:&nbsp;982.50 &nbsp;<span class='greenclr'>[4.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=2298'><span class='Tickertext'>Bharat Electron</span></a>:&nbsp;393.00 &nbsp;<span class='blueclr'>[0.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=2330'><span class='Tickertext'>Kotak Mah. Bank</span></a>:&nbsp;403.40 &nbsp;<span class='redclr'>[1.90]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=2806'><span class='Tickertext'>Infosys</span></a>:&nbsp;1,000.95 &nbsp;<span class='redclr'>[8.15]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=3722'><span class='Tickertext'>Bajaj Finance</span></a>:&nbsp;995.00 &nbsp;<span class='greenclr'>[11.85]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=4325'><span class='Tickertext'>Sun Pharma.Inds.</span></a>:&nbsp;1,853.50 &nbsp;<span class='greenclr'>[0.50]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=4987'><span class='Tickertext'>HDFC Bank</span></a>:&nbsp;735.80 &nbsp;<span class='greenclr'>[6.35]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=5400'><span class='Tickertext'>TCS</span></a>:&nbsp;2,083.95 &nbsp;<span class='greenclr'>[6.95]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=5418'><span class='Tickertext'>ICICI Bank</span></a>:&nbsp;1,326.50 &nbsp;<span class='redclr'>[5.50]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=5455'><span class='Tickertext'>Power Grid Corpn</span></a>:&nbsp;269.25 &nbsp;<span class='greenclr'>[2.25]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=5496'><span class='Tickertext'>Maruti Suzuki</span></a>:&nbsp;12,071.00 &nbsp;<span class='greenclr'>[57.65]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=5554'><span class='Tickertext'>Axis Bank</span></a>:&nbsp;1,220.00 &nbsp;<span class='greenclr'>[33.50]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=5656'><span class='Tickertext'>HCL Technologies</span></a>:&nbsp;1,259.40 &nbsp;<span class='greenclr'>[14.55]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=12001'><span class='Tickertext'>NTPC</span></a>:&nbsp;326.20 &nbsp;<span class='redclr'>[0.30]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=15542'><span class='Tickertext'>Bharti Airtel</span></a>:&nbsp;1,786.90 &nbsp;<span class='redclr'>[4.10]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=17215'><span class='Tickertext'>Tech Mahindra</span></a>:&nbsp;1,547.00 &nbsp;<span class='greenclr'>[1.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=21281'><span class='Tickertext'>Adani Ports</span></a>:&nbsp;1,784.00 &nbsp;<span class='redclr'>[0.60]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=24951'><span class='Tickertext'>UltraTech Cem.</span></a>:&nbsp;11,100.00 &nbsp;<span class='greenclr'>[19.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=28075'><span class='Tickertext'>Bajaj Finserv</span></a>:&nbsp;1,769.00 &nbsp;<span class='redclr'>[2.00]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=33159'><span class='Tickertext'>Interglobe Aviat</span></a>:&nbsp;4,934.85 &nbsp;<span class='greenclr'>[44.85]</span><img src='../Images/Spacer.gif' style='width:10px'><a href='../CompanyProfile/ScripSearch.aspx?id=401&cocode=68117'><span class='Tickertext'>Eternal</span></a>:&nbsp;334.80 &nbsp;<span class='redclr'>[1.20]</span></marquee></td>
+            <td width="46px" align="center" class="bgtickred text3"><img src="../images/tickerarrow.gif"/> <b>BSE</b></td>
+            <td width="46px" align="center" class="bgtickgrey text3"><a id="Ticker1_lnktick" class="text3" href="javascript:__doPostBack('Ticker1$lnktick','')">NSE</a></td>
+        </tr>
+    </table>
+    
+</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="10px">
+                                                    </td>
+                                                    <td>
+                                                        <img src="images/ShadowImg.jpg" />
+                                                    </td>
+                                                    <td>
+                                                        <table width="254px" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="254px" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <a href="../openanaccount.aspx">
+                                                                                    <img border="0" src="images/openanaccount.gif" alt="" role="presentation" /></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <a href="../PortfolioTracker/PortFolioLogin.aspx">
+                                                                                    <img border="0" src="images/PortfolioTracker.gif" alt="" role="presentation" /></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                
+                                                                                 <a href="/BackOffice.aspx" target="_blank">
+                                                                                    <img src="images/BackOfficeLogin.gif" alt="" role="presentation" border="0" /></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <a href="http://182.75.230.198:85/HTML5/" target="_blank">
+                                                                                    <img src="images/OnlineTrading.gif" alt="" role="presentation" border="0" /></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <a href="http://ebill.sharemart.co.in/Client%20interface/login.aspx" target="_blank">
+                                                                                    <img src="images/FiananceTools.gif" alt="" role="presentation" border="0" /></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <a href="../download.aspx">
+                                                                                    <img src="images/hdownloads.gif" alt="" role="presentation" border="0" /></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <a href="../Research.aspx">
+                                                                                    <img src="images/Research.gif" alt="" role="presentation" border="0" /></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div id="MarketToday1_upd_markettoday">
+	
+<table width="254px" style="" border="0" cellspacing="0" cellpadding="0">
+  <tr><td height="15px" colspan="2"><img src="images/MarketTodays.gif" /></td></tr>
+  <tr><td>
+        <select name="MarketToday1$Drp_markettoday" onchange="javascript:setTimeout('__doPostBack(\'MarketToday1$Drp_markettoday\',\'\')', 0)" id="MarketToday1_Drp_markettoday" class="dropdown">
+		<option selected="selected" value="bse">SENSEX</option>
+		<option value="nse">NIFTY</option>
+
+	</select>
+    </td><td id="MarketToday1_markettd" class="text" height="26px">&nbsp;73,895.74&nbsp;&nbsp;&nbsp;315.20&nbsp;&nbsp;&nbsp;<img src='../images/Arrowup.gif'alt='up arrow indicating positive price change' >&nbsp;&nbsp;&nbsp;<span class='greenclr'><b>(0.43%)</b></span></td>
+	</tr>
+  
+  <tr>
+    <td height="10px"></td>
+  </tr>
+</table>
+
+</div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="982px" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td valign="top">
+                                                        <div id="HomeChart1_updchart">
+	
+<table width="322px" height="200px" class="bgwhite" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr><td height="5px"></td></tr>
+    
+    <tr id="HomeChart1_tdmarket">
+		<td valign="top">
+            <table width="312px" border="0" cellspacing="0" cellpadding="0"  align="center">
+                <tr><td height="5px"></td></tr>
+                <tr> 
+                    <td style="padding-right:26px;" align="right"><img src="images/ArrowBSE.gif"   alt=""   role="presentation" />
+                        <a id="HomeChart1_lnkbse" class="text1" href="javascript:__doPostBack('HomeChart1$lnkbse','')" style="cursor:default"><b>BSE</b></a>&nbsp;
+                        <a id="HomeChart1_lnknse" class="text2" href="javascript:__doPostBack('HomeChart1$lnknse','')" style="cursor:pointer"><b>NSE</b></a>
+                    </td>
+                  </tr> 
+                  <tr>
+                    <td valign="top" height="140px" id="live_chart"></td>
+                  </tr>
+                  <input type="hidden" name="HomeChart1$hidexchg" id="HomeChart1_hidexchg" value="BSE" />
+                  <input type="hidden" name="HomeChart1$hidperiod" id="HomeChart1_hidperiod" value="1" />
+                  <tr>
+                    <td height="30px" class="text1" align="center">
+                        <a id="HomeChart1_lnk1day" class="text1 boldv" href="javascript:__doPostBack('HomeChart1$lnk1day','')" style="cursor:default">1 Day</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a id="HomeChart1_lnk5days" class="text1" href="javascript:__doPostBack('HomeChart1$lnk5days','')" style="cursor:pointer">5 Days</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a id="HomeChart1_lnk3mon" class="text1" href="javascript:__doPostBack('HomeChart1$lnk3mon','')" style="cursor:pointer">3 Months</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a id="HomeChart1_lnk1yr" class="text1" href="javascript:__doPostBack('HomeChart1$lnk1yr','')" style="cursor:pointer">1 yr</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a id="HomeChart1_lnk5yrs" class="text1" href="javascript:__doPostBack('HomeChart1$lnk5yrs','')" style="cursor:pointer">5 yrs</a>
+                    </td>
+                  </tr>     
+            </table>
+        </td>
+	</tr>
+	  
+    
+   
+</table>
+
+
+<script src="/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="/amchart/amcharts.js" type="text/javascript"></script>
+<script src="/amchart/serial.js" type="text/javascript"></script>
+<script src="/amchart/none.js" type="text/javascript"></script>
+<script type="text/javascript">
+    use_date1('BSE', '1D');
+ 
+    
+  
+    function use_date1(EXCHG, Duration) {
+      // alert(EXCHG);
+          //alert(Duration);
+        //alert(cocode);
+        var laby;
+        if(Duration=="1D")
+        {laby="Time";}
+        else
+        {laby="Date";}
+        var s = "";
+        $.ajax({
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+//            url: "/Commodity/CommodityHome.aspx/todaysmarket",
+            url: "/TodayMarketChart.aspx/todaysmarket",
+            data: "{EXCHG:'" + EXCHG + "',Duration:'" + Duration + "'}",
+            dataType: "json",
+            beforeSend: function () {
+                    // alert("start");
+                $("#LoadingImage").show();
+            },
+            success: function (output) {
+                var s = output.d;
+               // alert(s);
+//                if (output.d == ']') {
+//                    //                    alert(output.d);
+//                  
+//                    $("#hmfchart").show();
+//                    $("#live_chart").hide();
+//                 //   $("#hmfchart").text("No Data Available")
+//                    document.getElementById("hmfchart").innerHTML="Company Not Listed";
+//                }
+//                else {
+//                    $("#hmfchart").hide();
+//                    $("#live_chart").show();
+//                    
+//                   // use_date_stock(EXCHG);
+//                }
+
+              
+
+
+                var chart = AmCharts.makeChart('live_chart', { 'type': 'serial', 'theme': 'light', 'paddingRight': 0, 'color': 'black', 'fontfamily': 'Roboto Condensed',
+                    'pathToImages': '/images/',
+                    'dataProvider': eval(s),
+                    'valueAxes': [{ 'id': 'v1',
+                        'axisColor': 'black',
+                        'axisThickness': 2,
+                        'gridAlpha': 0,
+                        'axisAlpha': 1,
+                        'position': 'left',
+                        'title': 'Price',
+                        "labelsEnabled": false
+                    }],
+                    'numberFormatter': {
+                        'precision': 2,
+                        'decimalSeparator': " .",
+                        'thousandsSeparator': ","
+                    },
+                    'graphs': [{ 'valueAxis': 'v2', 'axisAlpha': 0, 'reversed': false, 'lineColor': '#DD2B22', 'color': '#57ac58', 'bullet': 'round', 'bulletBorderThickness': 0, 'hideBulletsCount': 25, 'valueField': 'value', 'fillAlphas': 1 },
+                { 'valueAxis': 'v2', 'lineColor': '#D3575E', 'inside': true, 'bullet': 'round', 'bulletBorderThickness': 0, 'hideBulletsCount': 25, 'valueField': 'value1', 'fillAlphas': 0 }
+                ],
+                    'plotAreaBorderAlpha': 0, 'marginTop': 10, 'marginLeft': 0, 'marginBottom': 0, 'chartCursor': {
+                        'cursorAlpha': 0
+                    }, 'categoryField': 'year', 'categoryAxis': { 'axisColor': '#DADADA',"labelsEnabled": false, 'title': laby, 'forceShowField': 'forceShow', 'gridAlpha': 0.07, 'autoGridCount': true, 'dashLength': 2, 'gridCount': 2, "labelRotation": 45,
+                        'guides': [{ inside: true}]
+                    },
+                    'exportConfig': { 'menuTop': '10px', 'menuRight': '10px', 'menuItems': [{ 'icon': '/lib/3/images/export.png', 'format': 'png'}]
+                    }
+
+                });
+            },
+            complete: function () {
+                //alert("stop");
+                $("#LoadingImage").hide();
+            }, 
+            error: function (errormsg) {
+
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript"> 
+     HomeComChartLanding('NCDEX','SILVER');
+      function HomeComChartLanding(Type,symbol) {      
+  // alert(Type);alert(symbol);
+          var s = "";
+          
+        $.ajax({
+            type: "POST",          
+            contentType: "application/json; charset=utf-8",
+            url:"/Commodity/CommodityHome.aspx/FillComIntradayLanding",
+            data:"{type:'"+Type+"',symbol:'"+symbol+"'}",
+            dataType: "json",
+            success: function (output) {
+          //   alert(output.d);
+                debugger;
+                var s = output.d;
+           
+                var a = s.split('~');
+       
+               
+                var chart = AmCharts.makeChart('goldsilver', {
+                    'type': 'serial', 'theme': 'light', 'paddingRight': 0, 'color': '#686868', 'fontfamily': 'Roboto Condensed',
+                    'pathToImages': '/images/',
+                    'dataProvider': eval(a[0]),
+                    'valueAxes': [{ 'id': 'v1',
+                        'axisColor': '#6C8CC7',
+                        'axisThickness': 0,
+                        'gridAlpha': 0.2,
+                        'axisAlpha': 1,
+                        'position': 'right',
+                        'title':'price'
+}],
+
+'numberFormatter': {
+    'precision': 2,
+    'decimalSeparator': ".",
+    'thousandsSeparator': ","
+},
+
+'graphs': [{ 'valueAxis': 'v2', 'axisAlpha': 0, 'reversed': false, 'lineColor': '#DD2B22', 'color': '#000',  'valueField': 'value', 'fillAlphas': 0.03, 'lineThickness': 2, },
+                { 'valueAxis': 'v2', 'lineColor': '#DADADA', 'forceShowField': 'forceShow', 'inside': true, 'valueField': 'value1', 'fillAlphas': 0.2 }
+                ],
+                    'plotAreaBorderAlpha': 0, 'marginTop': 10, 'marginLeft': 15, 'marginBottom': 0, 'chartCursor': {
+                        'cursorAlpha': 0
+                    }, 'categoryField': 'year', 'categoryAxis': { 'axisColor': '#DADADA','title':'period', 'forceShowField': 'forceShow', 'gridAlpha': 0.2, 'autoGridCount': true, 'dashLength': 0, 'gridCount': 2,
+                        'guides': [{ inside: true}]
+                    },
+                    'exportConfig': { 'menuTop': '10px', 'menuRight': '10px', 'menuItems': [{ 'icon': '/lib/3/images/export.png', 'format': 'png'}]
+                    }
+                });
+            },
+            error: function (errormsg) {
+              
+            }
+        });
+      }
+       
+    
+    
+      </script>
+
+</div>
+
+                                                    </td>
+                                                    <td width="8px">
+                                                    </td>
+                                                    <td valign="top">
+                                                        
+<script language="javascript" type="text/javascript">
+    function NewsPop(sno)
+    {
+        var wind_new11;
+        wind_new11=window.open("../News/NewsPopup.aspx?SrNo="+sno, "NewsPopup", "status = 0, height =409, width=500, resizable=no, nomaximize, noheader, scrollbars=0,left=50,top=100 ")
+        wind_new11.focus();
+    }
+</script>
+<div id="MarketNews1_UpdMarketNews">
+	
+<table width="369px" style="padding:5px 5px;" class="bgwhite" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+            <table width="359px" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <table width="359px" height="30px" class="bggrey" border="0" cellspacing="0" cellpadding="0">
+                            <tr><td height="4px"></td></tr>
+                            <tr>
+                                <td width="5px"></td>
+                                <td id="MarketNews1_tdmarkrtcomm" width="134px" align="center" class="bgwhite boldv"><a id="MarketNews1_lnkmarkcomm" class="text1" href="javascript:__doPostBack('MarketNews1$lnkmarkcomm','')" style="cursor:default;">Market Commentary</a></td>
+	
+                                <td id="MarketNews1_tdhot" width="118px" align="center" class=""><a id="MarketNews1_lnkhot" class="text1" href="javascript:__doPostBack('MarketNews1$lnkhot','')" style="cursor:pointer;">Hot Pursuit</a></td>
+	
+                                <td id="MarketNews1_tdbeat" width="99px" align="center" class=""><a id="MarketNews1_lnkbeat" class="text1" href="javascript:__doPostBack('MarketNews1$lnkbeat','')" style="cursor:pointer;">Market Beat</a></td>
+	
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="142px" style="padding-left:5px; padding-top:10px;" class="">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            
+                            <tr>
+                                <td class="text" nowrap height="22px"><img src="images/Bullet.gif" alt="" aria-hidden="true" />&nbsp;&nbsp;<font class="text2">[25-Sep-26 05:30]</font>&nbsp;&nbsp;&nbsp;&nbsp;   <a href="#" title="Local stocks ended on a mildly positive note"><a style="cursor:pointer" onclick="javascript:NewsPop('5022762')"><span class="text">Local stocks ended on a mildly positive note</span></a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="text" nowrap height="22px"><img src="images/Bullet.gif" alt="" aria-hidden="true" />&nbsp;&nbsp;<font class="text2">[25-Sep-26 04:30]</font>&nbsp;&nbsp;&nbsp;&nbsp;   <a href="#" title="Local stocks ended on a mildly positive note"><a style="cursor:pointer" onclick="javascript:NewsPop('5022743')"><span class="text">Local stocks ended on a mildly positive note</span></a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="text" nowrap height="22px"><img src="images/Bullet.gif" alt="" aria-hidden="true" />&nbsp;&nbsp;<font class="text2">[25-Sep-26 04:00]</font>&nbsp;&nbsp;&nbsp;&nbsp;   <a href="#" title="Quick Wrap: Nifty Consumer Durables Index records a surge of 0.95%"><a style="cursor:pointer" onclick="javascript:NewsPop('5022615')"><span class="text">Quick Wrap: Nifty Consumer Durables Index ...</span></a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="text" nowrap height="22px"><img src="images/Bullet.gif" alt="" aria-hidden="true" />&nbsp;&nbsp;<font class="text2">[25-Sep-26 12:30]</font>&nbsp;&nbsp;&nbsp;&nbsp;   <a href="#" title="Stocks build on strong gains from the last session"><a style="cursor:pointer" onclick="javascript:NewsPop('5022407')"><span class="text">Stocks build on strong gains from the last...</span></a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="text" nowrap height="22px"><img src="images/Bullet.gif" alt="" aria-hidden="true" />&nbsp;&nbsp;<font class="text2">[25-Sep-26 11:00]</font>&nbsp;&nbsp;&nbsp;&nbsp;   <a href="#" title="NIFTY remains flat, Nifty Realty remains on investors' radar"><a style="cursor:pointer" onclick="javascript:NewsPop('5022321')"><span class="text">NIFTY remains flat, Nifty Realty remains o...</span></a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="text" nowrap height="22px"><img src="images/Bullet.gif" alt="" aria-hidden="true" />&nbsp;&nbsp;<font class="text2">[25-Sep-26 09:45]</font>&nbsp;&nbsp;&nbsp;&nbsp;   <a href="#" title="Local stocks see limited gains"><a style="cursor:pointer" onclick="javascript:NewsPop('5022308')"><span class="text">Local stocks see limited gains</span></a></td>
+                            </tr>
+                            
+                            <tr>
+                                
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                <td class="text1" style="padding-right:10px;" align="Right"><a href="../News/News.aspx?id=103">More <img border="0"   alt=""   role="presentation" src="images/ArrowMore.gif" /></a></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+</div>
+
+                                                    </td>
+                                                    <td width="10px">
+                                                    </td>
+                                                    <td valign="top">
+                                                        
+
+<table cellpadding="0" cellspacing="0" border="0" width="270px" height="200px" class="bgwhite">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td width="100%" height="29px" class="MHtabOFF" style="padding-left:15px;cursor:auto">World Indices</td>
+                </tr>
+                <tr>
+                    <td height="150px" valign="top">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                                <td width="8px"><img src="images/spacer.gif" /></td>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="GridHeadWIL" style="padding-left:10px;">Indices</td>
+                                            <td class="GridHeadWIC">Value</td>
+                                            <td class="GridHeadWIC" style="padding-right:10px;">% Chg</td>
+                                        </tr>
+                                        
+                                                <tr>
+                                                    <td id="WorldIndices1_repWorldIndices_ctl00_indices" class="GridItemDataL"><img src='../images/ArrowUp.gif' alt='up arrow indicating positive price change' />&nbsp;&nbsp;&nbsp;DJIA</td>
+
+                                                    <td class="GridItemDataR">51,839.66</td>
+                                                    <td class="GridItemDataR"><span id="WorldIndices1_repWorldIndices_ctl00_PerChg1" style="color:#0D5A0D;">0.91</span></td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td id="WorldIndices1_repWorldIndices_ctl01_indices" class="GridItemDataL"><img src='../images/ArrowUp.gif' alt='up arrow indicating positive price change' />&nbsp;&nbsp;&nbsp;S&P 500</td>
+
+                                                    <td class="GridItemDataR">7,763.25</td>
+                                                    <td class="GridItemDataR"><span id="WorldIndices1_repWorldIndices_ctl01_PerChg1" style="color:#0D5A0D;">0.49</span></td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td id="WorldIndices1_repWorldIndices_ctl02_indices" class="GridItemDataL"><img src='../images/ArrowDwn.gif' alt='down arrow indicating negative price change' />&nbsp;&nbsp;&nbsp;Hang Seng</td>
+
+                                                    <td class="GridItemDataR">24,507.16</td>
+                                                    <td class="GridItemDataR"><span id="WorldIndices1_repWorldIndices_ctl02_PerChg1" style="color:#952626;">-1.03</span></td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td id="WorldIndices1_repWorldIndices_ctl03_indices" class="GridItemDataL"><img src='../images/ArrowUp.gif' alt='up arrow indicating positive price change' />&nbsp;&nbsp;&nbsp;Nikkei 225</td>
+
+                                                    <td class="GridItemDataR">66,308.10</td>
+                                                    <td class="GridItemDataR"><span id="WorldIndices1_repWorldIndices_ctl03_PerChg1" style="color:#0D5A0D;">1.21</span></td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td id="WorldIndices1_repWorldIndices_ctl04_indices" class="GridItemDataL"><img src='../images/ArrowUp.gif' alt='up arrow indicating positive price change' />&nbsp;&nbsp;&nbsp;FTSE 100</td>
+
+                                                    <td class="GridItemDataR">10,694.57</td>
+                                                    <td class="GridItemDataR"><span id="WorldIndices1_repWorldIndices_ctl04_PerChg1" style="color:#0D5A0D;">0.14</span></td>
+                                                </tr>
+                                            
+                                        <tr><td id="WorldIndices1_nodata" colspan="3" class="Nodata" align="center"></td>
+</tr>
+                                    </table>
+                                </td>
+                                <td width="8px"><img src="images/spacer.gif" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="WorldIndices1_tdmore" align="right" valign="top" class="more"><a href="../OtherMarkets/OtherMarkets.aspx?id=355">More&nbsp;<img border="0" src="images/ArrowMore.gif"   alt=""   role="presentation" /></a></td>
+
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="8px">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="982px" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td valign="top">
+                                                        
+<script language="javascript">
+function DownLoad(FileName)
+{
+  //alert(type);
+  //alert(FileName);
+  window.open("../Admin/Research/"+FileName);
+}
+</script>
+<div id="DailyAnalysis1_upddate">
+	
+        <table width="322px" class="bgwhite" height="200px" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+            <td class="MHtabOFF" style="padding-left:10px">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" 
+                    style="height: 19px">
+                    <tr>
+                        <td width="100px"><a id="DailyAnalysis1_lnkdaily" class="lnkActive" href="javascript:__doPostBack('DailyAnalysis1$lnkdaily','')">Daily Analysis</a><b></b></td>
+                        <td><a id="DailyAnalysis1_lnkweekly" class="lnkNotActive" href="javascript:__doPostBack('DailyAnalysis1$lnkweekly','')">Weekly Analysis</a></td>
+                        <td><a id="DailyAnalysis1_lnkpivot" class="lnkNotActive" href="javascript:__doPostBack('DailyAnalysis1$lnkpivot','')">Pivot Table</a></td>
+                    </tr>
+                </table>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    
+                </table>
+            </td>
+          </tr>
+          <tr><td id="DailyAnalysis1_Nodata" class="Nodata">No Data Found</td>
+	</tr>
+          
+        </table>
+
+</div>
+                                                    </td>
+                                                    <td width="8px">
+                                                    </td>
+                                                    <td valign="top">
+                                                        <div id="MarketWatch1_Upd_Home_Expert_views">
+	
+        <table cellpadding="0" cellspacing="0" border="0" width="369px" height="200px" class="bgwhite">
+            <tr>
+                <td width="100%" height="29px"  class="MHtabOFF" style="padding-left:15px;cursor:auto">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tr>
+                            <td class="SecHead">Markets Watch</td>
+                            <td align="right"><a id="MarketWatch1_lnkBse" class="lnkActive" href="javascript:__doPostBack('MarketWatch1$lnkBse','')">BSE</a></td>
+                            <td width="40px" align="center"><a id="MarketWatch1_lnkNse" class="lnkNotActive" href="javascript:__doPostBack('MarketWatch1$lnkNse','')">NSE</a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tr>
+                            <td width="105px" valign="top">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%" height="156px" bgcolor="#F5F5F5">
+                                    <tr><td height="2px"></td></tr>
+                                    <tr>
+                                        <td id="MarketWatch1_tdMM" class="tabselect"><a id="MarketWatch1_lnkMarketMovers" class="tablnkselect" cursor="default" href="javascript:__doPostBack('MarketWatch1$lnkMarketMovers','')">Market Movers</a></td>
+	
+                                    </tr>
+                                    <tr>
+                                        <td id="MarketWatch1_tdGain" class="tabnotselect"><a id="MarketWatch1_lnkGainers" class="tablnkNotselect" href="javascript:__doPostBack('MarketWatch1$lnkGainers','')">Gainers</a></td>
+	
+                                    </tr>
+                                    <tr>
+                                        <td id="MarketWatch1_tdLose" class="tabnotselect"><a id="MarketWatch1_lnkLosers" class="tablnkNotselect" href="javascript:__doPostBack('MarketWatch1$lnkLosers','')">Losers</a></td>
+	
+                                    </tr>
+                                    <tr>
+                                        <td id="MarketWatch1_tdSI" class="tabnotselect"><a id="MarketWatch1_lnkSectorIndices" class="tablnkNotselect" href="javascript:__doPostBack('MarketWatch1$lnkSectorIndices','')">Sector Indices</a></td>
+	
+                                    </tr>
+                                    <tr>
+                                        <td id="MarketWatch1_tdNH" class="tabnotselect"><a id="MarketWatch1_lnkNewHigh" class="tablnkNotselect" href="javascript:__doPostBack('MarketWatch1$lnkNewHigh','')">New High</a></td>
+	
+                                    </tr>
+                                    <tr>
+                                        <td id="MarketWatch1_tdNL" height="28px" class="tabnotselect"><a id="MarketWatch1_lnkNewLow" class="tablnkNotselect" href="javascript:__doPostBack('MarketWatch1$lnkNewLow','')">New Low</a></td>
+	
+                                    </tr>
+                                    
+                                </table>
+                            </td>
+                            <td width="264px" valign="top">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tr>
+                                        <td width="2px"><img src="images/spacer.gif" /></td>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td height="152px" valign="top">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tr>
+                                                                <td id="MarketWatch1_tdMarketMovers">
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td class="GridHeadL">
+                                                                                Company Name</td>
+                                                                            <td class="GridHeadC">
+                                                                                LTP <span class="Nodata">*</span></td>
+                                                                            <td class="GridHeadC">
+                                                                                Weight in Index</td>
+                                                                        </tr>
+                                                                        
+                                                                                <tr>
+                                                                                    <td class="GridItemDataL">
+                                                                                        <a  class="datalink" title="Reliance Industries Ltd" href="../CompanyProfile/ScripSearch.aspx?id=401&cocode=476">Reliance Industri...</a></td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        1226.00</td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        11.22</td>
+                                                                                </tr>
+                                                                            
+                                                                                <tr>
+                                                                                    <td class="GridItemDataL">
+                                                                                        <a  class="datalink" title="HDFC Bank Ltd" href="../CompanyProfile/ScripSearch.aspx?id=401&cocode=4987">HDFC Bank Ltd</a></td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        735.80</td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        7.67</td>
+                                                                                </tr>
+                                                                            
+                                                                                <tr>
+                                                                                    <td class="GridItemDataL">
+                                                                                        <a  class="datalink" title="Bharti Airtel Ltd" href="../CompanyProfile/ScripSearch.aspx?id=401&cocode=15542">Bharti Airtel Ltd</a></td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        1786.90</td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        7.54</td>
+                                                                                </tr>
+                                                                            
+                                                                                <tr>
+                                                                                    <td class="GridItemDataL">
+                                                                                        <a  class="datalink" title="ICICI Bank Ltd" href="../CompanyProfile/ScripSearch.aspx?id=401&cocode=5418">ICICI Bank Ltd</a></td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        1326.50</td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        6.44</td>
+                                                                                </tr>
+                                                                            
+                                                                                <tr>
+                                                                                    <td class="GridItemDataL">
+                                                                                        <a  class="datalink" title="State Bank of India" href="../CompanyProfile/ScripSearch.aspx?id=401&cocode=1375">State Bank of India</a></td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        982.50</td>
+                                                                                    <td class="GridItemDataR">
+                                                                                        6.13</td>
+                                                                                </tr>
+                                                                            
+                                                                    </table>
+                                                                </td>
+	
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="10px"><img src="images/spacer.gif" /></td>
+                                    </tr>
+                                    <tr><td id="MarketWatch1_tdmore" height="15px" align="right" class="more" colspan="3"><a href="javascript:urlchange()">More&nbsp;<img border="0" src="images/ArrowMore.gif"   alt=""   role="presentation" /></a></td>
+	</tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    
+</div>
+
+<script language="javascript">
+function urlchange()
+{
+    var str_url;
+    var exchg, grp;
+    //var url = document.all['tdMM'].classname
+    //alert (str_url);
+    
+    if (document.getElementById('MarketWatch1_lnkBse').className == "lnkActive")
+    {
+        exchg = "BSE";
+        grp = "BSE_SENSEX";
+    }
+    else
+    {
+        exchg = "NSE";
+        grp = "NIFTY";
+    }
+   
+    if(document.getElementById('MarketWatch1_tdMM').className == "tabselect")
+        str_url = "../markets/MarketSnapshot.aspx?id=9&Grp="+grp+"&Exchg="+exchg;
+    else if(document.getElementById('MarketWatch1_tdGain').className == "tabselect")
+        str_url = "../markets/MarketSnapshot.aspx?popt=Gain&id=1&Grp="+grp+"&Exchg="+exchg;
+    else if(document.getElementById('MarketWatch1_tdLose').className == "tabselect")
+        str_url = "../markets/MarketSnapshot.aspx?popt=Lose&id=1&Grp="+grp+"&Exchg="+exchg;
+    else if(document.getElementById('MarketWatch1_tdSI').className == "tabselect")
+        str_url = "../markets/MarketSnapshot.aspx?id=20&Exchg="+exchg;
+    else if(document.getElementById('MarketWatch1_tdNH').className == "tabselect")
+        str_url = "../markets/MarketSnapshot.aspx?popt=NHigh&id=5&Grp="+grp+"&Exchg="+exchg;
+    else if(document.getElementById('MarketWatch1_tdNL').className == "tabselect")
+        str_url = "../markets/MarketSnapshot.aspx?popt=NLow&id=5&Grp="+grp+"&Exchg="+exchg;
+   // alert(str_url);
+    //alert(str_url);
+    if (str_url != "")
+    {
+        //alert(str_url);
+        window.location = str_url;
+    }
+}
+
+</script>
+                                                    </td>
+                                                    <td width="10px">
+                                                    </td>
+                                                    <td>
+                                                        <table width="272px" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td background="images/ServicesBG.gif" height="154px">
+                                                                    
+ <table width="272px" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td height="35px"></td>
+    </tr>
+    <tr>
+    <td>
+    <table width="272px" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10px"></td>
+        <td>
+        <table width="252px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="padding-left:15px; line-height:20px;" class="text1">
+                <img src="images/BulletRed.gif" alt="" role="presentation" style="vertical-align:middle;"  />&nbsp;&nbsp; <a href="../markets/MarketHome.aspx" class="text1" aria-label="Equity Analysis">Equity</a><br />
+                <img src="images/BulletRed.gif" alt="" role="presentation" style="vertical-align:middle;"  />&nbsp;&nbsp; <a href="../Derivatives/DerivativeHome.aspx" class="text1">Derivatives</a><br />
+                
+                <img src="images/BulletRed.gif" alt="" role="presentation" style="vertical-align:middle;"  />&nbsp;&nbsp; <a href="http://220.224.203.5/DOWNLOAD/Online_trading.html" target="_blank" class="text1" aria-label="Online Trading">Anywhere Trading</a><br />
+                <img src="images/BulletRed.gif" alt="" role="presentation" style="vertical-align:middle;" />&nbsp;&nbsp; <a href="../IPO/IPOHome.aspx" class="text1">IPO</a><br />
+                <img src="images/BulletRed.gif"  alt="" role="presentation" style="vertical-align:middle;"  />&nbsp;&nbsp; Depository<br />
+            </td>
+            <td style="padding-left:15px; line-height:20px;" class="text1">
+                
+                <img src="images/BulletRed.gif" alt="" role="presentation" style="vertical-align:middle;"  />&nbsp;&nbsp; <a href="../MutualFund/MutualHome.aspx" class="text1">Mutual Fund</a><br />
+                <img src="images/BulletRed.gif" alt="" role="presentation" style="vertical-align:middle;" />&nbsp;&nbsp; <a href="../NRIServices.aspx" class="text1">NRI Services</a><br />
+                <img src="images/BulletRed.gif" alt="" role="presentation" style="vertical-align:middle;"  />&nbsp;&nbsp; <a href="../Research.aspx" class="text1">Research</a><br />
+                <img src="images/BulletRed.gif" alt="" role="presentation" style="vertical-align:middle;" />&nbsp;&nbsp; <a href="../PortfolioTracker/PortFolioLogin.aspx" class="text1" aria-label="Portfolio Tracker">PM</a><br />
+            </td>
+          </tr>
+        </table>
+        </td>
+        <td width="10px"></td>
+      </tr>
+    </table>
+    </td>
+    </tr>
+    <tr>
+    <td height="11px"></td>
+    </tr>
+</table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="49px" align="center">
+                                                                    <a target="_blank" href="http://www.nseindia.com/marketinfo/fxTracker/fxTracker.jsp">
+                                                                        <img src="images/FxTracker.gif" border="0" /></a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="7px">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+
+<style>
+.ulbox{
+list-style: none;
+float: right;
+position: relative;
+right: 35%;
+display: none;
+
+  
+  position: relative;
+  left: -24%;
+  top: 6px;
+  
+  }
+
+.ulbox .ulli{
+background: #a4cff7;
+color:black;
+width: 100px;
+text-align: start;
+border: 1px solid white;
+padding: 3px 4px 4px;
+}
+
+ 
+
+</style>
+<table width="982px" class="footbluebg" border="0" cellspacing="0" cellpadding="0">
+  <tr><td height="5px"></td></tr>
+  <tr><td height="22px" align="center" class="foottxt1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         SEBI Common Reg. No. INZ000206338  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;  MAPIN NO:10014845 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      CDSL : IN-DP-CDSL-291-2005</td></tr>
+  <tr><td height="22px" align="center" class="foottxt1">MERCHANT BANKING REGISTRATION NO :  NM000011575</td></tr>
+  <tr>
+	<td>
+	<table width="982px" height="23px" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+		<td valign="top"  align="center"  class="foottxt2"><a href="/Termsofthesite.aspx"><span class="foottxt2">Terms of the Site</span>
+		</a>&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/PrivacyPolicy.aspx">
+		<span class="foottxt2">Privacy Policy</span></a>
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Disclaimer.aspx"><span class="foottxt2">Disclaimer</span>
+		</a>&nbsp;&nbsp;I&nbsp;&nbsp;<a href="../Brokersnorms.aspx"><span class="foottxt2">Broker Norms</span> </a>
+		
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Attention_and_Advisory_for_Investors.aspx" target="_blank"><span class="foottxt2">Attention and Advisory for Investors</span></a>
+           
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="../InvestorRelation.aspx"><span class="foottxt2">Investor Relations</span></a>
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Clientfiles/InvestorCharter.pdf" target=_blank><span class="foottxt2">Investor Charter </span></a>
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="../sitemap.aspx"><span class="foottxt2">Site Map</span></a>
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/PoliciesandCirculars.aspx"><span class="foottxt2">Payment Gateway</span></a>
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Viewcircular.aspx"><span class="foottxt2">Circular</span></a> 
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/UpfrontMargin.aspx"><span class="foottxt2">Upfront Margin</span></a>
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Pricing.aspx"><span class="foottxt2">Pricing</span></a>
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Clientfiles/Investor_Complaint_register_Broking.pdf" target="_blank"><span class="foottxt2">Investor Complaints</span></a>
+            
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Download/Investor-Charter-for-Depositories-and-Depository-Participants.pdf" target="_blank"><span class="foottxt2">Depository Participant</span></a>
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Clientfiles/Investor_Complaint_Register_for_DP.pdf" target="_blank"><span class="foottxt2">Investor Complaints for DP</span></a>
+         
+		&nbsp;&nbsp;I&nbsp;&nbsp;<a href="https://evoting.cdslindia.com/Evoting/EvotingLogin" target="_blank"><span class="foottxt2">CDSL E-Voting</span></a>
+        &nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Clientfiles/Maintenance of Website.pdf" target="_blank"><span class="foottxt2">Maintenance of Website</span></a>
+        &nbsp;&nbsp;I&nbsp;&nbsp; <a href="/Clientfiles/Details of Authorised Person.pdf" target="_blank"><span class="foottxt2">Details of authorized persons</span></a>
+        &nbsp;&nbsp;I&nbsp;&nbsp; <a href="https://smartodr.in/login" target="_blank"><span class="foottxt2">SMART ODR</span></a>
+        &nbsp;&nbsp;I&nbsp;&nbsp; <a href="/Bank_details.aspx" target="_blank"><span class="foottxt2">Bank Details</span></a>
+        &nbsp;&nbsp;I&nbsp;&nbsp; <a href="https://investorhelpline.nseindia.com/ClientCollateral/welcomeCLUser" target="_blank"><span class="foottxt2">View Client Collateral Details</span></a>
+        &nbsp;&nbsp;I&nbsp;&nbsp; <a href="https://smartkyc.co.in/d/marketcreator" target="_blank"><span class="foottxt2">Ekyc Login</span></a>
+        &nbsp;&nbsp;I&nbsp;&nbsp;<a href="/Clientfiles/Online_EKYC_Step_by_Step_Process.pptx" target="_blank"><span class="foottxt2">Online EKYC Step by Step Process</span></a>
+        &nbsp;&nbsp;I&nbsp;&nbsp; <a href="https://smartkyc.co.in/c/marketcreator" target="_blank"><span class="foottxt2">Online KYC Closure</span></a></td>
+            
+         
+	  </tr>
+	  <tr><td height="5px"></td></tr>
+	  <tr><td valign="top"  align="center" class="foottxt2"><a href="javascript:winclientfl('Internal-Control-Policy.pdf')"><span class="foottxt2">INTERNAL CONTROL POLICY</span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a href="javascript:winclientfl('AML.docx')"><span class="foottxt2">AML POLICY</span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a href="javascript:winclientfl('RMS_Policy.pdf')"><span class="foottxt2">RMS POLICY</span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a href="javascript:winclientfl('/PoliciesAndProcedures.pdf')"><span class="foottxt2">POLICIES & PROCEDURES</span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a href="javascript:winclientfl('Client acceptance policy.pdf')"><span class="foottxt2">CLIENT ACCEPTANCE POLICY </span></a>&nbsp;&nbsp;I&nbsp;&nbsp;
+	 
+	  <span class="foottxt2 clickthisone" id="trigerone" onclick="clickones()">CLIENT REGISTRATION FORM
+	        <ul class="ulbox" id="trigerbox">
+	           <li class="ulli"><a href="/Download/MCL_KYC_Form_11.08.2023.pdf" target="_blank">KYC Form </a></li>
+               
+	          
+	        </ul>
+	  </span>
+           &nbsp;&nbsp;I&nbsp;&nbsp;
+          <a href="/Download/Saral_AOF.pdf" target="_blank"><span class="foottxt2">Saral AOF</span></a>
+          &nbsp;&nbsp;I&nbsp;&nbsp;
+          <a href="/Download/Right_And_Obligations.pdf" target="_blank"><span class="foottxt2">RIGHTS AND OBLIGATIONS</span></a>
+          &nbsp;&nbsp;I&nbsp;&nbsp;
+          <a href="/Download/Dp-Rights-and-Obligations.pdf" target="_blank"><span class="foottxt2">DP Rights and Obligations</span></a>
+	  &nbsp;&nbsp;I&nbsp;&nbsp;
+	  <a href="https://www.nseindia.com/trade/members-client-registration-documents" target="_blank"><span class="foottxt2">DOCUMENTS IN VERNACULAR LANGUAGES</span></a></td></tr>
+	  <tr><td height="10px"></td></tr>
+        
+	  <tr><td valign="top" align="right" style="padding-Right:20px;" class="foottxt2"><a target="_blank" href="http://www.bseindia.com/"><span class="foottxt2"><b>BSE</b></span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a target="_blank"  href="http://www.nseindia.com/"><span class="foottxt2"><b>NSE</b></span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a target="_blank" href="http://www.cdslindia.com/"><span class="foottxt2"><b>CDSL</b></span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a target="_blank" href="http://www.sebi.gov.in"><span class="foottxt2"><b>SEBI</b></span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a target="_blank" href="http://www.mcxindia.com/"><span class="foottxt2"><b>MCX</b></span></a>&nbsp;&nbsp;I&nbsp;&nbsp;<a target="_blank" href="http://www.ncdex.com/"><span class="foottxt2"><b>NCDEX</b></span></a></td></tr>
+	</table>
+	</td>
+  </tr>
+  <tr>
+	<td>
+	<table width="982px" height="23px" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+		<td valign="top" style="padding-left:20px;" class="foottxt3">© 2010 SHARE MART. All rights reserved</td>
+          <td valign="top" align="right" style="padding-Right:20px;" class="foottxt3">Designed, Developed Maintained and Content Powered by  <a class="FooterinnerLinkText" target="_blank" href="http://www.cmots.com/"><span class="foottxt3"><b>CMOTS InfoTech (ISO 9001:2015 & ISO/IEC 27001:2022 Certified)</b></span></a></td>
+	  </tr>
+	</table>
+	</td>
+  </tr>
+</table>
+<script language="javascript" type="text/javascript">
+    function winclientfl(filename) {
+        window.open("http://www.sharemart.co.in/Clientfiles/" + filename, "clientfiles");
+    }
+</script>
+  
+  <script>
+      function clickones() {
+          if (document.getElementById("trigerbox").style.display == "none") {
+              document.getElementById("trigerbox").style.display = "block"
+          }
+          else {
+              document.getElementById("trigerbox").style.display = "none"
+          }
+      }
+
+</script>
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js" defer></script>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="9px">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="9px">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+      
+
+        
+         <div class="popuphome" id="openpopupnew" data-popup="popup-2" style="">
+            <div class="popuphome-inner rm_pop_up_inner" style="top:37% !important">
+                <section class="nps-sc nps-sc-new online-trading-sc service-section-sc" style="margin-bottom: 0;">
+                    <div class="">
+                         <div class="col-xs-12 no_pad popup-padz" style="padding:40px;">
+               
+               
+               
+      <p style="font-size:14px;" ><b>RISK DISCLOSURES ON DERIVATIVES</b></p>
+      <p style="font-size:14px;">*9 out of 10 individual traders in equity Futures and Options Segment, incurred net losses.</p>
+      <p style="font-size:14px;">*On an average, loss makers registered net trading loss close to ₹ 50,000.</p>
+      <p style="font-size:14px;">*Over and above the net trading losses incurred, loss makers expended an additional 28%
+                                                                      of net trading losses as transaction costs.</p>
+      <p style="font-size:14px;">*Those making net trading profits, incurred between 15% to 50% of such profits as
+                                                                     transaction cost. </p>
+      <p style="font-size:14px;"><b>Source:</b>
+       <tr>
+                                     <td style="padding-left: 14px"><a href="https://www.sebi.gov.in/reports-and-statistics/research/jan-2023/study-analysis-of-profit-and-loss-of-individual-traders-dealing-in-equity-fando-segment_67525.html" style="color: blue; text-decoration: underline;">1. SEBI study dated January 25, 2023 on “Analysis of Profit and Loss of Individual Traders dealing in
+                                    equity Futures and Options (F&O) Segment”, wherein Aggregate Level findings are based on annual
+                                    Profit/Loss incurred by individual traders in equity F&O during FY 2021-22.
+                                    </a></td>
+                                     </tr>
+      
+      </p>
+    </div>
+                    </div>
+
+                </section>
+                
+                <a class="popuphome-closenew" data-popup-close="popup-2" onclick="javascript:document.getElementById('openpopupnew').style.display='none'">x</a>
+            </div>
+
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div>
+            <table id="cm_gold" style="display: none; z-index: 101; left: 320px; position: absolute;
+                top: 450px; border-collapse: collapse" cellspacing="0" cellpadding="0" width="537px"
+                height="239px" border="0">
+                <tr>
+                    <td>
+                        <img src="/images/Run1.jpg" border="0" id="Gold" style="cursor: default;" onclick="document.getElementById('cm_gold').style.display='none'" />
+                    </td>
+                </tr>
+            </table>
+            <map name="Gold" id="Gold">
+                <area shape="RECT" coords="359,3,368,16" style="cursor: pointer;" onclick="document.getElementById('cm_gold').style.display='none'">
+            </map>
+        </div>
+
+        <script language="javascript">
+            function ShowPopup() {
+                var url = "Diwali.htm"
+                var newWin = window.open(url, 'Diwali', 'x=0,y=0,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=416px,height=400px,screenX=0,screenY=0,left=170,top=200');
+                newWin.focus();
+            }
+            function Dhantera() {
+                var url = "/DHANTERAS.htm"
+
+                var newWin = window.open(url, 'DHANTERAS', 'x=0,y=0,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=718px,height=400px,screenX=0,screenY=0,left=170,top=200');
+                newWin.focus();
+            }
+            // Dhantera();
+            function budget2011() {
+                window.open("http://www.clients.cmlinks.com/budget/2010-11.htm?z=0", '', 'x=0,y=0,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,copyhistory=no,width=515,height=325,screenX=0,screenY=0,left=250,top=150');
+            }
+            //budget2011();
+
+
+            function ShowShriPopup() {
+                var width = "";
+                var height = "";
+                var prop = "";
+                //alert(navigator.appName);
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    width = "570px";
+                    height = "358px";
+                    prop = "x=0,y=0,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=" + width + ",height=" + height + ",screenX=0,screenY=0,left=170,top=200";
+                }
+                else {
+                    width = "557px";
+                    height = "357px";
+                    prop = "x=0,y=0,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,width=" + width + ",height=" + height + ",screenX=0,screenY=0,left=170,top=200";
+                }
+                var url = "shriram.htm"
+                var newWin = window.open(url, 'shriram', prop);
+                newWin.focus();
+            }
+            // ShowShriPopup();
+        </script>
+
+        <script language="javascript" type="text/javascript">
+            function dussehra() {
+                mywindow = window.open("Diwali.htm", "mywindow", "x=0,y=0,toolbar=no;location=no,status=no,scrollbars=no,width=630x,height=472px,top=150px,left=200px");
+            }
+               //dussehra();
+        </script>
+
+        <script language="javascript" type="text/javascript">
+            function Newyear() {
+                var mywindow;
+                mywindow = window.open("/Newyear.htm", "mywindow", "location=1,status=1,scrollbars=0,top=77,left=310,width=358,height=477");
+            }
+            function AkshyaT() {
+                var mywindow;
+                mywindow = window.open("/images/nse_gold.jpg", "mywindow", "location=1,status=1,scrollbars=0,top=77,left=310,width=522,height=521");
+            }
+            function AkshyaT1() {
+                var mywindow;
+                mywindow = window.open("/images/ShareMart.jpg", "mywindow", "location=1,status=1,scrollbars=0,top=77,left=310,width=537,height=239");
+            }
+            //AkshyaT1(); 
+            // AkshyaT(); 
+            //Newyear();
+     
+        </script>
+
+    </div>
+    
+        
+        
+        
+        
+        
+        <div class="hidden-xs hidden-sm">
+
+<div style="display:none;" id="msgpopup" style="position: absolute; top: 0%; left: 59%; margin-top: 50px;
+        margin-left: -398px; width: auto; z-index: 5000000;" class="hidden-xs">
+       
+     
+     
+   <img src="/images/close_icon.gif"    alt=""   role="presentation" style="margin-left:551px;  "  border="0" style="margin-left: -59px;" alt=""
+                usemap="#popupmap"  />
+                
+         <br />
+         
+           
+                
+               <br />
+               
+               
+               <div style="margin-top: 24px;">
+               <span style="color:White;">
+               
+              <img src="/images/Diwali11.jpg" style="margin-left:-149px; margin-top: -40px;"  border="0" style="margin-left: -59px;" alt=""
+                usemap="#popupmap"  />
+
+
+               </span>
+                
+                </div>
+    </div>
+    
+
+</div>
+       
+        
+    <div id="popupnew" style="position: absolute; top: 6%; left: 17%;  width: 750px; z-index: 5000000;cursor:default !important;background-color:#fff;color:#000;border-radius:10px;font-family:Arial;font-size:15px;">
+          <div id="closebtnnnn" style="color:#fff;position: absolute;    width: auto; z-index: 5000000;margin-left:738px;margin-top:-18px;" class="closeposture"><a style="color:#fff;cursor:pointer"><img src="/images/close_icon.gif"    alt=""   role="presentation" onclick="javascript:close1();" /></a></div>
+     <br /><br />
+     <div style="text-align:justify;padding:20px;line-height:29px;font-family:Arial;color:#000">Investors are requested to note that Market Creators Limited is permitted to receive money from 
+investor through designated bank accounts only named as Up streaming Client Nodal Bank Account(USCNBA). For any queries call us on 0265-2354075.</div>
+   <div style="text-align:justify;padding:0px 10px 0px 20px;">
+<b>Bank Account Details for NSE Cash Segment:</b></div> 
+   <div style="text-align:justify;padding:20px;line-height:27px;font-family:Arial;color:#000">
+<b>Beneficiary Name&nbsp;:</b> Market Creators Limited - USCNB Account <br />
+<b>Bank Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>	 HDFC BANK LTD.<br />
+<b>Bank A/c.  No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>	00330340000061<br />
+<b>Branch Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;RC DUTT ROAD, VADODARA<br />
+<b>IFSC Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		 HDFC0000033<br />
+<b>Account Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>	Current A/c.<br />
+<b>UPI ID      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>     marketcreators.cm.brk@validhdfc<br />
+   </div> 
+   <div style="text-align:justify;padding:0px 10px 0px 20px;line-height:25px;font-family:Arial;color:#000">
+<b>Bank Account details for NSE F&O Segment:</b></div> 
+   <div style="text-align:justify;padding:20px;line-height:27px;font-family:Arial;color:#000">
+<b>Beneficiary Name&nbsp;:</b> Market Creators Limited - USCNB Account <br />
+<b>Bank Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		HDFC BANK LTD. <br />
+<b>Bank A/c.  No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		00330340000209<br />
+<b>Branch Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>	 	RC DUTT ROAD, VADODARA <br />
+<b>IFSC Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		HDFC0000033<br />
+<b>Account Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		Current A/c.<br />
+<b>UPI ID      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		marketcreators.fo.brk@validhdfc<br />
+   </div> 
+
+
+
+ <div style="text-align:justify;padding:0px 10px 0px 20px;line-height:25px;font-family:Arial;color:#000">
+<b>Bank Account Details for NSE Currency Derivative Segment:</b></div> 
+   <div style="text-align:justify;padding:20px;line-height:27px;font-family:Arial;color:#000">
+<b>Beneficiary Name&nbsp;:</b>Market Creators Limited - USCNB Account<br />
+<b>Bank Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		HDFC BANK LTD. <br />
+<b>Bank A/c. No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		04290340000628<br />
+<b>Branch Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>	 	Raopura Branch, Vadodara <br />
+<b>IFSC Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		HDFC0000429<br />
+<b>Account Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>		Current A/c.<br />
+ <b>UPI ID      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>	 marketcreators.cd.brk@validhdfc<br />     
+   </div> 
+
+
+
+
+
+
+
+
+   <div style="text-align:justify;padding:20px;line-height:29px;font-family:Arial;color:#000">
+You are also requested to send the cyber receipt of online funds transfer along with client code on our Office Whtsapp no.<b>90991 01163.</b><br /><br />
+</div> 
+
+            
+    </div>
+    <div id="divWhite1" style="width: 100%; height: 150%; background-color: #000000;
+        opacity: 0.7; filter: alpha(opacity=60); position: absolute; top: 0px; left: 0px;
+        z-index: 500000;">
+    </div>
+  
+        
+        
+      <script>
+          function close1() { document.getElementById("popupnew").style.display = "none", document.getElementById("divWhite1").style.display = "none", document.getElementById("closebtnnnn").style.display = "none" } 
+      </script>  
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("Topper1_TopLogin1_Req_FName"), document.getElementById("Topper1_TopLogin1_Req_FName1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var Topper1_TopLogin1_Req_FName = document.all ? document.all["Topper1_TopLogin1_Req_FName"] : document.getElementById("Topper1_TopLogin1_Req_FName");
+Topper1_TopLogin1_Req_FName.controltovalidate = "Topper1_TopLogin1_text1";
+Topper1_TopLogin1_Req_FName.errormessage = "Enter the User Name";
+Topper1_TopLogin1_Req_FName.display = "None";
+Topper1_TopLogin1_Req_FName.validationGroup = "Group1";
+Topper1_TopLogin1_Req_FName.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Topper1_TopLogin1_Req_FName.initialvalue = "";
+var Topper1_TopLogin1_Req_FName1 = document.all ? document.all["Topper1_TopLogin1_Req_FName1"] : document.getElementById("Topper1_TopLogin1_Req_FName1");
+Topper1_TopLogin1_Req_FName1.controltovalidate = "Topper1_TopLogin1_text2";
+Topper1_TopLogin1_Req_FName1.errormessage = "Enter the Password";
+Topper1_TopLogin1_Req_FName1.display = "None";
+Topper1_TopLogin1_Req_FName1.validationGroup = "Group1";
+Topper1_TopLogin1_Req_FName1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Topper1_TopLogin1_Req_FName1.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        Sys.Application.initialize();
+
+document.getElementById('Topper1_TopLogin1_Req_FName').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('Topper1_TopLogin1_Req_FName'));
+}
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ValidatorCalloutBehavior, {"ClientStateFieldID":"Topper1_TopLogin1_VCE_FName_ClientState","closeImageUrl":"/WebResource.axd?d=WJUhmOjLeh7nLkd-uAY_QcqTHzkznsfBFwFIu8EvheuhyGlf7Ntp1FUAFmfoPAFf1HL-3AD7AbKHFtRJZuv9F8ez9YHkyqe5keTe8eBUfLi0rVNJ7mV_4HgmklIzqlwBiZUj4LE9SXOARgwxI46VXIxA-AI1&t=634033213132968750","id":"Topper1_TopLogin1_VCE_FName","warningIconImageUrl":"/WebResource.axd?d=uw-rgwGlGEHEF6VybmgTi9eEZeSR1Le_5cqwC2aoa7l-hB4l0q9kOPcQCI9ZGl-db0j7acTLx66bFGGN0rsJTW5jhZF0Csu71zneGdyy1_W1gVMLcN6i_o02FC-u-31bOsX0FQ3G0Ef9q1eAt1NjrSDGUig1&t=634033213132968750"}, null, null, $get("Topper1_TopLogin1_Req_FName"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"Topper1_TopLogin1_TBWE1_ClientState","WatermarkText":"USER NAME","id":"Topper1_TopLogin1_TBWE1"}, null, null, $get("Topper1_TopLogin1_text1"));
+});
+
+document.getElementById('Topper1_TopLogin1_Req_FName1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('Topper1_TopLogin1_Req_FName1'));
+}
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ValidatorCalloutBehavior, {"ClientStateFieldID":"Topper1_TopLogin1_VCE_FName1_ClientState","closeImageUrl":"/WebResource.axd?d=WJUhmOjLeh7nLkd-uAY_QcqTHzkznsfBFwFIu8EvheuhyGlf7Ntp1FUAFmfoPAFf1HL-3AD7AbKHFtRJZuv9F8ez9YHkyqe5keTe8eBUfLi0rVNJ7mV_4HgmklIzqlwBiZUj4LE9SXOARgwxI46VXIxA-AI1&t=634033213132968750","id":"Topper1_TopLogin1_VCE_FName1","warningIconImageUrl":"/WebResource.axd?d=uw-rgwGlGEHEF6VybmgTi9eEZeSR1Le_5cqwC2aoa7l-hB4l0q9kOPcQCI9ZGl-db0j7acTLx66bFGGN0rsJTW5jhZF0Csu71zneGdyy1_W1gVMLcN6i_o02FC-u-31bOsX0FQ3G0Ef9q1eAt1NjrSDGUig1&t=634033213132968750"}, null, null, $get("Topper1_TopLogin1_Req_FName1"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"Topper1_TopLogin1_TBWE11_ClientState","WatermarkText":"PASSWORD","id":"Topper1_TopLogin1_TBWE11"}, null, null, $get("Topper1_TopLogin1_text2"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

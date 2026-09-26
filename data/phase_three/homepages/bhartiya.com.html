@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Bhartiya.com</title>
+      <link rel="icon" href="images/bhartiya.ico" type="image/x-icon">
+      <link href="styles/bhartiya-corp_3.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="images/homepage/global.css" type="text/css" />
+      <link rel="stylesheet" href="css/Enquiry-popup.css" type="text/css"/>
+      <style type="text/css">
+
+         .teamdiv{padding-top: 0%; padding-bottom: 5%;}
+         .team-title {font-family: 'HelveticaNeueLTPro-Bd'; font-size: 14px; line-height: 15px; margin-bottom: 5px;}
+         .team-img {width: 230px; height: 244px; padding: 0px 8%;}
+         @media screen and (max-width: 991px) {
+         .teamdiv{padding-top: 20%; padding-bottom: 5%;}
+         .team-img {width: 200px; height: 212px;}
+         }
+         @media screen and (min-width:992px) and (max-width:1199px){
+         .teamdiv{padding-top: 10%; padding-bottom: 5%;}            
+         }
+      </style>
+      <script type="text/javascript" src="jquery/jquery.min.js"></script> 
+      <script type="text/javascript">
+         $(function () {
+             $('.slider1').anythingSlider({
+                 //         theme : 'metallic',
+                 expand: true,
+                 autoPlay: false,
+         // For Touch
+         onInitialized: function(e, slider) {
+         
+         var time = 1000, // allow movement if < 1000 ms (1 sec)
+             range = 50,  // swipe movement of 50 pixels triggers the slider
+             x = 0, t = 0, touch = "ontouchend" in document,
+             st = (touch) ? 'touchstart' : 'mousedown',
+             mv = (touch) ? 'touchmove' : 'mousemove',
+             en = (touch) ? 'touchend' : 'mouseup';
+         
+         slider.$window
+             .bind(st, function(e){
+                 // prevent image drag (Firefox)
+                 //e.preventDefault();
+                 t = (new Date()).getTime();
+                 x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX; 
+             })
+             .bind(en, function(e){
+         
+                 t = 0; x = 0;
+             })
+             .bind(mv, function(e){
+                 //e.preventDefault();
+                 var newx = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+                 r = (x === 0) ? 0 : Math.abs(newx - x),
+                 // allow if movement < 1 sec
+                 ct = (new Date()).getTime();
+                 if (t !== 0 && ct - t < time && r > range) {
+                     if (newx < x) { slider.goForward(); }
+                     if (newx > x) { slider.goBack(); }
+                     t = 0; x = 0;
+                 }
+             });
+         }
+             });
+         //End For Touch
+         
+         
+         });
+         
+         function multiClick(btnId) {
+             var arrBtn = btnId.split('_');
+             var id = arrBtn[1];
+             var hgt = "400";
+             if (id == 2) { hgt = "330"; } if (id == 3) { hgt = "375"; }
+             $("#" + btnId).hide();
+             $("#maindiv_" + id).height(hgt);
+             $("#secdiv_" + id).show();
+             $(".content_" + id).mCustomScrollbar({
+                 set_width: false, /*optional element width: boolean, pixels, percentage*/
+                 set_height: false, /*optional element height: boolean, pixels, percentage*/
+                 horizontalScroll: false, /*scroll horizontally: boolean*/
+                 scrollInertia: 550, /*scrolling inertia: integer (milliseconds)*/
+                 scrollEasing: "easeOutCirc", /*scrolling easing: string*/
+                 mouseWheel: "pixels", /*mousewheel support and velocity: boolean, "auto", integer, "pixels"*/
+                 mouseWheelPixels: 60, /*mousewheel pixels amount: integer*/
+                 autoDraggerLength: true, /*auto-adjust scrollbar dragger length: boolean*/
+                 scrollButtons: { /*scroll buttons*/
+                     enable: false, /*scroll buttons support: boolean*/
+                     scrollType: "continuous", /*scroll buttons scrolling type: "continuous", "pixels"*/
+                     scrollSpeed: 20, /*scroll buttons continuous scrolling speed: integer*/
+                     scrollAmount: 40 /*scroll buttons pixels scroll amount: integer (pixels)*/
+                 },
+                 advanced: {
+                     updateOnBrowserResize: true, /*update scrollbars on browser resize (for layouts based on percentages): boolean*/
+                     updateOnContentResize: false, /*auto-update scrollbars on content resize (for dynamic content): boolean*/
+                     autoExpandHorizontalScroll: false, /*auto expand width for horizontal scrolling: boolean*/
+                     autoScrollOnFocus: true /*auto-scroll on focused elements: boolean*/
+                 },
+                 callbacks: {
+                     onScrollStart: function () { }, /*user custom callback function on scroll start event*/
+                     onScroll: function () { }, /*user custom callback function on scroll event*/
+                     onTotalScroll: function () { }, /*user custom callback function on scroll end reached event*/
+                     onTotalScrollBack: function () { }, /*user custom callback function on scroll begin reached event*/
+                     onTotalScrollOffset: 0, /*scroll end reached offset: integer (pixels)*/
+                     whileScrolling: false, /*user custom callback function on scrolling event*/
+                     whileScrollingInterval: 30 /*interval for calling whileScrolling callback: integer (milliseconds)*/
+                 }
+             });
+         
+            // $('html,body').animate({
+                 //scrollTop: $("#storydiv_" + id).offset().top
+             //},
+          //1000);
+         }
+         
+         $(document).ready(function () {
+             var res = $(window).height();
+             var res2 = res;
+             //res = res - 150;
+             //var aRes = ((res / 2)) + "px";
+             //$('head').append('<style type="text/css">#header1{ top:' + (aRes) + '; width:150px; height: 150px; display: block; position: fixed; z-index: 400; }</style>');
+             //res2 = res2 - 151;
+             //var aRes2 = res / 2 + "px";
+             //$('head').append('<style type="text/css">#nav{ top:' + aRes2 + '; list-style: none; position: fixed; margin-top: -5px; right: 0px; z-index: 400; }</style>');
+         
+             $("#ab_1").hide(); $("#ab_2").hide(); $("#ab_8").hide(); $("#Div_story").fadeIn();
+             $("#ab_2").click(function () { $("#ab_2").fadeOut(1000); $("#af_2").fadeIn(1000); }); $("#af_2").click(function () { $("#af_2").fadeOut(1000); $("#ab_2").fadeIn(1000); });
+             $("#ab_1").click(function () { $("#ab_1").fadeOut(1000); $("#af_1").fadeIn(1000); }); $("#af_1").click(function () { $("#af_1").fadeOut(1000); $("#ab_1").fadeIn(1000); });
+             $("#ab_8").click(function () { $("#ab_8").fadeOut(1000); $("#af_8").fadeIn(1000); }); $("#af_8").click(function () { $("#af_8").fadeOut(1000); $("#ab_8").fadeIn(1000); });
+             //$("#ab_6").click(function () { $("#ab_6").fadeOut(1000); $("#af_6").fadeIn(1000); }); $("#af_6").click(function () { $("#af_6").fadeOut(1000); $("#ab_6").fadeIn(1000); });
+             //var t_sHeight = $("#contact").height();
+             var t_sHeight = $(window).height();
+             var r_sHeight = t_sHeight - (153 + 35);
+             var padTop = r_sHeight / 2;
+             $("#contact_div").css({
+                 "padding-top": +padTop + "px", "font-family": "adobe_garamond_proregular",
+                 "color": "#000", "font-size": "13px", "line-height": "14px", "width": "65%", "margin": "0px auto"
+             });
+             $("#team_div").css({
+                  "color": "#000", "font-size": "12px", "line-height": "14px", "width": "70%", "margin": "0px auto"
+              });
+             var res_w = $(window).width();  //get the resolution
+             var imgg = '';   ///variable for assign image at resolution
+             if (res_w > 1024 && res_w <= 1280) { imgg = 'DesignStudio1280.jpg'; }  //change image between 1024 to 1280
+             else if (res_w > 1280) { imgg = 'DesignStudio.jpg'; }                   //change image =to 1280
+             else if (res_w < 1024) { imgg = 'DesignStudio1024.jpg'; }               //change image less than 1024
+             //Finally update the css class.
+             $('head').append('<style type="text/css">.DesignStudio1{ background: url(images/DesignStudio/' + imgg + ') 50% 0 no-repeat; }</style>');
+             var res_w = $(window).width();  //get the resolution
+             var imgg = '';   ///variable for assign image at resolution
+             if (res_w > 1024 && res_w <= 1280) { imgg = 'dessignstudio2-1280.jpg'; }  //change image between 1024 to 1280
+             else if (res_w > 1280) { imgg = 'dessignstudio2-2000.jpg'; }                   //change image =to 1280
+             else if (res_w < 1024) { imgg = 'dessignstudio2-1024.jpg'; }               //change image less than 1024
+             //Finally update the css class.
+             $('head').append('<style type="text/css">.DesignStudio2{ background: url(images/DesignStudio/' + imgg + ') 50% 0 no-repeat; }</style>');
+         });
+         
+         
+         
+         function isScrolledIntoView(elem) {
+             var docViewTop = $(window).scrollTop();
+             var docViewBottom = docViewTop + ($(window).height() / 2);
+             var elemTop = $(elem).offset().top;
+             var elemBottom = elemTop + $(elem).height();
+             return ((docViewTop <= elemTop) && (elemTop <= docViewBottom));
+         }
+         
+         function ConrtolArrow() {
+             if (screen.height <= 800) {
+                 var pos = $(window).scrollTop();
+                 //alert(pos);
+                 $("#divChngeCss").addClass("image");
+                 $("#Outerwear-textCss").addClass("outerimage");
+                 $("#accessories-textCss").addClass("accessoriesimage");
+                 $("#TextileApparel-textCss").addClass("TextileApparelimage");
+                 $("#DesignStudio-textCss").addClass("DesignStudioimage");
+                 $("#city-textCss").addClass("cityimage");
+                 $("#city-textCss").addClass("homesimage");
+                 $("#InteriorSolutions-textCss").addClass("InteriorSolutionsimage");
+                 $("#ITPark-textCss").addClass("ITParkimage");
+                 $("#IndustrialPark-textCss").addClass("IndustrialParkimage");
+                 $("#RetailSpace-textCss").addClass("RetailSpaceimage");
+                 $("#HotelsConvention-textCss").addClass("HotelsConventionimage");
+                 $("#Join-textCss").addClass("Joinimage");
+                 $("#Group-textCss").addClass("Groupimage");
+                 $("#Corporate-textCss").addClass("Corporateimage");
+                 $("#Investor-textCss").addClass("Investorimage");
+         
+             }
+             else {
+                 var pos = $(window).scrollTop();
+                 //alert(pos);
+                 $("#divChngeCss").addClass("imagebdrblack");
+                 $("#Outerwear-textCss").addClass("outerimage-big");
+                 $("#accessories-textCss").addClass("accessoriesimage-big");
+                 $("#TextileApparel-textCss").addClass("TextileApparelimage-big");
+                 $("#DesignStudio-textCss").addClass("DesignStudioimage-big");
+                 $("#city-textCss").addClass("cityimage-big");
+                 $("#homes-textCss").addClass("homesimage-big");
+                 $("#InteriorSolutions-textCss").addClass("InteriorSolutionsimage-big");
+                 $("#ITPark-textCss").addClass("ITParkimage-big");
+                 $("#IndustrialPark-textCss").addClass("IndustrialParkimage-big");
+                 $("#RetailSpace-textCss").addClass("RetailSpaceimage-big");
+                 $("#HotelsConvention-textCss").addClass("HotelsConventionimage-big");
+                 $("#Join-textCss").addClass("Joinimage");
+                 $("#Group-textCss").addClass("Groupimage");
+                 $("#Corporate-textCss").addClass("Corporatemage-big");
+                 $("#Investor-textCss").addClass("Investorimage");
+             }
+         
+             $.each($(".arrow"), function (ind, obj) {
+                 var hght = $(window).height();
+                 var docViewTop = $(window).scrollTop() + (hght - 150) / 2;
+                 var docViewBottom = (docViewTop + hght);
+                 var elemTop = $(obj).parent().offset().top + (hght / 2);
+                 var res = $(window).height();
+                 var height = 150;
+         
+                 if (elemTop > docViewTop && elemTop < (docViewTop + height)) {
+                     $(obj).fadeIn();
+                 }
+                 else { $(obj).fadeOut(); }
+                 return;
+             });
+         }
+         $(window).scroll(function (e) {
+             ConrtolArrow();
+             if ($(window).scrollTop() < 600) {
+                 curHeader = "";
+                 $(".glossymenu a").css("background-color", "");
+                 $(".glossymenu a").css("color", "");
+                 $(".submenu").slideUp();
+                 return;
+             }
+         
+         
+             $.each($(".trackScroll"), function (ind, obj) {
+                 if (isScrolledIntoView(obj)) {
+                     var lnk = $(obj).attr("id").replace("-text", "");
+         
+                     var color = $("[href=#" + lnk + "]").css("background-color");
+         
+                     if (color != "rgb(255, 255, 255)") {
+                         $(".glossymenu a").css("background-color", "");
+                         $(".glossymenu a").css("color", "");
+         
+                         if ($(".submenu [href=#" + lnk + "]").length > 0) {
+                             if (!$(".submenu [href=#" + lnk + "]").is(":visible")) {
+                                 $(".submenu").slideUp();
+                                 $(".submenu [href=#" + lnk + "]").parent().parent().parent().slideDown();
+                             }
+                             $(".submenu [href=#" + lnk + "]").css("background-color", "white");
+                             $(".submenu [href=#" + lnk + "]").css("color", "black");
+                         }
+                         else if ($("[href=#" + lnk + "]").hasClass("menuitem")) {
+                             $("[href=#" + lnk + "]").css("background-color", "white");
+                             $("[href=#" + lnk + "]").css("color", "black");
+                             if ($("[href=#" + lnk + "]").next(".submenu:hidden").length == 1) {
+                                 $(".submenu").slideUp();
+                                 $("[href=#" + lnk + "]").next(".submenu").slideDown();
+                             }
+                             else if ($("[href=#" + lnk + "]").next(".submenu").length == 0) {
+                                 $(".submenu").slideUp();
+                             }
+                             else if (curLink == "-1") {
+                                 curLink = "";
+                                 $("[href=#" + lnk + "]").next(".submenu").slideUp();
+                             }
+         
+         
+                         }
+         
+                         if (curHeader == "#" + lnk) {
+                             if ($("[href=#" + lnk + "]").next(".submenu:hidden").length == 1) {
+                                 $(".submenu").slideUp();
+                                 $("[href=#" + lnk + "]").next(".submenu").slideDown();
+                             }
+                             else if ($("[href=#" + lnk + "]").next(".submenu").length == 0) {
+                                 $(".submenu").slideUp();
+                             }
+                         }
+                     }
+                 }
+             });
+         });
+         
+         var curHeader = "";
+         var curLink = "#fashion";
+         
+         $(document).ready(function () {
+         // Add smooth scrolling to all links
+         //$("a").on('click', function(event) {
+         $("a").click(function(e){
+         
+         // Make sure this.hash has a value before overriding default behavior
+         if (this.hash !== "") {
+           // Prevent default anchor click behavior
+           event.preventDefault();
+         
+           // Store hash
+           var hash = this.hash;
+         
+           // Using jQuery's animate() method to add smooth page scroll
+           // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+           $('html, body').animate({
+            scrollTop: $(hash).offset().top
+           }, 1200, function(){
+         
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+           });
+         } // End if
+         });
+         
+             $('#nav').localScroll(50);
+             $(".submenu").hide();
+             $('#fashion').parallax("50%", 0.1);
+             $('#Leather-Finishing').parallax("50%", 0.1);
+             $('#Leather-Finishing .bg').parallax("50%", 0.4);
+             $('#Outerwear').parallax("50%", 0.1);
+             $('#Outerwear .bg').parallax("50%", 0.4);
+             $('#accessories').parallax("50%", 0.1);
+             $('#TextileApparel').parallax("50%", 0.1);
+             $('#DesignStudio').parallax("50%", 0.1);
+             $('#development').parallax("50%", 0.1);
+             $('#city').parallax("50%", 0.1);
+             $('#city .bg').parallax("50%", 0.4);
+             $('#homes').parallax("50%", 0.1);
+             $('#people').parallax("50%", 0.1);
+             $('#teams').parallax("50%", 0.1);
+             $('#teams .bg').parallax("100%", 0.4);
+             $('#contact').parallax("50%", 0.1);
+             $("#imgBarthiya").click(function () { $("#lnkHome").click(); });
+             $("#down-Leather-Finishing").click(function () { $("#FinishingText").click(); });
+             $("#downOuterwear").click(function () { $("#linkOuterwear-text").click(); });
+             $("#downAccessories").click(function () { $("#accessories-text").click(); });
+             $("#downTextileApparel").click(function () { $("#TextileApparel-text").click(); });
+             $("#downDesignStudio").click(function () { $("#DesignStudio-text").click(); });
+             $("#downcity").click(function () { $("#city-text").click(); });
+             $("#downhomes").click(function () { $("#homes-text").click(); });
+             $("#InteriorSolutions").click(function () { $("#InteriorSolutions-text").click(); });
+             $("#ITPark").click(function () { $("#ITPark-text").click(); });
+             $("#IndustrialPark").click(function () { $("#IndustrialPark-text").click(); });            
+             $("#RetailSpace").click(function () { $("#RetailSpace-text").click(); });
+             $("#HotelsConvention").click(function () { $("#HotelsConvention-text").click(); });
+             $("#Corporate").click(function () { $("#Corporate-text").click(); });
+             
+             $("#Join").click(function () { $("#Join-text").click(); });
+             $("#Group").click(function () { $("#Group-text").click(); });
+             $("#imgcontact").click(function () { $("#linkcontact-text").click(); });
+         
+             $("#a_msg").click(function () { $("#linkcontact-text").click(); });
+         
+             $(".submenu a").click(function () {
+                 curHeader = "";
+                 if (curLink == $(this).attr("href")) {
+                     curLink = "-1";
+                     $(this).parent().parent().parent().prev().click();
+                     return false;
+                 }
+                 curLink = $(this).attr("href");
+             });
+         
+             $(".buttonbottom").click(function () {
+                 curLink = "";
+                 $("a[href=" + $(this).attr("href") + "][class!=buttonbottom]").click();
+                 return false;
+             });
+         
+             $(".submenuheader").click(function () {
+                 if (curLink != "-1") { curLink = ""; }
+                 if (curHeader == $(this).attr("href")) {
+                     if ($(this).next(".submenu:hidden").length == 1) {
+                         $(".submenu").slideUp();
+                         $(this).next(".submenu:hidden").slideDown();
+                     }
+                     else {
+                         $(this).next(".submenu").slideUp();
+                     }
+                 }
+                 curHeader = $(this).attr("href");
+             });
+         
+             $(".arrow.back:eq(2)").addClass("arrowPrev");
+             $(".arrow.forward:eq(2)").addClass("arrowNext");
+         })
+         
+      </script>
+      <!--Enquiry Popup-->
+      <script src="jquery/jquery.lightbox_me.js" type="text/javascript" charset="utf-8"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+             
+             $('#videoclose').click(function (e) {
+                 $('#vframe').attr("src","");
+             });
+             $('#imgpop').lightbox_me({
+                 centered: true,
+                 onLoad: function () {
+                     $('#imgpop').find('input:first').focus()
+                 }
+             });
+             
+             
+             $('#video3').click(function (e) {
+                 $('#vframe').attr("src", "http://www.youtube.com/embed/ewTkoqXweWU?autoplay=1");
+                 $('#videopoup').lightbox_me({
+                     centered: true
+                 });
+         
+                 e.preventDefault();
+         
+             });
+         $('#video4').click(function (e) {
+                 $('#vframe').attr("src", "https://www.youtube.com/embed/GbujBVcoXZM?autoplay=1");
+                 $('#videopoup').lightbox_me({
+                     centered: true
+                 });
+         e.preventDefault();
+         
+             });
+         
+             $('#video5').click(function (e) {
+                 $('#vframe').attr("src", "https://www.youtube.com/embed/yQEIlzOaGQM?autoplay=1");
+                 $('#videopoup').lightbox_me({
+                     centered: true
+                 });
+         e.preventDefault();
+         
+             });
+         
+             $('#video6').click(function (e) {
+                 $('#vframe').attr("src", "https://www.youtube.com/embed/xv2Fk0gQqEQ?autoplay=1");
+                 $('#videopoup').lightbox_me({
+                     centered: true
+                 });
+         e.preventDefault();
+         
+             });
+            
+         });
+         
+         
+         function callunSuccess() {
+             $(document).ready(function () {
+                 $('#div_unsuccess').lightbox_me({
+                     centered: true,
+                     onLoad: function () {
+                         $('#div_unsuccess').find('input:first').focus()
+                     }
+                 });
+             });
+         }
+         
+         function imagepop() {
+             $(document).ready(function () {
+                 $('#imgpop').lightbox_me({
+                     centered: true,
+                     onLoad: function () {
+                         $('#imgpop').find('input:first').focus()
+                     }
+                 });
+             });
+         }
+         
+             
+      </script>
+      <!--end Enquiry popup-->
+      <style>
+         div#chkbhartiya {
+         height: 100%;
+         width: 100%;
+         display: block;
+         }
+         div#loading {
+         height: 100%;
+         width: 100%;
+         position: absolute;
+         z-index: 99999999;
+         background: url(Loader/loading.gif) no-repeat;
+         background-position: center;
+         cursor: wait;
+         }
+      </style>
+   </head>
+   <body>
+      <!--<div id="loading"></div>-->
+      <div id="chkbhartiya">
+          <!--top social--> 
+          <!--<div class="topsocial" style="display: none">
+             <div class="contact-top"><a id="a_msg" href="#contact"></a></div>
+             <div class="message-top"><a id="imgcontact" href="#contact"></a></div>
+             </div>--> 
+          <!--end top social--> 
+          <!-- Navigation links -->
+          <ul id="nav">
+             <div class="glossymenu">
+                <a class="menuitem" href="#home" id="lnkHome" style="color: #fff; display: none">home</a> 
+                <a class="menuitem" href="#Leather-Finishing-text" id="FinishingText" style="display: none;">Finishing Text</a> 
+                <a class="menuitem" href="#Outerwear-text" id="linkFinishingText" style="display: none;">Finishing Text</a> 
+                <a class="menuitem" href="#accessories-text" id="linkaccessoriesText" style="display: none;">accessories Text</a> 
+                <a class="menuitem" href="#TextileApparel-text" id="linkTextileapparelText" style="display: none;">Textile apparel</a> 
+                <a class="menuitem" href="#DesignStudio-text" id="linkDesignStudioText" style="display: none;">Design Studio</a> 
+                <a class="menuitem" href="#homes-text" id="linkhomes" style="display: none;">Homes</a> 
+                <a class="menuitem" href="#city-text" id="linkcity-text" style="display: none;">City Text</a> 
+                <a class="menuitem" href="#city-text" id="linkcity-text" style="display: none;">Home Text</a> 
+                <a class="menuitem" href="#InteriorSolutions-text" id="linkInteriorSolutions-text" style="display: none;">Interior Solutions Text</a> 
+                <a class="menuitem" href="#ITPark-text" id="linkITPark-text" style="display: none;">IT Park Text</a> 
+                <a class="menuitem" href="#IndustrialPark-text" id="linkIndustrialPark-text" style="display: none;">IT Industrial Park</a> 
+                <a class="menuitem" href="#RetailSpace-text" id="linkRetailSpace-text" style="display: none;">Retail Space Text</a> 
+                <a class="menuitem" href="#HotelsConvention-text" id="linkHotelsConvention-text" style="display: none;">Retail Space Text</a>    
+                <a class="menuitem" href="#teams-text" id="linkteams-text" style="display: none;">Team</a>
+                <a class="menuitem" href="#Join-text" id="linkJoin-text" style="display: none;">Join</a> 
+                <a class="menuitem" href="#Group-text" id="linkGroup-text" style="display: none;">Group</a> 
+                <!---<a class="menuitem" href="#Corporate-text" id="linkCorporate-text" style="display: none;">Corporate</a> contact--> 
+                <a class="menuitem" href="#contact" id="linkcontact-text" style="display: none;">Contact</a> 
+                <!--<a class="menuitem" href="#Investor-text" id="linkInvestor-text" style="display: none;">Investor</a>--> 
+                <a class="menuitem" href="#contact" style="color: #fff; display: none">home</a> 
+                <a class="menuitem submenuheader" href="#fashion" style="color: #fff">Fashion</a>
+                <div class="submenu">
+                   <ul>
+                      <li><a href="#Outerwear">Leather Outerwear </a></li>
+                      <li><a href="#accessories">Accessories</a></li>
+                      <li><a href="#TextileApparel">Textile Apparel</a></li>
+                      <li><a href="#Leather-Finishing">Leather Finishing</a></li>
+                      <li><a href="#DesignStudio">Design Studio</a></li>
+                   </ul>
+                </div>
+                <a class="menuitem submenuheader" href="#development">Development</a>
+                <div class="submenu">
+                   <ul>
+                      <li><a href="#city">City</a></li>
+                      <li><a href="#homes">Homes</a></li>
+                      <li><a href="#ITPark">IT Park</a></li>
+                      <li><a href="#IndustrialPark">Industrial Park</a></li>
+                      <li><a href="#RetailSpace">Retail Spaces</a></li>
+                      <li><a href="#HotelsConvention">Hotels & Convention Centre</a></li>
+                      <li><a href="#InteriorSolutions">Interior Solutions</a></li>
+                   </ul>
+                </div>
+                <a class="menuitem submenuheader" href="#teams">People</a>
+                <div class="submenu">
+                   <ul>
+                      <li><a href="#teams">Teams</a></li>
+                      <li><a href="#Join">Join</a></li>
+                   </ul>
+                </div>
+                <a class="menuitem submenuheader" href="#Corporate">Corporate</a>
+                <div class="submenu">
+                   <ul>
+                      <li><a href="#Group">Group</a></li>
+                      <!-- <li><a href="http://bhartiyafashion.com/invester-relations.html" target="_blank">Investor Relations</a></li> -->
+                      <li><a href="#Media">Media</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                   </ul>
+                </div>
+                <a class="menuitem" target="_blank" href="http://bhartiyafashion.com/invester-relations.html" style="color: #fff;">Investor Relation</a>
+             </div>
+          </ul>
+          <!-- Menu -->
+          <div class="bhartiya-logo"> <a href="#" id="imgBarthiya"> <img src="images/logo.jpg" alt="Barthiya" style="border: 0px" /></a> </div>
+          <!-- First slide -->
+          <div class="slide trackScroll" id="home">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="home1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="home2">
+                         <div id="Div_story" class="story" style="display: none;">
+                            Bhartiya designs to delight, whether it is a perfect leather jacket
+                            or a city you’d love to call your own. We began with fashion in
+                            1987, serving some of the world’s best brands. Harnessing our
+                            insight into lifestyle solutions across the world, we embarked
+                            on designing and developing a whole city in Bengaluru, and we
+                            named it Bhartiya City. Brought to you in partnership with our
+                            residential brand, Nikoo Homes, this is the first integrated city
+                            of its kind in India.<br />
+                            <br />
+                            The Bhartiya Group has a presence in many cities across the world
+                            with design studios in Italy and manufacturing infrastructure in
+                            India and China. Our business is structured into three verticals:<br />
+                            <br />
+                            Bhartiya International, which focuses on apparel and
+                            accessories manufacturing<br />
+                            <br />
+                            Bhartiya Urban, a real estate development business<br />
+                            <br />
+                            Bhartiya International SEZ, focusing on development of
+                            industrial parks<br />
+                            <br />
+                            We are committed to quality, innovation and ethical business practices. Most of all, we strive to create better
+                            lifestyles through excellent design.<br />
+                            <br />
+                            <!--<a id="a_cont" href="#contact">Contact</a>--> 
+                         </div>
+                      </div>
+                   </li>
+                </ul>
+             </div>
+             <!--<a class="buttonbottom" href="#fashion" id="down1" style="color: #000;"><br /><div style="margin-top:7px">Know More</div></a>--> 
+          </div>
+          <!--fashion1 -->
+          <div class="slide trackScroll" id="fashion">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="fashion1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="fashion2">
+                         <div class="story"> With a design studio in Italy, marketing offices across the world and integrated manufacturing infrastructure in India and China, Bhartiya has been a leader in the leather fashion industry in India for over two decades.<br />
+                            <br />
+                            Bhartiya Fashion has business interests in international manufacturing of leather accessories and apparel, under the business name of Bhartiya International. It is also developing a dedicated leather SEZ, known as Bhartiya International SEZ.<br />
+                            <br />
+                            Bhartiya International Ltd is the largest manufacturing export house of leather apparel and accessories out of India with a presence in India, China and Italy.<br />
+                            <br />
+                            Bhartiya offers complete vertical integration and special customer-centric design solutions. Our design studio in Milan creates additional value and higher margins for clients as we have control over raw material, design, production and manufacturing. As a result, Bhartiya is well-placed to ensure customers improve their margins and achieve greater market penetration. Bhartiya has a customer base of over sixty global brands.<br />
+                            <br />
+                            Bhartiya International Ltd  is a financially sound, dividend-paying Public Limited Company, listed on India's BSE and NSE stock exchanges. For its contribution and achievements, Bhartiya has been given a number of awards and other recognitions by the Indian government and Industry Associations 
+                         </div>
+                      </div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#Outerwear" id="down2" style="color: #FFF">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--outer wear main-->
+          <div id="Outerwear" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="Outerwear1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="Outerwear2">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="Outerwear3">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#Outerwear-text" id="downOuterwear" style="color: #FFF">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--End outer wear-->
+          <div style="clear: both"></div>
+          <!-- Outer Wear text-->
+          <div id="Outerwear-text" class="trackScroll">
+             <div id="Outerwear-textCss" class="outerimage">
+                <div class="story">
+                   <div>
+                      <h1 style="padding-bottom: 15px;">LEATHER OUTERWEAR</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Bhartiya has been India's largest exporter of leather apparel for more than fifteen years, producing leatherwear for global clients since 1990. We have nine production facilities in the Bangalore-Chennai region of South India, with a combined annual capacity of over half a million leather garments alone.<br />
+                         <br />
+                         Bhartiya also has manufacturing capabilities in China for leather garments, and this division is seeing increasing demand from European customers. 
+                      </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://www.bhartiyafashion.com/" target="_blank"> <img src="images/bhartiyafashion-logo.jpg" style="border: none" alt="Bhartiya Fashion" /></a> </div>
+                   </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--End  Outer Wear text-->
+          <div style="clear: both"></div>
+          <!--accessories-->
+          <div id="accessories" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="accessories1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="accessories2">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="accessories3">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#accessories-text" id="downAccessories" style="color: #FFF">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--End Accessories-->
+          <div style="clear: both"></div>
+          <!-- Accessories text-->
+          <div id="accessories-text" class="trackScroll">
+             <div id="accessories-textCss" class="accessoriesimage">
+                <div class="story">
+                   <div>
+                      <h1 style="padding-bottom: 15px;">ACCESSORIES</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Bhartiya has been manufacturing leather accessories for global market since the mid-2000s, starting with a factory for bags and accessories in Chennai. Our factory here has an annual production capacity of over half a million bags, belts, wallets and other small leather goods; we aim to grow that five-fold within the next four years. To do this, we are currently focused on upgrading technically and expanding capacity through a greenfield facility in Andhra Pradesh and a brownfield expansion at Chennai. This will help achieve higher standards of product excellence, as well as greater efficiency. </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://www.bhartiyafashion.com/" target="_blank"> <img src="images/bhartiyafashion-logo.jpg" style="border: none" alt="Bhartiya Fashion" /></a> </div>
+                   </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--End  Accessories text--> 
+          <!--Textile Apparel-->
+          <div id="TextileApparel" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="TextileApparel1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="TextileApparel2">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="TextileApparel3">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#TextileApparel-text" id="downTextileApparel" style="color: #FFF">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--End Textile Apparel-->
+          <div style="clear: both"></div>
+          <!--Textile Apparel text-->
+          <div id="TextileApparel-text" class="trackScroll">
+             <div id="TextileApparel-textCss" class="TextileApparelimage">
+                <div class="story">
+                   <div>
+                      <h1 style="padding-bottom: 15px;">TEXTILE APPAREL</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Bhartiya’s textile apparel business operates from India based on the virtual factory model. Our robust supply chain management capabilities, starting with design, are built around our factory relationships with third-party contractors, which enable us to deliver finished textile apparel to leading brands in Europe. This business line has since evolved and is now strongly linked to our design studio in Milan to enable design-driven growth. In addition to this, we have established manufacturing infrastructure in Bangladesh. As these initiatives mature, we expect this business line to contribute significantly to our total business in the next four years. </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://www.bhartiyafashion.com/" target="_blank"> <img src="images/bhartiyafashion-logo.jpg" style="border: none" alt="Bhartiya Fashion" /></a> </div>
+                   </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--End  Textile Apparel text-->
+          <div style="clear: both"></div>
+          <!--Leather finishing-->
+          <div id="Leather-Finishing" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="Leather-Finishing1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="Leather-Finishing2">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="Leather-Finishing3">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#Leather-Finishing-text" id="down-Leather-Finishing" style="color: #FFF">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end Leather finishing--> 
+          <!-- Leather Finishing Text-->
+          <div id="Leather-Finishing-text" class="trackScroll">
+             <div id="divChngeCss" class="image">
+                <div class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">LEATHER FINISHING</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Bhartiya has a dedicated leather tannery in the southern Indian city of Chennai, which can process 15,000 skins each day. This backward integration enables Bhartiya to create new finishes and fashions in leather, which has been a key element in growing our business.<br />
+                         <br />
+                         Since its establishment in 1997, this facility has multiplied its capacity to serve as our hub for leather sourcing and finishing. Our global network means we can be exceptionally competitive when it comes to sourcing the best raw materials, including hides and skins from New Zealand, the United Kingdom, Spain, France and Italy, as well as goat and sheep skins sourced from the Middle East and Latin America. 
+                      </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://www.bhartiyafashion.com/" target="_blank"> <img src="images/bhartiyafashion-logo.jpg" style="border: none" alt="Bhartiya Fashion" /></a> </div>
+                   </div>
+                </div>
+                <!--<div class="bg0"></div>-->
+             </div>
+          </div>
+          <!--End Leather Finishing text -->
+          <div style="clear: both"></div>
+          <!--Design studio-->
+          <div id="DesignStudio" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="DesignStudio1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="DesignStudio2">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#DesignStudio-text" id="downDesignStudio">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--End Design studio--> 
+          <!--Design studio text-->
+          <div id="DesignStudio-text" class="trackScroll">
+             <div id="DesignStudio-textCss" class="DesignStudioimage">
+                <div class="story">
+                   <div>
+                      <h1 style="padding-bottom: 15px;">DESIGN STUDIO</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Since our inception, we at Bhartiya have believed that design is how we add value to what we do. Our design studio in Milan was born out of this core idea in 1998. With a design and research studio, a customer support centre and dedicated designers from both Italy and India, the studio is the centrepiece of our design and product development capability. In fact, we would say it is our biggest strength.<br />
+                         <br />
+                         Our designers work on private label collections which showcase our design capabilities, and provide inputs to the production team. They also develop customised apparel and accessories collections for customers which include some top global fashion brands. 
+                      </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://www.bhartiyafashion.com/" target="_blank"> <img src="images/bhartiyafashion-logo.jpg" style="border: none" alt="Bhartiya Fashion" /></a> </div>
+                   </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--End  Design studio text-->
+          <div style="clear: both"></div>
+          <!--development-->
+          <div id="development" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="development1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="development2">
+                         <div class="story"> Bhartiya began as a fashion business and has now successfully diversified into real estate and infrastructure, applying its expertise to large-scale projects creating master-planned communities.<br />
+                            <br />
+                            Bhartiya Urban Infrastructure and Land Development Company is the Bhartiya group's flagship company in real estate and infrastructure.<br />
+                            <br />
+                            Thanks to an ambitious growth strategy, Bhartiya Urban has now successfully launched the ‘Bhartiya City’, an integrated urban township within the Bangalore city limits.
+                         </div>
+                      </div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#city" id="downCityText">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end development-->
+          <div style="clear: both"></div>
+          <!--city main-->
+          <div id="city" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="city1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="city2">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#city-text" id="downcity">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end city-->
+          <div style="clear: both"></div>
+          <!--city text-->
+          <div id="city-text" class="trackScroll">
+             <div id="city-textCss" class="cityimage">
+                <div id="storydiv_1" class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">CITY</h1>
+                      <div id="maindiv_1" class="content_1" style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px;">
+                         With an estimated built up area close to 17 million square feet, Bhartiya City spans over acres of land in the fastest growing region of North Bangalore. The City has its own residential and commercial districts, as well as IT parks, hotels, shopping and entertainment districts, schools and hospital, all perfectly woven in under a well-articulated master plan. It will be vibrant and verdant, with a focus on green space and an excellent public realm. Bhartiya City is to be the single largest urban development of its kind within corporation limits of any Indian metropolitan city.<br />
+                         <br />
+                         <input type="image" id="imgbtn_1" src="images/plus.jpg" onclick="multiClick(this.id);" width="25" height="25" />
+                         <!-- <img id="imgbtn_1" src="images/plus.jpg" width="25" height="25" /> -->
+                         <div id="secdiv_1" style="display: none"> Bhartiya City has eight districts, each with a distinctly separate identity. They are mostly mixed-use, which adds to their cosmopolitan nature.<br />
+                            <br />
+                            District 1 has residential and community living components, connected by gardens, courtyards and sky links.<br />
+                            <br />
+                            Districts 2 & 3 are the central business districts, the heart of the entire development. The mixed-use retail, residential and entertainment districts will contain a bustling retail environment, as well as hotels, a convention centre and a financial district. It is close to the multi-modal transport interchange.<br />
+                            <br />
+                            Districts 4 & 5 include the Bhartiya Centre of Information Technology (BCIT), the city’s creative technology centre.  The lush urban landscape of this IT park also includes parks, gardens, plazas and sporting spaces.<br />
+                            <br />
+                            District 6 is a mixed-use sector, with a school, homes, market bazaars and outdoor lifestyle areas, and is an ideal place for children and teenagers to gather.<br />
+                            <br />
+                            District 7 brings together a hospital and residential areas in a flexible, child-friendly environment, and contains a series of community spaces.<br />
+                            <br />
+                            District 8 will house a hotel and residential communities including a Waterfront Square.<br />
+                            <br />
+                            Bhartiya City has brought together architects and urban planners of international repute. They include Perkins Eastman (New York), Cox (Sydney), BDP Khandekar (Amsterdam) for master planning, and Broadway Malayan (UK) for residential, retail and hotels, and Edifice (Mumbai) for the IT Park, amongst many others.<br />
+                            <br />
+                            Bhartiya City Developers Pvt Ltd is a wholly owned subsidiary of Bhartiya Urban Infrastructure and Land Development Company. 
+                         </div>
+                      </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://www.bhartiyacity.com" target="_blank"> <img src="images/bc-logo.jpg" style="border: none" /></a> </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <!--end city text-->
+          <div style="clear: both"></div>
+          <!--Homes-->
+          <div id="homes" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="homes1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="homes2">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#homes-text" id="downhomes">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end Homes--> 
+          <!--Homes text-->
+          <div id="homes-text" class="trackScroll">
+             <div id="homes-textCss" class="homesimage">
+                <div class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">HOMES</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Immerse yourself in the Bhartiya commitment to high-quality design and finish at Nikoo, our brand of urban homes, at                         Bhartiya City.<br />
+                         <br />
+                         Furnished with customised European furniture, there are different Nikoo apartments to suit the varying needs of customers:                         everything from 500sq ft studio apartments to 3,500 sqft sky villas.; not to forget the amazing New York style Lofts. It’s                         a mix that celebrates diversity, one where a joint family might have a retired couple on one side, and a young single on                         the other.<br />
+                         <br />
+                         With such a focus on lifestyle, the Nikoo home district comes complete with club facilities, entertainment zones, shopping                         and recreational facilities, a sky garden with community spaces, cinema pods, swimming pools, parks, yoga deck, sporting                         facilities and roof top cafes, to name a few.<br />
+                         <br />
+                         Nikoo Homes I delivery started this year, with new residents moving in to their Nikoo homes. Also, the construction 
+                         for Nikoo homes II is under full swing.
+                      </div>
+                   </div>
+                   <div style="margin-top: 25px; text-align: left"> <a href="http://bhartiyacity.com/nikoo-homes.aspx" target="_blank"> <img src="images/Nikoo-homes-logo.jpg" style="border: none" /></a> </div>
+                </div>
+             </div>
+          </div>
+          <!--end Homes text-->
+          <div style="clear: both"></div>
+          <!--IT Park-->
+          <div id="ITPark" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="ITPark1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="ITPark2">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#ITPark-text" id="downITPark">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end IT Park--> 
+          <!--IT Park text-->
+          <div id="ITPark-text" class="trackScroll">
+             <div id="ITPark-textCss" class="ITParkimage">
+                <div class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">IT PARK</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Two districts of Bhartiya City will contain our own certified Special Economic Zone (SEZ), which is 3,700,000 square feet                         in built up space. A range of business-ready offices and supporting infrastructure will be available, which will be capable                        of housing large corporations.<br />
+                         <br />
+                         The location of the Bhartiya Centre of Information Technology, or BCIT, is particularly advantageous. Just 25 minutes from                         the international airport, it is just five minutes from a proposed metro station on the Outer Ring Road and 10 minutes from                        the Hebbal Flyover.<br />
+                         <br />
+                         The BCIT boasts numerous features: large office plans, outdoor spaces, natural ventilation and an LEED gold rating.<br />
+                         <br />
+                         The 1st phase of IT park is up and running with moving in of new tenanats.
+                      </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://bhartiyacity.com/it-park.aspx" target="_blank"><img src="images/BCIT_LOGO.jpg" style="border:none" /></a> </div>
+                   </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--end IT Park text-->
+          <div style="clear: both"></div>
+          <!--Industrial Park-->
+          <div id="IndustrialPark" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="IndustrialPark1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="IndustrialPark2">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#IndustrialPark-text" id="downIndustrialPark">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end Industrial Park--> 
+          <!--Industrial Park text-->
+          <div id="IndustrialPark-text" class="trackScroll">
+             <div id="IndustrialPark-textCss" class="IndustrialParkimage">
+                <div id="storydiv_2" class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">LEATHER SEZ</h1>
+                      <div id="maindiv_2" class="content_2" style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px;">
+                         Bhartiya’s industrial park for leather and leather products is being promoted as a Special Economic Zone (SEZ). It is India’s first dedicated leather product SEZ.<br />
+                         <br />
+                         The park is strategically located in South India with good access to abundant skilled labour and transport links, and is less than a 90-minute drive from the commercial and industrial hub of Chennai. It is well-connected by rail, and road, and is in close proximity to three major ports and two international airports.<br />
+                         <br />
+                         <input type="image" id="imgbtn_2" onclick="multiClick(this.id);" src="images/plus.jpg" width="25" height="25" />
+                         <!-- <img id="imgSEZ" src="images/plus.jpg" width="25" height="25" /> -->
+                         <div id="secdiv_2" style="display: none"> The 250-acre project has approximately 12 million square feet of development. It is conceived as an integrated mix of world-class industrial infrastructure along with cutting-edge support infrastructure; (design studio, product development centre, technical education centre, business centre as well as social infrastructure). While Bhartiya is setting up its own factories as lead promoter, we also seek to collaborate with international investors in joint ventures to manufacture leather products <a href="http://bhartiyasez.com/" target="_blank">here.</a> </div>
+                      </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://bhartiyasez.com/" target="_blank"> <img src="images/bhartiya-sez.jpg" style="border: 0px" /></a> </div>
+                   </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--end Industrial Park text-->
+          <div style="clear: both"></div>
+          <!--Retail Space-->
+          <div id="RetailSpace" class="slide trackScroll">
+             <div class="RetailSpace1 slide">&nbsp;</div>
+             <!--<div class="wrapper1">
+                <ul class="slider1">
+                    <li><div class="RetailSpace1">&nbsp;</div></li>
+                    <li><div class="RetailSpace2">&nbsp;</div></li>
+                  </ul>
+                </div>--> 
+             <a class="buttonbottom" href="#RetailSpace-text" id="downRetailSpace" style="color: #000">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end Retail Space--> 
+          <!--Retail Space text-->
+          <div id="RetailSpace-text" class="trackScroll">
+             <div id="RetailSpace-textCss" class="RetailSpaceimage">
+                <div id="storydiv_3" class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">RETAIL SPACES</h1>
+                      <div id="maindiv_3" class="content_3" style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px;">
+                         The High Street at Bhartiya City provides the natural phasing line between Districts 2 and 3, and is designed to allow vehicular traffic, albeit on a pedestrian and cyclist priority surface. This busy, bustling street will feature drop-off points to the main shopping areas to the north and south, and bridges will provide connectivity at the upper levels.<br />
+                         <br />
+                         Celebration Square forms the principal space to the south of the main shopping centre. Office towers above a retail podium form the edge between the main events space and the PRR. These create a visual presence from the motorway while also ‘protecting’ Celebration Square from the noise of the traffic and the light railway, which runs above the proposed peripheral ring road.<br />
+                         <br />
+                         <input type="image" id="imgbtn_3" onclick="multiClick(this.id);" src="images/plus.jpg" width="25" height="25" />
+                         <!-- <img id="imgRET" src="images/plus.jpg" width="25" height="25" /> -->
+                         <div id="secdiv_3" style="display: none"> Although the majority of the shopping is internal, all entrance points and frontages along The High Street and The Rambla, around Celebration Square and to all podium retail areas will be activated by means of shop windows. </div>
+                      </div>
+                      <div style="margin-top: 25px; text-align: left"> <a href="http://bhartiyacity.com/shopping.aspx" target="_blank"><img src="images/BCC_LOGO.jpg" style="border:none" /></a> </div>
+                   </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--end Retail Space text-->
+          <div style="clear: both"></div>
+          <!--Hotels & Convention Center-->
+          <div id="HotelsConvention" class="slide trackScroll">
+             <div class="HotelsConvention1 slide">&nbsp;</div>
+             <!--<div class="wrapper1">
+                <ul class="slider1">
+                    <li><div class="RetailSpace1">&nbsp;</div></li>
+                    <li><div class="RetailSpace2">&nbsp;</div></li>
+                  </ul>
+                </div>--> 
+             <a class="buttonbottom" href="#HotelsConvention-text" id="downHotelsConvention">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end Hotels & Convention Center--> 
+          <!--Hotels & Convention Center text-->
+          <div id="HotelsConvention-text" class="trackScroll">
+             <div id="HotelsConvention-textCss" class="HotelsConventionimage">
+                <div class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">HOTELS & CONVENTION CENTRE</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> 
+                         From 3 star to 5 star, Bhartiya City will have new hotels. The first one will be the Leela, the second of the 
+                         luxury chain’s properties in Bangalore. The hotel will be complemented by the Leela Residences, a high-end 
+                         branded luxury apartments and Bangalore’s largest conference centre, which will have a capacity of more than 
+                         6,000. The centre will also feature three function suites on one level, a rooftop function space and open-air 
+                         display terrace, meeting rooms and direct connectivity to a basement carpark.
+                      </div>
+                   </div>
+                   <div style="margin-top: 25px; text-align: left"> <a href="http://bhartiyacity.com/hotels-convention.aspx"><img src="images/BCC_LOGO.jpg" style="border:none" /></a> </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--end Hotels & Convention Center text--> 
+          <!--Interior Solutions-->
+          <div id="InteriorSolutions" class="slide trackScroll">
+             <div class="wrapper1">
+                <ul class="slider1">
+                   <li>
+                      <div class="InteriorSolutions3">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="InteriorSolutions1">&nbsp;</div>
+                   </li>
+                   <li>
+                      <div class="InteriorSolutions2">&nbsp;</div>
+                   </li>
+                </ul>
+             </div>
+             <a class="buttonbottom" href="#InteriorSolutions-text" id="downInteriorSolutions">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end InteriorSolutions--> 
+          <!--Interior Solutions text-->
+          <div id="InteriorSolutions-text" class="trackScroll">
+             <div id="InteriorSolutions-textCss" class="InteriorSolutionsimage">
+                <div class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">INTERIOR SOLUTIONS</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Bhartiya's interior design arm is Studio Creo, specialising in creating fresh, innovative residential spaces. In addition to interior design, Studio Creo also provides furniture made to a high level of craftsmanship, at competitive prices. With designers from across the world and a great sourcing team, which scours the globe, we can provide an ideal combination of international style married to local Indian tastes and requirements.<br />
+                         <br />
+                      </div>
+                   </div>
+                   <div style="margin-top: 25px; text-align: left"> <a href="http://www.studiocreo.com/" target="_blank"> <img src="images/creo-logo.jpg" style="border: none" /></a> </div>
+                </div>
+                <div class="bg0"></div>
+             </div>
+          </div>
+          <!--end InteriorSolutions text-->
+          <div style="clear: both"></div>
+          <!-- people -->
+          <!-- <div id="people" class="slide trackScroll">
+             <a class="buttonbottom" href="#teams" id="downteams"><br /><div style="margin-top:7px">Know More</div></a>
+             </div> -->
+          <!--end people-->
+          <div style="clear: both"></div>
+          <!--terms -->
+          <div id="teams" class="slide trackScroll">
+             <div class="teams1">
+                <div class="story" style="padding-top: 100px">
+                   <h1 style="color: #000; padding-bottom: 15px; font-size: 14px">Snehdeep Aggarwal - Founder and Chairman, Bhartiya Group </h1>
+                   <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Snehdeep Aggarwal is the Chairman and founder of the Bhartiya Group. Raised in Amritsar, he holds a Masters in Economics from Punjab University, and over the past 25 years has charted a unique and sterling course for his company. Under his stewardship, the Bhartiya Group gained a presence in nine cities across Asia, Europe and the United States, and developed into three business verticals. <br>
+                      <br>
+                   </div>
+                </div>
+             </div>
+             <a class="buttonbottom" href="#teams-text" id="downTeams" style="color: #FFF">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end terms-->
+          <div style="clear: both"></div>
+          <!-- Team list -->
+          <div id="teams-text" class="trackScroll">
+             <div id="team_div" class="teamdiv">
+                <div style="float: left; width: 33%; margin-right: 3%;">
+                   <div style="border-bottom: #c7c8ca solid 1px; padding-bottom: 12px;">
+                      <img src="images/Mr-Arjun.jpg" class="team-img">
+                      <h3 class="team-title">Mr Arjun Aggarwal</h3>
+                      <div class="contactsubhd">Vice Chairman & Managing Director</div>
+                   </div>
+                   <div style="margin-top: 12px;">                 
+                      Arjun is a Director on the board of various Bhartiya Group companies. An entrepreneur by trait, he has over twelve years of professional experience in infrastructure and real estate development. Arjun played a key role in founding the real estate business of the Bhartiya Group and he now drives the execution of Bhartiya City and all joint venture activities with the support of a highly experienced team of professionals.<br>
+                      Under his leadership, Nikoo Homes became the fastest selling residential homes brand in Bengaluru after its launch in November 2012. He holds the Master Plan for Bhartiya City, an area of over 17 million square feet to be constructed and delivered as per the development plan. Township developments are on the rise and Arjun plans to deliver the better infrastructure and planning that people are looking for.<br>
+                      Arjun holds an MBA from Tanaka Business School, Imperial College, London and a BA in Management from Cardiff University, United Kingdom.                 
+                   </div>
+                </div>
+                <div style="float: left; width: 30%; margin-right: 3%;">
+                   <div style="border-bottom: #c7c8ca solid 1px; padding-bottom: 12px;">
+                      <img src="images/Mr-Manoj.jpg" class="team-img">
+                      <h3 class="team-title">Mr Manoj Khattar</h3>
+                      <div class="contactsubhd">Director</div>
+                   </div>
+                   <div style="margin-top: 12px;">                 
+                      Mr. Manoj Khattar, aged 58 years, a Chartered Accountant by profession, has been associated with Bhartiya Group from almost 2 decades. He is responsible for all financial matters including capital-budgeting, planning & management, internal controls and audit & has over 30 years of corporate finance experience. Earlier he has served in various sectors like Consumer Durables, Heavy Chemicals etc.                 
+                   </div>
+                </div>
+                <!--<div style="float: left; width: 30%;">
+                   <div style="border-bottom: #c7c8ca solid 1px; padding-bottom: 12px;">
+                      <img src="images/Sneha.jpg" class="team-img">
+                      <h3 class="team-title">Ms. Sneha Kotecha</h3>
+                      <div class="contactsubhd">Group Chief Human Resources Officer</div>
+                   </div>
+                   <div style="margin-top: 12px;">                 
+                      Sneha heads the Human Resources function at Group level and is responsible for building the organization with distinctive capabilities. Sneha comes to us from OYO Hotels and Homes, where she was the head of Talent Management, HR Transformation and Shared services for the last 4 years. Before OYO, she was Head HR of the DTH business at Airtel. Sneha has very rich experience in leadership development, talent strategy, transformation and technology HR amongst others.<br>                
+                      She has done her MBA (HR) from the prestigious Narsee Monjee Institute of Management Studies, Mumbai.
+                   </div>
+                </div>-->
+                <div style="clear: both;"></div>
+             </div>
+          </div>
+          <!--End  Team list -->
+          <!--Join-->
+          <div id="Join" class="slide trackScroll">
+             <div class="Join1 slide">&nbsp;</div>
+             <!--<div class="wrapper1">
+                <ul class="slider1">
+                    <li><div class="Join1">&nbsp;</div></li>
+                    <li><div class="Join2">&nbsp;</div></li>
+                  </ul>
+                </div>--> 
+             <a class="buttonbottom" href="#Join-text" id="downJoin" style="color: #000">
+                <br />
+                <div style="margin-top: 7px">Know More</div>
+             </a>
+          </div>
+          <!--end Join--> 
+          <!--Join text-->
+          <div id="Join-text" class="trackScroll">
+             <div id="Join-textCss" class="Joinimage">
+                <div class="story" style="width: 25.5%">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">JOIN</h1>
+                      <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px">
+                         At Bhartiya, people matter. We have more than 3000 employees across various businesses.
+                         We don't just offer our employees competitive salaries and rewards, we also have a strong focus on ongoing skills development to help them realise their potential. Our senior executives are encouraged to take appropriate risks and think outside the box.<br />
+                         <br />
+                         If you would like to work in a global organisation which values its staff highly, rewards merit, upholds professional ethics and keeps employees engaged and challenged, send your CV to <a href="milto:email@bhartiya.com" style="color: #000">email@bhartiya.com </a>now.<br />
+                         <br />
+                         <!--Current Openings-->
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <!--end Join text-->
+          <div style="clear: both"></div>
+          <!--CORPORATE-->
+          <div id="Corporate" class="slide trackScroll">
+             <div class="Corporate1 slide">&nbsp;</div>
+             <!--<div class="wrapper1">
+                <ul class="slider1">
+                    <li><div class="Group1">&nbsp;</div></li>
+                    <li><div class="Group2">&nbsp;</div></li>
+                  </ul>
+                </div>--> 
+             <!--<a class="buttonbottom" href="#Corporate-text" id="downCorporate"></a>--> 
+          </div>
+          <!--end CORPORATE-->
+          <div style="clear: both"></div>
+          <!--group-->
+          <div id="Group" class="slide trackScroll">
+             <div id="Group-text">
+                <div id="Group-textCss" class="Groupimage">
+                   <div class="story">
+                      <div>
+                         <h1 style="color: #000; padding-bottom: 15px;">GROUP</h1>
+                         <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px"> Bhartiya designs to delight, whether it is a perfect leather jacket
+                            or a city you’d love to call your own. We began with fashion in
+                            1987, serving some of the world’s best brands. Harnessing our
+                            insight into lifestyle solutions across the world, we embarked
+                            on designing and developing a whole city in Bengaluru, and we
+                            named it Bhartiya City. Brought to you in partnership with our
+                            residential brand, Nikoo Homes, this is the first integrated city
+                            of its kind in India.<br />
+                            <br />
+                            The Bhartiya Group has a presence in many cities across the world
+                            with design studios in Italy and manufacturing infrastructure in
+                            India and China. Our business is structured into three verticals:<br />
+                            <br />
+                            Bhartiya International, which focuses on apparel and
+                            accessories manufacturing<br />
+                            <br />
+                            Bhartiya Urban, a real estate development business<br />
+                            <br />
+                            Bhartiya International SEZ, focusing on development of
+                            industrial parks<br />
+                            <br />
+                            We are committed to quality, innovation and ethical business practices. Most of all, we strive to create better
+                            lifestyles through excellent design.<br />
+                            <br />
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!--<div class="Investor1 slide">&nbsp;</div>--> 
+             <!--<div class="wrapper1">
+                <ul class="slider1">
+                    <li><div class="Group1">&nbsp;</div></li>
+                    <li><div class="Group2">&nbsp;</div></li>
+                  </ul>
+                </div>--> 
+             <!--<a class="buttonbottom" href="#Group-text" id="downGroup" style="color: #000"><br /><div style="margin-top:7px">Know More</div></a>--> 
+          </div>
+          <!--end group-->
+          <!--<div style="clear: both"></div>-->
+          <!--Investor-->
+          <!--<div id="Investor" class="slide trackScroll">
+             <div id="Investor-text">
+                   <div id="Investor-textCss" class="Investorimage">
+                 <div class="story" style="width:27%">
+                       <h1 style="color: #000; padding-bottom: 15px;">INVESTOR RELATIONS</h1>
+                       <div style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px">
+                     <div style="margin-top: 10px"><a href="FinancialStatements/Bhartiya AR 2012-2013.pdf" target="_blank">Annual Report 2012-2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a></div>
+                     <div style="margin-top: 10px"><a href="FinancialStatements/Annual-Report-2011-2012.pdf" target="_blank">Annual Report 2011-2012&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a></div>
+                     <div style="margin-top: 10px"><a href="FinancialStatements/Annual-Report-2010-2011.pdf" target="_blank">Annual Report 2010-2011&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a></div>
+                     <div style="margin-top: 10px"><a href="FinancialStatements/Annual-Report-2009-2010.pdf" target="_blank">Annual Report 2009-2010&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a></div>
+                   </div>
+                     </div>
+               </div>
+                 </div>
+             </div>-->
+          <!--end Investor text-->
+          <div style="clear: both"></div>
+          <!--media-->
+          <div id="Media" class="slide trackScroll" style="border-bottom: 0px; border-top:none">
+             <!--press coverage-->
+             <div id="storydiv_4" class="story" style="float:right; width:25%; margin-right:16%; margin-top:50px">
+                <div>
+                   <h1 style="color: #000; padding-bottom: 15px;">PRESS COVERAGE</h1>
+                   <div id="maindiv_4" class="content_4" style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px;">
+                      <div style="margin-top: 10px"><a href="images/press-coverage/2019/Bhartiya-group-coverage-mail-today-17th-june-2019.pdf" target="_blank">Return Of NRI’s. <br />
+                         17 Jun 2019&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                      </div>
+                      <div style="margin-top: 10px"><a href="images/press-coverage/2017/Realty Plus Excellence Awards SOUTH 2016.pdf" target="_blank">Bhartiya City Takes Home multiple Accolades in the Realty Plus Excellence Awards! <br />
+                         8 Dec 2016&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                      </div>
+                      <div style="margin-top: 10px"><a href="images/press-coverage/2015/The Financial Chronicle, New Delhi 22 Oct 2015 page no-1.pdf" target="_blank">The Financial Chronicle - New Delhi<br />
+                         22 Oct 2015&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                      </div>
+                      <div style="margin-top: 10px"><a href="images/press-coverage/2015/The Financial Express, Mumbai 19 Oct 2015 Page No4.pdf" target="_blank">The Financial Express - Mumbai<br />
+                         19 Oct 2015&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                      </div>
+                      <div style="margin-top: 10px"><a href="images/press-coverage/2015/The Sunday Guardian New Delhi 12 July 2015 Page no-14.pdf" target="_blank">PM’s housing-for-all-scheme will face many challenges - The Sunday Guardian<br />
+                         12 July 2015&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                      </div>
+                      <div style="margin-top: 10px"><a href="images/press-coverage/2015/Hindustan Times_01.07.2015_National_Pg15.pdf" target="_blank">India's manufacturing ambitions at risk from red-tape - Hindustan Times<br />
+                         1 July 2015&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                      </div>
+                      <div style="margin-top: 10px"><a href="http://www.abitare.it/en/architecture/projects/2015/06/29/bangalore-luogo-per-aiutare-negli-acquisti-immobili-lusso/" target="_blank">In Bangalore, a space for the sale of luxury real estate<br />
+                         29 June 2015</a>
+                      </div>
+                      <div style="margin-top: 10px"><a href="#" id="video4">Mr. Aggarwal on the Budget Expectation Story - NDTV Profit<br />Feb 18 2015</a></div>
+                      <br />
+                      <input type="image" id="imgbtn_4" src="images/plus.jpg" onclick="multiClick(this.id);" width="25" height="25" />
+                      <!-- <img id="imgbtn_1" src="images/plus.jpg" width="25" height="25" /> -->
+                      <div id="secdiv_4" style="display: none">
+                         <div style="margin-top: 10px"><a href="images/press-coverage/2014/Builders look for ways to provide affordable housing rein costs.pdf" target="_blank">Builders Look for Ways to Provide Affordable Housing, Rein in costs - Economic Times, New Delhi<br />
+                            24 July 2014&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/2014/The Society Interiors Magazine, 27 May 2014.pdf" target="_blank">Lofty Designs - Society Interiors Magazine<br />
+                            27 May 2014&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/2014/Financial Chronicle, New Delhi, May 22 2014, Page - 1.pdf" target="_blank">Southern Comfort - Financial Chronicle<br />
+                            22 May 2014&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/2014/The Economic Times, New Delhi,  April 17 2014, Page - 6.pdf" target="_blank">Work out of your home - The Economic Times – Mansion<br />
+                            17 April 2014&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/2014/news wire march 2014.pdf" target="_blank">Weak economy widens bridge between hospitality stakeholders - Newswire<br />
+                            March 2014&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/2014/Bhartiya Group Financial Chronicle 03 March, 2014.pdf" target="_blank">Bhartiya Group eyes 15% revenue, Financial Chronicle<br />
+                            March 3 2014&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://articles.economictimes.indiatimes.com/2014-03-02/news/47823804_1_bhartiya-international-snehdeep-aggarwal-brands" target="_blank">Bhartiya group targets 15% revenue from local market by FY17,  Economic Times<br />
+                            March 3 2014</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://articles.economictimes.indiatimes.com/2014-03-02/news/47823804_1_bhartiya-international-snehdeep-aggarwal-brands" target="_blank">Bhartiya Group Targets 15% Revenue from Local Market by FY'17, Indian Express<br />
+                            March 3 2014</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.business-standard.com/article/pti-stories/bhartiya-group-targets-15-revenue-from-local-market-by-fy-17-114030200238_1.html" target="_blank">Bhartiya group targets 15% revenue from local market by FY'17, Business Standard<br />
+                            March 2 2014</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="#" id="video3">Mr. Snehdeep Aggarwal in an discussion with Zee Business – THE BIG IDEA</a></div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Deccan Chronicle, Bangalore, October 31, 2013, page-6.pdf" target="_blank">Home Truths - Deccan Chronicle<br />
+                            Oct 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Should you invest in luxury housing.pdf" target="_blank">Should you invest in luxury housing?<br />
+                            Oct 9 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Estate World, All India, Sept 2013, Page 25.pdf" target="_blank">Estate World Magazine<br />
+                            Sep 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.thisweekbangalore.com/bhartiya-city-bags-the-best-futura-mega-project-mipim-asia-award-at-hong-kong-2/" target="_blank">thisweekbangalore.com<br />
+                            Sep 23 2013 </a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.epcworld.in/epcnews/bhartiya-city-bags-best-futura-mega-project-mipim-asia-award.aspx" target="_blank">epcworld.in<br />
+                            Sep 23 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.bnnwebtv.com/admin/info.php?recid=1325" target="_blank">bnnwebtv.com<br />
+                            Sep 23 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.abhitaknews.com/article/1574-Bhartiya-City-bags-the-Best-Futura-Mega-Project-MIPIM-Asia-Award-At-Hong-Kong-.aspx" target="_blank">abhitaknews.com<br />
+                            Sep 23 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://news.silobreaker.com/bhartiya-city-bags-the-best-futura-mega-project-mipim-asia-award-at-hong-kong-5_2267107975850098778" target="_blank">news.silobreaker.com<br />
+                            Sep 17 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Estate Avenues, All India, September 2013, Page 13.pdf" target="_blank">Bhartiya City introduces New York style lofts and launches Release III of Nikoo Homes<br />
+                            Sep 6 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/New Indian Express, Bangalore, September 03 Page 03.pdf" target="_blank">New Indian Express, Bangalore<br />
+                            Sep 3 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://newindianexpress.com/editorials/Dispel-mist-of-superstition-with-scientific-temper/2013/09/02/article1762983.ece" target="_blank"> newindianexpress.com<br />
+                            Sep 2 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.business-standard.com/article/beyond-business/the-serial-experiments-113083100615_1.html" target="_blank">business-standard.com<br />
+                            Sep 2 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/The Times od India - 1 Sep 2013, Page 8(Part2).pdf" target="_blank">The Times of India<br />
+                            Sep 1 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://articles.timesofindia.indiatimes.com/2013-09-01/bangalore/41662260_1_many-stalls-excitement-and-enthusiasm-vim" target="_blank">articles.timesofindia.indiatimes.com<br />
+                            Sep 1 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.scotland4me.co/glasgow/?p=27591" target="_blank">scotland4me.co<br />
+                            Sep 1 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Business Standard, New Delhi, 1 September 2013, Page 11.pdf" target="_blank">Business Standard, New Delhi<br />
+                            Sep 1 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/Business Today, All India, September 2013, Page 130.pdf" target="_blank">Business Today, All India<br />
+                            Sep 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/Business Today, All India, September 2013, Page 8.pdf" target="_blank">Business Today, All India<br />
+                            Sep 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.thehindu.com/news/cities/bangalore/i-want-to-create-a-robot-that-can-do-chores/article5076413.ece" target="_blank">thehindu.com<br />
+                            August 31 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.deccanchronicle.com/130831/news-current-affairs/article/10-day-science-fest-kicks" target="_blank">deccanchronicle.com<br />
+                            August 31 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://zeenews.india.com/news/science/edinburgh-science-fest-draws-bangalore-students-in-droves_873167.html" target="_blank">zeenews.india.com<br />
+                            August 31 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://post.jagran.com/edinburgh-science-fest-draws-bangalore-students-in-droves-1377943587" target="_blank">post.jagran.com<br />
+                            August 31 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/The Times Of India, Bangalore, August 31 2013, Page 8.pdf" target="_blank">The Times Of India, Bangalore<br />
+                            August 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Deccan Chronicle, Bangalore, August 31 2013, Page 4.pdf" target="_blank">Deccan Chronicle, Bangalore<br />
+                            August 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Deccan Herald, Bangalore, August 31 2013, Page 2.pdf" target="_blank">The Deccan Herald, Bangalore<br />
+                            August 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Dna, Bangalore, August 31 2013, Page 4.pdf" target="_blank">Dna, Bangalore<br />
+                            August 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/New-Indian-Express,-Bangalore,-31-Aug-2013.pdf" target="_blank">New Indian Express, Bangalore<br />
+                            August 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/The Hindu, Bangalore, August 31 2013, Page 2.pdf" target="_blank">New The Hindu, Bangalore<br />
+                            August 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Vijay Karnataka, Bangalore, 31 Aug 2013, Page 4.pdf" target="_blank">Vijay Karnataka, Bangalore<br />
+                            August 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Viajayavani, Bangalore, 31 Aug 2013, Page 5.pdf" target="_blank">Viajayavani, Bangalore<br />
+                            August 31 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.deccanherald.com/content/354429/science-fest-has-kids-ecstatic.html" target="_blank">deccanherald.com<br />
+                            August 30 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.business-standard.com/article/news-ians/edinburgh-science-fest-draws-bangalore-students-in-droves-113083001082_1.html" target="_blank">business-standard.com<br />
+                            August 30 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.dnaindia.com/bangalore/1881947/report-science-fest-is-here-don-t-miss-the-party" target="_blank">dnaindia.com<br />
+                            August 30 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://www.livenews-24.com/edinburgh-science-fest-draws-bangalore-students-in-droves/" target="_blank">livenews-24.com<br />
+                            August 30 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/The Times Of India, New Delhi, August 30 2013, Page 2.pdf" target="_blank">The Times Of India, New Delhi<br />
+                            August 30 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://content.magicbricks.com/developers-vie-for-innovation-to-attract-customers/" target="_blank"> Arjun Aggarwal’s interaction with Mr. Vikram Jethwani (Times Group)<br />
+                            Aug 27, 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Developers vie for innovation to attract customers.pdf" target="_blank">Developers vie for innovation to attract customers<br />
+                            Aug 27, 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/Dakshin Bharath, Bangalore August 23 2013, Page 3.pdf" target="_blank">Edinburgh International Science Festival - Dakshin Bharath, Bangalore<br />
+                            August 23 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/Can ‘no’ to gold and equity be ‘yes’ to real estate.pdf" target="_blank">Can ‘no’ to gold and equity be ‘yes’ to real estate<br />
+                            Aug 22, 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://content.magicbricks.com/can-no-to-gold-and-equity-be-yes-to-real-estate/" target="_blank">Mr. Arjun Aggarwal’s interaction with Mr. Vikram Jethwani (Times Group)<br />
+                            Aug 22, 2013</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/press-coverage/303112-2013/915 Corporate Reports (Bhartiya group).pdf" target="_blank">Making dreams come true<br />
+                            April 14, 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!--end press coverage-->
+             <div id="Media-text" class="scroll trackScroll" style="border-bottom: 0px; border-top:none">
+                <div id="storydiv_7" class="story">
+                   <div>
+                      <h1 style="color: #000; padding-bottom: 15px;">MEDIA</h1>
+                      <div id="maindiv_7" class="content_7" style="border-top: #c7c8ca solid 1px; margin-top: 8px; padding-top: 15px;">
+                         <div style="margin-top: 10px">
+                            <a href="images/Media/TOI-coverage-bhartiya-city.pdf" target="_blank"> What makes Bengaluru’s developers best in country <br />April 2019&nbsp;
+                            <img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" />
+                            </a>
+                         </div>
+                         <div style="margin-top: 10px">
+                            <a href="http://realtyplusmag.com/leaders-in-real-estate-the-design-of-cities-and-their-founders-of-tomorrow/" target="_blank"> Leaders In Real Estate: The Design Of Cities And Their Founders Of Tomorrow <br />March 2019&nbsp;&nbsp;
+                            </a>
+                         </div>
+                         <div style="margin-top: 10px">
+                            <a href="images/Media/sustainability-and-new-product-development-january-2019.pdf" target="_blank"> Sustainability & New product development <br />January 2019&nbsp;&nbsp;
+                            <img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" />
+                            </a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/Media/Mr. Snehdeep Aggarwal Chairman and Founder Bhartiya Group presented the Insignia of  Knight by H.E. Lorenzo Angeloni, the Ambassador of Italy to India.pdf" target="_blank"> Mr. Snehdeep Aggarwal, Chairman and Founder, Bhartiya Group presented the Insignia of  Knight by H.E. Lorenzo Angeloni, the Ambassador of Italy to India. <br />
+                            May 26, 2017&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/Media/Kohinoor.pdf" target="_blank"> Bhartiya Group organized an evening in which author
+                            William Dalrymple took the audience on an enthralling journey of the Kohinoor diamond. <br />
+                            April 2017&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="http://m.economictimes.com/opinion/interviews/nikoo-home-brand-has-defined-all-normal-market-reality-snehdeep-aggarwal-bhartiya-international/articleshow/57553386.cms" target="_blank">Even after cash ban, our real estate sales were not affected: Snehdeep Aggarwal<br />
+                            March 2017</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="#" id="video6">Mr. Snehdeep Aggrawal, Chairman Bhartiya Group on the Business Outlook of the Company – ET Now<br />
+                            March 2016</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="#" id="video5">Mr. Snehdeep Aggrawal, Chairman Bhartiya Group on the Business Outlook of the Company – ET Now<br />
+                            Dec 2016</a>
+                         </div>
+                         <div style="margin-top: 10px"><a href="images/Media/Press Release- Nikoo Homes -II Launch.pdf" target="_blank"> Bhartiya City launches Nikoo Homes-II <br />
+                            October 9, 2015&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                         </div>
+                         <br />
+                         <input type="image" id="imgbtn_7" src="images/plus.jpg" onclick="multiClick(this.id);" width="25" height="25" />
+                         <!-- <img id="imgbtn_1" src="images/plus.jpg" width="25" height="25" /> -->
+                         <div id="secdiv_7" style="display: none">
+                            <div style="margin-top: 10px"><a href="images/Media/Bhartiya City Press Note_MIPIM Asia Awards 2013.pdf" target="_blank"> Bhartiya City bags the Best Futura Mega Project MIPIM Asia Award <br />
+                               September 17, 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                            </div>
+                            <div style="margin-top: 10px"><a href="images/Media/Press Release_Big buzz at Edinburgh International Science Festival inauguration at Bhartiya City.pdf" target="_blank"> Big buzz at Edinburgh International Science Festival inauguration at Bhartiya City <br />
+                               August 30, 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                            </div>
+                            <div style="margin-top: 10px"><a href="images/Media/Bhartiya_City_Loft and Release III_Launch_Press_Note_18 July2013 Final.pdf" target="_blank">Bhartiya City introduces New York Style Lofts and launches Release III of Nikoo Homes <br />
+                               July 18, 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                            </div>
+                            <div style="margin-top: 10px"><a href="images/Media/Robert Moore CEO Bhartiya Fashion.pdf" target="_blank">Bhartiya Group appoints Robert Moore as Chief Executive Officer of Bhartiya Fashion<br />
+                               April 8, 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                            </div>
+                            <div style="margin-top: 10px"><a href="images/Media/Press-Release-Release-II.pdf" target="_blank">Pre-registrations Boom for Bhartiya City’s Nikoo Homes Release-II<br />
+                               January 17, 2013&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                            </div>
+                            <div style="margin-top: 10px"><a href="images/Media/Press-Release-Dubai.pdf" target="_blank">Bhartiya City launches its international sales at Indian Property Show, Dubai<br />
+                               December 13, 2012&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                            </div>
+                            <div style="margin-top: 10px"><a href="images/Media/Bhartiya-City-Launch-Press-Releaseason-Oct-29,2012.pdf" target="_blank">Bhartiya Group announces the launch of Bhartiya City - a 125-acre integrated city near Hebbal Bangalore<br />
+                               October 29, 2012&nbsp;&nbsp;<img src="images/pdf-icon.jpg" style="border: none; vertical-align: middle" /></a>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!--end media-->
+             <div style="clear:both"></div>
+             <div style="height: 200px">&nbsp;</div>
+             <div style="clear: both"></div>
+             <!--Contact-->
+             <div id="contact" class="trackScroll">
+                <div id="contact_div">
+                   <div style="float: left; width: 35%; margin-left: 32%;">
+                      <div style="border-bottom: #c7c8ca solid 1px; padding-bottom: 12px;">
+                         <h1>Bhartiya Corporate</h1>
+                      </div>
+                      <div style="margin-top: 12px;">
+                         <div class="contactsubhd">
+                            <!--Ajay Malhotra – Group CFO-->
+                         </div>
+                         38, Sector 44, Gurgaon 122 002 <br>
+                         New Delhi Capital Region, India<br>
+                         t +91 124 4888555<br>
+                         f +91 124 4888500<br>
+                         <a href="#" style="color: #000; text-decoration: none;">bhartiya@bhartiya.com</a> 
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!--end contact--> 
+          </div>
+          <div id="videopoup" class="sign_up press-video-popup" style="width:640px; height:390px"> <span class="popupher">
+             <iframe id="vframe" width="100%" height="100%" src="" frameborder="0" allowfullscreen></iframe>
+             </span> <a id="videoclose" class="close_x close sprited" href="#">close</a> 
+          </div>
+      </div>
+      <script type="text/javascript" src="jquery/ddaccordion.js"></script> 
+      <!--<script type="text/javascript" src="jquery/jquery.min.js"></script>--> 
+      <script type="text/javascript" src="jquery/jquery.news.js"></script> 
+      <script type="text/javascript" src="jquery/jquery.parallax-1.1.3.js"></script> 
+      <script type="text/javascript" src="jquery/jquery-ui.min.js"></script> 
+      <script type="text/javascript" src="jquery/jquery.mCustomScrollbar.js"></script> 
+   </body>
+</html>

@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="https://www.symbiotec.com/images/fevicon.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.symbiotec.com/images/fevicon.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.symbiotec.com/images/fevicon.webp">
+
+    <title>Symbiotec - Driving Innovation in Biotech APIs</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.symbiotec.com/css/header.css">
+    <link rel="stylesheet" href="https://www.symbiotec.com/css/footer.css">
+    <link rel="stylesheet" href="https://www.symbiotec.com/css/responsive.css">
+    <link rel="stylesheet" href="https://www.symbiotec.com/css/scroll-reveal.css">
+
+        <link rel="stylesheet" href="https://www.symbiotec.com/css/home.css">
+    
+    <style>
+        #diff{
+            max-width: 703px !important;
+        }
+        
+        
+        .home-events{
+            margin-bottom: 50px;
+        }
+        
+.home-event-grid{
+        position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 59px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 60px;
+    z-index: 999;
+}
+
+/* CARD */
+.event-slab{
+    display:flex;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 6px 14px rgba(0,0,0,.1);
+    text-decoration:none;
+    color:#000;
+    min-height:90px;
+}
+
+/* LEFT COLORED SIDE */
+.event-slab-left{
+    width:110px;
+    background-color:var(--brand);
+    padding:14px;
+        clip-path: polygon(0 0, 100% 0, 83% 100%, 0 100%);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:6px;
+}
+
+.event-logo{
+       width: 68px;
+    height: 35px;
+    object-fit:contain;
+}
+
+.event-name{
+    font-size:13px;
+    font-weight:700;
+    color:#fff;
+    line-height:1.2;
+}
+
+/* RIGHT SIDE */
+.event-slab-right{
+    padding:14px 16px;
+    flex:1;
+}
+
+.event-desc{
+    font-size:13px;
+    color:#444;
+    margin-bottom:8px;
+    line-height:1.4;
+}
+
+.event-meta{
+    display:flex;
+    gap:14px;
+    font-size:11.5px;
+    color:#666;
+    font-weight:600;
+}
+
+/* HOVER (SUBTLE) */
+.event-slab:hover{
+    transform:translateY(-3px);
+    transition:.25s ease;
+}
+
+
+/* RIGHT SIDE – make space for CTA */
+.event-slab-right{
+    padding:14px 16px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Push CTA to bottom */
+.event-desc{
+    flex-grow:1;
+}
+
+/* CTA */
+.event-cta{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:3px;
+    position: relative;
+    margin-top: 10px;
+    /*left: 258px;*/
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--brand);
+    width:fit-content;
+}
+
+/* Arrow */
+.event-cta .arrow{
+    display:inline-block;
+    transition:transform .35s ease;
+}
+
+/* Hover animation (smooth aage peeche) */
+.event-slab:hover .event-cta .arrow{
+    transform:translateX(4px);
+}
+
+/* Active (click feedback) */
+.event-slab:active .event-cta .arrow{
+    transform:translateX(3px);
+}
+
+
+.event-content{
+        display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+
+.event-content strong
+{
+    font-size: 20px;
+}
+
+
+.sustainability-wrap {
+       padding: 60px 0px;
+    max-width: 1145px;
+    margin: auto;
+}
+
+/* Flex Container */
+.sustainability-inner {
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 31px auto;
+    
+}
+
+/* Left Content */
+.sustainability-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+/* Vertical Line */
+.left-bar {
+       width: 3px;
+    height: 74px;
+    background: #6bb7c5;
+    margin-top: 31px;
+}
+
+/* Text */
+.sustainability-text h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.sustainability-text p {
+    font-size: 16px;
+    color: #6f7a80;
+}
+
+/* Button */
+.download-btn {
+    padding: 12px 22px;
+    border: 1.5px solid #9ccad3;
+    color: #5faebc;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #5faebc;
+    color: #fff;
+}
+
+
+@media (max-width:991px)
+{
+    .sustainability-inner {
+        flex-direction: column;
+    }
+}
+
+    </style>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x5dov9c988");
+
+<script type="text/javascript">
+(function(w,d,s,r,k,h,m){
+
+    if(w.performance && w.performance.timing && w.performance.navigation && !w.s247r) {
+
+        w[r] = w[r] || function(){
+            (w[r].q = w[r].q || []).push(arguments)
+        };
+
+        h = d.createElement('script');
+        h.async = true;
+        h.setAttribute('src', s + k);
+
+        d.getElementsByTagName('head')[0].appendChild(h);
+
+        (m = window.onerror);
+
+        window.onerror = function (b, c, d, f, g) {
+            m && m(b, c, d, f, g);
+
+            g || (g = new Error(b));
+
+            (w[r].q = w[r].q || []).push([
+                "captureException",
+                g
+            ]);
+        };
+    }
+
+})(window, document,
+   '//static.site24x7rum.in/beacon/site24x7rum-min.js?appKey=',
+   's247r',
+   '07cabc1c26eb280a430d6096b91eca99'
+);
+</script>
+</head>
+
+<body>
+
+    <header class="sym-main-navigation-bar">
+    <div class="sym-header-inner-wrap">
+        <div class="sym-header-brand-section">
+            <a href="https://www.symbiotec.com" class="sym-main-identity-logo">
+                <img src="https://www.symbiotec.com/images/symbiotec-logo.webp" alt="Symbiotec">
+            </a>
+        </div>
+
+        <nav class="sym-central-menu-wrapper">
+            <ul class="sym-primary-nav-list">
+                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com" class="sym-nav-anchor">Home</a></li>
+
+                <li class="sym-nav-list-item sym-has-mega-dropdown-trigger">
+                    <a href="#" class="sym-nav-anchor">About Us</a>
+                    <div class="sym-mega-dropdown-overlay-panel">
+                        <div class="sym-mega-panel-inner-container">
+                            <div class="sym-mega-panel-description-left">
+                                <h3 class="sym-mega-panel-heading">About us</h3>
+                                <p class="sym-mega-panel-paragraph">Symbiotec is a research-driven, science-based pharmaceutical and biotechnology company with a strong Global Leadership Position ...</p>
+                            </div>
+                            <div class="sym-mega-panel-links-right">
+                                <a href="https://www.symbiotec.com/about" class="sym-mega-panel-link">About Us</a>
+                              
+                                <a href="https://investor.symbiotec.com/" target="_blank" class="sym-mega-panel-link">Investor Relations</a>
+                                   <a href="https://www.symbiotec.com/events" class="sym-mega-panel-link">Events</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/manufacturing-facility" class="sym-nav-anchor">Manufacturing<br>Facilities</a></li>
+                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/quality" class="sym-nav-anchor">Quality</a></li>
+
+                <li class="sym-nav-list-item sym-has-mega-dropdown-trigger">
+                    <a href="#" class="sym-nav-anchor">Products &<br>Regulatory</a>
+                    <div class="sym-mega-dropdown-overlay-panel">
+                        <div class="sym-mega-panel-inner-container">
+                            <div class="sym-mega-panel-description-left">
+                                <h3 class="sym-mega-panel-heading">Products & Regulatory</h3>
+                                <p class="sym-mega-panel-paragraph">Cortico-Steroids, both Sterile & Non-Sterile, and Steroid Hormone APIs are the most significant parts of our business portfolio...</p>
+                            </div>
+                            <div class="sym-mega-panel-links-right">
+                                <a href="https://www.symbiotec.com/product" class="sym-mega-panel-link">Products</a>
+                                <a href="https://www.symbiotec.com/regulatory" class="sym-mega-panel-link">Regulatory</a>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                </li>
+                  <li class="sym-nav-list-item"><a href="https://nutra.symbiotec.com" class="sym-nav-anchor">Nutraceuticals</a></li>
+                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/r&amp;d" class="sym-nav-anchor">Science &<br>Innovation</a></li>
+                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/sustainability" class="sym-nav-anchor">Sustainability</a></li>
+                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/career" class="sym-nav-anchor">Career</a></li>
+                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/contact" class="sym-nav-anchor">Contact Us</a></li>
+            </ul>
+        </nav>
+
+      <div class="sym-header-action-area desktop-only">
+    <a href="https://investor.symbiotec.com/" 
+       class="sym-investor-relations-action-btn" 
+       target="_blank">
+       Investor Relations
+    </a>
+</div>
+
+        
+        <!-- MOBILE TOGGLE BUTTON -->
+<button class="sym-mobile-toggle-btn" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+    </div>
+</header>
+<!-- <header class="sym-main-navigation-bar">-->
+<!--    <div class="sym-header-inner-wrap">-->
+<!--        <div class="sym-header-brand-section">-->
+<!--            <a href="https://www.symbiotec.com" class="sym-main-identity-logo">-->
+<!--                <img src="https://www.symbiotec.com/images/symbiotec-logo.webp" alt="Symbiotec">-->
+<!--            </a>-->
+<!--        </div>-->
+
+<!--        <nav class="sym-central-menu-wrapper">-->
+<!--            <ul class="sym-primary-nav-list">-->
+<!--                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com" class="sym-nav-anchor">Home</a></li>-->
+
+<!--                <li class="sym-nav-list-item sym-has-mega-dropdown-trigger">-->
+<!--                    <a href="#" class="sym-nav-anchor">About Us</a>-->
+<!--                    <div class="sym-mega-dropdown-overlay-panel">-->
+<!--                        <div class="sym-mega-panel-inner-container">-->
+<!--                            <div class="sym-mega-panel-description-left">-->
+<!--                                <h3 class="sym-mega-panel-heading">About us</h3>-->
+<!--                                <p class="sym-mega-panel-paragraph">Symbiotec is a research-driven, science-based pharmaceutical and biotechnology company with a strong global leadership position</p>-->
+<!--                            </div>-->
+<!--                            <div class="sym-mega-panel-links-right">-->
+<!--                                <a href="https://www.symbiotec.com/about" class="sym-mega-panel-link">About Us</a>-->
+<!--                                <a href="https://investor.symbiotec.com/" target="_blank" class="sym-mega-panel-link">Investor Relation</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/manufacturing-facility" class="sym-nav-anchor">Manufacturing<br>Facilities</a></li>-->
+<!--                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/quality" class="sym-nav-anchor">Quality</a></li>-->
+
+<!--                <li class="sym-nav-list-item sym-has-mega-dropdown-trigger">-->
+<!--                    <a href="#" class="sym-nav-anchor">Products &<br>Regulatory</a>-->
+<!--                    <div class="sym-mega-dropdown-overlay-panel">-->
+<!--                        <div class="sym-mega-panel-inner-container">-->
+<!--                            <div class="sym-mega-panel-description-left">-->
+<!--                                <h3 class="sym-mega-panel-heading">Products & Regulatory</h3>-->
+<!--                                <p class="sym-mega-panel-paragraph">Cortico-Steroids, both Sterile & Non-Sterile, and Steroid Hormone APIs are the most significant parts of our business portfolio</p>-->
+<!--                            </div>-->
+<!--                            <div class="sym-mega-panel-links-right">-->
+<!--                                <a href="https://www.symbiotec.com/product" class="sym-mega-panel-link">Product</a>-->
+<!--                                <a href="https://www.symbiotec.com/regulatory" class="sym-mega-panel-link">Regulatory</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/r&amp;d" class="sym-nav-anchor">Science &<br>Innovation</a></li>-->
+<!--                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/sustainability" class="sym-nav-anchor">Sustainability</a></li>-->
+<!--                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/career" class="sym-nav-anchor">Career</a></li>-->
+<!--                <li class="sym-nav-list-item"><a href="https://www.symbiotec.com/contact" class="sym-nav-anchor">Contact Us</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+
+<!--        <div class="sym-header-action-area">-->
+<!--            <a href="https://investor.symbiotec.com/" class="sym-investor-relations-action-btn" target="_blank">Investor Relations</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</header> -->
+
+<div class="sym-mobile-menu-overlay">
+    <nav class="sym-mobile-menu">
+        <ul>
+            <li><a href="https://www.symbiotec.com">Home</a></li>
+            <li class="mobile-has-sub">
+                <span>About Us</span>
+                <ul>
+                    <li><a href="https://www.symbiotec.com/about">About Us</a></li>
+                    <li><a href="https://www.symbiotec.com/events">Events</a></li>
+                    <li><a href="https://investor.symbiotec.com/" target="_blank">Investor Relations</a></li>
+                </ul>
+            </li>
+
+            <li><a href="https://www.symbiotec.com/manufacturing-facility">Manufacturing Facilities</a></li>
+            <li><a href="https://www.symbiotec.com/quality">Quality</a></li>
+
+            <li class="mobile-has-sub">
+                <span>Products & Regulatory</span>
+                <ul>
+                    <li><a href="https://www.symbiotec.com/product">Product</a></li>
+                    <li><a href="https://www.symbiotec.com/regulatory">Regulatory</a></li>
+                </ul>
+            </li>
+            
+             <li><a href="https://nutra.symbiotec.com">Nutraceuticals</a></li>
+
+
+            <li><a href="https://www.symbiotec.com/r&amp;d">Science & Innovation</a></li>
+            <li><a href="https://www.symbiotec.com/sustainability">Sustainability</a></li>
+            <li><a href="https://www.symbiotec.com/career">Career</a></li>
+            <li><a href="https://www.symbiotec.com/contact">Contact Us</a></li>
+        </ul>
+
+        <!-- Investor button INSIDE toggle -->
+        <a href="https://investor.symbiotec.com/"
+           class="sym-investor-relations-action-btn mobile-investor-btn"
+           target="_blank">
+           Investor Relations
+        </a>
+    </nav>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ===============================
+       DESKTOP MEGA MENU (ONLY DESKTOP)
+    ================================ */
+
+    if (window.innerWidth > 992) {
+
+        document.querySelectorAll('.sym-has-mega-dropdown-trigger').forEach(item => {
+            const dropdown = item.querySelector('.sym-mega-dropdown-overlay-panel');
+            let closeTimer;
+
+            item.addEventListener('mouseenter', () => {
+                clearTimeout(closeTimer);
+                dropdown.style.visibility = 'visible';
+                dropdown.style.opacity = '1';
+                dropdown.style.transform = 'translateY(0)';
+                dropdown.style.pointerEvents = 'auto';
+            });
+
+            item.addEventListener('mouseleave', () => {
+                closeTimer = setTimeout(() => {
+                    dropdown.style.visibility = 'hidden';
+                    dropdown.style.opacity = '0';
+                    dropdown.style.transform = 'translateY(10px)';
+                    dropdown.style.pointerEvents = 'none';
+                }, 200);
+            });
+        });
+
+    }
+
+    /* ===============================
+       HEADER SCROLL EFFECT
+    ================================ */
+
+    const header = document.querySelector('.sym-main-navigation-bar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('sym-header-scrolled');
+        } else {
+            header.classList.remove('sym-header-scrolled');
+        }
+    });
+
+    /* ===============================
+       MOBILE MENU TOGGLE
+    ================================ */
+
+    const toggleBtn = document.querySelector('.sym-mobile-toggle-btn');
+    const mobileOverlay = document.querySelector('.sym-mobile-menu-overlay');
+
+    toggleBtn.addEventListener('click', () => {
+        mobileOverlay.classList.toggle('active');
+    });
+
+    mobileOverlay.addEventListener('click', e => {
+        if (e.target === mobileOverlay) {
+            mobileOverlay.classList.remove('active');
+        }
+    });
+
+    /* ===============================
+       MOBILE SUBMENU (PROFESSIONAL)
+    ================================ */
+
+    document.querySelectorAll('.mobile-has-sub > span').forEach(trigger => {
+
+        trigger.addEventListener('click', function () {
+
+            const parent = this.parentElement;
+            const submenu = parent.querySelector('ul');
+
+            // Close other open submenus
+            document.querySelectorAll('.mobile-has-sub').forEach(item => {
+                if (item !== parent) {
+                    item.classList.remove('active');
+                    item.querySelector('ul').style.maxHeight = null;
+                }
+            });
+
+            parent.classList.toggle('active');
+
+            if (parent.classList.contains('active')) {
+                submenu.style.maxHeight = submenu.scrollHeight + "px";
+            } else {
+                submenu.style.maxHeight = null;
+            }
+
+        });
+
+    });
+
+});
+</script>
+
+
+
+    <main>
+        
+   <div class="v-hero-viewport">
+        <video class="v-hero-video-bg" autoplay muted loop playsinline>
+            <source src="https://www.symbiotec.com/images/homebg.mp4" type="video/mp4">
+        </video>
+
+        <div class="v-hero-content-stack">
+            <div class="v-hero-drive-frame">
+                <h1 class="v-hero-drive-title">DRIVING</h1>
+            </div>
+
+            <div class="v-hero-overlay-holder">
+                <div class="v-hero-vertical-line"></div>
+                <div class="v-hero-text-gate">
+                    <h4 class="v-hero-head-text v-hero-reveal-item">Innovation in</h4>
+                    <p class="v-hero-sub-text v-hero-reveal-item">Synthetic and Biotech<br>(Fermentation) <span class="v-hero-api-badge">APIs</span></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+  <div class="hero-event-divider"></div>
+<div class="main-scroll">
+ <section class="about-we">
+       
+         
+    <div class="hero-event-card" style="top: calc(-16% + 0px); right: -5px;">
+        <div class="hero-event-top">
+            <img src="https://www.symbiotec.com/storage/events/e5QEthn5d9f0iUWFpckZABxOBBXSCzi0DLlyys2l.png"
+                 class="hero-event-logo" alt="CPHI Milan -2026">
+            
+            <span class="hero-event-meta">
+                Connect with us,<br>
+                06 to 08 Oct . &#039;2026<br>
+                CPHI ,  Fiera Milano, Italy
+            </span>
+        </div>
+        <div class="hero-event-divider"></div>
+        <a href="/events" class="hero-event-cta">
+            Schedule a meeting
+            <i class="fa-solid fa-angles-right"></i>
+        </a>
+    </div>
+
+    <h2 class="about-title js-reveal">We’re</h2>
+
+    <div class="about-container">
+      <div class="about-left">
+
+        <p class="about-caption1 js-reveal delay-1">
+     A research and development-driven, science-based pharmaceutical and biotechnology company with capabilities across
+three platforms:
+        <br>
+        </p>
+
+        <div class="tech-hud js-reveal delay-2">
+          <div class="tech-container">
+
+            <div class="node-wrapper">
+              <div class="hud-circle">
+                <div class="ring rotating"></div>
+                <div class="ring rotating-reverse"></div>
+                <div class="icon-box">
+                    <img src="https://www.symbiotec.com/images/organicchem.webp" class="icon-img">
+                 </div>
+              </div>
+              <span class="hud-text">Organic Chemistry</span>
+            </div>
+
+            <div class="node-wrapper center">
+              <div class="hud-circle large">
+                <div class="ring rotating"></div>
+                <div class="ring rotating-reverse"></div>
+                <div class="icon-box"> 
+                    <img src="https://www.symbiotec.com/images/DNA.webp" class="icon-img">
+                </div>
+              </div>
+              <span class="hud-text">Biotechnology</span>
+            </div>
+
+            <div class="node-wrapper">
+              <div class="hud-circle">
+                <div class="ring rotating"></div>
+                <div class="ring rotating-reverse"></div>
+                <div class="icon-box">
+                    <img src="https://www.symbiotec.com/images/DCV.webp" class="icon-img" id="dcv">
+                </div>
+              </div>
+              <span class="hud-text">Complex Injectables</span>
+            </div>
+
+          </div>
+        </div>
+       <h3 class="futre-ready js-reveal delay-3">Agile Tech Adoption</h3>
+         <p class="about-caption1 js-reveal delay-4">Demonstrating agility by rapidly embracing technologies
+such as biotransformation, precision fermentation, double
+chamber platforms, continuous flow chemistry and integrating them into our manufacturing processes, which we believe
+has enabled us to bring complex products to the market</p>
+      </div>
+
+      <div class="about-right">
+        <img class="js-reveal delay-1" src="https://www.symbiotec.com/images/sym-H-abtus.webp" alt="">
+        <p class="about-caption js-reveal delay-2">
+    We have a global leadership position in Corticosteroid and
+Steroidal-Hormone Active Pharmaceutical Ingredients
+("APIs") in volume terms in Fiscal 2025.
+        </p>
+        <a href="/about" class="meet-board-btn1 js-reveal delay-3">
+      READ MORE...
+<i class="fa-solid fa-angles-right arrow"></i></a>
+      </div>
+
+    </div>
+  </section>
+  <hr class="dived"/>
+  
+  
+
+<section class="global-presence">
+
+     Background Video 
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="https://www.symbiotec.com/images/World.mp4" type="video/mp4">
+    </video>
+
+     Overlay 
+    <div class="overlay"></div>
+
+     Content 
+    <div class="gp-container">
+
+      <div class="gp-left">
+        <span class="gp-tag js-reveal">Global Presence</span>
+
+        <h2 class="js-reveal delay-1">Global Steroid APIs Excellence</h2>
+
+        <p class="intro js-reveal delay-2">
+         We are the only Indian and global company to have a presence across the top 10 Corticosteroid and Steroidal-Hormone APIs in Fiscal 2025, demonstrating the depth of our portfolio
+        </p>
+
+        <div class="stats js-reveal delay-3">
+          <div class="stat">
+            <h3>Corticosteroid APIs</h3>
+          </div>
+
+          <div class="stat">
+            <h3>Steroidal-Hormone APIs</h3>
+          </div>
+        </div>
+
+        <p class="desc js-reveal">
+Manufactures these products using fermentation and multi-step complex chemical reactions </p>
+
+          <h3 class="js-reveal delay-1">Built on Experience</h3>
+       <p class="desc js-reveal delay-2">    
+          Over 30 years of industry experience, we have evolved from a
+          lab-scale Steroidal-Hormone API manufacturer in 1995 into an
+          industrial-scale, Symbiotec is one of the first generics companies globally to successfully develop DCV
+          through backward integration, by relying on in-house materials and not imports, for
+        </p>
+ <div class="injection js-reveal delay-3">
+          <h5>Methylprednisolone Sodium Succinate Injection and</h5>
+           <h5>Hydrocortisone Sodium Succinate Injection</h5>
+</div>
+        
+           <br>
+
+        <div class="approvals">
+          <span class="js-reveal delay-1">With approvals from</span>
+
+          <div class="approval-list">
+            <div class="approval-item js-reveal delay-1" >
+              <img src="https://www.symbiotec.com/images/WHO-GMP.webp" alt="WHO GMP" />
+              <div class="approval-text">
+                <strong>WHO-GMP</strong>
+                <small>World Health Organization Good Manufacturing Practices</small>
+              </div>
+            </div>
+
+            <div class="approval-item js-reveal delay-2" >
+              <img src="https://www.symbiotec.com/images/logo-FDA.webp" alt="US FDA" />
+              <div class="approval-text">
+                <strong>US FDA</strong>
+                <small>United States Food and Drug Administration</small>
+              </div>
+            </div>
+
+            <div class="approval-item js-reveal delay-3" >
+              <img src="https://www.symbiotec.com/images/logos-eugmp.webp" alt="EU GMP" />
+              <div class="approval-text">
+                <strong>EU-GMP</strong>
+                <small>European Union Good Manufacturing Practices</small>
+              </div>
+            </div>
+
+            <div class="approval-item js-reveal delay-4" >
+              <img src="https://www.symbiotec.com/images/logo-FD-korea.webp" alt="MFDS Korea" />
+              <div class="approval-text">
+                <strong>MFDS Korea</strong>
+                <small>Ministry of Food and Drug Safety, Korea and Other Global Organizations </small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </section>
+
+  <div class="sdm">
+    <section class="cdmo-section">
+      <div class="cdmo-container">
+
+        <h2 class="cdmo-title js-reveal">
+          <span class="offer">Offerings</span> Integrated CDMO Solutions Across<br> Chemistry, Biotechnology & Injectables
+        </h2>
+
+        <p class="cdmo-desc js-reveal delay-1">
+          Leveraging our deep capabilities across Organic Chemistry, Biotechnology, and Complex Injectables to operate
+          as a Contract Development and Manufacturing Organization (“CDMO”), variably for specialty Pharmaceutical and
+          Nutraceutical companies globally, offering products and services across the three platforms in which we also
+          manufacture our own products
+        </p>
+
+      </div>
+    </section>
+
+  </div>
+
+
+<section class="sym-wrapper">
+    <div class="sym-content">
+        <div class="sym-header-container js-reveal">
+            <span class="sym-tag">Infrastructure</span>
+            <h2 class="sym-header-title">Operational Manufacturing Locations</h2>
+        </div>
+        <div class="sym-fac-item js-reveal delay-1">
+            <h3>Rau Facility (Rau Unit) — <span>Established in 2004, dedicated facilities for Cortico-Steroid API Manufacturing</span></h3>
+        </div>
+        <div class="sym-fac-item js-reveal delay-2" style="margin-bottom: 0;">
+            <h3>Pithampur Facility (SEZ Unit) — <span>Established in 2010, with dedicated facilities for Cortico-Steroid API, Hormone API, and Fermentation & Biotransformation</span></h3>
+        </div>
+    </div>
+
+<div class="sym-visual-container">
+
+    <svg class="dynamic-connector-svg" id="svgCanvas">
+        <path id="path-sez" class="stripe-line"></path>
+        <path id="path-rau" class="stripe-line"></path>
+        
+        
+    </svg>
+
+    <div class="sym-nav-diamond">
+        <div class="nav-side">
+            <button class="nav-btn locked"></button>
+            <button class="nav-btn" id="btn-sez" onclick="showSEZ()">SEZ</button>
+        </div>
+        <div class="nav-side">
+            <button class="nav-btn" id="btn-rau" onclick="showRAU()">RAU</button>
+            <button class="nav-btn locked"></button>
+        </div>
+    </div>
+
+    <div class="sym-stack-frame" id="facStack">
+        <div class="sym-card-layer card-pithampur" id="img-sez">
+            <img src="https://www.symbiotec.com/images/sym-H-mfg-SEZ.webp" alt="SEZ Facility">
+        </div>
+        <div class="sym-card-layer card-rau" id="img-rau">
+            <img src="https://www.symbiotec.com/images/sym-mfg rau.webp" alt="RAU Facility">
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+  <section class="whats-new">
+    <div class="wn-container">
+
+      <h3 class="wn-title js-reveal">What’s New</h3>
+
+      <div class="wn-features">
+
+        <div class="wn-item js-reveal delay-1">
+
+          <div>
+            <strong>Classical Fermentation-Based APIs</strong>
+            <span>We have already launched Fermentation-Based APIs such as Mupirocin, Teicoplanin and Serratiopeptidase,
+              among others, and we intend to build on this foundation by introducing additional High-Value, low-volume
+              APIs in niche therapeutic areas</span>
+          </div>
+        </div>
+
+        <div class="wn-item js-reveal delay-2">
+
+          <div>
+            <strong>Speciality Ingredients</strong>
+            <span>Such as Vegan Vitamin D3 and Algal based Docosa Hexanoic Acid (DHA)</span>
+          </div>
+        </div>
+
+        <div class="wn-item js-reveal delay-3">
+
+          <div>
+            <strong>CDMO</strong>
+            <span>Services for Food/Nutraceuticals such as alternative Protein and Enzymes, and Industrial Biotechnology
+              Products</span>
+          </div>
+        </div>
+
+        <div class="wn-item js-reveal delay-4">
+
+          <div>
+            <strong>Complex Injectable Formulation</strong>
+            <span>One of the first generics globally to develop DCV (Double Chamber Vials) through backward
+              integration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="iso-section">
+    <div class="iso-header js-reveal">
+      <span class="iso-header-tag">Regulatory Compliance</span>
+      <h2 class="iso-header-title">Accreditations</h2>
+    </div>
+
+
+    <section class="certifications">
+      <div class="cert-container">
+
+        <div class="cert-item js-reveal">
+          <h4 class="cert-title">Rau Facility</h4>
+          <ul class="cert-list">
+            <li>US– FDA</li>
+            <li>EU GMP – Germany Bavaria</li>
+            <li>WHO GMP</li>
+            <li>USFDA – Facility Establishment Identification (FEI): <strong>3005122933</strong></li>
+            <li>D-U-N-S Number: <strong>650328805</strong></li>
+          </ul>
+        </div>
+
+        <div class="cert-item js-reveal delay-1">
+          <h4 class="cert-title">Pithampur Facility</h4>
+          <ul class="cert-list">
+            <li>US– FDA</li>
+            <li>EU GMP – Germany Bavaria</li>
+            <li>WHO GMP</li>
+            <li>USFDA – Facility Establishment Identification (FEI): <strong>3009298759</strong></li>
+            <li>D-U-N-S Number: <strong>677604336</strong></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+
+     <div class="iso-grid-container">
+       <div class="iso-cert-card js-reveal">
+         <div class="iso-card-watermark">ISO</div>
+         <div class="iso-card-inner">
+          <span class="iso-label-small">TÜV NORD CERT GmbH </span>
+          <h3 class="iso-cert-heading">Environment Management <br>System [EMS]</h3>
+          <span class="iso-cert-version">ISO 14001:2015 (SEZ & RAU Sites)</span>
+          <div class="iso-info-grid">
+            <div class="iso-info-group"><label>Certificate Registration No.</label><span>44 104 21393400 </span></div>
+                        <div class="iso-info-group"><label>Validity From</label><span>30.11.2024</span></div>
+            <div class="iso-info-group"><label>Valid Until</label><span>29.11.2027</span></div>
+          </div>
+          <a href="https://www.symbiotec.com/images/ISO14001.pdf" download class="iso-download-btn">
+   Download
+</a>
+
+        </div>
+        
+      </div>
+      <div class="iso-cert-card js-reveal delay-2">
+        <div class="iso-card-watermark">ISO</div>
+        <div class="iso-card-inner">
+          <span class="iso-label-small">TÜV NORD CERT GmbH</span>
+          <h3 class="iso-cert-heading">Occupational Health & Safety <br>[OHSMS]</h3>
+          <span class="iso-cert-version">ISO 45001:2018 (SEZ & RAU Sites)</span>    
+          <div class="iso-info-grid">
+            <div class="iso-info-group"><label>Certificate Registration No.</label><span>44 126 21393400</span></div>
+            <div class="iso-info-group"><label>Validity From</label><span>30.11.2024</span></div>
+                        <div class="iso-info-group"><label>Valid Until</label><span>29.11.2027</span></div>
+
+          </div>
+        <a href="https://www.symbiotec.com/images/ISO45001.pdf" download class="iso-download-btn">
+  Download
+</a>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="vp-section-wrapper">
+    <div class="vp-grid-main">
+      <div class="vp-visual-container">
+        <div class="vp-main-image-box js-reveal">
+          <img src="https://www.symbiotec.com/images/sym-H-isolator.webp" alt="Production Facility">
+        </div>
+        <div class="vp-feature-stack">
+          <div class="vp-feature-item js-reveal delay-1">
+            <div class="vp-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20" />
+              </svg>
+            </div>
+            <span class="vp-feature-title">Corticosteroid APIs</span>
+          </div>
+          <div class="vp-feature-item js-reveal delay-2">
+            <div class="vp-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                <line x1="16" y1="8" x2="2" y2="22" />
+                <line x1="17.5" y1="15" x2="9" y2="15" />
+              </svg>
+            </div>
+            <span class="vp-feature-title">Steroid-Hormone APIs</span>
+          </div>
+          </div>
+      </div>
+
+      <div class="rev-slant-wrapper">
+
+
+        <div class="vp-content-block">
+          <h2 class="vp-heading-main js-reveal">
+            Offers a robust product portfolio of over 60 <span class="vp-blue-highlight">Corticosteroid </span>
+            and Steroid-Hormone APIs
+          </h2>
+          <p class="vp-description-text js-reveal delay-1">
+            According to F&S Report in molecules such as Hydrocortisone, Testosterone, and Methylprednisolone,
+            we held a Global Leadership Position
+          </p>
+          <div class="vp-stat-accent js-reveal delay-2">
+            <span class="vp-stat-label">Fiscal 2025 Market Share</span>
+            <p class="vp-stat-value">
+              Capturing over <span class="vp-blue-highlight">50%</span>
+              <span style="font-size: 15px; font-weight: 400; color: #86868b; display: block; margin-top: 5px;">Market
+                share of supply by volume</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="vp-section-accents">
+      <div class="vp-accent-box vp-light-blue"></div>
+      <div class="vp-accent-box vp-dark-blue"></div>
+    </div>
+  </section>
+
+
+
+  <section class="df-bg-container">
+    <div class="df-wrapper">
+      <header class="df-header js-reveal">
+        <span class="df-tag">Performance Indicators</span>
+        <h2 class="df-title">Differentiators</h2>
+      </header>
+      
+       <p class="about-caption1 js-reveal delay-1" id="diff">Scale, science, and global reach reflect the strength of our integrated manufacturing platform — reinforcing our dedication to quality, innovation, and long-term partnerships</p>
+    <div class="df-grid-layout">
+
+  <div class="df-card-item span-2 js-scroll-item">
+    <div class="df-icon-sphere">
+      <i class="fa-solid fa-earth-asia"></i>
+    </div>
+    <span class="df-stat-val">200+ Customers</span>
+    <p class="df-stat-desc">Serving strategic accounts across >40 countries with precision</p>
+  </div>
+
+  <div class="df-card-item js-scroll-item">
+    <div class="df-icon-sphere">
+      <i class="fa-solid fa-users"></i>
+    </div>
+    <span class="df-stat-val">1,700+</span>
+    <p class="df-stat-desc">Strong and diversely skilled global workforce</p>
+  </div>
+
+  <div class="df-card-item js-scroll-item">
+    <div class="df-icon-sphere">
+      <i class="fa-solid fa-microscope"></i>
+    </div>
+    <span class="df-stat-val">138 Experts</span>
+    <p class="df-stat-desc">High-caliber scientists and engineers fueling R&D innovation</p>
+  </div>
+
+  <div class="df-card-item span-2 df-accent-card js-scroll-item">
+    <div class="df-icon-sphere">
+      <i class="fa-solid fa-diagram-project"></i>
+    </div>
+    <span class="df-stat-val">Backward Integration</span>
+    <p class="df-stat-desc">Advanced supply chain control from fermentation to synthesis</p>
+  </div>
+
+  <div class="df-card-item js-scroll-item">
+    <div class="df-icon-sphere">
+      <i class="fa-solid fa-flask"></i>
+    </div>
+    <span class="df-stat-val">584.67 MT</span>
+    <p class="df-stat-desc">Total aggregate chemical synthesis capacity</p>
+  </div>
+
+  <div class="df-card-item js-scroll-item">
+    <div class="df-icon-sphere">
+      <i class="fa-solid fa-vial"></i>
+    </div>
+    <span class="df-stat-val">700 KL</span>
+    <p class="df-stat-desc">Substantial industrial fermentation capacity</p>
+  </div>
+
+  <div class="df-card-item span-4 js-scroll-item">
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <div class="df-icon-sphere" style="margin-bottom: 0; flex-shrink: 0;">
+        <i class="fa-solid fa-award"></i>
+      </div>
+      <div>
+        <span class="df-stat-val">Global Accreditations</span>
+        <p class="df-stat-desc">
+          Accredited by renowned global regulatory authorities for excellence in quality
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+  </section>
+  
+  
+  <section class="sustainability-wrap">
+    <div class="sustainability-inner">
+        <div class="sustainability-text js-reveal">
+            <span class="left-bar"></span>
+            <div>
+                <h2>Sustainability at Symbiotec</h2>
+                <p>Integral to our business philosophy and decision-making process</p>
+            </div>
+        </div>
+
+ <a href="https://www.symbiotec.com/sustainability#gri-report" class="download-btn js-reveal delay-2">
+    Download Report
+</a>
+
+
+
+    </div>
+</section>
+
+</div>
+
+
+
+
+    </main>
+
+    <div class="sym-footer-parent">
+    <div class="sym-footer-accents">
+        <div class="accent-box dark-blue"></div>
+        <div class="accent-box light-blue"></div>
+    </div>
+
+    <footer class="sym-footer-main">
+        <div class="sym-footer-container">
+            
+            <div class="footer-left">
+                <div class="brand-section">
+                    <div class="logo-placeholder">
+                        <img src="https://www.symbiotec.com/images/symbiotec-logo.webp" alt="Symbiotec Logo">
+                    </div>
+                    <p class="tagline-bold">Steroids – Hormones</p>
+                    <p class="tagline-bold">Fermentation APIs & CDMO</p>
+                </div>
+
+                <div class="links-grid">
+                    <div class="link-column">
+                        <h4 class="link-header">QUICK LINKS</h4>
+                        <ul>
+                            <li><a href="https://www.symbiotec.com/about">About Us</a></li>
+                            <li><a href="//manufacturing-facility">Manufacturing Facilities</a></li>
+                            <li><a href="https://www.symbiotec.com/quality">Quality</a></li>
+                            <li><a href="https://www.symbiotec.com/regulatory">Regulatory</a></li>
+                            <li><a href="https://www.symbiotec.com/r&amp;d">Science & Innovation</a></li>
+                            <li><a href="https://www.symbiotec.com/contact">Contact Us</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="link-column">
+                        <h4 class="link-header">PRODUCTS</h4>
+                        <ul>
+                            <li><a href="https://www.symbiotec.com/product">Cortico-Steroid APIs</a></li>
+                            <li><a href="https://www.symbiotec.com/product">Hormone (Steroid) APIs</a></li>
+                            <li><a href="https://nutra.symbiotec.com" target="_blank">Nutraceuticals</a></li>
+                            <li><a href="https://www.symbiotec.com/about">Other Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-column">
+                        <h4 class="link-header">QUICK LINKS</h4>
+                        <ul>
+                            <li><a href="https://www.symbiotec.com/sustainability">Sustainability</a></li>
+                            <li><a href="https://www.symbiotec.com/career">Career</a></li>
+                            <li><a href="https://www.symbiotec.com/events">News and Events</a></li>
+                            <li><a href="https://investor.symbiotec.com/">Investor Relations</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="form-header-flex">
+                    <div class="form-header-content">
+                        <p class="form-title">Connect for Queries</p>
+                        <p class="form-subtitle">
+                            Looking for more information? <br>
+                            Submit your request, and we’ll ensure your query is addressed quickly
+                        </p>
+                    </div>
+                    <a href="/contact" id="enquiry"><button class="inquire-btn">ENQUIRE - PRODUCTS</button></a>
+                </div>
+
+                    <form id="footerContactForm" class="contact-form" action="https://www.symbiotec.com/footer-enquiry" method="POST">
+                        <input type="hidden" name="_token" value="SprQATPwmrn5r80XYwTOCNIjDAdnrJ8lSpPNpDLp" autocomplete="off">                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Name</label>
+                                <input type="text" name="name" required value="">
+                            </div>
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" name="email" required value="">
+                            </div>
+                            <div class="input-group">
+                                <label>Subject</label>
+                                <input type="text" name="subject" required value="">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Message</label>
+                            <textarea name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" id="footerSubmitBtn" class="send-btn">Submit</button>
+                    </form>
+
+
+
+            </div>
+        </div>
+
+        <div class="footer-copyright-strip">
+            <div class="copyright-container">
+                <p>© 2026 Symbiotec Pharmalab Limited. All Rights Reserved</p>
+                <div class="footer-legal-links">
+                    <a href="https://investor.symbiotec.com/policy" target="_blank">Privacy Policy</a>
+                    <a href="https://investor.symbiotec.com/terms">Terms of Service</a>
+                   
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    document.getElementById('footerContactForm').addEventListener('submit', function(e) {
+    const btn = document.getElementById('footerSubmitBtn');
+    
+    // 1. Button ka text badlein aur spinner add karein
+    btn.innerHTML = '<span class="loader-dots"></span> Submitting...';
+    
+    // 2. Button ko disable karein taaki double click na ho
+    btn.disabled = true;
+    
+    // Form automatically submit ho jayega kyunki humne e.preventDefault() nahi lagaya hai
+});
+</script>
+
+    
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const facStack = document.getElementById("facStack");
+    const svg = document.getElementById("svgCanvas");
+
+    const btnSez = document.getElementById("btn-sez");
+    const btnRau = document.getElementById("btn-rau");
+
+    const imgSez = document.getElementById("img-sez");
+    const imgRau = document.getElementById("img-rau");
+
+    const pathSez = document.getElementById("path-sez");
+    const pathRau = document.getElementById("path-rau");
+
+    /* CONFIG */
+    const STRAIGHT_LEN = 90;
+    const TIP = 30;
+    const VERTICAL_EXTRA = 40;
+    const RIGHT_EXTRA = 60;
+
+    /* 🔒 SINGLE SOURCE OF TRUTH */
+    let currentView = null;
+
+    /* ---------- HELPERS ---------- */
+
+    function resetPath(path) {
+        path.classList.remove("active");
+        path.setAttribute("d", "M 0 0");
+        path.getBoundingClientRect(); // force reflow (critical)
+    }
+function drawStraight(btn, img, path, side) {
+    resetPath(path);
+
+    const s = svg.getBoundingClientRect();
+    const b = btn.getBoundingClientRect();
+
+    const startX = b.left + b.width / 2 - s.left;
+    const startY = b.top + b.height / 2 - s.top;
+
+    let endX;
+
+if (side === "left") {
+    // 🔴 LEFT side thodi lambi
+    endX = startX - STRAIGHT_LEN - 10;  
+} else {
+    // RIGHT side same
+    endX = startX + STRAIGHT_LEN;
+}
+
+    path.setAttribute(
+        "d",
+        `M ${startX} ${startY} L ${endX} ${startY}`
+    );
+
+    path.classList.add("active");
+}
+
+
+  function drawVertical(btn, img, path, side, dir) {
+    resetPath(path);
+
+    const s = svg.getBoundingClientRect();
+    const b = btn.getBoundingClientRect();
+    const i = img.getBoundingClientRect();
+
+    const startX = b.left + b.width / 2 - s.left;
+    const startY = b.top + b.height / 2 - s.top;
+
+   const SEZ_X_EXTRA = 30; // jitna badhana ho (20–40 try kar sakte ho)
+
+const edgeX = side === "left"
+    ? (i.left - s.left)    // 🔴 LEFT (SEZ) thoda aur left
+    : (i.right - s.left);                 // RIGHT (RAU) bilkul same
+
+    const VERTICAL_EXTRA = 40; // 🔧 control height here
+
+    const targetY = dir === "down"
+        ? i.top - s.top - VERTICAL_EXTRA
+        : i.bottom - s.top + VERTICAL_EXTRA;
+
+    const midX = side === "left"
+        ? edgeX - TIP
+        : edgeX + TIP;
+
+    path.setAttribute(
+        "d",
+        `M ${startX} ${startY}
+         L ${midX} ${startY}
+         L ${midX} ${targetY}
+         L ${edgeX} ${targetY}`
+    );
+
+    path.classList.add("active");
+}
+
+    /* ---------- VIEWS ---------- */
+
+    function showSEZ(force = false) {
+        if (!force && currentView === "SEZ") return;
+        currentView = "SEZ";
+
+        facStack.classList.remove("is-swapped");
+
+        btnSez.classList.add("active-link");
+        btnRau.classList.remove("active-link");
+
+        resetPath(pathSez);
+        resetPath(pathRau);
+
+        requestAnimationFrame(() => {
+            drawStraight(btnRau, imgRau, pathRau, "left");
+            drawStraight(btnSez, imgSez, pathSez, "right");
+        });
+    }
+
+    function showRAU(force = false) {
+        if (!force && currentView === "RAU") return;
+        currentView = "RAU";
+
+        facStack.classList.add("is-swapped");
+
+        btnRau.classList.add("active-link");
+        btnSez.classList.remove("active-link");
+
+        resetPath(pathSez);
+        resetPath(pathRau);
+
+        requestAnimationFrame(() => {
+            drawVertical(btnSez, imgSez, pathSez, "left", "down");
+            drawVertical(btnRau, imgRau, pathRau, "right", "up");
+        });
+    }
+
+    /* ---------- EVENTS ---------- */
+
+    btnSez.addEventListener("click", () => showSEZ());
+    btnRau.addEventListener("click", () => showRAU());
+
+    window.addEventListener("resize", () => {
+        if (currentView === "RAU") showRAU(true);
+        else showSEZ(true);
+    });
+
+    /* INIT */
+    setTimeout(() => showSEZ(true), 300);
+});
+</script>
+
+
+    <script src="https://www.symbiotec.com/js/scroll-reveal.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    /* Force Toast & Modals to appear above the Navbar */
+    .swal2-container {
+        z-index: 999999 !important;
+    }
+
+    /* Custom shadow for the Teal Confirm Button */
+    .swal2-styled.swal2-confirm {
+        box-shadow: 0 10px 15px -3px rgba(97, 181, 201, 0.4) !important;
+    }
+</style>
+
+<script>
+    // 1. GLOBAL TOAST CONFIGURATION
+    // Used for success/error messages after redirects
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    });
+
+    // Fire Success Toast
+    
+    // Fire Error Toast
+    
+    // Fire Validation Errors
+    
+
+    // 2. UNIVERSAL DELETE CONFIRMATION FUNCTION
+    // Call this from any blade file: confirmDelete('form-id', 'Optional custom message')
+    window.confirmDelete = function(formId, message =
+        "This action cannot be undone and the record will be permanently removed.") {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: message,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#61b5c9', // Symbiotec Teal
+            cancelButtonColor: '#ff5f5f', // Professional Red
+            confirmButtonText: 'Yes, Delete it!',
+            cancelButtonText: 'No, Cancel',
+            background: '#ffffff',
+            customClass: {
+                popup: 'rounded-[32px]',
+                confirmButton: 'rounded-xl px-6 py-3 font-bold',
+                cancelButton: 'rounded-xl px-6 py-3 font-bold'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit the specific form passed to the function
+                document.getElementById(formId).submit();
+            }
+        });
+    }
+</script>
+</body>
+
+</html>

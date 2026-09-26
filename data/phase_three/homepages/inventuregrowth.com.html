@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Open Demat Account - Demat Account Online for Free* - Inventure Growth</title>
+    <meta name="description" content="Open Demat Account - Avail hassle free paperless account opening online atInventure Growth with premium trading services.">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#e8f1ff">
+    <!--Website-favicon-->
+    <link href="images/.png" rel="icon">
+
+
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '402489472754224');
+        fbq('track', 'PageView');
+    </script>
+    <noscript b-sn3g8wa6o7>
+        <img b-sn3g8wa6o7 height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=402489472754224&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HHJ9R0QGY"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-6HHJ9R0QGY');</script>
+
+
+    <!--Plugin-css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/plugin.min.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Template-style-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        .modal {
+            position: fixed;
+            top: 17%;
+            left: 0;
+            z-index: 1050;
+            display: none;
+            width: 360px;
+            height: 100%;
+            overflow: hidden;
+            outline: 0;
+        }
+
+        .modal-backdrop.show {
+            opacity: 0;
+        }
+
+        .modal-open {
+            overflow: auto;
+        }
+
+        .formButton span {
+            writing-mode: tb;
+            text-orientation: mixed;
+            /* transform: rotate(180deg); */
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // Make an AJAX request to fetch dynamic links
+            $.ajax({
+                url: 'https://adminpanel.inventuregrowth.com/Download/GetDownloadCategories',
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    // Check if the API call was successful
+                    console.log("response", response);
+                    if (response.success) {
+                        // Clear existing links
+                        $('#dynamic-links').empty();
+                        // Iterate over the data array and add dynamic links
+                        $.each(response.data, function (index, link) {
+                            if (link.name !== "Annual Reports") {
+                                $('#dynamic-links').append('<div class="inner-blockss"><ul class="menu-li-link"><li><a href="/quaterly?qid=' + link.id + '">' + link.name + '</a></li></ul></div>');
+                            } else {
+                                $('#dynamic-links').append('<li><a href="/downloads">' + link.name + '</a></li>');
+                            }
+                        });
+                    } else {
+                        // Handle API error
+                        $('#dynamic-links').append('<li>Error: ' + response.message + '</li>');
+                    }
+                },
+                error: function () {
+                    // Handle AJAX error
+                    $('#dynamic-links').append('<li>Error fetching data from API</li>');
+                }
+            });
+        });
+    </script>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $.ajax({
+                url: 'https://adminpanel.inventuregrowth.com/Download/GetInvestorRelationspdf',
+                method: 'GET',
+                success: function (response) {
+
+                    if (response && response.success && response.data) {
+
+                        bindDataToMenu(response.data);
+                    } else {
+                        console.error('Error: Unable to fetch data from the API.');
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error('Error:', errorThrown);
+
+                }
+            });
+        });
+
+        function bindDataToMenu(data) {
+            var menuInnerBlock = document.getElementById("menu-inner-block-id");
+            if (menuInnerBlock) {
+                // Group the data by category
+                var groupedData = {};
+                data.forEach(function (item) {
+                    if (!groupedData[item.category]) {
+                        groupedData[item.category] = [];
+                    }
+                    if (!groupedData[item.category].some(subcategory => subcategory.subcategory === item.subcategory)) {
+                        groupedData[item.category].push({ subcategory: item.subcategory, categoryId: item.categoryid, subcategoryId: item.subcategoryid });
+                    }
+                });
+
+                // Iterate over the grouped data and create HTML elements
+                Object.keys(groupedData).forEach(function (category) {
+                    // Sort the subcategories by subcategoryId in descending order
+                    groupedData[category].sort((a, b) => b.subcategoryId - a.subcategoryId);
+
+                    // Create inner block for each category
+                    var innerBlock = document.createElement("div");
+                    innerBlock.className = "inner-blockss";
+                    innerBlock.id = category.toLowerCase().replace(/\s+/g, '-');
+
+                    // Create category label
+                    var categoryLabel = document.createElement("button");
+                    categoryLabel.className = "menu-headings";
+                    categoryLabel.textContent = category;
+                    categoryLabel.type = "button";
+                    // Event listener for category label click
+                    categoryLabel.addEventListener("click", function () {
+                        // Get the category ID
+                        var categoryId = groupedData[category][0].categoryId;
+                        // Check if subcategory ID is 0
+                        if (groupedData[category][0].subcategoryId === 0) {
+                            // Redirect to another page with the category ID in the query string
+                            window.location.href = "investorrelation?categoryId=" + categoryId;
+                        }
+                    });
+
+                    // Create category list
+                    var categoryList = document.createElement("ul");
+                    categoryList.className = "menu-li-link";
+
+                    // Iterate over subcategories
+                    groupedData[category].forEach(function (subcategoryData) {
+                        // Create subcategory list item
+                        var listItem = document.createElement("li");
+                        var link = document.createElement("a");
+                        link.href = "#"; // Placeholder
+                        link.textContent = subcategoryData.subcategory;
+
+                        // Event listener for subcategory link click
+                        link.addEventListener("click", function () {
+                            // Get the category ID and subcategory ID
+                            var categoryId = subcategoryData.categoryId;
+                            var subcategoryId = subcategoryData.subcategoryId;
+                            // Redirect to another page with both IDs in the query string
+                            window.location.href = "investorrelation?categoryId=" + categoryId + "&subcategoryId=" + subcategoryId;
+                        });
+
+                        listItem.appendChild(link);
+
+                        // Append subcategory list item to category list
+                        categoryList.appendChild(listItem);
+                    });
+
+                    // Hide subcategories initially
+                    categoryList.style.display = "none";
+
+                    // Event listener for category click to toggle subcategories visibility
+                    categoryLabel.addEventListener("click", function () {
+                        if (categoryList.style.display === "none") {
+                            categoryList.style.display = "block";
+                        } else {
+                            categoryList.style.display = "none";
+                        }
+                    });
+
+                    // Append category label and list to inner block
+                    innerBlock.appendChild(categoryLabel);
+                    innerBlock.appendChild(categoryList);
+
+                    // Append inner block to menu container
+                    menuInnerBlock.appendChild(innerBlock);
+                });
+            }
+        }
+
+
+
+        function bindDataToMenu1(data) {
+            var menuInnerBlock = document.getElementById("menu-inner-block-id");
+            if (menuInnerBlock) {
+                // Group the data by category
+                var groupedData = {};
+                data.forEach(function (item) {
+                    if (!groupedData[item.category]) {
+                        groupedData[item.category] = [];
+                    }
+                    if (!groupedData[item.category].some(subcategory => subcategory.subcategory === item.subcategory)) {
+                        groupedData[item.category].push({ subcategory: item.subcategory, categoryId: item.categoryid, subcategoryId: item.subcategoryid });
+                    }
+                });
+
+                // Iterate over the grouped data and create HTML elements
+                Object.keys(groupedData).forEach(function (category) {
+                    // Create inner block for each category
+                    var innerBlock = document.createElement("div");
+                    innerBlock.className = "inner-blockss";
+                    innerBlock.id = category.toLowerCase().replace(/\s+/g, '-');
+
+                    // Create category label
+                    var categoryLabel = document.createElement("button");
+                    categoryLabel.className = "menu-headings";
+                    categoryLabel.textContent = category;
+                    categoryLabel.type = "button";
+                    // Event listener for category label click
+                    categoryLabel.addEventListener("click", function () {
+                        // Get the category ID
+                        var categoryId = groupedData[category][0].categoryId;
+                        // Check if subcategory ID is 0
+                        if (groupedData[category][0].subcategoryId === 0) {
+                            // Redirect to another page with the category ID in the query string
+                            window.location.href = "investorrelation?categoryId=" + categoryId;
+                        }
+                    });
+
+                    // Create category list
+                    var categoryList = document.createElement("ul");
+                    categoryList.className = "menu-li-link";
+
+                    // Iterate over subcategories
+                    groupedData[category].forEach(function (subcategoryData) {
+                        // Create subcategory list item
+                        var listItem = document.createElement("li");
+                        var link = document.createElement("a");
+                        link.href = "#"; // Placeholder
+                        link.textContent = subcategoryData.subcategory;
+
+                        // Event listener for subcategory link click
+                        link.addEventListener("click", function () {
+                            // Get the category ID and subcategory ID
+                            var categoryId = subcategoryData.categoryId;
+                            var subcategoryId = subcategoryData.subcategoryId;
+                            // Redirect to another page with both IDs in the query string
+                            window.location.href = "investorrelation?categoryId=" + categoryId + "&subcategoryId=" + subcategoryId;
+                        });
+
+                        listItem.appendChild(link);
+
+                        // Append subcategory list item to category list
+                        categoryList.appendChild(listItem);
+                    });
+
+                    // Hide subcategories initially
+                    categoryList.style.display = "none";
+
+                    // Event listener for category click to toggle subcategories visibility
+                    categoryLabel.addEventListener("click", function () {
+                        if (categoryList.style.display === "none") {
+                            categoryList.style.display = "block";
+                        } else {
+                            categoryList.style.display = "none";
+                        }
+                    });
+
+                    // Append category label and list to inner block
+                    innerBlock.appendChild(categoryLabel);
+                    innerBlock.appendChild(categoryList);
+
+                    // Append inner block to menu container
+                    menuInnerBlock.appendChild(innerBlock);
+                });
+            }
+        }
+
+
+
+
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            var currentYear = new Date().getFullYear();
+            document.getElementById("copyright").innerHTML = "Copyright © " + currentYear + " Inventure Growth & Securities Limited.";
+
+            generateCaptchaallpage();
+        });
+    </script>
+</head>
+<body>
+
+    <a b-sn3g8wa6o7 href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+    <header b-sn3g8wa6o7 class="ree-header fixed-top">
+        <div b-sn3g8wa6o7 class="container-fluid m-p-l-r-0">
+            <div b-sn3g8wa6o7 class="menu-header">
+                <div b-sn3g8wa6o7 class="menu-logo">
+                    <div b-sn3g8wa6o7 class="dskt-logo"><a b-sn3g8wa6o7 class="nav-brand" href="./">	<img b-sn3g8wa6o7 src="images/inventure-logo.png" alt="Inventure Logo" class="ree-logo" /> </a> </div>
+                </div>
+                <div b-sn3g8wa6o7 class="ree-nav" role="navigation">
+                    <ul b-sn3g8wa6o7 class="nav-list">
+                        <li b-sn3g8wa6o7 class="megamenu">
+                            <a b-sn3g8wa6o7 href="#" class="menu-links">Products & Services</a>
+                            <div b-sn3g8wa6o7 class="menu-dropdown">
+                                <div b-sn3g8wa6o7 class="menu-block-set">
+                                    <div b-sn3g8wa6o7 class="container" style="max-width: 700px;">
+                                        <div b-sn3g8wa6o7 class="menu-block-a">
+
+                                            <div b-sn3g8wa6o7 class="mega-menu-blocks">
+                                                <div b-sn3g8wa6o7 class="menu-inner-block-a" style="">
+                                                    <div b-sn3g8wa6o7 class="inner-blockss">
+                                                        <label b-sn3g8wa6o7 class="menu-headings">Products & Services</label>
+                                                        <ul b-sn3g8wa6o7 class="menu-li-link">
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="equity">Equity</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="currency">Currency</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="commodity">Commodity</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="tradeapp">Trade App</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="mutualfund">Mutual Funds</a></li>
+
+                                                            <!-- <li><a href="web-design">Web Design</a></li> -->
+                                                        </ul>
+                                                    </div>
+
+                                                    <div b-sn3g8wa6o7 class="inner-blockss">
+                                                        <label b-sn3g8wa6o7 class="menu-headings">Products & Services</label>
+                                                        <ul b-sn3g8wa6o7 class="menu-li-link">
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="Insurance">Insurance</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="ipo">IPOs</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="depository">Depository</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="mtf">MTF</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="webapp">Web Trading</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div b-sn3g8wa6o7 class="inner-blockss">
+                                                        <label b-sn3g8wa6o7 class="menu-headings">Research</label>
+                                                        <ul b-sn3g8wa6o7 class="menu-li-link">
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/marketreports?pagename=Market Reports">Market Reports</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/technicalreports?pagename=Technical Reports">Technical Reports</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/fundamentalreports?pagename=Fundamental Reports">Fundamental Reports</a></li>
+
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li b-sn3g8wa6o7 class="megamenu mega-small">
+                            <a b-sn3g8wa6o7 href="becomeapartner" class="menu-links">Partner</a>
+
+                        </li>
+
+                        <li b-sn3g8wa6o7 class="megamenu mega-small">
+                            <a b-sn3g8wa6o7 href="#" class="menu-links">Login</a>
+                            <div b-sn3g8wa6o7 class="menu-dropdown">
+                                <div b-sn3g8wa6o7 class="menu-block-set">
+                                    <div b-sn3g8wa6o7 class="container">
+                                        <div b-sn3g8wa6o7 class="menu-block-a">
+
+                                            <div b-sn3g8wa6o7 class="mega-menu-blocks">
+                                                <div b-sn3g8wa6o7 class="menu-inner-block-a" style="grid-template-columns:max-content">
+                                                    <div b-sn3g8wa6o7 class="inner-blockss">
+                                                        <label b-sn3g8wa6o7 class="menu-headings"></label>
+                                                        <ul b-sn3g8wa6o7 class="menu-li-link">
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://trading.inventuregrowth.com/Aero/login">IGSL AERO</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="http://bo.inventuregrowth.com/WebClient/">Client Back-Office</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com">Client eKYC</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="http://bo.inventuregrowth.com/WebLogin/index.cfm?Logintype=Branch">Partner Back-Office</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/EkycNewVersion/ekyc-admin/login.aspx">Partner eKYC</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/re-ekyc/">Re-KYC</a></li>
+
+
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li b-sn3g8wa6o7 class="megamenu mega-small">
+                            <a b-sn3g8wa6o7 href="aboutus" class="menu-links">About Us</a>
+
+                        </li>
+                        <li b-sn3g8wa6o7 class="megamenu">
+                            <a b-sn3g8wa6o7 href="#" class="menu-links">Quick Links</a>
+                            <div b-sn3g8wa6o7 class="menu-dropdown">
+                                <div b-sn3g8wa6o7 class="menu-block-set">
+                                    <div b-sn3g8wa6o7 class="container" style="max-width: 700px;">
+                                        <div b-sn3g8wa6o7 class="menu-block-a">
+
+                                            <div b-sn3g8wa6o7 class="mega-menu-blocks">
+                                                <div b-sn3g8wa6o7 class="menu-inner-block-a">
+
+                                                    <div b-sn3g8wa6o7 class="inner-blockss">
+                                                        <ul b-sn3g8wa6o7 class="menu-li-link">
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://attribute.inventuregrowth.com/">6 Attributes</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="regulation30?categoryId=7">Regulation 30</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="subsidiaries">Subsidaries Financials</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="offerdocuments">Offer Documents</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://ipo.inventuregrowth.com/">E-IPO</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://www.evotingindia.com/">E-voting</a></li>
+                                                            <li b-sn3g8wa6o7>
+                                                                <a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/re-ekyc/">Re-KYC</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div b-sn3g8wa6o7 class="inner-blockss">
+                                                        <ul b-sn3g8wa6o7 class="menu-li-link">
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads">Downloads</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads?categoryId=8">Trading Software</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads?categoryId=9">Margin File</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads?categoryId=10">KYC Form</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads?categoryId=11">Compliance</a></li>
+                                                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads?categoryId=13">Others</a></li>
+
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li b-sn3g8wa6o7 class="megamenu">
+                            <a b-sn3g8wa6o7 href="#" class="menu-links">Investor Relation</a>
+                            <div b-sn3g8wa6o7 class="menu-dropdown">
+                                <div b-sn3g8wa6o7 class="menu-block-set">
+                                    <div b-sn3g8wa6o7 class="container" style="max-width: 700px;">
+                                        <div b-sn3g8wa6o7 class="menu-block-a" style="grid-template-columns: 110%;">
+
+                                            <div b-sn3g8wa6o7 class="mega-menu-blocks">
+                                                <div b-sn3g8wa6o7 class="menu-inner-block-a" id="menu-inner-block-id" style="grid-template-columns: auto auto auto;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div b-sn3g8wa6o7 class="ree-nav-cta">
+                    <ul b-sn3g8wa6o7>
+                        <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/" class="ree-btn ree-btn0 ree-btn-grdt2"> Open an account</a> </li>
+                    </ul>
+                </div>
+                <div b-sn3g8wa6o7 class="mobile-menu2">
+                    <li b-sn3g8wa6o7 style="display:none"><a b-sn3g8wa6o7 href="" class="ree-btn2 ree-btn-grdt1"><i b-sn3g8wa6o7 class="fas fa-envelope-open-text"></i></a></li>
+                    <li b-sn3g8wa6o7 class="navm-">
+                        <button b-sn3g8wa6o7 class="toggle"
+                                type="button"
+                                aria-label="Open menu"
+                                aria-expanded="false"
+                                aria-controls="mobile-menu">
+
+                            <span b-sn3g8wa6o7 aria-hidden="true"></span>
+
+                        </button>
+                    </li>
+                    </ul>
+                    <ul b-sn3g8wa6o7 class="mob-nav2">
+                </div>
+                <!-- mobile Nav -->
+                <nav b-sn3g8wa6o7 id="main-nav">
+                    <ul b-sn3g8wa6o7>
+                        <li b-sn3g8wa6o7>
+                            <a b-sn3g8wa6o7 href="#">Products & Services</a>
+                            <ul b-sn3g8wa6o7>
+
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="equity">Equity</a></li>
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="currency">Currency</a></li>
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="commodity">Commodity</a></li>
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="tradeapp">Trade App</a></li>
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="mutualfund">Mutual Funds</a></li>
+
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="Insurance">Insurance</a></li>
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="ipo">IPOs</a></li>
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="depository">Depository</a></li>
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="mtf">MTF</a></li>
+                                <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="webapp">Web Trading</a></li>
+
+                        </li>
+
+                    </ul>
+                    <li b-sn3g8wa6o7>
+                        <a b-sn3g8wa6o7 href="#">Research</a>
+                        <ul b-sn3g8wa6o7 class="menu-li-link">
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/marketreports?pagename=Market Reports">Market Reports</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/technicalreports?pagename=Technical Reports">Technical Reports</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/fundamentalreports?pagename=Fundamental Reports">Fundamental Reports</a></li>
+
+
+                        </ul>
+
+                    </li>
+
+
+                    <li b-sn3g8wa6o7>
+                        <a b-sn3g8wa6o7 href="becomeapartner">Partner</a>
+
+                    </li>
+                    <li b-sn3g8wa6o7>
+                        <a b-sn3g8wa6o7 href="">Login</a>
+                        <ul b-sn3g8wa6o7>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://trading.inventuregrowth.com/Aero/login">IGSL AERO</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="http://bo.inventuregrowth.com/WebClient/">Client Back-Office</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/">Client eKYC</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="http://bo.inventuregrowth.com/WebLogin/index.cfm?Logintype=Branch">Partner Back-Office</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/EkycNewVersion/ekyc-admin/login.aspx">Partner eKYC</a></li>
+
+                        </ul>
+                    </li>
+                    <li b-sn3g8wa6o7>
+                        <a b-sn3g8wa6o7 href="aboutus">About Us</a>
+
+                    </li>
+                    <li b-sn3g8wa6o7>
+                        <a b-sn3g8wa6o7 href="#">Quick Links</a>
+                        <ul b-sn3g8wa6o7>
+                            <!-- <li><a href="annualreports">Annual Reports</a></li> -->
+                            <!-- <li><a href="career">Career</a></li> -->
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://attribute.inventuregrowth.com/">6 ATTRIBUTES</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/viewquicklinks?categoryId=7">REGULATION 30</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/viewquicklinks?categoryId=6">SUBSIDARIES FINANCIALS</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="offerdocuments">OFFER DOCUMENTS</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads">TRADING SOFTWARE</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="/viewquicklinks?categoryId=2">MARGIN FILE</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads">KYC FORM</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads">COMPLIANCE</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads">OTHERS</a></li>
+                            <li b-sn3g8wa6o7>
+                                <a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/re-ekyc/">Re-KYC</a>
+
+                            </li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://ipo.inventuregrowth.com/">E-IPO</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <ul b-sn3g8wa6o7>
+                        <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/" class="ree-btn ree-btn-grdt2" style="line-height: 5px;width: 65%;"> Open an account</a> </li>
+                    </ul>
+                    <ul b-sn3g8wa6o7 class="bottom-nav">
+
+                        <li b-sn3g8wa6o7 class="ree-hc">
+                            <a b-sn3g8wa6o7 href="tel:+911234567890"
+                               rel="noreferrer noopener"
+                               aria-label="Call us">
+
+                                <i b-sn3g8wa6o7 class="fas fa-phone-alt" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+
+
+                        <li b-sn3g8wa6o7 class="ree-hc">
+                            <a b-sn3g8wa6o7 href="mailto:abc@example.com"
+                               aria-label="Send us an email">
+
+                                <i b-sn3g8wa6o7 class="fas fa-envelope" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+
+
+                        <li b-sn3g8wa6o7 class="ree-hc">
+                            <a b-sn3g8wa6o7 href="skype:reevan.company"
+                               target="_blank"
+                               rel="noreferrer noopener"
+                               aria-label="Contact us on Skype">
+
+                                <i b-sn3g8wa6o7 class="fab fa-skype" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+
+
+                        <li b-sn3g8wa6o7 class="ree-hc">
+                            <a b-sn3g8wa6o7 href="https://wa.me/911234567890"
+                               target="_blank"
+                               rel="noreferrer noopener"
+                               aria-label="Chat with us on WhatsApp">
+
+                                <i b-sn3g8wa6o7 class="fab fa-whatsapp" aria-hidden="true"></i>
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <a b-sn3g8wa6o7 target="_blank"
+       href="https://signup.inventuregrowth.com/"
+       class="formButton">
+        <img b-sn3g8wa6o7 src="images/openanaccount_left.png" alt="Open an account">
+
+    </a>
+
+    <div b-sn3g8wa6o7 class="">
+        <main b-sn3g8wa6o7 role="main" id="main-content" tabindex="-1" class="pb-3">
+            <script>
+    $(document).ready(function () {
+       
+   $.ajax({
+
+            url: 'https://adminpanel.inventuregrowth.com/Career/GetTestimonials?Pagename=Index',
+            type: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    // Clear existing content
+                    $('#Testimonials').empty();
+
+
+                    response.data.forEach(function (item, i) {
+                     
+                        var html = '<div class="items"><div class="review-text"><p>' + item.content + '</p> </div>' +
+                            '<div class="ree-row-set mt30"><div class="media vcenter">' +
+                            '<div class="ree-details-set user-info"><h5>'+item.name+'</h5></div>' +                           
+                            '</div></div></div>';
+
+                        $('#Testimonials').append(html);
+                    });
+
+                   
+
+                } else {
+                    // Handle API error
+                    console.error('Error:', response.message);
+                }
+            },
+            error: function () {
+                // Handle AJAX error
+                console.error('Error fetching data from API');
+            }
+        });
+
+        generateCaptcha();
+    });
+</script>
+
+
+<!--start Hero Section  -->
+<section class="home-app hero-sec" style="padding: 80px 0 60px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 vcenter order-2 m-mt30 order-lg-1">
+                <div class="hero-content-a">
+                    <div class="shape-dot-bg"><img src="images/shape/svg_dot.svg" alt="shape"></div>
+                    <h1 class="mb30 zup" data-aos="fade-in" data-aos-delay="200">Empower your trades with IGSL Trade App</h1>
+                    <p class="zup" data-aos="fade-in" data-aos-delay="500">Where seamless functionality meets powerful insights for a smarter trading experience.</p>
+
+                    <div class="uniq-points mt40" data-aos="fade-in" data-aos-delay="800">
+
+                        <div class="uniq-card uca">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                            <p>15k+ Downloads</p>
+                        </div>
+
+                        <div class="uniq-card ucb">
+                            <i class="fa-regular fa-star" aria-hidden="true"></i>
+                            <p>4 star Rating</p>
+                        </div>
+
+                        <div class="uniq-card ucc">
+                            <i class="fas fa-rocket" aria-hidden="true"></i>
+                            <p>Quick & Easy</p>
+                        </div>
+
+                    </div>
+                    <div class="btn-sets2 vcenter mt20" data-aos="fade-in" data-aos-delay="1100">
+
+                        <div class="download-icons" style="border: 1px solid #6228a4; border-radius: 15px;">
+
+                            <a href="/download" class="ree-btn mw-80" style="color: #6228a4;">
+                                Download
+                            </a>
+
+                            <div class="media vcenter">
+                                <div class="ree-details-set user-info" style="display: flex; gap: 15px;">
+
+                                    <a target="_blank"
+                                       href="https://play.google.com/store/apps/details?id=com.wave.inventuregrowth&hl=en_IN&gl=US&pli=1"
+                                       aria-label="Download app from Google Play Store">
+
+                                        <img src="images/google-play-logo.svg" alt="Google Play Store">
+                                    </a>
+
+                                    <a target="_blank"
+                                       href="https://apps.apple.com/in/app/inventure-growth-securities/id1278836960"
+                                       aria-label="Download app from Apple App Store">
+
+                                        <img src="images/app-store-logo.svg" alt="Apple App Store">
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 vcenter order-1 order-lg-2">
+                <div class="sol-image m-mt30">
+                    <img src="images/header_home.png" alt="" class="img-fluid" data-aos="fade-in" data-aos-delay="400">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--hero Section End-->
+<!--start home-about  -->
+<section class="home-about sec-pad" style="background-color: #f8f2ff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-content-home m-mb60 pera-block">
+
+                    <h2>Pioneering Financial Solutions for 25 Years</h2>
+                    <p class="">
+                        For the past 25 years, Inventure Growth has been a stalwart provider of financial services, serving clients across every corner of India. <br> With a commitment to excellence and innovation, we've forged lasting partnerships and empowered countless individuals and businesses to achieve their financial goals. Our unwavering dedication to integrity, expertise, and personalized service continues to drive our success as <br> we navigate the dynamic landscape of the financial industry.
+                    </p>
+                    <div class="btn-sets" style="margin-top: 20px;">
+                        <a href="aboutus" class="ree-btn  ree-btn-grdt2 mr20">About Us <i class="fas fa-arrow-right fa-btn" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="company-stats">
+                    <div class="row">
+                        <div class="col-lg-6 col-6 m-pr7">
+                            <div class="stats-box stat-bx-1" data-aos="fade-up" data-aos-delay="200">
+                                <span class="sub-heading mb20">Clients</span>
+                                <h3>75K<span>+</span></h3>
+                                <p class="mt20">75K+ esteemed customers, for propelling us forward and shaping our success together.</p>
+                            </div>
+                            <div class="stats-box stat-bx-2 mt20" data-aos="fade-up" data-aos-delay="600">
+                                <span class="sub-heading mb20">Team</span>
+                                <h3>200<span>+</span></h3>
+                                <p class="mt20">Invaluable experience within our company enriches our endeavors, shaping success and fostering growth for all.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6 m-pl7">
+                            <div class="stats-box stat-bx-3 mt100" data-aos="fade-up" data-aos-delay="400">
+                                <span class="sub-heading mb20">Partner</span>
+                                <h3>400<span>+</span></h3>
+                                <p class="mt20">Our success thrives through the synergy of 400+ valued partners.</p>
+                            </div>
+                            <div class="stats-box stat-bx-4 mt20" data-aos="fade-up" data-aos-delay="800">
+                                <span class="sub-heading mb20">Years</span>
+                                <h3>25<span>+</span></h3>
+                                <p class="mt20">
+                                    25 years of financial expertise, guiding success and shaping futures with integrity, innovation, and dedication.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--home-about end-->
+<!--start services-->
+<section class="r-bg-i sec-pad" style="padding-top: 60px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sec-heading text-center">
+
+                    <h2>Tools to give you ease of trading environment</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row mt30">
+            <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="ree-card r-bg-c mt60">
+                    <div class="ree-card-img shadows"><img src="images/services1.png" alt=""> </div>
+                    <div class="ree-card-content mt40">
+                        <h3 class="mb15"><div  href="equity">Equity</div></h3>
+                        <p>
+                            For 25 years, Inventure Growth has been a trusted provider of equity services, offering expertise and reliability in navigating the market to help clients achieve their financial goals with confidence.
+                        </p>
+                    </div>
+                    <div class="ree-card-content-link">
+                        <a href="equity" class="ree-card-link mt40">
+                            Read more about Equity trading
+                            <i class="fas fa-arrow-right fa-btn" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="ree-card r-bg-c  mt60">
+                    <div class="ree-card-img"><img src="images/services2.png" alt=""> </div>
+                    <div class="ree-card-content mt40">
+                        <h3 class="mb15"><div  href="mtf">MTF</div></h3>
+                        <p>
+                            Providing traders with advanced tools and market access, maximizing trading potential and efficiency for optimal investment outcomes in today's dynamic financial landscape
+                            <br><br>
+                        </p>
+                    </div>
+                    <div class="ree-card-content-link">
+                        <a href="mtf" class="ree-card-link mt40">
+                            Read more about Margin Trading Facility (MTF)
+                            <i class="fas fa-arrow-right fa-btn" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="ree-card r-bg-c  mt60">
+                    <div class="ree-card-img"><img src="images/services3.png" alt=""> </div>
+                    <div class="ree-card-content mt40">
+                        <h3 class="mb15"><div  href="mutualfund">Mutual Funds</div></h3>
+                        <p>
+                            Offering expert services which result in tailored solutions to navigate market complexities and optimize investment outcomes, ensuring financial goals are achieved with confidence and precision.
+                            <br><br>
+                        </p>
+                    </div>
+                    <div class="ree-card-content-link">
+                        <a href="mutualfund" class="ree-card-link mt40">
+                            Read more about Mutual Funds
+                            <i class="fas fa-arrow-right fa-btn" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="ree-card r-bg-c  mt60">
+                    <div class="ree-card-img"><img src="images/services4.png" alt=""> </div>
+                    <div class="ree-card-content mt40">
+                        <h3 class="mb15">
+                            <div  href="Insurance">
+                                Insurance
+                            </div>
+                        </h3>
+                        <p>Inventure Growth offers comprehensive insurance services, providing personalized solutions to safeguard your assets and protect against unforeseen risks, ensuring peace of mind and financial security for you and your loved ones.</p>
+                    </div>
+                    <div class="ree-card-content-link">
+                        <a href="Insurance" class="ree-card-link mt40">
+                            Read more about Insurance services
+                            <i class="fas fa-arrow-right fa-btn" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="ree-card r-bg-c  mt60">
+                    <div class="ree-card-img"><img src="images/services5.png" alt=""> </div>
+                    <div class="ree-card-content mt40">
+                        <h3 class="mb15">
+                            <div  href="ipo">
+                                IPO
+                            </div>
+                        </h3>
+                        <p>
+                            Ditch paper forms, Skip the hassle and invest in IPOs easily with Inventure Growth. Our online platform and expert opinion make it a breeze to navigate the IPO market and potentially boost your portfolio.
+                            <br><br>
+                        </p>
+                    </div>
+                    <div class="ree-card-content-link">
+                        <a href="ipo" class="ree-card-link mt40">
+                            Read more about IPO investments
+                            <i class="fas fa-arrow-right fa-btn" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="ree-card r-bg-c  mt60">
+                    <div class="ree-card-img"><img src="images/services6.png" alt=""> </div>
+                    <div class="ree-card-content mt40">
+                        <h3 class="mb15">
+                            <div href="">
+                                International Market
+                            </div>
+                        </h3>
+                        <p>
+                            <b>
+                                Go global with Inventure Growth!
+                            </b>
+                            Our platform unlocks a world of investment opportunities by connecting you to international stock exchanges. Advanced tools and expert guidance, ensuring smooth execution for success in the global market.
+                        </p>
+                    </div>
+                    <div class="ree-card-content-link">
+                        <a target="_blank"
+                           href="https://www.indiainxga.com/member/index.aspx?memberCode=100048"
+                           class="ree-card-link mt40">
+                            Explore International Market opportunities
+                            <i class="fas fa-arrow-right fa-btn" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--services end-->
+<!--start Hero Section  -->
+<section class="home-hero-a" style="background-color: #f8f2ff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 vcenter order-lg-1 order-2">
+                <div class="hero-content-a">
+                    <h2 class="h1 mb30" data-aos="fade-in" data-aos-delay="200">Grow with Us: Partner with Inventure Growth</h2>
+                    <p data-aos="fade-in" data-aos-delay="500">
+                        Partner with us and chart a course for shared prosperity. We'll open doors to exciting possibilities and empower each other to achieve exceptional results in the ever-evolving financial landscape
+                    </p>
+                    <a href="becomeapartner" class="ree-btn  ree-btn-grdt1 mt40 mw-80" data-aos="fade-in" data-aos-delay="800">Become a partner <i class="fas fa-arrow-right fa-btn"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 vcenter order-lg-2 order-1">
+                <div class="sol-image m-mt30">
+                    <img src="images/partner_home.png" alt="" class="img-fluid" data-aos="fade-in" data-aos-delay="400">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container hero-brand-block">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="brand-title text-center">
+                    <!-- <h4>The World's Top Brands Trust Us</h4> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--hero Section End-->
+<!--download app-->
+<section class="home-app-block sec-pad" style="padding-bottom: 60px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-2 vcenter">
+                <div class="sec-heading pera-block">
+
+                    <h2>IGSL Trade: Your Gateway to Seamless Trading with Inventure</h2>
+                    <p>Invest easily and efficiently with the IGSL Trade app by Inventure. Our user-friendly platform provides powerful tools for trading stocks, commodities, currencies, and more, helping you make informed decisions which may led to optimal investment outcome.</p>
+                    <div class="btn-sets mt40">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.wave.inventuregrowth&hl=en_IN&gl=US&pli=1" class="ree-btn  ree-btn-grdt1 mr20">Play Store <i class="fa-brands fa-google-play"></i></a>
+                        <a target="_blank" href="https://apps.apple.com/in/app/inventure-growth-securities/id1278836960" class="ree-btn  ree-btn-grdt2 mr20">iOS Store <i class="fab fa-apple ml10"></i></a>
+                    </div>
+                   
+                </div>
+                <div class="sec-heading pera-block col-12" style="display: flex;margin-top: 40px;padding: 0;justify-content: center;align-items: center;">
+                    <div class="col-12">
+                        <h5>
+                            Inventure Growth & Securities has partnered with   <a href="/tradingview">  <img src="images/TRADING_VIEW.jpg" alt="Trading View Partner" class="img-fluid"></a>
+                        </h5>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6 vcenter">
+                <div class="sol-image order-1 m-mt30"><img src="images/app_home.png" alt="Mobile trading app interface showing stock prices and portfolio dashboard" class="img-fluid"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--download app end-->
+<!--start contact block-->
+<section class="home-contact pb120" data-background="images/home_contact_background.jpg">
+    <div class="container">
+        <div class="row zup flx-end">
+            <div class="col-right-a">
+                <div class="sec-heading fourc-up-a">
+
+                    <h2>Let’s Get in <span class="rt40">Touch</span></h2>
+                </div>
+                <div class="home-contact-block">
+                    <div class="contact-infos">
+                        <div class="c-infot">
+                            <span style="color: #000;">Sales Department</span> <a href="tel:+91 22 40751500"><i class="fas fa-phone-alt" aria-hidden="true"></i>+91 22 40751500</a>
+                        </div>
+                        <div class="c-infot">
+                            <span style="color: #000;">WhatsApp</span> <a href="tel:+911234567890"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +91 1234567890</a>
+                        </div>
+                    </div>
+                    <div class="contact-infos mt35">
+                        <div class="c-infot">
+                            <span style="color: #000;">CRM</span> <a style="font-size: 14px;" href="mailto:crm@inventuregrowth.com"><i class="fas fa-envelope" aria-hidden="true"></i> crm@inventuregrowth.com</a>
+                        </div>
+                        <div class="c-infot">
+                            <span style="color: #000;">Social Media</span> <a style="font-size: 14px;" href="https://www.instagram.com/inventuregrowth"><i class="fa-brands fa-instagram" aria-hidden="true"></i>inventuregrowth.com</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-right-b">
+                <div class="form-contact-hom fourc-up-b">
+                    <div class="form-block">
+                        <div class="form-head">
+                            <h3>Please fill in the form below.</h3>
+                        </div>
+                        <div class="form-body">
+                            <div class="form-body">
+                                <form name="feedback-form" id="ContactUSform">
+
+                                    <div class="fieldsets row">
+
+                                        <div class="col-md-6">
+
+                                            <input type="text"
+                                                   placeholder="Full Name"
+                                                   name="name"
+                                                   id="name"
+                                                   autocomplete="name"
+                                                   aria-label="Full Name"
+                                                   aria-describedby="name-error"
+                                                   aria-invalid="false">
+
+                                            <p class="error-message"
+                                               id="name-error"
+                                               role="alert"
+                                               style="color:#A60303"></p>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <input type="email"
+                                                   placeholder="Email Address"
+                                                   name="email"
+                                                   id="email"
+                                                   autocomplete="email"
+                                                   aria-label="Email Address"
+                                                   aria-describedby="email-error"
+                                                   aria-invalid="false">
+
+                                            <p class="error-message"
+                                               id="email-error"
+                                               role="alert"
+                                               style="color:#A60303"></p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="fieldsets row">
+
+                                        <div class="col-md-6">
+
+                                            <input type="tel"
+                                                   placeholder="Contact Number"
+                                                   name="phone"
+                                                   id="mobile"
+                                                   autocomplete="tel"
+                                                   aria-label="Contact Number"
+                                                   aria-describedby="mobile-error"
+                                                   aria-invalid="false">
+
+                                            <p class="error-message"
+                                               id="mobile-error"
+                                               role="alert"
+                                               style="color:#A60303"></p>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <select name="interested-in"
+                                                    id="interested"
+                                                    aria-label="Interested in"
+                                                    aria-describedby="interested-error"
+                                                    aria-invalid="false">
+
+                                                <option value="">Interested in</option>
+                                                <option value="Equity">Equity</option>
+                                                <option value="Mutual">Mutual Funds</option>
+                                                <option value="Commodity">Commodity</option>
+                                                <option value="MTF">MTF</option>
+                                                <option value="Insurance">Insurance</option>
+                                                <option value="Others">Others</option>
+
+                                            </select>
+
+
+                                            <p class="error-message"
+                                               id="interested-error"
+                                               role="alert"
+                                               style="color:#A60303"></p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="fieldsets">
+
+                                        <textarea placeholder="Message"
+                                                  aria-label="Message"
+                                                  name="message"
+                                                  id="messages"
+                                                  aria-describedby="messages-error"
+                                                  aria-invalid="false"></textarea>
+
+
+                                        <p class="error-message"
+                                           id="messages-error"
+                                           role="alert"
+                                           style="color:#A60303"></p>
+
+                                    </div>
+
+
+                                    <div class="fieldsets">
+
+                                        <input type="text"
+                                               name="captcha"
+                                               id="captcha"
+                                               aria-label="Captcha verification"
+                                               placeholder="Enter the Captcha"
+                                               autocomplete="off"
+                                               aria-describedby="captcha-error"
+                                               aria-invalid="false">
+
+
+                                        <span class="error-message"
+                                              style="color:#A60303"
+                                              id="captcha-error"
+                                              role="alert"></span>
+
+
+                                        <span style="margin-top:15px; margin-left:15px;"
+                                              id="random_number"></span>
+
+
+                                        <button type="button"
+                                                class="captcha-refresh-control"
+                                                onclick="generateCaptcha()"
+                                                aria-label="Refresh captcha">
+
+                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+
+                                        </button>
+
+                                    </div>
+
+
+                                    <div class="custom-control custom-checkbox" style="margin-top:10px;">
+
+                                        <input type="checkbox"
+                                               class="custom-control-input"
+                                               id="customCheck"
+                                               name="example1"
+                                               aria-label="Agree to Terms and Conditions"
+                                               aria-describedby="terms-error"
+                                               aria-invalid="false">
+
+
+                                        <label class="custom-control-label label-f-form"
+                                               for="customCheck">
+
+                                            I agree to the
+                                            <a href="javascript:void(0)">Terms &amp; Conditions</a>.
+
+                                        </label>
+
+
+                                        <p class="error-message"
+                                           id="terms-error"
+                                           role="alert"
+                                           style="color:#A60303"></p>
+
+                                    </div>
+
+
+                                    <div class="fieldsets mt20">
+
+                                        <button type="submit"
+                                                name="submit"
+                                                id="btnsubmit"
+                                                class="ree-btn ree-btn-grdt1 w-100">
+
+                                            Send your inquiry
+
+                                            <i class="fas fa-arrow-right fa-btn"
+                                               aria-hidden="true"></i>
+
+                                        </button>
+
+                                    </div>
+
+
+                                    <p class="trm">
+
+                                        <i class="fas fa-lock"
+                                           aria-hidden="true"></i>
+
+                                        We hate spam, and we respect your privacy.
+
+                                    </p>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--start contact block-->
+<!--start home review-->
+<section class="sec-pad" style="padding: 50px 0;background-color: #f8f2ff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 vcenter">
+                <div class="quote-text">
+                    <h2>Voices of Satisfaction: Testimonials from Our <br> Valued  Clients</h2>
+                </div>
+            </div>
+            <div class="col-lg-6 vcenter">
+                <div class="ree-card trust-review owl-carousel" id="Testimonials">
+                   
+                  
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="brand-title text-center">
+                    <!-- <h4>The World's Top Brands Trust Us</h4> -->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--end home review -->
+<script>
+    $(document).ready(function () {
+        $('#ContactUSform').submit(function (e) {
+            e.preventDefault();
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var mobile = $('#mobile').val();
+            var interestedIn = $('#interested').val();
+            var message = $('#messages').val();
+            var termsChecked = $('#customCheck').prop('checked');
+
+            // Reset previous error messages
+            $('.error-message').text('');
+            $('#name, #email, #mobile, #interested, #messages, #captcha, #customCheck')
+                .attr('aria-invalid', 'false');
+
+            // Validate name
+            if (name.trim() == '') {
+                $('#name').attr('aria-invalid', 'true');
+                $('#name-error').text('Please enter your full name.');
+                return;
+            }
+
+            // Validate email
+            if (email.trim() == '') {
+                $('#email').attr('aria-invalid', 'true');
+                $('#email-error').text('Please enter your email address.');
+                return;
+            } else if (!validateEmail(email.trim())) {
+                $('#email').attr('aria-invalid', 'true');
+                $('#email-error').text('Please enter a valid email address.');
+                return;
+            }
+
+            // Validate phone number
+            if (mobile.trim() == '') {
+                $('#mobile').attr('aria-invalid', 'true');
+                $('#mobile-error').text('Please enter your contact number.');
+                return;
+            } else if (!validateMobile(mobile.trim())) {
+                $('#mobile').attr('aria-invalid', 'true');
+                $('#mobile-error').text('Please enter a valid contact number.');
+                return;
+            }
+
+            if (interestedIn == 'interested in') {
+                $('#interested').attr('aria-invalid', 'true');
+                $('#interested-error').text('Please select an option.');
+                return;
+            }
+            
+
+            // Validate captcha
+            var captcha = document.getElementById("captcha").value;
+            var random_number = document.getElementById("random_number").textContent;
+            if (captcha == "") {
+                $('#captcha').attr('aria-invalid', 'true');
+                $('#captcha-error').text('Please enter the captcha');
+                return;
+            } else if (captcha != random_number) {
+                $('#captcha').attr('aria-invalid', 'true');
+                $('#captcha-error').text('Captcha is incorrect. Please try again.');
+                return;
+            }
+
+            // Validate Terms & Conditions checkbox
+            if (!termsChecked) {
+                $('#customCheck').attr('aria-invalid', 'true');
+                $('#terms-error').text('Please agree to the Terms & Conditions.');
+                return;
+            }
+            // If all inputs are valid, proceed with form submission
+            var formData = {
+                Name: name,
+                Email: email,
+                Mobile: mobile,
+                CallTime: interestedIn,
+                Message: message,
+                Pagename: "Index"
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "https://adminpanel.inventuregrowth.com/NewsLetter/SaveGetInTouch",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (response) {
+                    console.log('Form submitted successfully');
+                    if (response.message == "GetInTouch Saved Successfully") {
+                        Swal.fire({
+                            title: 'Success',
+                            text: 'Form submitted successfully',
+                            icon: 'success'
+                        }).then(() => {
+                            
+                            $('#captcha-error').text('');
+                            generateCaptcha(); 
+                        });
+                    }
+                    // Clear form fields
+                    $('#ContactUSform')[0].reset();
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error submitting form:', error);
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Failed to submit form. Please try again.',
+                        icon: 'error'
+                    });
+                }
+            });
+        });
+
+
+    });
+    function generateCaptcha() {
+        var random_number = Math.floor(1000 + Math.random() * 9000); 
+        document.getElementById("random_number").textContent = random_number;
+    }
+</script>
+        </main>
+    </div>
+
+    <!-- start locations -->
+    <div b-sn3g8wa6o7 class="location-home sec-pad">
+        <div b-sn3g8wa6o7 class="container">
+            <div b-sn3g8wa6o7 class="row justify-content-center">
+
+                <!-- Mumbai -->
+                <div b-sn3g8wa6o7 class="col-lg-4">
+                    <div b-sn3g8wa6o7 class="location-block- mt60">
+                        <div b-sn3g8wa6o7 class="loc-icon-nam">
+                            <h3 b-sn3g8wa6o7><span b-sn3g8wa6o7 class="rt40">Mumbai</span></h3>
+                        </div>
+
+                        <p b-sn3g8wa6o7 class="pt20 pb20" style="text-transform: capitalize;">
+                            VIRAJ TOWER, 201-2ND FLOOR, W.E. HIGHWAY, ANDHERI ( EAST ), MUMBAI - 400069, MAHARASHTRA
+                        </p>
+
+                        <div b-sn3g8wa6o7 class="loc-contct">
+
+                            <a b-sn3g8wa6o7 href="https://maps.google.com?q=Viraj+Tower+Andheri+East+Mumbai"
+                               target="_blank" rel="noopener noreferrer"
+                               class="btn-outline rount-btn"
+                               aria-label="View Mumbai office location on map">
+                                <i b-sn3g8wa6o7 class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </a>
+
+                            <a b-sn3g8wa6o7 href="tel:+912240751500"
+                               class="btn-outline rount-btn"
+                               aria-label="Call Mumbai office">
+                                <i b-sn3g8wa6o7 class="fas fa-phone-alt" aria-hidden="true"></i>
+                            </a>
+
+                            <a b-sn3g8wa6o7 href="mailto:crm@inventuregrowth.com"
+                               class="btn-outline rount-btn"
+                               aria-label="Email Mumbai office">
+                                <i b-sn3g8wa6o7 class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Surat -->
+                <div b-sn3g8wa6o7 class="col-lg-4">
+                    <div b-sn3g8wa6o7 class="location-block- mt60">
+                        <div b-sn3g8wa6o7 class="loc-icon-nam">
+                            <h3 b-sn3g8wa6o7><span b-sn3g8wa6o7 class="rt40">Surat</span></h3>
+                        </div>
+
+                        <p b-sn3g8wa6o7 class="pt20 pb20">
+                            11/12, AGAM EMPRIO, NEAR D AMBANI HIGH SCHOOL, VESU, SURAT - 395007, GUJARAT
+                        </p>
+
+                        <div b-sn3g8wa6o7 class="loc-contct">
+
+                            <a b-sn3g8wa6o7 href="https://maps.google.com?q=Agam+Emprio+Vesu+Surat"
+                               target="_blank" rel="noopener noreferrer"
+                               class="btn-outline rount-btn"
+                               aria-label="View Surat office location on map">
+                                <i b-sn3g8wa6o7 class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </a>
+
+                            <a b-sn3g8wa6o7 href="tel:+91XXXXXXXXXX"
+                               class="btn-outline rount-btn"
+                               aria-label="Call Surat office">
+                                <i b-sn3g8wa6o7 class="fas fa-phone-alt" aria-hidden="true"></i>
+                            </a>
+
+                            <a b-sn3g8wa6o7 href="mailto:crm@inventuregrowth.com"
+                               class="btn-outline rount-btn"
+                               aria-label="Email Surat office">
+                                <i b-sn3g8wa6o7 class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Botad -->
+                <div b-sn3g8wa6o7 class="col-lg-4">
+                    <div b-sn3g8wa6o7 class="location-block- mt60">
+                        <div b-sn3g8wa6o7 class="loc-icon-nam">
+                            <h3 b-sn3g8wa6o7><span b-sn3g8wa6o7 class="rt40">Botad</span></h3>
+                        </div>
+
+                        <p b-sn3g8wa6o7 class="pt20 pb20">
+                            B/207, BINDU SHOPPING CENTRE, PANJRAPOLE LANE, BOTAD- 364710, GUJARAT
+                        </p>
+
+                        <div b-sn3g8wa6o7 class="loc-contct">
+
+                            <a b-sn3g8wa6o7 href="https://maps.google.com?q=Bindu+Shopping+Centre+Botad"
+                               target="_blank" rel="noopener noreferrer"
+                               class="btn-outline rount-btn"
+                               aria-label="View Botad office location on map">
+                                <i b-sn3g8wa6o7 class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </a>
+
+                            <a b-sn3g8wa6o7 href="tel:+91XXXXXXXXXX"
+                               class="btn-outline rount-btn"
+                               aria-label="Call Botad office">
+                                <i b-sn3g8wa6o7 class="fas fa-phone-alt" aria-hidden="true"></i>
+                            </a>
+
+                            <a b-sn3g8wa6o7 href="mailto:crm@inventuregrowth.com"
+                               class="btn-outline rount-btn"
+                               aria-label="Email Botad office">
+                                <i b-sn3g8wa6o7 class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end locations -->
+
+    <section b-sn3g8wa6o7 class="" style="background-color: #6228a4; padding: 40px 0;">
+        <div b-sn3g8wa6o7 class="container">
+            <h2 b-sn3g8wa6o7 class="text-center text-white">Quick connect for trading</h2>
+            <div b-sn3g8wa6o7 class="row">
+                <div b-sn3g8wa6o7 class="col-xl-12">
+                    <div b-sn3g8wa6o7 class="row mx-2 justify-content-center">
+
+                        <div b-sn3g8wa6o7 class="d-flex justify-content-center text-center" id="slot" style="padding: 20px 0;border-radius: 20px;">
+
+                            <div b-sn3g8wa6o7 class="col-lg-2 col-12" style="flex: 0 0 auto;">
+                                <div b-sn3g8wa6o7 class="comment-form__input-box" style="margin-bottom: 0;">
+                                    <input b-sn3g8wa6o7 style="height: 50px; width: 100%; padding: 0 15px;border: 1px solid #ffffff;line-height: 28px;border-radius: 15px;"
+                                           type="text"
+                                           placeholder="Your Name"
+                                           name="name"
+                                           aria-label="Your Name"
+                                           aria-describedby="namequick-error"
+                                           aria-invalid="false"
+                                           id="namequick"
+                                           autocomplete="name">
+
+                                    <span b-sn3g8wa6o7 style="color:white"
+                                          class="error-message"
+                                          id="namequick-error"
+                                          role="alert"></span>
+                                </div>
+                            </div>
+
+
+                            <div b-sn3g8wa6o7 class="col-lg-2 col-12" style="flex: 0 0 auto;">
+                                <div b-sn3g8wa6o7 class="comment-form__input-box" style="margin-bottom: 0;">
+                                    <input b-sn3g8wa6o7 style="height: 50px;width: 100%; padding: 0 15px;border: 1px solid #ffffff;line-height: 28px;border-radius: 15px;"
+                                           type="email"
+                                           placeholder="Email"
+                                           name="email"
+                                           aria-label="Email address"
+                                           id="emailquick"
+                                           aria-describedby="emailquick-error"
+                                           aria-invalid="false"
+                                           autocomplete="email">
+
+                                    <span b-sn3g8wa6o7 style="color:white"
+                                          class="error-message"
+                                          id="emailquick-error"
+                                          role="alert"></span>
+                                </div>
+                            </div>
+
+
+                            <div b-sn3g8wa6o7 class="col-lg-2 col-12" style="flex: 0 0 auto;">
+                                <div b-sn3g8wa6o7 class="comment-form__input-box" style="margin-bottom: 0;">
+                                    <input b-sn3g8wa6o7 style="height: 50px;width: 100%; padding: 0 15px;border: 1px solid #ffffff;line-height: 28px;border-radius: 15px;"
+                                           type="tel"
+                                           placeholder="Mobile Number"
+                                           name="mobile"
+                                           aria-label="Mobile number"
+                                           id="mobilequick"
+                                           aria-describedby="mobilequick-error"
+                                           aria-invalid="false"
+                                           autocomplete="tel">
+
+                                    <span b-sn3g8wa6o7 style="color:white"
+                                          class="error-message"
+                                          id="mobilequick-error"
+                                          role="alert"></span>
+                                </div>
+                            </div>
+
+
+                            <div b-sn3g8wa6o7 class="col-lg-2 col-12" style="flex: 0 0 auto;">
+                                <div b-sn3g8wa6o7 class="none" style="margin-bottom: 0;">
+
+                                    <select b-sn3g8wa6o7 class="customSelect"
+                                            aria-required="true"
+                                            aria-invalid="false"
+                                            aria-label="Best time to call"
+                                            name="call-time"
+                                            id="call-timequick">
+
+                                        <option value="">Best Time to Call</option>
+                                        <option value="09:00 - 10:00 AM">09:00 - 10:00 AM</option>
+                                        <option value="10:00 - 11:00 AM">10:00 - 11:00 AM</option>
+                                        <option value="11:00 - 12:00 AM">11:00 - 12:00 AM</option>
+                                        <option value="12:00 - 01:00 PM">12:00 - 01:00 PM</option>
+                                        <option value="01:00 - 02:00 PM">01:00 - 02:00 PM</option>
+                                        <option value="02:00 - 03:00 PM">02:00 - 03:00 PM</option>
+                                        <option value="03:00 - 04:00 PM">03:00 - 04:00 PM</option>
+                                        <option value="04:00 - 05:00 PM">04:00 - 05:00 PM</option>
+                                        <option value="05:00 - 06:00 PM">05:00 - 06:00 PM</option>
+                                        <option value="06:00 - 07:00 PM">06:00 - 07:00 PM</option>
+                                        <option value="07:00 - 08:00 PM">07:00 - 08:00 PM</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+                            <div b-sn3g8wa6o7 class="col-lg-2 col-12" style="flex: 0 0 auto;">
+                                <div b-sn3g8wa6o7 class="comment-form__input-box captcha-form" style="margin-bottom: 0;">
+
+                                    <input b-sn3g8wa6o7 style="padding: 10px 15px;border: 1px solid #6228a4; max-width: 100%;line-height: 28px;border-radius: 15px;"
+                                           type="text"
+                                           placeholder="Captcha"
+                                           name="captcha"
+                                           aria-label="Captcha verification"
+                                           id="captcha1"
+                                           aria-describedby="captcha1-error"
+                                           aria-invalid="false"
+                                           autocomplete="off">
+
+
+                                    <span b-sn3g8wa6o7 class="error-message"
+                                          style="color:white"
+                                          id="captcha1-error"
+                                          role="alert"></span>
+
+
+                                    <span b-sn3g8wa6o7 style="color:white"
+                                          id="random_number1"></span>
+
+
+                                    <button b-sn3g8wa6o7 type="button"
+                                            class="captcha-refresh-btn"
+                                            onclick="generateCaptchaallpage()"
+                                            aria-label="Refresh captcha">
+
+                                        <i b-sn3g8wa6o7 class="fa fa-refresh" aria-hidden="true"></i>
+
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div b-sn3g8wa6o7 class="text-center">
+                            <div b-sn3g8wa6o7 class="col-lg-12 col-12" style="flex: 0 0 auto;">
+                                <div b-sn3g8wa6o7 class="comment-form__input-box" style="margin-bottom: 0;">
+                                    <button b-sn3g8wa6o7 type="submit" id="customSubmit" class="bookButton comment-form__btn"
+                                            style="width: 100%;
+                                    padding: 20px;
+                                    border: 1px solid #6228a4;
+                                    background-color: #fff;
+                                    color:#6228a4;
+                                    font-weight: 600;
+                                    line-height: 5px;
+                                    border-radius: 15px;
+                                    box-shadow: none;">
+                                        Book a call
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer b-sn3g8wa6o7 class="footer-a">
+        <div b-sn3g8wa6o7 class="footer-fist-row pt40">
+            <div b-sn3g8wa6o7 class="container">
+                <div b-sn3g8wa6o7 class="footer-ree-c">
+                    <a b-sn3g8wa6o7 href="/" aria-label="Go to Inventure Growth homepage">
+                        <img b-sn3g8wa6o7 src="images/inventure-footer-logo.png" alt="Inventure Growth logo" class="footer-logo">
+                    </a>
+
+                    <ul b-sn3g8wa6o7 class="footer_social mt30">
+
+                        <li b-sn3g8wa6o7>
+                            <a b-sn3g8wa6o7 href="https://twitter.com/InventureGrowth" target="_blank" rel="noopener noreferrer"
+                               aria-label="Visit our Twitter profile">
+                                <i b-sn3g8wa6o7 class="fab fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li b-sn3g8wa6o7>
+                            <a b-sn3g8wa6o7 href="https://www.facebook.com/InventureGrowth/" target="_blank" rel="noopener noreferrer"
+                               aria-label="Visit our Facebook page">
+                                <i b-sn3g8wa6o7 class="fab fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li b-sn3g8wa6o7>
+                            <a b-sn3g8wa6o7 href="https://www.youtube.com/channel/UCC83XFFe7vDqgU4VkWUc6bQ" target="_blank" rel="noopener noreferrer"
+                               aria-label="Visit our YouTube channel">
+                                <i b-sn3g8wa6o7 class="fab fa-youtube" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li b-sn3g8wa6o7>
+                            <a b-sn3g8wa6o7 href="https://www.linkedin.com/company/inventure-growth-&-securities-ltd./?originalSubdomain=in" target="_blank" rel="noopener noreferrer"
+                               aria-label="Visit our LinkedIn profile">
+                                <i b-sn3g8wa6o7 class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li b-sn3g8wa6o7>
+                            <a b-sn3g8wa6o7 href="https://www.instagram.com/inventuregrowth/" target="_blank" rel="noopener noreferrer"
+                               aria-label="Visit our Instagram profile">
+                                <i b-sn3g8wa6o7 class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+                <div b-sn3g8wa6o7 class="row footer-deg2">
+
+                    <div b-sn3g8wa6o7 class="col-5s">
+                        <h3 b-sn3g8wa6o7>Company</h3>
+                        <ul b-sn3g8wa6o7 class="footer-links-list">
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="aboutus"> About us</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="career">Careers</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="contactUs">Contact Us</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="termsandcondition">Terms And Conditions</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="disclaimer">Disclaimer</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="privacypolicy">Privacy & Policy</a></li>
+                        </ul>
+                    </div>
+                    <div b-sn3g8wa6o7 class="col-5s">
+                        <h3 b-sn3g8wa6o7>Login</h3>
+                        <ul b-sn3g8wa6o7 class="footer-links-list social-linkz">
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://trading.inventuregrowth.com/Aero/login">IGSL AERO</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="http://bo.inventuregrowth.com/WebClient/">Client Back-Office</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/">Client eKYC</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="http://bo.inventuregrowth.com/WebLogin/index.cfm?Logintype=Branch">Partner Back-Officee</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/EkycNewVersion/ekyc-admin/login.aspx">Partner eKYC</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div b-sn3g8wa6o7 class="col-5s">
+                        <h3 b-sn3g8wa6o7> Products & Services</h3>
+                        <ul b-sn3g8wa6o7 class="footer-links-list">
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="equity">Equity Trading </a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="currency">Currency Trading</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="commodity">Commodity Trading</a></li>
+
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="mutualfund">Mutual Funds</a></li>
+
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://www.evotingindia.com/">CDSL e-voting</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://www.evotingindia.com/">NSDL eVoting</a></li>
+                        </ul>
+                    </div>
+                    <div b-sn3g8wa6o7 class="col-5s">
+                        <h3 b-sn3g8wa6o7>Quick Links</h3>
+                        <ul b-sn3g8wa6o7 class="footer-links-list">
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://attribute.inventuregrowth.com/">6 Attributes</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="regulation30?categoryId=7">Regulation 30</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="subsidiaries">Subsidaries Financials</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="offerdocuments">Offer Documents</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://ipo.inventuregrowth.com/">E-IPO</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 target="_blank" href="https://www.evotingindia.com/">E-voting</a></li>
+                            <li b-sn3g8wa6o7>
+                                <a b-sn3g8wa6o7 target="_blank" href="https://signup.inventuregrowth.com/re-ekyc/">Re-KYC</a>
+                            </li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="sitemap">Sitemap</a></li>
+
+                        </ul>
+                    </div>
+                    <div b-sn3g8wa6o7 class="col-5s">
+                        <h3 b-sn3g8wa6o7>Others</h3>
+                        <ul b-sn3g8wa6o7 class="footer-links-list">
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="http://bo.inventuregrowth.com/WebLogin/index.cfm?Logintype=Branch" target="_blank">Client Back-Office</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="http://bo.inventuregrowth.com/WebLogin/index.cfm?Logintype=Branch" target="_blank">Branch Back-Office</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="https://signup.inventuregrowth.com/ekyc-admin/login.aspx" target="_blank">Branch eKYC</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="https://elite.inventuregrowth.com/">IGSL Elite</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="becomeapartner">Partner</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="offerdocuments">Documents</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="downloads">Downloads</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="investorCharter">Investor Charter</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="accountclosure">Account closure</a></li>
+                            <li b-sn3g8wa6o7><a b-sn3g8wa6o7 href="pdf/EKYC_ACCOUNT_OPEN_PROCESS.pdf" target="_blank">KYC Process</a></li>
+                        </ul>
+                    </div>
+                    <div b-sn3g8wa6o7 class="col-5s">
+                    </div>
+                </div>
+                <div b-sn3g8wa6o7 style="color: #fff;">
+                    <p b-sn3g8wa6o7 style="color: #fff;font-size: 11px;">
+                        NSE- 09017 | BSE-0275 | Investor Awareness | SEBI | Investor Complaints BSE | <a b-sn3g8wa6o7 href="https://scores.sebi.gov.in/" style="color: #fff;" target="_blank">
+                            SEBI Complaints Redress System (SCORES)
+                        </a> | Account Closure | Investor Charter
+                        SEBI Registration No: INZ000221934 (BSE-0275| NSE- 09017| MSEI- 1032| MCX- 10845| NCDEX- 00485) Research Analyst: INH000006129. CDSL Registration No: IN-DPCDSL-12-99 AMFI ARN NO:- ARN-33446. CIN No: L65990MH1995PLC089838, ISIN No:- INE878H01024, GSTIN NO:- 27AAACI2044K1ZP |
+                        <a b-sn3g8wa6o7 href="https://smartodr.in/odr/login" style="color: #fff;" target="_blank">Smart ODR</a>.|
+                        <a b-sn3g8wa6o7 href="https://www.inventuregrowth.com/pdf/SEBI_CIRCULAR.pdf" style="color: #fff;" target="_blank">ODR Circular</a>
+                        |
+                        <a b-sn3g8wa6o7 href="https://www.inventuregrowth.com/pdf/PROCEDURE_FOR_FILING_A_COMPLAINT.pdf" style="color: #fff;" target="_blank">Procedure and Benefits of SEBI SCORES Filing</a>.
+                    </p>
+
+                    <p b-sn3g8wa6o7 class="footerUL" style="line-height: 1.6;">
+                        Filing of complaints on SCORES - Easy & quick a. Register on SCORES portal b. Mandatory details for filing complaints on SCORES: I. Name, PAN, Address, Mobile Number, Email ID c. Benefits: I. Effective communication ii. Speedy redressal of the grievances.
+                    </p>
+                    <p b-sn3g8wa6o7>
+                        <ul b-sn3g8wa6o7 class="footerUL" style="">
+                            <li b-sn3g8wa6o7 type="none" style="margin-top: 15px;"><b b-sn3g8wa6o7>ATTENTION INVESTORS :</b> </li>
+
+
+                            <li b-sn3g8wa6o7> KYC is one time exercise while dealing in securities markets - once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund etc.), you need not undergo the same process again when you approach another intermediary. ==== "If you are not updated your latest income details in demat & trading a/c than update it as soon as possible. If you are not registered your KYC ( as per SEBI guideline), than send us immediately KYC form along with proof of address & photo ID. For the benefit of the investors SEBI has directed Depositories to send Consolidated Account Statement (CAS) for securities held in demat form with the Depositories. However, if you do not wish to receive the CAS, you may write to your DP separately. As per SEBI Circular on Delivery Instruction slip(DIS), old DIS will not valid (issued before October,2014) from 07 Jan., 2016, Kindly contact to the DP for New DIS. DP will not responsible for any financial losses due to old DIS.</li>
+
+                            <li b-sn3g8wa6o7>Prevent Unauthorized Transactions in your demat account --> Update your Mobile Number with your Depository Participant. Receive alerts on your Registered Mobile for all debit and other important transactions in your demat account directly from CDSL on the same day......................issued in the interest of investors.</li>
+
+                            <li b-sn3g8wa6o7>No need to issue cheques by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. No worries for refund as the money remains in investor's account." Beware of fixed / guaranteed / regular returns / capital protection schemes. Stock Brokers (Brokers/Members) or their authorized persons or any of their associates are not authorized to offer fixed / guaranteed / regular returns / capital protection on your investment or authorized to enter into any loan agreement with you to pay interest on the funds offered by you. Please note that in case of default of a member claim for funds or securities / commodities given to the Broker under any arrangement / agreement of indicative return will not be accepted by the relevant Committee of the Exchange as per the approved norms.</li>
+
+                            <li b-sn3g8wa6o7>Do not keep funds idle with the Stock Broker. Please note that your Stock Broker has to return the credit balance lying with them, within three working days in case you have not done any transaction within last 30 calendar days. Please note that in case of default of a Member, claim for funds and securities/commodities, without any transaction on the Exchange will not be accepted by the relevant Committee of the Exchange as per the approved norms.</li>
+
+                            <li b-sn3g8wa6o7>Check the frequency of accounts settlement opted for. If you have opted for running account, please ensure that your Stock Broker settles your account and, in any case, not later than once in 90 days (or 30 days if you have opted for 30 days settlement). In case of declaration of Member as defaulter, the claims of clients against such Defaulter Member would be subject to norms for eligibility of claims for compensation from Member funds / IPF to the clients of the Defaulter Member. These norms are available on Exchange website at following link: https://www.mcxindia.com/Investor- Services/defaulters/sop-process-faqs-for-handling-of-claims-of-investors-of- defaulter-member</li>
+
+                            <li b-sn3g8wa6o7>Stock Brokers are not permitted to accept transfer of securities as margin. Securities offered as margin / collateral MUST remain in the account of the client and can be pledged to the broker only by way of ‘margin pledge’, created in the Depository system. Clients are not permitted to place any securities with the Broker or associate of the Broker or authorized person of the Broker for any reason. Broker can take securities belonging to clients only for settlement of securities sold by the client.</li>
+
+                            <li b-sn3g8wa6o7>Always keep your contact details, viz. mobile number / email ID updated with the Broker. Email and mobile number is mandatory and you must provide the same to your Broker for updation in Exchange records. You must immediately take up the matter with Broker / Exchange if you are not receiving the messages from Exchange / Depositories regularly.</li>
+
+                            <li b-sn3g8wa6o7>Don't ignore any emails / SMSs received from the Exchange for trades done by you. Verify the same with the contract notes / statement of accounts received from your Stock Broker and report discrepancy, if any, to your Broker in writing immediately and if the Broker does not respond, please take this up with the Exchange/Depositories forthwith.</li>
+
+                            <li b-sn3g8wa6o7>Check messages sent by Exchanges on a weekly basis regarding funds and securities balances reported by the Stock Broker, compare it with the weekly statement of account sent by Stock Broker and immediately raise a concern to the Exchange if you notice any discrepancy.</li>
+
+                            <li b-sn3g8wa6o7>Please do not transfer funds, for the purposes of trading to anyone, including an authorized person or an associate of the Stock Broker, other than a SEBI registered Stock Broker.</li>
+
+                            <li b-sn3g8wa6o7>
+                                Do not deal with unregistered intermediaries (who are not registered with SEBI/Exchanges)
+
+                            </li>
+
+                        </ul>
+                    </p>
+                    <p b-sn3g8wa6o7 class="footerUL" style="line-height: 1.6;">
+                        <b b-sn3g8wa6o7>Advisory - Investors</b><br b-sn3g8wa6o7 />
+
+                        1) Ensure that pay-out of funds/securities is received in your account within 1 working day from the date of pay-out.
+                        <br b-sn3g8wa6o7>
+                        2) Be careful while executing the PoA (Power of Attorney) - specify all the rights that the stock broker can exercise and timeframe for which PoA is valid. It may be noted that PoA is not a mandatory requirement as per SEBI / Exchanges. • Register for online applications viz Speed-e and Easiest provided by Depositories for online delivery of securities as an alternative to PoA.
+                        <br b-sn3g8wa6o7>
+
+                        3) Ensure that you receive Contract Notes within 24 hours of your trades and Statement of Account at least once in a quarter from your Stock Broker.
+                        <br b-sn3g8wa6o7>
+
+                        4) Please note that securities provided by you towards margin are not permitted to be pledged by your Stock Broker for raising funds.
+                        <br b-sn3g8wa6o7>
+                        5) If you have opted for running account, please ensure that the stock broker settles your account regularly and in any case not later than 90 days (or 30 days if you have opted for 30 days settlement).
+                        <br b-sn3g8wa6o7>
+                        6) Do not keep funds and securities idle with the Stock Broker.
+                        <br b-sn3g8wa6o7>
+                        7) Regularly login into your account to verify balances and verify the demat statement received from depositories for correctness.
+                        <br b-sn3g8wa6o7>
+                        8) Check messages sent by Exchanges on a monthly basis regarding funds and securities balances reported by the trading member and immediately raise a concern if you notice a discrepancy.
+                        <br b-sn3g8wa6o7>
+                        9) Always keep your contact details viz Mobile number / Email ID updated with the stock broker. You may take up the matter with Stock Broker / Exchange if you are not receiving the messages from Exchange / Depositories regularly.
+                        <br b-sn3g8wa6o7>
+                        10) If you observe any discrepancies in your account or settlements, immediately take up the same with your stock broker and if the Stock Broker does not respond, with the Exchange/Depositories
+                        <br b-sn3g8wa6o7>
+                    </p>
+                    <p b-sn3g8wa6o7 style="color: #eeebe67a;font-size: 11px;">
+                        <a b-sn3g8wa6o7 style="color: #fff;font-size: 11px;" href="privacypolicy">Privacy</a>   |   <a b-sn3g8wa6o7 style="color: #fff;font-size: 11px;" href="termsandcondition">Terms & Conditions</a> |
+                        <a b-sn3g8wa6o7 style="color: #fff;font-size: 11px;" href="disclaimer">Disclaimer</a>   |   <a b-sn3g8wa6o7 style="color: #fff;font-size: 11px;" href="vernacular">Vernacular Languages</a>
+                    </p>
+
+                    </p>
+                </div>
+            </div>
+
+            <div b-sn3g8wa6o7 class="container ft-cpy bt-top mt70">
+                <div b-sn3g8wa6o7 class="row">
+                    <div b-sn3g8wa6o7 class="col-lg-5">
+                        <div b-sn3g8wa6o7 class="ft-copyright">
+                            <p b-sn3g8wa6o7 id="copyright"></p>
+                        </div>
+                    </div>
+                    <div b-sn3g8wa6o7 class="col-lg-7">
+                        <div b-sn3g8wa6o7 class="ft-copyright ft-r">
+                            <p b-sn3g8wa6o7> All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var formButton = document.getElementById("formButton");
+            if (formButton) {
+                formButton.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default button action
+                    formButton.style.display = "none";
+                    // Code to open the modal here
+                    document.getElementById("myModal").style.display = "block";
+                });
+            } else {
+                console.error("Button with ID 'formButton' not found.");
+            }
+        });
+
+        function closeModal() {
+            var formButton = document.getElementById("formButton");
+            if (formButton) {
+                formButton.style.display = "block";
+                // Code to close the modal here
+                document.getElementById("myModal").style.display = "none";
+            } else {
+                console.error("Button with ID 'formButton' not found.");
+            }
+        }
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get all the main headings
+            var mainHeadings = document.querySelectorAll("#menu-headings-id");
+
+            // Loop through each main heading
+            mainHeadings.forEach(function (heading) {
+                // Get the corresponding subheading
+                var subheading = heading.nextElementSibling;
+
+                // Hide the subheading initially
+                subheading.style.display = "none";
+
+                // Toggle the display of the subheading when the main heading is clicked
+                heading.addEventListener("click", function () {
+                    subheading.style.display = (subheading.style.display === "none") ? "block" : "none";
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#customSubmit').click(function () {
+                var name = $('#namequick').val();
+                var email = $('#emailquick').val();
+                var mobile = $('#mobilequick').val();
+                var callTime = $('#call-timequick').val();
+                var pageUrl = window.location.href;
+
+
+                $('.error-message').text('');
+                $('#namequick, #emailquick, #mobilequick, #call-timequick, #captcha1')
+                    .attr('aria-invalid', 'false');
+
+
+                if (name.trim() == '') {
+                    $('#namequick').attr('aria-invalid', 'true');
+                    $('#namequick-error').text('Please enter your name.');
+                    return;
+                }
+
+
+                if (email.trim() == '') {
+                    $('#emailquick').attr('aria-invalid', 'true');
+                    $('#emailquick-error').text('Please enter your email address.');
+                    return;
+                } else if (!validateEmail(email.trim())) {
+                    $('#emailquick').attr('aria-invalid', 'true');
+                    $('#emailquick-error').text('Please enter a valid email address.');
+                    return;
+                }
+
+
+                if (mobile.trim() == '') {
+                    $('#mobilequick').attr('aria-invalid', 'true');
+                    $('#mobilequick-error').text('Please enter your mobile number.');
+                    return;
+                } else if (!validateMobile(mobile.trim())) {
+                    $('#mobilequick').attr('aria-invalid', 'true');
+                    $('#mobilequick-error').text('Please enter a valid mobile number.');
+                    return;
+                }
+
+
+                if (callTime == '') {
+                    $('#call-timequick').attr('aria-invalid', 'true');
+                    $('#call-timequick-error').text('Please select a call time.');
+                    return;
+                }
+
+                var captcha1 = document.getElementById("captcha1").value;
+                var random_number1 = document.getElementById("random_number1").textContent;
+                if (captcha1 == "") {
+                    $('#captcha1').attr('aria-invalid', 'true');
+                    $('#captcha1-error').text('Please enter the captcha');
+                    generateCaptchaallpage();
+                    return;
+                } else if (captcha1 != random_number1) {
+                    $('#captcha1').attr('aria-invalid', 'true');
+                    $('#captcha1-error').text('Captcha is incorrect. Please try again.');
+                    return;
+                }
+
+                // If all inputs are valid, proceed with form submission
+                var formData = {
+                    Name: name,
+                    Mobile: mobile,
+                    Email: email,
+                    CallTime: callTime,
+                    Pagename: pageUrl
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://adminpanel.inventuregrowth.com/NewsLetter/SaveGetInTouch",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (response) {
+                        if (response.message == "GetInTouch Saved Successfully") {
+                            console.log('Form submitted successfully');
+
+                            $('#namequick').val('');
+                            $('#emailquick').val('');
+                            $('#mobilequick').val('');
+                            $('#call-timequick').val('');
+                            $('#captcha1').val('');
+                            generateCaptchaallpage();
+                            Swal.fire({
+                                title: 'Success',
+                                text: 'Form submitted successfully',
+                                icon: 'success'
+                            });
+
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error submitting form:', error);
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Failed to submit form. Please try again.',
+                            icon: 'error'
+                        });
+                    }
+                });
+            });
+
+
+        });
+        // Email validation function
+        function validateEmail(email) {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        // Mobile number validation function
+        function validateMobile(mobile) {
+            var mobilePattern = /^[0-9]{10}$/;
+            return mobilePattern.test(mobile);
+        }
+
+        function generateCaptchaallpage() {
+            var random_number1 = Math.floor(1000 + Math.random() * 9000);
+            document.getElementById("random_number1").textContent = random_number1
+        }
+    </script>
+
+    <script src="js/modernizr-3.5.0.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.bundle.js"></script>
+    <!--Common reevan script file-->
+    <script src="js/main.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+    
+</body>
+</html>

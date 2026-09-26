@@ -1,0 +1,1217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lotus Chocolate</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" sizes="32x32" href="uploads/favicon.png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Comic+Relief:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+AU+SA&family=Playwrite+IN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=WDXL+Lubrifont+TC&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6LZ83FM58"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R6LZ83FM58');
+</script>
+
+</head>
+
+<body style="background-image: url('uploads/background.png'); background-size: cover; background-attachment: fixed;">
+
+<!-- ================= TOP BAR ================= -->
+<div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center position-relative">
+
+        <!-- Hidden Live Price (CODE ACTIVE BUT NOT SHOWN) -->
+        <div class="bse-font live-price">
+            BSE: ₹558.35            <span class="text-danger fw-bold">
+                (-1.85%)
+            </span>
+        </div>
+
+        <!-- Visible Replacement Text -->
+        <div class="bse-font">
+            <a href="https://www.bseindia.com/stock-share-price/lotus-chocolate-company-ltd/lotuscho/523475/"
+               target="_blank"
+               class="fw-bold text-decoration-none text-white">
+                Stock Price BSE
+            </a>
+        </div>
+
+        <!-- SEARCH (UNCHANGED) -->
+        <div class="d-flex align-items-center position-relative" style="flex-grow:0;">
+            <a href="javascript:void(0);" id="searchToggle" class="btn">
+                SEARCH <i class="fas fa-search ms-1"></i>
+            </a>
+
+            <!-- Search Modal -->
+            <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Search</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" id="searchInput" class="form-control mb-3"
+                                   placeholder="Type to search..." autocomplete="on"
+                                   style="border-radius:20px; height:40px; font-size:16px;" />
+                            <div id="searchSuggestions"
+                                 class="list-group mb-2 top-sug-text"
+                                 style="max-height: 250px; overflow-y: auto;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-white py-3 border-bottom">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="/">
+      <img src="uploads/1757503517_1757503188526.png" alt="Lotus Logo" height="70">
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+
+      <!-- Center Menu -->
+      <ul class="navbar-nav mx-auto gap-3 text-center">
+
+        <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+
+        <!-- About Us -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/board_of_directors">Board of Directors</a></li>
+            <li><a class="dropdown-item" href="/board_committees">Committees</a></li>
+            <li><a class="dropdown-item" href="/code_of_conduct">Code of Conduct</a></li>
+            <li><a class="dropdown-item" href="/corporate_governance">Corporate Governance</a></li>
+          </ul>
+        </li>
+
+        <!-- Business Divisions -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Business Divisions</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/b2b_products">B2B</a></li>
+            <li><a class="dropdown-item" href="/b2c_products">B2C</a></li>
+          </ul>
+        </li>
+
+        <!-- Investor Relations -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Investor Relations</a>
+            <ul class="dropdown-menu" aria-labelledby="investorDropdown">
+              <li><a class="dropdown-item" href="/financial_calendar">Financial Calendar</a></li>
+              <li><a class="dropdown-item" href="/share_holding_pattern">Share Holding Pattern</a></li>
+              <li><a class="dropdown-item" href="/quarterly_results">Quarterly Results</a></li>
+              <li><a class="dropdown-item" href="/related_party_transactions">Related Party Transactions</a></li>
+              <li><a class="dropdown-item" href="/integrated_filing">Integrated Filing</a></li>
+              <li><a class="dropdown-item" href="/annual_reports">Annual Reports</a></li>
+              <li><a class="dropdown-item" href="/listing_information">Listing Information</a></li>
+              <li><a class="dropdown-item" href="/investor_contacts">Investor Contacts</a></li>
+              <li><a class="dropdown-item" href="/investor_services">Investor Services</a></li>
+              <li><a class="dropdown-item" href="/notices">Notices</a></li>
+              <li><a class="dropdown-item" href="/downloads">Downloads</a></li>
+              <li><a class="dropdown-item" href="/disclosures">Disclosures under Regulation 46</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="/news">News & Media</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#careers">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+      </ul>
+
+      <!-- Right Button -->
+      <div class="d-flex justify-content-center mt-3 mt-lg-0">
+        <a href="../uploads/Lotus-chocolate.pdf"
+           class="btn btn-danger rounded-pill px-4"
+           target="_blank">
+          Download Resources
+        </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+  <style>
+    /* Hide live stock price display but keep code active */
+.live-price {
+    display: none !important;
+}
+
+/* Optional hover effect for Stock Price BSE */
+.bse-font a:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+  /* ===== Custom Navbar Colors for Lotus Theme ===== */
+  .navbar-toggler {
+    border: 2px solid #5b322a !important;
+    border-radius: 6px;
+    padding: 5px;
+  }
+
+  .navbar-toggler-icon {
+    background-image: none !important;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after,
+  .navbar-toggler-icon span {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #5b322a;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+  }
+
+  .navbar-toggler-icon::before {
+    top: 0;
+  }
+  .navbar-toggler-icon span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .navbar-toggler-icon::after {
+    bottom: 0;
+  }
+
+  /* When toggler clicked (expanded) */
+  .navbar-toggler:focus,
+  .navbar-toggler:active,
+  .navbar-toggler[aria-expanded="true"] {
+    background-color: #5b322a !important;
+    box-shadow: none !important;
+  }
+
+  .navbar-toggler:focus .navbar-toggler-icon::before,
+  .navbar-toggler:focus .navbar-toggler-icon::after,
+  .navbar-toggler:focus .navbar-toggler-icon span,
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after,
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span {
+    background-color: #fff !important;
+  }
+
+  /* Dropdown hover and active styles */
+  .dropdown-menu {
+    border-radius: 8px;
+    border: 1px solid #e0d2ca;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus,
+  .dropdown-item.active {
+    background-color: #5b322a !important;
+    color: #fff !important;
+  }
+
+  /* Adjust nav links hover */
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #5b322a !important;
+  }
+
+ <!-- ✅ Matching Styling for Both Sections -->
+<style>
+.text-box {
+  padding: 40px 60px;
+}
+
+/* Tablet adjustments */
+@media (max-width: 991px) {
+  .text-box {
+    padding: 30px 40px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .text-box {
+    padding: 20px;
+  }
+  .text-box h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .text-box h5 {
+    font-size: 16px;
+  }
+  .text-box p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .content-btn {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}
+
+.text-box {
+  padding: 40px 60px;
+}
+
+/* Tablet adjustments */
+@media (max-width: 991px) {
+  .text-box {
+    padding: 30px 40px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .text-box {
+    padding: 20px;
+  }
+  .text-box h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .text-box h5 {
+    font-size: 16px;
+  }
+  .text-box p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .content-btn {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  /* Brand logos grid tighter on mobile */
+  .brand-logos .col img {
+    max-height: 25px !important;
+    max-width: 50px !important;
+  }
+}
+
+  </style>
+  
+
+
+<div class="stats-strip">
+  <div class="scroll-track">
+    <span><i class="fas fa-truck"></i> INSTITUTIONAL OFFERINGS</span>
+    <span><i class="fas fa-gift"></i> CONSUMER OFFERINGS</span>
+    <span><i class="fas fa-globe"></i> ETHICAL, GLOBAL SOURCING</span>
+    <span><i class="fas fa-shield-alt"></i> QUALITY COMMITMENT</span>
+    <span><i class="fas fa-industry"></i> TOP TECH MANUFACTURING</span>
+
+    <!-- duplicate once for looping -->
+    <span><i class="fas fa-truck"></i> INSTITUTIONAL OFFERINGS</span>
+    <span><i class="fas fa-gift"></i> CONSUMER OFFERINGS</span>
+    <span><i class="fas fa-globe"></i> ETHICAL, GLOBAL SOURCING</span>
+    <span><i class="fas fa-shield-alt"></i> QUALITY COMMITMENT</span>
+    <span><i class="fas fa-industry"></i> TOP TECH MANUFACTURING</span>
+  </div>
+</div>
+
+<style>
+  /* 🔒 Hide the 3 white boxes under Investors */
+  .investor-stats-box,
+  .row.text-center.text-dark.mt-4.d-none.d-md-flex {
+    display: none !important;
+  }
+</style>
+
+<style>
+.stats-strip {
+  background: #2b1308;
+  color: #fff;
+  border-top: 2px solid #3b1d0f;
+  border-bottom: 2px solid #3b1d0f;
+  overflow: hidden;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+  height: 50px; /* fixed height keeps it visible on all phones */
+  display: flex;
+  align-items: center;
+}
+
+.scroll-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 60px;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  animation: moveLeft 25s linear infinite;
+  will-change: transform;
+}
+
+.scroll-track span {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.scroll-track i {
+  color: #f5b461;
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+/* Animation */
+@keyframes moveLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Hover pause for desktop only */
+@media (hover: hover) {
+  .stats-strip:hover .scroll-track {
+    animation-play-state: paused;
+  }
+}
+
+/* ✅ Responsive tuning */
+@media (max-width: 768px) {
+  .stats-strip {
+    height: 45px;
+  }
+  .scroll-track {
+    gap: 35px;
+    font-size: 13px;
+    animation-duration: 20s;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-strip {
+    height: 42px;
+  }
+  .scroll-track {
+    gap: 25px;
+    font-size: 12px;
+    animation-duration: 18s;
+  }
+
+  .alert-danger {
+  background-color: #ffeaea;
+  color: #b10000;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* 14-inch laptop perfect fit */
+@media (min-width: 1280px) and (max-width: 1439px) {
+top: 0px;
+    left: -60px;
+    background-color: rgba(73, 41, 35, 0.886);
+    color: white;
+    padding: 40px;
+    line-height: 30px;
+    width: 720px;
+    padding-left: 70px;
+}
+
+</style>
+
+<!-- HERO SLIDER (same design, 3 images) -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+
+  <div class="carousel-inner">
+          <div class="carousel-item active">
+        <section class="hero d-flex align-items-center"
+          style="
+            background: url('uploads/1756569840_9.png') center/cover no-repeat;
+            margin-bottom: 20px;
+            background-size: cover;
+            min-height: 80vh;">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 text-center text-lg-start text-white hero-h">
+                <h1>Crafting Quality Cocoa-Based Products Since 1989</h1>
+                <h6>New heights for our client partners</h6>
+                                  <a href="#contact"
+                    class="btn btn-get mt-3">GET IN TOUCH</a>
+                              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+          <div class="carousel-item ">
+        <section class="hero d-flex align-items-center"
+          style="
+            background: url('uploads/slide_1_690723790cc84_2.jpg') center/cover no-repeat;
+            margin-bottom: 20px;
+            background-size: cover;
+            min-height: 80vh;">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 text-center text-lg-start text-white hero-h">
+                <h1>Crafting Quality Cocoa-Based Products Since 1989</h1>
+                <h6>New heights for our client partners</h6>
+                                  <a href="#contact"
+                    class="btn btn-get mt-3">GET IN TOUCH</a>
+                              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+          <div class="carousel-item ">
+        <section class="hero d-flex align-items-center"
+          style="
+            background: url('uploads/slide_2_690723790cf64_1.jpg') center/cover no-repeat;
+            margin-bottom: 20px;
+            background-size: cover;
+            min-height: 80vh;">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 text-center text-lg-start text-white hero-h">
+                <h1>Crafting Quality Cocoa-Based Products Since 1989</h1>
+                <h6>New heights for our client partners</h6>
+                                  <a href="#contact"
+                    class="btn btn-get mt-3">GET IN TOUCH</a>
+                              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0"
+        class="active"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+        class=""></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+        class=""></button>
+      </div>
+
+</div>
+
+
+
+  <!-- Company Profile Section -->
+ <section class="section-space">
+  <div class="container-fluid">
+    <div class="row g-0 align-items-center">
+
+      <!-- Image -->
+      <div class="col-md-6 p-1">
+        <img src="uploads/1756237632_10.png" 
+             alt="Company Profile"
+             class="img-fluid d-none d-md-block com-img">
+        <img src="uploads/1756237632_10.png" 
+             alt="Company Profile"
+             class="img-fluid w-100 d-md-none mb-4">
+      </div>
+
+      <!-- Text -->
+      <div class="col-md-6 p-1">
+        <div class="company-profile-box">
+          <h2>                                                       Company Profile</h2>
+          <p>Lotus Chocolates is among the early contributors to India’s chocolate and cocoa-based products industry. <br />
+<br />
+We offer a thoughtfully developed range designed to meet evolving consumer preferences,adhering to all applicable food safety standards. We cater comprehensively to both individual consumers and leading confectionery brands alike.<br />
+<br />
+Operated from a state-of-the-art manufacturing facility, all our products unwaveringly prioritise and promise excellence. We consistently set benchmarks in taste, purity and craftsmanship, ensuring every product delivers a celebratory experience. </p>
+          <a href="#" class="content-btn">
+            OUR LEGACY          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Business Verticals B2B Section -->
+<section class="section-space">
+  <div class="container-fluid">
+    <div class="row g-0 align-items-center flex-md-row flex-column-reverse">
+
+      <!-- Text -->
+      <div class="col-md-6 p-1">
+        <div class="company-profile-box">
+          <h2>Business Verticals</h2>
+          <h5><strong>Institutional Business (B2B)</strong></h5>
+          <p>All institutional Lotus products serve as reliable and long-standing partners for many bakery and food manufacturing businesses across the country. We provide high quality compound and couverture products, cocoa derivatives, decoratives, and specialised ingredients. <br />
+<br />
+Our products are meticulously designed to meet the rigorous demands of large-scale production, designed to support and deliver both taste and consistency. <br />
+<br />
+From bakeries and confectioners to hotels and diverse food manufacturers, our customisable solutions, robust supply chain, and technical expertise establish us as a trusted partner for brands seeking to elevate their offerings with superior cocoa-based confectionery.</p>
+          <a href="b2b_products.php" class="content-btn">
+            EXPLORE B2B          </a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="col-md-6 p-1">
+        <img src="uploads/1762418785_Untitled design (1).jpg" 
+             alt="B2B Products"
+             class="img-fluid d-none d-md-block com-img">
+        <img src="uploads/1762418785_Untitled design (1).jpg" 
+             alt="B2B Products"
+             class="img-fluid w-100 d-md-none mb-4">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- Business Verticals B2C Section (same text design, responsive) -->
+<section class="section-space">
+  <div class="container-fluid">
+    <div class="row g-0 align-items-center flex-md-row flex-column">
+
+      <!-- Image -->
+      <div class="col-md-6 p-1">
+        <img src="uploads/1769175250_B2C_.jpeg" 
+             alt="B2C Products"
+             class="img-fluid d-none d-md-block b2c-style">
+        <img src="uploads/1769175250_B2C_.jpeg" 
+             alt="B2C Products"
+             class="img-fluid w-100 d-md-none mb-4">
+      </div>
+
+      <!-- Text -->
+      <div class="col-md-6 p-1">
+        <div class="company-profile-box">
+          <h2>Business Verticals</h2>
+          <h5><strong>Consumer Business (B2C)</strong></h5>
+          <p>At Lotus Chocolate, we believe our products transcend being mere treats, and should create many moments of joy while being enjoyed and shared with loved ones. <br />
+<br />
+Our wide and wonderful range is crafted to delight every palate and occasion.<br />
+<br />
+Whether for a moment of personal indulgence, shared enjoyment with family and friends, or a special celebration, our consumer-facing confectionery delivers the perfect fusion of taste, texture, and memorability.  </p>
+          <a href="b2c_products.php" class="content-btn">
+            EXPLORE B2C          </a>
+
+          <!-- Brand Logos -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- 
+  Investors Section (Hidden as per request)
+  Originally included: Investors title, notices, investor documents, and image.
+-->
+<!--
+<section style="margin-bottom: 20px;">
+  <div class="container">
+    <div class="row g-0 align-items-center">
+      <div class="col-md-6 position-relative rel" style="left:80px">
+        <div class="content-box b2c-box b3v" style="text-align: justify;">
+          <h2 style="text-transform: uppercase;">
+            Investors          </h2>
+
+          <h5 class="mb-4 fw-bold">NOTICES</h5>
+          <ul class="mb-3">
+                          <li>April 21, 2025: Board Meeting Outcome</li>
+                          <li>April 14, 2025: Notice of Board Meeting scheduled for April 21, 2025</li>
+                      </ul>
+
+          <h5 class="mb-4 fw-bold">INVESTOR DOCUMENTS</h5>
+          <ul class="mb-4">
+                          <li>
+                <i class="fas fa-file-alt me-2"></i>
+                <a href="#1" 
+                   style="text-decoration:none; color:white;">
+                   2024 - 2025 Financial Presentation - Q4 Results: April 25, 2025                </a>
+              </li>
+                          <li>
+                <i class="fas fa-file-alt me-2"></i>
+                <a href="#2" 
+                   style="text-decoration:none; color:white;">
+                    2024 - 2025 Financial Presentation - Q3 Results: April 25, 2025                </a>
+              </li>
+                      </ul>
+
+          <a href="annual_reports.php" 
+             class="content-btn">
+             ANNUAL REPORT          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6 p-0 mb-4 mb-md-0">
+        <img src="uploads/1762418810_Untitled design.jpg" 
+             alt="Investors" 
+             class="img-fluid d-none d-md-block b2c-style">
+        <img src="uploads/1762418810_Untitled design.jpg" 
+             alt="Investors" 
+             class="img-fluid w-100 d-md-none">
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+  <!-- Careers Section (unchanged desktop, modern mobile) -->
+  <section class="py-5 position-relative" id="careers">
+    <div class="container-fulid position-relative">
+      <div class="careers-box" style="background-color: #492923ff; color: white; padding: 40px; margin-top: -30px;"
+        style="text-align: justify;">
+        <h2 class="text-center mb-4" style="text-transform: uppercase; letter-spacing: 2px; font-size: 40px;">
+          Careers         </h2>
+
+        <!-- Mobile Images -->
+        <div class="careers-images d-md-none">
+          <img src="uploads/1761827058_career.png" alt="Career Team" class="img-fluid">
+          <img src="uploads/1756243325_15.png" alt="Career Factory" class="img-fluid">
+        </div>
+
+        <!-- Desktop Images -->
+        <div class="row g-2 mb-4 d-none d-md-flex">
+          <div class="col-md-6">
+            <img src="uploads/1761827058_career.png" alt="Career Team" class="img-fluid w-100"
+              style="height: 100%; object-fit: cover;">
+          </div>
+          <div class="col-md-6">
+            <img src="uploads/1756243325_15.png" alt="Career Factory"
+              class="img-fluid w-100" style="height: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <p class="text-center mb-0" style="line-height: 30px;">
+          At Lotus Chocolates, our people are integral to our sustained success. We actively seek passionate, driven individuals eager to contribute to our journey of crafting excellence in confectionery. Whether an experienced professional or an emerging talent, we offer a dynamic work environment, robust opportunities for growth, and the chance to contribute to a brand shaping the future of confectionery in India.         </p>
+
+        <!-- Mobile Buttons -->
+        <div class="careers-buttons d-md-none mt-4">
+          <a href="#1"
+            class="btn btn-danger rounded-pill px-4">EXPLORE OPEN POSITIONS</a>
+
+        </div>
+
+        <!-- Desktop Buttons -->
+        <div class="d-none d-md-block"
+          style="position: absolute; bottom: -15px; left: 49%; transform: translateX(-50%);">
+          <a href="#1"
+            class="btn btn-danger rounded-pill px-4 me-2">EXPLORE OPEN POSITIONS</a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- contact section -->
+<section id="contact" class="py-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title display-5 fw-bold mb-1" style="color: #5b322a;">Get In Touch</h2>
+        <p class="section-subtitle lead text-muted">We're here to help and answer any questions you might have.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- LEFT: Contact info -->
+      <div class="col-lg-6">
+        <div class="contact-info-card p-4 p-lg-5 rounded-3 shadow-sm" style="background-color: #fff; height: 100%;">
+          <div class="d-flex align-items-center mb-4">
+            <img src="uploads/1757503517_1757503188526.png" alt="Lotus Logo"
+              class="img-fluid me-3" style="max-width: 100px;">
+            <h3 class="mb-0 fw-bold" style="color: #5b322a;">
+              Lotus Chocolate Company Limited            </h3>
+          </div>
+
+          <div class="contact-details">
+                          <div class="d-flex mb-3">
+                <div class="me-3" style="color: #d4a373; font-size: 1.2rem;">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1 fw-bold" style="color: #5b322a;">Address</h5>
+                  <p class="mb-0 text-muted">Pranava One, 6th Floor, 6-5-654, Punjagutta Road, <br />
+Raj Bhavan Quarters Colony, Somajiguda, <br />
+Hyderabad, Telangana - 500082<br />
+CIN: L15200TG1988PLC009111</p>
+                </div>
+              </div>
+            
+                          <div class="d-flex mb-3">
+                <div class="me-3" style="color: #d4a373; font-size: 1.2rem;">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1 fw-bold" style="color: #5b322a;">Phone</h5>
+                  <p class="mb-0 text-muted">1800-425-3949</p>
+                </div>
+              </div>
+            
+                          <div class="d-flex mb-3">
+                <div class="me-3" style="color: #d4a373; font-size: 1.2rem;">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1 fw-bold" style="color: #5b322a;">Email</h5>
+                  <p class="mb-0 text-muted">ce@lotuschocolate.com</p>
+                </div>
+              </div>
+            
+                          <div class="d-flex mb-4">
+                <div class="me-3" style="color: #d4a373; font-size: 1.2rem;">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1 fw-bold" style="color: #5b322a;">Website</h5>
+                  <p class="mb-0">
+                    <a href="www.lotuschocolate.com" target="_blank"
+                      style="color: #6c757d; text-decoration: none;">
+                      www.lotuschocolate.com                    </a>
+                  </p>
+                </div>
+              </div>
+                      </div>
+
+          
+          <div class="social-links mt-4 pt-3 border-top">
+            <h5 class="fw-bold mb-3" style="color: #5b322a;">Follow Us</h5>
+            <div class="d-flex">
+                              <a href="https://www.facebook.com/Lotus.Chocolates/" class="social-icon me-3" target="_blank"
+                  style="background-color: #5b322a; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                                            <a href="https://www.youtube.com/user/LotusChocs" class="social-icon me-3" target="_blank"
+                  style="background-color: #5b322a; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                                            <a href="https://www.instagram.com/lotus.chocolate.india/?hl=en" class="social-icon me-3" target="_blank"
+                  style="background-color: #5b322a; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                                            <a href="https://in.linkedin.com/company/lotus-chocolate-company-limited" class="social-icon" target="_blank"
+                  style="background-color: #5b322a; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact form -->
+      <div class="col-lg-6">
+        <div class="contact-form p-4 p-lg-5 rounded-3 shadow-sm" style="background-color: #fff; height: 100%;">
+          <h3 class="mb-4 fw-bold" style="color: #5b322a;">Send Us a Message</h3>
+          <form id="contact-form" method="post" action="process_contactdata" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label small text-muted">Your Name</label>
+                <input type="text" class="form-control py-2" id="name" name="name" placeholder="John Doe" required
+                  style="border-radius: 8px; border: 1px solid #ddd;">
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label small text-muted">Your Email</label>
+                <input type="email" class="form-control py-2" id="email" name="email" placeholder="john@example.com"
+                  required style="border-radius: 8px; border: 1px solid #ddd;">
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <label for="subject" class="form-label small text-muted">Subject</label>
+              <input type="text" class="form-control py-2" id="subject" name="subject" placeholder="How can we help?"
+                required style="border-radius: 8px; border: 1px solid #ddd;">
+            </div>
+
+            <div class="mt-3">
+              <label for="message" class="form-label small text-muted">Your Message</label>
+              <textarea class="form-control py-2" id="message" name="message" rows="5"
+                placeholder="Type your message here..." required
+                style="border-radius: 8px; border: 1px solid #ddd;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4 px-4 py-2 fw-bold"
+              style="background-color: #5b322a; border: none; border-radius: 8px;">
+              Send Message <i class="fas fa-paper-plane ms-2"></i>
+            </button>
+
+            <!-- Error message -->
+                      </form>
+        </div>
+      </div>
+    </div>
+
+      </div>
+</section>
+
+
+
+  <!-- Footer (unchanged desktop, stacked mobile) -->
+  
+<!-- ===== Footer CSS ===== -->
+<style>
+  footer {
+    color: #f2e8da;
+    font-family: inherit;
+  }
+
+  footer a {
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  footer a:hover {
+    color: #f8d9a0;
+    text-decoration: underline;
+  }
+
+  .footer-logo {
+    max-width: 110px;
+    background: transparent;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* ✅ Compact layout */
+  footer {
+    padding: 40px 0 25px !important;
+  }
+
+  .footer-links-row {
+    gap: 40px !important;
+  }
+
+  /* ✅ Add spacing between links */
+  .footer-links-row ul li {
+    margin-bottom: 10px !important; /* spacing between links */
+  }
+
+  /* ✅ Adjust column heading and text sizes */
+  .footer-links-row h6 {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+  }
+
+  .footer-links-row ul a {
+    font-size: 14.5px;
+    display: inline-block;
+  }
+
+  /* ✅ Align link columns correctly (yellow line offset) */
+  @media (min-width: 992px) {
+    .footer-links-row {
+      margin-left: 80px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .footer-logo {
+      max-width: 85px !important;
+    }
+  }
+</style>
+
+<!-- ===== Footer Section ===== -->
+<footer style="background: url('uploads/1762435332_1756568884_16.png') center/cover no-repeat;">
+  <div class="container-fluid" style="max-width: 100%;">
+
+    <!-- Address + Dynamic Columns -->
+    <div class="row text-center text-md-start justify-content-center align-items-start footer-links-row">
+
+      <!-- Address Column -->
+      <div class="col-lg-3 col-md-6 mb-3 d-flex flex-column align-items-center align-items-md-start">
+        <img src="uploads/1757503517_1757503188526.png" 
+             alt="Lotus Logo" 
+             class="footer-logo">
+
+        <p style="font-size:14px; line-height:1.6; margin-bottom:10px;">
+          <strong>Lotus Chocolate Company Limited</strong><br>
+          Pranava One, 6th Floor, 6-5-654, Punjagutta Road, <br />
+Raj Bhavan Quarters Colony, Somajiguda, <br />
+Hyderabad, Telangana - 500082<br />
+CIN: L15200TG1988PLC009111<br>
+                    EMAIL: ce@lotuschocolate.com<br>          PHONE: 1800-425-3949        </p>
+
+        <!-- Social Media -->
+        <div class="mt-1 mb-1">
+                      <a href="https://www.facebook.com/Lotus.Chocolates/" class="text-white me-2" style="font-size:20px;"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.youtube.com/user/LotusChocs" class="text-white me-2" style="font-size:20px;"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.instagram.com/lotus.chocolate.india/?hl=en" class="text-white me-2" style="font-size:20px;"><i class="fab fa-instagram"></i></a>
+                                <a href="https://in.linkedin.com/company/lotus-chocolate-company-limited" class="text-white me-2" style="font-size:20px;"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+      </div>
+
+      <!-- Dynamic Columns -->
+                        <div class="col-lg-2 col-md-6 mb-3 d-flex flex-column justify-content-between h-100">
+            <h6 class="fw-bold"></h6>
+            <ul class="list-unstyled mb-0">
+                              <li>
+                  <a href="#" class="text-white text-decoration-none fw-semibold">
+                    SUSTAINABILITY                  </a>
+                </li>
+                              <li>
+                  <a href="investor_contacts.php" class="text-white text-decoration-none fw-semibold">
+                    INVESTOR RELATIONS                  </a>
+                </li>
+                              <li>
+                  <a href="disclosures.php" class="text-white text-decoration-none fw-semibold">
+                    DISCLOSURES                  </a>
+                </li>
+                              <li>
+                  <a href="#" class="text-white text-decoration-none fw-semibold">
+                    BLOG                  </a>
+                </li>
+                              <li>
+                  <a href="index.php#careers" class="text-white text-decoration-none fw-semibold">
+                    CAREERS                  </a>
+                </li>
+                              <li>
+                  <a href="index.php#contact" class="text-white text-decoration-none fw-semibold">
+                    CONTACT US                  </a>
+                </li>
+                          </ul>
+          </div>
+                  <div class="col-lg-2 col-md-6 mb-3 d-flex flex-column justify-content-between h-100">
+            <h6 class="fw-bold"></h6>
+            <ul class="list-unstyled mb-0">
+                              <li>
+                  <a href="#" class="text-white text-decoration-none fw-semibold">
+                    PRESS KIT                  </a>
+                </li>
+                              <li>
+                  <a href="quarterly_results.php" class="text-white text-decoration-none fw-semibold">
+                    QUARTERLY REPORTS                  </a>
+                </li>
+                              <li>
+                  <a href="annual_reports.php" class="text-white text-decoration-none fw-semibold">
+                    ANNUAL REPORT                  </a>
+                </li>
+                          </ul>
+          </div>
+                  <div class="col-lg-2 col-md-6 mb-3 d-flex flex-column justify-content-between h-100">
+            <h6 class="fw-bold"></h6>
+            <ul class="list-unstyled mb-0">
+                              <li>
+                  <a href="#" class="text-white text-decoration-none fw-semibold">
+                    LEGAL &amp; COMPLIANCE                  </a>
+                </li>
+                              <li>
+                  <a href="terms_conditions.php" class="text-white text-decoration-none fw-semibold">
+                    TERMS &amp; CONDITIONS                  </a>
+                </li>
+                              <li>
+                  <a href="privacy_policy.php" class="text-white text-decoration-none fw-semibold">
+                    PRIVACY POLICY                  </a>
+                </li>
+                          </ul>
+          </div>
+                  </div>
+
+    <!-- Bottom Bar -->
+    <div class="text-center mt-3 pt-2" style="border-top:1px solid #ffffff44;">
+      <small style="letter-spacing:1.5px; font-size:13px;">
+        © 2026 LOTUS CHOCOLATE COMPANY LIMITED — ALL RIGHTS RESERVED.
+      </small>
+    </div>
+
+  </div>
+</footer>
+
+  <button id="backToTop" title="Back to top">&#8679;</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  let isValid = true;
+  const fields = ["name", "email", "subject", "message"];
+
+  fields.forEach((fieldId) => {
+    const field = document.getElementById(fieldId);
+    const errorId = fieldId + "-error";
+    let error = document.getElementById(errorId);
+
+    // remove previous error message
+    if (error) error.remove();
+
+    if (!field.value.trim()) {
+      isValid = false;
+      error = document.createElement("div");
+      error.id = errorId;
+      error.style.color = "#b10000";
+      error.style.fontSize = "0.9rem";
+      error.style.marginTop = "4px";
+      error.textContent = "This field is required.";
+      field.insertAdjacentElement("afterend", error);
+    }
+  });
+
+  // Stop form submission if invalid
+  if (!isValid) {
+    e.preventDefault();
+  }
+});
+</script>
+
+
+<script>
+    //search toggle
+
+    (() => {
+      const searchToggle = document.getElementById('searchToggle');
+      const searchInput = document.getElementById('searchInput');
+      const suggestions = document.getElementById('searchSuggestions');
+      const searchModal = document.getElementById('searchModal');
+
+      // Page links data (from navbar)
+      const pages = [
+        { label: 'Business Divisions', url: 'index.php' },
+        { label: 'Financial Calendar', url: 'financial_calendar.php' },
+        { label: 'Share Holding Pattern', url: 'share_holding_pattern.php' },
+        { label: 'Quarterly Results', url: 'quarterly_results.php' },
+        { label: 'Related Party Transactions', url: 'related_party_transactions.php' },
+        { label: 'Integrated Filing', url: 'integrated_filing.php' },
+        { label: 'Annual Reports', url: 'annual_reports.php' },
+        { label: 'Listing Information', url: 'listing_information.php' },
+        { label: 'Investor Contacts', url: 'investor_contacts.php' },
+        { label: 'Investor Services', url: 'investor_services.php' },
+        { label: 'Notices', url: 'notices.php' },
+        { label: 'Downloads', url: 'downloads.php' },
+        { label: 'Disclosures under Regulation 46', url: 'disclosures.php' },
+        { label: 'News', url: 'news.php' },
+        { label: 'Board of Directors', url: 'board_of_directors.php' },
+        { label: 'Committees of Board of Directors', url: 'board_committees.php' },
+        { label: 'Code of Business Conduct and Ethics', url: 'code_of_conduct.php' },
+        { label: 'Corporate Governance', url: 'corporate_governance.php' },
+        { label: 'Careers', url: 'index.php#careers' },
+        { label: 'Contact', url: 'index.php#contact' }
+      ];
+
+      // Show modal when SEARCH is clicked
+      searchToggle.addEventListener('click', () => {
+        // Use Bootstrap's built-in modal show method
+        new bootstrap.Modal(searchModal).show();
+        setTimeout(() => searchInput.focus(), 400);
+      });
+
+      // Filtering and showing suggestions inside modal
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value.trim().toLowerCase();
+        suggestions.innerHTML = '';
+        if (!q) return;
+
+        const filtered = pages.filter(p => p.label.toLowerCase().includes(q));
+        if (!filtered.length) {
+          suggestions.innerHTML = `<div class="list-group-item disabled text-muted">No results found</div>`;
+          return;
+        }
+
+        filtered.forEach(({ label, url }) => {
+          const el = document.createElement('a');
+          el.className = 'list-group-item list-group-item-action';
+          el.href = url;
+          el.innerText = label;
+          suggestions.appendChild(el);
+          el.onclick = () => {
+            window.location.href = url;
+          };
+        });
+      });
+
+      // Clear on close
+      searchModal.addEventListener('hidden.bs.modal', () => {
+        searchInput.value = '';
+        suggestions.innerHTML = '';
+      });
+
+      // Optional: ESC closes modal in Bootstrap automatically
+    })();
+
+    // Show or hide the button
+    window.onscroll = function () {
+      var backToTop = document.getElementById("backToTop");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    };
+
+    // Scroll to top when button is clicked
+    document.getElementById("backToTop").onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+  </script>
+
+
+<!-- Compact Popup Modal -->
+<div class="modal fade" id="sitePopup" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 380px;"><!-- smaller custom width -->
+    <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg">
+      <div class="modal-body p-0 position-relative text-center bg-white">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <!-- Popup Image -->
+        <img src="uploads/1770286448_Lotus special.png" class="img-fluid rounded-top" alt="Popup" style="width:100%; height:auto;">
+        
+        <!-- Popup Text -->
+        <div class="p-3">
+          <h6 class="fw-bold mb-1"></h6>
+                    <p class="small mb-3"></p>
+                  </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Auto-show Popup on page load -->
+<script>
+  window.addEventListener('load', function() {
+    const popupModal = new bootstrap.Modal(document.getElementById('sitePopup'));
+    popupModal.show();
+  });
+</script>
+
+
+</body>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl509465'},{'dcenter':'sg2'},{'cp_id':'10590765'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>

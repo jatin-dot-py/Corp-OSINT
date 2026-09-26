@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!--====== Required meta tags ======-->
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<!--====== Title ======-->
+	<title>STRING METAVERSE | WEB 3.0</title>
+	<!--====== Favicon Icon ======-->
+	<link rel="shortcut icon" href="assets/img/icon/favicon.png" type="image/png" />
+	<!--====== Animate Css ======-->
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+	<!--====== Bootstrap css ======-->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<!--====== Fontawesome css ======-->
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+	<!--====== Magnific Popup css ======-->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css" />
+	<!--====== Owl Carousel css ======-->
+	<link rel="stylesheet" href="assets/css/slick.css" />
+	<!--====== Mean Menu ======-->
+	<link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+	<!--====== Default css ======-->
+	<link rel="stylesheet" href="assets/css/default.css" />
+	<!--====== Style css ======-->
+	<link rel="stylesheet" href="assets/css/style.min.css" />
+	<!--====== Flaticon css ======-->
+	<link rel="stylesheet" href="assets/css/flaticon.css" />
+	<!--====== Custom Animate css ======-->
+	<link rel="stylesheet" href="assets/css/custom-animate.css" />
+
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css'>
+
+<style>
+	.preloader-logo {
+		max-width: 200px;
+		height: auto;
+		animation: preloaderFadeIn 1.2s ease-in-out infinite;
+	}
+	
+	@keyframes preloaderFadeIn {
+		0%, 100% {
+			opacity: 0.6;
+			transform: scale(0.95);
+		}
+		50% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+	
+	#preloader > div > img {
+		background-color: transparent !important;
+	}
+	
+	#preloader > div div {
+		display: none !important;
+	}
+	
+	/* Fix header logo cutoff issue */
+	header.haeder-absolute {
+		overflow: visible !important;
+		width: 100%;
+	}
+	
+	header.haeder-absolute .container-fluid.container-extra {
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 30px;
+		padding-right: 30px;
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	header.haeder-absolute .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	header.haeder-absolute .col-12 {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	header .nav {
+		padding-right: 0;
+		flex-wrap: nowrap;
+		width: 100%;
+		max-width: 100%;
+		overflow: visible;
+	}
+	
+	header .nav .logo {
+		flex-shrink: 0;
+		margin-right: auto;
+	}
+	
+	header .nav .main-mneu {
+		flex-shrink: 0;
+		margin-left: auto;
+	}
+	
+	header .nav .main-mneu ul {
+		display: flex;
+		flex-wrap: nowrap;
+		white-space: nowrap;
+		margin: 0;
+		padding: 0;
+	}
+	
+	@media (min-width: 1400px) {
+		header.haeder-absolute .container-fluid.container-extra {
+			max-width: 1650px;
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+	}
+	
+	@media (min-width: 1200px) and (max-width: 1399px) {
+		header.haeder-absolute .container-fluid.container-extra {
+			max-width: 1350px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+	}
+	
+	@media (max-width: 1199px) {
+		header.haeder-absolute .container-fluid.container-extra {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	
+	/* Hero background image - centered and covering entire section */
+	.banner-section {
+		background-image: url(assets/img/home-hero-bg_1.png);
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		overflow: visible;
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+	}
+	
+	/* Ensure container doesn't cut off the background */
+	.banner-section .container-fluid.container-extra {
+		position: relative;
+		z-index: 1;
+	}
+	
+	/* Responsive adjustments */
+	@media (max-width: 991px) {
+		.banner-section {
+			background-attachment: scroll;
+		}
+	}
+	
+	/* White logo on the right side of hero section */
+	.banner-section .hero-logo-right {
+		position: absolute;
+		right: 50px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		max-width: 300px;
+		width: auto;
+		height: auto;
+	}
+	
+	.banner-section .hero-logo-right img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	
+	@media (max-width: 1199px) {
+		.banner-section .hero-logo-right {
+			right: 30px;
+			max-width: 250px;
+		}
+	}
+	
+	@media (max-width: 991px) {
+		.banner-section .hero-logo-right {
+			right: 20px;
+			max-width: 200px;
+		}
+	}
+	
+	@media (max-width: 767px) {
+		.banner-section .hero-logo-right {
+			display: none;
+		}
+		.header-content h1 {
+			font-size: 32px !important;
+		}
+		.header-content h4 {
+			font-size: 18px !important;
+		}
+	}
+
+	@media (max-width: 575px) {
+		.header-content h1 {
+			font-size: 24px !important;
+		}
+		.header-content h4 {
+			font-size: 16px !important;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.pt-110 {
+			padding-top: 40px !important;
+		}
+		.pb-100 {
+			padding-bottom: 30px !important;
+		}
+		.mb-70 {
+			margin-bottom: 25px !important;
+		}
+		footer .widget {
+			margin-bottom: 30px !important;
+		}
+		footer .widget .widget-title {
+			margin-bottom: 15px !important;
+		}
+	}
+
+	/* Team card centering */
+	.section-title .team-card {
+		display: block;
+		margin: 0 auto;
+		margin-top: 40px;
+	}
+
+
+	@media (max-width: 767px) {
+		.team-bg-text {
+			background-size: contain;
+		}
+	}
+
+	.team-container {
+		padding-top: 40px !important;
+		padding-bottom: 40px !important;
+	}
+
+	.team-card, .team-card-1 {
+		text-align: center;
+	}
+
+	.team-card img, .team-card-1 img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 15px;
+		height: auto !important;
+		object-fit: contain !important;
+	}
+</style>
+
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+
+	<!--====== PRELOADER ======-->
+	<div id="preloader">
+		<div>
+			<img src="assets/img/logo.png" alt="String Metaverse Logo" class="preloader-logo">
+		</div>
+	</div>
+	<!--====== HEADER PART START ======-->
+	<header class="haeder-absolute">
+		<div class="container-fluid container-extra">
+			<div class="row">
+				<div class="col-12">
+					<nav class="nav align-items-center justify-content-between">
+						<div class="logo">
+							<a href="index.html"><img src="assets/img/logo.png" alt="String"></a>
+						</div>
+						<div class="main-mneu">
+							<ul>
+								<li class="active"><a href="#home">Home</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="media.html">Media</a></li>
+								<li><a href="#team">Team</a></li>
+								<li><a href="investor-relations.html">Investor Relations</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+				<div class="col-12">
+					<div class="mobilemenu"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--====== HEADER PART ENDS ======-->
+	<!--====== BANNER SECTION START ======-->
+	
+	<section class="banner-section" id="home">
+		<!-- White logo on the right side -->
+		<div class="hero-logo-right">
+			<img src="assets/img/white_logo.png" alt="String Metaverse Logo">
+		</div>
+		<div class="container-fluid container-extra">
+			<div class="row">
+	
+				<div class="col-lg-6 col-md-8 top-home">
+	
+					<!-- <div class="banner-text">
+							<h4 class="bt-h4" >Converting human attention into Digital Economy.</h4>
+							<h2 class="bt-h2" data-wow-delay=".4s">The Singularity where AI Agents</h2>
+							<h2 class="bt-1-h2" data-wow-delay=".4s">collide with Gaming and Digital Assets</h2>
+							<a href="#about" class="banner-btn-1 wow fadeInUp" data-wow-delay=".5s">Learn More</a>
+						</div> -->
+	
+	
+	
+					<div class="owl-carousel owl-theme">
+						<div class="item">
+							<div class="cover">
+								<div class="container">
+									<div class="header-content">
+										<h4 style="color: #fff;">The Financial Operating System for <br> Tokenized Assets
+										</h4>
+										<h1 style="color: #fff;">From Stocks to Skyscrapers — All Assets, On-Chain</h1>
+										<h4 style="color: #fff;">Where Real Assets Meet Real Yield</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="cover">
+								<div class="container">
+									<div class="header-content">
+										<h1 style="color: #fff;">Every Interaction <br>Becomes a Transaction</h1>
+										<h4 style="color: #fff;">The world’s attention, actions, and assets<br> - instantly
+											financialized.</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <h1 style="color: #fff;">Tokenization as a Service</h1>
+                                <h4 style="color: #fff;">Transform any asset into programmable,<br> liquid digital value.</h4>
+                            </div>
+                        </div>
+                     </div>
+                </div>                
+                <div class="item">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <h1 style="color: #fff;">Liquidity as a Service</h1>
+                                <h4 style="color: #fff;">24/7 automated market-making engines <br>powering the global token economy.</h4>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+				<div class="item">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <h1 style="color: #fff;">Infrastructure as a Service <br> High Performance<br> Computing Data centers</h1>
+                                <h4 style="color: #fff;">High-performance compute, nodes, and <br>financial rails for the next internet.</h4>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+				<div class="item">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <h1 style="color: #fff;">String Agentic Finance <br>Operating System (AFOS)</h1>
+                                <h4 style="color: #fff;">Autonomous, intent-driven financial coordination<br>- built on AI + DeFi.</h4>
+                            </div>
+                        </div>
+                     </div>
+                </div> 
+
+
+				<div class="item">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <h1 style="color: #fff;">Bridging Real-World Assets <br>With Digital Assets</h1>
+                                <h4 style="color: #fff;">From Stocks to Treasuries to Gold <br>- live on-chain, accessible to anyone.</h4>
+                            </div>
+                        </div>
+                     </div>
+                </div> 
+
+
+				<div class="item">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <h1 style="color: #fff;">Powering Borderless <br>Digital Communities</h1>
+                                <h4 style="color: #fff;">Millions of gamers, creators, <br>and global citizens connected <br>by programmable money.</h4>
+                            </div>
+                        </div>
+                     </div>
+                </div> 
+
+
+				<div class="item">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <h1 style="color: #fff;">The OS of the Internet <br>Financial System</h1>
+                                <h4 style="color: #fff;">String Metaverse is building <br>the backbone of the new global economy.</h4>
+                            </div>
+                        </div>
+                     </div>
+                </div> 
+
+            </div>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--====== BANNER SECTION END ======-->
+	<!--====== FEATURE SECTION START ======-->
+	<section class="container-fluid feature-boxes pt-130 pb-90"  style="background-color: #f2f2f8;" >
+		<div class="container">
+			<div class="row" id="about">
+						<div class="col-lg-6 abt-ht-box-1">
+							<div class="section pt-115 pb-90">
+
+							<!-- LEFT RAIL with 4 ash bars -->
+							<div class="left-rail" aria-hidden="true">
+							<div class="ash a1"></div>
+							<div class="ash a2"></div>
+							<div class="ash a3"></div>
+							<div class="ash a4"></div>
+
+							<!-- orange indicator that slides over the ash bars -->
+							<div class="indicator" role="presentation"></div>
+							</div>
+
+							<!-- CONTENT - 4 blocks -->
+							<div class="content ">
+							<div class="slide">
+
+								<div class="block b1">
+								<div class="eyebadge">Why us?</div>
+								<div class="h1">We <span>Build</span></div>
+								<div class="h3">Web3.0 Gaming &amp; Digital communities</div>
+								<div class="p">String Metaverse envisions a comprehensive gaming universe that consists of play-to-earn games, real money games, esports, and GameFi, with plans to Integrate AI Agents into String Ecosystem. Central to this ecosystem is the String AI token, which powers all transactions and interactions within the String ecosystem.</div>
+								</div>
+
+								<div class="block b2">
+								<div class="eyebadge">Why us?</div>
+								<div class="h1">We <span>Invest</span></div>
+								<div class="h3">Community Projects &amp; Protocol</div>
+								<div class="p">Leveraging our expertise to pinpoint the best market opportunities, we invest in early-stage Web3.0 Projects, acquiring stake in the form of digital assets.</div>
+								</div>
+
+								<div class="block b3">
+								<div class="eyebadge">Why us?</div>
+								<div class="h1">We <span>Provide</span></div>
+								<div class="h3">Liquidity for Digital Assets powered by AI Agents</div>
+								<div class="p">String will assist in token distribution through its diverse community and provide Liquidity for Web3.0 Projects and Protocols using AI Agents which will analyze market trends, automate trading, and optimize asset allocation with reinforcement learning.</div>
+								</div>
+
+								<div class="block b4">
+								<div class="eyebadge">Why us?</div>
+								<div class="h1">We <span>Create</span></div>
+								<div class="h3">Army of AI Agents</div>
+								<div class="p">Midearth in String Metaverse empowers users with AI-driven agents for seamless digital interactions. Key features include agent-to-human and agent-to-agent commerce, generative AI-powered community commerce, smart contract management with crypto wallets for autonomous transactions. Midearth redefines digital engagement, enabling users to transact, manage assets, and earn within a transparent, blockchain-secured ecosystem.</div>
+								</div>
+
+							</div>
+							</div>
+
+						</div>
+						</div>
+						<div class="col-lg-6">
+							<img src="assets/img/about-img-1.jpg" alt="Image">
+						</div>
+			</div>
+		</div>
+</section>
+	
+	<!--====== TEAM SECTION START ======-->
+	<section class="team-section" style="background-color: #f2f2f8;" >
+		<div class="container-fluid"  style="background-image: url(assets/img/team-bg.svg); background-repeat: no-repeat; background-size: 50%; background-position: center center;  padding: 0; margin: 0;">
+			<div class="hd-st section-title text-center mb-0 wow fadeIn animated" data-wow-delay=".5s" style="visibility: visible;-webkit-animation-delay: .5s; -moz-animation-delay: .5s; animation-delay: .5s;">
+				<h2 id="team">Our Team</h2>
+				<div class="team-card">
+					<img src="assets/img/team/team_14.png" alt="Dr. Sethurathnam Ravi">
+					<h3>Dr. Sethurathnam Ravi</h3>
+					<p>Chairman & Non-Executive Director</p>
+				</div>
+			</div>
+			<div class="team-container team-bg-text">
+
+				<!-- <div class="team-card">
+					<img src="assets/img/team/team_06.png" alt="Ghanshyam Dass">
+					<h3>Ghanshyam Dass</h3>
+					<p>Chairman & Non-Executive Director</p>
+				</div> -->
+				
+			
+				<div class="team-card">
+					<img src="assets/img/team/ganesh.jpg" alt="Ganesh Meenavalli">
+					<h3>Ganesh Meenavalli</h3>
+					<p>Managing Director</p>
+				</div>
+
+				<div class="team-card">
+					<img src="assets/img/team/raghavendra.jpg" alt="Dr. Raghavendra Pranesh Hunasgi">
+					<h3>Dr. Raghavendra Pranesh Hunasgi</h3>
+					<p>Chief Executive Officer (CEO)</p>
+				</div>
+
+				<div class="team-card">
+					<img src="assets/img/team/hemant.jpg" alt="Mr. Hemant Prabhudas Vastani">
+					<h3>Mr. Hemant Prabhudas Vastani</h3>
+					<p>Chief Financial Officer (CFO)</p>
+				</div>
+
+
+				<div class="team-card">
+					<img src="assets/img/team/krishna.jpg" alt="Krishna Mohan Meenavalli">
+					<h3>Krishna Mohan Meenavalli</h3>
+					<p>Founder</p>
+				</div>
+
+				<div class="team-card">
+					<img src="assets/img/team/santosh.jpg" alt="Sai Santosh Althuru">
+					<h3>Sai Santosh Althuru</h3>
+					<p>Co-Founder</p>
+				</div>
+
+
+				<div class="team-card">
+					<img src="assets/img/team/team_07.png" alt="Mr. Vivek Kumar Ratakonda">
+					<h3>Mr. Vivek Kumar Ratakonda</h3>
+					<p>Non-Executive & Non-Independent Director</p>
+				</div>
+
+
+				<div class="team-card">
+					<img src="assets/img/team/team_03.png" alt="Rohit Reddy">
+					<h3>Rohit Reddy</h3>
+					<p>Co-Founder</p>
+				</div>
+
+				<div class="team-card">
+					<img src="assets/img/team/team_04.png" alt="Sanjana Reddy">
+					<h3>Sanjana Reddy</h3>
+					<p>Co-Founder</p>
+				</div>
+
+
+			</div>
+						
+		</div>
+
+		<div class="container-fluid" style="background-image: url(assets/img/left-bg.png); background-size: 30%; background-position: left; background-repeat: no-repeat; padding: 0; margin: 0;">
+			<div style="background-image: url(assets/img/right-bg.png); background-size: 30%; background-position: right; background-repeat: no-repeat;">
+			<!-- <div class="absolute inset-0 h-full bg-left bg-no-repeat" style="background-image: url(assets/img/left-bg.png); background-size: contain;"></div>
+			<div class="absolute inset-0 h-full bg-right bg-no-repeat" style="background-image: url(assets/img/right-bg.png); background-size: contain;"></div> -->
+			<div class="hd-st section-title text-center pt-40 mb-0 wow fadeIn animated" data-wow-delay=".5s" style="visibility: visible;-webkit-animation-delay: .5s; -moz-animation-delay: .5s; animation-delay: .5s;">
+				<h2>Independent Directors</h2>
+			</div>
+			<div class="team-container">
+				<!-- <div class="team-card-1">
+					<img src="assets/img/team/team_11.png" alt="Arvind Jadhav">
+					<h3>Arvind Jadhav</h3>
+					<p>Independent Director</p>
+				</div> -->
+				
+
+				<div class="team-card-1">
+					<img src="assets/img/team/team_09.png" alt="Dr Sarat Malik">
+					<h3>Dr Sarat Malik</h3>
+					<p>Independent Director</p>
+				</div>
+
+				<div class="team-card-1">
+					<img src="assets/img/team/team_12.png" alt="Anima Rajmohan Nair">
+					<h3>Anima Rajmohan Nair</h3>
+					<p>Independent Director</p>
+				</div>
+
+				<div class="team-card-1">
+					<img src="assets/img/team/team_10.png" alt="Deenadayal Tripurasetty">
+					<h3>Deenadayal Tripurasetty</h3>
+					<p>Independent Director</p>
+				</div>
+
+
+				<div class="team-card-1">
+					<img src="assets/img/team/Prathipati.jpg" alt="Mr.Prathipati Parthasarathi">
+					<h3>Mr.Prathipati Parthasarathi</h3>
+					<p>Independent Director</p>
+				</div>
+
+				<div class="team-card-1">
+					<img src="assets/img/team/Amar.jpg" alt="Mr. Amar Kumar">
+					<h3>Mr. Amar Kumar</h3>
+					<p>Independent Director</p>
+				</div>
+
+			</div>
+
+			</div>
+						
+		</div>
+	</section>
+	<!--====== TEAM SECTION END ======-->
+
+	<section class="business-section pt-115 pb-120" style="background-image: url(assets/img/bg/pattern-4.png); background-color: #fff;">
+		<div class="auto-container">
+			<!-- Sec Title / Centered -->
+			<div class="hd-st section-title text-center mb-0 wow fadeIn animated" data-wow-delay=".5s" style="visibility: visible;-webkit-animation-delay: .5s; -moz-animation-delay: .5s; animation-delay: .5s;">
+				<h2>Global Offices</h2>
+			</div>
+			<div class="row clearfix">
+			
+				<!-- Left Column -->
+				<div class="left-column col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-column">
+					
+						<!-- Business Block -->
+						<div class="business-block">
+							<div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
+								<div class="content">
+									<div class="icon-box">
+										<!-- <span class="icon flaticon-padlock"></span> -->
+										 <img src="assets/img/global/india.png" alt="India Icon">
+									</div>
+									<div class="conbox">
+									<h4><a href="index.html">India</a></h4>
+									<div class="text">String Metaverse Ltd</div>
+									</div>
+								</div>
+							</div>
+							</div>
+						
+						<!-- Business Block -->
+						<div class="business-block">
+							<div class="inner-box wow fadeInLeft animated" data-wow-delay="150ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 150ms; animation-name: fadeInLeft;">
+								<div class="content">
+									<div class="icon-box">
+										<!-- <span class="icon flaticon-seo"></span> -->
+										  <img src="assets/img/global/Hong-Kong.png" alt="Hong Kong Icon">
+									</div>
+									<div class="conbox">
+									<h4><a href="index.html">Hong Kong</a></h4>
+									<div class="text">String Fintech HK Ltd</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Business Block -->
+						<div class="business-block">
+							<div class="inner-box wow fadeInLeft animated" data-wow-delay="300ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 300ms; animation-name: fadeInLeft;">
+								<div class="content">
+									<div class="icon-box">
+										<!-- <span class="icon flaticon-search-engine"></span> -->
+										<img src="assets/img/global/canada.png" alt="Canada Icon">
+									</div>
+									<div class="conbox">
+									<h4><a href="index.html">Canada</a></h4>
+									<div class="text">String Pay X Ltd</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<!-- Image Column -->
+				<div class="image-column col-lg-4 col-md-12 col-sm-12">
+					<div class="inner-column">
+						<div class="circle-layer"></div>
+						<div class="circle-layer-two"></div>
+						<div class="pattern-layer" style="background-image: url(assets/img/shape/pattern-5.png)"></div>
+						<div class="image" data-tilt="" data-tilt-max="4" style="will-change: transform; transform: perspective(300px) rotateX(0deg) rotateY(0deg);">
+							<img src="assets/img/business-1.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				
+				<!-- Right Column -->
+				<div class="right-column col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-column">
+						
+						<!-- Business Block -->
+						<div class="business-block">
+							<div class="inner-box wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
+								<div class="content">
+									<div class="icon-box">
+										<!-- <span class="icon flaticon-bar-chart"></span> -->
+										<img src="assets/img/global/singapore.png" alt="Singapore Icon">
+									</div>
+									<div class="conbox">
+									<h4><a href="index.html">Singapore</a></h4>
+									<div class="text">String Digi Tech PTE. Ltd</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Business Block -->
+						<div class="business-block">
+							<div class="inner-box wow fadeInRight animated" data-wow-delay="150ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 150ms; animation-name: fadeInRight;">
+								<div class="content">
+									<div class="icon-box">
+										<!-- <span class="icon flaticon-human-brain"></span> -->
+										<img src="assets/img/global/dubai.png" alt="Dubai Icon">
+									</div>
+									<div class="conbox">
+									<h4><a href="index.html">Dubai</a></h4>
+									<div class="text">Kling Digital Assets FZCO</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Business Block -->
+						<div class="business-block">
+							<div class="inner-box wow fadeInRight animated" data-wow-delay="300ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 300ms; animation-name: fadeInRight;">
+								<div class="content">
+									<div class="icon-box">
+										<!-- <span class="icon flaticon-notebook"></span> -->
+										<img src="assets/img/global/ras-al-khaimah.png" alt="Ras Al-Khaimah Icon">
+									</div>
+									<div class="conbox">
+									<h4><a href="index.html">Ras Al-Khaimah</a></h4>
+									<div class="text">String DePIN and AI Ltd <br> String Digital Assets Ltd</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	
+	<!--====== GO TO TOP PART START ======-->
+	<div class="go-top-area">
+		<div class="go-top-wrap">
+			<div class="go-top-btn-wrap">
+				<div class="go-top go-top-btn">
+					<i class="fal fa-angle-double-up"></i>
+					<i class="fal fa-angle-double-up"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--====== GO TO TOP PART ENDS ======-->
+	<!--====== FOOTER START ======-->
+	<footer>
+		<div class="footer-widgets pt-115">
+			<div class="container container-extra">
+				<div class="row">
+					
+					<div class="col-lg-4 col-md-6">
+						<div class="widget nav-widget">
+							<div>
+								<h4 class="widget-title">quick links</h4>
+								<ul>
+									<li><a href="#team">Team</a></li>
+									<li><a href="media.html">Media</a></li>
+									<li><a href="investor-relations.html">Investor Relation</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-6">
+						<div class="widget newsletter-widget" style="width: 80%;">
+							<div>
+								<h4 class="widget-title">address</h4>
+								<p>Plot No.114,2nd floor, TVS Avenue, Survey No.66/2, Raidurgam, Prashant Hills, Gachibowli, Nav Khalsa, Serilingampally, Ranga Reddy, Hyderabad-500008, Telangana, India</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget contact-widget">
+							<ul class="contact-info">
+								<li><span>Phone:</span>040-2939-0760</li>
+								<li><span>Email:</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e676068614e7d7a7c676069636b7a6f786b7c7d6b206d6163">[email&#160;protected]</a></li>
+							</ul>
+							<ul class="social-icons">
+								<!-- <li><a href="#"><i class="fab fa-facebook-f"></i></a></li> -->
+								<li><a href="https://x.com/StringMetaverse" target="_blank"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="https://www.instagram.com/stringmetaverse/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								<!-- <li><a href="#"><i class="fab fa-google"></i></a></li> -->
+								 <li><a href="https://www.linkedin.com/company/string-metaverse" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="copyright-area">
+			<div class="container container-extra">
+				<div class="row align-items-center">
+					<div class="col-lg-6 order-2 order-lg-1">
+						<p class="copyright-text">Copyright © 2026 String Metaverse. All rights reserved.</p>
+					</div>
+					<!-- <div class="col-lg-6 order-1 order-lg-2">
+						<div class="footer-nav text-center text-lg-right">
+							<ul>
+								<li><a href="#">Terms & Conditins</a></li>
+								<li><a href="#">Services</a></li>
+								<li><a href="#">Careers</a></li>
+							</ul>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--====== FOOTER END ======-->
+	<!--====== jquery js ======-->
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+	<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+	<!--====== Bootstrap js ======-->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<!--====== Slick js ======-->
+	<script src="assets/js/slick.min.js"></script>
+	<!--====== Isotope js ======-->
+	<script src="assets/js/isotope.pkgd.min.js"></script>
+	<!--====== Magnific Popup js ======-->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<!--====== counterup js ======-->
+	<script src="assets/js/jquery.counterup.min.js"></script>
+	<!--====== waypoints js ======-->
+	<script src="assets/js/waypoints.min.js"></script>
+	<!--====== Wow Js ======-->
+	<script src="assets/js/wow.min.js"></script>
+	<!--====== Mean Menu ======-->
+	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<!--====== OnePage Nav ======-->
+	<script src="assets/js/onepage-nav.min.js"></script>
+	<!--====== Main js ======-->
+	<script src="assets/js/main.js"></script>
+
+
+
+		<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
+			<script id="rendered-js" >
+				$('.owl-carousel').owlCarousel({
+					loop: true,
+					margin: 10,
+					dots: false,
+					nav: true,
+					mouseDrag: false,
+					autoplay: true,
+					autoplayTimeout: 5000,
+					autoplayHoverPause: true,
+					smartSpeed: 800,
+					animateIn: 'fadeInUp',
+					animateOut: 'fadeOutUp',
+					responsive: {
+						0: { items: 1 },
+						600: { items: 1 },
+						1000: { items: 1 }
+					}
+				});
+				//# sourceURL=pen.js
+			</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"968f4fe19c5a46df8b25bf0402bb84ff","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+
+</html>

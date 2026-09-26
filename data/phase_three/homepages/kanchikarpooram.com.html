@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+	 <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+   <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+	 <title>Home|Kanchi Karpooram Limited</title>
+	 <link rel="icon" type="image/png" href="images/icon.png">
+
+	<!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+	
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+	
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/logomain.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/logomain.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/logomain.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/logomain.png">
+    <link rel="apple-touch-icon-precomposed" href="images/logomain.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head><!--/head-->
+<script>
+        jQuery(document).ready(function ($) {
+            
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:600,$Opacity:0}
+            ];
+            
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 600);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+		
+		
+		
+		
+		
+    </script>
+<style>
+.dropdown-menu.columns-3 {
+        min-width: 1000px;
+    margin-left: -720px;
+}
+.multi-column-dropdown {
+    list-style: none;
+	    padding: 10px;
+}
+ul .multi-column-dropdown li a:hover {
+	background: #f4061a;
+    color: #fff;
+    padding: 5px 5px;
+	width:100%;
+} 
+.span4 img {
+    margin-right: 10px;
+}
+.span4 .img-left {
+    float: left;
+}
+.span4 .img-right {
+    float: right;
+}
+hr{
+	margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+   .item {
+            background: #fff;
+           
+            height: 239px;
+        }
+
+     @media only screen and (min-device-width: 300px) and (max-device-width: 600px) and (orientation:portrait) {
+		 .img-left{
+			margin-left:30px;
+			 
+		 }
+		 .responsives{
+			 
+			 height:400px !important;
+		 }
+		 
+	 }  
+.multi-column-dropdown a{color:#fff;}
+
+.multi-column-dropdown {
+    list-style: none;
+	    padding: 10px;
+		    line-height: 28px;
+}
+
+
+.announcement a {
+    font-weight: bold;
+}
+.announcement a:hover {
+    color: #F4061A !important;
+}
+
+</style>
+
+
+
+    <style>
+        
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('images/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 12 css */
+        /*
+        .jssora12l                  (normal)
+        .jssora12r                  (normal)
+        .jssora12l:hover            (normal mouseover)
+        .jssora12r:hover            (normal mouseover)
+        .jssora12l.jssora12ldn      (mousedown)
+        .jssora12r.jssora12rdn      (mousedown)
+        */
+        .jssora12l, .jssora12r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 30px;
+            height: 46px;
+            cursor: pointer;
+            background: url('images/a12.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora12l { background-position: -16px -37px; }
+        .jssora12r { background-position: -75px -37px; }
+        .jssora12l:hover { background-position: -136px -37px; }
+        .jssora12r:hover { background-position: -195px -37px; }
+        .jssora12l.jssora12ldn { background-position: -256px -37px; }
+        .jssora12r.jssora12rdn { background-position: -315px -37px; }
+    </style>
+    <style>
+         .doc__dnld{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin-left: -27px;
+        }
+        .top-number{
+            margin-top:14px;
+        }
+        .new____pdf{
+            color: #f50525;
+            background-color: #fff;
+            font-size: 24px;
+            padding: 5px 5px;
+            border-top-right-radius: 10px;
+        }
+        /* .doc__dnld_1 a{
+            background: #e87978!important;
+        } */
+        .tooltip-inner {
+            font-size: 15px; /* Change this value to your desired font size */
+            background-color:#fff!important;
+            color:#000!important;
+        }
+    </style>
+
+
+<body class="homepage">
+<section>
+	<header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                   <div class="col-md-6 col-xs-4">
+                        <div class="top-number"><p><i class="fa fa-phone-square"></i> +91- 44-26401914 /15 /16 /17&nbsp;<a href="mailto:info@kklgroup.in" style="padding-left:30px">info@kklgroup.in</a> &nbsp;</p>
+						
+						</div>
+                    </div>
+                    <div class="col-md-6 doc__dnld">
+                        <div class="doc__dnld_1">
+                            <a href="https://www.kanchikarpooram.com/assets/pdf/SmartODR.pdf" target="_blank" data-toggle="tooltip" data-placement="left" title="Online Dispute Resolution"><i class="fa fa-file-text new____pdf" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+        <div class="announcement">
+            <div class="container">
+                <div class="row">
+                   <div class="col-md-12">
+                        <marquee onmouseover="this.stop();" onmouseout="this.start();"><p>For our home aroma products, visit <a href="#" onClick="window.open('http://kklgroup.in/kanchiaroma/', '_blank')">kanchiaroma.in</a></p></marquee>
+                   </div>
+               </div>
+            </div>
+        </div>
+
+      	<nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://www.kanchikarpooram.com/index.php"><img src="https://www.kanchikarpooram.com//images/logomain.png" alt="logo" style="margin-left: -24px;"><h5 style="color: green;font-family: normal;font-size:32px;margin-top:-60px;margin-left: 54px;">Kanchi Karpooram Limited</h5></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="https://www.kanchikarpooram.com/index.php">Home&nbsp;<i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.kanchikarpooram.com/about-us.php">About Us&nbsp;<i class="fa fa-user" aria-hidden="true"></i></a></li>
+                       <li><a href="https://www.kanchikarpooram.com/investor_info.php">Investor Info&nbsp;<i class="fa fa-users" aria-hidden="true"></i></a></li>
+                                                <!--<li><a href="portfolio.html">Portfolio</a></li>-->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products&nbsp;<i class="fa fa-cogs" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu multi-column columns-2">
+							<div class="row">
+								<div class="col-md-12">
+									<ul class="multi-column-dropdown" style="column-count: 2;">
+									 										<li><a href="https://www.kanchikarpooram.com/products/Camphene/13">Camphene</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/Camphor/1">Camphor</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/Dipentene/2">Dipentene</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/DoubleDistilledTurpentine/5">Double Distilled Turpentine</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/EsterGum/11">Ester Gum</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/FortifiedRosin/12">Fortified Rosin</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/GumRosin/10">Gum Rosin</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/Isoborneol/14">Isoborneol</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/IsobornylAcetate/3">Isobornyl Acetate</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/PineOil/9">Pine Oil</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/PinePitch/6">Pine Pitch</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/PineTarNatural/8">Pine Tar (Natural)</a></li>
+																<li><a href="https://www.kanchikarpooram.com/products/SodiumAcetateTrihydrate/4">Sodium Acetate Trihydrate</a></li>
+																
+									</ul>
+								</div>
+								
+
+								<!--<li><a href="404.html">404</a></li>
+								<li><a href="blog-item.html">Blog Single</a></li>
+								<li><a href="shortcodes.html">Shortcodes</a></li>-->
+							</div>
+							
+							
+							</ul>
+						</li>
+                        <!--<li><a href="blog.html">Blog</a></li>--> 
+                        <li><a href="https://www.kanchikarpooram.com/contact-us.php">Contact&nbsp;<i class="fa fa-envelope" aria-hidden="true"></i></a></li>  
+                        <li><a href="https://www.kanchikarpooram.com/csr.php">CSR</a></li>                      
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        
+        
+    </header><!--/header-->
+    </section>
+
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <div  class="carousel slide" data-interval="5000" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+    				<li data-target="#main-slider" data-slide-to="1"></li>
+                    <li data-target="#main-slider" data-slide-to="2"></li>
+                    <li data-target="#main-slider" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+
+                    <div class="item active" style="background-image: url(images/slider01.jpg);height: 584px;">
+                        <div class="container">
+                            <div class="row slide-margin">
+                            
+
+                            </div>
+                        </div>
+                    </div><!--/.item-->
+
+                    <div class="item" style="background-image: url(images/slider02.jpg);height: 584px;">
+                        <div class="container">
+                            <div class="row slide-margin">
+                            
+
+                            </div>
+                        </div>
+                    </div><!--/.item-->
+
+                    <div class="item" style="background-image: url(images/camphor2.jpg);height: 584px;">
+                        <div class="container">
+                            <div class="row slide-margin">
+                            
+
+                            </div>
+                        </div>
+                    </div><!--/.item-->
+
+                    <div class="item" style="background-image: url(images/slider5.jpg);height: 584px;">
+                        <div class="container">
+                            <div class="row slide-margin">
+                            
+
+                            </div>
+                        </div>
+                    </div><!--/.item-->				
+                </div><!--/.carousel-inner-->
+            </div><!--/.carousel-->
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </section><!--/#main-slider-->
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><i style="font-size:24px;color:grey;" class="fa">&#xf062;</i></button>
+    
+    <!-- <section class="notify-sect">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="new_card_parent">
+                        <h1 class="head_new">Testing head</h1>
+                        <div class="card custom_new_card">
+                            <h4>Testing head new</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel error blanditiis 
+                                velit porro fugit perspiciatis eligendi dolorem aspernatur,
+                                consequuntur placeat earum excepturi culpa officiis totam alias
+                                magni laborum! Reiciendis, omnis.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel error blanditiis 
+                                velit porro fugit perspiciatis eligendi dolorem aspernatur,
+                                consequuntur placeat earum excepturi culpa officiis totam alias
+                                magni laborum! Reiciendis, omnis.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel error blanditiis 
+                                velit porro fugit perspiciatis eligendi dolorem aspernatur,
+                                consequuntur placeat earum excepturi culpa officiis totam alias
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+    </section> -->
+    <section id="feature" >
+        <div class="container">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="our-team-main"style="height:auto;">
+                        <div class="team-front" style="padding-bottom:2px;">
+                		    <div class="center wow fadeInDown">
+                			
+                                <h5 style="font-size:19px; color:#000;font-weight:700;">Adding value to nature's resources...</h5>
+                                <address style="text-align:justify;margin:0 0 10px;font-size:14px;padding:10px;color:#000;">Kanchi Karpooram is South India’s first & the largest producer of a variety of Terpene & Paper chemicals. Our range of products include Turpentine-based chemicals such as Camphor, Dipentine, Isobornyl Acetate & Sodium Acetate Trihydrate; Gum Rosin and its derivates such as Fortified Rosin, Ester Gum, Phenolic / Maleic Resins. We are keen to develop and expand our customer base to provide industries with stable & continuous supply of inputs from a totally new source. We are committed to product quality assurance, believe in continuous innovation and be the reliable supplier you need. <a href="about-us.php" style="color:red; font-style:italic;font-weight:550;font-size:13px;padding-left:142px;">Read More...</a></address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="center wow fadeInDown " style="width:100%;min-height:100px;">
+                        <div class="thumbnail" style="border-bottom: 5px #323233 solid;border-radius: 10px;">
+                            <div id="DemoCarousel" class="carousel slide" data-interval="5000" data-ride="carousel">
+
+                                <ol class="carousel-indicators">
+                                    <li data-target="#DemoCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#DemoCarousel" data-slide-to="1"></li>
+                                    <li data-target="#DemoCarousel" data-slide-to="2"></li>
+                    				<li data-target="#DemoCarousel" data-slide-to="3"></li>
+                    				<li data-target="#DemoCarousel" data-slide-to="4"></li>
+
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="item active responsives">
+                                        <div class="span4">
+                                            <img class="img-left" src="images/aqq.png" style="width:200px;height:auto;padding-top:20px;padding-left:15px;filter: grayscale(100%);">
+                                            <div class="content-heading">
+                                                <h5 style="font-size:18px; padding:15px;padding-top:70px;color:#444;font-weight:550;line-height:1.5;">Fully automated production line with PLC (Programmable Logic Controls) & DCS (Distributed Control Systems)</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item responsives">
+                                        <div class="span4">
+                                            <img class="img-left" src="images/a99.png" style="width:200px;height:auto;padding-top:20px;padding-left:15px; opacity:0.7; filter: grayscale(100%);">
+                                            <div class="content-heading"> <h5 style="font-size:18px; padding-top:100px;color:#444;font-weight:550;">ISO 9001:2008 CERTIFIED  </h5></div>
+                                        </div>
+                                    </div>
+                                 
+                                    <div class="item responsives">
+                                       <div class="span4">
+                                            <img class="img-left" src="images/QC.png" style="width:200px;height:auto;padding-top:15px;  filter: grayscale(100%);">
+                                            <div class="content-heading"> <h5 style="font-size:18px; padding-top:100px;color:#444;font-weight:550;line-height:1.5;">Fully Equipped Quality Control Lab </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item responsives">
+                                        <div class="span4">
+                                              <img class="img-left" src="images/pp.png" style="width:200px;height:auto;padding-left:12px;opacity:0.7;  filter: grayscale(100%);">
+                                              <div class="content-heading"><h5 style="font-size:19px; padding-top:80px;color:#444;font-weight:550;line-height:1.5;">Round the clock operations supported by qualified engineers</h5></div>
+                                        </div>
+                                    </div>
+                        			<div class="item responsives">
+                                        <div class="span4">
+                                              <img class="img-left" src="images/qq.png" style="width:200px;height:auto;padding-top:10px;  filter: grayscale(100%);">
+                                              <div class="content-heading"><h5 style="font-size:19px; padding-top:70px;color:#444;font-weight:550;line-height:1.5;">Consistently Rated "Excellent" by one of the largest tyre manafactures of India </h5></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control left" href="#DemoCarousel" data-slide="prev" style="background:none;">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="carousel-control right" href="#DemoCarousel" data-slide="next" style="background:none;">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="prjct_detailed_section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12" style= "background: #e87373;opacity:0.95;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                <div class="center wow fadeInDown">
+                                    <h2 style="color:aliceblue;margin-top:1%;">Representative Customers</h2>
+                                </div> 
+                                </div>
+                                <div class="col-lg-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                    <div class="our-team-main">
+                                        <div class="team-front">
+                                            <img src="images/s2.jpg" class="img-rounded">
+                                            <h2 style="font-family: serif;font-size:28px;color:red;">Paints</h2>
+                                            <p style="font-weight:700; text-align:center;color:black;font-size:16.5px;font-family: 'Open Sans', sans-serif;">Largest paint manufacturers in India</p><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/.col-md-4-->
+                                <div class="col-lg-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms"> 
+                                    <div class="our-team-main">
+                                        <div class="team-front">
+                                            <img src="images/s1.jpg" class="img-rounded">
+                                            <h2 style="font-family: serif;font-size:28px;color:red;">Tyres</h2>
+                                            <p style="font-weight:700; text-align:center;color:black;font-size:16.5px;font-family: 'Open Sans', sans-serif;">Leading tyre manufacturers in India </p><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                    <div class="our-team-main">
+                                        <div class="team-front">
+                                        <img src="images/s3.jpg" class="img-rounded">
+                                        <h2 style="font-family: serif;font-size:28px;color:red;">Paper</h2>
+                                        <p style="font-weight:700; text-align:center;color:black;font-size:16px;font-family: 'Open Sans', sans-serif;">Craft paper manufacturers in India</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                    <div class="our-team-main">
+                                        <div class="team-front">
+                                            <img src="images/s4.jpeg" class="img-rounded">
+                                            <h2 style="font-family: serif;font-size:28px;color:red;">Fragrance</h2>
+                                            <p style="font-weight:700; text-align:center;color:black;font-size:16.5px;font-family: 'Open Sans', sans-serif;">Global flavours & fragrance manufacturer</p><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms"> 
+                                <div class="our-team-main">
+                                    <div class="team-front">
+                                        <img src="images/s8.jpg" class="img-rounded">
+                                            <h2 style="font-family: serif;font-size:28px;color:red;">Camphor</h2>
+                                        <p style="font-weight:700; text-align:center;color:black;font-size:16.5px;font-family: 'Open Sans', sans-serif;">Manufacturers Of camphor tablets across India</p><br>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                    <div class="our-team-main">
+                                        <div class="team-front">
+                                        <img src="images/s6.jpg" class="img-rounded">
+                                            <h2 style="font-family: serif;font-size:28px; color:red;">Rubber</h2>
+                                        <center>  <p style="font-weight:700; text-align:center;color:black;font-size:16.5px;font-family: 'Open Sans', sans-serif;">Exports to European trading houses</p></center><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/.services-->
+                        </div><!--/.row-->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+    <section id="bottom">
+	
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+		<div class="center wow fadeInDown">
+                <h2 style="color:#fff;">Our Products</h2>
+        </div> 
+            <div class="row" style="margin-right:0px;margin-left:0px;">
+				                <div class="col-md-4 col-sm-6">
+				
+                    <div class="widget">
+                        
+                        <ul>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/Camphene/13" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Camphene</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/Camphor/1" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Camphor</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/Dipentene/2" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Dipentene</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/DoubleDistilledTurpentine/5" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Double Distilled Turpentine</a></li>
+						</ul></div></div><div class="col-md-4 col-sm-6"><div class="widget">							
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/EsterGum/11" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Ester Gum</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/FortifiedRosin/12" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Fortified Rosin</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/GumRosin/10" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Gum Rosin</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/Isoborneol/14" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Isoborneol</a></li>
+						</ul></div></div><div class="col-md-4 col-sm-6"><div class="widget">							
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/IsobornylAcetate/3" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Isobornyl Acetate</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/PineOil/9" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Pine Oil</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/PinePitch/6" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Pine Pitch</a></li>
+													
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/PineTarNatural/8" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Pine Tar (Natural)</a></li>
+						</ul></div></div><div class="col-md-4 col-sm-6"><div class="widget">							
+										<li style="padding:5px 10px;list-style-type:none;"><a href="https://www.kanchikarpooram.com/products/SodiumAcetateTrihydrate/4" style="color: #ffffff;font-size: 15px;"><i  class="fa fa-link"  aria-hidden="true" style="color:red;"></i>Sodium Acetate Trihydrate</a></li>
+																
+                          
+								
+								
+								
+								 
+								 
+								 
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+
+            </div>
+        </div>
+    </section><!--/#bottom-->
+	
+	
+	<div id="csrModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="padding:0px !important">
+                    <button type="button" class="csr_close" data-dismiss="modal"><span>&times;</span></button>
+                    
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="images/csr04.jpg" class="img-responsive" alt="CSR Image3">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="images/csr03.jpg" class="img-responsive" alt="CSR Image3">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="images/csr02.jpg" class="img-responsive" alt="CSR Image3">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="images/csr01.jpg" class="img-responsive" alt="CSR Image3">
+                    </div>
+
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <!-- Caption text -->
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+
+                    <!-- Thumbnail image controls -->
+                    <div style="display: table-row;">
+                        <div style="display: table-cell;">
+                            <img src="images/csr04.jpg" class="img-responsive demo" onclick="currentSlide(1)"  alt="CSR Images">
+                        </div>
+
+                        <div style="display: table-cell;">
+                            <img src="images/csr03.jpg" class="img-responsive demo" onclick="currentSlide(2)"  alt="CSR Images">
+                        </div>
+
+                        <div style="display: table-cell;">
+                            <img src="images/csr02.jpg" class="img-responsive demo" onclick="currentSlide(3)"  alt="CSR Images">
+                        </div>
+
+                        <div style="display: table-cell;">
+                            <img src="images/csr01.jpg" class="img-responsive demo" onclick="currentSlide(4)"  alt="CSR Images">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+   <footer id="footer" class="midnight-blue" style=" border-top: 5px solid #c52d2f;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6" style="font-size: 10px;">
+                   ©&nbsp;2016&nbsp;Kanchi Karpooram Limited.
+ All Rights Reserved. Designed by  <a target="_blank" href="http://yoursefficiently.com/"><img src="https://www.kanchikarpooram.com/images/y.png"></a>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="https://www.kanchikarpooram.com/index.php">Home</a></li>
+                        <li><a href="https://www.kanchikarpooram.com/about-us.php">About Us</a></li>
+                         <li><a href="https://www.kanchikarpooram.com/investor_info.php">Investor Info</a></li>
+                        <li><a href="https://www.kanchikarpooram.com/contact-us.php">Contact</a></li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+   	
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
+</html>
+
+
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+                      <script>
+        jssor_1_slider_init = function() {
+            
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:1200,$Opacity:2}
+            ];
+            
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 600);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            //responsive code end
+        };
+    </script>
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+<script>
+    $(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>

@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta Data -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Anya Polytech & Fertilizers</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="https://www.apfl.in/assets/media/favicon.png">
+
+	<!-- Dependency Styles -->
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/animate-css/animate.min.css" type="text/css">
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/fontawesome/css/all.min.css" type="text/css">
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/flaticon/flaticon.css" type="text/css">
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/nivo-slider/css/nivo-slider.css" type="text/css">
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/meanmenu/css/meanmenu.min.css" type="text/css">
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/magnific-popup/css/magnific-popup.css" type="text/css">
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/owl.carousel/css/owl.carousel.min.css" type="text/css">
+	<link rel="stylesheet" href="https://www.apfl.in/assets/dependencies/owl.carousel/css/owl.theme.default.min.css" type="text/css">
+
+	<!-- Site Stylesheet -->
+	<link rel="stylesheet" href="https://www.apfl.in/assets/css/app.css" type="text/css">
+
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Hind:400,500,600,700&amp;display=swap" rel="stylesheet">
+	 <style>
+    .fxt-team-box-layout1 .item-content .item-subtitle {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .fxt-team-box-layout1 .item-content .item-title {
+        font-size:14px;
+        line-height:14px;
+    }
+    .fxt-team-box-layout1 .item-content {
+        padding: 15px 5px 0;
+        width: 92%;
+        min-height: 65px;
+    }
+    .item-social{
+        display:none;
+    }
+    .anya-carousel{
+        display:flex;
+        gap:10px;
+        justify-content:space-evenly;
+    }
+    #banner-section {
+        transition: background-image 1s ease-in-out; /* Smooth transition for background image */
+    }
+    @media (max-width: 976px) {
+        .anya-carousel{
+            flex-wrap: wrap;
+        }
+        .fxt-team-box-layout1{
+            flex: 0 32%;
+        }
+    }
+    @media (max-width: 768px) {
+        .anya-carousel{
+            flex-wrap: wrap;
+        }
+        .fxt-team-box-layout1{
+            flex: 0 48%;
+        }
+    }
+</style>
+    <style>
+        .breadcrumbs-area{
+            margin-top:2rem;
+        }
+        .topbar-layout1 {
+            padding: 10px 0 55px;
+        }
+        .sticky-menu
+        {
+          -webkit-transition: var(--transition2);
+          -ms-transition: var(--transition2);
+          -o-transition: var(--transition2);
+          transition: var(--transition2);
+        }
+        
+        nav ul li,
+        .team-social,
+        .shop-img > a
+        {
+          -webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+          -webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+          -moz-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+          -o-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+          transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+          -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+          -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+          -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+          -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+          position:relative;
+        }
+        
+        a i,
+        button i {
+          -webkit-transition: none;
+          -ms-transition: none;
+          -o-transition: none;
+          transition: none;
+        }
+        
+        /*=== Border Radius ===*/
+        .brd-rd20
+        {
+          -webkit-border-radius: 1.25rem;
+          border-radius: 1.25rem;
+        }
+        
+        .brd-rd10
+        {
+          -webkit-border-radius: 0.625rem;
+          border-radius: 0.625rem;
+        }
+        
+        .brd-rd3
+        {
+          -webkit-border-radius: 0.1875rem;
+          border-radius: 0.1875rem;
+        }
+        
+        .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {width: 100%;}
+        .dropdown-menu {
+          border: 0;
+          -webkit-box-shadow: 0 0 10px rgba(0,0,0,.15);
+          -ms-box-shadow: 0 0 10px rgba(0,0,0,.15);
+          -o-box-shadow: 0 0 10px rgba(0,0,0,.15);
+          box-shadow: 0 0 10px rgba(0,0,0,.15);
+          padding: 0;
+        }
+        .bootstrap-select .dropdown-menu li {line-height: initial;}
+        .bootstrap-select .dropdown-menu li:nth-child(2n) {background-color: #f5f5f5;}
+        .bootstrap-select .dropdown-menu li a {padding: 6px 1.5rem;}
+        .bootstrap-select .dropdown-menu li a.dropdown-item.active, 
+        .bootstrap-select .dropdown-menu li a.dropdown-item:active,
+        .bootstrap-select .dropdown-menu li a:hover,
+        .bootstrap-select .dropdown-menu li a:focus {color: #fff !important;}
+        
+        /**/
+        .menu-wrap {
+          margin: -1.9375rem 0;
+          z-index: 9999;
+          position: relative;
+        }
+        .thm-bg {background:var(--secondary)}
+        nav {
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          padding-left: 1.25rem;
+          position:relative;
+        }
+        
+        /*=== Dropdown ===*/
+        nav > div > ul > li:hover a {
+            color:#fff;
+        }
+        nav > div > ul > li.menu-item-has-children > a {padding-right: 1.1rem;}
+        nav > div > ul > li.menu-item-has-children > a::before {
+          content: "\f107";
+          font-family: "Font Awesome 5 Free";
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: inherit;
+          font-weight: 700;
+        }
+        nav > div ul ul {
+          display: none;
+          position: absolute;
+          left: -1rem;
+          top: 100%;
+          min-width: 17.5rem;
+          line-height: initial;
+          opacity: 0;
+          visibility: hidden;
+          -webkit-box-shadow: 0 0 1.875rem rgba(0,0,0,.08);
+          -ms-box-shadow: 0 0 1.875rem rgba(0,0,0,.08);
+          -o-box-shadow: 0 0 1.875rem rgba(0,0,0,.08);
+          box-shadow: 0 0 1.875rem rgba(0,0,0,.08);
+        }
+        nav > div ul ul ul {
+          top: 0;
+          left: 100%;
+        }
+        nav > div ul ul ul:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 20%;
+          width: 0.375rem;
+          z-index: 1;
+        }
+        nav > div ul ul li {
+          font-size: 0.500rem;
+          font-weight: 400;
+          margin-top: 20px;
+          opacity: 0;
+          visibility: hidden;
+          position:relative;
+        }
+        nav > div ul ul li a {
+          display: block;
+          background-color: #fff;
+          padding: 4px 8px;
+          position: relative;
+        }
+        nav > div ul ul li a:before {
+          content: "\f061";
+          font-family: "Font Awesome 5 Free";
+          background-color: transparent;
+          font-weight: 900;
+          right: auto;
+          left: 1.25rem;
+          top: 13px;
+          position: absolute;
+          opacity: 0;
+          display: none;
+        }
+        nav > div ul ul li:hover > a, 
+        nav > div ul ul li a:focus {
+          background-color: #f7f7f7;
+          /* padding-left: 3.125rem; */
+        }
+        nav > div ul ul li:hover > a:before, 
+        nav > div ul ul li a:focus:before {
+          left: 2rem;
+          opacity: 1;
+        }
+        nav > div ul ul li + li {border-top: 0.0625rem solid #ededed;}
+        nav > div ul li.menu-item-has-children:hover > ul > li {
+          margin-top: 0;
+          opacity: 1;
+          visibility: visible;
+        }
+        nav > div ul ul ul li {margin: 0 0 0 10px;}
+        nav > div ul ul li.menu-item-has-children:hover > ul > li {margin-left: 0;}
+        nav > div ul li.menu-item-has-children:hover > ul {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+        nav > div ul li.menu-item-has-children:hover > ul:before {bottom: 0;}
+        nav > div > ul > li {
+            color: #fff;
+            margin-right: 1rem;
+            line-height: 3.875rem;
+            font-size: 0.9375rem;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        nav > div > ul > li a{
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        nav > div ul li.menu-item-has-children ul li a {
+            color: #474747;
+        }
+        .rspn-hdr {
+            display: none;
+            width: 100%;
+            position: relative;
+            z-index: 999;
+        }
+        @media (max-width: 976px) {
+            .rspn-hdr {
+              display: block;
+              width: 100%;
+              position: relative;
+              z-index: 999;
+            }
+            .rspn-mdbr {
+                background-color: #121a37;
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            .rspn-scil {
+                display: inline-flex;
+            }
+            /*===== Responsive Header =====*/
+            
+            .rspn-mdbr {
+              background-color: #252a2c;
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              flex-wrap: wrap;
+            }
+            .rspn-scil {display: inline-flex;}
+            .rspn-scil > a {
+              background-color: rgba(255,255,255,.05);
+              height: 2.5rem;
+              width: 2.5rem;
+              line-height: 2.5rem;
+              text-align: center;
+              color: #fff;
+            }
+            .rspn-scil > a:not(:first-child) {margin-left: 1px;}
+            .rspn-srch {
+              height: 2.5rem;
+              position: relative;
+              flex: 0 0 calc(100% - 10.1875rem);
+              max-width: calc(100% - 10.1875rem);
+            }
+            .rspn-srch > input {
+              background-color: transparent;
+              border: 0 none;
+              color: #7e7e7e;
+              font-size: .75rem;
+              height: 100%;
+              padding: 0 3.125rem 0 5%;
+              width: 100%;
+            }
+            .rspn-srch > input:focus {font-style: normal;}
+            .rspn-srch > button {
+              background-color: transparent;
+              border: 0;
+              color: #999;
+              font-size: .75rem;
+              height: 100%;
+              position: absolute;
+              right: 10px;
+            }
+            .lg-mn {
+              padding: 1.125rem 5rem 1.125rem .9375rem;
+              position: relative;
+              width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .rspn-cnt {display: inline-block;}
+            .rspn-cnt > span {
+              color: #777;
+              display: inline-block;
+              margin: 5px .5rem;
+            }
+            .rspn-cnt > span i {margin-right: .5rem;}
+            .rspn-mnu-btn {
+              background-color: #0c0c0c;
+              color: #fff;
+              cursor: pointer;
+              font-size: 0.875rem;
+              height: 2.5rem;
+              line-height: 2.5rem;
+              position: absolute;
+              right: 1.25rem;
+              text-align: center;
+              top: 50%;
+              width: 2.5rem;
+              margin-top: -1.25rem;
+            }
+            /*=== Responsive Menu ===*/
+            .rsnp-mnu {
+              background-color: #0c0c0c;
+              bottom: 0;
+              opacity: 0;
+              padding: 5.3125rem 2.5rem 3.125rem;
+              position: fixed;
+              right: -21.875rem;
+              top: 0;
+              visibility: hidden;
+              z-index: 99999;
+              max-width: 21.875rem;
+              width: 100%;
+            }
+            .rsnp-mnu.slidein {
+              opacity: 1;
+              right: 0;
+              visibility: visible;
+            }
+            .rspn-mnu-cls {
+              background-color: #303030;
+              color: #fff;
+              cursor: pointer;
+              font-size: 0.875rem;
+              height: 2.5rem;
+              line-height: 2.5rem;
+              position: absolute;
+              right: .75rem;
+              text-align: center;
+              top: .75rem;
+              width: 2.5rem;
+            }
+            .rsnp-mnu > ul {
+              display: inline-block;
+              list-style: outside none none;
+              margin-bottom: 0;
+              padding-left: 0;
+              overflow-y: auto !important;
+              width: 100% !important;
+            }
+            .rsnp-mnu > ul > li {
+              color: #fff;
+              font-size: 1rem;
+              font-weight: 600;
+              position: relative;
+              text-transform: uppercase;
+              width: 100%;
+            }
+            .rsnp-mnu > ul > li a {
+              color: inherit;
+              display: block;
+                text-transform: uppercase;
+            }
+            .rsnp-mnu > ul > li:not(:first-child) {margin-top: 1.25rem;}
+            .rsnp-mnu > ul ul {
+              display: none;
+              list-style: outside none none;
+              margin-bottom: 0;
+              padding-left: 1.25rem;
+              opacity: 1;
+              position: static;
+              visibility: visible;
+            }
+            .rsnp-mnu ul li.menu-item-has-children.active > a {margin-bottom: 15px;}
+            .rsnp-mnu > ul li.menu-item-has-children > a::before {
+              content: "\f107";
+              font-family: "Font Awesome 5 Free";
+              position: absolute;
+              right: 0;
+              top: 0;
+              color: inherit;
+              font-weight: 900;
+            }
+            .rsnp-mnu > ul ul > li {
+              color: #a4a4a4;
+              font-size: 0.9375rem;
+              position: relative;
+              text-transform: initial;
+              width: 100%;
+              font-weight: 400;
+            }
+            .rsnp-mnu > ul ul > li:not(:first-child) {margin-top: .75rem;}
+            .rsnp-mnu > ul ul {
+                display: none;
+                list-style: outside none none;
+                margin-bottom: 0;
+                padding-left: 1.25rem;
+                opacity: 1;
+                position: static;
+                visibility: visible;
+                overflow: hidden;
+                overflow-y: scroll;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+	<div id="" class="">
+		<a href="#main_content" data-type="section-switch" class="return-to-top">
+			<i class="fas fa-angle-double-up"></i>
+		</a>
+
+		<div id="main_content">
+            
+			<header class="sticky-fixed-after">
+			     <div class="topbar w-100">
+                    <div class="container">
+                        <div class="topbar-inner d-flex flex-wrap justify-content-between align-items-center w-100">
+                            <ul class="topbar-info-list mb-0 list-unstyled d-inline-flex">
+                                <li><i class="thm-clr flaticon-phone-call"></i>0120-4159498</li>
+                            </ul>
+                            <ul class="topbar-info-list mb-0 list-unstyled d-inline-flex">
+                                <li><i class="thm-clr far fa-envelope-open"></i><a href="mailto:contact@apfl.in" title="Email">contact@apfl.in</a></li>
+                            </ul>
+                            <ul class="topbar-links mb-0 list-unstyled d-inline-flex">
+                                <li><i class="thm-clr far fa-envelope-open"></i><span>Email for Investors : </span><a href="mailto:secretarial@apfl.in" title="Email">secretarial@apfl.in</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+				<div id="topbar-wrap">
+					<div class="topbar-layout1">
+						<div class="container">
+							<div class="row no-gutters d-flex align-items-center">
+								<div class="col-lg-3 d-flex justify-content-start">
+									<div class="temp-logo">
+										<a href="https://www.apfl.in" class="default-logo" id="temp-logo">
+                                            <img src="https://www.apfl.in/assets/media/logo.png" alt="logo" class="img-fluid">
+                                        </a>
+									</div>
+								</div>
+								<div class="col-lg-9 d-flex justify-content-end">
+									<ul class="header-address-info">
+										<li class="single-item">
+											<div class="item-icon">
+												<i class="flaticon-location-pin"></i>
+											</div>
+											<div class="item-content">
+												<div class="item-title">Address:</div>
+												<div class="item-sub-title"><b>Regd. Office:</b> Level S2, Tower "E", International Trade Tower, Nehru Place, New Delhi-110019<br><b>Corp. Office:</b> B-243, Sector 26, Noida-201301,U.P.</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="sticky-placeholder"></div>
+				<div class="menu-wrap">
+                    <div class="container">
+                        <nav class="d-inline-flex thm-bg justify-content-between align-items-center w-100">
+                            <div class="header-left">
+                                <ul class="mb-0 list-unstyled d-inline-flex">
+                                    <li>
+                                        <a href="https://www.apfl.in">HOME</a>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">ABOUT</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="https://www.apfl.in/about-us">ABOUT APFL</a></li>
+											<li><a href="https://www.apfl.in/organisation-structure">ORGANISATION STRUCTURE</a></li>
+											<li><a href="https://www.apfl.in/management-team">MANAGEMENT TEAM</a></li>
+											<li><a href="https://www.apfl.in/awards-and-certification">AWARDS AND CERTIFICATION</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="https://www.apfl.in/infrastructure" title="">INFRASTRUCTURE</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="https://www.apfl.in/bag-manufacturing-unit">BAG MANUFACTURING UNIT</a></li>
+											<li><a href="https://www.apfl.in/fertilizers-unit-organic">FERTILIZERS UNIT ORGANIC</a></li>
+											<li><a href="https://www.apfl.in/fertilizers-unit-inorganic">FERTILIZERS UNIT INORGANIC</a></li>
+											<li><a href="https://www.apfl.in/cattle-feed-unit">CATTLE FEED UNIT</a></li>
+											<li><a href="https://www.apfl.in/apfl-retail-bussiness">APFL RETAIL BUSSINESS</a></li>
+                                        </ul>
+                                    </li>
+									<li class="menu-item-has-children">
+										<a href="https://www.apfl.in/products">PRODUCTS</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/product/hdpe-bags">HDPE BAGS</a></li>
+											<li><a href="https://www.apfl.in/product/pp-bopp-bags">PP / BOPP BAGS</a></li>
+											<li><a href="https://www.apfl.in/product/fertilizer-inorganic">FERTILIZER INORGANIC</a></li>
+											<li><a href="https://www.apfl.in/product/cattle-feed">CATTLE FEED</a></li>
+											<li><a href="https://www.apfl.in/product/pphdpe-laminated-unlaminated-rolls">PP/HDPE LAMINATED/ UNLAMINATED ROLLS</a></li>
+										</ul>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="https://www.apfl.in/deficiency">DEFICIENCY</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/zinc-deficiency">ZINC DEFICIENCY</a></li>
+											<li><a href="https://www.apfl.in/micro-nutrient-deficiency">MICRO NUTRIENT DEFICIENCY</a></li>
+											<li><a href="https://www.apfl.in/potash-deficiency">POTASH DEFICIENCY</a></li>
+											<li><a href="https://www.apfl.in/phosphorus-deficiency">PHOSPHORUS DEFICIENCY</a></li>
+											
+										</ul>
+									</li>
+									<li>
+										<a href="https://www.apfl.in/clients">CLIENTS</a>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="#">MEDIA</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/csr">CSR</a></li>
+											<li><a href="https://www.apfl.in/photo-album">PHOTO ALBUM</a></li>
+											<li><a href="https://www.apfl.in/videos">VIDEOS</a></li>
+										</ul>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="#">INVESTORS</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/investor/corporate-information">Corporate Information</a></li>
+    <li><a href="https://www.apfl.in/investor/board-committees">Board Committees</a></li>
+    <li><a href="https://www.apfl.in/investor/kmp-authorised-to-determine-materiality-of-events">KMP Authorised to Determine Materiality of Events </a></li>
+    <li><a href="https://www.apfl.in/investor/financial-results">Financial Results</a></li>
+    <li><a href="https://www.apfl.in/investor/shareholding-pattern">Shareholding Pattern</a></li>
+    <li><a href="https://www.apfl.in/investor/annual-report">Annual Report</a></li>
+    <li><a href="https://www.apfl.in/investor/board-meeting">Board Meeting</a></li>
+    <li><a href="https://www.apfl.in/investor/agm">AGM</a></li>
+    <li><a href="https://www.apfl.in/investor/financials-of-group-company">Financials of Group Company</a></li>
+    <li><a href="https://www.apfl.in/investor/financials-of-subsidiary-companies">Financials of subsidiary Companies </a></li>
+    <li><a href="https://www.apfl.in/investor/investor-or-analyst-call-updates">Investor/Analyst Call Updates</a></li>
+    <li><a href="https://www.apfl.in/investor/composition-of-board-committees">Composition of Board &amp; Committees</a></li>
+    <li><a href="https://www.apfl.in/investor/shareholders-meeting">Shareholders Meeting</a></li>
+    <li><a href="https://www.apfl.in/investor/corporate-governance">Corporate Governance</a></li>
+    <li><a href="https://www.apfl.in/investor/red-herring-prospectus">Red Herring Prospectus</a></li>
+    <li><a href="https://www.apfl.in/investor/prospectus">Prospectus</a></li>
+<li><a href="https://www.apfl.in/policy-and-codes">POLICIES AND CODES</a></li>
+										</ul>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="https://www.apfl.in/career">CAREER</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/vacancies">VACANCIES</a></li>
+										</ul>
+									</li>
+                                    <li><a href="https://www.apfl.in/contact">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div><!-- Menu Wrap -->
+                
+			</header>
+			<!--Mobile Menu-->
+                <div class="rspn-hdr">
+                <div class="rspn-mdbr">
+                    <div class="rspn-scil">
+                        <a href="javascript:void(0);" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="javascript:void(0);" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="javascript:void(0);" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0);" title="Google Plus" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                    </div>
+                    <div class="rspn-cnt">
+                        <span class="text-white"><i class="thm-clr far fa-envelope-open"></i><a href="javascript:void(0);"  class="text-white">secretarial@apfl.in</a></span>
+                    </div>
+                </div>
+                <div class="lg-mn">
+                    <div class="logo">
+                        <a href="https://www.apfl.in" title="Home">
+                            <img style="height:100px" src="https://www.apfl.in/assets/media/logo.png" alt="logo" >
+                        </a>
+                    </div>
+                    <span class="rspn-mnu-btn"><i class="fas fa-list-ul"></i></span>
+                </div>
+                <div class="rsnp-mnu">
+                    <span class="rspn-mnu-cls"><i class="fas fa-times"></i></span>
+                    <ul class="mb-0 list-unstyled w-100">
+                                    <li>
+                                        <a href="https://www.apfl.in">HOME</a>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);" title="">ABOUT</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="https://www.apfl.in/about-us">ABOUT APFL</a></li>
+											<li><a href="https://www.apfl.in/organisation-structure">ORGANISATION STRUCTURE</a></li>
+											<li><a href="https://www.apfl.in/management-team">MANAGEMENT TEAM</a></li>
+											<li><a href="https://www.apfl.in/awards-and-certification">AWARDS AND CERTIFICATION</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="https://www.apfl.in/infrastructure" title="">INFRASTRUCTURE</a>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li><a href="https://www.apfl.in/bag-manufacturing-unit">BAG MANUFACTURING UNIT</a></li>
+											<li><a href="https://www.apfl.in/fertilizers-unit-organic">FERTILIZERS UNIT ORGANIC</a></li>
+											<li><a href="https://www.apfl.in/fertilizers-unit-inorganic">FERTILIZERS UNIT INORGANIC</a></li>
+											<li><a href="https://www.apfl.in/cattle-feed-unit">CATTLE FEED UNIT</a></li>
+											<li><a href="https://www.apfl.in/apfl-retail-bussiness">APFL RETAIL BUSSINESS</a></li>
+                                        </ul>
+                                    </li>
+									<li class="menu-item-has-children">
+										<a href="https://www.apfl.in/products">PRODUCTS</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/product/hdpe-bags">HDPE BAGS</a></li>
+											<li><a href="https://www.apfl.in/product/pp-bopp-bags">PP / BOPP BAGS</a></li>
+											<li><a href="https://www.apfl.in/product/fertilizer-inorganic">FERTILIZER INORGANIC</a></li>
+											<li><a href="https://www.apfl.in/product/cattle-feed">CATTLE FEED</a></li>
+											<li><a href="https://www.apfl.in/product/pphdpe-laminated-unlaminated-rolls">PP/HDPE LAMINATED/ UNLAMINATED ROLLS</a></li>
+										</ul>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="https://www.apfl.in/deficiency">DEFICIENCY</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/zinc-deficiency">ZINC DEFICIENCY</a></li>
+											<li><a href="https://www.apfl.in/micro-nutrient-deficiency">MICRO NUTRIENT DEFICIENCY</a></li>
+											<li><a href="https://www.apfl.in/potash-deficiency">POTASH DEFICIENCY</a></li>
+											<li><a href="https://www.apfl.in/phosphorus-deficiency">PHOSPHORUS DEFICIENCY</a></li>
+											
+										</ul>
+									</li>
+									<li>
+										<a href="https://www.apfl.in/clients">CLIENTS</a>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="#">MEDIA</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/csr">CSR</a></li>
+											<li><a href="https://www.apfl.in/photo-album">PHOTO ALBUM</a></li>
+											<li><a href="https://www.apfl.in/videos">VIDEOS</a></li>
+										</ul>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="#">INVESTORS</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/investor/corporate-information">Corporate Information</a></li>
+    <li><a href="https://www.apfl.in/investor/board-committees">Board Committees</a></li>
+    <li><a href="https://www.apfl.in/investor/kmp-authorised-to-determine-materiality-of-events">KMP Authorised to Determine Materiality of Events </a></li>
+    <li><a href="https://www.apfl.in/investor/financial-results">Financial Results</a></li>
+    <li><a href="https://www.apfl.in/investor/shareholding-pattern">Shareholding Pattern</a></li>
+    <li><a href="https://www.apfl.in/investor/annual-report">Annual Report</a></li>
+    <li><a href="https://www.apfl.in/investor/board-meeting">Board Meeting</a></li>
+    <li><a href="https://www.apfl.in/investor/agm">AGM</a></li>
+    <li><a href="https://www.apfl.in/investor/financials-of-group-company">Financials of Group Company</a></li>
+    <li><a href="https://www.apfl.in/investor/financials-of-subsidiary-companies">Financials of subsidiary Companies </a></li>
+    <li><a href="https://www.apfl.in/investor/investor-or-analyst-call-updates">Investor/Analyst Call Updates</a></li>
+    <li><a href="https://www.apfl.in/investor/composition-of-board-committees">Composition of Board &amp; Committees</a></li>
+    <li><a href="https://www.apfl.in/investor/shareholders-meeting">Shareholders Meeting</a></li>
+    <li><a href="https://www.apfl.in/investor/corporate-governance">Corporate Governance</a></li>
+    <li><a href="https://www.apfl.in/investor/red-herring-prospectus">Red Herring Prospectus</a></li>
+    <li><a href="https://www.apfl.in/investor/prospectus">Prospectus</a></li>
+<li><a href="https://www.apfl.in/policy-and-codes">POLICIES AND CODES</a></li>
+										</ul>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="https://www.apfl.in/career">CAREER</a>
+										<ul class="dropdown-menu-col-1">
+											<li><a href="https://www.apfl.in/vacancies">VACANCIES</a></li>
+										</ul>
+									</li>
+                                    <li><a href="https://www.apfl.in/contact">Contact Us</a></li>
+                    </ul>
+                </div><!-- Responsive Menu -->
+            </div><!-- Responsive Header -->
+			<!--=              Navbar End           =-->
+						<!--=         Main Banner Start         =-->
+			<section class="fxt-main-banner-layout1 bg-position-center bg-no-repeat bg-size-cover" style="background-image: url(https://www.apfl.in/assets/media/banner/npk.jpg" id="banner-section">
+				<div class="container">
+					<div class="item-content mt-4">
+						<div class="banner-sub-text">OUR STORY /</div>
+						<h1 class="banner-big-text">- PROLOGUE</h1>
+						<p class="banner-paragraph">Beyond the pale of commerce, Anya Polytech explores the expansive horizon of sustainable value growth strategy through advanced crop nutrition science. Striving beyond the mainstream curve, we envisage food security on a national scale. With this goal, we are consistently making landmark strides to amplify healthy victuals through environmentally-sensitive practices and products. At Anya Polytech, we cater to the needs of the present without compromising with the potential for the future.</p>
+						<div class="banner-btns">
+							<a href="https://www.apfl.in/about-us" class="item-btn btn-fill btn-light">LEARN MORE</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!--=         About Area Start          =-->
+			<section class="section-padding-md">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="fxt-about-box-layot1">
+								<div class="section-heading heading-layout1">
+									<div class="heading-bar">
+										<div class="item-subtitle">WELCOME TO</div>
+										<h2 class="item-title">Anya Polytech & Fertilizers.</h2>
+									</div>
+								</div>
+								<p>Conceived at the turn of the decade, Anya Polytech Pvt Ltd was registered on 18th January 2011 under the Company Act, 1956.</p>
+                                <p>Today, Anya is recognized as India’s premier fertilizer & Bag Manufacturing company along with being a provider of innovative environmental solutions. Putting forth a staggering capacity of over 750 lakh bags (75 Million bags) per annum, APFL is one of the most renowned players in this domain.</p>
+							    <p>Back in time, in January of 2013, the commercial production had begun and today, APFL proudly delivers 100% of its existing capacity utilization and churns out a turnover beyond Rs. 100 crores, from bags & fertilizers (Zinc Sulphate Division).</p>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="fxt-about-box-layout2">
+								<img src="https://www.apfl.in/assets/media/about/Fertilizers-Inorganic.jpg" alt="about">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--=====================================-->
+			<!--=          About Area End           =-->
+			<!--=====================================-->
+			<!--=====================================-->
+			<!--=       Service Area Start          =-->
+			<!--=====================================-->
+			<section class="section2-padding-bottom-md-equal">
+				<div class="container">
+					<div class="fxt-service-box-layout1">
+						<ul>
+							<li>
+								<div class="item-icon">
+									<i class="thm-clr fas fa-medal"></i>
+								</div>
+								<div class="item-subtitle">Quality Products</div>
+								</li>
+							<li>
+								<div class="item-icon">
+									<i class="thm-clr fas fa-users"></i>
+								</div>
+								<div class="item-subtitle">Highly Skilled Workforce</div>
+								</li>
+							<li>
+								<div class="item-icon">
+									<i class="thm-clr fas fa-tasks"></i>
+								</div>
+								<div class="item-subtitle">Comprehensive Testing Facilities</div>
+								</li>
+							<li>
+								<div class="item-icon">
+									<i class="thm-clr fas fa-rupee-sign"></i>
+								</div>
+								<div class="item-subtitle">Competitive Prices</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="section-padding-md bg-no-repeat fxt-inner-banner-wrap-layout1 bg-size-cover bg-attachment-fixed" data-bg-image="https://www.apfl.in/assets/media/banner/banner7.jpg">
+				<div class="container">
+					<div class="fxt-inner-banner-box-layout1">
+						<div class="item-content">
+							<div class="item-subtitle">12+ YEARS OF EXPERIENCE</div>
+							<div class="item-subtitle">500+ COMPLETED ASSIGNMENTS</div>
+							<div class="item-subtitle">120+ PERSONNEL EMPLOYED</div>
+						</div>
+						<a href="https://www.apfl.in/products" class="d-none d-lg-block item-btn btn-fill">VIEW PRODUCT</a>
+					</div>
+				</div>
+			</section>
+			<section class="fxt-project-wrap-layout1 section-padding-md bg-repeat" data-bg-image="https://www.apfl.in/assets/media/elements/pattern.png">
+				<div class="container">
+					<div class="d-lg-flex align-items-center justify-content-between">
+						<div class="section-heading heading-layout1 paragraph-layout1">
+							<div class="heading-bar">
+								<div class="item-subtitle">OUR WORKS</div>
+								<h2 class="item-title">Our Products</h2>
+							</div>
+							<p>We also deal in providing premium quality Cattle feed , which is marketed by Anya Polytech & Fertilizers Ltd. This product aims at providing quality feed to the cattle for their complete well being & improved health. This Cattlefeed is made up of high quality nutritious ingredients which include maize, rice, soyabean cake, mustard oil cake, peanuts, wheat choker, gram, rice, salt ,minerals & vitamin E. Thus this aims at providing complete nutrition to the cattle. We are dealing in this product under the brand name of Gokuldhara. Currently we have the following Four Variants:</p>
+						</div>
+						<a href="https://www.apfl.in/products" class="d-none d-lg-block item-btn btn-fill">VIEW MORE</a>
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div class="row zoom-gallery">
+						<div class="col-xl-2 col-sm-6 col-12">
+							<div class="fxt-project-box-layout1">
+								<div class="item-img">
+									<img src="https://www.apfl.in/assets/media/project/zinc.png" alt="Zinc Sulphate Monohydrate">
+								</div>
+								<div class="item-content">
+									<div class="item-icon">
+										<a href="https://www.apfl.in/assets/media/project/zinc.png" class="popup-zoom" data-fancybox-group="gallery"><i class="flaticon-add"></i></a>
+									</div>
+									<h3 class="item-title"><a href="#">Zinc Sulphate Monohydrate</a></h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-sm-6 col-12">
+							<div class="fxt-project-box-layout1">
+								<div class="item-img">
+									<img src="https://www.apfl.in/assets/media/project/Cattle-Feed.png" alt="Projects">
+								</div>
+								<div class="item-content">
+									<div class="item-icon">
+										<a href="https://www.apfl.in/assets/media/project/Cattle-Feed.png" class="popup-zoom" data-fancybox-group="gallery"><i class="flaticon-add"></i></a>
+									</div>
+									<h3 class="item-title"><a href="#">Balanced Cattle Feed</a></h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-sm-6 col-12">
+							<div class="fxt-project-box-layout1">
+								<div class="item-img">
+									<img src="https://www.apfl.in/assets/media/project/Silver.png" alt="Micro-Nutrient">
+								</div>
+								<div class="item-content">
+									<div class="item-icon">
+										<a href="https://www.apfl.in/assets/media/project/Silver.png" class="popup-zoom" data-fancybox-group="gallery"><i class="flaticon-add"></i></a>
+									</div>
+									<h3 class="item-title"><a href="#">Micro-Nutrient</a></h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-sm-6 col-12">
+							<div class="fxt-project-box-layout1">
+								<div class="item-img">
+									<img src="https://www.apfl.in/assets/media/project/newbag.jpg" alt="Zinc Sulphate Heptahydrate">
+								</div>
+								<div class="item-content">
+									<div class="item-icon">
+										<a href="https://www.apfl.in/assets/media/project/newbag.jpg" class="popup-zoom" data-fancybox-group="gallery"><i class="flaticon-add"></i></a>
+									</div>
+									<h3 class="item-title"><a href="#">Zinc Sulphate Heptahydrate</a></h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-sm-6 col-12">
+							<div class="fxt-project-box-layout1">
+								<div class="item-img">
+									<img src="https://www.apfl.in/assets/media/project/HDPE1.jpg" alt="HDPE Bags">
+								</div>
+								<div class="item-content">
+									<div class="item-icon">
+										<a href="https://www.apfl.in/assets/media/project/HDPE1.jpg" class="popup-zoom" data-fancybox-group="gallery"><i class="flaticon-add"></i></a>
+									</div>
+									<h3 class="item-title"><a href="#">HDPE Bags</a></h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-sm-6 col-12">
+							<div class="fxt-project-box-layout1">
+								<div class="item-img">
+									<img src="https://www.apfl.in/assets/media/project/fabric.jpg" alt="Fabric Rolls">
+								</div>
+								<div class="item-content">
+									<div class="item-icon">
+										<a href="https://www.apfl.in/assets/media/project/fabric.jpg" class="popup-zoom" data-fancybox-group="gallery"><i class="flaticon-add"></i></a>
+									</div>
+									<h3 class="item-title"><a href="#">Fabric Rolls</a></h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-center mb--30 d-block d-lg-none">
+						<a href="https://www.apfl.in/products" class="item-btn btn-fill">VIEW MORE</a>
+					</div>
+				</div>
+			</section>
+				<div class="container mb-5">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="section-heading heading-layout1 paragraph-layout1">
+							<div class="heading-bar">
+								<div class="item-subtitle">OUR</div>
+								<h2 class="item-title">Management Team</h2>
+							</div>
+							<div>Crafting Visionary Strategies for a Stronger Tomorrow</div>
+						</div>
+					</div>
+					<div class="anya-carousel" >
+						<div class="fxt-team-box-layout1">
+							<div class="item-img">
+								<img src="https://www.apfl.in/assets/media/team/team18.jpg" alt="team">
+							</div>
+							<div class="item-content">
+								<h3 class="item-title"><a href="https://www.apfl.in/yash-pal-singh-yadav">Yash Pal Singh Yadav</a></h3>
+								<div class="item-subtitle">Managing Director</div>
+								<div class="item-social">
+									<ul>
+										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="fxt-team-box-layout1">
+							<div class="item-img">
+								<img src="https://www.apfl.in/assets/media/team/tejpal.jpg" alt="team">
+							</div>
+							<div class="item-content">
+								<h3 class="item-title"><a href="https://www.apfl.in/tejpal-singh-yadav">Tejpal Singh Yadav</a></h3>
+								<div class="item-subtitle">Director</div>
+								<div class="item-social">
+									<ul>
+										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="fxt-team-box-layout1">
+							<div class="item-img">
+								<img src="https://www.apfl.in/assets/media/team/team19.jpg" alt="team">
+							</div>
+							<div class="item-content">
+								<h3 class="item-title"><a href="https://www.apfl.in/liza-sahni">Liza Sahni</a></h3>
+								<div class="item-subtitle">Independent Director</div>
+								<div class="item-social">
+									<ul>
+										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="fxt-team-box-layout1">
+							<div class="item-img">
+								<img src="https://www.apfl.in/assets/media/team/vineet.jpg" alt="team">
+							</div>
+							<div class="item-content">
+								<h3 class="item-title"><a href="https://www.apfl.in/vineet-bhatia">Vineet Bhatia</a></h3>
+								<div class="item-subtitle">Independent Director</div>
+								<div class="item-social">
+									<ul>
+										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="fxt-team-box-layout1">
+							<div class="item-img">
+								<img src="https://www.apfl.in/assets/media/team/team20.jpg" alt="team">
+							</div>
+							<div class="item-content">
+								<h3 class="item-title"><a href="https://www.apfl.in/virendra-singh">Virendra Singh</a></h3>
+								<div class="item-subtitle">Advisor Legal</div>
+								<div class="item-social">
+									<ul>
+										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="fxt-team-box-layout1">
+							<div class="item-img">
+								<img src="https://www.apfl.in/assets/media/team/anurag.jpg" alt="team">
+							</div>
+							<div class="item-content">
+								<h3 class="item-title"><a href="https://www.apfl.in/anurag-srivastav">Anurag Srivastav</a></h3>
+								<div class="item-subtitle">Senior Advisor (Strategy & Projects)</div>
+								<div class="item-social">
+									<ul>
+										<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<footer id="footer-wrap-layout1" class="footer-wrap-layout1">
+				<div class="footer-top-layout1">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-4 col-lg-3 col-md-6 col-12">
+								<div class="footer-widgets">
+									<div class="footer-logo-layout1">
+										<h2 class="footer-heading">APFL</h2>
+									</div>
+									<p>At Anya, we endeavor to create a positive change with every step we take, working relentlessly to improve yield and pave way for environmentally conscious food security in the country.</p>
+									<ul class="footer-social-layout1">
+										<li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+										<li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+										<li class="instagram"><a href="#"><i class="fab fa-instagram"></i></a></li>
+										<li class="pinterest"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-md-6 col-12">
+								<div class="footer-widgets">
+									<h3 class="footer-widget-heading">LINKS</h3>
+									<ul class="footer-menu-layout1">
+									    <li><a href="https://www.apfl.in">Home</a></li>
+									    <li><a href="https://www.apfl.in/about-us">About Us</a></li>
+										<li><a href="https://www.apfl.in/infrastructure">Infrastructure</a></li>
+									    <li><a href="https://www.apfl.in/products">Our Products</a></li>
+										<li><a href="https://www.apfl.in/deficiency">Deficiency</a></li>
+										<li><a href="https://www.apfl.in/clients">Clients</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-6 col-12 pt-5">
+								<div class="footer-widgets">
+									<ul class="footer-menu-layout1 pt-2">
+									    <li><a href="https://www.apfl.in/csr">CSR</a></li>
+										<li><a href="https://www.apfl.in/photo-album">Photo Album</a></li>
+										<li><a href="https://www.apfl.in/videos">Videos</a></li>
+										<li><a href="https://www.apfl.in/career">Career</a></li>
+										<li><a href="https://www.apfl.in/contact">Contact Us</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6 col-12 bg-size-contain bg-no-repeat bg-position-center" data-bg-image="https://www.apfl.in/assets/media/elements/map.png">
+								<div class="footer-widgets">
+									<h3 class="footer-widget-heading">Contact Information</h3>
+									<ul class="footer-contact-layout1">
+										<li><span>Phone:</span>  0120-4159498</li>
+										<li><span>Email:</span>  contact@apfl.in</li>
+										<li><span>Regd. Office:</span> Level S2, Tower "E", International Trade Tower, Nehru Place, New Delhi-110019</li>
+										<li><span>Corp. Office:</span> B-243, Sector 26, Noida-201301, U.P.</li>
+										<li><span>Plant Address:</span> Plot No. 2, UPSIDA Industrial Area, Village Keshurehai, P.O. Piprola, Dist. Shahjahanpur, U.P.-242001
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom-layout1">
+					<div class="container">
+						<div class="copy-right-wrap-layout1">
+							<div class="copy-right-text">Copyright by APFL | All Rights Reserved</div>
+							<div class="copy-right-text">Designed by: Webplex Technologies</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!--=====================================-->
+			<!--=       Template Search Start       =-->
+			<!--=====================================-->
+			<div id="template-search" class="template-search">
+				<button type="button" class="close">×</button>
+				<form class="search-form">
+					<input type="search" value="" placeholder="Type here........" />
+                    <button type="submit" class="search-btn">
+                        <i class="flaticon-magnifying-glass"></i>
+                    </button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dependency Scripts -->
+	<script src="https://www.apfl.in/assets/dependencies/popper.js/popper.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/jquery/jquery.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/jquery.appear/jquery.appear.js"></script>
+	
+	<script src="https://www.apfl.in/assets/dependencies/owl.carousel/js/owl.carousel.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/counter-up/jquery.counterup.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/waypoints/jquery.waypoints.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/meanmenu/js/jquery.meanmenu.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/nivo-slider/js/jquery.nivo.slider.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/nivo-slider/js/home.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+	<script src="https://www.apfl.in/assets/dependencies/validator/validator.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<!-- Site Scripts -->
+	<script src="https://www.apfl.in/assets/js/app.js"></script>
+	<script>
+	    //===== Side Menu =====//
+        $('.rspn-mnu-btn').on('click', function () {
+            $('.rsnp-mnu').addClass('slidein');
+            return false;
+        });
+        $('.rspn-mnu-cls').on('click', function () {
+            $('.rsnp-mnu').removeClass('slidein');
+        });
+        $('.rsnp-mnu li.menu-item-has-children > a').on('click', function () {
+            $(this).parent().siblings('li').children('ul').slideUp();
+            $(this).parent().siblings('li').removeClass('active');
+            $(this).parent().children('ul').slideToggle();
+            $(this).parent().toggleClass('active');
+            return false;
+        });
+	    var drop = $('nav > ul ul li');
+	   // console.log(drop);
+          $('nav > ul ul').each(function () {
+            var delay = 50;
+            $(this).find(drop).each(function () {
+              $(this).css({transitionDelay: delay + 'ms'});
+              delay += 50;
+                
+            });
+              
+          });
+	</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const bannerSection = document.getElementById('banner-section');
+        
+        // Array of image URLs
+        const images = [
+            'https://www.apfl.in/assets/media/banner/npk.jpg',
+            'https://www.apfl.in/assets/media/banner/bobbin.jpg',  // Replace with actual image URLs
+            'https://www.apfl.in/assets/media/banner/npk.jpg'
+        ];
+
+        let currentImageIndex = 0;
+
+        function changeBackgroundImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            bannerSection.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+        }
+
+        // Change image every 5 seconds
+        setInterval(changeBackgroundImage, 3000);
+    });
+</script>
+</body>
+
+</html>

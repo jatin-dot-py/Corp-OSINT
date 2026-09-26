@@ -1,0 +1,934 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>shivalik</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="lib/jquery.ad-gallery.css">
+<link rel="icon" type="image/x-icon" href="/images/fav.ico">
+
+<style type="text/css">
+	.fixed_popup.active:after {background: rgba(0,0,0,0.5); height: 100%; width: 100%; left: 0; top: 0; content: '';}
+	.fixed_popup {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; z-index: 9999; transition: 0.5s; visibility:hidden; opacity:0;}
+	.fixed_popup.active {visibility:visible; opacity:1;}
+	.images_box {position: fixed; right: 25px; z-index: 999;}
+	.images_box2 {position: fixed;}
+	.images_box2 .close {position: absolute;top: -19px;
+    right: -5px; width: 30px; height: 30px; background: #fff; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 600; cursor: pointer; font-size: 18px; }
+	.images_box .close {position: absolute;top: -19px;
+    right: -5px; width: 30px; height: 30px; background: #fff; border-radius: 50%; text-align: center; line-height: 30px; font-weight: 600; cursor: pointer; font-size: 18px; }
+    .close_right_popup .images_box {display: none;}
+</style>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/jquery.ad-gallery.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('img.image1').data('ad-desc', 'These products are available in the form of strips as well as customized components.<br /> Both strips and components can be offered with electroplating.<br /><br />We strictly conduct our operations in compliance with applicable occupational health and safety <br />laws and regulations as per Government regulations');
+	   $('img.image2').data('ad-desc', 'A thermostatic bimetal consists of two or more layers of different alloys firmly bonded together, having different<br /> coefficient of thermal expansion result i.e. high expansion and low expansion.<br /><br /> One layer consists of an alloy having a high coefficient of expansion while the other layer is one with a lower<br /> coefficient of expansion...<a href="product_details.php?pID=1"><strong>Read More</strong></a>');
+	   $('img.image3').data('ad-desc', 'Shivalik Precision Shunt Resistors are characterized by low temperature co-efficient, high stability of electrical <br />resistance, low watt loss, and good heat dissipation.<br /><br /> Furthermore, since mounting generally involves contact with copper, the copper welded to each side facilitates the <br />mounting without the problems of thermo EF and galvanic action...<a href="product_details.php?pID=3"><strong>Read More</strong></a>');
+    $('img.image4').data('ad-desc', 'To reduce the cost of labour and assembly Shivalik offers pre-soldered strip.<br/><br/> The solder stripe thickness and location can be varied as per customers requirements. The base metals could be<br/> any steels, coppers and brasses...<a href="product_details.php?pID=4"><strong>Read More</strong></a><br/><br/>');
+	$('img.image7').data('ad-desc', 'Shivalik has in house stamping facility consisting of 10T, 20T, 40T, 50T stamping process that enable us to produce<br /> customize precision parts and components.<br/><br /> We have our own sophisticated tool room consisting of the following machines CNC wire...<a href="product_details.php?pID=5"><strong>Read More</strong></a><br/><br/>');
+    $('img.image5').data('ad-desc', 'Shivalik Bimetals manufactures and supplies various types of Bimetallic helical and spiral coils. The configuration<br /> of the component varies on the basis of the end application.<br /><br />These configurations are precision manufactured to retain a uniform pitch and provide large movements<br/>for small temperature changes in a relatively small space... <a href="product_details.php?pID=20"><strong>Read More</strong></a>');
+	$('img.image6').data('ad-desc', 'The snap acting thermostat metal disc is becoming increasing popular as a cost effective protection of small motors<br/> and appliances.<br/><br/>A disc of thermostat metal is pretensioned by dishing or doming.With a rise in temperature, the  thermal stresses<br/> produced due to the bimetal action reach a point where they equal the pretensioning stresses...<a href="product_details.php?pID=6"><strong>Read More</strong></a>');
+     var galleries = $('.ad-gallery').adGallery();
+    $('#switch-effect').change(
+      function() {
+        galleries[0].settings.effect = $(this).val();
+        return false;
+      }
+    );
+    $('#toggle-slideshow').click(
+      function() {
+        galleries[0].slideshow.toggle();
+        return false;
+      }
+    );
+    galleries[0].addAnimation('wild',
+      function(img_container, direction, desc) {
+        var current_left = parseInt(img_container.css('left'), 10);
+        var current_top = parseInt(img_container.css('top'), 10);
+        if(direction == 'left') {
+          var old_image_left = '-'+ this.image_wrapper_width +'px';
+          img_container.css('left',this.image_wrapper_width +'px');
+          var old_image_top = '-'+ this.image_wrapper_height +'px';
+          img_container.css('top', this.image_wrapper_height +'px');
+        } else {
+          var old_image_left = this.image_wrapper_width +'px';
+          img_container.css('left','-'+ this.image_wrapper_width +'px');
+          var old_image_top = this.image_wrapper_height +'px';
+          img_container.css('top', '-'+ this.image_wrapper_height +'px');
+        };
+        if(desc) {
+          desc.css('bottom', '-'+ desc[0].offsetHeight +'px');
+          desc.animate({bottom: 0}, this.settings.animation_speed * 2);
+        };
+        img_container.css('opacity', 0);
+        return {old_image: {left: old_image_left, top: old_image_top, opacity: 0},
+                new_image: {left: current_left, top: current_top, opacity: 1},
+                easing: 'easeInBounce',
+                speed: 2500};
+      }
+    );
+  });
+  function debug(str) {
+    if(window.console && window.console.log && jQuery.browser.mozilla) {
+      console.log(str);
+    } else {
+      $('#debug').show().val($('#debug').val() + str +'\n');
+    }
+  }
+  </script>
+  <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+<script>
+$(window).on("load", function(){
+	$(".fixed_popup").addClass("active");
+});
+
+</script>
+<script type="text/javascript">
+	$(function() {
+		$('a#view_large').lightBox();
+	});
+</script>
+
+		<script type="text/javascript" src="jquery.reveal.js"></script>
+<script>
+		$(document).ready(function(){
+			$(".close").click(function(){
+			$(".fixed_popup").removeClass("active");
+			});
+			// set the wrapper width and height to match the img size
+			$('#wrapper').css({'width':$('#wrapper img').width(),
+							  'height':$('#wrapper img').height()
+			})
+			
+			//tooltip direction
+			var tooltipDirection;
+						 
+			for (i=0; i<$(".pin").length; i++)
+			{				
+				// set tooltip direction type - up or down             
+				if ($(".pin").eq(i).hasClass('pin-down')) {
+					tooltipDirection = 'tooltip-down';
+				} else {
+					tooltipDirection = 'tooltip-up';
+					}
+			
+				// append the tooltip
+				$("#wrapper").append("<div style='left:"+$(".pin").eq(i).data('xpos')+"px;top:"+$(".pin").eq(i).data('ypos')+"px' class='" + tooltipDirection +"'>\
+													<div class='tooltip'>" + $(".pin").eq(i).html() + "</div>\
+											</div>");
+			}    
+			
+			// show/hide the tooltip
+			$('.tooltip-up, .tooltip-down').mouseenter(function(){
+						$(this).children('.tooltip').fadeIn(100);
+					}).mouseleave(function(){
+						$(this).children('.tooltip').fadeOut(100);
+					})
+		});
+    </script>
+
+	<!-- Global site tag (gtag.js) - Google Ads: 954910667 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-954910667"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-954910667'); </script></head>
+<body>
+
+
+			
+
+
+<div class="main">
+<div class="inner-main">
+<div class="gray-main">
+<link rel="stylesheet" type="text/css" href="css/anylinkcssmenu.css" />
+<script type="text/javascript" src="js/anylinkcssmenu.js">
+
+/***********************************************
+* AnyLink CSS Menu script v2.0- � Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Project Page at http://www.dynamicdrive.com/dynamicindex1/anylinkcss.htm for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+//anylinkcssmenu.init("menu_anchors_class") ////Pass in the CSS class of anchor links (that contain a sub menu)
+anylinkcssmenu.init("anchorclass")
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/flexdropdown.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/flexdropdown.js">
+
+/***********************************************
+* Flex Level Drop Down Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+</script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/jquery.ad-gallery.js"></script>
+  
+  <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+<style type="text/css">
+	.top_h_images {    position: absolute;top: 12px; right: 0;}
+		.top_h_images  img { float: right;}
+    .gray-main {position: relative;}
+    .google_translate_main {position: absolute; right: 0; top: 20px;}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$('a#view_large').lightBox();
+	});
+</script>
+
+		<script type="text/javascript" src="jquery.reveal.js"></script>
+<script>
+		$(document).ready(function(){
+		
+			// set the wrapper width and height to match the img size
+			$('#wrapper').css({'width':$('#wrapper img').width(),
+							  'height':$('#wrapper img').height()
+			})
+			
+			//tooltip direction
+			var tooltipDirection;
+						 
+			for (i=0; i<$(".pin").length; i++)
+			{				
+				// set tooltip direction type - up or down             
+				if ($(".pin").eq(i).hasClass('pin-down')) {
+					tooltipDirection = 'tooltip-down';
+				} else {
+					tooltipDirection = 'tooltip-up';
+					}
+			
+				// append the tooltip
+				$("#wrapper").append("<div style='left:"+$(".pin").eq(i).data('xpos')+"px;top:"+$(".pin").eq(i).data('ypos')+"px' class='" + tooltipDirection +"'>\
+													<div class='tooltip'>" + $(".pin").eq(i).html() + "</div>\
+											</div>");
+			}    
+			
+			// show/hide the tooltip
+			$('.tooltip-up, .tooltip-down').mouseenter(function(){
+						$(this).children('.tooltip').fadeIn(100);
+					}).mouseleave(function(){
+						$(this).children('.tooltip').fadeOut(100);
+					})
+		});
+    </script>
+	
+
+
+
+<ul id="flexmenu1" class="flexdropdownmenu" style="z-index:999999999999999999999 !important;">
+<li><a href="about-us.php?pageId=2">Overview</a>
+  </li>
+<li><a href="about-us.php?pageId=5">Certifications</a>
+  </li>
+<li><a href="about-us.php?pageId=6">R & D Innovations</a>
+  </li>
+<li><a href="about-us.php?pageId=7">Investor Relations</a>
+<ul style="position:absolute;" class="flexdropdownmenu">
+		
+			<!-- 	<li ><a href="about-us.php?pageId=8" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Code of Conduct</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=41" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Memorandum and Articles of Association</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=25" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Board of Directors</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=10" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Financials</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=33" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Unclaimed / Unpaid Dividend</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=11" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Shareholding Pattern</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=12" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Annual Reports</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=13" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Corporate Governance</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=40" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Business Responsibility and Sustainability Report.</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=29" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Compliance Officer</a></li> -->
+		</td><td valign="top">
+			<!-- 	<li ><a href="about-us.php?pageId=26" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Registrar & Share Transfer Agents</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=27" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Share Prices</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=28" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Investor Queries/Complaints</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=9" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">News</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=32" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Shivalik Corporate Policies</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=34" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Transfer of Shares to IEPF Account</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=35" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Investor Education and Protection Fund</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=38" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Related Party Transactions</a></li> -->
+		
+			<!-- 	<li ><a href="about-us.php?pageId=39" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Forms</a></li> -->
+				
+<li style="width:240px; line-height:16px; padding:0px 5px; text-indent:0;">
+	<a href="about-us.php?pageId=7" style="line-height: 1.5;text-align: center;">Disclosure under Regulation 46 of SEBI LODR</a>
+
+		<ul style="position:absolute;">
+		
+
+	<li ><a href="about-us.php?pageId=8" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Code of Conduct</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=41" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Memorandum and Articles of Association</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=25" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Board of Directors</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=10" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Financials</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=33" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Unclaimed / Unpaid Dividend</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=11" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Shareholding Pattern</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=12" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Annual Reports</a>
+						<!-- <ul style="position:absolute;">
+						<li style="width:240px; line-height:16px; padding:0px 5px; text-indent:0;"> <a href="annual_return.php">Annual Return</a></li>
+						<li style="width:240px; line-height:16px; padding:0px 5px; text-indent:0;"> <a href="secretarial-compliance-report.php">Secretarial Compliance Report</a></li>
+						<li style="width:240px; line-height:16px; padding:0px 5px; text-indent:0;"> <a href="subsidiaries-financial-statement.php" style="width: 100%;">subsidiaries Financial Statement</a></li>
+				</ul> -->
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=13" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Corporate Governance</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=40" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Business Responsibility and Sustainability Report.</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=29" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Compliance Officer</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=26" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Registrar & Share Transfer Agents</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=27" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Share Prices</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=28" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Investor Queries/Complaints</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=9" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">News</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=32" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Shivalik Corporate Policies</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=34" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Transfer of Shares to IEPF Account</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=35" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Investor Education and Protection Fund</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=38" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Related Party Transactions</a>
+				</li>
+	
+
+		
+
+	<li ><a href="about-us.php?pageId=39" style="width:230px; line-height:16px; padding:10px 11px; text-indent:0;">Forms</a>
+				</li>
+	
+
+					</ul>
+
+				</li>
+		</ul>
+		  </li>
+</ul>
+
+
+<div id="submenu1" class="anylinkcss">
+<ul>
+<li><a href="about-us.php">History</a></li>
+<li><a href="innovations.php">Innovations</a></li>
+<li><a href="certifications.php">ISO Certifications</a></li>
+<li><a href="r-d.php" >R & D  </a></li>
+<li><a href="#" >Investor Relations</a>
+
+</li>
+
+<li><a href="enviornmental-involvement.php">Environmental Involvement </a></li>
+<li><a href="safety-consiousness.php">Safety Consiousness</a></li>
+<li><a href="awards.php">Awards</a></li>
+</ul>
+</div>
+
+
+<div id="submenu4" class="anylinkcss">
+<ul>
+<li><a href="clad-bounding.php">Clad bonding</a></li>
+<li><a href="electron-beem-welding.php">Electron Beam Welding</a></li>
+<li><a href="precision-stamping.php">Precision Stamping</a></li>
+<li><a href="shunts.php">Shunts</a></li>
+<li><a href="snap-action-disc.php">Snap Action Disc</a></li>
+<li><a href="solder-top-lay.php">Solder Top Lay</a></li>
+</ul>
+</div>
+
+<div id="submenu5" class="anylinkcss">
+<ul>
+<li><a href="/product_details.php?pID=9">Electronics</a></li>
+<li><a href="/product_details.php?pID=8">Automotive</a></li>
+<li><a href="/product_details.php?pID=10">Domestic Appliances</a></li>
+<li><a href="/product_details.php?pID=14">Industrial</a></li>
+<li><a href="/product_details.php?pID=15">Medical</a></li>
+<li><a href="/product_details.php?pID=19">Agriculture and Animal Husbandry Appliances</a></li>
+</ul>
+</div>
+
+
+<div id="submenu3" class="anylinkcsscols" style=" width:536px; z-index:9999999999999999 !important; height:300px; bottom:0; ">
+<table width="536" border="0" cellspacing="0" cellpadding="0" style="padding-left:10px; padding-top:10px; padding-bottom:10px;">
+  <tr>
+	
+	<td width="44" valign="top">
+  		<a href="/product_details.php?pID=1" class="nav"> <img src="https://www.shivalikbimetals.com/images/product/small/1_1536384039_1_1896473942_part-and-strip.jpg" border="0" align="center" alt="Thermostatic Bimetal Parts/Strips"  title="Thermostatic Bimetal Parts/Strips" style="margin-right:10px;" width="113" height="81" ></a>
+	<!--<a href="thermostatic-bimetals.php"><img src="images/new-ther.jpg" border="0" style="margin-right:10px;" /></a>--> 
+	
+	</td>
+    <td width="304" valign="top"><a href="/product_details.php?pID=1"><strong>Thermostatic Bimetal Parts/Strips</strong> <br />
+
+				<span class="sub-text"> A thermostatic bimetal consists of two or more layers of different alloys firmly...</span>
+</a></td>
+    <td width="40">&nbsp;</td>
+	
+		
+	<td width="44" valign="top">
+  		<a href="/product_details.php?pID=3" class="nav"> <img src="https://www.shivalikbimetals.com/images/product/small/1_962530557_ebpkdkadehcpggle.png" border="0" align="center" alt="SMDs / Shunt Resistors"  title="SMDs / Shunt Resistors" style="margin-right:10px;" width="113" height="81" ></a>
+	<!--<a href="thermostatic-bimetals.php"><img src="images/new-ther.jpg" border="0" style="margin-right:10px;" /></a>--> 
+	
+	</td>
+    <td width="304" valign="top"><a href="/product_details.php?pID=3"><strong>SMDs / Shunt Resistors</strong> <br />
+
+				<span class="sub-text"> Shivalik Precision Shunt Resistors are characterized by low temperature...</span>
+</a></td>
+    <td width="40">&nbsp;</td>
+	
+	</tr><tr><td colspan="2"><img src="images/lines.jpg" width="100%"></td><td>&nbsp;</td><td colspan="2"><img src="images/lines.jpg" width="100%"></td></tr><tr>	
+	<td width="44" valign="top">
+  		<a href="/product_details.php?pID=4" class="nav"> <img src="https://www.shivalikbimetals.com/images/product/small/1_1786562559_reflow-solder.jpg" border="0" align="center" alt="Reflow Solder/Presoldered Strips"  title="Reflow Solder/Presoldered Strips" style="margin-right:10px;" width="113" height="81" ></a>
+	<!--<a href="thermostatic-bimetals.php"><img src="images/new-ther.jpg" border="0" style="margin-right:10px;" /></a>--> 
+	
+	</td>
+    <td width="304" valign="top"><a href="/product_details.php?pID=4"><strong>Reflow Solder/Presoldered Strips</strong> <br />
+
+				<span class="sub-text">To reduce the cost of labour and assembly Shivalik offers pre-soldered strip.</span>
+</a></td>
+    <td width="40">&nbsp;</td>
+	
+		
+	<td width="44" valign="top">
+  		<a href="/product_details.php?pID=5" class="nav"> <img src="https://www.shivalikbimetals.com/images/product/small/1_129492481_precisoion-tool.jpg" border="0" align="center" alt="Precision Stainless Steel"  title="Precision Stainless Steel" style="margin-right:10px;" width="113" height="81" ></a>
+	<!--<a href="thermostatic-bimetals.php"><img src="images/new-ther.jpg" border="0" style="margin-right:10px;" /></a>--> 
+	
+	</td>
+    <td width="304" valign="top"><a href="/product_details.php?pID=5"><strong>Precision Stainless Steel</strong> <br />
+
+				<span class="sub-text"> Shivalik has in house stamping facility consisting of 10T, 20T, 40T, 50T...</span>
+</a></td>
+    <td width="40">&nbsp;</td>
+	
+	</tr><tr><td colspan="2"><img src="images/lines.jpg" width="100%"></td><td>&nbsp;</td><td colspan="2"><img src="images/lines.jpg" width="100%"></td></tr><tr>	
+	<td width="44" valign="top">
+  		<a href="/product_details.php?pID=20" class="nav"> <img src="https://www.shivalikbimetals.com/images/product/small/1_1200055689_spring.jpg" border="0" align="center" alt="Thermostatic Bimetal Coils & Spring"  title="Thermostatic Bimetal Coils & Spring" style="margin-right:10px;" width="113" height="81" ></a>
+	<!--<a href="thermostatic-bimetals.php"><img src="images/new-ther.jpg" border="0" style="margin-right:10px;" /></a>--> 
+	
+	</td>
+    <td width="304" valign="top"><a href="/product_details.php?pID=20"><strong>Thermostatic Bimetal Coils & Spring</strong> <br />
+
+				<span class="sub-text"> Shivalik manufactures and supplies various types of Bimetallic helical and...</span>
+</a></td>
+    <td width="40">&nbsp;</td>
+	
+		
+	<td width="44" valign="top">
+  		<a href="/product_details.php?pID=6" class="nav"> <img src="https://www.shivalikbimetals.com/images/product/small/1_375154521_Snap-Action-Disc.jpg" border="0" align="center" alt="Snap Action Disc"  title="Snap Action Disc" style="margin-right:10px;" width="113" height="81" ></a>
+	<!--<a href="thermostatic-bimetals.php"><img src="images/new-ther.jpg" border="0" style="margin-right:10px;" /></a>--> 
+	
+	</td>
+    <td width="304" valign="top"><a href="/product_details.php?pID=6"><strong>Snap Action Disc</strong> <br />
+
+				<span class="sub-text"> The snap acting thermostat metal disc is becoming increasing popular as a cost...</span>
+</a></td>
+    <td width="40">&nbsp;</td>
+	
+		
+  </tr>
+</table>
+
+
+</div>
+
+<div class="main-header-wrapper">
+<div class="top-left">
+	<div class="top-links-logos"><a href="index.php"><img src="images/top-link.png" width="490" height="44" border="0" /></a></div>
+
+
+
+
+<div class="logo">
+
+	<a href="index.php"><img src="images/shivalik-logo-new.jpg" width="591" height="100" border="0" /></a>
+	
+
+	<div class="google_translate_main">
+	<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
+
+
+
+</div>
+</div>
+<div class="top-right">
+<div class="gap-top-rights">
+<!--<img src="images/social-media.jpg" class="social" />--><br /><br />
+
+<p class="gap-fons">
+<!--Call : +91-11- 26027174
+--></p>
+</div>
+<div class="clear"></div>
+<div class="menu">
+<ul>
+<li><a href="about-us.php?pageId=1"  data-flexmenu="flexmenu1">Company</a></li>
+<li><a href="applications.php?pageId=17" class="anchorclass" rel="submenu5">Applications</a></li>
+
+<li><a href="technology.php">Technology</a></li>
+
+<li><a href="products.php"  class="anchorclass" rel="submenu3">Products</a></li>
+<li><a href="sales-network.php" class="big-link" data-reveal-id="myModal" data-animation="fade">Sales Network</a></li>
+
+<li><a href="alliance-joint-ventures.php">Alliances & Joint Ventures</a></li>
+<li style="background-image:none;"><a href="contact-us.php">Contact Us</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- <div class="top_h_images"><a href="index.php"><img src="images/exhibition-img4.jpg"  border="0" /></a></div> -->
+
+
+<div id="myModal" class="reveal-modal" style="text-align:center; background-color:#fff">
+<div style="width:1000px; height:600px; background-image:url(images/map12.jpg); background-repeat:no-repeat; margin:auto; ">
+
+<div style="margin-top:585px; position:absolute; margin-left:75px; color:#2E94C0;  font-weight:bold; font-size:14px;">For enquiries please <a href="contact-us.php" style="font-weight:bold; font-size:14px; text-decoration:underline" >click here</a></div>
+
+<div style="margin-top:378px; position:absolute; width:21px; height:21px; margin-left:325px;"><a href="#" class="tooltip"><img src="images/blue.png"/><span><b>Brazil</b></span></a></div>
+
+<div style="margin-top:378px; position:absolute; width:21px; height:21px; margin-left:335px;"><a href="#" class="tooltip"><img src="images/global-pre.png"/><span><b>Brazil</b></span></a></div>
+<div style="margin-top:250px;  position:absolute; width:21px; height:21px; margin-left:733px;"><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>China</b></span></a></div>
+<div style="margin-top:250px;  position:absolute; width:21px; height:21px; margin-left:740px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>China</b></span></a></div>
+<div style="margin-top:310px;  position:absolute; width:21px; height:21px; margin-left:740px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Thailand</b></span></a></div>
+<div style="margin-top:290px;  position:absolute; width:21px; height:21px; margin-left:800px;"><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>Taiwan</b></span></a></div>
+<div style="margin-top:290px;  position:absolute; width:21px; height:21px; margin-left:810px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Taiwan</b></span></a></div>
+<div style="margin-top:210px;  position:absolute; width:21px; height:21px; margin-left:505px;" ><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>Czech Republic</b></span></a></div>
+<div style="margin-top:210px;  position:absolute; width:21px; height:21px; margin-left:515px;" ><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Czech Republic</b></span></a></div>
+<div style="margin-top:238px;  position:absolute; width:21px; height:21px; margin-left:478px;"><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>Italy</b></span></a></div>
+<div style="margin-top:238px;  position:absolute; width:21px; height:21px; margin-left:490px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Italy</b></span></a></div>
+<div style="margin-top:230px;  position:absolute; width:21px; height:21px; margin-left:445px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Spain</b></span></a></div>
+<div style="margin-top:247px;  position:absolute; width:21px; height:21px; margin-left:835px;"><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>Japan</b></span></a></div>
+<div style="margin-top:247px;  position:absolute; width:21px; height:21px; margin-left:845px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Japan</b></span></a></div>
+<div style="margin-top:278px;  position:absolute; width:21px; height:21px; margin-left:695px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Bangladesh</b></span></a></div>
+<div style="margin-top:290px;  position:absolute; width:21px; height:21px; margin-left:665px;"><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>India</b></span></a></div>
+<div style="margin-top:210px;  position:absolute; width:21px; height:21px; margin-left:788px;"><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>Korea</b></span></a></div>
+<div style="margin-top:210px;  position:absolute; width:21px; height:21px; margin-left:798px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Korea</b></span></a></div>
+<div style="margin-top:140px;  position:absolute; width:21px; height:21px; margin-left:705px;"><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>Russia</b></span></a></div>
+<div style="margin-top:140px;  position:absolute; width:21px; height:21px; margin-left:715px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Russia</b></span></a></div>
+<div style="margin-top:345px;  position:absolute; width:21px; height:21px; margin-left:720px;"><a href="#" class="tooltip"><img src="images/blue.png" style=""  /><span><b>Singapore</b></span></a></div>
+<div style="margin-top:345px;  position:absolute; width:21px; height:21px; margin-left:730px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Singapore</b></span></a></div>
+<div style="margin-top:440px;  position:absolute; width:21px; height:21px; margin-left:283px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Argentina</b></span></a></div>
+<div style="margin-top:230px;  position:absolute; width:21px; height:21px; margin-left:563px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Armenia</b></span></a></div>
+<div style="margin-top:236px;  position:absolute; width:21px; height:21px; margin-left:542px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Turkey</b></span></a></div>
+<div style="margin-top:410px;  position:absolute; width:21px; height:21px; margin-left:810px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Australia</b></span></a></div>
+<div style="margin-top:185px;  position:absolute; width:21px; height:21px; margin-left:190px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Canada</b></span></a></div>
+<div style="margin-top:288px;  position:absolute; width:21px; height:21px; margin-left:533px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Egypt</b></span></a></div>
+<div style="margin-top:288px;  position:absolute; width:21px; height:21px; margin-left:580px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Saudi Arabia</b></span></a></div>
+<div style="margin-top:203px;  position:absolute; width:21px; height:21px; margin-left:465px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>France</b></span></a></div>
+<div style="margin-top:220px;  position:absolute; width:21px; height:21px; margin-left:465px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Switzerland</b></span></a></div>
+<div style="margin-top:197px;  position:absolute; width:21px; height:21px; margin-left:485px;" ><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Germany</b></span></a></div>
+<div style="margin-top:355px;  position:absolute; width:21px; height:21px; margin-left:750px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Indonesia</b></span></a></div>
+<div style="margin-top:250px;  position:absolute; width:21px; height:21px; margin-left:603px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Iran</b></span></a></div>
+<div style="margin-top:240px;  position:absolute; width:21px; height:21px; margin-left:185px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>USA</b></span></a></div>
+<div style="margin-top:270px;  position:absolute; width:21px; height:21px; margin-left:185px;"><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Mexico</b></span></a></div>
+<div style="margin-top:187px;  position:absolute; width:21px; height:21px; margin-left:462px;" ><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Netherlands</b></span></a></div>
+<div style="margin-top:187px;  position:absolute; width:21px; height:21px; margin-left:440px;" ><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>UK</b></span></a></div>
+<div style="margin-top:193px;  position:absolute; width:21px; height:21px; margin-left:520px;" ><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Poland</b></span></a></div>
+<div style="margin-top:220px;  position:absolute; width:21px; height:21px; margin-left:525px;" ><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Romania</b></span></a></div>
+<div style="margin-top:217px;  position:absolute; width:21px; height:21px; margin-left:485px;" ><a href="#" class="tooltip"><img src="images/global-pre.png" style=""  /><span><b>Slovakia</b></span></a></div>
+
+
+<a class="close-reveal-modal"><img src="images/close-new.png" /></a></div>
+</div>
+			</div>
+<!-- <div class="images_box">
+		<img src="images/pop-images2.jpg"  height="340" />
+		<div class="close">X</div>
+	</div> -->
+
+<!-- <div class="fixed_popup">
+	<div class="images_box2">
+		<img src="images/banner-elecrama-2020.png"  />
+		<div class="close">X</div>
+	</div>
+</div> -->
+
+
+<div class="banner"><div id="container">
+  
+
+    <div id="gallery" class="ad-gallery">
+      <div class="ad-image-wrapper">
+      </div>
+      
+      <div class="ad-nav" style="position: absolute; z-index:100;">
+        <div class="ad-thumbs">
+          <ul class="ad-thumb-list">
+            
+            <!--<li>
+              <a href="images/banner1.jpg">
+                <img src="images/thumb2.jpg" title="Thermostatic Bimetal" alt="12These products are available in the form of strips as well as customized components. <br />
+Both strips and components can be offered with electroplating.<br /><br />
+
+We strictly conduct our operations in compliance with applicable occupational health and safety<br />
+laws and regulations as per Government regulations" class="image1">
+              </a>
+            </li>-->
+            <li>
+              <a href="images/banner1.jpg">
+                <img src="images/banner1-thum.jpg" title="Thermostatic Bimetal Parts/Strips" longdesc="#" alt="A thermostatic bimetal consists of two or more layers of different alloys firmly bonded together, having different<br /> coefficient of thermal expansion result i.e. high expansion and low expansion.<br /><br /> One layer consists of an alloy having a high coefficient of expansion while the other layer is one with a lower<br /> coefficient of expansion... 
+" class="image2">
+              </a>
+            </li>
+			<li>
+              <a href="images/banner3.jpg">
+                <img src="images/banner3-thum.jpg" title="Shunt Resistors" alt="Shivalik Precision Shunt Resistors are characterized by low temperature co-efficient, high stability of electrical resistance, <br />low watt loss, and good heat dissipation.<br /><br /> Furthermore, since mounting generally involves contact with copper, the copper<br /> welded to each side facilitates the mounting without the problems of thermo EF and galvanic action." class="image3">
+              </a>
+            </li>
+            <li>
+              <a href="images/reflow-banner5.jpg">
+                <img src="images/reflow-banner-thum.jpg" title=" Reflow Solder/Presoldered Strips" alt="To reduce the cost of labour and assembly Shivalik offers pre-soldered strip.<br/><br/>
+The solder stripe thickness and location can be varied as per customer's requirements. The base metals could be any steels,<br/> coppers and brasses... " class="image4">
+              </a>
+            </li>
+			
+			 <li>
+              <a href="images/reflow-banner.jpg">
+                <img src="images/thumb3.jpg" title=" Precision Stainless Steel" alt="To reduce the cost of labour and assembly Shivalik offers pre-soldered strip.<br/><br/>
+The solder stripe thickness and location can be varied as per customer's requirements. The base metals could be any steels,<br/> coppers and brasses... " class="image7">
+              </a>
+            </li>
+            
+            <li>
+              <a href="images/banner6.jpg">
+                <img src="images/banner6-thum.jpg" title=" Thermostatic Bimetal Coils &amp; Spring" alt="Shivalik has in house stamping facility consisting of 10T, 20T, 40T, 50T stamping process that enable us to produce customize precision parts and components."  class="image5">
+              </a>
+            </li>
+            <li>
+              <a href="images/banner5.jpg">
+                <img src="images/banner5-thum.jpg" title="Snap Action Disc" alt="These products are available in the form of strips as well as customized components. <br />
+Both strips and components can be offered with electroplating.<br /><br />
+We strictly conduct our operations in compliance with applicable occupational health and safety<br />
+laws and regulations as per Government regulations " class="image6">
+              </a>
+            </li>
+           
+          
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+</div></div>
+
+
+	<div class="inner-page-main"  style="border:none; background-image:none;">
+	<div class="part1"><strong class="heading">ABOUT SHIVALIK</strong>
+	<div style="border:1px solid #dbdbdb; padding:10px; margin-top:12px; overflow:hidden; font-size:12px; line-height:19px; color:#333;">
+	 Shivalik Bimetal Controls Limited is a company specialized in the joining of material through various methods such as Diffusion Bonding / Cladding, Electron Beam Welding, Solder Reflow and Resistance Welding. Our present program includes Thermostatic Bimetal, Clad Metal, Spring Rolled stainless Steels, Electron Beam Welded Material with multi- Gauge and Multi- Materials strips and Thermostatic Edge- Welded Strips for a board spectrum of industries.     Shivalik can offer precision manufactured components specific to the application...<br />
+	
+	<a href="about-us.php?pageId=2"><img src="images/more.gif" border="0"  style="padding-top:7px;"/></a></div>
+	</div>
+	
+	
+	
+	
+	<div class="part2"><strong class="heading">APPLICATIONS <a href="applications.php"><img src="images/more.jpg" border="0"  align="right" style="margin-right:2px;"/></a></strong>
+		<div style="border:1px solid #dbdbdb; padding:10px; margin-top:12px; overflow:hidden;">
+	
+	
+		
+	<div class="boxes"><a href="/product_details.php?pID=9"><img src="https://www.shivalikbimetals.com/images/product/small/2_1388612940_automotive.jpg" alt="Electronics" title="Electronics" width="124" height="81" border="0"  class="bw pic"/></a>
+	<div class="boxes-text">Electronics</div></div>
+	
+		
+	<div class="boxes-second"><a href="/product_details.php?pID=8"><img src="https://www.shivalikbimetals.com/images/product/small/2_1241920627_automotive.jpg" alt="Automotive" title="Automotive" width="124" height="81" border="0"  class="bw pic"/></a>
+	<div class="boxes-text">Automotive</div></div>
+	
+		
+	<div class="boxes-second"><a href="/product_details.php?pID=10"><img src="https://www.shivalikbimetals.com/images/product/small/2_191056900_dome.jpg" alt="Domestic Appliances" title="Domestic Appliances" width="124" height="81" border="0"  class="bw pic"/></a>
+	<div class="boxes-text">Domestic Appliances</div></div>
+	
+		
+	<div class="boxes"><a href="/product_details.php?pID=14"><img src="https://www.shivalikbimetals.com/images/product/small/2_390835331_industry.jpg" alt="Industrial" title="Industrial" width="124" height="81" border="0"  class="bw pic"/></a>
+	<div class="boxes-text">Industrial</div></div>
+	
+		
+	<div class="boxes-second"><a href="/product_details.php?pID=15"><img src="https://www.shivalikbimetals.com/images/product/small/2_1658616393_medical.jpg" alt="Medical" title="Medical" width="124" height="81" border="0"  class="bw pic"/></a>
+	<div class="boxes-text">Medical</div></div>
+	
+		
+	<div class="boxes-second"><a href="/product_details.php?pID=19"><img src="https://www.shivalikbimetals.com/images/product/small/2_2044987483_agricul.jpg" alt="Agriculture and Animal Husbandry Appliances" title="Agriculture and Animal Husbandry Appliances" width="124" height="81" border="0"  class="bw pic"/></a>
+	<div class="boxes-text">Agriculture and Animal Husbandry Appliances</div></div>
+	
+		
+	
+	<!--<div ><a href="automotive.php"><img src="images/space.jpg" width="124" height="81" border="0" /></a>
+	<div class="boxes-text">Automotive</div></div>-<div class="boxes-second"><a href="electrical.php"><img src="images/electrical.jpg" width="124" height="81" border="0" /></a>
+	<div class="boxes-text">Electrical</div></div>
+	
+	<div class="boxes-second"><a href="domestic-appliances.php"><img src="images/domestic.jpg" width="124" height="81" border="0" /></a>
+	<div class="boxes-text">Domestic Appliances</div></div>
+	
+	
+	
+	
+	
+	<div class="boxes" style=" margin-top:5px;"><a href="aerospace.php"><img src="images/aireplane.jpg" width="124" height="81" border="0" /></a>
+	  <div class="boxes-text">Aerospace</div></div>
+	  
+	  <div class="boxes-second" style=" margin-top:5px;"><a href="medical.php"><img src="images/medical.jpg" width="124" height="81" border="0" /></a>
+	<div class="boxes-text">Medical</div></div>
+	
+	<div class="boxes-second" style=" margin-top:5px;"><a href="industrial.php"><img src="images/industrial.jpg" width="124" height="81" border="0" /></a>
+	<div class="boxes-text">Industrial</div></div>
+	-->
+	
+	
+	
+	
+	
+	
+	</div>
+		</div>
+	<div class="part3">
+	<div class="client" >
+	 
+       <a href="bms.php"><img src="images/bms-new.jpg" border="0" /></a>
+     
+     
+     </div>
+	  <a href="Catalogue.pdf" target=_blank;><img src="images/download.jpg"  style="margin-top:5px;" class="bw pic"/></a>
+	</div>
+	</div>
+<div class="inner-page-main" style="border:none; background-image:none;">
+<div class="investor-relations">
+<div class="investor-flo"><table width="100%" height="118" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="40%" align="center"><a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade"><img src="images/global.jpg" width="389" height="92" hspace="0" border="0"  style="padding-top:39px; padding-left:10px;"/></a></td>
+    <td width="27%" valign="top"></td>
+<td width="33%" align="left" valign="top"><a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade"><img src="images/saless.jpg" width="364" height="86" border="0" style="padding-top:39px; margin-left:10px;" /></a></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="battery-management-solution" style="background:#767676">
+CERTIFICATES
+ <a href="about-us.php?pageId=5"><img src="images/iso-18001-v3.jpg" width="170" border="0" style=" margin-top:5px;" /></a>
+</div>
+</div>
+<script>
+  $('.link-item').each(function(){
+    var linkValue = '/'+$(this).attr('href');
+    var windowPathname = window.location.pathname;
+    if(linkValue == windowPathname){
+        $(this).addClass('active');
+    }
+});
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ 
+
+  ga('create', 'UA-59880521-1', 'auto');
+
+  ga('send', 'pageview');
+
+ 
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Ads: 954910667 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-954910667"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-954910667');
+</script>
+
+ 
+
+ 
+
+<div class="inner-page-main" style="border-left:0px; border-right:0px; border-bottom:0px; background-image:none; padding-top:15px;">
+
+<div class="footer">
+
+<ul style="float:left; list-style:none; padding-left:2px; padding-right:20px; padding-top:0px; margin-top:0px;">
+<strong class="footer-heading">Company</strong>
+<li><a href="about-us.php?pageId=2">Overview</a></li>
+<li><a href="about-us.php?pageId=5">Certifications</a></li>
+<li><a href="about-us.php?pageId=6">R & D Innovations</a></li>
+<li><a href="about-us.php?pageId=7">Investor Relations</a></li>
+</ul>
+
+<ul style="float:left; width:120px; border-left:1px solid #e8e8e8; list-style:none; padding-right:15px; padding-top:0px; margin-top:0px; padding-left:15px; height:150px;">
+<strong class="footer-heading">Applications</strong>
+
+
+<li><a href="/product_details.php?pID=9">Electronics</a></li>
+
+<li><a href="/product_details.php?pID=8">Automotive</a></li>
+
+<li><a href="/product_details.php?pID=10">Domestic Appliances</a></li>
+</ul><ul style="float:left; width:130px; list-style:none; padding-left:2px; padding-right:15px; padding-top:20px; margin-top:0px; padding-left:15px;">
+<li><a href="/product_details.php?pID=14">Industrial</a></li>
+
+<li><a href="/product_details.php?pID=15">Medical</a></li>
+
+<li><a href="/product_details.php?pID=19">Agriculture and Animal Husbandry Appliances</a></li>
+</ul><ul style="float:left; width:130px; list-style:none; padding-left:2px; padding-right:15px; padding-top:20px; margin-top:0px; padding-left:15px;"></ul>
+
+<ul style="float:left; width:120px; border-left:1px solid #e8e8e8; list-style:none; padding-right:15px; padding-top:0px; margin-top:0px; padding-left:15px; height:150px;">
+<strong class="footer-heading">Products</strong>
+
+<li><a href="product_details.php?pID=1">Thermostatic Bimetal Parts/Strips</a></li>
+<li><a href="product_details.php?pID=3">SMDs / Shunt Resistors</a></li>
+<li><a href="product_details.php?pID=4">Reflow Solder/Presoldered Strips</a></li>
+</ul><ul style="float:left; width:130px; list-style:none; padding-right:20px; padding-top:20px; margin-top:0px; padding-left:35px;"><li><a href="product_details.php?pID=5">Precision Stainless Steel</a></li>
+<li><a href="product_details.php?pID=20">Thermostatic Bimetal Coils & Spring</a></li>
+<li><a href="product_details.php?pID=6">Snap Action Disc</a></li>
+</ul><ul style="float:left; width:130px; list-style:none; padding-right:20px; padding-top:20px; margin-top:0px; padding-left:35px;"></ul>
+
+<ul style="float:left; width:130px; border-left:1px solid #e8e8e8; list-style:none; padding-left:2px; padding-right:15px; padding-top:0px; margin-top:-13px; padding-left:15px; height:150px;">
+
+<li><a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade"><strong class="footer-heading">Sales Network</strong></a></li>
+<li><a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade"><strong class="footer-heading">Global Presence</strong></a></li>
+<li><a href="technology.php"><strong class="footer-heading">Technology</strong></a></li>
+
+
+<!-- <li><script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script></li> -->
+ <ul class="footer-image">
+ <li><script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script></li>
+ <li class="footer-second-image"><script language="JavaScript" src=https://dunsregistered.dnb.com/ESG.js type="text/javascript"></script></li>
+ </ul>
+ 
+
+
+</ul>
+
+</div>
+<div class="clear"></div>
+
+<div class="footer-bottom">Copyright &copy; 2019 Shivalik Bimetal Controls Limited <br />
+
+<!--Web Design - <a href="http://www.indiainternets.com/" target="_blank">India Internets</a>--></div>
+</div><script>
+$(document).ready(function(){
+  $(".images_box .close").click(function(){
+    $("body").addClass("close_right_popup");
+  });
+});
+</script>
+</div>
+</div>
+<script type="text/javascript">
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+</script>
+
+</body>
+</html>

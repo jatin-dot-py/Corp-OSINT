@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>Nouveau Global Ventures Ltd</title>
+
+<link rel="stylesheet" type="text/css" href="css/styleHome.css" />
+<link rel="stylesheet" type="text/css" href="css/feature-carousel.css" charset="utf-8" />
+
+<link rel="icon" href="images/windowlogo.ico" type="image/x-icon" />
+
+<!--Adding jquery file -->
+	<script language="javascript" type="text/javascript" src="js/jquery-min-1.7.2.js" ></script>
+
+    <script src="js/jquery.featureCarousel.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Plugin initialization -->
+<script type="text/javascript">
+	$(document).ready(function () {
+		
+		  var carousel = $("#carousel").featureCarousel({
+          // include options like this:
+          // (use quotes only for string values, and no trailing comma after last option)
+          // option: value,
+          // option: value
+		  smallFeatureHeight: .6,
+		  smallFeatureWidth: .5,
+		  trackerIndividual: false,
+		  trackerSummation: false,
+		  topPadding: 0,
+		  sidePadding: 30
+        });
+
+        $("#but_prev").click(function () {
+          carousel.prev();
+        });
+        $("#but_pause").click(function () {
+          carousel.pause();
+        });
+		
+		
+        $("#but_start").click(function () {
+          carousel.start();
+        });
+        $("#but_next").click(function () {
+          carousel.next();
+        });
+				
+		$("#nav td:contains('Home')").addClass("currNavClass");
+			$("#nav a").hover(
+			   function(){ $(this).closest("td").removeClass('navClass').addClass('hoverNavClass') },
+	   			function(){ $(this).closest("td").removeClass('hoverNavClass').addClass('navClass')
+		})
+
+
+		$("[id^=btnReadMore]").hover( 
+				function(){	$(this).removeClass("btnReadMore").addClass("btnReadMoreHover")},
+				function(){ $(this).removeClass("btnReadMoreHover").addClass("btnReadMore")
+			})
+			
+			
+		$("#btnReadMore2").click( 
+				function(){	window.location.href = "business.html" })
+
+	
+	
+	});
+</script>
+
+</head>
+
+<body>
+
+<div id= "container">
+
+<div id= "footer">
+<div id="copyrightText">
+<span class="footerClass">Copyright © 2012.Nouveau Global Ventures Ltd. All rights reserved.</span>
+</div>
+<div id="siteText">
+<span class="footerClass">This site is developed and maintatined by d2plus1.com</span>
+</div>
+</div>
+
+
+<div id="divider">
+<img src="images/divider.png" />
+</div>
+
+<div id="lowerMenu" class="footerClass">
+
+<a href="index.html">Home | </a>
+<a href="business.html">Business | </a>
+<a href="executives.html">Executives | </a>
+<a href="investors.html">Investors | </a>
+<a href="company.html">Company | </a>
+<a href="company.html#contact">Contact </a>
+
+</div>
+
+<div id="nav">
+<table id="tabMenu" cellpadding="5px;">
+<tr>
+<td><span class="navClass"><a href="index.html">Home</a></span></td>
+<td><span class="navClass"><a href="business.html">Business</a></span></td>
+<td><span class="navClass"><a href="executives.html">Executives</a></span></td>
+<td><span class="navClass"><a href="investors.html">Investors</a></span></td>
+<td><span class="navClass"><a href="company.html">Company</a></span></td>
+</tr>
+</table>
+</div>
+
+<a href="index.html">
+<div id="logo">
+</div>
+</a>
+
+
+<div class="carousel-container">
+
+  <div id="carousel">
+    <div class="carousel-feature">
+      <a href="#"><img class="carousel-image" alt="Image Caption" src="images/home1.jpg"></a>
+        <div class="carousel-caption">
+        <p>
+          Automation
+        </p>
+      </div>
+    </div>
+    <div class="carousel-feature">
+      <a href="#"><img class="carousel-image" alt="Image Caption" src="images/home2.jpg"></a>
+       <div class="carousel-caption">
+        <p>
+          Finance. 
+        </p>
+      </div>
+    </div>
+    
+    <div class="carousel-feature">
+      <a href="#"><img class="carousel-image" alt="Image Caption" src="images/home4.jpg"></a>
+       <div class="carousel-caption">
+        <p>
+          Infrastructure
+        </p>
+      </div>
+    </div>
+
+
+    <div class="carousel-feature">
+      <a href="#"><img class="carousel-image" alt="Image Caption" src="images/home3.jpg"></a>
+       <div class="carousel-caption">
+        <p>
+          Mr. Krishan Khadaria at Bhojpuri Awards
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id = "textHolder1">
+  <div class="headerArrow1"><img src="images/arrow.png" /></div>
+  <div class="header1">Welcome </div>
+  <div class="dottedLine1"><img src="images/dotted-line.png" </div>
+  <div class="mainText">
+  <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Nouveau Global Ventures Limited” was originally incorporated as a private limited company in the name of “Nouveau Consultancy Services Private Limited” on November 16, 1988.The Company has been promoted by Mr. Krishan Khadaria. The Company has a professional team of Directors consisting of Mr. Krishan Khadaria, Mr. Mohit Khadaria, Mr. Narendra Gupta & Mr. Manoj Bhatia with an objective to make the Company reach new heights in a diverse range of businesses started by the company.
+    <br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The successful management and sound financial backing of exemplary visions has helped develop Nouveau Global Ventures into a diverse array of industries with a truly global identity.
+  </div>
+   <a href="company.html"><div id="btnReadMore1" class="btnReadMore"></div></a>
+</div>
+
+<div id = "textHolder2">
+  <div class="headerArrow1"><img src="images/arrow.png" /></div>
+  <div class="header1">Business Verticals </div>
+  <div class="dottedLine1"><img src="images/dotted-line.png" </div>
+  <div class="listText" id="list">
+  <table cellpadding="5px">
+  <tr>
+  <td><img src="images/bullet.png" /></td>
+  <td><a href="business.html#automation">Automation</a></td>
+  </tr>
+  <tr>
+  <td><img src="images/bullet.png" /></td>
+  <td><a href="business.html#mutimedia">Multimedia</a></td>
+  </tr>
+  <tr>
+  <td><img src="images/bullet.png" /></td>
+  <td><a href="business.html#infrastructure">Real Estate & Infrastructure</a></td>
+  </tr>
+  <tr>
+  <td><img src="images/bullet.png" /></td>
+  <td><a href="business.html#electronics">Electronics</a></td>
+  </tr>
+  <tr>
+  <td><img src="images/bullet.png" /></td>
+  <td><a href="business.html#agriculture">Agriculture</a></td>
+  </tr>
+  <tr>
+  <td><img src="images/bullet.png" /></td>
+  <td><a href="business.html#enterprises">Global Enterprises</a></td>
+  </tr>
+  </table>
+<!--  <ul>
+  	<li>Automation</li>
+    <li>Multimedia</li>
+    <li>Real Estate & Infrastructure</li>
+    <li>Electronics</li>
+    <li>Agriculture</li>
+    <li>Global Enterprises</li>
+  </ul>-->
+  </div>
+  	<a href="business.html"><div id="btnReadMore2" class="btnReadMore"></div></a>
+</div>
+
+<div id = "textHolder3">
+<script type="text/javascript">var _mcq=["4","4e463034"];</script><span id='_mc_mg4'></span><script language="JavaScript" src="http://stat1.moneycontrol.com/mcjs/common/mc_widget.js"></script><noscript><a href="http://www.moneycontrol.com/india/stockpricequote/financegeneral/nouveauglobalventures/NF04">Nouveau Global Ventures</a></noscript>
+</div>
+
+</body>
+</html>

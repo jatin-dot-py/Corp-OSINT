@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataKosa — Insightful Data, Smart Decisions</title>
+  <meta name="description" content="DataKosa delivers AI, cloud, cybersecurity, and digital services for enterprises.">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/main.css?v=20260920e">
+  <link rel="stylesheet" href="assets/css/glitter-cards.css?v=20260920e">
+  <link rel="stylesheet" href="assets/css/home-hero.css?v=20260920e">
+  <script>
+    (function () {
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      document.documentElement.classList.add("anim");
+      var started = false;
+      var cleaned = false;
+      var bootTimer;
+      var safetyTimer;
+      function clean() {
+        if (cleaned) return;
+        cleaned = true;
+        window.clearTimeout(safetyTimer);
+        document.removeEventListener("animationend", onEnd, true);
+        document.documentElement.classList.remove("anim", "go");
+      }
+      function onEnd(e) {
+        if (e.animationName === "pillIn" && e.target.classList.contains("btn-ghost")) clean();
+      }
+      function start() {
+        if (started) return;
+        started = true;
+        window.clearTimeout(bootTimer);
+        document.addEventListener("animationend", onEnd, true);
+        safetyTimer = window.setTimeout(clean, 2600);
+        document.documentElement.classList.add("go");
+      }
+      function boot() {
+        bootTimer = window.setTimeout(start, 900);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(start, start);
+        else start();
+      }
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+      else boot();
+    })();
+  </script>
+</head>
+<body class="page-home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Datakosa.ai home">
+        <img class="logo-img" src="assets/images/datakosa-logo.png" alt="Datakosa.ai — Data &amp; AI Services" width="158" height="28" decoding="async">
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <div class="nav-dropdown nav-dropdown--mega" data-nav="services">
+  <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+    Services
+    <span class="nav-chevron" aria-hidden="true"></span>
+  </button>
+  <div class="nav-dropdown-menu nav-mega-menu" role="menu">
+    <div class="nav-mega-menu__inner">
+      <div class="nav-mega-intro">
+        <h2>Our Services</h2>
+        <p>AI, cloud, security, digital, and automation services that help enterprises work more efficiently.</p>
+        <a class="nav-mega-cta" href="services/index.html">Explore All Services <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="nav-mega-cats"><a class="nav-mega-cat is-active" href="services/ai-ml.html" data-panel="services-ai-ml" role="menuitem">
+              AI &amp; ML
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="services/cybersecurity.html" data-panel="services-cybersecurity" role="menuitem">
+              Cybersecurity
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="services/cloud.html" data-panel="services-cloud" role="menuitem">
+              Cloud
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="services/digital.html" data-panel="services-digital" role="menuitem">
+              Digital Services
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="services/automation.html" data-panel="services-automation" role="menuitem">
+              Automation
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a></div>
+      <div class="nav-mega-panels"><div class="nav-mega-panel is-active" data-panel="services-ai-ml">
+              <a class="nav-mega-item" href="services/ai-ml.html" role="menuitem">
+            <h3>Predictive analytics</h3>
+            <p>Forecasting and decision models that operations teams can actually run.</p>
+          </a>
+              <a class="nav-mega-item" href="services/ai-ml.html" role="menuitem">
+            <h3>Generative AI &amp; NLP</h3>
+            <p>Assistants, search, and document intelligence grounded in your data.</p>
+          </a>
+              <a class="nav-mega-item" href="services/ai-ml.html" role="menuitem">
+            <h3>Computer vision</h3>
+            <p>Inspection, IDP, and visual workflows from prototype to production.</p>
+          </a>
+              <a class="nav-mega-item" href="services/ai-ml.html" role="menuitem">
+            <h3>MLOps &amp; governance</h3>
+            <p>Monitoring, model control, and a path from lab to live.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="services-cybersecurity">
+              <a class="nav-mega-item" href="services/cybersecurity.html" role="menuitem">
+            <h3>Security assessments</h3>
+            <p>Find the real attack surface before an auditor or adversary does.</p>
+          </a>
+              <a class="nav-mega-item" href="services/cybersecurity.html" role="menuitem">
+            <h3>Identity &amp; access</h3>
+            <p>IAM that keeps users moving and privileged access locked down.</p>
+          </a>
+              <a class="nav-mega-item" href="services/cybersecurity.html" role="menuitem">
+            <h3>SOC &amp; detection</h3>
+            <p>SIEM design and managed detection for cloud and hybrid estates.</p>
+          </a>
+              <a class="nav-mega-item" href="services/cybersecurity.html" role="menuitem">
+            <h3>Compliance readiness</h3>
+            <p>ISO 27001 and SOC 2 controls you can evidence.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="services-cloud">
+              <a class="nav-mega-item" href="services/cloud.html" role="menuitem">
+            <h3>Cloud migration</h3>
+            <p>Secure moves to AWS, Azure, and GCP with a landing zone that lasts.</p>
+          </a>
+              <a class="nav-mega-item" href="services/cloud.html" role="menuitem">
+            <h3>Platform engineering</h3>
+            <p>Kubernetes, containers, and well-architected reviews.</p>
+          </a>
+              <a class="nav-mega-item" href="services/cloud.html" role="menuitem">
+            <h3>DevOps &amp; IaC</h3>
+            <p>CI/CD and infrastructure as code with change you can audit.</p>
+          </a>
+              <a class="nav-mega-item" href="services/cloud.html" role="menuitem">
+            <h3>FinOps</h3>
+            <p>Cost, tagging, and spend control once the estate is live.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="services-digital">
+              <a class="nav-mega-item" href="services/digital.html" role="menuitem">
+            <h3>Application modernization</h3>
+            <p>Re-platform legacy systems without pausing the business.</p>
+          </a>
+              <a class="nav-mega-item" href="services/digital.html" role="menuitem">
+            <h3>Web &amp; mobile products</h3>
+            <p>Customer-facing experiences built for release, not decks.</p>
+          </a>
+              <a class="nav-mega-item" href="services/digital.html" role="menuitem">
+            <h3>API &amp; microservices</h3>
+            <p>Integration that lets new products reuse what you already have.</p>
+          </a>
+              <a class="nav-mega-item" href="services/digital.html" role="menuitem">
+            <h3>UX &amp; design systems</h3>
+            <p>Interfaces your teams can extend after we leave.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="services-automation">
+              <a class="nav-mega-item" href="services/automation.html" role="menuitem">
+            <h3>RPA</h3>
+            <p>Repeatable process automation with a clear operating model.</p>
+          </a>
+              <a class="nav-mega-item" href="services/automation.html" role="menuitem">
+            <h3>Intelligent documents</h3>
+            <p>IDP that pulls structured work out of PDFs and inboxes.</p>
+          </a>
+              <a class="nav-mega-item" href="services/automation.html" role="menuitem">
+            <h3>Workflow orchestration</h3>
+            <p>BPM and IT runbooks that stay measurable.</p>
+          </a>
+              <a class="nav-mega-item" href="services/automation.html" role="menuitem">
+            <h3>Automation CoE</h3>
+            <p>Governance so bots do not become shadow IT.</p>
+          </a>
+            </div></div>
+    </div>
+  </div>
+</div>
+<div class="nav-dropdown nav-dropdown--mega" data-nav="industries">
+  <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+    Industries
+    <span class="nav-chevron" aria-hidden="true"></span>
+  </button>
+  <div class="nav-dropdown-menu nav-mega-menu" role="menu">
+    <div class="nav-mega-menu__inner">
+      <div class="nav-mega-intro">
+        <h2>Industry Expertise</h2>
+        <p>Programmes shaped around how your sector actually operates — regulation, data, and delivery included.</p>
+        <a class="nav-mega-cta" href="industries/index.html">Explore All Industries <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="nav-mega-cats"><a class="nav-mega-cat is-active" href="industries/government.html" data-panel="industries-government" role="menuitem">
+              Government
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="industries/technology.html" data-panel="industries-technology" role="menuitem">
+              Technology
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="industries/finance.html" data-panel="industries-finance" role="menuitem">
+              Finance
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="industries/healthcare.html" data-panel="industries-healthcare" role="menuitem">
+              Healthcare
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="industries/supply-chain.html" data-panel="industries-supply-chain" role="menuitem">
+              Supply Chain
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a></div>
+      <div class="nav-mega-panels"><div class="nav-mega-panel is-active" data-panel="industries-government">
+              <a class="nav-mega-item" href="industries/government.html" role="menuitem">
+            <h3>Citizen services</h3>
+            <p>Portals and e-governance that people can complete, not abandon.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/government.html" role="menuitem">
+            <h3>Secure infrastructure</h3>
+            <p>Cloud and hybrid estates built for public-sector controls.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/government.html" role="menuitem">
+            <h3>Policy analytics</h3>
+            <p>Data platforms that show whether programmes are working.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/government.html" role="menuitem">
+            <h3>Legacy modernization</h3>
+            <p>Replace brittle systems without a big-bang outage.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="industries-technology">
+              <a class="nav-mega-item" href="industries/technology.html" role="menuitem">
+            <h3>Product engineering</h3>
+            <p>SaaS and platform teams that ship on a weekly rhythm.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/technology.html" role="menuitem">
+            <h3>Scale &amp; performance</h3>
+            <p>Architecture that holds when usage finally arrives.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/technology.html" role="menuitem">
+            <h3>DevOps &amp; SRE</h3>
+            <p>Release, reliability, and the on-call model behind them.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/technology.html" role="menuitem">
+            <h3>QA automation</h3>
+            <p>Quality gates that keep enterprise buyers comfortable.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="industries-finance">
+              <a class="nav-mega-item" href="industries/finance.html" role="menuitem">
+            <h3>Core &amp; payments</h3>
+            <p>Integration around banking and payment platforms.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/finance.html" role="menuitem">
+            <h3>Risk &amp; fraud</h3>
+            <p>Controls that keep pace with digital channels.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/finance.html" role="menuitem">
+            <h3>Regulatory reporting</h3>
+            <p>Automation for filings you cannot afford to miss.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/finance.html" role="menuitem">
+            <h3>Customer analytics</h3>
+            <p>Personalisation inside the guardrails of the licence.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="industries-healthcare">
+              <a class="nav-mega-item" href="industries/healthcare.html" role="menuitem">
+            <h3>EHR interoperability</h3>
+            <p>HL7/FHIR connections that clinicians will tolerate.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/healthcare.html" role="menuitem">
+            <h3>Clinical data platforms</h3>
+            <p>Analytics on records you are allowed to use.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/healthcare.html" role="menuitem">
+            <h3>Patient engagement</h3>
+            <p>Portals and telehealth that reduce no-shows.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/healthcare.html" role="menuitem">
+            <h3>Privacy-aware cloud</h3>
+            <p>HIPAA-aligned architecture and access control.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="industries-supply-chain">
+              <a class="nav-mega-item" href="industries/supply-chain.html" role="menuitem">
+            <h3>Control tower</h3>
+            <p>One view of inventory, orders, and exceptions.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/supply-chain.html" role="menuitem">
+            <h3>Demand forecasting</h3>
+            <p>Planning that cuts stock-outs and excess.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/supply-chain.html" role="menuitem">
+            <h3>WMS / TMS</h3>
+            <p>Warehouse and transport systems that talk to each other.</p>
+          </a>
+              <a class="nav-mega-item" href="industries/supply-chain.html" role="menuitem">
+            <h3>Track and trace</h3>
+            <p>IoT and supplier portals for real-time movement.</p>
+          </a>
+            </div></div>
+    </div>
+  </div>
+</div>
+<a href="customers/index.html">Customers</a>
+<div class="nav-dropdown nav-dropdown--mega" data-nav="investor">
+  <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+    Investor
+    <span class="nav-chevron" aria-hidden="true"></span>
+  </button>
+  <div class="nav-dropdown-menu nav-mega-menu" role="menu">
+    <div class="nav-mega-menu__inner">
+      <div class="nav-mega-intro">
+        <h2>Investor Relations</h2>
+        <p>Filings, governance, results, and shareholder information in the same sections as before.</p>
+        <a class="nav-mega-cta" href="investors/index.html">Explore Investors <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="nav-mega-cats"><a class="nav-mega-cat is-active" href="investors/code-and-policies.html" data-panel="investor-code-and-policies" role="menuitem">
+              Code and Policies
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="investors/corporate-governance.html" data-panel="investor-corporate-governance" role="menuitem">
+              Corporate Governance
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="investors/quarterly-reports.html" data-panel="investor-results-reports" role="menuitem">
+              Results &amp; Reports
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="investors/egms-postal-ballots.html" data-panel="investor-egms-postal-ballots" role="menuitem">
+              EGMs / Postal Ballots
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="investors/shareholding.html" data-panel="investor-shareholding" role="menuitem">
+              Shareholding
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="investors/miscellaneous-info.html" data-panel="investor-miscellaneous-info" role="menuitem">
+              Miscellaneous Info
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="investors/rights-issue.html" data-panel="investor-rights-issue" role="menuitem">
+              Rights Issue
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="investors/investor-grievances.html" data-panel="investor-investor-grievances" role="menuitem">
+              Investor grievances
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a></div>
+      <div class="nav-mega-panels"><div class="nav-mega-panel is-active" data-panel="investor-code-and-policies">
+              <a class="nav-mega-item" href="investors/code-and-policies.html" role="menuitem">
+            <h3>Code and Policies</h3>
+            <p>Codes of conduct, policies, and related disclosures.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="investor-corporate-governance">
+              <a class="nav-mega-item" href="investors/corporate-governance.html" role="menuitem">
+            <h3>Corporate Governance</h3>
+            <p>Governance documents and statutory disclosures.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="investor-results-reports">
+              <a class="nav-mega-item" href="investors/quarterly-reports.html" role="menuitem">
+            <h3>Quarterly Reports</h3>
+            <p>Quarterly results and reports.</p>
+          </a>
+              <a class="nav-mega-item" href="investors/annual-reports.html" role="menuitem">
+            <h3>Annual Reports</h3>
+            <p>Annual reports and filings.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="investor-egms-postal-ballots">
+              <a class="nav-mega-item" href="investors/egms-postal-ballots.html" role="menuitem">
+            <h3>EGMs / Postal Ballots</h3>
+            <p>Extra-ordinary general meetings and postal ballots.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="investor-shareholding">
+              <a class="nav-mega-item" href="investors/shareholding.html" role="menuitem">
+            <h3>Shareholding</h3>
+            <p>Shareholding pattern and related disclosures.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="investor-miscellaneous-info">
+              <a class="nav-mega-item" href="investors/miscellaneous-info.html" role="menuitem">
+            <h3>Miscellaneous Info</h3>
+            <p>Additional investor information and notices.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="investor-rights-issue">
+              <a class="nav-mega-item" href="investors/rights-issue.html" role="menuitem">
+            <h3>Rights Issue</h3>
+            <p>Rights issue documents and updates.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="investor-investor-grievances">
+              <a class="nav-mega-item" href="investors/investor-grievances.html" role="menuitem">
+            <h3>Investor grievances</h3>
+            <p>How to raise and track investor grievances.</p>
+          </a>
+            </div></div>
+    </div>
+  </div>
+</div>
+<div class="nav-dropdown nav-dropdown--mega" data-nav="about">
+  <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+    About Us
+    <span class="nav-chevron" aria-hidden="true"></span>
+  </button>
+  <div class="nav-dropdown-menu nav-mega-menu" role="menu">
+    <div class="nav-mega-menu__inner">
+      <div class="nav-mega-intro">
+        <h2>About Datakosa.ai</h2>
+        <p>A delivery-led technology firm — CMMi Level 5, ISO 9001, ISO 27001 — working with enterprises in India, Australia, and beyond.</p>
+        <a class="nav-mega-cta" href="about/index.html">Explore About Us <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="nav-mega-cats"><a class="nav-mega-cat is-active" href="about/index.html" data-panel="about-company" role="menuitem">
+              Company
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a>
+            <a class="nav-mega-cat" href="about/board-of-directors/index.html" data-panel="about-leadership" role="menuitem">
+              Leadership
+              <span class="nav-mega-cat__chevron" aria-hidden="true">›</span>
+            </a></div>
+      <div class="nav-mega-panels"><div class="nav-mega-panel is-active" data-panel="about-company">
+              <a class="nav-mega-item" href="about/index.html" role="menuitem">
+            <h3>About Us</h3>
+            <p>Who we are, how we work, and what we hold ourselves to.</p>
+          </a>
+              <a class="nav-mega-item" href="careers/index.html" role="menuitem">
+            <h3>Careers</h3>
+            <p>Open roles across delivery, engineering, and operations.</p>
+          </a>
+              <a class="nav-mega-item" href="contact/index.html" role="menuitem">
+            <h3>Contact</h3>
+            <p>Talk to us about a programme, partnership, or role.</p>
+          </a>
+            </div>
+            <div class="nav-mega-panel" data-panel="about-leadership">
+              <a class="nav-mega-item" href="about/board-of-directors/index.html" role="menuitem">
+            <h3>Board of Directors</h3>
+            <p>The board that governs DataKosa.</p>
+          </a>
+              <a class="nav-mega-item" href="about/board-committees.html" role="menuitem">
+            <h3>Board Committees</h3>
+            <p>Audit, nomination, and other committee charters.</p>
+          </a>
+            </div></div>
+    </div>
+  </div>
+</div>
+        <a href="contact/index.html" class="nav-mobile-cta">Contact us</a>
+      </nav>
+      <div class="header-actions">
+        <a href="contact/index.html" class="header-cta">Contact us</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <main class="home-hero" id="main">
+    <div class="bg" role="img" aria-label="Stylised globe of Earth against a starfield, slowly rotating">
+      <video class="bg-video is-active" id="bgVideoA" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/82e7eb75-c65f-490a-99b5-f3d1cad54200.webp">
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260912_104036_bd6924f6-3c8e-417e-8465-6d03c8c2e9e6.mp4" type="video/mp4">
+      </video>
+      <video class="bg-video" id="bgVideoB" muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/82e7eb75-c65f-490a-99b5-f3d1cad54200.webp">
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260912_104036_bd6924f6-3c8e-417e-8465-6d03c8c2e9e6.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-inner">
+      <h1>
+        <span class="ln"><span class="ln-i">Empower with</span></span>
+        <span class="ln"><span class="ln-i brand-line">AI innovations</span></span>
+      </h1>
+      <p class="sub">Transform your business with AI, cloud, security, and automation<br>
+         for clearer decisions and reliable operations.</p>
+      <div class="ctas">
+        <a class="btn btn-lg btn-primary" href="contact/index.html">Get Started
+          <svg class="arw" viewBox="0 0 12 10" fill="none" aria-hidden="true">
+            <path d="M0.8 5h10M7.1 1.4 10.9 5l-3.8 3.6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="btn btn-lg btn-ghost" href="contact/index.html">Contact Sales
+          <svg class="arw" viewBox="0 0 12 10" fill="none" aria-hidden="true">
+            <path d="M0.8 5h10M7.1 1.4 10.9 5l-3.8 3.6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+  <div class="home-rest">
+    <section class="home-trust" aria-label="Credentials">
+      <div class="container home-trust__inner">
+        <div class="home-trust__item"><strong>CMMi Level 5</strong><span>Quality delivery</span></div>
+        <div class="home-trust__item"><strong>ISO 9001</strong><span>Quality systems</span></div>
+        <div class="home-trust__item"><strong>ISO 27001</strong><span>Information security</span></div>
+        <div class="home-trust__item"><strong>Global reach</strong><span>India · Australia · worldwide</span></div>
+      </div>
+    </section>
+
+    <section class="section home-story">
+      <div class="container home-story__grid">
+        <div class="home-story__media">
+          <img src="assets/images/cards/story.jpg" alt="DataKosa specialists collaborating on an enterprise programme" width="1400" height="900" loading="lazy">
+        </div>
+        <div class="home-story__copy">
+          <span class="section-eyebrow">Who we are</span>
+          <h2 class="section-title">Insightful data. Smart decisions.</h2>
+          <p class="section-desc">DataKosa helps enterprises put data, AI, cloud, and digital systems to work — so teams can make clearer decisions and run operations with more confidence.</p>
+          <ul class="home-story__points">
+            <li>AI, cloud, security, and automation programmes</li>
+            <li>Industry specialists for regulated and growth sectors</li>
+            <li>CMMi Level 5 delivery with ISO 9001 and ISO 27001 controls</li>
+          </ul>
+          <a class="btn btn-primary" href="about/index.html">About DataKosa</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cards">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">What We Do</span>
+          <h2 class="section-title">Our services</h2>
+          <p class="section-desc">AI, security, cloud, automation, and digital programmes aligned to how you work.</p>
+        </div>
+        <div class="card-grid">
+          <a class="feature-card" href="services/ai-ml.html">
+            <div class="feature-card__media"><img src="assets/images/cards/ai-ml.jpg" alt="Generative AI model visualisation" width="1400" height="900" loading="lazy"></div>
+            <div class="feature-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="13" y="13" width="22" height="22" rx="4"/><circle cx="24" cy="24" r="5"/><path d="M24 7v6M24 35v6M7 24h6M35 24h6M12 12l4 4M32 32l4 4M12 36l4-4M32 16l4-4"/></svg></div>
+            <h3>AI &amp; ML</h3>
+            <p>Intelligent AI and ML solutions for smarter decision-making, automation, and growth.</p>
+            <span class="feature-card__cta">Know More <span class="feature-card__arrow" aria-hidden="true">↗</span></span>
+          </a>
+          <a class="feature-card" href="services/cybersecurity.html">
+            <div class="feature-card__media"><img src="assets/images/cards/cybersecurity.jpg" alt="Cybersecurity operations and threat monitoring" width="1400" height="900" loading="lazy"></div>
+            <div class="feature-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6L10 12v11c0 8.4 5.6 14.2 14 16.4C32.4 37.2 38 31.4 38 23V12L24 6z"/><rect x="19" y="21" width="10" height="8" rx="1.4"/><path d="M22 21v-2.5a2 2 0 014 0V21"/></svg></div>
+            <h3>Cybersecurity</h3>
+            <p>Stay ahead of threats with proactive, reliable protection tailored to your needs.</p>
+            <span class="feature-card__cta">Know More <span class="feature-card__arrow" aria-hidden="true">↗</span></span>
+          </a>
+          <a class="feature-card" href="services/cloud.html">
+            <div class="feature-card__media"><img src="assets/images/cards/cloud.jpg" alt="Global cloud-scale infrastructure" width="1400" height="900" loading="lazy"></div>
+            <div class="feature-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M16 34h16.5a7.5 7.5 0 00.4-15 10.5 10.5 0 00-20.5 3A6.8 6.8 0 0016 34z"/><path d="M24 16v12M19.5 21 24 16.5 28.5 21"/></svg></div>
+            <h3>Cloud Services</h3>
+            <p>Streamline operations and scale with secure, flexible cloud services.</p>
+            <span class="feature-card__cta">Know More <span class="feature-card__arrow" aria-hidden="true">↗</span></span>
+          </a>
+          <a class="feature-card" href="services/digital.html">
+            <div class="feature-card__media"><img src="assets/images/cards/digital.jpg" alt="Product analytics dashboard on a laptop" width="1400" height="900" loading="lazy"></div>
+            <div class="feature-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="10" width="26" height="18" rx="2.5"/><path d="M14 32h10M19 28v4"/><rect x="34" y="16" width="9" height="18" rx="1.6"/><path d="M10 16h12M10 21h8"/></svg></div>
+            <h3>Digital Services</h3>
+            <p>Digital solutions to modernize processes, applications, and customer-facing systems.</p>
+            <span class="feature-card__cta">Know More <span class="feature-card__arrow" aria-hidden="true">↗</span></span>
+          </a>
+          <a class="feature-card" href="services/automation.html">
+            <div class="feature-card__media"><img src="assets/images/cards/automation.jpg" alt="Industrial robot arm used for intelligent automation" width="1400" height="900" loading="lazy"></div>
+            <div class="feature-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="3.2"/><path d="M24 8v4.2M24 35.8V40M8 24h4.2M35.8 24H40M12.1 12.1l3 3M32.9 32.9l3 3M12.1 35.9l3-3M32.9 15.1l3-3"/></svg></div>
+            <h3>Automation</h3>
+            <p>Optimize workflows and boost efficiency with automation tailored to your business.</p>
+            <span class="feature-card__cta">Know More <span class="feature-card__arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt home-verticals" id="verticals">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">Our Verticals</span>
+          <h2 class="section-title">Empowering Businesses with Tailored Solutions</h2>
+          <p class="section-desc">Industry programmes built around how you operate.</p>
+        </div>
+        <div class="vertical-grid">
+          <a class="vertical-card" href="industries/government.html">
+            <img src="assets/images/cards/government.jpg" alt="Government building representing public-sector programmes" width="1400" height="900" loading="lazy">
+            <div class="vertical-card__body">
+              <h3>Government &amp; Public Sector</h3>
+              <p>Citizen services, secure infrastructure, and e-governance platforms.</p>
+            </div>
+          </a>
+          <a class="vertical-card" href="industries/finance.html">
+            <img src="assets/images/cards/finance.jpg" alt="Financial market charts for banking and insurance" width="1400" height="900" loading="lazy">
+            <div class="vertical-card__body">
+              <h3>Finance</h3>
+              <p>Core banking, payments, risk, and regulatory-ready digital operations.</p>
+            </div>
+          </a>
+          <a class="vertical-card" href="industries/technology.html">
+            <img src="assets/images/cards/technology.jpg" alt="Product engineering team building software" width="1400" height="900" loading="lazy">
+            <div class="vertical-card__body">
+              <h3>Technology</h3>
+              <p>Product engineering, SaaS platforms, and scale-ready DevOps.</p>
+            </div>
+          </a>
+          <a class="vertical-card" href="industries/healthcare.html">
+            <img src="assets/images/cards/healthcare.jpg" alt="Clinician using a digital health tablet" width="1400" height="900" loading="lazy">
+            <div class="vertical-card__body">
+              <h3>Healthcare &amp; Life Sciences</h3>
+              <p>Clinical data platforms, interoperability, and privacy-aware systems.</p>
+            </div>
+          </a>
+          <a class="vertical-card" href="industries/supply-chain.html">
+            <img src="assets/images/cards/supply-chain.jpg" alt="Warehouse logistics and supply-chain operations" width="1400" height="900" loading="lazy">
+            <div class="vertical-card__body">
+              <h3>Supply Chain Management</h3>
+              <p>Control towers, forecasting, and logistics visibility end to end.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-approach">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">How we work</span>
+          <h2 class="section-title">A delivery rhythm that stays on target</h2>
+          <p class="section-desc">Clear ownership, industry context, and measurable checkpoints from discovery through run.</p>
+        </div>
+        <div class="approach-grid">
+          <article class="approach-card">
+            <span class="approach-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="21" cy="21" r="10"/><path d="M29 29l11 11"/><path d="M17 21h8M21 17v8"/></svg></span>
+            <span class="approach-card__num">01</span>
+            <h3>Discover</h3>
+            <p>We map outcomes, constraints, and data — then pick the few use cases that will actually move the business.</p>
+          </article>
+          <article class="approach-card">
+            <span class="approach-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 20l16-8 16 8-16 8z"/><path d="M8 28l16 8 16-8"/><path d="M8 36l16 8 16-8"/></svg></span>
+            <span class="approach-card__num">02</span>
+            <h3>Build</h3>
+            <p>Cross-functional squads design, engineer, and harden the product with security and operations in the same loop.</p>
+          </article>
+          <article class="approach-card">
+            <span class="approach-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 38h32"/><path d="M14 38V24"/><path d="M24 38V16"/><path d="M34 38V10"/><path d="M12 18l8-6 6 4 10-8"/></svg></span>
+            <span class="approach-card__num">03</span>
+            <h3>Scale</h3>
+            <p>We hand over a run-ready platform: monitored, documented, and ready for the next phase of work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">Why DataKosa</span>
+          <h2 class="section-title">Why organisations work with us</h2>
+          <p class="section-desc">CMMi Level 5 · ISO 9001 · ISO 27001</p>
+        </div>
+        <div class="card-grid card-grid--3">
+          <a class="feature-card" href="about/index.html">
+            <div class="feature-card__media"><img src="assets/images/cards/expertise.jpg" alt="Workshop with specialists mapping a delivery programme" width="1400" height="900" loading="lazy"></div>
+            <div class="feature-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="17" cy="15" r="5"/><path d="M6 38c1.4-8 6-13 14-13s12.6 5 14 13"/><circle cx="34" cy="17" r="4"/><path d="M27 38c1-6 4-10 9-10"/></svg></div>
+            <h3>Business expertise</h3>
+            <p>Specialists across finance, healthcare, government, technology, and supply chain.</p>
+            <span class="feature-card__cta">Know More <span class="feature-card__arrow" aria-hidden="true">↗</span></span>
+          </a>
+          <a class="feature-card" href="services/index.html">
+            <div class="feature-card__media"><img src="assets/images/cards/delivery.jpg" alt="Engineering team reviewing a product build" width="1400" height="900" loading="lazy"></div>
+            <div class="feature-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="12" y="10" width="24" height="30" rx="3"/><path d="M18 10V8h12v2"/><path d="M18 24l4 4 8-8"/></svg></div>
+            <h3>Proven delivery</h3>
+            <p>Implementations with measurable client outcomes, retention, and production support.</p>
+            <span class="feature-card__cta">Know More <span class="feature-card__arrow" aria-hidden="true">↗</span></span>
+          </a>
+          <a class="feature-card" href="customers/index.html">
+            <div class="feature-card__media"><img src="assets/images/cards/global.jpg" alt="Global business district skyline" width="1400" height="900" loading="lazy"></div>
+            <div class="feature-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M8 24h32"/><path d="M24 8c5 5 8 11 8 16s-3 11-8 16M24 8c-5 5-8 11-8 16s3 11 8 16"/></svg></div>
+            <h3>Global reach</h3>
+            <p>Clients across India, Australia, and international markets — with delivery that follows the sun when it needs to.</p>
+            <span class="feature-card__cta">Know More <span class="feature-card__arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-label="Get in touch">
+      <div class="cta-band__bg" aria-hidden="true"></div>
+      <div class="container cta-band__inner">
+        <h2 class="cta-band__title">
+          <span class="cta-band__ln"><span class="cta-band__ln-i">Ready to transform</span></span>
+          <span class="cta-band__ln"><span class="cta-band__ln-i cta-band__accent">your enterprise?</span></span>
+        </h2>
+        <p class="cta-band__sub">Partner with DataKosa for AI, cloud, and digital programmes<br> that fit how you work.</p>
+        <div class="cta-band__ctas">
+          <a class="btn btn-lg btn-primary cta-band__btn" href="contact/index.html">Get in touch
+            <svg class="arw" viewBox="0 0 12 10" fill="none" aria-hidden="true">
+              <path d="M0.8 5h10M7.1 1.4 10.9 5l-3.8 3.6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html" aria-label="Datakosa.ai home">
+        <img class="logo-img logo-img--footer" src="assets/images/datakosa-logo.png" alt="Datakosa.ai — Data &amp; AI Services" width="176" height="32" decoding="async">
+      </a>
+        <p class="footer-tagline">Insightful Data, Smart Decisions</p>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul class="footer-links">
+          <li><a href="about/index.html">About Us</a></li>
+          <li><a href="about/board-of-directors/index.html">Board of Directors</a></li>
+          <li><a href="careers/index.html">Careers</a></li>
+          <li><a href="contact/index.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Offerings</h3>
+        <ul class="footer-links">
+          <li><a href="services/index.html">Services</a></li>
+          <li><a href="industries/index.html">Industries</a></li>
+          <li><a href="investors/index.html">Investor Relations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Get in touch</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <a href="mailto:info@datakosa.ai">info@datakosa.ai</a>
+          </li>
+          <li>
+            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2 2A15 15 0 016.5 6a2 2 0 012-2z"/></svg></span>
+            <a href="tel:+918121041553">+91-8121041553</a>
+          </li>
+          <li>
+            <span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s7-4.5 7-11a7 7 0 10-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span>Workafella, Cyber Crown, Sec-II, HUDA Techno Enclave, Madhapur, Hyderabad – 500081, India</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="container footer-bar__inner">
+        <p class="footer-bar__copy">&copy; 2026 <a href="index.html">DataKosa</a> <span aria-hidden="true">|</span> <a href="privacy/index.html">Privacy Policy</a> <span aria-hidden="true">|</span> <a href="cookie-policy/index.html">Cookie Policy</a></p>
+        <div class="footer-bar__social" aria-label="Social media">
+          <a class="footer-bar__icon" href="https://www.linkedin.com/company/datakosa-ai" target="_blank" rel="noopener noreferrer" aria-label="DataKosa on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.25h4.56V24H.22V8.25zM8.34 8.25h4.37v2.14h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.99h-4.56v-8c0-1.9-.03-4.35-2.65-4.35-2.65 0-3.06 2.07-3.06 4.21V24H8.34V8.25z"/></svg></a>
+          <a class="footer-bar__icon" href="https://www.facebook.com/profile.php?id=61594596153568" target="_blank" rel="noopener noreferrer" aria-label="DataKosa on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.5 9.5V7.4c0-.7.5-1.1 1.1-1.1h1.9V3h-2.6C11.9 3 10 4.8 10 7.7v1.8H8v3.3h2V21h3.5v-8.2h2.4l.6-3.3h-3z"/></svg></a>
+          <a class="footer-bar__icon" href="https://www.instagram.com/datakosaai1" target="_blank" rel="noopener noreferrer" aria-label="DataKosa on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 3.5A4.5 4.5 0 1112 16.5 4.5 4.5 0 0112 7.5zm0 2A2.5 2.5 0 1014.5 12 2.5 2.5 0 0012 9.5zM17.2 6.3a1 1 0 11-1 1 1 1 0 011-1z"/></svg></a>
+          <a class="footer-bar__icon" href="https://www.youtube.com/@DataKosaAI" target="_blank" rel="noopener noreferrer" aria-label="DataKosa on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3.05 3.05 0 00-2.15-2.16C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.35.44A3.05 3.05 0 00.5 6.2 32.1 32.1 0 000 12a32.1 32.1 0 00.5 5.8 3.05 3.05 0 002.15 2.16C4.5 20.4 12 20.4 12 20.4s7.5 0 9.35-.44a3.05 3.05 0 002.15-2.16A32.1 32.1 0 0024 12a32.1 32.1 0 00-.5-5.8zM9.75 15.57V8.43L15.84 12l-6.09 3.57z"/></svg></a>
+        </div>
+        <a class="footer-bar__top" href="#top" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    (function () {
+      var A = document.getElementById("bgVideoA");
+      var B = document.getElementById("bgVideoB");
+      if (!A || !B) return;
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        A.removeAttribute("autoplay");
+        A.pause();
+        B.pause();
+        try { A.currentTime = 0; } catch (err) {}
+        return;
+      }
+      var FADE = 0.9;
+      var cur = A;
+      var nxt = B;
+      var swapping = false;
+      function play(v) {
+        var p = v.play();
+        if (p) p.catch(function () {});
+      }
+      play(A);
+      function tick() {
+        if (swapping || !cur.duration) return;
+        if (cur.duration - cur.currentTime > FADE) return;
+        swapping = true;
+        var out = cur;
+        nxt.currentTime = 0;
+        play(nxt);
+        nxt.classList.add("is-active");
+        out.classList.remove("is-active");
+        cur = nxt;
+        nxt = out;
+        window.setTimeout(function () {
+          out.pause();
+          out.currentTime = 0;
+          swapping = false;
+        }, FADE * 1000 + 100);
+      }
+      A.addEventListener("timeupdate", tick);
+      B.addEventListener("timeupdate", tick);
+    })();
+  </script>
+  <script src="assets/js/main.js?v=20260920e"></script>
+  <script src="assets/js/glitter-cards.js?v=20260920e"></script>
+  <script src="assets/js/feature-cards.js?v=20260920e"></script>
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl504456'},{'dcenter':'p3'},{'cp_id':'10949196'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>

@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Welcome to ISL Consulting Ltd.</title>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/menu_style.css">
+<link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+<link rel="stylesheet" href="css/slider.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+
+
+	//Set Default State of each portfolio piece
+
+	$(".paging").show();
+
+	$(".paging a:first").addClass("active");
+
+		
+
+	//Get size of images, how many there are, then determin the size of the image reel.
+
+	var imageWidth = $(".window").width();
+
+	var imageSum = $(".image_reel img").size();
+
+	var imageReelWidth = imageWidth * imageSum;
+
+	
+
+	//Adjust the image reel to its new size
+
+	$(".image_reel").css({'width' : imageReelWidth});
+
+	
+
+	//Paging + Slider Function
+
+	rotate = function(){	
+
+		var triggerID = $active.attr("rel") - 1; //Get number of times to slide
+
+		var image_reelPosition = triggerID * imageWidth; //Determines the distance the image reel needs to slide
+
+
+
+		$(".paging a").removeClass('active'); //Remove all active class
+
+		$active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
+
+		
+
+		//Slider Animation
+
+		$(".image_reel").animate({ 
+
+			left: -image_reelPosition
+
+		}, 500 );
+
+		
+
+	}; 
+
+	
+
+	//Rotation + Timing Event
+
+	rotateSwitch = function(){		
+
+		play = setInterval(function(){ //Set timer - this will repeat itself every 3 seconds
+
+			$active = $('.paging a.active').next();
+
+			if ( $active.length === 0) { //If paging reaches the end...
+
+				$active = $('.paging a:first'); //go back to first
+
+			}
+
+			rotate(); //Trigger the paging and slider function
+
+		}, 7000); //Timer speed in milliseconds (3 seconds)
+
+	};
+
+	
+
+	rotateSwitch(); //Run function on launch
+
+	
+
+	//On Hover
+
+	$(".image_reel a").hover(function() {
+
+		clearInterval(play); //Stop the rotation
+
+	}, function() {
+
+		rotateSwitch(); //Resume rotation
+
+	});	
+
+	
+
+	//On Click
+
+	$(".paging a").click(function() {	
+
+		$active = $(this); //Activate the clicked paging
+
+		//Reset Timer
+
+		clearInterval(play); //Stop the rotation
+
+		rotate(); //Trigger rotation immediately
+
+		rotateSwitch(); // Resume rotation
+
+		return false; //Prevent browser jump to link anchor
+
+	});	
+
+	
+
+});
+
+</script>
+<script type="text/javascript">
+
+<!--
+
+function MM_swapImgRestore() { //v3.0
+
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+
+}
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+
+
+function MM_findObj(n, d) { //v4.01
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}
+
+
+
+function MM_swapImage() { //v3.0
+
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+
+}
+
+//-->
+
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('images/mn_home_hvr.png','images/mn_services_hvr.png','images/mn_products_hvr.png','images/mn_downloads_hvr.png','images/mn_investor_relation_hvr.png','images/mn_contact_us_hvr.png')">
+<div id="wrapper">
+  <div class="width-960-center">
+    <div class="header_container">
+      <div class="left_logo"><a href="index.html"><img src="images/logo.png" /></a></div>
+      <div class="right_nav">
+        <div class="menu">
+          <ul>
+            <li><a href="company_profile.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('company_overview','','images/mn_company_overview_hvr.png',1)"><img src="images/mn_company_overview.png" alt="Home" name="company_overview" border="0"></a>
+              <ul style="width:143px;">
+                <li style="width:143px;"><a href="company_profile.html">Company Profile</a></li>
+                <li style="width:143px;"><a href="bod.html">Board of Directors</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="services.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('services','','images/mn_services_hvr.png',1)"><img src="images/mn_services.png" alt="Services" name="services" width="82" height="68" border="0"></a></li> -->
+            <!-- <li><a href="products.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('products','','images/mn_products_hvr.png',1)"><img src="images/mn_products.png" alt="Products" name="products" width="84" height="68" border="0"></a></li> -->
+            <!-- <li><a href="downloads.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('downloads','','images/mn_downloads_hvr.png',1)"><img src="images/mn_downloads.png" alt="Downloads" name="downloads" width="97" height="68" border="0"></a></li> -->
+            <li class="dropdown"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('investor_relation','','images/mn_investor_relation_hvr.png',1)"><img src="images/mn_investor_relation.png" alt="Investor Relation" name="investor_relation" width="130" height="68" border="0"></a>
+              
+              <ul>
+                <li><a href="disclosures_under_regulation_46_lodr.html">Disclosures under Regulation 46 of the LODR</a></li>
+                <li><a href="disclosures_under_regulation_30_lodr.html">Disclosures under Regulation 30 of the LODR</a></li>
+                <li><a href="policies.html">Policies</a></li>
+              </ul>
+              
+              <!-- <ul>
+                <li><a href="annual_report.html">Annual Reports</a></li>
+                <li><a href="financial_result.html">Financial Result</a></li>
+                <li><a href="shareholding_pattern.html">Shareholding Pattern</a></li>
+                <li><a href="notice_of_board_meeting.html">Notice of Board Meeting</a></li>
+                <li><a href="corporate_governance_report.html">Corporate Governance Report</a></li>
+                <li><a href="compliance.html">Compliance Officer</a></li>
+                <li><a href="investor_grievances.html">Investor Grievances</a></li>
+                <li><a href="register_share_transfer.html">Register and Share Transfer</a></li>
+                <li><a href="code_of_conduct.html">Code of conduct</a></li>
+                <li><a href="postal-ballot.html">Postal Ballot</a></li>
+                <li><a href="policies.html">Policies</a></li>
+                <li><a href="newspaper-publications.html">Newspaper Publications</a></li>
+                <li><a href="related-party-transactions.html">Related Party Transactions</a></li>
+                <li><a href="committees.html">Committees</a></li>
+                <li><a href="annual_return.html">Annual Return</a></li>
+                <li><a href="announcement-for-physical-shareholders.html">Announcement for Physical Shareholders</a></li>
+              </ul> -->
+            </li>
+            <li><a href="contact_us.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('contact','','images/mn_contact_us_hvr.png',1)"><img src="images/mn_contact_us.png" alt="Contact Us" name="contact" width="97" height="68" border="0"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner_container">
+      <div class="main_view">
+        <div class="window">
+          <div class="image_reel"> <a href="#"><img src="images/banner_slide-1.png" alt="" /></a> <a href="#"><img src="images/banner_slide-2.png" alt="" /></a> <a href="#"><img src="images/banner_slide-3.png" alt="" /></a> <a href="#"><img src="images/banner_slide-4.png" alt="" /></a> <a href="#"><img src="images/banner_slide-5.png" alt="" /></a> </div>
+        </div>
+        <div class="paging"> <a href="#" rel="1">1</a> <a href="#" rel="2">2</a> <a href="#" rel="3">3</a> <a href="#" rel="4">4</a> <a href="#" rel="5">5</a> </div>
+      </div>
+    </div>
+    <div class="mail_text_container">
+      <div class="homepage_welcome_text">Welcome to ISL Consulting Ltd.</div>
+      <div class="homepage_text">
+        <p>ISL CONSULTING LIMITED is a Public Limited Company based at Ahmedabad. The Registered Office of the Company is situated at 504, Priviera, Nehrunagar Circle, Nr. Bank Of Baroda, Ahmedabad – 380015, Gujarat, India.</p>
+        <p>The CIN of the Company is: <b>L67120GJ1993PLC086576.</b></p>
+        <p>The Company was incorporated on 5th January, 1993 as a Public Limited Company with the Registrar of Companies, Tamil Nadu at Madras as Innovation Security Limited. The Company has changed its name to ISL Consulting Limited w.e.f. 27th March, 2000 and obtained change of name certificate on 4th May, 2000.</p>
+      </div>
+      <div class="homepage_service_box_container" style="border-top:1px dotted #666666;">
+        <div class="homepage_service_box">
+          <div class="homepage_service_title">Company Profile</div>
+          <div class="homepage_service_image"><img src="images/img_company_profile.jpg" alt=""></div>
+          <div class="homepage_service_text">Whether you are a novice or seasoned investor, with our great experience we are capable of satisfying your trading needs.</div>
+          <div class="homepage_service_read_more"><a href="company_profile.html">read more</a></div>
+        </div>
+        <div class="homepage_service_box margin-left-10px">
+          <div class="homepage_service_title">Career at ISL Consulting Ltd.</div>
+          <div class="homepage_service_image"><img src="images/img_career.jpg" alt=""></div>
+          <div class="homepage_service_text">At ISL Consulting we value you as an individual and constantly help you to evolve further - both personally and professionally.</div>
+          <div class="homepage_service_read_more"><a href="contact_us.html">read more</a></div>
+        </div>
+        <div class="homepage_service_box margin-left-10px">
+          <div class="homepage_service_title">Investor Relation</div>
+          <div class="homepage_service_image"><img src="images/img_investor_relation.jpg" alt=""></div>
+          <div class="homepage_service_text">See our Annual Reports, Financial Result, Shareholding Pattern, Corporate Governance Report Here...</div>
+          <div class="homepage_service_read_more"><a href="investor_relation.html">read more</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="clear-both"></div>
+  </div>
+</div>
+<div class="clear-both"></div>
+<div class="footer_container">
+  <div class="width-960-center">
+    <div class="footer_left"><span><a href="index.html">Home</a><!-- /<a href="services.html">Services</a> --><!-- /<a href="products.html">Products</a> --><!-- /<a href="downloads.html">Downloads</a> /<a href="#">Investor Relation</a>-->/<a href="disclaimer.html">Disclaimer</a><!-- /<a href="broker_norms.html">Broker Norms</a> -->/<a href="contact_us.html">Contact Us</a></span><br/>
+      © 2011 All rights are reserved by : ISL Consulting Ltd.</div>
+    
+    <!--<div class="footer_right"><img src="images/footer_logo.jpg" alt=""></div>--> 
+    
+  </div>
+</div>
+</body>
+</html>

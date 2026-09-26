@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (() => {
+        let seen = false;
+        try {
+          seen = window.sessionStorage.getItem("euro-site-bootstrap-v1") === "1";
+        } catch {
+          seen = false;
+        }
+        document.documentElement.dataset.euroLoader = seen ? "skip" : "active";
+        window.__EURO_LOADER_STARTED_AT__ = window.performance.now();
+      })();
+    </script>
+    <style>
+      #initial-page-loader { display: none; }
+      html[data-euro-loader="active"],
+      html[data-euro-loader="active"] body { overflow: hidden; }
+      html[data-euro-loader="active"] #initial-page-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483000;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 44%, rgba(255, 218, 164, 0.34), transparent 29%),
+          #fff9f6;
+        color: #512c25;
+        font-family: Arial, Helvetica, sans-serif;
+        opacity: 1;
+        transition: opacity 360ms ease, visibility 360ms ease;
+      }
+      #initial-page-loader::before,
+      #initial-page-loader::after {
+        position: absolute;
+        width: min(42vw, 420px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(190, 0, 75, 0.08);
+        border-radius: 44% 56% 58% 42%;
+        content: "";
+        pointer-events: none;
+      }
+      #initial-page-loader::before { top: -24%; left: -12%; rotate: 18deg; }
+      #initial-page-loader::after { right: -16%; bottom: -28%; rotate: -24deg; }
+      .initial-loader__content {
+        position: relative;
+        display: grid;
+        width: min(82vw, 320px);
+        justify-items: center;
+        text-align: center;
+      }
+      .initial-loader__mark {
+        position: relative;
+        display: grid;
+        width: 108px;
+        height: 108px;
+        place-items: center;
+      }
+      .initial-loader__orbit {
+        position: absolute;
+        inset: 5px;
+        border: 1px dashed rgba(190, 0, 75, 0.34);
+        border-radius: 50%;
+        animation: euro-loader-spin 8s linear infinite;
+      }
+      .initial-loader__crumb {
+        position: absolute;
+        width: 10px;
+        height: 7px;
+        border-radius: 65% 35% 55% 45%;
+        background: #f2b94b;
+        box-shadow: 0 4px 10px rgba(116, 69, 17, 0.18);
+      }
+      .initial-loader__crumb--one { top: 5px; left: 48px; rotate: 22deg; }
+      .initial-loader__crumb--two { right: 2px; bottom: 31px; rotate: -18deg; scale: 0.8; }
+      .initial-loader__crumb--three { bottom: 14px; left: 13px; rotate: 48deg; scale: 0.65; }
+      .initial-loader__badge {
+        position: relative;
+        display: grid;
+        width: 68px;
+        height: 48px;
+        place-items: center;
+        border: 3px solid #f7cf74;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d30a55, #a90042);
+        box-shadow: 0 13px 28px rgba(190, 0, 75, 0.22);
+        color: #fff;
+        font-size: 17px;
+        font-style: italic;
+        font-weight: 900;
+        letter-spacing: -0.6px;
+        rotate: -7deg;
+      }
+      .initial-loader__eyebrow {
+        margin: 18px 0 7px;
+        color: #be004b;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .initial-loader__label {
+        min-height: 24px;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 750;
+        letter-spacing: -0.02em;
+      }
+      .initial-loader__track {
+        width: 154px;
+        height: 4px;
+        margin-top: 21px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(81, 44, 37, 0.1);
+      }
+      .initial-loader__progress {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #be004b, #ed6b52, #f2b94b);
+        transform: scaleX(0.12);
+        transform-origin: left;
+        animation: euro-loader-progress 2200ms cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
+        transition: transform 180ms ease;
+      }
+      #initial-page-loader.is-ready .initial-loader__progress {
+        transform: scaleX(1);
+        animation: none;
+      }
+      #initial-page-loader.is-leaving {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+      }
+      @keyframes euro-loader-spin { to { transform: rotate(360deg); } }
+      @keyframes euro-loader-progress {
+        0% { transform: scaleX(0.12); }
+        52% { transform: scaleX(0.58); }
+        100% { transform: scaleX(0.88); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .initial-loader__orbit,
+        .initial-loader__progress { animation: none; }
+        #initial-page-loader { transition-duration: 1ms; }
+      }
+    </style>
+    <title>Best Indian Snack Brand &amp; Food Manufacturer | EURO India Foods</title>
+    <meta name="description" content="Discover EURO India Foods, a popular snack brand and food manufacturer in India. Browse authentic Made in India snacks and beverages crafted with quality ingredients and hygienic processing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400..900;1,700..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,600&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script type="module" crossorigin src="/assets/index-CjhbMLGM.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-V5ViYRv3.css">
+  </head>
+  <body>
+    <div id="initial-page-loader" role="status" aria-live="polite" aria-label="Preparing the Euro page">
+      <div class="initial-loader__content">
+        <div class="initial-loader__mark" aria-hidden="true">
+          <span class="initial-loader__orbit"></span>
+          <span class="initial-loader__crumb initial-loader__crumb--one"></span>
+          <span class="initial-loader__crumb initial-loader__crumb--two"></span>
+          <span class="initial-loader__crumb initial-loader__crumb--three"></span>
+          <span class="initial-loader__badge">EURO</span>
+        </div>
+        <p class="initial-loader__eyebrow">Best quality. Best taste.</p>
+        <p class="initial-loader__label">Bringing the crunch...</p>
+        <div class="initial-loader__track" role="progressbar" aria-label="Loading the page">
+          <span class="initial-loader__progress"></span>
+        </div>
+      </div>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>

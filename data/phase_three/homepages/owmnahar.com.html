@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Nahar Group of Companies</title></head>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<script language="javascript1.2" src="js/RemoveDoubleClick.js"></script>
+<script defer="defer" language="javascript" src="js/pngfix.js"></script>
+<style type="text/css">
+.arrow {background: url(images/arrow.png) no-repeat; height:33px; padding-left:24px;}
+#heading {background: url(images/inner-arrow.jpg) no-repeat; width:328px; height:60px;}
+#heading p{color: #b3070b; font-family: Trebuchet MS; font-size:18px; font-weight:normal; text-decoration:none; padding-left:24px; padding-top:18px;}
+</style>
+
+<link type="text/css" href="css/stylesheet.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+
+    
+    <script type="text/javascript">
+
+/*** 
+    Simple jQuery Slideshow Script
+    Released by Jon Raasch (jonraasch.com) under FreeBSD license: free to use or modify, not responsible for anything, etc.  Please link out to me if you like it :)
+***/
+
+function slideSwitch() {
+    var $active = $('#slideshow DIV.active');
+
+    if ( $active.length == 0 ) $active = $('#slideshow DIV:last');
+
+    // use this to pull the divs in the order they appear in the markup
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow DIV:first');
+
+    // uncomment below to pull the divs randomly
+    // var $sibs  = $active.siblings();
+    // var rndNum = Math.floor(Math.random() * $sibs.length );
+    // var $next  = $( $sibs[ rndNum ] );
+
+
+    $active.addClass('last-active');
+
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 6000 );
+});
+
+</script>
+</head>
+
+
+<body>
+<div id="wrap"> 
+<div id="header"><span class="logo"><a href="index.php"><img src="images/logo.png" width="113" height="91" border="0" /></a>
+</span></div> 
+<p><img src="images/company-name.jpg" width="259" height="45" /></p>
+<div class="clear"> </div>
+
+
+<div id="button"> 
+<link href="css/dropdown.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/dropdown/default.ultimate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<ul class="dropdown dropdown-horizontal" id="nav" name="nav">
+	<li><a href="index.php">Home</a></li>
+	<li><span class="dir">Corportate Profile</span>
+		<ul>
+		<li><a href="about_us.php">About Us</a></li>
+		<li><a href="management.php">Management</a></li>
+			<li><a href="philosphy.php">Our Philosophy</a></li>
+			<li><a href="people-power.php">People Power</a></li>
+            <li><a href="group_performance.php">Group Performance</a></li>
+<li><a href="social.php">Social Responsibility</a></li>
+		</ul>
+	</li>
+	<li><span class="dir">Products</span>
+		<ul>
+             <li><a href="textiles.php">Textiles</a></li>  
+			<li><a href="textiles.php">Yarns</a></li>
+			<li><a href="textiles.php">Woven Fabrics</a></li>
+			<li><a href="textiles.php">Knitwears & Garments</a></li>
+			<li><a href="textiles.php">Sugar & Other Products</a></li>
+		</ul>
+	</li>
+	<li><a href="#" class="dir">Group Companies</a>
+		<ul>
+<li><a href="woollen_mill/about.php">Oswal Woollen Mills Limited</a></li>
+<li><a href="http://montecarlocorporate.com/" target="_blank">Monte Carlo Fashions Limited</a></li>
+<li><a href="nahar_ie/about.php">Nahar Industrial Enterprises Limited</a></li>
+<!--<li><a href="cotton-county/about.php">Cotton County Retail Limited</a></li>	-->		
+<li><a href="spinning/about.php">Nahar Spinning Mills Limited</a></li>
+<li><a href="nahar_polyfilm/about.php">Nahar Poly Films Limited</a></li>
+<li><a href="nahar_cf/about.php">Nahar Capital & Financial Services Limited</a></li>
+<li><a href="leasing_ltd/about.php">Oswal Leasing Limited </a></li>
+<li><a href="kovalam/about.php">Kovalam Investment & Trading Company Ltd  </a></li>
+
+			
+		</ul>
+	
+	<li><a href="contact.php">Enquiry</a></li>
+	<li><a href="careers.php">Careers</a></li>
+	<li><a href="contact.php">Contact Us</a>	</li>
+
+<li><span class="dir">Media Centre  </span>
+		<ul>
+		<li><a href="press-release.php">Press Release</a></li>
+			<li><a href="event-gallery.php">Event Gallery</a></li>
+			<li><a href="news.php">News</a></li>
+            
+		</ul>
+	</li>
+</ul>
+
+
+ </div>
+<div class="clear"> </div>
+<div class="line">&nbsp;</div>
+<div class="line1"></div>
+<div id="flash">
+<div class="main">
+<div style="height:5px;"> </div>
+<!-- banner starts here -->  
+   <div class="banner">
+    <div id="slideshow">
+    <div class="active">
+      <a href="#"><img  src="images/home-flash-banner.jpg" width="979" height="246" alt="Slideshow Image 1" /></a>
+      
+    </div>
+    
+    <div>
+        <a href="#"><img src="images/banner-2.png" width="979" height="246" alt="Slideshow Image 2" /></a>
+       
+    </div>
+    
+    <div>
+        <a href="#"><img src="images/banner-9.png" width="979" height="246" alt="Slideshow Image 3" /></a>
+        
+    </div>
+  <div>
+        <a href="#"><img src="images/banner-4.png" width="979" height="246" alt="Slideshow Image 3" /></a>
+        
+    </div> 
+ <div>
+        <a href="#"><img src="images/banner-5.jpg" width="979" height="246" alt="Slideshow Image 3" /></a>
+        
+    </div>
+<!-- <div>
+        <a href="#"><img src="images/banner-6.jpg" width="979" height="246" alt="Slideshow Image 3" /></a>
+        
+    </div> -->
+
+<div>
+        <a href="#"><img src="images/banner-8.jpg" width="979" height="246" alt="Slideshow Image 3" /></a>
+        
+    </div>
+    </div>
+
+    <div class="clr"></div>
+    </div>
+    <!--banner ends here -->
+
+</div>
+</div>
+<div class="clear"></div>
+<div style="margin-top:10px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="70%" valign="top"><table width="96%" border="0" align="left" cellpadding="0" cellspacing="0">
+      <tr>
+        <td style="padding-left:20px;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="padding-left:20px;"><img src="images/pro-ser.png" width="216" height="20" /></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center"><img src="images/home-pro1.jpg" width="203" height="180" /></td>
+            <td align="center"><img src="images/homepro4.jpg" width="203" height="180" /></td>
+            <td align="center"><img src="images/homepro6.jpg" width="203" height="180" /></td>
+          </tr>
+          <tr>
+            <td align="center" class="read-more" style="text-decoration:none;text-align:center">Yarns</td>
+            <td align="center" class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center">Textiles</span></span></td>
+          <td align="center" class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center">Knitted Garments</span></span></td>
+          </tr>
+          <tr>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="181" align="center"><img src="images/woven.jpg" width="203" height="180" /></td>
+            <td align="center"><img src="images/home-pro7.jpg" width="203" height="180" /></td>
+            <td align="center"><img src="images/home-pro9.jpg" width="203" height="180" /></td>
+          </tr>
+          <tr>
+          <td align="center" class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center">Woven Textiles</span></span></td>
+         <td align="center" class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center">Woollens</span></span></td>
+          <td align="center" class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center">Knitting Wool</span></span></td>
+          </tr>
+          <tr>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center"><img src="images/homerpro5.jpg" width="203" height="180" /></td>
+            <td align="center"><img src="images/homepro3.png" width="203" height="180" /></td>
+            <td align="center"><img src="images/home-pro8.jpg" width="203" height="180" /></td>
+          </tr>
+          <tr>
+            <td align="center" class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center">Polyfilms</span></span></span></td>
+            <td align="center" class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center">Sugar </span></td>
+            <td align="center" class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center"><span class="read-more" style="text-decoration:none;text-align:center">Financial Services</span></span></span></td>
+          </tr>
+          <tr>
+            <td align="center" class="read-more" style="text-decoration:none;text-align:center">&nbsp;</td>
+            <td align="center" class="read-more" style="text-decoration:none;text-align:center">&nbsp;</td>
+            <td align="center" class="read-more" style="text-decoration:none;text-align:center">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+    <td width="30%" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="images/group-companies.jpg"border="0" usemap="#Map" /></td>
+      </tr>
+  
+      <tr>
+        <td align="left" >&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left" ><a href="http://montecarlocorporate.com/" target="_blank"><img src="images/our-brands3.jpg" width="288" height="183" border="0"  /></a></td>
+        </tr>
+      <tr>
+       <td height="10"></td>
+      </tr>
+      <tr>
+        <td align="left" style="padding-left:40px;">&nbsp;</td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>
+<div>&nbsp;</div>
+<div><div id="copyright" class="text1">
+<div class="left">Copyright  © 2011-12. All Rights Reserved.</div>
+<div class="right"><a href="http://royalways.com/" target="_blank">Website Design by Royalways</a></div>
+<!--<a href="index.php">Home</a> | <a href="contact.php">Contact Us</a> | <a href="enquiry.php">Enquiry</a>-->
+</div></div>
+</div>
+
+<map name="Map" id="Map">
+  <area shape="rect" coords="33,114,270,148" href="spinning/about.php" />
+  <area shape="rect" coords="32,80,268,111" href="woollen_mill/about.php" />
+  <area shape="rect" coords="34,163,284,193" href="nahar_ie/about.php" />
+  <area shape="rect" coords="35,200,283,230" href="nahar_polyfilm/about.php" />
+  <area shape="rect" coords="37,241,284,267" href="http://montecarlocorporate.com/" target="_blank" />
+  <!--<area shape="rect" coords="36,279,285,311" href="cotton-county/about.php" />-->
+  <area shape="rect" coords="37,325,251,363" href="nahar_cf/about.php" />
+  <area shape="rect" coords="33,378,251,408" href="leasing_ltd/about.php" />
+  <area shape="rect" coords="40,413,278,459" href="kovalam/about.php" />
+</map>
+
+<map name="Map2" id="Map2">
+  <area shape="rect" coords="33,51,187,98" href="http://www.montecarlocollections.com/" target="_blank" />
+</map>
+</body>
+</html>

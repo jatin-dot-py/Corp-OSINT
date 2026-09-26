@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!--<meta http-equiv="Content-Security-Policy" content="base-uri 'self'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; font-src 'self' data: fonts.gstatic.com fonts.googleapis.com; style-src 'self' 'unsafe-inline' data: fonts.googleapis.com code.jquery.com; img-src 'self' data: www.digitaldesk.net www.aditaas.com ps.w.org secure.gravatar.com cdn.userway.org;script-src 'self' 'nonce-2725c7f24c'">
+-->
+<script type="text/javascript" nonce="2725c7f24c" src="jquery.min.js"></script>
+<script type="text/javascript" nonce="2725c7f24c">
+
+       jQuery(document).ready(function () {
+	   
+	   if (document.URL.toLowerCase().indexOf("aditaas.com") != -1) 
+			{
+			 location.href = "https://www.aditaas.com/aditaas/";
+				return;
+	            }
+	  
+	 	if (document.URL.toLowerCase().indexOf("digitaldesk.net") != -1) 
+			{
+			 location.href = "https://www.digitaldesk.net/digitaldesk/";
+				return;
+	            }          
+
+		     jQuery.ajax({
+		         url: 'https://api.ipify.org/?format=json',
+		         type: 'POST',
+		         dataType: 'json',
+		         type: 'GET',
+		         crossDomain: true,
+		         success: function (data1) {
+		             jQuery.ajax({
+		                 //url: 'https://adireporting-us.allieddigital.net/AlliedWebGeoLoc/GeoHandler.ashx?ipadd=' + data1.ip,
+						 //url: 'https://geolocation.allieddigital.net/AlliedWebGeoLoc/GeoHandler.ashx?ipadd=' + data1.ip,
+						 url: 'https://www.allieddigital.net/AlliedWebGeoLoc/GeoHandler.ashx?ipadd=' + data1.ip,
+		                 type: 'POST',
+		                 dataType: 'json',
+		                 type: 'GET',
+		                 crossDomain: true,
+		                 success: function (data) {
+						 //debugger 
+						 
+		                     var loc = data.country_code;
+
+		                     if (loc.indexOf("US") == 0) {
+		                         location.href = "https://www.allieddigital.net/us/";
+		                     }
+		                     else if (loc.indexOf("IN") == 0) {
+		                         location.href = "https://www.allieddigital.net/in/";
+		                     }
+							 else {
+							 
+							     if (loc.indexOf("FR") == 0){
+								   sessionStorage.setItem("slang", "fr");
+								 } else if (loc.indexOf("NL") == 0){
+								   sessionStorage.setItem("slang", "nl");
+								 } else if (loc.indexOf("IN") == 0){
+								   sessionStorage.setItem("slang", "hi");
+								 }
+
+								location.href = "https://www.allieddigital.net/row/";
+							 }
+							 
+							 
+		                 }
+		             });
+		         }
+		     });
+        }); //ready end
+    </script>
+</head>
+
+<body >
+</body>
+</html>

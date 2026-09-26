@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    /* Global Reset & Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #003366;
+    }
+
+    /* Logo Styling */
+    .logo img {
+      width: 279.77px;
+      height: 36.28px;
+      max-width: 100%;
+    }
+
+    /* Menu Styling */
+    .menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+    .menu li {
+      margin: 0 8px;
+    }
+    .menu a {
+      color: #003366;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px 15px;
+      transition: 0.3s;
+      border-radius: 5px;
+    }
+    .menu a:hover {
+      background-color: #003366;
+      color: white;
+    }
+
+    /* Search Box */
+    .search-box {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      border: 2px solid #003366;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 8px 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+    .search-box button {
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .search-box button:hover {
+      background: #002244;
+    }
+
+    /* Banner Styling (Updated to match Investors Page) */
+    .banner-container {
+      position: relative;
+      width: calc(100% - 80px);
+      height: 400px;
+      background: url('/assets/AboutUs.webp') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .banner-text {
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* About Page Styling */
+    .about-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      background: #f9f9f9;
+    }
+    .about-container h2 {
+      margin-bottom: 20px;
+      color: #003366;
+    }
+    .about-container p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/"><img src="assets/logo.png" alt="Hathway Bhawani"></a>
+    </div>
+    <ul class="menu">
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/investors">Investors Relations</a></li>
+    </ul>
+    
+    <!-- Search Box -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button>🔍</button>
+    </div>
+  </nav>
+
+  <!-- Banner with Text -->
+  <div class="banner-container">
+    <div class="banner-text"></div>
+  </div>
+
+  <!-- Main Content: About Us Details -->
+  <main>
+    <div class="about-container">
+      <h2>Overview</h2>
+      <p>We at Hathway Bhawani, are guided by a vision – <strong>“To be a single point access provider bringing into the home and workplace, the converged world of information, entertainment, and services.”</strong></p>
+      
+      <p>Being one of the largest Cable TV services companies in India, spurs us to be the best in whatever we do. Started in 1995, Hathway Bhawani provides quality Cable TV services in several cities. With a fiber optic backbone across its networks and state-of-the-art distribution set-ups, we bring the digital age through Cable, transforming the way viewers receive information and entertainment.</p>
+      
+      <h2>Our Services</h2>
+      <p><strong>Digital Cable TV:</strong> Hathway Bhawani is the largest Cable TV service provider to roll out Digital Cable TV services in cities like Mumbai, New Mumbai, Karjat, and Mumbra.</p>
+      <p><strong>Entertainment:</strong> Hathway Bhawani also has under its umbrella – Hathway Bhawani Cinema and Movies (HB Cinema, HB Movies), a movie-based entertainment channel.</p>
+    </div>
+  </main>
+<!-- Footer Section -->
+<footer class="footer">
+    &copy; 2026 Hathway Bhawani. All Rights Reserved.
+</footer>
+
+<!-- Floating Navigation Buttons -->
+<div class="nav-buttons">
+    <button onclick="goBack()">⬅ Back</button>
+    <button onclick="goHome()">🏠 Home</button>
+</div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+
+    function goForward() {
+        window.history.forward();
+    }
+
+    function goHome() {
+        window.location.href = '/home'; // Change this to your home page URL
+    }
+</script>
+
+<style>
+
+.footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+    /* Floating Button Styling */
+    .nav-buttons {
+        position: fixed;
+        bottom: 480px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000;
+    }
+
+    .nav-buttons button {
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        border-radius: 8px;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        opacity: 0.2;
+    }
+
+    .nav-buttons button:hover {
+        background-color: #0056b3;
+        box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+        opacity: 1;
+    }
+</style>
+
+</body>
+</html>
+

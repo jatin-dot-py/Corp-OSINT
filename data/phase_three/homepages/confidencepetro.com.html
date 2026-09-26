@@ -1,0 +1,834 @@
+<style>
+.htlfndr-slider-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-image {
+    background: url('https://confidencegroup.co/assets_new/images/Homepage Banner.jpg') center center / cover no-repeat;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+}
+
+/* Gradient overlay for bottom depth only */
+.banner-image::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    z-index: 1;
+}
+
+/* Move text to the top-left area */
+.htlfndr-slide-data {
+    position: absolute;
+    left: 5%;      /* push text slightly inside from the left */
+    z-index: 2;
+    text-align: left;
+}
+
+/* Text styling */
+.htlfndr-slider-title {
+    color: #0056b3; /* blue to match your brand color */
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 2px 2px 5px rgba(255,255,255,0.8);
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1025px) { 
+    .banner-image {
+        height: 60vh;
+    }
+    .htlfndr-slide-data {
+        left: 8%;
+    }
+    .htlfndr-slider-title {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 992px) {
+    .banner-image {
+        height: 60vh;
+    }
+    .htlfndr-slide-data {
+        left: 8%;
+    }
+    .htlfndr-slider-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-image {
+        height: 50vh;
+    }
+    .htlfndr-slide-data {
+        left: 5%;
+    }
+    .htlfndr-slider-title {
+        font-size: 1.5rem;
+    }
+}
+
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:image" content="https://confidencegroup.co/assets_new/images/cpil-logo.png" />
+    <meta property="og:type" content="website" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>CPIL</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://confidencegroup.co/assets_new/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://confidencegroup.co/assets_new/images/cpil-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://confidencegroup.co/assets_new/images/cpil-logo.png">
+    <link rel="manifest" href="https://confidencegroup.co/assets_new/images/site.webmanifest">
+   
+    <!-- Bootstrap -->
+<link href="https://confidencegroup.co/assets_new/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Main styles -->
+	<link href="https://confidencegroup.co/assets_new/css/style.css" rel="stylesheet" />
+	<link href="https://confidencegroup.co/assets_new/css/contact.css" rel="stylesheet" />
+	<link href="https://confidencegroup.co/assets_new/css/career.css" rel="stylesheet" />
+	<!--<link rel="stylesheet/less" href="css/style.less" />-->
+	<!-- IE styles -->
+	<link href="https://confidencegroup.co/assets_new/css/ie.css" rel="stylesheet" />
+	<!-- Font Awesome -->
+	<link href="https://confidencegroup.co/assets_new/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- OWL Carousel -->
+	<link href="https://confidencegroup.co/assets_new/css/owl.carousel.css" rel="stylesheet" />
+	<!-- Jquery UI -->
+	<link href="https://confidencegroup.co/assets_new/css/jquery-ui.css" rel="stylesheet" />
+	<!-- Font Family -->
+	<link href="https://confidencegroup.co/assets_new/css/fontfamily.css" rel="stylesheet" />
+	<!-- For toast css-->
+	<link rel="stylesheet" href="https://confidencegroup.co/plugins/toast/jquery.toast.css">
+	<!-- lightgallery CSS File -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-autoplay.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-comments.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-fullscreen.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-rotate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-share.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-thumbnail.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />        <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EC1PJ34KVX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-EC1PJ34KVX');
+    </script>
+  </head>
+  
+  <body oncontextmenu="return false;"> 
+    <div class="htlfndr-loader-overlay"></div>
+		<header class="header2">
+            <div class="htlfndr-top-header">
+                <div class="navbar navbar-default htlfndr-blue-hover-nav widget-wrapper">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="row">
+                            <div class="col-md-8">
+                                <a class="htlfndr-logo navbar-brand" href="https://confidencegroup.co">
+                                    <img src="https://confidencegroup.co/assets_new/images/cpil-logo.png" alt="Logo" />
+                                </a>
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#htlfndr-first-nav">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div><!-- .navbar-header -->
+                            </div>
+                            <div class="col-md-4">
+                                <aside class="collapse navbar-collapse navbar-right htlfndr-widget-column" id="htlfndr-first-nav">
+                                    <div class="widget">
+                                        <div class="htlfndr-follow-plugin">
+                                            <a href="https://www.facebook.com/confidencepetroleumindialtd" target="_blank" class="htlfndr-follow-button button-facebook"></a>
+                                            <a href="https://www.instagram.com/confidencepetroleumindialtd/" target="_blank" class="htlfndr-follow-button button-instagram"></a>
+                                            <a href="https://twitter.com/GogasAutoLPG" target="_blank" class="htlfndr-follow-button button-twitter"></a>
+                                            <a href="https://www.linkedin.com/company/confidence-petroleum-india-ltd-/" target="_blank" class="htlfndr-follow-button button-linkedin"></a>
+                                            <a href="https://www.youtube.com/@confidencepetroleum3629" target="_blank" class="htlfndr-follow-button button-youtube"></a>
+                                        </div>
+                                    </div>
+                                </aside><!-- .collapse.navbar-collapse -->
+                                
+                            </div>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                    </div><!-- .container -->
+                </div><!-- .navbar.navbar-default.htlfndr-blue-hover-nav-->
+            </div><!-- .htlfndr-top-header -->
+            <!-- Start of main navigation -->
+            <div class="htlfndr-under-header">
+                <nav class="navbar navbar-default">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#htlfndr-main-nav">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div><!-- .navbar-header -->
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="htlfndr-main-nav">
+                            <ul class="nav navbar-nav">
+                                <li class="active-nav">
+                                    <a href="https://confidencegroup.co">Home</a> 
+                                </li>
+                                <li class="active dropdown ">
+                                    <a href="#" onclick="return false;">Investor Relations</a>
+                                    <ul class="dropdown-menu">	
+                                        <li  class="dropdown-submenu"><a href="#">Financial Reporting</a>
+                                            <ul class="dropdown-menu">
+                                                <li class=""><a href="https://confidencegroup.co/investor-relations/quaterly-result">Quaterly Result</a>
+                                                <li class=""><a href="https://confidencegroup.co/investor-relations/annual-report">Annual Report</a></li>
+                                                <li class=""><a href="https://confidencegroup.co/investor-relations/investor-presentation">Investor and Result Presentation</a></li>
+                                            </ul>
+                                        </li>	
+                                        <li class="dropdown-submenu"><a href="#">Shareholder Information</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="https://confidencegroup.co/investor-relations/share-holding-pattern">Share Holding Pattern</a>
+                                                <li><a href="https://confidencegroup.co/investor-relations/corporate-governance-report">Corporate Governance Report</a></li>
+                                                <li><a href="https://confidencegroup.co/investor-relations/notice-shareholder">Notice Of Shareholder Meeting</a></li>
+                                                <li><a href="https://confidencegroup.co/investor-relations/filling-stock-exchange">Other Filing With Stock Exchange</a></li>
+                                                <li><a href="https://confidencegroup.co/investor-relations/credit-rating">Credit Rating</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="https://confidencegroup.co/investor-relations/chairman-communication">Chairman Communication</a></li>
+                                        <li  class="dropdown-submenu"><a href="#">Disclosure Under SEBI LODR Regulation2015</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="https://confidencegroup.co/investor-relations/distribution-policy">Policy</a>
+                                                <li><a href="https://confidencegroup.co/investor-relations/investor-meeting">Investor Meeting</a></li>
+                                                <li><a href="https://confidencegroup.co/investor-relations/notice-investor-meeting">Notice Of Investor Meeting</a></li>
+                                                <li><a href="https://confidencegroup.co/investor-relations/transcript-investor-meeting">Transcript Of Investor Meeting</a></li>
+                                                <li><a href="https://confidencegroup.co/investor-relations/preferential-allotement">Preferential Allotment</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="active dropdown ">
+                                    <a href="#" onclick="return false;">Business Divisions</a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a href="https://confidencegroup.co/business-divisions/bulk_lpg">Bulk LPG</a></li>
+                                        <li class=""><a href="https://confidencegroup.co/business-divisions/lpg-cylinder">LPG Cylinder Manufacturing</a></li>	
+                                        <li  class="dropdown-submenu"><a href="https://gogas.co" target="_blank">Gogas</a>
+                                            <ul class="dropdown-menu">
+                                                <!-- <li><a target="_blank" href="https://gogas.co">Gogas</a> -->
+                                                <li><a target="_blank" href="https://gogas.co/packed-cylinder">PCD</a>
+                                                <li><a target="_blank" href="https://gogas.co/auto-lpg">ALDS</a></li>
+                                            </ul>
+                                        </li>
+                                        <li  class="dropdown-submenu"><a href="#">Our Subsidiary</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown-submenu"><a href="#">High-Pressure Industrial Cylinder</a>
+                                                <ul class="dropdown-menu">
+                                                <li class="dropdown-submenu"><a href="#">CFEL</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a target="_blank" href="https://confidencegroup.co/cepl"
+                                                                >CEPL</a></li>
+                                                        <li><a target="_blank" href="https://confidencegroup.co/silver_sky"
+                                                                >Silver Sky</a></li>
+                                                        <li><a target="_blank" href="https://confidencegroup.co/sarju_implex"
+                                                                >Sarju Impex</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                                </li>
+                                            </ul> 
+                                        </li>	
+                                        <li class=""><a href="https://confidencegroup.co/business-divisions/cng-stations">CNG Stations</a></li>
+                                        <!--<li class=""><a href="https://gobikeindia.com/" target="_blank">GoBike</a></li>-->
+                                    </ul>
+                                </li>
+                                <li class="active dropdown ">
+                                    <a href="#" onclick="return false;">Knowledge Hub</a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a href="https://confidencegroup.co/knowledge-hub/blogs">Blog</a></li>
+                                        <li class=""><a href="https://confidencegroup.co/knowledge-hub/press-release">Press Release</a></li> 
+                                    </ul>
+                                </li>
+                                <li class="active dropdown ">
+                                    <a href="#"  onclick="return false;">Media</a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a href="https://confidencegroup.co/media/photo">Photo</a></li>
+                                        <li class=""><a href="https://confidencegroup.co/media/videos">Video</a></li> 
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="https://confidencepetroleumindialimited.my.salesforce-sites.com/Careers">Career</a>
+                                </li>
+                                <li class="vertical-line-hide ">
+                                    <a href="https://confidencegroup.co/contact">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div><!-- .collapse.navbar-collapse -->
+                    </div><!-- .container -->
+                </nav><!-- .navbar.navbar-default.htlfndr-blue-hover-nav -->
+            </div><!-- .htlfndr-under-header -->
+            <!-- End of main navigation -->
+        </header>    <!-- ======= Hero Section ======= -->
+   
+<!-- End Hero -->
+    <main id="main">
+     
+    <div class="htlfndr-wrapper">			
+        <!-- Start of slider section -->
+        <section class="htlfndr-slider-section" id="Sustainable">
+            <div class="owl-carousel">
+                <div class="htlfndr-slide-wrapper">
+                    <div class="banner-image">
+                        <div class="htlfndr-slide-data container">
+                            <h1 class="htlfndr-slider-title">
+                                Creating A Greener &<br>Sustainable Future
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- .htlfndr-slider-section -->
+        
+        <section class="container-fluid htlfndr-usp-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="htlfndr-section-title">Welcome to Confidence Group!</h1><!-- You need <span> and 'htlfndr-lined-title' class for both side line -->
+                            <p>At Confidence Petroleum India Ltd, our mission is to provide the best quality,<br>
+                                clean and eco-friendly fuel for all individuals & commercial entities. </p>
+                    </div><!-- .col-sm-4.htlfndr-icon-box -->
+                </div>
+                <div class="row"> 
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/LPG_dealer_network.png"  alt="Confidence" />
+                                <h4><span>2500+</span> LPG Dealer Network</h4>
+                            </div>
+                        </div><!-- .col-sm-4.htlfndr-icon-box -->
+                        
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/auto_LPG_dispensing_stations.png"  alt="Confidence" />
+                                <h4><span>295+</span> Auto LPG Dispensing Station</h4>
+                            </div>
+                        </div><!-- .col-sm-4.htlfndr-icon-box -->
+
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/cng-stations3.png"  alt="Confidence" />
+                                <h4><span>50+</span>  CNG Station</h4>
+                            </div>
+                        </div><!-- .col-sm-4.htlfndr-icon-box -->
+
+                        
+
+                    
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/SIL_CPIL_Website_Product_pannels.png"  alt="Confidence" />
+                                <h4>Sarju Impex Limited</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/Silver_Sky_Exim_Product_Image.png"  alt="Confidence" />
+                                <h4>Silver Sky</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/CEPL_Factory_Website_Product_Image.png"  alt="Confidence" />
+                                <h4>CEPL</h4>
+                            </div>
+                        </div> 
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/cylinder_manufacturing_plants.png"  alt="Confidence" />
+                                <h4><span>15</span> Cylinder Manufacturing Plants</h4>
+                            </div>
+                        </div><!-- .col-sm-4.htlfndr-icon-box -->
+
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/road_tankers.png"  alt="Confidence" />
+                                <h4><span>470+</span> Road Vehicles and Tankers</h4>
+                            </div>
+                        </div><!-- .col-sm-4.htlfndr-icon-box -->
+
+                        <div class="col-sm-4">
+                            <div class="services">
+                                <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/bottling_&amp;_blending_plants.png"  alt="Confidence" />
+                                <h4><span>68+</span> Bottling & Blending Plants</h4>
+                            </div>
+                        </div><!-- .col-sm-4.htlfndr-icon-box -->
+                    </div> 
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </section> 
+       
+        <section class="container-fluid htlfndr-visitors-cards">
+            <div class="container"> 
+                    <div class="col-md-12">
+                        <h1 class="htlfndr-section-title"> Confidence Petroleum India Ltd. is the pinnacle of India's private LPG & CNG sector, driven by an experienced team and unwavering ethical values.
+                            </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="icon-drinks" src="https://confidencegroup.co/assets_new/images/confidence_icon_1.png"  alt="Confidence" />
+                            <p>Listed on NSE and BSE underscores our financial credibility.</p>
+                        </div>
+                        <div class="col-md-4 border-lr">
+                            <img class="icon-drinks" src="https://confidencegroup.co/assets_new/images/confidence_icon_2.png"  alt="Confidence" />
+                            <p>Pioneers of innovation with India's first fibre-body Composite Cylinders. </p>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="icon-drinks" src="https://confidencegroup.co/assets_new/images/confidence_icon_3.png"  alt="Confidence" />
+                            <p>Revolutionizing mobility with Auto LPG and CNG Dispensing Stations nationwide.
+                            </p>
+                        </div>  
+                    </div>
+                    <div class="row-2">
+                        <div class="col-md-6 border-r">
+                            <img class="icon-drinks" src="https://confidencegroup.co/assets_new/images/customer-service.png"  alt="Confidence" />
+                            <p>Customer service and safety are paramount in our business ethos.</p>
+                        </div> 
+                        <div class="col-md-6">
+                            <img class="icon-drinks" src="https://confidencegroup.co/assets_new/images/economic-efficient.png"  alt="Confidence" />
+                            <p>Driving economic and efficient solutions in the Indian LPG and CNG market.</p>
+                        </div> 
+                    </div>
+                    <!-- .row -->
+            </div><!-- .container -->
+        </section><!-- .container-fluid.htlfndr-visitors-cards -->
+        <section class="container-fluid mission">
+            <div class="container">
+                <!-- <div class="row">
+                    <div class="col-md-8">
+                        <p>Our commitment to providing the highest quality products and
+                        services has resulted in countless sasfied customers.
+                        </p><br>
+                        <p>Our company is commied to fulfilling the energy needs of the
+                            nation and providing superior quality and service to our customers.
+                            As a key player in the LPG & CNG sector, we connually strive for
+                            innovation and growth, contribung to the development of a
+                            sustainable & energy-efficient future.
+                            
+                            </p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/india-1.png"  alt="Confidence" />
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Our Values</h4>
+                        <div class="htlfndr-slider-under-title-line"></div>
+                        <p><strong>1. Innovativeness: </strong> We believe the secret of unprecedented success is associated directly with trying new approaches to solve problems, in ways that make a lasting difference.</p>
+                        <p><strong>2. Timeliness: </strong> Nothing beats being in the right place at the right time. Hence, we commit to tracking schedules very closely throughout the process and meeting it. </p>
+                        <p><strong>3. Quality:</strong> At Confidence, we consider quality to be of utmost importance. To this end, we undertake to uphold high-quality standards to provide customers with the best product and service.</p>
+                        <p><strong>4. Consumer Focus:</strong> We believe new energy market rules must be guided by consumer outcomes. Thus, we keep our customers first and aim to provide a great customer experience.</p>
+                        <p><strong>5. Collaboration:</strong> We believe collaborations help in meeting shared objectives. It facilitates improved efficiency, cost reduction, product innovation, and increased market scalability.</p>
+                        <p><strong>6. Paying it Forward:</strong> We look towards the future with long-term sustainability in mind. Hence reinvesting our profits is our way of “paying it forward”.</p>
+                    </div>
+                    <div class="col-md-12">
+                        <h4>Our Mission</h4>
+                        <div class="htlfndr-slider-under-title-line"></div>
+                        <p>Our mission is to deliver innovative, reliable and high-quality products and services that have a positive impact on
+                            the environment and communities we serve. We strive to establish lasting relationships with our customers and
+                            stakeholders based on trust, integrity, and mutual success.</p>
+                    </div>
+
+                    <div class="col-md-12">
+                        <h4>Our Vision</h4>
+                        <div class="htlfndr-slider-under-title-line"></div>
+                        <p>At our core, we are committed to revolutionizing the way individuals and businesses think about fuel. Our vision
+                            is to be a leading provider of clean and eco-friendly fuel solutions to individuals and commercial entities, while
+                            contributing to the development of a sustainable and energy-efficient future. We strive to be an industry leader,
+                            achieving excellence with financial soundness, generating value for stakeholders and championing innovative
+                            solutions for a cleaner and greener earth.</p>
+                    </div> 
+                </div>	
+            </div>
+        </section> 
+        <section class="container-fluid gas">
+            <div class="container">
+                <div class="row">
+                    <h4>Within Our Subsidiary</h4>
+                    <div class="htlfndr-slider-under-title-line"></div><br>
+                    <div class="col-md-6"> 
+                        <p>1. Three cutting-edge High-Pressure Cylinder Manufacturing Facilities ensure precision and excellence.</p>
+                        <p>2. Specialized in crafting seamless industrial gas cylinders for nitrogen, oxygen, helium, argon, and more.</p>
+                        <p>3. Meeting the highest standards in quality to fulfill diverse industrial gas requirements.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/Cylinder manufacturing Only.png"  alt="Confidence" />
+                    </div>
+                </div>	
+            </div>
+        </section> 
+        <section class="container-fluid team">
+            <div class="container">
+                <h1>Our Team</h1>
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-3">
+                        <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/nitin_khara.png"  alt="Confidence" />
+                        <p>Mr. Nitin Khara</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/elesh_khara.png"  alt="Confidence" />
+                        <p>Mr. Elesh Khara</p>
+                    </div>
+                    <div class="col-md-3">
+
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- <div class="col-md-2 col-md-offset-1">
+                        <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/vimal_parwal.png"  alt="Confidence" />
+                        <p>Vimal Parwal</p>
+                    </div> -->
+                    <div class="col-md-4">
+                        <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/jitendra_jain.png"  alt="Confidence" />
+                        <p>Mr. Jitendra Jain</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/yatin_khara.png"  alt="Confidence" />
+                        <p>Mr. Yatin Khara</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/satish_chandak.png"  alt="Confidence" />
+                        <p>Mr. Satish Chandak</p>
+                    </div>
+                    <!--<div class="col-md-3">-->
+                    <!--    <img class="htlfndr-icon" src="https://confidencegroup.co/assets_new/images/anand_chandak.png"  alt="Confidence" />-->
+                    <!--    <p>Mr. Anand Chandak</p>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </section> 
+        <!-- ======= logo slider Section ======= -->
+        <section id="our-legacy" class="our-legacy">
+            <div class="container">
+                <header class="section-header" style="padding-bottom:10px;">
+                    <h1>Our Esteemed Customer</h1>
+                    <div class="header-line"></div>
+                </header>
+                <div id="esteemed">
+                    <img src="https://confidencegroup.co/assets_new/images/CPIL Client web.jpg" alt="">    
+                </div>
+            </div>
+        </section>
+       
+	</div>
+	
+	 <!-- start model -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="popup-img">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"> 
+        <!--<button class="btn-close popup-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>-->
+            <div class="modal-body"> 
+                <div class="modal-body popup-img"> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- end model -->
+    </main>
+    <!-- footer start-->
+    <footer class="htlfndr-footer">
+				
+				<button class="htlfndr-button-to-top" role="button"><span>Back to top</span></button><!-- Button "To top" -->
+
+				<div class="widget-wrapper">
+					<div class="container">
+						<div class="row">
+							<aside class="col-xs-12 col-sm-6 col-md-3 htlfndr-widget-column">
+								<div class="widget">
+									<div class="footer-logo">
+									<a class="htlfndr-logo navbar-brand" href="#">
+										<img src="https://confidencegroup.co/assets_new/images/cpil-logo.png" alt="Logo" />
+									</a>
+										</div>
+									<br>
+									<p>Confidence Group <br> 1. CPIL<br> 2. CFEL</p>
+
+								</div><!-- .widget -->
+							</aside><!-- .col-xs-12.col-sm-6.col-md-3.htlfndr-widget-column -->
+							<aside class="col-xs-12 col-sm-6 col-md-3 htlfndr-widget-column">
+								<div class="widget">
+									<h3 class="widget-title">contact info</h3>
+									<h5><span><i class="fa fa-map-marker" aria-hidden="true"></i></span> address</h5>
+									<p>34, Central Bazar Road, Ramdaspeth, Nagpur, Maharashtra 440010</p>
+									<hr />
+									<h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> phone number</h5>
+									<p>18002107999</p>
+									<hr />
+									<h5><span><i class="fa fa-envelope" aria-hidden="true"></i></span> email address</h5>
+									<p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="543d3a323b14373b3a323d30313a373133263b21247a373b">[email&#160;protected]</a></p>
+									<p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2645475443435466454948404f42434845434154495356084549">[email&#160;protected]</a></p>
+								</div><!-- .widget -->
+							</aside><!-- .col-xs-12.col-sm-6.col-md-3.htlfndr-widget-column -->
+							<aside class="col-xs-12 col-sm-6 col-md-3 htlfndr-widget-column">
+								<div class="widget">
+									<h3 class="widget-title">Quick Links</h3>
+									<ul class="menu">
+										<li class="menu-item active"><a href="https://confidencegroup.co">home</a></li>
+										<li class="menu-item "><a href="https://confidencegroup.co/contact">Contact Us</a></li>
+										<li class="menu-item "><a href="https://confidencegroup.co/career">Career</a></li>
+										<li class="menu-item "><a href="https://confidencegroup.co/business-divisions/bulk_lpg">Bulk Lpg</a></li> 
+										<li class="menu-item "><a href="https://confidencegroup.co/business-divisions/lpg-cylinder">LPG Cylinder Manufacturing</a></li> 
+										<li class="menu-item "><a href="https://confidencegroup.co/business-divisions/cng-stations">CNG Stations</a></li>
+									</ul>
+								</div><!-- .widget -->
+							</aside><!-- .col-xs-12.col-sm-6.col-md-3.htlfndr-widget-column -->
+							<aside class="col-xs-12 col-sm-6 col-md-3 htlfndr-widget-column">
+								<div class="widget">
+									<h3 class="widget-title">follow us</h3>
+									<!-- Start of Follow Us buttons -->
+									<div class="htlfndr-follow-plugin">
+										<a href="https://www.facebook.com/confidencepetroleumindialtd" target="_blank" class="htlfndr-follow-button button-facebook"></a>
+										<a href="https://www.instagram.com/confidencepetroleumindialtd/" target="_blank" class="htlfndr-follow-button button-instagram"></a>
+										<a href="https://twitter.com/GogasAutoLPG" target="_blank" class="htlfndr-follow-button button-twitter"></a>
+										<a href="https://www.linkedin.com/company/confidence-petroleum-india-ltd-/" target="_blank" class="htlfndr-follow-button button-linkedin"></a>
+										<a href="https://www.youtube.com/@confidencepetroleum3629" target="_blank" class="htlfndr-follow-button button-youtube"></a>
+									</div><!-- .htlfndr-follow-plugin -->
+									<!-- End of Follow Us buttons -->
+									<hr />
+								
+								</div><!-- .widget -->
+							</aside><!-- .col-xs-12.col-sm-6.col-md-3.htlfndr-widget-column -->
+						</div><!-- .row -->
+					</div><!-- .container -->
+				</div><!-- .widget-wrapper -->
+
+				<div class="htlfndr-copyright">
+					<div class="container" role="contentinfo">
+						<p>Copyright 2023 | <a href="https://confidencegroup.co/terms_n_conditions" target="_blank" class="">Terms of Use</a> | <a href="https://confidencegroup.co/privacy_policy" target="_blank" class="">Privacy Policy</a></p>
+					</div><!-- .container -->
+				</div><!-- .htlfndr-copyright -->
+			</footer> 
+        
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        var premiumStockMarketWidgets = {
+          pluginUrl: "https://confidencegroup.co/assets_new",
+          ajaxUrl: "https://confidencegroup.co/assets_new/assets/ajax.php",
+          addons: {
+            financials: {
+              installed: true
+            },
+            options: {
+              installed: true
+            }
+          },
+          assetRecognitionRegexp: '^stocks/([a-zA-Z0-9-\.=\^\$]+)/?$',
+          assetNamesOverrides: {
+            '^NZ50': 'S&P/NZX 50 INDEX GROSS'
+          },
+          googleMapsApiKey: 'AIzaSyAXWrcPQtQShylFxMAaVyDfzMbTr4k9yDo',
+          assetsLogoImages: { 
+          BSET: "https://confidencegroup.co/assets_new/assets/images/logo/BSET.png",
+          BSET: "https://confidencegroup.co/assets_new/assets/images/logo/BSET.webp",
+
+          NFLX: "https://confidencegroup.co/assets_new/assets/images/logo/NFLX.webp",
+
+          NSIT: "https://confidencegroup.co/assets_new/assets/images/logo/NSIT.webp",
+          },
+          text: {
+            price_per_1k: 'Price per 1000 shares'
+          },
+          numberFormats: {
+            price_per_1k: '$0,0',
+          },
+          dateFormats: {
+            //
+          },
+          hideSymbolSuffix: true
+        }
+    </script>
+    <script src="https://confidencegroup.co/assets_new/assets/dist/app.js"></script>    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://confidencegroup.co/assets_new/js/jquery-1.11.3.min.js"></script>
+<!-- Include Jquery UI script file -->
+<script src="https://confidencegroup.co/assets_new/js/jquery-ui.min.js"></script> 
+<script src="https://confidencegroup.co/assets_new/js/jquery.ui.touch-punch.min.js"></script>
+<script src="https://confidencegroup.co/assets_new/js/bootstrap.min.js"></script>
+<script src="https://confidencegroup.co/plugins/toast/jquery.toast.js"></script>
+<script src="https://confidencegroup.co/assets_new/vendor/php-email-form/validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.js"></script>
+<!-- Include Owl Carousel script file -->
+<script src="https://confidencegroup.co/assets_new/js/owl.carousel.min.js"></script>
+<!-- Include main script file -->
+<script src="https://confidencegroup.co/assets_new/js/script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/autoplay/lg-autoplay.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/rotate/lg-rotate.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/share/lg-share.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+		<script>
+			lightGallery(document.getElementById('gallery'), {
+				plugins: [lgThumbnail, lgZoom, lgFullscreen, lgShare, lgRotate, lgAutoplay],
+				download: true,
+				controls: true,
+				thumbWidth: 100,
+				thumbHeight: 100
+			});
+		</script>
+		<script>
+        lightGallery(document.getElementById('testimonial'), {
+            plugins: [lgThumbnail, lgZoom, lgFullscreen, lgShare, lgRotate, lgAutoplay],
+            download: true,
+            controls: true,
+            thumbWidth: 100,
+            thumbHeight: 100
+        });
+    </script>
+		<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    /** 
+   * our-legacy slider
+   */
+  new Swiper('.our-legacy-slider', {
+      speed: 600,
+      loop: true,
+      autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+
+      // Navigation arrows
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+          320: {
+              slidesPerView: 1,
+              spaceBetween: 40
+          },
+          768: {
+              slidesPerView: 2,
+          },
+          1200: {
+              slidesPerView: 3,
+          }
+      }
+  });
+
+  $('.share_btn').on('click', function() {
+            //first hide all other div
+         
+            var idBtn = $(this).data('id');
+            //now open the selected div
+            if ($("#div_"+idBtn).is(':hidden')) {
+                $("#div_"+idBtn).show();
+            } else {
+                $("#div_"+idBtn).hide();
+            } 
+        })    
+
+  /**
+   * our-legacy slider
+   */
+</script>
+<script>
+  $(document).ready(function () {
+      $("#contact_form").validate({
+          errorElement: "div",
+          highlight: function (element) {
+              $(element).removeClass("error");
+          },
+          rules: {
+              "name": {
+                  required: true,
+              },
+               "email": {
+                  required: true,
+              },
+               "phone": {
+                  required: true,
+              },
+              "message": {
+                  required: true,
+              }
+          },
+          messages: {
+              "name": {
+                  required: "Please enter Name",
+              },
+              "email": {
+                  required: "Please enter Email",
+              },
+              "phone": {
+                  required: "Please enter Phone Number",
+              },
+              "message": {
+                  required: "Please enter Message",
+              }
+          },
+      });
+  });
+</script>
+<script type="text/javascript">
+  
+    var nowY = new Date().getFullYear(),
+    options = "";  
+    var currentYear = (new Date()).getFullYear();
+    for(var Y=2000; Y<=currentYear-1; Y++) {
+        var j=Y+1; 
+        options += "<option>"+ Y +"-"+ j +"</option>"; 
+    }
+
+    $("#year").append( options );
+</script>
+<script>
+    var nowY = new Date().getFullYear(),
+    options = "";  
+    var currentYear = (new Date()).getFullYear();
+    //Loop and add the Year values to DropDownList.
+    for (var i = 2000; i <= currentYear; i++) {
+      
+        options += "<option>"+ i +"</option>";
+    } 
+  
+    $("#ddlYears").append( options );
+</script>
+ 
+    <!-- toast msg -->
+        <script>
+    // jQuery(document).ready(function () {
+    //     $('#popup-img').modal('show');
+    // }); 
+</script>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"5bd2601f3c73461898be7a4bfd3341aa","spa":2}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a41494599a4f51bd',t:'MTc5MDQ0OTkzOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

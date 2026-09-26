@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Your Custom CSS -->
+<link href="./links/bannersection.css" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="../images/favicon.png">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="./links/fontawesome-free-5.15.4-web/css/all.min.css">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="./links/bootstrap-icons-1.11.1/bootstrap-icons.css">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="./links/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+
+<!-- jQuery -->
+<script src="./links/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Popper.js -->
+<script src="./links/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="./links/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+
+
+
+    <!-- <link href="bannersection.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet"> -->
+
+
+    <style>
+        body {
+            /* cursor: none; */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+        }
+        /* .custom-cursor {
+    position: fixed;
+    width: 20px; 
+    height: 20px;
+    background-image: url('../images/cursor-black.png'); 
+    background-size: cover;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999; 
+    transition: background-image 0.2s ease, transform 0.1s ease;
+} */
+        
+      
+
+        .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 30px 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .footer-logo {
+            flex: 1;
+            text-align: left;
+        }
+
+        .footer-logo img {
+            margin-top: 50px;
+            max-width: 270px;
+        }
+
+        .footer-content div {
+            flex: 1;
+            margin: 10px;
+            min-width: 250px;
+        }
+
+        .footer-content div h4 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .footer-content div p,
+        .footer-content div a {
+            color: #fff;
+            font-size: 0.9em;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .footer-content div a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .col-lg-3 h4 {
+            font-size: 22px; /* Optional: For headings like Office, Phone, Email */
+        }
+        
+        .footer .office p {
+            font-size: 15px; /* Default size for address content */
+            line-height: 1.5; /* Optional: Adjust spacing between lines */
+            margin-bottom: 10px; /* Optional: Space below paragraphs */
+        }
+       
+        .footer .useful-links p {
+            font-size: 20px; /* Desired font size */
+            margin-bottom: 5px; /* Optional: Add spacing between the links */
+        }
+     
+        .icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }  
+
+        @media (max-width: 768px) {
+            /* Make footer columns stack vertically */
+            .footer .row {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            /* Center-align column content and add spacing */
+            .footer .col-lg-3 {
+                text-align: center;
+                margin-bottom: 20px; /* Space between sections */
+            }
+        
+            /* Resize the logo for mobile */
+            .footer-logo img {
+                max-width: 150px;
+                margin: 0 auto;
+            }
+        
+            /* Adjust heading font size */
+            .footer .col-lg-3 h4 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+        
+            /* Reduce paragraph and link font size */
+            .footer .col-lg-3 p,
+            .footer .col-lg-3 a {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+        
+            /* Add padding around the footer */
+            .footer {
+                padding: 20px 15px;
+            }
+        
+            /* Footer bottom section styling */
+            .authum-footer {
+                text-align: center;
+                font-size: 14px;
+                padding: 10px 0;
+            }
+        
+            /* Stack footer links in bottom section */
+            .authum-footer__link {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+        
+        
+          
+        
+
+/* Adjust the navbar logo size */
+.navbar-brand img.logo {
+    margin-left: -95px;
+    margin-right: 50px;
+    max-width: 150px;  /* Adjust the max-width */
+    height: auto;      /* Maintain the aspect ratio */
+}
+
+/* Ensure navbar items are black */
+.navbar-nav .nav-link {
+    color: black !important;
+}
+
+/* Ensure dropdown items are black */
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: black;
+}
+
+/* Hover effect for nav links */
+.navbar-nav .nav-link:hover,
+.navbar-nav .dropdown-item:hover {
+    color: #007bff;  /* Change to blue on hover */
+}
+
+/* Adjust size for larger screens if needed */
+@media (min-width: 992px) {
+    .navbar-brand img.logo {
+        max-width: 200px;  /* Adjust for larger screens */
+    }
+}
+
+  /* Remove Bootstrap's default dropdown arrow */
+  .dropdown-toggle::after {
+            display: none !important;
+        }
+
+
+        
+/* Positioning the sub-dropdown to the right of the parent dropdown */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 100%;
+    left: 0%;
+    margin-top: 0px;
+    display: none; /* Hide by default */
+    position: absolute;
+    border-radius: 8px;
+}
+
+.dropdown-submenu.show > .dropdown-menu {
+    display: block !important; /* Ensure it's shown when toggled */
+}
+
+/* Prevent Bootstrap from closing submenu immediately */
+/* .dropdown-menu {
+    transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+} */
+
+.nav-item {
+    position: relative; /* Needed for positioning the dropdown */
+}
+
+/*
+.dropdown-menu {
+    display: none; /* Hide the dropdown by default */
+    position: absolute; /* Position it absolutely */
+    background-color: #f9f9f9; /* Background color */
+    min-width: 160px; /* Minimum width of the dropdown */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Shadow effect */
+    z-index: 1; /* Ensure it appears above other content */
+}
+*/
+
+
+.nav-item:hover .dropdown-menu {
+    display: block; /* Show the dropdown on hover */
+}
+
+
+/* Modal Background */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.custom-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.custom-popup-header {
+    background: white;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+/* Close Button */
+.custom-close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Footer */
+.custom-footer {
+    margin-top: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
+
+#custom-popup {
+    text-decoration: none; /* Remove default underline */
+}
+
+#custom-popup:hover {
+    text-decoration: underline;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="custom-cursor"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        
+        <div class="container">
+            <!-- Logo on the left -->
+            <a class="navbar-brand" href="/index.php">
+                <img src="../images/headerlogo.png" class="logo" alt="Authum Logo" />
+            </a>
+            
+            <!-- Navbar Toggler for mobile view -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Menu -->
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto" style="gap: 16px;">
+                    <!-- Home Dropdown -->
+                    <!-- <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navText1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Home <i class="fa fa-angle-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navText1">
+                            <a class="dropdown-item" href="/index.php">Item 1</a>
+                            <a class="dropdown-item" href="#">Item 2</a>
+                            <a class="dropdown-item" href="#">Item 3</a>
+                        </div>
+                    </div> -->
+            
+                    <!-- About Dropdown -->
+                    <div class="nav-item">
+                        <a class="nav-link" href="/about.php" id="navText2">
+                            About
+                        </a>
+                    </div>
+            
+                    <!-- Market & Private Equity Dropdown -->
+
+                    <!-- About Dropdown -->
+                    <div class="nav-item">
+                        <a class="nav-link" href="/markets.php" id="navText2">
+                        Markets & Private Equity
+                        </a>
+                    </div>
+
+                    
+                    <!-- About Dropdown -->
+                    <div class="nav-item">
+                        <a class="nav-link" href="/credit.php" id="navText2">
+                        Credit Business 
+                        </a>
+                    </div>
+
+
+                    <!-- Credit Business Dropdown -->
+                    <!-- <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navText4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Credit Business <i class="fa fa-angle-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navText4">
+                            <a class="dropdown-item" href="/credit.php   ">Item 1</a>
+                            <a class="dropdown-item" href="#">Item 2</a>
+                            <a class="dropdown-item" href="#">Item 3</a>
+                        </div>
+                    </div> -->
+            
+                    <!-- Platform & Real Assets Dropdown -->
+                    <!-- <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navText5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Platform & Real Assets 
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navText5">
+                            <a class="dropdown-item" href="#">Item 1</a>
+                            <a class="dropdown-item" href="#">Item 2</a>
+                            <a class="dropdown-item" href="#">Item 3</a>
+                        </div>
+                    </div> -->
+            
+                    <!-- Investor Relations Dropdown -->
+                    <!-- <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navText6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Investor Relations <i class="fa fa-angle-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navText6">
+                            <a class="dropdown-item" href="#">Item 1</a>
+                            <a class="dropdown-item" href="#">Item 2</a>
+                            <a class="dropdown-item" href="#">Item 3</a>
+                        </div>
+                    </div> -->
+            
+                    <!-- Customer Relations Dropdown -->
+
+
+
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/investor.php" id="navText2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Investor Relations <i class="fa fa-angle-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navText2">
+                            <a class="dropdown-item" href="/investor.php">Disclosure under Regulation 46 of SEBI LODR</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/customization.php" id="navText4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Customer Relations <i class="fa fa-angle-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navText4">
+                            <a class="dropdown-item" href="/customization.php">Customer Care</a>
+                            <a class="dropdown-item " href="/customization.php#branch-locator">Branch Locator</a>
+                            <a class="dropdown-item " href="/customization.php#download-documents">Download Documents</a>
+                            <a class="dropdown-item " href="/customization.php#grievance-redressal">Grievance Redressal Policy</a>
+                            <a class="dropdown-item " href="/policies.php">Policies</a>
+
+                            <!-- Submenu -->
+                            <div class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Customer Information <i class="fa fa-angle-down"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item " href="/customization.php#consumer-awareness">Consumer Awareness</a>
+                                    <a class="dropdown-item " href="/customization.php#consumer-awareness">Assets Possessed SARFAESI Act 2002</a>
+                                    <a class="dropdown-item" href="/auctionnotice.php">Auction Notice Under SARFAESI Act 2002</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <a class="nav-link" href="#" id="custom-popup">
+                        Benchmark PLR
+                        </a>
+                    </div>
+		    <!-- About collection/recovery agencies -->
+                   
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="custom-popup-modal" class="custom-modal">
+    <div class="custom-modal-content">
+        <span class="custom-close">&times;</span>
+        <div class="custom-popup-header">
+            <img src="../images/headerlogo.png" alt="Company Logo">
+        </div>
+        <p>New Benchmark PLR - 21.35% p.a. with effect from 15th October 2023</p>
+    </div>
+</div>
+
+
+    <script>
+       document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.querySelector(".custom-cursor");
+
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+
+        let elem = document.elementFromPoint(e.clientX, e.clientY);
+        let bgColor = "rgb(255, 255, 255)"; // Default background color
+
+        while (elem && elem !== document.documentElement) {
+            let computedStyle = window.getComputedStyle(elem);
+            if (computedStyle.backgroundColor !== "rgba(0, 0, 0, 0)" && computedStyle.backgroundColor !== "transparent") {
+                bgColor = computedStyle.backgroundColor;
+                break;
+            }
+            elem = elem.parentElement;
+        }
+
+        // Convert RGB to brightness
+        let rgb = bgColor.match(/\d+/g);
+        if (rgb) {
+            let brightness = (parseInt(rgb[0]) * 299 + parseInt(rgb[1]) * 587 + parseInt(rgb[2]) * 114) / 1000;
+
+            // Change cursor based on brightness
+            cursor.style.backgroundImage = brightness < 128 ? "url('../images/cursor-white.png')" : "url('../images/cursor-black.png')";
+        }
+    });
+});
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+    // Enable sub-dropdown on hover
+    $('.dropdown-submenu').hover(function () {
+        $(this).children('.dropdown-menu').stop(true, true).slideDown(200);
+    }, function () {
+        $(this).children('.dropdown-menu').stop(true, true).slideUp(200);
+    });
+});
+
+    </script>
+
+<script src="./links/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".scroll-link").on("click", function(event){
+            event.preventDefault(); // Prevent direct navigation
+            var target = $(this).attr("href"); // Get the section ID
+            $("html, body").animate({
+                scrollTop: $(target).offset().top - 80 // Adjust offset for fixed navbar
+            }, 800); // Smooth scrolling duration
+        });
+    });
+</script>
+
+<script src="./links/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Toggle submenu on click
+    $(".dropdown-submenu > .dropdown-toggle").on("click", function (e) {
+        e.preventDefault(); // Prevent default only for toggling
+
+        var submenuParent = $(this).parent();
+
+        // Close other submenus before opening the clicked one
+        $(".dropdown-submenu").not(submenuParent).removeClass("show");
+
+        // Toggle submenu visibility
+        submenuParent.toggleClass("show");
+    });
+
+    // Close submenu when clicking outside (default Bootstrap behavior)
+    $(document).on("click", function (e) {
+        if (!$(e.target).closest('.dropdown-submenu').length) {
+            $(".dropdown-submenu").removeClass("show");
+        }
+    });
+
+    // Ensure submenu items navigate properly
+    $(".dropdown-submenu .dropdown-item").on("click", function (e) {
+        e.stopPropagation(); // Prevent the entire menu from closing
+        $(".dropdown-submenu").removeClass("show"); // Close the submenu
+
+        // **Important:** Allow normal link behavior (NO preventDefault here)
+    });
+});
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.getElementById("custom-popup-modal");
+    var btn = document.getElementById("custom-popup");
+    var close = document.querySelector(".custom-close");
+
+    btn.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        popup.style.display = "flex";
+    });
+
+    close.addEventListener("click", function() {
+        popup.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
+
+</script><title>Authum : Home</title>
+<style>
+
+    /* Red Section Design */
+.red-section {
+    background: url('/images/Content.png') no-repeat center center; /* Add your image path */
+    background-size: cover; /* Ensures the image covers the entire section */
+    color: white;
+    padding: 50px 30px;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+        .red-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .red-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        .red-section .brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .red-section .arrow {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+
+        /* Info Section Design */
+        .info-section {
+            background-color: #F6F6F6;
+            padding: 50px 30px;
+            /* height: 100vh; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-block {
+            text-align: left;
+            margin-bottom: 30px;
+            margin-left: 50px;
+        }
+
+        .info-block h3 {
+            font-size: 56px;
+            color: #444444;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .info-block p {
+            font-weight: 600;
+            font-size: 18px;
+            color: #444444;
+        }
+
+        .info-divider {
+            border-top: 2px solid black;
+            margin: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .red-section {
+                text-align: center;
+                height: auto;
+                padding: 40px 20px;
+            }
+
+            .red-section p {
+                margin: 0 auto;
+            }
+
+            .red-section .arrow {
+                display: none;
+            }
+
+            .info-section {
+                height: auto;
+                padding: 30px 20px;
+            }
+
+            .info-block {
+                margin-bottom: 20px;
+            }
+        }
+   
+        .back-card-image-container {
+    position: relative;
+    height: 710px;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay opacity as needed */
+    z-index: 0;
+}
+
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: 0; /* Place it behind the content */
+        }
+        
+        .text-left {
+            z-index: 1;
+            position: relative;
+            padding-left: 90px;
+        }
+        
+        .heading {
+            font-size: 55px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .paragraph {
+            color: #fff;
+        }
+        
+        .btn-danger {
+            background-color: red;
+            color: white;
+        }
+        
+      
+
+        .menu-item-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* Ensures cards are the same height */
+        }
+        .menu-item-image {
+            max-height: 200px; /* Adjust the height as needed */
+            object-fit: cover; /* Keeps the image aspect ratio intact */
+        }
+
+        .heading-one {
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+
+        /* Section Styling */
+/* Section Styling */
+.authum-edge-section {
+    padding: 50px 0;
+}
+
+/* Section Title */
+.authum-section-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Feature Card Styling */
+.authum-feature-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures equal height for all cards */
+    transition: transform 0.3s ease-in-out;
+}
+
+.authum-feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image Styling - Increased Height */
+.authum-feature-image {
+    width: 100%;
+    height: 250px; /* Increased image height */
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Card Content */
+.authum-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Feature Title */
+.authum-feature-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* Feature Description */
+.authum-feature-description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Equal Card Heights */
+.row.g-4 .col-lg-4 {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .authum-feature-title {
+        font-size: 18px;
+    }
+    
+    .authum-feature-description {
+        font-size: 14px;
+    }
+}
+
+
+
+</style>
+
+
+
+
+<div class="d-flex flex-column justify-content-center" style="height: 710px; position: relative; overflow: hidden;">
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="/images/bannervideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Black overlay -->
+    <div class="overlay"></div>
+
+    <!-- Content -->
+    <div class="text-left" style="padding-left: 130px; z-index: 1; position: relative;">
+        <h1 class="heading">Value Creation. <br>Across the Capital Structure</h1>
+        <p class="paragraph">At Authum, we specialize in deploying funds across the capital structure in equity, debt, <br>and structured products. Coupled with our extensive experience and local market knowledge,<br> we are relentlessly focused on delivering continuous value for our stakeholders</p>
+        <button class="btn" style="background-color:#E70505; color:white; width: 10%; border-radius: 12px; height: 17%;" onclick="window.location.href='about.php';">Learn More</button>
+    </div>
+</div>
+
+    
+    <!-- The Authum Edge Section -->
+<section class="authum-edge-section pt-5 pb-5">
+    <div class="container" style="max-width: 90%;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="authum-section-title mb-5 mt-4">The Authum Edge</h1>
+            </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="authum-feature-card">
+                    <img src="/images/home1.png" alt="Balanced Investment Approach" class="authum-feature-image">
+                    <div class="authum-card-content">
+                        <h3 class="authum-feature-title">Balanced Investment Approach</h3>
+                        <p class="authum-feature-description">
+                            Optimized capital allocation for a healthy mix of long-term strategic investments and short-term opportunities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="authum-feature-card">
+                    <img src="/images/home2.png" alt="Capital Preservation" class="authum-feature-image">
+                    <div class="authum-card-content">
+                        <h3 class="authum-feature-title">Capital Preservation</h3>
+                        <p class="authum-feature-description">
+                            Focus on effective risk mitigation through downside protection.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="authum-feature-card">
+                    <img src="/images/home3.png" alt="Platformize and Professionalize" class="authum-feature-image">
+                    <div class="authum-card-content">
+                        <h3 class="authum-feature-title">Platformize and Professionalize</h3>
+                        <p class="authum-feature-description">
+                            Creating self-sustainable and scalable platforms to drive enterprise value.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Red Section (Left Column) -->
+            <div class="col-md-6 red-section">
+                <span class="brand">Authum</span>
+                <h1>Driving Growth</h1>
+                <p>
+                    Authum Investment & Infrastructure Ltd. is a registered NBFC listed on all major Indian bourses.
+                    Authum is promoted by enterprising and bold First Generation entrepreneurs with an exemplary
+                    track record of value maximization.
+                </p>
+            </div>
+
+            <!-- Info Section (Right Column) -->
+            <div class="col-md-6 info-section">
+                <div class="info-block">
+                  <!-- &#8377;-->  <h3>&#8377; 14,700 <span style="font-size:45px;">crores+ </span></h3>
+                    <p>Net Worth</p>
+                </div>
+                <hr class="info-divider">
+                <div class="info-block">
+                <h3>&#8377; 40,500  <span style="font-size:45px;">crores+ </span></h3>
+                <p>Market Capitalization</p>
+                </div>
+                <hr class="info-divider">
+                <div class="info-block">
+                    <h3>A/ <span style="font-size:45px;">Stable by CRISIL</span> </h3>
+                    <p>Credit Rating (Upgraded from A-/ Stable in October 2025)</p>
+                </div>
+                <p style="text-align:right;">*All information as of March 31, 2026</p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+<style>
+
+.useful-links-row {
+    background: #222;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.useful-links-row .footer-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.useful-links-row .footer-link:hover {
+    color: red;
+}
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 0px 20px;
+}
+</style>
+
+<footer class="footer">
+    <!-- Useful Links Row -->
+    <div class="row useful-links-row">
+            <div class="col-12 text-center" style="margin-top: 8px;">
+                <a href="about.php" class="footer-link">About Us</a>
+                <a href="investor.php" class="footer-link">Investor Relations</a>
+                <a href="customization.php" class="footer-link">Contact Us</a>
+                <a href="customization.php" class="footer-link">Branch Locator</a>
+            </div>
+        </div>
+        <div class="container" style="max-width:100%;">
+            <div class="row">
+                <!-- Footer Logo -->
+                <div class="col-lg-3">
+                    <div class="footer-logo">
+                        <img src="./images/footerlogo.png" alt="Authum Logo" class="img-fluid">
+                    </div>
+                </div>
+    
+                <!-- Email Section -->
+                <!-- <div class="col-lg-2">
+                    <h4 style="font-size: 20px; font-weight: 700;"><span class="icon"><i class="bi bi-envelope-fill"></i></span>Email</h4>
+                    <h6 style="font-size: 18px; font-weight: 600;">Reach us anytime at</h6>
+                    <p>
+                        <a href="mailto:info@authum.com">info@authum.com</a>
+                    </p>
+                </div> -->
+
+                <div class="col-lg-3">
+                <h4 style="font-size: 18px; font-weight: 700;"><span class="icon"><i class="bi bi-envelope-fill"></i></span>Email</h4>
+                    <h6 style="font-size: 16px; font-weight: 600;">Commercial Finance Customers</h6>
+                    <p>
+                        <a href="tel:+912267472117">customercare@authum.com</a>
+                    </p>
+
+                    <h6 style="font-size: 16px; font-weight: 600;">Home Finance Customers</h6>
+                    <p>
+                        <a href="tel:+912267472117">customercarehfd@authum.com</a>
+                    </p>
+
+                    <!-- <h6 style="font-size: 16px; font-weight: 600;">For any other queries</h6>
+                    <p>
+                        <a href="mailto:info@authum.com">info@authum.com</a>
+                    </p> -->
+                </div>
+
+
+                 <!-- Office Section -->
+                 <div class="col-lg-3">
+                    <h4 style="font-size: 18px; font-weight: 700;"><span class="icon"><i class="fa fa-map-marker-alt"></i></span>Office</h4>
+                     <h6 style="font-size: 16px; font-weight: 600;">Registered Office :</h6>
+                    <p style="font-size: 15px;">707, Raheja Centre, Free Press Journal Marg,<br> Nariman Point, Mumbai-400021</p>
+                    <h6 style="font-size: 16px; font-weight: 600;">Corporate Office :</h6>
+                    <p style="font-size: 15px;">11th Floor, The Ruby, North-West Wing,<br> Senapati Bapat Road, Dadar West, Mumbai,<br> Maharashtra - 400028 India</p>
+                   
+                </div>
+
+
+                <!-- Phone Section -->
+                <div class="col-lg-3">
+                    <h4 style="font-size: 18px; font-weight: 700;"><span class="icon">&#9742;</span>Phone</h4>
+                    <h6 style="font-size: 16px; font-weight: 600;">Registered Office</h6>
+                    <p>
+                        <a href="tel:+912267472117">(022) 35347700</a>
+                    </p>
+                    <h6 style="font-size: 16px; font-weight: 600;">Commercial Finance Customers</h6>
+                    <p>
+                        <a href="tel:+1800-26-88486">1800-26-88486</a>
+                    </p>
+                    <h6 style="font-size: 16px; font-weight: 600;">Home Finance Customers</h6>
+                    <p>
+                        <a href="tel:+1800-26-88486">1800-26-88486</a>
+                    </p>
+                </div>
+    
+               
+    
+                
+            </div>
+
+        <!-- <div class="footer-bottom">
+            <p>&copy; 2025 Authum. All rights reserved.</p>
+
+        </div> -->
+    </footer>
+    <div class="authum-footer">
+        &copy; 2025 Authum. All rights reserved.
+        <a class="authum-footer__link" href="#">Privacy Policy</a>
+        <a class="authum-footer__link" href="#">Terms of Service</a>
+        <a class="authum-footer__link" href="#">Cookies Settings</a>
+    </div>
+
+
+
+    <script src="./links/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+    

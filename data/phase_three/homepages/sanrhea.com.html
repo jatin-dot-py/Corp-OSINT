@@ -1,0 +1,1974 @@
+<!DOCTYPE html><html lang="en"><head >	<meta charset="UTF-8" />
+<script>
+//----------------------------------------------------------
+//------ JAVASCRIPT HOOK FUNCTIONS FOR GRAVITY FORMS -------
+//----------------------------------------------------------
+
+if ( ! gform ) {
+	document.addEventListener( 'gform_main_scripts_loaded', function() { gform.scriptsLoaded = true; } );
+	window.addEventListener( 'DOMContentLoaded', function() { gform.domLoaded = true; } );
+
+	var gform = {
+		domLoaded: false,
+		scriptsLoaded: false,
+		initializeOnLoaded: function( fn ) {
+			if ( gform.domLoaded && gform.scriptsLoaded ) {
+				fn();
+			} else if( ! gform.domLoaded && gform.scriptsLoaded ) {
+				window.addEventListener( 'DOMContentLoaded', fn );
+			} else {
+				document.addEventListener( 'gform_main_scripts_loaded', fn );
+			}
+		},
+		hooks: { action: {}, filter: {} },
+		addAction: function( action, callable, priority, tag ) {
+			gform.addHook( 'action', action, callable, priority, tag );
+		},
+		addFilter: function( action, callable, priority, tag ) {
+			gform.addHook( 'filter', action, callable, priority, tag );
+		},
+		doAction: function( action ) {
+			gform.doHook( 'action', action, arguments );
+		},
+		applyFilters: function( action ) {
+			return gform.doHook( 'filter', action, arguments );
+		},
+		removeAction: function( action, tag ) {
+			gform.removeHook( 'action', action, tag );
+		},
+		removeFilter: function( action, priority, tag ) {
+			gform.removeHook( 'filter', action, priority, tag );
+		},
+		addHook: function( hookType, action, callable, priority, tag ) {
+			if ( undefined == gform.hooks[hookType][action] ) {
+				gform.hooks[hookType][action] = [];
+			}
+			var hooks = gform.hooks[hookType][action];
+			if ( undefined == tag ) {
+				tag = action + '_' + hooks.length;
+			}
+			if( priority == undefined ){
+				priority = 10;
+			}
+
+			gform.hooks[hookType][action].push( { tag:tag, callable:callable, priority:priority } );
+		},
+		doHook: function( hookType, action, args ) {
+
+			// splice args from object into array and remove first index which is the hook name
+			args = Array.prototype.slice.call(args, 1);
+
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action], hook;
+				//sort by priority
+				hooks.sort(function(a,b){return a["priority"]-b["priority"]});
+
+				hooks.forEach( function( hookItem ) {
+					hook = hookItem.callable;
+
+					if(typeof hook != 'function')
+						hook = window[hook];
+					if ( 'action' == hookType ) {
+						hook.apply(null, args);
+					} else {
+						args[0] = hook.apply(null, args);
+					}
+				} );
+			}
+			if ( 'filter'==hookType ) {
+				return args[0];
+			}
+		},
+		removeHook: function( hookType, action, priority, tag ) {
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action];
+				hooks = hooks.filter( function(hook, index, arr) {
+					var removeHook = (undefined==tag||tag==hook.tag) && (undefined==priority||priority==hook.priority);
+					return !removeHook;
+				} );
+				gform.hooks[hookType][action] = hooks;
+			}
+		}
+	};
+}
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Sanrhea &#8211; Technical Textiles Limited</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" type="application/rss+xml" title="Sanrhea &raquo; Feed" href="https://sanrhea.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Sanrhea &raquo; Comments Feed" href="https://sanrhea.com/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://sanrhea.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsanrhea.com%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://sanrhea.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsanrhea.com%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='font-awesome-5-all-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.css?ver=4.3.2' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/**
+ * These rules are needed for backwards compatibility.
+ * They should match the button element rules in the base theme.json file.
+ */
+.wp-block-button__link {
+	color: #ffffff;
+	background-color: #32373c;
+	border-radius: 9999px; /* 100% causes an oval, but any explicit but really high value retains the pill shape. */
+
+	/* This needs a low specificity so it won't override the rules from the button element if defined in theme.json. */
+	box-shadow: none;
+	text-decoration: none;
+
+	/* The extra 2px are added to size solids the same as the outline versions.*/
+	padding: calc(0.667em + 2px) calc(1.333em + 2px);
+
+	font-size: 1.125em;
+}
+
+.wp-block-file__button {
+	background: #32373c;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+/*# sourceURL=/wp-includes/css/classic-themes.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:root :where(.wp-block-icon svg){width: 24px;}
+:where(.wp-block-gallery.is-layout-flex){gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}:where(.wp-block-gallery.is-layout-grid){gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}
+:where(.wp-block-latest-posts.is-layout-flex){gap: 1.25em;}:where(.wp-block-latest-posts.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel='stylesheet' id='jupiterx-popups-animation-css' href='https://sanrhea.com/wp-content/plugins/jupiterx-core/includes/extensions/raven/assets/lib/animate/animate.css?ver=2.0.7' media='all' />
+<link rel='stylesheet' id='jupiterx-css' href='https://sanrhea.com/wp-content/uploads/jupiterx/compiler/jupiterx/25af7f5.css?ver=2.0.7' media='all' />
+<link rel='stylesheet' id='jupiterx-elements-dynamic-styles-css' href='https://sanrhea.com/wp-content/uploads/jupiterx/compiler/jupiterx-elements-dynamic-styles/226df46.css?ver=2.0.7' media='all' />
+<style id="elementor-pro-custom-fonts-inline-css">
+@font-face {
+	font-family: 'SF Pro Display Font Family';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url('https://sanrhea.com/wp-content/uploads/2022/05/FontsFree-Net-SFProDisplay-Regular-1.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'SF Pro Display Font Family';
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+	src: url('https://sanrhea.com/wp-content/uploads/2022/05/FontsFree-Net-SFProDisplay-Medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'SF Pro Display Font Family';
+	font-style: normal;
+	font-weight: bold;
+	font-display: auto;
+	src: url('https://sanrhea.com/wp-content/uploads/2022/05/FontsFree-Net-SFProDisplay-Bold.ttf') format('truetype');
+}
+
+/*# sourceURL=elementor-pro-custom-fonts-inline-css */
+</style>
+<link rel='stylesheet' id='elementor-icons-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.css?ver=5.54.0' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/frontend.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.css?ver=4.7.0' media='all' />
+<link rel='stylesheet' id='jupiterx-core-raven-frontend-css' href='https://sanrhea.com/wp-content/plugins/jupiterx-core/includes/extensions/raven/assets/css/frontend.css?ver=7.1.2' media='all' />
+<link rel='stylesheet' id='elementor-post-6-css' href='https://sanrhea.com/wp-content/uploads/elementor/css/post-6.css?ver=1790380369' media='all' />
+<link rel='stylesheet' id='jet-tabs-frontend-css' href='https://sanrhea.com/wp-content/plugins/jet-tabs/assets/css/jet-tabs-frontend.css?ver=2.3.4' media='all' />
+<link rel='stylesheet' id='swiper-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.css?ver=8.4.5' media='all' />
+<link rel='stylesheet' id='flatpickr-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/flatpickr/flatpickr.css?ver=4.6.13' media='all' />
+<link rel='stylesheet' id='jet-elements-css' href='https://sanrhea.com/wp-content/plugins/jet-elements/assets/css/jet-elements.css?ver=2.9.2.2' media='all' />
+<link rel='stylesheet' id='jet-carousel-css' href='https://sanrhea.com/wp-content/plugins/jet-elements/assets/css/addons/jet-carousel.css?ver=2.9.2.2' media='all' />
+<link rel='stylesheet' id='jet-carousel-skin-css' href='https://sanrhea.com/wp-content/plugins/jet-elements/assets/css/skin/jet-carousel.css?ver=2.9.2.2' media='all' />
+<link rel='stylesheet' id='jet-banner-css' href='https://sanrhea.com/wp-content/plugins/jet-elements/assets/css/addons/jet-banner.css?ver=2.9.2.2' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='e-animation-zoomIn-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/animations/styles/zoomIn.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='widget-icon-list-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='e-swiper-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='widget-image-carousel-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/widget-image-carousel.min.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='widget-posts-css' href='https://sanrhea.com/wp-content/plugins/elementor-pro/assets/css/widget-posts.min.css?ver=4.3.0' media='all' />
+<link rel='stylesheet' id='elementor-post-2-css' href='https://sanrhea.com/wp-content/uploads/elementor/css/post-2.css?ver=1790380878' media='all' />
+<link rel='stylesheet' id='elementor-post-44-css' href='https://sanrhea.com/wp-content/uploads/elementor/css/post-44.css?ver=1790380369' media='all' />
+<link rel='stylesheet' id='elementor-post-2537-css' href='https://sanrhea.com/wp-content/uploads/elementor/css/post-2537.css?ver=1790380369' media='all' />
+<link rel='stylesheet' id='elementor-post-122-css' href='https://sanrhea.com/wp-content/uploads/elementor/css/post-122.css?ver=1790380369' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='https://sanrhea.com/wp-content/uploads/elementor/google-fonts/css/roboto.css?ver=1742284811' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='https://sanrhea.com/wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1742284825' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.css?ver=5.15.3' media='all' />
+<script id="font-awesome-4-shim-js" src="https://sanrhea.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.js?ver=4.3.2"></script>
+<script id="jquery-core-js" src="https://sanrhea.com/wp-includes/js/jquery/jquery.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://sanrhea.com/wp-includes/js/jquery/jquery-migrate.js?ver=3.4.1"></script>
+<script id="jupiterx-utils-js" src="https://sanrhea.com/wp-content/themes/jupiterx/lib/assets/dist/js/utils.js?ver=2.0.7"></script>
+<link rel="https://api.w.org/" href="https://sanrhea.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://sanrhea.com/wp-json/wp/v2/pages/2" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sanrhea.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.2" />
+<link rel="canonical" href="https://sanrhea.com/" />
+<link rel='shortlink' href='https://sanrhea.com/' />
+<!-- start Simple Custom CSS and JS -->
+<script type="text/javascript">
+jQuery(document).ready(function( jQuery ) {
+	jQuery(window).on('scroll touchmove', function() {
+
+		if (jQuery(document).scrollTop() >= jQuery('#one').position().top) {
+			jQuery('body').css('background', jQuery('#one').attr('data-color'));
+		}
+
+		if (jQuery(document).scrollTop() > jQuery('#two').position().top) {
+			jQuery('body').css('background', jQuery('#two').attr('data-color'));
+		}
+
+		
+
+	});
+})(jQuery);
+</script><!-- end Simple Custom CSS and JS -->
+<meta name="generator" content="Elementor 4.3.2; settings: css_print_method-external, google_font-enabled, font_display-auto">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="https://sanrhea.com/wp-content/uploads/2022/05/Sanrhea.svg" sizes="32x32" />
+<link rel="icon" href="https://sanrhea.com/wp-content/uploads/2022/05/Sanrhea.svg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://sanrhea.com/wp-content/uploads/2022/05/Sanrhea.svg" />
+<meta name="msapplication-TileImage" content="https://sanrhea.com/wp-content/uploads/2022/05/Sanrhea.svg" />
+<style id="wp-custom-css">
+body{
+	overflow-x:hidden;
+}
+
+/* footer gap */
+ .jupiterx-post {
+   margin-bottom: 0rem !important;
+} 
+
+
+/* Top, Bottom space theme*/
+ .jupiterx-main-content{
+padding : 0px ;
+} 
+
+ .elementor-column-gap-default > .elementor-column > .elementor-element-populated {
+  padding: 0px;
+}
+
+.pad_leftright{	
+	padding:0vw 7vw;
+}
+
+.pad{
+    padding:5vw 15vw 5vw 15vw ;
+    
+}
+.pad1{
+    padding:5vw 7vw 5vw 7vw ;
+    
+}
+.pad3{
+	
+	 padding:5vw 3vw 5vw 3vw ;
+}
+.pad_all{
+	
+	padding:1vw 7vw;
+}
+.padright{
+    padding:5vw 0vw 5vw 7vw ;    
+}
+
+.padtl{
+    padding:0vw 0vw 0vw 7vw ;    
+}
+
+
+@media only screen and (min-device-width: 700px) and (max-device-width: 1112px){
+body{
+	overflow-x:hidden;
+}
+.pad{
+    padding:5vw 5vw 5vw 5vw ;
+    
+}	
+.padtl{
+    padding:5vw 5vw 0vw 5vw ;    
+}
+.padright{
+    padding:5vw 5vw 5vw 5vw ;    
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+body{
+	overflow-x:hidden;
+}
+.pad{
+    padding:5vw 5vw 5vw 5vw ;    
+}		
+.pad_all{	
+	padding:2vw 3vw;
+}
+.padtl{
+    padding:5vw 5vw 0vw 5vw ;    
+}
+.padright{
+    padding:5vw 5vw 5vw 5vw ;    
+}
+}
+</style>
+</head><body class="home wp-singular page-template page-template-elementor_header_footer page page-id-2 wp-theme-jupiterx no-js elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-2 jupiterx-header-fixed" itemscope="itemscope" itemtype="http://schema.org/WebPage"><a class="jupiterx-a11y jupiterx-a11y-skip-navigation-link" href="#jupiterx-main">Skip to content</a><div class="jupiterx-site"><header class="jupiterx-header jupiterx-header-custom" data-jupiterx-settings="{&quot;breakpoint&quot;:&quot;767.98&quot;,&quot;template&quot;:&quot;44&quot;,&quot;stickyTemplate&quot;:&quot;2537&quot;,&quot;behavior&quot;:&quot;fixed&quot;,&quot;position&quot;:&quot;top&quot;}" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">		<header data-elementor-type="header" data-elementor-id="44" class="elementor elementor-44" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-85c7d9a elementor-section-full_width elementor-section-stretched elementor-section-height-min-height elementor-section-height-default elementor-section-items-middle" data-id="85c7d9a" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c71320e" data-id="c71320e" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-cca6d84 elementor-icon-list--layout-inline  .pad_leftright elementor-mobile-align-start elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="cca6d84" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items elementor-inline-items">
+							<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="tel:+91-(02764)%20227696">
+
+												<span class="elementor-icon-list-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M17.5 12.9167C16.4062 12.9167 15.3563 12.75 14.3763 12.4417C14.07 12.35 13.7287 12.4167 13.4837 12.6417L11.5588 14.475C9.0825 13.275 7.0525 11.35 5.7925 8.98333L7.7175 7.14167C7.9625 6.925 8.0325 6.6 7.93625 6.30833C7.6125 5.375 7.4375 4.375 7.4375 3.33333C7.4375 2.875 7.04375 2.5 6.5625 2.5H3.5C3.01875 2.5 2.625 2.875 2.625 3.33333C2.625 11.1583 9.28375 17.5 17.5 17.5C17.9813 17.5 18.375 17.125 18.375 16.6667V13.75C18.375 13.2917 17.9813 12.9167 17.5 12.9167ZM16.625 10H18.375C18.375 5.85833 14.8487 2.5 10.5 2.5V4.16667C13.8862 4.16667 16.625 6.775 16.625 10ZM13.125 10H14.875C14.875 7.7 12.915 5.83333 10.5 5.83333V7.5C11.9525 7.5 13.125 8.61667 13.125 10Z" fill="white"></path></svg>						</span>
+										<span class="elementor-icon-list-text">+91-(02764) 227696</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="/cdn-cgi/l/email-protection#6d1e0c031f05080c2d0a000c0401430e0200">
+
+												<span class="elementor-icon-list-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M17.5 3.3335H3.5C2.5375 3.3335 1.75875 4.0835 1.75875 5.00016L1.75 15.0002C1.75 15.9168 2.5375 16.6668 3.5 16.6668H17.5C18.4625 16.6668 19.25 15.9168 19.25 15.0002V5.00016C19.25 4.0835 18.4625 3.3335 17.5 3.3335ZM17.5 6.66683L10.5 10.8335L3.5 6.66683V5.00016L10.5 9.16683L17.5 5.00016V6.66683Z" fill="white"></path></svg>						</span>
+										<span class="elementor-icon-list-text"><span class="__cf_email__" data-cfemail="daa9bbb4a8b2bfbb9abdb7bbb3b6f4b9b5b7">[email&#160;protected]</span></span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3b82833 elementor-section-full_width elementor-section-stretched pad_all elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="3b82833" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-8b31720" data-id="8b31720" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2917a2a elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-image" data-id="2917a2a" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://sanrhea.com/">
+							<img width="256" height="70" src="https://sanrhea.com/wp-content/uploads/2022/05/logo-1.svg" class="attachment-large size-large wp-image-76" alt="" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-fe983a8" data-id="fe983a8" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-dd8d140 elementor-nav-menu__align-end elementor-nav-menu--dropdown-mobile elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="dd8d140" data-element_type="widget" data-e-type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none">
+				<ul id="menu-1-dd8d140" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-1887"><a href="https://sanrhea.com/" aria-current="page" class="elementor-item elementor-item-active">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3837"><a href="https://sanrhea.com/about-us/" class="elementor-item">About Us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16"><a href="#Products" class="elementor-item elementor-item-anchor">Products<span class="sub-arrow"><i class="fas fa-caret-down" aria-hidden="true"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3839"><a href="https://sanrhea.com/conveyor-belting-fabrics/" class="elementor-sub-item">Conveyor Belting Fabrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3890"><a href="https://sanrhea.com/chafer-breaker-fabrics/" class="elementor-sub-item">Chafer/Breaker Fabrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3904"><a href="https://sanrhea.com/dimensionally-stabilised-square-woven-fabrics/" class="elementor-sub-item">Dimensionally Stabilised Square Woven Fabrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3963"><a href="https://sanrhea.com/warp-sheet-stretch-fabrics/" class="elementor-sub-item">Warp-sheet &#038; Stretch Fabrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3918"><a href="https://sanrhea.com/liner-fabrics/" class="elementor-sub-item">Liner Fabrics</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3838"><a href="https://sanrhea.com/infrastructure/" class="elementor-item">Infrastructure</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18"><a href="#News%20&#038;%20Events" class="elementor-item elementor-item-anchor">News &#038; Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1889"><a href="https://sanrhea.com/investors/" class="elementor-item">Investors</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="#Career" class="elementor-item elementor-item-anchor">Career</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1888"><a href="https://sanrhea.com/contact-us/" class="elementor-item">Contact Us</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<ul id="menu-2-dd8d140" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-1887"><a href="https://sanrhea.com/" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3837"><a href="https://sanrhea.com/about-us/" class="elementor-item" tabindex="-1">About Us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16"><a href="#Products" class="elementor-item elementor-item-anchor" tabindex="-1">Products<span class="sub-arrow"><i class="fas fa-caret-down" aria-hidden="true"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3839"><a href="https://sanrhea.com/conveyor-belting-fabrics/" class="elementor-sub-item" tabindex="-1">Conveyor Belting Fabrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3890"><a href="https://sanrhea.com/chafer-breaker-fabrics/" class="elementor-sub-item" tabindex="-1">Chafer/Breaker Fabrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3904"><a href="https://sanrhea.com/dimensionally-stabilised-square-woven-fabrics/" class="elementor-sub-item" tabindex="-1">Dimensionally Stabilised Square Woven Fabrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3963"><a href="https://sanrhea.com/warp-sheet-stretch-fabrics/" class="elementor-sub-item" tabindex="-1">Warp-sheet &#038; Stretch Fabrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3918"><a href="https://sanrhea.com/liner-fabrics/" class="elementor-sub-item" tabindex="-1">Liner Fabrics</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3838"><a href="https://sanrhea.com/infrastructure/" class="elementor-item" tabindex="-1">Infrastructure</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18"><a href="#News%20&#038;%20Events" class="elementor-item elementor-item-anchor" tabindex="-1">News &#038; Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1889"><a href="https://sanrhea.com/investors/" class="elementor-item" tabindex="-1">Investors</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="#Career" class="elementor-item elementor-item-anchor" tabindex="-1">Career</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1888"><a href="https://sanrhea.com/contact-us/" class="elementor-item" tabindex="-1">Contact Us</a></li>
+</ul>			</nav>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-8ce6d56 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile" data-id="8ce6d56" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4490118 elementor-align-right elementor-widget elementor-widget-button" data-id="4490118" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="https://sanrhea.com/contact-us/#inqueryform">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Inquiry Now</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</header>
+		</header><main id="jupiterx-main" class="jupiterx-main">		<div data-elementor-type="wp-page" data-elementor-id="2" class="elementor elementor-2" data-elementor-post-type="page">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-049e643 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="049e643" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5e475ca" data-id="5e475ca" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-c878212 bannerdot elementor-widget elementor-widget-jet-carousel" data-id="c878212" data-element_type="widget" data-e-type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;slides_to_scroll&quot;:&quot;1&quot;}" data-widget_type="jet-carousel.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-jet-carousel jet-elements"><div class="jet-carousel-wrap">
+	<div class="jet-carousel" data-slider_options="{&quot;autoplaySpeed&quot;:5000,&quot;autoplay&quot;:true,&quot;infinite&quot;:true,&quot;centerMode&quot;:false,&quot;centerPadding&quot;:&quot;50px&quot;,&quot;pauseOnHover&quot;:false,&quot;speed&quot;:500,&quot;arrows&quot;:false,&quot;dots&quot;:false,&quot;variableWidth&quot;:false,&quot;prevArrow&quot;:&quot;.jet-carousel__prev-arrow-c878212&quot;,&quot;nextArrow&quot;:&quot;.jet-carousel__next-arrow-c878212&quot;,&quot;rtl&quot;:false,&quot;fractionNav&quot;:false,&quot;fade&quot;:false}" dir="ltr">
+	<div class="elementor-slick-slider">
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><div class="jet-carousel__content">		<div data-elementor-type="section" data-elementor-id="892" class="elementor elementor-892" data-elementor-post-type="elementor_library" data-unique-item-id="c878212-892-0">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-3073fee elementor-section-full_width elementor-section-content-middle padtl elementor-section-height-default elementor-section-height-default" data-id="3073fee" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-be05d0c" data-id="be05d0c" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4e78791 elementor-widget elementor-widget-heading" data-id="4e78791" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Taking The Lead In </h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-82d63ed elementor-widget elementor-widget-text-editor" data-id="82d63ed" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Techinical Textiles								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-93f2b31" data-id="93f2b31" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-21c1f74 elementor-widget elementor-widget-image" data-id="21c1f74" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img fetchpriority="high" decoding="async" width="971" height="647" src="https://sanrhea.com/wp-content/uploads/2022/05/8_auto_x2-1.png" class="attachment-large size-large wp-image-81" alt="" srcset="https://sanrhea.com/wp-content/uploads/2022/05/8_auto_x2-1.png 971w, https://sanrhea.com/wp-content/uploads/2022/05/8_auto_x2-1-300x200.png 300w, https://sanrhea.com/wp-content/uploads/2022/05/8_auto_x2-1-768x512.png 768w" sizes="(max-width: 971px) 100vw, 971px" />															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		</div></div>
+</div>
+</div></div>
+</div>
+</div>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-c8c893d elementor-section-full_width elementor-section-stretched pad1 elementor-section-height-default elementor-section-height-default" data-id="c8c893d" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f8da3da" data-id="f8da3da" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-62fa90a elementor-section-full_width animated-slow elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="62fa90a" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;animation&quot;:&quot;zoomIn&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8318eb0" data-id="8318eb0" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-55dee6d elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="55dee6d" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="763" height="700" src="https://sanrhea.com/wp-content/uploads/2022/05/CF066527-1.png" class="attachment-large size-large wp-image-91" alt="" srcset="https://sanrhea.com/wp-content/uploads/2022/05/CF066527-1.png 763w, https://sanrhea.com/wp-content/uploads/2022/05/CF066527-1-300x275.png 300w" sizes="(max-width: 763px) 100vw, 763px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c1cbca4" data-id="c1cbca4" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-9365718 elementor-widget elementor-widget-heading" data-id="9365718" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">About <span style="color:#13242C">Us</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-b4f1769 elementor-widget elementor-widget-heading" data-id="b4f1769" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Welcome to Sanrhea Technical 
+Textiles Limited  </h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-946d3b2 elementor-widget elementor-widget-text-editor" data-id="946d3b2" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Sanrhea is a stock listed ISO 9001:2015 registered company, based in Gujarat, India, concentrating on the production of RFL Dipped fabrics for the Tyre, Conveyor-Belt, and the Rubber Product Industry.
+<br><br>
+In the year 1997, Sanrhea Technical Textiles Ltd. ( STTL ) entered the field of Technical Textiles by putting up a manufacturing facility for the production of Nylon and Polyester based heavy industrial fabrics for the Tyre and Rubber industry.								</div>
+				</div>
+				<div class="elementor-element elementor-element-5005118 elementor-align-left elementor-widget elementor-widget-button" data-id="5005118" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="https://sanrhea.com/about-us/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Read More</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-e739775 elementor-section-full_width elementor-section-stretched pad1 elementor-section-height-default elementor-section-height-default" data-id="e739775" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0bed115" data-id="0bed115" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1a49e31 elementor-widget elementor-widget-heading" data-id="1a49e31" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Our <span style="color:#13242C">Products
+</span></h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-82e3eb3 elementor-widget elementor-widget-html" data-id="82e3eb3" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<style>
+img.Product_btn {
+    margin: 0vw 0vw 0vw 7vw;
+    width: 2vw;
+}
+img.Product_btn1 {
+    margin: -3vw 0vw 0vw 12vw;
+    width: 2vw;
+}
+img.Product_btn2 {
+    margin: -4vw 0vw 0vw 12vw;
+    width: 2vw;
+}
+img.Product_btn3 {
+    margin: 0.5vw 0vw 0vw 7vw;
+    width: 2vw;
+}
+img.Product_btn4 {
+    margin: -3vw 0vw 0vw 12vw;
+    width: 2vw;
+}
+
+
+/*.bannerslide > .jet-carousel__item.slick-slide.slick-current.slick-active{*/
+/*    padding: 0vw 0vw 0vw 0vw !important;*/
+/*}*/
+
+.product-slide >.jet-carousel__item.slick-slide.slick-current.slick-active {
+    padding: 0vw 2vw 0vw 2vw !important;
+}
+.product-slide .jet-carousel__item.slick-slide.slick-active{
+    padding: 0vw 2vw 0vw 2vw !important;
+}
+
+.product-slide .jet-carousel__item.slick-slide{
+    padding: 0vw 2vw 0vw 2vw !important;
+}
+
+.product-slide .slick-slide{
+    height: 35vw !important;
+    width: 35vw !important;
+}
+
+.product_button {
+    margin: -1.7vw 0vw 0.8vw 31vw !important;
+    padding: 0.5vw 2vw;
+    font-size: -2vw;
+    width: 6.5vw;
+
+}
+
+.elementor-2 .elementor-element.elementor-element-5a754b6 .jet-carousel .elementor-slick-slider {
+    margin-right: -2vw;
+    margin-left: -2vw;
+}
+
+.jet-carousel .jet-arrow svg {
+    width: 3vw;
+    height: 3vw;
+}
+
+.elementor-2 .elementor-element.elementor-element-5a754b6 .jet-carousel .jet-arrow.prev-arrow{
+    top: -4vw;
+    bottom: auto;
+    right: 14vw !important;
+}
+.elementor-2 .elementor-element.elementor-element-5a754b6 .jet-carousel .jet-arrow.next-arrow{
+     top: -4vw;
+    bottom: auto;
+    right: 8vw !important;
+}
+@media only screen and (max-width: 600px) {
+img.Product_btn {
+    margin: 0vw 0vw 0vw 4vw;
+    width: 7vw;
+}
+img.Product_btn1 {
+    margin: 0vw 0vw 0vw 4vw;
+    width: 7vw;
+}
+img.Product_btn2 {
+    margin: 0vw 0vw 0vw 4vw;
+    width: 7vw;
+}
+img.Product_btn3 {
+    margin:0vw 0vw 0vw 3vw;
+    width: 7vw;
+}
+img.Product_btn4 {
+    margin: 0vw 0vw 0vw 2vw;
+    width: 7vw;
+}
+
+}
+</style>				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-31e10f1 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="31e10f1" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-0feeb7c" data-id="0feeb7c" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+						<div class="elementor-element elementor-element-66c5f42 elementor-widget elementor-widget-heading" data-id="66c5f42" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">Conveyor Belting Fabrics
+
+<a href="https://sanrhea.com/conveyor-belting-fabrics/"><img decoding="async" class="Product_btn" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></p>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-85ebdde" data-id="85ebdde" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+						<div class="elementor-element elementor-element-23b324d elementor-widget elementor-widget-heading" data-id="23b324d" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">Chafer/Breaker Fabrics <a href="https://sanrhea.com/chafer-breaker-fabrics/"><img decoding="async" class="Product_btn1" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></p>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-01ee450" data-id="01ee450" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+						<div class="elementor-element elementor-element-7599d7e elementor-widget elementor-widget-heading" data-id="7599d7e" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">Dimensionally Stabilised Square Woven Fabrics <a href="https://sanrhea.com/dimensionally-stabilised-square-woven-fabrics/"><img decoding="async" class="Product_btn2" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></p>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-7e2b8e0" data-id="7e2b8e0" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+						<div class="elementor-element elementor-element-48e2511 elementor-widget elementor-widget-heading" data-id="48e2511" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">Warp-sheet &amp; Stretch Fabrics
+ <a href="https://sanrhea.com/warp-sheet-stretch-fabrics/"><img decoding="async" class="Product_btn3" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></p>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-397673c" data-id="397673c" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+						<div class="elementor-element elementor-element-961cdd6 elementor-widget elementor-widget-heading" data-id="961cdd6" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">Liner Fabric <a href="https://sanrhea.com/liner-fabrics/"><img decoding="async" class="Product_btn4" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></p>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ded85a8 elementor-section-full_width elementor-section-stretched padright elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default" data-id="ded85a8" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8bfcfec" data-id="8bfcfec" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-bbfcb08 elementor-section-full_width animated-slow elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="bbfcb08" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;animation&quot;:&quot;zoomIn&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-831e13a" data-id="831e13a" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-464046a elementor-widget elementor-widget-heading" data-id="464046a" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Our <span style="color:#13242C">Products
+</span></h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-5a754b6 elementor-hidden-tablet elementor-hidden-mobile product-slide elementor-widget elementor-widget-jet-carousel" data-id="5a754b6" data-element_type="widget" data-e-type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;3&quot;,&quot;slides_to_show_mobile&quot;:&quot;2&quot;,&quot;slides_to_scroll_mobile&quot;:&quot;1&quot;,&quot;slides_to_scroll&quot;:&quot;2&quot;}" data-widget_type="jet-carousel.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-jet-carousel jet-elements"><div class="jet-carousel-wrap">
+	<div class="jet-carousel" data-slider_options="{&quot;autoplaySpeed&quot;:5000,&quot;autoplay&quot;:false,&quot;infinite&quot;:true,&quot;centerMode&quot;:false,&quot;centerPadding&quot;:&quot;50px&quot;,&quot;pauseOnHover&quot;:false,&quot;speed&quot;:500,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;variableWidth&quot;:true,&quot;prevArrow&quot;:&quot;.jet-carousel__prev-arrow-5a754b6&quot;,&quot;nextArrow&quot;:&quot;.jet-carousel__next-arrow-5a754b6&quot;,&quot;rtl&quot;:false,&quot;fractionNav&quot;:false}" dir="ltr">
+	<div class="elementor-slick-slider">
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><a href="https://sanrhea.com/" class="jet-carousel__item-link" ><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Chafer-Fabric-3.png" class="jet-carousel__item-img" alt="Chafer Fabric 3" loading="lazy"></a><div class="jet-carousel__content"><h5 class="jet-carousel__item-title">Chafer Fabric</h5><a class="elementor-button elementor-size-md jet-carousel__item-button" href="https://sanrhea.com/"><img decoding="async" class="product_button" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></div></div>
+</div>
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><a href="#" class="jet-carousel__item-link" ><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Liner-Fabric-3.png" class="jet-carousel__item-img" alt="Liner Fabric 3" loading="lazy"></a><div class="jet-carousel__content"><h5 class="jet-carousel__item-title">Liner Fabric</h5><a class="elementor-button elementor-size-md jet-carousel__item-button" href="#"><img decoding="async" class="product_button" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></div></div>
+</div>
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><a href="#" class="jet-carousel__item-link" ><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Belting-Fabrics-3.png" class="jet-carousel__item-img" alt="Belting Fabrics 3" loading="lazy"></a><div class="jet-carousel__content"><h5 class="jet-carousel__item-title">Belting Fabrics</h5><a class="elementor-button elementor-size-md jet-carousel__item-button" href="#"><img decoding="async" class="product_button" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></div></div>
+</div>
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><a href="#" class="jet-carousel__item-link" ><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Diaphragm-fabrics.png" class="jet-carousel__item-img" alt="Diaphragm fabrics" loading="lazy"></a><div class="jet-carousel__content"><h5 class="jet-carousel__item-title">Diaphragm, Impression &amp; Float Fabrics </h5><a class="elementor-button elementor-size-md jet-carousel__item-button" href="#"><img decoding="async" class="product_button" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></div></div>
+</div>
+</div><div class="jet-carousel__prev-arrow-5a754b6 jet-arrow prev-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M36 45L22 31L36 17" stroke="#9B0600" stroke-width="2" stroke-linecap="round"></path><rect x="1" y="1" width="62" height="62" stroke="#9B0600" stroke-width="2"></rect></svg></div><div class="jet-carousel__next-arrow-5a754b6 jet-arrow next-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M28 45L42 31L28 17" stroke="#9B0600" stroke-width="2" stroke-linecap="round"></path><rect x="-1" y="1" width="62" height="62" transform="matrix(-1 0 0 1 62 0)" stroke="#9B0600" stroke-width="2"></rect></svg></div></div>
+</div>
+</div>				</div>
+				</div>
+				<div class="elementor-element elementor-element-6400a3e elementor-hidden-desktop elementor-widget elementor-widget-jet-carousel" data-id="6400a3e" data-element_type="widget" data-e-type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;3&quot;,&quot;slides_to_show_tablet&quot;:&quot;2&quot;,&quot;slides_to_show_mobile&quot;:&quot;1&quot;,&quot;slides_to_scroll_tablet&quot;:&quot;1&quot;,&quot;slides_to_scroll_mobile&quot;:&quot;1&quot;,&quot;slides_to_scroll&quot;:&quot;1&quot;}" data-widget_type="jet-carousel.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-jet-carousel jet-elements"><div class="jet-carousel-wrap jet-equal-cols">
+	<div class="jet-carousel" data-slider_options="{&quot;autoplaySpeed&quot;:5000,&quot;autoplay&quot;:false,&quot;infinite&quot;:true,&quot;centerMode&quot;:false,&quot;centerPadding&quot;:&quot;50px&quot;,&quot;pauseOnHover&quot;:false,&quot;speed&quot;:500,&quot;arrows&quot;:true,&quot;dots&quot;:false,&quot;variableWidth&quot;:false,&quot;prevArrow&quot;:&quot;.jet-carousel__prev-arrow-6400a3e&quot;,&quot;nextArrow&quot;:&quot;.jet-carousel__next-arrow-6400a3e&quot;,&quot;rtl&quot;:false,&quot;fractionNav&quot;:false}" dir="ltr">
+	<div class="elementor-slick-slider">
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><a href="https://sanrhea.com/" class="jet-carousel__item-link" ><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Chafer-Fabric.jpg" class="jet-carousel__item-img" alt="Chafer-Fabric" loading="lazy"></a><div class="jet-carousel__content"><h5 class="jet-carousel__item-title">Chafer Fabric</h5><a class="elementor-button elementor-size-md jet-carousel__item-button" href="https://sanrhea.com/"><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></div></div>
+</div>
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><a href="#" class="jet-carousel__item-link" ><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Liner-Fabric.jpg" class="jet-carousel__item-img" alt="Liner-Fabric" loading="lazy"></a><div class="jet-carousel__content"><h5 class="jet-carousel__item-title">Liner Fabric</h5><a class="elementor-button elementor-size-md jet-carousel__item-button" href="#"><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></div></div>
+</div>
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><a href="#" class="jet-carousel__item-link" ><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Belting-Fabric.jpg" class="jet-carousel__item-img" alt="Belting-Fabric" loading="lazy"></a><div class="jet-carousel__content"><h5 class="jet-carousel__item-title">Chafer Fabric</h5><a class="elementor-button elementor-size-md jet-carousel__item-button" href="#"><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></div></div>
+</div>
+
+<div class="jet-carousel__item">
+	<div class="jet-carousel__item-inner"><a href="#" class="jet-carousel__item-link" ><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Liner-Fabric.jpg" class="jet-carousel__item-img" alt="Liner-Fabric" loading="lazy"></a><div class="jet-carousel__content"><h5 class="jet-carousel__item-title">Diaphragm, Impression &amp; <BR>Float Fabrics </h5><a class="elementor-button elementor-size-md jet-carousel__item-button" href="#"><img decoding="async" src="https://sanrhea.com/wp-content/uploads/2022/05/Group-53.png"></a></div></div>
+</div>
+</div><div class="jet-carousel__prev-arrow-6400a3e jet-arrow prev-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M36 45L22 31L36 17" stroke="#9B0600" stroke-width="2" stroke-linecap="round"></path><rect x="1" y="1" width="62" height="62" stroke="#9B0600" stroke-width="2"></rect></svg></div><div class="jet-carousel__next-arrow-6400a3e jet-arrow next-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M28 45L42 31L28 17" stroke="#9B0600" stroke-width="2" stroke-linecap="round"></path><rect x="-1" y="1" width="62" height="62" transform="matrix(-1 0 0 1 62 0)" stroke="#9B0600" stroke-width="2"></rect></svg></div></div>
+</div>
+</div>				</div>
+				</div>
+				<div class="elementor-element elementor-element-e2e28a8 elementor-align-center elementor-widget elementor-widget-button" data-id="e2e28a8" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="#">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Know More</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-1bb4f79 elementor-section-full_width elementor-section-stretched pad1 elementor-section-height-default elementor-section-height-default" data-id="1bb4f79" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-83cb5a3 elementor-invisible" data-id="83cb5a3" data-element_type="column" data-e-type="column" data-settings="{&quot;animation&quot;:&quot;zoomIn&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-745905a elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="745905a" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="1024" height="285" src="https://sanrhea.com/wp-content/uploads/2022/05/Mask-group2-1024x285.png" class="attachment-large size-large wp-image-85" alt="" srcset="https://sanrhea.com/wp-content/uploads/2022/05/Mask-group2-1024x285.png 1024w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group2-300x84.png 300w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group2-768x214.png 768w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group2-1536x428.png 1536w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group2.png 1590w" sizes="(max-width: 1024px) 100vw, 1024px" />															</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-4031114 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="4031114" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2ccf2d2" data-id="2ccf2d2" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a496377 elementor-widget elementor-widget-heading" data-id="a496377" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Quality Products Begin With Quality Thinking</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-3f33a1c elementor-align-left elementor-widget elementor-widget-button" data-id="3f33a1c" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="https://sanrhea.com/contact-us/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Contact Us</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4fddd84" data-id="4fddd84" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-014b544 elementor-section-full_width elementor-section-stretched pad_leftright elementor-reverse-mobile elementor-section-height-default elementor-section-height-default" data-id="014b544" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-21d2bd3" data-id="21d2bd3" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-efbdf99 elementor-section-full_width animated-slow elementor-reverse-mobile elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="efbdf99" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;animation&quot;:&quot;zoomIn&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d3d4026" data-id="d3d4026" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e575bba iconsize elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="e575bba" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="59" height="49" viewBox="0 0 59 49" fill="none"><path d="M21.625 32.375C14.6163 32.375 0.625 35.8925 0.625 42.875V48.125H42.625V42.875C42.625 35.8925 28.6338 32.375 21.625 32.375Z" fill="white"></path><path d="M56.0124 10.955C56.0387 10.6663 56.0649 10.3775 56.0649 10.0625C56.0649 9.7475 56.0387 9.45875 55.9862 9.17L57.9287 7.6475C58.1124 7.51625 58.1387 7.25375 58.0337 7.07L56.1962 3.89375C56.0912 3.68375 55.8287 3.63125 55.6449 3.68375L53.3874 4.6025C52.9149 4.235 52.3899 3.94625 51.8387 3.71L51.4974 1.26875C51.4449 1.0325 51.2612 0.875 51.025 0.875H47.3499C47.1137 0.875 46.9299 1.0325 46.9037 1.26875L46.5624 3.71C46.0112 3.94625 45.4862 4.26125 45.0137 4.6025L42.73 3.68375C42.52 3.605 42.2837 3.68375 42.1787 3.89375L40.3412 7.07C40.2362 7.28 40.2625 7.51625 40.4462 7.6475L42.3887 9.17C42.3362 9.45875 42.3099 9.77375 42.3099 10.0625C42.3099 10.3512 42.3362 10.6663 42.3887 10.955L40.4462 12.4775C40.2625 12.6088 40.2362 12.8712 40.3412 13.055L42.1787 16.2313C42.2837 16.4413 42.5462 16.4938 42.73 16.4413L45.0137 15.5225C45.4862 15.89 46.0112 16.1788 46.5624 16.415L46.9037 18.8563C46.9299 19.0925 47.1137 19.25 47.3499 19.25H51.025C51.2612 19.25 51.445 19.0925 51.4712 18.8563L51.8124 16.415C52.3637 16.1788 52.8887 15.8637 53.3612 15.5225L55.6449 16.4413C55.8549 16.52 56.0912 16.4413 56.1962 16.2313L58.0337 13.055C58.1387 12.845 58.1124 12.6088 57.9287 12.4775L56.0124 10.955ZM49.1874 13.3438C47.3762 13.3438 45.9062 11.8737 45.9062 10.0625C45.9062 8.25125 47.3762 6.78125 49.1874 6.78125C50.9987 6.78125 52.4687 8.25125 52.4687 10.0625C52.4687 11.8737 50.9987 13.3438 49.1874 13.3438Z" fill="white"></path><path d="M50.2901 23.66L48.9776 21.3763C48.8988 21.2188 48.7151 21.1662 48.5838 21.2188L46.9563 21.875C46.6151 21.6125 46.2476 21.4025 45.8538 21.245L45.6176 19.5125C45.5651 19.355 45.4076 19.25 45.2501 19.25H42.6251C42.4676 19.25 42.3363 19.355 42.3101 19.5387L42.0738 21.2713C41.6801 21.4288 41.3126 21.665 40.9713 21.9013L39.3438 21.245C39.1863 21.1925 39.0288 21.245 38.9501 21.4025L37.6376 23.6862C37.5588 23.8437 37.5851 24.0013 37.7163 24.1063L39.1076 25.1825C39.0813 25.3925 39.0551 25.6025 39.0551 25.8125C39.0551 26.0225 39.0813 26.2587 39.1076 26.4425L37.7163 27.5187C37.5851 27.6237 37.5588 27.8075 37.6376 27.9388L38.9501 30.2225C39.0288 30.38 39.2126 30.4325 39.3438 30.38L40.9713 29.7237C41.3126 29.9862 41.6801 30.1962 42.0738 30.3537L42.3101 32.0863C42.3363 32.27 42.4676 32.375 42.6251 32.375H45.2501C45.4076 32.375 45.5651 32.27 45.5651 32.0863L45.8013 30.3537C46.1951 30.1962 46.5626 29.96 46.9038 29.7237L48.5313 30.38C48.6888 30.4325 48.8463 30.38 48.9251 30.2225L50.2376 27.9388C50.3163 27.7813 50.2901 27.6237 50.1588 27.5187L48.7938 26.4425C48.8201 26.2325 48.8463 26.0225 48.8463 25.8125C48.8463 25.6025 48.8201 25.3663 48.7938 25.1825L50.1851 24.1063C50.3163 24.0013 50.3426 23.8175 50.2901 23.66ZM43.9376 27.9913C42.7301 27.9913 41.7588 26.9938 41.7588 25.8125C41.7588 24.605 42.7563 23.6337 43.9376 23.6337C45.1188 23.6337 46.1163 24.6312 46.1163 25.8125C46.1163 27.02 45.1451 27.9913 43.9376 27.9913Z" fill="white"></path><path d="M10.4425 16.625H32.8338C33.5425 16.625 34.12 16.0475 34.12 15.3388V15.2862C34.12 14.5775 33.5425 14 32.8338 14H32.125C32.125 10.115 29.9988 6.78125 26.875 4.94375V7.4375C26.875 8.1725 26.2975 8.75 25.5625 8.75C24.8275 8.75 24.25 8.1725 24.25 7.4375V3.8675C23.41 3.6575 22.5437 3.5 21.625 3.5C20.7063 3.5 19.84 3.6575 19 3.8675V7.4375C19 8.1725 18.4225 8.75 17.6875 8.75C16.9525 8.75 16.375 8.1725 16.375 7.4375V4.94375C13.2512 6.78125 11.125 10.115 11.125 14H10.4425C9.73375 14 9.15625 14.5775 9.15625 15.2862V15.365C9.15625 16.0475 9.73375 16.625 10.4425 16.625Z" fill="white"></path><path d="M21.6249 27.125C26.5074 27.125 30.5762 23.765 31.7574 19.25H11.4924C12.6737 23.765 16.7424 27.125 21.6249 27.125Z" fill="white"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Infrastructure</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-946d7d3 elementor-widget elementor-widget-text-editor" data-id="946d7d3" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Sanrhea&#8217;s manufacturing giant features the finest machinery in the field, such as:								</div>
+				</div>
+				<div class="elementor-element elementor-element-9c559b4 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="9c559b4" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Jumbo TFO Machines  Parallel Winders</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-272b1c4 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="272b1c4" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Prashant Gamatex Sectional Warping Machines</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-20ba05a elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="20ba05a" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Dornier Rapier Looms</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-4f5ccbb elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="4f5ccbb" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Sulzer Projectile Looms (weaving fabrics in widths up to 4.5 metres)</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-f61376f elementor-widget elementor-widget-text-editor" data-id="f61376f" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									The Stenter-based RFL. Dipping Plant is arguably the most modern and automated machine currently installed in India, assuring a consistent and stable quality. The current total production capacity of the company is 180 tons of fabric per month.								</div>
+				</div>
+				<div class="elementor-element elementor-element-5b7e128 elementor-widget elementor-widget-text-editor" data-id="5b7e128" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									A technically qualified, well-trained and optimally experienced human asset complements this technology spine.								</div>
+				</div>
+				<div class="elementor-element elementor-element-0584239 elementor-align-left elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-button" data-id="0584239" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="#">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Read More</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-527571a" data-id="527571a" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-9bc3937 elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="9bc3937" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="798" height="884" src="https://sanrhea.com/wp-content/uploads/2022/05/Mask-group1.png" class="attachment-large size-large wp-image-90" alt="" srcset="https://sanrhea.com/wp-content/uploads/2022/05/Mask-group1.png 798w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group1-271x300.png 271w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group1-768x851.png 768w" sizes="(max-width: 798px) 100vw, 798px" />															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-d789969 elementor-section-full_width animated-slow elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="d789969" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;animation&quot;:&quot;zoomIn&quot;,&quot;animation_delay&quot;:500}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-aaf108f" data-id="aaf108f" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-85544ca elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="85544ca" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="794" height="884" src="https://sanrhea.com/wp-content/uploads/2022/05/Quality-Control-Image.jpg" class="attachment-full size-full wp-image-1217" alt="" srcset="https://sanrhea.com/wp-content/uploads/2022/05/Quality-Control-Image.jpg 794w, https://sanrhea.com/wp-content/uploads/2022/05/Quality-Control-Image-269x300.jpg 269w, https://sanrhea.com/wp-content/uploads/2022/05/Quality-Control-Image-768x855.jpg 768w" sizes="(max-width: 794px) 100vw, 794px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-b7145d9" data-id="b7145d9" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-0e70a4d elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="0e70a4d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="39" height="47" viewBox="0 0 39 47" fill="none"><path d="M19.5 0.125L0.375 8.625V21.375C0.375 33.1688 8.535 44.1975 19.5 46.875C30.465 44.1975 38.625 33.1688 38.625 21.375V8.625L19.5 0.125ZM15.25 34.125L6.75 25.625L9.74625 22.6287L15.25 28.1112L29.2537 14.1075L32.25 17.125L15.25 34.125Z" fill="white"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Quality Control</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-c230255 elementor-widget elementor-widget-text-editor" data-id="c230255" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Sanrhea is a ISO 9001 certified company, and all its products adhere to industry-specific quality standards, and exceed them whenever possible
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-a5be375 elementor-widget elementor-widget-text-editor" data-id="a5be375" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									The company operates a full-spectrum OC regimen, covering allt erocedures involving inward and outward materials flow, and entailing periodic in-line tests and stringent monitoring
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-9a4644a elementor-widget elementor-widget-text-editor" data-id="9a4644a" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									A mini-vulcanizing press facilitates production of sample befts and testing of their adhesion values. A fully equipped laboratory enables quality control tests on yarns and fabrics								</div>
+				</div>
+				<div class="elementor-element elementor-element-2d725d8 elementor-align-left elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-button" data-id="2d725d8" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="#">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Read More</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-244008e elementor-section-full_width elementor-section-stretched pad3 elementor-section-height-default elementor-section-height-default" data-id="244008e" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-10accc6" data-id="10accc6" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-cfc3e79 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="cfc3e79" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;animation&quot;:&quot;zoomIn&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-bfbc3ab" data-id="bfbc3ab" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-52f24ab elementor-widget elementor-widget-heading" data-id="52f24ab" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Our <span style="color:#13242C">Clients</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-7a29a62 our_client_logo elementor-widget elementor-widget-image-carousel" data-id="7a29a62" data-element_type="widget" data-e-type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;6&quot;,&quot;navigation&quot;:&quot;none&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:80,&quot;sizes&quot;:[]},&quot;slides_to_show_mobile&quot;:&quot;3&quot;,&quot;slides_to_show_tablet&quot;:&quot;4&quot;,&quot;slides_to_scroll&quot;:&quot;1&quot;,&quot;slides_to_scroll_mobile&quot;:&quot;1&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;speed&quot;:500,&quot;image_spacing_custom_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="image-carousel.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-image-carousel-wrapper swiper" role="region" aria-roledescription="carousel" aria-label="Image Carousel" dir="ltr">
+			<div class="elementor-image-carousel swiper-wrapper" aria-live="off">
+								<div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2022/05/path2989.svg" alt="path2989" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/continental-logo-2.svg" alt="continental-logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/phoneix_logo-1.svg" alt="phoneix_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="4 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/MRF_logo.svg" alt="MRF_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="5 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/CEAT_logo.svg" alt="CEAT_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="6 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/BKT_logo.svg" alt="BKT_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="7 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/MEGA_logo.svg" alt="MEGA_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="8 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/oriental_logo.svg" alt="oriental_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="9 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/SEMPERIT_logo.svg" alt="SEMPERIT_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="10 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/TVS_RUBBER_logo.svg" alt="TVS_RUBBER_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="11 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/ZENITH_logo.svg" alt="ZENITH_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="12 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/iban_logo.svg" alt="iban_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="13 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/Roop_polymer_logo.svg" alt="Roop_polymer_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="14 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/ocean_rubber_logo.svg" alt="ocean_rubber_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="15 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/Philbelt_logo.svg" alt="Philbelt_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="16 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/JYRP_logo.svg" alt="JYRP_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="17 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/UNiRUB_logo.svg" alt="UNiRUB_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="18 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/RBG_Group_logo.svg" alt="RBG_Group_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="19 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/Frame-24.svg" alt="Frame 24" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="20 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/innovatives_tyre_logo.svg" alt="innovatives_tyre_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="21 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/EURKA_logo.svg" alt="EURKA_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="22 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/Sudaram_logo.svg" alt="Sudaram_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="23 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/NEELKENTH_RUBBER_logo.svg" alt="NEELKENTH_RUBBER_logo" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="24 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/Frame-27.svg" alt="Frame 27" /></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="25 of 25"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://sanrhea.com/wp-content/uploads/2024/07/R_M_ENGINEERs_loho.svg" alt="R_M_ENGINEERs_loho" /></figure></div>			</div>
+							
+									</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-17faea1 elementor-widget elementor-widget-html" data-id="17faea1" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<style>
+    .our_client_logo img.swiper-slide-image {
+    width: 20vw;
+}
+    @media only screen and (max-width: 600px) {
+.our_client_logo img.swiper-slide-image {
+    width: 45vw !important;
+}
+}
+</style>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-88a4f44 elementor-section-full_width elementor-section-stretched pad1 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default" data-id="88a4f44" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9bdaf2e elementor-invisible" data-id="9bdaf2e" data-element_type="column" data-e-type="column" data-settings="{&quot;animation&quot;:&quot;zoomIn&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2c8a660 elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="2c8a660" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="1590" height="443" src="https://sanrhea.com/wp-content/uploads/2022/05/Mask-group3.png" class="attachment-2048x2048 size-2048x2048 wp-image-84" alt="" srcset="https://sanrhea.com/wp-content/uploads/2022/05/Mask-group3.png 1590w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group3-300x84.png 300w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group3-1024x285.png 1024w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group3-768x214.png 768w, https://sanrhea.com/wp-content/uploads/2022/05/Mask-group3-1536x428.png 1536w" sizes="(max-width: 1590px) 100vw, 1590px" />															</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-96c2d3e elementor-section-full_width elementor-reverse-mobile elementor-section-height-default elementor-section-height-default" data-id="96c2d3e" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-66eb3df" data-id="66eb3df" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8de2ac0" data-id="8de2ac0" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e9cbe44 elementor-widget elementor-widget-heading" data-id="e9cbe44" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Lorem Ipsum</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-6312236 elementor-widget elementor-widget-text-editor" data-id="6312236" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim 
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-940b5cc elementor-align-left elementor-widget elementor-widget-button" data-id="940b5cc" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="#">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Contact Us</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-0d8bd9e elementor-section-full_width elementor-section-stretched pad1 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default" data-id="0d8bd9e" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b24ea61" data-id="b24ea61" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-d7a9b79 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="d7a9b79" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[],&quot;animation&quot;:&quot;zoomIn&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-dd268e5" data-id="dd268e5" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-7149d66 elementor-widget-mobile__width-inherit elementor-hidden-mobile elementor-widget elementor-widget-heading" data-id="7149d66" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Recent <br>
+ <span style="color:#13242C">Blogs</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-df820c7 elementor-widget-mobile__width-inherit elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-heading" data-id="df820c7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Recent
+ <span style="color:#13242C">Blogs</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-9f1badc elementor-align-left elementor-hidden-mobile elementor-widget elementor-widget-button" data-id="9f1badc" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="#">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Know More</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-decfffa" data-id="decfffa" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-35ba4a2 elementor-grid-2 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-posts--thumbnail-top elementor-widget elementor-widget-posts" data-id="35ba4a2" data-element_type="widget" data-e-type="widget" data-settings="{&quot;classic_columns&quot;:&quot;2&quot;,&quot;classic_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:37,&quot;sizes&quot;:[]},&quot;classic_columns_tablet&quot;:&quot;2&quot;,&quot;classic_columns_mobile&quot;:&quot;1&quot;,&quot;classic_row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;classic_row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="posts.classic">
+				<div class="elementor-widget-container">
+							<div class="elementor-posts-container elementor-posts elementor-posts--skin-classic elementor-grid" role="list">
+				<article class="elementor-post elementor-grid-item post-508 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized" role="listitem">
+				<a class="elementor-post__thumbnail__link" href="https://sanrhea.com/2022/05/23/elementor-508/" tabindex="-1" >
+			<div class="elementor-post__thumbnail"><img loading="lazy" decoding="async" width="587" height="459" src="https://sanrhea.com/wp-content/uploads/2022/05/NIKS0163-1.png" class="attachment-full size-full wp-image-83" alt="" srcset="https://sanrhea.com/wp-content/uploads/2022/05/NIKS0163-1.png 587w, https://sanrhea.com/wp-content/uploads/2022/05/NIKS0163-1-300x235.png 300w" sizes="(max-width: 587px) 100vw, 587px" /></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://sanrhea.com/2022/05/23/elementor-508/" >
+				Elementor #508			</a>
+		</h3>
+				<div class="elementor-post__meta-data">
+					<span class="elementor-post-date">
+			May 23, 2022		</span>
+				</div>
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized" role="listitem">
+				<a class="elementor-post__thumbnail__link" href="https://sanrhea.com/2022/05/20/hello-world/" tabindex="-1" >
+			<div class="elementor-post__thumbnail"><img loading="lazy" decoding="async" width="586" height="459" src="https://sanrhea.com/wp-content/uploads/2022/05/CN010531-4.png" class="attachment-full size-full wp-image-82" alt="" srcset="https://sanrhea.com/wp-content/uploads/2022/05/CN010531-4.png 586w, https://sanrhea.com/wp-content/uploads/2022/05/CN010531-4-300x235.png 300w" sizes="(max-width: 586px) 100vw, 586px" /></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://sanrhea.com/2022/05/20/hello-world/" >
+				Lorem ipsum dolor sit amet,  adipiscing elit			</a>
+		</h3>
+				<div class="elementor-post__meta-data">
+					<span class="elementor-post-date">
+			May 20, 2022		</span>
+				</div>
+				</div>
+				</article>
+				</div>
+		
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-4c07c7b elementor-align-left elementor-mobile-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="4c07c7b" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="#">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Know More</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		</main><footer class="jupiterx-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">		<footer data-elementor-type="footer" data-elementor-id="122" class="elementor elementor-122" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-5109431 elementor-section-full_width elementor-section-content-middle elementor-section-stretched pad elementor-section-height-default elementor-section-height-default" data-id="5109431" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-487c75f" data-id="487c75f" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-f8975ac elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="f8975ac" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-855e349" data-id="855e349" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-31bee84 elementor-widget elementor-widget-image" data-id="31bee84" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://sanrhea.com/">
+							<img width="256" height="70" src="https://sanrhea.com/wp-content/uploads/2022/05/logo-1.svg" class="attachment-full size-full wp-image-76" alt="" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fc0149a" data-id="fc0149a" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6e1ee22 e-grid-align-right elementor-shape-circle elementor-grid-mobile-2 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="6e1ee22" data-element_type="widget" data-e-type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-6c256aa" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+						<i aria-hidden="true" class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-51b7073" target="_blank">
+						<span class="elementor-screen-only">Twitter</span>
+						<i aria-hidden="true" class="fab fa-twitter"></i>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-6a845aa elementor-section-full_width pad_all elementor-section-height-default elementor-section-height-default" data-id="6a845aa" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-a357c3e" data-id="a357c3e" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-93082fc elementor-widget elementor-widget-spacer" data-id="93082fc" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-01c90c4 elementor-section-full_width pad_all elementor-section-height-default elementor-section-height-default" data-id="01c90c4" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-f42aa49" data-id="f42aa49" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e8060dd elementor-widget elementor-widget-spacer" data-id="e8060dd" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-7ff8874 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="7ff8874" data-element_type="section" data-e-type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-281a0f5" data-id="281a0f5" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-c73330a elementor-widget elementor-widget-text-editor" data-id="c73330a" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Sanrhea is a stock listed ISO 9001:2015 registered company, based in Gujarat, India, concentrating on the production of RFL Dipped fabrics for the Tyre, Conveyor-Belt, and the Rubber Product Industry.								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-a5b1711" data-id="a5b1711" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4337f84 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="4337f84" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://sanrhea.com/">
+
+											<span class="elementor-icon-list-text">Home</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://sanrhea.com/about-us/">
+
+											<span class="elementor-icon-list-text">About Us</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="#">
+
+											<span class="elementor-icon-list-text">Products</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://sanrhea.com/infrastructure/">
+
+											<span class="elementor-icon-list-text">Infrastructure</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="#">
+
+											<span class="elementor-icon-list-text">News &amp; Events</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://sanrhea.com/investors/">
+
+											<span class="elementor-icon-list-text">Investors</span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-a7ee176" data-id="a7ee176" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-ff53a3f elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="ff53a3f" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="#">
+
+											<span class="elementor-icon-list-text">Career</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://sanrhea.com/contact-us/">
+
+											<span class="elementor-icon-list-text">Contact Us</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="#">
+
+											<span class="elementor-icon-list-text">Quality</span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-796414f" data-id="796414f" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-be98821 elementor-widget elementor-widget-text-editor" data-id="be98821" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Subscribe our newsletter								</div>
+				</div>
+				<div class="elementor-element elementor-element-6b5b6d4 elementor-widget elementor-widget-shortcode" data-id="6b5b6d4" data-element_type="widget" data-e-type="widget" data-widget_type="shortcode.default">
+				<div class="elementor-widget-container">
+					
+<style type="text/css">body #gform_wrapper_1 {border-width: 0; border-style: solid;border-width:0px;font-family:inherit;}body #gform_wrapper_1 .gform_heading {border-style: solid;border-width:0px;border-width: 0px;}body #gform_wrapper_1 .gform_heading .gform_title {font-weight: normal; }body #gform_wrapper_1 .gform_heading .gform_description {font-weight: normal; display:block;}body #gform_wrapper_1 .gform_footer .gform_button,body #gform_wrapper_1 .gform_page_footer .gform_button,body #gform_wrapper_1 .gform_page_footer .gform_previous_button,body #gform_wrapper_1 .gform_page_footer .gform_next_button,body #gform_wrapper_1 .gfield#field_submit .gform-button{border-style: solid;font-weight: normal; font-weight: bold; height:3vw;color:#9b0600;background-color:#ffffff;font-size:1vw;width:8vw;border-width:0px;border-style:solid;}body #gform_wrapper_1 .gform_footer .gform_button:hover,body #gform_wrapper_1 .gform_page_footer .gform_button:hover,body #gform_wrapper_1 .gform_page_footer .gform_previous_button:hover,body #gform_wrapper_1 .gform_page_footer .gform_next_button:hover,body #gform_wrapper_1 .gfield#field_submit .gform-button:hover {border-type:solid;border-style: solid;}body #gform_wrapper_1 .gform_footer button.mdc-button:hover {background-color:;color:;}body #gform_wrapper_1 .gform_footer,body #gform_wrapper_1 .gform_page_footer,body #gform_wrapper_1 #field_submit.gfield {text-align:left;justify-content:left;}body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=text]:not(.gform-text-input-reset),body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=email],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=tel],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=url],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=password],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=number]{font-weight: normal; background-color:#ffffff;height:3vw;color:#ffffff;font-size:1vw;border-width:0px;border-style:solid;border-radius:0px;-web-border-radius:0px;-moz-border-radius:0px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;max-width:100%;}body #gform_wrapper_1 .gform_body .gform_fields .gfield textarea {background:#ffffff;border-width:0px;border-style:solid;font-size:1vw;color:#ffffff;border-radius: 0px;-web-border-radius: 0px;-moz-border-radius: 0px;font-weight: normal; }body #gform_wrapper_1 .gform_body .gform_fields .gfield select {font-weight: normal; max-width: 100%;}body #gform_wrapper_1 .gfield_radio .gchoice label {font-weight: normal; }body #gform_wrapper_1 .gfield_checkbox .gchoice label,body #gform_wrapper_1 .gfield .ginput_container_consent label{font-weight: normal; }body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_label {font-weight: normal; font-weight: bold; justify-content:;}body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_description {font-weight: normal; }body #gform_wrapper_1 .gform_body .gform_fields .gsection .gsection_title {font-weight: normal; font-weight: bold; }body #gform_wrapper_1 .gform_body .gform_fields .gsection .gsection_description {font-weight: normal; padding: 0 16px 0 0 !important;}body #gform_confirmation_message_1  {font-weight: normal; }body #gform_wrapper_1 .validation_error,body #gform_wrapper_1 .gform_validation_errors {font-weight: normal; border-width:1px;border-style:solid;}body #gform_wrapper_1 .gform_validation_errors h2.gform_submission_error{}body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_complex .ginput_full label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_complex .ginput_right label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_complex .ginput_left label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .name_first label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .name_prefix label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .name_middle label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .name_suffix label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .name_last label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .address_line_1 label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .address_line_2 label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .address_city label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .address_state label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .address_zip label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .address_country label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_time_hour label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_time_minute label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_date_month label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_date_day label,body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_date_year label {font-weight: normal; }body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list {}body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list .gfield_list .gfield_header_item:not(:last-child),body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list .gfield_list thead th:not(:last-child){font-weight: normal; font-weight: bold; }body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list .gfield_list .gfield_list_cell input {font-weight: normal; }body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list gfield_list .gfield_list_cell  {}/* Option to style placeholder */body #gform_wrapper_1 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */font-weight: normal; color:#f1f1f1;font-size:1vw;}body #gform_wrapper_1 ::-moz-placeholder { /* Firefox 19+ */font-weight: normal; color:#f1f1f1;font-size:1vw;}body #gform_wrapper_1 :-ms-input-placeholder { /* IE 10+ */font-weight: normal; color:#f1f1f1;font-size:1vw;}body #gform_wrapper_1 :-moz-placeholder { /* Firefox 18- */font-weight: normal; color:#f1f1f1;font-size:1vw;}/* Styling for Tablets */
+@media only screen and ( max-width: 800px ) and ( min-width:481px ) {body #gform_wrapper_1 .gform_footer .gform_button,body #gform_wrapper_1 .gform_page_footer .gform_button,body #gform_wrapper_1 .gform_body .gform_page_footer .gform_next_button,body #gform_wrapper_1 .gform_body .gform_page_footer .gform_previous_button,body #gform_wrapper_1 .gfield#field_submit .gform-button {border-style: solid;width:;height:;font-size:1.2vw;line-height:;}body #gform_wrapper_1 .gform_footer button.mdc-button {width:;height:;font-size:1.2vw;line-height:;}body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=text]:not(.gform-text-input-reset),body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=email],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=tel],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=url],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=password],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=number] {width:;height:;font-size:1.2vw;}body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list .gfield_list .gfield_list_cell::after{font-weight: normal; font-weight: bold; }body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list .gfield_list_groups .gfield_list_group{}body #gform_wrapper_1 ::-webkit-input-placeholder{   /* Chrome/Opera/Safari */font-size:1.2vw;}  body #gform_wrapper_1 ::-moz-placeholder {  /* Firefox 19+ */font-size:1.2vw;} body #gform_wrapper_1 :-ms-input-placeholder {  /* IE 10+ */font-size:1.2vw;} body #gform_wrapper_1 :-moz-placeholder {   /* Firefox 18- */font-size:1.2vw;}}
+/* Styling for phones */
+@media only screen and ( max-width: 480px ) {body #gform_wrapper_1 .gform_footer .gform_button,body #gform_wrapper_1 .gform_page_footer .gform_button,body #gform_wrapper_1 .gform_body .gform_page_footer .gform_next_button,body #gform_wrapper_1 .gform_body .gform_page_footer .gform_previous_button,body #gform_wrapper_1 .gfield#field_submit .gform-button{border-style: solid;width:13vw;height:;font-size:3vw;line-height:;}body #gform_wrapper_1 .gform_footer button.mdc-button{width:13vw;height:;font-size:3vw;line-height:;}body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=text]:not(.gform-text-input-reset),body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=email],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=tel],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=url],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=password],body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=number] {width:;height:;font-size:3vw;} body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list .gfield_list .gfield_list_cell::after {font-weight: normal; font-weight: bold; }body #gform_wrapper_1 .gform_body .gform_fields .gfield .ginput_list .gfield_list_group {}body #gform_wrapper_1 ::-webkit-input-placeholder {   /* Chrome/Opera/Safari */font-size:3vw;}body #gform_wrapper_1 ::-moz-placeholder {  /* Firefox 19+ */font-size:3vw;}body #gform_wrapper_1 :-ms-input-placeholder {  /* IE 10+ */font-size:3vw;}body #gform_wrapper_1 :-moz-placeholder {   /* Firefox 18- */font-size:3vw;}}
+/*Option to add custom CSS */
+input#input_1_1 {background: transparent !important;border-bottom: 1px solid #fff !important;
+}
+input{
+outline:none;
+}
+::placeholder {color: #ffffff50 !important;
+}
+input#gform_submit_button_1 {cursor: pointer;
+}
+</style>
+<style type="text/css">#gform_wrapper_1 .gform_body .gform_fields .gfield#field_1_1 input[type=text],#gform_wrapper_1 .gform_body .gform_fields .gfield#field_1_1 input[type=email],#gform_wrapper_1 .gform_body .gform_fields .gfield#field_1_1 input[type=tel],#gform_wrapper_1 .gform_body .gform_fields .gfield#field_1_1 input[type=url],#gform_wrapper_1 .gform_body .gform_fields .gfield#field_1_1 input[type=password],#gform_wrapper_1 .gform_body .gform_fields .gfield#field_1_1 input[type=number]{max-width:100%;}body #gform_wrapper_1 .gform_body .gform_fields .gfield#field_1_1 .gfield_label {font-weight: bold; }/* Styling for Tablets */@media only screen and ( max-width: 800px ) and ( min-width:481px ) {}@media only screen and ( max-width: 480px ) {}body #gform_wrapper_1 .gform_body .gform_fields .gfield#field_1_2 .gfield_label {font-weight: bold; }/* Styling for Tablets */@media only screen and ( max-width: 800px ) and ( min-width:481px ) {}@media only screen and ( max-width: 480px ) {}</style>		<div class="elementor-shortcode"><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript"></script>
+                <div class='gf_browser_chrome gform_wrapper gravity-theme' id='gform_wrapper_1' >
+                        <div class='gform_heading'>
+                            <span class='gform_description'></span>
+                        </div><form method='post' enctype='multipart/form-data'  id='gform_1'  action='/' novalidate>
+                        <div class='gform_body gform-body'><div id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below'><div id="field_1_1"  class="gfield gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible"  data-js-reload="field_1_1"><label class='gfield_label' for='input_1_1' >Email<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_1_1' type='email' value='' class='large'   placeholder='Enter Your Email ID' aria-required="true" aria-invalid="false"  />
+                        </div></div><div id="field_1_2"  class="gfield gfield--width-full field_sublabel_below field_description_below hidden_label gfield_visibility_visible"  data-js-reload="field_1_2"><label class='gfield_label' for='input_1_2' >CAPTCHA</label><div id='input_1_2' class='ginput_container ginput_recaptcha' data-sitekey='6Lfngh0gAAAAANoDGEYQWhBSypvTx14co5ENsqf6'  data-theme='light' data-tabindex='-1' data-size='invisible' data-badge='bottomright'></div></div></div></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_1' class='gform_button button' value='Submit'  onclick='if(window["gf_submitting_1"]){return false;}  if( !jQuery("#gform_1")[0].checkValidity || jQuery("#gform_1")[0].checkValidity()){window["gf_submitting_1"]=true;}  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1"]){return false;} if( !jQuery("#gform_1")[0].checkValidity || jQuery("#gform_1")[0].checkValidity()){window["gf_submitting_1"]=true;}  jQuery("#gform_1").trigger("submit",[true]); }' /> 
+            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_1' value='WyJbXSIsIjVkODdmZTBlZDExZWRjNTU2ZTljZjhlY2QwODUzNDIzIl0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div></div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-d93c91b elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="d93c91b" data-element_type="section" data-e-type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;jet_parallax_layout_list&quot;:[],&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-48bb54a" data-id="48bb54a" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-cf897b8 elementor-widget elementor-widget-text-editor" data-id="cf897b8" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Copyright@2022-Sanrhea Technical Textiles Limited								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</footer>
+		</footer><div class="jupiterx-corner-buttons" data-jupiterx-scroll="{&quot;offset&quot;:1000}"><button class="jupiterx-scroll-top jupiterx-icon-angle-up" data-jupiterx-scroll-target="0"></button></div></div><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/jupiterx/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				( () => {
+					const lazyloadRunObserver = () => {
+						const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+						const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+							entries.forEach( ( entry ) => {
+								if ( entry.isIntersecting ) {
+									let lazyloadBackground = entry.target;
+									if( lazyloadBackground ) {
+										lazyloadBackground.classList.add( 'e-lazyloaded' );
+									}
+									lazyloadBackgroundObserver.unobserve( entry.target );
+								}
+							});
+						}, { rootMargin: '200px 0px 200px 0px' } );
+						lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+							lazyloadBackgroundObserver.observe( lazyloadBackground );
+						} );
+					};
+					const events = [
+						'DOMContentLoaded',
+						'elementor/lazyload/observe',
+					];
+					events.forEach( ( event ) => {
+						document.addEventListener( event, lazyloadRunObserver );
+					} );
+				} )();
+			</script>
+			<link rel='stylesheet' id='e-sticky-css' href='https://sanrhea.com/wp-content/plugins/elementor-pro/assets/css/modules/sticky.css?ver=4.3.0' media='all' />
+<link rel='stylesheet' id='widget-nav-menu-css' href='https://sanrhea.com/wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min.css?ver=4.3.0' media='all' />
+<link rel='stylesheet' id='elementor-post-892-css' href='https://sanrhea.com/wp-content/uploads/elementor/css/post-892.css?ver=1790380878' media='all' />
+<link rel='stylesheet' id='widget-social-icons-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='e-apple-webkit-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='widget-spacer-css' href='https://sanrhea.com/wp-content/plugins/elementor/assets/css/widget-spacer.min.css?ver=4.3.2' media='all' />
+<link rel='stylesheet' id='gform_basic-css' href='https://sanrhea.com/wp-content/plugins/gravityforms/assets/css/dist/basic.css?ver=2.6.7' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://sanrhea.com/wp-content/plugins/gravityforms/assets/css/dist/theme-components.css?ver=2.6.7' media='all' />
+<link rel='stylesheet' id='gform_theme_ie11-css' href='https://sanrhea.com/wp-content/plugins/gravityforms/assets/css/dist/theme-ie11.css?ver=2.6.7' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://sanrhea.com/wp-content/plugins/gravityforms/assets/css/dist/theme.css?ver=2.6.7' media='all' />
+<style id="core-block-supports-inline-css">
+/**
+ * Core styles: block-supports
+ */
+
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+<script id="jupiterx-wc-quickview-js" src="https://sanrhea.com/wp-content/plugins/jupiterx-core/includes/woocommerce/wc-quick-view.js?ver=2.0.7"></script>
+<script id="underscore-js" src="https://sanrhea.com/wp-includes/js/underscore.min.js?ver=1.13.8"></script>
+<script id="jupiterx-js-extra">
+var jupiterxOptions = {"smoothScroll":"0"};
+//# sourceURL=jupiterx-js-extra
+</script>
+<script id="jupiterx-js" src="https://sanrhea.com/wp-content/themes/jupiterx/lib/assets/dist/js/frontend.js?ver=2.0.7"></script>
+<script id="jet-slick-js" src="https://sanrhea.com/wp-content/plugins/jet-elements/assets/js/lib/slick/slick.min.js?ver=1.8.1"></script>
+<script id="elementor-webpack-runtime-js" src="https://sanrhea.com/wp-content/plugins/elementor/assets/js/webpack.runtime.js?ver=4.3.2"></script>
+<script id="elementor-frontend-modules-js" src="https://sanrhea.com/wp-content/plugins/elementor/assets/js/frontend-modules.js?ver=4.3.2"></script>
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://sanrhea.com/wp-includes/js/jquery/ui/core.js?ver=1.14.2"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":true},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnX":"Share on X","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"4.3.2","is_static":false,"experimentalFeatures":{"theme_builder_v2":true,"import-export-customization":true,"e_pro_atomic_form":true,"e_pro_collection_loop":true},"urls":{"assets":"https:\/\/sanrhea.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/sanrhea.com\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/sanrhea.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"d38dc324ee","atomicFormsSendForm":"59b61b912e"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":2,"title":"Sanrhea%20%E2%80%93%20Technical%20Textiles%20Limited","excerpt":"","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script id="elementor-frontend-js" src="https://sanrhea.com/wp-content/plugins/elementor/assets/js/frontend.js?ver=4.3.2"></script>
+<script id="jet-tween-js-js" src="https://sanrhea.com/wp-content/plugins/jet-elements/assets/js/lib/tweenjs/tweenjs.min.js?ver=2.0.2"></script>
+<script id="jet-elements-js-extra">
+var jetElements = {"ajaxUrl":"https://sanrhea.com/wp-admin/admin-ajax.php","isMobile":"false","templateApiUrl":"https://sanrhea.com/wp-json/jet-elements-api/v1/elementor-template","devMode":"false","mapboxToken":"","messages":{"invalidMail":"Please specify a valid e-mail"}};
+//# sourceURL=jet-elements-js-extra
+</script>
+<script id="jet-elements-js" src="https://sanrhea.com/wp-content/plugins/jet-elements/assets/js/jet-elements.js?ver=2.9.2.2"></script>
+<script id="jet-carousel-js" src="https://sanrhea.com/wp-content/plugins/jet-elements/assets/js/addons/jet-carousel.js?ver=2.9.2.2"></script>
+<script id="swiper-js" src="https://sanrhea.com/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.js?ver=8.4.5"></script>
+<script id="imagesloaded-js" src="https://sanrhea.com/wp-includes/js/imagesloaded.min.js?ver=5.0.0"></script>
+<script id="e-sticky-js" src="https://sanrhea.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.js?ver=4.3.0"></script>
+<script id="smartmenus-js" src="https://sanrhea.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.js?ver=1.2.1"></script>
+<script id="wp-dom-ready-js" src="https://sanrhea.com/wp-includes/js/dist/dom-ready.js?ver=3fe927cab37bf38d6a23"></script>
+<script id="wp-hooks-js" src="https://sanrhea.com/wp-includes/js/dist/hooks.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://sanrhea.com/wp-includes/js/dist/i18n.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://sanrhea.com/wp-includes/js/dist/a11y.js?ver=31c6cec5a4ff7aff483d"></script>
+<script id="gform_json-js" defer='defer' src="https://sanrhea.com/wp-content/plugins/gravityforms/js/jquery.json.js?ver=2.6.7"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https://sanrhea.com/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https://sanrhea.com/wp-content/plugins/gravityforms","number_formats":[],"spinnerUrl":"https://sanrhea.com/wp-content/plugins/gravityforms/images/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://sanrhea.com/wp-content/plugins/gravityforms/js/gravityforms.js?ver=2.6.7"></script>
+<script id="gform_recaptcha-js" defer='defer' src="https://www.google.com/recaptcha/api.js?hl=en&#038;&#038;ver=7.1.2#038;render=explicit"></script>
+<script id="gform_placeholder-js" defer='defer' src="https://sanrhea.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.6.7"></script>
+<script id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/sanrhea.com\/wp-admin\/admin-ajax.php","nonce":"bdd983d502","urls":{"assets":"https:\/\/sanrhea.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/sanrhea.com\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":true},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/sanrhea.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+//# sourceURL=elementor-pro-frontend-js-before
+</script>
+<script id="elementor-pro-frontend-js" src="https://sanrhea.com/wp-content/plugins/elementor-pro/assets/js/frontend.js?ver=4.3.0"></script>
+<script id="pro-elements-handlers-js" src="https://sanrhea.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.js?ver=4.3.0"></script>
+<script id="jet-tabs-frontend-js-extra">
+var JetTabsSettings = {"ajaxurl":"https://sanrhea.com/wp-admin/admin-ajax.php","isMobile":"false","templateApiUrl":"https://sanrhea.com/wp-json/jet-tabs-api/v1/elementor-template","devMode":"false","isSelfRequest":""};
+//# sourceURL=jet-tabs-frontend-js-extra
+</script>
+<script id="jet-tabs-frontend-js" src="https://sanrhea.com/wp-content/plugins/jet-tabs/assets/js/jet-tabs-frontend.js?ver=2.3.4"></script>
+<script id="wp-util-js-extra">
+var _wpUtilSettings = {"ajax":{"url":"/wp-admin/admin-ajax.php"}};
+//# sourceURL=wp-util-js-extra
+</script>
+<script id="wp-util-js" src="https://sanrhea.com/wp-includes/js/wp-util.js?ver=7.1.2"></script>
+<script id="jupiterx-core-raven-frontend-js-extra">
+var ravenFormsTranslations = {"validation":{"required":"Please fill in this field","invalidEmail":"The value is not a valid email address","invalidPhone":"The value should only consist numbers and phone characters (-, +, (), etc)","invalidNumber":"The value is not a valid number","invalidMaxValue":"Value must be less than or equal to MAX_VALUE","invalidMinValue":"Value must be greater than or equal to MIN_VALUE"},"itiValidation":{"invalidCountryCode":"Invalid country code","tooShort":"Phone number is too short","tooLong":"Phone number is too long","areaCodeMissing":"Area code is required.","invalidLength":"Phone number has an invalid length","invalidGeneral":"Invalid phone number","forceMinLength":"Phone number must be more than X digits","typeMismatch":["Phone number must be of type: Fixed Line","Phone number must be of type: Mobile","Phone number must be of type: Fixed Line or Mobile","Phone number must be of type: Toll Free","Phone number must be of type: Premium Rate","Phone number must be of type: Shared Cost","Phone number must be of type: VOIP","Phone number must be of type: Personal Number","Phone number must be of type: Pager","Phone number must be of type: UAN","Phone number must be of type: Voicemail"]}};
+var ravenTools = {"nonce":"79d227f53c","activeElements":["animated-gradient","alert","advanced-accordion","button","categories","code-highlight","countdown","counter","divider","flex-spacer","forms","global-widget","heading","icon","text-marquee","content-marquee","testimonial-marquee","image","image-accordion","image-comparison","image-gallery","instagram-feed","inline-svg","nav-menu","photo-album","photo-roller","posts","advanced-posts","post-content","post-comments","post-meta","post-navigation","products","search-form","shopping-cart","site-logo","tabs","video","video-playlist","breadcrumbs","add-to-cart","advanced-nav-menu","sticky-media-scroller","archive-title","author-box","animated-heading","archive-description","business-hours","call-to-action","cart","carousel","charts","content-switch","custom-css","flip-box","hotspot","lottie","loop-carousel","loop-filter","loop-grid","product-data-tabs","post-title","post-terms","preview-settings","product-reviews","media-gallery","product-additional-info","price-list","pricing-table","product-rating","product-gallery","product-meta","product-short-description","product-stock-status","product-price","progress-tracker","site-title","table-of-contents","timeline","slider","social-share","tooltip","product-title","role-manager","team-members","product-content","custom-attributes","woocommerce-breadcrumbs","woocommerce-settings","woocommerce-notices","motion_effects","wrapper-link","my-account","paypal","stripe","products-carousel","circle-progress"],"globalTypography":{"fontFamily":"SF Pro Display Font Family","fontSize":{"size":"","unit":""},"lineHeight":{"size":"","unit":""},"color":""},"wc":{"wcAjaxAddToCart":"","disableAjaxToCartInArchive":true},"maxFileUploadSize":"33554432"};
+var lottie_defaultAnimationUrl = {"url":"https://sanrhea.com/wp-content/plugins/jupiterx-core/includes/extensions/raven/assets/animations/default.json"};
+//# sourceURL=jupiterx-core-raven-frontend-js-extra
+</script>
+<script id="jupiterx-core-raven-frontend-js" src="https://sanrhea.com/wp-content/plugins/jupiterx-core/includes/extensions/raven/assets/js/frontend.js?ver=7.1.2"></script>
+<script id="flatpickr-js" src="https://sanrhea.com/wp-content/plugins/elementor/assets/lib/flatpickr/flatpickr.js?ver=4.6.13"></script>
+<script type="text/javascript">
+		(function() {
+			document.body.className = document.body.className.replace('no-js','js');
+		}());
+	</script>
+	<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"wpemoji":"https://sanrhea.com/wp-includes/js/wp-emoji.js?ver=7.1.2","twemoji":"https://sanrhea.com/wp-includes/js/twemoji.js?ver=7.1.2"}}
+</script>
+<script type="module">
+/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+/* eslint-env es6 */
+
+// Note: This is loaded as a script module, so there is no need for an IIFE to prevent pollution of the global scope.
+
+/**
+ * Emoji Settings as exported in PHP via _print_emoji_detection_script().
+ * @typedef WPEmojiSettings
+ * @type {object}
+ * @property {?object} source
+ * @property {?string} source.concatemoji
+ * @property {?string} source.twemoji
+ * @property {?string} source.wpemoji
+ */
+
+const selector = 'script#wp-emoji-settings';
+const script = document.querySelector( selector );
+if ( ! ( script instanceof HTMLScriptElement ) ) {
+	throw new Error( `Element missing: ${ selector }`);
+}
+const settings = /** @type {WPEmojiSettings} */ ( JSON.parse( script.text ) );
+
+// For compatibility with other scripts that read from this global, in particular wp-includes/js/wp-emoji.js (source file: js/_enqueues/wp/emoji.js).
+window._wpemojiSettings = settings;
+
+/**
+ * Support tests.
+ * @typedef SupportTests
+ * @type {object}
+ * @property {?boolean} flag
+ * @property {?boolean} emoji
+ */
+
+const sessionStorageKey = 'wpEmojiSettingsSupports';
+const tests = [ 'flag', 'emoji' ];
+
+/**
+ * Checks whether the browser supports offloading to a Worker.
+ *
+ * @since 6.3.0
+ *
+ * @private
+ *
+ * @returns {boolean}
+ */
+function supportsWorkerOffloading() {
+	return (
+		typeof Worker !== 'undefined' &&
+		typeof OffscreenCanvas !== 'undefined' &&
+		typeof URL !== 'undefined' &&
+		URL.createObjectURL &&
+		typeof Blob !== 'undefined'
+	);
+}
+
+/**
+ * @typedef SessionSupportTests
+ * @type {object}
+ * @property {number} timestamp
+ * @property {SupportTests} supportTests
+ */
+
+/**
+ * Get support tests from session.
+ *
+ * @since 6.3.0
+ *
+ * @private
+ *
+ * @returns {?SupportTests} Support tests, or null if not set or older than 1 week.
+ */
+function getSessionSupportTests() {
+	try {
+		/** @type {SessionSupportTests} */
+		const item = JSON.parse(
+			sessionStorage.getItem( sessionStorageKey )
+		);
+		if (
+			typeof item === 'object' &&
+			typeof item.timestamp === 'number' &&
+			new Date().valueOf() < item.timestamp + 604800 && // Note: Number is a week in seconds.
+			typeof item.supportTests === 'object'
+		) {
+			return item.supportTests;
+		}
+	} catch ( e ) {}
+	return null;
+}
+
+/**
+ * Persist the supports in session storage.
+ *
+ * @since 6.3.0
+ *
+ * @private
+ *
+ * @param {SupportTests} supportTests Support tests.
+ */
+function setSessionSupportTests( supportTests ) {
+	try {
+		/** @type {SessionSupportTests} */
+		const item = {
+			supportTests: supportTests,
+			timestamp: new Date().valueOf()
+		};
+
+		sessionStorage.setItem(
+			sessionStorageKey,
+			JSON.stringify( item )
+		);
+	} catch ( e ) {}
+}
+
+/**
+ * Checks if two sets of Emoji characters render the same visually.
+ *
+ * This is used to determine if the browser is rendering an emoji with multiple data points
+ * correctly. set1 is the emoji in the correct form, using a zero-width joiner. set2 is the emoji
+ * in the incorrect form, using a zero-width space. If the two sets render the same, then the browser
+ * does not support the emoji correctly.
+ *
+ * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+ * scope. Everything must be passed by parameters.
+ *
+ * @since 4.9.0
+ *
+ * @private
+ *
+ * @param {CanvasRenderingContext2D} context 2D Context.
+ * @param {string} set1 Set of Emoji to test.
+ * @param {string} set2 Set of Emoji to test.
+ *
+ * @return {boolean} True if the two sets render the same.
+ */
+function emojiSetsRenderIdentically( context, set1, set2 ) {
+	// Cleanup from previous test.
+	context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+	context.fillText( set1, 0, 0 );
+	const rendered1 = new Uint32Array(
+		context.getImageData(
+			0,
+			0,
+			context.canvas.width,
+			context.canvas.height
+		).data
+	);
+
+	// Cleanup from previous test.
+	context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+	context.fillText( set2, 0, 0 );
+	const rendered2 = new Uint32Array(
+		context.getImageData(
+			0,
+			0,
+			context.canvas.width,
+			context.canvas.height
+		).data
+	);
+
+	return rendered1.every( ( rendered2Data, index ) => {
+		return rendered2Data === rendered2[ index ];
+	} );
+}
+
+/**
+ * Checks if the center point of a single emoji is empty.
+ *
+ * This is used to determine if the browser is rendering an emoji with a single data point
+ * correctly. The center point of an incorrectly rendered emoji will be empty. A correctly
+ * rendered emoji will have a non-zero value at the center point.
+ *
+ * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+ * scope. Everything must be passed by parameters.
+ *
+ * @since 6.8.2
+ *
+ * @private
+ *
+ * @param {CanvasRenderingContext2D} context 2D Context.
+ * @param {string} emoji Emoji to test.
+ *
+ * @return {boolean} True if the center point is empty.
+ */
+function emojiRendersEmptyCenterPoint( context, emoji ) {
+	// Cleanup from previous test.
+	context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+	context.fillText( emoji, 0, 0 );
+
+	// Test if the center point (16, 16) is empty (0,0,0,0).
+	const centerPoint = context.getImageData(16, 16, 1, 1);
+	for ( let i = 0; i < centerPoint.data.length; i++ ) {
+		if ( centerPoint.data[ i ] !== 0 ) {
+			// Stop checking the moment it's known not to be empty.
+			return false;
+		}
+	}
+
+	return true;
+}
+
+/**
+ * Determines if the browser properly renders Emoji that Twemoji can supplement.
+ *
+ * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+ * scope. Everything must be passed by parameters.
+ *
+ * @since 4.2.0
+ *
+ * @private
+ *
+ * @param {CanvasRenderingContext2D} context 2D Context.
+ * @param {string} type Whether to test for support of "flag" or "emoji".
+ * @param {Function} emojiSetsRenderIdentically Reference to emojiSetsRenderIdentically function, needed due to minification.
+ * @param {Function} emojiRendersEmptyCenterPoint Reference to emojiRendersEmptyCenterPoint function, needed due to minification.
+ *
+ * @return {boolean} True if the browser can render emoji, false if it cannot.
+ */
+function browserSupportsEmoji( context, type, emojiSetsRenderIdentically, emojiRendersEmptyCenterPoint ) {
+	let isIdentical;
+
+	switch ( type ) {
+		case 'flag':
+			/*
+			 * Test for Transgender flag compatibility. Added in Unicode 13.
+			 *
+			 * To test for support, we try to render it, and compare the rendering to how it would look if
+			 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+			 */
+			isIdentical = emojiSetsRenderIdentically(
+				context,
+				'\uD83C\uDFF3\uFE0F\u200D\u26A7\uFE0F', // as a zero-width joiner sequence
+				'\uD83C\uDFF3\uFE0F\u200B\u26A7\uFE0F' // separated by a zero-width space
+			);
+
+			if ( isIdentical ) {
+				return false;
+			}
+
+			/*
+			 * Test for Sark flag compatibility. This is the least supported of the letter locale flags,
+			 * so gives us an easy test for full support.
+			 *
+			 * To test for support, we try to render it, and compare the rendering to how it would look if
+			 * the browser doesn't render it correctly ([C] + [Q]).
+			 */
+			isIdentical = emojiSetsRenderIdentically(
+				context,
+				'\uD83C\uDDE8\uD83C\uDDF6', // as the sequence of two code points
+				'\uD83C\uDDE8\u200B\uD83C\uDDF6' // as the two code points separated by a zero-width space
+			);
+
+			if ( isIdentical ) {
+				return false;
+			}
+
+			/*
+			 * Test for English flag compatibility. England is a country in the United Kingdom, it
+			 * does not have a two letter locale code but rather a five letter sub-division code.
+			 *
+			 * To test for support, we try to render it, and compare the rendering to how it would look if
+			 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+			 */
+			isIdentical = emojiSetsRenderIdentically(
+				context,
+				// as the flag sequence
+				'\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F',
+				// with each code point separated by a zero-width space
+				'\uD83C\uDFF4\u200B\uDB40\uDC67\u200B\uDB40\uDC62\u200B\uDB40\uDC65\u200B\uDB40\uDC6E\u200B\uDB40\uDC67\u200B\uDB40\uDC7F'
+			);
+
+			return ! isIdentical;
+		case 'emoji':
+			/*
+			 * Is there a large, hairy, humanoid mythical creature living in the browser?
+			 *
+			 * To test for Emoji 17.0 support, try to render a new emoji: Hairy Creature.
+			 *
+			 * The hairy creature emoji is a single code point emoji. Testing for browser
+			 * support required testing the center point of the emoji to see if it is empty.
+			 *
+			 * 0xD83E 0x1FAC8 (\uD83E\u1FAC8) == 🫈 Hairy creature.
+			 *
+			 * When updating this test, please ensure that the emoji is either a single code point
+			 * or switch to using the emojiSetsRenderIdentically function and testing with a zero-width
+			 * joiner vs a zero-width space.
+			 */
+			const notSupported = emojiRendersEmptyCenterPoint( context, '\uD83E\u1FAC8' );
+			return ! notSupported;
+	}
+
+	return false;
+}
+
+/**
+ * Checks emoji support tests.
+ *
+ * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+ * scope. Everything must be passed by parameters.
+ *
+ * @since 6.3.0
+ *
+ * @private
+ *
+ * @param {string[]} tests Tests.
+ * @param {Function} browserSupportsEmoji Reference to browserSupportsEmoji function, needed due to minification.
+ * @param {Function} emojiSetsRenderIdentically Reference to emojiSetsRenderIdentically function, needed due to minification.
+ * @param {Function} emojiRendersEmptyCenterPoint Reference to emojiRendersEmptyCenterPoint function, needed due to minification.
+ *
+ * @return {SupportTests} Support tests.
+ */
+function testEmojiSupports( tests, browserSupportsEmoji, emojiSetsRenderIdentically, emojiRendersEmptyCenterPoint ) {
+	let canvas;
+	if (
+		typeof WorkerGlobalScope !== 'undefined' &&
+		self instanceof WorkerGlobalScope
+	) {
+		canvas = new OffscreenCanvas( 300, 150 ); // Dimensions are default for HTMLCanvasElement.
+	} else {
+		canvas = document.createElement( 'canvas' );
+	}
+
+	const context = canvas.getContext( '2d', { willReadFrequently: true } );
+
+	/*
+	 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+	 * it doesn't work when the font is bolder than 500 weight. So, we
+	 * check for bold rendering support to avoid invisible emoji in Chrome.
+	 */
+	context.textBaseline = 'top';
+	context.font = '600 32px Arial';
+
+	const supports = {};
+	tests.forEach( ( test ) => {
+		supports[ test ] = browserSupportsEmoji( context, test, emojiSetsRenderIdentically, emojiRendersEmptyCenterPoint );
+	} );
+	return supports;
+}
+
+/**
+ * Adds a script to the head of the document.
+ *
+ * @ignore
+ *
+ * @since 4.2.0
+ *
+ * @param {string} src The url where the script is located.
+ *
+ * @return {void}
+ */
+function addScript( src ) {
+	const script = document.createElement( 'script' );
+	script.src = src;
+	script.defer = true;
+	document.head.appendChild( script );
+}
+
+settings.supports = {
+	everything: true,
+	everythingExceptFlag: true
+};
+
+// Obtain the emoji support from the browser, asynchronously when possible.
+new Promise( ( resolve ) => {
+	let supportTests = getSessionSupportTests();
+	if ( supportTests ) {
+		resolve( supportTests );
+		return;
+	}
+
+	if ( supportsWorkerOffloading() ) {
+		try {
+			// Note that the functions are being passed as arguments due to minification.
+			const workerScript =
+				'postMessage(' +
+				testEmojiSupports.toString() +
+				'(' +
+				[
+					JSON.stringify( tests ),
+					browserSupportsEmoji.toString(),
+					emojiSetsRenderIdentically.toString(),
+					emojiRendersEmptyCenterPoint.toString()
+				].join( ',' ) +
+				'));';
+			const blob = new Blob( [ workerScript ], {
+				type: 'text/javascript'
+			} );
+			const worker = new Worker( URL.createObjectURL( blob ), { name: 'wpTestEmojiSupports' } );
+			worker.onmessage = ( event ) => {
+				supportTests = event.data;
+				setSessionSupportTests( supportTests );
+				worker.terminate();
+				resolve( supportTests );
+			};
+			return;
+		} catch ( e ) {}
+	}
+
+	supportTests = testEmojiSupports( tests, browserSupportsEmoji, emojiSetsRenderIdentically, emojiRendersEmptyCenterPoint );
+	setSessionSupportTests( supportTests );
+	resolve( supportTests );
+} )
+	// Once the browser emoji support has been obtained from the session, finalize the settings.
+	.then( ( supportTests ) => {
+		/*
+		 * Tests the browser support for flag emojis and other emojis, and adjusts the
+		 * support settings accordingly.
+		 */
+		for ( const test in supportTests ) {
+			settings.supports[ test ] = supportTests[ test ];
+
+			settings.supports.everything =
+				settings.supports.everything && settings.supports[ test ];
+
+			if ( 'flag' !== test ) {
+				settings.supports.everythingExceptFlag =
+					settings.supports.everythingExceptFlag &&
+					settings.supports[ test ];
+			}
+		}
+
+		settings.supports.everythingExceptFlag =
+			settings.supports.everythingExceptFlag &&
+			! settings.supports.flag;
+
+		// When the browser can not render everything we need to load a polyfill.
+		if ( ! settings.supports.everything ) {
+			const src = settings.source || {};
+
+			if ( src.concatemoji ) {
+				addScript( src.concatemoji );
+			} else if ( src.wpemoji && src.twemoji ) {
+				addScript( src.twemoji );
+				addScript( src.wpemoji );
+			}
+		}
+	} );
+//# sourceURL=https://sanrhea.com/wp-includes/js/wp-emoji-loader.js
+</script>
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [1, 1]) } );
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"68945f9f41b44c6fb76f6d24a1ae182e","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a41486a94a5bb416',t:'MTc5MDQ0OTM3OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

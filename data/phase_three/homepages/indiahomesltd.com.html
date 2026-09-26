@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>India Homes Limited — Mumbai Redevelopment</title>
+    <meta name="description" content="India Homes Limited (BSE: 513361) — a Mumbai-focused real estate redeveloper unlocking value in Wadala, Matunga, Chembur and Khopoli." />
+    <link rel="icon" href="assets/logo.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0F2238',          /* deep navy */
+              'ink-deep': '#081427',
+              'ink-soft': '#2A3A4E',
+              brass: '#A88142',         /* aged brass */
+              'brass-deep': '#8B6A30',
+              'brass-soft': '#C9A663',
+              ivory: '#FAF7F0',          /* warm page */
+              cream: '#F3EDDF',
+              paper: '#FFFFFF',
+              rule: 'rgba(15,34,56,0.10)',
+              mute: '#6B7785',
+            },
+            fontFamily: {
+              display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root { --maxw: 1280px; --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.92  0 0 0 0 0.82  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+      html, body { background: #FAF7F0; color: #0F2238; }
+      body { font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+      /* Pages */
+      .page { display: none; }
+      .page.active { display: block; animation: fadeIn .35s ease-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(8px);} to { opacity:1; transform: none;} }
+
+      /* Editorial type helpers */
+      .eyebrow {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #A88142;
+      }
+      .display { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; letter-spacing: -0.012em; line-height: 0.98; }
+      .display em, .display .italic { font-style: italic; font-weight: 400; letter-spacing: -0.015em; }
+      .rule-top { border-top: 1px solid rgba(15,34,56,0.14); }
+      .rule-btm { border-bottom: 1px solid rgba(15,34,56,0.14); }
+      .hairline { background: linear-gradient(90deg, transparent, rgba(15,34,56,0.18), transparent); height: 1px; }
+
+      .container-wide { max-width: var(--maxw); margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; }
+      @media (max-width: 640px){ .container-wide { padding-left: 20px; padding-right: 20px; } }
+
+      /* Nav */
+      .navlink { position: relative; color: #0F2238; transition: color .2s ease; }
+      .navlink:hover { color: #A88142; }
+      .navlink.active { color: #A88142; }
+      .navlink.active::after, .navlink:hover::after {
+        content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: #A88142;
+      }
+      .dropdown { position: relative; }
+      .dropdown-menu { display: none; position: absolute; top: 100%; left: -8px; padding-top: 14px; min-width: 260px; z-index: 60; }
+      .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; }
+      .dropdown-card { background: #fff; border: 1px solid rgba(15,34,56,0.10); box-shadow: 0 20px 50px -20px rgba(15,34,56,0.25); padding: 8px; }
+      .dropdown-card a { display: block; padding: 10px 14px; font-size: 14px; color: #0F2238; }
+      .dropdown-card a:hover { background: #FAF7F0; color: #A88142; }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        min-height: 92vh;
+        background: #081427;
+        color: #FAF7F0;
+        overflow: hidden;
+      }
+      .hero-img {
+        position: absolute; inset: 0;
+        background-image: url('assets/hero_khopoli-valley_sunset-view.png');
+        background-size: cover; background-position: center;
+        animation: kenburns 24s ease-in-out infinite alternate;
+      }
+      @keyframes kenburns { from { transform: scale(1.0) translate(0,0);} to { transform: scale(1.08) translate(-1%, 1%);} }
+      .hero-vignette {
+        position: absolute; inset: 0;
+        background:
+          linear-gradient(180deg, rgba(8,20,39,0.55) 0%, rgba(8,20,39,0.12) 35%, rgba(8,20,39,0.20) 60%, rgba(8,20,39,0.85) 100%),
+          linear-gradient(90deg, rgba(8,20,39,0.70) 0%, rgba(8,20,39,0.08) 65%);
+      }
+      .hero::after, .grain::after {
+        content: ''; position: absolute; inset: 0; pointer-events: none;
+        background-image: var(--grain); opacity: 0.5; mix-blend-mode: overlay;
+      }
+
+      /* Section header eyebrow + numeral */
+      .section-head { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: end; }
+      .section-numeral { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14px; color: #A88142; letter-spacing: .2em; }
+
+      /* Stats */
+      .stat-num { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 56px; line-height: 1; color: #0F2238; }
+      .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #6B7785; }
+
+      /* Buttons */
+      .btn-primary { background:#0F2238; color:#FAF7F0; padding: 14px 26px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; transition: background .2s ease; display:inline-flex; align-items:center; gap:10px; }
+      .btn-primary:hover { background:#A88142; color:#fff; }
+      .btn-ghost { color:#FAF7F0; padding: 14px 26px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; border: 1px solid rgba(250,247,240,0.4); transition: all .2s ease; display:inline-flex; align-items:center; gap:10px; }
+      .btn-ghost:hover { border-color:#A88142; color:#A88142; }
+      .btn-dark { background:#A88142; color:#fff; padding: 14px 26px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; transition: background .2s ease; display:inline-flex; align-items:center; gap:10px; }
+      .btn-dark:hover { background:#0F2238; }
+
+      /* Cards */
+      .card { background: #fff; border: 1px solid rgba(15,34,56,0.08); transition: box-shadow .3s ease, transform .3s ease; }
+      .card:hover { box-shadow: 0 22px 50px -28px rgba(15,34,56,0.32); transform: translateY(-2px); }
+
+      /* Photo placeholder (for missing imagery) */
+      .photo-ph {
+        background:
+          repeating-linear-gradient(135deg, rgba(15,34,56,0.05) 0 1px, transparent 1px 14px),
+          #F3EDDF;
+        color: #6B7785;
+        display:flex; align-items:center; justify-content:center;
+        font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; text-align:center;
+      }
+
+      /* Timeline */
+      .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #A88142; box-shadow: 0 0 0 4px rgba(168,129,66,0.18); }
+      .tl-line { background: linear-gradient(90deg, rgba(168,129,66,0), rgba(168,129,66,0.6), rgba(168,129,66,0)); height: 1px; }
+
+      /* Accordion */
+      .accordion-content { max-height: 0; overflow: hidden; transition: max-height .5s ease; }
+      .accordion-button.active .accordion-icon { transform: rotate(180deg); }
+
+      /* Redevelop With Us tabs */
+      .redev-tab.active { color: #0F2238; border-color: #A88142; }
+
+      /* Investor-section tabs (Shareholders Info / Governance / Financial Reports & Filings) */
+      .ir-tab { padding: 10px 2px 12px; font-size: 13px; letter-spacing: .02em; font-weight: 500; color: #6B7785; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+      .ir-tab:hover { color: #0F2238; }
+      .ir-tab.active { color: #0F2238; border-color: #A88142; }
+      .ir-pane { display: none; }
+      .ir-pane.active { display: block; animation: fadeIn .25s ease-out; }
+      .shortlink-btn { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #A88142; border: 1px solid rgba(168,129,66,.4); padding: 6px 10px; display: inline-flex; gap: 6px; align-items: center; transition: background .2s, color .2s; }
+      .shortlink-btn:hover { background: #A88142; color: #fff; }
+
+      /* Misc */
+      .modal { display: none; }
+      .modal.active { display: flex; animation: fadeIn .3s ease-out; }
+      #backToTopBtn { opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s; }
+      #backToTopBtn.show { opacity: 1; visibility: visible; }
+      #searchOverlay { opacity: 0; visibility: hidden; transition: opacity .3s ease-out; }
+      #searchOverlay.active { opacity: 1; visibility: visible; }
+      #cookieConsent { display: none; }
+      #cookieConsent.active { display: flex; }
+
+      /* Subtle fade-in on scroll-into-view */
+      .reveal { opacity: 0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+
+      /* Disclaimers */
+      .note {
+        font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .04em;
+        color: #6B7785; border-left: 2px solid #A88142; padding: 10px 14px; background: rgba(168,129,66,0.04);
+      }
+
+      .ticker-row { display: grid; grid-template-columns: repeat(4, 1fr); }
+      @media (max-width: 768px){ .ticker-row { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+
+<!-- =========================== TOP UTILITY =========================== -->
+<div class="bg-ink-deep text-ivory/70 text-[12px]">
+  <div class="container-wide flex items-center justify-between py-2">
+    <div class="flex items-center gap-6 font-mono tracking-wider">
+      <span><span class="text-brass">BSE:</span> 513361</span>
+      <span class="hidden sm:inline"><span class="text-brass">CIN:</span> L29100MH1987PLC043186</span>
+      <span class="hidden md:inline"><span class="text-brass">FY26 PAT:</span> ₹18.66 Cr</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="#investors" data-page="investors" class="nav-link-header hover:text-brass">Investor Relations</a>
+      <span class="hidden sm:inline opacity-40">·</span>
+      <a href="/cdn-cgi/l/email-protection#197a766a7c7a5970777d70787176747c6a756d7d377a7674" class="hidden sm:inline hover:text-brass"><span class="__cf_email__" data-cfemail="086b677b6d6b4861666c61696067656d7b647c6c266b6765">[email&#160;protected]</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================== HEADER =========================== -->
+<header class="bg-paper rule-btm sticky top-0 z-50">
+  <div class="container-wide flex items-center justify-between py-5">
+    <a href="#home" data-page="home" class="nav-link-header flex items-center gap-3">
+      <img src="assets/logo.png" alt="India Homes Limited" class="h-12 w-auto" />
+      <span class="sr-only">India Homes Limited</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9 text-[14px] tracking-wide font-medium">
+      <a href="#home" data-page="home" class="navlink nav-link">Home</a>
+      <div class="dropdown">
+        <a href="#about" data-page="about" class="navlink nav-link nav-link-header flex items-center gap-1.5">About <i class="fas fa-chevron-down text-[9px] opacity-70"></i></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-card">
+            <a href="#about" data-page="about" class="nav-link-dropdown">Our Story</a>
+            <a href="#leadership" data-page="leadership" class="nav-link-dropdown">Leadership</a>
+            <a href="#sustainability" data-page="sustainability" class="nav-link-dropdown">Sustainability &amp; CSR</a>
+          </div>
+        </div>
+      </div>
+      <a href="#projects" data-page="projects" class="navlink nav-link">Portfolio</a>
+      <a href="#redevelop" data-page="redevelop" class="navlink nav-link">Redevelop With Us</a>
+      <div class="dropdown">
+        <a href="#investors" data-page="investors" class="navlink nav-link nav-link-header flex items-center gap-1.5">Investors <i class="fas fa-chevron-down text-[9px] opacity-70"></i></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-card">
+            <a href="#investors" data-page="investors" class="nav-link-dropdown">Overview</a>
+            <a href="#financials" data-page="financials" class="nav-link-dropdown">Financial Reports &amp; Filings</a>
+            <a href="#announcements" data-page="announcements" class="nav-link-dropdown">Announcements</a>
+            <a href="#governance" data-page="governance" class="nav-link-dropdown">Corporate Governance</a>
+            <a href="#shareholders" data-page="shareholders" class="nav-link-dropdown">Shareholders Information</a>
+            <a href="#rights-issue-2026" data-page="rights-issue-2026" class="nav-link-dropdown">Rights Issue 2026</a>
+            <a href="#investor-faq" data-page="investor-faq" class="nav-link-dropdown">Investor FAQ</a>
+          </div>
+        </div>
+      </div>
+      <a href="#media" data-page="media" class="navlink nav-link">Media</a>
+      <a href="#careers" data-page="careers" class="navlink nav-link">Careers</a>
+    </nav>
+
+    <div class="flex items-center gap-5">
+      <button id="search-open-btn" aria-label="Search" class="text-ink hover:text-brass text-[15px]"><i class="fas fa-search"></i></button>
+      <a href="#contact" data-page="contact" class="nav-link-header hidden md:inline-flex btn-dark text-[11px] py-2.5 px-4">Contact</a>
+      <button id="mobile-menu-button" class="lg:hidden text-ink text-xl"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-paper rule-top">
+    <div class="container-wide py-4 space-y-1">
+      <a href="#home" data-page="home" class="nav-link-mobile block py-2.5 text-ink">Home</a>
+      <a href="#about" data-page="about" class="nav-link-mobile block py-2.5 text-ink">About</a>
+      <a href="#leadership" data-page="leadership" class="nav-link-mobile block py-2.5 pl-4 text-mute">— Leadership</a>
+      <a href="#sustainability" data-page="sustainability" class="nav-link-mobile block py-2.5 pl-4 text-mute">— Sustainability &amp; CSR</a>
+      <a href="#projects" data-page="projects" class="nav-link-mobile block py-2.5 text-ink">Portfolio</a>
+      <a href="#redevelop" data-page="redevelop" class="nav-link-mobile block py-2.5 text-ink">Redevelop With Us</a>
+      <a href="#investors" data-page="investors" class="nav-link-mobile block py-2.5 text-ink">Investors</a>
+      <a href="#financials" data-page="financials" class="nav-link-mobile block py-2.5 pl-4 text-mute">— Financial Reports &amp; Filings</a>
+      <a href="#announcements" data-page="announcements" class="nav-link-mobile block py-2.5 pl-4 text-mute">— Announcements</a>
+      <a href="#governance" data-page="governance" class="nav-link-mobile block py-2.5 pl-4 text-mute">— Corporate Governance</a>
+      <a href="#shareholders" data-page="shareholders" class="nav-link-mobile block py-2.5 pl-4 text-mute">— Shareholders Information</a>
+      <a href="#rights-issue-2026" data-page="rights-issue-2026" class="nav-link-mobile block py-2.5 pl-4 text-mute">— Rights Issue 2026</a>
+      <a href="#investor-faq" data-page="investor-faq" class="nav-link-mobile block py-2.5 pl-4 text-mute">— FAQ</a>
+      <a href="#media" data-page="media" class="nav-link-mobile block py-2.5 text-ink">Media</a>
+      <a href="#careers" data-page="careers" class="nav-link-mobile block py-2.5 text-ink">Careers</a>
+      <a href="#contact" data-page="contact" class="nav-link-mobile block mt-4 btn-dark w-full text-center justify-center">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- =====================================================================
+                                  HOME
+====================================================================== -->
+<section id="home" class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-img"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="relative h-full">
+      <div class="container-wide pt-24 pb-12 md:pt-32 md:pb-20" style="min-height: 92vh; display:flex; flex-direction:column; justify-content: space-between;">
+
+        <div class="max-w-4xl">
+          <div class="eyebrow text-brass-soft mb-6">India Homes Limited · Estd. 1987 · BSE 513361</div>
+          <h1 class="display text-[56px] md:text-[88px] lg:text-[112px] text-ivory">
+            Mumbai homes, <em class="text-brass-soft">reimagined.</em>
+          </h1>
+          <p class="mt-8 text-ivory/85 text-lg md:text-xl max-w-2xl leading-relaxed font-light">
+            A seventy‑year industrial legacy, reborn for the work of renewing Mumbai's most established neighbourhoods — Wadala, Matunga, Chembur and Khopoli.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#redevelop" data-page="redevelop" class="nav-link-header btn-primary bg-brass hover:bg-paper hover:!text-ink">Redevelop With Us <i class="fas fa-arrow-right text-[11px]"></i></a>
+            <a href="#investors" data-page="investors" class="nav-link-header btn-ghost">Investor Relations</a>
+          </div>
+        </div>
+
+        <!-- Latest results strip -->
+        <div class="mt-16 max-w-5xl border-t border-ivory/15 pt-6">
+          <div class="flex items-end justify-between mb-4">
+            <div>
+              <div class="eyebrow text-brass-soft">Q4 &amp; FY26 · Audited Standalone Results</div>
+              <div class="font-mono text-ivory/60 text-[11px] mt-1">Reporting period: April 2025 – March 2026</div>
+            </div>
+            <a href="assets/investor_brief.pdf" target="_blank" class="hidden md:inline text-ivory/80 hover:text-brass text-[12px] font-mono tracking-widest uppercase">Read presentation →</a>
+          </div>
+          <div class="ticker-row text-ivory">
+            <div class="border-l border-ivory/15 pl-5 py-2">
+              <div class="display text-4xl md:text-5xl text-brass-soft">₹24.48<span class="text-base text-ivory/60 ml-1">Cr</span></div>
+              <div class="stat-label !text-ivory/60 mt-2">Q4 Revenue</div>
+            </div>
+            <div class="border-l border-ivory/15 pl-5 py-2">
+              <div class="display text-4xl md:text-5xl text-brass-soft">₹24.68<span class="text-base text-ivory/60 ml-1">Cr</span></div>
+              <div class="stat-label !text-ivory/60 mt-2">Q4 EBITDA</div>
+            </div>
+            <div class="border-l border-ivory/15 pl-5 py-2">
+              <div class="display text-4xl md:text-5xl text-brass-soft">₹22.85<span class="text-base text-ivory/60 ml-1">Cr</span></div>
+              <div class="stat-label !text-ivory/60 mt-2">Q4 PAT</div>
+            </div>
+            <div class="border-l border-ivory/15 pl-5 py-2">
+              <div class="display text-4xl md:text-5xl text-brass-soft">₹0.57</div>
+              <div class="stat-label !text-ivory/60 mt-2">Q4 EPS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========== MD LETTER =========== -->
+  <section class="bg-ivory py-28">
+    <div class="container-wide grid md:grid-cols-12 gap-12 reveal">
+      <div class="md:col-span-4">
+        <div class="section-numeral mb-3">— 01 / Management Commentary</div>
+        <div class="eyebrow">Letter from the Managing Director</div>
+      </div>
+      <div class="md:col-span-8">
+        <h2 class="display text-5xl md:text-6xl mb-8">A defining year of <em>transformation.</em></h2>
+        <p class="text-ink-soft text-lg leading-relaxed mb-5">
+          FY26 marks a defining year for India Homes. We have completed the Company's strategic pivot from stainless‑steel manufacturing to Mumbai real‑estate redevelopment — signing a landmark joint venture with the Lloyds Group at Khopoli, fully repaying our borrowings with Kotak Mahindra Bank, and reaching a One‑Time Settlement with J.C. Flowers ARC to resolve our remaining secured debt.
+        </p>
+        <p class="text-ink-soft text-lg leading-relaxed mb-8">
+          With our debt position substantially resolved, a focused operating model and a visible launch pipeline across Wadala, Matunga, Chembur and Khopoli, the Company is now positioned to scale a high‑margin, asset‑light redevelopment business — and deliver meaningful value to shareholders in the years ahead.
+        </p>
+        <div class="border-t border-rule pt-5 mb-8 font-mono text-[12px] tracking-widest text-mute uppercase">Mr. Varun S. Gupta · Managing Director</div>
+        <a href="assets/investor_brief.pdf" target="_blank" class="inline-flex items-center gap-3 text-brass hover:text-ink font-mono text-[12px] tracking-widest uppercase">
+          <span class="hairline w-12 inline-block"></span> Download Q4 &amp; FY26 Presentation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== TRANSFORMATION TIMELINE =========== -->
+  <section class="bg-ink text-ivory py-28 relative overflow-hidden grain">
+    <div class="container-wide reveal">
+      <div class="section-head mb-16">
+        <div class="section-numeral !text-brass-soft">— 02</div>
+        <div class="flex items-end justify-between flex-wrap gap-4">
+          <div>
+            <div class="eyebrow text-brass-soft">FY26 · From Steel to Real Estate</div>
+            <h2 class="display text-5xl md:text-6xl mt-2 text-ivory">Five moves that <em>reshaped the Company.</em></h2>
+          </div>
+          <p class="text-ivory/70 max-w-md text-[15px] leading-relaxed">
+            Key milestones in the pivot from stainless‑steel manufacturing to Mumbai real estate — across the balance sheet, the brand and the roadmap.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="absolute left-0 right-0 top-[18px] tl-line"></div>
+        <div class="grid md:grid-cols-5 gap-10">
+
+          <div class="relative pt-12">
+            <div class="absolute top-[14px] left-0 tl-dot"></div>
+            <div class="font-mono text-brass-soft text-[11px] tracking-widest mb-2">MAY 2025</div>
+            <div class="display text-2xl mb-2">JV MOU signed</div>
+            <p class="text-ivory/65 text-sm leading-relaxed">Memorandum of Understanding with the Lloyds Group to jointly develop the Khopoli land.</p>
+          </div>
+
+          <div class="relative pt-12">
+            <div class="absolute top-[14px] left-0 tl-dot"></div>
+            <div class="font-mono text-brass-soft text-[11px] tracking-widest mb-2">JUL 2025</div>
+            <div class="display text-2xl mb-2">Development Agreement</div>
+            <p class="text-ivory/65 text-sm leading-relaxed">Development Agreement executed with Lloyds IHL LLP — the JV vehicle for the Khopoli project.</p>
+          </div>
+
+          <div class="relative pt-12">
+            <div class="absolute top-[14px] left-0 tl-dot"></div>
+            <div class="font-mono text-brass-soft text-[11px] tracking-widest mb-2">SEP 2025</div>
+            <div class="display text-2xl mb-2">Bank debt repaid</div>
+            <p class="text-ivory/65 text-sm leading-relaxed">Entire outstanding borrowings with Kotak Mahindra Bank repaid in full, freeing the balance sheet.</p>
+          </div>
+
+          <div class="relative pt-12">
+            <div class="absolute top-[14px] left-0 tl-dot"></div>
+            <div class="font-mono text-brass-soft text-[11px] tracking-widest mb-2">NOV 2025</div>
+            <div class="display text-2xl mb-2">Rebrand to India Homes</div>
+            <p class="text-ivory/65 text-sm leading-relaxed">Company renamed India Homes Limited; the Board approves the real‑estate roadmap.</p>
+          </div>
+
+          <div class="relative pt-12">
+            <div class="absolute top-[14px] left-0 tl-dot"></div>
+            <div class="font-mono text-brass-soft text-[11px] tracking-widest mb-2">MAR 2026</div>
+            <div class="display text-2xl mb-2">ARC settlement</div>
+            <p class="text-ivory/65 text-sm leading-relaxed">One‑Time Settlement with J.C. Flowers ARC to resolve all remaining secured borrowings.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== WHERE WE ARE ACTIVE =========== -->
+  <section class="bg-ivory py-28">
+    <div class="container-wide reveal">
+      <div class="section-head mb-16">
+        <div class="section-numeral">— 03</div>
+        <div class="flex items-end justify-between flex-wrap gap-4">
+          <div>
+            <div class="eyebrow">Footprint</div>
+            <h2 class="display text-5xl md:text-6xl mt-2">Four neighbourhoods. <em>One Mumbai.</em></h2>
+          </div>
+          <a href="assets/investor_brief.pdf" target="_blank" class="font-mono text-[12px] tracking-widest uppercase text-brass hover:text-ink">Investor Presentation →</a>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-px bg-rule">
+        <div class="bg-paper p-8 hover:bg-cream/40 transition">
+          <div class="flex items-baseline justify-between mb-6">
+            <div class="display text-5xl text-brass">01</div>
+            <div class="font-mono text-[10px] tracking-widest text-mute uppercase">Island City</div>
+          </div>
+          <h3 class="display text-3xl mb-2 text-ink">Wadala</h3>
+          <p class="text-mute text-sm leading-relaxed">A core micro‑market where the promoter group has delivered landmark residential assets across two decades.</p>
+        </div>
+        <div class="bg-paper p-8 hover:bg-cream/40 transition">
+          <div class="flex items-baseline justify-between mb-6">
+            <div class="display text-5xl text-brass">02</div>
+            <div class="font-mono text-[10px] tracking-widest text-mute uppercase">Island City</div>
+          </div>
+          <h3 class="display text-3xl mb-2 text-ink">Matunga</h3>
+          <p class="text-mute text-sm leading-relaxed">A heritage neighbourhood with embedded demand and a tradition of considered, boutique redevelopment.</p>
+        </div>
+        <div class="bg-paper p-8 hover:bg-cream/40 transition">
+          <div class="flex items-baseline justify-between mb-6">
+            <div class="display text-5xl text-brass">03</div>
+            <div class="font-mono text-[10px] tracking-widest text-mute uppercase">Eastern Suburbs</div>
+          </div>
+          <h3 class="display text-3xl mb-2 text-ink">Chembur</h3>
+          <p class="text-mute text-sm leading-relaxed">One of Mumbai's most established residential markets with strong absorption and connectivity tailwinds.</p>
+        </div>
+        <div class="bg-paper p-8 hover:bg-cream/40 transition">
+          <div class="flex items-baseline justify-between mb-6">
+            <div class="display text-5xl text-brass">04</div>
+            <div class="font-mono text-[10px] tracking-widest text-mute uppercase">MMR · JV with Lloyds</div>
+          </div>
+          <h3 class="display text-3xl mb-2 text-ink">Khopoli</h3>
+          <p class="text-mute text-sm leading-relaxed">Company‑owned land developed in joint venture with the Lloyds Group — a multi‑phase, long‑horizon asset.</p>
+        </div>
+      </div>
+
+      <p class="note mt-10 max-w-4xl">The Company's active pipeline is disclosed in its Q4 &amp; FY26 investor presentation. Project details and timelines are indicative; none of the projects on the pipeline are RERA‑registered as of date. This page does not constitute an offer, invitation or solicitation to purchase any property.</p>
+    </div>
+  </section>
+
+  <!-- =========== EIGHT STRENGTHS =========== -->
+  <section class="bg-paper py-28">
+    <div class="container-wide reveal">
+      <div class="section-head mb-16">
+        <div class="section-numeral">— 04</div>
+        <div>
+          <div class="eyebrow">Investment Thesis</div>
+          <h2 class="display text-5xl md:text-6xl mt-2 max-w-3xl">Eight reasons India Homes is emerging as a <em>scalable, high‑growth</em> real‑estate business.</h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-rule">
+        <!-- 01 -->
+        <div class="bg-paper p-8 hover:bg-ivory transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <div class="display text-5xl text-brass">01</div>
+            <div class="eyebrow">Land</div>
+          </div>
+          <h4 class="font-semibold text-ink text-lg mb-2">Strategic land bank</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Significant embedded value with strong monetization potential across Khopoli, Wadala, Matunga and Chembur.</p>
+        </div>
+        <!-- 02 -->
+        <div class="bg-paper p-8 hover:bg-ivory transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <div class="display text-5xl text-brass">02</div>
+            <div class="eyebrow">Value</div>
+          </div>
+          <h4 class="font-semibold text-ink text-lg mb-2">Value unlock through development</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Redevelopment economics turn under‑utilized legacy assets into premium residential and mixed‑use product.</p>
+        </div>
+        <!-- 03 -->
+        <div class="bg-paper p-8 hover:bg-ivory transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <div class="display text-5xl text-brass">03</div>
+            <div class="eyebrow">Pivot</div>
+          </div>
+          <h4 class="font-semibold text-ink text-lg mb-2">Turnaround story</h4>
+          <p class="text-mute text-[14px] leading-relaxed">FY26 marks the decisive shift from stainless‑steel to real estate — debt resolved, JV signed, brand reset.</p>
+        </div>
+        <!-- 04 -->
+        <div class="bg-paper p-8 hover:bg-ivory transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <div class="display text-5xl text-brass">04</div>
+            <div class="eyebrow">People</div>
+          </div>
+          <h4 class="font-semibold text-ink text-lg mb-2">Experienced promoter group</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Two decades of execution, deep local relationships and a delivered portfolio across Mumbai micro‑markets.</p>
+        </div>
+        <!-- 05 -->
+        <div class="bg-paper p-8 hover:bg-ivory transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <div class="display text-5xl text-brass">05</div>
+            <div class="eyebrow">Mix</div>
+          </div>
+          <h4 class="font-semibold text-ink text-lg mb-2">Shift to high‑margin business</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Redevelopment generates structurally higher margins than the previous manufacturing portfolio.</p>
+        </div>
+        <!-- 06 -->
+        <div class="bg-paper p-8 hover:bg-ivory transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <div class="display text-5xl text-brass">06</div>
+            <div class="eyebrow">Assets</div>
+          </div>
+          <h4 class="font-semibold text-ink text-lg mb-2">Integrated asset advantage</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Group ownership of land and execution capability enables faster, more capital‑efficient builds.</p>
+        </div>
+        <!-- 07 -->
+        <div class="bg-paper p-8 hover:bg-ivory transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <div class="display text-5xl text-brass">07</div>
+            <div class="eyebrow">Model</div>
+          </div>
+          <h4 class="font-semibold text-ink text-lg mb-2">Flexible development model</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Mix of direct development, JVs and group‑entity execution — capital‑efficient and risk‑shared.</p>
+        </div>
+        <!-- 08 -->
+        <div class="bg-paper p-8 hover:bg-ivory transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <div class="display text-5xl text-brass">08</div>
+            <div class="eyebrow">Returns</div>
+          </div>
+          <h4 class="font-semibold text-ink text-lg mb-2">Strong investor upside</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Asset‑light, high‑return real‑estate model with a visible launch pipeline and a clean balance sheet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== TWO CTAs · Societies + Investors =========== -->
+  <section class="bg-paper py-0">
+    <div class="grid md:grid-cols-2">
+      <div class="bg-cream p-14 md:p-20">
+        <div class="eyebrow mb-3">For Societies &amp; Landowners</div>
+        <h3 class="display text-4xl md:text-5xl mb-6">Considering redevelopment?</h3>
+        <p class="text-ink-soft text-lg leading-relaxed mb-8 max-w-md">A listed, transparent partner with vetted documentation and a delivered portfolio across Mumbai. We walk you through 33(7), 33(10) and society redevelopment — step by step.</p>
+        <a href="#redevelop" data-page="redevelop" class="nav-link-header btn-dark">Redevelop With Us <i class="fas fa-arrow-right text-[11px]"></i></a>
+      </div>
+      <div class="bg-ink p-14 md:p-20 text-ivory">
+        <div class="eyebrow text-brass-soft mb-3">For Shareholders &amp; Analysts</div>
+        <h3 class="display text-4xl md:text-5xl mb-6 text-ivory">Read the FY26 presentation.</h3>
+        <p class="text-ivory/75 text-lg leading-relaxed mb-8 max-w-md">A full snapshot of the year — financials, the pivot, pipeline, strengths and CSR.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="assets/investor_brief.pdf" target="_blank" class="btn-dark"><i class="far fa-file-pdf"></i> Download</a>
+          <a href="#investors" data-page="investors" class="nav-link-header btn-ghost">Investor Centre</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- =====================================================================
+                                  ABOUT
+====================================================================== -->
+<section id="about" class="page">
+  <div class="bg-ivory pt-24 pb-12">
+    <div class="container-wide">
+      <div class="section-numeral mb-3">— Our Story</div>
+      <h1 class="display text-6xl md:text-7xl max-w-4xl">Seven decades of growth. <em>One Mumbai vision.</em></h1>
+    </div>
+  </div>
+
+  <div class="bg-ivory pb-28">
+    <div class="container-wide grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-6">
+        <img src="assets/about_legacy-vision_desk-flatlay.png" alt="Architectural blueprint and documents" class="w-full" />
+      </div>
+      <div class="md:col-span-6 md:pt-8">
+        <div class="eyebrow mb-4">A Mumbai‑focused redeveloper</div>
+        <p class="text-lg text-ink-soft leading-relaxed mb-5">
+          India Homes Limited (formerly India Steel Works Limited) unlocks value in land‑scarce urban locations by transforming legacy assets into premium residential and mixed‑use developments.
+        </p>
+        <p class="text-lg text-ink-soft leading-relaxed mb-8">
+          With over two decades of promoter experience on the ground, we combine institutional capital with local partnerships to efficiently manage approvals, tenant rehabilitation, and project delivery — end‑to‑end.
+        </p>
+        <div class="grid grid-cols-3 border-t border-rule pt-8">
+          <div>
+            <div class="display text-5xl text-ink">20<span class="text-brass">+</span></div>
+            <div class="stat-label mt-2">Years of experience</div>
+          </div>
+          <div>
+            <div class="display text-5xl text-ink">04</div>
+            <div class="stat-label mt-2">Pipeline projects</div>
+          </div>
+          <div>
+            <div class="display text-5xl text-ink">04</div>
+            <div class="stat-label mt-2">Mumbai micro‑markets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Journey -->
+  <div class="bg-paper py-28">
+    <div class="container-wide">
+      <div class="section-head mb-16">
+        <div class="section-numeral">— Journey</div>
+        <div>
+          <div class="eyebrow">1950s → 2020s</div>
+          <h2 class="display text-5xl md:text-6xl mt-2">Strategic phases, <em>key milestones.</em></h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-7 gap-8 relative">
+        <div class="hidden md:block absolute top-9 left-0 right-0 tl-line" style="background: linear-gradient(90deg, rgba(168,129,66,0), rgba(168,129,66,0.4), rgba(168,129,66,0));"></div>
+        <div class="relative md:pt-16"><div class="hidden md:block absolute top-[34px] left-2 tl-dot"></div><div class="font-mono text-[11px] tracking-widest text-brass mb-1">1950s</div><div class="display text-2xl mb-1">Foundation</div><p class="text-mute text-sm">Group origins; industrial foundation laid.</p></div>
+        <div class="relative md:pt-16"><div class="hidden md:block absolute top-[34px] left-2 tl-dot"></div><div class="font-mono text-[11px] tracking-widest text-brass mb-1">1970s</div><div class="display text-2xl mb-1">Manufacturing</div><p class="text-mute text-sm">Stainless‑steel operations established.</p></div>
+        <div class="relative md:pt-16"><div class="hidden md:block absolute top-[34px] left-2 tl-dot"></div><div class="font-mono text-[11px] tracking-widest text-brass mb-1">1980s</div><div class="display text-2xl mb-1">Strategic shift</div><p class="text-mute text-sm">Diversification and capability building.</p></div>
+        <div class="relative md:pt-16"><div class="hidden md:block absolute top-[34px] left-2 tl-dot"></div><div class="font-mono text-[11px] tracking-widest text-brass mb-1">1990s</div><div class="display text-2xl mb-1">Expansion</div><p class="text-mute text-sm">Capacity and footprint expanded.</p></div>
+        <div class="relative md:pt-16"><div class="hidden md:block absolute top-[34px] left-2 tl-dot"></div><div class="font-mono text-[11px] tracking-widest text-brass mb-1">2000s</div><div class="display text-2xl mb-1">Integration</div><p class="text-mute text-sm">Backward integration; promoter group enters real estate.</p></div>
+        <div class="relative md:pt-16"><div class="hidden md:block absolute top-[34px] left-2 tl-dot"></div><div class="font-mono text-[11px] tracking-widest text-brass mb-1">2010s</div><div class="display text-2xl mb-1">Challenges</div><p class="text-mute text-sm">Sector headwinds; strategic review undertaken.</p></div>
+        <div class="relative md:pt-16"><div class="hidden md:block absolute top-[34px] left-2 tl-dot"></div><div class="font-mono text-[11px] tracking-widest text-brass mb-1">2020s</div><div class="display text-2xl mb-1">Transformation</div><p class="text-mute text-sm">FY26 — rebranded to India Homes Limited; pivot complete.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+                                  LEADERSHIP
+====================================================================== -->
+<section id="leadership" class="page bg-ivory py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Leadership</div>
+    <h1 class="display text-6xl md:text-7xl mb-4">Guided by experience. <em>Driven by execution.</em></h1>
+    <p class="text-ink-soft text-lg max-w-2xl mb-20">A Board and management team combining decades of industrial operating experience with deep Mumbai real‑estate relationships.</p>
+
+    <h3 class="eyebrow mb-6">Board of Directors</h3>
+    <div class="grid md:grid-cols-3 gap-px bg-rule mb-24">
+      <div class="bg-paper p-10">
+        <div class="display text-3xl">Sudhirkumar H Gupta</div>
+        <div class="eyebrow mt-1 mb-4">Executive Chairman</div>
+        <p class="text-mute text-[15px] leading-relaxed">A leader with decades of industrial experience, guiding the Company's strategic pivot into Mumbai real estate redevelopment.</p>
+      </div>
+      <div class="bg-paper p-10">
+        <div class="display text-3xl">Varun S. Gupta</div>
+        <div class="eyebrow mt-1 mb-4">Managing Director</div>
+        <p class="text-mute text-[15px] leading-relaxed">Driving operational execution and forging strategic partnerships — including the landmark Lloyds Group joint venture at Khopoli.</p>
+      </div>
+      <div class="bg-paper p-10">
+        <div class="display text-3xl">Siddharth S. Gupta</div>
+        <div class="eyebrow mt-1 mb-4">Joint Managing Director</div>
+        <p class="text-mute text-[15px] leading-relaxed">Focused on business development, land acquisition and expanding the Company's footprint across Mumbai's high‑growth micro‑markets.</p>
+      </div>
+    </div>
+
+    <h3 class="eyebrow mb-6">Key Management</h3>
+    <div class="grid md:grid-cols-3 gap-px bg-rule">
+      <div class="bg-paper p-8">
+        <div class="display text-2xl">Nilesh Matkar</div>
+        <div class="eyebrow mt-1 mb-3">Chief Financial Officer</div>
+        <p class="text-mute text-sm leading-relaxed">Financial planning and capital management — fiscal health across all projects.</p>
+      </div>
+      <div class="bg-paper p-8">
+        <div class="display text-2xl">Dilip Maharana</div>
+        <div class="eyebrow mt-1 mb-3">Company Secretary</div>
+        <p class="text-mute text-sm leading-relaxed">Corporate governance and adherence to all regulatory compliances.</p>
+      </div>
+      <div class="bg-paper p-8">
+        <div class="display text-2xl">Rajendra Patkar</div>
+        <div class="eyebrow mt-1 mb-3">Head, Business Development</div>
+        <p class="text-mute text-sm leading-relaxed">Land acquisition strategy and project approvals liaison.</p>
+      </div>
+      <div class="bg-paper p-8">
+        <div class="display text-2xl">Ashwini Pawar</div>
+        <div class="eyebrow mt-1 mb-3">Legal Head</div>
+        <p class="text-mute text-sm leading-relaxed">Legal frameworks, due diligence, and contract integrity.</p>
+      </div>
+      <div class="bg-paper p-8">
+        <div class="display text-2xl">Sohan Jaiswar</div>
+        <div class="eyebrow mt-1 mb-3">Finance Manager</div>
+        <p class="text-mute text-sm leading-relaxed">Day‑to‑day financial operations, reporting and analysis.</p>
+      </div>
+      <div class="bg-paper p-8">
+        <div class="display text-2xl">Purnima Anthony</div>
+        <div class="eyebrow mt-1 mb-3">Sales &amp; Marketing Head</div>
+        <p class="text-mute text-sm leading-relaxed">Market outreach and customer engagement strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+                                  SUSTAINABILITY
+====================================================================== -->
+<section id="sustainability" class="page bg-paper py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— ESG &amp; CSR</div>
+    <h1 class="display text-6xl md:text-7xl mb-4">Building <em>responsibly.</em></h1>
+    <p class="text-ink-soft text-lg max-w-2xl mb-16">Our legacy is defined by how we build. We integrate Environmental, Social and Governance principles into every project.</p>
+
+    <div class="grid md:grid-cols-3 gap-px bg-rule mb-24">
+      <div class="bg-paper p-10">
+        <div class="display text-5xl text-brass mb-4">E</div>
+        <h3 class="display text-3xl mb-2">Environmental</h3>
+        <p class="text-mute leading-relaxed">Green materials, water conservation and sustainable site management across all developments.</p>
+      </div>
+      <div class="bg-paper p-10">
+        <div class="display text-5xl text-brass mb-4">S</div>
+        <h3 class="display text-3xl mb-2">Social</h3>
+        <p class="text-mute leading-relaxed">Community investment, workforce safety, and inclusive spaces — designed to serve the neighbourhoods we redevelop.</p>
+      </div>
+      <div class="bg-paper p-10">
+        <div class="display text-5xl text-brass mb-4">G</div>
+        <h3 class="display text-3xl mb-2">Governance</h3>
+        <p class="text-mute leading-relaxed">Transparency, ethics and high standards of corporate conduct.</p>
+      </div>
+    </div>
+
+    <!-- CSR Flagship -->
+    <div class="grid md:grid-cols-12 gap-12 items-center bg-ivory p-10 md:p-16">
+      <div class="md:col-span-7">
+        <div class="eyebrow mb-3">Flagship CSR Initiative</div>
+        <h2 class="display text-4xl md:text-5xl mb-6">Shri Banshidhar Aggarwal School, <em>Wadala.</em></h2>
+        <p class="text-ink-soft text-lg leading-relaxed mb-4">Our promoters are actively involved in running Shri Banshidhar Aggarwal School in Wadala — providing quality education and contributing directly to community development in one of our core micro‑markets.</p>
+        <ul class="space-y-3 mt-6 text-ink-soft">
+          <li class="flex gap-3"><span class="text-brass font-mono">01.</span><span>Financial assistance to students from economically weaker sections.</span></li>
+          <li class="flex gap-3"><span class="text-brass font-mono">02.</span><span>Regular distribution of books, notebooks and study materials.</span></li>
+          <li class="flex gap-3"><span class="text-brass font-mono">03.</span><span>Merit scholarships for academically bright students.</span></li>
+          <li class="flex gap-3"><span class="text-brass font-mono">04.</span><span>Blood donation camps and community health initiatives.</span></li>
+        </ul>
+        <a href="https://bansidharschool.com" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-3 text-brass hover:text-ink font-mono text-[12px] tracking-widest uppercase">
+          <span class="hairline w-12 inline-block"></span> Visit bansidharschool.com <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
+      </div>
+      <div class="md:col-span-5">
+        <div class="aspect-[4/5] photo-ph">[ photograph · Shri Banshidhar Aggarwal School, Wadala ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+                                  PORTFOLIO
+====================================================================== -->
+<section id="projects" class="page bg-ivory py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Portfolio</div>
+    <h1 class="display text-6xl md:text-7xl mb-4">A delivered legacy. <em>An active future.</em></h1>
+    <p class="text-ink-soft text-lg max-w-2xl mb-16">Completed developments executed by the promoter group, and the current footprint disclosed in our investor materials.</p>
+
+    <!-- Promoter Group Completed Portfolio -->
+    <div class="mb-24">
+      <div class="flex items-baseline justify-between flex-wrap gap-4 mb-8">
+        <h2 class="eyebrow">Promoter Group · Completed Portfolio</h2>
+        <span class="font-mono text-[11px] text-mute tracking-widest uppercase">3 projects · 3,75,000 sq ft delivered</span>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-rule">
+        <article class="bg-paper">
+          <div class="aspect-[4/3] bg-cream overflow-hidden"><img src="assets/completed_the-link_andheri.png" class="w-full h-full object-cover" alt="The Link, Andheri"/></div>
+          <div class="p-8">
+            <div class="eyebrow mb-2">Andheri · Completed 2011</div>
+            <h3 class="display text-3xl mb-3">The Link</h3>
+            <p class="text-mute text-sm leading-relaxed mb-5">A landmark mixed‑use redevelopment in Andheri — among the larger early projects in the promoter group's portfolio.</p>
+            <dl class="border-t border-rule pt-4 text-[12px] space-y-1.5">
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Construction Area</dt><dd class="text-ink">1,00,000 sq ft</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Period</dt><dd class="text-ink">Feb 2007 – Jan 2011</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="bg-paper">
+          <div class="aspect-[4/3] bg-cream overflow-hidden"><img src="assets/completed_emgee-greens_wadala.png" class="w-full h-full object-cover" alt="Emgee Greens, Wadala"/></div>
+          <div class="p-8">
+            <div class="eyebrow mb-2">Wadala · Completed 2007</div>
+            <h3 class="display text-3xl mb-3">Emgee Greens</h3>
+            <p class="text-mute text-sm leading-relaxed mb-5">A residential redevelopment in Wadala — among the group's largest projects by construction area and an early footprint in a core micro‑market.</p>
+            <dl class="border-t border-rule pt-4 text-[12px] space-y-1.5">
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Construction Area</dt><dd class="text-ink">1,50,000 sq ft</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Period</dt><dd class="text-ink">Mar 2002 – Oct 2007</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="bg-paper">
+          <div class="aspect-[4/3] bg-cream overflow-hidden"><img src="assets/completed_aden-court_matunga.png" class="w-full h-full object-cover" alt="Aden Court, Matunga"/></div>
+          <div class="p-8">
+            <div class="eyebrow mb-2">Matunga · Completed 2023</div>
+            <h3 class="display text-3xl mb-3">Aden Court</h3>
+            <p class="text-mute text-sm leading-relaxed mb-5">A premium residential redevelopment in Matunga delivered in 2023 — the most recent completion in the promoter group's portfolio.</p>
+            <dl class="border-t border-rule pt-4 text-[12px] space-y-1.5">
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Construction Area</dt><dd class="text-ink">1,25,000 sq ft</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Period</dt><dd class="text-ink">Jan 2018 – Dec 2023</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+      <p class="note mt-8 max-w-4xl">Completed projects above were executed by the promoter group; some may have been developed via group entities rather than India Homes Limited directly.</p>
+    </div>
+
+    <!-- Active footprint -->
+    <div class="mb-12">
+      <div class="flex items-baseline justify-between flex-wrap gap-4 mb-8">
+        <h2 class="eyebrow">Current Footprint · As disclosed to BSE</h2>
+        <a href="assets/investor_brief.pdf" target="_blank" class="font-mono text-[11px] tracking-widest uppercase text-brass hover:text-ink">Q4 &amp; FY26 Presentation →</a>
+      </div>
+
+      <div class="bg-paper p-10 md:p-14 border border-rule">
+        <p class="text-ink-soft text-lg leading-relaxed max-w-3xl mb-10">As disclosed in the Company's Q4 &amp; FY26 investor presentation, India Homes is active across four Mumbai micro‑markets and the broader Mumbai Metropolitan Region. None of the projects on the active pipeline is RERA‑registered as of date; the disclosures below are reproduced from public stock‑exchange filings and are not intended as an offer, invitation or solicitation to purchase any property.</p>
+
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+          <div class="border-l border-brass pl-6">
+            <div class="eyebrow mb-2">JV · Lloyds Group · Khopoli, MMR</div>
+            <div class="display text-3xl text-ink mb-2">Company‑owned land · multi‑phase</div>
+            <p class="text-mute text-[14px] leading-relaxed">A landmark, multi‑phase development of the Company's prime Khopoli land bank, executed in joint venture with the Lloyds Group via Lloyds IHL LLP. Development Agreement executed July 2025.</p>
+          </div>
+          <div class="border-l border-brass pl-6">
+            <div class="eyebrow mb-2">Wadala · Island City</div>
+            <div class="display text-3xl text-ink mb-2">Residential redevelopment</div>
+            <p class="text-mute text-[14px] leading-relaxed">A premium residential project in a core micro‑market where the promoter group has delivered multiple landmark assets.</p>
+          </div>
+          <div class="border-l border-brass pl-6">
+            <div class="eyebrow mb-2">Matunga · Island City</div>
+            <div class="display text-3xl text-ink mb-2">Boutique redevelopment</div>
+            <p class="text-mute text-[14px] leading-relaxed">A boutique residential redevelopment in a heritage Mumbai neighbourhood with deeply embedded demand.</p>
+          </div>
+          <div class="border-l border-brass pl-6">
+            <div class="eyebrow mb-2">Chembur · Eastern Suburbs</div>
+            <div class="display text-3xl text-ink mb-2">Large‑format redevelopment</div>
+            <p class="text-mute text-[14px] leading-relaxed">A high‑density redevelopment in one of Mumbai's most established residential micro‑markets with strong absorption fundamentals.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-rule grid md:grid-cols-4 gap-8">
+          <div><div class="stat-num">04</div><div class="stat-label mt-2">Projects in pipeline</div></div>
+          <div><div class="stat-num">04</div><div class="stat-label mt-2">Mumbai micro‑markets</div></div>
+          <div><div class="stat-num">20<span class="text-brass">+</span></div><div class="stat-label mt-2">Years promoter experience</div></div>
+          <div><div class="stat-num">FY26</div><div class="stat-label mt-2">Pivot completed</div></div>
+        </div>
+      </div>
+
+      <p class="note mt-8 max-w-5xl"><strong>RERA disclaimer.</strong> As of the date of this page, none of the projects on the Company's active pipeline is registered under the Real Estate (Regulation and Development) Act, 2016. The information presented above is reproduced from publicly‑filed investor disclosures and is provided for the benefit of shareholders, analysts and other stakeholders. It does not constitute an advertisement, offer or invitation to purchase, book, sell or solicit any plot, apartment, building or other interest in any project. Specific project details, plans, sizes, amenities, prices and timelines will be disclosed only upon RERA registration of the respective project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+                              REDEVELOP WITH US
+====================================================================== -->
+<section id="redevelop" class="page">
+
+  <!-- Hero strip -->
+  <div class="bg-ink text-ivory pt-24 pb-20 relative overflow-hidden grain">
+    <div class="container-wide relative z-10">
+      <div class="section-numeral !text-brass-soft mb-3">— Redevelop With Us</div>
+      <h1 class="display text-6xl md:text-7xl lg:text-[96px] max-w-5xl text-ivory">A listed partner for the work of <em class="text-brass-soft">renewing your home.</em></h1>
+      <p class="mt-8 text-ivory/80 text-lg md:text-xl max-w-3xl leading-relaxed font-light">For housing societies, cessed‑building tenants and landowners across Mumbai who are considering redevelopment — a BSE‑listed counterparty, vetted documentation, and a process honed across two decades of completed projects.</p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#contact" data-page="contact" class="nav-link-header btn-dark">Speak to our team <i class="fas fa-arrow-right text-[11px]"></i></a>
+        <a href="#redevelop-process" class="btn-ghost">See the process</a>
+      </div>
+    </div>
+    <!-- Decorative numbers -->
+    <div aria-hidden="true" class="absolute right-0 bottom-0 display text-[280px] text-ivory/[0.03] leading-none select-none pointer-events-none">33</div>
+  </div>
+
+  <!-- Trust pillars -->
+  <div class="bg-ivory py-28">
+    <div class="container-wide">
+      <div class="section-head mb-16">
+        <div class="section-numeral">— Why us</div>
+        <div>
+          <div class="eyebrow">Trust, in writing</div>
+          <h2 class="display text-5xl md:text-6xl mt-2 max-w-4xl">Six commitments your <em>society and family</em> can hold us to.</h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-rule">
+        <div class="bg-paper p-10">
+          <div class="display text-5xl text-brass mb-4">01</div>
+          <h4 class="display text-2xl text-ink mb-2">A BSE‑listed counterparty</h4>
+          <p class="text-mute text-[14px] leading-relaxed">India Homes Limited is publicly listed since 1987 (BSE: 513361). You contract with an audited, regulated company — not a single‑purpose vehicle with no public footprint.</p>
+        </div>
+        <div class="bg-paper p-10">
+          <div class="display text-5xl text-brass mb-4">02</div>
+          <h4 class="display text-2xl text-ink mb-2">Clean balance sheet</h4>
+          <p class="text-mute text-[14px] leading-relaxed">FY26 closed with bank borrowings fully repaid and the ARC One‑Time Settlement concluded. Funding certainty matters — for rent, for timelines, and for trust.</p>
+        </div>
+        <div class="bg-paper p-10">
+          <div class="display text-5xl text-brass mb-4">03</div>
+          <h4 class="display text-2xl text-ink mb-2">Vetted documentation</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Our Development Agreement and Permanent Alternate Accommodation Agreement (PAA) templates have been reviewed by senior Mumbai real‑estate counsel and align with the 2019 Society Redevelopment GR.</p>
+        </div>
+        <div class="bg-paper p-10">
+          <div class="display text-5xl text-brass mb-4">04</div>
+          <h4 class="display text-2xl text-ink mb-2">Architects you'd choose anyway</h4>
+          <p class="text-mute text-[14px] leading-relaxed">We work with a curated panel of Mumbai's most respected architects, structural consultants and MEP firms — selected for craft, code knowledge, and on‑time delivery.</p>
+        </div>
+        <div class="bg-paper p-10">
+          <div class="display text-5xl text-brass mb-4">05</div>
+          <h4 class="display text-2xl text-ink mb-2">Delivered, not promised</h4>
+          <p class="text-mute text-[14px] leading-relaxed">The promoter group has completed projects in Andheri (2011), Wadala (2007) and Matunga (2023) — across the same micro‑markets we work in today.</p>
+        </div>
+        <div class="bg-paper p-10">
+          <div class="display text-5xl text-brass mb-4">06</div>
+          <h4 class="display text-2xl text-ink mb-2">Rent on time, every month</h4>
+          <p class="text-mute text-[14px] leading-relaxed">Permanent alternate accommodation rent is paid via standing instruction on the first business day of every month, with corpus and brokerage front‑loaded at vacating possession.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process: 3 redevelopment types as tabs -->
+  <div id="redevelop-process" class="bg-paper py-28">
+    <div class="container-wide">
+      <div class="section-head mb-12">
+        <div class="section-numeral">— Process</div>
+        <div>
+          <div class="eyebrow">Three routes, one rigorous method</div>
+          <h2 class="display text-5xl md:text-6xl mt-2 max-w-4xl">Step by step. <em>Plain language.</em></h2>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="border-b border-rule mb-12">
+        <div class="flex flex-wrap gap-1" role="tablist">
+          <button class="redev-tab active px-6 py-4 font-mono text-[12px] tracking-widest uppercase border-b-2 transition" data-tab="t-society">Society Redevelopment</button>
+          <button class="redev-tab px-6 py-4 font-mono text-[12px] tracking-widest uppercase border-b-2 border-transparent text-mute hover:text-ink transition" data-tab="t-33-7">DCPR 33(7) · Cessed Buildings</button>
+          <button class="redev-tab px-6 py-4 font-mono text-[12px] tracking-widest uppercase border-b-2 border-transparent text-mute hover:text-ink transition" data-tab="t-33-10">DCPR 33(10) · Slum / SRA</button>
+        </div>
+      </div>
+
+      <!-- Society Redevelopment -->
+      <div class="redev-pane" id="t-society">
+        <div class="grid md:grid-cols-12 gap-12 mb-12">
+          <div class="md:col-span-4">
+            <div class="eyebrow mb-2">Co‑operative Housing Society</div>
+            <h3 class="display text-4xl text-ink mb-4">Society Redevelopment</h3>
+            <p class="text-mute leading-relaxed">For registered Co‑operative Housing Societies in Mumbai, governed by the 79(A) directives of the Maharashtra Co‑operative Societies Act and the 2019 Government Resolution that sets out the model procedure.</p>
+            <dl class="mt-6 border-t border-rule pt-5 text-[13px] space-y-2">
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Governed by</dt><dd class="text-ink">79A GR, 4 Jul 2019</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Consent threshold</dt><dd class="text-ink">≥ 51% to initiate · ≥ 75% to confirm</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Typical timeline</dt><dd class="text-ink">36–48 months from DA</dd></div>
+            </dl>
+          </div>
+          <div class="md:col-span-8">
+            <ol class="space-y-px bg-rule">
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">01</div><div><div class="display text-xl text-ink mb-1">Special General Body Meeting · initiating resolution</div><p class="text-mute text-sm leading-relaxed">Society convenes an SGBM with prescribed notice. A resolution to explore redevelopment is passed with at least 51% of total members of the society in attendance and voting in favour.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">02</div><div><div class="display text-xl text-ink mb-1">Appoint a Project Management Consultant (PMC)</div><p class="text-mute text-sm leading-relaxed">An empanelled, independent PMC (typically an architect) is appointed to prepare the feasibility report, draft the tender and supervise the developer‑selection process.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">03</div><div><div class="display text-xl text-ink mb-1">Tender · transparent developer selection</div><p class="text-mute text-sm leading-relaxed">The PMC issues a tender on terms approved by the General Body. Sealed bids are opened in the presence of members; commercials, carpet area entitlement and corpus are compared on a like‑for‑like basis.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">04</div><div><div class="display text-xl text-ink mb-1">Confirming Special General Body Meeting · LOI</div><p class="text-mute text-sm leading-relaxed">The shortlisted developer (India Homes) is confirmed by at least 75% of the General Body. A Letter of Intent and Term Sheet are signed; the District Deputy Registrar is intimated.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">05</div><div><div class="display text-xl text-ink mb-1">Development Agreement &amp; Power of Attorney</div><p class="text-mute text-sm leading-relaxed">A registered Development Agreement is executed between the Society and India Homes, along with an Irrevocable Power of Attorney for execution of approvals only — not for sale of members' entitlements.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">06</div><div><div class="display text-xl text-ink mb-1">Individual Permanent Alternate Accommodation Agreement (PAA)</div><p class="text-mute text-sm leading-relaxed">Each member signs an individual PAA with India Homes, recording new‑flat carpet area, rent, brokerage, corpus, shifting allowance and the schedule of handover.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">07</div><div><div class="display text-xl text-ink mb-1">Approvals · IOD &amp; Commencement Certificate</div><p class="text-mute text-sm leading-relaxed">Architect files plans with MCGM; Intimation of Disapproval (IOD) and Commencement Certificate (CC) are obtained. RERA registration is filed once plinth CC is in hand.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">08</div><div><div class="display text-xl text-ink mb-1">Vacating possession · rent commences</div><p class="text-mute text-sm leading-relaxed">Members vacate against handover of cheques for rent, brokerage and corpus. Monthly rent runs by standing instruction until possession of the new flat.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">09</div><div><div class="display text-xl text-ink mb-1">Demolition &amp; construction</div><p class="text-mute text-sm leading-relaxed">Demolition, excavation, structure and finishing. Monthly progress is shared with the Society and the PMC. Quality audits are conducted at key construction milestones.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">10</div><div><div class="display text-xl text-ink mb-1">Occupation Certificate &amp; possession</div><p class="text-mute text-sm leading-relaxed">On receipt of the Occupation Certificate (OC), members are handed over their new flats along with the agreed corpus. Society is reformed with the new building's members.</p></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- 33(7) Cessed -->
+      <div class="redev-pane hidden" id="t-33-7">
+        <div class="grid md:grid-cols-12 gap-12 mb-12">
+          <div class="md:col-span-4">
+            <div class="eyebrow mb-2">Cessed Buildings · Island City</div>
+            <h3 class="display text-4xl text-ink mb-4">DCPR 33(7)</h3>
+            <p class="text-mute leading-relaxed">For cessed (pre‑1969) buildings in the Island City of Mumbai, classified by MHADA Repair Board as Category A, B or C. Provides higher FSI and incentive FSI for tenant rehabilitation.</p>
+            <dl class="mt-6 border-t border-rule pt-5 text-[13px] space-y-2">
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Governed by</dt><dd class="text-ink">DCPR 2034, Reg. 33(7)</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Consent threshold</dt><dd class="text-ink">≥ 51% of eligible tenants</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Approving authority</dt><dd class="text-ink">MHADA · MCGM</dd></div>
+            </dl>
+          </div>
+          <div class="md:col-span-8">
+            <ol class="space-y-px bg-rule">
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">01</div><div><div class="display text-xl text-ink mb-1">Building category &amp; cess verification</div><p class="text-mute text-sm leading-relaxed">MHADA Repair Board categorisation (A / B / C), cess records and property card are pulled and verified. Structural audit assesses suitability for redevelopment.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">02</div><div><div class="display text-xl text-ink mb-1">Tenant census &amp; eligibility</div><p class="text-mute text-sm leading-relaxed">An eligibility list is prepared from cess receipts, ration cards and possession evidence. Each tenant's existing carpet area is measured and recorded.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">03</div><div><div class="display text-xl text-ink mb-1">Developer appointment · tenants' resolution</div><p class="text-mute text-sm leading-relaxed">A meeting of all eligible tenants resolves to appoint India Homes as developer with at least 51% consent. Letter of Intent and Term Sheet are signed.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">04</div><div><div class="display text-xl text-ink mb-1">MHADA NOC &amp; Annexures</div><p class="text-mute text-sm leading-relaxed">Application is filed with MHADA Repair Board for the Section 79A1 NOC, along with eligibility annexures and architect's feasibility report.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">05</div><div><div class="display text-xl text-ink mb-1">PAA with each tenant · registered</div><p class="text-mute text-sm leading-relaxed">A registered Permanent Alternate Accommodation Agreement is executed with each eligible tenant, recording new‑tenement carpet area, rent, corpus and shifting terms.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">06</div><div><div class="display text-xl text-ink mb-1">IOD · Commencement Certificate</div><p class="text-mute text-sm leading-relaxed">Plans are approved by MCGM Building Proposal department; IOD and CC are obtained. RERA registration follows plinth CC.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">07</div><div><div class="display text-xl text-ink mb-1">Tenants vacate · rent commences</div><p class="text-mute text-sm leading-relaxed">Tenants vacate the old building against handover of rent, brokerage, corpus cheques and shifting allowance. Rent runs monthly until possession of the new tenement.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">08</div><div><div class="display text-xl text-ink mb-1">Demolition, construction &amp; quality audit</div><p class="text-mute text-sm leading-relaxed">Construction proceeds with milestone‑based quality audits. Rehab tenements are built and finished to the specifications recorded in the PAA.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">09</div><div><div class="display text-xl text-ink mb-1">OC &amp; permanent possession</div><p class="text-mute text-sm leading-relaxed">Occupation Certificate is obtained; possession of new tenements is handed over to tenants along with corpus. Cess is discontinued; a co‑operative housing society of new owners is formed.</p></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- 33(10) SRA -->
+      <div class="redev-pane hidden" id="t-33-10">
+        <div class="grid md:grid-cols-12 gap-12 mb-12">
+          <div class="md:col-span-4">
+            <div class="eyebrow mb-2">Slum Rehabilitation · SRA</div>
+            <h3 class="display text-4xl text-ink mb-4">DCPR 33(10)</h3>
+            <p class="text-mute leading-relaxed">For notified slums on private, government or municipal land under the Slum Rehabilitation Authority (SRA). Eligible slum dwellers receive free rehab tenements; developer is granted incentive FSI for free‑sale.</p>
+            <dl class="mt-6 border-t border-rule pt-5 text-[13px] space-y-2">
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Governed by</dt><dd class="text-ink">DCPR 2034, Reg. 33(10)</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Consent threshold</dt><dd class="text-ink">≥ 51% of eligible slum dwellers</dd></div>
+              <div class="flex justify-between"><dt class="text-mute uppercase font-mono tracking-wider text-[10px]">Approving authority</dt><dd class="text-ink">Slum Rehabilitation Authority</dd></div>
+            </dl>
+          </div>
+          <div class="md:col-span-8">
+            <ol class="space-y-px bg-rule">
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">01</div><div><div class="display text-xl text-ink mb-1">Eligibility survey · Annexure II</div><p class="text-mute text-sm leading-relaxed">SRA Competent Authority conducts an eligibility survey of slum dwellers based on the cut‑off date and documentary proof. The verified eligibility list is published as Annexure II.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">02</div><div><div class="display text-xl text-ink mb-1">Society formation among slum dwellers</div><p class="text-mute text-sm leading-relaxed">Eligible dwellers form a proposed co‑operative housing society and obtain registration under the Maharashtra Co‑operative Societies Act.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">03</div><div><div class="display text-xl text-ink mb-1">Developer appointment · ≥ 51% consent</div><p class="text-mute text-sm leading-relaxed">A General Body meeting appoints India Homes as developer with at least 51% consent of eligible members. Individual consent forms are collected with photographs and identification.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">04</div><div><div class="display text-xl text-ink mb-1">Development Agreement &amp; PAA with each member</div><p class="text-mute text-sm leading-relaxed">A registered Development Agreement is executed with the Society, and individual PAAs are executed with each eligible member recording the 27.88 sq m (300 sq ft) carpet area entitlement and free rehab terms.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">05</div><div><div class="display text-xl text-ink mb-1">SRA Letter of Intent</div><p class="text-mute text-sm leading-relaxed">SRA issues the Letter of Intent (LOI) on satisfaction of eligibility and project viability, prescribing rehab and free‑sale components, FSI and conditions of approval.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">06</div><div><div class="display text-xl text-ink mb-1">Intimation of Approval &amp; transit camp</div><p class="text-mute text-sm leading-relaxed">SRA issues IOA. India Homes constructs or arranges transit accommodation. Eligible slum dwellers shift to transit and receive monthly rent until possession.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">07</div><div><div class="display text-xl text-ink mb-1">Construction · rehab + free sale</div><p class="text-mute text-sm leading-relaxed">Rehab and free‑sale buildings are constructed. Rehab buildings are typically completed and handed over before free‑sale buildings, in line with SRA conditions.</p></div></li>
+              <li class="bg-paper grid grid-cols-[64px_1fr] gap-6 p-6"><div class="display text-3xl text-brass">08</div><div><div class="display text-xl text-ink mb-1">Occupation Certificate &amp; allotment</div><p class="text-mute text-sm leading-relaxed">On OC, permanent allotment letters are issued by SRA. Members take possession of their rehab tenements; the new co‑operative housing society is constituted.</p></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Document Library -->
+  <div class="bg-ivory py-28">
+    <div class="container-wide">
+      <div class="section-head mb-16">
+        <div class="section-numeral">— Document Library</div>
+        <div>
+          <div class="eyebrow">Sample documents · for review</div>
+          <h2 class="display text-5xl md:text-6xl mt-2 max-w-4xl">Read the paperwork <em>before you sign.</em></h2>
+        </div>
+      </div>
+
+      <p class="text-ink-soft text-lg leading-relaxed max-w-3xl mb-10">Specimen versions of the agreements your society or family will be asked to sign with India Homes. Each is a working template — final terms are negotiated in good faith on every project, with the support of independent counsel.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-rule">
+        <a href="#contact" data-page="contact" class="nav-link-header bg-paper p-8 hover:bg-cream/50 transition block">
+          <div class="flex items-start justify-between mb-5">
+            <i class="far fa-file-pdf text-brass text-3xl"></i>
+            <span class="font-mono text-[10px] tracking-widest uppercase text-mute">v2026.1 · 28 pages</span>
+          </div>
+          <div class="eyebrow mb-1">01 · Specimen</div>
+          <div class="display text-2xl text-ink mb-2">Development Agreement</div>
+          <p class="text-mute text-sm leading-relaxed">Master agreement between the Society and India Homes — scope, consideration, timelines, corpus, default and dispute resolution.</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-brass font-mono text-[11px] tracking-widest uppercase">Request copy <i class="fas fa-arrow-right text-[10px]"></i></span>
+        </a>
+        <a href="#contact" data-page="contact" class="nav-link-header bg-paper p-8 hover:bg-cream/50 transition block">
+          <div class="flex items-start justify-between mb-5">
+            <i class="far fa-file-pdf text-brass text-3xl"></i>
+            <span class="font-mono text-[10px] tracking-widest uppercase text-mute">v2026.1 · 14 pages</span>
+          </div>
+          <div class="eyebrow mb-1">02 · Specimen</div>
+          <div class="display text-2xl text-ink mb-2">Permanent Alternate Accommodation Agreement</div>
+          <p class="text-mute text-sm leading-relaxed">Individual agreement with each member or tenant — new carpet area, rent, brokerage, corpus, shifting allowance and handover schedule.</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-brass font-mono text-[11px] tracking-widest uppercase">Request copy <i class="fas fa-arrow-right text-[10px]"></i></span>
+        </a>
+        <a href="#contact" data-page="contact" class="nav-link-header bg-paper p-8 hover:bg-cream/50 transition block">
+          <div class="flex items-start justify-between mb-5">
+            <i class="far fa-file-alt text-brass text-3xl"></i>
+            <span class="font-mono text-[10px] tracking-widest uppercase text-mute">v2026.1 · 8 pages</span>
+          </div>
+          <div class="eyebrow mb-1">03 · Specimen</div>
+          <div class="display text-2xl text-ink mb-2">Term Sheet &amp; Letter of Intent</div>
+          <p class="text-mute text-sm leading-relaxed">Pre‑DA document signed after tender — captures key commercial terms before the full DA is drafted.</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-brass font-mono text-[11px] tracking-widest uppercase">Request copy <i class="fas fa-arrow-right text-[10px]"></i></span>
+        </a>
+        <a href="#contact" data-page="contact" class="nav-link-header bg-paper p-8 hover:bg-cream/50 transition block">
+          <div class="flex items-start justify-between mb-5">
+            <i class="far fa-file-alt text-brass text-3xl"></i>
+            <span class="font-mono text-[10px] tracking-widest uppercase text-mute">Checklist</span>
+          </div>
+          <div class="eyebrow mb-1">04 · Reference</div>
+          <div class="display text-2xl text-ink mb-2">Society Pre‑DA Document Checklist</div>
+          <p class="text-mute text-sm leading-relaxed">The set of society documents (property card, conveyance, audited accounts, member registers) needed before a DA can be drafted.</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-brass font-mono text-[11px] tracking-widest uppercase">Request copy <i class="fas fa-arrow-right text-[10px]"></i></span>
+        </a>
+        <a href="#contact" data-page="contact" class="nav-link-header bg-paper p-8 hover:bg-cream/50 transition block">
+          <div class="flex items-start justify-between mb-5">
+            <i class="far fa-file-alt text-brass text-3xl"></i>
+            <span class="font-mono text-[10px] tracking-widest uppercase text-mute">Reference</span>
+          </div>
+          <div class="eyebrow mb-1">05 · Reference</div>
+          <div class="display text-2xl text-ink mb-2">79(A) Government Resolution, 2019</div>
+          <p class="text-mute text-sm leading-relaxed">The Government of Maharashtra resolution that prescribes the model procedure for co‑operative society redevelopment.</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-brass font-mono text-[11px] tracking-widest uppercase">Request copy <i class="fas fa-arrow-right text-[10px]"></i></span>
+        </a>
+        <a href="#contact" data-page="contact" class="nav-link-header bg-paper p-8 hover:bg-cream/50 transition block">
+          <div class="flex items-start justify-between mb-5">
+            <i class="far fa-file-alt text-brass text-3xl"></i>
+            <span class="font-mono text-[10px] tracking-widest uppercase text-mute">Reference</span>
+          </div>
+          <div class="eyebrow mb-1">06 · Reference</div>
+          <div class="display text-2xl text-ink mb-2">DCPR 33(7) &amp; 33(10) extracts</div>
+          <p class="text-mute text-sm leading-relaxed">The relevant extracts of the Development Control and Promotion Regulations, 2034 — for tenant and society reference.</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-brass font-mono text-[11px] tracking-widest uppercase">Request copy <i class="fas fa-arrow-right text-[10px]"></i></span>
+        </a>
+      </div>
+
+      <p class="note mt-10 max-w-4xl">Specimen documents are intended for review only and do not bind India Homes Limited or any prospective counterparty. Final terms are recorded only in agreements duly executed and, where required, registered. We encourage every society, tenant body and family to take independent legal advice before signing.</p>
+    </div>
+  </div>
+
+  <!-- Architects & Panel -->
+  <div class="bg-paper py-28">
+    <div class="container-wide">
+      <div class="section-head mb-16">
+        <div class="section-numeral">— Panel</div>
+        <div>
+          <div class="eyebrow">Architects, Consultants &amp; Counsel</div>
+          <h2 class="display text-5xl md:text-6xl mt-2 max-w-4xl">A curated team. <em>On every project.</em></h2>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-4 gap-px bg-rule">
+        <div class="bg-paper p-8">
+          <div class="eyebrow mb-3">Architecture</div>
+          <p class="text-mute text-[14px] leading-relaxed">A panel of Mumbai‑based firms selected for redevelopment expertise, MCGM code fluency, and a track record of delivered residential work.</p>
+        </div>
+        <div class="bg-paper p-8">
+          <div class="eyebrow mb-3">Structural &amp; MEP</div>
+          <p class="text-mute text-[14px] leading-relaxed">IIT‑Bombay alumni‑led structural consultants and recognised MEP firms — including BCAM‑registered peer review on every major project.</p>
+        </div>
+        <div class="bg-paper p-8">
+          <div class="eyebrow mb-3">Legal Counsel</div>
+          <p class="text-mute text-[14px] leading-relaxed">Senior Mumbai real‑estate counsel for title due diligence, MHADA/SRA matters and registered DA/PAA drafting.</p>
+        </div>
+        <div class="bg-paper p-8">
+          <div class="eyebrow mb-3">Project Management</div>
+          <p class="text-mute text-[14px] leading-relaxed">An independent Project Management Consultant works alongside the Society or tenant body on every redevelopment — funded by the Society on India Homes' projects.</p>
+        </div>
+      </div>
+      <p class="note mt-10 max-w-4xl">Names of empanelled firms are shared with shortlisted societies during the tender and due‑diligence stage. India Homes does not maintain captive consultants — every empanelled firm is an independent practice.</p>
+    </div>
+  </div>
+
+  <!-- CTA strip -->
+  <div class="bg-ink text-ivory py-20">
+    <div class="container-wide grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-8">
+        <div class="eyebrow text-brass-soft mb-3">Get in touch</div>
+        <h3 class="display text-4xl md:text-5xl text-ivory mb-4">Is your society or building considering redevelopment?</h3>
+        <p class="text-ivory/75 text-lg leading-relaxed max-w-2xl">Send a note with your location and a few details — we'll respond with a feasibility view, a sample document set and a meeting time within one business day.</p>
+      </div>
+      <div class="md:col-span-4 md:text-right">
+        <a href="#contact" data-page="contact" class="nav-link-header btn-dark inline-flex">Speak to our team <i class="fas fa-arrow-right text-[11px]"></i></a>
+        <div class="mt-5"><a href="/cdn-cgi/l/email-protection#dba9bebfbeadbeb7b4abb6beb5af9bb2b5bfb2bab3b4b6bea8b7afbff5b8b4b6" class="text-ivory/75 hover:text-brass font-mono text-sm"><span class="__cf_email__" data-cfemail="e99b8c8d8c9f8c858699848c879da980878d80888186848c9a859d8dc78a8684">[email&#160;protected]</span></a></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- =====================================================================
+                                  INVESTORS — Overview
+====================================================================== -->
+<section id="investors" class="page bg-paper py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Investor Relations</div>
+    <h1 class="display text-6xl md:text-7xl mb-4">Built on <em>transparency.</em></h1>
+    <p class="text-ink-soft text-lg max-w-2xl mb-12">India Homes Limited is committed to high standards of disclosure and governance. Latest results, filings and disclosures are below.</p>
+
+    <!-- Financial snapshot strip -->
+    <div class="bg-ink text-ivory p-8 md:p-12 mb-16">
+      <div class="flex items-end justify-between flex-wrap gap-4 mb-8">
+        <div>
+          <div class="eyebrow text-brass-soft">Audited Standalone · FY26</div>
+          <div class="display text-4xl text-ivory mt-1">Financial snapshot</div>
+        </div>
+        <a href="assets/investor_brief.pdf" target="_blank" class="text-ivory hover:text-brass font-mono text-[12px] uppercase tracking-widest">Download presentation →</a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <div class="eyebrow text-brass-soft mb-4">Quarterly · Q4 FY26 vs Q4 FY25</div>
+          <table class="w-full text-[14px]">
+            <thead><tr class="border-b border-ivory/20 text-ivory/60 font-mono text-[11px] tracking-wider uppercase">
+              <th class="text-left py-3 font-normal">Metric</th><th class="text-right py-3 font-normal">Q4 FY26</th><th class="text-right py-3 font-normal">Q4 FY25</th>
+            </tr></thead>
+            <tbody class="font-mono">
+              <tr class="border-b border-ivory/10"><td class="py-3">Revenue (₹ Cr)</td><td class="text-right">24.48</td><td class="text-right text-ivory/55">0.01</td></tr>
+              <tr class="border-b border-ivory/10"><td class="py-3">EBITDA (₹ Cr)</td><td class="text-right">24.68</td><td class="text-right text-ivory/55">(0.77)</td></tr>
+              <tr class="border-b border-ivory/10"><td class="py-3">PAT (₹ Cr)</td><td class="text-right">22.85</td><td class="text-right text-ivory/55">(3.30)</td></tr>
+              <tr><td class="py-3">EPS (₹)</td><td class="text-right">0.57</td><td class="text-right text-ivory/55">(0.08)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="eyebrow text-brass-soft mb-4">Full Year · FY26 vs FY25</div>
+          <table class="w-full text-[14px]">
+            <thead><tr class="border-b border-ivory/20 text-ivory/60 font-mono text-[11px] tracking-wider uppercase">
+              <th class="text-left py-3 font-normal">Metric</th><th class="text-right py-3 font-normal">FY26</th><th class="text-right py-3 font-normal">FY25</th>
+            </tr></thead>
+            <tbody class="font-mono">
+              <tr class="border-b border-ivory/10"><td class="py-3">Revenue (₹ Cr)</td><td class="text-right">24.50</td><td class="text-right text-ivory/55">0.01</td></tr>
+              <tr class="border-b border-ivory/10"><td class="py-3">EBITDA (₹ Cr)</td><td class="text-right">23.35</td><td class="text-right text-ivory/55">(4.58)</td></tr>
+              <tr class="border-b border-ivory/10"><td class="py-3">PAT (₹ Cr)</td><td class="text-right">18.66</td><td class="text-right text-ivory/55">(13.39)</td></tr>
+              <tr><td class="py-3">EPS (₹)</td><td class="text-right">0.47</td><td class="text-right text-ivory/55">(0.34)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="text-ivory/55 font-mono text-[11px] mt-6">EBITDA = profit before tax + finance costs + depreciation &amp; amortisation. Real estate activities contributed ₹24.25 Cr of revenue in Q4 / FY26; prior‑period comparisons reflect the Company's pivot from stainless‑steel manufacturing. ( ) denotes loss.</p>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-7">
+        <h3 class="eyebrow mb-5">Quick Links</h3>
+        <div class="grid sm:grid-cols-2 gap-px bg-rule">
+          <a href="#financials" data-page="financials" class="nav-link-header bg-paper p-6 hover:bg-ivory flex items-start gap-4">
+            <i class="far fa-file-pdf text-brass text-xl mt-1"></i>
+            <div>
+              <div class="display text-2xl">Financial Reports &amp; Filings</div>
+              <p class="text-mute text-sm mt-1">Annual &amp; quarterly reports and statutory filings.</p>
+            </div>
+          </a>
+          <a href="#announcements" data-page="announcements" class="nav-link-header bg-paper p-6 hover:bg-ivory flex items-start gap-4">
+            <i class="fas fa-bullhorn text-brass text-xl mt-1"></i>
+            <div>
+              <div class="display text-2xl">Announcements</div>
+              <p class="text-mute text-sm mt-1">Stock exchange filings and corporate news.</p>
+            </div>
+          </a>
+          <a href="#shareholders" data-page="shareholders" class="nav-link-header bg-paper p-6 hover:bg-ivory flex items-start gap-4">
+            <i class="fas fa-chart-pie text-brass text-xl mt-1"></i>
+            <div>
+              <div class="display text-2xl">Shareholders Information</div>
+              <p class="text-mute text-sm mt-1">Stock information, shareholding patterns, notices &amp; forms.</p>
+            </div>
+          </a>
+          <a href="#governance" data-page="governance" class="nav-link-header bg-paper p-6 hover:bg-ivory flex items-start gap-4">
+            <i class="fas fa-balance-scale text-brass text-xl mt-1"></i>
+            <div>
+              <div class="display text-2xl">Governance</div>
+              <p class="text-mute text-sm mt-1">Board, committees and corporate policies.</p>
+            </div>
+          </a>
+          <a href="#rights-issue-2026" data-page="rights-issue-2026" class="nav-link-header bg-paper p-6 hover:bg-ivory flex items-start gap-4">
+            <i class="fas fa-file-invoice-dollar text-brass text-xl mt-1"></i>
+            <div>
+              <div class="display text-2xl">Rights Issue 2026</div>
+              <p class="text-mute text-sm mt-1">Documents and disclosures.</p>
+            </div>
+          </a>
+          <a href="#investor-faq" data-page="investor-faq" class="nav-link-header bg-paper p-6 hover:bg-ivory flex items-start gap-4">
+            <i class="fas fa-question-circle text-brass text-xl mt-1"></i>
+            <div>
+              <div class="display text-2xl">Investor FAQ</div>
+              <p class="text-mute text-sm mt-1">Answers to common queries.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="md:col-span-5">
+        <h3 class="eyebrow mb-5">Investor Services</h3>
+        <div class="bg-ivory p-8 mb-5">
+          <div class="eyebrow text-brass mb-3">Compliance Officer</div>
+          <div class="font-medium text-ink">Dilip Maharana · Company Secretary</div>
+          <div class="text-mute text-sm mt-2">304, A‑wing, Naman Midtown, Senapati Bapat Marg, Elphinstone Road (W), Mumbai – 400 013</div>
+          <a href="/cdn-cgi/l/email-protection#32515d415751725b5c565b535a5d5f57415e46561c515d5f" class="block mt-3 text-brass hover:text-ink text-sm"><i class="far fa-envelope mr-2"></i><span class="__cf_email__" data-cfemail="88ebe7fbedebc8e1e6ece1e9e0e7e5edfbe4fceca6ebe7e5">[email&#160;protected]</span></a>
+        </div>
+        <div class="bg-ivory p-8">
+          <div class="eyebrow text-brass mb-3">Registrar &amp; Transfer Agent</div>
+          <div class="font-medium text-ink">M/s. Purva Sharegistry (I) Pvt Ltd</div>
+          <div class="text-mute text-sm mt-2">Unit No. 9, Shiv Shakti Ind. Estt., Lower Parel (E), Mumbai – 400 011</div>
+          <a href="http://www.purvashare.com" target="_blank" class="block mt-3 text-brass hover:text-ink text-sm"><i class="fas fa-globe mr-2"></i>www.purvashare.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border-t border-rule">
+      <div class="bg-paper p-5"><div class="stat-label">Listing</div><div class="font-mono text-ink mt-1">BSE</div></div>
+      <div class="bg-paper p-5"><div class="stat-label">Scrip Code</div><div class="font-mono text-ink mt-1">513361</div></div>
+      <div class="bg-paper p-5"><div class="stat-label">CIN</div><div class="font-mono text-ink mt-1 text-[12px]">L29100MH1987PLC043186</div></div>
+      <div class="bg-paper p-5"><div class="stat-label">Sector</div><div class="font-mono text-ink mt-1">Real Estate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINANCIALS / ANNOUNCEMENTS / etc — Firebase-driven ========== -->
+<section id="financials" class="page bg-ivory py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Financial Reports &amp; Filings</div>
+    <h1 class="display text-6xl md:text-7xl mb-10">Financial reports &amp; filings.</h1>
+    <div id="financials-ir"><p class="text-mute">Loading financial data…</p></div>
+  </div>
+</section>
+
+<section id="announcements" class="page bg-paper py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Disclosures</div>
+    <h1 class="display text-6xl md:text-7xl mb-10">Corporate announcements.</h1>
+    <div class="max-w-5xl">
+      <div class="mb-8 flex items-center gap-3">
+        <label for="announcement-year" class="eyebrow">Filter by year</label>
+        <select id="announcement-year" class="bg-ivory border border-rule px-3 py-2 text-sm">
+          <option value="all">All Years</option>
+        </select>
+      </div>
+      <div id="announcement-list" class="space-y-3"><p class="text-mute">Loading announcements…</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="governance" class="page bg-ivory py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Governance</div>
+    <h1 class="display text-6xl md:text-7xl mb-10">Corporate governance.</h1>
+    <div id="governance-ir"><p class="text-mute">Loading…</p></div>
+
+    <template id="tpl-regulation-46">
+      <p class="text-ink-soft max-w-3xl mb-8">Disclosures on the website of the Company under Regulation 46(2) of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015.</p>
+      <div class="overflow-x-auto border border-rule mb-8">
+        <table class="w-full text-[14px] bg-paper min-w-[640px]">
+          <thead>
+            <tr class="border-b border-rule text-mute font-mono text-[11px] tracking-wider uppercase text-left">
+              <th class="p-4 font-normal w-14">Sr.</th>
+              <th class="p-4 font-normal">Particulars</th>
+              <th class="p-4 font-normal w-32">Weblink</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">1</td><td class="p-4 text-ink">Details of business</td><td class="p-4"><a href="#about" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">2</td><td class="p-4 text-ink">Terms and conditions of appointment of Independent Directors</td><td class="p-4"><a href="#governance/independent-directors" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">3</td><td class="p-4 text-ink">Composition of various committees of the Board of Directors</td><td class="p-4"><a href="#governance/committees" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">4</td><td class="p-4 text-ink">Code of Conduct of the Board of Directors and Senior Management Personnel</td><td class="p-4"><a href="#governance/code-of-conduct" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">5</td><td class="p-4 text-ink">Details of establishment of Vigil Mechanism / Whistle Blower policy</td><td class="p-4"><a href="#governance/policies" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">6</td><td class="p-4 text-ink">Criteria of making payments to Non-Executive Directors</td><td class="p-4"><a href="#governance/policies" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">7</td><td class="p-4 text-ink">Policy on dealing with Related Party Transactions</td><td class="p-4"><a href="#governance/policies" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">8</td><td class="p-4 text-ink">Policy for determining &lsquo;material&rsquo; subsidiaries</td><td class="p-4"><a href="#governance/policies" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">9</td><td class="p-4 text-ink">Details of familiarisation programmes imparted to Independent Directors</td><td class="p-4"><a href="#governance/independent-directors" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">10</td><td class="p-4 text-ink">Code of conduct and disclosures under SEBI (Prohibition of Insider Trading) Regulations, 2015</td><td class="p-4"><a href="#governance/insider-trading" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">11</td><td class="p-4 text-ink">Email address for grievance redressal and other relevant details</td><td class="p-4"><a href="#shareholders/stock-information" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">12</td><td class="p-4 text-ink">Contact information of the designated officials responsible for assisting and handling investor grievances</td><td class="p-4"><a href="#shareholders/stock-information" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">13</td><td class="p-4 text-ink">Financial results</td><td class="p-4"><a href="#financials/quarterly-reports" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">14</td><td class="p-4 text-ink">Annual reports</td><td class="p-4"><a href="#financials/annual-reports" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">15</td><td class="p-4 text-ink">Shareholding pattern</td><td class="p-4"><a href="#shareholders/shareholding-pattern" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">16</td><td class="p-4 text-ink">Memorandum of Association and Articles of Association</td><td class="p-4"><a href="#governance/moa-aoa" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">17</td><td class="p-4 text-ink">Brief profile of the Board of Directors</td><td class="p-4"><a href="#leadership" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">18</td><td class="p-4 text-ink">Secretarial Compliance Report</td><td class="p-4"><a href="#financials/secretarial-compliance" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">19</td><td class="p-4 text-ink">Annual Return</td><td class="p-4"><a href="#financials/annual-returns" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">20</td><td class="p-4 text-ink">Subsidiary financial statements</td><td class="p-4"><a href="#financials/subsidiary-financials" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">21</td><td class="p-4 text-ink">Notices published / disclosures under Regulation 47 of SEBI (LODR) Regulations, 2015</td><td class="p-4"><a href="#shareholders/notices" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">22</td><td class="p-4 text-ink">Issue of share certificates under Regulation 39(3) of SEBI (LODR) Regulations, 2015</td><td class="p-4"><a href="#shareholders/share-certificate" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">23</td><td class="p-4 text-ink">Statement of deviation(s) or variation(s)</td><td class="p-4"><a href="#rights-issue-2026" class="text-brass hover:text-ink">Click here</a></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">24</td><td class="p-4 text-ink">Credit Rating</td><td class="p-4"><span class="text-mute">N.A.</span></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">25</td><td class="p-4 text-ink">Dividend Distribution Policy</td><td class="p-4"><span class="text-mute">N.A.</span></td></tr>
+            <tr class="border-b border-rule"><td class="p-4 text-mute">26</td><td class="p-4 text-ink">Employee benefit scheme documents</td><td class="p-4"><span class="text-mute">N.A.</span></td></tr>
+            <tr><td class="p-4 text-mute">27</td><td class="p-4 text-ink">Details of agreements entered into with media companies and/or their associates</td><td class="p-4"><span class="text-mute">No such agreements have been entered into.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </template>
+  </div>
+</section>
+
+<section id="shareholders" class="page bg-paper py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Shareholders</div>
+    <h1 class="display text-6xl md:text-7xl mb-10">Shareholders information.</h1>
+    <div id="shareholders-ir"><p class="text-mute">Loading…</p></div>
+
+    <template id="tpl-stock-information">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-rule mb-8">
+        <div class="bg-ivory p-5"><div class="stat-label">Stock Exchange</div><div class="font-mono text-ink mt-1">BSE Limited</div></div>
+        <div class="bg-ivory p-5"><div class="stat-label">Scrip Code</div><div class="font-mono text-ink mt-1">513361</div></div>
+        <div class="bg-ivory p-5"><div class="stat-label">CIN</div><div class="font-mono text-ink mt-1 text-[12px]">L29100MH1987PLC043186</div></div>
+        <div class="bg-ivory p-5"><div class="stat-label">Sector</div><div class="font-mono text-ink mt-1">Real Estate</div></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-px bg-rule border border-rule mb-8">
+        <div class="bg-ivory p-8">
+          <div class="eyebrow text-brass mb-3">Compliance Officer &amp; Investor Grievances</div>
+          <div class="font-medium text-ink">Dilip Maharana · Company Secretary &amp; Compliance Officer</div>
+          <div class="text-mute text-sm mt-2">304, A‑wing, Naman Midtown, Senapati Bapat Marg, Elphinstone Road (W), Mumbai – 400 013</div>
+          <a href="/cdn-cgi/l/email-protection#85e6eaf6e0e6c5ecebe1ece4edeae8e0f6e9f1e1abe6eae8" class="block mt-3 text-brass hover:text-ink text-sm"><i class="far fa-envelope mr-2"></i><span class="__cf_email__" data-cfemail="177478647274577e79737e767f787a72647b63733974787a">[email&#160;protected]</span></a>
+        </div>
+        <div class="bg-ivory p-8">
+          <div class="eyebrow text-brass mb-3">Registrar &amp; Transfer Agent</div>
+          <div class="font-medium text-ink">M/s. Purva Sharegistry (I) Pvt Ltd</div>
+          <div class="text-mute text-sm mt-2">Unit No. 9, Shiv Shakti Ind. Estt., Lower Parel (E), Mumbai – 400 011</div>
+          <a href="http://www.purvashare.com" target="_blank" class="block mt-3 text-brass hover:text-ink text-sm"><i class="fas fa-globe mr-2"></i>www.purvashare.com</a>
+        </div>
+      </div>
+    </template>
+  </div>
+</section>
+
+<section id="rights-issue-2026" class="page bg-ivory py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Capital</div>
+    <h1 class="display text-6xl md:text-7xl mb-4">Rights Issue 2026.</h1>
+    <p class="text-ink-soft text-lg max-w-2xl mb-12">Documents and disclosures related to the 2026 Rights Issue.</p>
+    <div class="max-w-5xl" id="rights-issue-2026-list"><p class="text-mute">Loading…</p></div>
+  </div>
+</section>
+
+<section id="investor-faq" class="page bg-paper py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— FAQ</div>
+    <h1 class="display text-6xl md:text-7xl mb-12">Investor questions, answered.</h1>
+    <div class="max-w-4xl space-y-3" id="faq-accordion-container"><p class="text-mute">Loading…</p></div>
+  </div>
+</section>
+
+<!-- =====================================================================
+                                  MEDIA
+====================================================================== -->
+<section id="media" class="page bg-ivory py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Media</div>
+    <h1 class="display text-6xl md:text-7xl mb-12">Press &amp; coverage.</h1>
+    <div class="grid md:grid-cols-2 gap-10 max-w-6xl">
+      <div>
+        <h3 class="eyebrow mb-5">Press Releases</h3>
+        <div id="press-release-list" class="space-y-3"><p class="text-mute">Loading…</p></div>
+      </div>
+      <div>
+        <h3 class="eyebrow mb-5">In The News</h3>
+        <div id="news-clipping-list" class="space-y-3"><p class="text-mute">Loading…</p></div>
+      </div>
+    </div>
+    <div class="mt-16 bg-paper p-8 max-w-4xl">
+      <h3 class="eyebrow mb-3">Investor &amp; Media Relations</h3>
+      <p class="text-ink-soft mb-4">Adfactors PR Pvt. Ltd.</p>
+      <div class="grid sm:grid-cols-3 gap-6 text-sm">
+        <div><div class="font-medium text-ink">Rahul Trivedi</div><a href="/cdn-cgi/l/email-protection#780a19100d14560c0a110e1d1c1138191c1e191b0c170a0b080a561b1715" class="text-brass hover:text-ink break-all"><span class="__cf_email__" data-cfemail="1466757c61783a60667d6271707d547570727577607b666764663a777b79">[email&#160;protected]</span></a></div>
+        <div><div class="font-medium text-ink">Nishita Bhatt</div><a href="/cdn-cgi/l/email-protection#5e30372d36372a3f703c363f2a2a1e3f3a383f3d2a312c2d2e2c703d3133" class="text-brass hover:text-ink break-all"><span class="__cf_email__" data-cfemail="9ff1f6ecf7f6ebfeb1fdf7feebebdffefbf9fefcebf0edecefedb1fcf0f2">[email&#160;protected]</span></a></div>
+        <div><div class="font-medium text-ink">Vivek Sahu</div><a href="/cdn-cgi/l/email-protection#bccad5cad9d792cfddd4c9fcddd8dadddfc8d3cecfccce92dfd3d1" class="text-brass hover:text-ink break-all"><span class="__cf_email__" data-cfemail="74021d02111f5a07151c01341510121517001b060704065a171b19">[email&#160;protected]</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+                                  CAREERS
+====================================================================== -->
+<section id="careers" class="page bg-paper py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Careers</div>
+    <h1 class="display text-6xl md:text-7xl mb-4">Build with us.</h1>
+    <p class="text-ink-soft text-lg max-w-2xl mb-16">We are scaling a high‑margin Mumbai redevelopment business with a clean balance sheet and a visible launch pipeline. Talented people are how we get there.</p>
+    <div class="grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-7">
+        <div class="eyebrow mb-6">Current Openings</div>
+
+        <!-- Job card · Legal Manager -->
+        <article class="bg-ivory p-10 md:p-12">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+            <h2 class="display text-3xl md:text-4xl">Legal Manager</h2>
+            <span class="font-mono text-[11px] tracking-widest uppercase text-brass border border-brass/40 px-3 py-1.5 whitespace-nowrap">Full-time</span>
+          </div>
+          <div class="flex flex-wrap gap-x-8 gap-y-2 text-[12px] font-mono tracking-widest uppercase text-mute mb-8">
+            <span><i class="fas fa-location-dot text-brass mr-2"></i>Mumbai · On-site</span>
+            <span><i class="fas fa-indian-rupee-sign text-brass mr-2"></i>~₹50,000/month · negotiable</span>
+          </div>
+
+          <p class="text-ink-soft leading-relaxed mb-8">Own India Homes Limited's in-house legal strategy and drafting end-to-end — from society negotiations through agreement execution to managing live litigation. An individual-contributor role coordinating external counsel, working alongside existing legal staff who handle tenant coordination and Section 138 matters.</p>
+
+          <div class="eyebrow mb-4">Responsibilities</div>
+          <ul class="space-y-3 mb-8 text-ink-soft">
+            <li class="flex gap-3"><span class="text-brass font-mono">01.</span><span>Draft, review and negotiate redevelopment agreements, PAAAs, development agreements, MoUs, leave &amp; license agreements and conveyance documents.</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">02.</span><span>Build and execute legal strategy for redevelopment projects, including title due diligence and risk assessment.</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">03.</span><span>Manage litigation end-to-end — society disputes, High Court matters and SLPs — briefing and coordinating external counsel.</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">04.</span><span>Advise on co-operative housing society law, RERA compliance and DCPR 2034 / development control regulations.</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">05.</span><span>Track statutory and regulatory obligations and keep projects legally on track.</span></li>
+          </ul>
+
+          <div class="eyebrow mb-4">Requirements</div>
+          <ul class="space-y-3 mb-10 text-ink-soft">
+            <li class="flex gap-3"><span class="text-brass font-mono">01.</span><span>LLB with enrolment as an advocate (Bar Council).</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">02.</span><span>Minimum 5 years' post-qualification experience, ideally in real estate / redevelopment / co-operative housing law.</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">03.</span><span>Strong command of legal strategy and drafting.</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">04.</span><span>Working knowledge of co-op housing law, RERA, DCPR 2034 and litigation management.</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">05.</span><span>Tech-forward: comfortable with digital tools, document automation and AI-assisted workflows.</span></li>
+            <li class="flex gap-3"><span class="text-brass font-mono">06.</span><span>Commercially-minded and able to operate independently.</span></li>
+          </ul>
+
+          <a href="/cdn-cgi/l/email-protection#c9aaa8bbacacbbba89a0a7ada0a8a1a6a4acbaa5bdade7aaa6a4f6babcaba3acaabdf488b9b9a5a0aaa8bda0a6a7ecfbf9ec8cfbecf1f9ecf0fdecfbf985acaea8a5ecfbf984a8a7a8aeacbb" class="btn-dark inline-flex"><i class="far fa-envelope"></i> Apply for this role</a>
+        </article>
+
+        <p class="text-ink-soft leading-relaxed mt-8">Don't see your role? We'd still love to hear from architects, project managers, sales leaders and finance professionals who want to work in Mumbai redevelopment — write to <a href="/cdn-cgi/l/email-protection#503331223535222310393e343931383f3d35233c24347e333f3d" class="text-brass hover:text-ink"><span class="__cf_email__" data-cfemail="4c2f2d3e29293e3f0c252228252d242321293f203828622f2321">[email&#160;protected]</span></a>.</p>
+      </div>
+      <div class="md:col-span-5">
+        <div class="aspect-[3/4] photo-ph">[ photograph · site team on location ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+                                  CONTACT
+====================================================================== -->
+<section id="contact" class="page bg-ivory py-28">
+  <div class="container-wide">
+    <div class="section-numeral mb-3">— Contact</div>
+    <h1 class="display text-6xl md:text-7xl mb-16">Get in touch.</h1>
+
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <div class="bg-paper p-10 mb-6">
+          <div class="eyebrow mb-3">Corporate Office</div>
+          <div class="display text-2xl text-ink">India Homes Limited</div>
+          <p class="text-mute mt-3 leading-relaxed">304, A‑wing, Naman Midtown, Senapati Bapat Marg, Elphinstone Road (W), Mumbai — 400 013, India.</p>
+          <div class="mt-6 space-y-2 text-sm">
+            <div class="flex items-center gap-3 text-ink"><i class="fas fa-phone text-brass"></i> +91 22 6230 4304</div>
+            <div class="flex items-center gap-3 text-ink"><i class="far fa-envelope text-brass"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9df4f3fbf2ddf4f3f9f4fcf5f2f0f8eef1e9f9b3fef2f0">[email&#160;protected]</a></div>
+          </div>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.188235282717!2d72.83595931539447!3d19.0115852586617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce8c897f2e4b%3A0x9a75873523f36077!2sNaman%20Midtown!5e0!3m2!1sen!2sin!4v1668511728285!5m2!1sen!2sin" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="md:col-span-7 bg-paper p-10">
+        <div class="eyebrow mb-3">Send an Enquiry</div>
+        <h3 class="display text-3xl mb-8">We typically respond within one business day.</h3>
+        <form id="contactForm" class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-[11px] tracking-widest uppercase font-mono text-mute mb-2">Name</label>
+              <input type="text" id="name" name="name" class="w-full bg-ivory border-0 border-b border-ink/30 px-0 py-3 focus:outline-none focus:border-brass" required />
+            </div>
+            <div>
+              <label for="email" class="block text-[11px] tracking-widest uppercase font-mono text-mute mb-2">Email</label>
+              <input type="email" id="email" name="email" class="w-full bg-ivory border-0 border-b border-ink/30 px-0 py-3 focus:outline-none focus:border-brass" required />
+            </div>
+          </div>
+          <div>
+            <label for="message" class="block text-[11px] tracking-widest uppercase font-mono text-mute mb-2">Message</label>
+            <textarea id="message" name="message" rows="5" class="w-full bg-ivory border-0 border-b border-ink/30 px-0 py-3 focus:outline-none focus:border-brass" required></textarea>
+          </div>
+          <button type="submit" class="btn-dark">Submit Enquiry <i class="fas fa-arrow-right text-[11px]"></i></button>
+          <p id="form-status" class="text-sm mt-2"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================== FOOTER =========================== -->
+<footer class="bg-ink-deep text-ivory pt-24 pb-10">
+  <div class="container-wide">
+    <div class="grid md:grid-cols-12 gap-10 pb-16 border-b border-ivory/15">
+      <div class="md:col-span-5">
+        <img src="assets/logo.png" alt="India Homes Limited" class="h-14 mb-6 brightness-0 invert opacity-90"/>
+        <p class="text-ivory/70 leading-relaxed max-w-md">A Mumbai‑focused real estate redeveloper. Listed on BSE since 1987 — pivoted in FY26 from stainless‑steel manufacturing to premium urban redevelopment.</p>
+        <div class="flex gap-5 mt-6 text-ivory/60">
+          <a href="#" class="hover:text-brass text-lg"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="hover:text-brass text-lg"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="hover:text-brass text-lg"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <div class="eyebrow text-brass-soft mb-4">Company</div>
+        <ul class="space-y-2.5 text-[14px]">
+          <li><a href="#about" data-page="about" class="nav-link-footer text-ivory/75 hover:text-brass">About</a></li>
+          <li><a href="#leadership" data-page="leadership" class="nav-link-footer text-ivory/75 hover:text-brass">Leadership</a></li>
+          <li><a href="#projects" data-page="projects" class="nav-link-footer text-ivory/75 hover:text-brass">Projects</a></li>
+          <li><a href="#sustainability" data-page="sustainability" class="nav-link-footer text-ivory/75 hover:text-brass">Sustainability</a></li>
+          <li><a href="#careers" data-page="careers" class="nav-link-footer text-ivory/75 hover:text-brass">Careers</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <div class="eyebrow text-brass-soft mb-4">Investors</div>
+        <ul class="space-y-2.5 text-[14px]">
+          <li><a href="#investors" data-page="investors" class="nav-link-footer text-ivory/75 hover:text-brass">Overview</a></li>
+          <li><a href="#financials" data-page="financials" class="nav-link-footer text-ivory/75 hover:text-brass">Financial Reports &amp; Filings</a></li>
+          <li><a href="#announcements" data-page="announcements" class="nav-link-footer text-ivory/75 hover:text-brass">Announcements</a></li>
+          <li><a href="#governance" data-page="governance" class="nav-link-footer text-ivory/75 hover:text-brass">Corporate Governance</a></li>
+          <li><a href="#shareholders" data-page="shareholders" class="nav-link-footer text-ivory/75 hover:text-brass">Shareholders Information</a></li>
+          <li><a href="#rights-issue-2026" data-page="rights-issue-2026" class="nav-link-footer text-ivory/75 hover:text-brass">Rights Issue 2026</a></li>
+          <li><a href="#investor-faq" data-page="investor-faq" class="nav-link-footer text-ivory/75 hover:text-brass">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <div class="eyebrow text-brass-soft mb-4">Registered Office</div>
+        <p class="text-ivory/75 text-[14px] leading-relaxed">304, A‑wing, Naman Midtown,<br/>Senapati Bapat Marg, Elphinstone Road (W),<br/>Mumbai — 400 013, India.</p>
+        <p class="mt-4 text-[13px]"><a href="/cdn-cgi/l/email-protection#e1888f878ea1888f858880898e8c84928d9585cf828e8c" class="text-ivory/75 hover:text-brass"><span class="__cf_email__" data-cfemail="8ce5e2eae3cce5e2e8e5ede4e3e1e9ffe0f8e8a2efe3e1">[email&#160;protected]</span></a></p>
+        <p class="text-[13px]"><a href="tel:+912262304304" class="text-ivory/75 hover:text-brass">+91 22 6230 4304</a></p>
+      </div>
+    </div>
+
+    <div class="pt-8 text-ivory/50 text-[12px] leading-relaxed">
+      <div class="font-mono mb-3">
+        <span class="text-brass-soft">BSE:</span> 513361 &nbsp;·&nbsp;
+        <span class="text-brass-soft">CIN:</span> L29100MH1987PLC043186 &nbsp;·&nbsp;
+        <span class="text-brass-soft">Sector:</span> Real Estate
+      </div>
+      <p class="mb-3">© 2026 India Homes Limited. All Rights Reserved. Formerly India Steel Works Limited.</p>
+      <p class="max-w-5xl">Disclaimer: The contents of this website are for information purposes only and do not constitute an offer or invitation to purchase or subscribe for any shares or other securities. Forward‑looking statements may differ from actual results. Project details, renders and timelines are indicative and subject to RERA registration and final regulatory approvals. Please consult your financial advisor before making any investment decision.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================== Modals & Overlays =========================== -->
+<div id="project-modal" class="modal fixed inset-0 bg-ink-deep/85 z-[100] items-center justify-center p-4 sm:p-6">
+  <div class="bg-paper w-full max-w-6xl max-h-[90vh] overflow-y-auto relative">
+    <button id="modal-close-button" class="absolute top-4 right-4 text-mute hover:text-ink text-2xl z-10">&times;</button>
+    <div id="modal-content" class="p-4 sm:p-10"></div>
+  </div>
+</div>
+
+<button id="backToTopBtn" class="fixed bottom-6 right-6 bg-ink text-ivory w-11 h-11 shadow-lg z-[90] flex items-center justify-center hover:bg-brass transition"><i class="fas fa-arrow-up"></i></button>
+
+<div id="searchOverlay" class="fixed inset-0 bg-ink-deep/95 z-[110] flex items-start justify-center p-8">
+  <button id="search-close-btn" class="absolute top-6 right-8 text-ivory text-3xl">&times;</button>
+  <div class="w-full max-w-2xl mt-20">
+    <div class="eyebrow text-brass-soft mb-3">Search</div>
+    <input type="text" id="search-input" class="w-full bg-transparent border-0 border-b border-ivory/30 text-3xl py-4 text-ivory placeholder:text-ivory/40 focus:outline-none focus:border-brass" placeholder="Khopoli · Investors · Financials…" />
+    <div id="search-results" class="text-left text-ivory mt-6 space-y-2"></div>
+  </div>
+</div>
+
+<div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-ink text-ivory p-5 z-[120] items-center justify-between gap-4 flex-wrap">
+  <p class="text-ivory/80 text-sm flex-1 min-w-[260px]">We use cookies to enhance browsing and analyze traffic. By clicking "Accept" you consent to our use of cookies.</p>
+  <button id="cookieAcceptBtn" class="btn-dark !py-2 !text-[11px]">Accept</button>
+</div>
+
+<!-- Firebase + App Logic -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  import { getFirestore, collection, getDocs, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+  function initializeAppLogic() {
+    let app, db, firebaseFailedToLoad = false;
+    const firebaseConfig = {
+      apiKey: "AIzaSyBwcXHtIYFTRnWVRT69Bglnj_9PZGILcHM",
+      authDomain: "indiahomeltd.firebaseapp.com",
+      projectId: "indiahomeltd",
+      storageBucket: "indiahomeltd.firebasestorage.app",
+      messagingSenderId: "677481859207",
+      appId: "1:677481859207:web:3d1d54c7e50eb0dfbc9022",
+      measurementId: "G-EVM94DD5TP"
+    };
+    try { app = initializeApp(firebaseConfig); db = getFirestore(app); setLogLevel('error'); }
+    catch(e) { console.error(e); firebaseFailedToLoad = true; }
+
+    const SITE_PAGES = ['home','about','leadership','sustainability','projects','redevelop','investors','financials','announcements','governance','shareholders','rights-issue-2026','investor-faq','media','careers','contact'];
+    const PAGE_ALIASES = { shareholding: 'shareholders' }; // legacy hashes keep working
+    const TITLES = { home:'Welcome', about:'Our Story', leadership:'Leadership', sustainability:'Sustainability & CSR', projects:'Portfolio', redevelop:'Redevelop With Us', investors:'Investors', financials:'Financial Reports & Filings', announcements:'Announcements', governance:'Corporate Governance', shareholders:'Shareholders Information', 'rights-issue-2026':'Rights Issue 2026', 'investor-faq':'FAQ', media:'Media', careers:'Careers', contact:'Contact' };
+    let allAnnouncements = [];
+
+    // Investor sections: tabbed sub-sections with shareable shortlinks (#page/tab).
+    // `section` matches the Firestore `section` field; `yearwise` groups docs in year accordions.
+    const IR_SECTIONS = {
+      financials: {
+        mount: 'financials-ir', collection: 'financials', icon: 'far fa-file-pdf', fallbackTab: 'quarterly-reports',
+        tabs: [
+          { id:'annual-reports',            section:'annual-reports',            label:'Annual Reports & Notices',              yearwise:true, fy:true },
+          { id:'quarterly-reports',         section:'quarterly-reports',         label:'Quarterly Reports',                     yearwise:true, fy:true },
+          { id:'subsidiary-financials',     section:'subsidiary-financials',     label:'Subsidiary Financials',                 yearwise:true, fy:true },
+          { id:'scrutinizer-reports',       section:'scrutinizer-reports',       label:'Scrutinizer Reports',                   yearwise:true },
+          { id:'related-party-transactions',section:'related-party-transactions',label:'Related Party Transactions',            yearwise:true },
+          { id:'secretarial-compliance',    section:'secretarial-compliance',    label:'Annual Secretarial Compliance Report',  yearwise:true },
+          { id:'annual-returns',            section:'annual-returns',            label:'Annual Returns',                        yearwise:true, fy:true },
+        ],
+      },
+      governance: {
+        mount: 'governance-ir', collection: 'governance', icon: 'fas fa-balance-scale', fallbackTab: 'policies',
+        tabs: [
+          { id:'code-of-conduct',       section:'code-of-conduct',       label:'Code of Conduct' },
+          { id:'policies',              section:'policies',              label:'Policies & Other Related Documents' },
+          { id:'insider-trading',       section:'insider-trading',       label:'Insider Trading Regulations' },
+          { id:'committees',            section:'committees',            label:'Composition of Committees' },
+          { id:'independent-directors', section:'independent-directors', label:'Independent Directors' },
+          { id:'moa-aoa',               section:'moa-aoa',               label:'Memorandum & Articles of Association' },
+          { id:'regulation-46',         template:'tpl-regulation-46',    label:'Disclosure under Regulation 46' },
+        ],
+      },
+      shareholders: {
+        mount: 'shareholders-ir', collection: 'shareholding', icon: 'fas fa-chart-pie', fallbackTab: 'shareholding-pattern',
+        tabs: [
+          { id:'stock-information',    section:'stock',       label:'Stock Information', template:'tpl-stock-information' },
+          { id:'shareholding-pattern', section:'pattern',     label:'Shareholding Pattern', yearwise:true, fy:true },
+          { id:'notices',              section:'notices',     label:'Notices', yearwise:true },
+          { id:'share-certificate',    section:'certificate', label:'Issue of Share Certificate — Reg. 39(3)' },
+          { id:'nomination-forms',     section:'nomination',  label:'Nomination Forms / Declarations' },
+        ],
+      },
+    };
+
+    const App = {
+      init() {
+        this.setupNav();
+        this.setupOverlays();
+        this.setupContactForm();
+        this.setupReveal();
+        this.setupRedevTabs();
+        this.buildIRSections();
+        this.route();
+        this.fetchAllData();
+      },
+
+      buildIRSections() {
+        Object.entries(IR_SECTIONS).forEach(([key, cfg]) => {
+          const mount = document.getElementById(cfg.mount);
+          if (!mount) return;
+          mount.innerHTML = `
+            <div class="flex flex-wrap gap-x-7 gap-y-1 border-b border-rule mb-10">
+              ${cfg.tabs.map(t => `<button class="ir-tab" data-tab="${t.id}">${t.label}</button>`).join('')}
+            </div>
+            ${cfg.tabs.map(t => `
+              <div class="ir-pane" id="ir-${key}-${t.id}">
+                <div class="max-w-5xl">
+                  <div class="flex items-center justify-between gap-4 mb-6 flex-wrap">
+                    <h2 class="display text-3xl text-ink">${t.label}</h2>
+                    <button class="shortlink-btn" data-shortlink="${key}/${t.id}" title="Copy a direct link to this section"><i class="fas fa-link"></i><span>Copy shortlink</span></button>
+                  </div>
+                  ${t.template ? `<div class="mb-4">${document.getElementById(t.template)?.innerHTML || ''}</div>` : ''}
+                  ${t.section ? `<div id="ir-docs-${key}-${t.id}"><p class="text-mute">Loading…</p></div>` : ''}
+                </div>
+              </div>`).join('')}
+          `;
+          mount.querySelectorAll('.ir-tab').forEach(btn =>
+            btn.addEventListener('click', () => { window.location.hash = `${key}/${btn.dataset.tab}`; }));
+          mount.querySelectorAll('.shortlink-btn').forEach(btn =>
+            btn.addEventListener('click', () => this.copyShortlink(btn)));
+          this.activateTab(key, cfg.tabs[0].id);
+        });
+      },
+
+      activateTab(key, tabId) {
+        const cfg = IR_SECTIONS[key];
+        if (!cfg) return;
+        if (!cfg.tabs.some(t => t.id === tabId)) tabId = cfg.tabs[0].id;
+        const mount = document.getElementById(cfg.mount);
+        if (!mount) return;
+        mount.querySelectorAll('.ir-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+        cfg.tabs.forEach(t => {
+          const pane = document.getElementById(`ir-${key}-${t.id}`);
+          if (pane) pane.classList.toggle('active', t.id === tabId);
+        });
+      },
+
+      copyShortlink(btn) {
+        const url = `${window.location.origin}${window.location.pathname}#${btn.dataset.shortlink}`;
+        const label = btn.querySelector('span');
+        const done = () => { label.textContent = 'Copied!'; setTimeout(() => { label.textContent = 'Copy shortlink'; }, 1600); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(done).catch(() => window.prompt('Copy this link:', url));
+        } else {
+          window.prompt('Copy this link:', url);
+        }
+      },
+
+      setupRedevTabs() {
+        const tabs = document.querySelectorAll('.redev-tab');
+        const panes = document.querySelectorAll('.redev-pane');
+        tabs.forEach(t => {
+          t.addEventListener('click', () => {
+            const id = t.dataset.tab;
+            tabs.forEach(x => { x.classList.remove('active'); x.classList.add('border-transparent','text-mute'); });
+            t.classList.add('active'); t.classList.remove('border-transparent','text-mute');
+            panes.forEach(p => p.classList.toggle('hidden', p.id !== id));
+          });
+        });
+      },
+
+      setupNav() {
+        document.querySelectorAll('.nav-link, .nav-link-header, .nav-link-mobile, .nav-link-footer, .nav-link-dropdown').forEach(link => {
+          link.addEventListener('click', (e) => {
+            const pageId = e.currentTarget.dataset.page;
+            if (pageId) {
+              e.preventDefault();
+              window.location.hash = pageId;
+            }
+            document.getElementById('mobile-menu').classList.add('hidden');
+          });
+        });
+        window.addEventListener('hashchange', () => this.route());
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+          document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+      },
+
+      setupOverlays() {
+        const search = document.getElementById('searchOverlay');
+        document.getElementById('search-open-btn').addEventListener('click', () => { search.classList.add('active'); setTimeout(()=>document.getElementById('search-input').focus(), 100); });
+        document.getElementById('search-close-btn').addEventListener('click', () => search.classList.remove('active'));
+        document.getElementById('search-input').addEventListener('keyup', (e) => this.handleSearch(e));
+
+        document.getElementById('modal-close-button').addEventListener('click', () => document.getElementById('project-modal').classList.remove('active'));
+
+        const btn = document.getElementById('backToTopBtn');
+        btn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+        window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 400));
+
+        // Cookie consent
+        const banner = document.getElementById('cookieConsent');
+        if (!localStorage.getItem('ihl_cookie')) banner.classList.add('active');
+        document.getElementById('cookieAcceptBtn').addEventListener('click', () => {
+          localStorage.setItem('ihl_cookie','1'); banner.style.display='none';
+        });
+      },
+
+      setupContactForm() {
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const status = document.getElementById('form-status');
+          status.textContent = 'Sending…';
+          setTimeout(() => {
+            status.textContent = 'Thank you. Your enquiry has been received — we will respond within one business day.';
+            status.className = 'text-sm mt-2 text-brass';
+            form.reset();
+          }, 800);
+        });
+      },
+
+      setupReveal() {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('in'); });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      },
+
+      route() {
+        const hash = decodeURIComponent(window.location.hash.substring(1) || 'home');
+        let [page, sub] = hash.split('/');
+        if (PAGE_ALIASES[page]) page = PAGE_ALIASES[page];
+        if (!SITE_PAGES.includes(page)) page = 'home';
+        this.showPage(page);
+        if (IR_SECTIONS[page]) this.activateTab(page, sub || IR_SECTIONS[page].tabs[0].id);
+      },
+
+      showPage(id) {
+        const samePage = this.currentPage === id;
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        const page = document.getElementById(id);
+        if (page) page.classList.add('active');
+        document.title = `India Homes Limited · ${TITLES[id] || 'Welcome'}`;
+        this.updateActiveNav(id);
+        if (!samePage) window.scrollTo(0,0);
+        this.currentPage = id;
+      },
+
+      updateActiveNav(id) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          const lp = link.dataset.page;
+          if (lp === id) link.classList.add('active');
+          else if (lp === 'about' && ['leadership','sustainability'].includes(id)) link.classList.add('active');
+          else if (lp === 'investors' && ['financials','announcements','governance','shareholders','rights-issue-2026','investor-faq'].includes(id)) link.classList.add('active');
+        });
+      },
+
+      async fetchAllData() {
+        if (firebaseFailedToLoad || !db) { this.showDataError("Dynamic content unavailable."); return; }
+        try {
+          const [financials, announcements, governance, shareholding, faqs, pr, news, ri] = await Promise.all([
+            this.fetchFrom('financials'), this.fetchFrom('announcements'),
+            this.fetchFrom('governance'), this.fetchFrom('shareholding'),
+            this.fetchFrom('faqs'), this.fetchFrom('pressReleases'),
+            this.fetchFrom('newsClippings'), this.fetchFrom('rightsIssue2026'),
+          ]);
+          allAnnouncements = announcements;
+          this.renderIRDocs('financials', financials);
+          this.renderIRDocs('governance', governance);
+          this.renderIRDocs('shareholders', shareholding);
+          this.renderAnnouncements(announcements);
+          this.renderFAQs(faqs);
+          this.renderMedia(pr, news);
+          this.renderRightsIssue(ri);
+        } catch(e) {
+          console.error(e);
+          let msg = "Data could not be loaded. Please refresh.";
+          if (e.message && (e.message.includes("blocked") || e.message.includes("Failed to fetch"))) msg = "Data could not be loaded — ad‑blockers or tracking‑prevention may be the cause. Please disable them and refresh.";
+          this.showDataError(msg);
+        }
+      },
+
+      async fetchFrom(path) {
+        const colRef = collection(db, path);
+        const snap = await getDocs(colRef);
+        const data = snap.docs.map(d => ({ id:d.id, ...d.data() }));
+        if (data.length && (data[0].date || data[0].year)) {
+          data.sort((a,b) => new Date(b.date || `${b.year}-01-01`) - new Date(a.date || `${a.year}-01-01`));
+        }
+        return data;
+      },
+
+      showDataError(msg) {
+        const tgt = ['announcement-list','faq-accordion-container','press-release-list','news-clipping-list','rights-issue-2026-list'];
+        tgt.forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = `<p class="note">${msg}</p>`; });
+        document.querySelectorAll('[id^="ir-docs-"]').forEach(el => { el.innerHTML = `<p class="note">${msg}</p>`; });
+      },
+
+      setupAccordion(containerId) {
+        const c = document.getElementById(containerId);
+        if (!c) return;
+        c.querySelectorAll('.accordion-button').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const open = btn.classList.contains('active');
+            if (!open) { btn.classList.add('active'); content.style.maxHeight = content.scrollHeight + "px"; }
+            else { btn.classList.remove('active'); content.style.maxHeight = null; }
+          });
+        });
+      },
+
+      renderIRDocs(key, data) {
+        const cfg = IR_SECTIONS[key];
+        if (!cfg) return;
+        const docs = data || [];
+        cfg.tabs.filter(t => t.section).forEach(t => {
+          const c = document.getElementById(`ir-docs-${key}-${t.id}`);
+          if (!c) return;
+          const mine = docs.filter(d => d.section ? d.section === t.section : t.id === cfg.fallbackTab);
+          if (!mine.length) {
+            c.innerHTML = t.template ? '' : `<p class="note">No documents available in this section yet.</p>`;
+            return;
+          }
+          const fileCard = r => `<a href="${r.url}" target="_blank" class="flex items-center gap-3 p-4 bg-ivory hover:bg-cream text-ink border border-rule"><i class="${cfg.icon} text-brass"></i><span class="text-sm">${r.name}</span></a>`;
+          if (t.yearwise) {
+            const by = mine.reduce((a,r) => { const y = r.year || '—'; (a[y] = a[y] || []).push(r); return a; }, {});
+            c.innerHTML = Object.keys(by).sort((a,b)=>b-a).map(y => `
+              <div class="bg-paper mb-2 border border-rule">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-left">
+                  <span class="display text-3xl text-ink">${t.fy ? 'Fiscal Year ' : ''}${y}</span>
+                  <i class="fas fa-chevron-down accordion-icon text-brass transition-transform"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="p-6 border-t border-rule grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    ${by[y].map(fileCard).join('')}
+                  </div>
+                </div>
+              </div>
+            `).join('');
+            this.setupAccordion(c.id);
+          } else {
+            c.innerHTML = `<div class="grid sm:grid-cols-2 gap-3">${mine.map(fileCard).join('')}</div>`;
+          }
+        });
+      },
+
+      renderAnnouncements(data) {
+        const list = document.getElementById('announcement-list');
+        const yearFilter = document.getElementById('announcement-year');
+        if (!data || !data.length) { list.innerHTML = `<p class="note">No announcements available.</p>`; return; }
+        if (yearFilter.options.length <= 1) {
+          [...new Set(data.map(a => new Date(a.date).getFullYear()))].sort((a,b)=>b-a).forEach(y => yearFilter.add(new Option(y,y)));
+          yearFilter.onchange = () => this.renderAnnouncements(allAnnouncements);
+        }
+        const f = yearFilter.value;
+        const filt = f === 'all' ? data : data.filter(a => new Date(a.date).getFullYear() == f);
+        if (!filt.length) { list.innerHTML = `<p class="note">No announcements for this period.</p>`; return; }
+        list.innerHTML = filt.map(i => `
+          <a href="${i.url}" target="_blank" class="block bg-ivory hover:bg-cream border-l-2 border-brass p-5">
+            <div class="font-mono text-[11px] tracking-wider uppercase text-mute">${new Date(i.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}${i.category?` · ${i.category}`:''}</div>
+            <div class="text-ink font-medium mt-1">${i.title} <i class="fas fa-download text-[10px] text-brass ml-1"></i></div>
+          </a>
+        `).join('');
+      },
+
+      renderFAQs(data) {
+        const c = document.getElementById('faq-accordion-container');
+        if (!data || !data.length) { c.innerHTML = `<p class="note">No FAQs available.</p>`; return; }
+        c.innerHTML = data.map(f => `
+          <div class="bg-paper border border-rule">
+            <button class="accordion-button w-full flex justify-between items-center p-6 text-left gap-4">
+              <span class="display text-2xl text-ink">${f.q}</span>
+              <i class="fas fa-chevron-down accordion-icon text-brass transition-transform"></i>
+            </button>
+            <div class="accordion-content"><div class="p-6 border-t border-rule text-ink-soft leading-relaxed">${f.a}</div></div>
+          </div>
+        `).join('');
+        this.setupAccordion('faq-accordion-container');
+      },
+
+      renderMedia(pr, news) {
+        const prList = document.getElementById('press-release-list');
+        if (prList) prList.innerHTML = (!pr||!pr.length) ? `<p class="text-mute">No press releases available.</p>` : pr.map(i => `<a href="${i.url}" target="_blank" class="block bg-paper p-4 hover:bg-cream border border-rule"><div class="font-mono text-[11px] uppercase tracking-wider text-mute">${new Date(i.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}</div><div class="text-ink font-medium mt-1">${i.title} <i class="fas fa-external-link-alt text-[10px] text-brass ml-1"></i></div></a>`).join('');
+        const newsList = document.getElementById('news-clipping-list');
+        if (newsList) newsList.innerHTML = (!news||!news.length) ? `<p class="text-mute">No news clippings available.</p>` : news.map(i => `<a href="${i.url}" target="_blank" class="block bg-paper p-4 hover:bg-cream border border-rule"><div class="font-mono text-[11px] uppercase tracking-wider text-mute">${new Date(i.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}${i.source?` · ${i.source}`:''}</div><div class="text-ink font-medium mt-1">${i.title} <i class="fas fa-external-link-alt text-[10px] text-brass ml-1"></i></div></a>`).join('');
+      },
+
+      renderRightsIssue(data) {
+        const c = document.getElementById('rights-issue-2026-list');
+        if (!data || !data.length) { c.innerHTML = `<p class="note">No documents available at this time.</p>`; return; }
+        c.innerHTML = `<div class="grid sm:grid-cols-2 gap-3">${data.map(i => `<a href="${i.url}" target="_blank" class="flex items-center gap-3 bg-paper p-4 hover:bg-cream text-ink border border-rule"><i class="fas fa-file-invoice-dollar text-brass"></i><span class="text-sm">${i.name}</span></a>`).join('')}</div>`;
+      },
+
+      handleSearch(e) {
+        const q = e.target.value.toLowerCase().trim();
+        const out = document.getElementById('search-results');
+        if (q.length < 2) { out.innerHTML = ''; return; }
+        const dict = {
+          khopoli: { page:'projects', title:'Waterfall Enclave · Khopoli', sub:'JV with Lloyds — ~60 lakh sq ft' },
+          waterfall: { page:'projects', title:'Waterfall Enclave · Khopoli', sub:'JV with Lloyds — ~60 lakh sq ft' },
+          chembur: { page:'projects', title:'Duke Court · Chembur', sub:'~5,00,000 sq ft · ~4 years' },
+          duke: { page:'projects', title:'Duke Court · Chembur', sub:'~5,00,000 sq ft · ~4 years' },
+          matunga: { page:'projects', title:'King Court · Matunga', sub:'~1,50,000 sq ft · ~3 years' },
+          king: { page:'projects', title:'King Court · Matunga', sub:'~1,50,000 sq ft · ~3 years' },
+          wadala: { page:'projects', title:'India Court · Wadala', sub:'~75,000 sq ft · ~3 years' },
+          india: { page:'projects', title:'India Court · Wadala', sub:'~75,000 sq ft · ~3 years' },
+          financial: { page:'financials', title:'Financial Reports & Filings', sub:'Annual, quarterly and statutory filings' },
+          'annual report': { page:'financials/annual-reports', title:'Annual Reports & Notices', sub:'Financial Reports & Filings' },
+          quarterly: { page:'financials/quarterly-reports', title:'Quarterly Reports', sub:'Financial Reports & Filings' },
+          subsidiary: { page:'financials/subsidiary-financials', title:'Subsidiary Financials', sub:'Financial Reports & Filings' },
+          scrutinizer: { page:'financials/scrutinizer-reports', title:'Scrutinizer Reports', sub:'Financial Reports & Filings' },
+          'related party': { page:'financials/related-party-transactions', title:'Related Party Transactions', sub:'Financial Reports & Filings' },
+          secretarial: { page:'financials/secretarial-compliance', title:'Annual Secretarial Compliance Report', sub:'Financial Reports & Filings' },
+          'annual return': { page:'financials/annual-returns', title:'Annual Returns', sub:'Financial Reports & Filings' },
+          announcement: { page:'announcements', title:'Corporate Announcements', sub:'Stock exchange filings' },
+          governance: { page:'governance', title:'Corporate Governance', sub:'Codes, policies, committees, MOA & AOA' },
+          'code of conduct': { page:'governance/code-of-conduct', title:'Code of Conduct', sub:'Corporate Governance' },
+          policy: { page:'governance/policies', title:'Policies & Other Related Documents', sub:'Corporate Governance' },
+          insider: { page:'governance/insider-trading', title:'Insider Trading Regulations', sub:'Corporate Governance' },
+          committee: { page:'governance/committees', title:'Composition of Committees', sub:'Corporate Governance' },
+          independent: { page:'governance/independent-directors', title:'Independent Directors', sub:'Corporate Governance' },
+          memorandum: { page:'governance/moa-aoa', title:'Memorandum & Articles of Association', sub:'Corporate Governance' },
+          regulation: { page:'governance/regulation-46', title:'Disclosure under Regulation 46', sub:'Corporate Governance' },
+          shareholder: { page:'shareholders', title:'Shareholders Information', sub:'Stock info, patterns, notices & forms' },
+          shareholding: { page:'shareholders/shareholding-pattern', title:'Shareholding Pattern', sub:'Shareholders Information' },
+          stock: { page:'shareholders/stock-information', title:'Stock Information', sub:'Shareholders Information' },
+          notice: { page:'shareholders/notices', title:'Notices', sub:'Shareholders Information' },
+          certificate: { page:'shareholders/share-certificate', title:'Issue of Share Certificate — Reg. 39(3)', sub:'Shareholders Information' },
+          nomination: { page:'shareholders/nomination-forms', title:'Nomination Forms / Declarations', sub:'Shareholders Information' },
+          rights: { page:'rights-issue-2026', title:'Rights Issue 2026', sub:'Documents and disclosures' },
+          faq: { page:'investor-faq', title:'Investor FAQ', sub:'Common questions answered' },
+          leadership: { page:'leadership', title:'Leadership Team', sub:'Board and management' },
+          investor: { page:'investors', title:'Investor Relations', sub:'Overview and quick links' },
+          contact: { page:'contact', title:'Contact', sub:'Corporate office and enquiry form' },
+          career: { page:'careers', title:'Careers', sub:'Working at India Homes' },
+          media: { page:'media', title:'Media Centre', sub:'Press and news' },
+          sustainability: { page:'sustainability', title:'Sustainability & CSR', sub:'ESG and flagship initiatives' },
+          esg: { page:'sustainability', title:'Sustainability & CSR', sub:'ESG and flagship initiatives' },
+        };
+        const hits = [];
+        Object.keys(dict).forEach(k => { if (k.includes(q)) hits.push(dict[k]); });
+        const uniq = hits.filter((v,i,a) => a.findIndex(t => t.title===v.title)===i).slice(0,6);
+        if (!uniq.length) { out.innerHTML = `<p class="text-ivory/60 font-mono text-sm">No results for "${q}".</p>`; return; }
+        out.innerHTML = uniq.map(r => `<a href="#${r.page}" data-page="${r.page}" class="block bg-ivory/5 hover:bg-ivory/10 border-l-2 border-brass p-4 search-hit"><div class="text-ivory font-medium">${r.title}</div><div class="text-ivory/60 text-sm font-mono">${r.sub}</div></a>`).join('');
+        out.querySelectorAll('.search-hit').forEach(el => el.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          window.location.hash = el.dataset.page;
+          document.getElementById('searchOverlay').classList.remove('active');
+          document.getElementById('search-input').value = '';
+          out.innerHTML = '';
+        }));
+      },
+
+    };
+
+    App.init();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeAppLogic);
+  else initializeAppLogic();
+</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"444bb05f10524e8f85b35359004d3ea9","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

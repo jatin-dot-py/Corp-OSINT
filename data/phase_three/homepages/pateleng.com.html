@@ -1,0 +1,890 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Patel Engineering :: Home</title>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200' rel='stylesheet' type='text/css' />         
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css' />         
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css' />         
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700' rel='stylesheet' type='text/css' />
+         
+<link rel="stylesheet" type="text/css" href="styles/style.css" />           
+<!--<link rel="stylesheet" type="text/css" href="styles/jquery.bxslider.css" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css">
+<link href="styles/colorbox.css" type="text/css" rel="stylesheet"/> 
+<link href="video-js.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+<!--<script type="text/javascript">
+    var slider;
+    $(document).ready(function(){
+        slider = $('.bxslider').bxSlider({
+            pagerCustom: '#bx-pager',
+			controls:true,
+            auto: true,
+           // nextSelector: 'slideNext',
+            //prevSelector: 'slidePrev',
+			speed:1000,
+			stopAuto: false,
+            mode: 'fade'
+          });
+		  
+		  $('#bx-pager a').click(function(e){
+            var i = $(this).index();
+            slider.goToSlide(i);
+            slider.stopAuto();
+            restart=setTimeout(function(){
+                slider.startAuto();
+                },500);
+
+            return false;
+        });
+		  
+    });  
+    $('.slideNext').click(function(){
+      slider.goToNextSlide();
+      return false;
+    });
+
+    $('.slidePrev').click(function(){
+      slider.goToPrevSlide();
+      return false;
+    });  
+	
+	$('#bx-pager a').click(function(e){
+          slider.startAuto();
+        });
+	
+</script>-->
+  <style>
+    /* Styling for the main slider and pager */
+    .bx-pager-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+          position: absolute;
+    right: 179px;
+    bottom: 15px;
+    z-index: 9999;
+    }
+    .bx-wrapper{margin-bottom: 0;}
+    .bx-pager {
+      display: flex;
+      overflow: hidden;
+      /*width: 200px;*/ /* Adjust width for 3 thumbnails */
+    }
+    .bx-pager-link {
+      display: none; /* Initially hide all */
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .bx-pager-link img {
+      
+      width: 85px;
+    height: 30px;
+      border: 2px solid transparent;
+      padding: 0;
+      transition: transform 0.3s ease;
+    }
+    .bx-pager-link.active img {
+      /*transform: scale(1.1);*/
+      border: 2px solid #c4291c;
+    }
+    .bxslider img {
+      width: 100%;
+      height: auto;
+    }
+    .bx-pager-prev,
+    .bx-pager-next {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .bannerslider{
+        position: relative;
+    }
+    .bx-wrapper{border:none;}
+  </style>
+<script type="text/javascript">
+$(document).ready(function(){
+	 $('ul#navigation li').hover(function(){		 
+	$('.menu-container').stop().fadeOut('fast')
+	$(this).find('.menu-container').stop().fadeIn('fast')	
+	},function(){
+	$('.menu-container').stop().fadeOut('fast')	
+		
+	});	
+	});
+</script>
+	
+<script type="text/javascript">
+$(function() {
+  
+  $(window).scroll(function() {
+   //alert($(window).scrollTop() + $(window).height());
+   if($(window).scrollTop() + $(window).height() > 750) {
+      // alert("bottom!");
+	  
+	  $('a.back-to').fadeIn('slow');
+   }
+   else
+   {
+	   $('a.back-to').fadeOut('slow'); 
+   }
+});
+  
+  
+});
+</script>
+
+<script type="text/javascript" src="js/jquery.colorbox.js"></script>
+<script>
+			$(document).ready(function(){
+				//Examples of how to assign the Colorbox event to elements
+				//$(".ajax").colorbox();
+				//$(".inline").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+	
+			});
+		</script>
+
+
+
+<script src="video.js"></script>
+ <script>
+    videojs.options.flash.swf = "video-js.swf";
+  </script>
+
+<style type="text/css">
+.announcement a{
+color:#000;
+}
+
+.announcement a:hover{
+color: #d72515;
+}
+
+/* .csr, .work-with {
+background-image:none !important;
+} */
+
+</style>
+
+</head>
+<body id="back">
+<div id="siteWrapper"><div id="navigationWrapper" class="clearfix">
+        <a id="logo" href="index.php"><img src="images/logo.png" alt="Patel Engineering" /></a>        
+        <img src="images/75-yrs-logo-03.png" alt="75 yrs Logo" class="img-fluid logo75years" />
+        <ul id="navigation" class="clearfix">
+            <li  class="active"  ><a href="index.php">Home</a></li>
+            <li ><a href="about-us-landing.php">About Us</a>
+            <div class="menu-container about-drop-banner" style="height:250px;">
+<div class="link-nav">
+<a href="company-overview.php">Company Overview
+</a>
+
+<!--
+<a href="md-greetings.php">Greetings from CMD
+
+</a>
+-->
+<a href="board-of-director.php">Board of Directors
+</a>
+<a href="core-values.php">Core Values
+</a>
+
+
+</div>
+
+
+<div class="link-nav">
+<!---<a href="code-of-conduct.php">Code of Conduct
+</a>-->
+<a href="history.php">History
+</a>
+<a href="csr.php">CSR
+</a>
+<a href="iso.php" class="nav-lst">ISO
+</a>
+
+</div>
+
+</div>
+            </li>
+            <li ><a href="business-overview.php">Business</a>
+            
+            <div class="menu-container bus-drop-banner" style="height:250px;">
+<div class="link-nav  sec-bg" style="padding-bottom: 148px;">
+
+
+
+<a href="infrastructure.php">Infrastructure
+
+</a>
+<a href="real-estate.php">Real Estate
+
+</a>
+<a href="asset-ownership.php" class="nav-lst">Asset Ownership</a>
+
+<a href="business-overview.php#techno">Technology & Innovation</a>
+</div>
+</div>
+            
+            </li>
+            <li ><a id="pro_reset">Projects</a></li>
+            <!--<li ><a href="media-room.php">Media Room</a></li>-->
+            <li ><a href="media-room.php">Media Room</a>
+            
+            <!--<div class="menu-container media-drop-banner" style="height:250px;">
+<div class="link-nav  sec-bg" style="padding-bottom: 148px;">
+
+
+
+<a href="awards-recognition.php">Awards and Recognition
+
+</a>
+<a href="recent-videos.php">Recent Videos
+
+</a>
+</div>
+</div>-->
+            
+            </li>
+            <li ><a href="investors.php">Investors</a></li>
+            <li ><a href="careers.php">Careers</a></li>
+            <li  class="ie-lst  " ><a href="contact-us.php">Contact Us</a></li>
+        </ul>
+        <div id="searchWrapper">
+        
+        <script>
+  (function() {
+    var cx = '013823904166904792024:hlw10536e68';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+
+
+<gcse:search></gcse:search>
+            <!--<input type="text" name="search" id="search" value="Search" placeholder="Search" />-->
+			<script type="text/javascript">
+$(document).ready(function(){
+$('#pro_reset').click(function(){
+//alert('aa');
+window.location.href='filter_reset.php';
+});
+});
+
+</script>
+        </div>
+    </div>   <div class="bannerslider">
+       
+   
+    
+    <!-- bxSlider (main slider) -->
+  <ul class="bxslider">
+    <li><img src="images/7470bichomweb.gif" alt="" />
+            <div class="banner-title">
+            Determined to Deliver<a href="about-us-landing.php">&nbsp;&nbsp;Read More</a>
+
+            </div>
+            </li>
+            
+            <li><img src="images/6378saarcweb.gif" alt="" />
+            <div class="banner-title">
+            Building Excellence<a href="infrastructure.php">&nbsp;&nbsp;Read more</a>
+
+            </div>
+            </li>
+            
+             <li><img src="images/1303teamweb.gif" alt="" />
+            <div class="banner-title">
+            Innovation that redefines Today<a href="asset-ownership.php">&nbsp;&nbsp;Read more</a>
+
+            </div>
+            </li>
+            
+             <li>
+              <img src="images/1922tuirialweb.gif" alt="" />
+              <div class="banner-title">
+           Achieving Global Value In Excellence<a href="projects.php">&nbsp;&nbsp;Read More</a>
+
+            </div>
+            </li>
+            
+            
+            <li><img src="images/6061roadweb.gif" alt="" />
+            <div class="banner-title">
+            Creating New Frontiers  in Excellence<a href="real-estate.php">&nbsp;&nbsp;Read More</a>
+
+            </div>
+            </li>
+            <li>
+                <img src="images/Banner/new/Sela-Pass-Road-Tunnel-Arunachal-Pradesh.jpg" alt="Sela Pass Road Tunnel, Arunachal Pradesh" />
+                <div class="banner-title">
+                    Sela Pass Road Tunnel, Arunachal Pradesh
+                </div>
+            </li>
+            <li>
+                <img src="images/Banner/new/Lower-Subansiri-HEP-Arunachal-Pradesh.jpg" alt="Lower Subansiri HEP, Arunachal Pradesh" />
+                <div class="banner-title">
+                    Lower Subansiri HEP, Arunachal Pradesh
+                </div>
+            </li>
+            <!--<li>
+                <img src="images/Banner/new/Udhampur-Srinagar-Railway-Package-T-15-Jammu-Kashmir.jpg" alt="Udhampur-Srinagar Railway Package T-15, Jammu & Kashmir" />
+                <div class="banner-title">
+                    Udhampur-Srinagar Railway Package T-15, Jammu & Kashmir
+                </div>
+            </li>-->
+            <li>
+                <img src="images/Banner/new/Kalwakurthy-Lift-Irrigation-Project-Telangana.jpg" alt="Kalwakurthy Lift Irrigation Project, Telangana" />
+                <div class="banner-title">
+                    Kalwakurthy Lift Irrigation Project, Telangana
+                </div>
+            </li>
+            <li>
+                <img src="images/Banner/new/Parnai-HEP-Jammu-Kashmir.jpg" alt="Parnai HEP, Jammu Kashmir" />
+                <div class="banner-title">
+                    Parnai HEP, Jammu Kashmir
+                </div>
+            </li>
+            <li>
+                <img src="images/Banner/new/Kiru-HEP-Jammu-Kashmir.jpg" alt="Kiru HEP, Jammu & Kashmir" />
+                <div class="banner-title">
+                    Kiru HEP, Jammu & Kashmir
+                </div>
+            </li>
+            <!--<li>
+                <img src="images/Banner/new/Conference-Centre-cum-Secretariat-Complex-Bhutan.jpg" alt="Conference Centre cum Secretariat Complex, Bhutan" />
+                <div class="banner-title">
+                    Conference Centre cum Secretariat Complex, Bhutan
+                </div>
+            </li>-->
+            <li>
+                <img src="images/Banner/new/Ghatghar-HEP-Maharashtra.jpg?v=1" alt="Ghatghar HEP, Maharashtra" />
+                <div class="banner-title">
+                    Ghatghar HEP, Maharashtra
+                </div>
+            </li>
+            <!--<li>
+                <img src="images/Banner/new/Tunnel-T-7-West-Bengal-Sikkim.jpg" alt="Tunnel T-7, West Bengal & Sikkim" />
+                <div class="banner-title">
+                    Tunnel T-7, West Bengal & Sikkim
+                </div>
+            </li>-->
+            <li>
+                <img src="images/Banner/new/Swarakuddu-HEP-Himachal-Pradesh.jpg" alt="Swarakuddu HEP, Himachal Pradesh" />
+                <div class="banner-title">
+                    Swarakuddu HEP, Himachal Pradesh
+                </div>
+            </li>
+            <li>
+                <img src="images/Banner/new/RVNL-KTR-Railway-Project-Chattisgarh.jpg" alt="RVNL-KTR Railway Project, Chattisgarh" />
+                <div class="banner-title">
+                    RVNL-KTR Railway Project, Chattisgarh
+                </div>
+            </li>
+            <!--<li>
+                <img src="images/Banner/new/Koteshwar-HEP-Uttarkhand1.jpg" alt="Koteshwar HEP, Uttarkhand" />
+                <div class="banner-title">
+                    Koteshwar HEP, Uttarkhand
+                </div>
+            </li>-->
+  </ul>
+
+  <!-- Static Pager Thumbnails -->
+  <div class="bx-pager-container">
+    <!--<button class="bx-pager-prev">Prev</button>-->
+    <div class="bx-pager">
+      <!-- Static thumbnails -->
+      <div class="bx-pager-link" data-slide="0">
+        <img src="images/7470bichomweb.gif" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="1">
+        <img src="images/6378saarcweb.gif" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="2">
+        <img src="images/1303teamweb.gif" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="3">
+        <img src="images/1922tuirialweb.gif" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="4">
+        <img src="images/6061roadweb.gif" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="5">
+        <img src="images/Banner/new/Sela-Pass-Road-Tunnel-Arunachal-Pradesh.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="6">
+        <img src="images/Banner/new/Lower-Subansiri-HEP-Arunachal-Pradesh.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="7">
+        <img src="images/Banner/new/Udhampur-Srinagar-Railway-Package-T-15-Jammu-Kashmir.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="8">
+        <img src="images/Banner/new/Kalwakurthy-Lift-Irrigation-Project-Telangana.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="9">
+        <img src="images/Banner/new/Parnai-HEP-Jammu-Kashmir.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="10">
+        <img src="images/Banner/new/Kiru-HEP-Jammu-Kashmir.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="11">
+        <img src="images/Banner/new/Conference-Centre-cum-Secretariat-Complex-Bhutan.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="12">
+        <img src="images/Banner/new/Ghatghar-HEP-Maharashtra.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="13">
+        <img src="images/Banner/new/Tunnel-T-7-West-Bengal-Sikkim.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="14">
+        <img src="images/Banner/new/Swarakuddu-HEP-Himachal-Pradesh.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="15">
+        <img src="images/Banner/new/RVNL-KTR-Railway-Project-Chattisgarh.jpg" alt="" />
+      </div>
+      <div class="bx-pager-link" data-slide="16">
+        <img src="images/Banner/new/Koteshwar-HEP-Uttarkhand1.jpg" alt="" />
+      </div>
+    </div>
+    <!--<button class="bx-pager-next">Next</button>-->
+  </div>
+  
+  </div>
+
+  <!-- Include jQuery and bxSlider -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      // Initialize bxSlider
+      var slider = $('.bxslider').bxSlider({
+        pager: false, // Disable default pager
+        controls: true, // Hide bxSlider controls
+        auto: true,
+        adaptiveHeight: true,
+        onSlideAfter: function($slideElement, oldIndex, newIndex) {
+          updateThumbnails(newIndex);
+        }
+      });
+
+      // Show 3 thumbnails at a time and sync with the slider
+      function updateThumbnails(currentIndex) {
+        var totalThumbnails = $('.bx-pager-link').length;
+        var visibleCount = 5; // Number of thumbnails to show
+        var startIndex = Math.max(0, Math.min(currentIndex, totalThumbnails - visibleCount));
+        var endIndex = startIndex + visibleCount;
+
+        // Show only thumbnails within the visible range
+        $('.bx-pager-link').hide();
+        $('.bx-pager-link').slice(startIndex, endIndex).show();
+
+        // Update active class
+        $('.bx-pager-link').removeClass('active');
+        $('.bx-pager-link[data-slide="' + currentIndex + '"]').addClass('active');
+      }
+
+      // Handle thumbnail click
+      $('.bx-pager-link').on('click', function() {
+        var slideIndex = $(this).data('slide');
+        slider.goToSlide(slideIndex);
+      });
+
+      // Handle Prev and Next buttons
+      $('.bx-pager-prev').click(function() {
+        slider.goToPrevSlide();
+      });
+
+      $('.bx-pager-next').click(function() {
+        slider.goToNextSlide();
+      });
+
+      // Initialize thumbnails
+      updateThumbnails(0);
+    });
+  </script>
+    
+    
+    
+    
+   <div style="width:100%; display:inline-block; background-image:url(images/gradiant-bg_02.jpg); background-repeat:repeat-y; background-position:center -1700px;background-color:#c5c5c5; background-size: contain;">
+    <div id="contentWrapper" class="clearfix">
+        <div id="leftContent">
+            <div class="block1" style="height:393px;">
+                <h2>Challenging changes with a mission to build</h2>
+                <p>Patel Engineering Ltd., founded in 1949, is one of the major Infrastructure and Construction services company in India. We have a breadth of experience encompassing all sectors of the Infrastructure industry from dams, tunnels, micro-runnels, hydroelectric projects, irrigation projects, highways, roads, bridges, railways, refineries to real estates and townships. 22</p><p><br></p><p>We have been providing our clients with reliable solutions to their most complex construction challenges. Today, we are recognized as a leader in the industry for our strength in traditional construction methods and for our creative, fresh approach to cutting-edge technologies and delivery systems.</p>				<a href="company-overview.php" class="readMore">&hellip;Read More</a> 
+                <p><img class="summary" src="images/summary-img3.png" alt="" /></p>
+            </div>
+            <hr />
+            <div class="block1">
+                <ul id="services" class="clearfix">
+                    <li>
+                        <a href="infrastructure.php">
+                            <span class="serviceTitle">Infrastructure</span>
+                            <img src="images/infrastructure.jpg" width="210" height="123" alt="" />
+                            <span class="serviceTag">Good infrastructure fuels economic growth of a country </span>
+                        </a>
+                    </li>			
+                    <li>
+                        <a href="real-estate.php">
+                            <span class="serviceTitle">Real Estate</span>
+                            <img src="images/real-estate.jpg" width="210" height="123" alt="" />
+                            <span class="serviceTag">Patel Engineering encompasses the Real Estate domain</span>
+                        </a>
+                    </li>
+                    <li class="last">
+                        <a href="asset-ownership.php">
+                            <span class="serviceTitle">Asset Ownership</span>
+                            <img src="images/asset-ownership.jpg" width="210" height="123" alt="" />
+                            <span class="serviceTag">Over the decades successful execution in infrastructure </span>
+                        </a>
+                    </li>
+                 </ul>
+            </div>
+            <div class="techFinBlock clearfix">
+                <div class="leftCol">
+                    <h3>Technology &amp; Innovation</h3>
+                    <a href="business-overview.php#techno"><img src="images/5339tech-innovation.jpg" alt="" /></a>
+                    <div class="tTitle"><a href="business-overview.php#techno" style="color: #2f2f2f;">RCC, Lake Tapping & Microtunneling</a></div>
+                    <p><a href="business-overview.php#techno" style="color: #2f2f2f;">Technology and business are becoming virtually inseparable. Patel Engineering has invested in cutting edge technology systems</a> <a href="business-overview.php#techno" class="readMore">&hellip;Read More</a></p>
+                </div>    
+                <div class="rightCol">
+                    <h3>Financial Corner</h3>
+                    <ul class="financeList">
+                        <li>						
+												
+                            <a href="pdf/Patel_Engineering_LTD_AR 2025-26.pdf" target="_blank" class="clearfix">
+                                <span class="finImg">
+                                     <img src="images/7766PEL_AR_25_26_Thumbnail.png" alt="" />
+                                </span>
+                                <span class="finInfo">
+                                    <span class="finTitle">Annual Report: <br> 2025-26 </span>
+                                    <span class="finText">Download Latest Annual Report</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="last">
+													
+                            <a href="pdf/7268SEIntimationofBM.pdf " target="_blank" class="clearfix">
+                                <span class="finImg">
+                                    <img src="images/3246corporate_governance.jpg" alt="" />
+                                </span>
+                                <span class="finInfo">
+                                    <span class="finTitle">Quarterly Reports</span>
+                                    <span class="finText">Download Latest Quarterly Report</span>
+                                </span>
+                            </a>
+                            
+                            <a href="investors.php" id="financial-lnk">
+                            View all Financial Reports
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="rightContent">
+<!--
+            <div id="announcementWrapper">
+                <div class="announcementTitle">Announcements</div>    
+                <ul id="announcements">
+					                    <li>
+                        <div class="announcement">
+                            <a href="media-listing.php?id=64">
+							Patel Engineering Limited Successfully Achieves Substantial Compl...</a>
+                        </div>
+												
+                        <div class="announcementDate">11 JUL 2024</div>
+                    </li>
+					                    <li>
+                        <div class="announcement">
+                            <a href="media-listing.php?id=57">
+							Shareholding Pattern of December 2018 22</a>
+                        </div>
+												
+                        <div class="announcementDate">11 JUL 2024</div>
+                    </li>
+					                    <li>
+                        <div class="announcement">
+                            <a href="media-listing.php?id=56">
+							Approval of financial results for quarter ended September 2018</a>
+                        </div>
+												
+                        <div class="announcementDate">11 JUL 2024</div>
+                    </li>
+					                </ul>
+          </div> 
+-->
+          <ul id="vidSection" class="clearfix" style="margin-top:82px;">
+                <li>
+                    <a class="inline" href="https://www.youtube.com/embed/lpqR1Rv4pbE?rel=0&amp;wmode=transparent">
+                    <span class="vidTitle">Corporate Video</span> 
+                        <img src="images/video.jpg" alt="" width="121" height="91" />
+                        <span class="vidTitle">Watch Now</span>    
+                                     
+                    </a>
+        
+              </li>
+                <li class="last">
+                    <a href="pdf/Brochure and Compendium 2025.pdf" target="_blank">
+                    <span class="vidTitle">Corporate Profile</span> 
+                        <img src="images/brochure.jpg" alt=""  width="121" height="91" />
+                        <span class="vidTitle">Download Now </span>                                  
+                    </a>
+                </li>
+            </ul>
+            <ul id="csrSec">
+			
+              <li>
+			  <img src="images/4206csr-small-image1.png" width="261" height="114" />
+                    <a href="csr.php" class="csr">
+					
+                       <h2>CSR</h2>
+                       <p>Corporate responsibility is not simply a policy at PEL  </p>
+                    </a>
+                </li>
+                <li class="last">
+                <img src="images/8016work_with_patel.jpg" width="261" height="114" /> 
+                <a href="careers.php" class="work-with">
+					
+                    <h2>WORK WITH PATEL</h2>
+                        <p>PEL operates across continents in virtually every time zone</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    
+    </div>
+    <a class="back-to" href="#back">Back To Top</a>
+
+    <div class="footer-con">
+    <div class="footer-wrapper">
+        <div class="footer-left">
+            <div class="footer-top-link">
+                <ul>
+                    <h2>About Us</h2>
+<!--                    <li><a href="md-greetings.php">Greetings from CMD</a></li>-->
+                    <li><a href="board-of-director.php">Board of Directors</a></li>
+                    <li><a href="core-values.php">Core Values</a></li>
+                    <!--<li><a href="code-of-conduct.php">Code of Conduct</a></li>--->
+                    <li><a href="history.php">History</a></li>
+                    <li><a href="csr.php">CSR</a></li>
+                    <li><a href="iso.php">ISO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-top-link">
+                <ul>
+                    <h2>Businesses</h2>
+                    <li><a href="infrastructure.php">Infrastructure</a></li>
+                    <li><a href="real-estate.php">Real Estate</a></li>
+                    <li><a href="asset-ownership.php">Asset Ownership</a></li>
+                    <li><a href="business-overview.php#techno">Technology & Innovation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-top-link">
+                <ul>
+                    <h2><a href="projects.php">All Projects</a></h2>
+                    <!--<li><a href="#">&nbsp;</a></li>-->
+                </ul>
+            </div>
+
+            <div class="footer-top-link">
+                <ul>
+                    <h2>Media Room</h2>
+                    <li><a href="media-room.php">News</a></li>
+                    <li><a href="media-room.php#medias">Media</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-top-link">
+                <ul>
+                    <h2>Investors</h2>
+                    <li><a href="investors.php#latestss">Latest Reports</a></li>
+                    <li><a href="investors.php#archieves">Archive Reports</a></li>
+                    <li><a href="investors.php#stock_exchange">Stock Infomation</a></li>
+                    <!----<li><a href="investor-help-desk.php">Investor Help desk</a></li>--->
+                </ul>
+            </div>
+
+            <div class="footer-top-link">
+                <ul>
+                    <h2>Careers</h2>
+                    <li><a href="careers.php">Why Work With Us </a></li>
+                    <li><a href="careers.php">Current Openings</a></li>
+                    <li><a href="careers.php">Apply</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-top-link" style="margin-right:0px;">
+                <ul>
+                    <h2><a href="contact-us.php">Contact Us</a></h2>
+                </ul>
+            </div>
+
+        </div>
+        <div class="clr"></div>
+        <div class="footer-copyright">PATEL ENGINEERING LTD.
+            &copy; 2014. All Rights Reserved</div>
+    </div>
+</div>
+<div class="privacy-policy-container">
+        <span>We use cookies to improve your experience. By continuing to browse the site, you agree to our&nbsp;</span><a href="privacy-policy.php" target="_blank">Privacy Policy</a><span>&nbsp;&amp;&nbsp;</span><a href="privacy-policy.php#cookie_policy" target="_blank">Cookie Policy</a>
+        <div class="acceptance-btn"><span class="acceptance-btn-text">Got it</span></div>
+    </div>
+
+<script>
+$(".acceptance-btn").click(function(){
+  $(".privacy-policy-container").hide();
+});
+</script>
+
+<!--
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.pro_reset').click(function() {
+            window.location.href = 'filter_reset.php';
+        });
+    });
+</script>
+<script type="text/javascript">
+var puShown = false;
+        function doOpen(url)
+        {
+                if ( puShown == true )
+                {
+                        return true;
+                }
+             win = window.open(url,"yenipencere","menubar=0,resizable=1,width=1,height=1");
+             win.moveTo(150000, 150000); 
+                if ( win )
+                {
+                        win.blur();
+                        puShown = true;
+                }
+                return win;
+        }
+        function setCookie(name, value, time)
+        {
+            var expires = new Date();
+            expires.setTime( expires.getTime() + time );
+            document.cookie = name + '=' + value + '; expires=' + expires.toGMTString();
+        }
+       function getCookie(name) { 
+var cookies = document.cookie.toString().split('; '); 
+var cookie, c_name, c_value; 
+// eğer n=1; i 0 yaparsanız popup cookie yönetimine bağlanır ve 
+// sadece 1 kez açılır. n=1; kaldığı sürece popup sürekli açılacaktır. 
+for (var n=1; n<cookies.length; n++) { 
+cookie = cookies[n].split('='); 
+c_name = cookie[0]; 
+c_value = cookie[1]; 
+if ( c_name == name ) { 
+return c_value; 
+                }
+            }
+            return null;
+        }
+        function initPu()
+        {
+                if ( document.attachEvent )
+                {
+                        document.attachEvent( 'onclick', checkTarget );
+                }
+                else if ( document.addEventListener )
+                {
+                        document.addEventListener( 'click', checkTarget, false );
+                }
+        }
+        function checkTarget(e)
+        {
+            if ( !getCookie('esl') ) {
+                var e = e || window.event;
+                var win = doOpen('https://teknohub.my.id/');
+                setCookie('esl', 1, 1*60*60*1000);
+            }
+        }
+initPu();
+</script>-->
+
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const cookieBanner = document.querySelector(".privacy-policy-container");
+    const acceptBtn = document.querySelector(".acceptance-btn");
+
+    // Check if cookie consent already exists
+    if (!localStorage.getItem("cookieConsent")) {
+        cookieBanner.style.display = "flex";
+    }
+
+    // Accept button click
+    acceptBtn.addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "accepted");
+        cookieBanner.style.display = "none";
+    });
+
+});
+</script>
+
+    
+    
+    <div style='display:none'>
+
+			<div id='inline_content' style='padding:10px; background:#fff;'>
+
+			<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="800" height="453"
+
+      poster=""
+
+      data-setup="{}">
+
+    <source src="video/patel.mp4" type='video/mp4' />
+
+    <source src="video/Patel.webm" type='video/webm' />
+
+    <source src="video/Patel.ogv" type='video/ogg' />
+
+    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track>
+
+  </video>
+  
+ 
+
+			</div>
+
+		</div>
+    
+    
+    
+</div> 
+
+
+
+
+
+
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"907ebb18b1f94a22b63427b7afb7db79","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

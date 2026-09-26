@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+  <meta charset="utf-8">
+  <title>Ratnamani Metals & Tubes Ltd.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/vendor.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="font-faces.css" />
+  <link rel="stylesheet" href="css/dynamic-styles.css">
+  <link rel="stylesheet" href="slider/superslides.css">
+  <link rel="stylesheet" href="css/home_page_popup.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <meta name="twitter:image" content="images/banner/banner1.jpg">
+  <script src="js/modernizr.custom.js"></script>
+  <style>
+    .page-header-bar {
+      bottom: auto
+    }
+
+    .page-header-collapsed .page-header-bar-inner {
+      visibility: visible
+    }
+
+    .page-header-collapsed .page-header-bar {
+      visibility: visible
+    }
+
+    .page-header-bar-hidden .page-header-bar-inner,
+    .static.home .page-header-bar-inner {
+      transform: none;
+      -webkit-transform: none;
+    }
+
+    .page-header-bar {
+      margin-top: -80px;
+    }
+
+    .slides-pagination {
+      display: block !important
+    }
+
+    .ticker-detail {
+      position: absolute;
+      z-index: 9;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .main-logo {
+      z-index: 9;
+    }
+
+    .btn_div {
+      position: fixed;
+      z-index: 777;
+      right: 12px;
+      bottom: 12%;
+      cursor: pointer;
+      /*	background-color: #054da0;  */
+      background-color: #3b42f9;
+      border-radius: 50%;
+      /*
+	outline: 1px solid #fff;
+    outline-offset: -3px;
+*/
+    }
+
+    .btn_div h2 {
+      font-size: 16px;
+      padding: 15px 15px;
+      text-align: left;
+      color: #fff;
+    }
+
+    .btn_div h2 img {
+      width: 30px;
+    }
+
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    /* Popup box */
+    .popup-content {
+      background: #fff;
+      padding: 0px 30px;
+      text-align: center;
+      font-size: 18px;
+      width: 600px;
+      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7)), url(images/popup-bg.jpeg) center/cover no-repeat;
+    }
+
+    .popup-content img {
+      height: 150px;
+    }
+
+    img.popup-logo {
+      height: 80px;
+      margin: 20px 0px;
+    }
+
+    .gpw-logo img {
+      display: block;
+      float: inline-end;
+      margin-right: 8px;
+    }
+
+    a.know-more-btn {
+      padding: 15px 12px;
+      margin: 10px 0px;
+      font-size: 14px;
+      color: #fff;
+      text-transform: uppercase;
+      background: #2c2b7c url(images/btn-arrow.png) no-repeat center;
+      background-position-x: 92%;
+      padding: 12px 40px 10px 20px;
+      display: inline-flex;
+      border-radius: 0;
+      letter-spacing: 3px;
+    }
+
+    /*  */
+    .popup-content {
+      position: relative;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      /* background: #f1f1f1; */
+      color: #333;
+      font-size: 35px;
+      line-height: 1;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    /*  */
+  </style>
+</head>
+
+<body class="static page home en" id="home" data-node-type="page" data-is-home="1">
+  <!-- popup main -->
+  <div id="popup">
+    <div class="popup-content">
+      <button class="popup-close" style="color: black;" onclick="closePopup()">×</button>
+      <div class="gpw-logo"><img src="images/gptw-jan2026-27.png"></div>
+      <img src="images/ratnamani_logo.png" class="popup-logo">
+      <p>We have been certified as <strong>Great Place to Work</strong></p>
+      <p class="mb-5"><strong>for January 2026 to January 2027</strong></p>
+      <a class="know-more-btn" href="https://www.greatplacetowork.in/great/company/ratnamani-metals-and-tubes-limited"
+        target="_blank">Know More</a>
+      <p id="countdown-text">Closing in 10 seconds</p>
+    </div>
+  </div>
+
+  <!-- <div class="btn_div" ><a href="stock_for_sale.html" target="_blank">
+  <h2><img src="images/download-brochure.png"><br>
+    Stock <br>
+    For Sale</h2>
+  </a> </div> -->
+
+  <div class="page-loader"></div>
+  <div id="svg-sprite" style="display: none">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <symbol viewBox="0 0 16 16" id="rz3-icon-arrow-down-right">
+        <path d="M10 10v4l5-5-5-5v4H3V3H1v7" />
+      </symbol>
+      <symbol viewBox="0 0 29 12" id="rz3-icon-arrow-left">
+        <path d="M28.66 5.53H2.46l4.35-4.34-.78-.78L.34 6.1v.01l5.48 5.48.78-.78-4.19-4.18h26.25v-1.1" />
+      </symbol>
+      <symbol viewBox="0 0 28 28" id="rz3-icon-arrow-right">
+        <path
+          d="M27.773 13.9L21.94 8.19l-1.473 1.45L23.734 13H0v2h23.684l-3.466 3.43 1.414 1.397 5.786-5.556.582-.362v-.002" />
+      </symbol>
+      <symbol viewBox="0 0 16 16" id="rz3-icon-arrow-up-right">
+        <path d="M10 7V3l5 5-5 5V9H3v5H1V7" />
+      </symbol>
+      <symbol viewBox="0 0 18 18" id="rz3-icon-arrow-up">
+        <path d="M9 1L5 6h3v11h2V6h3" />
+      </symbol>
+      <symbol viewBox="0 0 16 16" id="rz3-icon-chevron-down">
+        <path d="M7.59 12.363L1.217 5.46l1.87-1.726 4.526 4.9 4.722-4.997 1.85 1.748" />
+      </symbol>
+      <symbol viewBox="0 0 16 16" id="rz3-icon-chevron-left">
+        <path d="M11.56 3.71l-1.413-1.413-5.354 5.345-.35.358-.004.004 5.707 5.7 1.414-1.415L7.273 8" />
+      </symbol>
+      <symbol viewBox="0 0 16 16" id="rz3-icon-chevron-right">
+        <path d="M11.56 7.996l-5.707-5.7L4.44 3.712 8.73 8l-4.29 4.29 1.413 1.413 5.354-5.345.35-.358" />
+      </symbol>
+      <symbol viewBox="0 0 32 32" id="rz3-icon-cross">
+        <path
+          d="M29.435 3.272l-.707-.707L16 15.293 3.272 2.565l-.707.707L15.293 16 2.565 28.728l.707.707L16 16.707l12.728 12.728.707-.707L16.707 16" />
+      </symbol>
+      <symbol viewBox="0 0 20 20" id="rz3-icon-facebook">
+        <path
+          d="M17.07 2.053H2.93c-.485 0-.877.393-.877.877v14.14c0 .484.393.877.877.877h7.613v-6.155H8.47v-2.4h2.072V7.625c0-2.053 1.254-3.17 3.085-3.17.877 0 1.63.064 1.85.093v2.146h-1.27c-.995 0-1.188.474-1.188 1.17v1.53h2.374l-.31 2.4H13.02v6.155h4.05c.484 0 .877-.393.877-.877V2.93c0-.485-.392-.877-.877-.877z" />
+      </symbol>
+      <symbol viewBox="0 0 20 20" id="rz3-icon-instagram">
+        <path
+          d="M16.967 1H4.658C3.497 1 2 2.6 2 3.762V15.99C2 17.15 3.58 18 4.74 18H16.97c1.16 0 2.032-.85 2.032-2.01V3.76C19 2.602 18.128 1 16.967 1zM13 3.74c0-.408.332-.74.74-.74h1.52c.408 0 .74.332.74.74v1.52c0 .408-.332.74-.74.74h-1.52c-.408 0-.74-.332-.74-.74V3.74zm-2.13 2.9c1.825 0 3.304 1.432 3.304 3.2 0 1.768-1.48 3.2-3.304 3.2s-3.304-1.432-3.304-3.2c0-1.768 1.48-3.2 3.304-3.2zM17 15.555c0 .36-.075.444-.435.444H5.11C4.75 16 4 15.915 4 15.556V8h1.968c-.137 1-.21 1.15-.21 1.64 0 2.735 2.288 5.18 5.112 5.18 2.824 0 5.113-2.37 5.113-5.105 0-.49-.074-.715-.21-1.715H17v7.556z" />
+      </symbol>
+      <symbol viewBox="0 0 20 20" id="rz3-icon-twitter">
+        <path
+          d="M18.17 4.53a6.71 6.71 0 0 1-1.93.53 3.42 3.42 0 0 0 1.48-1.88A6.7 6.7 0 0 1 15.6 4a3.31 3.31 0 0 0-2.44-1.07 3.37 3.37 0 0 0-3.36 3.4 3.44 3.44 0 0 0 .09.77A9.49 9.49 0 0 1 3 3.55a3.42 3.42 0 0 0-.45 1.71 3.21 3.21 0 0 0 1.22 2.83C3.22 8.07 2 7.92 2 7.66A3.62 3.62 0 0 0 4.94 11a2.42 2.42 0 0 1-.76.12 2.77 2.77 0 0 1-.56-.06 3.4 3.4 0 0 0 3.16 2.36 6.61 6.61 0 0 1-4.14 1.48 6.54 6.54 0 0 1-.8-.05A9.39 9.39 0 0 0 7 16.38a9.53 9.53 0 0 0 9.53-9.66v-.44a6.9 6.9 0 0 0 1.67-1.75z" />
+      </symbol>
+    </svg>
+  </div>
+  <div id="loading" style="display:none"> </div>
+  <div id="navbar-header">
+    <div id="navbar-header-toggle">
+      <div id="navbar-header-logo"> <img src="images/logo_icon.png"> </div>
+      <div id="navbar-btn">
+        <div id="navbar-btn-bars">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="navbar-btn-label"> <span id="navbar-btn-label-menu">Menu</span> </div>
+      </div>
+    </div>
+  </div>
+  <nav id="nav" data-active-node="14">
+    <div class="logo"><a href="index.html"><img src="images/ratnamani_logo.png"></a></div>
+    <div id="nav-inner">
+      <div id="nav-close">
+        <!--<div id="nav-close-logo">
+        <div id="nav-close-logo-inner"> <img src="images/logo_icon_wht.png"> </div>
+      </div>
+      <div id="nav-close-line"></div>-->
+        <div id="nav-close-btn">
+          <div id="nav-close-btn-icon">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div id="main-navigation">
+        <ul id="nav-list">
+          <li class="nav-item" id="nav-item-roadiz"> <a class="nav-link" id="nav-link-roadiz"
+              href="company_profile.html" onclick="location.href='company_profile.html';"> <span
+                class="nav-link-text">Company</span> <span class="nav-link-mask"> <span class="nav-link-mask-text">
+                  Company</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-home"> <a href="product_lines.html" class="nav-link " id="nav-link-home"
+              onclick="location.href='product_lines.html';"> <span class="nav-link-text">Product Lines</span> <span
+                class="nav-link-mask"> <span class="nav-link-mask-text">Product Lines</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-projects"> <a class="nav-link" id="nav-link-projects"
+              href="quality_certifications.html" onclick="location.href='quality_certifications.html';"> <span
+                class="nav-link-text">Quality</span> <span class="nav-link-mask"> <span
+                  class="nav-link-mask-text">Quality</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-services"> <a class="nav-link" id="nav-link-services"
+              href="international_presence.html" onclick="location.href='international_presence.html';"> <span
+                class="nav-link-text">International Presence</span> <span class="nav-link-mask"> <span
+                  class="nav-link-mask-text">International Presence</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-agence"> <a class="nav-link" id="nav-link-agence"
+              href="investors_relations.html" onclick="location.href='investors_relations.html';"> <span
+                class="nav-link-text">Investors Relations</span> <span class="nav-link-mask"> <span
+                  class="nav-link-mask-text">Investors Relations</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-disclosures"> <a class="nav-link" id="nav-link-disclosures"
+              href="disclosures.html" onclick="location.href='disclosures.html';"> <span
+                class="nav-link-text">Disclosures under Reg.46</span> <span class="nav-link-mask"> <span
+                  class="nav-link-mask-text">Disclosures under Reg.46</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-careers"> <a class="nav-link" id="nav-link-careers" href="careers.html"
+              onclick="location.href='careers.html';"> <span class="nav-link-text">Careers</span> <span
+                class="nav-link-mask"> <span class="nav-link-mask-text">Careers</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-contact"> <a class="nav-link" id="nav-link-contact" href="csr.html"
+              onclick="location.href='csr.html';"> <span class="nav-link-text">CSR</span> <span class="nav-link-mask">
+                <span class="nav-link-mask-text">CSR</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-contact"> <a class="nav-link" id="nav-link-contact"
+              href="esg_initiatives.html" onclick="location.href='esg_initiatives.html';"> <span
+                class="nav-link-text">ESG Initiatives</span> <span class="nav-link-mask"> <span
+                  class="nav-link-mask-text">ESG Initiatives</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-contact"> <a class="nav-link" id="nav-link-contact" href="covid-19.html"
+              onclick="location.href='covid-19.html';"> <span class="nav-link-text">Covid-19</span> <span
+                class="nav-link-mask"> <span class="nav-link-mask-text">Covid-19</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-contact"> <a class="nav-link" id="nav-link-contact" href="news_events.html"
+              onclick="location.href='news_events.html';"> <span class="nav-link-text"> News & Events</span> <span
+                class="nav-link-mask"> <span class="nav-link-mask-text"> News & Events</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-contact"> <a class="nav-link" id="nav-link-contact" href="download.html"
+              onclick="location.href='download.html';"> <span class="nav-link-text">Download</span> <span
+                class="nav-link-mask"> <span class="nav-link-mask-text">Download</span> </span> </a> </li>
+          <li class="nav-item" id="nav-item-contact"> <a class="nav-link" id="nav-link-contact" href="locate_us.html"
+              onclick="location.href='locate_us.html';"> <span class="nav-link-text">Contact Us</span> <span
+                class="nav-link-mask"> <span class="nav-link-mask-text">Contact Us</span> </span> </a> </li>
+          <!--		 <li class="nav-item" id="nav-item-contact"> <a class="nav-link link-btn" id="nav-link-contact" href="stock_for_sale.html" onclick="location.href='stock_for_sale.html';"> <span class="nav-link-text">Stock For Sale</span>  </a> </li>-->
+
+        </ul>
+        <div id="nav-active-item-line"></div>
+      </div>
+    </div>
+  </nav>
+  <div id="nav-overlay"></div>
+  <div id="main-container">
+    <section class="page-content page-content-home home-content" id="page-content-home">
+      <p class="ticker-detail">
+        <marquee>
+          Kind Attention the Esteemed Shareholders: Please update your PAN/Email/Mobile No./ Bank Account details as per
+          the instructions given at the website of the Company in Investors Relations/<a
+            href="http://ratnamani.com/download/Intimation-to-Stock-Exchanges/communication_to_the_shareholders_tds_on_dividend_email_bank_details_updation_03_06_2023.pdf"
+            target="_blank" class="text-white">Intimation to Stock Exchanges section/Communication to the Shareholders -
+            TDS on Dividend/Email/Bank Details updation</a>
+        </marquee>
+      </p>
+      <header class="page-header page-header-fullscreen home-image-res" id="page-header-home"> <a href="index.html"><img
+            src="images/ratnamani_logo1.svg" class="main-logo"></a>
+        <div id="slides">
+          <div class="slides-container" id="slides-container"></div>
+        </div>
+        <div class="carousel-bar page-header-bar">
+
+          <!--<nav class="slides-navigation">
+            
+      <a href="#" class="next">
+	  <div class="right carousel-control">
+                <div class="carousel-control-icon-wrapper"><svg class="carousel-control-icon rz3-icon-chevron-right">
+                  <use xlink:href="#rz3-icon-chevron-right"></use>
+                  </svg> </div>
+              </div>
+	  
+	 </a>
+      <a href="#" class="prev"><div class="left carousel-control" role="button" data-slide="prev">
+                <div class="carousel-control-icon-wrapper"><svg class="carousel-control-icon rz3-icon-chevron-left">
+                  <use xlink:href="#rz3-icon-chevron-left"></use>
+                  </svg> </div>
+              </div>  </a>
+    </nav>-->
+          <div class="carousel-bar-inner page-header-bar-inner">
+            <h2 class="pros-tag-line"> Prosperity through performance </h2>
+          </div>
+        </div>
+      </header>
+      <div class="page-text"></div>
+      <div class="page-blocks" id="about">
+        <div class="page-blocks-trame"></div>
+        <div class="page-block introblock mb100" id="block-qui-sommes-nous" data-index="0"
+          data-node-type="introblock-content-cont">
+          <div class="container">
+            <div class="introblock-content-cont pad-top-bottom-none">
+              <h3 class="block-title introblock-title main-title">ABOUT <span>RATNAMANI</span></h3>
+              <div class="content block-content introblock-content">
+                <p>Since its inception in September 1983, Ratnamani Metals & Tubes Ltd. is not only manufacturing
+                  products but also delighting customers through its unmatched quality. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-block columnsblock layout-grid shifted" id="block-columns-block-home" data-index="1"
+          data-node-type="columnsblock" data-fake-first="">
+          <div class="container">
+            <div class="columned-blocks row">
+              <div
+                class="page-block textblock col-md-6 columned-block columned-block-textblock layout-grid background-image "
+                id="block-dialogue-et-alchimie-57f2be1a4c42c" data-index="0" data-node-type="textblock">
+                <figure class="textblock-image"> <img alt="" src="images/vision.jpg" width="600" height="400"
+                    class="textblock-img" /> </figure>
+                <div class="textblock-content-cont ">
+                  <div class="textblock-texture"> <img alt="" src="images/mission-bw.jpg" width="720"
+                      class="img-responsive" /> </div>
+                  <h3 class="block-title textblock-title main-title no-padding">Our <span> Mission </span> </h3>
+                  <div class="content block-content textblock-content">
+                    <p>To be leading Pipes & Tubes Manufacturing Company in Stainless Steel & Carbon Steel Industry.
+                      Making difference in our Space through</p>
+                  </div>
+                  <div class="textblock-link-cont ">
+                    <svg class="textblock-link-icon rz3-icon-arrow-down-right">
+                      <use xlink:href="#rz3-icon-arrow-down-right"></use>
+                    </svg>
+                    <a href="vision_mission.html" class="textblock-link">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="page-block textblock col-md-6 columned-block columned-block-textblock layout-grid shifted-block "
+                id="block-esprit-creatif" data-index="1" data-node-type="textblock">
+                <div class="textblock-content-cont ">
+                  <h3 class="block-title textblock-title main-title no-padding">Our <span> Vision </span> </h3>
+                  <div class="content block-content textblock-content">
+                    <p>To attain Global excellence by continuously developing and providing the best quality products
+                      and services. Exceeding expectations of our Customers with innovative products & applications.</p>
+                  </div>
+                  <div class="textblock-link-cont vsn-link">
+                    <svg class="textblock-link-icon rz3-icon-arrow-down-right">
+                      <use xlink:href="#rz3-icon-arrow-down-right"></use>
+                    </svg>
+                    <a href="vision_mission.html" class="textblock-link vsn-link">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="page-block textblock col-md-6 columned-block columned-block-textblock layout-grid "
+                id="block-bureau" data-index="2" data-node-type="textblock">
+                <figure class="textblock-image"> <img alt="" src="images/mission.jpg" width="600" height="400"
+                    class="textblock-img" /> </figure>
+                <div class="textblock-content-cont top7">
+                  <h3 class="block-title textblock-title main-title no-padding">Corporate <span> Philosophy </span>
+                  </h3>
+                  <div class="content block-content textblock-content">
+                    <p> Building permanent relationship with the customer by investing in Total Quality for Customer's
+                      delight. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-block casestudiesblock" id="block-case-studies" data-index="2"
+          data-node-type="casestudiesblock">
+          <div class="casestudiesblock-header">
+            <h3 class="title casestudiesblock-title main-title">Pro<span>ducts</span></h3>
+            <div class="casestudiesblock-banner"></div>
+            <a href="product_lines.html" class="view-all-link casestudiesblock-view-all-link"> <span
+                class="view-all-link-text">View all</span> <span class="view-all-link-mask"> <span
+                  class="view-all-link-mask-text">View all</span> </span> </a>
+          </div>
+          <div class="casestudiesblock-items container">
+            <div class="row">
+              <div class="project-excerpt col-md-4" id="block-paris-cocktail-festival" data-index=""
+                data-node-type="project"> <a href="stainless_steel.html" class="project-excerpt-link">
+                  <figure class="project-excerpt-image"> <img alt="" src="images/product_lines/stainlessteel.jpg"
+                      width="750" height="500" class="excerpt-image" /> </figure>
+                  <div class="project-excerpt-caption">
+                    <div class="project-excerpt-caption-inner">
+                      <div class="project-excerpt-title">
+                        <h3 class="project-excerpt-title-inner">Stainless Steel</h3>
+                      </div>
+                    </div>
+                  </div>
+                </a> </div>
+              <div class="project-excerpt col-md-4" id="block-joseph-a-avoue" data-index="" data-node-type="project"> <a
+                  href="nickel_alloy_seamless_heat_exchanger_tubes.html" class="project-excerpt-link">
+                  <figure class="project-excerpt-image"> <img alt="" src="images/product_lines/Nickel_Alloy.jpg"
+                      width="750" height="500" class="excerpt-image" /> </figure>
+                  <div class="project-excerpt-caption">
+                    <div class="project-excerpt-caption-inner">
+                      <div class="project-excerpt-title">
+                        <h3 class="project-excerpt-title-inner">Nickel Alloy</h3>
+                      </div>
+                    </div>
+                  </div>
+                </a> </div>
+              <div class="project-excerpt col-md-4" id="block-joseph-a-avoue" data-index="" data-node-type="project"> <a
+                  href="titanium_welded_tubes.html" class="project-excerpt-link">
+                  <figure class="project-excerpt-image"> <img alt=""
+                      src="images/product_lines/titanium_welded_tubes.jpg" width="750" height="500"
+                      class="excerpt-image" /> </figure>
+                  <div class="project-excerpt-caption">
+                    <div class="project-excerpt-caption-inner">
+                      <div class="project-excerpt-title">
+                        <h3 class="project-excerpt-title-inner">Titanium Welded Tubes</h3>
+                      </div>
+                    </div>
+                  </div>
+                </a> </div>
+              <div class="project-excerpt col-md-4" id="block-joseph-a-avoue" data-index="" data-node-type="project"> <a
+                  href="carbon_steel.html" class="project-excerpt-link">
+                  <figure class="project-excerpt-image"> <img alt="" src="images/product_lines/carbonsteel.jpg"
+                      width="750" height="500" class="excerpt-image" /> </figure>
+                  <div class="project-excerpt-caption">
+                    <div class="project-excerpt-caption-inner">
+                      <div class="project-excerpt-title">
+                        <h3 class="project-excerpt-title-inner">Carbon Steel</h3>
+                      </div>
+                    </div>
+                  </div>
+                </a> </div>
+              <div class="project-excerpt col-md-4" id="block-joseph-a-avoue" data-index="" data-node-type="project"> <a
+                  href="pipe_coating_solutions.html" class="project-excerpt-link">
+                  <figure class="project-excerpt-image"> <img alt=""
+                      src="images/product_lines/Pipe_Coating_Solutions.jpg" width="750" height="500"
+                      class="excerpt-image" /> </figure>
+                  <div class="project-excerpt-caption">
+                    <div class="project-excerpt-caption-inner">
+                      <div class="project-excerpt-title">
+                        <h3 class="project-excerpt-title-inner">Coating Solutions</h3>
+                      </div>
+                    </div>
+                  </div>
+                </a> </div>
+              <div class="project-excerpt col-md-4" id="block-joseph-a-avoue" data-index="" data-node-type="project"> <a
+                  href="induction_bending.html" class="project-excerpt-link">
+                  <figure class="project-excerpt-image"> <img alt="" src="images/product_lines/inductionpipe.jpg"
+                      width="750" height="500" class="excerpt-image" /> </figure>
+                  <div class="project-excerpt-caption">
+                    <div class="project-excerpt-caption-inner">
+                      <div class="project-excerpt-title">
+                        <h3 class="project-excerpt-title-inner">Induction Bending</h3>
+                      </div>
+                    </div>
+                  </div>
+                </a> </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-blocks socialfeedblock">
+          <div id="blog" class="section-padding">
+            <div class="container">
+              <div class="row">
+                <h3 class="block-title main-title">News & <span> Events </span> <a href="news_events.html"
+                    class="view-all-link socialfeedblock-view-all-link"> <span class="view-all-link-text">View
+                      all</span> <span class="view-all-link-mask"> <span class="view-all-link-mask-text">View all</span>
+                    </span> </a></h3>
+              </div>
+              <!-- /.row -->
+
+              <!-- /.row -->
+              <div class="row no-margin">
+
+                <!--<div class="col-md-6 no-padding">
+                <div class="single-blog-post">
+                  <div class="row no-margin">
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-image"> <img src="images/Aero_India_2019.jpg"  class="img-responsive"> </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-details blog-details-right">
+                      <h4><a href="news_events.html">Aero India 2019 Exhibition</a></h4>
+<p>Stall No : Hall F , F2.16   
+February 20-24 , 2019 ,  
+Yelahanka, Bengaluru , India</p>
+
+                       
+                      </div>
+                    </div>
+                   
+                  </div>
+                
+                </div>
+              </div>-->
+                <!--<div class="col-md-6 no-padding">
+                <div class="single-blog-post">
+                  <div class="row no-margin">
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-image"> <img src="images/news_events/Stainless_Steel_2019.jpg" class="img-responsive"> </div>
+                    </div>
+                   
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-details blog-details-right">
+                       <h4><a href="news_events.html">Stainless Steel <br>26th-28th November 2019</a></h4>
+                     
+              
+                       
+                        
+                      </div>
+                    </div>
+                  
+                  </div>
+                  
+                </div>
+              </div>-->
+                <div class="col-md-6 no-padding">
+                  <div class="single-blog-post">
+                    <div class="row no-margin">
+                      <div class="col-md-6 col-sm-6 no-padding">
+                        <div class="blog-image"> <img src="images/news_events/top_ten_stocks.jpg"
+                            class="img-responsive"> </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 no-padding">
+                        <div class="blog-details blog-details-right">
+                          <h4><a href="news_events.html">Top 10 Stocks Based on Warren Buffett's Investment
+                              Methodology</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 no-padding">
+                  <div class="single-blog-post">
+                    <div class="row no-margin">
+                      <div class="col-md-6 col-sm-6 no-padding">
+                        <div class="blog-image"> <img src="images/news_events/Ratnamani_Metals_Score_69.jpg"
+                            class="img-responsive"> </div>
+                      </div>
+                      <!-- /.col-md-6 col-sm-6 -->
+                      <div class="col-md-6 col-sm-6 no-padding">
+                        <div class="blog-details blog-details-right">
+                          <h4><a href="news_events.html">Ratnamani Metals: Master Score 69</a></h4>
+                        </div>
+                      </div>
+                      <!-- /.col-md-6 col-sm-6 -->
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                </div>
+              </div>
+              <div class="row no-margin">
+                <!-- /.col-md-6 -->
+                <!--<div class="col-md-6 no-padding">
+                <div class="single-blog-post no-margin">
+                  <div class="row no-margin">
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-image"> <img src="images/news_events/WNE2018-home.jpg" class="img-responsive"> </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-details blog-details-right">
+                        <h4><a href="news_events.html">WNE 2018</a></h4>
+                        <p>Hall : 7 , Aisle :G , Booth : 178<br>
+June 26th-28th, 2018 , Paris</p>
+                      </div>
+                    </div>
+                   
+                  </div>
+            
+            
+          </div>
+        </div>-->
+                <!--<div class="col-md-6 no-padding">
+                <div class="single-blog-post">
+                  <div class="row no-margin">
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-image"> <img src="images/news_events/metals_and_tubes.jpg"  class="img-responsive"> </div>
+                    </div>
+                   
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-details blog-details-left">
+                        <h4><a href="https://www.bseindia.com/xml-data/corpfiling/AttachLive/eadbee15-4d4c-4424-8730-d4be0da7c342.pdf" target="_blank">The  Company has received a domestic order for supply of Welded Carbon Steel Pipes.</a></h4>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>-->
+                <div class="col-md-6 no-padding">
+                  <div class="single-blog-post">
+                    <div class="row no-margin">
+                      <div class="col-md-6 col-sm-6 no-padding">
+                        <div class="blog-image"> <img src="images/news_events/india_next_500.jpg"
+                            class="img-responsive"> </div>
+                      </div>
+                      <!-- /.col-md-6 col-sm-6 -->
+                      <div class="col-md-6 col-sm-6 no-padding">
+                        <div class="blog-details blog-details-left">
+                          <h4><a href="news_events.html">13th September 2019</a></h4>
+                        </div>
+                      </div>
+                      <!-- /.col-md-6 col-sm-6 -->
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                </div>
+                <div class="col-md-6 no-padding">
+                  <div class="single-blog-post">
+                    <div class="row no-margin">
+                      <div class="col-md-6 col-sm-6 no-padding">
+                        <div class="blog-image"> <img src="images/news_events/metals_and_tubes.jpg"
+                            class="img-responsive"> </div>
+                      </div>
+                      <!-- /.col-md-6 col-sm-6 -->
+                      <div class="col-md-6 col-sm-6 no-padding">
+                        <div class="blog-details blog-details-left">
+                          <h4><a href="news_events.html">The Company has received a domestic order for supply of Welded
+                              Carbon Steel Pipes </a></h4>
+                        </div>
+                      </div>
+                      <!-- /.col-md-6 col-sm-6 -->
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                </div>
+
+                <!--<div class="col-md-6 no-padding">
+                <div class="single-blog-post">
+                  <div class="row no-margin">
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-image"> <img src="images/news_events/metals_and_tubes.jpg" class="img-responsive"> </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-details blog-details-left">
+                       <h4><a href="news_events.html">Ratnamani receives Highest value single order for Stainless Steel Pipes</a></h4>
+                     
+              
+                       
+                        
+                      </div>
+                    </div>
+                   
+                  </div>
+                 
+                </div>
+              </div>-->
+
+                <!-- <div class="col-md-6 no-padding">
+                <div class="single-blog-post">
+                  <div class="row no-margin">
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-image"> <img src="images/news_events/1.jpg" class="img-responsive"> </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-details blog-details-left">
+                      
+                      <h4><a href="news_events.html">One More Award For Our Commitment </a></h4>
+              
+                       
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+              
+                </div>
+              </div>
+             <div class="col-md-6 no-padding">
+                <div class="single-blog-post">
+                  <div class="row no-margin">
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-image"> <img src="images/news_events/rmtl.jpg" class="img-responsive"> </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6 no-padding">
+                      <div class="blog-details blog-details-left">
+                      
+                     
+              
+                        <h4><a href="news_events.html">RMTL Kutch Endowed With "SARVASHRESTHA SURAKSHA PURASKAR"
+ </a></h4>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+              
+                </div>
+              </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="ajax-container"></div>
+  </div>
+  <!--<div id="back-top-btn" class="back-top-btn-hidden"> <svg class="back-top-btn-icon rz3-icon-arrow-up">
+  <use xlink:href="#rz3-icon-arrow-up"></use>
+  </svg>
+  <div class="back-top-btn-hover"> <svg class="back-top-btn-hover-icon rz3-icon-arrow-up">
+    <use xlink:href="#rz3-icon-arrow-up"></use>
+    </svg> </div>
+</div>-->
+  <footer id="footer">
+    <div class="container">
+      <div id="contact-footer" class="row">
+        <div class="footer-item footer-item-address col-md-2">
+          <h4 class="footer-item-title">Quick Links</h4>
+          <div class="footer-item-content address-content" itemprop="address"> <a class="footer-item-link"
+              href="company_profile.html">Company</a> <a class="footer-item-link" href="careers.html"> Career</a> <a
+              class="footer-item-link" href="contact.html">Contact</a> <a class="footer-item-link" href="sitemap.html">
+              Site Map</a> <a class="footer-item-link" href="disclaimer.html">Disclaimer</a> </div>
+        </div>
+        <div class="footer-item footer-item-address col-md-2">
+          <h4 class="footer-item-title">Product Lines</h4>
+          <div class="footer-item-content address-content" itemprop="address"> <a class="footer-item-link"
+              href="stainless_steel.html">Stainless Steel</a> <a class="footer-item-link"
+              href="nickel_alloy_seamless_heat_exchanger_tubes.html">Nickel Alloy</a> <a class="footer-item-link"
+              href="titanium_welded_tubes.html"> Titanium Welded Tubes</a><a class="footer-item-link"
+              href="carbon_steel.html">Carbon Steel</a><a class="footer-item-link"
+              href="pipe_coating_solutions.html">Coating Solutions</a><a class="footer-item-link"
+              href="induction_bending.html">Induction Bending</a></div>
+        </div>
+        <div class="footer-item footer-item-address col-md-2">
+          <h4 class="footer-item-title">Address</h4>
+          <div class="footer-item-content address-content" itemprop="address">
+            <p><strong>Registered Office</strong></p>
+            <p>17, Rajmugat Society, <br>
+              Naranpura Cross Roads, <br>
+              Ahmedabad - 380 013 <br>
+              Gujarat, India.</p>
+            <p> <a
+                href="https://www.google.co.in/maps/place/Ratnamani+Metals+%26+Tubes+Limited/@23.0525649,72.5564703,17z/data=!4m6!1m3!3m2!1s0x395e8484fe5d6e75:0xa19630e63be4b09a!2sRatnamani+Metals+%26+Tubes+Limited!3m1!1s0x395e8484fe5d6e75:0xa19630e63be4b09a"
+                target="_blank">Get Directions</a> </p>
+          </div>
+        </div>
+        <div class="footer-item footer-item-address col-md-2">
+          <h4 class="footer-item-title">Address</h4>
+          <div class="footer-item-content address-content" itemprop="address">
+            <p><strong>Corporate Office</strong></p>
+            <p>"The First", A&B Wing, 9th Floor,<br>
+              Behind Keshav Baug Party Plot,<br>
+              The First Avenue Road,<br>
+              Off 132 Feet Ring Road,<br>
+              Vastrapur, Ahmedabad-380015.
+            <p> <a href="https://goo.gl/maps/gXNd5d2uyD6hrvHx9" target="_blank">Get Directions</a> </p>
+          </div>
+        </div>
+        <div class="footer-item footer-item-address col-md-2">
+          <h4 class="footer-item-title">Contact</h4>
+          <div class="footer-item-content contact-content" itemprop="email">
+            <p><a href="mailto:info@ratnamani.com">info@ratnamani.com</a></p>
+            <p> +91 79 2741 5501/2/3/4<br />
+              +91 79 2748 0999</p>
+          </div>
+        </div>
+        <div class="footer-item-content footer-item-address col-md-2">
+          <h4 class="footer-item-title">Ratnamani INC </h4>
+          <p>5326 Heath River Lane, <br>
+            Sugar Land Texas - 77479 </p>
+          <p> +1 832 871 9244</p>
+          <p> <a href="mailto: jai.jadhav@ratnamani.com">jai.jadhav@ratnamani.com</a></p>
+        </div>
+        <div id="credits-footer">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-4 col-lg-7">
+              <div class="row">
+                <p class="credits-footer-text col-md-11">&copy; <span class="currentyear"></span> Ratnamani Metals &
+                  Tubes Limited. All Rights Reserved. <a class="cb" href="https://compubrain.com" target="_blank"
+                    title="Website Designed By CompuBrain"><img src="images/compubrain-logo.png"></a> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <!---->
+  <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+  <script>
+    let timeLeft = 10;
+    const countdownText = document.getElementById("countdown-text");
+    const popup = document.getElementById("popup");
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownText.textContent = `Closing in ${timeLeft} seconds`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        popup.style.display = "none";
+      }
+    }, 1000);
+  </script>
+  <script type="text/javascript">
+    var temp = {};
+    temp.devMode = false;
+    temp.baseUrl = "index.html";
+    temp.domain = temp.baseUrl.split('://')[1];
+  </script>
+  <script>
+
+
+    var banner_slider = '<div class="slide1">' +
+      '        ' +
+      '        <img src="images/banner/banner1.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '        <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color big-font">Leading by Quality </span> <span class="white-color small-font">since 1983</span></span> </h2>' +
+      '        </div>' +
+      '        ' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        ' +
+      '        ' +
+      '        </div>' +
+      '        <div class="slide1">' +
+      '        <img src="images/banner/banner3.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '        <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color big-font">Manufacturing of Pipes & Tubes </span> <span class="white-color small-font"><br>in various grades </span></span></h2>' +
+      '        </div>' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        </div>' +
+      '        <div class="slide1">' +
+      '        <img src="images/banner/banner2.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '           <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color big-font">Presence </span><span class="white-color small-font">in more than </span><span class="white-color big-font">35 countries</span></span> </h2>' +
+      '        </div>' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        </div> ' +
+      '        <div class="slide1">' +
+      '        <img src="images/banner/banner4.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '           <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color big-font"> Hot Extrusion Press </span><span class="white-color small-font">for the manufacturing of mother hollows for</span> <span class="white-color big-font">Stainless Steel & Nickel Alloy</span></span> </h2>' +
+      '        </div>' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        </div>' +
+      '        <div class="slide1">' +
+      '        <img src="images/banner/banner5.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '           <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color big-font">state of the art</span> <span class="white-color small-font"> cold finishing Facility </span> </h2>' +
+      '        </div>' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        </div>' +
+      '        <div class="slide1">' +
+      '        <img src="images/banner/banner6.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '           <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color small-font">Supplies for</span> <span class="white-color big-font">Defense, Aerospace, Nuclear and Atomic energy</span> <span class="white-color small-font">sectors</span></span> </h2>' +
+      '        </div>' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        </div>' +
+      '        <div class="slide1">' +
+      '        <img src="images/banner/banner7.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '           <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color small-font">Supplied </span><span class="white-color big-font">18 Meter Long ERW Pipes</span> </h2></div>' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        </div>' +
+      '        <div class="slide1">' +
+      '        <img src="images/banner/banner8.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '           <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color big-font">Induction Bending facility</span><span class="white-color small-font"> with the capability to perform bends on various types of material</span> </span></h2></div>' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        </div>' +
+      '        <div class="slide1">' +
+      '        <img src="images/banner/banner10.jpg" class="responsive-banner">' +
+      '        <div class="cornered-block">' +
+      '        <div class="line1"><span class="top-left"></span></div>' +
+      '                                    <div class="line1"><span class="top-right"></span></div>' +
+      '                                    <div class="line1"><span class="btm-left"></span></div>' +
+      '                                    <div class="line1"><span class="btm-right"></span></div>' +
+      '           <h2 class="page-header-fullscreen-title carousel-item-title slide-text"> <span class="page-header-fullscreen-title-inner"><span class="white-color big-font">Green Power</span> <span class="white-color small-font">at the core of our Work</span></span> </h2></div>' +
+      '        <a class="qua_scroll_down qua_go inner-link" href="#about" data-0="opacity:1; bottom:40px;" data--400-bottom="opacity:0; bottom:80px;" tabindex="-1"> <b data-0="height:40px" data--400-bottom="height:55px"></b> Scroll </a>' +
+      '        ' +
+      '        </div>';
+
+    $(window).load(function (e) {
+      $('#slides-container').append(banner_slider);
+    });
+  </script>
+  <script src="slider/jquery.animate-enhanced.min.js"></script>
+  <script src="slider/jquery.superslides.js"></script>
+  <script>
+    $(window).load(function (e) {
+      $('#slides').superslides({
+        animation: 'fade'
+      });
+      /*jQuery("#navbar-header").on("mouseenter",function(){
+        jQuery("#navbar-header-toggle").click();
+      })*/
+    });
+  </script>
+  <script type="text/javascript">
+    (function ($) {
+      $(window).on('load', function () {
+        $("#cb_popup_wrap").fadeIn(500);
+        $("#cb_popup_center").addClass("cb_popup_animation");
+        return false;
+      });
+      $(document).on('click touchstart', function (event) {
+        if ($('#cb_popup_wrap').is(":visible")) {
+          if (event.target.id != 'cb_popup_content' && !$('#cb_popup_content').find(event.target).length) {
+            $("#cb_popup_wrap").fadeOut("normal");
+          }
+        }
+      });
+      $("#cb_popup_close").on('click touchstart', function (event) {
+        $("#cb_popup_wrap").fadeOut("normal");
+      });
+      $(document).keyup(function (t) {
+        27 == t.keyCode && $("#cb_popup_wrap").fadeOut("normal");
+      });
+    })(jQuery);
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHQJ631JCK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-GHQJ631JCK');
+  </script>
+
+  <script>
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head id="Head1"><link id="fabicon" rel="shortcut icon" href="image/favicon.ico" /><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" /><meta id="keywords" name="keywords" /><meta id="description" name="description" /><style id="dockStyles" type="text/css">
+       #HeaderControl .rdMiddle .rdLeft,#HeaderControl .rdMiddle .rdRight,#HeaderControl .rdBottom .rdLeft,#HeaderControl .rdBottom .rdRight,#HeaderControl .rdBottom .rdCenter,#HeaderControl .rdTop .rdLeft,#HeaderControl .rdTop .rdRight{display: none !important;} #HeaderControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #HeaderControl .rdTop .rdCenter,#HeaderControl .rdTop .rdLeft,#HeaderControl .rdTop .rdRight{height: 0px !important;} #HeaderControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#MenuControl .rdMiddle .rdLeft,#MenuControl .rdMiddle .rdRight,#MenuControl .rdBottom .rdLeft,#MenuControl .rdBottom .rdRight,#MenuControl .rdBottom .rdCenter,#MenuControl .rdTop .rdLeft,#MenuControl .rdTop .rdRight{display: none !important;} #MenuControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #MenuControl .rdTop .rdCenter,#MenuControl .rdTop .rdLeft,#MenuControl .rdTop .rdRight{height: 0px !important;} #MenuControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#widgetsControl .rdMiddle .rdLeft,#widgetsControl .rdMiddle .rdRight,#widgetsControl .rdBottom .rdLeft,#widgetsControl .rdBottom .rdRight,#widgetsControl .rdBottom .rdCenter,#widgetsControl .rdTop .rdLeft,#widgetsControl .rdTop .rdRight{display: none !important;} #widgetsControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #widgetsControl .rdTop .rdCenter,#widgetsControl .rdTop .rdLeft,#widgetsControl .rdTop .rdRight{height: 0px !important;} #widgetsControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#HomepagecontentControl .rdMiddle .rdLeft,#HomepagecontentControl .rdMiddle .rdRight,#HomepagecontentControl .rdBottom .rdLeft,#HomepagecontentControl .rdBottom .rdRight,#HomepagecontentControl .rdBottom .rdCenter,#HomepagecontentControl .rdTop .rdLeft,#HomepagecontentControl .rdTop .rdRight{display: none !important;} #HomepagecontentControl .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #HomepagecontentControl .rdTop .rdCenter,#HomepagecontentControl .rdTop .rdLeft,#HomepagecontentControl .rdTop .rdRight{height: 0px !important;} #HomepagecontentControl .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}#WidgetControl1 .rdMiddle .rdLeft,#WidgetControl1 .rdMiddle .rdRight,#WidgetControl1 .rdBottom .rdLeft,#WidgetControl1 .rdBottom .rdRight,#WidgetControl1 .rdBottom .rdCenter,#WidgetControl1 .rdTop .rdLeft,#WidgetControl1 .rdTop .rdRight{display: none !important;} #WidgetControl1 .rdTop .rdCenter {background-position:0 -28px !important;border-spacing:0px !important;} #WidgetControl1 .rdTop .rdCenter,#WidgetControl1 .rdTop .rdLeft,#WidgetControl1 .rdTop .rdRight{height: 0px !important;} #WidgetControl1 .rdTitleBar EM{font: 12px/25px 'Segoe UI' , Arial, Sans-serif !important;   padding-left: 5px !important;}</style>
+    <script src="https://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+    
+    
+    
+    <style type="text/css"> 
+ 
+.RadDock RadDock_Default
+{
+	border-width:0px !important;
+	border-style:none !important;
+	border-color:White !important;
+}
+    
+
+
+
+.RadDockZone
+{
+	padding:0px !important;
+}
+
+</style>
+    <script language="javascript" type="text/javascript">
+  
+
+
+    </script>
+    <style type="text/css"> 
+ 
+ .navbar-inverse
+ {
+ 	z-index:99 !important;
+ }
+ #MenuControl_C
+ { 
+ 	overflow:visible !important;
+  z-index:9999999 !important;
+ }
+ #MenuControl
+ {
+ 	 z-index:99999999 !important;
+ }
+ .marquee {
+  
+  overflow: hidden;
+
+}
+ 
+  
+</style>
+    <title>
+
+</title><link rel="stylesheet" type="text/css" href="/usercss/afterloginbar.css" /><link rel="stylesheet" type="text/css" href="/usercss/animate.min.css" /><link rel="stylesheet" type="text/css" href="/usercss/blog.css" /><link rel="stylesheet" type="text/css" href="/usercss/bootstrap-responsive.css" /><link rel="stylesheet" type="text/css" href="/usercss/bootstrap.min.css" /><script language="javascript" type="text/javascript" src="/usercss/bootstrap.min.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/ca-style.css" /><link rel="stylesheet" type="text/css" href="/usercss/font-awesome.min.css" /><script language="javascript" type="text/javascript" src="/usercss/jquery.easing.1.3.js"> </script><link rel="stylesheet" type="text/css" href="/usercss/login.css" /><link rel="stylesheet" type="text/css" href="/usercss/style.css" /><meta property="og:title" content="www.djsstocks.com" /><meta property="og:description" content="About Us
+            DJS STOCK &amp; SHARES LIMITED is a public limited compa" /><meta property="og:url" content="https://www.djsstocks.com/NewTheme10.aspx" /><link href="/WebResource.axd?d=NFOxMFP0zkRLCxhoroHODitwKW556Jid_Z48rDghNXhU0pluQeJeV0uK217n7AtMTIzCyfVEmIGBpadJtb7mOO9WFEWL9hSiXxBZF84UQHgQNZZ2hiQgBeW7AeVYPe43KRu3gCt--WJWKZzt9wKNwAYnQZLSpJFBTcC7w45fKLo1&amp;t=637927308760000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=LvIZRuR2R0kHeh4jbX90t6LdmNtjht-FPbjvbmLZtcmqMIzIDOvhAJ7MwPvHXFESClXPfyCLvh2IJjl1LASzCCC9_bzAcDfc8B07vfAdhU78lpkAdZa9ighfdWC7fCkJral6MYqKyFi8xzJxh9RX2g2&amp;t=637927308760000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body id="body1" leftmargin="0px" bottommargin="0px" rightmargin="0px" topmargin="0px" style="margin: 0px; padding: 0px; overflow-x: hidden;">
+    <form name="form2" method="post" action="./NewTheme10.aspx" id="form2" style="background-color:#ffffff">
+<div>
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTA1MDgzNDA5D2QWBAIBD2QWBmYPFgIeBGhyZWYFEWltYWdlL2Zhdmljb24uaWNvZAICDxYCHgdjb250ZW50ZGQCAw8WAh8BZGQCAw9kFgQCAQ8WAh4Fc3R5bGUFGGJhY2tncm91bmQtY29sb3I6I2ZmZmZmZhYCAgUPFgIfAgU1aGVpZ2h0OmF1dG87b3ZlcmZsb3c6aGlkZGVuO2JhY2tncm91bmQtY29sb3I6I2ZmZmZmZjsWBAIBDxYEHg9TdG9yZWRQb3NpdGlvbnMFpQF7IkhlYWRlckNvbnRyb2wiOiJSYWREb2NrWm9uZTIiLCJNZW51Q29udHJvbCI6IlJhZERvY2tab25lMiIsIndpZGdldHNDb250cm9sIjoiUmFkRG9ja1pvbmUyIiwiSG9tZXBhZ2Vjb250ZW50Q29udHJvbCI6IlJhZERvY2tab25lMSIsIldpZGdldENvbnRyb2wxIjoiUmFkRG9ja1pvbmUzIn0eDVN0b3JlZEluZGljZXMFZHsiSGVhZGVyQ29udHJvbCI6MCwiTWVudUNvbnRyb2wiOjEsIndpZGdldHNDb250cm9sIjoyLCJIb21lcGFnZWNvbnRlbnRDb250cm9sIjowLCJXaWRnZXRDb250cm9sMSI6MH0WEgIBDw8WAh4XRW5hYmxlQWpheFNraW5SZW5kZXJpbmdoZGQCAw8PFgIfBWgWAh4FU3R5bGUFG3otaW5kZXg6OTtvdmVyZmxvdzp2aXNpYmxlO2QCBQ8PFgIfBWhkZAIHDw8WAh4HVmlzaWJsZWhkZAIJDw8WBh4EXyFTQgICHwVoHghDc3NDbGFzcwUJY29sLW1kLTEyFgIfAgULZmxvYXQ6TGVmdDsWAmYPZBYGZg9kFgRmDxYCHgVjbGFzcwUGcmRMZWZ0ZAIDDxYCHwoFB3JkUmlnaHRkAgEPZBYGZg8WAh8KBQZyZExlZnRkAgEPZBYCZg9kFgJmD2QWBGYPZBYCZg9kFgICAQ8PFgIfB2hkZAIBDxYEHwJlHgdiZ2NvbG9yZBYEZg8WAh8HaGQCAQ8WAh4JaW5uZXJodG1sBbsDPGh0bWw+PGhlYWRlcj4KICAJCTxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CiAgICAgICAgCTxkaXYgY2xhc3M9ImNvbC1tZC05IGNvbC1zbS05Ij4KICAgICAgICAJCTxhIGhyZWY9Ii9yZXNvdXJjZS9ob21lLmFzcHgiPgogICAgICAgICAgICAJPGltZyBzcmM9IkltYWdlL3dlYi1sb2dvLnBuZyIgY2xhc3M9ImltZy1yZXNwb25zaXZlIj4KICAgICAgICAgICAgPC9hPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29sLW1kLTMgY29sLXNtLTMgdGV4dC1yaWdodCBxdWVyeS1idG4gaGlkZGVuLXhzIj4KICAgICAgICAJCTxhIGhyZWY9Ii9Mb2dpbi5hc3B4IiB0YXJnZXQ9Il9ibGFuayI+CiAgICAgICAgICAgIAkJTG9naW4KICAgICAgICAgICAgCTwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgCTwvaGVhZGVyPjwvaHRtbD5kAgIPFgIfCgUHcmRSaWdodGQCAg9kFgRmDxYCHwoFBnJkTGVmdGQCAg8WAh8KBQdyZFJpZ2h0ZAIKDw8WBh8IAgIfBWgfCQUJY29sLW1kLTEyFgIfAgULZmxvYXQ6TGVmdDsWAmYPZBYGZg9kFgRmDxYCHwoFBnJkTGVmdGQCAw8WAh8KBQdyZFJpZ2h0ZAIBD2QWBmYPFgIfCgUGcmRMZWZ0ZAIBD2QWAmYPZBYCZg9kFgICAQ8UKwANDxYMHwgChBweCUZvbnRfQm9sZGceCUZvcmVDb2xvcgoAHgtfIURhdGFCb3VuZGceCkZvbnRfTmFtZXMVAQVBcmlhbB4JRm9udF9TaXplKCoiU3lzdGVtLldlYi5VSS5XZWJDb250cm9scy5Gb250VW5pdAM5cHRkFgwfEBUBBUFyaWFsHw4KAB4JQmFja0NvbG9yCgAeC0l0ZW1TcGFjaW5nGwAAAAAAAAAAAQAAAB8NZx8IAoyUEGQWBh8SCgAfDgoAHwgCDGRkZBYGHxIKAB8OCgAfCAIMFggeC0JvcmRlckNvbG9yCgAfEgoAHg9WZXJ0aWNhbFBhZGRpbmcbAAAAAAAACEABAAAAHwgCmIAEZGRkFCsACQUfMDowLDA6MSwwOjIsMDozLDA6NCwwOjUsMDo2LDA6NxQrAAIWDh4EVGV4dAUESG9tZR4FVmFsdWUFBEhvbWUeC05hdmlnYXRlVXJsBRMvcmVzb3VyY2UvaG9tZS5hc3B4HgdFbmFibGVkZx4KU2VsZWN0YWJsZWceCERhdGFQYXRoBRMvcmVzb3VyY2UvaG9tZS5hc3B4HglEYXRhQm91bmRnZBQrAAIWDh8WBQhBYm91dCBVcx8XBQhBYm91dCBVcx8YBRQvcmVzb3VyY2UvYWJvdXQuYXNweB8ZZx8aZx8bBRQvcmVzb3VyY2UvYWJvdXQuYXNweB8cZ2QUKwACFgwfFgUIU2VydmljZXMfFwUIU2VydmljZXMfGWcfGmgfGwUkODhhOTIxMDEtZDk1NS00Mzg0LTlkNzQtOTAyZDc2ZDQ1Y2RhHxxnFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYOHxYFElNlY3VyaXRpZXMgQnJva2luZx8XBRJTZWN1cml0aWVzIEJyb2tpbmcfGAUqL3Jlc291cmNlL1NlcnZpY2VzL1NlY3VyaXRpZXMtQnJva2luZy5hc3B4HxlnHxpnHxsFKi9yZXNvdXJjZS9zZXJ2aWNlcy9zZWN1cml0aWVzLWJyb2tpbmcuYXNweB8cZ2QUKwACFg4fFgUTRGVyaXZhdGl2ZXMgQnJva2luZx8XBRNEZXJpdmF0aXZlcyBCcm9raW5nHxgFKy9yZXNvdXJjZS9TZXJ2aWNlcy9EZXJpdmF0aXZlcy1Ccm9raW5nLmFzcHgfGWcfGmcfGwUrL3Jlc291cmNlL3NlcnZpY2VzL2Rlcml2YXRpdmVzLWJyb2tpbmcuYXNweB8cZ2QUKwACFg4fFgUSRGVwb3NpdG9yeSBTZXJ2aWNlHxcFEkRlcG9zaXRvcnkgU2VydmljZR8YBSovcmVzb3VyY2UvU2VydmljZXMvRGVwb3NpdG9yeS1TZXJ2aWNlLmFzcHgfGWcfGmcfGwUqL3Jlc291cmNlL3NlcnZpY2VzL2RlcG9zaXRvcnktc2VydmljZS5hc3B4HxxnZBQrAAIWDh8WBRxDdXJyZW5jeSBEZXJpdmF0aXZlcyBCcm9raW5nHxcFHEN1cnJlbmN5IERlcml2YXRpdmVzIEJyb2tpbmcfGAU0L3Jlc291cmNlL1NlcnZpY2VzL0N1cnJlbmN5LURlcml2YXRpdmVzLUJyb2tpbmcuYXNweB8ZZx8aZx8bBTQvcmVzb3VyY2Uvc2VydmljZXMvY3VycmVuY3ktZGVyaXZhdGl2ZXMtYnJva2luZy5hc3B4HxxnZBQrAAIWDB8WBRNJbnZlc3RvcnMgUmVsYXRpb25zHxcFE0ludmVzdG9ycyBSZWxhdGlvbnMfGWcfGmgfGwUkZTFhNjMxZjktNzdiYi00MDg2LTk0NGMtNTQyYTNiYjQxMmM3HxxnFCsADgU2MDowLDA6MSwwOjIsMDozLDA6NCwwOjUsMDo2LDA6NywwOjgsMDo5LDA6MTAsMDoxMSwwOjEyFCsAAhYOHxYFDU5vdGljZSBvZiBBR00fFwUNTm90aWNlIG9mIEFHTR8YBTAvcmVzb3VyY2UvSW52ZXN0b3JzLVJlbGF0aW9ucy9Ob3RpY2Utb2YtQUdNLmFzcHgfGWcfGmcfGwUwL3Jlc291cmNlL2ludmVzdG9ycy1yZWxhdGlvbnMvbm90aWNlLW9mLWFnbS5hc3B4HxxnZBQrAAIWDh8WBQ5PdXRjb21lIG9mIEFHTR8XBQ5PdXRjb21lIG9mIEFHTR8YBTEvcmVzb3VyY2UvSW52ZXN0b3JzLVJlbGF0aW9ucy9PdXRjb21lLW9mLUFHTS5hc3B4HxlnHxpnHxsFMS9yZXNvdXJjZS9pbnZlc3RvcnMtcmVsYXRpb25zL291dGNvbWUtb2YtYWdtLmFzcHgfHGdkFCsAAhYOHxYFDUFubnVhbCBSZXBvcnQfFwUNQW5udWFsIFJlcG9ydB8YBTAvcmVzb3VyY2UvSW52ZXN0b3JzLVJlbGF0aW9ucy9Bbm51YWwtUmVwb3J0LmFzcHgfGWcfGmcfGwUwL3Jlc291cmNlL2ludmVzdG9ycy1yZWxhdGlvbnMvYW5udWFsLXJlcG9ydC5hc3B4HxxnZBQrAAIWDh8WBRJCb2FyZCBvZiBEaXJlY3RvcnMfFwUSQm9hcmQgb2YgRGlyZWN0b3JzHxgFNS9yZXNvdXJjZS9JbnZlc3RvcnMtUmVsYXRpb25zL0JvYXJkLW9mLURpcmVjdG9ycy5hc3B4HxlnHxpnHxsFNS9yZXNvdXJjZS9pbnZlc3RvcnMtcmVsYXRpb25zL2JvYXJkLW9mLWRpcmVjdG9ycy5hc3B4HxxnZBQrAAIWDh8WBRZJbmZvIGZvciBTaGFyZSBIb2xkZXJzHxcFFkluZm8gZm9yIFNoYXJlIEhvbGRlcnMfGAU5L3Jlc291cmNlL0ludmVzdG9ycy1SZWxhdGlvbnMvSW5mby1mb3ItU2hhcmUtSG9sZGVycy5hc3B4HxlnHxpnHxsFOS9yZXNvdXJjZS9pbnZlc3RvcnMtcmVsYXRpb25zL2luZm8tZm9yLXNoYXJlLWhvbGRlcnMuYXNweB8cZ2QUKwACFg4fFgUZQm9hcmQgTWVldGluZyBJbnRpbWF0aW9ucx8XBRlCb2FyZCBNZWV0aW5nIEludGltYXRpb25zHxgFPC9yZXNvdXJjZS9JbnZlc3RvcnMtUmVsYXRpb25zL0JvYXJkLU1lZXRpbmctSW50aW1hdGlvbnMuYXNweB8ZZx8aZx8bBTwvcmVzb3VyY2UvaW52ZXN0b3JzLXJlbGF0aW9ucy9ib2FyZC1tZWV0aW5nLWludGltYXRpb25zLmFzcHgfHGdkFCsAAhYOHxYFEUZpbmFuY2lhbCBSZXN1bHRzHxcFEUZpbmFuY2lhbCBSZXN1bHRzHxgFNC9yZXNvdXJjZS9JbnZlc3RvcnMtUmVsYXRpb25zL0ZpbmFuY2lhbC1SZXN1bHRzLmFzcHgfGWcfGmcfGwU0L3Jlc291cmNlL2ludmVzdG9ycy1yZWxhdGlvbnMvZmluYW5jaWFsLXJlc3VsdHMuYXNweB8cZ2QUKwACFg4fFgUNUG9zdGFsIEJhbGxvdB8XBQ1Qb3N0YWwgQmFsbG90HxgFMC9yZXNvdXJjZS9JbnZlc3RvcnMtUmVsYXRpb25zL1Bvc3RhbC1CYWxsb3QuYXNweB8ZZx8aZx8bBTAvcmVzb3VyY2UvaW52ZXN0b3JzLXJlbGF0aW9ucy9wb3N0YWwtYmFsbG90LmFzcHgfHGdkFCsAAhYOHxYFFFNoYXJlSG9sZGluZyBQYXR0ZXJuHxcFFFNoYXJlSG9sZGluZyBQYXR0ZXJuHxgFNy9yZXNvdXJjZS9JbnZlc3RvcnMtUmVsYXRpb25zL1NoYXJlSG9sZGluZy1QYXR0ZXJuLmFzcHgfGWcfGmcfGwU3L3Jlc291cmNlL2ludmVzdG9ycy1yZWxhdGlvbnMvc2hhcmVob2xkaW5nLXBhdHRlcm4uYXNweB8cZ2QUKwACFg4fFgUIUG9saWNpZXMfFwUIUG9saWNpZXMfGAUpL3Jlc291cmNlL0ludmVzdG9ycy1SZWxhdGlvbnMvUG9saWN5LmFzcHgfGWcfGmcfGwUpL3Jlc291cmNlL2ludmVzdG9ycy1yZWxhdGlvbnMvcG9saWN5LmFzcHgfHGdkFCsAAhYOHxYFGVJlZ3VsYXRpb24gMzAtRGlzY2xvc3VyZScfFwUZUmVndWxhdGlvbiAzMC1EaXNjbG9zdXJlJx8YBTAvcmVzb3VyY2UvSW52ZXN0b3JzLVJlbGF0aW9ucy9Bbm5vdW5jZW1lbnRzLmFzcHgfGWcfGmcfGwUwL3Jlc291cmNlL2ludmVzdG9ycy1yZWxhdGlvbnMvYW5ub3VuY2VtZW50cy5hc3B4HxxnZBQrAAIWDh8WBRNDb3Jwb3JhdGUgR292ZXJhbmNlHxcFE0NvcnBvcmF0ZSBHb3ZlcmFuY2UfGAU2L3Jlc291cmNlL0ludmVzdG9ycy1SZWxhdGlvbnMvQ29ycG9yYXRlX0dvdmVyYW5jZS5hc3B4HxlnHxpnHxsFNi9yZXNvdXJjZS9pbnZlc3RvcnMtcmVsYXRpb25zL2NvcnBvcmF0ZV9nb3ZlcmFuY2UuYXNweB8cZ2QUKwACFg4fFgUNQW5udWFsIFJldHVybh8XBQ1Bbm51YWwgUmV0dXJuHxgFLy9yZXNvdXJjZS9JbnZlc3RvcnMtUmVsYXRpb25zL0FubnVhbFJldHVybi5hc3B4HxlnHxpnHxsFLy9yZXNvdXJjZS9pbnZlc3RvcnMtcmVsYXRpb25zL2FubnVhbHJldHVybi5hc3B4HxxnZBQrAAIWDh8WBQVRdWVyeR8XBQVRdWVyeR8YBRgvTmV3VGhlbWVRdWVyeXNoZWV0LmFzcHgfGWcfGmcfGwUYL25ld3RoZW1lcXVlcnlzaGVldC5hc3B4HxxnZBQrAAIWDh8WBQdDYXJlZXJzHxcFB0NhcmVlcnMfGAUVL3Jlc291cmNlL0NhcmVlci5hc3B4HxlnHxpnHxsFFS9yZXNvdXJjZS9jYXJlZXIuYXNweB8cZ2QUKwACFgwfFgUFQWRtaW4fFwUFQWRtaW4fGWcfGmgfGwUkMDA4MjRlZjQtYTNmZi00Nzg4LTk4NTAtYTczMjM2Y2ZjYTg1HxxnFCsABAULMDowLDA6MSwwOjIUKwACFg4fFgUFTG9naW4fFwUFTG9naW4fGAULL0xvZ2luLmFzcHgfGWcfGmcfGwULL2xvZ2luLmFzcHgf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IDxkaXYgY2xhc3M9InNlcnZpY2VzLWl0ZW0iPiA8YSBocmVmPSIvcmVzb3VyY2UvRGVyaXZhdGl2ZXMtQnJva2luZy5hc3B4IiBjbGFzcz0idGV4dC1jZW50ZXIgaWNvbi1kYXJrIj4gPGkgY2xhc3M9ImZhIGZhLWdlYXIiPjwvaT48L2E+PC9hPgogICAgICAgICAgPGRpdiBjbGFzcz0iaWNvbi1ib3gtZGV0YWlscyI+CiAgICAgICAgICAgIDxoND48YSBocmVmPSIvcmVzb3VyY2UvRGVyaXZhdGl2ZXMtQnJva2luZy5hc3B4Ij5EZXJpdmF0aXZlcyBCcm9raW5nPC9hPjwvaDQ+CiAgICAgICAgICAgIDxwPkNvbWluZyBTb29uLi4uPC9wPgoJCQk8cCBjbGFzcz0idGV4dC1jZW50ZXIiPjxhIGhyZWY9Ii9yZXNvdXJjZS9EZXJpdmF0aXZlcy1Ccm9raW5nLmFzcHgiPlJlYWQgTW9yZTwvYT48L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImNvbC1tZC00Ij4KICAgICAgICA8ZGl2IGNsYXNzPSJzZXJ2aWNlcy1pdGVtIj4gPGEgaHJlZj0iL3Jlc291cmNlL0RlcG9zaXRvcnktU2VydmljZS5hc3B4IiBjbGFzcz0idGV4dC1jZW50ZXIgaWNvbi1kYXJrIj4gPGkgY2xhc3M9ImZhIGZhLWdlYXIiPjwvaT48L2E+PC9hPgogICAgICAgICAgPGRpdiBjbGFzcz0iaWNvbi1ib3gtZGV0YWlscyI+CiAgICAgICAgICAgIDxoND48YSBocmVmPSIvcmVzb3VyY2UvRGVwb3NpdG9yeS1TZXJ2aWNlLmFzcHgiPkRlcG9zaXRvcnkgU2VydmljZTwvYT48L2g0PgogICAgICAgICAgICA8cD5Db21pbmcgU29vbi4uLjwvcD4KICAgICAgICAgICAgPHAgY2xhc3M9InRleHQtY2VudGVyIj48YSBocmVmPSIvcmVzb3VyY2UvRGVwb3NpdG9yeS1TZXJ2aWNlLmFzcHgiPlJlYWQgTW9yZTwvYT48L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CgogICAgPC9kaXY+CiAgPC9kaXY+Cjwvc2VjdGlvbj5kAgIPFgIfCgUHcmRSaWdodGQCAg9kFgRmDxYCHwoFBnJkTGVmdGQCAg8WAh8KBQdyZFJpZ2h0ZAIDD2QWAgIBD2QWAmYPZBYCZg9kFgQCAQ8WAh8CBURiYWNrZ3JvdW5kLWNvbG9yOnRleHQtYWxpZ246cmlnaHQ7UGFkZGluZy1Ub3A6MTVweDt0ZXh0LWFsaWduOnJpZ2h0O2QCAw8WBB8CBVF3aWR0aDoxMDAlO2hlaWdodDphdXRvO3RvcDowcHg7dmVydGljYWwtYWxpZ246dG9wIDtmbG9hdDpsZWZ0IDtiYWNrZ3JvdW5kLWNvbG9yOjsfDAXVGDxhIGhyZWY9Imh0dHA6Ly93ZWJ0ZWwuaW4iIHN0eWxlPSJkaXNwbGF5Om5vbmU7IiByZWw9ImRvZm9sbG93Ij5XZWJ0ZWw8L2E+PGZvb3Rlcj4KICAgIDxkaXYgY2xhc3M9ImZvb3RlLWxpbmsiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9InJvdyI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJjb2wtbWQtNCBmdC1kaXMiPgogICAgICAgICAgICAgICAgICAgIDxoMj5EaXNjbGFpbWVyPC9oMj4KICAgICAgICAgICAgICAgICAgICA8cD5Zb3VyIGFjY2VzcyB0byB0aGlzIHdlYnNpdGUgY29uc3RpdHV0ZXMgeW91ciBhZ3JlZW1lbnQgdG8gYmUgYm91bmQgYnkgYWxsIHRlcm1zIGFuZCBjb25kaXRpb25zCiAgICAgICAgICAgICAgICAgICAgICAgIGxpc3RlZCBoZXJlaW4gYmVsb3cuIElmIHlvdSBkbyBub3QgYWdyZWUgdG8gdGhpcywgeW91IG1heSBub3QgYWNjZXNzIG9yIG90aGVyd2lzZSB1c2UgdGhlCiAgICAgICAgICAgICAgICAgICAgICAgIHdlYnNpdGUuPC9wPgogICAgICAgICAgICAgICAgICAgIDxwPlRoZSBtYXRlcmlhbCBkaXNwbGF5ZWQgb24gdGhpcyB3ZWJzaXRlIG1heSBiZSBkb3dubG9hZGVkIGZvciBub24tY29tbWVyY2lhbC4uPGJyPgogICAgICAgICAgICAgICAgICAgICAgICA8YSBocmVmPSIvcmVzb3VyY2UvRGlzY2xhaW1lci5hc3B4Ij5SZWFkIE1vcmU8L2E+CiAgICAgICAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJjb2wtbWQtNCI+CiAgICAgICAgICAgICAgICAgICAgPGgyPkxvY2F0aW9uPC9oMj4KICAgICAgICAgICAgICAgICAgICA8IS0tIDxpZnJhbWUKICAgICAgICAgICAgICAgICAgICAgICAgc3JjPSJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvZW1iZWQ/cGI9ITFtMTghMW0xMiExbTMhMWQzNzY1LjIyNTEyNTE0NTU2OTYhMmQ3Mi44NTM4NjYyMTQ5MDQ5MSEzZDE5LjMxNjAzNTAzNjk1MDYzOCEybTMhMWYwITJmMCEzZjAhM20yITFpMTAyNCEyaTc2OCE0ZjEzLjEhM20zITFtMiExczB4M2JlN2FmZDQ0YmE2MWI1ZCUzQTB4YmUxYWMwYzVhZjM4MmE2NSEyc09sZCUyMFJhdmlyYWolMjBDb21wbGV4JTJDJTIwSmVzYWwlMjBQYXJrJTJDJTIwQmhheWFuZGFyJTIwRWFzdCUyQyUyME1pcmElMjBCaGF5YW5kYXIlMkMlMjBNYWhhcmFzaHRyYSUyMDQwMTEwNSE1ZTAhM20yITFzZW4hMnNpbiE0djE2NTIxNTc2MDE0ODAhNW0yITFzZW4hMnNpbiIKICAgICAgICAgICAgICAgICAgICAgICAgd2lkdGg9IjEwMCUiIGhlaWdodD0iMjAwcHgiIHN0eWxlPSJib3JkZXI6MDsiIGFsbG93ZnVsbHNjcmVlbj0iIiBsb2FkaW5nPSJsYXp5IgogICAgICAgICAgICAgICAgICAgICAgICByZWZlcnJlcnBvbGljeT0ibm8tcmVmZXJyZXItd2hlbi1kb3duZ3JhZGUiPjwvaWZyYW1lPiAtLT4KICAgICAgICAgICAgICAgICAgICA8aWZyYW1lCiAgICAgICAgICAgICAgICAgICAgICAgIHNyYz0iaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2VtYmVkP3BiPSExbTE4ITFtMTIhMW0zITFkMTIwNTQyLjYxNDYwNTE0MzYyITJkNzIuNzcwODcyOTIyNjE0MSEzZDE5LjI0MDcxODQ5NzQ4MzAyITJtMyExZjAhMmYwITNmMCEzbTIhMWkxMDI0ITJpNzY4ITRmMTMuMSEzbTMhMW0yITFzMHgzYmU3YWZkNDM0NTU1NTU1JTNBMHg2ZTU4ZjE0NjNhYjJmMjEyITJzREpTJTIwU1RPQ0slMjAlMjYlMjBTSEFSRVMlMjBMSU1JVEVEITVlMCEzbTIhMXNlbiEyc2luITR2MTc0ODM0MzIzMzg1NCE1bTIhMXNlbiEyc2luIgogICAgICAgICAgICAgICAgICAgICAgICB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIyMDAiIHN0eWxlPSJib3JkZXI6MDsiIGFsbG93ZnVsbHNjcmVlbj0iIiBsb2FkaW5nPSJsYXp5IgogICAgICAgICAgICAgICAgICAgICAgICByZWZlcnJlcnBvbGljeT0ibm8tcmVmZXJyZXItd2hlbi1kb3duZ3JhZGUiPjwvaWZyYW1lPgogICAgICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29sLW1kLTQiPgogICAgICAgICAgICAgICAgICAgIDxoMj5Db250YWN0IFVzPC9oMj4KICAgICAgICAgICAgICAgICAgICA8cD48aSBjbGFzcz0iZmEgZmEtbWFwLW1hcmtlciI+PC9pPjxzcGFuPiBPZmZpY2UgTm8uIDAzLCBHcm91bmQgRmxvb3IsIEd1bG1vaGFyIFNvY2lldHksIE9wcC4gQW51cGFtCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBDaW5lbWEsIEFhcmV5IFJvYWQsIEdvcmVnYW9uIChFYXN0KSwgTXVtYmFpIC0gNDAwIDA2Mzwvc3Bhbj48L3A+CiAgICAgICAgICAgICAgICAgICAgPHA+PGkgY2xhc3M9ImZhIGZhLXBob25lIj48L2k+PHNwYW4+IDAyMiA0NTE5ODcyMzxicj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIFdlIGZlZWwgaGFwcHkgdG8gdGFsazwvc3Bhbj48L3A+CiAgICAgICAgICAgICAgICAgICAgPHA+PGkgY2xhc3M9ImZhIGZhLWVudmVsb3BlLW8iPjwvaT48c3Bhbj4gPGEKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBocmVmPSJtYWlsdG86aW5mb0BkanNzdG9ja3MuY29tIj5pbmZvQGRqc3N0b2Nrcy5jb208L2E+PGJyPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgV3JpdGUgWW91ciBNZXNzYWdlPC9zcGFuPjwvcD4KICAgICAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImNvcHlyaHQiPgogICAgICAgIDxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9InJvdyI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJjb2wtbWQtNiI+CiAgICAgICAgICAgICAgICAgICAgPHA+Q29weXJpZ2h0IMKpIGRqc3N0b2Nrcy5jb20gMjAyMjwvcD4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iY29sLW1kLTYgdGV4dC1yaWdodCI+CiAgICAgICAgICAgICAgICAgICAgPHA+RGVzaWduIEJ5IDxhIGhyZWY9Imh0dHBzOi8vd2VidGVsLmluLyIgdGFyZ2V0PSJfYmxhbmsiPldlYnRlbCBFbGVjdHJvc29mdCBMdGQuPC9hPjwvcD4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgIDwvZGl2Pgo8L2Zvb3Rlcj5kAgMPFgIfB2gWAgIBD2QWBgIEDxYCHwwFDENoYXQgV2l0aCBVc2QCBg8WAh8MBRBib3QgaXMgdHlwaW5nLi4uZAIKDxYCHwwFEFdhbnQgVG8gQ29uc3VsdD9kGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYIBQxSYWREb2NrWm9uZTIFDFJhZERvY2tab25lMQUMUmFkRG9ja1pvbmUzBQ1IZWFkZXJDb250cm9sBQtNZW51Q29udHJvbAUOd2lkZ2V0c0NvbnRyb2wFFkhvbWVwYWdlY29udGVudENvbnRyb2wFDldpZGdldENvbnRyb2wx+lx+3+nw66ocbnecEfB95xZlUkKz+mB/8xvy4A6S6MA=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form2'];
+if (!theForm) {
+    theForm = document.form2;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=4k70njDBj4Ayc75g08zTukvHeOqXKCNGBqxbo1TfXMTC5FaR4lik4qL1TqVHOcQpj6izBWzcxWmTmUGwS8dDZHASmbpGI4n3n7hNPX7k6pk1&amp;t=638901739900000000" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3aa8328cc8-0a99-4e41-8fe3-b58afac64e45%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2010.2.713.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a1814ab69-dbf3-46be-b5e4-1b4e7d85f183%3a16e4e7cd%3af7645509%3a854aa0a7%3a874f8ea2%3a5a6d9d23" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6393C27E" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAL3vPqP7sd9luqjaYV42MHCsu/cYFL6xJbnXI5xGKw4bSq2OJaBcmSHQ1ddT6fJPC/6rWl00k2EiJjeQwOaHa0j" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('RadScriptManager1', 'form2', [], [], [], 90, '');
+//]]>
+</script>
+
+    <center>
+        <input type="hidden" name="hdn" id="hdn" />
+        <div id="Div_body" style="height:auto;overflow:hidden;background-color:#ffffff;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 table-responsive">
+                        
+                            <div id="RadDockZone2" class="RadDockZone RadDockZone_Default rdHorizontal container-fluid" style="border-style:None;width:100%;min-width:10px;min-height:10px;margin: 0px; padding: 0px; height: auto; min-height: 0px; margin: 0px;
+                                z-index: 100;">
+	<!-- 2010.2.713.40 --><div id="HeaderControl" class="RadDock RadDock_Default col-md-12" style="height:83px;float:Left;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="HeaderControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+<script language="javascript" type="text/javascript">
+
+  
+
+</script>
+  <script type="text/javascript">
+var Analog_Color="#ffffff";
+//alert(col);
+Analog_Color=Analog_Color.substring(1,7);
+//alert(col);
+
+var clocksize=75;
+var colnumbers=Analog_Color;
+var colseconds=Analog_Color;
+var colminutes=Analog_Color;
+var colhours=Analog_Color;
+
+var numstyle = 0;
+var font_family = 'helvetica,arial,sans-serif';
+var localZone = 1;
+var mytimezone = 0;
+var dst = 0;
+var city = '';
+var country = '';
+var fix = 1;
+var xpos=0;
+var ypos=0;
+</script>
+<script type="text/javascript" language="javascript">
+
+var dayname = new Array ('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'); var am = 'AM'; var pm = 'PM';
+
+// you should not need to alter the below code
+var pi = Math.PI; var d = document; var pi2 = pi/2; var rad = (+clocksize) / 2; var ctrX = (+xpos) + rad; var ctrY = (+ypos) + rad; var hourln = 1; var minln = secln = 2; for(var i = 0; i < (rad / 2) + (rad / 16); i++) {hourln += 1;} for(var i = 0; i < (rad / 2) - (rad / 8); i++) {minln += 2;secln += 2;} var font_size = rad / 4; var offset = 16;  var clocknum = [[,1,2,3,4,5,6,7,8,9,10,11,12],[,'I','II','III','IIII','V','VI','VII','VIII','IX','X','XI','XII'],[,'�','�','-','�','�','<span style="font-size:60%">|</span>','�','�','-','�','�','<span style="font-size:60%">||</span>']]; if (numstyle < 0 || numstyle > 2) numstyle = 0; function timeZone(now,loc,mtz,dst) {if (loc) {var dow = now.getDay(); var second = now.getSeconds(); var minute = now.getMinutes(); var hour = now.getHours();} else {now.setUTCMinutes(now.getUTCMinutes() + (mtz + dst)*60); var dow = now.getUTCDay(); var second = now.getUTCSeconds(); var minute = now.getUTCMinutes(); var hour = now.getUTCHours();} if (hour > 11) {moa = pm; hour -= 12;} else moa = am; return [dow,moa,hour,minute,second];} function commonClock(n) {n.style.position = 'absolute'; n.style.top = '0'; n.style.left = '0'; n.style.visibility = 'hidden';} 
+function displayClock() 
+{
+if (!d.getElementById) return; 
+    var ctx = document.createElement('div'); 
+    if ( fix) {ctx.style.position = 'relative'; 
+    ctx.style.margin = 'auto'; 
+    ctx.style.width = (clocksize + offset * 2) + 'px'; 
+    ctx.style.height = (clocksize + offset * 2) + 'px'; 
+    ctx.style.overflow = 'visible';
+} 
+var cn = []; for (var i = 12; i > 0; i--) 
+{
+    cn[i] = document.createElement('div'); 
+    cn[i].id = 'cnum' + i; commonClock(cn[i]); 
+    cn[i].style.width = (offset * 2) + 'px'; 
+    cn[i].style.height = (offset * 2) + 'px'; 
+    cn[i].style.fontFamily = font_family; cn[i].style.fontSize = font_size + 'px'; 
+    cn[i].style.color = '#' + colnumbers; cn[i].style.textAlign = 'center'; 
+    cn[i].style.paddingTop = '10px'; 
+    cn[i].style.zIndex = 1000; cn[i].innerHTML = clocknum[numstyle][i]; 
+    ctx.appendChild(cn[i]);
+} 
+var mn = []; 
+for (i = minln; i > 0; i--) 
+{
+    mn[i] = document.createElement('div'); 
+    mn[i].id = 'cmin' + i; 
+    commonClock(mn[i]);
+    mn[i].style.width = '1px'; mn[i].style.height = '1px';
+    mn[i].style.fontSize = '1px'; 
+    mn[i].style.backgroundColor = '#' + colminutes; mn[i].style.zIndex = 997; 
+    ctx.appendChild(mn[i]);
+} 
+var hr = []; 
+for (i = hourln; i > 0; i--) 
+{
+    hr[i] = document.createElement('div'); 
+    hr[i].id = 'chour' + i; commonClock(hr[i]); 
+    hr[i].style.width = '2px'; 
+    hr[i].style.height = '2px'; 
+    hr[i].style.fontSize ='2px'; 
+    hr[i].style.backgroundColor = '#' + colhours; 
+    hr[i].style.zIndex = 998; ctx.appendChild(hr[i]);
+} 
+var sc = []; 
+for (i = secln; i > 0; i--) 
+{
+    sc[i] = document.createElement('div'); 
+    sc[i].id = 'csec' + i; 
+    commonClock(sc[i]); 
+    sc[i].style.width = '1px'; sc[i].style.height = '1px'; 
+    sc[i].style.fontSize ='1px'; 
+    sc[i].style.backgroundColor = '#' + colseconds; 
+    sc[i].style.zIndex = 999; ctx.appendChild(sc[i]);
+} 
+    var am = document.createElement('div'); 
+    am.id = 'ampm'; commonClock(am); 
+    am.style.width = ((xpos + rad) * 2) + 'px'; 
+    am.style.fontFamily = font_family; 
+    am.style.fontSize = (font_size * 2 / 3) + 'px'; 
+    am.style.color = '#' + colnumbers; 
+    am.style.textAlign = 'center'; 
+    am.style.paddingTop = '10px'; 
+    am.style.zIndex = 990; 
+    ctx.appendChild(am); 
+    var zn = document.createElement('div'); 
+    zn.id = 'zone'; commonClock(zn); 
+    zn.style.width = ((xpos + rad) * 2) + 'px'; 
+    zn.style.fontFamily = font_family; zn.style.fontSize = (font_size * 2 / 3) + 'px'; 
+    zn.style.color = '#' + colnumbers; zn.style.textAlign = 'center'; 
+    zn.style.paddingTop = '10px'; zn.style.zIndex = 990; 
+    ctx.appendChild(zn); 
+    try
+    {
+    d.getElementById('clock_a').appendChild(ctx); 
+    }
+    catch(e)
+    {
+    }
+for (var i = 12; i > 0; i--) 
+{
+    try
+    {
+    d.getElementById('cnum' + i).style.top = (ctrY - offset + rad * Math.sin(i * pi / 6 - pi2))+'px'; 
+    d.getElementById('cnum' + i).style.left = (ctrX - offset + rad * Math.cos(i * pi / 6 - pi2))+'px'; 
+    d.getElementById('cnum' + i).style.visibility = 'visible';
+    }
+    catch(e)
+    {
+    }
+} 
+updateClock();
+
+} 
+function moveClock(l, e, f) 
+{
+try
+{
+for (var i = l; i > 0; i--) 
+{
+    d.getElementById(e + i).style.top = (ctrY + i * Math.sin(f))+'px';
+    d.getElementById(e + i).style.left = (ctrX + i * Math.cos(f))+'px';
+    d.getElementById(e + i).style.visibility = 'visible';
+}
+}
+catch(e)
+{
+}
+} 
+function updateClock() 
+{
+   try
+   {
+    var now = new Date(); 
+    var theTime = timeZone(now,localZone,mytimezone,dst); 
+    d.getElementById('ampm').style.top = (ypos + rad/3)+'px'; 
+    d.getElementById('ampm').innerHTML = theTime[1] + '<br />' + dayname[theTime[0]]; 
+    d.getElementById('ampm').style.visibility = 'visible'; 
+    if (!localZone)
+    {
+    d.getElementById('zone').style.top = (ctrY + (rad/10))+'px'; 
+    d.getElementById('zone').innerHTML = city + '<br />' + country; 
+    d.getElementById('zone').style.visibility = 'visible';
+    
+    }
+     
+     moveClock(secln, 'csec', pi * theTime[4] / 30 - pi2); 
+     moveClock(minln, 'cmin', pi * theTime[3] / 30 - pi2); 
+     moveClock(hourln, 'chour', pi * theTime[2] / 6 + pi * (+now.getMinutes())/360 - pi2); 
+     setTimeout('updateClock()', 100);
+     }
+     catch(e)
+     {
+     }
+}
+
+window.onload = displayClock;
+
+</script>
+<script language="JavaScript" type="text/javascript">
+
+function curTime()
+{
+var now=new Date()
+var hrs=now.getHours()
+var min=now.getMinutes()
+var sec=now.getSeconds()
+var don="AM"
+if (hrs>=12){ don="PM" }
+if (hrs>12) { hrs-=12 }
+if (hrs==0) { hrs=12 }
+if (hrs<10) { hrs="0"+hrs }
+if (min<10) { min="0"+min }
+if (sec<10) { sec="0"+sec }
+if(navigator.appName.indexOf("Microsoft Internet Explorer") != -1)
+{
+    clock.innerHTML=hrs+":"+min+":"+sec+" "+don
+}
+else
+{
+    document.getElementById("clock").textContent=hrs+":"+min+":"+sec+" "+don
+}
+setTimeout("curTime()",1000)
+
+}
+</script>
+ <style type="text/css">
+.IE8Fix
+{
+    text-align:left;
+    z-index: 100;
+}
+.imstyle			
+ {			
+     float:left;			
+     padding:0px;			    
+     margin:0px;			
+     border:0px;			
+ }	
+</style>
+
+<table class="table-responsive" style="width:100%; height:20%; margin-top:0px;margin-left:0px;margin-right:0px;margin-bottom:0px;padding-bottom:0px; padding-top:0px; border-spacing:0px; vertical-align:top;"  cellpadding ="0" cellspacing = "0" border="0">
+        <tr id="HeaderControl_C_ctl00_imageheader" style="width:100%; margin:0 ; ">
+						<td colspan="3" style="width:100%; border:0;  margin:0 ;">
+                
+            </td>
+					</tr>
+					
+        <tr id="HeaderControl_C_ctl00_tr_HeaderBackImage" valign="top" style="">
+						<td id="HeaderControl_C_ctl00_Header" style="width:100%; height:100%" valign="top" class="IE8Fix"><html><header>
+  		<div class="container">
+        	<div class="col-md-9 col-sm-9">
+        		<a href="/resource/home.aspx">
+            	<img src="Image/web-logo.png" class="img-responsive">
+            </a>
+            </div>
+            <div class="col-md-3 col-sm-3 text-right query-btn hidden-xs">
+        		<a href="/Login.aspx" target="_blank">
+            		Login
+            	</a>
+            </div>
+        </div>
+  	</header></html></td>
+					</tr>
+					
+      </table>
+
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="HeaderControl_ClientState" name="HeaderControl_ClientState" type="hidden" />
+	</div><div id="MenuControl" class="RadDock RadDock_Default col-md-12" style="height:44px;float:Left;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="MenuControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+
+ <nav class="navbar-default marginBottom-0 " style="z-index:155555555555;" >
+ <div class="container-fluid" style="z-index:1010192;">
+                <div class="navbar navbar-header" style="z-index:155555555555;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1" style="z-index:155555555555;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            
+            </div>
+            <div class="collapse navbar-collapse " id="navbar-collapse-1" style="z-index:1010192;">
+           
+             
+                    <ul class="nav navbar-nav">
+						<li><a href="/resource/home.aspx" title="Home">Home</a></li><li><a href="/resource/about.aspx" title="About Us">About Us</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Services&nbsp;<b class="caret"></b></a><ul class="dropdown-menu">
+							<li><a href="/resource/Services/Securities-Broking.aspx" title="Securities Broking">Securities Broking</a></li><li><a href="/resource/Services/Derivatives-Broking.aspx" title="Derivatives Broking">Derivatives Broking</a></li><li><a href="/resource/Services/Depository-Service.aspx" title="Depository Service">Depository Service</a></li><li><a href="/resource/Services/Currency-Derivatives-Broking.aspx" title="Currency Derivatives Broking">Currency Derivatives Broking</a></li>
+						</ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Investors Relations&nbsp;<b class="caret"></b></a><ul class="dropdown-menu">
+							<li><a href="/resource/Investors-Relations/Notice-of-AGM.aspx" title="Notice of AGM">Notice of AGM</a></li><li><a href="/resource/Investors-Relations/Outcome-of-AGM.aspx" title="Outcome of AGM">Outcome of AGM</a></li><li><a href="/resource/Investors-Relations/Annual-Report.aspx" title="Annual Report">Annual Report</a></li><li><a href="/resource/Investors-Relations/Board-of-Directors.aspx" title="Board of Directors">Board of Directors</a></li><li><a href="/resource/Investors-Relations/Info-for-Share-Holders.aspx" title="Info for Share Holders">Info for Share Holders</a></li><li><a href="/resource/Investors-Relations/Board-Meeting-Intimations.aspx" title="Board Meeting Intimations">Board Meeting Intimations</a></li><li><a href="/resource/Investors-Relations/Financial-Results.aspx" title="Financial Results">Financial Results</a></li><li><a href="/resource/Investors-Relations/Postal-Ballot.aspx" title="Postal Ballot">Postal Ballot</a></li><li><a href="/resource/Investors-Relations/ShareHolding-Pattern.aspx" title="ShareHolding Pattern">ShareHolding Pattern</a></li><li><a href="/resource/Investors-Relations/Policy.aspx" title="Policies">Policies</a></li><li><a href="/resource/Investors-Relations/Announcements.aspx" title="Regulation 30-Disclosure&#39;">Regulation 30-Disclosure'</a></li><li><a href="/resource/Investors-Relations/Corporate_Goverance.aspx" title="Corporate Goverance">Corporate Goverance</a></li><li><a href="/resource/Investors-Relations/AnnualReturn.aspx" title="Annual Return">Annual Return</a></li>
+						</ul></li><li><a href="/NewThemeQuerysheet.aspx" title="Query">Query</a></li><li><a href="/resource/Career.aspx" title="Careers">Careers</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Admin&nbsp;<b class="caret"></b></a><ul class="dropdown-menu">
+							<li><a href="/Login.aspx" title="Login">Login</a></li><li><a href="http://mail.djsstocks.com" target="_blank" title="Email Login">Email Login</a></li><li><a href="https://djsstocks.com/Timesheet.aspx" target="_blank" title="Time Sheet">Time Sheet</a></li>
+						</ul></li><li><a href="/resource/Contact_Us.aspx" title="Contact Us">Contact Us</a></li>
+					</ul>
+             
+                
+
+            </div>
+           
+        </div>
+
+        </nav>
+        <style type="text/css" >
+        
+        .marginBottom-0 {margin-bottom:0;}
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#555;}
+.dropdown-submenu.pull-left{float:none;}
+.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+.dropdown-menu[data-placement="left"] {
+    left: auto !important;
+    right: 0px !important;
+}
+
+.navbar .nav>li>.dropdown-menu[data-placement="left"]:before {
+    left:auto !important;
+    right: 9px !important;
+}
+
+.navbar .nav>li>.dropdown-menu[data-placement="left"]:after {
+    left: auto  !important;
+    right: 10px  !important;
+}
+        </style>
+
+
+
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="MenuControl_ClientState" name="MenuControl_ClientState" type="hidden" />
+	</div><div id="widgetsControl" class="RadDock RadDock_Default col-md-12" style="height:500px;float:Left;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="widgetsControl_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+<div > 
+                            <table id="widgetsControl_C_ctl00_tbl_widgets" width="100%" style="height:100%;" cellpadding="0" cellspacing="0" border="0">
+						<tr id="widgetsControl_C_ctl00_tr_Widgets" style="height:100%;">
+							<td style="text-align:left;margin:0px 0px 0px 0px;height:100%;">
+                                        <section class="banner-hm">
+		<div class="banner-cont">
+        	<h1>Welcome to <span>DJS Stock &amp; Shares Ltd</span></h1>
+        </div>
+	</section>
+                                    </td>
+						</tr>
+					</table>
+					                         
+                         </div>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="widgetsControl_ClientState" name="widgetsControl_ClientState" type="hidden" />
+	</div><div class="RadDock RadDock_Default rdPlaceHolder" id="RadDockZone2_D" style="display:none;">
+		<!-- -->
+	</div><div class="clear" id="RadDockZone2_C">
+		<!-- -->
+	</div><input id="RadDockZone2_ClientState" name="RadDockZone2_ClientState" type="hidden" />
+</div>
+                            <div id="RadDockZone1" class="RadDockZone RadDockZone_Default rdHorizontal container" style="border-style:None;min-width:10px;min-height:10px;z-index:9;overflow:visible;">
+	<div id="HomepagecontentControl" class="RadDock RadDock_Default col-md-12" style="min-height:450px;float:Left;z-index:0;border-color:white;height:auto;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="HomepagecontentControl_C" class="rdContent" style="height:auto;overflow:hidden;border-style:none;">
+					
+<center>
+ <table cellpadding ="0" cellspacing = "5" style="width: 100%;margin-top:20px;">
+        <tr style="width: 100%;">
+           
+        </tr>
+        </table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr valign="top">
+                    <td valign="top" >
+                       
+                       </td>
+                    <td valign="top" style="width:100%;" >
+                     
+                        
+<section class="hm-abt">
+    	<div class="container">
+        	<div class="col-md-12">
+        	<h2>About <span>Us</span></h2>
+            <p>DJS STOCK & SHARES LIMITED is a public limited company incorporated in April 1994 under Indian Companies Act, 1956 and is also listed on the Bombay Stock Exchange.
+ (BSE Code – 511636).</p>
+            <p>The Company has membership of following Stock Exchanges:</p>
+            <div class="row">
+            <div class="col-md-6">
+            <ul><li>Bombay Stock Exchange</li>
+<li>National Stock Exchange (Cash Market Segment and F & O segment)</li>
+<li>National Stock Exchange (Currency segment)</li>
+<li>MCX-SX</li>
+<li>CDSL Depository Participant</li>
+</ul>
+<p><a href="/resource/about.aspx">Read More</a></p>
+			</div>
+			</div>
+            </div>
+        </div>
+    </section>
+                    </td>
+                    <td valign="top">
+                       </td>
+                </tr>
+            </table>  
+            </center>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="HomepagecontentControl_ClientState" name="HomepagecontentControl_ClientState" type="hidden" />
+	</div><div class="RadDock RadDock_Default rdPlaceHolder" id="RadDockZone1_D" style="display:none;">
+		<!-- -->
+	</div><div class="clear" id="RadDockZone1_C">
+		<!-- -->
+	</div><input id="RadDockZone1_ClientState" name="RadDockZone1_ClientState" type="hidden" />
+</div>
+                            <div id="RadDockZone3" class="RadDockZone RadDockZone_Default rdHorizontal container-fluid zoneover" style="border-style:None;width:100%;min-width:10px;min-height:10px;margin: 0px; padding: 0px; height: auto; z-index: 0; min-height: 0px;
+                                margin: 0px;">
+	<div id="WidgetControl1" class="RadDock RadDock_Default col-md-12" style="float:Left;">
+		<table class="rdTable">
+			<tr class="rdTop rdNone">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdMiddle">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter"><div id="WidgetControl1_C" class="rdContent" style="overflow:hidden;border-style:none;">
+					
+
+<div > 
+                            <table id="WidgetControl1_C_ctl00_tbl_widgets" width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr id="WidgetControl1_C_ctl00_tr_Widgets">
+							<td style="text-align:left;margin:0px 0px 0px 0px;">
+                                        
+<section class="services-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Our <span>Services</span></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="services-item"> <a href="/resource/Securities-Broking.aspx" class="text-center icon-dark"> <i class="fa fa-gear"></i></a>
+          <div class="icon-box-details">
+            <h4><a href="/resource/Securities-Broking.aspx">Securities Broking</a></h4>
+            <p>Coming Soon..</p>
+			<p class="text-center"><a href="/resource/Securities-Broking.aspx">Read More</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="services-item"> <a href="/resource/Derivatives-Broking.aspx" class="text-center icon-dark"> <i class="fa fa-gear"></i></a></a>
+          <div class="icon-box-details">
+            <h4><a href="/resource/Derivatives-Broking.aspx">Derivatives Broking</a></h4>
+            <p>Coming Soon...</p>
+			<p class="text-center"><a href="/resource/Derivatives-Broking.aspx">Read More</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="services-item"> <a href="/resource/Depository-Service.aspx" class="text-center icon-dark"> <i class="fa fa-gear"></i></a></a>
+          <div class="icon-box-details">
+            <h4><a href="/resource/Depository-Service.aspx">Depository Service</a></h4>
+            <p>Coming Soon...</p>
+            <p class="text-center"><a href="/resource/Depository-Service.aspx">Read More</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+                                    </td>
+						</tr>
+					</table>
+					                         
+                         </div>
+				</div></td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+			<tr class="rdBottom">
+				<td class="rdLeft">&nbsp;</td>
+				<td class="rdCenter">&nbsp;</td>
+				<td class="rdRight">&nbsp;</td>
+			</tr>
+		</table>
+		<input id="WidgetControl1_ClientState" name="WidgetControl1_ClientState" type="hidden" />
+	</div><div class="RadDock RadDock_Default rdPlaceHolder" id="RadDockZone3_D" style="display:none;">
+		<!-- -->
+	</div><div class="clear" id="RadDockZone3_C">
+		<!-- -->
+	</div><input id="RadDockZone3_ClientState" name="RadDockZone3_ClientState" type="hidden" />
+</div>
+                            
+                        
+                        
+   <div style="-moz-border-radius:0px; -webkit-border-radius:0px; -khtml-border-radius:0px;border-radius:0px; behavior:url(../js/border-radius.htc);
+/*border-radius:0px; box-shadow: 0 0 10px rgba(0,0,0,.5); */
+ /*margin-bottom:10px;*/ height:auto;" align="center">
+
+<table id="FooterrControl1_tbl" style="height:auto;width:100%;" class="table-responsive" cellpadding="0" cellspacing="0" border="0">
+	<tr id="FooterrControl1_tr_FooterBackImage">
+		<td style="width:100%; height:auto;" valign="top">
+         
+        <table style="width:100%;height:auto; float:right;"  class="table-responsive" cellpadding ="0"  cellspacing ="0"; border="0">
+        <tr>
+        <td id="FooterrControl1_tr_hitCounter" style="background-color:text-align:right;Padding-Top:15px;text-align:right;" valign="middle">   
+        <span id="FooterrControl1_lbl_hitsCounter" style="font-weight:bold;"></span>
+         <span id="FooterrControl1_lbl_hitMessage" style="font-weight:bold;"></span>
+        </td>
+		
+        </tr></table>
+        <div id="FooterrControl1_Footer" style="width:100%;height:auto;top:0px;vertical-align:top ;float:left ;background-color:;"><a href="http://webtel.in" style="display:none;" rel="dofollow">Webtel</a><footer>
+    <div class="foote-link">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 ft-dis">
+                    <h2>Disclaimer</h2>
+                    <p>Your access to this website constitutes your agreement to be bound by all terms and conditions
+                        listed herein below. If you do not agree to this, you may not access or otherwise use the
+                        website.</p>
+                    <p>The material displayed on this website may be downloaded for non-commercial..<br>
+                        <a href="/resource/Disclaimer.aspx">Read More</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Location</h2>
+                    <!-- <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.2251251455696!2d72.85386621490491!3d19.316035036950638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7afd44ba61b5d%3A0xbe1ac0c5af382a65!2sOld%20Raviraj%20Complex%2C%20Jesal%20Park%2C%20Bhayandar%20East%2C%20Mira%20Bhayandar%2C%20Maharashtra%20401105!5e0!3m2!1sen!2sin!4v1652157601480!5m2!1sen!2sin"
+                        width="100%" height="200px" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120542.61460514362!2d72.7708729226141!3d19.24071849748302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7afd434555555%3A0x6e58f1463ab2f212!2sDJS%20STOCK%20%26%20SHARES%20LIMITED!5e0!3m2!1sen!2sin!4v1748343233854!5m2!1sen!2sin"
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="col-md-4">
+                    <h2>Contact Us</h2>
+                    <p><i class="fa fa-map-marker"></i><span> Office No. 03, Ground Floor, Gulmohar Society, Opp. Anupam
+                            Cinema, Aarey Road, Goregaon (East), Mumbai - 400 063</span></p>
+                    <p><i class="fa fa-phone"></i><span> 022 45198723<br>
+                            We feel happy to talk</span></p>
+                    <p><i class="fa fa-envelope-o"></i><span> <a
+                                href="mailto:info@djsstocks.com">info@djsstocks.com</a><br>
+                            Write Your Message</span></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="copyrht">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Copyright © djsstocks.com 2022</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>Design By <a href="https://webtel.in/" target="_blank">Webtel Electrosoft Ltd.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer></div> 
+        </td>
+	</tr>
+</table>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDockZone, {"clientID":"RadDockZone2","clientStateFieldID":"RadDockZone2_ClientState","fitDocks":false,"layoutID":"RadDockLayout1","uniqueName":"RadDockZone2"}, null, null, $get("RadDockZone2"));
+    $create(Telerik.Web.UI.RadDock, {"_expandedHeight":90,"allowedZones":[],"clientStateFieldID":"HeaderControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"83px","layoutID":"RadDockLayout1","skin":"Default","title":"HeaderControl(100* 80 ) Left","uniqueID":"HeaderControl","uniqueName":"HeaderControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("HeaderControl"));
+    $create(Telerik.Web.UI.RadDock, {"_expandedHeight":44,"allowedZones":[],"clientStateFieldID":"MenuControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"44px","index":1,"layoutID":"RadDockLayout1","skin":"Default","title":"MenuControl(100* 44 ) Left","uniqueID":"MenuControl","uniqueName":"MenuControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("MenuControl"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"widgetsControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone2","forbiddenZones":[],"height":"500px","index":2,"layoutID":"RadDockLayout1","skin":"Default","title":"widgetsControl(100* 515 ) Left","uniqueID":"widgetsControl","uniqueName":"widgetsControl","width":""}, null, {"dockZone":"RadDockZone2"}, $get("widgetsControl"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDockZone, {"clientID":"RadDockZone1","clientStateFieldID":"RadDockZone1_ClientState","fitDocks":false,"layoutID":"RadDockLayout1","uniqueName":"RadDockZone1"}, null, null, $get("RadDockZone1"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"HomepagecontentControl_ClientState","dockMode":2,"dockZoneID":"RadDockZone1","forbiddenZones":[],"layoutID":"RadDockLayout1","skin":"Default","title":"HomepagecontentControl(750px*450)Left","uniqueID":"HomepagecontentControl","uniqueName":"HomepagecontentControl","width":""}, null, {"dockZone":"RadDockZone1"}, $get("HomepagecontentControl"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDockZone, {"clientID":"RadDockZone3","clientStateFieldID":"RadDockZone3_ClientState","fitDocks":false,"layoutID":"RadDockLayout1","uniqueName":"RadDockZone3"}, null, null, $get("RadDockZone3"));
+    $create(Telerik.Web.UI.RadDock, {"allowedZones":[],"clientStateFieldID":"WidgetControl1_ClientState","dockMode":2,"dockZoneID":"RadDockZone3","forbiddenZones":[],"layoutID":"RadDockLayout1","skin":"Default","title":"WidgetControl1(100* 1736 ) Left","uniqueID":"WidgetControl1","uniqueName":"WidgetControl1","width":""}, null, {"dockZone":"RadDockZone3"}, $get("WidgetControl1"));
+});
+//]]>
+</script>
+</form>
+    
+</body>
+
+<script language="javascript" type="text/javascript">
+ 
+
+ 
+</script>
+
+</html>

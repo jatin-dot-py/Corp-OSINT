@@ -1,0 +1,2674 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Oriental Trimex Ltd.</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="60x60" href="assets/images/favicons/favicon-60x60.png" />
+    <link rel="icon" type="image/png" sizes="40x40" href="assets/images/favicons/favicon-40x40.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Oriental Trimex Ltd." />
+
+    <!---CSS Links --->
+        
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&amp;family=Kumbh+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/icomoon-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/twentytwenty/twentytwenty.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/alori.css" />
+    <link rel="stylesheet" href="assets/css/alori-responsive.css" />
+</head>
+
+<body>
+
+    <!--preloader -->
+    
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <!------Header------>
+        
+
+    
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&amp;family=Kumbh+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/icomoon-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/twentytwenty/twentytwenty.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/alori.css" />
+    <link rel="stylesheet" href="assets/css/alori-responsive.css" />
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function () {
+    function fetchStockData() {
+        fetch('https://www.orientaltrimex.com/fetch-nse-bse.php')
+            .then(response => response.json())
+            .then(data => {
+                const results = data.quoteResponse.result;
+
+                const nse = results.find(stock => stock.exchange === "NSI");
+                const bse = results.find(stock => stock.exchange === "BSE");
+
+                if (nse) {
+                    document.getElementById('nse-price').textContent = `₹${nse.regularMarketPrice}`;
+                    const nseChangeEl = document.getElementById('nse-change');
+                    nseChangeEl.textContent = `${nse.regularMarketChangePercent.toFixed(2)}%`;
+                    nseChangeEl.style.color = nse.regularMarketChangePercent >= 0 ? 'green' : 'red';
+                }
+
+                if (bse) {
+                    document.getElementById('bse-price').textContent = `₹${bse.regularMarketPrice}`;
+                    const bseChangeEl = document.getElementById('bse-change');
+                    bseChangeEl.textContent = `${bse.regularMarketChangePercent.toFixed(2)}%`;
+                    bseChangeEl.style.color = bse.regularMarketChangePercent >= 0 ? 'green' : 'red';
+                }
+            })
+            .catch(error => {
+                console.error('Stock data fetch error:', error);
+                document.getElementById('nse-price').textContent = 'N/A';
+                document.getElementById('nse-change').textContent = 'N/A';
+                document.getElementById('bse-price').textContent = 'N/A';
+                document.getElementById('bse-change').textContent = 'N/A';
+            });
+    }
+
+    fetchStockData(); // initial fetch
+    setInterval(fetchStockData, 15000); // auto-refresh every 15 seconds
+});
+
+.then(data => {
+
+    if (!data.quoteResponse || !data.quoteResponse.result) {
+        console.error('Invalid API response', data);
+        return;
+    }
+
+    const results = data.quoteResponse.result;
+
+    ...
+})
+*/
+</script>
+
+
+
+<header class="main-header main-header--one  clearfix">
+
+    <!--------Start Top header-------->
+    <div class="main-header-three__top">
+        <div class="container-fluid">
+            <div class="main-header-three__top-inner">
+                <div class="main-header-three__top-left">
+
+                    <div class="social-icon">
+                        <ul>
+                            <li><a href="https://www.facebook.com/share/1EaXGGyw4X/"><span
+                                        class="fab fa-facebook"></span></a></li>
+                            <li><a href="https://www.linkedin.com/in/oriental-rareearth-310338355/"><span
+                                        class="fab fa-linkedin"></span></a></li>
+                            <li><a href="https://www.instagram.com/orientaltrimex/"><span
+                                        class="fab fa-instagram"></span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-box">
+                        <ul>
+                            <li><a href="bse.php"><span class="exchange">BSE/NSE:exchange</span></a></li>
+                            <li><span>|</span></li>
+                            <li><a href="bse-nse_price.php"><span class="exchange">BSE/NSE:price</span></a></li>
+                            <li><span>|</span></li>
+                            <li><a href="call:9910501668"><span class="fa fa-phone-alt"></span>+91 9289007501</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------Close Top header-------->
+
+    <div class="main-header--one__wrapper">
+        <div class="auto-container">
+            <div class="main-header--one__inner">
+
+                <div class="main-header--one__left">
+                    <div class="logo">
+                        <a href="https://www.orientaltrimex.com/"><img class="logo-img" src="/assets/images/resources/logo-2.png"
+                                alt="Oriental Trimex Logo" /></a>
+                    </div>
+                </div>
+
+                <nav class="main-menu main-menu--1">
+                    <div class="main-menu__inner">
+                        <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                        <div class="stricky-one-logo">
+                            <div class="logo">
+                                <a href="https://www.orientaltrimex.com/"><img class="stricky-logo" src="/assets/images/resources/logo-2.png"
+                                        alt=""></a>
+                            </div>
+                        </div>
+
+                        <div class="main-header--one__middle">
+                            <ul class="main-menu__list">
+
+                                <li class="dropdown current"><a href="https://www.orientaltrimex.com/">Home</a></li>
+                                <li class="dropdown"><a href="about.php">About us</a>
+                                    <ul>
+                                        <li><a href="about.php">Company Profile</a></li>
+                                        <li><a href="milestones.php">Milestones</a></li>
+                                    </ul>
+                                </li>
+
+
+                                <li class="dropdown"><a href="#">Products</a>
+                                    <ul>
+                                        <li><a href="/products.php?cat_name=Marble">Marble</a></li>
+                                        <li><a href="/products.php?cat_name=Travertine">Travertine
+                                                Marble</a></li>
+                                        <li><a href="/products.php?cat_name=Onyx">Onyx</a></li>
+                                        <li><a href="/products.php?cat_name=Quartz">Quartz</a></li>
+                                        <li><a
+                                                href="/products.php?cat_name=Quartzite">Quartzite</a>
+                                        </li>
+                                        <li><a href="/products.php?cat_name=Granite">Granite</a>
+                                        </li>
+                                        <li><a href="/products.php?cat_name=Tiles">Tiles</a></li>
+                                        <li><a href="/products.php?cat_name=Marble%20Artfects">Handcraft
+                                                Marble</a></li>
+                                    </ul>
+                                </li>
+
+
+                                <li class="dropdown"><a href="#">Virtual Room</a>
+                                    <ul>
+                                        <li><a href="living-room.php">Living Room</a></li>
+                                        <li><a href="bedroom.php">Bedroom</a></li>
+                                    </ul>
+                                </li>
+
+                                
+                                <li class="dropdown"><a href="https://orientaltrimex.com/investors.php?cat_name=ANNOUNCEMENT">Investors</a></li>
+
+                                <li class="dropdown"><a href="#">Franchise</a>
+                                    <ul>
+                                        <li><a href="invitation-letter.php">Invitation Letter</a></li>
+                                        <li><a href="our-policy.php">Our Policy</a></li>
+                                        <li><a href="our-support.php">Our Support</a></li>
+                                        <li><a href="/assets/docs/application-form.pdf" target="_blank">Application
+                                                Form</a></li>
+                                        <li><a href="galary.php">Gallery</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="faq.php">Faq's</a></li>
+                                <li><a href="contact.php">Contact</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="main-header--one__right clearfix">
+
+                    <div class="hidden-content-button bar-box">
+                        <a class="side-nav-toggler nav-toggler hidden-bar-opener" href="#">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="stricky-header stricked-menu main-menu">
+    <div class="sticky-header__content">
+
+    </div><!-- /.sticky-header__content -->
+</div><!-- /.stricky-header -->        
+
+        <!-- Hidden Navigation Bar -->
+            
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&amp;family=Kumbh+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/icomoon-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/twentytwenty/twentytwenty.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/alori.css" />
+    <link rel="stylesheet" href="assets/css/alori-responsive.css" />
+
+        <!----Hidden navbar---->
+        <section class="hidden-bar right-align">
+            <div class="hidden-bar-closer">
+                <button><span class="fa fa-times"></span></button>
+            </div>
+            <div class="hidden-bar-wrapper">
+                <div class="logo">
+                    <a href="https://www.orientaltrimex.com/"><img src="assets/images/resources/logo-2.png" alt="Logo" /></a>
+                </div>
+                <div class="hiddenbar-about-us">
+                    <h3>About Us</h3>
+                    <div class="text">
+                        <p>Oriental Trimex is a leading provider of high-quality natural stone and tile solutions, catering to both residential and commercial projects. With a commitment to excellence, we source and deliver premium marble, granite, and other stone materials.</p>
+                    </div>
+                </div>
+                <div class="contact-info-box">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>
+                            <h5>Address</h5>
+                            <p>26/25, Bazar Marg, Old Rajendra Nagar, New Delhi - 110060 India.</p>
+                        </li>
+                        <li>
+                            <h5>Phone</h5>
+                            <p><a href="tel:9289007501">+91 9289007501</a></p>
+                            <p><a href="tel:9289007502">+91 9289007502</a></p>
+                        </li>
+                        <li>
+                            <h5>Email</h5>
+                            <p><a href="/cdn-cgi/l/email-protection#7a13141c153a1508131f140e1b160e0813171f0254191517"><span class="__cf_email__" data-cfemail="b7ded9d1d8f7d8c5ded2d9c3d6dbc3c5dedad2cf99d4d8da">[email&#160;protected]</span></a></p>
+                            <p><a href="/cdn-cgi/l/email-protection#ef809d868a819d9b8e839b9d86828a97838682869b8a8baf88828e8683c18c8082"><span class="__cf_email__" data-cfemail="0c637e6569627e786d60787e65616974606561657869684c6b616d6560226f6361">[email&#160;protected]</span></a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget__contact-info-social-links">
+                    <ul>
+                        <li><a href="https://www.facebook.com/share/1EaXGGyw4X/"><span class="fab fa-facebook"></span></a></li>
+                        <li><a href="https://www.linkedin.com/in/oriental-rareearth-310338355/"><span class="fab fa-linkedin"></span></a></li>
+                        <li><a href="https://www.instagram.com/orientaltrimex/"><span class="fab fa-instagram"></span></a></li>
+                    </ul>
+                </div>
+                <div class="copy-right-text">
+                    <p>© 2025 <a href="https://www.orientaltrimex.com/">Oriental Trimex</a>. All Rights Reserved.</p>
+                </div>
+            </div>
+        </section>
+        <!----Closed Hidden navbar---->
+
+        <!-- /Hidden - mobile-navbar--->
+        <div class="mobile-nav__wrapper">
+            <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+            <!-- /.mobile-nav__overlay -->
+            <div class="mobile-nav__content">
+                <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+               <div class="logo-box">
+                    <a href="https://www.orientaltrimex.com/" aria-label="logo image"><img src="assets/images/resources/logo-2.png" alt="" /></a>
+                </div>
+
+                <!-- /.logo-box -->
+                <div class="mobile-nav__container">
+                    <div class="main-header--one__middle">
+                        <ul class="main-menu__list">
+
+                            <li class="dropdown current"><a href="index.php">Home</a></li>
+                            <li class="dropdown"><a href="about.php">About us</a>
+                        <ul>
+                            <li><a href="about.php">Company Profile</a></li>
+                            <li><a href="milestones.php">Milestones</a></li>
+                        </ul>
+                            </li>
+
+
+                            <li class="dropdown"><a href="#">Products</a>
+                            <ul>
+                                <li><a href="/products.php?cat_name=Marble">Marble</a></li>
+                                <li><a href="/products.php?cat_name=Travertine">Travertine
+                                    Marble</a></li>
+                                <li><a href="/products.php?cat_name=Onyx">Onyx</a></li>
+                                <li><a href="/products.php?cat_name=Quartz">Quartz</a></li>
+                                <li><a href="/products.php?cat_name=Quartzite">Quartzite</a></li>
+                                <li><a href="/products.php?cat_name=Granite">Granite</a></li>
+                                <li><a href="/products.php?cat_name=Tiles">Tiles</a></li>
+                                <li><a href="/products.php?cat_name=Marble%20Artfects">Handcraft Marble</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown"><a href="#">Virtual Room</a>
+                            <ul>
+                                <li><a href="living-room.php">Living Room</a></li>
+                                <li><a href="bedroom.php">Bedroom</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="investors.php">Investors</a></li>
+
+                        <li class="dropdown"><a href="#">Franchise</a>
+                            <ul>
+                                <li><a href="invitation-letter.php">Invitation Letter</a></li>
+                                <li><a href="our-policy.php">Our Policy</a></li>
+                                <li><a href="our-support.php">Our Support</a></li>
+                                <li><a href="/assets/docs/application-form.pdf" target="_blank">Application Form</a></li>
+                                <li><a href="galary.php">Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="faq.php">Faq's</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.mobile-nav__container -->
+
+                <ul class="mobile-nav__contact list-unstyled">
+                    <li>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="/cdn-cgi/l/email-protection#bad3d4dcd5fad5c8d3dfd4cedbd6cec8d3d7dfc294d9d5d7"><span class="__cf_email__" data-cfemail="d4bdbab2bb94bba6bdb1baa0b5b8a0a6bdb9b1acfab7bbb9">[email&#160;protected]</span></a>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="tel:9289007501">+91 9289007501</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="tel:9289007502">+91 9289007502</a>
+                    </li>
+                </ul><!-- /.mobile-nav__contact -->
+                <div class="mobile-nav__top">
+                    <div class="mobile-nav__social">
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-facebook-square"></a>
+                        <a href="#" class="fab fa-pinterest-p"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div><!-- /.mobile-nav__social -->
+                </div><!-- /.mobile-nav__top -->
+            </div>
+            <!-- /.mobile-nav__content -->
+        </div>
+
+        <!--Main Slider Start-->
+        <section class="main-slider main-slider-one main-slider-one--two">
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true, "effect": "fade", "pagination": {
+            "el": "#main-slider-pagination",
+            "type": "bullets",
+            "clickable": true
+            },
+            "navigation": {
+            "nextEl": "#main-slider__swiper-button-next",
+            "prevEl": "#main-slider__swiper-button-prev"
+            },
+            "autoplay": {
+            "delay": 7000
+            }}'>
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/main-slider-v1-3.jpg);"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-one__inner">
+                                        <div class="border-box"></div>
+                                        <p class="main-slider-one__text">A Complete Solution for Your Flooring Vision.
+                                        </p>
+                                        <h2 class="main-slider-one__title">Your Floor, Your <br>Lifestyle, Our Passion
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/main-slider-v1-1.jpg);"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-one__inner">
+                                        <div class="border-box"></div>
+                                        <p class="main-slider-one__text">Oriental Trimex.
+                                        </p>
+                                        <h2 class="main-slider-one__title">Premium Marble, Onyx & <br>Granite Suppliers in India.
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/main-slider-v2-1.jpg);"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-one__inner">
+                                        <div class="border-box"></div>
+                                        <p class="main-slider-one__text">Luxurious Onyx Wall Panels.
+                                        </p>
+                                        <h2 class="main-slider-one__title">Elegant & Timeless <br>Interior Design
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-pagination" id="main-slider-pagination"></div>
+                <div class="main-slider__nav">
+                    <div class="swiper-button-prev" id="main-slider__swiper-button-prev">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="swiper-button-next" id="main-slider__swiper-button-next">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Main Slider End-->
+
+        <!--Start Latest products-->
+        <section class="services-two">
+            <div class="container">
+                <div class="sec-title text-center">
+                    <span class="sec-title__tagline">Our popular Products</span>
+                    <p>Our mesmerizing range of designer products.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="services-two__carousel owl-carousel owl-theme owl-dot-type1">
+
+                            <!--Start Latest products-->
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=24">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743405065.jpg" alt="Green Onyx" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Green Onyx</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=25">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743405207.jpg" alt="Honey Onyx" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Honey Onyx</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=26">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743405304.jpg" alt="Orange Onyx" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Orange Onyx</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=27">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743405404.jpg" alt="Tiger Onyx" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Tiger Onyx</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=28">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743405553.jpg" alt="White Onyx" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>White Onyx</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=29">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743405907.jpg" alt="Beige Travertine" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Beige Travertine</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=30">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743406047.jpg" alt="Red Travertine" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Red Travertine</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=31">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743406241.jpg" alt="Grey Travertine" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Grey Travertine</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=32">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743406478.jpg" alt="Walnut Travertine" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Walnut Travertine</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=33">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743406648.jpg" alt="Noce Travertine" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Noce Travertine</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=34">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743416643.jpg" alt="Arabescato (Italy) " width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Arabescato (Italy) </h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=35">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743416771.jpg" alt="Carrara (Italy)" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Carrara (Italy)</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=36">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743416862.jpg" alt="Calacatta Gold (Italy)" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Calacatta Gold (Italy)</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=37">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743416997.jpg" alt="Calacatta White Marble (Italy)" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Calacatta White Marble (Italy)</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=38">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743417123.jpg" alt="Marmara White Marble (Turkey)" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Marmara White Marble (Turkey)</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=39">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743417225.jpg" alt="Statuario Marble (Italy)" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Statuario Marble (Italy)</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=40">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743417381.jpg" alt="Thassos White Marble (Greece)" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Thassos White Marble (Greece)</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=41">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743417514.jpg" alt="Venatino Marble (Italy)" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Venatino Marble (Italy)</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=42">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743417648.jpg" alt="Volakas Marble (Greece)" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Volakas Marble (Greece)</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=43">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743672061.jpg" alt="Camicia Brown Tile – Elegant &amp; Durable Flooring Solution" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Camicia Brown Tile – Elegant &amp; Durable Flooring Solution</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=44">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743675964.jpg" alt="Camicia Brown Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Camicia Brown Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=45">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743681394.jpg" alt="Hount Beige Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Hount Beige Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=46">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743681509.jpg" alt="Ikea Natural Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Ikea Natural Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=47">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743681596.jpg" alt="Lumber Crema Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Lumber Crema Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=48">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743681670.jpg" alt="Pine Gray Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Pine Gray Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=49">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743681752.jpg" alt="Rufe Brown Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Rufe Brown Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=50">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743681839.jpg" alt="Softwood Crema Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Softwood Crema Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=51">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743681923.jpg" alt="Tibet Wood Honey Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Tibet Wood Honey Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=52">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743682106.jpg" alt="Burin Carrara Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Burin Carrara Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=53">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743682261.jpg" alt="Portobello Natural Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Portobello Natural Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=54">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743682364.jpg" alt="Plazzo Bianco Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Plazzo Bianco Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=55">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743682458.jpg" alt="Versace Grey Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Versace Grey Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=56">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743682531.jpg" alt="Jorden Light Grey Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Jorden Light Grey Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=57">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743682626.jpg" alt="Jorden Dark Grey Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Jorden Dark Grey Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=58">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743682858.jpg" alt="Marlin White Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Marlin White Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=59">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743682942.jpg" alt="Marlin Beige Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Marlin Beige Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=60">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743683138.jpg" alt="Asiatic Grey Carving Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Asiatic Grey Carving Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=61">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743683373.jpg" alt="Statuario Galaxy Carving Finish Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Statuario Galaxy Carving Finish Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=62">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743683569.jpg" alt="Versace Aqua Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Versace Aqua Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=63">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743684215.jpg" alt="Onyx Stone Blue Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Onyx Stone Blue Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=64">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743684345.jpg" alt="Volga Blue Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Volga Blue Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=65">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743684465.jpg" alt="Versace Black Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Versace Black Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=66">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743684574.jpg" alt="Alenson Grey Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Alenson Grey Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=67">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743684682.jpg" alt="Dyna Fantastico Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Dyna Fantastico Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=68">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743684769.jpg" alt="Spreda Brown Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Spreda Brown Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=69">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743685128.jpg" alt="Inox Dark Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Inox Dark Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=70">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743685320.jpg" alt="Ascot Light Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Ascot Light Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=71">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743685382.jpg" alt="Destin Dark Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Destin Dark Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=72">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743685517.jpg" alt="Gibson White Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Gibson White Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=73">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743685662.jpg" alt="Marsh Light Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Marsh Light Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=74">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743685858.jpg" alt="Rivana Brown Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Rivana Brown Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=75">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743685941.jpg" alt="Cloud Dark Onyx Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Cloud Dark Onyx Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=76">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686102.jpg" alt="Destin Dark Carving Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Destin Dark Carving Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=77">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686195.jpg" alt="Magnus White Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Magnus White Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=78">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686289.jpg" alt="Oyster Bianco Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Oyster Bianco Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=79">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686359.jpg" alt="Rome Bianco Glossy Tile" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Rome Bianco Glossy Tile</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=80">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686556.jpg" alt="3059 Punch Tile – Stylish &amp; Durable Textured Finish" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>3059 Punch Tile – Stylish &amp; Durable Textured Finish</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=81">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686613.jpg" alt="3042 Punch Tile – Modern Textured Finish for Stylish Interiors" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>3042 Punch Tile – Modern Textured Finish for Stylish Interiors</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=82">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686710.jpg" alt="3026 Plain Tile – Minimalist &amp; Versatile Design for Modern Spaces" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>3026 Plain Tile – Minimalist &amp; Versatile Design for Modern Spaces</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=83">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686791.jpg" alt="3091 Plain Tile – Sleek &amp; Versatile Design for Modern Interiors" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>3091 Plain Tile – Sleek &amp; Versatile Design for Modern Interiors</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=84">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686864.jpg" alt="3092 Plain Tile – Minimalist &amp; Timeless Elegance" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>3092 Plain Tile – Minimalist &amp; Timeless Elegance</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=85">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743686923.jpg" alt="4012 Punch Tile – Stylish Textured Finish for Modern Spaces" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>4012 Punch Tile – Stylish Textured Finish for Modern Spaces</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=88">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743754633.jpg" alt="Black Granite Slab – Premium Natural Stone" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Black Granite Slab – Premium Natural Stone</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=89">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743755182.jpg" alt="Galaxy Granite Slab – Luxurious Sparkle &amp; Strength in Natural Stone" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Galaxy Granite Slab – Luxurious Sparkle &amp; Strength in Natural Stone</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=90">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743755254.jpg" alt="Moon White Granite – Elegant &amp; Durable Natural Stone with Soft Grey Patterns" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Moon White Granite – Elegant &amp; Durable Natural Stone with Soft Grey Patterns</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=91">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743870737.jpg" alt="D-3002 Vitrified Tiles – Sleek &amp; Durable Finish for Modern Interiors" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>D-3002 Vitrified Tiles – Sleek &amp; Durable Finish for Modern Interiors</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=92">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743871021.jpg" alt="D-3034 Vitrified Tiles – Elegant &amp; Durable Finish for Modern Interiors" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>D-3034 Vitrified Tiles – Elegant &amp; Durable Finish for Modern Interiors</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=93">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743871126.jpg" alt="D-6007 Vitrified Tiles – Premium Large Format Tiles for Elegant Spaces" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>D-6007 Vitrified Tiles – Premium Large Format Tiles for Elegant Spaces</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=94">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743871882.jpg" alt="D-6027 Vitrified Tiles – Sophisticated &amp; Durable Tiles for Contemporary Interiors" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>D-6027 Vitrified Tiles – Sophisticated &amp; Durable Tiles for Contemporary Interiors</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=95">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743871976.jpg" alt="D-6052 Vitrified Tiles – Contemporary Elegance with Superior Durability" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>D-6052 Vitrified Tiles – Contemporary Elegance with Superior Durability</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=96">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872062.jpg" alt="D-8015 Endless Vitrified Tiles – Seamless Design for Expansive Elegance" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>D-8015 Endless Vitrified Tiles – Seamless Design for Expansive Elegance</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=97">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872138.jpg" alt="Electra Grey Tiles – Sleek Grey Finish with Modern Appeal" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Electra Grey Tiles – Sleek Grey Finish with Modern Appeal</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=98">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872236.jpg" alt="Endless Cypres Coffee Tiles – Rich Wood Look with Seamless Endless Effect" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Endless Cypres Coffee Tiles – Rich Wood Look with Seamless Endless Effect</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=99">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872314.jpg" alt="Infinity Imperial Dyna Gold-P – Luxurious Marble-Inspired Vitrified Tiles" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Infinity Imperial Dyna Gold-P – Luxurious Marble-Inspired Vitrified Tiles</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=100">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872392.jpg" alt="ENDLESS Motion Beige – Seamless Vitrified Tiles in Elegant Beige Tone" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>ENDLESS Motion Beige – Seamless Vitrified Tiles in Elegant Beige Tone</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=101">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872466.jpg" alt="ENDLESS Pistanchino Onyx – Seamless Luxury Onyx Look Vitrified Tiles" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>ENDLESS Pistanchino Onyx – Seamless Luxury Onyx Look Vitrified Tiles</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=102">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872524.jpg" alt="Kashmir Bianco – Elegant White Marble-Inspired Vitrified Tiles" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Kashmir Bianco – Elegant White Marble-Inspired Vitrified Tiles</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=103">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872635.jpg" alt="Moon Onyx White – Elegant White Onyx Look Vitrified Tiles" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Moon Onyx White – Elegant White Onyx Look Vitrified Tiles</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=104">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872716.jpg" alt="Onyx Ice – Cool-Toned Onyx Look Vitrified Tiles for Elegant Interiors" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Onyx Ice – Cool-Toned Onyx Look Vitrified Tiles for Elegant Interiors</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=105">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872804.jpg" alt="Onyx Natural – Timeless Natural Onyx Look Vitrified Tiles" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Onyx Natural – Timeless Natural Onyx Look Vitrified Tiles</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=106">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872867.jpg" alt="D-6016 – Premium Vitrified Tile with Contemporary Stone Finish" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>D-6016 – Premium Vitrified Tile with Contemporary Stone Finish</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <a href="product-details.php?id=107">
+                                   <div class="services-two__single-img">
+                                       <img src="/admin/assets/img/uploads/1743872961.jpg" alt="Nero Merquina – Luxurious Black Marble-Inspired Vitrified Tiles" width="150">
+                                    </div>
+
+                                    <div class="services-two__single-content text-center">
+                                       <h2>Nero Merquina – Luxurious Black Marble-Inspired Vitrified Tiles</h2>
+                                    </div>
+                                </a>
+                            </div>
+
+                                                        <!--End Latest products-->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Latest products-->
+
+        <!--Start About Three-->
+        <section class="about-three">
+            <div class="shape5"><img src="assets/images/shapes/about-v3-shape5.png" alt="#"></div>
+            <div class="shape6 zoom-fade"><img src="assets/images/shapes/about-v3-shape6.png" alt="#"></div>
+            <div class="container">
+                <div class="row">
+                    <!--Start About Three Img-->
+                    <div class="col-xl-6">
+                        <div class="about-three__img">
+                            <div class="about-three__img1">
+                                <div class="shape3 float-bob-y"></div>
+                                <div class="shape4 float-bob-y"><img src="assets/images/shapes/about-v3-shape4.png"
+                                        alt="#"></div>
+                                <div class="inner">
+                                    <div class="shape1 float-bob-y"></div>
+                                    <div class="shape2"></div>
+                                    <img src="assets/images/resources/product-v1-img02.jpg" alt="#">
+                                </div>
+                            </div>
+                            <div class="about-three__img2 wow zoomIn" data-wow-delay="100ms" data-wow-duration="3500ms">
+                                <img src="assets/images/resources/product-v1-img01.jpg" alt="#">
+                            </div>
+                        </div>
+                    </div>
+                    <!--End About Three Img-->
+
+                    <!--Start About Three Content-->
+                    <div class="col-xl-6">
+                        <div class="about-three__content">
+                            <div class="sec-title-two">
+                                <p class="sec-title-two__tagline">About Comapny</p>
+                                <h2 class="sec-title-two__title">WHY Oriental's <br> Rare Earth </h2>
+                            </div>
+
+
+                            <div class="about-three__content-text1">
+                                <p>Oriental Trimex limited (OTL) is a leading importer and processor of natural marbles
+                                    from all around the globe.</p>
+                            </div>
+
+                            <div class="about-three__content-middle">
+                                <div class="img-box">
+                                    <img src="assets/images/resources/product-v1-img02.jpg" alt="#">
+                                </div>
+
+                                <div class="content-box">
+                                    <ul>
+                                        <li>
+                                            <div class="icon-box">
+                                                <span class="fa fa-check"></span>
+                                            </div>
+                                            <div class="text-box">
+                                                <p>Hardwood Flooring</p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon-box">
+                                                <span class="fa fa-check"></span>
+                                            </div>
+                                            <div class="text-box">
+                                                <p>Highly Competitive Pricing</p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon-box">
+                                                <span class="fa fa-check"></span>
+                                            </div>
+                                            <div class="text-box">
+                                                <p>Our Strong National Reputation</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="about-three__content-bottom">
+                                <div class="left-content">
+                                    <div class="text-box">
+                                        <h3>Rajesh Punia</h3>
+                                        <p>Founder<br> Oriental Trimex</p>
+                                    </div>
+                                    <div class="signature-box">
+                                        <img src="assets/images/about/about-v3-signature.png" alt="#">
+                                    </div>
+                                </div>
+
+                                <div class="right-content">
+                                    <p>Rare Earth denotes Prestige in  every Project, Elegance in every design, Luxury in every  stone and perfection in each floor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End About Three Content-->
+                </div>
+            </div>
+        </section>
+        <!--End About Three-->
+
+
+        <!--Start flooring-->
+        <section class="best-logistics-one">
+            <div class="shape2 zoominout"><img src="assets/images/shapes/best-logistics-v1-shape2.png" alt="" /></div>
+            <div class="container">
+                <div class="row">
+                    <!--Start flooring Content-->
+                    <div class="col-xl-6">
+                        <div class="support-one__content">
+                            <h2>We provide quality industrial <br> flooring solutions </h2>
+                            <p>At Rare Earth durability meets design, for decades we provide premium flooring that  elevate commercial spaces like Hotels, Shopping Malls, Banquet Halls and other  prime commercial properties.</p>
+
+                            <ul class="about-one__content-list">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-wood-board"></span>
+                                    </div>
+
+                                    <div class="title">
+                                        <h3>High-Quality Floorings At Great Prices </h3>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-customer-satisfaction-1"></span>
+                                    </div>
+
+                                    <div class="title">
+                                        <h3>Satisfied and happy customers</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="btn-box">
+                                <a href="about.php" class="thm-btn">Discover More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End flooring Content-->
+
+                    <!--Start Our Material One Img-->
+                    <div class="col-xl-6">
+                        <div class="our-material-one__img">
+                            <div class="our-material-one__img1 wow slideInRight" data-wow-delay="100ms"
+                                data-wow-duration="3500ms">
+                                <img src="assets/images/resources/our-material-v2-img2.jpg" alt="" />
+                            </div>
+                            <div class="our-material-one__img2 wow slideInLeft" data-wow-delay="100ms"
+                                data-wow-duration="3500ms">
+                                <img src="assets/images/resources/our-material-v2-img02.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Our Material One Img-->
+
+                </div>
+            </div>
+        </section>
+        <!--End Best Logistics One-->
+
+
+                <!--Start Our clients-->
+                <section class="services-two">
+            <div class="container">
+                <div class="sec-title text-center">
+                    <h2 class="sec-title__tagline">Our Clients</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="services-two__carousel owl-carousel owl-theme owl-dot-type1">
+
+                            <!--Start Our clients-->
+                            <div class="services-two__single wow animated fadeInUp justify-content-center" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/amrapali.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/ansal.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/assotech.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/ATS.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/bestech.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/centralpark.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/crowne-plaza.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/dlf.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/eros.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/gulf.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/emaar.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/hcl.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/holiday-inn.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/itdc.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/jaypee-group.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/max.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/parasvnath.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/Piccadily.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/pullman.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/sds.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/skycity.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/sobha.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/supertech.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/theforum.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/thepark.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/uppals.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/vatika.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="services-two__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="services-two__single-img our-clients">
+                                    <img src="/assets/images/clients/westin.png" alt="" />
+                                </div>
+                            </div>
+                            <!--End Our clients-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Our clients-->
+
+
+        <!--Start Categories-->
+        <section class="projects-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="projects-two">
+
+                            <div class="sec-title text-center">
+                                <span class="sec-title__tagline">TRENDING STYLES</span>
+                                <p>Your spaces are a reflection of your tastes. <br> Find
+                                    design inspiration right here!</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="projects-two__carousel owl-carousel owl-theme">
+                            <!--Start Categories-->
+                                                        <div class="projects-two__single wow slideInUp" data-wow-delay="100ms" data-wow-duration="3500ms">
+                                <div class="projects-two__single-img" style="background-image: url('/admin/assets/img/uploads/1743010138.jpg');" alt="Quartzite">
+                                    <div class="overlay-content">
+                                        <div class="overlay-content-inner">
+                                            <div class="text">
+                                                <!--<span>Hardwood</span>-->
+                                                <h2><a href="products.php?cat_name=Quartzite">Quartzite</a></h2>
+                                            </div>
+                                            <div class="button">
+                                            <a href="products.php?cat_name=Quartzite"></a><span class="icon-next"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="projects-two__single wow slideInUp" data-wow-delay="100ms" data-wow-duration="3500ms">
+                                <div class="projects-two__single-img" style="background-image: url('/admin/assets/img/uploads/1743065488.jpg');" alt="Onyx">
+                                    <div class="overlay-content">
+                                        <div class="overlay-content-inner">
+                                            <div class="text">
+                                                <!--<span>Hardwood</span>-->
+                                                <h2><a href="products.php?cat_name=Onyx">Onyx</a></h2>
+                                            </div>
+                                            <div class="button">
+                                            <a href="products.php?cat_name=Onyx"></a><span class="icon-next"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="projects-two__single wow slideInUp" data-wow-delay="100ms" data-wow-duration="3500ms">
+                                <div class="projects-two__single-img" style="background-image: url('/admin/assets/img/uploads/1743065543.jpg');" alt="Marble">
+                                    <div class="overlay-content">
+                                        <div class="overlay-content-inner">
+                                            <div class="text">
+                                                <!--<span>Hardwood</span>-->
+                                                <h2><a href="products.php?cat_name=Marble">Marble</a></h2>
+                                            </div>
+                                            <div class="button">
+                                            <a href="products.php?cat_name=Marble"></a><span class="icon-next"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="projects-two__single wow slideInUp" data-wow-delay="100ms" data-wow-duration="3500ms">
+                                <div class="projects-two__single-img" style="background-image: url('/admin/assets/img/uploads/1743065647.jpg');" alt="Travertine">
+                                    <div class="overlay-content">
+                                        <div class="overlay-content-inner">
+                                            <div class="text">
+                                                <!--<span>Hardwood</span>-->
+                                                <h2><a href="products.php?cat_name=Travertine">Travertine</a></h2>
+                                            </div>
+                                            <div class="button">
+                                            <a href="products.php?cat_name=Travertine"></a><span class="icon-next"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="projects-two__single wow slideInUp" data-wow-delay="100ms" data-wow-duration="3500ms">
+                                <div class="projects-two__single-img" style="background-image: url('/admin/assets/img/uploads/1743065856.jpg');" alt="Granite">
+                                    <div class="overlay-content">
+                                        <div class="overlay-content-inner">
+                                            <div class="text">
+                                                <!--<span>Hardwood</span>-->
+                                                <h2><a href="products.php?cat_name=Granite">Granite</a></h2>
+                                            </div>
+                                            <div class="button">
+                                            <a href="products.php?cat_name=Granite"></a><span class="icon-next"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="projects-two__single wow slideInUp" data-wow-delay="100ms" data-wow-duration="3500ms">
+                                <div class="projects-two__single-img" style="background-image: url('/admin/assets/img/uploads/1743066582.jpg');" alt="Tiles">
+                                    <div class="overlay-content">
+                                        <div class="overlay-content-inner">
+                                            <div class="text">
+                                                <!--<span>Hardwood</span>-->
+                                                <h2><a href="products.php?cat_name=Tiles">Tiles</a></h2>
+                                            </div>
+                                            <div class="button">
+                                            <a href="products.php?cat_name=Tiles"></a><span class="icon-next"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="projects-two__single wow slideInUp" data-wow-delay="100ms" data-wow-duration="3500ms">
+                                <div class="projects-two__single-img" style="background-image: url('/admin/assets/img/uploads/1743423497.jpg');" alt="Marble Artfects">
+                                    <div class="overlay-content">
+                                        <div class="overlay-content-inner">
+                                            <div class="text">
+                                                <!--<span>Hardwood</span>-->
+                                                <h2><a href="products.php?cat_name=Marble Artfects">Marble Artfects</a></h2>
+                                            </div>
+                                            <div class="button">
+                                            <a href="products.php?cat_name=Marble Artfects"></a><span class="icon-next"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <!--End Categories-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Category section-->
+
+
+        <!--Start Blog One-->
+        <!--<section class="blog-one">
+            <div class="container">
+                <div class="sec-title text-center">
+                    <span class="sec-title__tagline">Know this industry through blogs!</span>
+                    <p>Articles daily updated latest articles <br>directly from the blog</p>
+                </div>
+                <div class="row">
+
+                    <div class="col-xl-12">
+                        <div class="projects-two__carousel owl-carousel owl-theme">
+                            <div class="wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="blog-one__single">
+                                    <div class="blog-one__single-img">
+                                        <img src="assets/images/blog/blog-v1-img1.jpg" alt="" />
+                                        <div class="overlay-icon">
+                                            <a href="blog-single.html"><span class="fa fa-plus"></span></a>
+                                        </div>
+                                        <div class="overlay-text">
+                                            <span>Business</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="blog-one__single-content">
+                                        <ul class="meta-info">
+                                            <li>
+                                                <div class="icon">
+                                                    <i class="icon-clock-3" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Octobar 12,2021</p>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="icon">
+                                                    <i class="icon-user-3" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Admin</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <h2><a href="blog-single.html">How to Remove Common <br>Carpet Stains</a></h2>
+                                        <p>One of the most popular and timeless tile choices for kitchens and bathrooms
+                                        </p>
+                                        <div class="your-project-one__single-btn">
+                                            <a href="#" class="thm-btn">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="blog-one__single">
+                                    <div class="blog-one__single-img">
+                                        <img src="assets/images/blog/blog-v1-img2.jpg" alt="" />
+                                        <div class="overlay-icon">
+                                            <a href="blog-single.html"><span class="fa fa-plus"></span></a>
+                                        </div>
+                                        <div class="overlay-text">
+                                            <span>Woodhard</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="blog-one__single-content">
+                                        <ul class="meta-info">
+                                            <li>
+                                                <div class="icon">
+                                                    <i class="icon-clock-3" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Octobar 12,2021</p>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="icon">
+                                                    <i class="icon-user-3" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Admin</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <h2><a href="blog-single.html">Hardwood oak flooring at<br> Simple Flooring </a>
+                                        </h2>
+                                        <p>One of the most popular and timeless tile choices for kitchens and bathrooms
+                                        </p>
+                                        <div class="your-project-one__single-btn">
+                                            <a href="#" class="thm-btn">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="blog-one__single">
+                                    <div class="blog-one__single-img">
+                                        <img src="assets/images/blog/blog-v1-img3.jpg" alt="" />
+                                        <div class="overlay-icon">
+                                            <a href="blog-single.html"><span class="fa fa-plus"></span></a>
+                                        </div>
+                                        <div class="overlay-text">
+                                            <span>Flooring</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="blog-one__single-content">
+                                        <ul class="meta-info">
+                                            <li>
+                                                <div class="icon">
+                                                    <i class="icon-clock-3" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Octobar 12,2021</p>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="icon">
+                                                    <i class="icon-user-3" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Admin</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <h2><a href="blog-single.html">Why choose vinyl plank <br>over other flooring
+                                                types?</a>
+                                        </h2>
+                                        <p>One of the most popular and timeless tile choices for kitchens and bathrooms
+                                        </p>
+                                        <div class="your-project-one__single-btn">
+                                            <a href="#" class="thm-btn">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <!--End Blog One-->
+
+
+
+        <!--Start Contact One-->
+        <section class="contact-one contact-one--two">
+            <div class="shape1"><img src="assets/images/shapes/contact-v1-shape1.png" alt="" /></div>
+            <div class="contact-one__img wow slideInLeft" data-wow-delay="100ms" data-wow-duration="3500ms"
+                style="background-image: url(assets/images/resources/contact-v1-img1.jpg);">
+                <div class="overlay-content text-center wow zoomIn animated" data-wow-delay="100ms"
+                    data-wow-duration="3500ms">
+                    <h2>30</h2>
+                    <h3>Years of <br>Expeirence</h3>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <!--Start Contact One Img-->
+                    <div class="col-xl-6 col-lg-0">
+
+                    </div>
+                    <!--End Contact One Img-->
+
+                    <!--Start Contact One Content-->
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="contact-one__content">
+                            <div class="sec-title">
+                                <span class="sec-title__tagline">Contact us</span>
+                                <p>Lets Create Something <br>Great Together!</p>
+                            </div>
+
+                            <div class="contact-one__content-comment-form">
+                                <form action="https://alori-html.vercel.app/assets/inc/sendemail.php"
+                                    class="comment-one__form contact-form-validated" novalidate="novalidate">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <div class="comment-form__input-box">
+                                                <input type="text" placeholder="Full Name" name="name">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <div class="comment-form__input-box">
+                                                <input type="email" placeholder="Email Addresss" name="email">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-xl-12 col-lg-12">
+                                            <div class="comment-form__input-box">
+                                                <textarea name="message" placeholder="Message Details"></textarea>
+                                            </div>
+                                            <button type="submit" class="thm-btn comment-form__btn">Send</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End Contact One Content-->
+                </div>
+            </div>
+        </section>
+        <!--End Contact One-->
+
+
+
+        <!--Start Footer One-->
+        <footer class="footer-one footer-one--two">
+    <div class="footer-one__bg" style="background-image: url(assets/images/backgrounds/footer-v2-bg.jpg);">
+    </div>
+    <div class="footer-one__top">
+        <div class="container">
+            
+            <div class="footer-one--two__contact-box">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="footer-one--two__contact-box-inner text-center">
+                            <h2>Schedule a free case evaluation.<br> or call us at <a
+                                    href="tel:01145041223">011-45041223</a></h2>
+
+                            <div class="footer-one--two__contact-box-btn">
+                                <a href="contact.php" class="thm-btn">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="footer-one__top-wrapper">
+                        <div class="row">
+                            <!--Start Footer Widget Column-->
+                            <div class="col-xl-4 col-lg-4 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="footer-widget__column footer-widget__about">
+                                    <div class="footer-widget__about-logo">
+                                        <a href="https://www.orientaltrimex.com/"><img class="footer-logo"
+                                                src="/assets/images/resources/oriental_rare-earth-logo.png" alt=""></a>
+                                    </div>
+
+                                    <p class="footer-widget__about-text"><b>Mainufacture Address</b> <br>26/25, 2nd Floor, Bazar Marg, Okd Rajendra Nagar, New Delhi-110060.</p>
+
+                                    <div class="footer-widget__contact-info-social-links">
+                                        <ul>
+                                            <li><a href="https://www.facebook.com/share/1EaXGGyw4X/"><span class="fab fa-facebook"></span></a></li>
+                                            <li><a href="https://www.linkedin.com/in/oriental-rareearth-310338355/"><span class="fab fa-linkedin"></span></a></li>
+                                            <li><a href="https://www.instagram.com/orientaltrimex/"><span class="fab fa-instagram"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Footer Widget Column-->
+
+                            <!--Start Footer Widget Column-->
+                            <div class="col-xl-2 col-lg-2 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                                <div class="footer-widget__column footer-widget__quick-links">
+                                    <h2 class="footer-widget__title">Quick Links</h2>
+                                    <ul class="footer-widget__quick-links-list">
+                                        <li class="footer-widget__quick-links-list-item"><a href="about.php">About
+                                                us</a></li>
+                                        <li class="footer-widget__quick-links-list-item"><a href="contact.php">Contact
+                                                us</a></li>
+                                        <li class="footer-widget__quick-links-list-item"><a href="faq.php">FAQ's</a>
+                                        </li>
+                                        <li class="footer-widget__quick-links-list-item"><a
+                                                href="terms-conditions.php">Terms & Conditions</a></li>
+                                        <li class="footer-widget__quick-links-list-item"><a
+                                                href="privacy-policy.php">Privacy Policy</a></li>
+                                        <li class="footer-widget__quick-links-list-item"><a href="blog.php">Blogs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--End Footer Widget Column-->
+
+                            <!--Start Footer Widget Column-->
+                            <div class="col-xl-2 col-lg-2 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s">
+                                <div class="footer-widget__column footer-widget__services">
+                                    <h2 class="footer-widget__title">Products</h2>
+                                    <ul class="footer-widget__services-list">
+                                        <li class="footer-widget__services-list-item"><a href="/products.php?cat_name=Marble">Marble</a></li>
+                                        <li class="footer-widget__services-list-item"><a href="/products.php?cat_name=Travertine">Travertine</a></li>
+                                        <li class="footer-widget__services-list-item"><a href="/products.php?cat_name=Onyx">Onyx</a></li>
+                                        <li class="footer-widget__services-list-item"><a href="/products.php?cat_name=Quartz">Quartz</a></li>
+                                        <li class="footer-widget__services-list-item"><a href="/products.php?cat_name=Quartzite">Quartzite</a></li>
+                                        <li class="footer-widget__services-list-item"><a href="/products.php?cat_name=Granite">Granite</a></li>
+                                        <li class="footer-widget__services-list-item"><a href="/products.php?cat_name=Tiles">Tiles</a></li>
+                                        <li class="footer-widget__services-list-item"><a href="/products.php?cat_name=Marble%20Artfects">Marble Artfects</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--End Footer Widget Column-->
+
+                            <!--Start Footer Widget Column-->
+                            <div class="col-xl-4 col-lg-4 col-md-6 wow animated fadeInUp" data-wow-delay="0.7s">
+                                <div class="footer-widget__column footer-widget__contact-info">
+                                    <h2 class="footer-widget__title">Get In Touch</h2>
+
+                                    <div class="footer-widget__contact-info-subscribe-box">
+                                        <p class="footer-widget__about-email">
+                                            <a href="/cdn-cgi/l/email-protection#c3aaada5ac83acb1aaa6adb7a2afb7b1aaaea6bbeda0acae"><span class="fa fa-envelope"
+                                                    aria-hidden="true"></span> <span class="__cf_email__" data-cfemail="c8a1a6aea788a7baa1ada6bca9a4bcbaa1a5adb0e6aba7a5">[email&#160;protected]</span></a>
+                                        </p>
+                                        <p class="footer-widget__about-email">
+                                            <a href="/cdn-cgi/l/email-protection#81eef3e8e4eff3f5e0edf5f3e8ece4f9ede8ece8f5e4e5c1e6ece0e8edafe2eeec"><span class="fa fa-envelope"
+                                                    aria-hidden="true"></span> <span class="__cf_email__" data-cfemail="4728352e22293533262b33352e2a223f2b2e2a2e33222307202a262e2b6924282a">[email&#160;protected]</span></a>
+                                        </p>
+                                        <p class="footer-widget__about-email">
+                                            <a href="tel:8448299195"><span class="fa fa-phone"></span> +91
+                                                9289007501</a>
+                                        </p>
+                                        <p class="footer-widget__about-email">
+                                            <a href="tel:8448299195"><span class="fa fa-phone"></span> +91
+                                                9289007502</a>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--End Footer Widget Column-->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Start Footer One Bottom-->
+    <div class="footer-one__bottom clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="footer-one__bottom-inner">
+                        <div class="footer-one__bottom-text">
+                            <p>&copy; 2026 <a class="copyRight" href="https://www.orientaltrimex.com/">Oriental
+                                    Trimex</a>. All Rights Reserved. ( Developed By <a class="eratec" href="https://www.eratecsolution.com/">Eratec Solution</a> )
+                            </p>
+                        </div>
+
+                        <div class="footer-one__bottom-list">
+                            <ul>
+                                <li><a href="faq.php">FAQ's</a></li>
+                                <li><a class="title m_title" href="#">Sitemap</a></li>
+                                <li><a href="terms-conditions.php"> Terms & Conditions</a></li>
+                                <li><a href="our-policy.php">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer One Bottom-->
+</footer>        <!--End Footer One-->
+
+
+    </div><!-- /.page-wrapper -->
+
+    <!-- Hidden mobile-navbar -->
+        
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&amp;family=Kumbh+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/icomoon-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/twentytwenty/twentytwenty.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/alori.css" />
+    <link rel="stylesheet" href="assets/css/alori-responsive.css" />
+
+        <!----Hidden navbar---->
+        <section class="hidden-bar right-align">
+            <div class="hidden-bar-closer">
+                <button><span class="fa fa-times"></span></button>
+            </div>
+            <div class="hidden-bar-wrapper">
+                <div class="logo">
+                    <a href="https://www.orientaltrimex.com/"><img src="assets/images/resources/logo-2.png" alt="Logo" /></a>
+                </div>
+                <div class="hiddenbar-about-us">
+                    <h3>About Us</h3>
+                    <div class="text">
+                        <p>Oriental Trimex is a leading provider of high-quality natural stone and tile solutions, catering to both residential and commercial projects. With a commitment to excellence, we source and deliver premium marble, granite, and other stone materials.</p>
+                    </div>
+                </div>
+                <div class="contact-info-box">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>
+                            <h5>Address</h5>
+                            <p>26/25, Bazar Marg, Old Rajendra Nagar, New Delhi - 110060 India.</p>
+                        </li>
+                        <li>
+                            <h5>Phone</h5>
+                            <p><a href="tel:9289007501">+91 9289007501</a></p>
+                            <p><a href="tel:9289007502">+91 9289007502</a></p>
+                        </li>
+                        <li>
+                            <h5>Email</h5>
+                            <p><a href="/cdn-cgi/l/email-protection#96fff8f0f9d6f9e4fff3f8e2f7fae2e4fffbf3eeb8f5f9fb"><span class="__cf_email__" data-cfemail="3b52555d547b5449525e554f5a574f4952565e4315585456">[email&#160;protected]</span></a></p>
+                            <p><a href="/cdn-cgi/l/email-protection#4b2439222e25393f2a273f3922262e33272226223f2e2f0b2c262a222765282426"><span class="__cf_email__" data-cfemail="4629342f23283432272a32342f2b233e2a2f2b2f32232206212b272f2a6825292b">[email&#160;protected]</span></a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget__contact-info-social-links">
+                    <ul>
+                        <li><a href="https://www.facebook.com/share/1EaXGGyw4X/"><span class="fab fa-facebook"></span></a></li>
+                        <li><a href="https://www.linkedin.com/in/oriental-rareearth-310338355/"><span class="fab fa-linkedin"></span></a></li>
+                        <li><a href="https://www.instagram.com/orientaltrimex/"><span class="fab fa-instagram"></span></a></li>
+                    </ul>
+                </div>
+                <div class="copy-right-text">
+                    <p>© 2025 <a href="https://www.orientaltrimex.com/">Oriental Trimex</a>. All Rights Reserved.</p>
+                </div>
+            </div>
+        </section>
+        <!----Closed Hidden navbar---->
+
+        <!-- /Hidden - mobile-navbar--->
+        <div class="mobile-nav__wrapper">
+            <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+            <!-- /.mobile-nav__overlay -->
+            <div class="mobile-nav__content">
+                <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+               <div class="logo-box">
+                    <a href="https://www.orientaltrimex.com/" aria-label="logo image"><img src="assets/images/resources/logo-2.png" alt="" /></a>
+                </div>
+
+                <!-- /.logo-box -->
+                <div class="mobile-nav__container">
+                    <div class="main-header--one__middle">
+                        <ul class="main-menu__list">
+
+                            <li class="dropdown current"><a href="index.php">Home</a></li>
+                            <li class="dropdown"><a href="about.php">About us</a>
+                        <ul>
+                            <li><a href="about.php">Company Profile</a></li>
+                            <li><a href="milestones.php">Milestones</a></li>
+                        </ul>
+                            </li>
+
+
+                            <li class="dropdown"><a href="#">Products</a>
+                            <ul>
+                                <li><a href="/products.php?cat_name=Marble">Marble</a></li>
+                                <li><a href="/products.php?cat_name=Travertine">Travertine
+                                    Marble</a></li>
+                                <li><a href="/products.php?cat_name=Onyx">Onyx</a></li>
+                                <li><a href="/products.php?cat_name=Quartz">Quartz</a></li>
+                                <li><a href="/products.php?cat_name=Quartzite">Quartzite</a></li>
+                                <li><a href="/products.php?cat_name=Granite">Granite</a></li>
+                                <li><a href="/products.php?cat_name=Tiles">Tiles</a></li>
+                                <li><a href="/products.php?cat_name=Marble%20Artfects">Handcraft Marble</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown"><a href="#">Virtual Room</a>
+                            <ul>
+                                <li><a href="living-room.php">Living Room</a></li>
+                                <li><a href="bedroom.php">Bedroom</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="investors.php">Investors</a></li>
+
+                        <li class="dropdown"><a href="#">Franchise</a>
+                            <ul>
+                                <li><a href="invitation-letter.php">Invitation Letter</a></li>
+                                <li><a href="our-policy.php">Our Policy</a></li>
+                                <li><a href="our-support.php">Our Support</a></li>
+                                <li><a href="/assets/docs/application-form.pdf" target="_blank">Application Form</a></li>
+                                <li><a href="galary.php">Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="faq.php">Faq's</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.mobile-nav__container -->
+
+                <ul class="mobile-nav__contact list-unstyled">
+                    <li>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="/cdn-cgi/l/email-protection#5831363e3718372a313d362c39342c2a31353d20763b3735"><span class="__cf_email__" data-cfemail="85ecebe3eac5eaf7ece0ebf1e4e9f1f7ece8e0fdabe6eae8">[email&#160;protected]</span></a>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="tel:9289007501">+91 9289007501</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="tel:9289007502">+91 9289007502</a>
+                    </li>
+                </ul><!-- /.mobile-nav__contact -->
+                <div class="mobile-nav__top">
+                    <div class="mobile-nav__social">
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-facebook-square"></a>
+                        <a href="#" class="fab fa-pinterest-p"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div><!-- /.mobile-nav__social -->
+                </div><!-- /.mobile-nav__top -->
+            </div>
+            <!-- /.mobile-nav__content -->
+        </div>
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn2">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-next"></i></a>
+
+    <!---Js Links --->
+        <!-- js -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/assets/vendors/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/vendors/nouislider/nouislider.min.js"></script>
+
+    <script src="/assets/vendors/odometer/odometer.min.js"></script>
+    <script src="/assets/vendors/swiper/swiper.min.js"></script>
+    <script src="/assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="/assets/vendors/wow/wow.js"></script>
+    <script src="/assets/vendors/isotope/isotope.js"></script>
+    <script src="/assets/vendors/countdown/countdown.min.js"></script>
+    <script src="/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/vendors/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/vendors/twentytwenty/jquery.event.move.js"></script>
+    <script src="/assets/vendors/parallax/parallax.min.js"></script>
+    <script src="/assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="/assets/vendors/progress-bar/knob.js"></script>
+    <script src="/assets/vendors/tilt.js/tilt.jquery.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+
+    <!-- template js -->
+    <script src="/assets/js/alori.js"></script>
+    <!-- Code injected by live-server -->
+    
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"1a043ffaed4d4f3e9b70e4df0dd13e9f","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

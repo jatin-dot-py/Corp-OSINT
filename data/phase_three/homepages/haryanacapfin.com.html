@@ -1,0 +1,349 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Haryana Capfin Limited</title>
+<meta name="Microsoft Theme" content="sky 1011, default">
+
+<style>
+  :root{
+    --overlay: rgba(0,0,0,.55);
+    --radius: 16px;
+    --shadow: 0 20px 50px rgba(0,0,0,.25);
+    --maxw: 560px;
+    --card-bg: #ffffff;
+    --card-fg: #111111;
+    --muted: #333333;
+    --btn-bg: #111111;
+    --btn-fg: #ffffff;
+    --stroke: #e5e7eb;
+
+    /* Big z-index to beat any site layers */
+    --z-modal: 2147483646;
+    --z-backdrop: 2147483645;
+  }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark){
+    :root{
+      --overlay: rgba(0,0,0,.7);
+      --card-bg: #0b0b0c;
+      --card-fg: #f5f5f6;
+      --muted: #d1d5db;
+      --btn-bg: #f5f5f6;
+      --btn-fg: #111111;
+      --stroke: #2a2a2e;
+      --shadow: 0 20px 60px rgba(0,0,0,.6);
+    }
+    body{ background:#0a0a0b; color:#f5f5f6 }
+  }
+
+  /* Base page styles (for demo — safe to replace) */
+  body{font-family:Arial, sans-serif; margin:0; line-height:1.5}
+  main{padding: clamp(20px, 6vw, 64px)}
+  h1.popup{margin:0 0 8px; font-size: clamp(22px, 2.8vw, 36px)}
+  p.popup{max-width: 70ch}
+  section.demo{display:grid; gap:24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top:24px}
+  .card{border:1px solid #e5e7eb; border-radius:12px; padding:16px; background:#fff}
+  @media (prefers-color-scheme: dark){
+    .card{background:#0f1012; border-color:#232429}
+  }
+
+  /* ---------- MODAL (HTML + CSS only) ---------- */
+
+  /* Hidden controller: checked => popup visible */
+  #popup-toggle{ position:absolute; left:-9999px }
+
+  /* Backdrop: click anywhere outside to close */
+  .backdrop{
+    display:none;
+    position: fixed; inset: 0;
+    background: var(--overlay);
+    cursor: pointer;
+    z-index: var(--z-backdrop);
+    animation: fade .2s ease;
+  }
+
+  /* Wrapper: centers on larger screens, becomes bottom sheet on phones */
+  .popup-wrap{
+    display:none;               /* hidden by default */
+    position: fixed; inset: 0;
+    padding: 24px;
+    place-items: center;        /* when shown as grid */
+    pointer-events: none;       /* let backdrop catch outside clicks */
+    z-index: var(--z-modal);
+  }
+
+  /* Popup card */
+  .popup{
+    position: relative;
+    width: min(100%, var(--maxw));
+    background: var(--card-bg);
+    color: var(--card-fg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: clamp(18px, 3.5vw, 28px);
+    animation: rise .25s ease;
+    pointer-events: auto;       /* keep clicks inside from closing */
+
+    /* Limit height + enable vertical scroll for long content */
+    max-height: clamp(320px, 85dvh, 720px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable both-edges;
+  }
+
+  .popup h2{margin:0 0 8px; font-size: clamp(20px, 2.2vw, 28px)}
+  .popup p{margin:0 0 16px; color: var(--muted)}
+
+  .actions{display:flex; gap:10px; justify-content:flex-end; margin-top:10px}
+  .btn, .close{
+    display:inline-flex; align-items:center; justify-content:center;
+    border-radius: 12px; border: 1px solid var(--stroke);
+    padding: 10px 14px; font-weight: 600; cursor: pointer; user-select: none;
+  }
+  .btn{ background: var(--btn-bg); color: var(--btn-fg); border-color: var(--btn-bg) }
+  .btn:focus-visible, .close:focus-visible{ outline: 2px solid #3b82f6; outline-offset: 2px }
+
+  /* Top-right close (?) */
+  .close{
+    position: absolute; top: 10px; right: 10px;
+    width: 40px; height: 40px;
+    background: color-mix(in oklab, var(--card-fg) 10%, transparent);
+  }
+  .close::before{ content:"X"; font-size:18px; line-height:1 }
+
+  /* SHOW when checked */
+  #popup-toggle:checked ~ .backdrop{ display:block }
+  #popup-toggle:checked ~ .popup-wrap{ display:grid }
+
+  /* Lock background scroll while open (progressive enhancement) */
+  @supports(selector(:has(*))){
+    body:has(#popup-toggle:checked){ overflow:hidden }
+  }
+
+  /* Mobile: bottom sheet + stricter height so it scrolls when long */
+  @media (max-width: 480px){
+    .popup-wrap{
+      place-items: start center;
+	  align-content: start;
+      padding: calc(16px + env(safe-area-inset-top)) 16px 16px;
+    }
+    .popup{
+      width: 100%;
+      border-radius: 16px 16px 0 0;
+      padding-bottom: 18px;
+      animation: slideUp .25s ease;
+
+      /* Make sure huge content scrolls inside the sheet */
+      max-height: 75dvh;
+	  overflow-y: auto;
+    }
+    .close{ top: 8px; right: 8px; width: 44px; height: 44px }
+  }
+
+  /* Tablet */
+  @media (min-width: 481px) and (max-width: 900px){
+    .popup{ width: min(92vw, var(--maxw)) }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .popup, .backdrop{ animation: none !important }
+  }
+
+  /* Animations */
+  @keyframes fade{ from{opacity:0} to{opacity:1} }
+  @keyframes rise{ from{opacity:0; transform: translateY(8px) scale(.98)} to{opacity:1; transform: translateY(0) scale(1)} }
+  @keyframes slideUp{ from{opacity:0; transform: translateY(16px)} to{opacity:1; transform: translateY(0)} }
+</style>
+</head>
+
+<body>
+<!-- Start Pop-Up -->
+<input id="popup-toggle" type="checkbox" checked>
+<label class="backdrop" for="popup-toggle" aria-hidden="true"></label>
+<div class="popup-wrap" aria-hidden="false">
+<section class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
+<label for="popup-toggle" class="close" aria-label="Close popup"></label>
+<h2 id="popup-title">IMPORTANT ANNOUNCEMENT</h2>
+<p id="popup-desc" style="font-weight:bold;">SPECIAL WINDOW FOR TRANSFER AND DEMATERIALISATION OF PHYSICAL SHARES</p>
+<p id="popup-desc">Pursuant to SEBI Circular No. HO/38/13/11(2)2026-MIRSD-POD/I/3750/2026 dated 30th January, 2026, all shareholders are hereby informed that a special window has been opened for a period of one year, from <span>5th  February, 2026 to 4th February, 2027</span>, to facilitate transfer and dematerialisation of physical securities which were sold/purchased prior to 1st April, 2019. The said special window shall also be available for such physical share transfer requests which were submitted earlier but were rejected/returned/not attended to due to deficiency in the documents/process/or otherwise.</p>
+<p id="popup-desc">All securities transferred under this special window shall be mandatorily credited only in dematerialised form to the transferee's demat account. Further, such securities shall be subject to a lock-in for a period of one year from the date of registration of transfer, during which the securities shall not be transferred/lien-marked/pledged during the said lock-in period.</p>
+
+<p id="popup-desc">The transferee shall be mandatorily required to submit all documents, as prescribed under the aforesaid SEBI Circular, to the Company's Registrar and Share Transfer Agent (RTA), i.e., Alankit Assignments Limited, 4E/2, Jhandenwalan Extension, New Delhi-110055, Tel No: 011 – 23541234,42541234, E-mail Id: <a href="mailto:rta@alankit.com">rta@alankit.com</a> or can write to the Company at investors@haryanacapfin.com.</p>
+<p id="popup-desc">Cases involving disputes between the transferor and transferee shall not be considered under this special window and Securities that have already been transferred to the Investor Education and Protection Fund (IEPF) shall not be eligible for processing under this special window.</p>
+
+<div class="actions">
+<label for="popup-toggle" class="btn" aria-label="Close popup">Got it</label>
+</div>
+</section>
+</div>
+<!-- End Pop-Up -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="1195">
+	<tr>
+		<td style="border-bottom-style: solid; border-bottom-width: 1" align="center" bordercolor="#FF00FF" bgcolor="#99CCFF" width="1195">
+		&nbsp;<p align="center"><font size="7">&nbsp;&nbsp; Welcome to Haryana Capfin Limited</font></p>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="1196">
+	<tr>
+		<td valign="top" width="4" style="border-left-style:none; border-left-width:medium; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:none; border-bottom-width:medium">
+		&nbsp;</td>
+		<td valign="top" width="250" style="border-left-style:none; border-left-width:medium; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:none; border-bottom-width:medium" align="center" bordercolorlight="#FF00FF" bordercolordark="#FF00FF" bgcolor="#FFCC66" bordercolor="#800000">
+		<p align="right"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font> </p>
+		<p align="left"><font size="4">&nbsp;</font><a style="font-weight: bold" target="_blank" href="pdf/Management-of-the-Company.pdf"><font size="4">Managment</font></a></p>
+		<p align="left"><font size="4"><b>&nbsp;<font color="#0000FF"> Investor
+		</font>&nbsp;</b></font></p>
+		<ul>
+			<li>
+			<p align="left"><font size="2" color="#0000FF"><b>
+			<a target="_blank" href="appintmentshcl.html">Appointments</a></b></font></p>
+			</li>
+			
+			<li>
+			<p align="left"><font size="2" color="#0000FF"><b>
+			<a target="_blank" href="postal-ballot.html">Postal Ballot</a></b></font></p>
+			</li>
+			
+			<li>
+			<p align="left"><font size="2" color="#0000FF"><b>
+			<a target="_blank" href="Annual%20Report.htm">Annual Report</a></b></font></p>
+			</li>
+			
+			<li>
+			<p align="left"><b><font size="2" color="#0000FF">
+			<a target="_blank" href="financial_result.htm">Financial Results</a></font></b></p>
+			</li>
+			
+			<li>
+			<p align="left"><font size="2" color="#0000FF"><b>
+			<a href="Memorandum of Association.pdf">Memorandum of Association</a></b></font></p>
+			</li>
+			
+			<li>
+			<p align="left"><font size="2" color="#0000FF"><b>
+			<a href="Articles of Association.pdf">Articles of Association</a></b></font></p>
+			</li>
+			
+			<li>
+			<p align="left"><b>
+			<a href="shp.htm">Share Holding Pattern</a></font></b></p>
+                                                </li>
+			<li>
+			<p align="left"><b>
+			<a href="Material_Subsidiary.pdf">Material Subsidiaries</a></font></b></p>
+                                                </li>
+			<li>
+			<p align="left"><font size="2"><b><a href="code-of-conduct.pdf">Code 
+			of Conduct</a></b></font></p></li>
+			<li>
+			<p align="left"><font size="2"><b><a href="code-of-fair_disclosure.pdf">Code-Of-Fair_Disclosure
+                        </a></b></font></p></li>
+			<li>
+			<p align="left"><font size="2"><b><a href="pdf/Policy-on-Materiality-of-Events-Information.pdf" target="_blank">Policy on Materiality of Events Information
+                        </a></b></font></p></li>
+			<li>
+			<p align="left"><font size="2"><b><a href="Voting_result.htm">Voting Result
+                        </a></b></font></p></li>
+			<li>
+			<p align="left"><font size="2"><b><a href="pdf/Vigil-Mechanism.pdf" target="_blank">Vigil Mechanism</a></b></font></p></li>
+			<li>
+			<p align="left"><font size="2"><b><a href="RPTPOLICY.pdf">RPT POLICY</a></b></font></p></li>
+			
+			<li>
+
+			<p align="left"><font size="2"><b><a href="Nomination and Remuneration Policy.pdf">Nomination and Remuneration Policy</a></b></font></p></li>
+			
+			<li>
+			<p align="left"><font size="2"><b><a href="Preservation and  ArchivesManagementPolicy.pdf">Preservation and  Archives Management Policy</a></b></font></p></li>
+			
+			
+			
+			<li>
+                        <p align="left"><font size="2"><b>
+			<a href="Familiarization.htm">Familiarization Programme</a></b></font></p>
+			</li>
+			
+			<li>
+			<p align="left"><b><font size="2" color="#0000FF">
+			<a target="_blank" href="anouncemnt.htm">Announcements</a></font></b></p>
+			</li>
+		</ul>
+
+<p align="left"><font size="4"><b>&nbsp;<font color="#0000FF">Investor Relation
+</font>&nbsp;</b></font></p>
+<ul>
+<li>
+<p align="left"><font size="2" color="#0000FF"><b>
+<a target="_blank" href="investor-forms.html">Investor Forms</a></b></font></p>
+</li>
+<li>
+<p align="left"><font size="2" color="#0000FF"><b>
+<a target="_blank" href="online-dispute-resolution.htm">Online Dispute Resolution</a></b></font></p>
+</li>
+</ul>
+
+		
+<p align="left"><font size="2"><b>&nbsp;<a target="_blank" href="newspaper-publication.htm">Newspaper Publication</a></b></font></p>
+<p align="left"><font size="2"><b>&nbsp;<a target="_blank" href="pdf/Contact-Us.pdf" target="_blank">Contact Us</a></b></font></p>
+		
+		<p><font size="4">&nbsp; </font></p>
+		<p>&nbsp;</p>
+		<p><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font>
+		</p>
+		<p>&nbsp;</p>
+		</td>
+		<td valign="top" width="1" style="border-right-style:none; border-right-width:medium; border-top-style:none; border-top-width:medium; border-bottom-style:none; border-bottom-width:medium" bgcolor="#FFFFFF">
+		</td>
+		<td valign="top" width="940" height="100%" style="border-right-style:none; border-right-width:medium; border-top-style:none; border-top-width:medium; border-bottom-style:none; border-bottom-width:medium" bgcolor="#FFFFFF" align="center" bordercolor="#00FF00" bordercolorlight="#000000" bordercolordark="#FF00FF">
+		<h3 align="justify"><font color="#993300">About Company</font></h3>
+		<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify;">
+		<i><font size="5">Haryana</font><font size="5"> Capfin Limited 
+		is part of Rs. 4,000 Crore D. P. Jindal Group. The Company is engaged in 
+		the business of Finance/Investing activities. The Company is licensed as 
+		a Non Banking Financing Company by Reserve Bank of India. </font> </i>
+		</p>
+		<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify">
+		<i><font size="5">Non banking financing 
+		Company play a vital role in the context on Indian Economy. They are 
+		indispensable part in the Indian financial system because they 
+		supplement the activities of Banks in term of deposit mobilization and 
+		lending. They play a very important role by providing finance to 
+		activities which are not served by the organized Banking sector. The 
+		related NBFC activities have not been started by the Company in full 
+		flow, the Company has invested in the shares of Maharashtra Seamless 
+		Limited, flagship Company of the group.. </font> </i> </p>
+		<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" width="4" style="border-left-style:none; border-left-width:medium; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:none; border-bottom-width:medium">
+		&nbsp;</td>
+		<td valign="top" width="250" style="border-left-style:none; border-left-width:medium; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:none; border-bottom-width:medium" align="center" bordercolorlight="#FF00FF" bordercolordark="#FF00FF" bgcolor="#FFCC66" bordercolor="#800000">
+		&nbsp;</td>
+		<td valign="top" width="1" style="border-right-style:none; border-right-width:medium; border-top-style:none; border-top-width:medium; border-bottom-style:none; border-bottom-width:medium" bgcolor="#FFFFFF">
+		&nbsp;</td>
+		<td valign="top" width="940" height="100%" style="border-right-style:none; border-right-width:medium; border-top-style:none; border-top-width:medium; border-bottom-style:none; border-bottom-width:medium" bgcolor="#FFFFFF" align="center" bordercolor="#00FF00" bordercolorlight="#000000" bordercolordark="#FF00FF">
+		&nbsp;</td>
+	</tr>
+</table>
+<p align="center"><small>
+&nbsp;</small></p>
+<p><i><small>&nbsp;</small></i></p>
+
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/New_Variation_-_11-3-2025-01_0ee56c50-e620-46dd-bf07-68bd7386109c.png?v=1763364279" />
+    <link rel="apple-touch-icon" href="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/New_Variation_-_11-3-2025-01_0ee56c50-e620-46dd-bf07-68bd7386109c.png?v=1763364279" />
+    <title>Colab Platform - Sports & AI Excellence</title>
+    <meta name="description" content="Building India's future through integrated sports ecosystem and cutting-edge AI technology" />
+    <meta name="author" content="Colab Platform" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Colab Platform - Sports & AI Excellence" />
+    <meta property="og:description" content="Building India's future through integrated sports ecosystem and cutting-edge AI technology" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/New_Variation_-_11-3-2025-01_0ee56c50-e620-46dd-bf07-68bd7386109c.png?v=1763364279" />
+    <meta property="og:url" content="https://www.colabplatforms.com/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ColabLtd" />
+    <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/New_Variation_-_11-3-2025-01_0ee56c50-e620-46dd-bf07-68bd7386109c.png?v=1763364279" />
+    
+    <!-- Preconnect to required domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS Variables -->
+    <style>
+      :root {
+        /* AEON Color Palette */
+        --aeon-primary: #6C63FF;
+        --aeon-primary-dark: #5649CC;
+        --aeon-secondary: #00F0FF;
+        --aeon-dark: #0A0A1A;
+        --aeon-darker: #050510;
+        --aeon-light: #F5F5FF;
+        --aeon-gray: #A0A0B0;
+        
+        /* Typography */
+        --font-heading: 'Canela', serif;
+        --font-body: 'Inter', sans-serif;
+        
+        /* Transitions */
+        --transition-smooth: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      
+      /* Base Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--aeon-darker);
+        color: var(--aeon-light);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Typography */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: var(--aeon-darker);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: var(--aeon-primary);
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--aeon-primary-dark);
+      }
+      
+      /* Animation Classes */
+      .aeon-fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--transition-smooth);
+      }
+      
+      .aeon-fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .aeon-scale-in {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: var(--transition-smooth);
+      }
+      
+      .aeon-scale-in.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+      
+      /* Glow Effects */
+      .aeon-glow {
+        position: relative;
+        z-index: 1;
+      }
+      
+      .aeon-glow::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at center, rgba(108, 99, 255, 0.1) 0%, transparent 70%);
+        z-index: -1;
+        pointer-events: none;
+        transition: var(--transition-smooth);
+      }
+      
+      /* Custom Cursor */
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: var(--aeon-primary);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+      }
+      
+      .cursor-outline {
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--aeon-primary);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 9998;
+        transition: all 0.2s ease-out, width 0.3s, height 0.3s;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-CoHODoVm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CgGvpHsh.css">
+  </head>
+
+  <body class="antialiased bg-aeon-darker text-aeon-light">
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    
+    <!-- Main App Container -->
+    <div id="root" class="overflow-x-hidden"></div>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- GSAP for Advanced Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <!-- Main App Script -->
+    
+    <!-- Custom Cursor Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          once: true,
+          easing: 'ease-out-cubic',
+          offset: 50
+        });
+        
+        // Custom Cursor
+        if (window.innerWidth > 1024) {
+          document.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            cursorOutline.animate({
+              left: `${posX}px`,
+              top: `${posY}px`
+            }, { duration: 500, fill: 'forwards' });
+          });
+          
+          // Cursor Hover Effects
+          const hoverElements = document.querySelectorAll('a, button, .cursor-hover');
+          hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+              cursorDot.style.width = '16px';
+              cursorDot.style.height = '16px';
+              cursorDot.style.backgroundColor = 'var(--aeon-secondary)';
+              cursorOutline.style.width = '40px';
+              cursorOutline.style.height = '40px';
+              cursorOutline.style.borderColor = 'var(--aeon-secondary)';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+              cursorDot.style.width = '8px';
+              cursorDot.style.height = '8px';
+              cursorDot.style.backgroundColor = 'var(--aeon-primary)';
+              cursorOutline.style.width = '30px';
+              cursorOutline.style.height = '30px';
+              cursorOutline.style.borderColor = 'var(--aeon-primary)';
+            });
+          });
+        } else {
+          // Hide custom cursor on mobile
+          cursorDot.style.display = 'none';
+          cursorOutline.style.display = 'none';
+        }
+        
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.aeon-reveal');
+        
+        const revealOnScroll = () => {
+          revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+              element.classList.add('aeon-fade-in', 'visible');
+            }
+          });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check in case elements are already in view
+        revealOnScroll();
+      });
+    </script>
+  </body>
+</html>

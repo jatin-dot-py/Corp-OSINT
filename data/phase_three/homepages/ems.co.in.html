@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Home ::  EMS Limited</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://ems.co.in/home/css/font-awesome.css">
+<link rel="stylesheet" href="https://ems.co.in/home/css/owl.carousel.min.css">
+<link rel="stylesheet" href="https://ems.co.in/home/css/owl.theme.default.min.css">
+
+<link rel="stylesheet" href="https://ems.co.in/home/css/style.css">
+<link rel="stylesheet" href="https://ems.co.in/home/css/responsive.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/owz0jju.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- <script src="https://ems.co.in/home/js/jquery.counterup.min.js"></script> -->
+<script src="https://ems.co.in/home/js/jquery.min.js"></script>
+<script src="https://ems.co.in/home/js/owl.carousel.js"></script>
+<!-- <script src="https://ems.co.in/home/js/waypoints.min.js"></script>  -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+$(document).ready(function() {
+  
+   $('#home-banner').owlCarousel({
+		  items: 1, 
+		  autoplay:true,
+		  loop: true,
+		  nav: false,
+		  dots: false,
+		 onInitialized  : counter1, 
+		onTranslated : counter1,
+		});
+		function counter1(event) {
+	  if (!event.namespace) {
+	    return;
+	  }
+	  var slides = event.relatedTarget;
+	  $('#counter1').text(slides.relative(slides.current()) + 1 + ' - ' + slides.items().length);
+	}
+	
+   $('#mission-slider').owlCarousel({
+		  items: 1, 
+		  autoplay:true,
+		  loop: true,
+		  nav: true,
+		  dots: false,
+		  navText: ["<img src='images/ms-arrowL.jpg'>","<img src='images/ms-arrowR.jpg'>"],
+		 onInitialized  : counter2, 
+		onTranslated : counter2,
+		});
+		function counter2(event) {
+	  if (!event.namespace) {
+	    return;
+	  }
+	  var slides = event.relatedTarget;
+	  $('#counter2').text(slides.relative(slides.current()) + 1 + ' - ' + slides.items().length);
+	}
+		
+   })
+</script>
+<script>
+$(document).ready(function() {     
+   /* 
+	jQuery(".project_bx").on('mouseenter', function(event) {
+  jQuery('.project_bx').removeClass("proActive");
+  jQuery(this).addClass("proActive");
+
+});  
+	*/
+});   
+</script>
+<script>
+  $(window).scroll(function(){
+        var add_header = $(window).scrollTop();
+        if(add_header > 0){
+            $('header').addClass('header_fixed');
+        }else{
+            $('header').removeClass('header_fixed');
+        }
+    })
+</script>
+<script>
+$(document).ready(function() {   
+$(".scroll").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#about").position().top-90}, 'slow');
+});
+});
+</script>
+
+
+
+<!-- <link href="https://ems.co.in/home/css/jquery.bxslider.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/owl.theme.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/owl.carousel.min.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/font-awesome.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/viewbox.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/colorbox.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/animate.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/fadeAnimation.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/liMarquee.css" rel="stylesheet">
+<link href="https://ems.co.in/home/css/magnific-popup.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ems.co.in/home/js/jquery.bxslider.min.js"></script>
+<script src="https://ems.co.in/home/js/owl.carousel.js"></script>
+<script src="https://ems.co.in/home/js/bootstrap.js"></script>
+<script src="https://ems.co.in/home/js/jquery.viewbox.min.js"></script>
+<script src="https://ems.co.in/home/js/jquery.colorbox.js"></script>
+<script src="https://ems.co.in/home/js/animations.js"></script>
+<script src="https://ems.co.in/home/js/animate-content.js"></script>
+<script src="https://ems.co.in/home/js/script.js"></script>
+<script src="https://ems.co.in/home/js/main.js"></script>
+<script src="https://ems.co.in/home/js/jquery.counterup.min.js"></script>
+<script src="https://ems.co.in/home/js/waypoints.min.js"></script> 
+<script src="https://ems.co.in/home/js/jquery.liMarquee.js"></script>
+<script src="https://ems.co.in/home/js/jquery.magnific-popup.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+<!--<link href="https://daneden.github.io/animate.css/animate.min.css" rel="styleSheet"/> --->    </head>
+    <body>
+       
+            
+            <!--<header>
+        <div class="logo">
+            <a href="https://ems.co.in" title="MyHome">
+                     
+                      <img src="https://ems.co.in/home/images/logo.png" alt="MyHome">
+             </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">About Us</a>
+                    <ul class="submenu">
+                        <li><a href="https://ems.co.in/about-us">Company Profile</a></li>
+                        <li><a href="https://ems.co.in/services">Services Offered</a></li>
+                        <li><a href="https://ems.co.in/vision-mission">Vision, Mission & Values</a></li>
+                        <li><a href="https://ems.co.in/health-safety">Health, Safety & Environment</a></li>
+                        <li><a href="https://ems.co.in/quality-policy">Quality Policy</a></li>
+                        <li><a href="https://ems.co.in/our-clients">Clients</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">EMS Group</a>
+                    <ul class="submenu">
+                        <li><a href="https://ems.co.in/ems-infracon">EMS Infracon</a></li>
+                        <li><a href="https://ems.co.in/ems-infra-llc">EMS Infra LLC</a></li>
+                        <li><a href="https://ems.co.in/skuem-water-projects-pvt-ltd">SKUEM Water Projects</a></li>
+                        <li><a href="https://ems.co.in/ems-green-energy-pvt-ltd">EMS Green Energy</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://ems.co.in/work-with-us">Work With Us</a></li>
+                <li><a href="https://ems.co.in/contact-us">Reach Us</a></li>
+            </ul>
+        </div>
+        <div class="right_side">            
+            <a href="https://ems.co.in/contact-us" class="enquire">inquire us</a>
+        </div>
+        <div class="clear"></div>
+</header>-->
+<header>
+		<div class="logo">
+            <a href="https://ems.co.in" title="MyHome">
+                    
+                      <img src="https://ems.co.in/home/images/logo.png" alt="MyHome">
+             </a>
+        </div>
+		<div class="mobileback"></div>
+		<div class="menu">
+		<div class="tp_menu">
+			<div class="close_mn">
+	            <i class="fa fa-times" aria-hidden="true"></i>
+	        </div>		
+			<div class="logo">
+				<a href="https://ems.co.in"><img src="https://ems.co.in/home/images/logo.png" alt=""></a>
+			</div>
+			<ul>
+				<li class="avkt"><a href="#">About Us</a>
+					<ul class="submenu">
+						<li><a href="https://ems.co.in/about-us">Company Profile</a></li>
+						<li><a href="https://ems.co.in/gallery">Gallery</a></li>
+						<!-- <li><a href="https://ems.co.in/about-us">EMS Limited</a></li>-->
+                        <li><a href="https://ems.co.in/services">Services Offered</a></li>
+                        <li><a href="https://ems.co.in/vision-mission">Vision, Mission & Values</a></li>
+                        <li><a href="https://ems.co.in/health-safety">Health, Safety & Environment</a></li>
+                        <li><a href="https://ems.co.in/quality-policy">Quality Policy</a></li>
+                        <li><a href="https://ems.co.in/our-clients">Clients</a></li>
+						<li><a href="https://ems.co.in/management">Management</a></li>
+						
+					</ul>
+				</li>
+				<li class="avkt"><a href="#">EMS Group</a>
+					<ul class="submenu">
+					<li><a href="https://ems.co.in/ems-infracon">EMS Limited</a></li>
+                        <!-- <li><a href="https://ems.co.in/ems-infra-llc">EMS Infra LLC</a></li>-->
+                        <li><a href="https://ems.co.in/skuem-water-projects-pvt-ltd">SKUEM Water Projects</a></li>
+                        <!--<li><a href="https://ems.co.in/ems-green-energy-pvt-ltd">EMS Green Energy</a></li>-->  
+					</ul>
+				</li>
+				 <li><a href="https://ems.co.in/work-with-us">Work With Us</a></li>
+                <li><a href="https://ems.co.in/contact-us">Reach Us</a></li>
+				<li class="avkt"><a href="#">Investors</a>
+					<ul class="submenu">
+						<!-- <li><a href="https://ems.co.in/about-us">Company Profile</a></li>-->
+						<li><a href="https://ems.co.in/annual_reports">Annual Reports</a></li>
+                        <li><a href="https://ems.co.in/announcements_under_regulation">Announcements under Regulation 30</a></li>
+                        <!--<li><a href="https://ems.co.in/code_of_conduct">Code of conduct</a></li> --> 
+						<!-- <li><a href="https://ems.co.in/home/images/code_of_conduct.pdf" target="_blank">Code of conduct</a></li>  -->
+                        <li><a href="https://ems.co.in/prospectus">Prospectus</a></li>
+                        <!--<li><a href="https://ems.co.in/home/images/DRH_Prospectus.pdf" target="_blank">DRH Prospectus</a></li> -->
+                        <li><a href="https://ems.co.in/home/images/pdfs/Industry Research Report on Infrastructure sector in India.pdf" target="_blank">Industry research report</a></li> 
+                        <!--<li><a href="https://ems.co.in/home/images/pdfs/RHP_Final_Sept 01 2023.pdf" target="_blank">Red Herring Prospectus</a></li>--> 
+                        <!--<li><a href="https://ems.co.in/home/images/pdf/Prospectus_EMS.pdf" target="_blank">Prospectus EMS</a></li>-->
+                        <!-- <li><a href="https://ems.co.in/notice-circular">Announcement</a></li> -->
+
+                        <li><a href="https://ems.co.in/financial">FINANCIAL RESULTS</a></li>
+                        <li><a href="https://ems.co.in/shareholding-pattern">SHAREHOLDING PATTERN</a></li>
+                        <li><a href="https://ems.co.in/shareholders_information">SHAREHOLDERS INFORMATION</a></li>
+                        <li><a href="https://ems.co.in/dividend_shares">Dividend & Shares</a></li>
+                        <!-- <li><a href="https://ems.co.in/investors-news">INVESTOR NEWS</a></li> -->
+                        <li><a href="https://ems.co.in/policies">Policies</a></li>
+                        <li><a href="https://ems.co.in/annual_return">Annual Return</a></li>
+                        <li><a href="https://ems.co.in/general_meeting">General Meeting</a></li>
+                        <li><a href="https://ems.co.in/discllosure_under_regulation_46_of_sebi_lodr_regulation_2015">DISCLOSURE UNDER REGULATION 46 OF SEBI (LODR) REGULATION 2015</a></li>
+                        <li><a href="https://ems.co.in/investor_helpdesk">Investor Helpdesk</a></li>
+                        <li><a href="https://ems.co.in/MOA_AND_AOA">MOA AND AOA</a></li>
+                        <li><a href="https://ems.co.in/corporate_social_responsibility">Corporate Social Responsibility</a></li>
+                        <li><a href="https://ems.co.in/disclosure_under_regulation_of_lodr">Disclosure Under Regulation 30 of Lodr</a></li>
+                        <li><a href="https://ems.co.in/other_stock_exchange_disclosure">Other Stock Exchange Disclosure</a></li>
+					</ul>
+				</li>
+				
+				<!--<li class="enquire1"><a href="reach-us.php">Inquire Us</a></li>-->
+			</ul>			
+		</div>
+		</div>
+		<!-- <div class="right_side">			
+			<a href="https://ems.co.in/contact-us" class="enquire">inquire us</a>
+		</div> -->
+			<div class="mobile-menu"><a href="javascript:;"><img class="btnmenu" src="https://ems.co.in/home/images/mobile_icon.png" alt="" border="0" /></a></div>
+		<div class="clear"></div>
+</header>
+
+<script>
+$(document).ready(function() {   
+    $(".btnmenu").click(function(){
+        $('.tp_menu').stop(true, true).animate({'right':'0'});
+        $('.close_mn').fadeIn(700);
+        $('.tp_menu .logo').fadeIn(700);
+        $('.mobileback').fadeIn(700);
+    });
+
+ 
+
+    $(".close_mn").click(function(){
+        $('.tp_menu').stop(true, true).animate({'right':'-300px'});;
+        $('.close_mn').fadeOut(700);
+        $('.tp_menu .logo').fadeOut(700);
+        $('.mobileback').fadeOut(700);
+    });
+ $('.tp_menu li.avkt a').click(function() {
+            $(this).parent().children('ul').slideToggle();
+            $(this).parent('li.avkt').toggleClass('icon_add1');
+            $(this).parent('li.avkt').siblings().removeClass('icon_add1');
+        });
+        
+});
+</script>        
+             <div class="borderbg">
+
+            		
+    	<!----Start Banner---->     
+       
+        <div class="banner-home">		
+			<div id="home-banner" class="owl-carousel owl-theme">			
+				<div class="item"><img src="https://ems.co.in/home/images/banner.jpg" alt=""></div>
+                <div class="item"><img src="https://ems.co.in/home/images/banner2.jpg" alt=""></div> 		
+			</div>				
+			<div class="caption wow fadeInLeft">
+				<h2>Where We<br> Build Your<br> Vision.</h2>
+			</div>
+			<div id="counter1"></div>
+			<div class="scroll"><img src="https://ems.co.in/home/images/scroll.png" ></div>
+			<div class="social">
+				<!--<ul>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>-->
+			</div>
+		</div>
+<!----End Banner---->
+
+<section class="about_section" id="about">
+            <div class="about-bxL" data-aos="fade-left" data-aos-duration="800">
+                <div class="about_out1">                
+                <div class="about_out_inn">             
+                    <div class="abg"><img src="https://ems.co.in/home/images/bg-about1.jpg"></div>
+                    <div class="ab_txt">
+                        <h3>our vision</h3>
+                        <p>To be a world-class construction and infrastructure 
+	enterprise committed to quality, timely completion, customer satisfaction and continuous learning. </p>
+                    </div>
+                </div>
+                </div>              
+                <div class="about_out2">
+                <div class="about_out_inn">             
+                    <div class="ab_txt">
+                        <h3>Our achievements speak for themselves</h3>
+                        <!--<ul class="our_ach">
+                            <li><div class="our_achbx"><a href="https://ems.co.in/ems-infracon">
+                                <div class="our_achbxL"><img src="https://ems.co.in/home/images/achbx-icon-1.png"></div>
+                                <div class="our_achbxR"><h4><span class="counter">480</span></h4>
+                                        <p>COMPLETED PROJECTS</p>
+                                </div></a>
+                                </div>
+                            </li>
+                            <li><div class="our_achbx"><a href="https://ems.co.in/ems-infra-llc">
+                                <div class="our_achbxL"><img src="https://ems.co.in/home/images/achbx-icon-2.png"></div>
+                                <div class="our_achbxR"><h4><span class="counter">8000</span>+KMs</h4>
+                                        <p>CROSS COUNTRY PIPELINE</p>
+                                </div></a>
+                                </div>
+                            </li>
+                            <li><div class="our_achbx"><a href="https://ems.co.in/skuem-water-projects-pvt-ltd">
+                                <div class="our_achbxL"><img src="https://ems.co.in/home/images/achbx-icon-3.png"></div>
+                                <div class="our_achbxR"><h4><span class="counter">1000</span>+</h4>
+                                        <p>MLD WATER TREATMENT PLANTS</p>
+                                </div></a>
+                                </div>
+                            </li>
+                            <li><div class="our_achbx"><a href="https://ems.co.in/ems-green-energy-pvt-ltd">
+                                <div class="our_achbxL"><img src="https://ems.co.in/home/images/achbx-icon-4.png"></div>
+                                <div class="our_achbxR"><h4><span class="counter">848</span>+</h4>
+                                        <p>MLD SEWAGE TREATMENT PLANTS</p>
+                                </div></a>
+                                </div>
+                            </li>
+                        </ul>-->
+                        <ul class="our_ach">
+							<li><div class="our_achbx"><a href="https://ems.co.in/ems-green-energy-pvt-ltd">
+								<div class="our_achbxL"><img src="https://ems.co.in/home/images/achbx-icon-1.png"></div>
+								<div class="our_achbxR"><h4><span class="counter">50</span>+</h4>
+										<p>COMPLETED PROJECTS</p>
+								</div></a>
+								</div>
+							</li>
+							<li><div class="our_achbx"><a href="https://ems.co.in/ems-infra-llc">
+								<div class="our_achbxL"><img src="https://ems.co.in/home/images/achbx-icon-2.png"></div>
+								<div class="our_achbxR"><h4><span class="counter">1000</span>+KMs</h4>
+										<p>SEWRAGE PIPELINE</p>
+								</div></a>
+								</div>
+							</li>
+							<li><div class="our_achbx"><a href="https://ems.co.in/skuem-water-projects-pvt-ltd">
+								<div class="our_achbxL"><img src="https://ems.co.in/home/images/achbx-icon-3.png"></div>
+								<div class="our_achbxR"><h4><span class="counter">250</span>+</h4>
+										<p>BILLION LITRES SEWAGE TREATED</p>
+								</div></a>
+								</div>
+							</li>
+							<li><div class="our_achbx"><a href="https://ems.co.in/ems-green-energy-pvt-ltd">
+								<div class="our_achbxL"><img src="https://ems.co.in/home/images/powerdis.png"></div>
+								<div class="our_achbxR"><h4><span class="counter">1000</span>+KMs</h4>
+										<p>POWER DISTRIBUTION LINE</p>
+								</div></a>
+								</div>
+							</li>
+						</ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="about-bxR" data-aos="fade-right" data-aos-duration="800">
+                <div class="about_rbx">
+                   <h2>About EMS Limited</h2>
+					<p>EMS Limited, ISO 9001:2015 certified, is a 
+multi-disciplinary EPC company, headquartered in Delhi that 
+specializes in providing turnkey services in water and 
+wastewater collection, treatment and disposal. EMS provides 
+complete, single-source services from engineering and design to construction and installation of water, wastewater and domestic waste treatment facilities.</p>
+					<p>EMS has been committed to sustainable development by promoting clean and green environment and modern infrastructure ever since it is established in the year 1998. In all the states where the 
+company is present in executing the turnkey projects, our 
+customers have been incredibly happy and enthused to repeat 
+patronage on us.</p>
+                    <a href="https://ems.co.in/about-us">read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        
+        <div class="clear"></div>
+
+</section>
+
+
+<section class="ems_project">
+    <div class="project_bx pro_bg1 proActive"><a href="https://ems.co.in/ems-infracon">
+        <div class="project_txt">
+        <h3>EMS Limited</h3>
+        <p>Water and waste water projects such as water treatment plants, water transmission and distribution systems, elevated reservoirs and ground level service reservoirs, sewage treatment plants, common effluent treatment plants, tertiary treatment plants, underground drainage systems and lake restorations.</p>
+		</div></a>
+        <a href="https://ems.co.in/ems-infracon" class="pro_arrow"><img src="https://ems.co.in/home/images/arrow-img.png"></a>
+    </div>
+    <!--<div class="project_bx pro_bg2"><a href="https://ems.co.in/ems-infra-llc">
+        <div class="project_txt">
+        <h3>EMS Infra LLC</h3>
+        <p>EMS Infra LLC, a subsidiary of EMS Infracon Pvt. Ltd., offers turnkey infrastructure solutions to international clients, specially foreign government agencies.</p>
+		</div></a>
+        <a href="https://ems.co.in/ems-infra-llc" class="pro_arrow"><img src="https://ems.co.in/home/images/arrow-img.png"></a>
+    </div>-->
+    <div class="project_bx pro_bg3 proActive"><a href="https://ems.co.in/ems-green-energy-pvt-ltd">
+        <div class="project_txt">
+        <h3>SKUEM Water Projects Pvt. Ltd.</h3>
+        <p>SKUEM Water Projects Pvt. Ltd., a subsidiary of EMS LIMITED, owns and operates a Common Effluent Treatment Plant (CETP) of 4.5 MLD capacity in SIDCUL</p>
+		</div></a>
+        <a href="https://ems.co.in/skuem-water-projects-pvt-ltd" class="pro_arrow"><img src="https://ems.co.in/home/images/arrow-img.png"></a>
+    </div>
+    <!--<div class="project_bx pro_bg4"><a href="EMS-green-energy-pvt-ltd.php">
+        <div class="project_txt">
+        <h3>EMS Green
+Energy Pvt. Ltd.</h3>
+        <p>EMS Green Energy Pvt. Ltd., a subsidiary of EMS Infracon Pvt. Ltd., offers a spectrum of services delivering concept to commissioning of power plants including Design, supply, installation, Testing and Commissioning (EPC) and Operation and Maintenance.</p>
+		 </div></a>
+        <a href="https://ems.co.in/ems-green-energy-pvt-ltd" class="pro_arrow"><img src="https://ems.co.in/home/images/arrow-img.png"></a>
+    </div> -->
+    
+    <div class="clear"></div>
+</section>
+
+
+<section class="client">
+    <div class="container">
+        <h3 data-aos="fade-left" data-aos-duration="800">Our Clients</h3>
+        <p data-aos="fade-left" data-aos-duration="800">EMS has implemented projects for a national network of clients, ranging from urban bodies tostate and central governmentacross India.  Below is a<br> list of some of major clients that EMS has worked with on various projects.</p>
+    
+    <div class="c-logo" data-aos="fade-right" data-aos-duration="800">
+        <ul>
+            <li><img src="https://ems.co.in/home/images/client-logo1.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo2.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo3.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo4.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo5.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo6.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo7.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo8.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo9.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo10.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo11.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo12.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo13.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo14.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo15.jpg"></li>
+            <li><img src="https://ems.co.in/home/images/client-logo16.jpg"></li>
+        </ul>
+    </div>
+    <a href="https://ems.co.in/our-clients">read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+        
+    <div class="clear"></div>
+    </div>
+</section>
+
+
+<section class="services">
+        <div class="servicesL">
+            <div class="ser_bx">
+            <div class="ser_bx1" data-aos="fade-right" data-aos-duration="800">
+                <h3>Values</h3>
+				<ul>
+					<li>Openness and Trust</li>
+					<li>Integrity and reliability</li>
+					<li>Team work and collaboration</li>
+					<li>Commitment</li>
+					<li>Creativity</li>
+				</ul>
+                <a href="https://ems.co.in/vision-mission">Read more +</a>
+            </div>
+            <!--<div class="ser_bx2" data-aos="fade-left" data-aos-duration="800">
+                <h3>quality policy</h3>
+                	<p>EMS strives to achieve enhanced customer satisfaction by delivering quality products through timely completion in safe working environments. We dedicate ourselves to continual improvement in all fields of our business.</p>
+				<a href="https://ems.co.in/quality-policy">Read more +</a>
+            </div>-->
+            
+            <div class="ser_bx2" data-aos="fade-left" data-aos-duration="800">
+				<h3>quality policy</h3>
+				<p>EMS strives to achieve enhanced customer satisfaction by delivering quality products through timely completion in safe working environments. We dedicate ourselves to continual improvement in all fields of our business.</p>
+				<a href="https://ems.co.in/quality-policy">Read more +</a>
+			</div>
+			
+            </div>
+    <div class="clear"></div>
+            <div class="ser_bx3" data-aos="fade-left" data-aos-duration="800">
+                <div class="ser_bx3L"><img src="https://ems.co.in/home/images/service-img1.png"></div>
+                <div class="ser_bx3R">
+                    <h4>Health, Safety and<br>
+Environment</h4>
+                    	<p>At EMS, we are strongly committed to employee well-being. Topping our priorities is employee safety at project sites and workplaces. Integrating employee health and safety to our business success, we strive to make our workplaces accident-free.</p>
+					<p>Also, irrespective of the place and domain of our operations, EMS is committed to conducting all its activities in a systematic and safe manner without risking the environment.</p>
+					 <a href="https://ems.co.in/health-safety">Read more +</a>
+                </div>
+            </div>
+        </div>
+        <div class="servicesR" data-aos="fade-right" data-aos-duration="800">
+            <h3>services</h3>
+            <p>Sewerage and their allied works including design, procurement, laying, jointing, testing, commissioning, operation and maintenance of new sewerage network as well as refurbishment of old/existing sewerage network.</p>
+            <a href="https://ems.co.in/services">Read more +</a>
+        </div>
+            
+    <div class="clear"></div>
+</section>
+
+
+<section class="join_ems">
+        <div class="join_emsL" data-aos="fade-right" data-aos-duration="800">
+            <div class="join_heading1">Join EMS LIMITED <img src="https://ems.co.in/home/images/infra-bg1.png"></div>
+        </div>
+        <div class="join_emsR">
+            <div class="join_heading2" data-aos="fade-left" data-aos-duration="800">Develop your career with the most skillful team in the country. Let's build something great together.</div>
+            <a href="https://ems.co.in/work-with-us" data-aos="fade-up" data-aos-duration="800">View Career Opportunities</a>
+        </div>
+</section>        
+    
+
+           
+            
+            <footer>
+    <div class="container">
+        <div class="footer_bx" data-aos="fade-right" data-aos-duration="800">
+            <h4>about us</h4>
+            <ul>
+                 <li><a href="https://ems.co.in/about-us">Company Profile</a></li>
+                        <li><a href="https://ems.co.in/services">Services Offered</a></li>
+                        <li><a href="https://ems.co.in/vision-mission">Vision, Mission & Values</a></li>
+                        <li><a href="https://ems.co.in/health-safety">Health, Safety & Environment</a></li>
+                        <li><a href="https://ems.co.in/quality-policy">Quality Policy</a></li>
+                        <li><a href="https://ems.co.in/our-clients">Clients</a></li>
+            </ul>
+        </div>
+        <div class="footer_bx" data-aos="fade-down" data-aos-duration="800">
+            <h4>ems group</h4>
+            <ul>
+                <li><a href="https://ems.co.in/ems-infracon">EMS Limited</a></li>
+                        <!--<li><a href="https://ems.co.in/ems-infra-llc">EMS Infra LLC</a></li> -->
+                        <li><a href="https://ems.co.in/skuem-water-projects-pvt-ltd">SKUEM Water Projects</a></li>
+                        <!--<li><a href="https://ems.co.in/ems-green-energy-pvt-ltd">EMS Green Energy</a></li> -->
+            </ul>
+        </div>
+        <div class="footer_bx" data-aos="fade-up" data-aos-duration="800">
+            <h4>EMS Limited.</h4>
+            <p>C-88, Raj Nagar Distt. Centre,<br>
+Raj Nagar, Ghaziabad,<br>
+Uttar Pradesh, India<br>
+Pin - 201 002</p>
+        </div>
+        <div class="footer_bx" data-aos="fade-right" data-aos-duration="800">
+            <h4>contact us</h4>
+            <ul>
+                <!--<li>T :<a href="#"> +91-120-2820016</a></li>-->
+                <li>T :<a href="#"> +91-120-4235555, 4235559</a></li>
+                <!--<li>F :<a href="#"> +91-120-2820115</a></li>-->
+                <li>E: <a href="#">  ems@ems.co.in</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="fot_bxL">
+                <ul>
+                    <li><img src="https://ems.co.in/home/images/flogo.png"></li>
+               <!--     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>-->
+                </ul>
+            </div>
+            <div class="fot_bxR">
+            <ul>
+                    <!--<li><a href="https://ems.co.in/terms-and-conditions">terms and conditions</a></li>
+                    <li><a href="https://ems.co.in/privacy-policy">privacy policy</a></li>-->
+                    <li>@ 2026 EMS Limited  all rights reserved. made by <a href="https://www.csipl.net/">csipl</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+ 
+<!--  <script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script> -->
+<script src="https://ems.co.in/home/js/jquery.waypoints.min.js"></script>
+<script src="https://ems.co.in/home/js/jquery.counterup.min.js"></script>
+<script>
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        }); 
+    </script>   
+<script>
+    AOS.init();
+</script>            
+        </div>
+    </body>
+</html>

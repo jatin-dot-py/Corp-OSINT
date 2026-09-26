@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House of Manohar — Premium Indian Staples | BSE Listed | Since 1980</title>
+<meta name="description" content="House of Manohar — India's most trusted FMCG staples brand. BSE Listed. ISO Certified. Fresh-milled gram flour, dal, sattu, spices. D2C delivery across North India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared-styles.css">
+<style>
+/* ─── HERO ──────────────────────────────────────────────────────────────── */
+.hero {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background: var(--dark);
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 4rem 5rem 5rem;
+  position: relative;
+  z-index: 2;
+}
+.hero-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 80% at -20% 120%, rgba(139,26,26,.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 700;
+}
+.hero-sub {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.7);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.hero-stat .num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.hero-stat .num span { color: var(--gold); }
+.hero-stat .label {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  margin-top: .3rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--dark) 0%, transparent 30%),
+              linear-gradient(0deg, var(--dark) 0%, transparent 20%);
+}
+.hero-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3D1A0A 0%, #1C0F09 40%, #4A2010 70%, #2C1208 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-product-visual {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, rgba(196,150,10,.25) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(139,26,26,.3) 0%, transparent 50%);
+  border: 1px solid rgba(196,150,10,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-product-visual .inner {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px solid rgba(196,150,10,.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(196,150,10,.08) 0%, transparent 70%);
+}
+.hero-product-visual .icon { font-size: 5rem; margin-bottom: .5rem; }
+.hero-product-visual .since {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--gold);
+  font-style: italic;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-right {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* FULL section fill karega */
+  display: block;
+}
+
+/* ─── HOW WE DELIVER (COVER + PERFECT ALIGNMENT) ───────────────── */
+
+.quality-section {
+  background: var(--cream);
+  padding: 7rem 0;
+}
+
+.quality-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+/* CARD */
+.quality-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-top: 3px solid var(--red);
+  text-align: center;
+  border-radius: 12px;
+  transition: all .3s var(--ease);
+}
+
+.quality-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.08);
+}
+
+/* IMAGE BOX */
+.quality-img {
+  width: 100%;
+  height: 180px; /* fixed height for uniformity */
+  margin-bottom: 1.2rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* IMAGE */
+.quality-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* PERFECT ALIGNMENT */
+  transition: transform .4s ease;
+}
+
+/* ZOOM EFFECT */
+.quality-card:hover .quality-img img {
+  transform: scale(1.1);
+}
+
+/* TEXT */
+.quality-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: .8rem;
+}
+
+.quality-desc {
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--mid);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .quality-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .quality-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-img {
+    height: 160px;
+  }
+}
+
+/* ─── CREDENTIALS STRIP ─────────────────────────────────────────────────── */
+.creds-strip {
+  background: var(--dark2);
+  padding: 1.2rem 2rem;
+}
+.creds-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.cred-item {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.cred-item .icon { font-size: 1.1rem; }
+.cred-item .text {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+}
+.cred-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,.15);
+}
+
+/* ─── STORY SECTION ───────────────────────────────────────────────────────── */
+.story-section {
+  background: var(--white);
+  padding: 7rem 0;
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.story-card {
+  background: var(--dark);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+}
+.story-card .year {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.05);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  line-height: 1;
+}
+.story-card .quote {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.story-card .attr {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.story-card-accent {
+  background: var(--gold-lt);
+  padding: 1.5rem 2rem;
+  margin-top: -2px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--gold);
+  border-top: none;
+}
+.story-card-accent .num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--red);
+}
+.story-card-accent .desc {
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--dark2);
+  line-height: 1.4;
+}
+.story-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.story-content h2 em { font-style: italic; color: var(--red); }
+.story-content p {
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+}
+.story-milestones {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+.milestone {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(139,26,26,.08);
+}
+.milestone .yr {
+  font-family: var(--font-display);
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--red);
+  min-width: 45px;
+}
+.milestone .desc {
+  font-size: .88rem;
+  color: var(--dark2);
+  line-height: 1.4;
+}
+
+/* ─── PRODUCTS SECTION (REDESIGNED) ─────────────────────────────────────── */
+.products-section {
+  background: var(--cream);
+  padding: 7rem 0;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.product-card {
+  background: var(--white);
+  border: 1px solid rgba(139,26,26,.08);
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  transition: all .3s var(--ease);
+  position: relative;
+}
+.product-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  transform: scaleX(0);
+  transition: transform .3s var(--ease);
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.12);
+  border-color: var(--red);
+}
+.product-card:hover::after { transform: scaleX(1); }
+.product-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--gold-lt) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+}
+.product-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.4) 0%, transparent 60%);
+}
+.product-info {
+  padding: 1.2rem;
+  text-align: center;
+}
+.product-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* ─── video ──────────────────────────────────────────────────────────── */
+.video-wrapper {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.gallery-video {
+  width: 100%;
+  height: 500px; /* 👈 same size jaisa slider tha */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ─── PRODUCTS (UPDATED WITH FIXED IMAGE SIZE) ───────────────────────────── */
+
+.products-section {
+  background: var(--white);
+  padding: 7rem 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.product-card {
+  background: var(--cream);
+  padding: 1.5rem;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s var(--ease);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  transform: scaleX(0);
+  transition: transform .3s var(--ease);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.1);
+  background: var(--white);
+}
+
+.product-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* IMAGE FIX */
+.product-img {
+  width: 100%;
+  height: 250px; /* 530 bahut zyada hai, balanced rakho */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #fff; /* empty space clean dikhe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* FULL IMAGE SHOW */
+}
+
+/* TEXT */
+.product-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-align: center;
+}
+
+/* OPTIONAL ARROW */
+.product-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--red);
+  border-radius: 50%;
+  transition: all .2s;
+}
+
+.product-card:hover .product-arrow {
+  background: var(--red);
+  color: var(--white);
+  transform: translate(2px, -2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── WHY CHOOSE US ─────────────────────────────────────────────────────── */
+.why-section {
+  background: var(--cream);
+  padding: 7rem 0;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.why-card {
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(139,26,26,.1);
+  background: var(--white);
+  position: relative;
+  transition: border-color .3s, transform .3s;
+}
+.why-card:hover {
+  border-color: var(--red);
+  transform: translateY(-4px);
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--red);
+  transition: height .4s var(--ease);
+}
+.why-card:hover::before { height: 100%; }
+.why-icon {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+.why-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: .8rem;
+}
+.why-desc {
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--mid);
+}
+
+/* ─── BRANDS SECTION UPDATED ───────────────────────────────────────── */
+
+.brands-section {
+  background: var(--white);
+  padding: 7rem 0;
+}
+
+.brands-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.brand-card {
+  flex: 1 1 calc(20% - 20px);
+  min-width: 220px;
+  background: var(--cream);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 12px;
+  position: relative;
+  transition: all .3s;
+  border-top: 3px solid transparent;
+}
+
+.brand-card:hover {
+  background: var(--dark);
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.brand-img {
+  width: 100%;
+  height: 120px; /* SAME SIZE */
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.brand-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* FULL IMAGE VISIBLE */
+}
+
+/* TEXT */
+.brand-tag {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+  display: block;
+  transition: color .3s;
+}
+
+.brand-desc {
+  font-size: .82rem;
+  line-height: 1.5;
+  color: var(--mid);
+  transition: color .3s;
+}
+
+/* HOVER TEXT */
+.brand-card:hover .brand-tag {
+  color: var(--gold);
+}
+
+.brand-card:hover .brand-desc {
+  color: rgba(255,255,255,.7);
+}
+
+/* BORDER COLORS */
+.brand-A { border-top-color: var(--red); }
+.brand-B { border-top-color: #2D7D4F; }
+.brand-C { border-top-color: #1A4A8A; }
+.brand-D { border-top-color: var(--gold); }
+.brand-E { border-top-color: #7B5EA7; }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .brand-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ─── CERTIFICATIONS ────────────────────────────────────────────────────── */
+.cert-section {
+  background: var(--dark2);
+  padding: 4rem 0;
+}
+.cert-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.cert-title {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.certs-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.cert-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  text-align: center;
+}
+.cert-item .cert-icon {
+  width: 56px; height: 56px;
+  border: 1.5px solid rgba(196,150,10,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+.cert-item .cert-name {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.cert-item .cert-detail {
+  font-size: .6rem;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .06em;
+}
+.cert-divider {
+  width: 1px; height: 50px;
+  background: rgba(255,255,255,.1);
+}
+
+/* ─── LEADERSHIP ────────────────────────────────────────────────────────── */
+.founder-section {
+  background: var(--cream);
+  padding: 7rem 0;
+}
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.founder-card {
+  background: var(--white);
+  border: 1px solid rgba(139,26,26,.1);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+}
+.founder-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.1);
+}
+.founder-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--dark2) 0%, var(--dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.founder-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(28,15,9,.9) 0%, transparent 100%);
+}
+.founder-info {
+  padding: 1.5rem;
+}
+.founder-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: .3rem;
+}
+.founder-title {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: .8rem;
+}
+.founder-bio {
+  font-size: .83rem;
+  line-height: 1.6;
+  color: var(--mid);
+}
+
+/* ─── SUSTAINABILITY ────────────────────────────────────────────────────── */
+.sustain-section {
+  background: var(--dark);
+  padding: 7rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.sustain-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 70% at 20% 50%, rgba(45,125,79,.15) 0%, transparent 60%);
+}
+.sustain-inner {
+  position: relative;
+  z-index: 2;
+}
+.sustain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.sustain-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+.sustain-content h2 span { color: #4CAF7E; }
+.sustain-content p {
+  font-size: .95rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 2rem;
+}
+.sustain-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.sustain-pillar {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 1.5rem;
+}
+.sustain-pillar .s-icon { font-size: 1.5rem; margin-bottom: .6rem; display: block; }
+.sustain-pillar .s-title {
+  font-weight: 600;
+  color: var(--white);
+  font-size: .9rem;
+  margin-bottom: .4rem;
+}
+.sustain-pillar .s-desc {
+  font-size: .78rem;
+  color: rgba(255,255,255,.4);
+  line-height: 1.5;
+}
+
+/* ─── DISTRIBUTION NETWORK UPDATED ───────────────────────────────── */
+
+.distribution-section {
+  background: var(--white);
+  padding: 7rem 0;
+}
+
+.distribution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* TEXT */
+.dist-text {
+  font-size: .97rem;
+  line-height: 1.8;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+}
+
+/* STATES */
+.states-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.state-pill {
+  background: var(--cream);
+  border: 1px solid rgba(139,26,26,.2);
+  color: var(--dark2);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  padding: .5rem 1rem;
+  text-transform: uppercase;
+}
+
+/* IMAGE */
+.distribution-img {
+  width: 100%;
+  height: 650px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.distribution-img img {
+  width: 100%;
+  height: 100%;
+  
+  transition: transform .4s ease;
+}
+
+/* HOVER EFFECT */
+.distribution-img:hover img {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .distribution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .distribution-img {
+    height: 250px;
+  }
+}
+
+/* ─── INVESTOR SECTION ──────────────────────────────────────────────────── */
+.investor-section {
+  background: var(--cream);
+  padding: 7rem 0;
+  border-top: 4px solid var(--red);
+}
+.investor-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  align-items: start;
+}
+.investor-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+.investor-info p {
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+}
+.investor-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--cream);
+}
+.inv-link {
+  background: var(--white);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: background .2s;
+  border-bottom: 2px solid transparent;
+}
+.inv-link:hover { background: var(--gold-lt); border-bottom-color: var(--red); }
+.inv-link .il-icon {
+  width: 40px; height: 40px;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.inv-link .il-text .il-title {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: .88rem;
+  margin-bottom: .2rem;
+}
+.inv-link .il-text .il-sub {
+  font-size: .72rem;
+  color: var(--grey);
+  letter-spacing: .04em;
+}
+
+/* ─── MEDIA SECTION ─────────────────────────────────────────────────────── */
+.media-section {
+  background: var(--white);
+  padding: 7rem 0;
+}
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.media-card {
+  background: var(--cream);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+}
+.media-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.08);
+}
+.media-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--dark2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  position: relative;
+}
+.media-img .play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.4);
+  font-size: 2.5rem;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.media-card:hover .play-btn { opacity: 1; }
+.media-body { padding: 1.5rem; }
+.media-type {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: .6rem;
+}
+.media-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.3;
+  margin-bottom: .8rem;
+}
+.media-desc {
+  font-size: .82rem;
+  line-height: 1.5;
+  color: var(--mid);
+}
+
+/* ─── CAREERS ───────────────────────────────────────────────────────────── */
+.careers-section {
+  background: var(--red);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.careers-section::after {
+  content: 'CAREERS';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.04);
+  letter-spacing: .2em;
+  pointer-events: none;
+}
+.careers-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+.careers-inner h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+}
+.careers-inner h2 span { color: var(--gold-lt); font-style: italic; }
+.careers-inner p {
+  color: rgba(255,255,255,.75);
+  font-size: .95rem;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-top: .8rem;
+}
+
+/* ─── CONTACT ───────────────────────────────────────────────────────────── */
+.contact-section {
+  background: var(--cream);
+  padding: 7rem 0;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+.contact-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-point {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+.contact-point .cp-icon {
+  width: 44px; height: 44px;
+  background: var(--white);
+  border: 1px solid rgba(139,26,26,.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.contact-point .cp-label {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: .3rem;
+}
+.contact-point .cp-value {
+  font-size: .92rem;
+  color: var(--dark2);
+  line-height: 1.5;
+}
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+.form-group label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+.form-group input, .form-group textarea, .form-group select {
+  padding: .9rem 1rem;
+  background: var(--white);
+  border: 1px solid rgba(139,26,26,.15);
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: var(--dark);
+  outline: none;
+  transition: border-color .2s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--red);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+/* ─── FOOTER ────────────────────────────────────────────────────────────── */
+footer {
+  background: var(--dark);
+  padding: 5rem 0 2rem;
+}
+
+/* GRID */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* BRAND */
+.footer-brand .wordmark {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: .3rem;
+}
+
+.footer-brand .sub {
+  font-size: .65rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 1.2rem;
+}
+
+.footer-brand p {
+  font-size: .85rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.45);
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+
+/* BADGES */
+.footer-badges {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+.f-badge {
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  padding: .3rem .7rem;
+  border: 1px solid rgba(196,150,10,.4);
+  color: var(--gold);
+}
+
+/* COLUMN */
+.footer-col h4 {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.footer-col ul li a {
+  font-size: .83rem;
+  color: rgba(255,255,255,.45);
+  text-decoration: none;
+  transition: .2s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--gold);
+}
+
+/* SOCIAL */
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: .3s;
+}
+
+.social-links a:hover {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+/* DIVIDER */
+.footer-divider {
+  height: 1px;
+  background: rgba(255,255,255,.08);
+  margin-bottom: 2rem;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  font-size: .75rem;
+  color: rgba(255,255,255,.3);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  font-size: .72rem;
+  color: rgba(255,255,255,.3);
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: var(--gold);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ─── IMAGE CAROUSEL ────────────────────────────────────────────────────── */
+.carousel-section {
+  background: var(--cream);
+  padding: 6rem 0;
+}
+.carousel-section .section-header {
+  margin-bottom: 3rem;
+}
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+.carousel-track {
+  display: flex;
+  transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+}
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/7;
+  background: var(--dark2);
+}
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s var(--ease);
+}
+.carousel-slide:hover img { transform: scale(1.03); }
+.carousel-slide-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--dark2), var(--dark));
+  gap: 1rem;
+}
+.carousel-slide-placeholder .slide-icon { font-size: 4rem; opacity: .5; }
+.carousel-slide-placeholder .slide-label {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .05em;
+}
+.carousel-slide-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(to top, rgba(28,15,9,.85) 0%, transparent 100%);
+  color: var(--white);
+}
+.carousel-slide-caption .cap-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .4rem;
+}
+.carousel-slide-caption .cap-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px; height: 48px;
+  background: rgba(253,248,242,.92);
+  backdrop-filter: blur(8px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--dark);
+  transition: background .2s, transform .2s;
+  z-index: 10;
+}
+.carousel-btn:hover { background: var(--white); transform: translateY(-50%) scale(1.08); }
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: .6rem;
+  margin-top: 1.2rem;
+}
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--grey);
+  border: none;
+  cursor: pointer;
+  transition: background .3s, transform .3s;
+  padding: 0;
+}
+.carousel-dot.active {
+  background: var(--red);
+  transform: scale(1.35);
+}
+@media (max-width: 768px) {
+  .carousel-slide { aspect-ratio: 4/3; }
+  .carousel-slide-caption .cap-title { font-size: 1rem; }
+  .carousel-btn { width: 38px; height: 38px; font-size: .9rem; }
+}
+
+/* ─── FOUNDER IMAGE STYLES ──────────────────────────────────────────────── */
+.founder-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { display: none; }
+  .hero-left { padding: 5rem 2rem; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .quality-grid { grid-template-columns: 1fr 1fr; }
+  .story-grid, .sustain-grid, .contact-grid,
+  .investor-grid, .distribution-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .founder-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-actions .nav-cta { display: none; }
+  .nav-inner { padding: .8rem 1.2rem; }
+}
+@media (max-width: 768px) {
+  .products-grid, .media-grid { grid-template-columns: 1fr; }
+  .why-grid, .quality-grid { grid-template-columns: 1fr; }
+  .brands-row { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: 1.5rem; }
+  .investor-links { grid-template-columns: 1fr; }
+  .careers-inner { flex-direction: column; text-align: center; }
+  .certs-row { gap: 1.5rem; }
+  .cred-divider { display: none; }
+  .distribution-channels { grid-template-columns: 1fr; }
+  .nav-logo .wordmark { font-size: 1.1rem; }
+  .nav-logo .sub { font-size: .52rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── ANNOUNCEMENT BANNER ─────────────────────────────────────────────────── -->
+<div class="ann-bar">
+  🏆 <span>BSE SME LISTED</span> — SSMD AGROTECH INDIA LIMITED &nbsp;|&nbsp; IPO DECEMBER 2025 &nbsp;|&nbsp; ISO 22000 · ISO 14001 CERTIFIED
+</div>
+
+<!-- ── NAVIGATION ──────────────────────────────────────────────────────────── -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="wordmark">House of Manohar</span>
+      <span class="sub">Agro-Food Manufacturing · Trusted Since 1980</span>
+    </a>
+
+    <ul class="nav-links">
+      <li class="has-dropdown">
+        <a href="about.html">About Us <span class="dropdown-arrow"></span></a>
+        <div class="dropdown-menu">
+          <a href="about.html#vision">Vision</a>
+          <a href="about.html#mission">Mission</a>
+          <a href="about.html#values">Values</a>
+          <a href="careers.html">Careers</a>
+          <a href="blog.html">Blog</a>
+        </div>
+      </li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="brands.html">Our Brands</a></li>
+      <li><a href="policies.html">Policies</a></li>
+      <li><a href="investors.html">Investors</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="https://www.bseindia.com/stock-share-price/ssmd-agrotech-india-ltd/ssmdagro/544621/" target="_blank" class="stock-ticker" id="stockTicker">
+        <span class="st-label">BSE:</span>
+        <span class="st-price" id="stockPrice">₹70.6</span>
+        <span class="st-change positive" id="stockChange">+4.27%</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
+  <ul>
+    <li>
+      <a href="about.html">About Us</a>
+      <div class="mobile-submenu">
+        <a href="about.html#vision">Vision</a>
+        <a href="about.html#mission">Mission</a>
+        <a href="about.html#values">Values</a>
+      </div>
+    </li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="brands.html">Our Brands</a></li>
+<li><a href="policies.html">Policies</a></li>
+<li><a href="investors.html">Investors</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="mob-cta">Partner With Us →</a>
+  <div class="mob-stock">BSE: 544621 · ₹67.54 (+2.46%)</div>
+</div>
+
+<!-- ── HERO ────────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="line"></div>
+      <span>Trusted Since 1980</span>
+    </div>
+    <h1>Where Tradition<br><em>Meets Taste.</em></h1>
+    <p class="hero-sub">At House of Manohar, every product reflects our promise of purity, authenticity, and unwavering dedication to quality for 44 years and counting.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">44<span>+</span></div>
+        <div class="label">Years of Expertise</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">5</div>
+        <div class="label">States Served</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">4</div>
+        <div class="label">Manufacturing Units</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">607<span>M</span></div>
+        <div class="label">Market Cap</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="products.html" class="btn-primary">Explore Our Products →</a>
+      <a href="about.html" class="btn-outline">Our Story</a>
+    </div>
+  </div>
+ <div class="hero-right">
+  <img src="https://houseofmanohar.com/demo/Media/DSC01670.jpg" class="hero-img" alt="hero">
+</div>
+</section>
+
+<!-- ── CREDENTIALS STRIP ───────────────────────────────────────────────────── -->
+<div class="creds-strip">
+  <div class="creds-inner">
+    <div class="cred-item"><span class="icon">🏛️</span><span class="text">BSE SME Listed</span></div>
+    <div class="cred-divider"></div>
+    <div class="cred-item"><span class="icon">✅</span><span class="text">ISO 22000</span></div>
+    <div class="cred-divider"></div>
+    <div class="cred-item"><span class="icon">🌿</span><span class="text">ISO 14001</span></div>
+    <div class="cred-divider"></div>
+    <div class="cred-item"><span class="icon">⚕️</span><span class="text">ISO 45001</span></div>
+    <div class="cred-divider"></div>
+    <div class="cred-item"><span class="icon">🏭</span><span class="text">4 Units · Delhi</span></div>
+  </div>
+</div>
+
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+
+      <!-- LEFT SIDE -->
+      <div class="story-visual reveal">
+        
+        <div class="story-card">
+
+          <!-- 🔥 Image Added -->
+          <div class="story-img">
+            <img src="https://houseofmanohar.com/demo/Media/story.jpg" alt="House of Manohar">
+          </div>
+
+          <div class="year">1980</div>
+
+          <div class="quote">
+            "At House of Manohar, quality is not just a standard. It is a way of life. For 44 years, every product we create has reflected our unwavering commitment to purity, authenticity, and excellence."
+          </div>
+
+          <div class="attr">— Ishu Munjal, Managing Director</div>
+        </div>
+
+        <div class="story-card-accent">
+          <div class="num">78%</div>
+          <div class="desc">Return on Net Worth, FY2024–25 · SSMD Agrotech India Limited</div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="story-content reveal reveal-delay-1">
+        <span class="tag">Our Story</span>
+
+        <h2>
+          A Tradition of Purity,
+          <em>Trusted Since 1980.</em>
+        </h2>
+
+        <p>
+          House of Manohar began with a passion for delivering the finest, most authentic food products. Rooted in tradition and driven by quality, we have been a trusted part of Indian families for over 44 years. Our commitment to excellence has earned recognition across the agro-food industry — including the Nationwide Awards Under 30 for Managing Director Ishu Munjal.
+        </p>
+
+        <p>
+          Since 2017, HOM has evolved from agro-food trading to full-scale manufacturing — launching four production facilities across Delhi, diversifying into new product categories, and entering the D2C space in 2025 with India's first mini dark factory. In December 2025, SSMD Agrotech India Limited listed on the BSE SME platform.
+        </p>
+
+        <div class="story-milestones">
+          <div class="milestone"><span class="yr">2017</span><span class="desc">First production facility for gram flour.</span></div>
+          <div class="milestone"><span class="yr">2018</span><span class="desc">Advanced unit replaces the first.</span></div>
+          <div class="milestone"><span class="yr">2021</span><span class="desc">Chana Dal facility added.</span></div>
+          <div class="milestone"><span class="yr">2022</span><span class="desc">Murmura & ramdana production.</span></div>
+          <div class="milestone"><span class="yr">2024</span><span class="desc">Fourth unit with advanced tech.</span></div>
+          <div class="milestone"><span class="yr">2025</span><span class="desc">Mini dark factory + BSE listing.</span></div>
+        </div>
+<!-- ── butons
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#" class="btn-primary">Our Full Story →</a>
+          <a href="#leadership" class="btn-outline">Meet Our Leadership</a>
+        </div>
+-->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW WE DELIVER QUALITY ──────────────────────────────────────────────── -->
+<section class="quality-section" id="quality">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">How We Deliver Quality</span>
+      <h2>Our Backbone. <em>State-of-the-Art Manufacturing.</em></h2>
+      <p>For over 44 years, House of Manohar has specialised in delivering premium food products to families who value authenticity. Our processes intertwine age-old wisdom with modern conveniences — ensuring every grain meets the highest standards.</p>
+    </div>
+
+    <div class="quality-grid">
+
+      <div class="quality-card reveal">
+        <div class="quality-img">
+          <img src="https://houseofmanohar.com/demo/Media/AdvancedEquipments.jpg" alt="Advanced Equipment">
+        </div>
+        <div class="quality-title">Advanced Equipment</div>
+        <div class="quality-desc">Cutting-edge machinery ensures consistency in every batch, across all four facilities.</div>
+      </div>
+
+      <div class="quality-card reveal reveal-delay-1">
+        <div class="quality-img">
+          <img src="https://houseofmanohar.com/demo/Media/CleanandSafeWorkspaces.jpg" alt="Clean and Safe Workspaces">
+        </div>
+        <div class="quality-title">Workspaces</div>
+        <div class="quality-desc">ISO-certified with rigorous hygiene standards. Quality upheld at every stage of production.</div>
+      </div>
+
+      <div class="quality-card reveal reveal-delay-2">
+        <div class="quality-img">
+          <img src="https://houseofmanohar.com/demo/Media/SkilledWorkforce.jpg" alt="Skilled Workforce">
+        </div>
+        <div class="quality-title">Skilled Workforce</div>
+        <div class="quality-desc">A dedicated team ensuring precision and perfection from raw material intake to final pack.</div>
+      </div>
+
+      <div class="quality-card reveal reveal-delay-3">
+        <div class="quality-img">
+          <img src="https://houseofmanohar.com/demo/Media/logistics.jpg" alt="Seamless Logistics">
+        </div>
+        <div class="quality-title">Seamless Logistics</div>
+        <div class="quality-desc">A structured, scalable supply chain ensuring every product reaches you in perfect condition.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS (REDESIGNED) ─────────────────────────────────────────────────── -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Our Products</span>
+      <h2>Pure. Fresh. <em>Authentic.</em></h2>
+      <p>From freshly milled gram flour to puffed grains, cold-pressed mustard oil to premium sattu — every House of Manohar product is made with premium ingredients and zero compromise on quality.</p>
+    </div>
+    <div class="products-grid">
+
+  <a href="products.html" class="product-card">
+    <div class="product-img">
+      <img src="https://houseofmanohar.com/demo/Media/Products/besanmanohar.jpg" alt="Besan">
+    </div>
+    <div class="product-info">
+      <div class="product-name">Besan</div>
+    </div>
+  </a>
+
+  <a href="products.html" class="product-card">
+    <div class="product-img">
+      <img src="https://houseofmanohar.com/demo/Media/Products/atta.jpg" alt="Chakki Fresh Atta">
+    </div>
+    <div class="product-info">
+      <div class="product-name">Chakki Fresh Atta</div>
+    </div>
+  </a>
+
+  <a href="products.html" class="product-card">
+    <div class="product-img">
+      <img src="https://houseofmanohar.com/demo/Media/Products/RoastedChana.png" alt="roasted chana">
+    </div>
+    <div class="product-info">
+      <div class="product-name">Roasted Chana</div>
+    </div>
+  </a>
+
+  <a href="products.html" class="product-card">
+    <div class="product-img">
+      <img src="https://houseofmanohar.com/demo/Media/Products/murmura.png" alt="Murmura">
+    </div>
+    <div class="product-info">
+      <div class="product-name">Murmura</div>
+    </div>
+  </a>
+
+  <a href="products.html" class="product-card">
+    <div class="product-img">
+      <img src="https://houseofmanohar.com/demo/Media//Products/BlackMustardOil1.png" alt="Mustard Oil">
+    </div>
+    <div class="product-info">
+      <div class="product-name">Mustard Oil</div>
+    </div>
+  </a>
+
+  <a href="products.html" class="product-card">
+    <div class="product-img">
+      <img src="https://houseofmanohar.com/demo/Media/Products/RiceFlour.png" alt="RiceFlour">
+    </div>
+    <div class="product-info">
+      <div class="product-name">Rice Flour</div>
+    </div>
+  </a>
+
+</div>
+    <div style="text-align: center; margin-top: 3rem;" class="reveal">
+      <a href="products.html" class="btn-outline">View Full Product Range →</a>
+    </div>
+  </div>
+</section>
+
+<section class="carousel-section" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Our World</span>
+      <h2>Inside <em>House of Manohar.</em></h2>
+      <p>From our manufacturing facilities to our products and team — a glimpse into 44 years of quality and craftsmanship.</p>
+    </div>
+  </div>
+
+  <div class="video-wrapper">
+  <video autoplay muted loop playsinline class="gallery-video">
+    <source src="https://houseofmanohar.com/demo/Media/MANOHAR-COMPANY-HIGHLIGHT.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+</section>
+
+<!-- ── WHY HOM ──────────────────────────────────────────────────────────────── -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Why House of Manohar</span>
+      <h2>44 Years of Doing <em>One Thing Right.</em></h2>
+      <p>Built on innovation, customer focus, operational excellence, and sustainability — here is what makes House of Manohar the trusted choice for families and trade partners across North India.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-icon">🌾</span>
+        <div class="why-title">Innovation-Driven Growth</div>
+        <div class="why-desc">Advanced manufacturing technologies across four Delhi facilities. The first agro-food brand to launch a mini dark factory for fresh D2C delivery in India.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <span class="why-icon">👥</span>
+        <div class="why-title">Customer-Centric Approach</div>
+        <div class="why-desc">44 years of understanding what Indian families need from their food. Our product range — from 500gm consumer packs to 35kg trade sacks — reflects every one of those years.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <span class="why-icon">⚙️</span>
+        <div class="why-title">Operational Excellence</div>
+        <div class="why-desc">Cutting-edge machinery. Clean, ISO-certified workspaces. A skilled workforce ensuring precision at every stage. Consistent quality, every batch, every time.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <span class="why-icon">🌱</span>
+        <div class="why-title">Sustainability and Quality</div>
+        <div class="why-desc">ISO 14001 environmental management across all four facilities. Eco-friendly practices embedded in manufacturing, packaging, and logistics.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OUR BRANDS ───────────────────────────────────────────────────────────── -->
+<section class="brands-section" id="brands">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Company Owned Brands</span>
+      <h2>Five Brands. <em>One Standard.</em></h2>
+      <p>From premium consumer packs to professional B2B bulk supply — our five brands serve every segment of the agro-food market with the same quality commitment.</p>
+    </div>
+    <div class="brands-row">
+      <div class="brand-card brand-A reveal">
+  <div class="brand-img">
+    <img src="https://houseofmanohar.com/demo/Media/Products/manohar-agro.webp" alt="Manohar Agro">
+  </div>
+  <span class="brand-tag">Premium Consumer Brand</span>
+  <div class="brand-desc">Our flagship range — besan, atta, sattu, mustard oil, spices, dal, rice, poha, and more. Premium quality in modern packaging for the quality-conscious family.</div>
+</div>
+
+<div class="brand-card brand-B reveal reveal-delay-1">
+  <div class="brand-img">
+    <img src="https://houseofmanohar.com/demo/Media/Products/superss.webp" alt="Super SS">
+  </div>
+  <span class="brand-tag">Puffed Grains & Cereals</span>
+  <div class="brand-desc">Murmura (400gm, 500gm, bulk), ramdana, poha, and futa chana — produced at our Mundka facility. Trusted by North India's wholesale grain trade.</div>
+</div>
+
+<div class="brand-card brand-C reveal reveal-delay-2">
+  <div class="brand-img">
+    <img src="https://houseofmanohar.com/demo/Media/Products/delhi-special.webp" alt="Delhi Special">
+  </div>
+  <span class="brand-tag">B2B Gram Flour</span>
+  <div class="brand-desc">Gargara, Mota, Barik, and Motichoor besan in 35kg sacks — for mithai shops, halwais, and food manufacturers across Delhi NCR.</div>
+</div>
+
+<div class="brand-card brand-D reveal reveal-delay-3">
+  <div class="brand-img">
+    <img src="https://houseofmanohar.com/demo/Media/Products/shree-dhanlaxmi.webp" alt="Shree Dhanlaxmi">
+  </div>
+  <span class="brand-tag">B2B Gram Flour Specialist</span>
+  <div class="brand-desc">Mota, Motichoor, Barik, and Gargara besan in 35kg professional sack formats. The trusted name in bulk gram flour supply.</div>
+</div>
+
+<div class="brand-card brand-E reveal reveal-delay-3">
+  <div class="brand-img">
+    <img src="https://houseofmanohar.com/demo/Media/Products/ultra-dhulari.webp" alt="Ultra Dhulai">
+  </div>
+  <span class="brand-tag">Home Care</span>
+  <div class="brand-desc">House of Manohar's home care range — extending our quality promise beyond the kitchen. Distributed via our established North India network.</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ───────────────────────────────────────────────────────── -->
+<div class="cert-section">
+  <div class="cert-inner">
+    <div class="cert-title">Certifications & Credentials</div>
+    <div class="certs-row">
+      <div class="cert-item">
+        <div class="cert-icon">🏅</div>
+        <div class="cert-name">ISO 22000</div>
+        <div class="cert-detail">Food Safety Management</div>
+      </div>
+      <div class="cert-divider"></div>
+      <div class="cert-item">
+        <div class="cert-icon">🌿</div>
+        <div class="cert-name">ISO 14001</div>
+        <div class="cert-detail">Environmental Management</div>
+      </div>
+      <div class="cert-divider"></div>
+      <div class="cert-item">
+        <div class="cert-icon">⚕️</div>
+        <div class="cert-name">ISO 45001</div>
+        <div class="cert-detail">Occupational Health & Safety</div>
+      </div>
+      <div class="cert-divider"></div>
+      <div class="cert-item">
+        <div class="cert-icon">⚙️</div>
+        <div class="cert-name">ISO 9001</div>
+        <div class="cert-detail">Quality Management</div>
+      </div>
+      <div class="cert-divider"></div>
+      <div class="cert-item">
+        <div class="cert-icon">🏛️</div>
+        <div class="cert-name">BSE SME</div>
+        <div class="cert-detail">Listed Dec 2025 · Scrip 544621</div>
+      </div>
+      <div class="cert-divider"></div>
+      <div class="cert-item">
+        <div class="cert-icon">📋</div>
+        <div class="cert-name">FSSAI</div>
+        <div class="cert-detail">Food Safety Licensed</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── LEADERSHIP ───────────────────────────────────────────────────────────── -->
+<section class="founder-section" id="leadership">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Our Leadership</span>
+      <h2>The People Behind <em>Every Product.</em></h2>
+      <p>The leadership of House of Manohar brings together decades of agro-food expertise, modern business acumen, and a shared commitment to quality that has defined the brand since 1980.</p>
+    </div>
+
+    <div class="founder-grid">
+
+      <!-- Jai Gopal Munjal -->
+      <div class="founder-card reveal">
+        <div class="founder-img">
+          <img src="https://houseofmanohar.com/demo/Media/Jai-Gopal-Munjal.jpg" alt="Jai Gopal Munjal — Chairman">
+        </div>
+        <div class="founder-info">
+          <div class="founder-name">Jai Gopal Munjal</div>
+          <div class="founder-title">Chairman</div>
+          <div class="founder-bio">
+            The driving force behind House of Manohar Group's legacy. With decades of experience in business strategy and manufacturing excellence, he laid the foundation for the company's growth. Under his guidance, the group introduced Manohar Agro and established state-of-the-art manufacturing facilities across Delhi.
+          </div>
+        </div>
+      </div>
+
+      <!-- Ishu Munjal -->
+      <div class="founder-card reveal reveal-delay-1">
+        <div class="founder-img">
+          <img src="https://houseofmanohar.com/demo/Media/Ishu-Munjal.jpg" alt="Ishu Munjal — Managing Director">
+        </div>
+        <div class="founder-info">
+          <div class="founder-name">Ishu Munjal</div>
+          <div class="founder-title">Managing Director</div>
+          <div class="founder-bio">
+            A visionary leader with a foundation in Information Technology, Ishu has led HOM from inception to a BSE-listed company — pioneering D2C innovations including India's first mini dark factory. Honoured with the Nationwide Awards Under 30 by Business Mint. He drives business operations, product innovation, and expansion strategy.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ── SUSTAINABILITY ───────────────────────────────────────────────────────── -->
+<section class="sustain-section" id="sustainability">
+  <div class="container">
+    <div class="sustain-inner">
+      <div class="sustain-grid">
+        <div class="sustain-content reveal">
+          <span class="tag">Sustainability</span>
+          <h2>Building a Business That Is <span>Good for India.</span></h2>
+          <p>
+            Our ISO 14001 certification is not a badge — it is a commitment embedded across all four manufacturing facilities in Delhi. Every process at House of Manohar is designed to uphold the highest environmental and safety standards.
+          </p>
+          <p>
+            Through our CSR initiatives, we support communities connected to our agricultural supply chain and contribute to sustainable agro-food practices across North India.
+          </p>
+          <a href="https://houseofmanohar.com/policies" class="btn-primary">Read Our CSR Report →</a>
+        </div>
+        <div class="sustain-pillars reveal reveal-delay-2">
+          <div class="sustain-pillar">
+            <span class="s-icon">🌱</span>
+            <div class="s-title">Eco-Friendly Manufacturing</div>
+            <div class="s-desc">ISO 14001 compliant operations across all four Delhi facilities. Sustainable practices embedded in production, packaging, and logistics.</div>
+          </div>
+          <div class="sustain-pillar">
+            <span class="s-icon">⚙️</span>
+            <div class="s-title">Advanced Technology</div>
+            <div class="s-desc">Cutting-edge machinery that maximises efficiency and minimises environmental impact at every stage of production.</div>
+          </div>
+          <div class="sustain-pillar">
+            <span class="s-icon">👥</span>
+            <div class="s-title">Community Commitment</div>
+            <div class="s-desc">CSR initiatives supporting communities connected to our agricultural supply network across North India.</div>
+          </div>
+          <div class="sustain-pillar">
+            <span class="s-icon">📦</span>
+            <div class="s-title">Responsible Packaging</div>
+            <div class="s-desc">Food-safe, moisture-proof packaging designed to protect product quality and reduce material waste.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DISTRIBUTION NETWORK ─────────────────────────────────────────────────── -->
+<section class="distribution-section" id="distribution">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Our Distribution Network</span>
+      <h2>Five States. <em>One Consistent Standard.</em></h2>
+    </div>
+
+    <div class="distribution-grid">
+      
+      <!-- LEFT CONTENT -->
+      <div class="reveal">
+        <p class="dist-text">
+          At House of Manohar, our distribution network is the backbone of our success. We have built a structured and scalable supply chain that ensures our products reach every corner of the market efficiently — through both B2B distributor partnerships and our D2C dark factory channel.
+        </p>
+
+        <div class="states-list">
+          <span class="state-pill">Delhi / NCR</span>
+          <span class="state-pill">Haryana</span>
+          <span class="state-pill">Uttar Pradesh</span>
+          <span class="state-pill">Punjab</span>
+          <span class="state-pill">Uttarakhand</span>
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="distribution-img reveal reveal-delay-2">
+        <img src="https://houseofmanohar.com/demo/Media/india.webp" alt="Distribution Network">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── INVESTOR RELATIONS ───────────────────────────────────────────────────── 
+<section class="investor-section" id="investors">
+  <div class="container">
+    <div class="investor-grid">
+      <div class="investor-info reveal">
+        <span class="tag">Investor Relations</span>
+        <h2>SSMD Agrotech India Limited</h2>
+        <p>
+          Listed on the BSE SME Platform in December 2025. SSMD Agrotech India Limited provides comprehensive access to all financial disclosures, governance documents, and corporate announcements as mandated by SEBI LODR regulations.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: .5rem; margin: 1.5rem 0;">
+          <div style="display: flex; gap: 1rem; font-size: .85rem;">
+            <span style="color: var(--mid); min-width: 160px; font-weight: 600;">IPO Price Band</span>
+            <span style="color: var(--dark);">₹114 – ₹121 per share</span>
+          </div>
+          <div style="display: flex; gap: 1rem; font-size: .85rem;">
+            <span style="color: var(--mid); min-width: 160px; font-weight: 600;">Issue Size</span>
+            <span style="color: var(--dark);">100% Fresh Issue</span>
+          </div>
+          <div style="display: flex; gap: 1rem; font-size: .85rem;">
+            <span style="color: var(--mid); min-width: 160px; font-weight: 600;">Listing</span>
+            <span style="color: var(--dark);">December 2025 · BSE SME · Scrip 544621</span>
+          </div>
+          <div style="display: flex; gap: 1rem; font-size: .85rem;">
+            <span style="color: var(--mid); min-width: 160px; font-weight: 600;">FY25 Revenue</span>
+            <span style="color: var(--dark);">₹99.26 Crore</span>
+          </div>
+          <div style="display: flex; gap: 1rem; font-size: .85rem;">
+            <span style="color: var(--mid); min-width: 160px; font-weight: 600;">FY25 RoNW</span>
+            <span style="color: var(--red); font-weight: 700;">78%</span>
+          </div>
+        </div>
+        <a href="#" class="btn-primary">BSE Filings Portal →</a>
+      </div>
+
+      <div class="investor-links reveal reveal-delay-2">
+        <a href="#" class="inv-link">
+          <div class="il-icon">📄</div>
+          <div class="il-text">
+            <div class="il-title">Annual Report</div>
+            <div class="il-sub">FY2024–25 Report & Accounts</div>
+          </div>
+        </a>
+        <a href="#" class="inv-link">
+          <div class="il-icon">📊</div>
+          <div class="il-text">
+            <div class="il-title">Balance Sheet</div>
+            <div class="il-sub">Latest Financial Statements</div>
+          </div>
+        </a>
+        <a href="#" class="inv-link">
+          <div class="il-icon">📋</div>
+          <div class="il-text">
+            <div class="il-title">Shareholding Pattern</div>
+            <div class="il-sub">BSE Filing — Latest Quarter</div>
+          </div>
+        </a>
+        <a href="#" class="inv-link">
+          <div class="il-icon">🏛️</div>
+          <div class="il-text">
+            <div class="il-title">Corporate Governance</div>
+            <div class="il-sub">Policies & Committees</div>
+          </div>
+        </a>
+        <a href="#" class="inv-link">
+          <div class="il-icon">📢</div>
+          <div class="il-text">
+            <div class="il-title">Corporate Announcements</div>
+            <div class="il-sub">BSE Disclosures & Notices</div>
+          </div>
+        </a>
+        <a href="#" class="inv-link">
+          <div class="il-icon">📜</div>
+          <div class="il-text">
+            <div class="il-title">Draft Prospectus / Prospectus</div>
+            <div class="il-sub">IPO Prospectus — Nov 2025</div>
+          </div>
+        </a>
+        <a href="#" class="inv-link">
+          <div class="il-icon">📅</div>
+          <div class="il-text">
+            <div class="il-title">AGM / Board Meetings</div>
+            <div class="il-sub">Notices & Outcomes</div>
+          </div>
+        </a>
+        <a href="#" class="inv-link">
+          <div class="il-icon">📮</div>
+          <div class="il-text">
+            <div class="il-title">Investor Grievance</div>
+            <div class="il-sub">Redressal & Contact Details</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ── MEDIA CENTRE ─────────────────────────────────────────────────────────── -->
+<section class="media-section" id="media">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Media Centre</span>
+      <h2>Stories from <em>Our Factory.</em></h2>
+      <p>Press releases, awards coverage, and factory stories from inside House of Manohar.</p>
+    </div>
+    <div class="media-grid">
+      <div class="media-card reveal">
+        <div class="media-img">
+          🏭
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="media-body">
+          <div class="media-type">Factory Film</div>
+          <div class="media-title">Inside Our Manufacturing Unit</div>
+          <div class="media-desc">Watch how fresh atta, spices, and oil are made to order and delivered within 10 minutes — inside a residential housing society in Delhi.</div>
+        </div>
+      </div>
+      <div class="media-card reveal reveal-delay-1">
+        <div class="media-img" style="background: var(--dark);">
+          📰
+        </div>
+        <div class="media-body">
+          <div class="media-type">Press Release</div>
+          <div class="media-title">SSMD Agrotech Lists on BSE SME — December 2025</div>
+          <div class="media-desc">SSMD Agrotech India Limited successfully completes its BSE SME IPO, raising capital for manufacturing expansion and D2C dark factory growth.</div>
+        </div>
+      </div>
+      <div class="media-card reveal reveal-delay-2">
+        <div class="media-img" style="background: linear-gradient(135deg, #3D1A0A, #1C0F09);">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;opacity:.4;">
+            <circle cx="40" cy="28" r="16" fill="#C4960A"/>
+            <ellipse cx="40" cy="70" rx="28" ry="18" fill="#C4960A"/>
+          </svg>
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="media-body">
+          <div class="media-type">Founder Interview</div>
+          <div class="media-title">Ishu Munjal — Nationwide Awards Under 30, 2024</div>
+          <div class="media-desc">Managing Director Ishu Munjal honoured by Business Mint for leadership in D2C innovation and agro-food manufacturing.</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="https://houseofmanohar.com/media.html" class="btn-outline">Visit Media Centre →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAREERS ──────────────────────────────────────────────────────────────── 
+<section class="careers-section" id="careers">
+  <div class="container">
+    <div class="careers-inner">
+      <div>
+        <h2>Build the <span>Future of</span><br>Indian Agro-Food With Us</h2>
+        <p>We are growing. If you want to work at a BSE-listed, founder-led agro-food company that takes quality seriously — we want to hear from you.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;">
+        <a href="#" class="btn-gold">View Open Positions →</a>
+        <span style="font-size: .78rem; color: rgba(255,255,255,.5);">Across Manufacturing · Sales · Marketing · Technology</span>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ── CONTACT ───────────────────────────────────────────────────────────────── 
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="tag">Get in Touch</span>
+        <h2>Let's Talk.</h2>
+
+        <div class="contact-points">
+          <div class="contact-point">
+            <div class="cp-icon">🏢</div>
+            <div>
+              <div class="cp-label">Corporate Office</div>
+              <div class="cp-value">G-215, Upper Ground Floor, Preet Vihar, Delhi – 110092</div>
+            </div>
+          </div>
+          <div class="contact-point">
+            <div class="cp-icon">📞</div>
+            <div>
+              <div class="cp-label">Phone</div>
+              <div class="cp-value">+91 9560248435 &nbsp;|&nbsp; 011-45380705</div>
+            </div>
+          </div>
+          <div class="contact-point">
+            <div class="cp-icon">✉️</div>
+            <div>
+              <div class="cp-label">Email</div>
+              <div class="cp-value">info@houseofmanohar.com</div>
+            </div>
+          </div>
+          <div class="contact-point">
+            <div class="cp-icon">🚚</div>
+            <div>
+              <div class="cp-label">Distributor Enquiries</div>
+              <div class="cp-value">info@houseofmanohar.com<br>Delhi · UP · Haryana · Punjab · Uttarakhand</div>
+            </div>
+          </div>
+          <div class="contact-point">
+            <div class="cp-icon">📊</div>
+            <div>
+              <div class="cp-label">Investor Relations</div>
+              <div class="cp-value">Rajesh Thakur, CS & Compliance Officer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <span class="tag">Send a Message</span>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Enquiry Type</label>
+            <select>
+              <option value="">Select enquiry type</option>
+              <option>Product / Order Enquiry</option>
+              <option>Distributor / Trade Partnership</option>
+              <option>Investor Relations</option>
+              <option>Media / Press</option>
+              <option>Career</option>
+              <option>General</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us how we can help…"></textarea>
+          </div>
+          <button class="btn-primary" type="submit" style="width: 100%; justify-content: center;">
+            Send Message →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- BRAND -->
+      <div class="footer-brand">
+        <div class="wordmark">House of Manohar</div>
+        <div class="sub">SSMD Agrotech India Limited</div>
+        <p>
+          Agro-food manufacturing, trusted since 1980. BSE SME Listed December 2025. 
+          ISO certified. Four manufacturing units in Delhi.
+        </p>
+
+        <div class="footer-badges">
+          <span class="f-badge">BSE Listed</span>
+          <span class="f-badge">ISO 22000</span>
+          <span class="f-badge">ISO 14001</span>
+          <span class="f-badge">FSSAI</span>
+        </div>
+      </div>
+
+      <!-- COLUMN 1 -->
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 2 -->
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul>
+          <li><a href="policies.html">Policies</a></li>
+          <li><a href="investors.html">Investors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="footer-col social-col">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/houseofmanohar/" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/p/HOM-House-of-Manohar-61556916934763/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/hom-house-of-manohar-group/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p>
+        © 2025 SSMD Agrotech India Limited (House of Manohar). All Rights Reserved.<br>
+        BSE SME Platform Listed. G-215, Preet Vihar, Delhi – 110092
+      </p>
+
+      <div class="footer-legal">
+        <a href="https://ratanrajbhar.com/">Developed By : Ratan Rajbhar</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- FONT AWESOME (icons ke liye) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ── WHATSAPP WIDGET ─────────────────────────────────────────────────────── -->
+<a href="https://wa.me/918700304298?text=Hi%2C%20I%20want%20to%20know%20more%20about%20House%20of%20Manohar%20products." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958C9.736 30.908 12.748 32 16.004 32 24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.318 22.59c-.39 1.1-1.932 2.014-3.168 2.28-.848.182-1.956.326-5.684-1.222-4.77-1.98-7.836-6.834-8.072-7.15-.226-.316-1.9-2.532-1.9-4.832s1.202-3.428 1.63-3.898c.39-.428.914-.61 1.22-.61.148 0 .28.008.4.014.428.018.642.044.924.716.354.844 1.218 2.97 1.324 3.186.108.218.216.514.068.81-.138.306-.258.496-.476.756-.218.26-.426.46-.644.74-.198.244-.422.506-.176.934.244.428 1.092 1.8 2.344 2.916 1.612 1.436 2.928 1.894 3.396 2.094.354.152.774.122 1.028-.148.318-.344.712-.914 1.114-1.476.284-.4.644-.45 1.036-.306.396.136 2.514 1.186 2.944 1.402.43.216.716.324.822.502.104.178.104 1.032-.286 2.13z"/></svg>
+</a>
+
+<script>
+// Sticky nav
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav')?.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileClose = document.getElementById('mobile-menu-close');
+if (hamburgerBtn && mobileMenu) {
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    hamburgerBtn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  mobileClose?.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburgerBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburgerBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }));
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// Counter animation
+document.querySelectorAll('.hero-stat .num').forEach(counter => {
+  const text = counter.textContent;
+  const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+  const suffix = text.replace(/[0-9.]/g, '');
+  if (isNaN(num)) return;
+  const dur = 1400, startTime = Date.now();
+  const tick = () => {
+    const progress = Math.min((Date.now() - startTime) / dur, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    counter.textContent = Math.round(ease * num) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+  setTimeout(tick, 400);
+});
+</script>
+</body>
+</html>

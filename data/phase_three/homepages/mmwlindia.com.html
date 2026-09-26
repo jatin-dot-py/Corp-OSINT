@@ -1,0 +1,3337 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Media Matrix</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="css/grayscale.css" rel="stylesheet">
+	<style>
+		a {
+			border: none;
+			color: inherit;
+			outline: 0 none;
+			text-decoration: none;
+			transition: color 0.35s ease-in-out 0s, border-bottom-color 0.35s ease-in-out 0s;
+		}
+
+		a:hover {
+			color: #000;
+			border-bottom-color: rgba(255, 255, 255, 0);
+		}
+
+		#logo {
+			cursor: default;
+			margin: 1.75em 1.5em 1.5em 3em;
+			min-height: 48px;
+			position: relative;
+		}
+
+		.Mheader {
+			background: #ffffff;
+			color: #fff;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			text-align: right;
+			top: 0;
+			width: 375px;
+			z-index: 10;
+		}
+
+		.Mheader .Mnav {
+			float: left;
+			margin: 0;
+			padding: 10px 0;
+			width: 100% !important;
+		}
+
+		.Mheader .Mnav ul {
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+			z-index: 9 !important;
+		}
+
+		#ABOUT {
+			z-index: 8 !important;
+		}
+
+		.Mheader .Mnav ul li {
+			width: 100%;
+		}
+
+		.Mheader .Mnav ul li a {
+			display: block;
+			padding: 1em 1em 1em 1em !important;
+			color: rgb(0, 0, 0);
+			text-decoration: none;
+			outline: 0;
+			border: 0;
+			-moz-transition: none;
+			-webkit-transition: none;
+			-o-transition: none;
+			-ms-transition: none;
+			transition: none;
+			font-size: 20px;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 1.6;
+			margin-bottom: 10px;
+		}
+
+		.h3,
+		h3 {
+			font-size: 19px;
+			margin-bottom: 10px;
+		}
+
+		.Mheader .Mnav ul li a:hover {
+			background-color: #D1B1EC;
+		}
+
+		.Mheader .Mnav ul li a span {
+			position: relative;
+			display: block;
+			font-size: 0.8em;
+		}
+
+		.Mheader .Mnav ul li a span:before {
+			position: absolute;
+			left: 0;
+			color: #41484c;
+			text-align: center;
+			width: 1.25em;
+			line-height: 1.75em;
+		}
+
+		.Mheader .Mnav ul li.active {
+			background: #7c51a1;
+			box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
+			color: #ffffff !important;
+		}
+
+		.Mheader .Mnav ul li a.active span {
+			color: #ffffff !important;
+		}
+
+		.Mheader .Mnav ul li a.active span:before {
+			color: #fff;
+		}
+
+		.navbar-header {
+			width: 100%
+		}
+
+		.logo {
+			display: block;
+		}
+
+		.logo a {
+			display: block;
+			float: none;
+			height: 129px;
+			margin: 10px auto;
+			width: 263px;
+		}
+
+		.LeftCont {
+			width: 376px;
+		}
+
+		.bottom {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}
+
+		.copyright {
+			color: #000000 !important;
+			font-size: 14px;
+			line-height: 1.5;
+			text-align: center;
+		}
+
+		.home-container {
+			background: #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -62%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0;
+			width: 40%;
+		}
+
+		.home-container2 {
+			background: #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			/*left: -190%;*/
+			left: -66%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0px;
+			width: 45%;
+		}
+
+		.home-container3 {
+			background: none repeat scroll 0 0 #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -66%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0.9em;
+			width: 45%;
+		}
+
+		.home-container4 {
+			background: none repeat scroll 0 0 #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -66%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0.9em;
+			width: 45%;
+		}
+
+		.home-container5 {
+			background: none repeat scroll 0 0 #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -66%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0.9em;
+			width: 45%;
+		}
+
+		.home-container6 {
+			background: none repeat scroll 0 0 #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -66%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0.9em;
+			width: 45%;
+		}
+
+		.home-container7 {
+			background: none repeat scroll 0 0 #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -66%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0.9em;
+			width: 45%;
+		}
+
+		.home-container9 {
+			background: none repeat scroll 0 0 #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -66%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0.9em;
+			width: 45%;
+		}
+
+		.home-container10 {
+			background: none repeat scroll 0 0 #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -66%;
+			opacity: 0.9;
+			padding: 10px 42px;
+			position: absolute;
+			text-align: left;
+			top: 0.9em;
+			width: 45%;
+		}
+
+		.home-container8 {
+			background: none repeat scroll 0 0 #ff6701;
+			color: #ffffff;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+			left: -66%;
+			opacity: 0.9;
+			padding: 42px;
+			position: absolute;
+			text-align: left;
+			top: 0.9em;
+			width: 45%;
+		}
+
+		.home-container p,
+		.home-container2 p {
+			margin-bottom: 20px;
+			font-size: 1em;
+			font-family: "Open Sans", Arial, Helvetica, sans-serif;
+		}
+
+		.LeftTab {
+			float: left;
+			width: 39%;
+		}
+
+		.rightTab {
+			float: right;
+			width: 60%;
+		}
+
+		b,
+		strong {
+			font-size: 17px;
+		}
+	</style>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-custom navbar-fixed-top Mheader" role="navigation">
+		<div class="LeftCont">
+			<div class="navbar-header logo">
+				<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>-->
+				<a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo.png" alt=""></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-right navbar-main-collapse Mnav">
+				<ul class="nav navbar-nav">
+					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+
+					<li class="active" id="ABOUT-link"> <a class="page-scroll" href="#ABOUT">ABOUT US</a> </li>
+					<li id="BUSINESSES-link"> <a class="page-scroll" href="#BUSINESSES">BUSINESSES</a> </li>
+					<!--  <li id="NEWS-link"> <a class="page-scroll"  href="#NEWS">NEWS</a> </li>-->
+					<li id="INVESTOR-link"> <a class="page-scroll" href="#INVESTOR">INVESTOR</a> </li>
+					<!--<li> <a class="page-scroll" href="#SITEMAP">SITE MAP</a> </li>-->
+					<li id="GETINTOUCH-link"> <a class="page-scroll" href="#GETINTOUCH">GET IN TOUCH</a> </li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+			<div class="bottom">
+
+				<!-- Social Icons -->
+				<p class="copyright">&copy; Copyright 2015<br>
+					www.mmwlindia.com</p>
+			</div>
+		</div>
+
+		<!-- /.container -->
+	</nav>
+	<!--2-->
+
+	<!-- Intro Header -->
+	<header class="intro" id="ABOUT">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div id="aboutus" class="home-container">
+						<p style="text-align:justify;">Media Matrix Worldwide Limited (MMWL) is a B2B focused
+							next-generation technology and services provider, specializing in Value Added Services (VAS)
+							across the mobile and digital ecosystem. Beyond its core VAS offerings, MMWL is also engaged
+							in the distribution of wide range of innovative products in mobility, audio, Consumer
+							Electronics and IT segment across India through one of its subsidiaries.</p>
+						<a id="ABOUTReadMore" style="float:right;" href="#" class="read-more allbuttons">READ MORE</a>
+					</div>
+					<div class="home-container2" style="height: 470px; display:block;  overflow: auto; width:62%  ">
+						<b>Media Matrix worldwide Limited (MMWL) </b>
+						<br />
+						<p style="text-align:justify;">Media Matrix Worldwide Limited (MMWL) is a B2B focused
+							next-generation technology and services provider, specializing in Value Added Services (VAS)
+							across the mobile and digital ecosystem. Beyond its core VAS offerings, MMWL is also engaged
+							in the distribution of wide range of innovative products in mobility, audio, Consumer
+							Electronics and IT segment across India through one of its subsidiaries.
+
+						</p>
+						<b>Media Matrix Enterprises Private Limited (MMEPL) </b>
+						<br />
+						<p style="text-align:justify;"> MMEPL is wholly owned Subsidiary of Media Matrix Worldwide
+							Limited. <br />
+
+							MMEPL has been incorporated on 2011 with objectives for making strategic investments in its
+							subsidiary/ associate/ group companies and/ or other companies.
+						</p>
+
+
+
+						<!-- <b>DigiVive Services Private Limited (DSPL)</b> -->
+						<!-- <br /> -->
+						<!--           <p style="text-align:justify;"> Digivive Services pioneered anytime, anywhere mobile entertainment in India, launching what has now grown to become India’s largest subscription-driven video entertainment destination in the Over-The-Top (OTT) space – NEXGTV. </p>
+          <p style="text-align:justify;">NexGTv, literally the mobile button on a user’s digital device, is an award-winning application offering its viewers wholesome and unlimited entertainment across multiple screens including – smartphones, tablets and laptops/PCs via a single sign-in.</p>
+          <p style="text-align:justify;"> With best-in-class technical infrastructure and support services, R&D capabilities, Network Operating Centres (NOC), Digivive Services has integrated the best global technologies to offer a highly scalable mobile TV solution.   Downloaded by over 25 million unique users, nexGTv offers an unrivalled suite of:<br>
+            •	130+ Live TV channels <br>
+            •	A huge catalogue of over 1000+ Movies <br>
+            •	Host of TV Shows and Videos for every mood and intent<br></p>
+ -->
+						<p style="text-align:justify;"> <b>nexG Devices Private Limited (NDPL) </b>
+							<br />
+							NexG Devices Private Limited is a multi-brand and multi-product -telecom device distribution
+							organization which uniquely bundles white-labelled products from global OEMs with services
+							from telecom operators to offer a wide range of customized solutions to customers.
+						</p>
+						<p style="text-align:justify;"> A strong network of pan-India distributors and warehouses forms
+							the backbone that allows NexG Devices to provide leading brands with reliable countrywide
+							rollout and product availability.</p>
+						<!-- <p style="text-align:justify;"> <b>DigiCall Teleservices Private Limited </b>
+            <br />
+            Keeping pace with time and active managerial intervention, DigiCall Teleservices has evolved from an erstwhile paging company to a full-service Voice and Data BPO organization, with over 5,000 seat presence in 9 cities of India. It supports all major telecom and DTH operators, e-commerce and BFSI institutions with multi-lingual regional call support playing a pivotal role in connecting brands with their consumers. </p> -->
+						<!--   <p style="text-align:justify;"> <b>DigiCall Global Private Limited</b>
+            <br />
+            DigiCall Global provides, inbound and outbound support, web and back office as well as collection services support, to customers globally across Retail, Technology Support and Healthcare industries. </p>
+          <p> Both Digicall Teleservices and Digicall Global are the new-age BPO business offering customized multilingual services to various telecom operators across India. The organizations also offer cutting-edge technologies as part of their offerings, such as One Click Solutions - an IOT-based CRM solution for smart phone management. </p>
+          <br/> -->
+						<br />
+						<a style="float:right;" href="#" class="back allbuttons">Back</a><br />
+						<br />
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="intro" id="BUSINESSES"
+		style=" width:100%;background:url(images/business.jpg) no-repeat top center scroll !important;  -webkit-background-size: cover;   -moz-background-size: cover !important; background-size:cover !important; -o-background-size: cover !important;">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div id="bus" class="home-container"
+						style=" height: 400px; display:block;  overflow: auto; width:65%  ">
+						<p style="text-align:justify;">
+							<a id="busReadMore" class="subsid-link read-more allbuttons" href="#"
+								style="float:right;">Leadership Team</a> <br />
+							<!--<img src="images/Digivive-logo.jpg"><br />
+          
+          
+            <strong> DigiVive Services Private Limited (DSPL)</strong> 
+            <br />
+            Digivive Services pioneered anytime, anywhere mobile entertainment in India, launching what has now grown to become India’s largest subscription-driven video entertainment destination in the Over-The-Top (OTT) space – NEXGTV. </p>
+          <p style="text-align:justify;">  NexGTv, literally the mobile button on a user’s digital device, is an award-winning application offering its viewers wholesome and unlimited entertainment across multiple screens including – smartphones, tablets and laptops/PCs via a single sign-in. </p>
+          <p style="text-align:justify;">  With best-in-class technical infrastructure and support services, R&D capabilities, Network Operating Centres (NOC), Digivive Services has integrated the best global technologies to offer a highly scalable mobile TV solution.   Downloaded by over 25 million unique users, nexGTv offers an unrivalled suite of:<br>
+            •	130+ Live TV channels <br>
+            •	A huge catalogue of over 1000+ Movies <br>
+            •	Host of TV Shows and Videos for every mood and intent </p>
+          <br />--->
+
+						<p style="text-align:justify;"> <img src="images/NexG-logo.jpg"><br />
+							<strong> nexG Devices Private Limited (NDPL)</strong>
+							<br />
+							NexG Devices Private Limited is a multi-brand and multi-product -telecom device distribution
+							organization which uniquely bundles white-labelled products from global OEMs with services
+							from telecom operators to offer a wide range of customized solutions to customers.
+						</p>
+						<p style="text-align:justify;"> A strong network of pan-India distributors and warehouses forms
+							the backbone that allows NexG Devices to provide leading brands with reliable countrywide
+							rollout and product availability.</p><br />
+
+
+						<!---<p style="text-align:justify;">  <img src="images/DigiCall-logo.jpg"><br />
+            <strong> DigiCall Teleservices Private Limited </strong>
+            <br />
+            Keeping pace with time and active managerial intervention, DigiCall Teleservices has evolved from an erstwhile paging company to a full-service Voice and Data BPO organization, with over 5,000 seat presence in 9 cities of India. It supports all major telecom and DTH operators, e-commerce and BFSI institutions with multi-lingual regional call support playing a pivotal role in connecting brands with their consumers. </p>
+			
+          <p style="text-align:justify;"> <strong> DigiCall Global Private Limited</strong> <br />
+            DigiCall Global provides, inbound and outbound support, web and back office as well as collection services support, to customers globally across Retail, Technology Support and Healthcare industries.</p>
+			
+          <p style="text-align:justify;">  Both Digicall Teleservices and Digicall Global are the new-age BPO business offering customized multilingual services to various telecom operators across India. The organizations also offer cutting-edge technologies as part of their offerings, such as One Click Solutions - an IOT-based CRM solution for smart phone management.</p>--->
+
+						<br />
+						<br />
+					</div>
+					<div style=" height: 400px; display:block;  overflow: auto; width:65%  " class="home-container2">
+						<!-- <h3> Mr. Bharat Bhushan Chug <br /> -->
+						<!-- <span style="font-size:15px;"> Director - nexG Devices Private Limited</span></h3> -->
+						<!-- <p style="text-align:justify;"> Mr. Chugh is a qualified Costs and Works Accountant with over 31 years of experience in General Management, Accounting and Financial Management. He has vast experience in manufacturing, engineering, FMCG and service industry. He is currently working with Microwave Communications Limited as Whole-time Director of the Company. Prior to this, he had worked with Media Matrix Worldwide Limited, BST, Triveni Engineering Subros Limited & Karvy Digikonnect Limited.</p> -->
+
+
+						<h3>Mr. Sunil Batra <br />
+							<span style="font-size:15px;">Director - Media Matrix Worldwide Limited</span>
+						</h3>
+						<p style="text-align:justify;">Mr. Sunil Batra is an evangelist in Consumer Sales and a
+							Marketing professional with a successful track record of over two decades in various FMCG
+							multinationals like Lipton India (HUL), Kellogg India, Bata India, Coca-Cola and Tata
+							Teleservices Ltd (TTSL). Before joining MMWL group, Mr. Batra was President Operations at
+							TTSL. His key responsibilities at TTSL in the Pre-paid business were Sales, Product
+							Management, Customer Service, Logistics & MIS, Training, business & finance Support. At
+							TTSL, he has played various roles-from being Chief Operating Officer of Punjab, Haryana and
+							Himachal Pradesh Circle(s), where he was a recipient of the "Chairman's trophy" for the best
+							rollout, Regional Head North for Enterprise and HNI Market to heading Branded Retail.
+						</p>
+
+						<!--- <h3>Mr. Abhesh Verma<br />
+          <span style="font-size:15px;"> COO - DigiVive Services Private Limited (DSPL)</span> </h3>          
+          <p style="text-align:justify;"> A serial entrepreneur, an industry pioneer and a digital native are words that best describe Abhesh. A US-based industry veteran with 15+ years of hands-on experience, Abhesh has a history of leveraging the power of innovative ideas to transform them into successful businesses. He was the mastermind behind the success of www.smashits.com and www.Indiads.com along with several other firsts to his career. He joins Digivive from Saavn, where he was their Chief Growth Officer.
+          </p>--->
+
+
+						<p> <a class="back allbuttons" href="#" style="float:right;">Back</a> <br />
+							<br />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="intro" id="NEWS"
+		style="background:url(images/news.jpg) no-repeat top center scroll !important;  -webkit-background-size: cover;   -moz-background-size: cover !important; background-size:cover !important; -o-background-size: cover !important;">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div id="NEW" class="home-container">
+						<p><strong>Financial Results for March 31, 2012</strong> <br>
+							29/05/12 09:35 Result<br>
+							Media Matrix Worldwide Ltd has informed BSE about the Financial Results for the period ended
+							March 31, 2012.</p>
+						<p><strong>Updates on Outcome of EGM </strong><br>
+							25/04/12 13:36 AGM/EGM<br>
+							Media Matrix Worldwide Ltd has submitted to BSE a copy of the Extra Ordinary General Meeting
+							(EGM) of the Company was held on March 26, 2012.</p>
+						<a id="NEWSReadMore" class="read-more allbuttons" href="#" style="float:right;">READ MORE</a>
+					</div>
+					<div class="home-container2" style=" height: 350px; display:block;  overflow: auto; width:65%  ">
+						<p><strong>Financial Results for March 31, 2012 </strong><br>
+							<strong>29/05/12 09:35 Result</strong><br>
+							Media Matrix Worldwide Ltd. has informed BSE about the Financial Results for the period
+							ended March 31, 2012.
+						</p>
+						<p><strong>Updates on outcome of EGM </strong><br>
+							<strong>25/04/12 13:36 AGM/EGM</strong><br>
+							Media Matrix Worldwide Ltd. has submitted to BSE a copy of the Extra Ordinary General
+							Meeting (EGM) of the Company was held on March 26, 2012.
+						</p>
+						<p><strong>Subsidiary Companies </strong><br>
+							<strong>16/04/12 18:25 Company Update</strong>
+						</p>
+						<p>Media Matrix Worldwide Ltd. has informed BSE that the Company has made an investment into
+							79,85,000 equity shares of Rs. 10/- each of M/s. DigiVive Services Private Limited and also
+							an investment into 1,30,99,900 equity shares of Rs. 10/- each of M/s. Digicall Teleservices
+							Private Limited respectively. Pursuant to the aforesaid investments made by the Company,
+							M/s. DigiVive Services Private Limited and M/s. Digicall Teleservices Private Limited have
+							....</p>
+						<p><strong>Disclosures under Reg.13(6) of SEBI (Prohibition of Insider Trading) Regulations,
+								1992 </strong><br>
+							<strong>07/04/12 10:42 Insider Trading / SAST</strong><br>
+							Media Matrix Worldwide Ltd. has submitted the disclosure under Regulation 13(6) of the SEBI
+							(Prohibition of Insider Trading) Regulations, 1992 to BSE:
+						</p>
+						<p><strong>Disclosures under Reg.13(6) of SEBI (Prohibition of Insider Trading) Regulations,
+								1992</strong><br>
+							<strong> 04/04/12 19:22 Insider Trading / SAST</strong><br>
+							Media Matrix Worldwide Ltd has submitted the disclosure under Regulation 13(6) of the SEBI
+							(Prohibition of Insider Trading) Regulations, 1992 to BSE:
+						</p>
+						<a class="back allbuttons" href="#" style="float:right; margin-bottom: 1em;">Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="INVESTOR" class="intro"
+		style="background:url(images/investor.jpg) no-repeat top center scroll !important;  -webkit-background-size: cover; -moz-background-size: cover !important; background-size:cover!important; -o-background-size:cover!important;">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div id="INVES" class="home-container">
+						<ul class="investor-list">
+							<li><a href="#board_directors" id="boardDirectors" data-next="board_directors">Board of
+									Directors</a></li>
+							<li><a href="#!annual_reports" id="annualReports" data-next="annual_reports">Annual Reports
+								</a></li>
+							<li><a href="#!Financial_Result" id="FinancialResult" data-next="Financial_Result">Financial
+									Results</a></li>
+							<li><a href="#!ShareHolding_Patterns" id="ShareHoldingPatterns"
+									data-next="ShareHolding_Patterns">Share Holding Patterns</a></li>
+							<!--<li><a href="PDF/Code of business conduct and ethics for senior manager and director.pdf" target="_blank">Code of Conduct &amp; Ethics for Board of Directors</a></li>
+    <li><a href="PDF/Code of business conduct and ethics for senior managemnet.pdf" target="_blank"> Code of Conduct and Ethics for Senior Management Personal</a> </li>
+    
+    <li><a href="PDF/Whistle Blower policy_MMWL.pdf" target="_blank">Whistle Blower Policy</a> </li>-->
+							<li><a href="#!ComplianceWithCorporateGovernance" id="ComplianceWithCorporateGovernance"
+									data-next="ComplianceWithCorporateGovernance">Disclosures under Regulation 46 of
+									SEBI (LODR) Regulations, 2015</a></li>
+
+
+							<!--<li><a href="PDF/InsiderTradingCodePolicy/Insider Trading Code Policy.pdf" target="_blank">Code of Insider Trading</a> </li>-->
+							<li><!--<a href="PDF/MMWL_AGM NOTICE 2016.PDF">--><a href="#!Notices" id="Notices"
+									data-next="Notices">Notices to Shareholders</a></li>
+							<li><a href="#!Company_Notices" id="CompanyNotices" data-next="Company_Notices">Newspaper
+									Publications</a></li>
+							<li><a href="#!Corporate_Announcements" id="CorporateAnnouncements"
+									data-next="Corporate_Announcements">Corporate Announcements</a> </li>
+							<li><a href="#!Investor_Contact" id="InvestorContact" data-next="Investor_Contact">Investor
+									Contacts</a></li>
+						</ul>
+						<a id="INVESTORReadMore" class="read-more allbuttons" href="#" style="float:right;">READ
+							MORE</a>
+					</div>
+					<div class="home-container2" id="boardDirectors"
+						style="height: 270px; display:block;  overflow: auto; width:65%;">
+						<h3>Board of Directors</h3>
+
+						<p style="text-align:justify;"><strong>Mr. Sarvdeep Garg – Director</strong><br>
+							Mr. Sarvdeep Garg holds a degree in BE (Electronics & Electrical communication) from Punjab
+							Engineering College, Chandigarh. He has overall 38 years of rich and diverse experience in
+							the Indian Telecom and IT Industry. He has handled leadership positions in the Services
+							domain in India with global giants like Ericsson, Fujitsu, Alcatel Lucent and Huawei. As a
+							part of his professional journey, he has experience in managing large scale Project Roll
+							out, Operations and Services with an overall P&L responsibility. He has experience in
+							managing large teams while working with telecom Vendors, Operators and have successfully
+							delivered for operators like Bharti and Vodafone in Managed Services environment in India.
+						</p>
+
+						<br />
+
+						<p style="text-align:justify;"><strong>Smt. Mansi Gupta – Director</strong><br>
+							Smt. Mansi Gupta holds a bachelor degree in B.A. Honors (History) from Jesus & Mary convent
+							Delhi University, MA (History) from Annamalai University. She has also done PG Diploma in
+							Sales & Marketing from N.I.S. and Diploma in social media marketing from Shaw academy. She
+							has more than 21 year of experience in marketing, communication and training programs. She
+							has worked at senior positions with G4S Corporate Services (India) Private Limited, Sahara
+							Group, Bata India Limited, Citi Group. She is currently doing women safety trainings and
+							supporting NGOs including Government CSR (Haryana) for women development programs.
+						</p>
+
+						<br />
+
+						<p style="text-align:justify;"><strong>Mr. Aasheesh Verma - Director</strong><br>
+							Mr. Aasheesh Verma is B.Sc graduate and hold a degree of B.E. in Electronics &amp;
+							Telecommunications. He has also done his MBA from IIM Calcutta. He has more than 27 year of
+							experience in Sales & Marketing, business operations, revenue and cost management. He had
+							worked as Chief Operating Officer of Tata Teleservices (Tata DoCoMo), Chief Operating
+							officer of MTS India, Country Manager (India) of InterPacket Inc. (USA).
+						</p>
+
+						<br />
+
+						<p style="text-align:justify;"><strong>Mr. Sunil Batra – Director</strong><br>
+							Mr. Sunil Batra is a Commerce graduate He is having an experience of 28 years and is an
+							aficionado in Consumer Sales and a Marketing professional with a successful track record of
+							over two decades in various FMCG multinationals like Lipton India (HUL), Kelloggs India,
+							Bata India, Coca-Cola and Tata Tele Services Limited (TTSL).
+						</p>
+						<br />
+
+						<p style="text-align:justify;"><strong>Mr. Sandeep Jairath- Whole Time Director</strong><br>
+							Mr. Sandeep Jairath is a B.Com graduate and also holds a degree in MBA Finance. He has more
+							than 20 years of experience in telecom and other related industries. He has worked in
+							Hutchison Max Telecom Limited and Quadrant Televentures Limited and was looking after
+							finance and revenue Assurance.
+						</p>
+						<br />
+
+						<p style="text-align:justify;"><strong>Mr. Chhattar Kumar Goushal - Director</strong><br>
+							Mr. Chhattar Kumar Goushal is a member of Institute of Chartered Accountants of India and
+							has been a practicing Chartered Accountant with an experience of more than 28 years in areas
+							of Audit, Financial and Corporate Advisory. He has also been a part of various projects of
+							fund raising and corporate debt restructuring for various large corporate houses.</p>
+						<BR />
+
+						<!--<p style="text-align:justify;"><strong>Mrs. Bela Banerjee - Director</strong><br>-->
+						<!-- Mrs. Bela Banerjee, a Post-Graduate in History form Banaras Hindu University also holds a degree in Law from Delhi University. With an experience of over 37 years’ Mrs. Bela Banerjee has been associated with the Government of India at various positions at the Ministry of Railways as well as with the Ministry of HRD-Department of Education. After superannuating from Indian Railways in October, 2010, she joined as Member Technical in Railway Claims Tribunal. She has also been a part of the Board of Directors of Container Corporation of India as a Govt. nominee. Mrs. Banerjee also brings with her a vast experience in tender management, project & financial management of construction projects. As an ED-Finance, Exp. Railway Board, she was responsible for financial appraisal of investment proposals of various projects like New Lines, Doubling, Bridges etc. and dealt with various matters concerning Railway PSUs, RITES, IRCON. Mrs. Banerjee is also a registered member of Arbitration Council of India and has handled various arbitration at various levels in railway and also handling arbitration of PSUs.</p>-->
+						<a class="back allbuttons" href="#" style="float:right; margin-bottom: 1em;">Back</a>
+					</div>
+					<div id="annual_reports" class="home-container3"
+						style=" height: 290px; display:block;  overflow: auto; width:65%  ">
+						<h3>Annual Reports</h3>
+
+						<ul>
+							<li><a target="_blank" href="PDF/MMWL_AR_2025-26.pdf">Annual Report for the financial year 2025-2026</a></li>
+							<li><a target="_blank" href="PDF/Annual Accounts for the FY 2025-2026 of subsidiary Company Media Matrix Enterprises Private Limited.pdf">Annual Accounts for the FY 2025-2026 of subsidiary Company Media Matrix Enterprises Private Limited.</a></li>
+							<li><a target="_blank" href="PDF/Annual Accounts for the FY 2025-2026 of subsidiary Company nexG Devices Private Limited.pdf">Annual Accounts for the FY 2025-2026 of subsidiary Company nexG Devices Private Limited</a></li>
+
+							<li><a target="_blank" href="PDF/MMWL_AR_2024-25.pdf">Annual Report for the financial year
+									2024-2025</a></li>
+							<li><a target="_blank"
+									href="PDF/Annual Accounts for the FY 2024-2025 of subsidiary Company nexG Devices Private Limited.pdf">Annual
+									Accounts for the FY 2024-2025 of subsidiary Company nexG Devices Private Limited</a>
+							</li>
+							<li><a target="_blank"
+									href="PDF/Annual Accounts for the FY 2024-2025 of subsidiary Company Media Matrix Enterprises Private Limited.pdf">Annual
+									Accounts for the FY 2024-2025 of subsidiary Company Media Matrix Enterprises Private
+									Limited</a></li>
+							<li>
+								<a target="_blank" href="PDF/MMWL AR 2023-24 Finall.pdf">
+									Annual Report for the financial
+									year 2023-2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/6-BS-Nexg Devices Pvt Ltd _FY 2023-24.pdf">
+									Annual Accounts
+									for the FY 2023-2024 of subsidiary Company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Financials - MMEPL - 2023-24.pdf">
+									Annual Accounts for the
+									FY 2023-2024 of subsidiary Company Media Matrix Enterprises Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/MMWL AR 2022-23 Final.pdf">
+									Annual Report for the financial
+									year 2022-2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Accounts NexG Devices.pdf">
+									Annual Accounts for the
+									FY 2022-2023 of subsidiary Company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Accounts Media Matrix Enterprises.pdf">
+									Annual
+									Accounts for the FY 2022-2023 of subsidiary Company Media Matrix Enterprises Private
+									Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Report MMWL 2021-2022.pdf">
+									Annual Report for the
+									financial year 2021-2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Accounts nexG 2021-2022.pdf">
+									Annual Accounts for the
+									FY 2021-222 of subsidiary Company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annul Accounts MMEPL 2021-2022.pdf">
+									Annual Accounts for the
+									FY 2021-222 of subsidiary Company Media Matrix Enterprises Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual_Report_MMWL_2020-21.pdf">
+									Annual Report for the
+									financial year 2020-2021
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual_Report_nexG_2020-21.pdf">
+									Annual Accounts for FY
+									2020-2021 of subsidiary company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual_Report_MMEPL_2020-21.pdf">
+									Annual Accounts for FY
+									2020-2021 of subsidiary company Media Matrix Enterprises Private Limited
+
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual-Report-MMWL.pdf">
+									Annual Report for the financial
+									year 2019-20
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/MMEPL-BS-Ind-As-31.03.2020.pdf">
+									Annual Accounts for FY
+									2019-2020 of subsidiary company Media Matrix Enterprises Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BS-Nexg-Devices-FY-2019-20.pdf">
+									Annual Accounts for FY
+									2019-2020 of subsidiary company nexG Devices Private Limited
+
+								</a>
+							</li>
+
+
+							<!--<li><a target="_blank" href="PDF/MMWL_AR2015-16.pdf">Annual Report for the Financial year 2015-2016</a></li>-->
+							<li>
+								<a target="_blank" href="PDF/MMWL-Annual-Report-2018-19.pdf">
+									Annual Report for the
+									financial year 2018-19
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/MMEPL-Annual-Accounts-2018-19.pdf">
+									Annual Accounts for FY
+									2018-2019 of subsidiary company Media Matrix Enterprises Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/nexG-devices-Annual-Accounts-2018-19.pdf">
+									Annual Accounts
+									for FY 2018-2019 of subsidiary company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/PRINTED_MEDIA-MATRIX-WORLDWIDE-LIMITED.pdf">
+									Annual Report
+									for the Financial year 2017-2018
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Sign-Balance-Sheet-MMEPL-FY-2017-18.pdf">
+									Annual Accounts
+									for FY 2017-2018 of subsidiary company Media Matrix Enterprises Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BS-Digivive-Servies-FY-2017-18.pdf">
+									Annual Accounts for FY
+									2017-2018 of subsidiary company Digivive Services Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BS-NEXG-FY-17-181.pdf">
+									Annual Accounts for FY 2017-2018 of
+									subsidiary company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/AnnualReportsNew/MMWL_AR2016-17.pdf">
+									Annual Report for the
+									Financial year 2016-2017
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/AnnualReportsNew/BS-DGPLFY2016-17.PDF">
+									Annual Accounts for
+									FY 2016-2017 of subsidiary company DigiCall Global Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/AnnualReportsNew/BS-MediaMatrixEnterprisesFY-2016-17.PDF">
+									Annual Accounts
+									for FY 2016-2017 of subsidiary company Media Matrix Enterprises Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/AnnualReportsNew/BS-DTPLFY2016-17.PDF">
+									Annual Accounts for
+									FY 2016-2017 of subsidiary company DigiCall Teleservices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/AnnualReportsNew/BSDigiviveServicesPvtLtdFY-2016-17.PDF">
+									Annual Accounts
+									for FY 2016-2017 of subsidiary company Digivive Services Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/AnnualReportsNew/BS-NexGDevicesPvtLtdFY-2016-17.PDF">
+									AAnnual Accounts for
+									FY 2016-2017 of subsidiary company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/investors/MMWL_AR2015-16.PDF">
+									Annual Report for the
+									financial year 2015-16
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BS-DGPL FY2015-16.PDF">
+									Annual Accounts for FY 2015-2016 of
+									subsidiary company Digicall Global Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BS- Media Matrix Enterprises FY-2015-16.PDF">
+									Annual
+									Accounts for FY 2015-2016 of subsidiary company Media Matrix Enterprises Private
+									Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BS-DTPL FY2015-16.PDF">
+									Annual Accounts for FY 2015-2016 of
+									subsidiary company DigiCall Teleservices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Digivive_Services_BS_FY_2015-16.PDF">
+									Annual Accounts for FY
+									2015-2016 of subsidiary company Digivive Services Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BS - NexG Devices Pvt Ltd FY-2015-16.PDF">
+									Annual Accounts
+									for FY 2015-2016 of subsidiary company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Reports/MMWL_Annual Report_2014-2015.pdf">
+									Annual
+									Report for the Financial year 2014-2015
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/DigiCall_Global_BS_2014-15.pdf">
+									Annual Accounts for FY
+									2014-2015 of subsidiary company Digicall Global Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Annual Reports/Annual Accounts_Media Matrix Enterprises Private Limited.pdf">
+									Annual
+									Accounts for FY 2014-2015 of subsidiary company Media Matrix Enterprises Private
+									Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Annual Reports/Annual Accounts_DigiCall Teleservices Private Limited.pdf">
+									Annual
+									Accounts for FY 2014-2015 of subsidiary company DigiCall Teleservices Private
+									Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BS_Digivive_Services_PvtLtd _14-15.pdf">
+									Annual Accounts for
+									FY 2014-2015 of subsidiary company Digivive Services Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/NexG_Devices_2014-2015.pdf">
+									Annual Accounts for FY
+									2014-2015 of subsidiary company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Reports/MMWL_Annual Report 2013-14.pdf">
+									Annual
+									Report for FY 2013-2014
+								</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Annual Reports/Annual Accounts for FY 2013-2014 Digicall Global.pdf">
+									Annual
+									Accounts for FY 2013-2014 of subsidiary company Digicall Global Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Annual Reports/Annual Accounts for FY 2013-2014 Media Matrix Holdings.pdf">
+									Annual
+									Accounts for FY 2013-2014 of subsidiary company Media Matrix Holdings Private
+									Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Annual Reports/Annual Accounts for FY 2013-2014 DigiCall.pdf">
+									Annual
+									Accounts for FY 2013-2014 of subsidiary company DigiCall Teleservices Private
+									Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Annual Reports/Annual Accounts for FY 2013-2014 DigiVive.pdf">
+									Annual
+									Accounts for FY 2013-2014 of subsidiary company Digivive Services Private
+									Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Reports/Annual Accounts for FY 2013-2014 nexG.pdf">
+									Annual Accounts
+									for FY 2013-2014 of subsidiary company nexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Reports/MMWL Report 2013.pdf">
+									Annual Report for FY
+									2012-2013
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Reports/MMWL Annual Report 2011-12.pdf">
+									Annual
+									Report for FY 2011-2012
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Reports/2011.pdf">Annual Report for FY 2010-2011</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Reports/Annual Report Media Matrix 2010.pdf">
+									Annual
+									Report for FY 2009-2010
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Reports/Annual report 2009.pdf">
+									Annual Report for FY
+									2008-2009
+								</a>
+							</li>
+						</ul>
+
+						<a style="float:right;margin-bottom: 1em;" href="#" class="back allbuttons">Back</a>
+
+					</div>
+					<div class="home-container4" id="FinancialResult"
+						style="height: 270px; display:block;  overflow: auto; width:65%  ">
+						<div style="width:100%">
+							<div class="LeftTab">
+								<h3>Financial Results</h3>
+								<!-- <p><strong>Financial Result for the quarter ended 31st March, 2012 </strong></p>-->
+								<ul style="padding-left:17px;">
+									<li><a target="_blank"
+											href="PDF/IND AS Unaudited Standalone & Consolidated Financial Result for the first Quarter ended 30th June, 2026.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the first Quarter ended 30th June, 2026.
+										</a></li>
+									<li><a target="_blank"
+											href="PDF/IND As Un-audited Standalone & Consolidated financial Results for the third quarter and nine months ended 31st December 2025.pdf">
+											IND As Un-audited Standalone & Consolidated financial Results for the third
+											quarter and nine months ended 31st December 2025
+										</a></li>
+									<li><a target="_blank"
+											href="PDF/IND AS Unaudited Standalone & Consolidated Financial Result for the Second Quarter and Half Year ended 30th September, 2025.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the Second
+											Quarter and Half Year ended 30th September 2025
+										</a></li>
+									<li><a target="_blank" href="PDF/MMWL_UFR_30062025.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the first
+											Quarter ended 30th June, 2025
+										</a></li>
+									<li><a target="_blank"
+											href="PDF/IND As Un-audited Standalone & Consolidated financial Results for the third quarter and nine month ended 31st December 2024.pdf">
+											IND As Un-audited Standalone & Consolidated financial Results for the third
+											quarter and nine month ended 31st December 2024
+										</a></li>
+									<li><a target="_blank" href="PDF/Resultwebsite2024.pdf">
+											IND AS Uaudited Standalone & Consolidated Financial Result for the second
+											Quarter and half year ended 30th September, 2024.
+										</a></li>
+									<li><a target="_blank" href="PDF/BSE Result-june24.pdf">
+											IND AS Uaudited Standalone & Consolidated Financial Result for the first
+											Quarter ended 30th June, 2024
+										</a></li>
+									<li><a target="_blank" href="PDF/BSE Result-march24.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the fourth
+											Quarter and financial year ended 31st March, 2024
+										</a></li>
+									<li><a target="_blank" href="PDF/BSE Result.pdf">
+											IND AS Uaudited Standalone & Consolidated Financial Result for the third
+											Quarter and nine month ended 31st December, 2023
+										</a></li>
+									<li><a target="_blank" href="PDF/Result 1.pdf">
+											IND AS Uaudited Standalone & Consolidated Financial Result for the Second
+											Quarter and half year ended 30th September, 2023.
+										</a></li>
+									<li><a target="_blank" href="PDF/Result Website3.pdf">
+											IND AS Uaudited Standalone & Consolidated Financial Result for the first
+											Quarter year ended 30th June, 2023.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/BSE Result Website.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the 4th
+											Quarter and Financial year ended 31st March, 2023.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/Website Result2.pdf">
+											IND AS Uaudited Standalone & Consolidated Financial Result for the third
+											Quarter and nine month year ended 31st December, 2022.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/Website Result 30092022.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the second
+											Quarter and half financial year ended 30th September, 2022.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/Result Website-9822.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the first
+											Quarter year ended 30th June, 2022.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/Result BSE 27052022 Website.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the 4th
+											Quarter and Financial year ended 31st March, 2022.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/financial_result_09FEB22.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the 3rd
+											Quarter and nine month ended 31st December, 2021.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/PDF_17-Mar-22/Result Website.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the 2nd
+											Quarter and half year ended 30th September, 2021.
+										</a></li>
+
+
+
+									<li>
+										<a target="_blank" href="PDF/Result_Website_30_6_21.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the first
+											Quarter ended 30th June, 2021.</a>
+									</li>
+									<li>
+										<a target="_blank" href="PDF/website_Result_22_06_21.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the 4th
+											Quarter and financial year ended 31st March, 2021.</a>
+									</li>
+									<li>
+										<a target="_blank" href="PDF/website_Result_31_dec.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the 3rd
+											Quarter and nine month ended 31st December, 2020.</a>
+									</li>
+									<li>
+										<a target="_blank" href="PDF/website_Result_30_sept.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the half
+											year and second quarter ended 30th September, 2020.</a>
+									</li>
+									<li>
+										<a target="_blank" href="PDF/Website Result-5-9-20.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the first
+											quarter ended 30th June, 2020.</a>
+									</li>
+
+									<li>
+										<a target="_blank" href="PDF/Website-Result-130219.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the third
+											quarter and nine month ended 31st December, 2019.</a>
+									</li>
+
+									<li>
+										<a target="_blank" href="PDF/UFR-30.09.19-Website.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the second
+											quarter and half year ended 30th September, 2019.</a>
+									</li>
+
+
+
+									<li>
+										<a target="_blank" href="PDF/Financial Result/Result Website.pdf">
+											Unaudited Standalone & Consolidated Financial Result for the third quarter
+											and nine month ended 31st December, 2018.</a>
+									</li>
+
+									<li><a target="_blank" href="PDF/Website Result 14.11.18.pdf">
+											Unaudited Standalone & Consolidated Financial Result for the second quarter
+											and half year ended 30th September, 2018.</a></li>
+
+									<li><a target="_blank" href="PDF/Result_Website.pdf">
+											Unaudited Standalone &amp; Consolidated Financial Result for the first
+											quarter ended 30th June, 2018</a></li>
+
+									<li><a target="_blank" href="PDF/Result-31.01.2018.pdf">
+											Unaudited Standalone and Consolidated Financial Result for the third quarter
+											and nine month ended 31st December, 2017.</a></li>
+
+									<li><a target="_blank" href="PDF/Website-Result.pdf">
+											Unaudited Standalone and Consolidated Financial Result for the second
+											quarter and half year ended 30th September, 2017.</a></li>
+
+									<li><a target="_blank" href="PDF/Websiteresult.pdf">
+											Unaudited Standalone and Consolidated Financial Result for the first quarter
+											ended 30th June, 2017.</a></li>
+
+									<li> <a target="_blank" href="PDF/WebsiteResult31.12.2017.pdf">
+											Unaudited Consolidated Financial Result for the third quarter and nine month
+											ended 31st December, 2016.</a></li>
+
+									<li> <a target="_blank" href="PDF/WebsiteResult14.11.16.pdf">Unaudited Financial
+											Result for the second quarter and half year ended 30th September, 2016.</a>
+									</li>
+
+									<li> <a target="_blank" href="PDF/Financial Result/UFR 30.06.16.pdf"> Unaudited
+											Financial Result for the first quarter ended 30th June, 2016.</a></li>
+									<li> <a target="_blank" href="PDF/Financial Result/UFR 31.12.15.pdf"> Un-Audited
+											result for the quarter and nine month ended 31st December, 2015.</a></li>
+									<li> <a target="_blank"
+											href="PDF/Financial Result/Media Matrix November_result_28x38 cm final____1.pdf">
+											Un - Audited result for the quarter and half year ended 30 September
+											2015.</a></li>
+									<li><a target="_blank"
+											href="PDF/Financial Result/Media Matrix Result August 2015.pdf"> Un- Audited
+											Quarterly Financial Result for the quarter ended 30th June,2015</a></li>
+									<li><a target="_blank" href="PDF/Financial Result/Final result_31.12.2014.pdf"> Un-
+											Audited Quarterly Financial Result for the quarter ended 31st Dec,2014</a>
+									</li>
+									<li><a target="_blank"
+											href="PDF/Financial Result/Media Matrix Result November 2014.pdf"> Un-
+											Audited Result for the quarter ended 30th September,2014</a></li>
+									<li><a target="_blank" href="PDF/Financial Result/Result_30 06 2014.pdf"> Un-
+											Audited Quarterly Financial Result for the quarter ended 30th June,2014</a>
+									</li>
+									<li><a target="_blank" href="PDF/Financial Result/MMWL Result.pdf">Un-audited Result
+											for the quarter ended 31st December, 2013</a></li>
+									<li><a target="_blank"
+											href="PDF/Financial Result/Media Matrix Result November 2013.pdf">Un-audited
+											Result for the quarter ended 30th September, 2013</a></li>
+									<li><a target="_blank"
+											href="PDF/Financial Result/Media Matrix Result July 2013.pdf">Un- audited
+											result for the Quarter ended 30th June,2013</a></li>
+									<!--   <li><a target="_blank" href="PDF/Financial Result/Consolidated Balance sheet 31March 2012.pdf">Consolidated Balance sheet 31st March 2012</a></li>
+        <li><a target="_blank" href="PDF/Financial Result/Consolidated Profit &amp; loss 31March 2012.pdf">Consolidated Statement of Profit &amp; loss for the year  ended 31st March 2012</a></li>-->
+									<!-- <li><a target="_blank" href="PDF/Financial Result/LRR_31.12.2011_Media.pdf">Financial Result for the quarter ended 31st December, 2011 </a></li>-->
+
+
+
+									<li><a target="_blank" href="PDF/Financial Result/MMWL_UFR_30.06.2012.pdf">
+											Unaudited results for the Quarter ended 30th June, 2012</a>
+									</li>
+
+									<li><a target="_blank" href="PDF/Financial Result/Media Matrix UFR-Oct-2012-2.jpg">
+											Unaudited results for the Quarter ended 30 September, 2012</a>
+									</li>
+
+									<li><a target="_blank" href="PDF/Financial Result/Media Matrix UFR-feb.jpg">
+											Unaudited results for the Quarter ended 31st December, 2012</a>
+									</li>
+
+									<li><a target="_blank" href="PDF/Financial Result/Clause 41 -31 12 2011_Media.pdf">
+											Unaudited results for the Quarter ended 31st December, 2011</a>
+									</li>
+
+								</ul>
+							</div>
+
+
+							<div class="rightTab">
+								<h3>Audited (Annual) Financial Results</h3>
+								<!--<p><strong>Audited Financial Result for the year ended 31st March 2013</strong></p>-->
+								<ul style="padding-left:20px;">
+
+									<li><a target="_blank"
+											href="PDF/IND AS Audited Standalone & Consolidated Financial Result for the fourth quarter ended 31st March 2026.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the fourth quarter ended 31st March 2026
+										</a></li>
+									<li><a target="_blank"
+											href="PDF/IND AS Audited Standalone & Consolidated Financial Result for the fourth Quarter and financial year ended 31st March, 2025_.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the fourth
+											quarter ended 31st March 2025
+										</a></li>
+
+
+									<li><a target="_blank"
+											href="PDF/IND AS Audited Standalone & Consolidated Financial Result for the fourth quarter ended 31st March 2024.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the fourth
+											quarter ended 31st March 2024
+										</a></li>
+
+									<li><a target="_blank"
+											href="PDF/IND AS Audited Standalone & Consolidated Financial Result for the fourth quarter ended 31st March 2023.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the fourth
+											quarter ended 31st March 2023
+										</a></li>
+
+									<li><a target="_blank"
+											href="PDF/IND AS Audited Standalone & Consolidated Financial Result for the fourth quarter ended 31st March 2022.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the fourth
+											quarter ended 31st March 2022
+										</a></li>
+
+									<li><a target="_blank"
+											href="PDF/IND AS Audited Standalone & Consolidated Financial Result for the fourth quarter ended 31st March 2021.pdf">
+											IND AS Audited Standalone & Consolidated Financial Result for the fourth
+											quarter ended 31st March 2021
+										</a></li>
+
+									<li><a target="_blank" href="PDF/mmwl_pdf/MMWL_Result_websited_31.03.2020.pdf">
+											<!--Audited Annual Standalone & Consolidated Financial Result for the fourth quarter and year ended 31st March, 2020. -->
+											IND AS Audited Standalone & Consolidated Financial Result for the fourth
+											quarter ended 31st March, 2020
+										</a></li>
+
+									<li><a target="_blank" href="PDF/Result-Website.pdf">
+											IND AS Unaudited Standalone & Consolidated Financial Result for the first
+											quarter ended 30th June, 2019.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/Result Website29-05-19.pdf">
+											Audited Annual Standalone &amp; Consolidated Financial Result for the fourth
+											quarter and year ended 31st March, 2019.
+										</a></li>
+
+									<li><a target="_blank" href="PDF/WebsiteResult2018.pdf">
+											Audited Annual Standalone &amp; Consolidated Financial Result for the fourth
+											quarter and year ended 31st March, 2018
+										</a></li>
+
+									<li><a target="_blank" href="PDF/Result Website.pdf">
+											Audited Annual Standalone &amp; Consolidated Financial Result for the fourth
+											quarter and year ended 31st March, 2017
+										</a></li>
+
+									<li><a target="_blank"
+											href="PDF/Financial Result/Audited Financial Result 31.03.15.pdf">
+											Audited Annual Standalone &amp; Consolidated Financial Result for the
+											quarter and financial year ended 31st March, 2016 </a></li>
+
+									<li><a target="_blank" href="PDF/Financial Result/Final UFR _MMWL result_2015.pdf">
+											Audited Annual Standalone &amp; Consolidated Financial Result for the
+											quarter and financial year ended 31st March,2015 </a></li>
+
+									<li><a target="_blank" href="PDF/Audited Financial Result 31.03.2014.pdf">
+											Audited Annual Standalone &amp; Consolidated Financial Result for the
+											quarter and financial year ended 31 March, 2014</a></li>
+
+									<li><a class="styleLink" target="_blank"
+											href="PDF/Financial Result/Consolidated Media Matrix Result.JPG">
+											Audited Annual Standalone &amp; Consolidated Financial Result for the
+											quarter and financial year ended 31st March 2013</a></li>
+
+								</ul>
+								<!--<p> <strong> Audited Financial Result for the quarter ended 31st March 2012</strong></p>-->
+								<ul style="padding-left:20px;">
+									<li><a target="_blank"
+											href="PDF/Financial Result/Standard audited balance sheet31st march 2012.pdf">
+											Standalone audited balance sheet as at 31st March 2012</a></li>
+									<li><a class="styleLink" target="_blank"
+											href="PDF/Financial Result/Audited standalone profit &amp; loss statement for the year ended 31 st March 2012.pdf">Audited
+											standalone profit &amp; loss statement for the year ended 31st March
+											2012</a></li>
+								</ul>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<a class="back allbuttons" href="#" style="float:right;margin-bottom: 1em;">Back</a>
+					</div>
+					<div class="home-container5" id="ShareHoldingPatterns"
+						style="height: 270px; display:block;  overflow: auto; width:65%">
+						<h3>Share Holding Patterns</h3>
+						<div style="width:100%">
+							<ul>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the quarter ended 30th June, 2026.pdf">MMWL Shareholding Pattern for the Quarter ended 30.06.2026</a></li>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the Quarter ended 31.03.2026.pdf">MMWL Shareholding Pattern for the Quarter ended 31.03.2026</a></li>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the quarter ended 31.12.2025.pdf">MMWL
+										Shareholding Pattern for the Quarter ended 31.12.2025</a></li>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the quarter ended 30th September, 2025.pdf">MMWL
+										Shareholding Pattern for the Quarter ended 30.09.2025</a></li>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the quarter ended 30th June, 2025.pdf">MMWL
+										Shareholding Pattern for the Quarter ended 30.06.2025</a></li>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the quarter ended 31st March, 2025.pdf">
+										MMWL Shareholding Pattern for the Quarter ended 31.03.2025</a></li>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the quarter ended 31st December, 2024.pdf">
+										MMWL Shareholding Pattern for the Quarter ended 31.12.2024</a></li>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the quarter ended 30th September, 2024.pdf">
+										MMWL Shareholding Pattern for the Quarter ended 30.09.2024</a></li>
+								<li><a target="_blank"
+										href="PDF/mmwl_pdf/MMWL Shareholding Pattern for the quarter ended 30th June, 2024.pdf">
+										MMWL Shareholding Pattern for the Quarter ended 30.06.2024</a></li>
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding Pattern 310324.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2024</a></li>
+
+								<li><a target="_blank" href="PDF/mmwl_pdf/SHP Website 31122023.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2023</a></li>
+								<li><a target="_blank" href="PDF/mmwl_pdf/SHP SEP23.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2023</a></li>
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding Pattern 300623 Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2023</a></li>
+								<li><a target="_blank" href="PDF/mmwl_pdf/shareholding pattern website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2023</a></li>
+								<li><a target="_blank" href="PDF/mmwl_pdf/SHP Website 31122022.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2022</a></li>
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding Pattern Website 30092022.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2022</a></li>
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding Pattern 300622 Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2022</a></li>
+
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2022</a></li>
+
+								<li><a target="_blank" href="PDF/PDF_17-Mar-22/SHP 31.12.2021.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2021</a></li>
+
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding_Pattern_30.09.2021.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2021</a></li>
+
+								<li><a target="_blank" href="PDF/PDF_17-Mar-22/SHP 30.06.2021.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2021</a></li>
+
+
+
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding_Pattern_31.03.2021.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2021</a></li>
+
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding_Pattern_Website_31.12.2020.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2020</a></li>
+
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding_Pattern_Website_30.09.2020.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2020</a></li>
+
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding_Pattern_Website_30.06.2020.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2020</a></li>
+
+								<li><a target="_blank" href="PDF/mmwl_pdf/Shareholding_Pattern_Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2020.</a></li>
+
+								<li><a target="_blank" href="PDF/Shareholding-Pattern-31.12.19.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2019.</a></li>
+
+								<li><a target="_blank" href="PDF/Shareholding_Pattern_Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2019</a></li>
+
+								<li><a target="_blank" href="PDF/Shareholding-Pattern-30.06.19-Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2019.</a></li>
+
+								<li><a target="_blank" href="PDF/Shareholding-Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2019.</a></li>
+
+								<li><a target="_blank" href="PDF/Shareholding-Pattern-Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2018.</a></li>
+
+								<li><a target="_blank" href="PDF/Shareholding Pattern 30.09.18 Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2018.</a></li>
+
+								<li><a target="_blank" href="PDF/ShareHoldingPatterns/Website_SHP_30.06.18.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2018.</a></li>
+
+								<li><a target="_blank" href="PDF/ShareHoldingPatterns/Shareholding-Pattern-Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2018.</a></li>
+
+								<li><a target="_blank" href="PDF/ShareHoldingPatterns/SH311217Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2017.</a></li>
+
+								<li><a target="_blank" href="PDF/ShareHoldingPatterns/ShareholdingPatternWebsite.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2017.</a></li>
+
+								<li><a target="_blank" href="PDF/ShareholdingPattern30.06.17.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2017.</a></li>
+
+								<li><a target="_blank" href="PDF/ShareholdingPattern31.03.17Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2017.</a></li>
+
+								<li><a target="_blank" href="PDF/SHP 31.12.16 Website.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2016.</a></li>
+
+								<li><a target="_blank" href="PDF/ShareHoldingPatterns/SHP_30_09_16.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2016 </a></li>
+
+								<li><a target="_blank" href="PDF/ShareHoldingPatterns/SHP_30_06_16.pdf">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2016 </a></li>
+
+								<li><a target="_blank" href="PDF/ShareHoldingPatterns/SHP_31_03_2016.pdf">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2016 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/SHP_31_12_15.pdf" target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2015 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/Shareholding pattern 30.09.2015.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2015 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/Shareholding pattern 30.06.2015.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2015 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/MMWL_BSE_Shareholding Pattern_31.03.2015.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2015 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/Shareholding Pattern MMWL 31.12.2014_new.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2014 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/MMWL_BSE_Shareholding_Sep 2014.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2014 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/Shareholding pattern_BSE_30.06.2014.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2014 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/Shareholding pattern 31.03.2014.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2014 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/512267-31-12-2013-MMEQ.O.pdf" target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2013 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/512267-30-09-2013-MMEQ O.pdf" target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2013 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/MMWL_BSE_18.04.2013.pdf" target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2013 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/MMWL_BSE_18.04.2013.pdf" target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2013 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/MMWL Shareholdig Pattern 310312 unsigned.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 31st December, 2012 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/MMWL Shareholdig Pattern 310312 unsigned.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 30th September, 2012 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/MMWL Shareholdig Pattern 310312 unsigned.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 30th June, 2012 </a></li>
+
+								<li><a href="PDF/ShareHoldingPatterns/MMWL Shareholdig Pattern 310312 unsigned.pdf"
+										target="_blank">
+										MMWL Shareholding Pattern for the quarter ended 31st March, 2012</a>
+								</li>
+
+							</ul>
+						</div>
+
+						<a class="back allbuttons" href="#" style="float:right;margin-bottom: 1em;">Back</a>
+					</div>
+
+					<!---->
+					<div class="home-container6" id="ComplianceWithCorporateGovernance"
+						style="height: 270px; display:block;  overflow: auto; width:65%  ">
+						<div style="width:100%">
+							<div style="float:left; width:100%;margin-bottom : 10px;">
+								<a target="_blank"
+									href="PDF/Contact details of personnel authorised to determine materiality of event and information.pdf">
+									<h5>Contact details of personnel authorised to determine materiality of event and
+										information</h5>
+								</a>
+							</div>
+
+							<div style="float:left; width:100%;">
+								<a target="_blank" href="PDF/Memorandum & Article of Association.pdf">
+									<h5>Memorandum of Association and Articles of Association</h5>
+								</a>
+							</div>
+
+							<div style="float:left; width:100%;">
+								<a target="_blank" href="PDF/Composition of Committee.pdf">
+									<h5>Composition of various committees of Board of Directors</h5>
+								</a>
+							</div>
+
+							<div style="float:left; width:100%;">
+								<a target="_blank" href="PDF/Brief profile & Directorship.pdf">
+									<h5>Brief Profile, Directorships and other full-time positions</h5>
+								</a>
+							</div>
+
+							<div style="float:left; width:100%;">
+								<a target="_blank" href="PDF/mmwl_pdf/Familiarization Programme for Independent Directors.pdf">
+									<h5>Familiarization Programme for Independent Directors</h5>
+								</a>
+							</div>
+
+
+							<div style="float:left; width:30%; margin-bottom:30px;">
+
+								<h5>Annual Return</h5>
+								<ul>
+									<li><a href="PDF/mmwl_pdf/Draft Annual Return 2025-26.pdf" target="_blank">
+											Draft Annual Return 2025-26</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Return_2024-25.pdf" target="_blank">
+											Annual Return 2024-25</a> </li>
+									<!-- <li><a href="PDF/mmwl_pdf/MMWL_Annual Return_FY24-25.pdf" target="_blank">Draft
+											Annual Return 2024-25</a> </li> -->
+									<li><a href="PDF/mmwl_pdf/Annual Return 2023-24.pdf" target="_blank">Annual Return
+											2023-24</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Return 2022-23.pdf" target="_blank">Annual Return
+											2022-23</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Return 2021-22.pdf" target="_blank">Annual Return
+											2021-22</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Return 2020-21.pdf" target="_blank">Annual Return
+											2020-21</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Return 2019-20.pdf" target="_blank">Annual Return
+											2019-20</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Return 2018-19.pdf" target="_blank">Annual Return
+											2018-19</a> </li>
+								</ul>
+							</div>
+							<div style="float:left; width:100%;margin-bottom:30px;">
+
+								<h5>Business Responsibility and Sustainability Report</h5>
+								<ul>
+									<li><a href="PDF/Business Responsibility and Sustainability Report (BRSR) – 2025.pdf"
+											target="_blank">Business Responsibility and Sustainability Report (BRSR) – 2026</a> </li>
+									<li><a href="PDF/Business Responsibility and Sustainability Report (BRSR) - 2025.pdf"
+											target="_blank">Business Responsibility and Sustainability Report (BRSR) –
+											2025</a> </li>
+									<li><a href="PDF/Business Responsibility and Sustainability Report (BRSR) – 2024.pdf"
+											target="_blank">Business Responsibility and Sustainability Report
+											(BRSR)-2024</a> </li>
+
+								</ul>
+							</div>
+
+
+							<div style="float:left; width:100%;">
+								<h5>Secretarial Compliance Report</h5>
+								<ul>
+									<li><a href="PDF/mmwl_pdf/Annual Secretarial Compliance Report FY 2025-26.pdf"
+											target="_blank"> Annual Secretarial Compliance Report FY 2025-26</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Secretarial Compliance_30052025_signed.pdf"
+											target="_blank"> Annual Secretarial Compliance Report FY 2024-25</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Secretarial Compliance Report FY 2023-24.pdf"
+											target="_blank">Annual Secretarial Compliance Report FY 2023-24</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Secretarial Compliance Report FY 2021-22.pdf"
+											target="_blank">Annual Secretarial Compliance Report FY 2021-22</a> </li>
+									<li><a href="PDF/mmwl_pdf/Annual Secretarial Compliance Report FY 2020-21.pdf"
+											target="_blank">Annual Secretarial Compliance Report FY 2020-21</a> </li>
+								</ul>
+							</div>
+
+
+							<div style="float:left; width:47%;">
+								<h5>Corporate Governance Report</h5>
+								<ul>
+										<li><a href="PDF/mmwl_pdf/MMWL Integrated Governance for the Quarter ended 30.06.2026_1.pdf"
+											target="_blank">MMWL Integrated Governance for the Quarter ended 30.06.2026.</a> </li>
+									<li><a href="PDF/mmwl_pdf/MMWL Integrated Governance  for the Quarter ended 31.03.2026.pdf"
+											target="_blank">MMWL Integrated Governance for the Quarter ended 31.03.2026</a> </li>
+									<li><a href="PDF/mmwl_pdf/MMWL Integrated Governance for the Quarter ended 31.12.2025.pdf"
+											target="_blank">MMWL Integrated Governance for the Quarter ended
+											31.12.2025</a> </li>
+									<li><a href="PDF/mmwl_pdf/MMWL Integrated Governance for the Quarter ended 30.09.2025.pdf"
+											target="_blank">MMWL Integrated Governance for the Quarter ended
+											30.09.2025</a> </li>
+									<li><a href="PDF/mmwl_pdf/MMWL Integrated Governance for the Quarter ended 30.06.2025.pdf"
+											target="_blank">MMWL Integrated Governance for the Quarter ended
+											30.06.2025</a> </li>
+									<li><a href="PDF/mmwl_pdf/MMWL Integrated Governance  for the Quarter ended 31.03.2025.pdf"
+											target="_blank">MMWL Integrated Governance for the Quarter ended
+											31.03.2025</a> </li>
+									<li><a href="PDF/mmwl_pdf/MMWL Corporate Governance Report for the quarter ended 31.12.2024.pdf"
+											target="_blank">MMWL Corporate Governance for the Quarter ended
+											31.12.2024</a> </li>
+									<li><a href="PDF/mmwl_pdf/MMWL Corporate Governance Report for the quarter ended 30.09.2024.pdf"
+											target="_blank">MMWL Corporate Governance for the Quarter ended
+											30.09.2024</a> </li>
+									<li><a href="PDF/mmwl_pdf/MMWL Corporate Governance Report for the quarter ended 30.06.2024.pdf"
+											target="_blank">MMWL Corporate Governance for the Quarter ended
+											30.06.2024</a> </li>
+									<li><a href="PDF/mmwl_pdf/CG Website 31032024.pdf" target="_blank">MMWL Corporate
+											Governance Report for the quarter ended 31.03.2024</a> </li>
+									<li><a href="PDF/mmwl_pdf/CG Website 31122023.pdf" target="_blank">MMWL Corporate
+											Governance Report for the quarter ended 31.12.2023</a> </li>
+									<li><a href="PDF/mmwl_pdf/CGR SEP23.pdf" target="_blank">MMWL Corporate Governance
+											Report for the quarter ended 30.09.2023</a> </li>
+									<li><a href="PDF/mmwl_pdf/CG Website 300623.pdf" target="_blank">MMWL Corporate
+											Governance Report for the quarter ended 30.06.2023</a> </li>
+									<li><a href="PDF/mmwl_pdf/CGWebsite.pdf" target="_blank">MMWL Corporate Governance
+											Report for the quarter ended 31.03.2023</a> </li>
+									<li><a href="PDF/mmwl_pdf/CG Website 31122022.pdf" target="_blank">MMWL Corporate
+											Governance Report for the quarter ended 31.12.2022.</a> </li>
+									<li><a href="PDF/mmwl_pdf/Corporate Governance Website 30092022.pdf"
+											target="_blank">MMWL Corporate Governance Report for the quarter ended
+											30.09.2022.</a> </li>
+									<li><a href="PDF/mmwl_pdf/CG Website-new.pdf" target="_blank">MMWL Corporate
+											Governance Report for the quarter ended 30.06.2022.</a> </li>
+									<li><a href="PDF/mmwl_pdf/CG Website.pdf" target="_blank">MMWL Corporate Governance
+											Report for the quarter ended 31.03.2022.</a> </li>
+									<li><a href="PDF/PDF_17-Mar-22/CG 31.12.2021.pdf" target="_blank">MMWL Corporate
+											Governance Report for the quarter ended 31.12.2021.</a> </li>
+									<li><a target="_blank" href="PDF/mmwl_pdf/CG_30.09.2021.pdf">MMWL Corporate
+											Governance Report for the quarter ended 30.09.2021</a></li>
+									<li><a target="_blank" href="PDF/mmwl_pdf/CG_30.06.2021.pdf">MMWL Corporate
+											Governance Report for the quarter ended 30.06.2021</a></li>
+									<li><a target="_blank" href="PDF/mmwl_pdf/CG_31.03.2021.pdf">MMWL Corporate
+											Governance Report for the quarter ended 31.03.2021</a></li>
+									<li><a target="_blank" href="PDF/mmwl_pdf/CG_31.12.2020.pdf">MMWL Corporate
+											Governance Report for the quarter ended 31.12.2020</a></li>
+									<li><a target="_blank" href="PDF/mmwl_pdf/CG_30.09.2020.pdf">MMWL Corporate
+											Governance Report for the quarter ended 30.09.2020</a></li>
+									<li><a target="_blank" href="PDF/mmwl_pdf/CG_30.06.2020.pdf">MMWL Corporate
+											Governance Report for the Quarter ended 30.06.2020</a></li>
+									<li><a target="_blank" href="PDF/mmwl_pdf/CG_website.pdf">MMWL Corporate Governance
+											Report for the Quarter ended 31.03.2020</a></li>
+									<li><a target="_blank" href="PDF/CGR-31.12.2019.pdf">MMWL Corporate Governance
+											Report for the Quarter ended 31.12.2019.</a></li>
+									<li><a target="_blank" href="PDF/CG_Website.pdf">MMWL Corporate Governance Report
+											for the Quarter ended 30.09.2019</a></li>
+									<li><a target="_blank" href="PDF/CG-30.06.19-Website.pdf">MMWL Corporate Governance
+											Report for the Quarter ended 30.06.2019</a></li>
+									<li><a target="_blank" href="PDF/CG-Webiste.pdf">MMWL Corporate Governance Report
+											for the Quarter ended 31.03.2019</a></li>
+									<li><a target="_blank" href="PDF/CG-Website-19.pdf">MMWL Corporate Governance Report
+											for the Quarter ended 30.12.2018</a></li>
+									<li><a target="_blank" href="PDF/CG-Website-15-10-18.pdf">MMWL Corporate Governance
+											Report for the Quarter ended 30.09.2018.</a></li>
+									<li><a target="_blank" href="PDF/CG Website.pdf">Corporate Governance Report for the
+											Quarter ended 30.06.2018.</a></li>
+									<li><a target="_blank" href="PDF/CG-Website.pdf">Corporate Governance Report for the
+											Quarter ended 31.03.2018.</a></li>
+									<li><a target="_blank" href="PDF/CorporateGovernance/CG-Website-new.pdf">MMWL
+											Corporate Governance Report for the Quarter ended 31.12.2017.</a></li>
+									<li><a target="_blank" href="PDF/CorporateGovernance/CG-Website.pdf">MMWL Corporate
+											Governance Report for the Quarter ended 31.09.2017.</a> </li>
+									<li><a target="_blank" href="PDF/CGReport 31.03.17.pdf">MMWL Corporate Governance
+											Report for the Quarter ended 31.03.2017.</a> </li>
+									<li><a target="_blank" href="PDF/CGReportWebsite.pdf">MMWL Corporate Governance
+											Report for the Quarter ended 30.06.2017.</a> </li>
+									<li><a target="_blank" href="PDF/CG_Report_MMWL_Website.pdf">MMWL Corporate
+											Governance Report for the Quarter ended 31.12.2016.</a> </li>
+									<li><a target="_blank" href="PDF/CG Report MMWL.pdf">MMWL Corporate Governance
+											Report for the Quarter ended 30.09.2016.</a> </li>
+									<li><a target="_blank" href="PDF/Compositon of BOD.pdf">Composition of Committee of
+											Directors</a> </li>
+									<li><a target="_blank" href="PDF/MMWL CG Report 30.06.16.pdf">MMWL Corporate
+											Governance Report for the Quarter ended 30.06.2016.</a> </li>
+									<li><a target="_blank" href="PDF/CorporateGovernance/CGR 31.03.2016.pdf"> Corporate
+											Governance Report for the Quarter/year ended 31.03.2016</a></li>
+									<li><a target="_blank" href="PDF/CorporateGovernance/CGR_31_12_15.pdf"> Corporate
+											Governance for the quarter ended 31st December, 2015</a> </li>
+									<!--<li><a target="_blank" href="PDF/CorporateGovernance/MMWL_Corporate Governance.pdf">Corporate Governance Report</a> </li>
+    <li> <a target="_blank" href="PDF/CorporateGovernance/Corporate_Governance_Report _december_2014.pdf"> Compliance With Corporate Governance</a> </li>-->
+								</ul>
+							</div>
+							<div style="float:left; width:50%;">
+								<h5>Corporate Governance Policies</h5>
+								<ul>
+
+									<li><a target="_blank" href="PDF/MMWL_Dividend_Policy.pdf">
+											Dividend Distribution Policy</a></li>
+
+									<li><a target="_blank"
+											href="PDF/Policy-on-Principles-and-Policies-of-Business-Responsibility.pdf">
+											Policy on Principles and Policies of Business Responsibility</a></li>
+
+
+
+
+									<li><a target="_blank" href="PDF/Code-of-Practise.pdf">Code of Practices &
+											Procedures for Fair Disclosure</a> </li>
+
+									<li><a target="_blank"
+											href="PDF/investors/Policy on Related Party Transactions.pdf">Policy on
+											Related Party Transactions</a> </li>
+
+
+
+
+
+									<li><a target="_blank"
+											href="PDF/CorporateGovernance/Policy on disclosure of events information and for determination of materiality.pdf">Policy
+											on disclosure of events/information and for determination of materiality</a>
+									</li>
+									<li> <a target="_blank"
+											href="PDF/CorporateGovernance/Archival Policy.pdf">Archival Policy</a>
+									</li>
+									<!--<li> <a target="_blank" href="PDF/CorporateGovernance/MMWL_Clause 49_ BSE_31.03.2015.pdf">Clause 49 of the Listing Agreement</a> </li>-->
+									<li> <a target="_blank"
+											href="PDF/CorporateGovernance/Board Diversity Policy.pdf">Board Diversity
+											Policy</a></li>
+
+
+
+
+									<li><a target="_blank"
+											href="PDF/investors/Code of Business Conduct and Ethics for the Senior Management Personnel.pdf">Code
+											of Business Conduct and Ethics for the Senior Management Personnel</a></li>
+
+
+
+
+									<li><a target="_blank"
+											href="PDF/CorporateGovernance/Code of business conducts Ethics (Directors).pdf">
+											Code of business conducts Ethics (Directors)</a></li>
+									<!-- <li> <a target="_blank" href="PDF/MMWL-Familiarisation-Prog-ID.pdf"> Familiarization Program for independent directors</a></li>-->
+
+
+
+
+
+
+									<li><a target="_blank"
+											href="PDF/PDF_17-Mar-22/Policy on Material Subsidiaries.pdf"> Policy on
+											Material Subsidiaries</a></li>
+
+
+
+
+
+									<li> <a target="_blank" href="PDF/CorporateGovernance/Remuneration Policy.pdf">
+											Remuneration Policy</a></li>
+
+
+
+
+
+									<li> <a target="_blank"
+											href="PDF/investors/Terms and conditions of appointment of Independent Directors.pdf">
+											Terms and conditions of appointment of Independent Directors</a></li>
+
+
+
+
+
+
+									<li> <a target="_blank" href="PDF/Vigil MechanismWhistle Blower Policy.pdf">Vigil
+											Mechanism/Whistle Blower Policy</a></li>
+
+
+
+
+									<!--<li> <a target="_blank" href="PDF/MMWL- Code of Practices & Procedures for Fair Disclosure.pdf">
+    Code of Practices &amp; Procedures for Fair Disclosure</a></li>-->
+								</ul>
+							</div>
+
+
+
+
+						</div>
+						<a class="back allbuttons" href="#" style="float:right;">Back</a>
+					</div>
+					<!---->
+
+					<div class="home-container7" id="CompanyNotices"
+						style="height: 270px; display:block;  overflow: auto; width:65%  ">
+						<h3>Newspaper Result Advertisement</h3>
+								<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/IND AS Un-audited Standalone & Consolidated Financial Results for the first Quarter ended 30th June 2026.pdf">
+								&bull;IND AS Un-audited Standalone & Consolidated Financial Results for the first Quarter ended 30th June 2026</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/IND AS Audited Standalone & Consolidated Financial Results for the fourth Quarter and financial year ended 31st March 2026.pdf">
+								&bull; IND AS Audited Standalone & Consolidated Financial Results for the fourth Quarter and financial year ended 31st March 2026</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Special Window for re-lodgement of Transfer requests..pdf">
+								&bull; Special Window for re-lodgement of Transfer requests.</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/IND As Unaudited Standalone & Consolidated Financial Results for third quarter and nine months ended 31st December 2025..pdf">
+								&bull; IND As Unaudited Standalone & Consolidated Financial Results for third quarter
+								and nine months ended 31st December 2025</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Intimation of newspaper publication -shifting of Registered office of the Company.pdf">
+								&bull; Intimation of newspaper publication -shifting of Registered office of the
+								Company</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/IND AS Unaudited Standalone & Consolidated Financial Result for the Second Quarter and Half Year ended 30th September, 2025.pdf">
+								&bull; IND AS Un-audited Standalone & Consolidated Financial Results for the Second
+								Quarter and half year ended 30th September 2025.</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Newpaper Intimation_14082025.pdf"> &bull; IND AS Un-audited
+								Standalone & Consolidated Financial Results for the first Quarter ended 30th June
+								2025.</a> <br>
+
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Newspaperintimatin_signed.pdf"> &bull; IND AS Audited
+								Standalone & Consolidated Financial Results for the fourth Quarter and financial year
+								ended 31st March 2025.</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/IND As Unaudited Standalone & Consolidated Financial Results for third quarter and nine months ended 31st December 2024.pdf">
+								&bull; IND As Unaudited Standalone & Consolidated Financial Results for third quarter
+								and nine months ended 31st December 2024.</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 30.09.2024-combined.pdf">
+								&bull; IND Un Audited Standalone & Consolidated Financial Results for the second Quarter
+								ended 30th September 2024.</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 30.06.2024.pdf"> &bull; IND Un
+								Audited Standalone & Consolidated Financial Results for the first Quarter ended 30th
+								June 2024.</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 31.03.2024.pdf"> &bull; IND
+								Audited Standalone & Consolidated Financial Results for the fourth Quarter and financial
+								year ended 31st March 2024.</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 31.03.2023.pdf"> &bull; IND AS
+								Audited Standalone & Consolidated Financial Result for the fourth Quarter and financial
+								financial year ended 31st March, 2023</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 30.06.2023.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the first Quarter year ended
+								30th June, 2023</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 30.09.2023.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the second Quarter and half year
+								ended 30th September, 2023</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 30.12.2023.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the third Quarter and nine month
+								ended 31st December, 2023</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 31.12.2022.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the third Quarter and nine month
+								ended 31st December, 2022</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 30.09.2022.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the second Quarter and half year
+								ended 30th September, 2022</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 30.06.2022.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the first Quarter year ended
+								30th June, 2022</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 31.03.2022.pdf"> &bull; IND AS
+								Audited Standalone & Consolidated Financial Result for the fourth Quarter and financial
+								year ended 31st March, 2022</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisment 31.12.2021.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the third Quarter and nine month
+								ended 31st December, 2021</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Finanical Result Advertisment 30.09.2021.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the second Quarter and half year
+								ended 30th September, 2021</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisment 30.06.2021.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the first Quarter year ended
+								30th June, 2021</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisement 31.03.2021.pdf"> &bull; IND AS
+								Audited Standalone & Consolidated Financial Result for the fourth Quarter and financial
+								year ended 31st March, 2021</a> <br>
+						<p class="styleLink"> <a target="_blank"
+								href="PDF/Company Notices/Financial Result Advertisment 31.12.2020.pdf"> &bull; IND AS
+								Uaudited Standalone & Consolidated Financial Result for the third Quarter and nine month
+								ended 31st December, 2020</a> <br>
+
+						</p>
+
+						<h3>Notice of Electronic voting for AGM published in newspaper</h3>
+
+						<p class="styleLink"> <a target="_blank" href="PDF/Company Notices/Publication.pdf"> &bull;
+								Notice</a> <br>
+						</p>
+
+						<p class="styleLink"> <a target="_blank" href="PDF/AGMAdvertisement.pdf"> &bull; Notice of Book
+								Closure for AGM and e-voting published in Hindustan Times and Navshakti, Mumbai on 7th
+								September, 2017
+							</a> <br>
+						</p>
+
+					</div>
+
+					<a class="back allbuttons" href="#" style="float:right; margin-bottom: 1em;">Back</a>
+
+
+					<div class="home-container9" id="Notices"
+						style="height:270px; display:block; overflow:auto; width:65%;">
+						<h3></h3>
+						<a target="_blank" href="PDF/Intimation to Shareholders for KYC Update.pdf"> &bull;
+							Intimation to Shareholders for KYC Update</a><br>
+						<a target="_blank" href="PDF/AGM Post Advertisement dated 06.09.2026.pdf"> &bull;
+							AGM Post Advertisement dated 06.09.2026</a><br>
+						<a target="_blank" href="PDF/Dispatch of Letter to Shareholders Providing Web-Link to Annual Report.pdf"> &bull;
+							Dispatch of Letter to Shareholders Providing Web-Link to Annual Report</a><br>
+						
+						<a target="_blank" href="PDF/Notice of Annual General Meeting – 2026.pdf"> &bull;
+							Notice of Annual General Meeting – 2026</a><br>
+						<a target="_blank" href="PDF/AGM Pre Advertisement dated 03.09.2026.pdf"> &bull;
+							AGM Pre Advertisement dated 03.09.2026</a><br>
+						<a target="_blank" href="PDF/Special Window for re-lodgement of Transfer requests..pdf"> &bull;
+							Special Window for re-lodgement of Transfer requests.</a><br>
+						<a target="_blank"
+							href="PDF/Special Window for Re-lodgement of Physical Share Transfer Requests.pdf"> &bull;
+							Special Window for Re-lodgement of Physical Share Transfer Requests</a><br>
+						<p style="text-align:justify;"> &bull; In case the shareholders/investors have any dispute
+							against the Company and/or its Registrar and Share Transfer Agent (RTA), as per SEBI
+							Circular No. <a target="_blank"
+								href="https://www.sebi.gov.in/legal/circulars/jul-2023/online-resolution-of-disputes-in-the-indian-securities-market_74794.html">SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/131
+								dated July 31, 2023</a>, read with SEBI Circular No. <a target="_blank"
+								href="https://www.sebi.gov.in/legal/circulars/aug-2023/corrigendum-cum-amendment-to-circular-dated-july-31-2023-on-online-resolution-of-disputes-in-the-indian-securities-market_74976.html">SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/135
+								dated August 04, 2023</a>, they can file for Online Resolution of Disputes through
+							Securities Market Approach for Resolution through ODR Portal <a target="_blank"
+								href="https://smartodr.in"> https://smartodr.in </a></p>
+						<a target="_blank" href="PDF/Intimation to Shareholders for KYC Update.pdf"> &bull; Intimation
+							to Shareholders for KYC Update</a><br>
+
+						<a target="_blank" href="PDF/AGM Post Advertisement dated 08.09.2025.pdf"> &bull; AGM Post
+							Advertisement dated 08.09.2025</a><br>
+						<a target="_blank"
+							href="PDF/Dispatch Of Letter To Shareholders Providing Web-Link To Annual Report.pdf">
+							&bull; Dispatch of Letter to Shareholders Providing Web-Link to Annual Report</a><br>
+						<a target="_blank" href="PDF/AGM Pre Advertisement dated 02.09.2025.pdf"> &bull; AGM Pre
+							Advertisement dated 02.09.2025</a><br>
+						<a target="_blank" href="PDF/MMWL_AGM Notice_2025.pdf"> &bull; Notice of Annual General Meeting
+							–
+							2025</a><br>
+						<a target="_blank" href="PDF/NOTICE 2023-24_.pdf"> &bull; Notice of Annual General Meeting –
+							2024</a><br>
+						<a target="_blank" href="PDF/NOTICE.pdf"> &bull; Notice of Annual General Meeting – 2023</a><br>
+						<a target="_blank" href="PDF/Postal Ballot Notice.pdf"> &bull; Postal Ballot Notice-
+							2023.</a><br>
+						<a target="_blank" href="PDF/Notice  Annual General Meeting 2021-2022.pdf"> &bull; Notice of the
+							Annual General Meeting 2022</a><br>
+						<a target="_blank" href="PDF/Company Notices/AGM Pre Advertisement 04.09.2022.pdf"> &bull; AGM
+							Pre Advertisement dated 04.09.2022</a><br>
+						<a target="_blank" href="PDF/Company Notices/AGM Post Advertisement 08.09.2022.pdf"> &bull; AGM
+							Post Advertisement dated 08.09.2022</a><br>
+
+
+						<a> &bull; Forms for PAN, KYC etc. for the Shareholders holding securities in Physical Form</a>
+						<ul>
+							<a target="_blank" href="PDF/mmwl_pdf/Form-ISR-1.pdf"> &bull; Form-ISR-1</a> <br>
+							<a target="_blank" href="PDF/mmwl_pdf/Form-ISR-2.pdf"> &bull; Form-ISR-2</a> <br>
+							<a target="_blank" href="PDF/mmwl_pdf/Form-ISR-3.pdf"> &bull; Form-ISR-3</a> <br>
+							<a target="_blank" href="PDF/mmwl_pdf/Form-No.-SH-13.pdf"> &bull; Form-No.-SH-13</a> <br>
+							<a target="_blank" href="PDF/mmwl_pdf/Form-No.-SH-14.pdf"> &bull; Form-No.-SH-14</a> <br>
+						</ul>
+						<a target="_blank" href="PDF/Notice_Annual_General_Meeting_2021.pdf"> &bull; Notice of the
+							Annual General Meeting 2021</a><br>
+						<a target="_blank" href="PDF/PDF_17-Mar-22/AGM Post 09.09.21.pdf">&bull; AGM post
+							09.09.2021</a><br>
+						<a target="_blank" href="PDF/PDF_17-Mar-22/AGM pre 04.09.2021.pdf">&bull; AGM pre
+							04.09.2021</a><br>
+						<a target="_blank" href="PDF/Notice-MMWL.pdf"> &bull; Notice of Annual General Meeting
+							2020</a><br>
+						<a target="_blank" href="PDF/E-Voting&Notice-of-AGM-2018-19.pdf"> &bull; E-Voting & Notice of
+							Annual General Meeting 2019</a><br>
+						<a target="_blank" href="PDF/Compulsory_Dematerialization.pdf"> &bull; Compulsory
+							Dematerialisation (Demat) of Shares</a><br>
+						<a target="_blank" href="PDF/MMWL-AGM-Notice-2018.pdf"> &bull; E-Voting &amp; Notice of Annual
+							General Meeting 2018</a><br>
+						<a target="_blank" href="PDF/Adv-MMWL Postal Ballot.pdf"> &bull; Intimation under Advertisement
+							on Postal Ballot Notice 2017.</a><br>
+						<a target="_blank" href="PDF/MEDIA_MATRIX_LTD._Postal_Ballot_Notice.pdf"> &bull; Intimation
+							Under Postal Ballot Notice 2017.</a><br>
+						<a target="_blank" href="PDF/Newspaper_Advertisement_MMWL.pdf"> &bull; Intimation under
+							Advertisement on Postal Ballot Notice.</a><br>
+						<a target="_blank" href="PDF/Company Notices/MMWL Postal_Ballot_Notice.pdf"> &bull; Postal
+							Ballot Notice 2016 </a> <br>
+						<a target="_blank" href="PDF/Company Notices/MMWL_AGMNOTICE2017.pdf"> &bull; Notice of
+							Electronic voting for AGM sent to the Shareholders</a> <br>
+
+						</p>
+						<a class="back allbuttons" href="#" style="float:right; margin-bottom: 1em;">Back</a>
+
+
+					</div>
+
+
+					<div class="home-container8" id="CorporateAnnouncements"
+						style="height: 270px; display:block;  overflow: auto; width:65%;">
+
+
+
+
+					</div>
+
+
+					<div class="home-container10" id="InvestorContact"
+						style="height:270px; display:block; overflow:auto; width:65%;">
+
+
+						<div style="float: left; width: 50%; padding: 10px;">
+							<strong>Registered office</strong>
+							<p style="font-size: 14px">
+								Media Matrix Worldwide Limited <br>
+								Plot No. 38, 4th Floor, Institutional area,  <br>
+								Sector 32, Gurugram, 122001,  <br>
+							    Haryana
+							</p>
+
+
+							<strong>Investor Contact</strong>
+							<p style="font-size: 14px">
+								Mohd Sagir ( Company Secretary )<br>
+								<a href="mailto:mmwl.corporate@gmail.com">Email: mmwl.corporate@gmail.com</a>
+							</p>
+
+						</div>
+
+
+						<div style="float: left; width: 50%; padding: 10px;">
+							<strong>Contact details for Investor grievance redressal</strong><br>
+							MUFG Intime India Pvt. Ltd<br>
+							C 101, 247 Park, L B S Marg Vikhroli West Mumbai - 400083<br>
+							Tel:+91-22-4918 6270<br>
+							Fax:+91-22-4918 6060<br>
+							<a href="mailto:rnt.helpdesk@linkintime.co.in">Email: rnt.helpdesk@linkintime.co.in </a>
+							</p>
+
+						</div>
+
+						<a class="back allbuttons" href="#" style="float:right;margin-bottom: 1em;">Back</a>
+
+
+					</div>
+
+
+					<div class="home-container8" id="CorporateAnnouncements"
+						style="height: 270px; display:block;  overflow: auto; width:65%;">
+						<h3>Announcements made to Stock Exchange</h3>
+						<ul>
+							<li>
+								<a target="_blank" href="PDF/Special Window for re-lodgement of Transfer requests_22.09.2026.pdf">Special Window for re-lodgement of Transfer requests.</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Issuance of Corporate Guarantee to Jio Credit Limited.pdf">Issuance of Corporate Guarantee to Jio Credit Limited. </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Changes in Statutory Auditors-Appointment of Statutory Auditors in place of existing Auditor on completion of term.pdf">Changes in Statutory Auditors-Appointment of Statutory Auditors in place of existing Auditor on completion of term  </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of the Board Meeting-13th August 2026.pdf">Outcome of the Board Meeting-13th August 2026 </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Closure of Trading Window.pdf">Closure of Trading Window </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of Board Meeting -13th August 2026.pdf">Notice of Board Meeting -13th August 2026 </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/SBICAP.pdf">Issuance of Corporate Guarantee to SBICAP Trustee Company Limited. </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Special Window for re-lodgement of Transfer requests_30.07.2026.pdf">Special Window for re-lodgement of Transfer requests. </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Issuance of Corporate Guarantee to Yes Bank Limited.pdf">Issuance of Corporate Guarantee to Yes Bank Limited. </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation of Closure of Trading Window-30.06.2026.pdf">Intimation of Closure of Trading Window-30.06.2026 </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Issuance of Corporate Guarantee to Kotak Mahindra Bank Limited.pdf">Issuance of Corporate Guarantee to Kotak Mahindra Bank Limited. </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Special Window for re-lodgement of Transfer requests.pdf">Special Window for re-lodgement of Transfer requests. </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Issuance of Corporate Guarantee to IndusInd Bank Limited.pdf">Issuance of Corporate Guarantee to IndusInd Bank Limited. </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Clarification on Significant Price Movement in Company's Share.pdf">Clarification on Significant Price Movement in Company's Share. </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Update on change in the Registered Office.pdf">Update on Change in the Registered Office </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of the Board Meeting-15th April 2026.pdf">Outcome of the Board Meeting-15th April 2026</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of Board Meeting – 15th April 2026.pdf">Notice of
+									Board Meeting -15th April 2026</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Intimation Of Order Of The Regional Director For Shifting Of Registered Office Of The Company.pdf">Intimation
+									of Order of the Regional Director for Shifting of Registered Office of the
+									Company</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Intimation of Closure of Trading Window-31.03.2026.pdf">Intimation of
+									Closure of Trading Window-31.03.2026</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of the Board Meeting-10thFebruary 2026.pdf">Outcome
+									of the Board Meeting-10th February 2026</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of Board Meeting – 10th February 2026.pdf">Notice of
+									Board Meeting – 10th February 2026</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Intimation of Closure of Trading Window-10-02-2026.pdf">Intimation of
+									Closure of Trading Window</a>
+							</li>
+
+
+							<li>
+								<a target="_blank"
+									href="PDF/Notice to Creditors of the Company in connection with shifting of the Registered Office of the Company..pdf">Notice
+									to Creditors of the Company in connection with shifting of the Registered Office of
+									the Company</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Intimation of newspaper publication -shifting of Registered office of the Company.pdf">Intimation
+									of newspaper publication -shifting of Registered office of the Company</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Intimation of Closure of Trading Window-31.12.2025.pdf">Intimation of
+									Closure of Trading Window-31.12.2025</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Outcome of the Board Meeting-13th November 2025.pdf">Outcome of the Board
+									Meeting-13th November 2025</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of Board Meeting – 13th November 2025.pdf">Notice of
+									Board Meeting – 13th November 2025 </a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Issuance of Corporate Guarantee to Yes Bank Limited.pdf">
+									Issuance of
+									Corporate Guarantee to Yes Bank Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/Voting Result and Consolidated Scrutinizer Report of 40th Annual General Meeting.pdf">
+									Voting
+									Result and Consolidated Scrutinizer Report of 40th Annual General Meeting
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Proceeding of the Annual General Meeting 2025.pdf">
+									Proceeding of the
+									Annual General Meeting 2025
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation of Closure of Trading Window-30.09.2025.pdf">
+									Intimation of
+									Closure of Trading Window-30.09.2025
+								</a>
+							</li>
+
+							<li>
+								<a target="_blank" href="PDF/Outcome of the Board Meeting_Final_Clean_v1.pdf">
+									Outcome of
+									the Board Meeting
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of Board Meeting – 13th August 2025.pdf">
+									Notice of
+									Board Meeting – 13th August 2025
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation of Closure of Trading Window.pdf">
+									Intimation of
+									Closure of Trading Window
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation of Corporate Guarantee.pdf">
+									Intimation of
+									Corporate Guarantee
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation of Closure of Trading Window -30.06.2025.pdf">
+									Intimation of Closure of Trading Window -30.06.2025
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Appointment of Secretarial Auditor.pdf">
+									Appointment of
+									Secretarial Auditor
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of Board Meeting – 29th May 2025.pdf">
+									Notice of
+									Board Meeting - 29th May 2025
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/MMWL_Intimation of Closure Trading window_31032025.pdf">
+									Intimation of
+									Closure of Trading Window -31.03.2025
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of the Board Meeting.pdf">
+									Outcome of the Board
+									Meeting
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation of Closure of Trading Window - 31.12.2024.pdf">
+									Intimation of
+									Closure of Trading Window - 31.12.2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Update of the Board Meeting.pdf">
+									Update on the Board
+									Meeting.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of Board Meeting – 12th February 2025.pdf">
+									Notice of
+									Board Meeting – 12th February 2025
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of Board Meeting – 06th November 2024.pdf">
+									Notice of
+									Board Meeting – 06th November 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Change in name of RTA of the Company.pdf">
+									Change in name of
+									RTA of the Company.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/MMWL_STX_Closure of Trading window - Signed.pdf">
+									Intimation
+									of Closure of Trading Window - 31.12.2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank"
+									href="PDF/MMWL_STX_Intimation of Resignation of Bela Banerjee_final.pdf">
+									Intimation
+									of Resignation of Bela Banerjee_2.12.2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Disclosure- NexG Devices Private Limited.pdf">
+									Data Center
+									Creation and related Services by NexG Devices Private Limited
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Result Covering Letter 2024.pdf">
+									Voting Result and
+									Consolidated Scrutinizer Report of 39th Annual General Meeting
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Proceeding Final MMWL 2024.pdf">
+									Proceeding of the Annual
+									General Meeting 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Form MGT 7 Website-2024.pdf">Annual Return 2023-2024</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Related party Transaction Report_30.09.2024.pdf">
+									Related
+									Party Transactions for the financial year and half ended 30th September, 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of BOD BSE_8_8.pdf">
+									Notice of Board Meeting – 8th
+									August, 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Closure of Trading Window BSE June 2024.pdf">
+									Closure of
+									Trading Window – 30th June, 2024
+								</a>
+							</li>
+
+							<li>
+								<a target="_blank" href="PDF/Notice of BOD BSE_4_May.pdf">
+									Notice of Board Meeting – 14th
+									May, 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Relatd Party Transaction Report_31.03.2024.pdf">
+									Related
+									Party Transactions for the financial year ended 31st March 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Closure of Trading Window BSE March 2024.pdf">
+									Closure of
+									Trading Window – 31st March, 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of BOD BSE-2024.pdf">
+									Notice of Board Meeting – 14th
+									February, 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Closure of Trading Window BSE.pdf">
+									Closure of Trading
+									Window – 1st January, 2024
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Result Covering Letter.pdf">
+									Voting Result and Consolidated
+									Scrutinizer Report of 38th Annual General Meeting
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Proceeding Final MMWL 2023.pdf">
+									Proceeding of the Annual
+									General Meeting 2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BSE Related Party 300923.pdf">
+									Related Party Transactions
+									for the financial year and half ended 30th September, 2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of BOD (MMWL) 04.09.2023.pdf">
+									Outcome of Board
+									Meeting – 4th September, 2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Calrification on Price Movement.pdf">
+									Clarification on Price
+									Movement
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of BOD BSE.pdf">
+									Notice of Board Meeting – 8th
+									August, 2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Voting Result & Scrutinzer Report.pdf">
+									Voting Result and
+									Scrutinizer Report of Postal Ballot
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Related Party Transaction Report.pdf">
+									Related Party
+									Transactions for the financial year and half ended 31st March, 2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of BOD BSE 26032023.pdf">
+									Notice of Board Meeting –
+									26th May, 2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of BOD 10022022023.pdf">
+									Outcome of Board Meeting –
+									10th February, 2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of BOD BSE 10.02.2023.pdf">
+									Notice of Board Meeting –
+									10th February, 2023
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Related Party Transaction 30.09.2022.pdf">
+									Related Party
+									Transactions for the first half year year ended 30th September, 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice of BOD BSE 14.11.2022.pdf">
+									Notice of Board Meeting –
+									14th November, 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Annual Return 2021-2022.pdf">Annual Return 2021-2022</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Transcript 37th AGM MMWL __.pdf">
+									Transcript 37th AGM
+									MMWL
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Proceeding Final MMWL 2022.pdf">
+									Proceeding of the Annual
+									General Meeting 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BSE Scrutinizer Report & Voting Result.pdf">
+									Voting Result
+									and Consolidated Scrutinizer Report of 37th Annual General Meeting
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Announcement C K Goushal.pdf">Change in Directorate</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/Outcome of BOD 09.08.2022.pdf">
+									Outcome of
+									Board Meeting – 9th August, 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice BOD BSE 09.08.2022 Final.pdf">
+									Notice of Board
+									Meeting – 9th August, 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Related party Transaction 31.03.2022.pdf">
+									Related Party
+									Transactions for the financial year and half ended 31st March, 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/BSE Intimation 19052022 Final.pdf">
+									Notice
+									of Board Meeting – 27th May, 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Secretarial Compliance Report 2021-2022.pdf">
+									Secretarial
+									Compliance Report 2021-2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/Outcome_BOD_FEB22.pdf">
+									Outcome of Board
+									Meeting – 9th February, 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/BOD_FEB22.pdf">
+									Notice of Board Meeting –
+									9th February, 2022
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice_BOD_BSE_12_11_21.pdf">
+									Notice of Board Meeting – 12th
+									November, 2021
+								</a>
+							</li>
+							<li><a target="_blank" href="PDF/Annual Return 2020-21.pdf">Annual Return 2020-2021</a></li>
+							<li><a target="_blank" href="PDF/Transcript_36th_AGM.pdf">Transcript 36th AGM MMWL</a></li>
+							<li>
+								<a target="_blank" href="PDF/BSE_Result_final_21.pdf">
+									Voting Result and Consolidated
+									Scrutinizer Report of 36th Annual General Meeting
+								</a>
+							</li>
+							<li><a target="_blank" href="PDF/Proceeding_MMWL_2021.pdf">Proceeding of 36th AGM</a></li>
+							<li>
+								<a target="_blank" href="PDF/Outcome_BOD_13_08_2021.pdf">
+									Outcome of Board Meeting – 13th
+									August, 2021
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice_of_BOD_BSE_05.08.21.pdf">
+									Notice of Board Meeting –
+									13th August, 2021
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Related_Party_20_07_2020.pdf">
+									Related Party Transactions
+									for the half year and financial year ended 31st March, 2021
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome_BOD_22_06_21.pdf">
+									Outcome of Board Meeting – 22nd
+									June, 2021
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/mmwl_pdf/Notice_of_BOD_BSE_22.06.2021.pdf">
+									Notice of Board
+									Meeting – 22th June, 2021
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Secretarial Compliance Report 2020-2021.pdf">
+									Secretarial
+									Compliance Report 2020-2021
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/mmwl_pdf/Notice_of_BOD_BSE_sw.pdf">
+									Notice of Board Meeting
+									– 12th February, 2021
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/mmwl_pdf/Related_Party_BSE_Intimation.pdf">
+									Related Party
+									Transactions for the half year ended 30th September, 2020
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/mmwl_pdf/BSE_Intimation.pdf">
+									Notice of Board Meeting – 12th
+									November, 2020
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Stock_Exchange_Intimation.pdf">
+									Change in the registered
+									office of the Company within the local limits of city
+								</a>
+							</li>
+							<li><a target="_blank" href="PDF/Annual_Return_2019-20.pdf">Annual Return – 2019-20</a></li>
+							<li><a target="_blank" href="PDF/Transcript_35th_AGM.pdf">Transcript 35th AGM MMWL</a></li>
+							<li>
+								<a target="_blank" href="PDF/BSE_Result.pdf">
+									Voting Result and Consolidated Scrutinizers
+									Report of 35th Annual General Meeting
+								</a>
+							</li>
+							<li><a target="_blank" href="PDF/Proceeding_MMWL_2020.pdf">Proceedings of 35th AGM </a></li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of BOD-5-9-20.pdf">
+									Outcome of the Board of
+									Directors Meeting dated 05.09.2020
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/mmwl_pdf/Notice of Board Meeting-05.09.2020.pdf">
+									Notice of
+									Board Meeting – 5th September, 2020
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/mmwl_pdf/Relate_Party_Transaction.pdf">
+									Related Party
+									Transactions for the half year ended 31st March, 2020
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/mmwl_pdf/Outcome-of-BOD-(MMWL).pdf">
+									Outcome of the Board of
+									Directors Meeting dated 23.05.20
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/mmwl_pdf/Notice-of-BOD-BSE.pdf">
+									Notice of Board Meeting –
+									23rd May, 2020
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Secretarial Compliance Report 2019-2020.pdf">
+									Secretarial
+									Compliance Report 2019-2020
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation-to-BSE-13.02.20.PDF">
+									Notice of Board Meeting –
+									13th February, 2020
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/RPT_Disclosure_Sept_2019.PDF">
+									Related Party Transactions
+									for the half year ended 30th September, 2019
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BOD_Intimation_12.12.19.PDF">
+									Notice of Board Meeting – 12th
+									December, 2019
+								</a>
+							</li>
+							<li><a target="_blank" href="PDF/Annual_Return_2018-19.pdf">Annual Return – 2018-19</a></li>
+							<li>
+								<a target="_blank" href="PDF/Voting-Result&Scrutiniser-Report.PDF">
+									Voting Result and
+									Consolidated Scrutinizers Report of 34th Annual General Meeting
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/AGM_Doc__MMWL_.PDF">
+									Corporate Announcement> Proceedings of
+									34th AGM
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome-of-BOD.PDF">
+									Outcome of the Board of Directors
+									Meeting dated 29.08.19
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BOD-Intimation-29.08.19.PDF">
+									Notice of Board Meeting – 29th
+									August, 2019
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Closure-of-Trading-Window-01.07.2019.pdf">
+									Closure of
+									Trading Window – 1st July, 2019.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BSE-Intimation-29.05.2019.PDF">
+									Notice of Board Meeting –
+									29th May, 2019
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/RPT-Disclosure.pdf">
+									Related Party Disclosure (Consolidated)
+									for the half year ended 31st March, 2019
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Secretarial Compliance_Report 2018-2019.pdf">
+									Secretarial
+									Compliance Report 2018-2019
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BSE Intimation 13.02.19.PDF">
+									Notice of Board Meeting – 13th
+									February, 2019
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of BOD 14.11.18.PDF">
+									Outcome of the Board of
+									Directors Meeting dated 14.11.18
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BOD_Intimation.PDF">
+									Notice of Board Meeting – 14th
+									November, 2018.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BSE-Result.PDF">
+									Voting Result and Consolidated Scrutinizers
+									Report of 33rd Annual General Meeting.
+								</a>
+							</li>
+							<li><a target="_blank" href="PDF/MMWL-AGM2018.PDF">Proceedings of 33rd AGM.</a></li>
+							<li>
+								<a target="_blank" href="PDF/Intimation-of-Divest.PDF">
+									Intimation under Regulation 30 of
+									SEBI(LODR) for Divestment of entire stake in DigiVive Services Private Limited
+									(“DSPL”), a wholly owned subsidiary of the Company on the Website of the
+									Company.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome_of_BOD.PDF">
+									Outcome of the Board of Directors
+									Meeting dated 13.08.18
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice-of-BOD-website.pdf">
+									Notice of Board Meeting – 13th
+									August, 2018
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/OutcomeofBOD25March.pdf">
+									Outcome of the Board of Directors
+									Meeting dated 25.05.18
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice_BOD_BSE_25.05.18.pdf">
+									Notice of Board Meeting – 25th
+									May, 2018
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BSE-Outcome-of-BOD-31.01.2018.pdf">
+									Outcome of the Board of
+									Directors Meeting dated 31.01.2018
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/IntimatBOD310118.pdf">
+									Notice of Board Meeting – 31st
+									January, 2018.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Notice-of-BOD.pdf">
+									Notice of Board Meeting – 14th November,
+									2017.
+								</a>
+							</li>
+							<li><a target="_blank" href="PDF/Proceeding of AGM.pdf">Proceedings of 32nd AGM </a></li>
+							<li>
+								<a target="_blank" href="PDF/Result.pdf">
+									Voting Result and Consolidated Scrutinizers
+									Report of 32nd Annual General Meeting
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Disclosure06.09.2017.pdf">
+									Reg. 30 of SEBI (LODR) for
+									Divestment of entire stake in DigiCall Teleservices Private Limited DTPL, a wholly
+									owned subsidiary of the Company dated 06.09.2017
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Contact KMP.pdf">
+									Contact Details of Key Managerial
+									Personnel’s
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/OutcomeofBOD.pdf">
+									Outcome of the Board of Directors Meeting
+									dated 29.08.17
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Scrutiniser-Report.pdf">
+									Scutinizer Report on Result of
+									Postal Ballot 2017.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Regulation44SEBI(LODR).pdf">
+									Result of Postal Ballot under
+									Regulation 44 of LODR.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimat BOD 11.08.2017.pdf">
+									Notice of Board Meeting – 11th
+									August, 2017.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Disclosure 02.08.17.pdf">
+									Caption Intimation under
+									Regulation 30 of SEBI(LODR) for Divestment of entire stake in DigiCall Teleservices
+									Private Limited (“DTPL”), a wholly owned subsidiary of the Company
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/OutcomeofBOD17.07.17.pdf">
+									Outcome of the Board of Directors
+									Meeting dated 17.07.17
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Outcome of BOD 24.05.2017.pdf">
+									Outcome of the Board of
+									Directors Meeting dated 24.05.17
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation BOD.pdf">
+									Notice of Board Meeting – 24th May,
+									2017
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BSEBODOutcome 13.02.2017.pdf">
+									Outcome of the Board of
+									Directors Meeting dated 13.02.17
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/ScrutinizerReportMMWL.pdf">
+									Scutinizer Report on Result of
+									Postal Ballot
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Regulation4MMWLPostalResult.pdf">
+									Result of Postal Ballot
+									under Regulation 44 of LODR
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/BSE Board Intimation 30_01_2017.pdf">
+									Notice of Board
+									Meeting – 13th February, 2017
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Intimation BSE MMWL.pdf">
+									Intimation under Regulation 30 of
+									SEBI (LODR) for Change in status of nexG Devices Private Limited (“nexG”) from
+									Wholly owned subsidiary to subsidiary of the Company
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/OutcomeofBOD14.11.16.pdf">
+									Outcome of the Board of Directors
+									Meeting dated 14.11.16
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/NoticeofBoardMeeting.pdf">
+									Notice of Board Meeting – 4th
+									November, 2016.
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Website Resut.pdf">
+									Voting Result and Consolidated
+									Scrutinizers Report of 31st Annual General Meeting
+								</a>
+							</li>
+							<li><a target="_blank" href="PDF/Proceding of 31st AGM.pdf">Proceedings of 31st AGM</a></li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/Outcome of BOD 12.08.16.pdf">
+									Outcome of the
+									Board of Directors Meeting dated 12.08.16
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/Outcome of BOD 27.05.15.pdf">
+									Outcome of the
+									Board of Directors Meeting dated 27.05.16
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/BOD Notice 27.05.16.pdf">
+									Notice of Board
+									Meeting &ndash; 18th May, 2016
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/Outcome BOD 09.02.16.pdf">
+									Outcome of the
+									Board of Directors Meeting dated 09.02.16
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/BOD Notice 09.02.16.pdf">
+									Notice of Board
+									meeting -1st february, 2016
+								</a> <a target="_blank" href="PDF/Company Notices/MMWL_BSE_Outcome of AGM.pdf">Outcome
+									of AGM 2015</a>
+							</li>
+							<li>
+								<a target="_blank" href="PDF/Company Notices/Outcome of AGM_MMWL_BSE_28.09.2014.pdf">
+									Outcome of AGM
+									2014
+								</a>
+							</li>
+						</ul>
+
+
+						<a class="back allbuttons" href="#" style="float:right;margin-bottom: 1em;">Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--<section class="intro"  id="SITEMAP" style="background:url(images/SiteMap.jpg) no-repeat top right scroll !important;  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">  </div>
+    </div>
+  </div>
+</section>-->
+	<section class="intro" id="GETINTOUCH"
+		style="background:url(images/getinTouch.jpg) no-repeat top center scroll !important;  -webkit-background-size: cover; -moz-background-size: cover !important; background-size:cover !important; -o-background-size: cover !important;">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div style=" width: 51%;" id="GETIN" class="home-container contact-page">
+						<p style="float:left; margin-right:40px;">
+							<strong>Registered Office:</strong><br>
+							Plot No. 38, 4th Floor, Institutional Area, <br>
+							Sector 32, Gurugram, 122001, Haryana,<br>
+							Telephone: 0124-4310000<br>
+							Email:mmwl.corporate@gmail.com
+						</p>
+						<p style="float:left; margin-right:40px;">
+							<strong>Corporate Office:</strong><br>
+							Plot No 38, 4th Floor,<br>
+							Sector 32, Gurugram 122001<br>
+							Telephone:- 0124-4310000,<br>
+							Email: mmwl.corporate@gmail.com
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="js/jquery.easing.min.js"></script>
+
+	<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>-->
+
+	<!-- Custom Theme JavaScript -->
+	<script src="js/grayscale.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			//$("body").css("overflow", "hidden");
+			var obj = document.body;  // obj=element for example body
+			// bind mousewheel event on the mouseWheel function
+			if (obj.addEventListener) {
+				obj.addEventListener('DOMMouseScroll', mouseWheel, false);
+				obj.addEventListener("mousewheel", mouseWheel, false);
+			}
+			else obj.onmousewheel = mouseWheel;
+
+			function mouseWheel(e) {
+				// disabling
+				e = e ? e : window.event;
+				if (e.ctrlKey) {
+					if (e.preventDefault) e.preventDefault();
+					else e.returnValue = false;
+					return false;
+				}
+			}
+
+			x = 0;
+			y = $('#ABOUT-link').position().top;
+			cal = (x + y);
+			$('#aboutus').css("top", cal + 'px');
+			$('#aboutus').animate({ left: '376px' }, 1000);
+
+
+			$('#ABOUT-link').bind('click', function (e) {
+				//e.preventDefault();
+
+				var actClass = $(this).attr("class");
+				var x; var y; var cal;
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$("#aboutus").animate({ left: '376px' }, 1000);
+				x = 0;
+				y = $('#ABOUT-link').position().top;
+				cal = (x + y);
+
+				$('#aboutus').css("top", cal + 'px');
+				$('#aboutus').animate({ left: '376px' }, 1000);
+
+
+
+			})
+
+
+			$('#BUSINESSES-link').click(function () {
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$("#bus").animate({ left: '376px' }, 1000);
+				var x = $('#BUSINESSES').position().top;
+				var y = $('#BUSINESSES-link').position().top;
+
+				var cal = (x + y);
+				$('#bus').css("top", cal + 'px');
+				$('#bus').css("left", '376px');
+			})
+			$('#NEWS-link').click(function () {
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$("#NEW").animate({ left: '376px' }, 1000);
+				var x = $('#NEWS').position().top;
+				var y = $('#NEWS-link').position().top;
+				//alert(x+y);
+				var cal = (x + y);
+				$('#NEW').css("top", cal + 'px');
+				$('#NEW').css("left", '376px');
+			})
+
+			$('#INVESTOR-link').click(function () {
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$("#INVES").animate({ left: '376px' }, 1000);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				//alert(x+y);
+				var cal = (x + y);
+				$('#INVES').css("top", cal + 'px');
+				$('#INVES').css("left", '376px');
+			})
+
+
+			$('#GETINTOUCH-link').click(function () {
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$("#GETIN").animate({ left: '376px' }, 1000);
+				var x = $('#GETINTOUCH').position().top;
+				var y = $('#GETINTOUCH-link').position().top;
+				//alert(x+y);
+				var cal = (x + y);
+				$('#GETIN').css("top", cal + 'px');
+				$('#GETIN').css("left", '376px');
+			})
+
+
+
+
+
+			$(".read-more").bind('click', function (e) {
+				e.preventDefault();
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container2").animate({ left: '376px' }, 1500);
+
+				if (this.id == "ABOUTReadMore") {
+					var x = $('#ABOUT').position().top;
+					var y = $('#ABOUT-link').position().top;
+				}
+				else if (this.id == "busReadMore") {
+					var x = $('#BUSINESSES').position().top;
+					var y = $('#BUSINESSES-link').position().top;
+				}
+				else if (this.id == "NEWSReadMore") {
+					var x = $('#NEWS').position().top;
+					var y = $('#NEWS-link').position().top;
+				}
+				else if (this.id == "INVESTORReadMore") {
+					var x = $('#INVESTOR').position().top;
+					var y = $('#INVESTOR-link').position().top;
+				}
+				else if (this.id == "GETINTOUCHReadMore") {
+					var x = $('#GETINTOUCH').position().top;
+					var y = $('#GETINTOUCH-link').position().top;
+				}
+
+				var cal = (x + y);
+				$('.home-container2').css("top", cal + 'px');
+				$('.home-container2').css("left", '376px');
+				/*	$(this).closest(".row").children("#annual_reports").css({display: 'none'});*/
+
+				/*2*/
+
+
+
+
+
+			})
+
+
+			$("#boardDirectors").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container2").animate({ left: '376px' }, 1500);
+				//$(this).closest(".row").children(".home-container3").animate({left: '-376px'},1500);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+
+				$('.home-container2').css("top", cal + 'px');
+				//	$('.home-container2').css("left",'376px');
+				//$('.home-container2').animate({left: '376px'},1000);
+
+
+
+			})
+
+
+			$("#annualReports").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+				$('.home-container3').css("top", cal + 'px');
+				$('.home-container3').animate({ left: '376px' }, 1000);
+
+			})
+			//FinancialResult
+
+			$("#FinancialResult").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container4").animate({ left: '376px' }, 1500);
+				//$(this).closest(".row").children(".home-container3").animate({left: '-376px'},1500);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+
+				$('.home-container4').css("top", cal + 'px');
+				//	$('.home-container2').css("left",'376px');
+				//$('.home-container2').animate({left: '376px'},1000);
+
+
+
+			})
+
+			//ShareHoldingPatterns
+
+			$("#ShareHoldingPatterns").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container5").animate({ left: '376px' }, 1500);
+				//$(this).closest(".row").children(".home-container3").animate({left: '-376px'},1500);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+
+				$('.home-container5').css("top", cal + 'px');
+				//	$('.home-container2').css("left",'376px');
+				//$('.home-container2').animate({left: '376px'},1000);
+
+
+
+			})
+
+			//ComplianceWithCorporateGovernance
+
+			$("#ComplianceWithCorporateGovernance").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container6").animate({ left: '376px' }, 1500);
+				//$(this).closest(".row").children(".home-container3").animate({left: '-376px'},1500);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+
+				$('.home-container6').css("top", cal + 'px');
+				//	$('.home-container2').css("left",'376px');
+				//$('.home-container2').animate({left: '376px'},1000);
+
+
+
+			})
+
+			//CompanyNotices
+
+			$("#CompanyNotices").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container7").animate({ left: '376px' }, 1500);
+				//$(this).closest(".row").children(".home-container3").animate({left: '-376px'},1500);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+
+				$('.home-container7').css("top", cal + 'px');
+				//	$('.home-container2').css("left",'376px');
+				//$('.home-container2').animate({left: '376px'},1000);
+
+
+
+			})
+
+
+			//Notices
+
+			$("#Notices").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container9").animate({ left: '376px' }, 1500);
+				//$(this).closest(".row").children(".home-container3").animate({left: '-376px'},1500);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+
+				$('.home-container9').css("top", cal + 'px');
+				//	$('.home-container2').css("left",'376px');
+				//$('.home-container2').animate({left: '376px'},1000);
+
+
+
+			})
+
+
+
+			//CompanyNotices
+
+			$("#CorporateAnnouncements").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container8").animate({ left: '376px' }, 1500);
+				//$(this).closest(".row").children(".home-container3").animate({left: '-376px'},1500);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+
+				$('.home-container8').css("top", cal + 'px');
+				//	$('.home-container2').css("left",'376px');
+				//$('.home-container2').animate({left: '376px'},1000);
+
+
+
+			})
+
+
+			//InvestorContact
+
+			$("#InvestorContact").click(function (e) {
+
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				$(this).closest(".row").children(".home-container10").animate({ left: '376px' }, 1500);
+				//$(this).closest(".row").children(".home-container3").animate({left: '-376px'},1500);
+				var x = $('#INVESTOR').position().top;
+				var y = $('#INVESTOR-link').position().top;
+				var cal = (x + y);
+
+				$('.home-container10').css("top", cal + 'px');
+				//	$('.home-container2').css("left",'376px');
+				//$('.home-container2').animate({left: '376px'},1000);
+
+
+
+			})
+
+			$(".back").click(function (e) {
+				e.preventDefault();
+				$(".home-container, .home-container2,.home-container3,.home-container4,.home-container5,.home-container6,.home-container7,.home-container8,.home-container9,.home-container10").animate({ left: '-52%' }, 1000);
+				if ($(this).parent().attr("id") == 'annual_reports')
+					$(this).parent().prev().prev().animate({ left: '376px' }, 1500);
+
+				else if ($(this).parent().attr("id") == 'FinancialResult')
+					$(this).closest(".row").children("#INVES").animate({ left: '376px' }, 1500);
+
+				else if ($(this).parent().attr("id") == 'ShareHoldingPatterns')
+					$(this).closest(".row").children("#INVES").animate({ left: '376px' }, 1500);
+
+				else if ($(this).parent().attr("id") == 'ComplianceWithCorporateGovernance')
+					$(this).closest(".row").children("#INVES").animate({ left: '376px' }, 1500);
+
+				else if ($(this).parent().attr("id") == 'CompanyNotices')
+					$(this).closest(".row").children("#INVES").animate({ left: '376px' }, 1500);
+
+				else if ($(this).parent().attr("id") == 'Notices')
+					$(this).closest(".row").children("#INVES").animate({ left: '376px' }, 1500);
+
+				else if ($(this).parent().attr("id") == 'InvestorContact')
+					$(this).closest(".row").children("#INVES").animate({ left: '376px' }, 1500);
+
+				else if ($(this).parent().attr("id") == 'CorporateAnnouncements')
+					$(this).closest(".row").children("#INVES").animate({ left: '376px' }, 1500);
+				else
+					$(this).parent().prev().animate({ left: '376px' }, 1500);
+				$(this).closest(".row").children(".home-container3").animate({ left: '-52%' }, 1500);
+				/*$(this).closest(".row").children("#annual_reports").css({display: 'block'});*/
+			})
+		});
+	</script>
+</body>
+
+</html>
